@@ -1,10 +1,10 @@
 <?php
 
 
-$hostname = "localhost:3306";
-$user = "root";
-$password = "";
-$database ="e2edb";
+$hostname = "202.150.209.146:3306";
+$user = "u987316885_e2edb";
+$password = "markjoseph123";
+$database ="u987316885_e2edb";
 
 
 $bd = mysql_connect($hostname,$user,$password) or die ("Could not connect"); //connection of php to navicat
