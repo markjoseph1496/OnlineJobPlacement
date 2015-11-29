@@ -4,7 +4,19 @@
 include('connection.php');
 session_start();
 
-$x = $_SESSION['delete_SeminarID'];
+$x="";
+
+if(is_null($_SESSION['StudentID'])){
+    echo "
+        <script type='text/javascript'>
+        location.href='../../../../login-student.php';
+        </script>
+        ";
+}
+else{
+    $x = $_GET['EditSerminarID'];
+}
+
 
 $qry = "SELECT * FROM seminartbl WHERE SeminarID ='$x'";
 $result = mysql_query($qry);
@@ -14,6 +26,53 @@ $result = mysql_query($qry);
                 $Seminar = $qry['Seminar'];
                 $YearAttended = $qry['YearAttended'];
         }
+
+
+$b = 1;
+$txtSeminarValidator = '';
+$txtYearAttendedValidator = '';
+
+$server_txtSeminar = isset($_POST['txtSeminar']) ? $_POST['txtSeminar'] : '';
+$server_txtYearAttended = isset($_POST['txtYearAttended']) ? $_POST['txtYearAttended'] : '';
+
+$server_txtSeminar = ucwords(strtolower($server_txtSeminar));
+
+$a = isset($_POST['txtSeminar']);
+$a = $a && isset($_POST['txtYearAttended']);
+
+if($a){
+
+    $txtSeminarValid = 1;
+    $txtYearAttendedValid = 1;
+
+
+    if(is_null($server_txtSeminar) || $server_txtSeminar== ''){
+        $txtSeminarValidator = 'This Field cannot be Empty.';
+        $txtSeminarValid = 0;
+    }   
+
+    if(is_null($server_txtYearAttended) || $server_txtYearAttended == ''){
+        $txtYearAttendedValidator = 'Please Select One.';
+        $txtYearAttendedValid = 0;
+    }
+
+    $b=0;
+
+    $a = $txtSeminarValid;
+    $a = $a && $txtYearAttendedValid;
+
+    if($a){
+        unset($a);
+        $SeminarOk = mysql_real_escape_string($server_txtSeminar);
+        $query = "UPDATE seminartbl SET Seminar = '$SeminarOk ', YearAttended ='$server_txtYearAttended' WHERE SeminarID = '$SeminarID'";
+        $Result = mysql_query($query);
+        echo "
+             <script type='text/javascript'>
+             location.href='../education.php?id=SeminarEdit'
+             </script>
+             ";
+    }
+}
 ?>
 
 <html lang="en">
@@ -48,12 +107,6 @@ $result = mysql_query($qry);
     <nav class="navbar navbar-default navbar-fixed-top navbar-shrink">
         <div class="container">
             <div class="navbar-header page-scroll">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
                 <a class="navbar-brand page-scroll" href="#page-top">Online Job Placement Management</a>
             </div>
 
@@ -71,40 +124,52 @@ $result = mysql_query($qry);
     </nav><br><br>
 
     <div id="yellow-text-fields">
-        <div class="container">
-            <div class="white-holder">
-                <ul class="nav nav-tabs">
-                    <li id="my_info" class="item active"><a href="../personal_info.php"><B>My Info</B></a></li>
-                    <li id="resumelink" class="item"><a href="../../Resumelink/resumelink.php">Resumé Link</a></li>
-                    <li id="applications" class="item"><a href="../../Applications/applications.php">Applications</a></li>
-                    <li id="settings" class="item"><a href="../../Settings/settings.php">Settings</a></li>
-                </ul>
-                <div class="space"></div>
-                <ul class="nav nav-pills nav-stacked col-md-2 col-sm-3">
-                    <li class="yellow"><a href="../personal_info.php">Personal Info</a></li>
-                    <li class="yellow"><a href="../contacts_info.php">Contacts Info</a></li>
-                    <li class="yellow"><a href="../work.php">Work</a></li>
-                    <li class="yellow active"><a href="../education.php">Education</a></li>
-                    <li class="yellow"><a href="../certifications.php">Certifications</a></li>
-                    <li class="yellow"><a href="../achievements.php">Achievements</a></li>
-                    <li class="yellow"><a href="../skills_languages.php">Skills & Languages</a></li>
-                    <li class="yellow"><a href="../references.php">References</a></li>
-                    <li class="yellow"><a href="../portfolio.php">Portfolio</a></li>
-                </ul>
+        <div class="white-holder">
+            <ul class="nav nav-tabs">
+                <li id="my_info" class="item active"><a href="../personal_info.php"><B>My Info</B></a></li>
+                <li id="resumelink" class="item"><a href="../../Resumelink/resumelink.php">Resumé Link</a></li>
+                <li id="applications" class="item"><a href="../../Applications/applications.php">Applications</a></li>
+                <li id="search-job" class="item"><a href="../../Search-job/search-job.php">Jobs</a></li>
+                <li id="settings" class="item"><a href="../../Settings/settings.php">Settings</a></li>
+            </ul>
+            <div class="space"></div>
+            <ul class="nav nav-pills nav-stacked col-md-2 col-sm-3">
+                <li class="yellow"><a href="../personal_info.php">Personal Info</a></li>
+                <li class="yellow"><a href="../contacts_info.php">Contacts Info</a></li>
+                <li class="yellow"><a href="../work.php">Work</a></li>
+                <li class="yellow active"><a href="../education.php">Education</a></li>
+                <li class="yellow"><a href="../certifications.php">Certifications</a></li>
+                <li class="yellow"><a href="../achievements.php">Achievements</a></li>
+                <li class="yellow"><a href="../skills_languages.php">Skills & Languages</a></li>
+                <li class="yellow"><a href="../references.php">References</a></li>
+                <li class="yellow"><a href="../portfolio.php">Portfolio</a></li>
+            </ul>
+            <div class="space-1"></div>
 
-                <div class"row">
-                    <div class="col-md-10">
-                        <div class="row field">
-                            <div class="col-md-6 fieldcol">
+                <div class="col-md-6 col-md-5">
+                    <div class="row field">
+                        <div class="col-md-12 fieldcol">
+                            <div class="form-group">
                                 <label>Seminar <span>(*)</span></label>
-                                <input type="text" class="form-control" id="txtSeminar" name="txtSeminar" value="<?php echo $Seminar; ?>">
+                                <input type="text" class="form-control" id="txtSeminar" name="txtSeminar" value="<?php if($b==1){ echo htmlspecialchars($Seminar); } else{ echo htmlspecialchars($server_txtSeminar); }?>">
                             </div>
-                            <div class="col-md-6 fieldcol">
+                        </div>
+                    </div>
+                    <div class="row field">
+                        <div class="col-md-12 fieldcol">
+                            <div class="form-group">
                                 <label>Year Attended <span>(*)</span></label>
-                                <select id="txtYearAttended" name="txtYearAttended" class="" style="width:100%; height:34px;">
-                                    <?php 
+                                <select id="txtYearAttended" name="txtYearAttended" class="form-control" style="width:100%; height:34px;">
+                                    <option value="">- Year -</option>
+                                    <?php  
                                     $date = 1934;
-                                    $choose = $YearAttended;
+                                    if($b==1){
+                                        $choose = $YearAttended;
+                                    }
+                                    else{
+                                        $choose = $server_txtYearAttended;
+                                    }
+                                    
                                     while($date != Date("Y")){
                                         $date++;
                                         if($date == $choose){
@@ -133,25 +198,4 @@ $result = mysql_query($qry);
     </div>
 </form>
 </body>
-
-<?php
-include('connection.php');
-
-if(isset($_POST['btnSave'])){
-
-    $txtSeminar = $_POST['txtSeminar']; 
-    $txtYearAttended = $_POST['txtYearAttended'];
-
-
-
-    $query = "UPDATE seminartbl SET Seminar = '$txtSeminar', YearAttended ='$txtYearAttended' WHERE SeminarID = '$SeminarID'";
-    $Result = mysql_query($query);
-    echo "
-         <script type='text/javascript'>
-         location.href='../education.php'
-         </script>
-         ";
-}
-?>
-
 </html>

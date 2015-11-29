@@ -1,4 +1,10 @@
 <!DOCTYPE html>
+<?php
+include('CONNECTION.php');
+session_start();
+
+$x = $_SESSION['Email'];
+?>
 <html lang="en">
 
 <head>
@@ -11,13 +17,13 @@
     <title>My Info</title>
 
      <!-- Bootstrap Core CSS -->
-    <link href="css/admin.bootstrap.min.css" rel="stylesheet">
+    <link href="../css/admin.bootstrap.min.css" rel="stylesheet">
 
     <!-- CSS -->
-    <link href="css/admin.agency.css" rel="stylesheet">
+    <link href="../css/admin.agency.css" rel="stylesheet">
 
     <!-- Fonts -->
-    <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="../font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
     <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
     <link href='https://fonts.googleapis.com/css?family=Kaushan+Script' rel='stylesheet' type='text/css'>
     <link href='https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
@@ -196,7 +202,15 @@ background-color: #006681;
     width:250px;
     margin-left: 300px;
     margin-top: -60px;
-}          
+}       
+.white-holder {
+    background-color: #f7f7f7;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
+    padding: 80px 25px;
+    margin: 10px;
+    max-width:100%;
+    max-height:100%;
+}      
 </style>
 
 <body id="page-top" class="index resume">
@@ -225,26 +239,21 @@ background-color: #006681;
         </div>
     </nav><br><br>
 
-     <div class="resume_bg">
-        <ul class="nav nav-tabs">
+     <div class="white-holder">
+       <ul class="nav nav-tabs">
             <li role="presentation" id="company" class="item "><a href="Company.php">Home</a></li>
             <li role="presentation" id="dbase" class="item" ><a href="Positions.php">Positions</a></li>
-            <li role="presentation" id="dbase" class="item" ><a href="Database.php">Database</a></li>
+            <li role="presentation" id="calendar" class="item active" ><a href="Calendar.php">Calendar</a></li>
             <li role="presentation" id="report" class="item"><a href="Report.php">Reports</a></li>
-            <li role="presentation" id="setting" class="item active" ><a href="Settings.php">Settings</a></li>
-            <li role="presentation" id="resumelink" class="item"><a href="Resumesearch.php">Resumelink Search</a></li>           
+            <li role="presentation" id="setting" class="item" ><a href="Settings.php">Settings</a></li>
+            <li role="presentation" id="resumelink" class="item"><a href="Resumesearch.php">Resumelink Search</a></li>
+            <li role="presentation" id="studentlist" class="item"><a href="StudentList.php">Student List</a></li>
+            <li role="presentation" id="applicantlist" class="item "><a href="ApplicantList.php">Applicant List</a></li>
         </ul>
 
         <div class="space1"></div>
-       
-        <ul class="nav nav-pills" id = "submenu">
-            <li class="yellow "><a href="Settings.php">Company</a></li>
-            <li class="yellow active"><a href="Settings_Calendar.php">Calendar</a></li>
-            <li class="yellow"><a href="Settings_Users.php">User</a></li>
-            <li class="yellow"><a href="Settings_MyAccount.php">My Account</a></li>
-        </ul>
 
-        
+         <form method = "POST">
         <div class = "container">
             <div class = "col-md-12"> 
                 <div class = "space1"></div>
@@ -253,7 +262,7 @@ background-color: #006681;
                 <div class = "panel-heading">
                 <h3 class = "panel-title">Calendar: Create an Event</h3>
                 </div>
-                 <form method = "POST">
+                
             <div class = "panel-body">
                <table class = "infotable">
                 <tbody>
@@ -263,7 +272,7 @@ background-color: #006681;
                     <label = "usr" class = "control-label"> Event Title: </label>
                  </td>
                 <td> 
-                    <input type = "text" name = "position" id = "usr" class = "form-control">
+                    <input type = "text" name = "eventtitle" id = "usr" class = "form-control">
                 </td>
                 </tr>
 
@@ -272,16 +281,16 @@ background-color: #006681;
                     <label = "usr" class = "control-label"> Location: </label>
                  </td>
                 <td> 
-                    <input type = "text" name = "dept" id = "usr" class = "form-control" >
+                    <input type = "text" name = "location" id = "usr" class = "form-control" >
                 </td>
                 </tr>
                
                 <div class = "date">
                 <label = "usr" class = "control-label">Event from: </label>
-                 <input type = "date" name = "date_from" id = "date_from" class = "form-control">
+                 <input type = "date" name = "datefrom" id = "date_from" class = "form-control">
                  <div class = "date_to">
                  <label = "usr" class = "control-label">to: </label>
-                <input type = "date" name = "date_to" id = "date_to" class = "form-control">
+                <input type = "date" name = "dateto" id = "date_to" class = "form-control">
                 </div>
                 </div>
 
@@ -290,7 +299,7 @@ background-color: #006681;
                     <label = "usr" class = "control-label"> Description: </label>
                  </td>
                 <td> 
-                   <textarea name = "address" id = "add" rows="3" cols= "55"></textarea>
+                   <input type = "text" class = "form-control" id = "descrip" name = "descrip" >
                 </td>
                 </tr>
 
@@ -300,8 +309,8 @@ background-color: #006681;
                  </td>
                 <td> 
                     <form action="">
-                    <input type="radio" name="status">Draft</input>
-                    <input type="radio" name="status">Posted"</input>
+                    <input type="radio" name="status" value = "draft">Draft</input>
+                    <input type="radio" name="status" value = "posted">Posted"</input>
                     </form>
                 </td>
                 </tr>
@@ -314,10 +323,38 @@ background-color: #006681;
             </div>  
 
          </div>
-           <button type = "submit" class = "btn btn-danger " id = "save" href= "#"><b> SAVE </b></button>
+           <button type = "submit" class = "btn btn-danger" id = "save" name = "btnsave" ><b> SAVE </b></button>
             <div class = "space"></div>
-             <button type = "submit" class = "btn btn-danger " id = "cancel"><b> CANCEL</b> </button>
+             <button type = "submit" class = "btn btn-danger " id = "cancel" name = "btncancel"><b> CANCEL</b> </button>
          </form>
     </div>
 </body>
+
+<?php
+include('CONNECTION.php');
+
+
+
+if (isset($_POST['btnsave'])) {
+  $eventtitle =  $_POST['eventtitle'];
+  $datefrom = $_POST['datefrom'];
+  $dateto = $_POST['dateto'];
+  $location = $_POST['location'];
+  $descrip = $_POST['descrip'];
+  $status = $_POST['status'];
+
+  $query = ("INSERT INTO compeventtbl (Email,EventTitle,EventDatef,EventDatet,Location,Description,Status) values ('$x','$eventtitle','$datefrom','$dateto','$location','$descrip','$status')");
+  $Result = mysql_query($query);
+  echo "
+    <script type='text/javascript'>
+    location.href = 'Settings_Calendar.php?id=EventAdd';
+    </script>
+  ";
+ // echo "
+      //<script type='text/javascript'>
+      //location.href='Settings_Calendar.php?id=EventAdd';
+      //</script>
+      //";
+}
+?>
  

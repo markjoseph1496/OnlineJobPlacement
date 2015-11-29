@@ -1,36 +1,51 @@
 <!DOCTYPE html>
-<html lang="en">
 
-<head>
+<?php
+session_start();
+
+if(isset($_GET['id'])){
+    $x = $_GET['id'];
+    if($x = "SignOut"){
+    $_SESSION['StudentID'] = null;
+    }
+}
+?>
+
+<html>
     <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="">
-    <meta name="author" content="">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 
-    <title>Home</title>
+    <title>Online JPMS</title>
 
     <!-- Bootstrap Core CSS -->
-    <link href="StudentInfo/css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/bootstrap.min.css" rel="stylesheet">
 
     <!-- CSS -->
-    <link href="StudentInfo/css/agency.css" rel="stylesheet">
+    <link href="css/agency.css" rel="stylesheet">
+
+    <link href="css/agency2.css" rel="stylesheet" type="text/css" media="all">
 
     <!-- Fonts -->
-    <link href="StudentInfo/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
-    <link href="StudentInfo/font-awesome/ffonts/montserrat.css" rel="stylesheet" type="text/css">
-    <link href="StudentInfo/font-awesome/ffonts/kaushan.css" rel="stylesheet" type="text/css">
-    <link href="StudentInfo/font-awesome/ffonts/droid.css" rel="stylesheet" type="text/css">
-    <link href="StudentInfo/font-awesome/ffonts/roboto.css" rel="stylesheet" type="text/css">
+    <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="font-awesome/ffonts/montserrat.css" rel="stylesheet" type="text/css">
+    <link href="font-awesome/ffonts/kaushan.css" rel="stylesheet" type="text/css">
+    <link href="font-awesome/ffonts/droid.css" rel="stylesheet" type="text/css">
+    <link href="font-awesome/ffonts/roboto.css" rel="stylesheet" type="text/css">
+
+    <script src="js/jquery.min.js" type="text/javascript"></script>
 </head>
 
 
-<body id="page-top" class="index">
+<body id="page-top" class="index"> 
+    <div id="awwwards" class="sotd white right">
+        <a href="http://www.awwwards.com/" target="_blank"></a>
+    </div>
+    <div id="overlay" style="display: none;">
+        <div id="logo-anim-container"></div>
+    </div>
 
-    <!-- Navigation -->
-    <nav class="navbar navbar-default navbar-fixed-top">
+    <nav class="nav-navbar navbar-default navbar-fixed-top">
         <div class="container">
-            <!-- Brand and toggle get grouped for better mobile display -->
             <div class="navbar-header page-scroll">
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
                     <span class="sr-only">Toggle navigation</span>
@@ -41,9 +56,8 @@
                 <a class="navbar-brand page-scroll" href="#page-top">Online Job Placement Management</a>
             </div>
 
-            <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                <ul class="nav navbar-nav navbar-right">
+                <ul class="nav-links nav navbar-nav navbar-right">
                     <li class="hidden">
                         <a href="#page-top"></a>
                     </li>
@@ -64,21 +78,115 @@
                     </li>
                 </ul>
             </div>
-            <!-- /.navbar-collapse -->
         </div>
-        <!-- /.container-fluid -->
     </nav>
-
-    <!-- Header -->
-    <header>
-        <div class="container">
-            <div class="intro-text">
-                <div class="intro-lead-in">Welcome To Our Site!</div>
-                <div class="intro-heading">It's Nice To Meet You</div>
-                <a href="#services" class="page-scroll btn btn-xl">Let's Get Started</a>
+  
+    <!-- SLIDER -->
+    <div class="section-slider clearfix first-slide" id="home-hero" page-slide="1">
+        <a href="" class="down-arrow slide-link" page-slide="2"></a>
+        <div class="bx-wrapper" style="max-width: 100%;">
+            <div class="bx-viewport" style="width: 100%; overflow: hidden; position: relative; height: 660px;">
+                <ul id="home-hero-slider" style="width: auto; position: relative; height: 431px;">
+                    <li>
+                        <div class="slider-content">
+                            <div class="slide-container">
+                                <div class="slide-center intro-heading">
+                                    <div class="heading">STI Senior High School</div>
+                                    <div class="sub-heading">
+                                        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                                    </div>
+                                    <a href="" class="btn">Let's take a look</a>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li style="float: none; list-style: none; position: absolute; width: 1007px; z-index: 0; height: 431px; display: none; ">
+                        <div class="slider-content">
+                            <div class="slide-container">
+                                <div class="slide-center">
+                                    <div class="heading">Be college-ready, job-ready, and life-ready!</div>
+                                    <div class="sub-heading">
+                                        Most people think of slavery as a problem of the past. The upsetting reality is that modern day slavery still occurs all over the world, even in the U.S., and is called human trafficking.
+                                    </div>
+                                    <a href="" class="btn">Support Now</a>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li style="float: none; list-style: none; position: absolute; width: 1007px; z-index: 0; height: 431px; display: none; ">
+                        <div class="slider-content">
+                            <div class="slide-container">
+                                <div class="slide-center">
+                                    <div class="heading">Build a strong academic foundation</div>
+                                    <div class="sub-heading">
+                                        Most people think of slavery as a problem of the past. The upsetting reality is that modern day slavery still occurs all over the world, even in the U.S., and is called human trafficking.
+                                    </div>
+                                    <a href="" class="btn">Let's take a look</a>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li style="float: none; list-style: none; position: absolute; width: 1007px; z-index: 0; height: 431px; display: none; ">
+                        <div class="slider-content">
+                            <div class="slide-container">
+                                <div class="slide-center">
+                                    <div class="heading">STI’s wide range of academic</div>
+                                    <div class="sub-heading">
+                                        Most people think of slavery as a problem of the past. The upsetting reality is that modern day slavery still occurs all over the world, even in the U.S., and is called human trafficking.
+                                    </div>
+                                    <a href="" class="btn">Support Now</a>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li style="float: none; list-style: none; position: absolute; width: 1007px; z-index: 0; height: 431px; display: none; ">
+                        <div class="slider-content">
+                            <div class="slide-container">
+                                <div class="slide-center">
+                                    <div class="heading">STI Senior High School graduate</div>
+                                    <div class="sub-heading">
+                                        Most people think of slavery as a problem of the past. The upsetting reality is that modern day slavery still occurs all over the world, even in the U.S., and is called human trafficking.
+                                    </div>
+                                    <a href="" class="btn">Let's take a look</a>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
             </div>
+            <div class="bx-controls"></div>
         </div>
-    </header>
+            
+        <!--<div class="bx-control-bar">
+            <div class="bx-next-control bx-control-btn">
+                <i class="fa fa-chevron-right"></i>
+            </div>
+            <div class="bx-prev-control bx-control-btn">
+                <i class="fa fa-chevron-left"></i>
+            </div>
+        </div>-->
+        
+        <div class="bx-pager bx-default-pager bx-pager-custom" style="padding-top: 81.5px;">
+            <div class="bx-pager-item">
+                <a href="" data-slide-index="0" class="bx-pager-link slide-preview-tip first active"><span>01</span></a>
+            </div>
+            <div class="bx-pager-item">
+                <a href="" data-slide-index="1" class="bx-pager-link slide-preview-tip first active"><span>02</span></a>
+            </div>
+            <div class="bx-pager-item">
+                <a href="" data-slide-index="2" class="bx-pager-link slide-preview-tip first active"><span>03</span></a>
+            </div>
+            <div class="bx-pager-item">
+                <a href="" data-slide-index="3" class="bx-pager-link slide-preview-tip first active"><span>04</span></a>
+            </div>
+            <div class="bx-pager-item">
+                <a href="" data-slide-index="4" class="bx-pager-link slide-preview-tip first active"><span>05</span></a>
+            </div>  
+        </div>
+    </div>
+
+    <!-- PRELOADS -->
+    <div class="preload-global"></div>
 
     <!-- Services Section -->
     <section id="services">
@@ -135,7 +243,7 @@
                                 <i class="fa fa-plus fa-3x"></i>
                             </div>
                         </div>
-                        <img src="img/portfolio/roundicons.png" class="img-responsive" alt="">
+                        <img src="img/portfolio/thesis.png" class="img-responsive" alt="">
                     </a>
                     <div class="portfolio-caption">
                         <h4>Round Icons</h4>
@@ -149,7 +257,7 @@
                                 <i class="fa fa-plus fa-3x"></i>
                             </div>
                         </div>
-                        <img src="img/portfolio/startup-framework.png" class="img-responsive" alt="">
+                        <img src="img/portfolio/thesis.png" class="img-responsive" alt="">
                     </a>
                     <div class="portfolio-caption">
                         <h4>Startup Framework</h4>
@@ -163,7 +271,7 @@
                                 <i class="fa fa-plus fa-3x"></i>
                             </div>
                         </div>
-                        <img src="img/portfolio/treehouse.png" class="img-responsive" alt="">
+                        <img src="img/portfolio/thesis.png" class="img-responsive" alt="">
                     </a>
                     <div class="portfolio-caption">
                         <h4>Treehouse</h4>
@@ -177,7 +285,7 @@
                                 <i class="fa fa-plus fa-3x"></i>
                             </div>
                         </div>
-                        <img src="img/portfolio/golden.png" class="img-responsive" alt="">
+                        <img src="img/portfolio/thesis.png" class="img-responsive" alt="">
                     </a>
                     <div class="portfolio-caption">
                         <h4>Golden</h4>
@@ -191,7 +299,7 @@
                                 <i class="fa fa-plus fa-3x"></i>
                             </div>
                         </div>
-                        <img src="img/portfolio/escape.png" class="img-responsive" alt="">
+                        <img src="img/portfolio/thesis.png" class="img-responsive" alt="">
                     </a>
                     <div class="portfolio-caption">
                         <h4>Escape</h4>
@@ -205,7 +313,7 @@
                                 <i class="fa fa-plus fa-3x"></i>
                             </div>
                         </div>
-                        <img src="img/portfolio/dreams.png" class="img-responsive" alt="">
+                        <img src="img/portfolio/thesis.png" class="img-responsive" alt="">
                     </a>
                     <div class="portfolio-caption">
                         <h4>Dreams</h4>
@@ -388,7 +496,7 @@
             </div>
         </div>
     </aside>
-    
+
     <!-- JOIN US Section -->
     <FORM method ="POST">
     <section id="contact">
@@ -401,7 +509,7 @@
             </div>
             <div class="row text-center">
                 <div class="col-md-4">
-                    <a href="login-student.php"> 
+                    <a href="Login-student.php"> 
                         <span class="fa-stack fa-4x">
                             <i class="fa fa-square fa-stack-2x text-primary2"></i>
                             <i class="fa fa-users fa-stack-1x fa-inverse"></i>
@@ -411,7 +519,7 @@
                     <p class="text-muted"></p>
                 </div>
                 <div class="col-md-4">
-                    <a href=""> 
+                    <a href="Login-admin.php"> 
                         <span class="fa-stack fa-4x">
                             <i class="fa fa-square fa-stack-2x text-primary2"></i>
                             <i class="fa fa-user fa-stack-1x fa-inverse"></i>
@@ -421,7 +529,7 @@
                     <p class="text-muted"></p>
                 </div>
                 <div class="col-md-4">
-                    <a href=""> 
+                    <a href="Login-company.php"> 
                         <span class="fa-stack fa-4x">
                             <i class="fa fa-square fa-stack-2x text-primary2"></i>
                             <i class="fa fa-building fa-stack-1x fa-inverse"></i>
@@ -438,21 +546,31 @@
     <footer>
         <div class="container">
             <div class="col-md-50">
-                <span class="copyright">Connect With Us:</span>
+                <span>Connect With Us:</span>
                 <ul class="list-inline social-buttons">
-                    <li><a href="https://twitter.com/sticollege"><i class="fa fa-twitter"></i></a>
+                    <li>
+                        <a href="https://twitter.com/sticollege"><i class="fa fa-twitter"></i></a>
                     </li>
-                    <li><a href="https://www.facebook.com/pages/STI-College-Caloocan-Official-Fanpage/133289683408899?pnref=lhc"><i class="fa fa-facebook"></i></a>
+                    <li>
+                        <a href="https://www.facebook.com/pages/STI-College-Caloocan-Official-Fanpage/133289683408899?pnref=lhc"><i class="fa fa-facebook"></i></a>
                     </li>
-                    <li><a href="#"><i class="fa fa-youtube"></i></a>
+                    <li>
+                        <a href="#"><i class="fa fa-youtube"></i></a>
                     </li>
                 </ul>
-                <br><span class="copyright">Contact us:</span>
-                <br><span class="copyright"><b>109 Samson Road corner Caimito Street, Caloocan City 1400 <br>Tel. no. (+632) 294-4001<b></span>
-                <br><h6><span class="copyright">Copyright &copy; Online Job Placement Management 2015</span><h6>
+                <br><span>Contact us:</span>
+                <br><span><B>109 Samson Road corner Caimito Street, Caloocan City 1400 <br>Tel. no. (+632) 294-4001<B></span>
             </div>
         </div>
-    </footer>
+    </footer>       
+
+    <div class="" id="footer">
+        <div class="footer-info">
+            <div class="copyright"><p>© 2015, Online JPMS</p></div>
+            <a href="" class="top-button"></a>
+            <a href="" target="_blank" class="brave-people">Made by Brave People</a>
+        </div>
+    </div>
 
     <!-- Portfolio -->
     <!-- Use the modals below to showcase details about your portfolio projects! -->
@@ -623,6 +741,15 @@
         </div>
     </div>
 
+
+    <!-- SCRIPTS -->
+    <script src="js/jquery.bxslider.min.js" type="text/javascript"></script>
+    <script src="js/isotope.pkgd.min.js" type="text/javascript"></script>
+    <script src="js/waypoints.min.js" type="text/javascript"></script>
+    <script src="js/scripts.js" type="text/javascript"></script>
+    <script src="js/shopify_stats.js" type="text/javascript"></script>
+    <script src="js/ga_urchin_forms-f888be82dfc735c04a5e0b253a366bb5.js" type="text/javascript"></script>
+    
     <!-- jQuery -->
     <script src="js/jquery.js"></script>
 
@@ -641,6 +768,5 @@
 
     <!-- Custom Theme JavaScript -->
     <script src="js/agency.js"></script>
-
 </body>
 </html>

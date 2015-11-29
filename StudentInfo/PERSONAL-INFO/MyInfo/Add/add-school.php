@@ -5,7 +5,16 @@ session_start();
 
 $x = $_SESSION['StudentID'];
 
+if(is_null($x)){
+    echo "
+        <script type='text/javascript'>
+        location.href='../../../../login-student.php';
+        </script>
+        ";
+}
 ?>
+
+
 <html lang="en">
 
 <head>
@@ -17,8 +26,21 @@ $x = $_SESSION['StudentID'];
 
     <title>Online JPMS</title>
 
-    <!-- Bootstrap Core CSS -->
-    <link href="../../../css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap CSS -->
+    <link href="../../../css/bootstrap.min.css" rel="stylesheet" />
+    <link href="../../../css/basic-template.css" rel="stylesheet" />
+
+
+    <!-- BootstrapValidator CSS -->
+    <link href="../../../css/bootstrapValidator.min.css" rel="stylesheet"/>
+  
+    <!-- jQuery and Bootstrap JS -->
+    <script src="../../../js/jquery.min.js" type="text/javascript"></script>
+    <script src="../../../js/bootstrap.min.js" type="text/javascript"></script>
+      
+    <!-- BootstrapValidator -->
+    <script src="../../../js/bootstrapValidator.min.js" type="text/javascript"></script>
+
 
     <!-- CSS -->
     <link href="../../../css/agency.css" rel="stylesheet">
@@ -34,16 +56,10 @@ $x = $_SESSION['StudentID'];
 
 
 <body id="page-top" class="index bg">
-    <form method = "POST">
+    <form id="AddSchool" name="AddSchool" autocomplete="off" action="MyInfoAdd.php">
     <nav class="navbar navbar-default navbar-fixed-top navbar-shrink">
         <div class="container">
             <div class="navbar-header page-scroll">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
                 <a class="navbar-brand page-scroll" href="#page-top">Online Job Placement Management</a>
             </div>
 
@@ -61,89 +77,114 @@ $x = $_SESSION['StudentID'];
     </nav><br><br>
 
     <div id="yellow-text-fields">
-        <div class="container">
-            <div class="white-holder">
-                <ul class="nav nav-tabs">
-                    <li id="my_info" class="item active"><a href="../personal_info.php"><B>My Info</B></a></li>
-                    <li id="resumelink" class="item"><a href="../../Resumelink/resumelink.php">Resumé Link</a></li>
-                    <li id="applications" class="item"><a href="../../Applications/applications.php">Applications</a></li>
-                    <li id="settings" class="item"><a href="../../Settings/settings.php">Settings</a></li>
-                </ul>
-                <div class="space"></div>
-                <ul class="nav nav-pills nav-stacked col-md-2 col-sm-3">
-                    <li class="yellow"><a href="../personal_info.php">Personal Info</a></li>
-                    <li class="yellow"><a href="../contacts_info.php">Contacts Info</a></li>
-                    <li class="yellow"><a href="../work.php">Work</a></li>
-                    <li class="yellow active"><a href="../education.php">Education</a></li>
-                    <li class="yellow"><a href="../certifications.php">Certifications</a></li>
-                    <li class="yellow"><a href="../achievements.php">Achievements</a></li>
-                    <li class="yellow"><a href="../skills_languages.php">Skills & Languages</a></li>
-                    <li class="yellow"><a href="../references.php">References</a></li>
-                    <li class="yellow"><a href="../portfolio.php">Portfolio</a></li>
-                </ul>
+         <div class="white-holder">
+            <ul class="nav nav-tabs">
+                <li id="my_info" class="item active"><a href="../personal_info.php"><B>My Info</B></a></li>
+                <li id="resumelink" class="item"><a href="../../Resumelink/resumelink.php">Resumé Link</a></li>
+                <li id="applications" class="item"><a href="../../Applications/applications.php">Applications</a></li>
+                <li role="presentation" class="item"><a href="../../Search-job/search-job.php">Jobs</a></li>
+                <li id="settings" class="item"><a href="../../Settings/settings.php">Settings</a></li>
+            </ul>
+            <div class="space"></div>
+            <ul class="nav nav-pills nav-stacked col-md-2 col-sm-3">
+                <li class="yellow"><a href="../personal_info.php">Personal Info</a></li>
+                <li class="yellow"><a href="../contacts_info.php">Contacts Info</a></li>
+                <li class="yellow"><a href="../work.php">Work</a></li>
+                <li class="yellow active"><a href="../education.php">Education</a></li>
+                <li class="yellow"><a href="../certifications.php">Certifications</a></li>
+                <li class="yellow"><a href="../achievements.php">Achievements</a></li>
+                <li class="yellow"><a href="../skills_languages.php">Skills & Languages</a></li>
+                <li class="yellow"><a href="../references.php">References</a></li>
+                <li class="yellow"><a href="../portfolio.php">Portfolio</a></li>
+            </ul>
+            <div class="space-1"></div>
 
+            <div>
                 <div class"row">
                     <div class="col-md-10">
                         <div class="row field">
                             <div class="col-md-12 fieldcol">
-                                <label>School <span>(*)</span></label>
-                                <select id="txtSchool" name="txtSchool" class="" style="width:100%; height:34px;">
-                                    <option value></option>
-                                    <option value="STI College Caloocan">STI College Caloocan</option>
-                                </select>
+                                <div class="form-group">
+                                    <label>School <span>(*)</span></label>
+                                    <input type="text" class="form-control" id="School" name="School" style="height:34px;">
+                                </div>
                             </div>
                         </div>
                         <div class="row field">
                             <div class="col-md-6 fieldcol">
-                                <label>Educational Attainment <span>(*)</span></label>
-                                <select id="txtEducAttainment" name="txtEducAttainment" class="txtEducAttainment" style="width:100%; height:34px;">
-                                    <option value></option>
-                                    <option value="College Graduate">College Graduate</option>
-                                </select>
-                            </div>
-                            <div class="col-md-6 fieldcol">
-                                <label>Field of Study</label>
-                                <select id="txtFieldOfStudy" name="txtFieldOfStudy" class="" style="width:100%; height:34px;">
-                                    <option value></option>
-                                    <option value="Computer Science">Computer Science</option>
-                                </select>
+                                <div class="form-group">
+                                    <label>Educational Attainment <span>(*)</span></label>
+                                    <select id="EducAttainment" name="EducAttainment" class="form-control" style="width:100%; height:34px;">
+                                        <option value="">- Please select one -</option>
+                                        <option value="High School Diploma">High School Diploma</option>
+                                        <option value="Technical Vocational/Certificate">Technical Vocational/Certificate</option>
+                                        <option value="Bachelor's/College Degree">Bachelor's/College Degree</option>
+                                        <option value="Post Graduate Diploma/Master's Degree">Post Graduate Diploma/Master's Degree</option>
+                                        <option value="Professional License (Passed Board/Bar/Professional License Exam)">Professional License (Passed Board/Bar/Professional License Exam</option>
+                                        <option value="Doctorate Degree">Doctorate Degree</option>
+                                    </select>
+                                </div>
                             </div>
                         </div>
                         <div class="row field">
                             <div class="col-md-6 fieldcol">
-                                <label>Course</label>
-                                <select id="txtCourse" name="txtCourse" class="txtCourse" style="width:100%; height:34px;">
-                                    <option value></option>
-                                    <option value="Computer Science">Computer Science</option>
-                                </select>
+                                <div class="form-group">
+                                    <label>Course <span>(*)</span></label>
+                                    <select id="Course" name="Course" class="form-control" style="width:100%; height:34px;">
+                                        <option value="">- Course -</option>
+                                        <option value="Bachelor of Science in Tourism Management">Bachelor of Science in Tourism Management</option>
+                                        <option value="Bachelor of Science in Business Management Major in Operations">Bachelor of Science in Business Management Major in Operations</option>
+                                        <option value="Bachelor of Arts in Communication">Bachelor of Arts in Communication</option>
+                                        <option value="Bachelor of Science in Information Technology Major in Digital Arts">Bachelor of Science in Information Technology Major in Digital Arts</option>
+                                        <option value="Bachelor of Science in Hotel and Restaurant Management">Bachelor of Science in Hotel and Restaurant Management</option>
+                                        <option value="Bachelor of Science in Computer Science">Bachelor of Science of Computer Science</option>
+                                        <option value="Bachelor of Science in Information Technology">Bachelor of Science of Information Technology</option>
+                                        <option value="Bachelor of Science in Computer Engineering">Bachelor of Science of Computer Engineering</option>
+                                        <option value="Bachelor of Science in Accounting Technology">Bachelor of Science in Accounting Technology</option>
+                                        <option value="Bachelor of Science in Information Technology with Specialization Digital Arts">Bachelor of Science in Information Technology with Specialization Digital Arts</option>
+                                        <option value="2-yr. Associate in Computer Technology">2-yr. Associate in Computer Technology</option>
+                                    </select>
+                                </div>
                             </div>
-                            <div class="col-md-6 fieldcol">
-                                <label>Graduation Date</label><br>
-                                <select id="txtGradMonth" name="txtGradMonth" class="txtGradMonth" style="width:50%; height:34px;">
-                                    <option value></option>
-                                    <option value="01">January</option>
-                                    <option value="02">February</option> 
-                                    <option value="03">March</option> 
-                                    <option value="04">April</option> 
-                                    <option value="05">May</option> 
-                                    <option value="06">June</option> 
-                                    <option value="07">July</option> 
-                                    <option value="08">August</option>
-                                    <option value="09">September</option>
-                                    <option value="10">October</option>
-                                    <option value="11">November</option>
-                                    <option value="12">December</option>
-                                </select>
-                                <select id="txtGradYear" name="txtGradYear" class="txtGradYear" style="width:49%; height:34px;">
-                                     <option value>-Year-</option>
-                                     <script>
-                                        var myDate = new Date();
-                                        var year = 2015
-                                        for(var i = 1935; i < year+1; i++){
-                                        document.write('<option value="'+i+'">'+i+'</option>');
-                                        }
-                                    </script>
-                                </select>
+                            <div class="col-md-2 fieldcol">
+                                <div class="form-group">
+                                    <label>Graduation Date <span>(*)</span></label>
+                                    <select id="GraduatedMonth" name="GraduatedMonth" class="form-control" style="width:100%; height:34px;">
+                                        <option value="">- Month -</option>
+                                        <option value="01">January</option>
+                                        <option value="02">February</option> 
+                                        <option value="03">March</option> 
+                                        <option value="04">April</option> 
+                                        <option value="05">May</option> 
+                                        <option value="06">June</option> 
+                                        <option value="07">July</option> 
+                                        <option value="08">August</option>
+                                        <option value="09">September</option>
+                                        <option value="10">October</option>
+                                        <option value="11">November</option>
+                                        <option value="12">December</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-md-2 fieldcol">
+                                <div class="form-group">
+                                    <label>&nbsp;</label>
+                                    <select id="GraduatedYear" name="GraduatedYear" class="form-control" style="width:100%; height:34px;">
+                                        <option value="">-Year-</option>
+                                        <?php 
+                                            $date = Date("Y") + 4;
+                                            while($date != 1935){
+                                                $date--;
+                                                if($date == $server_txtGradYear){
+                                                    echo "<option selected value='$date'> $date</option>";
+                                                }
+                                                else{
+                                                echo "<option value='$date'> $date</option>";
+                                                }
+                                            }
+                                        ?>
+                                    </select>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -152,7 +193,7 @@ $x = $_SESSION['StudentID'];
                     <div class="profile_divider"></div>
                     <div class"row field">
                         <div class="col-md-12">
-                            <button class="btn btn-lg btn-hg btn-primary" style="float:right;" name ="btnSave">Add</button>
+                            <button type="submit" class="btn btn-lg btn-hg btn-primary" style="float:right;" name="btnSave">Add</button>
                         </div>
                     </div>
                 </div> 
@@ -160,28 +201,58 @@ $x = $_SESSION['StudentID'];
         </div>
     </div>
 </form>
+<script type="text/javascript">
+    $(document).ready(function () {
+            var validator = $("#AddSchool").bootstrapValidator({
+                feedbackIcons:{
+                    valid: "glyphicon glyphicon-ok",
+                    invalid: "glyphicon glyphicon-remove",
+                    validating: "glyphicon glyphicon-refresh"
+                },
+                fields: {
+                    School: {
+                        validators: {
+                            notEmpty: {
+                                message: "School is required."
+                            },
+                            stringLength: {
+                                min: 3,
+                                max: 30,
+                                message: "School must be 3-30 characters long."
+                            }
+                        }
+                    },
+                    EducAttainment: {
+                        validators: {
+                            notEmpty: {
+                                message: "Educational Attainment is required."
+                            }
+                        }
+                    },
+                    Course: {
+                        validators: {
+                            notEmpty: {
+                                message: "Course is required."
+                            }
+                        }
+                    },
+                    GraduatedMonth: {
+                        validators: {
+                            notEmpty: {
+                                message: "Month graduated is required."
+                            }
+                        }
+                    },
+                    GraduatedYear: {
+                        validators: {
+                            notEmpty: {
+                                message: "Year graduated is required."
+                            }
+                        }
+                    }
+                }
+            });
+    });
+</script>
 </body>
-
-<?php
-include('connection.php');
-
-if(isset($_POST['btnSave'])){
-
-    $School = $_POST['txtSchool']; 
-    $Attainment = $_POST['txtEducAttainment']; 
-    $Course = $_POST['txtCourse']; 
-    $FieldOfStudy = $_POST['txtFieldOfStudy']; 
-    $GradYear = $_POST['txtGradYear']; 
-    $GradMonth = $_POST['txtGradMonth'];
-    $Graduation = $GradMonth .'/'. $GradYear;
-
-    $query = "INSERT INTO schooltbl (StudentID,School,Attainment,Course,FieldOfStudy,Graduated) values  ('$x','$School','$Attainment','$Course','$FieldOfStudy','$Graduation')";
-    $Result = mysql_query($query);
-    echo "
-         <script type='text/javascript'>
-         </script>
-         ";
-}
-?>
-
 </html>

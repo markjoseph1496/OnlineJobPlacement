@@ -1,4 +1,57 @@
 <!DOCTYPE html>
+
+<?php 
+include('connection.php');
+session_start();
+
+$Course = $_GET['CourseID'];
+$FirstName = 'FirstName';
+$LastName = 'LastName';
+$EmploymentStatus = 'EmploymentStatus';
+
+    if($Course == "BSTM"){
+        $Course = "Bachelor of Science in Tourism Management";
+    }
+    elseif($Course == "BSBM"){
+        $Course = "Bachelor of Science in Business Management Major in Operations";
+    }
+    elseif($Course == "ABCOMM"){
+        $Course = "Bachelor of Arts in Communication";
+    }
+    elseif($Course == "BSITDA"){
+        $Course = "Bachelor of Science in Information Technology Major in Digital Arts";
+    }
+    elseif($Course == "BSHRM"){
+        $Course = "Bachelor of Science in Hotel & Restaurant Management";
+    }
+    elseif($Course == "BSCS"){
+        $Course = "Bachelor of Science in Computer Science";
+    }
+    elseif($Course == "BSIT"){
+        $Course = "Bachelor of Science in Information Technology";
+    }
+    elseif($Course == "BSAT"){
+        $Course = "Bachelor of Science in Accounting Technology";
+    }
+    elseif($Course == "BSCPE"){
+        $Course = "Bachelor of Science in Computer Engineering";
+    }
+    elseif($Course == "ACT"){
+        $Course = "2-Year Associate in Computer Technology";
+    }
+    else{
+        $Course = "No Course Selected.";
+    }
+
+
+$TotalStudents = mysql_query("SELECT COUNT(*) FROM studentinfotbl WHERE MajorCourse='$Course'");
+$Q1 = mysql_fetch_array($TotalStudents);
+$Total = $Q1[0];
+
+$qry = "SELECT * FROM studentinfotbl WHERE MajorCourse='$Course' ORDER BY LastName";
+$result = mysql_query($qry);
+
+?>
 <html lang="en">
 
 <head>
@@ -10,20 +63,18 @@
 
     <title>My Info</title>
 
-     <!-- Bootstrap Core CSS -->
-    <link href="../css/admin.bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap Core CSS -->
+    <link href="../css/bootstrap.min.css" rel="stylesheet">
 
     <!-- CSS -->
-    <link href="../css/admin.agency.css" rel="stylesheet">
-   
-
+    <link href="../css/agency.css" rel="stylesheet">
 
     <!-- Fonts -->
     <link href="../font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
-    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
-    <link href='https://fonts.googleapis.com/css?family=Kaushan+Script' rel='stylesheet' type='text/css'>
-    <link href='https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
-    <link href='https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700' rel='stylesheet' type='text/css'>
+    <link href="../font-awesome/ffonts/montserrat.css" rel="stylesheet" type="text/css">
+    <link href="../font-awesome/ffonts/kaushan.css" rel="stylesheet" type="text/css">
+    <link href="../font-awesome/ffonts/droid.css" rel="stylesheet" type="text/css">
+    <link href="../font-awesome/ffonts/roboto.css" rel="stylesheet" type="text/css">
 </head>
 <style type="text/css">
 .tabletitle {
@@ -223,7 +274,7 @@ input[type="search"]::-webkit-search-decoration {
 </style>
 
 
-<body id="page-top" class="index resume">
+<body id="page-top" class="index bg">
     <nav class="navbar navbar-default navbar-fixed-top navbar-shrink">
         <div class="container">
             <div class="navbar-header page-scroll">
@@ -249,26 +300,29 @@ input[type="search"]::-webkit-search-decoration {
         </div>
     </nav><br><br>
 
-    <div class="resume_bg">
+    <div class="white-holder-3">
         <ul class="nav nav-tabs">
-            <li role="presentation" id="myinfo" class="item active"><a href="Admin.php">Home</a></li>
-            <li role="presentation" id="resumelink" class="item"><a href="Reports.php">Reports</a></li>
+            <li role="presentation" id="myinfo" class="item "><a href="Admin.php">Home</a></li>
+            <li role="presentation" id="resumelink" class="item active"><a href="Reports.php">Reports</a></li>
             <li role="presentation" id="applications" class="item"><a href="Account.php">Account</a></li>
-             <div id="search">
-                    <form method = "POST">
-                        <fieldset class="clearfix">
-                        <input type="search" name="search" value="Search Student.." onBlur="if(this.value=='')this.value='Search Student..'" onFocus="if(this.value=='Search Student..')this.value=''" > <!-- JS because of IE support; better: placeholder="Search Student.." -->
-                        <input type="submit" value="Search" class="button" href = "#" > 
-                        </fieldset>
-                   </form>
-                </div> 
+            <li role="presentation" id="applications" class="item"><a href="Requested.php">Requested</a></li>
+            <li role="presentation" id="applications" class="item "><a href="CompanyList.php">Company List</a></li>
+            <li role="presentation" id="applications" class="item "><a href="AdviserList.php">Adviser List</a></li>
+            <li role="presentation" id="applications" class="item"><a href="Maintenance.php">Maintenance </a></li>
+            
         </ul>
+        <div class="space-1"></div>
+        <ul class="nav nav-pills" id="nav-submenu">
+            <li class="yellow active"><a href="reports.php">Reports</a></li>
+            <li class="yellow "><a href="OJT-reports.php">OJT Reports</a></li>
+        </ul>
+        <div class="space-1"></div>
     
         <div class="space"></div>
         <div class = "container">
             <div class = "col-md-12">
                 <div class = "header_advertising">
-                    <h5> Advertising Media <h5>
+                    <h5> <?php echo $Course ?> <h5>
                      <span class = export>
                         Export: <a  class = "btn btn-default" id = "xls" href= "#"><b> XLS </b></a>
                        <a class = "btn btn-default" id = "btl" href= "#"><b> Back to List </b></a>
@@ -277,7 +331,7 @@ input[type="search"]::-webkit-search-decoration {
                  <div class = "header2_advertising">
                    <div class = "container">
                     <div class = "col-md-4">
-                        <b> Total Number of Students: 290 </b>
+                        <b> Total Number of Students: <?php echo $Total;?> </b>
                     </div> 
                                 <div class = "asd">
                                      <form>
@@ -333,40 +387,35 @@ input[type="search"]::-webkit-search-decoration {
                 <tr>
                     <th width= "25%" class = "tabletitle"> Student Name</th>
                     <th width = "15%" class = "tabletitle"> Position Level </th>
-                    <th width = "30%" class = "tabletitle">  Specialization</th>
-                    <th width = "30%" class = "tabletitle"> Industry</th>
+                    <th width = "20%" class = "tabletitle">  Specialization</th>
+                    <th width = "15%" class = "tabletitle"> Industry</th>
                     <th width = "20%" class = "tabletitle"> Employment Status</th>
+                    <th width = "5%" class = "tabletitle"> </th>
                 <tr>
             </thead>
 
             <tbody>
+                <?php
+                    while($rows = mysql_fetch_array($result)){
+                ?>
                 <tr>
                     <td>
-                    <a href = "Resumelink.php">Aira Jane Cruz </a>
+                    <a href = "Resumelink.php"><?php echo $rows[$LastName] .", ". $rows[$FirstName]; ?></a>
                     </td>
-                    <td class = "tcenter">Fresh/Entry Level</td>
-                    <td class = "tcenter">Arts and Design </td>
-                    <td class = "tcenter">Arts/Design</td>
-                    <td class = "tcenter">Unemployed</td>
-                </tr>
-                <tr>
+                    <td class = "tcenter"></td>
+                    <td class = "tcenter"></td>
+                    <td class = "tcenter"></td>
+                    <td class = "tcenter"><?php echo $rows[$EmploymentStatus]?></td>
                     <td>
-                    <a href = "Resumelink.php">Aira Jane Cruz </a>
+                        <a id='Edit' name="btnedit" href="EditStudent.php" class='btn btn-default'> 
+                        <i class='fa fa-pencil'></i>
+                        </a> 
                     </td>
-                    <td class = "tcenter">Fresh/Entry Level</td>
-                    <td class = "tcenter">Arts and Design </td>
-                    <td class = "tcenter">Arts/Design</td>
-                    <td class = "tcenter">Unemployed</td>
+
                 </tr>
-                <tr>
-                    <td>
-                    <a href = "Resumelink.php">Aira Jane Cruz </a>
-                    </td>
-                    <td class = "tcenter">Fresh/Entry Level</td>
-                    <td class = "tcenter">Arts and Design </td>
-                    <td class = "tcenter">Arts/Design</td>
-                    <td class = "tcenter">Unemployed</td>
-                </tr>
+                <?php
+                    }
+                ?>
             </tbody>
         </table>
            </div>

@@ -11,17 +11,17 @@
     <title>Online JPMS</title>
 
     <!-- Bootstrap Core CSS -->
-    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="../css/bootstrap.min.css" rel="stylesheet">
 
     <!-- CSS -->
-    <link href="css/agency_style.css" rel="stylesheet">
+    <link href="../css/agency_style.css" rel="stylesheet">
 
     <!-- Fonts -->
-    <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
-    <link href="font-awesome/ffonts/montserrat.css" rel="stylesheet" type="text/css">
-    <link href="font-awesome/ffonts/kaushan.css" rel="stylesheet" type="text/css">
-    <link href="font-awesome/ffonts/droid.css" rel="stylesheet" type="text/css">
-    <link href="font-awesome/ffonts/roboto.css" rel="stylesheet" type="text/css">
+    <link href="../font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="../font-awesome/ffonts/montserrat.css" rel="stylesheet" type="text/css">
+    <link href="../font-awesome/ffonts/kaushan.css" rel="stylesheet" type="text/css">
+    <link href="../font-awesome/ffonts/droid.css" rel="stylesheet" type="text/css">
+    <link href="../font-awesome/ffonts/roboto.css" rel="stylesheet" type="text/css">
 </head>
 
 
@@ -57,7 +57,7 @@
                         <div class="row field">
                             
                                 <label>Company Name <span>(*)</span></label>
-                                <input type="text" class="form-control" id="fname" name="fname">
+                                <input type="text" class="form-control" id="cname" name="cname">
                             
                         </div>
                          <div class="row field">
@@ -65,12 +65,6 @@
                                 <label>Career Site Url <span>(*)</span></label>
                                 <input type="text" class="form-control" id="lname" name="lname">
                             
-                        </div>
-                        <div class="row field">
-                            
-                                <label>Company Name <span>(*)</span></label>
-                                <input type="text" class="form-control" id="fname" name="fname">
-                           
                         </div>
                        
                         <div class="row field">
@@ -98,7 +92,7 @@
                          <div class="row field">
                             
                                 <label>City<span>(*)</span></label><br>
-                                <select id="state_id" name="state_id" class="state_id" style="width:100%; height:34px;">
+                                <select id="city_id" name="city_id" class="city_id" style="width:100%; height:34px;">
                                     <option value>- Please select one</option>
                                     <option value="NCR">NCR</option>
                                     <option value="CAR">CAR</option>
@@ -108,20 +102,20 @@
                             </div> 
                          <div class="row field">
                            
-                                <label>Phone <span>(*)</span></label>
-                                <input type="text" class="form-control" id="lname" name="lname">
+                                <label>Phone Number <span>(*)</span></label>
+                                <input type="text" class="form-control" id="phonenum" name="phonenum">
                            
                         </div>  
                          <div class="row field">
                             
-                                <label>Mobile </label>
-                                <input type="text" class="form-control" id="lname" name="lname">
+                                <label>Mobile Number </label>
+                                <input type="text" class="form-control" id="mobilenum" name="mobilenum">
                            
                         </div> 
                         <div class="row field">
                             
                                 <label>Fax </label>
-                                <input type="text" class="form-control" id="lname" name="lname">
+                                <input type="text" class="form-control" id="fax" name="fax">
                             
                         </div> 
                     </div>  <!--Company Info-->   
@@ -137,44 +131,44 @@
                          <div class="row field">
                             
                                 <label>Middle Name <span>(*)</span></label>
-                                <input type="text" class="form-control" id="lname" name="lname">
+                                <input type="text" class="form-control" id="mname" name="mname">
                             
                         </div>
                         <div class="row field">
                             
                                 <label>Last Name <span>(*)</span></label>
-                                <input type="text" class="form-control" id="fname" name="fname">
+                                <input type="text" class="form-control" id="lname" name="lname">
                            
                         </div>
                        
                         <div class="row field">
                             
                                 <label>Position <span>(*)</span></label>
-                                <input type="text" class="form-control" id="fname" name="fname">
+                                <input type="text" class="form-control" id="position" name="position">
                            
                         </div>
                          
                          <div class="row field">
                            
                                 <label>Department <span>(*)</span></label>
-                                <input type="text" class="form-control" id="lname" name="lname">
+                                <input type="text" class="form-control" id="department" name="department">
                            
                         </div>  
                          <div class="row field">
                             
                                 <label>Email </label>
-                                <input type="text" class="form-control" id="lname" name="lname">
+                                <input type="text" class="form-control" id="email" name="email">
                            
                         </div> 
                         <div class="row field">
                             
                                 <label>Password </label>
-                                <input type="text" class="form-control" id="lname" name="lname">
+                                <input type="text" class="form-control" id="password" name="password">
                             
                         </div> 
                         <div class="row field">
                             
-                                <label>Confirmation </label>
+                                <label>Confirm Password </label>
                                 <input type="text" class="form-control" id="lname" name="lname">
                             
                         </div> 
@@ -199,5 +193,38 @@
         </div>
     </form>
 </body>
+
+<?php
+include('CONNECTION.php');
+
+if(isset($_POST['btnsave'])){
+
+   $cname = $_POST['cname'];
+   $state_id = $_POST['state_id'];
+   $industry = $_POST['industry'];
+   $city_id = $_POST['city_id'];
+   $phonenum = $_POST['phonenum'];
+   $mobilenum = $_POST['mobilenum'];
+   $fax = $_POST['fax'];
+   $fname = $_POST['fname'];
+   $mname = $_POST['mname'];
+   $lname = $_POST['lname'];
+   $position = $_POST['position'];
+   $department = $_POST['department'];
+   $email = $_POST['email'];
+   $password = $_POST['password'];
+
+
+
+   $query = "INSERT INTO companyinfotbl (CompanyName,StateRegion,Industry,City,PhoneNum,MobileNum,Fax,FirstName,MiddleName,LastName,Position,Department,Email,Password) values  ('$cname','$state_id','$industry','$city_id','$phonenum','$mobilenum','$fax','$fname','$mname','$lname','$position','$department','$email','$password')";
+   $Result = mysql_query($query);
+   echo "
+          <script type='text/javascript'>
+         alert('You have successfully registered');
+         location.href='Login-company.php';
+         </script>
+         ";
+}
+?>
 
 </html>

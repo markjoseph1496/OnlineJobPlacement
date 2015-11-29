@@ -154,6 +154,14 @@ background-color: #006681;
     margin-left: 350px;
     margin-top: -60px;
 }
+.white-holder {
+    background-color: #f7f7f7;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
+    padding: 80px 25px;
+    margin: 10px;
+    max-width:100%;
+    max-height:100%;
+} 
 </style>
 
 <body id="page-top" class="index resume">
@@ -182,14 +190,16 @@ background-color: #006681;
         </div>
     </nav><br><br>
 
-    <div class="resume_bg">
-        <ul class="nav nav-tabs">
+    <div class="white-holder">
+         <ul class="nav nav-tabs">
             <li role="presentation" id="company" class="item"><a href="Company.php">Home</a></li>
             <li role="presentation" id="dbase" class="item" ><a href="Positions.php">Positions</a></li>
-            <li role="presentation" id="dbase" class="item" ><a href="Database.php">Database</a></li>
+            <li role="presentation" id="calendar" class="item " ><a href="Calendar.php">Calendar</a></li>
             <li role="presentation" id="report" class="item active"><a href="Report.php">Reports</a></li>
             <li role="presentation" id="setting" class="item" ><a href="Settings.php">Settings</a></li>
-            <li role="presentation" id="resumelink" class="item"><a href="Resumesearch.php">Resumelink Search</a></li>  
+            <li role="presentation" id="resumelink" class="item"><a href="Resumesearch.php">Resumelink Search</a></li>
+            <li role="presentation" id="studentlist" class="item"><a href="StudentList.php">Student List</a></li>
+            <li role="presentation" id="applicantlist" class="item "><a href="ApplicantList.php">Applicant List</a></li>
         </ul>
 
         <div class="space1"></div>

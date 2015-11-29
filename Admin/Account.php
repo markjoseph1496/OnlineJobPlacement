@@ -1,8 +1,10 @@
 <!DOCTYPE html>
 
 <?php 
+/*
 include('connection.php');
 session_start();
+
 
 $x = $_SESSION['AdminID'];
 
@@ -20,8 +22,14 @@ $result = mysql_query($qry);
                 $Address = $qry['Address'];
                 $ContactNumber = $qry['ContactNumber'];
         }
-?>
 
+
+$server_Email = isset($_POST['txtEmail']) ? $_POST['txtEmail'] : '';
+$server_NewEmail = isset($_POST['txtNewEmail']) ? $_POST['txtNewEmail'] : '';
+$server_ConfirmEmail = isset($_POST['txtConfirmEmail']) ? $_POST['txtConfirmEmail'] : '';
+
+*/
+?>
 <html lang="en">
 
 <head>
@@ -33,190 +41,76 @@ $result = mysql_query($qry);
 
     <title>My Info</title>
 
-     <!-- Bootstrap Core CSS -->
-    <link href="../css/admin.bootstrap.min.css" rel="stylesheet">
+     <!-- Bootstrap CSS -->
+    <link href="../css/bootstrap.min.css" rel="stylesheet" />
+    <link href="../css/basic-template.css" rel="stylesheet" />
+
+
+    <!-- BootstrapValidator CSS -->
+    <link href="../css/bootstrapValidator.min.css" rel="stylesheet"/>
+  
+    <!-- jQuery and Bootstrap JS -->
+    <script src="../js/jquery.min.js" type="text/javascript"></script>
+    <script src="../js/bootstrap.min.js" type="text/javascript"></script>
+      
+    <!-- BootstrapValidator -->
+    <script src="../js/bootstrapValidator.min.js" type="text/javascript"></script>
 
     <!-- CSS -->
-    <link href="../css/admin.agency.css" rel="stylesheet">
+    <link href="../css/agency.css" rel="stylesheet">
 
     <!-- Fonts -->
     <link href="../font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
-    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
-    <link href='https://fonts.googleapis.com/css?family=Kaushan+Script' rel='stylesheet' type='text/css'>
-    <link href='https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
-    <link href='https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700' rel='stylesheet' type='text/css'>
+    <link href="../font-awesome/ffonts/montserrat.css" rel="stylesheet" type="text/css">
+    <link href="../font-awesome/ffonts/kaushan.css" rel="stylesheet" type="text/css">
+    <link href="../font-awesome/ffonts/droid.css" rel="stylesheet" type="text/css">
+    <link href="../font-awesome/ffonts/roboto.css" rel="stylesheet" type="text/css">
 </head>
 
-<style type="text/css">
-
-.tabletitle {
-    color: #000000;
-    padding: 7px;
-    border: 1px solid  #E5E4E2;
-}
-
-table {
-    width: 100%;
-    border-collapse: collapse;
-}
-
-
-thead {
-    display: table-header-group;
-    vertical-align: middle;
-    border-color: inherit;
-    height:20px;
-}
-
-.Applicants tr:nth-of-type(2n+1), .tablelist tr:nth-of-type(2n+1) {
-    background: none repeat scroll 0 0 #f3eeee;
-}
-tr {
-    display: table-row;
-    vertical-align: inherit;
-    border-color: inherit;
-}
-td, th {
-    text-align: left;
-    padding: 7px 10px;
-}
-
-td, th {
-    display: table-cell;
-    vertical-align: inherit;
-}
-
-.tcenter {
-    text-align: center;
-}
-
-a {
-    color: #5f3333;
-}
-a {
-    text-decoration: none;
-}
-a:-webkit-any-link {
-    cursor: auto;
-}
-h1,  {
-    color: #000000;
-}
-:-webkit-any(article,aside,nav,section) h1 {
-    font-size: 1.5em;
-    -webkit-margin-before: 0.83em;
-    -webkit-margin-after: 0.83em;
-}
-
-.resume_bg{
-    height:1000px;
-}
-
- #save
-            {
-              width: 300px;
-              height: 40px;
-              background-color: #2F817E;
-              border: 1px solid #E5E4E2;
-              border-radius: 4px 4px 4px 4px;
-              margin-left: 500px;
-            }
-            #save:hover
-            {
-              background-color: #006681;
-            }   
-#cancel
-            {
-              width: 300px;
-              height: 40px;
-              background-color: #fcdc66;
-              border: 1px solid #E5E4E2;
-              border-radius: 4px 4px 4px 4px;
-              margin-left: 500px;
-            }
-            #cancel:hover
-            {
-              background-color: #fed136;
-            }   
- #userlist
-            {
-              width: 100px;
-              height: 40px;
-              border: 1px solid #E5E4E2;
-              margin-left: 1000px;
-            }
-
-
-
-.overlay {
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  background: rgba(0, 0, 0, 0.7);
-  transition: opacity 500ms;
-  visibility: hidden;
-  opacity: 0;
-}
-.overlay:target {
-  visibility: visible;
-  opacity: 1;
-}
-
-.popup {
-  margin: 70px auto;
-  padding: 20px;
-  background: #fff;
-  border-radius: 5px;
-  width: 30%;
-  position: relative;
-  transition: all 5s ease-in-out;
-  margin-top: 300px;
-}
-
-.popup h4 {
-  margin-top: 0;
-  color: #333;
-  font-family: Tahoma, Arial, sans-serif;
-}
-.popup .close {
-  position: absolute;
-  top: 20px;
-  right: 30px;
-  transition: all 200ms;
-  font-size: 30px;
-  font-weight: bold;
-  text-decoration: none;
-  color: #333;
-}
-.popup .close:hover {
-  color: #06D85F;
-}
-.popup .content {
-  max-height: 30%;
-  overflow: auto;
-}
-
-@media screen and (max-width: 700px){
-  .box{
-    width: 50%;
-
-  }
-  .popup{
-    width: 30%;
-  }
-}
-.update {
-    margin-left: 150px;
-}
-.update1 {
-    margin-left: 130px;
+<style = "text/css">
+input.form-control{
+  height: 5px;
 }
 </style>
 
-<body id="page-top" class="index resume">
-  <form method = "POST">
+<form id="userForm" method="post" style="display: none;">
+    <div class="row"> 
+        <div class="col-md-12"> 
+            <form class="form-horizontal"> 
+                <div class="form-group"> 
+                    <label class="col-md-4 control-label" for="name">Email</label>  
+                        <div class="col-md-6"> 
+                            <input name="txtEmail" type="text" class="form-control input-md" placeholder="Your email"> 
+                        </div> 
+                </div> 
+                <div class="form-group"> 
+                    <label class="col-md-4 control-label" for="name">New Email</label>  
+                        <div class="col-md-6"> 
+                            <input name="txtNewEmail" type="text" placeholder="Your new email" class="form-control input-md"> 
+                        </div> 
+                </div> 
+                <div class="form-group"> 
+                    <label class="col-md-4 control-label" for="name">Confirm Email</label>  
+                        <div class="col-md-6"> 
+                            <input name="txtConfirmEmail" type="text" placeholder="Your new email" class="form-control input-md"> 
+                    </div> 
+                </div> 
+            </form> 
+        </div> 
+    </div>
+</form>
+<body id="page-top" class="index bg">
+    <script>
+
+            $(document).on("click", ".EmailPopup", function(result) {
+
+                bootbox.dialog({
+                   
+                    message:  $('#userForm'),
+              });
+            });
+    </script>
+  <form id="Account">
     <nav class="navbar navbar-default navbar-fixed-top navbar-shrink">
         <div class="container">
             <div class="navbar-header page-scroll">
@@ -242,365 +136,144 @@ h1,  {
         </div>
     </nav><br><br>
 
-    <div class="resume_bg">
+    <div class="white-holder-3" id = "yellow-text-fields">
         <ul class="nav nav-tabs">
             <li role="presentation" id="myinfo" class="item"><a href="Admin.php">Home</a></li>
             <li role="presentation" id="resumelink" class="item" ><a href="Reports.php">Reports</a></li>
-            <li role="presentation" id="applications" class="item active"><a href="Account.php">Account</a></li>
-           
+            <li role="presentation" id="applications" class="item active"><a href="Account.php"><B>Account</B></a></li>
+            <li role="presentation" id="applications" class="item"><a href="Requested.php">Requested</a></li>
+            <li role="presentation" id="applications" class="item"><a href="CompanyList.php">Company List</a></li>
+            <li role="presentation" id="applications" class="item"><a href="AdviserList.php">Adviser List</a></li>
+            <li role="presentation" id="applications" class="item"><a href="Maintenance.php">Maintenance </a></li>
+            
         </ul>
         <div class="space"></div>
         <div class = "container">
-                      <a class = "btn btn-default" id = "userlist" href="Records.php"><b> User List</b></a>
-                        <br><br>
-            <div class = "col-md-6">   
-                <div class = "panel panel-warning">
-                <div class = "panel-heading">
-                <h3 class = "panel-title">Personal Information</h3>
+            <div class = "col-md-12 fieldcol">
+                <a href="Records.php" class=" btn btn-default adduser" style="float:right;">Add User</a>
+            </div>
+                <div>&nbsp;</div>
+                <form method = "POST">
+                    <div class = "col-md-12"> 
+                        <div class = "panel panel-warning" id = "panel">
+                            <div class = "panel-heading">
+                                    <h3 class = "panel-title">Personal Information</h3>
+                                </div>
+                                <div class = "panel-body">
+                                    <div class="row field">
+                                        <div class = "col-md-4 fieldcol">
+                                            <label>Email:</label>
+                                        </div>
+                                        <div class = "col-md-8 fieldcol">
+                                            <a data-bb="ChangeEmail" class="bb-alert alert alert-info" style="display: none;" href=#>
+                                            <a href=# class="btn btn-default EmailPopup">Change Email</a>
+                                        </div>
+                                    </div>
+                                    <div class="row field">
+                                        <div class = "col-md-4 fieldcol">
+                                            <label>Password:</label>
+                                        </div>
+                                        <div class = "col-md-8 fieldcol popbox">
+                                            <a href="#popup2" class="btn btn-default" id="" name="">Change Password</a>
+                                        </div>
+                                    </div>
+                                    <div class="row field">
+                                        <div class = "col-md-4 fieldcol">
+                                            <label>First Name:</label>
+                                        </div>
+                                        <div class = "col-md-8 fieldcol">
+                                            <div class="form-group">
+                                                <input type="text" class="form-control" id="FirstName" name="FirstName" style = "height:34px;" value = "<?php echo $FirstName; ?>">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row field">
+                                        <div class = "col-md-4 fieldcol">
+                                            <label>Middle Name:</label>
+                                        </div>
+                                        <div class = "col-md-8 fieldcol">
+                                            <div class = "form-group">
+                                                <input type="text" class="form-control" id="MiddleName" name="MiddleName" style = "height:34px;" value="<?php echo $MiddleName; ?>">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row field">
+                                        <div class = "col-md-4 fieldcol">
+                                            <label>Last Name:</label>
+                                        </div>
+                                        <div class = "col-md-8 fieldcol">
+                                            <div class = "form-group">
+                                            <input type="text" class="form-control" id="LastName" name="LastName" style = "height:34px;" value="<?php echo $LastName; ?>">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row field">
+                                        <div class = "col-md-4 fieldcol">
+                                            <label>Position:</label>
+                                        </div>
+                                        <div class = "col-md-8 fieldcol">
+                                            <div class = "form-group">
+                                            <input type="text" class="form-control" id="Position" name="Position" style = "height:34px;" value="<?php echo $Position; ?>">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row field">
+                                        <div class = "col-md-4 fieldcol">
+                                            <label>Department:</label>
+                                        </div>
+                                        <div class = "col-md-8 fieldcol">
+                                            <div class = "form=group">
+                                            <input type="text" class="form-control" id="Department" name="Department" style = "height:34px;" value="<?php echo $Department; ?>">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row field">
+                                        <div class = "col-md-4 fieldcol">
+                                            <div class = "form-group">
+                                            <label>Address:  <?php echo $server_Email ?> </label>
+                                            </div>
+                                        </div>
+                                        <div class = "col-md-8 fieldcol">
+                                            <div class = "form-group">
+                                            <textarea name = "Address" id = "Address" rows="5" cols= "91"><?php echo $Address; ?></textarea>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row field">
+                                        <div class = "col-md-4 fieldcol">
+                                            <label>Contact Number:</label>
+                                        </div>
+                                        <div class = "col-md-8 fieldcol">
+                                            <div class = "form-group">
+                                            <input type="text" class="form-control" id="ContactNumber" name="ContactNumber" style = "height:34px;" value=" <?php echo $ContactNumber; ?>">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <button type = "submit" class = "btn btn-danger " id = "save" name = "btnSave"><B> SAVE </B></button>
+                        <div class = "space-1"></div>
+                        <button type = "submit" class = "btn btn-danger " id = "cancel" name = "btnCancel"><B>CANCEL</B> </button>
+                    </div>
                 </div>
-            <div class = "panel-body">
-               <table class = "infotable">
-                <tbody>
-                <tr>
-                <td> 
-                    <label = "usr" class = "control-label"> Email: </label>
-                 </td>
-                <td> 
-                   <?php echo $Email; ?>
-                </td>
-                <div class="box">
-                     <a class="btn btn-default" href="#popup1" style=" margin-left: 350px; margin-bottom:-90px;" >Change email</a>
-                   </div>
-                </tr>
-                
-                <tr>
-                <td> 
-                    <label = "usr" class = "control-label"> Password: </label>
-                 </td>
-                <td> 
-                   ************
-                </td>
-                <div class="box">
-                     <a class="btn btn-default" href="#popup2" style=" margin-left: 350px; margin-bottom:-135px"  >Change Password</a>
-                   </div>
-                </tr>
-
-                <tr>
-                <td> 
-                    <label = "usr" class = "control-label"> First Name:</label>
-                 </td>
-                <td> 
-                    <input type = "text" name = "fname" id = "usr" class = "form-control" value = "<?php echo $FirstName; ?>">
-                </td>
-                </tr>
-
-                <tr>
-                <td> 
-                    <label = "usr" class = "control-label">Middle Name:</label>
-                 </td>
-                <td> 
-                    <input type = "text" name = "mname" id = "usr" class = "form-control" value="<?php echo $MiddleName; ?>">
-                </td>
-                </tr>
-
-                <tr>
-                <td> 
-                    <label = "usr" class = "control-label"> Last Name: </label>
-                 </td>
-                <td> 
-                    <input type = "text" name = "lname" id = "usr" class = "form-control" value="<?php echo $LastName; ?>">
-                </td>
-                </tr>
-
-                <tr>
-                <td> 
-                    <label = "usr" class = "control-label"> Position: </label>
-                 </td>
-                <td> 
-                    <input type = "text" name = "position" id = "usr" class = "form-control" value="<?php echo $Position; ?>">
-                </td>
-                </tr>
-
-                <tr>
-                <td> 
-                    <label = "usr" class = "control-label"> Department: </label>
-                 </td>
-                <td> 
-                    <input type = "text" name = "dept" id = "usr" class = "form-control" value="<?php echo $Department; ?>">
-                </td>
-                </tr>
-                
-                <tr>
-                <td> 
-                    <label = "usr" class = "control-label"> Address: </label>
-                 </td>
-                <td> 
-                   <textarea name = "address" id = "add" rows="3" cols= "47"><?php echo $Address; ?></textarea>
-                </td>
-                </tr>
-
-                 <tr>
-                <td> 
-                    <label = "usr" class = "control-label"> Contact Number: </label>
-                 </td>
-                <td> 
-                    <input type = "text" name = "contact" id = "usr" class = "form-control" value="<?php echo $ContactNumber; ?>">
-                </td>
-                </tr>
-
-                </tbody>
-                </table>
-            </div>
-            </div>
-            </div>
-            <!--School-->
-            <div class = "col-md-6">   
-                <div class = "panel panel-warning">
-                <div class = "panel-heading">
-                <h3 class = "panel-title">School Information</h3>
-                </div>
-            <div class = "panel-body">
-               <table class = "infotable">
-                <tbody>
-                <tr>
-                <td> 
-                    <label = "usr" class = "control-label"> Career Portal: </label>
-                 </td>
-                <td> 
-                   http://schools.jobs180.com/STICollege-Caloocan
-                </td>
-                </tr>
-
-                <tr>
-                <td> 
-                    <label = "usr" class = "control-label"> Website Url: </label>
-                 </td>
-                <td> 
-                    <input type = "text" name = "web" id = "usr" class = "form-control" >
-                </td>
-                </tr>
-                
-                <tr>
-                <td> 
-                    <label = "usr" class = "control-label"> Address: </label>
-                 </td>
-                <td> 
-                   <textarea name = "SchoolAddress" id = "add" rows="3" cols= "50"></textarea>
-                </td>
-                </tr>
-
-                <tr>
-                <td> 
-                    <label = "usr" class = "control-label"> State Region: </label>
-                 </td>
-                <td> 
-                    <select id="state" name="state" class="state" style="width:100%; height:34px;">
-                                            <option value="select">Please select One</option>
-                                            <option value="ncr">NCR</option>
-                                            <option value="car">CAR</option> 
-                                            <option value="ilo">Ilocos Region</option> 
-                                            <option value="cag">Cagayan Valley</option> 
-                                            <option value="cen">Central Luzon</option> 
-                                            <option value="cala">CALABARZON</option> 
-                                            <option value="mima">MIMAROPA</option> 
-                                            <option value="bicol">Bicol Region</option>
-                                            <option value="west">Western Visayas</option>
-                                            <option value="cent">Central Visayas</option>
-                                            <option value="east">Eastern Visayas</option>
-                                            <option value="zam">Zamboanga Peninsula</option>
-                                            <option value="north">Northern Mindanao</option>
-                                            <option value="dav">Davao Region</option>
-                                            <option value="sock">SOCCKSCARGEN</option>
-                                            <option value="cara">Caraga Region</option>
-                                            <option value="armm">ARMM</option>
-                                        </select>
-                </td>
-                </tr>
-
-                <tr>
-                <td> 
-                    <label = "usr" class = "control-label"> City: </label>
-                 </td>
-                <td> 
-                    <select id="city" name="city" class="city" style="width:100%; height:34px;">
-                                            <option value="select">Please select One</option>
-                                            <option value="ncr">NCR</option>
-                                            <option value="car">CAR</option> 
-                                            <option value="ilo">Ilocos Region</option> 
-                                            <option value="cag">Cagayan Valley</option> 
-                                            <option value="cen">Central Luzon</option> 
-                                            <option value="cala">CALABARZON</option> 
-                                            <option value="mima">MIMAROPA</option> 
-                                            <option value="bicol">Bicol Region</option>
-                                            <option value="west">Western Visayas</option>
-                                            <option value="cent">Central Visayas</option>
-                                            <option value="east">Eastern Visayas</option>
-                                            <option value="zam">Zamboanga Peninsula</option>
-                                            <option value="north">Northern Mindanao</option>
-                                            <option value="dav">Davao Region</option>
-                                            <option value="sock">SOCCKSCARGEN</option>
-                                            <option value="cara">Caraga Region</option>
-                                            <option value="armm">ARMM</option>
-                                        </select>
-                </td>
-                </tr>
-
-                <tr>
-                <td> 
-                    <label = "usr" class = "control-label"> Postal Code: </label>
-                 </td>
-                <td> 
-                    <input type = "text" name = "postal" id = "usr" class = "form-control" >
-                </td>
-                </tr>
-                 <tr>
-                <td> 
-                    <label = "usr" class = "control-label"> Phone: </label>
-                 </td>
-                <td> 
-                    <input type = "text" name = "phone" id = "usr" class = "form-control">
-                </td>
-                </tr>
-
-                 <tr>
-                <td> 
-                    <label = "usr" class = "control-label"> Fax: </label>
-                 </td>
-                <td> 
-                    <input type = "text" name = "fax" id = "usr" class = "form-control">
-                </td>
-                </tr>
-                </tbody>
-                </table>
-                <br>
-            </div>
-            </div>
-            </div>
-         </div>
-           <button type = "submit" class = "btn btn-danger " id = "save" name = "btnSave"><b> SAVE </b></button>
-            <div class = "space"></div>
-             <button type = "submit" class = "btn btn-danger " id = "cancel" name = "btnCancel"><b> CANCEL</b> </button>
-         </form>
-    </div>
-       </div>
-<script>
-  $(function(){
-            
-        $("#state_id").change(function(){
-                
-            $("#state").val($("#state_id option:selected").text());
-                
-            get_city_select("city",$(this).val());
-                
-        });
-
-        formRules();                    
-            
-        $('#edit_email_btn').click(function(e) {
-            changeEmail();
-        });
-
-        $('#edit_password_btn').click(function(e) {
-            changePassword();
-        });
-            
-        setupSchoolEmailRules();         
-        setupSchoolPasswordRules();     
-        
-        $('#save').click(function(e) {
-            $(this).removeClass('ui-state-focus');
-            $('#entry_form').submit();
-            e.preventDefault(); 
-        });
-
-        $('#cancel').click(function(e) {
-            $(this).removeClass('ui-state-focus');
-            window.location = siteUrl + 'admin';
-            e.preventDefault(); 
-        });
-            
-    });
-    
-
-
-</script>
-
-<div id="popup1" class="overlay">
-  <form method ="POST">
-    <div class="popup">
-        <h4>Change Email</h4>
-        <a class="close" href="#">&times;</a>
-        <div class="content">
-            <div class = "col-md-4">
-          <label = "usr" class = "control-label"> New Email: </label>
-          </div>
-           <div class = "col-md-8">
-          <input type="text"  class="form-control" name="txtEmail">
-          </div><br><br>
-          <div class = "col-md-4">
-          <label = "usr" class = "control-label"> Retype Email: </label>
-          </div>
-           <div class = "col-md-8">
-          <input type="text"  class="form-control" name="txtRetypeEmail">
-          </div>
-          <br><br>
-          <div class = "update">
-           <button type = "submit" class = "btn btn-danger " name = "btnUpdateEmail"> Update Email</button>
-            <button type = "submit" class = "btn btn-danger " name = "btnCancel"> Cancel </button>
-         </div>
+            </form>
         </div>
     </div>
-  </form>
-</div>
-
-<div id="popup2" class="overlay">
-  <form method = "POST">
-    <div class="popup">
-        <h4>Change Password</h4>
-        <a class="close" href="#">&times;</a>
-        <div class="content">
-            
-          <div class = "col-md-5">
-          <label = "usr" class = "control-label"> Old Password: </label>
-          </div>
-           <div class = "col-md-7">
-          <input type="password"  class="form-control" name="txtOldPass">
-          </div><br><br>
-          <div class = "col-md-5">
-          <label = "usr" class = "control-label"> New Password: </label>
-          </div>
-           <div class = "col-md-7">
-          <input type="password"  class="form-control" name="txtNewPass">
-          </div><br><br>
-          <div class = "col-md-5">
-          <label = "usr" class = "control-label"> Retype Password: </label>
-          </div>
-           <div class = "col-md-7">
-          <input type="password"  class="form-control" name="txtRePass">
-          </div>
-          <br><br>
-          <div class = "update1">
-           <button type = "submit" class = "btn btn-danger " name="btnUpdatePass"> Update Password</button>
-            <button type = "submit" class = "btn btn-danger " name="btnCancel"> Cancel</button>
-         </div>
-        </div>
-    </div>
-  </form>
-</div>
-</form>
-</body>
 <?php
+
+/*
 include('connection.php');
 
 if(isset($_POST['btnSave'])){
 
-   $fname = $_POST['fname'];
-   $mname = $_POST['mname'];
-   $lname = $_POST['lname'];
-   $position = $_POST['position'];
-   $dept = $_POST['dept'];
-   $address = htmlspecialchars($_POST['address']);
-   $contact = $_POST['contact'];
+   $fname = $_POST['FirstName'];
+   $mname = $_POST['MiddleName'];
+   $lname = $_POST['LastName'];
+   $position = $_POST['Position'];
+   $dept = $_POST['Department'];
+   $address = htmlspecialchars($_POST['Address']);
+   $contact = $_POST['ContactNumber'];
 
   
 
@@ -684,10 +357,110 @@ if(isset($_POST['btnUpdateEmail'])){
             ";
         }
 }
-
+*/
 ?>
 
+<script type="text/javascript">
+    $(document).ready(function (){
+        var validator = $("#Account").bootstrapValidator({
+              feedbackIcons: {
+                    valid: "glyphicon glyphicon-ok",
+                    invalid: "glyphicon glyphicon-remove",
+                    validating: "glyphicon glyphicon-refresh"
+              },
+              fields: {
+                    FirstName: {
+                        validators: {
+                            notEmpty: {
+                                message: "First Name is required"
+                            },
+                            stringLength: {
+                                min: 2,
+                                max: 15,
+                                message: "First Name must be 3-15 characters long"
+                            }
+                        }
+                    },
+                    MiddleName: {
+                        validators: {
+                            notEmpty: {
+                                message: ""
+                            },
+                            stringLength: {
+                                min: 2,
+                                max: 15,
+                                message: ""
+                            }
+                        }
+                    },
+                    LastName: {
+                        validators: {
+                            notEmpty: {
+                                message: "Last Name is required"
+                            },
+                            stringLength: {
+                                min: 2,
+                                max: 15,
+                                message: "Last Name must be 2-15 characters long"
 
+                            }
+                        }
+                    },
+                    Position: {
+                        validators: {
+                            notEmpty: {
+                                message: "Position is required"
+                            },
+                            stringLength: {
+                                min: 10,
+                                max: 150,
+                                message: "Position must be 10-150 characters long"
 
+                            }
+                        }
+                    },
+                    Department: {
+                        validators: {
+                            notEmpty: {
+                                message: "Department is required"
+                            },
+                            stringLength: {
+                                min: 10,
+                                max: 150,
+                                message: "Department must be 10-150 characters long"
+
+                            }
+                        }
+                    },
+                    Address: {
+                        validators: {
+                            notEmpty: {
+                                message: "Address is required"
+                            },
+                            stringLength: {
+                                min: 10,
+                                max: 150,
+                                message: "Address must be 10-150 characters long"
+
+                            }
+                        }
+                    },
+                    ContactNumber: {
+                        validators: {
+                            notEmpty: {
+                                message: "Contact Number is required"
+                            },
+                            stringLength: {
+                                min: 11,
+                                max: 11,
+                                message: "Contact Number must be 11 characters long"
+
+                            }
+                        }
+                    }
+              }
+        });
+    });
+</script>
 </body>
- 
+</html>

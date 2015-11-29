@@ -1,4 +1,25 @@
 <!DOCTYPE html>
+<?php
+include('CONNECTION.php');
+session_start();
+
+$x = $_SESSION['Email'];
+$qry = "SELECT * FROM companyinfotbl WHERE Email ='$x'";
+$Result = mysql_query($qry);
+
+    while ($qry = mysql_fetch_Array($Result)) {
+
+        $Email = $qry['Email'];
+        $Password = $qry['Password'];
+        $FName = $qry['FirstName'];
+        $MName = $qry['MiddleName'];
+        $LName = $qry['LastName'];
+        $Positions = $qry['Position'];
+        $Department = $qry['Department'];
+        $Address = $qry['Address'];
+        $PhoneNum = $qry['PhoneNum'];
+    }
+?>
 <html lang="en">
 
 <head>
@@ -252,7 +273,18 @@ background-color: #006681;
 }
 .update1 {
     margin-left: 130px;
-}      
+}    
+.white-holder {
+    background-color: #f7f7f7;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
+    padding: 80px 25px;
+    margin: 10px;
+    max-width:100%;
+    max-height:100%;
+}     
+#yellow-text-fields label span {
+    color: #d95c5c;
+} 
 </style>
 
 <body id="page-top" class="index resume">
@@ -281,28 +313,39 @@ background-color: #006681;
         </div>
     </nav><br><br>
 
-     <div class="resume_bg">
-       <ul class="nav nav-tabs">
-            <li role="presentation" id="company" class="item "><a href="Company.php">Home</a></li>
+     <div class="white-holder">
+        <ul class="nav nav-tabs">
+            <li role="presentation" id="company" class="item"><a href="Company.php">Home</a></li>
             <li role="presentation" id="dbase" class="item" ><a href="Positions.php">Positions</a></li>
-            <li role="presentation" id="dbase" class="item" ><a href="Database.php">Database</a></li>
-            <li role="presentation" id="report" class="item"><a href="Report.php">Reports</a></li>
+            <li role="presentation" id="calendar" class="item " ><a href="Calendar.php">Calendar</a></li>
+            <li role="presentation" id="report" class="item "><a href="Report.php">Reports</a></li>
             <li role="presentation" id="setting" class="item active" ><a href="Settings.php">Settings</a></li>
-            <li role="presentation" id="resumelink" class="item"><a href="Resumesearch.php">Resumelink Search</a></li>           
+            <li role="presentation" id="resumelink" class="item"><a href="Resumesearch.php">Resumelink Search</a></li>
+            <li role="presentation" id="studentlist" class="item"><a href="StudentList.php">Student List</a></li>
+            <li role="presentation" id="applicantlist" class="item "><a href="ApplicantList.php">Applicant List</a></li>
         </ul>
-
         <div class="space1"></div>
        
          <ul class="nav nav-pills" id = "submenu">
             <li class="yellow"><a href="Settings.php">Company</a></li>
-            <li class="yellow"><a href="Settings_Calendar.php">Calendar</a></li>
-            <li class="yellow"><a href="Settings_Users.php">User</a></li>
             <li class="yellow active"><a href="Settings_MyAccount.php">My Account</a></li>
         </ul>
 
-        
+        <div id="yellow-text-fields">
         <div class = "container">
-            <div class = "col-md-12"> 
+            <div class = "col-md-12">
+            <br> 
+            <?php
+              if(isset($_GET['id'])){
+                    $id=$_GET['id'];
+                    if($id=="AccountEdit"){
+                        echo '<div class="alert alert-success">
+                        <span class="glyphicon glyphicon-info-sign"></span> 
+                        Achievement successfully updated.
+                        </div>';
+                    }
+                }   
+             ?> 
                 <div class = "space1"></div>
             <div class = "adduser">
                 <div class = "panel panel-warning">
@@ -318,7 +361,7 @@ background-color: #006681;
                     <label = "usr" class = "control-label"> Email: </label>
                  </td>
                 <td> 
-                   princetj.21@gmail.com
+                  <label = "usr" class = "control-label"><?php echo $Email; ?></label>
                 </td>
                 <div class="box">
                      <a class="btn btn-default" href="#popup1" style=" margin-left: 350px; margin-bottom:-90px;" >Change email</a>
@@ -330,7 +373,7 @@ background-color: #006681;
                     <label = "usr" class = "control-label"> Password: </label>
                  </td>
                 <td> 
-                   ************
+                   <label = "usr" class = "control-label" type = "password"><?php echo $Password; ?></label>
                 </td>
                 <div class="box">
                      <a class="btn btn-default" href="#popup2" style=" margin-left: 350px; margin-bottom:-135px"  >Change Password</a>
@@ -339,64 +382,64 @@ background-color: #006681;
 
                 <tr>
                 <td> 
-                    <label = "usr" class = "control-label"> First Name: </label>
+                    <label>First Name <span>(*)</span></label>
                  </td>
                 <td> 
-                    <input type = "text" name = "fname" id = "usr" class = "form-control">
+                    <input type = "text" name = "fname" id = "usr" class = "form-control" value = "<?php echo $FName; ?>">
                 </td>
                 </tr>
 
                 <tr>
                 <td> 
-                    <label = "usr" class = "control-label"> Middle Name: </label>
+                    <label>Middle Name <span>(*)</span></label>
                  </td>
                 <td> 
-                    <input type = "text" name = "mname" id = "usr" class = "form-control" >
+                    <input type = "text" name = "mname" id = "usr" class = "form-control" value = "<?php echo $MName; ?>">
                 </td>
                 </tr>
 
                 <tr>
                 <td> 
-                    <label = "usr" class = "control-label"> Last Name: </label>
+                    <label>Last Name <span>(*)</span></label>
                  </td>
                 <td> 
-                    <input type = "text" name = "lname" id = "usr" class = "form-control">
+                    <input type = "text" name = "lname" id = "usr" class = "form-control" value = "<?php echo $LName; ?>">
                 </td>
                 </tr>
 
                 <tr>
                 <td> 
-                    <label = "usr" class = "control-label"> Position: </label>
+                    <label>Position <span>(*)</span></label>
                  </td>
                 <td> 
-                    <input type = "text" name = "position" id = "usr" class = "form-control">
+                    <input type = "text" name = "position" id = "usr" class = "form-control" value = "<?php echo $Positions; ?>">
                 </td>
                 </tr>
 
                 <tr>
                 <td> 
-                    <label = "usr" class = "control-label"> Department: </label>
+                    <label>Department<span>(*)</span></label>
                  </td>
                 <td> 
-                    <input type = "text" name = "dept" id = "usr" class = "form-control" >
+                    <input type = "text" name = "dept" id = "usr" class = "form-control" value = "<?php echo $Department; ?>">
                 </td>
                 </tr>
                 
                 <tr>
                 <td> 
-                    <label = "usr" class = "control-label"> Address: </label>
+                    <label>Address <span>(*)</span></label>
                  </td>
                 <td> 
-                   <textarea name = "address" id = "add" rows="3" cols= "55"></textarea>
+                   <input type = "text" name = "address" id = "usr" class = "form-control" value = "<?php echo $Address; ?>">
                 </td>
                 </tr>
 
                  <tr>
                 <td> 
-                    <label = "usr" class = "control-label"> Contact Number: </label>
+                   <label>Contact Number <span>(*)</span></label>
                  </td>
                 <td> 
-                    <input type = "text" name = "contact" id = "usr" class = "form-control">
+                    <input type = "text" name = "contact" id = "usr" class = "form-control" value = "<?php echo $PhoneNum ?>">
                 </td>
                 </tr>
 
@@ -408,7 +451,8 @@ background-color: #006681;
             </div>  
 
          </div>
-           <button type = "submit" class = "btn btn-danger " id = "save" href= "#"><b> SAVE </b></button>
+         </div>
+           <button type = "submit" class = "btn btn-danger " name="btnSave" id = "save" href= "#"><b> SAVE </b></button>
             <div class = "space"></div>
              <button type = "submit" class = "btn btn-danger " id = "cancel"><b> CANCEL</b> </button>
          </form>
@@ -516,6 +560,30 @@ background-color: #006681;
         </div>
     </div>
 </div>
-
 </body>
+<?php
+include('CONNECTION.php');
+
+
+if(isset($_POST['btnSave'])){
+
+   $fname = $_POST['fname'];
+   $mname = $_POST['mname'];
+   $lname = $_POST['lname'];
+   $position = $_POST['position'];
+   $dept = $_POST['dept'];
+   $address = $_POST['address'];
+   $contact = $_POST['contact'];
+
+
+
+    $query = "UPDATE companyinfotbl SET FirstName = '$fname', MiddleName = '$mname', LastName = '$lname', Position = '$position', Department = '$dept', Address = '$address', PhoneNum = '$contact' WHERE Email = '$x'";
+   $Result = mysql_query($query);
+   echo "
+         <script type='text/javascript'>
+         location.href='Settings_MyAccount.php?id=AccountEdit';
+         </script>
+         ";
+}
+?>
  

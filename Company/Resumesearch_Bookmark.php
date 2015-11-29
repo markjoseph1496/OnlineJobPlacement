@@ -239,7 +239,17 @@ background-color: #006681;
     padding:10px;
     border: 1px solid #E5E4E2;
 }
-
+#submenu{
+    margin-left: 50px;
+}  
+.white-holder {
+    background-color: #f7f7f7;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
+    padding: 80px 25px;
+    margin: 10px;
+    max-width:100%;
+    max-height:100%;
+}  
     </style>
 
 <body id="page-top" class="index resume">
@@ -268,22 +278,22 @@ background-color: #006681;
         </div>
     </nav><br><br>
 
-    <div class="resume_bg">
-        <ul class="nav nav-tabs">
+    <div class="white-holder">
+       <ul class="nav nav-tabs">
             <li role="presentation" id="company" class="item"><a href="Company.php">Home</a></li>
             <li role="presentation" id="dbase" class="item" ><a href="Positions.php">Positions</a></li>
-            <li role="presentation" id="dbase" class="item" ><a href="Database.php">Database</a></li>
-            <li role="presentation" id="report" class="item"><a href="Report.php">Reports</a></li>
-            <li role="presentation" id="setting" class="item" ><a href="Settings.php">Settings</a></li>
+            <li role="presentation" id="calendar" class="item " ><a href="Calendar.php">Calendar</a></li>
+            <li role="presentation" id="report" class="item "><a href="Report.php">Reports</a></li>
+            <li role="presentation" id="setting" class="item " ><a href="Settings.php">Settings</a></li>
             <li role="presentation" id="resumelink" class="item active"><a href="Resumesearch.php">Resumelink Search</a></li>
-            
+            <li role="presentation" id="studentlist" class="item"><a href="StudentList.php">Student List</a></li>
+            <li role="presentation" id="applicantlist" class="item "><a href="ApplicantList.php">Applicant List</a></li>
         </ul>
-
         <div class="space1"></div>
        
         <ul class="nav nav-pills" id = "submenu">
             <li class="yellow "><a href="Resumesearch.php">Search Database</a></li>
-            <li class="yellow"><a href="Resumesearch_Purchase.php">Purchased Resumes</a></li>
+            <li class="yellow"><a href="Resumesearch_Purchase.php">Requested Resumes</a></li>
             <li class="yellow active"><a href="Resumesearch_Bookmark.php">Bookmark Resumelink</a></li>
         </ul>
 
@@ -334,7 +344,7 @@ background-color: #006681;
                     <td class = "tcenter"></td>
                     <td class = "tcenter"></td>
                     <td class = "tcenter">
-                        <a id="Edit" href="#" class=" btn btn-default"> <i class="fa fa-pencil"></i></a> 
+                        <a id="Edit" href="#" class=" btn btn-default"> <i class="fa fa-bookmark"></i></a> 
                         <a id="Delete" href="#" class=" btn btn-danger"> <i class="fa fa-minus-square"></i> </a> 
                     </td>
                     

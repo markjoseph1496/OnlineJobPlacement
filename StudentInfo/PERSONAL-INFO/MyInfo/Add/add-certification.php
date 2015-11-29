@@ -6,6 +6,62 @@ session_start();
 
 $x = $_SESSION['StudentID'];
 
+if(is_null($x)){
+    echo "
+        <script type='text/javascript'>
+        location.href='../../../../login-student.php';
+        </script>
+        ";
+}
+
+$b = 1;
+$txtCertificationValidator = '';
+$txtYearTakenValidator = '';
+
+$server_txtCertifcation = isset($_POST['txtCertification']) ? $_POST['txtCertification'] : '';
+$server_txtYearTaken = isset($_POST['txtYearTaken']) ? $_POST['txtYearTaken'] : '';
+
+$server_txtCertifcation = ucwords(strtolower($server_txtCertifcation));
+
+$a = isset($_POST['txtCertification']);
+$a = $a && isset($_POST['txtYearTaken']);
+
+if($a){
+    unset($a);
+    $txtCertificationValid = 1;
+    $txtYearTakenValid = 1;
+
+
+    if(is_null($server_txtCertifcation) || $server_txtCertifcation== ''){
+        $txtCertificationValidator = 'This Field cannot be Empty.';
+        $txtCertificationValid= 0;
+    } 
+
+    if(is_null($server_txtYearTaken) || $server_txtYearTaken== ''){
+        $txtYearTakenValidator = 'Please Select one';
+        $txtYearTakenValid= 0;
+    }  
+
+    $b=0;
+
+    $a = $txtCertificationValid;
+    $a = $a && $txtYearTakenValid;
+
+    if($a){
+        unset($a);
+
+        $query = "INSERT INTO certificationtbl (StudentID,Certification,YearTaken) values  ('$x','$server_txtCertifcation','$server_txtYearTaken')";
+        $Result = mysql_query($query);
+        echo "
+             <script type='text/javascript'>
+             location.href = '../certifications.php?id=CertificationAdd';
+             </script>
+             ";
+        $b=2;
+
+    }
+}
+
 ?>
 <html lang="en">
 
@@ -23,7 +79,7 @@ $x = $_SESSION['StudentID'];
 
     <!-- CSS -->
     <link href="../../../css/agency.css" rel="stylesheet">
-
+    
     <!-- Fonts -->
     <link href="../../../font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
     <link href="../../../font-awesome/ffonts/montserrat.css" rel="stylesheet" type="text/css">
@@ -35,16 +91,10 @@ $x = $_SESSION['StudentID'];
 
 
 <body id="page-top" class="index bg">
-    <form method = "POST">
+    <form method = "POST" autocomplete="off">
     <nav class="navbar navbar-default navbar-fixed-top navbar-shrink">
         <div class="container">
             <div class="navbar-header page-scroll">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
                 <a class="navbar-brand page-scroll" href="#page-top">Online Job Placement Management</a>
             </div>
 
@@ -62,56 +112,65 @@ $x = $_SESSION['StudentID'];
     </nav><br><br>
 
     <div id="yellow-text-fields">
-        <div class="container">
-            <div class="white-holder">
-                <ul class="nav nav-tabs">
-                    <li id="my_info" class="item active"><a href="../personal_info.php"><B>My Info</B></a></li>
-                    <li id="resumelink" class="item"><a href="../../Resumelink/resumelink.php">Resumé Link</a></li>
-                    <li id="applications" class="item"><a href="../../Applications/applications.php">Applications</a></li>
-                    <li id="settings" class="item"><a href="../../Settings/settings.php">Settings</a></li>
-                </ul>
-                <div class="space"></div>
-                <ul class="nav nav-pills nav-stacked col-md-2 col-sm-3">
-                    <li class="yellow"><a href="../personal_info.php">Personal Info</a></li>
-                    <li class="yellow"><a href="../contacts_info.php">Contacts Info</a></li>
-                    <li class="yellow"><a href="../work.php">Work</a></li>
-                    <li class="yellow"><a href="../education.php">Education</a></li>
-                    <li class="yellow active"><a href="../certifications.php">Certifications</a></li>
-                    <li class="yellow"><a href="../achievements.php">Achievements</a></li>
-                    <li class="yellow"><a href="../skills_languages.php">Skills & Languages</a></li>
-                    <li class="yellow"><a href="../references.php">References</a></li>
-                    <li class="yellow"><a href="../portfolio.php">Portfolio</a></li>
-                </ul>
+         <div class="white-holder">
+            <ul class="nav nav-tabs">
+                <li id="my_info" class="item active"><a href="../personal_info.php"><B>My Info</B></a></li>
+                <li id="resumelink" class="item"><a href="../../Resumelink/resumelink.php">Resumé Link</a></li>
+                <li id="applications" class="item"><a href="../../Applications/applications.php">Applications</a></li>
+                <li role="presentation" class="item"><a href="../../Search-job/search-job.php">Jobs</a></li>
+                <li id="settings" class="item"><a href="../../Settings/settings.php">Settings</a></li>
+            </ul>
+            <div class="space"></div>
+            <ul class="nav nav-pills nav-stacked col-md-2 col-sm-3">
+                <li class="yellow"><a href="../personal_info.php">Personal Info</a></li>
+                <li class="yellow"><a href="../contacts_info.php">Contacts Info</a></li>
+                <li class="yellow"><a href="../work.php">Work</a></li>
+                <li class="yellow"><a href="../education.php">Education</a></li>
+                <li class="yellow active"><a href="../certifications.php">Certifications</a></li>
+                <li class="yellow"><a href="../achievements.php">Achievements</a></li>
+                <li class="yellow"><a href="../skills_languages.php">Skills & Languages</a></li>
+                <li class="yellow"><a href="../references.php">References</a></li>
+                <li class="yellow"><a href="../portfolio.php">Portfolio</a></li>
+            </ul>
+            <div class="space-1"></div>
 
-                <div class"row">
-                    <div class="col-md-10">
-                        <div class="row field">
-                            <div class="col-md-6 fieldcol">
-                                <label>Certification <span>(*)</span></label>
-                                <input type="text" class="form-control" id="txtCertification" name="txtCertification">
-                            </div>
-                            <div class="col-md-6 fieldcol">
-                                <label>Year Taken <span>(*)</span></label>
-                                <select id="txtYearTaken" name="txtYearTaken" class="" style="width:100%; height:34px;">
-                                    <option value></option>
-                                    <script>
-                                            var myDate = new Date();
-                                            var year =  myDate.getFullYear();
-                                            for(var i = 1935; i < year+1; i++){
-                                            document.write('<option value="'+i+'">'+i+'</option>');
-                                            }
-                                     </script>
-                                </select>
-                            </div>
+            <div class="col-md-6 col-md-5">
+                <div class="row field">
+                    <div class="col-md-12 fieldcol">
+                        <div class="form-group">
+                            <label>Certification <span>(*)</span></label>
+                            <input type="text" class="form-control" id="txtCertification" name="txtCertification" value="<?php echo htmlspecialchars($server_txtCertifcation)?>">
                         </div>
                     </div>
                 </div>
-                <div class="field">
-                    <div class="profile_divider"></div>
-                    <div class"row field">
-                        <div class="col-md-12">
-                            <button class="btn btn-lg btn-hg btn-primary" style="float:right;" name ="btnSave">Add</button>
+                <div class="row field">
+                    <div class="col-md-12 fieldcol">
+                        <div class="form-group">
+                            <label>Year Taken <span>(*)</span></label>
+                            <select id="txtYearTaken" name="txtYearTaken" class="form-control" style="width:100%; height:34px;">
+                                <option value="">- Year -</option>
+                                <?php 
+                                    $date = 1934;
+                                    while($date != Date("Y")){
+                                        $date++;
+                                        if($date == $server_txtYearTaken){
+                                            echo "<option selected value='$date'> $date</option>";
+                                        }
+                                        else{
+                                        echo "<option value='$date'> $date</option>";
+                                        }
+                                    }
+                                ?>
+                            </select>
                         </div>
+                    </div>
+                </div>
+            </div>
+            <div class="field">
+                <div class="profile_divider"></div>
+                <div class"row field">
+                    <div class="col-md-12">
+                        <button class="btn btn-lg btn-hg btn-primary" style="float:right;" name ="btnSave">Add</button>
                     </div>
                 </div>
             </div>
@@ -119,22 +178,4 @@ $x = $_SESSION['StudentID'];
     </div>
 </form>
 </body>
-
-<?php
-include('connection.php');
-
-if(isset($_POST['btnSave'])){
-
-    $Certification = $_POST['txtCertification'];
-    $YearTaken = $_POST['txtYearTaken'];   
-
-   $query = "INSERT INTO certificationtbl (StudentID,Certification,YearTaken) values  ('$x','$Certification','$YearTaken')";
-   $Result = mysql_query($query);
-   echo "
-         <script type='text/javascript'>
-         </script>
-         ";
-}
-?>
-
 </html>

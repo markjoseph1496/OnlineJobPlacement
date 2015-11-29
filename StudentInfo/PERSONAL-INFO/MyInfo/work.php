@@ -1,4 +1,17 @@
 <!DOCTYPE html>
+
+
+<?php 
+session_start();
+if(is_null($_SESSION['StudentID'])){
+    echo "
+        <script type='text/javascript'>
+        location.href='../../../login-student.php';
+        </script>
+        ";
+}
+?>
+
 <html lang="en">
 
 <head>
@@ -15,6 +28,7 @@
 
     <!-- CSS -->
     <link href="../../css/agency.css" rel="stylesheet">
+    <link href="../../css/flat-ui.min.css" rel="stylesheet">
 
     <!-- Fonts -->
     <link href="../../font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
@@ -29,12 +43,6 @@
     <nav class="navbar navbar-default navbar-fixed-top navbar-shrink">
         <div class="container">
             <div class="navbar-header page-scroll">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
                 <a class="navbar-brand page-scroll" href="#page-top">Online Job Placement Management</a>
             </div>
 
@@ -44,119 +52,96 @@
                         <a href="#page-top"></a>
                     </li>
                     <li>
-                        <a class="page-scroll" href="#">Sign Out</a>
+                        <a href="../../../index.php?id=SignOut">Sign Out</a>
                     </li>
                 </ul>
             </div>
         </div>
     </nav><br><br>
 
-<div class="container">
-    <div class="white-holder">
-        <ul class="nav nav-tabs">
-            <li role="presentation" id="myinfo" class="item active"><a href="personal_info.php"><B>My Info</B></a></li>
-            <li role="presentation" id="resumelink" class="item"><a href="../Resumelink/resumelink.php">Resumé Link</a></li>
-            <li role="presentation" id="applications" class="item"><a href="../Applications/applications.php">Applications</a></li>
-            <li role="presentation" id="settings" class="item"><a href="../Settings/settings.php">Settings</a></li>
-        </ul>
-        <div class="space"></div>
-        <ul class="nav nav-pills nav-stacked col-md-2 col-sm-3">
-            <li class="yellow"><a href="personal_info.php">Personal Info</a></li>
-            <li class="yellow"><a href="contacts_info.php">Contacts Info</a></li>
-            <li class="yellow active"><a href="work.php">Work</a></li>
-            <li class="yellow"><a href="education.php">Education</a></li>
-            <li class="yellow"><a href="certifications.php">Certifications</a></li>
-            <li class="yellow"><a href="achievements.php">Achievements</a></li>
-            <li class="yellow"><a href="skills_languages.php">Skills & Languages</a></li>
-            <li class="yellow"><a href="references.php">References</a></li>
-            <li class="yellow"><a href="portfolio.php">Portfolio</a></li>
-        </ul>
+    <div id="yellow-text-fields">
+        <div class="white-holder">
+            <ul class="nav nav-tabs">
+                <li role="presentation" id="myinfo" class="item active"><a href="personal_info.php"><B>My Info</B></a></li>
+                <li role="presentation" id="resumelink" class="item"><a href="../Resumelink/resumelink.php">Resumé Link</a></li>
+                <li role="presentation" id="applications" class="item"><a href="../Applications/applications.php">Applications</a></li>
+                <li role="presentation" id="search-job" class="item"><a href="../Search-job/search-job.php">Jobs</a></li>
+                <li role="presentation" id="settings" class="item"><a href="../Settings/settings.php">Settings</a></li>
+            </ul>
+            <div class="space"></div>
+            <ul class="nav nav-pills nav-stacked col-md-2 col-sm-3">
+                <li class="yellow"><a href="personal_info.php">Personal Info</a></li>
+                <li class="yellow"><a href="contacts_info.php">Contacts Info</a></li>
+                <li class="yellow active"><a href="work.php">Work</a></li>
+                <li class="yellow"><a href="education.php">Education</a></li>
+                <li class="yellow"><a href="certifications.php">Certifications</a></li>
+                <li class="yellow"><a href="achievements.php">Achievements</a></li>
+                <li class="yellow"><a href="skills_languages.php">Skills & Languages</a></li>
+                <li class="yellow"><a href="references.php">References</a></li>
+                <li class="yellow"><a href="portfolio.php">Portfolio</a></li>
+            </ul>
+            <div class="space-1"></div>
 
-
-        <div class="col-md-10">
-            <div class="row field">
-                <div class="col-md-6 fieldcol">
-                    <label>Work Options</label>
-                    <div class="field">
-                        <div class="col-md-3">
-                            <div class="onoffswitch">
-                                <input type="checkbox" name="onoffswitch" class="onoffswitch-checkbox" id="myonoffswitch" checked>
-                                <label class="onoffswitch-label" for="myonoffswitch">
-                                    <span class="onoffswitch-inner"></span>
-                                    <span class="onoffswitch-switch"></span>
-                                </label>
-                            </div>
+            <div class="col-md-10">
+                <div class="row field">
+                    <div class="col-md-6">
+                        <label>Work Options</label>
+                        <div class="bootstrap-switch-square">
+                            <input type="checkbox" checked data-toggle="switch" name="square-switch" id="switch-02" />
+                            <B>Willing to work night shifts</B>
                         </div>
-                        <div class="col-md-9"><h6>Willing to work night shifts</h6></div>
+                        <div class="space-2"></div>
+
+                        <div class="bootstrap-switch-square">
+                            <input type="checkbox" checked data-toggle="switch" name="square-switch" id="switch-02" />
+                            <B>Willing to relocate</B>
+                        </div>
+                        <div class="space-2"></div>
+
+                        <div class="bootstrap-switch-square">
+                            <input type="checkbox" checked data-toggle="switch" name="square-switch" id="switch-02" />
+                            <B>Looking for OJT position</B>
+                        </div>
+                        <div class="space-2"></div>
+
+                        <div class="bootstrap-switch-square">
+                            <input type="checkbox" checked data-toggle="switch" name="square-switch" id="switch-02" />
+                            <B>Willing to work overseas</B>
+                        </div>
+                        <div class="space-2"></div>
                     </div>
 
-                    <div class="field">
-                        <div class="col-md-3">
-                            <div class="onoffswitch">
-                                <input type="checkbox" name="onoffswitch" class="onoffswitch-checkbox" id="myonoffswitch" checked>
-                                <label class="onoffswitch-label" for="myonoffswitch">
-                                    <span class="onoffswitch-inner"></span>
-                                    <span class="onoffswitch-switch"></span>
-                                </label>
-                            </div>
-                        </div>
-                        <div class="col-md-9"><h6>Willing to relocate</h6></div>
-                    </div>
-
-                    <div class="field">
-                        <div class="col-md-3">
-                            <div class="onoffswitch">
-                                <input type="checkbox" name="onoffswitch" class="onoffswitch-checkbox" id="myonoffswitch" checked>
-                                <label class="onoffswitch-label" for="myonoffswitch">
-                                    <span class="onoffswitch-inner"></span>
-                                    <span class="onoffswitch-switch"></span>
-                                </label>
-                            </div>
-                        </div>
-                        <div class="col-md-9"><h6>Looking for OJT position</h6></div>
-                    </div>
-
-                    <div class="field">
-                        <div class="col-md-3">
-                            <div class="onoffswitch">
-                                <input type="checkbox" name="onoffswitch" class="onoffswitch-checkbox" id="myonoffswitch" checked>
-                                <label class="onoffswitch-label" for="myonoffswitch">
-                                    <span class="onoffswitch-inner"></span>
-                                    <span class="onoffswitch-switch"></span>
-                                </label>
-                            </div>
-                        </div>
-                        <div class="col-md-9"><h6>Willing to work overseas</h6></div>
-                    </div>
-                </div>
-
-                <div class="col-md-6 fieldcol">
-                    <div class="fieldcol">
+                    <div class="col-md-6">
                         <label>Objectives</label>
-                        <textarea id="" name="" rows="6" style="margin: 0px; height: 126px; width: 381px;"></textarea>
+                        <textarea class="form-control" id="" name="" rows="7"></textarea>
+                        <span class="counter">120 characters remaining.</span>
                     </div>
                 </div>
 
                 <div class"row field">
-                    <div class="col-md-15">
+                    <div class="col-md-6">
+                        &nbsp;
+                    </div>
+                    <div class="col-md-6">
                         <form method="post">
-                            <button class="btn btn-lg btn-hg btn-primary" style="float:right;">Save Objective</button>
+                            <button class="btn btn-lg btn-block btn-primary" style="float:right;">Save</button>
                         </form>
                     </div>
                 </div>
-            </div><br><br>
-            
-            <div class="row field">
-                <div class="col-md-6 fieldcol">
-                    <label>Work Experiences</label>
+
+                <div class="divider-1"></div>
+               
+                <div class="row field">
+                    <div class="col-md-6 fieldcol">
+                        <label>Work Experiences</label>
+                    </div>
+                    <div class="col-md-6 fieldcol">
+                        <a href="add/add-work_experience.php" class="btnforadding" style="float:right;">
+                            <span class="fa fa-plus-square"> Add Work Experience</span>
+                        </a>
+                    </div>
                 </div>
-                <div class="col-md-6 fieldcol">
-                    <a href="add/add-work_experience.php" class="btnforadding" style="float:right;">
-                        <span class="fa fa-plus-square"> Add Work Experience</span>
-                    </a>
-                </div>
-            </div>
-            <div class="row field">
+
                 <table class="table segment table-hover">
                     <thead>
                         <tr class="table-color">
@@ -170,11 +155,11 @@
                     </thead>
                     <tbody>
                         <tr>
-                            <td>arfewrfe</td>
-                            <td>fasf</td>
-                            <td>rwerfe</td>
-                            <td>rewfeddt</td>
-                            <td>09267694941</td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
                             <td>
                                 <button href="" class="btn btn-danger btnformaintenance">
                                     <i class="fa fa-trash fa-1x"></i>
@@ -185,13 +170,16 @@
                             </td>
                         </tr>
                     </tbody>
-                </table>  
+                </table>
+            </div>
+            <div class="field">
+                <div class="invisible-line"></div>
             </div>
         </div>
-        <div class="field">
-            <div class="invisible-line"></div>
-        </div>
     </div>
-</div>
+
+    <script src="../../js/jquery.min.js"></script>
+    <script src="../../js/flat-ui.min.js"></script>
+    <script src="../../js/application.js"></script>
 </body>
 </html>

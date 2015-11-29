@@ -1,4 +1,17 @@
 <!DOCTYPE html>
+
+<?php 
+
+session_start();
+if(is_null($_SESSION['StudentID'])){
+    echo "
+        <script type='text/javascript'>
+        location.href='../../../../login-student.php';
+        </script>
+        ";
+}
+?>
+
 <html lang="en">
 
 <head>
@@ -29,12 +42,6 @@
     <nav class="navbar navbar-default navbar-fixed-top navbar-shrink">
         <div class="container">
             <div class="navbar-header page-scroll">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
                 <a class="navbar-brand page-scroll" href="#page-top">Online Job Placement Management</a>
             </div>
 
@@ -52,12 +59,12 @@
     </nav><br><br>
 
 <div id="yellow-text-fields">
-<div class="container">
     <div class="white-holder">
         <ul class="nav nav-tabs">
             <li id="my_info" class="item active"><a href="../personal_info.php"><B>My Info</B></a></li>
             <li id="resumelink" class="item"><a href="../../Resumelink/resumelink.php">Resumé Link</a></li>
             <li id="applications" class="item"><a href="../../Applications/applications.php">Applications</a></li>
+            <li role="presentation" class="item"><a href="../../Search-job/search-job.php">Jobs</a></li>
             <li id="settings" class="item"><a href="../../Settings/settings.php">Settings</a></li>
         </ul>
         <div class="space"></div>
@@ -72,85 +79,133 @@
             <li class="yellow"><a href="../references.php">References</a></li>
             <li class="yellow"><a href="../portfolio.php">Portfolio</a></li>
         </ul>
+        <div class="space-1"></div>
 
         <div class"row">
             <div class="col-md-10">
                 <div class="row field">
                     <div class="col-md-6 fieldcol">
-                        <label>Company Name <span>(*)</span></label>
-                        <input type="text" class="form-control" id="fname" name="fname">
+                        <div class="form-group">
+                            <label>Company Name <span>(*)</span></label>
+                            <input type="text" class="form-control" id="" name="">
+                        </div>
                     </div>
                     <div class="col-md-6 fieldcol">
-                        <label>Company Website</label>
-                        <input type="text" class="form-control" id="fname" name="fname">
+                        <div class="form-group">
+                            <label>Company Website</label>
+                            <input type="text" class="form-control" id="" name="">
+                        </div>
                     </div>
                 </div>
                 <div class="row field">
                     <div class="col-md-6 fieldcol">
-                        <label>Industry <span>(*)</span></label>
-                        <select id="" name="" class="" style="width:100%; height:34px;">
-                            <option value></option>
-                            <option value=""></option>
-                            <option value=""></option>
-                        </select>
+                        <div class="form-group">
+                            <label>Industry <span>(*)</span></label>
+                            <select id="" name="" class="form-control" style="width:100%; height:34px;">
+                                <option value></option>
+                                <option value=""></option>
+                                <option value=""></option>
+                            </select>
+                        </div>
                     </div>
-                    <div class="col-md-2 fieldcol">
-                        <label>Duration</label>
-                        <input type="checkbox" class="form-control" id="" name="">
+                    <div class="col-md-6 fieldcol">
+                        <div class="form-group">
+                            <label>Duration</label><br>
+                            <label><input type="checkbox" name="" value=""> Currently Work Here</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="row field">
+                    <div class="col-md-3 fieldcol">
+                        <div class="form-group">
+                            <label>From <span>(*)</span></label>
+                            <select id="" name="" class="form-control" style="width:100%; height:34px;">
+                                <option value></option>
+                                <option value=""></option>
+                                <option value=""></option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col-md-3 fieldcol">
+                        <div class="form-group">
+                            <label>&nbsp;</label>
+                            <select id="" name="" class="form-control" style="width:100%; height:34px;">
+                                <option value></option>
+                                <option value=""></option>
+                                <option value=""></option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col-md-3 fieldcol">
+                        <div class="form-group">
+                            <label>To <span>(*)</span></label>
+                            <select id="" name="" class="form-control" style="width:100%; height:34px;">
+                                <option value></option>
+                                <option value=""></option>
+                                <option value=""></option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col-md-3 fieldcol">
+                        <div class="form-group">
+                            <label>&nbsp;</label>
+                            <select id="" name="" class="form-control" style="width:100%; height:34px;">
+                                <option value></option>
+                                <option value=""></option>
+                                <option value=""></option>
+                            </select>
+                        </div>
                     </div>
                 </div>
                 <div class="row field">
                     <div class="col-md-6 fieldcol">
-                        <label>From <span>(*)</span></label><br>
-                        <select id="" name="" class="" style="width:50%; height:34px;">
-                            <option value></option>
-                            <option value=""></option>
-                            <option value=""></option>
-                        </select>
-                        <select id="" name="" class="" style="width:49%; height:34px;">
-                            <option value></option>
-                            <option value=""></option>
-                            <option value=""></option>
-                        </select>
+                        <div class="form-group">
+                            <label>Position Title <span>(*)</span></label>
+                            <select id="" name="" class="form-control" style="width:100%; height:34px;">
+                                <option value></option>
+                                <option value=""></option>
+                                <option value=""></option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col-md-6 fieldcol">
+                        <div class="form-group">
+                            <label>Position Level <span>(*)</span></label>
+                            <input type="text" class="form-control" id="" name="">
+                        </div>
                     </div>
                 </div>
                 <div class="row field">
                     <div class="col-md-6 fieldcol">
-                        <label>Position Title <span>(*)</span></label>
-                        <select id="" name="" class="" style="width:100%; height:34px;">
-                            <option value></option>
-                            <option value=""></option>
-                            <option value=""></option>
-                        </select>
+                        <div class="form-group">
+                            <label>Specialization <span>(*)</span></label>
+                            <input type="text" class="form-control" id="" name="">
+                        </div>
                     </div>
-                    <div class="col-md-6 fieldcol">
-                        <label>Position Level <span>(*)</span></label>
-                        <input type="text" class="form-control" id="" name="">
+                    <div class="col-md-3 fieldcol">
+                        <div class="form-group">
+                            <label>Monthly Salary</label><br>
+                            <select id="" name="" class="form-control" style="width:100%; height:34px;">
+                                <option value></option>
+                                <option value=""></option>
+                                <option value=""></option>
+                            </select>
+                        </div>
                     </div>
-                </div>
-                <div class="row field">
-                    <div class="col-md-6 fieldcol">
-                        <label>Specialization <span>(*)</span></label>
-                        <input type="text" class="form-control" id="" name="">
-                    </div>
-                    <div class="col-md-6 fieldcol">
-                        <label>Monthly Salary</label><br>
-                        <select id="" name="" class="" style="width:50%; height:34px;">
-                            <option value></option>
-                            <option value=""></option>
-                            <option value=""></option>
-                        </select>
-                        <select id="" name="" class="" style="width:49%; height:34px;">
-                            <option value></option>
-                            <option value=""></option>
-                            <option value=""></option>
-                        </select>
+                    <div class="col-md-3 fieldcol">
+                        <div class="form-group">
+                            <label>&nbsp;</label>
+                            <input type="text" class="form-control" id="" name="">
+                        </div>
                     </div>
                 </div>
                 <div class="row field">
-                    <div class="col-md-6 fieldcol">
-                        <label>Nature of Work</label><br>
-                        <textarea id="" name="" rows="7" cols="100"></textarea>
+                    <div class="col-md-12 fieldcol">
+                        <div class="form-group">
+                            <label>Nature of Work</label><br>
+                            <textarea class="form-control" id="" name="" rows="5"></textarea>
+                            <span class="counter">150 characters remaining.</span>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -166,7 +221,6 @@
             </div>
         </div> 
     </div>
-</div>
 </div>
 </body>
 </html>

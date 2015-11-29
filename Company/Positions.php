@@ -1,4 +1,7 @@
 <!DOCTYPE html>
+<?php
+session_start();
+?>
 <html lang="en">
 
 <head>
@@ -166,6 +169,14 @@ background-color: #006681;
               margin-left: 1000px;
               margin-top: -70px;
             }
+.white-holder {
+    background-color: #f7f7f7;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
+    padding: 80px 25px;
+    margin: 10px;
+    max-width:100%;
+    max-height:100%;
+}            
 </style>
 
 <body id="page-top" class="index resume">
@@ -194,55 +205,149 @@ background-color: #006681;
         </div>
     </nav><br><br>
 
-     <div class="resume_bg">
-        <ul class="nav nav-tabs">
+     <div class="white-holder">
+       <ul class="nav nav-tabs">
             <li role="presentation" id="company" class="item "><a href="Company.php">Home</a></li>
             <li role="presentation" id="dbase" class="item active" ><a href="Positions.php">Positions</a></li>
-            <li role="presentation" id="dbase" class="item" ><a href="Database.php">Database</a></li>
+            <li role="presentation" id="calendar" class="item " ><a href="Calendar.php">Calendar</a></li>
             <li role="presentation" id="report" class="item"><a href="Report.php">Reports</a></li>
-            <li role="presentation" id="setting" class="item " ><a href="Settings.php">Settings</a></li>
-            <li role="presentation" id="resumelink" class="item"><a href="Resumesearch.php">Resumelink Search</a></li>           
+            <li role="presentation" id="setting" class="item" ><a href="Settings.php">Settings</a></li>
+            <li role="presentation" id="resumelink" class="item"><a href="Resumesearch.php">Resumelink Search</a></li>
+            <li role="presentation" id="studentlist" class="item"><a href="StudentList.php">Student List</a></li>
+            <li role="presentation" id="applicantlist" class="item "><a href="ApplicantList.php">Applicant List</a></li>
         </ul>
 
         <div class="space1"></div>
        
         <ul class="nav nav-pills" id = "submenu">
-            <li class="yellow  active "><a href="Positions.php">All</a></li>
-            <li class="yellow"><a href="#">Active</a></li>
-            <li class="yellow"><a href="#">Draft</a></li>
-            <li class="yellow"><a href="CreatePosition.php">Create</a></li>
+            <li class="yellow  active "><a href="Positions.php">Position List</a></li>
+            <li class="yellow"><a href="CreatePosition.php">Create Position</a></li>
         </ul>
-
+        <br>
         
         <div class = "container">
             <div class = "col-md-12">
-                <h3>User's List</h3>
-                <a id="Adduser" href="Position_AddUser.php" class=" btn btn-default"> Add User</a>
+            <?php
+                if(isset($_GET['id'])){
+                    $id=$_GET['id'];
+                    if($id=="2"){
+                        echo '<div class="alert alert-success">
+                        <span class="glyphicon glyphicon-info-sign"></span> 
+                        Achievement successfully updated.
+                        </div>';
+                    }
+                    elseif($id=="3"){
+                        echo '<div class="alert alert-success">
+                        <span class="glyphicon glyphicon-info-sign"></span> 
+                        Achievement successfully deleted.
+                        </div>';
+                    }
+                    elseif($id=="1"){
+                        echo '<div class="alert alert-success">
+                        <span class="glyphicon glyphicon-info-sign"></span> 
+                        Achievement successfully added.
+                        </div>';
+                    }
+                }   
+            ?>
+                <h3>List of Positions</h3>
+                
         <table class = "Applicants" width = "100%" cellpadding = "0">
-           <thead>
+         
+
+<?php
+include ("CONNECTION.php");
+
+
+$x = $_SESSION['Email'];
+        $PID = 'PositionID';
+        $plevel = 'PositionLevel';
+        $status = 'Status';
+        $pdatef = 'PostingDateFrom';
+        $pdatet = 'PostingDateTo';
+        
+        $query = ("SELECT * FROM comppositiontbl WHERE Email = '$x'");
+        $Result = mysql_query($query);
+        ?>  
+
+        <table class = 'Applicants' width = '100%' cellpadding = '0'>
+          <thead>
            <tr>
     
            </tr>    
                 <tr>
-                    <th width= "40%" class = "tabletitle">Positions</th>
-                    <th width = "25%" class = "tabletitle">Status </th>
-                    <th width = "25%" class = "tabletitle"> Posted </th>
-                    <th width = "10%" class = "tabletitle"> </th>
+                    <th width= '30%' class = 'tabletitle'>Positions</th>
+                    <th width = '20%' class = 'tabletitle'>From</th>
+                    <th width = '20%' class = 'tabletitle'>To</th>
+                    <th width = '20%' class = 'tabletitle'>Status</th>
+                    <th width = '15%' class = 'tabletitle'>Action</th>
                 <tr>
             </thead>
-
             <tbody>
+
+            <?php
+
+            while ($row = mysql_fetch_array($Result)) {
+              ?>
+            
+
+            
                 <tr>
-                   <td></td>
-                   <td> </td>
-                   <td> </td>
-                   <td> <a id="Edit" href="#" class=" btn btn-default"> <i class="fa fa-pencil"></i></a> 
-                        <a id="Delete" href="#" class=" btn btn-danger"> <i class="fa fa-minus-square"></i> </a> 
-                   </td>
-                </tr> 
+                    <td width= 30% class = tabletitle>
+                      <a href = "ViewPosition.php?PID=<?php echo $row[$PID]; ?>">  <?php echo $row[$plevel]; ?> </a>
+                    </td>
+                    <td width = 20% class = tabletitle><?php echo $row[$pdatef]; ?></td>
+                    <td width = 20% class = tabletitle><?php echo $row[$pdatet]; ?></td>
+                    <td width = 20% class = tabletitle><?php echo $row[$status]; ?></td>
+                    <form method = "POST">
+                    <input type="hidden" name="delete_id" value="<?php echo $row['PositionID']; ?>" />
+                    <td width= 15%>
+                        <button  name = 'btndelete' href="" class='btn btn-danger'> 
+                        <i class='fa fa-minus-square'></i> 
+                        </button> 
+                        <button id='Edit' name="btnedit" href="" class='btn btn-default'> 
+                        <i class='fa fa-pencil'></i>
+                        </button> 
+                    </td>
+                    </form>
+                    <tr>
+
+             <?php
+                }
+            ?>
             </tbody>
+      
         </table>
-            </div>
+        </div>
+    </div>
+        <div class="field">
+        <div class="invisible-line"></div>
     </div>
 </body>
- 
+<?php
+include('CONNECTION.php');
+
+    if(isset($_POST['btndelete'])){
+
+    $Z = $_POST['delete_id'];
+    
+    $query = "DELETE FROM comppositiontbl WHERE PositionID='$Z'";
+    $Result = mysql_query($query);
+
+    echo "
+            <script type='text/javascript'>
+            location.href='Positions.php?id=3';
+            </script>
+            ";
+}
+if(isset($_POST['btnedit'])){
+    $Z = $_POST['delete_id'];
+    $_SESSION['delete_id'] = $Z;
+    echo "
+            <script type='text/javascript'>
+            location.href='EditPosition.php';
+            </script>
+            ";
+}
+?>
+ </html>

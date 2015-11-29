@@ -1,4 +1,7 @@
 <!DOCTYPE html>
+<?php 
+ session_start();
+?>
 <html lang="en">
 
 <head>
@@ -166,6 +169,14 @@ background-color: #006681;
               margin-left: 1000px;
               margin-top: -70px;
             }
+.white-holder {
+    background-color: #f7f7f7;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
+    padding: 80px 25px;
+    margin: 10px;
+    max-width:100%;
+    max-height:100%;
+}              
 </style>
 
 <body id="page-top" class="index resume">
@@ -198,10 +209,10 @@ background-color: #006681;
        <ul class="nav nav-tabs">
             <li role="presentation" id="company" class="item "><a href="Company.php">Home</a></li>
             <li role="presentation" id="dbase" class="item" ><a href="Positions.php">Positions</a></li>
-            <li role="presentation" id="dbase" class="item" ><a href="Database.php">Database</a></li>
-            <li role="presentation" id="report" class="item"><a href="Report.php">Reports</a></li>
+            <li role="presentation" id="report" class="item "><a href="Report.php">Reports</a></li>
             <li role="presentation" id="setting" class="item active" ><a href="Settings.php">Settings</a></li>
-            <li role="presentation" id="resumelink" class="item"><a href="Resumesearch.php">Resumelink Search</a></li>           
+            <li role="presentation" id="resumelink" class="item"><a href="Resumesearch.php">Resumelink Search</a></li>
+            <li role="presentation" id="studentlist" class="item"><a href="StudentList.php">StudentList</a></li>
         </ul>
 
         <div class="space1"></div>
@@ -216,31 +227,125 @@ background-color: #006681;
         
         <div class = "container">
             <div class = "col-md-12">
+            <br>
+            <?php
+                if(isset($_GET['id'])){
+                    $id=$_GET['id'];
+                    if($id=="UserEdit"){
+                        echo '<div class="alert alert-success">
+                        <span class="glyphicon glyphicon-info-sign"></span> 
+                        Achievement successfully updated.
+                        </div>';
+                    }
+                    elseif($id=="UserDelete"){
+                        echo '<div class="alert alert-success">
+                        <span class="glyphicon glyphicon-info-sign"></span> 
+                        Achievement successfully deleted.
+                        </div>';
+                    }
+                    elseif($id=="UserAdd"){
+                        echo '<div class="alert alert-success">
+                        <span class="glyphicon glyphicon-info-sign"></span> 
+                        Achievement successfully added.
+                        </div>';
+                    }
+                }   
+            ?>
                 <h3>User's List</h3>
                 <a id="Adduser" href="Settings_Adduser.php" class=" btn btn-default"> Add User</a>
-        <table class = "Applicants" width = "100%" cellpadding = "0">
-           <thead>
+       <?php
+       include('CONNECTION.php');
+       
+
+        $x = $_SESSION['Email'];
+
+       
+
+        $query = ("SELECT * FROM comaddusertbl WHERE Email = '$x'");
+        $Result = mysql_query($query);
+
+         ?>
+
+     <table class = 'Applicants' width = '100%' cellpadding = '0'>
+          <thead>
            <tr>
     
            </tr>    
                 <tr>
-                    <th width= "40%" class = "tabletitle">Positions</th>
-                    <th width = "25%" class = "tabletitle">Date Posted </th>
-                    <th width = "25%" class = "tabletitle"> Number of Applicants </th>
-                    <th width = "10%" class = "tabletitle"> </th>
+                    <th width= '40%' class = 'tabletitle'>Name</th>
+                    <th width = '25%' class = 'tabletitle'>Position </th>
+                    <th width = '25%' class = 'tabletitle'>Department </th>
+                    <th width = '10%' class = 'tabletitle'> </th>
                 <tr>
             </thead>
-
             <tbody>
+
+            <?php
+
+            while ($row = mysql_fetch_array($Result)) {
+
+              $UserID = 'UserID';
+              $FName = 'FirstName';
+              $LName = 'LastName';
+              $Position = 'Position';
+              $Department = 'Department';
+
+              ?>
+          
+
+            
                 <tr>
-                   <td>Tim Rojas</td>
-                   <td> CEO</td>
-                   <td> Manager</td>
-                   <td> </td>
-                </tr> 
+                    <td width= 40% class = tabletitle>
+                     <a href = "#"> <?php echo $row[$FName]; echo "&nbsp;"; echo $row[$LName]; ?> </a>
+                    </td>
+                    <td width = 25% class = tabletitle><?php echo $row[$Position]; ?></td>
+                    <td width = 25% class = tabletitle><?php echo $row[$Department]; ?></td>
+                    <form method = "POST">
+                    <input type="hidden" name="delete_id" value="<?php echo $row['UserID']; ?>" />
+                    <td width = 10% class = tabletitle>
+                        <button id='Delete' name = 'btndelete' href="" class='btn btn-danger'> 
+                        <i class='fa fa-minus-square'></i> </button> 
+                        <button id='Edit' name="btnedit" href="" class='btn btn-default'> 
+                        <i class='fa fa-pencil'></i></button> 
+                    </td>
+                    </form>
+                    <tr>
+
+                      <?php
+                        }
+                      ?>
             </tbody>
         </table>
             </div>
     </div>
+            <div class="field">
+                <div class="invisible-line"></div>
+            </div>  
 </body>
- 
+  
+  <?php
+include('CONNECTION.php');
+
+if(isset($_POST['btndelete'])){
+
+    $Z = $_POST['delete_id'];
+
+    $query = "DELETE FROM comaddusertbl WHERE UserID='$Z'";
+    $Result = mysql_query($query);
+
+    echo "
+            <script type='text/javascript'>
+            location.href='Settings_Users.php?id=UserDelete';
+            </script>
+            ";
+} 
+if(isset($_POST['btnedit'])){
+    $Z = $_POST['delete_id'];
+    $_SESSION['delete_id'] = $Z;
+    echo "
+            <script type='text/javascript'>
+            location.href='Edit_User.php';
+            </script>
+            ";
+}
+?>

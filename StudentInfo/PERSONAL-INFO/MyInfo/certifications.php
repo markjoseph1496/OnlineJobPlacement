@@ -5,6 +5,14 @@ session_start();
 
 $x = $_SESSION['StudentID'];
 
+if(is_null($x)){
+    echo "
+        <script type='text/javascript'>
+        location.href='../../../login-student.php';
+        </script>
+        ";
+}
+
 $CertificationID = 'CertificationID';
 $Certification = 'Certification';
 $YearTaken = 'YearTaken';
@@ -23,11 +31,17 @@ $result = mysql_query($qry);
 
     <title>Online JPMS</title>
 
+    <script type="text/javascript" src="../../js/jquery.min.js"></script>
+    <script src="../../js/bootstrap.min.js"></script>
+    <script src="../../js/bootbox.min.js"></script>
+
+
     <!-- Bootstrap Core CSS -->
     <link href="../../css/bootstrap.min.css" rel="stylesheet">
 
     <!-- CSS -->
     <link href="../../css/agency.css" rel="stylesheet">
+    <link href="../../css/flat-ui.min.css" rel="stylesheet">
 
     <!-- Fonts -->
     <link href="../../font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
@@ -38,15 +52,32 @@ $result = mysql_query($qry);
 </head>
 
 <body id="page-top" class="index bg">
+    <script>
+            $(document).on("click", ".deleteCertification", function(result) {
+                bootbox.confirm({
+                  title: 'Delete',
+                  message: 'Are you sure you want to delete this Information?',
+                  buttons: {
+                      'cancel': {
+                          label: 'Cancel',
+                          
+                      },
+                      'confirm': {
+                          label: 'Delete',
+                          className: 'btn-danger pull-right'
+                      }
+                  },
+                  callback: function(result) {
+                      if (result) {
+                           window.location = $("a[data-bb='confirmDeleteCertification']").attr('href');
+                      }
+                  }
+              });
+            });
+    </script>
     <nav class="navbar navbar-default navbar-fixed-top navbar-shrink">
         <div class="container">
             <div class="navbar-header page-scroll">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
                 <a class="navbar-brand page-scroll" href="#page-top">Online Job Placement Management</a>
             </div>
 
@@ -56,19 +87,20 @@ $result = mysql_query($qry);
                         <a href="#page-top"></a>
                     </li>
                     <li>
-                        <a class="page-scroll" href="#">Sign Out</a>
+                        <a href="../../../index.php?id=SignOut">Sign Out</a>
                     </li>
                 </ul>
             </div>
         </div>
     </nav><br><br>
 
-    <div class="container">
+    <div id="yellow-text-fields">
         <div class="white-holder">
             <ul class="nav nav-tabs">
                 <li role="presentation" id="myinfo" class="item active"><a href="personal_info.php"><B>My Info</B></a></li>
                 <li role="presentation" id="resumelink" class="item"><a href="../Resumelink/resumelink.php">Resumé Link</a></li>
                 <li role="presentation" id="applications" class="item"><a href="../Applications/applications.php">Applications</a></li>
+                <li role="presentation" id="search-job" class="item"><a href="../Search-job/search-job.php">Jobs</a></li>
                 <li role="presentation" id="settings" class="item"><a href="../Settings/settings.php">Settings</a></li>
             </ul>
             <div class="space"></div>
@@ -83,9 +115,33 @@ $result = mysql_query($qry);
                 <li class="yellow"><a href="references.php">References</a></li>
                 <li class="yellow"><a href="portfolio.php">Portfolio</a></li>
             </ul>
+            <div class="space-1"></div>
 
             <div class"row">
                 <div class="col-md-10">
+                     <?php
+                    if(isset($_GET['id'])){
+                        $id=$_GET['id'];
+                        if($id=="CertificationEdit"){
+                            echo '<div class="alert alert-success">
+                            <span class="glyphicon glyphicon-info-sign"></span> 
+                            Certification successfully updated.
+                            </div>';
+                        }
+                        elseif($id=="CertificationDelete"){
+                            echo '<div class="alert alert-success">
+                            <span class="glyphicon glyphicon-info-sign"></span> 
+                            Certification successfully deleted.
+                            </div>';
+                        }
+                        elseif($id=="CertificationAdd"){
+                            echo '<div class="alert alert-success">
+                            <span class="glyphicon glyphicon-info-sign"></span> 
+                            Certification successfully added.
+                            </div>';
+                        }
+                    }
+                    ?>
                     <div class="row field">
                         <div class="col-md-6 fieldcol">
                             <label>Certifications</label>
@@ -103,28 +159,31 @@ $result = mysql_query($qry);
                                 <tr class="table-color">
                                     <th>Certification</th>
                                     <th>Year Taken</th>
+                                    <th>Attachment</th>
                                     <th width="15%">&nbsp;</th>
                                 </tr>
                             </thead>
                             <tbody>
-                                  <?php
+                                  <?php 
+                                        $ctr = 0;
                                         while($rows = mysql_fetch_array($result)){
+                                        $ctr++;
                                     ?>
                                 <tr class="certification">
                                   
                                     <td><?php echo $rows[$Certification]; ?></td>
                                     <td><?php echo $rows[$YearTaken]; ?></td>
-                                    <form method = "POST">
-                                    <input type="hidden" name="delete_id" value="<?php echo $rows['CertificationID']; ?>" />
+                                    <td>Attachment</td>
                                     <td>
-                                        <button name ="btnDelete" href="" class="btn btn-danger btnformaintenance">
+                                       <a href=# class="btn btn-danger btnformaintenance deleteCertification">
                                             <i class="fa fa-trash fa-1x"></i>
-                                        </button>
-                                        <button name ="btnEdit" href="" class="btn btn-default btnformaintenance">
+                                        </a>
+                                        <a data-bb="confirmDeleteCertification" class="bb-alert alert alert-info" style="display: none;" href="delete.php?delete_CertificationID=<?php echo $rows['CertificationID'];?>">
+                                        
+                                        <a href="edit/edit-certification.php?EditCertificationID=<?php echo $rows['CertificationID'];?>" class="btn btn-default btnformaintenance">
                                             <i class="fa fa-pencil-square-o fa-1x"></i>
-                                        </button>
+                                        </a>
                                     </td>
-                                    </form>
                                 </tr>
                                 <?php
                                     }
@@ -140,32 +199,4 @@ $result = mysql_query($qry);
         </div>
     </div>
 </body>
-
-<?php
-
-include('connection.php');
-
-if(isset($_POST['btnDelete'])){
-
-    $Z = $_POST['delete_id'];
-    
-    $query = "DELETE FROM certificationtbl WHERE CertificationID='$Z'";
-    $result = mysql_query($query);
-
-    echo "
-            <script type='text/javascript'>
-            location.href='certifications.php';
-            </script>
-            ";
-} 
-if(isset($_POST['btnEdit'])){
-    $Z = $_POST['delete_id'];
-    $_SESSION['delete_id'] = $Z;
-    echo "
-            <script type='text/javascript'>
-            location.href='Edit/edit-certification.php';
-            </script>
-            ";
-}
-?>
 </html>

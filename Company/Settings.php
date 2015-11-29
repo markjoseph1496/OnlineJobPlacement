@@ -1,4 +1,26 @@
 <!DOCTYPE html>
+<?php
+include('CONNECTION.php');
+session_start();
+
+$x = $_SESSION['Email'];
+
+$qry = "SELECT * FROM companyinfotbl WHERE Email ='$x'";
+$Result = mysql_query($qry);
+    while ($qry = mysql_fetch_Array($Result)) {
+
+        $CName = $qry['CompanyName'];
+        $Industry = $qry['Industry'];
+        $classification = $qry['Classification'];
+        $address = $qry['Address'];
+        $State = $qry['StateRegion'];
+        $City = $qry['City'];
+        $Postal = $qry['PostalCode'];
+        $Phone = $qry['PhoneNum'];
+        $Mobile = $qry['MobileNum'];
+        $Fax = $qry['Fax'];
+    }
+?>
 <html lang="en">
 
 <head>
@@ -89,7 +111,7 @@ h1,  {
     height:1000px;
 }
 
- #save
+ #btnsave
             {
               width: 300px;
               height: 40px;
@@ -98,7 +120,7 @@ h1,  {
               border-radius: 4px 4px 4px 4px;
               margin-left: 500px;
             }
-            #save:hover
+            #btnsave:hover
             {
               background-color: #006681;
             }   
@@ -158,6 +180,23 @@ background-color: #006681;
 #submenu{
     margin-left: 50px;
 }  
+.info {
+  margin-left: 150px;
+}
+.white-holder {
+    background-color: #f7f7f7;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
+    padding: 80px 25px;
+    margin: 10px;
+    max-width:100%;
+    max-height:100%;
+}  
+#panel{
+    margin-left: -200px;
+}
+#yellow-text-fields label span {
+    color: #d95c5c;
+}
 </style>
 
 <body id="page-top" class="index resume">
@@ -186,29 +225,41 @@ background-color: #006681;
         </div>
     </nav><br><br>
 
-     <div class="resume_bg">
-        <ul class="nav nav-tabs">
-            <li role="presentation" id="company" class="item "><a href="Company.php">Home</a></li>
+     <div class="white-holder">
+     <ul class="nav nav-tabs">
+            <li role="presentation" id="company" class="item"><a href="Company.php">Home</a></li>
             <li role="presentation" id="dbase" class="item" ><a href="Positions.php">Positions</a></li>
-            <li role="presentation" id="dbase" class="item" ><a href="Database.php">Database</a></li>
-            <li role="presentation" id="report" class="item"><a href="Report.php">Reports</a></li>
+            <li role="presentation" id="calendar" class="item " ><a href="Calendar.php">Calendar</a></li>
+            <li role="presentation" id="report" class="item "><a href="Report.php">Reports</a></li>
             <li role="presentation" id="setting" class="item active" ><a href="Settings.php">Settings</a></li>
-            <li role="presentation" id="resumelink" class="item"><a href="Resumesearch.php">Resumelink Search</a></li>           
+            <li role="presentation" id="resumelink" class="item"><a href="Resumesearch.php">Resumelink Search</a></li>
+            <li role="presentation" id="studentlist" class="item"><a href="StudentList.php">Student List</a></li>
+            <li role="presentation" id="applicantlist" class="item "><a href="ApplicantList.php">Applicant List</a></li>
         </ul>
 
         <div class="space1"></div>
        
         <ul class="nav nav-pills" id = "submenu">
             <li class="yellow active"><a href="Settings.php">Company</a></li>
-            <li class="yellow"><a href="Settings_Calendar.php">Calendar</a></li>
-            <li class="yellow"><a href="Settings_Users.php">User</a></li>
             <li class="yellow"><a href="Settings_MyAccount.php">My Account</a></li>
         </ul>
-
+    <div id="yellow-text-fields">
         <div class="space"></div>
         <div class = "container">
+         <?php
+                if(isset($_GET['id'])){
+                    $id=$_GET['id'];
+                    if($id=="SettingEdit"){
+                        echo '<div class="alert alert-success">
+                        <span class="glyphicon glyphicon-info-sign"></span> 
+                        Achievement successfully updated.
+                        </div>';
+                    } 
+                }  
+            ?>
+            <div class = "info"> 
             <form method = "POST">
-            <div class = "col-md-6">   
+            <div class = "col-md-8">   
                 <div class = "panel panel-warning" id = "panel">
                 <div class = "panel-heading">
                 <h3 class = "panel-title">Company Details</h3>
@@ -218,10 +269,10 @@ background-color: #006681;
                 <tbody>
                 <tr>
                 <td> 
-                    <label = "usr" class = "control-label"> Company Name: </label>
+                    <label>Company Name<span>(*)</span></label><br>
                  </td>
                 <td> 
-                    <input type = "text" name = "cname" id = "usr" class = "form-control" >
+                    <input type = "text" name = "cname" id = "usr" class = "form-control" value = "<?php echo $CName; ?>" >
                 </td>
                 </tr>
                 
@@ -230,7 +281,7 @@ background-color: #006681;
                     <label = "usr" class = "control-label"> Companysite URL: </label>
                  </td>
                 <td> 
-                    http://www.jobs180.com/RojasCorpInc
+                    http://www.sample.com/RojasCorpInc
                 </td>
                 </tr>
 
@@ -245,99 +296,73 @@ background-color: #006681;
 
                 <tr>
                 <td> 
-                    <label = "usr" class = "control-label"> Industry: </label>
+                    <label>Industry<span>(*)</span></label><br>
                  </td>
                 <td> 
-                    <select id="industry" name="industry" class="industry" style="width:100%; height:30px;">
-                                           <option value = "ind">  </option>
-                                           <option value = "acc"> Accounting / Audit </option>
-                                            <option value = "amp">Advertising / Marketing Promotion </option>
-                                            <option value = "aaa">Aerospace/Aviation/Airline </option>
-                                            <option value = "appf">Agricultural/Plantation/Poultry/Fisheries </option>
-                                            <option value = "af">Apparel/Fashion </option>
-                                            <option value = "ad">Arts/Design </option>
-                                            <option value = "aav"> Automobile/Automotive Ancillary/Vehicle </option>
+                    <select id="industry" name="industry" class="industry" style="width:100%; height:30px;"  ?>">
+                                           <option value = "ind" <?php if($Industry=="ind") echo 'selected="selected"'; ?> >  </option>
+                                           <option value = "acc" <?php if($Industry=="acc") echo 'selected="selected"'; ?> > Accounting / Audit </option>
+                                            <option value = "amp" <?php if($Industry=="amp") echo 'selected="selected"'; ?> >Advertising / Marketing Promotion </option>
+                                            <option value = "aaa" <?php if($Industry=="aaa") echo 'selected="selected"'; ?> >Aerospace/Aviation/Airline </option>
+                                            <option value = "appf" <?php if($Industry=="appf") echo 'selected="selected"'; ?> >Agricultural/Plantation/Poultry/Fisheries </option>
+                                            <option value = "af" <?php if($Industry=="af") echo 'selected="selected"'; ?> >Apparel/Fashion </option>
+                                            <option value = "ad" <?php if($Industry=="ad") echo 'selected="selected"'; ?> >Arts/Design </option>
+                                            <option value = "aav" <?php if($Industry=="aav") echo 'selected="selected"'; ?> > Automobile/Automotive Ancillary/Vehicle </option>
                     </select>
                 </td>
                 </tr>
 
                 <tr>
                 <td> 
-                    <label = "usr" class = "control-label"> Classification: </label>
+                    <label>Classification<span>(*)</span></label><br>
                  </td>
                 <td> 
                     <select id="classification" name="classification" class="classification" style="width:100%; height:30px;">
                                            <option value = "">  </option>
-                                           <option value = "csme"> Corporate/SME </option>
-                                            <option value = "iag">Institutions/ (Associations,Government) </option>
-                                            <option value = "obpo">Outsourcing/BPO</option>
-                                            <option value = "appf">Recruitment Firm/Consultancy</option>
+                                           <option value = "csme" <?php if($classification=="csme") echo 'selected="selected"'; ?> > Corporate/SME </option>
+                                            <option value = "iag" <?php if($classification=="iag") echo 'selected="selected"'; ?> >Institutions/ (Associations,Government) </option>
+                                            <option value = "obpo" <?php if($classification=="obpo") echo 'selected="selected"'; ?> >Outsourcing/BPO</option>
+                                            <option value = "appf" <?php if($classification=="appf") echo 'selected="selected"'; ?> >Recruitment Firm/Consultancy</option>
                     </select>
                 </td>
                 </tr>
                 
                 <tr>
                 <td> 
-                    <label = "usr" class = "control-label"> Address: </label>
+                    <label>Address<span>(*)</span></label><br>
                  </td>
                 <td> 
-                   <textarea name = "address" id = "add" rows="3" cols= "47"></textarea>
+                   <input type = "text" name = "address" id = "address" class = "form-control" value = "<?php echo $address; ?>" >
                 </td>
                 </tr>
 
-                <tr>
-                <td> 
-                    <label = "usr" class = "control-label"> State Region: </label>
-                 </td>
-                <td> 
-                    <select id="state" name="state" class="state" style="width:100%; height:34px;">
-                                            <option value="select">Please select One</option>
-                                            <option value="ncr">NCR</option>
-                                            <option value="car">CAR</option> 
-                                            <option value="ilo">Ilocos Region</option> 
-                                            <option value="cag">Cagayan Valley</option> 
-                                            <option value="cen">Central Luzon</option> 
-                                            <option value="cala">CALABARZON</option> 
-                                            <option value="mima">MIMAROPA</option> 
-                                            <option value="bicol">Bicol Region</option>
-                                            <option value="west">Western Visayas</option>
-                                            <option value="cent">Central Visayas</option>
-                                            <option value="east">Eastern Visayas</option>
-                                            <option value="zam">Zamboanga Peninsula</option>
-                                            <option value="north">Northern Mindanao</option>
-                                            <option value="dav">Davao Region</option>
-                                            <option value="sock">SOCCKSCARGEN</option>
-                                            <option value="cara">Caraga Region</option>
-                                            <option value="armm">ARMM</option>
-                                        </select>
-                </td>
-                </tr>
+                
 
                 <tr>
                 <td> 
                     <label = "usr" class = "control-label"> City: </label>
                  </td>
                 <td> 
-                    <select id="city" name="city" class="city" style="width:100%; height:34px;">
-                                            <option value="select">Please select One</option>
-                                            <option value="ncr">NCR</option>
-                                            <option value="car">CAR</option> 
-                                            <option value="ilo">Ilocos Region</option> 
-                                            <option value="cag">Cagayan Valley</option> 
-                                            <option value="cen">Central Luzon</option> 
-                                            <option value="cala">CALABARZON</option> 
-                                            <option value="mima">MIMAROPA</option> 
-                                            <option value="bicol">Bicol Region</option>
-                                            <option value="west">Western Visayas</option>
-                                            <option value="cent">Central Visayas</option>
-                                            <option value="east">Eastern Visayas</option>
-                                            <option value="zam">Zamboanga Peninsula</option>
-                                            <option value="north">Northern Mindanao</option>
-                                            <option value="dav">Davao Region</option>
-                                            <option value="sock">SOCCKSCARGEN</option>
-                                            <option value="cara">Caraga Region</option>
-                                            <option value="armm">ARMM</option>
-                                        </select>
+                   <select id="City" name="City" class="form-control" style="width:100%; height:34px;">
+                                        <option value="">- Please select one -</option>
+                                        <option value="Caloocan City" <?php if($City=="Caloocan City") echo 'selected="selected"'; ?>>Caloocan City</option>
+                                        <option value="Las Pińas City" <?php if($City=="Las Pińas City") echo 'selected="selected"'; ?>>Las Pińas City</option>
+                                        <option value="Makati City" <?php if($City=="Makati City") echo 'selected="selected"'; ?>>Makati City</option>
+                                        <option value="Malabon City" <?php if($City=="Malabon City") echo 'selected="selected"'; ?>>Malabon City</option>
+                                        <option value="Mandaluyong City" <?php if($City=="Mandaluyong City") echo 'selected="selected"'; ?>>Mandaluyong City</option>
+                                        <option value="Manila" <?php if($City=="Manila") echo 'selected="selected"'; ?>>Manila</option>
+                                        <option value="Marikina City" <?php if($City=="Marikina City") echo 'selected="selected"'; ?>>Marikina City</option>
+                                        <option value="Muntinlupa City" <?php if($City=="Muntinlupa City") echo 'selected="selected"'; ?>>Muntinlupa City</option>
+                                        <option value="Navotas City" <?php if($City=="Navotas City") echo 'selected="selected"'; ?>>Navotas City</option>
+                                        <option value="Parańaque City" <?php if($City=="Parańaque City") echo 'selected="selected"'; ?>>Parańaque City</option>
+                                        <option value="Pasay City" <?php if($City=="Pasay City") echo 'selected="selected"'; ?>>Pasay City</option>
+                                        <option value="Pasig City" <?php if($City=="Pasig City") echo 'selected="selected"'; ?>>Pasig City</option>
+                                        <option value="Pateros City" <?php if($City=="Pateros City") echo 'selected="selected"'; ?>>Pateros City</option>
+                                        <option value="Quezon City" <?php if($City=="Quezon City") echo 'selected="selected"'; ?>>Quezon City</option>
+                                        <option value="San Juan City" <?php if($City=="San Juan City") echo 'selected="selected"'; ?>>San Juan City</option>
+                                        <option value="Taguig City" <?php if($City=="Taguig City") echo 'selected="selected"'; ?>>Taguig City</option>
+                                        <option value="Valenzuela City" <?php if($City=="Valenzuela City") echo 'selected="selected"'; ?>>Valenzuela City</option>
+                                    </select>
                 </td>
                 </tr>
 
@@ -346,16 +371,23 @@ background-color: #006681;
                     <label = "usr" class = "control-label"> Postal Code: </label>
                  </td>
                 <td> 
-                    <input type = "text" name = "postal" id = "usr" class = "form-control" >
+                    <input type = "text" name = "postal" id = "usr" class = "form-control" value = "<?php echo $Postal; ?>">
                 </td>
                 </tr>
 
                  <tr>
                 <td> 
-                    <label = "usr" class = "control-label"> Contact Number: </label>
+                    <label>Phone Number<span>(*)</span></label><br>
                  </td>
                 <td> 
-                    <input type = "text" name = "contact" id = "usr" class = "form-control">
+                    <input type = "text" name = "phonenum" id = "usr" class = "form-control" value = "<?php echo $Phone; ?>">
+                </td>
+                </tr>
+                <td> 
+                    <label>Mobile Number<span>(*)</span></label><br>
+                 </td>
+                <td> 
+                    <input type = "text" name = "mobilenum" id = "usr" class = "form-control" value = "<?php echo $Mobile; ?>">
                 </td>
                 </tr>
 
@@ -364,7 +396,7 @@ background-color: #006681;
                     <label = "usr" class = "control-label"> Fax: </label>
                  </td>
                 <td> 
-                    <input type = "text" name = "fax" id = "usr" class = "form-control">
+                    <input type = "text" name = "fax" id = "usr" class = "form-control" value = "<?php echo $Fax; ?>">
                 </td>
                 </tr>
 
@@ -373,136 +405,54 @@ background-color: #006681;
             </div>
             </div>
             </div>
-            <!--Billing-->
-            <div class = "col-md-6">   
-                <div class = "panel panel-warning">
-                <div class = "panel-heading">
-                <h3 class = "panel-title">Billing Details</h3>
+            </div>
+
+                        <div class="col-md-1 col-sm-6 fieldcol">
+                <label>Photo</label>
+                <input id="uploadFile" type="file" name="fileToUpload" class="img"><br>
+                <div id="imagePreview">
+                    <img src="<?php echo $ProfileImage; ?>" id="Image1" alt="" style="width:250px;height:250px;">
+                    <div class="space"></div>
+                    <div class="space"></div>
+                        <button name="" type="" id="" class="btn btn-hg btn-primary" name="btnDelete">Delete Image</button>
                 </div>
-            <div class = "panel-body">
-               <table class = "infotable">
-                <tbody>
-                
-                <tr>
-                <td> 
-                    <label = "usr" class = "control-label"> Contact Person: </label>
-                 </td>
-                <td> 
-                    <input type = "text" name = "person" id = "usr" class = "form-control" >
-                </td>
-                </tr>
-                
-                <tr>
-                <td> 
-                    <label = "usr" class = "control-label"> Address1: </label>
-                 </td>
-                <td> 
-                   <input type = "text" name = "address1" id = "usr" class = "form-control" ></input>
-                </td>
-                </tr>
-
-                <tr>
-                <td> 
-                    <label = "usr" class = "control-label"> Address2: </label>
-                 </td>
-                <td> 
-                   <input type = "text" name = "address2" id = "usr" class = "form-control"></input>
-                </td>
-                </tr>
-
-                <tr>
-                <td> 
-                    <label = "usr" class = "control-label"> State Region: </label>
-                 </td>
-                <td> 
-                    <select id="state" name="state" class="state" style="width:100%; height:34px;">
-                                            <option value="select">Please select One</option>
-                                            <option value="ncr">NCR</option>
-                                            <option value="car">CAR</option> 
-                                            <option value="ilo">Ilocos Region</option> 
-                                            <option value="cag">Cagayan Valley</option> 
-                                            <option value="cen">Central Luzon</option> 
-                                            <option value="cala">CALABARZON</option> 
-                                            <option value="mima">MIMAROPA</option> 
-                                            <option value="bicol">Bicol Region</option>
-                                            <option value="west">Western Visayas</option>
-                                            <option value="cent">Central Visayas</option>
-                                            <option value="east">Eastern Visayas</option>
-                                            <option value="zam">Zamboanga Peninsula</option>
-                                            <option value="north">Northern Mindanao</option>
-                                            <option value="dav">Davao Region</option>
-                                            <option value="sock">SOCCKSCARGEN</option>
-                                            <option value="cara">Caraga Region</option>
-                                            <option value="armm">ARMM</option>
-                                        </select>
-                </td>
-                </tr>
-
-                <tr>
-                <td> 
-                    <label = "usr" class = "control-label"> City: </label>
-                 </td>
-                <td> 
-                    <select id="city" name="city" class="city" style="width:100%; height:34px;">
-                                            <option value="select">Please select One</option>
-                                            <option value="ncr">NCR</option>
-                                            <option value="car">CAR</option> 
-                                            <option value="ilo">Ilocos Region</option> 
-                                            <option value="cag">Cagayan Valley</option> 
-                                            <option value="cen">Central Luzon</option> 
-                                            <option value="cala">CALABARZON</option> 
-                                            <option value="mima">MIMAROPA</option> 
-                                            <option value="bicol">Bicol Region</option>
-                                            <option value="west">Western Visayas</option>
-                                            <option value="cent">Central Visayas</option>
-                                            <option value="east">Eastern Visayas</option>
-                                            <option value="zam">Zamboanga Peninsula</option>
-                                            <option value="north">Northern Mindanao</option>
-                                            <option value="dav">Davao Region</option>
-                                            <option value="sock">SOCCKSCARGEN</option>
-                                            <option value="cara">Caraga Region</option>
-                                            <option value="armm">ARMM</option>
-                                        </select>
-                </td>
-                </tr>
-
-                <tr>
-                <td> 
-                    <label = "usr" class = "control-label"> Postal Code: </label>
-                 </td>
-                <td> 
-                    <input type = "text" name = "postal" id = "usr" class = "form-control" >
-                </td>
-                </tr>
-                 <tr>
-                <td> 
-                    <label = "usr" class = "control-label"> Email: </label>
-                 </td>
-                <td> 
-                    <input type = "text" name = "email" id = "usr" class = "form-control">
-                </td>
-                </tr>
-
-                 <tr>
-                <td> 
-                    <label = "usr" class = "control-label"> Contact Number: </label>
-                 </td>
-                <td> 
-                    <input type = "text" name = "cn" id = "usr" class = "form-control">
-                </td>
-                </tr>
-                </tbody>
-                </table>
-                <br><br><br><br><br><br><br><br>
-                <br>
             </div>
-            </div>
-            </div>
+            
+           
          </div>
-           <button type = "submit" class = "btn btn-danger " id = "save" href= "#"><b> SAVE </b></button>
+           <button type = "submit" class = "btn btn-danger " id = "btnsave" name = "btnsave"><b> SAVE </b></button>
             <div class = "space"></div>
              <button type = "submit" class = "btn btn-danger " id = "cancel"><b> CANCEL</b> </button>
          </form>
     </div>
+    </div>
 </body>
  
+<?php
+include('CONNECTION.php');
+
+
+if(isset($_POST['btnsave'])){
+
+   $cname = $_POST['cname'];
+   $industry = $_POST['industry'];
+   $classification = $_POST['classification'];
+   $address = $_POST['address'];
+   $state = $_POST['state'];
+   $city = $_POST['City'];
+   $postal = $_POST['postal'];
+   $phonenum = $_POST['phonenum'];
+   $mobilenum = $_POST['mobilenum'];
+   $fax = $_POST['fax'];
+
+
+
+    $query = "UPDATE companyinfotbl SET CompanyName = '$cname', Industry = '$industry', Classification = '$classification', Address = '$address', StateRegion = '$state', City = '$city', PostalCode = '$postal', PhoneNum = '$phonenum', MobileNum = '$mobilenum', Fax = '$fax' WHERE Email = '$x'";
+   $Result = mysql_query($query);
+   echo "
+        <script type='text/javascript'>
+        location.href = 'Settings.php?id=SettingEdit';
+        </script>
+         ";
+}
+?>

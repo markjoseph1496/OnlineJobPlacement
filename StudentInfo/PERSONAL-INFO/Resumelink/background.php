@@ -1,4 +1,16 @@
 <!DOCTYPE html>
+
+<?php 
+session_start();
+if(is_null($_SESSION['StudentID'])){
+    echo "
+        <script type='text/javascript'>
+        location.href='../../../login-student.php';
+        </script>
+        ";
+}
+?>
+
 <html lang="en">
 
 <head>
@@ -24,17 +36,10 @@
     <link href="../../font-awesome/ffonts/roboto.css" rel="stylesheet" type="text/css">
 </head>
 
-
 <body id="page-top" class="index bg">
     <nav class="navbar navbar-default navbar-fixed-top navbar-shrink">
         <div class="container">
             <div class="navbar-header page-scroll">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
                 <a class="navbar-brand page-scroll" href="#page-top">Online Job Placement Management</a>
             </div>
 
@@ -44,19 +49,20 @@
                         <a href="#page-top"></a>
                     </li>
                     <li>
-                        <a class="page-scroll" href="#">Sign Out</a>
+                        <a href="../../../index.php?id=SignOut">Sign Out</a>
                     </li>
                 </ul>
             </div>
         </div>
     </nav><br><br>
 
-    <div class="container">
+    <div id="yellow-text-fields">
         <div class="white-holder">
             <ul class="nav nav-tabs">
                 <li role="presentation" id="my_info" class="item"><a href="../MyInfo/personal_info.php">My Info</a></li>
                 <li role="presentation" id="resume_link" class="item active"><a href="resumelink.php"><B>Resumé Link</B></a></li>
                 <li role="presentation" id="applications" class="item"><a href="../Applications/applications.php">Applications</a></li>
+                <li role="presentation" id="search-job" class="item"><a href="../Search-job/search-job.php">Jobs</a></li>
                 <li role="presentation" id="settings" class="item"><a href="../Settings/settings.php">Settings</a></li>
             </ul>
             <div class="space"></div>
@@ -66,6 +72,7 @@
                 <li class="yellow"><a href="privacy_settings.php">Privacy Settings</a></li>
                 <li class="yellow"><a href="print.php">Print/Share</a></li>
             </ul>
+            <div class="space-1"></div>
 
             <div class"row">
                 <div class="col-md-10">
@@ -74,14 +81,11 @@
                             <label>Resumé Link URL</label>
                         </div>
                         <div class="field">
-                            <div class="col-md-3">
-                                http://markjoseph1496.jobs180.com
-                            </div>
-                            <div class="col-md-2">
-                                <a href="#" class="btnforadding" target="_blank">
-                                    <i class="fa fa-external-link"> Preview</i>
+                            <div class="col-md-4">
+                                <a href="../../../ResumelinkProfile.php" target="_blank">
+                                    http://markjoseph1496.ojpms.com <i class="fa fa-external-link-square"></i>
                                 </a>  
-                            </div>             
+                            </div>           
                         </div>
                         <div class="row">
                             <div class="space">
@@ -94,7 +98,7 @@
                         <input type="radio" name="" id="" value="">Solid Color &nbsp;&nbsp;&nbsp;
                         <input type="radio" name="" id="" checked="checked" value="I">Uploaded Image &nbsp;&nbsp;&nbsp;                                    
                         <br><br>
-                        <div id="color" style="display: block;">
+                        <div id="color" style="display: none;">
                             <label>Solid Color</label><br>
                             <select id="colorselector_1" style="display: none;">
                                 <option value="106" data-color="#A0522D" selected="selected">sienna</option>
@@ -119,14 +123,16 @@
                                 $('#colorselector').colorselector();
                             </script>
                         </div>
-                        <div id="uploaded" style="display:none;">
+                        <div id="uploaded" style="display:block;">
                             <label>Uploaded Image</label>
-                            <input type="file" id="" name="" class=""><br>
-                            <div id="profile_image">
-                                <div class="space"></div>
-                                <div class="space"></div>
-                                <br><br><br><br><br><br><br><br><br><br><br><br>              
+                            <input id="uploadFile" type="file" name="fileToUpload" class="img"><br>
+                            <div class="col-md-1 col-sm-6 fieldcol">
+                                <div id="imagePreview">
+                                <img src="<?php echo $ProfileImage; ?>" id="Image1" alt="" style="width:250px;height:250px;">
+                                <div class="space-1"></div>            
                                 <button name="" type="" id="" class="btn btn-hg btn-primary" name="btnDelete">Delete Image</button>
+                            </div>          
+
                                 <div id="preset" style="display: none;">
                                     <label>Preset Image</label>
                                     <select name="preset_id" id="preset_id" class="image-picker show-html" style="display: none;">

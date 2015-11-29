@@ -227,9 +227,13 @@ input[type="search"]::-webkit-search-decoration {
 
     <div class="resume_bg">
         <ul class="nav nav-tabs">
-            <li role="presentation" id="myinfo" class="item active"><a href="Admin.php">Home</a></li>
+            <li role="presentation" id="myinfo" class="item "><a href="Admin.php">Home</a></li>
             <li role="presentation" id="resumelink" class="item"><a href="Reports.php">Reports</a></li>
-            <li role="presentation" id="applications" class="item"><a href="Account.php">Account</a></li>
+            <li role="presentation" id="applications" class="item active"><a href="Account.php">Account</a></li>
+            <li role="presentation" id="applications" class="item"><a href="Requested.php">Requested</a></li>
+            <li role="presentation" id="applications" class="item"><a href="CompanyList.php">Company List</a></li>
+            <li role="presentation" id="applications" class="item"><a href="AdviserList.php">Adviser List</a></li>
+            <li role="presentation" id="applications" class="item"><a href="Maintenance.php">Maintenance </a></li>
             
         </ul>
     

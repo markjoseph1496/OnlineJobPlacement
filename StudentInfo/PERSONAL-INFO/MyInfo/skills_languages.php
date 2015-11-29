@@ -6,6 +6,14 @@ session_start();
 
 $x = $_SESSION['StudentID'];
 
+if(is_null($x)){
+    echo "
+        <script type='text/javascript'>
+        location.href='../../../login-student.php';
+        </script>
+        ";
+}
+
 $SkillID = 'SkillID';
 $Skill = 'Skill';
 $YearOfExperience = 'YearOfExperience';
@@ -37,6 +45,8 @@ $result2 = mysql_query($qry2);
 
     <!-- CSS -->
     <link href="../../css/agency.css" rel="stylesheet">
+    <link href="../../css/flat-ui.min.css" rel="stylesheet">
+
 
     <!-- Fonts -->
     <link href="../../font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
@@ -52,12 +62,6 @@ $result2 = mysql_query($qry2);
     <nav class="navbar navbar-default navbar-fixed-top navbar-shrink">
         <div class="container">
             <div class="navbar-header page-scroll">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
                 <a class="navbar-brand page-scroll" href="#page-top">Online Job Placement Management</a>
             </div>
 
@@ -67,19 +71,20 @@ $result2 = mysql_query($qry2);
                         <a href="#page-top"></a>
                     </li>
                     <li>
-                        <a class="page-scroll" href="#">Sign Out</a>
+                        <a href="../../../index.php?id=SignOut">Sign Out</a>
                     </li>
                 </ul>
             </div>
         </div>
     </nav><br><br>
 
-    <div class="container">
+    <div id="yellow-text-fields">
         <div class="white-holder">
             <ul class="nav nav-tabs">
                 <li role="presentation" id="myinfo" class="item active"><a href="personal_info.php"><B>My Info</B></a></li>
                 <li role="presentation" id="resumelink" class="item"><a href="../Resumelink/resumelink.php">Resumé Link</a></li>
                 <li role="presentation" id="applications" class="item"><a href="../Applications/applications.php">Applications</a></li>
+                <li role="presentation" id="search-job" class="item"><a href="../Search-job/search-job.php">Jobs</a></li>
                 <li role="presentation" id="settings" class="item"><a href="../Settings/settings.php">Settings</a></li>
             </ul>
             <div class="space"></div>
@@ -94,7 +99,7 @@ $result2 = mysql_query($qry2);
                 <li class="yellow"><a href="references.php">References</a></li>
                 <li class="yellow"><a href="portfolio.php">Portfolio</a></li>
             </ul>
-
+            <div class="space-1"></div>
 
             <div class"row">
                 <div class="col-md-10">
@@ -115,7 +120,7 @@ $result2 = mysql_query($qry2);
                                 <tr class="table-color">
                                     <th>Skill</th>
                                     <th>Year of Experience</th>
-                                    <th>Proficiency</th>
+                                    <th class="text-center">Proficiency</th>
                                     <th width="15%">&nbsp;</th>
                                 </tr>
                             </thead>
@@ -127,7 +132,13 @@ $result2 = mysql_query($qry2);
                                   
                                     <td><?php echo $rows[$Skill]; ?></td>
                                     <td><?php echo $rows[$YearOfExperience]; ?></td>
-                                    <td></td>
+                                    <td class="rating text-center">
+                                        <span class="star"></span>
+                                        <span class="star"></span>
+                                        <span class="star"></span>
+                                        <span class="star"></span>
+                                        <span class="star"></span>
+                                    </td>
                                     <form method = "POST">
                                     <input type="hidden" name="delete_SkillID" value="<?php echo $rows['SkillID']; ?>" />
                                     <td>
@@ -163,8 +174,8 @@ $result2 = mysql_query($qry2);
                             <thead>
                                 <tr class="table-color">
                                     <th>Language</th>
-                                    <th>Written Proficiency</th>
-                                    <th>Spoken Proficiency</th>
+                                    <th class="text-center">Written Proficiency</th>
+                                    <th class="text-center">Spoken Proficiency</th>
                                     <th width="15%">&nbsp;</th>
                                 </tr>
                             </thead>
@@ -175,8 +186,20 @@ $result2 = mysql_query($qry2);
                                         <tr>
                                   
                                     <td><?php echo $rows[$Language]; ?></td>
-                                    <td></td>
-                                    <td></td>
+                                    <td class="rating text-center">
+                                        <span class="star"></span>
+                                        <span class="star"></span>
+                                        <span class="star"></span>
+                                        <span class="star"></span>
+                                        <span class="star"></span>
+                                    </td>
+                                    <td class="rating text-center">
+                                        <span class="star"></span>
+                                        <span class="star"></span>
+                                        <span class="star"></span>
+                                        <span class="star"></span>
+                                        <span class="star"></span>
+                                    </td>
                                     <form method = "POST">
                                     <input type="hidden" name="delete_LangID" value="<?php echo $rows['LangID']; ?>" />
                                     <td>

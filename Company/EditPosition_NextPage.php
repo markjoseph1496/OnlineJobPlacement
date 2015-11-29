@@ -54,8 +54,6 @@ tr {
     border-color: inherit;
 }
 td, th {
-    border-top: 1px solid #ffffff;
-    border-bottom: 1px solid #E5E4E2;
     text-align: left;
     padding: 7px 10px;
 }
@@ -86,6 +84,37 @@ h1,  {
     -webkit-margin-before: 0.83em;
     -webkit-margin-after: 0.83em;
 }
+
+.resume_bg{
+    height:1000px;
+}
+
+ #save
+            {
+              width: 300px;
+              height: 40px;
+              background-color: #2F817E;
+              border: 1px solid #E5E4E2;
+              border-radius: 4px 4px 4px 4px;
+              margin-left: 500px;
+            }
+            #save:hover
+            {
+              background-color: #006681;
+            }   
+#cancel
+            {
+              width: 300px;
+              height: 40px;
+              background-color: #fcdc66;
+              border: 1px solid #E5E4E2;
+              border-radius: 4px 4px 4px 4px;
+              margin-left: 500px;
+            }
+            #cancel:hover
+            {
+              background-color: #fed136;
+            }   
 .nav-pills>li>a{
 border-radius:2px;
 
@@ -119,49 +148,54 @@ background-color: #006681;
     background: #fed136;
 }
 
-#active
-            {
-              width: 80px;
-              height: 40px;
-              background-color: #fcdc66;
-              border: 1px solid #E5E4E2;
-              border-radius: 4px 4px 4px 4px;
-              margin-left: 900px;
-            }
-            #active:hover
-            {
-              background-color: #fed136;
-            }  
-#all
-            {
-              width: 80px;
-              height: 40px;
-              background-color: #fcdc66;
-              border: 1px solid #E5E4E2;
-              border-radius: 4px 4px 4px 4px;
-              margin-left: 1000px;
-              margin-top: -60px;
-            }
-            #all:hover
-            {
-              background-color: #fed136;
-            }
-.panel-heading{
-    height:60px;
-}   
 .space1 {
     margin: 1rem 0rem;
     border-bottom: 0em;
     line-height: 1;
     height: 0em;
 }  
+
 #submenu{
     margin-left: 50px;
-}    
+}  
+#Adduser
+            {
+              width: 100px;
+              height: 40px;
+              border: 1px solid #E5E4E2;
+              margin-left: 1000px;
+              margin-top: -70px;
+            }
+ #save
+            {
+              width: 200px;
+              height: 40px;
+              background-color: #2F817E;
+              border: 1px solid #E5E4E2;
+              border-radius: 4px 4px 4px 4px;
+              margin-left: 50px;
+            }
+            #save:hover
+            {
+              background-color: #006681;
+            }   
+#cancel
+            {
+              width: 200px;
+              height: 40px;
+              background-color: #fcdc66;
+              border: 1px solid #E5E4E2;
+              border-radius: 4px 4px 4px 4px;
+              margin-left: 50px;
+            }
+            #cancel:hover
+            {
+              background-color: #fed136;
+            }                       
 </style>
 
 <body id="page-top" class="index resume">
-     <nav class="navbar navbar-default navbar-fixed-top navbar-shrink">
+    <nav class="navbar navbar-default navbar-fixed-top navbar-shrink">
         <div class="container">
             <div class="navbar-header page-scroll">
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
@@ -186,61 +220,63 @@ background-color: #006681;
         </div>
     </nav><br><br>
 
-    <div class"container">
-    <div class="resume_bg">
+     <div class="resume_bg">
         <ul class="nav nav-tabs">
-            <li role="presentation" id="company" class="item"><a href="Company.php">Home</a></li>
-            <li role="presentation" id="dbase" class="item" ><a href="Positions.php">Positions</a></li>
-            <li role="presentation" id="dbase" class="item active" ><a href="Database.php">Database</a></li>
+            <li role="presentation" id="company" class="item "><a href="Company.php">Home</a></li>
+            <li role="presentation" id="dbase" class="item active" ><a href="Positions.php">Positions</a></li>
+            <li role="presentation" id="dbase" class="item" ><a href="Database.php">Database</a></li>
             <li role="presentation" id="report" class="item"><a href="Report.php">Reports</a></li>
-            <li role="presentation" id="setting" class="item" ><a href="Settings.php">Settings</a></li>
-            <li role="presentation" id="resumelink" class="item"><a href="#">Resumelink Search</a></li>
-            
+            <li role="presentation" id="setting" class="item " ><a href="Settings.php">Settings</a></li>
+            <li role="presentation" id="resumelink" class="item"><a href="Resumesearch.php">Resumelink Search</a></li>           
         </ul>
+
         <div class="space1"></div>
        
         <ul class="nav nav-pills" id = "submenu">
-            <li class="yellow active"><a href="Database.php">My Job Aplication</a></li>
-            <li class="yellow"><a href="Database_CustomFolder.php">Custom Folder</a></li>
-            <li class="yellow"><a href="Database_Events.php">Events</a></li>
+            <li class="yellow"><a href="Positions.php">All</a></li>
+            <li class="yellow"><a href="Position_Active.php">Active</a></li>
+            <li class="yellow active"><a href="Position_Draft.php">Draft</a></li>
+            <li class="yellow "><a href="CreatePosition.php">Create</a></li>
         </ul>
-            
-        <div class="space"></div>
-    <div
-        <div class = "col-md-12">
-            <div class = "panel panel-warning">
-                <div class = "panel-heading">
-                 <form method = "POST">  
-                <a class = "btn btn-danger " id = "active" href= "#">Active</a>
-                 <a class = "btn btn-danger " id = "all" href= "#">All</a>
-                </div>
-            <div class = "panel-body">
-                <table class = "Applicants" width = "100%" cellpadding = "0">
-           <thead>
-           <tr>
-    
-           </tr>    
-                <tr>
-                    <th width= "50%" class = "tabletitle">Positions</th>
-                    <th width = "25%" class = "tabletitle">Posted on </th>
-                    <th width = "25%" class = "tabletitle"> Number of Applicants </th>
-                <tr>
-            </thead>
 
-            <tbody>
-                <tr>
-                   <td>No Records..</td>
-                   <td></td>
-                   <td></td>
-                </tr> 
-            </tbody>
-        </table>
+        
+        <div class = "container">
+            <div class = "col-md-12">
+                <div class = "space"></div>
+                    <div class"row">
+                <div class="col-md-10">
+                    <div class="row field">
+                        <div class="col-md-6 fieldcol">
+                            <label>Resumé Link URL</label>
+                        </div>
+                        <div class="field">
+                            <div class="col-md-3">
+                                http://markjoseph1496.jobs180.com
+                            </div>            
+                        </div>
+                        <div class="row">
+                            <div class="space">
+                                &nbsp;
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row field">
+                        <div class="col-md-6 fieldcol">
+                            <label>About Me</label>
+                        </div>
+                    </div>
+                    <div class="row field">
+                        <div class="col-md-12 fieldcol">
+                            <textarea name="" id="" cols="100" rows="10"></textarea>
+                        </div>
+                    </div>
+                </div>
+                <div class = "space"></div>
+                        <button type = "submit" class = "btn btn-danger " id = "save" href= "#"><b> SAVE </b></button>
+                        <br><br>
+                        <button type = "submit" class = "btn btn-danger " id = "cancel"><b> CANCEL</b> </button>
             </div>
             </div>
-            </div>
-            </form> 
-         </div>
-    </div>
     </div>
 </body>
  

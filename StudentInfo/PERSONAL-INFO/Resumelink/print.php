@@ -1,4 +1,17 @@
 <!DOCTYPE html>
+
+<?php 
+session_start();
+if(is_null($_SESSION['StudentID'])){
+    echo "
+        <script type='text/javascript'>
+        location.href='../../../login-student.php';
+        </script>
+        ";
+}
+?>
+
+
 <html lang="en">
 
 <head>
@@ -29,34 +42,28 @@
     <nav class="navbar navbar-default navbar-fixed-top navbar-shrink">
         <div class="container">
             <div class="navbar-header page-scroll">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
                 <a class="navbar-brand page-scroll" href="#page-top">Online Job Placement Management</a>
             </div>
-
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav navbar-right">
                     <li class="hidden">
                         <a href="#page-top"></a>
                     </li>
                     <li>
-                        <a class="page-scroll" href="#">Sign Out</a>
+                        <a href="../../../index.php?id=SignOut">Sign Out</a>
                     </li>
                 </ul>
             </div>
         </div>
     </nav><br><br>
 
-    <div class="container">
+    <div id="yellow-text-fields">
         <div class="white-holder">
             <ul class="nav nav-tabs">
                 <li role="presentation" id="my_info" class="item"><a href="../MyInfo/personal_info.php">My Info</a></li>
                 <li role="presentation" id="resume_link" class="item active"><a href="resumelink.php"><B>Resumé Link</B></a></li>
                 <li role="presentation" id="applications" class="item"><a href="../Applications/applications.php">Applications</a></li>
+                <li role="presentation" id="search-job" class="item"><a href="../Search-job/search-job.php">Jobs</a></li>
                 <li role="presentation" id="settings" class="item"><a href="../Settings/settings.php">Settings</a></li>
             </ul>
             <div class="space"></div>
@@ -66,6 +73,7 @@
                 <li class="yellow"><a href="privacy_settings.php">Privacy Settings</a></li>
                 <li class="yellow active"><a href="print.php">Print/Share</a></li>
             </ul>
+            <div class="space-1"></div>
 
             <div class="col-md-10 col-sm-9">
                 <div class="row field">
@@ -76,22 +84,16 @@
                     </div>
                     <div class="print">
                         <div class="fieldcol">
-                            <div class="clear"></div>
-                            <div class="column">
-                                <div class="overlay">
-                                    <p>One Column</p>
-                                    <a href="#"><i class="fa fa-file-text"></i> Download PDF</a>
+                            <div class="row field">
+                                <div class="fieldcol">
+                                    <div class="column">
+                                        <div class="overlay">
+                                            <p>One Column</p>
+                                            <a href="#"><i class="fa fa-file-text"></i> Download PDF</a>
+                                        </div>
+                                        <img src="../../img/one-column.jpg">
+                                    </div>
                                 </div>
-                                <img src="../../img/one-column.jpg">
-                            </div>
-                            <div class="column">
-                                <div class="overlay">
-                                    <p>Two Columns</p>
-                                    <a href="#"><i class="fa fa-file-text"></i> Download PDF</a>
-                                </div>
-                                    <img src="../../img/one-column.jpg">
-                                </div>
-                                <div class="clear"></div>                         
                             </div>
                         </div>
                     </div>    

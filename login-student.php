@@ -1,4 +1,83 @@
 <!DOCTYPE html>
+
+<?php 
+session_start();
+include('connection.php');
+
+$StudentID_validator = '';
+$Password_validator = '';
+
+$StudentID_class = '';
+$Password_class = '';
+
+$server_StudentID = isset($_POST['txtStudentID']) ? $_POST['txtStudentID'] : '';
+$server_Password = isset($_POST['txtPassword']) ? $_POST['txtPassword'] : '';
+
+$a = isset($_POST['txtStudentID']);
+$a = $a && isset($_POST['txtPassword']);
+
+if($a){
+    unset($a);
+    $StudentIDValid = (bool) preg_match('/^[0-9]+$/i', $server_StudentID);
+    $PasswordValid = 1;
+
+    if(is_null($server_StudentID) || $server_StudentID == ''){
+        $StudentID_validator = 'Student ID cannot be empty.';
+        $StudentID_class = 'error';
+    }
+    elseif(!$StudentIDValid){
+        $StudentID_validator = 'Invalid Student ID';
+        $StudentID_class = 'error';
+    }
+    elseif(strlen($server_StudentID) < 11 ){
+        $StudentID_validator = 'Student ID must be 11 Characters.';
+        $StudentID_class = 'error';
+        $StudentIDValid = 0;
+    }
+    else{
+        $StudentID_class='';
+    }
+
+    if(is_null($server_Password) || $server_Password == ''){
+        $Password_validator = 'Password cannot be empty.';
+        $Password_class = 'error';
+    }
+
+    $a = $StudentIDValid;
+    $a = $a && $PasswordValid;
+
+
+    if($a){
+        unset($a);
+        $query = "SELECT * FROM studentinfotbl WHERE StudentID='$server_StudentID' AND Password='$server_Password'";
+        $result = mysql_query($query);
+
+        if($result){
+
+            if(mysql_num_rows($result) == 0){
+                echo "
+                <script type='text/javascript'>
+                alert('Incorrect Password. Please try again.');
+                </script>
+                ";
+                $StudentID_class='error';
+                $Password_class='error';
+            }
+            else{
+                $_SESSION['StudentID'] = $server_StudentID;
+                echo "
+                <script type='text/javascript'>
+                alert('You have successfully loggged in.');
+                location.href='StudentInfo/personal-info/myinfo/personal_info.php';
+                </script>
+                ";
+
+            }   
+        }
+    }
+}
+?>
+
 <html lang="en">
 
 <head>
@@ -26,65 +105,30 @@
 
 
 <body class="login-background">
-    <form method = "POST">
-    <div class="container">
-        <div class="login">
-            <div class="login-screen">
-                <div class="login-form" id="yellow-text-fields">
-                    <div class="login-form">
-                        <div class="form-group">
-                            <input type="text" class="form-control login-field" value placeholder="Your Student ID" id="txtStudentID" name="txtStudentID" style="height:55px;">
+    <form method = "POST" autocomplete="off">
+        <div class="container">
+            <div class="login">
+                <div class="login-screen">
+                    <div class="login-form" id="yellow-text-fields">
+                        <div class="login-form">
+                            <div class="form-group">
+                                <input type="text" class="<?php echo $StudentID_class;?> form-control login-field" placeholder="Your Student ID" id="txtStudentID" name="txtStudentID" style="height:55px;" value="<?php echo htmlspecialchars($server_StudentID)?>">
+                                <div align="left" style="color: red"><?php echo $StudentID_validator?></div>
+                            </div>
+                            <div class="form-group">
+                                <input type="password" class="<?php echo $Password_class;?>  form-control login-field" placeholder="Password" id="txtPassword" name="txtPassword" style="height:55px;">
+                                <div align="left" style="color: red"><?php echo $Password_validator?></div>
+                            </div>
+                            <input type ="submit" class="btn btn-primary btn-large btn-block" name = "btnLogin" value = "Login"></input>
+                            <a class="login-link btn" href="">Forgot password?</a>
+                            <div>&nbsp;</div>
+                            <a class="btn btn-bordered" href="REGISTRATION.php">REGISTER NOW!</a>
                         </div>
-                        <div class="form-group">
-                            <input type="password" class="form-control login-field" value placeholder="Password" id="txtPassword" name="txtPassword" style="height:55px;">
-                        </div>
-                        <input type ="submit" class="btn btn-primary btn-large btn-block" name = "btnLogin" value = "Login"></input>
-                        <a class="login-link" href="">Forgot your password?</a>
-                        <a class="login-link" href="registration.php">REGISTER NOW!</a>
                     </div>
                 </div>
             </div>
         </div>
-   </div>
-</form>
+    </form>
+    <div class="login-footer"></div>
 </body>
-
-<?php
-
-session_start();
-
-
-include('connection.php');
-
-if(isset($_POST['btnLogin'])){
-
-    $StudentID = $_POST['txtStudentID'];
-    $password = $_POST['txtPassword'];
-
-    $query = "SELECT * FROM studentinfotbl WHERE StudentID='$StudentID' AND Password='$password'";
-    $result = mysql_query($query);
-
-    if($result){
-
-        if(mysql_num_rows($result) == 0){
-            echo "
-            <script type='text/javasczipt'>
-            alert('Incorrect Password. Please try again.');
-            </script>
-            ";
-        }
-        else{
-            $_SESSION['StudentID'] = $StudentID;
-            echo "
-            <script type='text/javascript'>
-            alert('You have successfully loggged in.');
-            location.href='StudentInfo/personal-info/myinfo/personal_info.php';
-            </script>
-            ";
-
-        }   
-    }
-} 
-?>
-
 </html>

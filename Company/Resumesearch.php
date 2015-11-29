@@ -1,3 +1,14 @@
+<?php session_start(); 
+    // Checks if request_resume and company_id 
+
+    include('CONNECTION.php');
+    $a = isset($_POST['request_resume']);
+    $a = $a && isset($_POST['company_id']);
+    $a = $a && isset($_POST['student_id']);
+    if($a){
+        mysql_query("INSERT INTO `resumerequesttbl`(`CompanyID`, `StudentID`, `Status`) VALUES('" . $_POST['company_id'] . "','" . $_POST['student_id'] . "','PENDING')");
+    }
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -356,9 +367,18 @@ background-color: #006681;
             {
               background-color: #fed136;
             }   
+ .white-holder {
+    background-color: #f7f7f7;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
+    padding: 80px 25px;
+    margin: 10px;
+    max-width:100%;
+    max-height:100%;
+}              
     </style>
 
 <body id="page-top" class="index resume">
+<form method = "POST" action="Resumesearch.php">
      <nav class="navbar navbar-default navbar-fixed-top navbar-shrink">
         <div class="container">
             <div class="navbar-header page-scroll">
@@ -384,34 +404,33 @@ background-color: #006681;
         </div>
     </nav><br><br>
 
-    <div class="resume_bg">
-        <ul class="nav nav-tabs">
+    <div class="white-holder">
+       <ul class="nav nav-tabs">
             <li role="presentation" id="company" class="item"><a href="Company.php">Home</a></li>
             <li role="presentation" id="dbase" class="item" ><a href="Positions.php">Positions</a></li>
-            <li role="presentation" id="dbase" class="item" ><a href="Database.php">Database</a></li>
-            <li role="presentation" id="report" class="item"><a href="Report.php">Reports</a></li>
-            <li role="presentation" id="setting" class="item" ><a href="Settings.php">Settings</a></li>
+            <li role="presentation" id="calendar" class="item " ><a href="Calendar.php">Calendar</a></li>
+            <li role="presentation" id="report" class="item "><a href="Report.php">Reports</a></li>
+            <li role="presentation" id="setting" class="item " ><a href="Settings.php">Settings</a></li>
             <li role="presentation" id="resumelink" class="item active"><a href="Resumesearch.php">Resumelink Search</a></li>
-            
+            <li role="presentation" id="studentlist" class="item"><a href="StudentList.php">Student List</a></li>
+            <li role="presentation" id="applicantlist" class="item "><a href="ApplicantList.php">Applicant List</a></li>
         </ul>
 
         <div class="space1"></div>
        
         <ul class="nav nav-pills" id = "submenu">
             <li class="yellow active"><a href="Resumesearch.php">Search Database</a></li>
-            <li class="yellow"><a href="Resumesearch_Purchase.php">Purchased Resumes</a></li>
-            <li class="yellow"><a href="#">Bookmark Resumelink</a></li>
+            <li class="yellow"><a href="Resumesearch_Purchase.php">Requested Resumes</a></li>
+            <li class="yellow"><a href="Resumesearch_Bookmark.php">Bookmark Resumelink</a></li>
         </ul>
 
         <div class="space1"></div>
         
         <div id="search">
-                    <form method = "POST">
                         <fieldset class="clearfix">
                         <input type="search" name="search" value="Search Student.." onBlur="if(this.value=='')this.value='Search Student..'" onFocus="if(this.value=='Search Student..')this.value=''" > <!-- JS because of IE support; better: placeholder="Search Student.." -->
-                        <input type="submit" value="Search" class="button" href = "#" > 
+                        <input type="submit" value="Search" class="button" href = "#" name="btnSearch"> 
                         </fieldset>
-                   </form>
                 </div> 
         <div class = "container">
         <ul class="nav nav-pills nav-stacked col-md-2 col-sm-3">
@@ -586,7 +605,38 @@ background-color: #006681;
            
         </ul>
         <div class = "col-md-10">
-                <table class = "Applicants" width = "100%" cellpadding = "0">
+            <table class = "Applicants" width = "100%" cellpadding = "0">
+        <?php 
+                
+                
+                if (isset($_POST['btnSearch'])) {
+                    $search = $_POST['search'];
+                    $qry = "SELECT studentinfotbl.StudentID, studcontactstbl.ContactsID, studcontactstbl.City, studentinfotbl.FirstName, studentinfotbl.LastName FROM studentinfotbl
+                            LEFT JOIN studcontactstbl 
+                            On studentinfotbl.StudentID = studcontactstbl.StudentID WHERE FirstName = '$search'";
+
+                }
+                else{
+                    $qry = "SELECT studentinfotbl.StudentID, studcontactstbl.ContactsID, studcontactstbl.City, studentinfotbl.FirstName, studentinfotbl.LastName FROM studentinfotbl
+                            LEFT JOIN studcontactstbl 
+                            On studentinfotbl.StudentID = studcontactstbl.StudentID";
+                    
+                }
+
+                $result = mysql_query($qry);
+
+                $fname = '';
+                $lname = '';
+                $location = '';
+                $student_id = '';
+
+                while ($qry = mysql_fetch_array($result)) {
+                    $fname = $qry['FirstName'];
+                    $lname = $qry['LastName'];
+                    $location = $qry['City'];
+                    $student_id = $qry['StudentID'];
+                }
+        ?>
                     <h4>Resume Search Results.. </h4>
            <thead>
            <tr>
@@ -596,26 +646,42 @@ background-color: #006681;
                     <th width= "20%" class = "tabletitle">Name/ID</th>
                     <th width = "20%" class = "tabletitle">Location</th>
                     <th width = "10%" class = "tabletitle">Age</th>
-                    <th width = "20%" class = "tabletitle">Skills </th>
-                    <th width = "20%" class = "tabletitle"> Specialization </th>
+                    <th width = "15%" class = "tabletitle">Skills </th>
+                    <th width = "15%" class = "tabletitle"> Specialization </th>
+                    <th width = "10%" class = "tabletitle"></th>
                 <tr>
             </thead>
-
             <tbody>
                 <tr>
-                   <td>No Records..</td>
+                   <td><?php echo " $lname, $fname";  ?></td>
+                   <td><?php echo "$location"; ?></td>
                    <td></td>
                    <td></td>
                    <td></td>
-                   <td></td>
-                </tr> 
+                   <td> 
+                    <?php
+                        $result = mysql_query("SELECT `CompanyID` FROM `companyinfotbl` WHERE `Email` = '" . $_SESSION['Email'] . "'");
+                        $row = mysql_fetch_array($result);
+                        $company_id = $row['CompanyID'];
+                        unset($result, $row);
+                    ?>
+                    <form method="POST">
+                        <input type="hidden" name="company_id" value="<?php echo $company_id?>"/>
+                        <input type="hidden" name="student_id" value="<?php echo $student_id?>"/>
+                         <button id='Edit' name="request_resume" href="" class='btn btn-default'> 
+                        <i class='fa fa-arrow-circle-right'></i>
+                        </button>
+                    </form>
+                        <button  name = 'btndelete' href="" class='btn btn-danger'> 
+                        <i class='fa fa-minus-square'></i> 
+                    </button>
+                    </td>
+                </tr>
             </tbody>
         </table>
-
             </div>
          </div>
     </div>
-   
+    </form>
 </body>
-
 </html> 

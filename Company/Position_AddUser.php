@@ -11,11 +11,10 @@
     <title>My Info</title>
 
      <!-- Bootstrap Core CSS -->
-    <link href="../../css/admin.bootstrap.min.css" rel="stylesheet">
+    <link href="../css/admin.bootstrap.min.css" rel="stylesheet">
 
     <!-- CSS -->
-    <link href="../../css/admin.agency.css" rel="stylesheet">
-
+    <link href="../css/admin.agency.css" rel="stylesheet">
     <!-- Fonts -->
     <link href="../../font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
     <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
@@ -220,7 +219,6 @@ background-color: #006681;
          <ul class="nav nav-tabs">
             <li role="presentation" id="company" class="item "><a href="Company.php">Home</a></li>
             <li role="presentation" id="dbase" class="item active" ><a href="Positions.php">Positions</a></li>
-            <li role="presentation" id="dbase" class="item" ><a href="Database.php">Database</a></li>
             <li role="presentation" id="report" class="item"><a href="Report.php">Reports</a></li>
             <li role="presentation" id="setting" class="item " ><a href="Settings.php">Settings</a></li>
             <li role="presentation" id="resumelink" class="item"><a href="Resumesearch.php">Resumelink Search</a></li>           
@@ -230,8 +228,8 @@ background-color: #006681;
        
         <ul class="nav nav-pills" id = "submenu">
             <li class="yellow  active "><a href="Positions.php">All</a></li>
-            <li class="yellow"><a href="#">Active</a></li>
-            <li class="yellow"><a href="#">Draft</a></li>
+            <li class="yellow"><a href="Position_Active.php">Active</a></li>
+            <li class="yellow"><a href="Position_Draft.php">Draft</a></li>
             <li class="yellow"><a href="CreatePosition.php">Create</a></li>
         </ul>
         

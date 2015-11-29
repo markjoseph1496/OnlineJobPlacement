@@ -54,8 +54,6 @@ tr {
     border-color: inherit;
 }
 td, th {
-    border-top: 1px solid #ffffff;
-    border-bottom: 1px solid #E5E4E2;
     text-align: left;
     padding: 7px 10px;
 }
@@ -86,9 +84,39 @@ h1,  {
     -webkit-margin-before: 0.83em;
     -webkit-margin-after: 0.83em;
 }
+
+.resume_bg{
+    height:1000px;
+}
+
+ #save
+            {
+              width: 300px;
+              height: 40px;
+              background-color: #2F817E;
+              border: 1px solid #E5E4E2;
+              border-radius: 4px 4px 4px 4px;
+              margin-left: 500px;
+            }
+            #save:hover
+            {
+              background-color: #006681;
+            }   
+#cancel
+            {
+              width: 300px;
+              height: 40px;
+              background-color: #fcdc66;
+              border: 1px solid #E5E4E2;
+              border-radius: 4px 4px 4px 4px;
+              margin-left: 500px;
+            }
+            #cancel:hover
+            {
+              background-color: #fed136;
+            }   
 .nav-pills>li>a{
 border-radius:2px;
-
 
 }
 
@@ -120,57 +148,36 @@ background-color: #006681;
     background: #fed136;
 }
 
-#active
-            {
-              width: 80px;
-              height: 40px;
-              background-color: #fcdc66;
-              border: 1px solid #E5E4E2;
-              border-radius: 4px 4px 4px 4px;
-              margin-left: 900px;
-            }
-            #active:hover
-            {
-              background-color: #fed136;
-            }  
-#all
-            {
-              width: 80px;
-              height: 40px;
-              background-color: #fcdc66;
-              border: 1px solid #E5E4E2;
-              border-radius: 4px 4px 4px 4px;
-              margin-left: 1000px;
-              margin-top: -60px;
-            }
-            #all:hover
-            {
-              background-color: #fed136;
-            }
-.panel-heading{
-    height:60px;
-}   
 .space1 {
     margin: 1rem 0rem;
     border-bottom: 0em;
     line-height: 1;
     height: 0em;
 }  
+
 #submenu{
     margin-left: 50px;
-}    
-#Addfolder
+}  
+#Adduser
             {
-              width: 150px;
+              width: 100px;
               height: 40px;
               border: 1px solid #E5E4E2;
-              margin-left: 950px;
+              margin-left: 1000px;
               margin-top: -70px;
             }
+.white-holder {
+    background-color: #f7f7f7;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
+    padding: 80px 25px;
+    margin: 10px;
+    max-width:100%;
+    max-height:100%;
+}            
 </style>
 
 <body id="page-top" class="index resume">
-     <nav class="navbar navbar-default navbar-fixed-top navbar-shrink">
+    <nav class="navbar navbar-default navbar-fixed-top navbar-shrink">
         <div class="container">
             <div class="navbar-header page-scroll">
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
@@ -195,53 +202,54 @@ background-color: #006681;
         </div>
     </nav><br><br>
 
-    <div class="resume_bg">
-         <ul class="nav nav-tabs">
-            <li role="presentation" id="company" class="item"><a href="Company.php">Home</a></li>
-            <li role="presentation" id="dbase" class="item" ><a href="Positions.php">Positions</a></li>
-            <li role="presentation" id="dbase" class="item active" ><a href="Database.php">Database</a></li>
+     <div class="white-holder">
+       <ul class="nav nav-tabs">
+            <li role="presentation" id="company" class="item "><a href="Company.php">Home</a></li>
+            <li role="presentation" id="dbase" class="item active" ><a href="Positions.php">Positions</a></li>
             <li role="presentation" id="report" class="item"><a href="Report.php">Reports</a></li>
             <li role="presentation" id="setting" class="item" ><a href="Settings.php">Settings</a></li>
-            <li role="presentation" id="resumelink" class="item"><a href="#">Resumelink Search</a></li>
-            
+            <li role="presentation" id="resumelink" class="item"><a href="Resumesearch.php">Resumelink Search</a></li>
+            <li role="presentation" id="studentlist" class="item"><a href="StudentList.php">StudentList</a></li>
         </ul>
+
         <div class="space1"></div>
        
         <ul class="nav nav-pills" id = "submenu">
-            <li class="yellow "><a href="Database.php">My Job Aplication</a></li>
-            <li class="yellow active"><a href="Database_CustomFolder.php">Custom Folder</a></li>
-            <li class="yellow"><a href="Database_Events.php">Events</a></li>
+            <li class="yellow"><a href="Positions.php">All</a></li>
+            <li class="yellow active"><a href="Position_Active.php">Active</a></li>
+            <li class="yellow"><a href="Position_Draft.php">Draft</a></li>
+            <li class="yellow"><a href="CreatePosition.php">Create</a></li>
         </ul>
-            
-        <div class="space"></div>
- <div class = "container">
-         <div class = "col-md-12">
-                <h3>My Custom's Folder</h3>
-               
-                <a id="Addfolder" href="Addfolder.php" class=" btn btn-default"> Add Custom Folders</a>
-                <table class = "Applicants" width = "100%" cellpadding = "0">
-                 <thead>
-                    <tr>
-                    <th width = "70%" class = "tabletitle">Folder Name </th>
-                    <th width = "30%" class = "tabletitle tcenter"> Number of Resume </th>
-                    </tr> 
-                </thead>
-                <!--Fields-->
-                <tbody>
+
+        
+        <div class = "container">
+            <div class = "col-md-12">
+                <div class = "space"></div>
+        <table class = "Applicants" width = "100%" cellpadding = "0">
+           <thead>
+           <tr>
+    
+           </tr>    
                 <tr>
-                    <td>
+                    <th width= "40%" class = "tabletitle">Positions</th>
+                    <th width = "25%" class = "tabletitle">Status </th>
+                    <th width = "25%" class = "tabletitle"> Posted </th>
+                    <th width = "10%" class = "tabletitle"> </th>
+                <tr>
+            </thead>
 
-                    </td>
-                    <td class = "tcenter"></td>
-                </tr>
-
-
-                </tbody>
-                </table>
-                
-                   
-        </div>
-         </div>
+            <tbody>
+                <tr>
+                   <td>
+                    <a href = "#"></a>
+                   </td>
+                   <td> </td>
+                   <td> </td>
+                   <td> </td>
+                </tr> 
+            </tbody>
+        </table>
+            </div>
     </div>
 </body>
  

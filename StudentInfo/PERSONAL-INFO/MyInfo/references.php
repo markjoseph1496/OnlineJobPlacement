@@ -5,6 +5,14 @@ session_start();
 
 $x = $_SESSION['StudentID'];
 
+if(is_null($x)){
+    echo "
+        <script type='text/javascript'>
+        location.href='../../../login-student.php';
+        </script>
+        ";
+}
+
 $ReferenceID = 'ReferenceID';
 $Name = 'Name';
 $Relationship = 'Relationship';
@@ -28,11 +36,16 @@ $result = mysql_query($qry);
 
     <title>Online JPMS</title>
 
+    <script type="text/javascript" src="../../js/jquery.min.js"></script>
+    <script src="../../js/bootstrap.min.js"></script>
+    <script src="../../js/bootbox.min.js"></script>
+
     <!-- Bootstrap Core CSS -->
     <link href="../../css/bootstrap.min.css" rel="stylesheet">
 
     <!-- CSS -->
     <link href="../../css/agency.css" rel="stylesheet">
+    <link href="../../css/flat-ui.min.css" rel="stylesheet">
 
     <!-- Fonts -->
     <link href="../../font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
@@ -45,15 +58,32 @@ $result = mysql_query($qry);
 
 
 <body id="page-top" class="index bg">
+    <script>
+            $(document).on("click", ".deleteReference", function(result) {
+                bootbox.confirm({
+                  title: 'Delete',
+                  message: 'Are you sure you want to delete this Reference?',
+                  buttons: {
+                      'cancel': {
+                          label: 'Cancel',
+                          
+                      },
+                      'confirm': {
+                          label: 'Delete',
+                          className: 'btn-danger pull-right'
+                      }
+                  },
+                  callback: function(result) {
+                      if (result) {
+                           window.location = $("a[data-bb='confirmDeleteReference']").attr('href');
+                      }
+                  }
+              });
+            });
+    </script>    
     <nav class="navbar navbar-default navbar-fixed-top navbar-shrink">
         <div class="container">
             <div class="navbar-header page-scroll">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
                 <a class="navbar-brand page-scroll" href="#page-top">Online Job Placement Management</a>
             </div>
 
@@ -63,19 +93,20 @@ $result = mysql_query($qry);
                         <a href="#page-top"></a>
                     </li>
                     <li>
-                        <a class="page-scroll" href="#">Sign Out</a>
+                        <a href="../../../index.php?id=SignOut">Sign Out</a>
                     </li>
                 </ul>
             </div>
         </div>
     </nav><br><br>
 
-    <div class="container">
+    <div id="yellow-text-fields">
         <div class="white-holder">
             <ul class="nav nav-tabs">
                 <li role="presentation" id="myinfo" class="item active"><a href="personal_info.php"><B>My Info</B></a></li>
                 <li role="presentation" id="resumelink" class="item"><a href="../Resumelink/resumelink.php">Resumé Link</a></li>
                 <li role="presentation" id="applications" class="item"><a href="../Applications/applications.php">Applications</a></li>
+                <li role="presentation" id="search-job" class="item"><a href="../Search-job/search-job.php">Jobs</a></li>
                 <li role="presentation" id="settings" class="item"><a href="../Settings/settings.php">Settings</a></li>
             </ul>
             <div class="space"></div>
@@ -90,9 +121,33 @@ $result = mysql_query($qry);
                 <li class="yellow active"><a href="references.php">References</a></li>
                 <li class="yellow"><a href="portfolio.php">Portfolio</a></li>
             </ul>
+            <div class="space-1"></div>
 
             <div class"row">
                 <div class="col-md-10">
+                    <?php
+                    if(isset($_GET['id'])){
+                        $id=$_GET['id'];
+                        if($id=="ReferenceEdit"){
+                            echo '<div class="alert alert-success">
+                            <span class="glyphicon glyphicon-info-sign"></span> 
+                            Reference successfully updated.
+                            </div>';
+                        }
+                        elseif($id=="ReferenceDelete"){
+                            echo '<div class="alert alert-success">
+                            <span class="glyphicon glyphicon-info-sign"></span> 
+                            Reference successfully deleted.
+                            </div>';
+                        }
+                        elseif($id=="ReferenceAdd"){
+                            echo '<div class="alert alert-success">
+                            <span class="glyphicon glyphicon-info-sign"></span> 
+                            Reference successfully added.
+                            </div>';
+                        }
+                    }
+                    ?>
                     <div class="row field">
                         <div class="col-md-6 fieldcol">
                             <label>References</label>
@@ -114,6 +169,7 @@ $result = mysql_query($qry);
                                     <th>Position</th>
                                     <th>Phone</th>
                                     <th>Email</th>
+                                    <th>No. of Years</th>
                                     <th width="15%">&nbsp;</th>
                                 </tr>
                             </thead>
@@ -128,15 +184,18 @@ $result = mysql_query($qry);
                                     <td><?php echo $rows[$Position]; ?></td>
                                     <td><?php echo $rows[$Phone]; ?></td>
                                     <td><?php echo $rows[$Email]; ?></td>
+                                    <td>No. of Years</td>
                                     <form method = "POST">
                                     <input type="hidden" name="delete_id" value="<?php echo $rows['ReferenceID']; ?>" />
                                     <td>
-                                        <button name ="btnDelete" href="" class="btn btn-danger btnformaintenance">
+                                        <a href=# class="btn btn-danger btnformaintenance deleteReference">
                                             <i class="fa fa-trash fa-1x"></i>
-                                        </button>
-                                        <button name ="btnEdit" href="" class="btn btn-default btnformaintenance">
+                                        </a>
+                                        <a data-bb="confirmDeleteReference" class="bb-alert alert alert-info" style="display: none;" href="delete.php?delete_ReferenceID=<?php echo $rows['ReferenceID'];?>">
+                                        
+                                        <a href="edit/edit-reference.php?EditReferenceID=<?php echo $rows['ReferenceID'];?>" class="btn btn-default btnformaintenance">
                                             <i class="fa fa-pencil-square-o fa-1x"></i>
-                                        </button>
+                                        </a>
                                     </td>
                                     </form>
                                 </tr>
@@ -154,33 +213,4 @@ $result = mysql_query($qry);
         </div>
     </div>
 </body>
-
-<?php
-include('connection.php');
-
-if(isset($_POST['btnDelete'])){
-
-    $Z = $_POST['delete_id'];
-
-    $query = "DELETE FROM referencetbl WHERE ReferenceID='$Z'";
-    $result = mysql_query($query);
-
-    echo "
-            <script type='text/javascript'>
-            location.href='references.php';
-            </script>
-            ";
-} 
-
-if(isset($_POST['btnEdit'])){
-    $Z = $_POST['delete_id'];
-    $_SESSION['delete_id'] = $Z;
-    echo "
-            <script type='text/javascript'>
-            location.href='Edit/edit-reference.php';
-            </script>
-            ";
-} 
-?>
-
 </html>

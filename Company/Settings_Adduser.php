@@ -1,4 +1,34 @@
 <!DOCTYPE html>
+
+<?php
+include('CONNECTION.php');
+
+session_start();
+
+$x = $_SESSION['Email'];
+
+  if (isset($_POST['btnsave'])) {
+      
+    $username = $_POST['username'];
+    $password = $_POST['password'];
+    $fname = $_POST['fname'];
+    $mname = $_POST['mname'];
+    $lname = $_POST['lname'];
+    $position = $_POST['position'];
+    $dept = $_POST['dept'];
+    $address = $_POST['address'];
+    $contact = $_POST['contact'];
+
+    $query = ("INSERT INTO comaddusertbl (Email,UserName,Password,FirstName,MiddleName,LastName,Position,Department,Address,ContactNum) values ('$x','$username','$password','$fname','$mname','$lname','$position','$dept','$address','$contact')");
+    $Result = mysql_query($query);
+    echo "
+          <script type='text/javascript'>
+         location.href='Settings_Users.php?id=UserAdd'
+         </script>
+    ";
+  };
+
+?>
 <html lang="en">
 
 <head>
@@ -11,10 +41,10 @@
     <title>My Info</title>
 
      <!-- Bootstrap Core CSS -->
-    <link href="css/admin.bootstrap.min.css" rel="stylesheet">
+    <link href="../css/admin.bootstrap.min.css" rel="stylesheet">
 
     <!-- CSS -->
-    <link href="css/admin.agency.css" rel="stylesheet">
+    <link href="../css/admin.agency.css" rel="stylesheet">
 
     <!-- Fonts -->
     <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
@@ -187,7 +217,15 @@ background-color: #006681;
 .adduser{
     margin-left: 250px;
     width: 600px;
-}            
+}  
+.white-holder {
+    background-color: #f7f7f7;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
+    padding: 80px 25px;
+    margin: 10px;
+    max-width:100%;
+    max-height:100%;
+}              
 </style>
 
 <body id="page-top" class="index resume">
@@ -216,19 +254,21 @@ background-color: #006681;
         </div>
     </nav><br><br>
 
-     <div class="resume_bg">
-        <ul class="nav nav-tabs">
+     <div class="white-holder">
+       <ul class="nav nav-tabs">
             <li role="presentation" id="company" class="item "><a href="Company.php">Home</a></li>
-            <li role="presentation" id="dbase" class="item" ><a href="Database.php">Database</a></li>
-            <li role="presentation" id="report" class="item"><a href="Report.php">Reports</a></li>
+            <li role="presentation" id="dbase" class="item" ><a href="Positions.php">Positions</a></li>
+            <li role="presentation" id="report" class="item "><a href="Report.php">Reports</a></li>
             <li role="presentation" id="setting" class="item active" ><a href="Settings.php">Settings</a></li>
-            <li role="presentation" id="resumelink" class="item"><a href="Resumesearch.php">Resumelink Search</a></li>           
+            <li role="presentation" id="resumelink" class="item"><a href="Resumesearch.php">Resumelink Search</a></li>
+            <li role="presentation" id="studentlist" class="item"><a href="StudentList.php">StudentList</a></li>
         </ul>
 
         <div class="space1"></div>
        
         <ul class="nav nav-pills" id = "submenu">
             <li class="yellow "><a href="Settings.php">Company</a></li>
+            <li class="yellow"><a href="Settings_Calendar.php">Calendar</a></li>
             <li class="yellow active"><a href="Settings_Users.php">User</a></li>
             <li class="yellow"><a href="Settings_MyAccount.php">My Account</a></li>
         </ul>
@@ -248,10 +288,10 @@ background-color: #006681;
                 <tbody>
                 <tr>
                 <td> 
-                    <label = "usr" class = "control-label"> Email: </label>
+                    <label = "usr" class = "control-label"> Username: </label>
                  </td>
                 <td> 
-                    <input type = "text" name = "email" id = "usr" class = "form-control" >
+                    <input type = "text" name = "username" id = "usr" class = "form-control" >
                 </td>
                 </tr>
                 
@@ -314,7 +354,7 @@ background-color: #006681;
                     <label = "usr" class = "control-label"> Address: </label>
                  </td>
                 <td> 
-                   <textarea name = "address" id = "add" rows="3" cols= "55"></textarea>
+                   <input type = "text" name = "address" id = "usr" class = "form-control" >
                 </td>
                 </tr>
 
@@ -335,10 +375,14 @@ background-color: #006681;
             </div>  
 
          </div>
-           <button type = "submit" class = "btn btn-danger " id = "save" href= "#"><b> SAVE </b></button>
+           <button type = "submit" class = "btn btn-danger " id = "save" name = "btnsave"><b> SAVE </b></button>
             <div class = "space"></div>
              <button type = "submit" class = "btn btn-danger " id = "cancel"><b> CANCEL</b> </button>
          </form>
     </div>
 </body>
+
+
+
+</html>
  

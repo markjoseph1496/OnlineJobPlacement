@@ -1,3 +1,6 @@
+<?php include('CONNECTION.php');
+session_start();
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -239,7 +242,17 @@ background-color: #006681;
     padding:10px;
     border: 1px solid #E5E4E2;
 }
-
+#submenu{
+    margin-left: 50px;
+}  
+.white-holder {
+    background-color: #f7f7f7;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
+    padding: 80px 25px;
+    margin: 10px;
+    max-width:100%;
+    max-height:100%;
+}
     </style>
 
 <body id="page-top" class="index resume">
@@ -268,22 +281,23 @@ background-color: #006681;
         </div>
     </nav><br><br>
 
-    <div class="resume_bg">
-        <ul class="nav nav-tabs">
+    <div class="white-holder">
+       <ul class="nav nav-tabs">
             <li role="presentation" id="company" class="item"><a href="Company.php">Home</a></li>
             <li role="presentation" id="dbase" class="item" ><a href="Positions.php">Positions</a></li>
-            <li role="presentation" id="dbase" class="item" ><a href="Database.php">Database</a></li>
-            <li role="presentation" id="report" class="item"><a href="Report.php">Reports</a></li>
-            <li role="presentation" id="setting" class="item" ><a href="Settings.php">Settings</a></li>
+            <li role="presentation" id="calendar" class="item " ><a href="Calendar.php">Calendar</a></li>
+            <li role="presentation" id="report" class="item "><a href="Report.php">Reports</a></li>
+            <li role="presentation" id="setting" class="item " ><a href="Settings.php">Settings</a></li>
             <li role="presentation" id="resumelink" class="item active"><a href="Resumesearch.php">Resumelink Search</a></li>
-            
+            <li role="presentation" id="studentlist" class="item"><a href="StudentList.php">Student List</a></li>
+            <li role="presentation" id="applicantlist" class="item "><a href="ApplicantList.php">Applicant List</a></li>
         </ul>
 
         <div class="space1"></div>
        
         <ul class="nav nav-pills" id = "submenu">
             <li class="yellow "><a href="Resumesearch.php">Search Database</a></li>
-            <li class="yellow active"><a href="Resumesearch_Purchase.php">Purchased Resumes</a></li>
+            <li class="yellow active"><a href="Resumesearch_Purchase.php">Requested Resumes</a></li>
             <li class="yellow"><a href="Resumesearch_Bookmark.php">Bookmark Resumelink</a></li>
         </ul>
 
@@ -314,34 +328,40 @@ background-color: #006681;
     
            </tr>    
                 <tr>
-                    <th width= "9%" class = "tabletitle">Date Purchased</th>
-                    <th width = "9%" class = "tabletitle">Date Applied </th>
-                    <th width = "9%" class = "tabletitle"> Name</th>
-                    <th width = "9%" class = "tabletitle">Location</th>
-                    <th width= "9%" class = "tabletitle">Status</th>
-                    <th width = "9%" class = "tabletitle">Age</th>
-                    <th width = "9%" class = "tabletitle"> Specialization</th>
-                    <th width = "9%" class = "tabletitle">Industry</th>
-                    <th width= "9%" class = "tabletitle">Position Level</th>
-                    <th width = "9%" class = "tabletitle">Years Experience</th>
-                    <th width = "9%" class = "tabletitle"> Current Job Title</th>
+                    <th width = "20%" class = "tabletitle"> Name</th>
+                    <th width= "20%" class = "tabletitle">Status</th>
+                    <th width = "20%" class = "tabletitle"> </th>
                 <tr>
             </thead>
 
             <tbody>
+                <?php
+                $result = mysql_query('SELECT `CompanyID` FROM `companyinfotbl` WHERE `Email` = \'' . $_SESSION['Email'] . '\';');
+                $company_id = mysql_fetch_array($result)['CompanyID'];
+                $result = mysql_query('SELECT * FROM `resumerequesttbl` WHERE `CompanyID` = \'' . $company_id . '\';');
+                while($row = mysql_fetch_array($result)){
+                    $status = $row['Status'];
+                    $result1 = mysql_query('SELECT * FROM `studentinfotbl` WHERE `StudentID` = ' . $row['StudentID'] . ';');
+                    $row1 = mysql_fetch_array($result1);
+                    if($row['Status'] == "ACCEPTED"){
+                        //http://stie2e.com/resumelinkprofile.php?studentid=1
+                        $name = 'http://stie2e.com/resumelinkprofile.php?studentid=' . $row['StudentID'];
+                        $name = '<a href="' . $name . '">' . $row1['FirstName'] . ', ' . $row1['LastName'] . '</a>';
+                    }else{
+                        $name = $row1['FirstName'] . ', ' . $row1['LastName'];
+                    }
+                    unset($result1, $row1);
+                ?>
                 <tr>
-                    <td class = "tcenter"></td>
-                    <td class = "tcenter"></td>
-                    <td class = "tcenter"></td>
-                    <td class = "tcenter"></td>
-                    <td class = "tcenter"></td>
-                    <td class = "tcenter"></td>
-                    <td class = "tcenter"></td>
-                    <td class = "tcenter"></td>
-                    <td class = "tcenter"></td>
-                    <td class = "tcenter"></td>
-                    <td class = "tcenter"></td>
+                     <td class = "tcenter"><?php echo $name?></td>
+                    <td class = "tcenter"><?php echo $status?></td>
+                    <td class = "tcenter">
+                        <button  name = 'btndelete' href="" class='btn btn-danger'> 
+                        <i class='fa fa-minus-square'></i> 
+                        </button> 
+                    </td>
                 </tr>
+                <?php } ?>
             </tbody>
         </table>
             </div>
@@ -349,5 +369,11 @@ background-color: #006681;
     </div>
    
 </body>
+<?php
+include('CONNECTION.php');
 
+if (isset($_POST['btnrequest'])) {
+    
+}
+?>
 </html> 

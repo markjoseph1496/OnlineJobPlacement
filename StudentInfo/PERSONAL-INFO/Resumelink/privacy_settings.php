@@ -1,4 +1,17 @@
 <!DOCTYPE html>
+
+<?php 
+session_start();
+if(is_null($_SESSION['StudentID'])){
+    echo "
+        <script type='text/javascript'>
+        location.href='../../../login-student.php';
+        </script>
+        ";
+}
+?>
+
+
 <html lang="en">
 
 <head>
@@ -15,6 +28,8 @@
 
     <!-- CSS -->
     <link href="../../css/agency.css" rel="stylesheet">
+    <link href="../../css/flat-ui.min.css" rel="stylesheet">
+
 
     <!-- Fonts -->
     <link href="../../font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
@@ -29,12 +44,6 @@
     <nav class="navbar navbar-default navbar-fixed-top navbar-shrink">
         <div class="container">
             <div class="navbar-header page-scroll">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
                 <a class="navbar-brand page-scroll" href="#page-top">Online Job Placement Management</a>
             </div>
 
@@ -44,19 +53,20 @@
                         <a href="#page-top"></a>
                     </li>
                     <li>
-                        <a class="page-scroll" href="#">Sign Out</a>
+                        <a href="../../../index.php?id=SignOut">Sign Out</a>
                     </li>
                 </ul>
             </div>
         </div>
     </nav><br><br>
 
-    <div class="container">
+    <div id="yellow-text-fields">
         <div class="white-holder">
             <ul class="nav nav-tabs">
                 <li role="presentation" id="my_info" class="item"><a href="../MyInfo/personal_info.php">My Info</a></li>
                 <li role="presentation" id="resume_link" class="item active"><a href="resumelink.php"><B>Resumé Link</B></a></li>
                 <li role="presentation" id="applications" class="item"><a href="../Applications/applications.php">Applications</a></li>
+                <li role="presentation" id="search-job" class="item"><a href="../Search-job/search-job.php">Jobs</a></li>
                 <li role="presentation" id="settings" class="item"><a href="../Settings/settings.php">Settings</a></li>
             </ul>
             <div class="space"></div>
@@ -66,6 +76,7 @@
                 <li class="yellow active"><a href="privacy_settings.php">Privacy Settings</a></li>
                 <li class="yellow"><a href="print.php">Print/Share</a></li>
             </ul>
+            <div class="space-1"></div>
 
             <div class"row">
                 <div class="col-md-10">
@@ -74,12 +85,9 @@
                             <label>Resumé Link URL</label>
                         </div>
                         <div class="field">
-                            <div class="col-md-3">
-                                http://markjoseph1496.jobs180.com
-                            </div>
-                            <div class="col-md-2">
-                                <a href="#" class="btnforadding" target="_blank">
-                                    <i class="fa fa-external-link"> Preview</i>
+                            <div class="col-md-4">
+                                <a href="../../../ResumelinkProfile.php" target="_blank">
+                                    http://markjoseph1496.ojpms.com <i class="fa fa-external-link-square"></i>
                                 </a>  
                             </div>             
                         </div>
@@ -88,12 +96,160 @@
                                 &nbsp;
                             </div>
                         </div>
-                    </div>
+                        <div class="row field">
+                            <div class="col-md-6 fieldcol">
+                                <label>Settings</label>
+                            </div>
+                        </div>
+                        <div class="row field">
+                            <div class="col-md-10 fieldcol">
+                                <label>Enable Public Resumelink</label><br>
+                                <div class="bootstrap-switch-square">
+                                    <input type="checkbox" checked data-toggle="switch" name="square-switch" id="switch-02" />
+                                    <em><B>Please note that your name is always displayed.</B></em>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row field"> 
+                            <div class="col-md-3">
+                                <label>Personal Info</label>
+                                <div class="bootstrap-switch-square">
+                                    <input type="checkbox" checked data-toggle="switch" name="square-switch" id="switch-02" />
+                                    <B>Photo</B>
+                                </div>
+                                <div class="space-2"></div>
+                                <div class="bootstrap-switch-square">
+                                    <input type="checkbox" checked data-toggle="switch" name="square-switch" id="switch-02" />
+                                    <B>Birthdate</B>
+                                </div>
+                                <div class="space-2"></div>
+                                <div class="bootstrap-switch-square">
+                                    <input type="checkbox" checked data-toggle="switch" name="square-switch" id="switch-02" />
+                                    <B>Nationality</B>
+                                </div>
+                                <div class="space-2"></div>
+                                <div class="bootstrap-switch-square">
+                                    <input type="checkbox" checked data-toggle="switch" name="square-switch" id="switch-02" />
+                                    <B>Gender</B>
+                                </div>
+                                <div class="space-2"></div>
+                                <div class="bootstrap-switch-square">
+                                    <input type="checkbox" checked data-toggle="switch" name="square-switch" id="switch-02" />
+                                    <B>Civil Status</B>
+                                </div>
+                                <div class="space-2"></div>
+                                <div class="bootstrap-switch-square">
+                                    <input type="checkbox" checked data-toggle="switch" name="square-switch" id="switch-02" />
+                                    <B>Social Networking</B>
+                                </div>
+                            </div>
+                            <div class="col-md-3">
+                                <label>Contact Info</label>
+                                <div class="bootstrap-switch-square">
+                                    <input type="checkbox" checked data-toggle="switch" name="square-switch" id="switch-02" />
+                                    <B>Email</B>
+                                </div>
+                                <div class="space-2"></div>
+                                <div class="bootstrap-switch-square">
+                                    <input type="checkbox" checked data-toggle="switch" name="square-switch" id="switch-02" />
+                                    <B>Mobile</B>
+                                </div>
+                                <div class="space-2"></div>
+                                <div class="bootstrap-switch-square">
+                                    <input type="checkbox" checked data-toggle="switch" name="square-switch" id="switch-02" />
+                                    <B>Home Number</B>
+                                </div>
+                                <div class="space-2"></div>
+                                <div class="bootstrap-switch-square">
+                                    <input type="checkbox" checked data-toggle="switch" name="square-switch" id="switch-02" />
+                                    <B>Wok Number</B>
+                                </div>
+                                <div class="space-2"></div>
+                                <div class="bootstrap-switch-square">
+                                    <input type="checkbox" checked data-toggle="switch" name="square-switch" id="switch-02" />
+                                    <B>Address</B>
+                                </div>
+                            </div>
+                            <div class="col-md-3">
+                                <label>Work</label>
+                                <div class="bootstrap-switch-square">
+                                    <input type="checkbox" checked data-toggle="switch" name="square-switch" id="switch-02" />
+                                    <B>Work Options</B>
+                                </div>
+                                <div class="space-2"></div>
+                                <div class="bootstrap-switch-square">
+                                    <input type="checkbox" checked data-toggle="switch" name="square-switch" id="switch-02" />
+                                    <B>Objectives</B>
+                                </div>
+                                <div class="space-2"></div>
+                                <div class="bootstrap-switch-square">
+                                    <input type="checkbox" checked data-toggle="switch" name="square-switch" id="switch-02" />
+                                    <B>Work Experience</B>
+                                </div>
+                            </div> 
+                        </div>
+                        <div class="space"></div>
+                        <div class="row field">
+                            <div class="col-md-3">
+                                <label>Education</label>
+                                <div class="bootstrap-switch-square">
+                                    <input type="checkbox" checked data-toggle="switch" name="square-switch" id="switch-02" />
+                                    <B>Schools</B>
+                                </div>
+                                <div class="space-2"></div>
+                                <div class="bootstrap-switch-square">
+                                    <input type="checkbox" checked data-toggle="switch" name="square-switch" id="switch-02" />
+                                    <B>Seminars</B>
+                                </div>
+                            </div>
+                            <div class="col-md-3">
+                                <label>&nbsp;</label>
+                                <div class="bootstrap-switch-square">
+                                    <input type="checkbox" checked data-toggle="switch" name="square-switch" id="switch-02" />
+                                    <B>References</B>
+                                </div>
+                                <div class="space-2"></div>
+                                <div class="bootstrap-switch-square">
+                                    <input type="checkbox" checked data-toggle="switch" name="square-switch" id="switch-02" />
+                                    <B>Portfolio</B>
+                                </div>
+                            </div>
+                            <div class="col-md-3">
+                                <label>&nbsp;</label>
+                                <div class="bootstrap-switch-square">
+                                    <input type="checkbox" checked data-toggle="switch" name="square-switch" id="switch-02" />
+                                    <B>Certifications</B>
+                                </div>
+                                <div class="space-2"></div>
+                                <div class="bootstrap-switch-square">
+                                    <input type="checkbox" checked data-toggle="switch" name="square-switch" id="switch-02" />
+                                    <B>Achievements</B>
+                                </div>
+                            </div>
+                            <div class="col-md-3">
+                                <label>Skills & Languages</label>
+                                <div class="bootstrap-switch-square">
+                                    <input type="checkbox" checked data-toggle="switch" name="square-switch" id="switch-02" />
+                                    <B>Skills</B>
+                                </div>
+                                <div class="space-2"></div>
+                                <div class="bootstrap-switch-square">
+                                    <input type="checkbox" checked data-toggle="switch" name="square-switch" id="switch-02" />
+                                    <B>Languages</B>
+                                </div>
+                            </div>
+                        </div>
+                    </div>      
                 </div>
-                <div class="field">
-                    <div class="invisible-line"></div>
-                </div>
+            </div>
+            <div class="field">
+                <div class="invisible-line"></div>
             </div>
         </div>
     </div>
+
+    <script src="../../js/jquery.min.js"></script>
+    <script src="../../js/flat-ui.min.js"></script>
+    <script src="../../js/application.js"></script>
 </body>
+</html>

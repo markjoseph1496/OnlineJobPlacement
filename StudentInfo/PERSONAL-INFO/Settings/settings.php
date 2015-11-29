@@ -2,6 +2,14 @@
 <?php
 session_start();
 include('connection.php');
+
+if(is_null($_SESSION['StudentID'])){
+    echo "
+        <script type='text/javascript'>
+        location.href='../../../login-student.php';
+        </script>
+        ";
+}
 ?>
 <html lang="en">
 
@@ -31,16 +39,10 @@ include('connection.php');
 
 
 <body id="page-top" class="index bg">
-    <form  method = "POST">
+<form  method = "POST">
     <nav class="navbar navbar-default navbar-fixed-top navbar-shrink">
         <div class="container">
             <div class="navbar-header page-scroll">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
                 <a class="navbar-brand page-scroll" href="#page-top">Online Job Placement Management</a>
             </div>
 
@@ -50,7 +52,7 @@ include('connection.php');
                         <a href="#page-top"></a>
                     </li>
                     <li>
-                        <a class="page-scroll" href="#">Sign Out</a>
+                        <a href="../../../index.php?id=SignOut">Sign Out</a>
                     </li>
                 </ul>
             </div>
@@ -58,35 +60,42 @@ include('connection.php');
     </nav><br><br>
 
     <div id="yellow-text-fields">
-        <div class="container">
-            <div class="white-holder">     
-                <ul class="nav nav-tabs">
-                    <li role="presentation" id="personal_info" class="item"><a href="../MyInfo/personal_info.php">My Info</a></li>
-                    <li role="presentation" id="resumelink" class="item"><a href="../Resumelink/resumelink.php">Resumé Link</a></li>
-                    <li role="presentation" id="applications" class="item"><a href="../Applications/applications.php">Applications</a></li>
-                    <li role="presentation" id="settings" class="item active"><a href="settings.php"><B>Settings</B></a></li>
-                </ul>
-                <div class="space"></div>
-                <ul class="nav nav-pills nav-stacked col-md-2 col-sm-3">
-                    <li class="yellow active"><a href="settings.php">Change Password</a></li>
-                </ul>
-
-                <div class"row">
-                    <div class="col-md-10 col-md-12">
-                        <div class="row field">
-                            <div class="col-md-10 col-sm-9">
-                                <div class="row field">
-                                    <div class="col-md-6 fieldcol">
+        <div class="white-holder">
+            <ul class="nav nav-tabs">
+                <li role="presentation" id="personal_info" class="item"><a href="../MyInfo/personal_info.php">My Info</a></li>
+                <li role="presentation" id="resumelink" class="item"><a href="../Resumelink/resumelink.php">Resumé Link</a></li>
+                <li role="presentation" id="applications" class="item"><a href="../Applications/applications.php">Applications</a></li>
+                <li role="presentation" id="search-job" class="item"><a href="../Search-job/search-job.php">Jobs</a></li>
+                <li role="presentation" id="settings" class="item active"><a href="settings.php"><B>Settings</B></a></li>
+            </ul>
+            <div class="space"></div>
+            
+            <ul class="nav nav-pills nav-stacked col-md-2 col-sm-3">
+                <li class="yellow active"><a href="settings.php">Change Password</a></li>
+            </ul>
+            <div class="space-1"></div>
+            
+            <div class"row">
+                <div class="col-md-10 col-md-12">
+                    <div class="row field">
+                        <div class="col-md-10 col-sm-9">
+                            <div class="row field">
+                                <div class="col-md-6 fieldcol">
+                                    <div class="form-group">
                                         <label>Current Password <span>(*)</span></label>
                                         <input type="password" class="form-control" id="txtCurrentPassword" name="txtCurrentPassword">
                                     </div>
                                 </div>
-                                <div class="row field">
-                                    <div class="col-md-6 col-sm-6 fieldcol">
+                            </div>
+                            <div class="row field">
+                                <div class="col-md-6 col-sm-6 fieldcol">
+                                    <div class="form-group">
                                         <label>New Password <span>(*)</span></label>
                                         <input type="password" class="form-control" id="txtNewPassword" name="txtNewPassword">
                                     </div>
-                                    <div class="col-md-6 col-sm-6 fieldcol">
+                                </div>
+                                <div class="col-md-6 col-sm-6 fieldcol">
+                                    <div class="form-group">
                                         <label>Confirm New Password <span>(*)</span></label>
                                         <input type="password" class="form-control" id="txtConfPassword" name="txtConfPassword">
                                     </div>
@@ -95,14 +104,14 @@ include('connection.php');
                         </div>
                     </div>
                 </div>
-                <div class="field">
-                    <div class="profile_divider"></div>
-                    <div class"row field">
-                        <div class="col-md-12">
-                            <form method="post">
-                                <button class="btn btn-lg btn-hg btn-primary" style="float:right;" name="btnChangePass">Change Password</button>
-                            </form>
-                        </div>
+            </div>
+            <div class="field">
+                <div class="profile_divider"></div>
+                <div class"row field">
+                    <div class="col-md-12">
+                        <form method="post">
+                            <button class="btn btn-lg btn-hg btn-primary" style="float:right;" name="btnChangePass">Change Password</button>
+                        </form>
                     </div>
                 </div>
             </div>

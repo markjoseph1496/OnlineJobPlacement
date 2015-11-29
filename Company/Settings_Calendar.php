@@ -1,4 +1,7 @@
 <!DOCTYPE html>
+<?php
+session_start();
+?>
 <html lang="en">
 
 <head>
@@ -166,6 +169,14 @@ background-color: #006681;
               margin-left: 980px;
               margin-top: -70px;
             }
+.white-holder {
+    background-color: #f7f7f7;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
+    padding: 80px 25px;
+    margin: 10px;
+    max-width:100%;
+    max-height:100%;
+}                
 </style>
 
 <body id="page-top" class="index resume">
@@ -194,14 +205,15 @@ background-color: #006681;
         </div>
     </nav><br><br>
 
-     <div class="resume_bg">
+     <div class="white-holder">
         <ul class="nav nav-tabs">
             <li role="presentation" id="company" class="item "><a href="Company.php">Home</a></li>
             <li role="presentation" id="dbase" class="item" ><a href="Positions.php">Positions</a></li>
-            <li role="presentation" id="dbase" class="item" ><a href="Database.php">Database</a></li>
             <li role="presentation" id="report" class="item"><a href="Report.php">Reports</a></li>
             <li role="presentation" id="setting" class="item active" ><a href="Settings.php">Settings</a></li>
-            <li role="presentation" id="resumelink" class="item"><a href="Resumesearch.php">Resumelink Search</a></li>           
+            <li role="presentation" id="resumelink" class="item"><a href="Resumesearch.php">Resumelink Search</a></li>
+            <li role="presentation" id="studentlist" class="item"><a href="StudentList.php">Student List</a></li>
+            <li role="presentation" id="applicantlist" class="item "><a href="ApplicantList.php">Applicant List</a></li>
         </ul>
 
         <div class="space1"></div>
@@ -209,42 +221,116 @@ background-color: #006681;
         <ul class="nav nav-pills" id = "submenu">
             <li class="yellow "><a href="Settings.php">Company</a></li>
             <li class="yellow active"><a href="Settings_Calendar.php">Calendar</a></li>
-            <li class="yellow"><a href="Settings_Users.php">User</a></li>
             <li class="yellow"><a href="Settings_MyAccount.php">My Account</a></li>
         </ul>
 
         <div class="space"></div>
         <div class = "container">
              <div class = "col-md-12">
+             <?php
+              if(isset($_GET['id'])){
+                    $id=$_GET['id'];
+                    if($id=="EventEdit"){
+                        echo '<div class="alert alert-success">
+                        <span class="glyphicon glyphicon-info-sign"></span> 
+                        Achievement successfully updated.
+                        </div>';
+                    }
+                    elseif($id=="EventDelete"){
+                        echo '<div class="alert alert-success">
+                        <span class="glyphicon glyphicon-info-sign"></span> 
+                        Achievement successfully deleted.
+                        </div>';
+                    }
+                    elseif($id=="EventAdd"){
+                        echo '<div class="alert alert-success">
+                        <span class="glyphicon glyphicon-info-sign"></span> 
+                        Achievement successfully added.
+                        </div>';
+                    }
+                }   
+             ?>
                 <h3>Calendar: Event List</h3>
                 <a id="Event" href="Settings_CreateEvent.php" class=" btn btn-default"> Create an Event </a>
+    <?php
+      include('CONNECTION.php');
+
+      $x = $_SESSION['Email'];
+          $eventtitle = 'EventTitle';
+          $datefrom = 'EventDatef';
+          $dateto = 'EventDatet';
+          $status = 'Status';
+
+          $query = ("SELECT * FROM compeventtbl WHERE Email = '$x'");
+          $Result = mysql_query($query);
+    ?>
         <table class = "Applicants" width = "100%" cellpadding = "0">
            <thead>
            <tr>
-    
+        
            </tr>    
                 <tr>
-                    <th width= "40%" class = "tabletitle">Event Title</th>
-                    <th width = "25%" class = "tabletitle">Event Date </th>
-                    <th width = "20%" class = "tabletitle"> Status </th>
+                    <th width= "40%" class = "tabletitle"></th>
+                    <th width = "20%" class = "tabletitle">Event Date </th>
+                    <th width = "25%" class = "tabletitle"> Status </th>
                     <th width = "15%" class = "tabletitle"> </th>
                 <tr>
             </thead>
-
             <tbody>
+              <?php
+                while ($row = mysql_fetch_array($Result)) {
+                  
+              ?>
                 <tr>
-                   <td></td>
-                   <td> </td>
-                   <td> </td>
-                   <td> <a id="Adduser" href="Settings_CreateEvent.php" class=" btn btn-default"> <i class="fa fa-pencil"></i></a> 
-                        <a id="Adduser" href="#" class=" btn btn-warning"> <i class="fa fa-exclamation"></i> </a>
-                        <a id="Adduser" href="#" class=" btn btn-danger"> <i class="fa fa-minus-square"></i> </a> 
+                   <td width = 40% class = tabletitle><?php echo $row[$eventtitle];?></td>
+                   <td width = 20% class = tabletitle><?php echo $row[$datefrom]; echo " To "; echo $row[$dateto];?> </td>
+                   <td width = 20% class = tabletitle><?php echo $row[$status];?> </td>
+                   <form method="POST">
+                      <input type="hidden" name="delete_id" value="<?php echo $row['EventID']; ?>" />
+                   <td> 
+                        <button id="Adduser" href="" name="btnedit" class=" btn btn-default"> 
+                        <i class="fa fa-pencil"></i></button> 
+                        <button id="Adduser" href="#" class=" btn btn-warning"> 
+                        <i class="fa fa-exclamation"></i> </button>
+                        <button id="Adduser" name="btndelete" href="#" class=" btn btn-danger"> 
+                        <i class="fa fa-minus-square"></i> </button> 
                    </td>
+                   </form>
                 </tr> 
+                <?php
+                }
+                ?>
             </tbody>
         </table>
             </div>
             
     </div>
 </body>
+<?php
+include('CONNECTION.php');
+
+    if(isset($_POST['btndelete'])){
+
+    $Z = $_POST['delete_id'];
+    
+    $query = "DELETE FROM compeventtbl WHERE EventID='$Z'";
+    $Result = mysql_query($query);
+
+    echo "
+            <script type='text/javascript'>
+            location.href='Settings_Calendar.php?id=EventDelete';
+            </script>
+            ";
+}
+if(isset($_POST['btnedit'])){
+    $Z = $_POST['delete_id'];
+    $_SESSION['delete_id'] = $Z;
+    echo "
+            <script type='text/javascript'>
+            location.href='Edit_Event.php';
+            </script>
+            ";
+}
+?>
+</html>
  

@@ -29,34 +29,28 @@
     <nav class="navbar navbar-default navbar-fixed-top navbar-shrink">
         <div class="container">
             <div class="navbar-header page-scroll">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
                 <a class="navbar-brand page-scroll" href="#page-top">Online Job Placement Management</a>
             </div>
-
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav navbar-right">
                     <li class="hidden">
                         <a href="#page-top"></a>
                     </li>
                     <li>
-                        <a class="page-scroll" href="#">Sign Out</a>
+                        <a href="../../../index.php?id=SignOut">Sign Out</a>
                     </li>
                 </ul>
             </div>
         </div>
     </nav><br><br>
 
-    <div class="container">
+    <div id="yellow-text-fields">
         <div class="white-holder">
             <ul class="nav nav-tabs">
                 <li role="presentation" id="my_info" class="item"><a href="../MyInfo/personal_info.php">My Info</a></li>
                 <li role="presentation" id="resume_link" class="item active"><a href="resumelink.php"><B>Resumé Link</B></a></li>
                 <li role="presentation" id="applications" class="item"><a href="../Applications/applications.php">Applications</a></li>
+                <li role="presentation" id="search-job" class="item"><a href="../Search-job/search-job.php">Jobs</a></li>
                 <li role="presentation" id="settings" class="item"><a href="../Settings/settings.php">Settings</a></li>
             </ul>
             <div class="space"></div>
@@ -66,6 +60,7 @@
                 <li class="yellow"><a href="privacy_settings.php">Privacy Settings</a></li>
                 <li class="yellow"><a href="print.php">Print/Share</a></li>
             </ul>
+            <div class="space-1"></div>
 
             <div class"row">
                 <div class="col-md-10">
@@ -74,12 +69,9 @@
                             <label>Resumé Link URL</label>
                         </div>
                         <div class="field">
-                            <div class="col-md-3">
-                                http://markjoseph1496.jobs180.com
-                            </div>
-                            <div class="col-md-2">
-                                <a href="../../../ResumelinkProfile.php" class="btnforadding" target="_blank">
-                                    <i class="fa fa-external-link"> Preview</i>
+                            <div class="col-md-4">
+                                <a href="../../../ResumelinkProfile.php" target="_blank">
+                                    http://markjoseph1496.ojpms.com <i class="fa fa-external-link-square"></i>
                                 </a>  
                             </div>             
                         </div>
@@ -96,7 +88,9 @@
                     </div>
                     <div class="row field">
                         <div class="col-md-12 fieldcol">
-                            <textarea name="" id="" cols="100" rows="10"></textarea>
+                            <div class="form-group">
+                                <textarea class="form-control" name="" id="" rows="10"></textarea>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -114,3 +108,4 @@
         </div>
     </div>
 </body>
+</html>

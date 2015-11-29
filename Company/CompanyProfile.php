@@ -1,18 +1,3 @@
-<!DOCTYPE html>
-<?php 
-include('connection.php');
-session_start();
-
-$x = $_SESSION['StudentID'];
-
-$qry = "SELECT * FROM studentinfotbl WHERE StudentID ='$x'";
-$result = mysql_query($qry);
-        while($qry = mysql_fetch_Array($result))
-        {       
-                $Birthdate = $qry['Birthdate'];
-        }
-?>
-
 <html>
 <head>
 
@@ -26,12 +11,12 @@ $result = mysql_query($qry);
     <title>Online Job Placement Managements</title>
 
     <!-- Bootstrap Core CSS -->
-    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css2/bootstrap.min.css" rel="stylesheet">
 
     <!-- CSS -->
-    <link href="css/agency.css" rel="stylesheet">
-	<link href="css/stylemain.css" rel = "stylesheet">
-	<link href = "css/style.css" rel = "stylesheet">
+    <link href="css2/agency.css" rel="stylesheet">
+	<link href="css2/stylemain.css" rel = "stylesheet">
+	<link href = "css2/style.css" rel = "stylesheet">
 	
 	<!--Javascript-->
 	<script src="./js/jquery.min.js"></script>
@@ -203,7 +188,7 @@ z-index: 99999;
   <header style= "background-image: url(./img/aa.jpg)">   
  <div class="container">
 	      <div class="intro-text">
-                <div class="intro-lead-in">Welcome To My Profile!</div>
+                <div class="intro-lead-in">Welcome To Our Company Profile!</div>
                 
                 <a id="down" href="#topinfo" class=" btn btn-xl"> View </a>
             </div>
@@ -218,9 +203,9 @@ z-index: 99999;
 
 	<div class="imgcover" style="background-image: url(./img/a.jpg)"></div>
 	<ul>
-	<h1 class = "name">Aira Jane Cruz</h1>
+	<h1 class = "name">JCO Company</h1>
 	
-	<p class = "name1">http://markjoseph1496.jobs180.com </p>
+	<p class = "name1">http://jcolangot.com </p>
 	
 	</ul>
 	
@@ -236,17 +221,13 @@ z-index: 99999;
 	<div class = "container1">
 		<div class = "row">
 			<div class = "col-md-4  ">
-			<h3> <img src = "./img/icons/profile.png" width = "60px;" height = "60px;"> Personal Information </h3>
+			<h3> <img src = "./img/icons/profile.png" width = "60px;" height = "60px;"> Company Information </h3>
 			</div>
 			<div class="col-md-8 col-sm-8">
 				<table class = "infotable">
 				<tbody>
 				<tr>
-				<td>
-				<?php 
-					echo $Birthdate;
-				?>
-				</td>
+				<td> Date of Birth </td>
 				<td> March 14, 1996 </td>
 				</tr>
 				
@@ -311,7 +292,7 @@ z-index: 99999;
 	<div class = "container1">
 		<div class = "row">
 			<div class = "col-md-4">
-			<h3> <img src = "./img/icons/education.png" height = "60px" width = "60px"> Education </h3>
+			<h3> <img src = "./img/icons/education.png" height = "60px" width = "60px"> Requirements </h3>
 			</div>
 			<div class="col-md-8">
 			<h3 class="unit">Bachelor's/College Degree</h3>
@@ -353,7 +334,7 @@ z-index: 99999;
 	<div class = "container1">
 		<div class = "row">
 			<div class = "col-md-4 col-sm-4">
-			<h3> <img src = "./img/icons/language.png" width = "60px;" height = "60px;"> Languages </h3>
+			<h3> <img src = "./img/icons/language.png" width = "60px;" height = "60px;"> Requirements </h3>
 			</div>
 			<div class="col-md-8 col-sm-8">
 				<table class = "infotable">
@@ -407,7 +388,7 @@ z-index: 99999;
 	<div class = "container1">
 		<div class = "row">
 			<div class = "col-md-4">
-			<h3> <img src = "./img/icons/skills.png" height = "60px" width = "60px"> Skills</h3>
+			<h3> <img src = "./img/icons/skills.png" height = "60px" width = "60px"> Requirements</h3>
 			</div>
 			<div class="col-md-8 col-sm-8">
 				<table class = "infotable">
@@ -438,7 +419,7 @@ z-index: 99999;
 	<div class = "container1">
 		<div class = "row">
 			<div class = "col-md-4 col-sm-4">
-			<h3> <img src = "./img/icons/achievements.png" width = "60px;" height = "60px;"> ACHIEVEMENTS </h3>
+			<h3> <img src = "./img/icons/achievements.png" width = "60px;" height = "60px;">Requirements </h3>
 			</div>
 			<div class="col-md-8 col-sm-8">
 				<table class = "infotable">
@@ -460,7 +441,7 @@ z-index: 99999;
 	<div class = "container1">
 		<div class = "row">
 			<div class = "col-md-4">
-			<h3> <img src = "./img/icons/referrence.png" height = "60px" width = "60px"> Referrence </h3>
+			<h3> <img src = "./img/icons/referrence.png" height = "60px" width = "60px"> Requirements </h3>
 			</div>
 			<div class="col-md-8">
 			<h3 class="unit">ASDASDASD</h3>

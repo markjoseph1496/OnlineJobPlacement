@@ -1,4 +1,7 @@
 <!DOCTYPE html>
+<?php
+session_start();
+?>
 <html lang="en">
 
 <head>
@@ -91,7 +94,14 @@ h1,  {
     border: 1px solid #E5E4E2;
     margin-top: 50px;
 }
-
+.white-holder {
+    background-color: #f7f7f7;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
+    padding: 80px 25px;
+    margin: 10px;
+    max-width:100%;
+    max-height:100%;
+} 
 </style>
 
 <body id="page-top" class="index resume">
@@ -120,15 +130,16 @@ h1,  {
         </div>
     </nav><br><br>
 
-    <div class="resume_bg">
+    <div class="white-holder">
         <ul class="nav nav-tabs">
             <li role="presentation" id="company" class="item active"><a href="Company.php">Home</a></li>
             <li role="presentation" id="dbase" class="item" ><a href="Positions.php">Positions</a></li>
-            <li role="presentation" id="dbase" class="item" ><a href="Database.php">Database</a></li>
+            <li role="presentation" id="calendar" class="item " ><a href="Calendar.php">Calendar</a></li>
             <li role="presentation" id="report" class="item"><a href="Report.php">Reports</a></li>
             <li role="presentation" id="setting" class="item" ><a href="Settings.php">Settings</a></li>
             <li role="presentation" id="resumelink" class="item"><a href="Resumesearch.php">Resumelink Search</a></li>
-            
+            <li role="presentation" id="studentlist" class="item"><a href="StudentList.php">Student List</a></li>
+            <li role="presentation" id="applicantlist" class="item "><a href="ApplicantList.php">Applicant List</a></li>
         </ul>
         <div class="space"></div>
         <div class = "container">
@@ -136,24 +147,56 @@ h1,  {
                 <div class = "container">
                         <h3>My Positions</h3>
                 </div>
+
+        <?php
+        include('CONNECTION.php');
+
+        $x = $_SESSION['Email'];
+
+            $plevel = 'PositionLevel';
+            $pdatef = 'PostingDateFrom';
+            $pdatet = 'PostingDateTo';
+            $status = 'Status'; 
+        
+
+            $query = "SELECT * FROM comppositiontbl WHERE Email = '$x'";
+            $Result = mysql_query($query);
+
+            //$query1 = "SELECT * FROM compcoursetbl WHERE Email = '$x'";
+            //$Result1 = mysql_query($query1);  
+        ?>
         <table class = "Applicants" width = "100%" cellpadding = "0">
            <thead>
            <tr>
 	
            </tr>	
 				<tr>
-					<th width= "50%" class = "tabletitle">Positions</th>
-					<th width = "25%" class = "tabletitle">Date Posted </th>
-					<th width = "25%" class = "tabletitle"> Number of Applicants </th>
+					<th width= "30%" class = "tabletitle">Positions</th>
+					<th width = "25%" class = "tabletitle">From </th>
+					<th width = "25%" class = "tabletitle">To </th>
+                    <th width = "25%" class = "tabletitle">Status </th>
 				<tr>
 			</thead>
 
             <tbody>
+            <?php
+                while ($row = mysql_fetch_array($Result)) { 
+                        
+                    
+            ?>
                 <tr>
-                   <td>No Records..</td>
-                   <td></td>
-                   <td></td>
-                </tr> 
+                   <td>
+                    <a href = "#"><?php echo $row[$plevel]; ?></a>
+                    </td>
+                   <td><?php echo $row[$pdatef]; ?></td>
+                   <td><?php echo $row[$pdatet]; ?></td>
+                   <td><?php echo $row[$status]; ?></td>
+                </tr>
+
+            <?php
+
+                }
+            ?> 
             </tbody>
         </table>
             </div>

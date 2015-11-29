@@ -1,6 +1,6 @@
 <!DOCTYPE html>
+<!-- Yung resume link kulang pa. Naka abang pa lang dito -->
 <html lang="en">
-
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -10,8 +10,19 @@
 
     <title>Online JPMS</title>
 
-    <!-- Bootstrap Core CSS -->
-    <link href="StudentInfo/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet" />
+    <link href="css/basic-template.css" rel="stylesheet" />
+
+    <!-- BootstrapValidator CSS -->
+    <link href="css/bootstrapValidator.min.css" rel="stylesheet"/>
+  
+    <!-- jQuery and Bootstrap JS -->
+    <script src="js/jquery.min.js" type="text/javascript"></script>
+    <script src="js/bootstrap.min.js" type="text/javascript"></script>
+      
+    <!-- BootstrapValidator -->
+    <script src="js/bootstrapValidator.min.js" type="text/javascript"></script>
 
     <!-- CSS -->
     <link href="StudentInfo/css/agency.css" rel="stylesheet">
@@ -25,8 +36,8 @@
 </head>
 
 
-<body id="page-top" class="index">
-    <form method="POST" >
+<body id="page-top" class="index bg">
+    <form name="registration" id="registration" autocomplete="off" action="RegisterAdd.php">
         <nav class="navbar navbar-default navbar-fixed-top navbar-shrink">
             <div class="container">
                 <!-- Brand and toggle get grouped for better mobile display -->
@@ -42,189 +53,160 @@
             </div>
         </nav>
 
-        <div id="yellow-text-fields" class="bg">
+        <div id="yellow-text-fields">
             <div class="container">
                 <div class="row">
-                    <div class="register_form">
+                    <div class="white-holder">
                         <div class="col-md-12 text-center">
                             <h1>REGISTRATION</h1><br><br>
                         </div>
-                        <div class="ribbon"><h4>Student Details:</h4></div><br><br>
-                        <div class="row">
-                            <div class="col-md-12 text-center">
-                                <label><span>(*) </span>Resumé Link: </label>
-                                http://________________.jobs180.com
-                                <input type="text" class="form-control" id="resumelink">
-                                <p class="note">ex.http://YourName.jobs180.com</p>
+                        <div class="ribbon"><h4>Student Details:</h4></div><br>
+                        <div class="row field">
+                            <div class="col-md-3" style="float:center;">
+                                &nbsp;
+                            </div>
+                            <div class="col-md-6 text-center">
+                                <div class="form-group">
+                                    <label><span>(*) </span>Resumé Link: </label>
+                                    <input type="text" class="form-control" id="resumelink" placeholder="http://YourName.sticaloocan.edu" name="resumelink">
+                                    <p class="note">ex.http://YourName.sticaloocan.edu</p>
+                                </div>
+                            </div>
+                            <div class="col-md-3">
+                                &nbsp;
                             </div>
                         </div>
                         <p class="note">You may only use alphanumeric characters, including period (.), dash (-), or underscore (_). This will be the name that will identify your personalized ResumeLink. This name will be permanent and no longer be changeable.</p>
-                        <br><br>
-
-                        <div class="row field ">
-                        <div class="col-md-12 fieldcol text-center">
-                            <label>Student ID: <span>(*)</span></label>
-                            <input type="text" class="form-control" id="txtStudentID" name="txtStudentID" style: float:"center;">
-                        </div>
-                        </div>
+                        <br>
                         <div class="row field">
-                            <div class="col-md-6 fieldcol">
-                                <label>First Name <span>(*)</span></label>
-                                <input type="text" class="form-control" id="txtFname" name="txtFname">
-                            </div>
-                            <div class="col-md-6 fieldcol">
-                                <label>Last Name <span>(*)</span></label>
-                                <input type="text" class="form-control" id="txtLname" name="txtLname">
+                            <div class="col-md-2 fieldcol">
+                                <div class="form-group">
+                                    <label>Student ID: <span>(*)</span></label>
+                                    <input type="text" class="form-control" id="StudentID" name="StudentID" maxlength="11">
+                                </div>
                             </div>
                         </div>
                         <div class="row field">
                             <div class="col-md-6 fieldcol">
-                                <label>Birthdate <span>(*)</span></label><br>
-                                    <span class="combodate ">
-                                        <select id="txtbday_month" name="txtbday_month" class="month" style="width:25%; height:34px;">
-                                            <option value></option>
-                                            <option value="01">January</option>
-                                            <option value="02">February</option> 
-                                            <option value="03">March</option> 
-                                            <option value="04">April</option> 
-                                            <option value="05">May</option> 
-                                            <option value="06">June</option> 
-                                            <option value="07">July</option> 
-                                            <option value="08">August</option>
-                                            <option value="09">September</option>
-                                            <option value="10">October</option>
-                                            <option value="11">November</option>
-                                            <option value="12">December</option>
-                                        </select>
-
-                                        <select id="txtbday_day" name="txtbday_day" class="day" style="width: 13%; height:34px;">
-                                            <option value></option>
-                                            <option value="01">1</option>
-                                            <option value="02">2</option> 
-                                            <option value="03">3</option> 
-                                            <option value="04">4</option> 
-                                            <option value="05">5</option> 
-                                            <option value="06">6</option> 
-                                            <option value="07">7</option> 
-                                            <option value="08">8</option>
-                                            <option value="09">9</option>
-                                            <option value="10">10</option>
-                                            <option value="11">11</option>
-                                            <option value="12">12</option>
-                                            <option value="13">13</option>
-                                            <option value="14">14</option>
-                                            <option value="15">15</option>
-                                            <option value="16">16</option>
-                                            <option value="17">17</option>
-                                            <option value="18">18</option>
-                                            <option value="19">19</option>
-                                            <option value="20">21</option>
-                                            <option value="21">21</option>
-                                            <option value="22">22</option>
-                                            <option value="23">23</option>
-                                            <option value="24">24</option>
-                                            <option value="25">25</option>
-                                            <option value="26">26</option>
-                                            <option value="27">27</option>
-                                            <option value="28">28</option>
-                                            <option value="29">29</option>
-                                            <option value="30">30</option>
-                                            <option value="31">31</option>
-                                        </select>
-
-                                        <select id="txtbday_year" name="txtbday_year" class="year" style="width:15%; height:34px;">
-                                            <?php 
-                                                $date = 1934;
-                                                while($date != Date("Y")){
-                                                $date++;
-                                                echo "<option value='$date'> $date</option>";
-                                                }
-                                            ?>
-                                        </select>
-                                    </span>
+                                <div class="form-group">
+                                    <label>First Name <span>(*)</span></label>
+                                    <input type="text" class="form-control" id="FirstName" name="FirstName">
+                                </div>
                             </div>
                             <div class="col-md-6 fieldcol">
-                                <label>Mobile Number <span>(*)</span></label>
-                                <input type="text" class="form-control" id="txtmobilenum" name="txtmobilenum">
+                                <div class="form-group">
+                                    <label>Last Name <span>(*)</span></label>
+                                    <input type="text" class="form-control" id="LastName" name="LastName">
+                                </div>
                             </div>
                         </div>
                         <div class="row field">
                             <div class="col-md-6 fieldcol">
-                                <label>Email <span>(*)</span></label>
-                                <input type="text" class="form-control" id="txtEmail" name="txtEmail">
+                                <div class="form-group">
+                                    <label>Birthdate <span>(*)</span></label><br>
+                                    <input type="date" class="form-control" name="Birthday" id="Birthday">
+                                </div>
                             </div>
                             <div class="col-md-6 fieldcol">
-                                <label>Confirm Email <span>(*)</span></label>
-                                <input type="text" class="form-control" id="txtconfirm_email" name="txtconfirm_email">
+                                <div class="form-group">
+                                    <label>Mobile Number<span>(*)</span></label>
+                                    <input type="text" class="form-control" id="MobileNumber" name="MobileNumber">
+                                </div>
                             </div>
                         </div>
                         <div class="row field">
                             <div class="col-md-6 fieldcol">
-                                <label>Password <span>(*)</span></label>
-                                <input type="password" class="form-control" id="txtpassword" name="txtpassword">
+                                <div class="form-group">
+                                    <label>Email <span>(*)</span></label>
+                                    <input type="email" class="form-control" id="Email" name="Email">
+                                </div>
                             </div>
                             <div class="col-md-6 fieldcol">
-                                <label>Confirm Password <span>(*)</span></label>
-                                <input type="password" class="form-control" id="txtconfirm_password" name="txtconfirm_password">
+                                <div class="form-group">
+                                    <label>Confirm Email <span>(*)</span></label>
+                                    <input type="text" class="form-control" id="ConfirmEmail" name="ConfirmEmail">
+                                </div>
                             </div>
                         </div>
                         <div class="row field">
                             <div class="col-md-6 fieldcol">
-                                <label>State/Region <span>(*)</span></label><br>
-                                <select id="txtstate_id" name="txtstate_id" class="state_id" style="width:100%; height:34px;">
-                                    <option value>- Please select one</option>
-                                    <option value="NCR">NCR</option>
-                                    <option value="CAR">CAR</option>
-                                    <option value="Ilocos Region">Ilocos Region</option>
-                                </select>
+                                <div class="form-group">
+                                    <label>Password <span>(*)</span></label>
+                                    <input type="password" class="form-control" id="_Password" name="_Password">
+                                </div>
                             </div>
                             <div class="col-md-6 fieldcol">
-                                <label>City <span>(*)</span></label><br>
-                                <select id="txtcity_id" name="txtcity_id" class="city_id" style="width:100%; height:34px;">
-                                    <option value>- Please select one</option>
-                                    <option value="Valenzuela">Valenzuela</option>
-                                    <option value="Caloocan">Caloocan</option>
-                                </select>
+                                <div class="form-group">
+                                    <label>Confirm Password <span>(*)</span></label>
+                                    <input type="password" class="form-control" id="ConfirmPassword" name="ConfirmPassword">
+                                </div>
                             </div>
-                        </div> <br><br>
+                        </div>
+                        <div class="row field">
+                            <div class="col-md-6 fieldcol">
+                                <div class="form-group">
+                                    <label>City <span>(*)</span></label><br>
+                                    <select id="City" name="City" class="form-control" style="width:100%; height:34px;">
+                                        <option value="">- Please select one -</option>
+                                        <option value="Caloocan City">Caloocan City</option>
+                                        <option value="Las Pińas City">Las Pińas City</option>
+                                        <option value="Makati City">Makati City</option>
+                                        <option value="Malabon City">Malabon City</option>
+                                        <option value="Mandaluyong City">Mandaluyong City</option>
+                                        <option value="Manila">Manila</option>
+                                        <option value="Marikina City">Marikina City</option>
+                                        <option value="Muntinlupa City">Muntinlupa City</option>
+                                        <option value="Navotas City">Navotas City</option>
+                                        <option value="Parańaque City">Parańaque City</option>
+                                        <option value="Pasay City">Pasay City</option>
+                                        <option value="Pasig City">Pasig City</option>
+                                        <option value="Pateros City">Pateros City</option>
+                                        <option value="Quezon City">Quezon City</option>
+                                        <option value="San Juan City">San Juan City</option>
+                                        <option value="Taguig City">Taguig City</option>
+                                        <option value="Valenzuela City">Valenzuela City</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div><br><br>
 
                         <div class="ribbon"><h4>Educational Background:</h4></div><br><br>
                         <div class="row field">
                             <div class="col-md-6 fieldcol">
-                                <label>Educational Attainment <span>(*)</span></label><br>
-                                <select id="txtqualification_id" name="txtqualification_id" class="qualification_id" style="width:100%; height:34px;">
-                                    <option value>- Please select one</option>
-                                    <option value="Bachelor's/College Degree">Bachelor's/College Degree</option>
-                                </select>
+                                <div class="form-group">
+                                    <label>Educational Attainment <span>(*)</span></label><br>
+                                    <select id="EducAttain" name="EducAttain" class="form-control" style="width:100%; height:34px;">
+                                        <option value="">- Please select one -</option>
+                                        <option value="Bachelor's/College Degree">Bachelor's/College Degree</option>
+                                    </select>
+                                </div>
                             </div>
                             <div class="col-md-6 fieldcol">
-                                <label>School <span>(*)</span></label><br>
-                                <select id="txtschool_id" name="txtschool_id" class="school_id" style="width:100%; height:34px;">
-                                    <option value>- Please select one</option>
-                                    <option value="STI College Caloocan">STI College Caloocan</option>
-                                </select>
+                                <div class="form-group">
+                                    <label>Course <span>(*)</span></label>
+                                    <select id="Course" name="Course" class="form-control" style="width:100%; height:34px;">
+                                        <option value="">- Please select one</option>
+                                        <option value="Bachelor of Science in Information Technology Major in Digital Arts">Bachelor of Science in Information Technology Major in Digital Arts</option>
+                                        <option value="Bachelor of Science in Information Technology">Bachelor of Science in Information Technology</option>
+                                        <option value="Bachelor of Science in Computer Science">Bachelor of Science in Computer Science</option>
+                                        <option value="2 - Year Associate in Computer Technology">2 - Year Associate in Computer Technology</option>
+                                        <option value="Bachelor of Science in Business Management Major in Operations">Bachelor of Science in Business Management Major in Operations</option>
+                                        <option value="Bachelor of Science in Business Administration">Bachelor of Science in Business Administration</option>
+                                        <option value="Bachelor of Science in Accounting Technology">Bachelor of Science in Accounting Technology</option>
+                                        <option value="Bachelor of Science in Hotel &amp; Restaurant Management">Bachelor of Science in Hotel &amp; Restaurant Management</option>
+                                        <option value="Bachelor of Science in Tourism Management">Bachelor of Science in Tourism Management</option>
+                                        <option value="Bachelor of Science in Computer Engineering">Bachelor of Science in Computer Engineering</option>
+                                        <option value="Bachelor of Arts in Communication">Bachelor of Arts in Communication</option>
+                                    </select>
+                                </div>
                             </div>
                         </div>
                         <div class="row field">
-                            <div class="col-md-4 fieldcol">
-                                <label>Field of Study <span>(*)</span></label><br>
-                                <select id="txtcourse_id" name="txtcourse_id" class="course_id" style="width:100%; height:34px;">
-                                    <option value>- Please select one</option>
-                                    <option value="Computer Science">Computer Science</option>
-                                </select>
-                            </div>
-                            <div class="col-md-4 fieldcol">
-                                <label>Major/Course <span>(*)</span></label><br>
-                                <select id="txtmajor" name="txtmajor" class="major" style="width:100%; height:34px;">
-                                    <option value>- Please select one</option>
-                                    <option value="Computer Science">Computer Science</option>
-                                </select>
-                            </div>
-                            <div class="col-md-4 fieldcol">
-                                <label>Graduation Date <span>(*)</span></label><br>
-                                <span class"combodate">
-                                    <select id="txtgraduated_month" name="txtgraduated_month" class="graduated_month" style="width:35%; height:34px;">
-                                        <option value></option>
+                            <div class="col-md-2 fieldcol">
+                                <div class="form-group">
+                                    <label>Graduation Date <span>(*)</span></label>
+                                    <select id="GraduatedMonth" name="GraduatedMonth" class="form-control" style="width:100%; height:34px;">
+                                        <option value="">- Month -</option>
                                         <option value="01">January</option>
                                         <option value="02">February</option> 
                                         <option value="03">March</option> 
@@ -238,169 +220,208 @@
                                         <option value="11">November</option>
                                         <option value="12">December</option>
                                     </select>
-
-                                    <select id="txtgraduated_year" name="txtgraduated_year" class="graduated_year" style="width:25%; height:34px;">
-                                        <option value></option>
-                                        <option value="1941">1941</option>
-                                        <option value="1940">1940</option>
-                                        <option value="1939">1939</option>
-                                        <option value="1938">1938</option>
-                                        <option value="1937">1937</option>
-                                        <option value="1936">1936</option>
-                                        <option value="1935">1935</option>
-                                    </select>
-                                </span>
-                            </div>
-                            <div class="divider"></div>
-                            <div class"row field">
-                                <div class="col-md-6">
-                                    <label><b>By clicking the "Sign Up" button below, I certify that I have read and agree to the <a href="" target="_blank">Terms of Use</a>.</b></label>
                                 </div>
-                                <div class="col-md-6">
-                                    <button type="submit" name="btnSave" id="btnSave" class="btn btn-log" style="float:right;">Sign Up</button>
+                            </div>
+                            <div class="col-md-2 fieldcol">
+                                <div class="form-group">
+                                    <label>&nbsp;</label>
+                                    <select id="GraduatedYear" name="GraduatedYear" class="form-control" style="width:100%; height:34px;">
+                                        <option value="">- Year -</option>
+                                        <?php 
+                                            $date = Date("Y") + 4;
+                                                if($b==1){
+                                                    $choose = "";
+                                                }
+                                                else{
+                                                    $choose = $server_graduatedyear;
+                                                }
+                                                while($date != 1935){
+                                                    $date--;
+                                                    if($date == $choose){
+                                                        echo "<option selected value='$date'> $date</option>";
+                                                        }
+                                                        else{
+                                                        echo "<option value='$date'> $date</option>";
+                                                        }
+                                                    }
+                                        ?>
+                                    </select>
                                 </div>
                             </div>
                         </div>
-                    </div> <!-- End of reg_form-->
-                </div>
+                        <div class="divider"></div>
+                        <div class"row field">
+                            <div class="col-md-6">
+                                <label><b>By clicking the "Sign Up" button below, I certify that I have read and agree to the <a href="" target="_blank">Terms of Use</a>.</b></label>
+                            </div>
+                            <div class="col-md-6">
+                                <button type="submit" class="btn btn-log" style="float:right;">Sign Up</button>
+                            </div>
+                        </div>
+                        <div class="field">
+                            <div class="invisible-line"></div>
+                        </div>
+                    </div>
+                </div> <!-- End of reg_form-->
             </div>
         </div>
     </form>
+    <script type="text/javascript">
+        $(document).ready(function (){
+            var validator = $("#registration").bootstrapValidator({
+                feedbackIcons: {
+                    valid: "glyphicon glyphicon-ok",
+                    invalid: "glyphicon glyphicon-remove",
+                    validating: "glyphicon glyphicon-refresh"
+                },
+                fields:{
+                    StudentID: {
+                        validators: {
+                            notEmpty: {
+                                message: "Student ID is required."
+                            },
+                            stringLength: {
+                                min: 11,
+                                max: 11,
+                                message: "Student ID is invalid."
+                            },
+                            remote: {
+                                message: 'The student ID already exists',
+                                url: 'RegisterAdd.php',
+                                data: {
+                                    type: 'StudentID'
+                                },
+                                type: 'POST'
+                                }
+                            }
+                    },
+                    FirstName: {
+                        validators: {
+                            notEmpty: {
+                                message: "First name is required."
+                            },
+                            stringLength: {
+                                min: 3,
+                                max: 15,
+                                message: "First name must be 3-15 characters long."
+                            }
+                        }
+                    },
+                    LastName: {
+                        validators: {
+                            notEmpty: {
+                                message: "Last name is required."
+                            },
+                            stringLength: {
+                                min: 3,
+                                max: 15,
+                                message: "Last name must be 3-15 characters long."
+                            }
+                        }
+                    },
+                    MobileNumber: {
+                        validators: {
+                            notEmpty: {
+                                message: "Mobile number is required."
+                            },
+                            stringLength: {
+                                min: 7,
+                                max: 11,
+                                message: "Mobile number must be 7-11 characters long."
+                            }
+                        }
+                    },
+                    Email: {
+                        validators: {
+                            notEmpty: {
+                                message: "Email address is required."
+                            },
+                            stringLength: {
+                                min: 6,
+                                max: 35,
+                                message: "Email address must be 6-35 characters long."
+                            }
+                        }
+                    },
+                    ConfirmEmail: {
+                        validators: {
+                            notEmpty: {
+                                message: "Confirm Email is required."
+                            },
+                            identical: {
+                                field: "Email",
+                                message: "Email and Confirm email mismatched."
+                            }
+                        }
+                    },
+                    _Password: {
+                        validators: {
+                            notEmpty: {
+                                message: "Password is required."
+                            },
+                            stringLength: {
+                                min: 8,
+                                max: 16,
+                                message: "Email address must be 8-16 characters long."
+                            }
+                        }
+                    },
+                    ConfirmPassword: {
+                        validators: {
+                            notEmpty: {
+                                message: "Confirm password is required."
+                            },
+                            identical: {
+                                field: "_Password",
+                                message: "Password and confirm password mismatched."
+                            }
+                        }
+                    },
+                    City: {
+                        validators: {
+                            notEmpty: {
+                                message: "City is required."
+                            }
+                        }
+                    },
+                    EducAttain: {
+                        validators:{
+                            notEmpty: {
+                                message: "Educational Attainment is required."
+                            }
+                        }
+                    },
+                    EducAttain: {
+                        validators:{
+                            notEmpty: {
+                                message: "Educational Attainment is required."
+                            }
+                        }
+                    },
+                    Course: {
+                        validators:{
+                            notEmpty: {
+                                message: "Course is required."
+                            }
+                        }
+                    },
+                    GraduatedMonth: {
+                        validators:{
+                            notEmpty: {
+                                message: "Month graduated is required."
+                            }
+                        }
+                    },
+                    GraduatedYear: {
+                        validators:{
+                            notEmpty: {
+                                message: "Year graduated is required."
+                            }
+                        }
+                    }
+                }
+            });
+        });
+    </script>
 </body>
-
-<!--
-<script>
-function validateForm(){
-    var fname = document.forms['registration']["fname"].value;
-    var lname = document.forms['registration']["lname"].value;
-    var bday_month = document.forms['registration']["bday_month"].value;
-    var bday_year = document.forms['registration']["bday_year"].value;
-    var bday_day = document.forms['registration']["bday_day"].value;
-    var mobilenum = document.forms['registration']["mobilenum"].value;
-    var email = document.forms['registration']["email"].value;
-    var confirm_email = document.forms['registration']["confirm_email"].value;
-    var password = document.forms['registration']["password"].value;
-    var confirm_password = document.forms['registration']["confirm_password"].value;
-    var state_id = document.forms['registration']["state_id"].value;
-    var city_id = document.forms['registration']["city_id"].value;
-    var qualification_id = document.forms['registration']["qualification_id"].value;
-    var school_id = document.forms['registration']["school_id"].value;
-    var course_id = document.forms['registration']["course_id"].value;
-    var major = document.forms['registration']["major"].value;
-    var graduated_month = document.forms['registration']["graduated_month"].value;
-    var graduated_year = document.forms['registration']["graduated_year"].value;
-    if(fname==null || fname == ""){
-        alert("First Name must be filled out");
-        return false;
-    }
-    if(lname==null || lname == ""){
-        alert("Last Name must be filled out");
-        return false;
-    }
-     if(bday_month==null || bday_month == ""){
-        alert("Enter your birthdate");
-        return false;
-    }
-     if(bday_year==null || bday_year == ""){
-        alert("Enter your birthdate");
-        return false;
-    }
-     if(bday_day==null || bday_day== ""){
-        alert("Enter your birthdate");
-        return false;
-    }
-     if(mobilenum==null || mobilenum == ""){
-        alert("Mobile Number must be filled out");
-        return false;
-    }
-     if(email==null || email == ""){
-        alert("Email must be filled out");
-        return false;
-    }
-     if(password==null || password == ""){
-        alert("Password must be filled out");
-        return false;
-    }
-     if(state_id==null || state_id == ""){
-        alert("State/Region must be filled out");
-        return false;
-    }
-     if(city_id==null || city_id == ""){
-        alert("City must be filled out");
-        return false;
-    }
-     if(qualification_id==null || qualification_id == ""){
-        alert("Educational Attainment must be filled out");
-        return false;
-    }
-     if(course_id==null || course_id == ""){
-        alert("Field of Study must be filled out");
-        return false;
-    }
-     if(major==null || major == ""){
-        alert("Major Course must be filled out");
-        return false;
-    }
-     if(graduated_month==null || graduated_month == ""){
-        alert("Graduation Date must be filled out");
-        return false;
-    }
-     if(school_id==null || school_id == ""){
-        alert("School must be filled out");
-        return false;
-    }
-     if(graduated_year==null || graduated_year == ""){
-        alert("Graduation Date must be filled out");
-        return false;
-    }
-    if(password != confirm_password){
-        alert("Password did not match.")
-        return false;
-    }
-    if(email != confirm_email){
-        alert("Email did not match.")
-        return false;
-    }
-    
-}
-</script>
--->
-<?php
-include('connection.php');
-
-if(isset($_POST['btnSave'])){
-
-    $StudentID = $_POST['txtStudentID'];
-   $fname = $_POST['txtFname'];
-   $lname = $_POST['txtLname'];
-   $bday_month = $_POST['txtbday_month'];
-   $bday_day = $_POST['txtbday_day'];
-   $bday_year = $_POST['txtbday_year'];
-   $mobilenum = $_POST['txtmobilenum'];
-   $email = $_POST['txtEmail'];
-   $password = $_POST['txtpassword'];
-   $state_id = $_POST['txtstate_id'];
-   $city_id = $_POST['txtcity_id'];
-   $qualification_id = $_POST['txtqualification_id'];
-   $school_id = $_POST['txtschool_id'];
-   $course_id = $_POST['txtcourse_id'];
-   $major = $_POST['txtmajor'];
-   $graduated_month = $_POST['txtgraduated_month'];
-   $graduated_year = $_POST['txtgraduated_year'];
-
-   $birthdate .= $bday_month .'/'. $bday_day .'/'. $bday_year;
-   $yeargraduated .= $graduated_month .'-'. $graduated_year;
-   $qualification_id = mysql_real_escape_string($qualification_id);
-
-
-   $query = "INSERT INTO studentinfotbl (StudentID,FirstName,LastName,Birthdate,MobileNumber,Email,Password,StateRegion,City,EducAttain,School,FieldofStudy,MajorCourse,GraduationDate) values  ('$StudentID','$fname','$lname','$birthdate','$mobilenum','$email','$password','$state_id','$city_id','$qualification_id','$school_id','$course_id','$major','$yeargraduated')";
-   $Result = mysql_query($query);
-   echo "
-         <script type='text/javascript'>
-         location.href='login-student.php';
-         </script>
-         ";
-}
-?>
-
 </html>
