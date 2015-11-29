@@ -1,9 +1,9 @@
 <?php
 
 
-$hostname = "202.150.209.146:3306";
+$hostname = "mysql.hostinger.ph";
 $user = "u987316885_e2edb";
-$password = "markjoseph123";
+$password = "o2ehQX3wqO";
 $database ="u987316885_e2edb";
 
 
