@@ -52,11 +52,8 @@
 </body>
 
 <?php
-
 session_start();
-
-
-include ("CONNECTION.php");
+include ("connection.php");
 if(isset($_POST['btnlogin'])){
 
     $username = $_POST['username'];
