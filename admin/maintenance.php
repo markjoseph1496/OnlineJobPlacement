@@ -228,7 +228,7 @@ input[type="search"]::-webkit-search-decoration {
         <div class = "container">
             <div class = "col-md-12">
                
-            <a href="Maintenance_Addcourse.php" class=" btn btn-default">Add Course</a>
+            <a href="maintenance_addcourse.php" class=" btn btn-default">Add Course</a>
                 
                    
         </div>
