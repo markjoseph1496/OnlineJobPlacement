@@ -1,5 +1,5 @@
 <?php
-include('connection.php');
+include('../connection.php');
 
 if(isset($_GET['fn'])) {
     $fn = $_GET['fn'];
@@ -10,7 +10,7 @@ if(isset($_GET['fn'])) {
     $result = mysql_query($query);
     echo "
             <script type='text/javascript'>
-            location.href='Requested.php?ID=Rejected';
+            location.href='requested.php?ID=Rejected';
             </script>";
     }
     elseif($fn=="Accept"){
@@ -18,7 +18,7 @@ if(isset($_GET['fn'])) {
     $result = mysql_query($query);
     echo "
             <script type='text/javascript'>
-            location.href='Requested.php?ID=Accepted';
+            location.href='requested.php?ID=Accepted';
             </script>";
     }
 }

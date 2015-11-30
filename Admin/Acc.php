@@ -1,5 +1,5 @@
 <?php
-include('connection.php');
+include('../connection.php');
 
 
 if(isset($_GET['EID'])) {
@@ -9,7 +9,7 @@ if(isset($_GET['EID'])) {
     $Result = mysql_query($query);
     echo "
 	    <script type='text/javascript'>
-	    location.href='./Account.php';
+	    location.href='account.php';
 	    alert('Email Changed!');
 	    </script>
     ";

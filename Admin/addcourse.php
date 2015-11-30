@@ -1,5 +1,5 @@
 <?php
-include('connection.php');
+include('../connection.php');
 
 if(isset($_GET['coursetitle'])) {
 	$CourseTitle = $_GET['coursetitle'];
@@ -11,7 +11,7 @@ if(isset($_GET['coursetitle'])) {
 
     echo "
             <script type='text/javascript'>
-            location.href='Maintenance_Addcourse.php?ID';
+            location.href='maintenance_addcourse.php?ID';
             </script>";
 }
 

@@ -509,7 +509,7 @@ if(isset($_GET['id'])){
             </div>
             <div class="row text-center">
                 <div class="col-md-4">
-                    <a href="Login-student.php"> 
+                    <a href="login-student.php"> 
                         <span class="fa-stack fa-4x">
                             <i class="fa fa-square fa-stack-2x text-primary2"></i>
                             <i class="fa fa-users fa-stack-1x fa-inverse"></i>
@@ -519,7 +519,7 @@ if(isset($_GET['id'])){
                     <p class="text-muted"></p>
                 </div>
                 <div class="col-md-4">
-                    <a href="Login-admin.php"> 
+                    <a href="login-admin.php"> 
                         <span class="fa-stack fa-4x">
                             <i class="fa fa-square fa-stack-2x text-primary2"></i>
                             <i class="fa fa-user fa-stack-1x fa-inverse"></i>
@@ -529,7 +529,7 @@ if(isset($_GET['id'])){
                     <p class="text-muted"></p>
                 </div>
                 <div class="col-md-4">
-                    <a href="Login-company.php"> 
+                    <a href="login-company.php"> 
                         <span class="fa-stack fa-4x">
                             <i class="fa fa-square fa-stack-2x text-primary2"></i>
                             <i class="fa fa-building fa-stack-1x fa-inverse"></i>

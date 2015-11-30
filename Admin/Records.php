@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <?php 
-include('connection.php');
+include('../connection.php');
 session_start();
 
 $x = $_SESSION['AdminID'];
@@ -227,13 +227,13 @@ input[type="search"]::-webkit-search-decoration {
 
     <div class="resume_bg">
         <ul class="nav nav-tabs">
-            <li role="presentation" id="myinfo" class="item "><a href="Admin.php">Home</a></li>
-            <li role="presentation" id="resumelink" class="item"><a href="Reports.php">Reports</a></li>
-            <li role="presentation" id="applications" class="item active"><a href="Account.php">Account</a></li>
-            <li role="presentation" id="applications" class="item"><a href="Requested.php">Requested</a></li>
-            <li role="presentation" id="applications" class="item"><a href="CompanyList.php">Company List</a></li>
-            <li role="presentation" id="applications" class="item"><a href="AdviserList.php">Adviser List</a></li>
-            <li role="presentation" id="applications" class="item"><a href="Maintenance.php">Maintenance </a></li>
+            <li role="presentation" id="myinfo" class="item "><a href="admin.php">Home</a></li>
+            <li role="presentation" id="resumelink" class="item"><a href="reports.php">Reports</a></li>
+            <li role="presentation" id="applications" class="item active"><a href="account.php">Account</a></li>
+            <li role="presentation" id="applications" class="item"><a href="requested.php">Requested</a></li>
+            <li role="presentation" id="applications" class="item"><a href="companylist.php">Company List</a></li>
+            <li role="presentation" id="applications" class="item"><a href="adviserlist.php">Adviser List</a></li>
+            <li role="presentation" id="applications" class="item"><a href="maintenance.php">Maintenance </a></li>
             
         </ul>
     
@@ -242,7 +242,7 @@ input[type="search"]::-webkit-search-decoration {
             <div class = "col-md-12">
                 <h3>User's List</h3>
                
-                <a id="Adduser" href="Adduser.php" class=" btn btn-default"> Add User</a>
+                <a id="Adduser" href="adduser.php" class=" btn btn-default"> Add User</a>
                 <table class = "Applicants" width = "100%" cellpadding = "0">
                  <thead>
                     <tr>

@@ -58,7 +58,7 @@ if($a){
                 echo "
                 <script type='text/javascript'>
                 alert('You have successfully loggged in.');
-                location.href='Admin/Admin.php';
+                location.href='admin/admin.php';
                 </script>
                 ";
 

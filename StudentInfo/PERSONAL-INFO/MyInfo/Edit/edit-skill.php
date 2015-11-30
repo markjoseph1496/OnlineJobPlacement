@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 
 <?php 
-include('connection.php');
+include('../../../../connection.php');
 session_start();
 
 $x="";
@@ -144,7 +144,7 @@ $result = mysql_query($qry);
 </body>
 
 <?php
-include('connection.php');
+include('../../../../connection.php');
 
 if(isset($_POST['btnSave'])){
 

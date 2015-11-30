@@ -195,7 +195,7 @@
 </body>
 
 <?php
-include('CONNECTION.php');
+include('connection.php');
 
 if(isset($_POST['btnsave'])){
 
@@ -221,7 +221,7 @@ if(isset($_POST['btnsave'])){
    echo "
           <script type='text/javascript'>
          alert('You have successfully registered');
-         location.href='Login-company.php';
+         location.href='login-company.php';
          </script>
          ";
 }

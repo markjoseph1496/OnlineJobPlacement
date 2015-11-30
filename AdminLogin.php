@@ -49,7 +49,7 @@ if(isset($_POST['btnLogin'])){
 			echo "
 			<script type='text/javascript'>
 			alert('You have successfully loggged in.');
-			location.href='Admin/admin.php';
+			location.href='admin/admin.php';
 			</script>
 			";
 

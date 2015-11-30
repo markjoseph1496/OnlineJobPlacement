@@ -1,5 +1,5 @@
 <?php 
-include('connection.php');
+include('../../../connection.php');
 session_start();
 
 $PositionID = $_GET['PID'];

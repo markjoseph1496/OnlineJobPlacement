@@ -1,5 +1,5 @@
 <?php 
-include('connection.php');
+include('../connection.php');
 
 if(isset($_GET['Accepted'])){
 	$Accepted = $_GET['Accepted'];
@@ -11,7 +11,7 @@ if(isset($_GET['Accepted'])){
 
 		echo'
 			<script type="text/javascript">
-	            location.href="ApplicantList.php?id=1";
+	            location.href="applicantlist.php?id=1";
 	        </script>
 	        ';
 	}
@@ -22,14 +22,10 @@ if(isset($_GET['Accepted'])){
 
 		echo'
 			<script type="text/javascript">
-	            location.href="ApplicantList.php?id=0";
+	            location.href="applicantlist.php?id=0";
 	        </script>
 	        ';
 
 	}
 }
-
-
-
-
 ?>

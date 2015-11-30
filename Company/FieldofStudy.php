@@ -1,5 +1,5 @@
 <?php
-include('CONNECTION.php');
+include('../connection.php');
 session_start();
 
 $Course = $_GET['CourseID'];
@@ -267,14 +267,14 @@ input[type="search"]::-webkit-search-decoration {
 
     <div class="white-holder-3">
         <ul class="nav nav-tabs">
-            <li role="presentation" id="company" class="item"><a href="Company.php">Home</a></li>
-            <li role="presentation" id="dbase" class="item" ><a href="Positions.php">Positions</a></li>
-            <li role="presentation" id="calendar" class="item " ><a href="Calendar.php">Calendar</a></li>
-            <li role="presentation" id="report" class="item "><a href="Report.php">Reports</a></li>
-            <li role="presentation" id="setting" class="item " ><a href="Settings.php">Settings</a></li>
-            <li role="presentation" id="resumelink" class="item "><a href="Resumesearch.php">Resumelink Search</a></li>
-            <li role="presentation" id="studentlist" class="item active"><a href="StudentList.php">Student List</a></li>
-            <li role="presentation" id="applicantlist" class="item "><a href="ApplicantList.php">Applicant List</a></li>
+            <li role="presentation" id="company" class="item"><a href="company.php">Home</a></li>
+            <li role="presentation" id="dbase" class="item" ><a href="positions.php">Positions</a></li>
+            <li role="presentation" id="calendar" class="item " ><a href="calendar.php">Calendar</a></li>
+            <li role="presentation" id="report" class="item "><a href="report.php">Reports</a></li>
+            <li role="presentation" id="setting" class="item " ><a href="settings.php">Settings</a></li>
+            <li role="presentation" id="resumelink" class="item "><a href="resumesearch.php">Resumelink Search</a></li>
+            <li role="presentation" id="studentlist" class="item active"><a href="studentlist.php">Student List</a></li>
+            <li role="presentation" id="applicantlist" class="item "><a href="applicantlist.php">Applicant List</a></li>
         </ul>
         <div class="space-1"></div>
     
@@ -313,7 +313,7 @@ input[type="search"]::-webkit-search-decoration {
                 <tr>
                     <td class = "tcenter"><?php echo $rows[$StudentID]; ?></td>
                     <td>
-                    <a href = "Resumelink.php"><?php echo $rows[$LastName] .", ". $rows[$FirstName]; ?></a>
+                    <a href = "resumelink.php"><?php echo $rows[$LastName] .", ". $rows[$FirstName]; ?></a>
                     </td>
                     <td class = "tcenter"><?php echo $rows[$MajorCourse]; ?></td>
                     <td class = "tcenter"><?php echo $rows[$EmploymentStatus]; ?></td>

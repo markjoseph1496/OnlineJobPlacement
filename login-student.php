@@ -68,7 +68,7 @@ if($a){
                 echo "
                 <script type='text/javascript'>
                 alert('You have successfully loggged in.');
-                location.href='StudentInfo/personal-info/myinfo/personal_info.php';
+                location.href='studentinfo/personal-info/myinfo/personal_info.php';
                 </script>
                 ";
 
@@ -122,7 +122,7 @@ if($a){
                             <input type ="submit" class="btn btn-primary btn-large btn-block" name = "btnLogin" value = "Login"></input>
                             <a class="login-link btn" href="">Forgot password?</a>
                             <div>&nbsp;</div>
-                            <a class="btn btn-bordered" href="REGISTRATION.php">REGISTER NOW!</a>
+                            <a class="btn btn-bordered" href="registration.php">REGISTER NOW!</a>
                         </div>
                     </div>
                 </div>

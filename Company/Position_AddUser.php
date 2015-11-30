@@ -217,20 +217,20 @@ background-color: #006681;
 
      <div class="resume_bg">
          <ul class="nav nav-tabs">
-            <li role="presentation" id="company" class="item "><a href="Company.php">Home</a></li>
-            <li role="presentation" id="dbase" class="item active" ><a href="Positions.php">Positions</a></li>
-            <li role="presentation" id="report" class="item"><a href="Report.php">Reports</a></li>
-            <li role="presentation" id="setting" class="item " ><a href="Settings.php">Settings</a></li>
-            <li role="presentation" id="resumelink" class="item"><a href="Resumesearch.php">Resumelink Search</a></li>           
+            <li role="presentation" id="company" class="item "><a href="company.php">Home</a></li>
+            <li role="presentation" id="dbase" class="item active" ><a href="positions.php">Positions</a></li>
+            <li role="presentation" id="report" class="item"><a href="report.php">Reports</a></li>
+            <li role="presentation" id="setting" class="item " ><a href="settings.php">Settings</a></li>
+            <li role="presentation" id="resumelink" class="item"><a href="resumesearch.php">Resumelink Search</a></li>           
         </ul>
 
         <div class="space1"></div>
        
         <ul class="nav nav-pills" id = "submenu">
-            <li class="yellow  active "><a href="Positions.php">All</a></li>
-            <li class="yellow"><a href="Position_Active.php">Active</a></li>
-            <li class="yellow"><a href="Position_Draft.php">Draft</a></li>
-            <li class="yellow"><a href="CreatePosition.php">Create</a></li>
+            <li class="yellow  active "><a href="positions.php">All</a></li>
+            <li class="yellow"><a href="position_active.php">Active</a></li>
+            <li class="yellow"><a href="position_draft.php">Draft</a></li>
+            <li class="yellow"><a href="createposition.php">Create</a></li>
         </ul>
         
         <div class = "container">

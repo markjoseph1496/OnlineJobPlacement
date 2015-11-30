@@ -207,21 +207,21 @@ background-color: #006681;
 
      <div class="white-holder">
        <ul class="nav nav-tabs">
-            <li role="presentation" id="company" class="item "><a href="Company.php">Home</a></li>
-            <li role="presentation" id="dbase" class="item active" ><a href="Positions.php">Positions</a></li>
-            <li role="presentation" id="calendar" class="item " ><a href="Calendar.php">Calendar</a></li>
-            <li role="presentation" id="report" class="item"><a href="Report.php">Reports</a></li>
-            <li role="presentation" id="setting" class="item" ><a href="Settings.php">Settings</a></li>
-            <li role="presentation" id="resumelink" class="item"><a href="Resumesearch.php">Resumelink Search</a></li>
-            <li role="presentation" id="studentlist" class="item"><a href="StudentList.php">Student List</a></li>
-            <li role="presentation" id="applicantlist" class="item "><a href="ApplicantList.php">Applicant List</a></li>
+            <li role="presentation" id="company" class="item "><a href="company.php">Home</a></li>
+            <li role="presentation" id="dbase" class="item active" ><a href="positions.php">Positions</a></li>
+            <li role="presentation" id="calendar" class="item " ><a href="calendar.php">Calendar</a></li>
+            <li role="presentation" id="report" class="item"><a href="report.php">Reports</a></li>
+            <li role="presentation" id="setting" class="item" ><a href="settings.php">Settings</a></li>
+            <li role="presentation" id="resumelink" class="item"><a href="resumesearch.php">Resumelink Search</a></li>
+            <li role="presentation" id="studentlist" class="item"><a href="studentlist.php">Student List</a></li>
+            <li role="presentation" id="applicantlist" class="item "><a href="applicantlist.php">Applicant List</a></li>
         </ul>
 
         <div class="space1"></div>
        
         <ul class="nav nav-pills" id = "submenu">
-            <li class="yellow  active "><a href="Positions.php">Position List</a></li>
-            <li class="yellow"><a href="CreatePosition.php">Create Position</a></li>
+            <li class="yellow  active "><a href="positions.php">Position List</a></li>
+            <li class="yellow"><a href="createposition.php">Create Position</a></li>
         </ul>
         <br>
         
@@ -256,7 +256,7 @@ background-color: #006681;
          
 
 <?php
-include ("CONNECTION.php");
+include ("../connection.php");
 
 
 $x = $_SESSION['Email'];
@@ -294,7 +294,7 @@ $x = $_SESSION['Email'];
             
                 <tr>
                     <td width= 30% class = tabletitle>
-                      <a href = "ViewPosition.php?PID=<?php echo $row[$PID]; ?>">  <?php echo $row[$plevel]; ?> </a>
+                      <a href = "viewposition.php?PID=<?php echo $row[$PID]; ?>">  <?php echo $row[$plevel]; ?> </a>
                     </td>
                     <td width = 20% class = tabletitle><?php echo $row[$pdatef]; ?></td>
                     <td width = 20% class = tabletitle><?php echo $row[$pdatet]; ?></td>
@@ -325,7 +325,7 @@ $x = $_SESSION['Email'];
     </div>
 </body>
 <?php
-include('CONNECTION.php');
+include('../connection.php');
 
     if(isset($_POST['btndelete'])){
 
@@ -336,7 +336,7 @@ include('CONNECTION.php');
 
     echo "
             <script type='text/javascript'>
-            location.href='Positions.php?id=3';
+            location.href='positions.php?id=3';
             </script>
             ";
 }
@@ -345,7 +345,7 @@ if(isset($_POST['btnedit'])){
     $_SESSION['delete_id'] = $Z;
     echo "
             <script type='text/javascript'>
-            location.href='EditPosition.php';
+            location.href='editposition.php';
             </script>
             ";
 }

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <?php
 session_start();
-include('connection.php');
+include('../../../connection.php');
 
 if(is_null($_SESSION['StudentID'])){
     echo "

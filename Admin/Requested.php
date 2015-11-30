@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 
 <?php
-include('connection.php');
+include('../connection.php');
 ?>
 <html lang="en">
 <head>
@@ -272,13 +272,13 @@ input[type="search"]::-webkit-search-decoration {
     <div class="yellow-text-fields">
     <div class="white-holder-3">
         <ul class="nav nav-tabs">
-             <li role="presentation" id="myinfo" class="item "><a href="Admin.php">Home</a></li>
-            <li role="presentation" id="resumelink" class="item  "><a href="Reports.php">Reports</a></li>
-            <li role="presentation" id="applications" class="item "><a href="Account.php">Account</a></li>
-            <li role="presentation" id="applications" class="item active"><a href="Requested.php">Requested</a></li>
-            <li role="presentation" id="applications" class="item"><a href="CompanyList.php">Company List</a></li>
-            <li role="presentation" id="applications" class="item"><a href="AdviserList.php">Adviser List</a></li>
-            <li role="presentation" id="applications" class="item"><a href="Maintenance.php">Maintenance </a></li>
+             <li role="presentation" id="myinfo" class="item "><a href="admin.php">Home</a></li>
+            <li role="presentation" id="resumelink" class="item  "><a href="reports.php">Reports</a></li>
+            <li role="presentation" id="applications" class="item "><a href="account.php">Account</a></li>
+            <li role="presentation" id="applications" class="item active"><a href="requested.php">Requested</a></li>
+            <li role="presentation" id="applications" class="item"><a href="companylist.php">Company List</a></li>
+            <li role="presentation" id="applications" class="item"><a href="adviserlist.php">Adviser List</a></li>
+            <li role="presentation" id="applications" class="item"><a href="maintenance.php">Maintenance </a></li>
         </ul>
         <div class="space-1"></div>
                     <?php
@@ -351,8 +351,8 @@ input[type="search"]::-webkit-search-decoration {
                                                 <a href=# class='btn btn-default btnAccept'> <i class='fa fa-check-circle'></i> </a>
                                                 <a href=# class='btn btn-danger btnDecline'> <i class='fa fa-minus-square'></i> </a>    
                                                 
-                                                <a data-bb='confirmDeleteRequest' class='bb-alert alert alert-info' style='display: none;' href='Request.php?fn=Delete&ID=$RequestID'>
-                                                <a data-bb='confirmAcceptRequest' class='bb-alert alert alert-info' style='display: none;' href='Request.php?fn=Accept&ID=$RequestID'>
+                                                <a data-bb='confirmDeleteRequest' class='bb-alert alert alert-info' style='display: none;' href='request.php?fn=Delete&ID=$RequestID'>
+                                                <a data-bb='confirmAcceptRequest' class='bb-alert alert alert-info' style='display: none;' href='request.php?fn=Accept&ID=$RequestID'>
                                             </td>
                                         <tr>            
                                     </tbody>                                        

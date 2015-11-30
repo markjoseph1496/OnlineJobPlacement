@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 
 <?php 
-include('connection.php');
+include('../../../connection.php');
 session_start();
 
 $x = $_SESSION['StudentID'];
@@ -82,10 +82,10 @@ $result2 = mysql_query($qry2);
         <div class="white-holder">
             <ul class="nav nav-tabs">
                 <li role="presentation" id="myinfo" class="item active"><a href="personal_info.php"><B>My Info</B></a></li>
-                <li role="presentation" id="resumelink" class="item"><a href="../Resumelink/resumelink.php">Resumé Link</a></li>
-                <li role="presentation" id="applications" class="item"><a href="../Applications/applications.php">Applications</a></li>
-                <li role="presentation" id="search-job" class="item"><a href="../Search-job/search-job.php">Jobs</a></li>
-                <li role="presentation" id="settings" class="item"><a href="../Settings/settings.php">Settings</a></li>
+                <li role="presentation" id="resumelink" class="item"><a href="../resumelink/resumelink.php">Resumé Link</a></li>
+                <li role="presentation" id="applications" class="item"><a href="../applications/applications.php">Applications</a></li>
+                <li role="presentation" id="search-job" class="item"><a href="../search-job/search-job.php">Jobs</a></li>
+                <li role="presentation" id="settings" class="item"><a href="../settings/settings.php">Settings</a></li>
             </ul>
             <div class="space"></div>
             <ul class="nav nav-pills nav-stacked col-md-2 col-sm-3">
@@ -228,7 +228,7 @@ $result2 = mysql_query($qry2);
 </body>
 
 <?php
-include('connection.php');
+include('../../../connection.php');
 
 if(isset($_POST['btnDeleteSkill'])){
 

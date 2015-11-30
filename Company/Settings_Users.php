@@ -207,21 +207,21 @@ background-color: #006681;
 
      <div class="resume_bg">
        <ul class="nav nav-tabs">
-            <li role="presentation" id="company" class="item "><a href="Company.php">Home</a></li>
-            <li role="presentation" id="dbase" class="item" ><a href="Positions.php">Positions</a></li>
-            <li role="presentation" id="report" class="item "><a href="Report.php">Reports</a></li>
-            <li role="presentation" id="setting" class="item active" ><a href="Settings.php">Settings</a></li>
-            <li role="presentation" id="resumelink" class="item"><a href="Resumesearch.php">Resumelink Search</a></li>
-            <li role="presentation" id="studentlist" class="item"><a href="StudentList.php">StudentList</a></li>
+            <li role="presentation" id="company" class="item "><a href="company.php">Home</a></li>
+            <li role="presentation" id="dbase" class="item" ><a href="positions.php">Positions</a></li>
+            <li role="presentation" id="report" class="item "><a href="report.php">Reports</a></li>
+            <li role="presentation" id="setting" class="item active" ><a href="settings.php">Settings</a></li>
+            <li role="presentation" id="resumelink" class="item"><a href="resumesearch.php">Resumelink Search</a></li>
+            <li role="presentation" id="studentlist" class="item"><a href="studentlist.php">StudentList</a></li>
         </ul>
 
         <div class="space1"></div>
        
        <ul class="nav nav-pills" id = "submenu">
-            <li class="yellow "><a href="Settings.php">Company</a></li>
-            <li class="yellow"><a href="Settings_Calendar.php">Calendar</a></li>
-            <li class="yellow active"><a href="Settings_Users.php">User</a></li>
-            <li class="yellow"><a href="Settings_MyAccount.php">My Account</a></li>
+            <li class="yellow "><a href="settings.php">Company</a></li>
+            <li class="yellow"><a href="settings_calendar.php">Calendar</a></li>
+            <li class="yellow active"><a href="settings_users.php">User</a></li>
+            <li class="yellow"><a href="settings_myaccount.php">My Account</a></li>
         </ul>
 
         
@@ -252,9 +252,9 @@ background-color: #006681;
                 }   
             ?>
                 <h3>User's List</h3>
-                <a id="Adduser" href="Settings_Adduser.php" class=" btn btn-default"> Add User</a>
+                <a id="Adduser" href="settings_adduser.php" class=" btn btn-default"> Add User</a>
        <?php
-       include('CONNECTION.php');
+       include('../connection.php');
        
 
         $x = $_SESSION['Email'];
@@ -324,7 +324,7 @@ background-color: #006681;
 </body>
   
   <?php
-include('CONNECTION.php');
+include('../connection.php');
 
 if(isset($_POST['btndelete'])){
 
@@ -335,7 +335,7 @@ if(isset($_POST['btndelete'])){
 
     echo "
             <script type='text/javascript'>
-            location.href='Settings_Users.php?id=UserDelete';
+            location.href='settings_users.php?id=UserDelete';
             </script>
             ";
 } 
@@ -344,7 +344,7 @@ if(isset($_POST['btnedit'])){
     $_SESSION['delete_id'] = $Z;
     echo "
             <script type='text/javascript'>
-            location.href='Edit_User.php';
+            location.href='edit_user.php';
             </script>
             ";
 }

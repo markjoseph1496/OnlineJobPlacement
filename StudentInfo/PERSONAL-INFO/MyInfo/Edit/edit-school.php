@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 
 <?php 
-include('connection.php');
+include('../../../../connection.php');
 session_start();
 
 $x="";
@@ -91,7 +91,7 @@ $result = mysql_query($qry);
 
 
 <body id="page-top" class="index bg">
-    <form name="EditSchool" id="EditSchool" autocomplete="off" action="MyInfoEdit.php">
+    <form name="EditSchool" id="EditSchool" autocomplete="off" action="myinfoedit.php">
     <nav class="navbar navbar-default navbar-fixed-top navbar-shrink">
         <div class="container">
             <div class="navbar-header page-scroll">
@@ -115,10 +115,10 @@ $result = mysql_query($qry);
         <div class="white-holder">
             <ul class="nav nav-tabs">
                 <li id="my_info" class="item active"><a href="../personal_info.php"><B>My Info</B></a></li>
-                <li id="resumelink" class="item"><a href="../../Resumelink/resumelink.php">Resumé Link</a></li>
-                <li id="applications" class="item"><a href="../../Applications/applications.php">Applications</a></li>
-                <li id="search-job" class="item"><a href="../../Search-job/search-job.php">Jobs</a></li>
-                <li id="settings" class="item"><a href="../../Settings/settings.php">Settings</a></li>
+                <li id="resumelink" class="item"><a href="../../resumelink/resumelink.php">Resumé Link</a></li>
+                <li id="applications" class="item"><a href="../../applications/applications.php">Applications</a></li>
+                <li id="search-job" class="item"><a href="../../search-job/search-job.php">Jobs</a></li>
+                <li id="settings" class="item"><a href="../../settings/settings.php">Settings</a></li>
             </ul>
             <div class="space"></div>
             <ul class="nav nav-pills nav-stacked col-md-2 col-sm-3">

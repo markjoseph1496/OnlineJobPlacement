@@ -26,7 +26,7 @@
 
 
 <body id="page-top" class="index">
-    <form name="registration" onsubmit="return validateForm()" method="POST" action="REGISTRATION.php" >
+    <form name="registration" onsubmit="return validateForm()" method="POST" action="registration.php" >
         <nav class="navbar navbar-default navbar-fixed-top navbar-shrink">
             <div class="container">
                 <!-- Brand and toggle get grouped for better mobile display -->
@@ -195,7 +195,7 @@
 </body>
 
 <?php
-include('CONNECTION.php');
+include('../connection.php');
 
 if(isset($_POST['btnsave'])){
 

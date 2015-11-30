@@ -37,7 +37,7 @@
 
 
 <body id="page-top" class="index bg">
-    <form name="registration" id="registration" autocomplete="off" action="RegisterAdd.php">
+    <form name="registration" id="registration" autocomplete="off" action="registeradd.php">
         <nav class="navbar navbar-default navbar-fixed-top navbar-shrink">
             <div class="container">
                 <!-- Brand and toggle get grouped for better mobile display -->
@@ -287,7 +287,7 @@
                             },
                             remote: {
                                 message: 'The student ID already exists',
-                                url: 'RegisterAdd.php',
+                                url: 'registeradd.php',
                                 data: {
                                     type: 'StudentID'
                                 },

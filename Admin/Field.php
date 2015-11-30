@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 
 <?php 
-include('connection.php');
+include('../connection.php');
 session_start();
 
 $Course = $_GET['CourseID'];
@@ -302,19 +302,19 @@ input[type="search"]::-webkit-search-decoration {
 
     <div class="white-holder-3">
         <ul class="nav nav-tabs">
-            <li role="presentation" id="myinfo" class="item "><a href="Admin.php">Home</a></li>
-            <li role="presentation" id="resumelink" class="item active"><a href="Reports.php">Reports</a></li>
-            <li role="presentation" id="applications" class="item"><a href="Account.php">Account</a></li>
-            <li role="presentation" id="applications" class="item"><a href="Requested.php">Requested</a></li>
-            <li role="presentation" id="applications" class="item "><a href="CompanyList.php">Company List</a></li>
-            <li role="presentation" id="applications" class="item "><a href="AdviserList.php">Adviser List</a></li>
-            <li role="presentation" id="applications" class="item"><a href="Maintenance.php">Maintenance </a></li>
+            <li role="presentation" id="myinfo" class="item "><a href="admin.php">Home</a></li>
+            <li role="presentation" id="resumelink" class="item active"><a href="reports.php">Reports</a></li>
+            <li role="presentation" id="applications" class="item"><a href="account.php">Account</a></li>
+            <li role="presentation" id="applications" class="item"><a href="requested.php">Requested</a></li>
+            <li role="presentation" id="applications" class="item "><a href="companylist.php">Company List</a></li>
+            <li role="presentation" id="applications" class="item "><a href="adviserlist.php">Adviser List</a></li>
+            <li role="presentation" id="applications" class="item"><a href="maintenance.php">Maintenance </a></li>
             
         </ul>
         <div class="space-1"></div>
         <ul class="nav nav-pills" id="nav-submenu">
             <li class="yellow active"><a href="reports.php">Reports</a></li>
-            <li class="yellow "><a href="OJT-reports.php">OJT Reports</a></li>
+            <li class="yellow "><a href="ojt-reports.php">OJT Reports</a></li>
         </ul>
         <div class="space-1"></div>
     
@@ -400,14 +400,14 @@ input[type="search"]::-webkit-search-decoration {
                 ?>
                 <tr>
                     <td>
-                    <a href = "Resumelink.php"><?php echo $rows[$LastName] .", ". $rows[$FirstName]; ?></a>
+                    <a href = "resumelink.php"><?php echo $rows[$LastName] .", ". $rows[$FirstName]; ?></a>
                     </td>
                     <td class = "tcenter"></td>
                     <td class = "tcenter"></td>
                     <td class = "tcenter"></td>
                     <td class = "tcenter"><?php echo $rows[$EmploymentStatus]?></td>
                     <td>
-                        <a id='Edit' name="btnedit" href="EditStudent.php" class='btn btn-default'> 
+                        <a id='Edit' name="btnedit" href="editstudent.php" class='btn btn-default'> 
                         <i class='fa fa-pencil'></i>
                         </a> 
                     </td>

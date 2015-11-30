@@ -41,7 +41,7 @@
                             <input type ="submit" class="btn btn-primary btn-large btn-block" name = "btnlogin" value = "Login"></input>
                             <a class="login-link btn" href="">Forgot password?</a>
                             <div>&nbsp;</div>
-                            <a class="btn btn-bordered" href="Registration-company.php">REGISTER NOW!</a>
+                            <a class="btn btn-bordered" href="registration-company.php">REGISTER NOW!</a>
                         </div>
                     </div>
                 </div>
@@ -82,7 +82,7 @@ if(isset($_POST['btnlogin'])){
             echo "
             <script type='text/javascript'>
             alert('You have successfully loggged in.');
-            location.href='company/Company.php';
+            location.href='company/company.php';
             </script>
             ";
         }

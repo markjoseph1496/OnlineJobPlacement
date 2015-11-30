@@ -1,5 +1,5 @@
 <?php
-include('connection.php');
+include('../../../connection.php');
 
 
 if(isset($_GET['delete_URLID'])) {
@@ -62,7 +62,7 @@ if(isset($_GET['delete_AchievementID'])) {
 
     echo "
             <script type='text/javascript'>
-            location.href='Achievements.php?id=AchievementDelete';
+            location.href='achievements.php?id=AchievementDelete';
             </script>
             ";
 }

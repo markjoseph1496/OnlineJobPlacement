@@ -1,5 +1,5 @@
 <?php
-include('CONNECTION.php');
+include('../connection.php');
 
 if(isset($_GET['delete_PositionID'])) {
     $Z = $_GET['delete_PositionID'];
@@ -9,7 +9,7 @@ if(isset($_GET['delete_PositionID'])) {
 
     echo "
             <script type='text/javascript'>
-            location.href='Positions.php?id=PositionDelete';
+            location.href='positions.php?id=PositionDelete';
             </script>
             ";
 ?>

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 
 <?php
-include('connection.php');
+include('../connection.php');
 
 $Course = 'MajorCourse';
 
@@ -268,13 +268,13 @@ input[type="search"]::-webkit-search-decoration {
 
     <div class="resume_bg">
         <ul class="nav nav-tabs">
-             <li role="presentation" id="myinfo" class="item active "><a href="Admin.php">Home</a></li>
-            <li role="presentation" id="resumelink" class="item"><a href="Reports.php">Reports</a></li>
-            <li role="presentation" id="applications" class="item "><a href="Account.php">Account</a></li>
-            <li role="presentation" id="applications" class="item"><a href="Requested.php">Requested</a></li>
-            <li role="presentation" id="applications" class="item"><a href="CompanyList.php">Company List</a></li>
-            <li role="presentation" id="applications" class="item"><a href="AdviserList.php">Adviser List</a></li>
-            <li role="presentation" id="applications" class="item"><a href="Maintenance.php">Maintenance </a></li>
+             <li role="presentation" id="myinfo" class="item active "><a href="admin.php">Home</a></li>
+            <li role="presentation" id="resumelink" class="item"><a href="reports.php">Reports</a></li>
+            <li role="presentation" id="applications" class="item "><a href="account.php">Account</a></li>
+            <li role="presentation" id="applications" class="item"><a href="requested.php">Requested</a></li>
+            <li role="presentation" id="applications" class="item"><a href="companylist.php">Company List</a></li>
+            <li role="presentation" id="applications" class="item"><a href="adviserlist.php">Adviser List</a></li>
+            <li role="presentation" id="applications" class="item"><a href="maintenance.php">Maintenance </a></li>
         </ul>
     
         <div class="space"></div>
@@ -291,61 +291,61 @@ input[type="search"]::-webkit-search-decoration {
                 <tbody>
                 <tr>
                     <td>
-                    <a href = "Field.php?CourseID=BSTM">Bachelor of Science in Tourism Management</a>
+                    <a href = "field.php?CourseID=BSTM">Bachelor of Science in Tourism Management</a>
                     </td>
                     <td class = "tcenter"><?php echo $TotalBSTM; ?></td>
                 </tr>
                 <tr>
                     <td>
-                    <a href = "Field.php?CourseID=BSBM">Bachelor of Science in Business Management Major in Operations</a>
+                    <a href = "field.php?CourseID=BSBM">Bachelor of Science in Business Management Major in Operations</a>
                     </td>
                     <td class = "tcenter"><?php echo $TotalBSBM; ?></td>
                 </tr>
                 <tr>
                     <td>
-                    <a href = "Field.php?CourseID=ABCOMM">Bachelor of Arts in Communication</a>
+                    <a href = "field.php?CourseID=ABCOMM">Bachelor of Arts in Communication</a>
                     </td>
                     <td class = "tcenter"><?php echo $TotalABCOMM; ?></td>
                 </tr>
                 <tr>
                     <td>
-                    <a href = "Field.php?CourseID=BSITDA">Bachelor of Science in Information Technology Major in Digital Arts</a>
+                    <a href = "field.php?CourseID=BSITDA">Bachelor of Science in Information Technology Major in Digital Arts</a>
                     </td>
                     <td class = "tcenter"><?php echo $TotalBSITDA; ?></td>
                 </tr>
                 <tr>
                     <td>
-                    <a href = "Field.php?CourseID=BSHRM">Bachelor of Science in Hotel &amp; Restaurant Management</a>
+                    <a href = "field.php?CourseID=BSHRM">Bachelor of Science in Hotel &amp; Restaurant Management</a>
                     </td>
                     <td class = "tcenter"><?php echo $TotalBSHRM; ?></td>
                 </tr>
                 <tr>
                     <td>
-                    <a href = "Field.php?CourseID=BSCS">Bachelor of Science in Computer Science</a>
+                    <a href = "field.php?CourseID=BSCS">Bachelor of Science in Computer Science</a>
                     </td>
                     <td class = "tcenter"><?php echo $TotalBSCS; ?></td>
                 </tr>
                                 <tr>
                     <td>
-                    <a href = "Field.php?CourseID=BSIT">Bachelor of Science in Information Technology</a>
+                    <a href = "field.php?CourseID=BSIT">Bachelor of Science in Information Technology</a>
                     </td>
                     <td class = "tcenter"><?php echo $TotalBSIT; ?></td>
                 </tr>
                 <tr>
                     <td>
-                    <a href = "Field.php?CourseID=BSCPE">Bachelor of Science in Computer Engineering</a>
+                    <a href = "field.php?CourseID=BSCPE">Bachelor of Science in Computer Engineering</a>
                     </td>
                     <td class = "tcenter"><?php echo $TotalBSCPE; ?></td>
                 </tr>
                 <tr>
                     <td>
-                    <a href = "Field.php?CourseID=BSAT">Bachelor of Science in Accounting Technology</a>
+                    <a href = "field.php?CourseID=BSAT">Bachelor of Science in Accounting Technology</a>
                     </td>
                     <td class = "tcenter"><?php echo $TotalBSAT; ?></td>
                 </tr>
                 <tr>
                     <td>
-                    <a href = "Field.php?CourseID=ACT">2-Year Associate in Computer Technology</a>
+                    <a href = "field.php?CourseID=ACT">2-Year Associate in Computer Technology</a>
                     </td>
                     <td class = "tcenter"><?php echo $TotalASCT; ?></td>
                 </tr>
@@ -377,7 +377,7 @@ input[type="search"]::-webkit-search-decoration {
 </body>
 
 <?php
-include('connection.php');
+include('../connection.php');
 
 if(isset($_POST['CourseID'])){
 

@@ -105,8 +105,8 @@ h1,  {
 
     <div class="resume_bg">
         <ul class="nav nav-tabs">
-            <li role="presentation" id="myinfo" class="item"><a href="Admin.php">Home</a></li>
-            <li role="presentation" id="resumelink" class="item" ><a href="Reports.php">Reports</a></li>
+            <li role="presentation" id="myinfo" class="item"><a href="admin.php">Home</a></li>
+            <li role="presentation" id="resumelink" class="item" ><a href="reports.php">Reports</a></li>
             <li role="presentation" id="applications" class="item active"><a href="applications.php">Applications</a></li>
             
         </ul>

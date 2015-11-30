@@ -2,7 +2,7 @@
 
 <?php 
 /*
-include('connection.php');
+include('../connection.php');
 session_start();
 
 
@@ -138,19 +138,19 @@ input.form-control{
 
     <div class="white-holder-3" id = "yellow-text-fields">
         <ul class="nav nav-tabs">
-            <li role="presentation" id="myinfo" class="item"><a href="Admin.php">Home</a></li>
-            <li role="presentation" id="resumelink" class="item" ><a href="Reports.php">Reports</a></li>
-            <li role="presentation" id="applications" class="item active"><a href="Account.php"><B>Account</B></a></li>
-            <li role="presentation" id="applications" class="item"><a href="Requested.php">Requested</a></li>
-            <li role="presentation" id="applications" class="item"><a href="CompanyList.php">Company List</a></li>
-            <li role="presentation" id="applications" class="item"><a href="AdviserList.php">Adviser List</a></li>
-            <li role="presentation" id="applications" class="item"><a href="Maintenance.php">Maintenance </a></li>
+            <li role="presentation" id="myinfo" class="item"><a href="admin.php">Home</a></li>
+            <li role="presentation" id="resumelink" class="item" ><a href="reports.php">Reports</a></li>
+            <li role="presentation" id="applications" class="item active"><a href="account.php"><B>Account</B></a></li>
+            <li role="presentation" id="applications" class="item"><a href="requested.php">Requested</a></li>
+            <li role="presentation" id="applications" class="item"><a href="companylist.php">Company List</a></li>
+            <li role="presentation" id="applications" class="item"><a href="adviserlist.php">Adviser List</a></li>
+            <li role="presentation" id="applications" class="item"><a href="maintenance.php">Maintenance </a></li>
             
         </ul>
         <div class="space"></div>
         <div class = "container">
             <div class = "col-md-12 fieldcol">
-                <a href="Records.php" class=" btn btn-default adduser" style="float:right;">Add User</a>
+                <a href="records.php" class=" btn btn-default adduser" style="float:right;">Add User</a>
             </div>
                 <div>&nbsp;</div>
                 <form method = "POST">
@@ -263,7 +263,7 @@ input.form-control{
 <?php
 
 /*
-include('connection.php');
+include('../connection.php');
 
 if(isset($_POST['btnSave'])){
 

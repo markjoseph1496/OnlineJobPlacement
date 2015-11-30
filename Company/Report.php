@@ -192,21 +192,21 @@ background-color: #006681;
 
     <div class="white-holder">
          <ul class="nav nav-tabs">
-            <li role="presentation" id="company" class="item"><a href="Company.php">Home</a></li>
-            <li role="presentation" id="dbase" class="item" ><a href="Positions.php">Positions</a></li>
-            <li role="presentation" id="calendar" class="item " ><a href="Calendar.php">Calendar</a></li>
-            <li role="presentation" id="report" class="item active"><a href="Report.php">Reports</a></li>
-            <li role="presentation" id="setting" class="item" ><a href="Settings.php">Settings</a></li>
-            <li role="presentation" id="resumelink" class="item"><a href="Resumesearch.php">Resumelink Search</a></li>
-            <li role="presentation" id="studentlist" class="item"><a href="StudentList.php">Student List</a></li>
-            <li role="presentation" id="applicantlist" class="item "><a href="ApplicantList.php">Applicant List</a></li>
+            <li role="presentation" id="company" class="item"><a href="company.php">Home</a></li>
+            <li role="presentation" id="dbase" class="item" ><a href="positions.php">Positions</a></li>
+            <li role="presentation" id="calendar" class="item " ><a href="calendar.php">Calendar</a></li>
+            <li role="presentation" id="report" class="item active"><a href="report.php">Reports</a></li>
+            <li role="presentation" id="setting" class="item" ><a href="settings.php">Settings</a></li>
+            <li role="presentation" id="resumelink" class="item"><a href="resumesearch.php">Resumelink Search</a></li>
+            <li role="presentation" id="studentlist" class="item"><a href="studentlist.php">Student List</a></li>
+            <li role="presentation" id="applicantlist" class="item "><a href="applicantlist.php">Applicant List</a></li>
         </ul>
 
         <div class="space1"></div>
        
         <ul class="nav nav-pills" id = "submenu">
-            <li class="yellow active"><a href="Report.php">Resumelink</a></li>
-            <li class="yellow"><a href="Report_Position.php">Position</a></li>
+            <li class="yellow active"><a href="report.php">Resumelink</a></li>
+            <li class="yellow"><a href="report_position.php">Position</a></li>
         </ul>
 
         <div class="space"></div>

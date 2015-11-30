@@ -61,11 +61,11 @@ if(is_null($_SESSION['StudentID'])){
     <div id="yellow-text-fields">
         <div class="white-holder">
             <ul class="nav nav-tabs">
-                <li role="presentation" id="personal_info" class="item"><a href="../MyInfo/personal_info.php">My Info</a></li>
-                <li role="presentation" id="resumelink" class="item"><a href="../Resumelink/resumelink.php">Resumé Link</a></li>
+                <li role="presentation" id="personal_info" class="item"><a href="../myinfo/personal_info.php">My Info</a></li>
+                <li role="presentation" id="resumelink" class="item"><a href="../resumelink/resumelink.php">Resumé Link</a></li>
                 <li role="presentation" id="applications" class="item active"><a href="applications.php"><B>Applications</B></a></li>
-                <li role="presentation" id="search-job" class="item"><a href="../Search-job/search-job.php">Jobs</a></li>
-                <li role="presentation" id="settings" class="item"><a href="../Settings/settings.php">Settings</a></li>
+                <li role="presentation" id="search-job" class="item"><a href="../search-job/search-job.php">Jobs</a></li>
+                <li role="presentation" id="settings" class="item"><a href="../settings/settings.php">Settings</a></li>
             </ul>
             <div class="space"></div>
             

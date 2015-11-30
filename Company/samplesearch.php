@@ -60,7 +60,7 @@ $(function() {
    
 </body>
 <?php
-include('CONNECTION.php');
+include('../connection.php');
 session_start();
 
 $x = $_SESSION['delete_id'];
