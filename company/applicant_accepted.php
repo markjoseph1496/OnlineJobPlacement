@@ -2,15 +2,11 @@
 include('../connection.php');
 session_start();
 
-$Email = $_SESSION['Email'];
+$CompanyID = $_SESSION['CompanyID'];
 
-$qry = "SELECT * FROM companyinfotbl WHERE Email = '$Email'";
+$qry = "SELECT * FROM companyinfotbl WHERE CompanyID = '$CompanyID'";
 $result = mysql_query($qry);
 
-    while($qry = mysql_fetch_Array($result)) {
-
-        $CompanyID = $qry['CompanyID'];
-    }
 ?>
 <html lang="en">
 

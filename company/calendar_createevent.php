@@ -3,7 +3,7 @@
 include('../connection.php');
 session_start();
 
-$x = $_SESSION['Email'];
+$CompanyID = $_SESSION['CompanyID'];
 ?>
 <html lang="en">
 
@@ -343,7 +343,7 @@ if (isset($_POST['btnsave'])) {
   $descrip = $_POST['descrip'];
   $status = $_POST['status'];
 
-  $query = ("INSERT INTO compeventtbl (Email,EventTitle,EventDatef,EventDatet,Location,Description,Status) values ('$x','$eventtitle','$datefrom','$dateto','$location','$descrip','$status')");
+  $query = ("INSERT INTO compeventtbl (CompanyID,EventTitle,EventDatef,EventDatet,Location,Description,Status) values ('$CompanyID','$eventtitle','$datefrom','$dateto','$location','$descrip','$status')");
   $Result = mysql_query($query);
   echo "
     <script type='text/javascript'>

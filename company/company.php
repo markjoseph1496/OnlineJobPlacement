@@ -151,7 +151,7 @@ h1,  {
         <?php
         include('../connection.php');
 
-        $x = $_SESSION['Email'];
+        $CompanyID = $_SESSION['CompanyID'];
 
             $plevel = 'PositionLevel';
             $pdatef = 'PostingDateFrom';
@@ -159,7 +159,7 @@ h1,  {
             $status = 'Status'; 
         
 
-            $query = "SELECT * FROM comppositiontbl WHERE Email = '$x'";
+            $query = "SELECT * FROM comppositiontbl WHERE CompanyID = '$CompanyID'";
             $Result = mysql_query($query);
 
             //$query1 = "SELECT * FROM compcoursetbl WHERE Email = '$x'";

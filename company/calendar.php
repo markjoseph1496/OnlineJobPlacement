@@ -250,13 +250,13 @@ background-color: #006681;
     <?php
       include('../connection.php');
 
-      $x = $_SESSION['Email'];
+      $CompanyID = $_SESSION['CompanyID'];
           $eventtitle = 'EventTitle';
           $datefrom = 'EventDatef';
           $dateto = 'EventDatet';
           $status = 'Status';
 
-          $query = ("SELECT * FROM compeventtbl WHERE Email = '$x'");
+          $query = ("SELECT * FROM compeventtbl WHERE CompanyID = '$CompanyID'");
           $Result = mysql_query($query);
     ?>
         <table class = "Applicants" width = "100%" cellpadding = "0">
@@ -313,7 +313,7 @@ include('../connection.php');
 
     echo "
             <script type='text/javascript'>
-            location.href='settings_calendar.php?id=EventDelete';
+            location.href='calendar.php?id=EventDelete';
             </script>
             ";
 }

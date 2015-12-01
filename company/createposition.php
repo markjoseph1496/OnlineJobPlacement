@@ -551,7 +551,7 @@ background-color: #006681;
 <?php
 include('../connection.php');
 
-$x = $_SESSION['Email'];
+$CompanyID = $_SESSION['CompanyID'];
 
 if(isset($_POST['btnsave'])){
 
@@ -565,7 +565,7 @@ if(isset($_POST['btnsave'])){
   $ymin = $_POST['ymin'];
   $ymax = $_POST['ymax'];
 
-  $query = ("INSERT INTO comppositiontbl (Email,PostingDateFrom,PostingDateTo,PositionLevel,JSpecialization,EType,AvPosition,MonthlySalary,YMin,YMax) values ('$x','$datefrom','$dateto','$plevel','$specialization','$etype','$avposition','$salary','$ymin','$ymax')");
+  $query = ("INSERT INTO comppositiontbl (CompanyID,PostingDateFrom,PostingDateTo,PositionLevel,JSpecialization,EType,AvPosition,MonthlySalary,YMin,YMax) values ('$CompanyID','$datefrom','$dateto','$plevel','$specialization','$etype','$avposition','$salary','$ymin','$ymax')");
   $result = mysql_query($query);
   echo "
       <script type='text/javascript'>

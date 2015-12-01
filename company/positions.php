@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <?php
 session_start();
+$CompanyID = $_SESSION['CompanyID']
 ?>
 <html lang="en">
 
@@ -259,14 +260,13 @@ background-color: #006681;
 include ("../connection.php");
 
 
-$x = $_SESSION['Email'];
         $PID = 'PositionID';
         $plevel = 'PositionLevel';
         $status = 'Status';
         $pdatef = 'PostingDateFrom';
         $pdatet = 'PostingDateTo';
         
-        $query = ("SELECT * FROM comppositiontbl WHERE Email = '$x'");
+        $query = ("SELECT * FROM comppositiontbl WHERE CompanyID='$CompanyID'");
         $Result = mysql_query($query);
         ?>  
 
