@@ -276,7 +276,7 @@ include ("../connection.php");
     
            </tr>    
                 <tr>
-                    <th width= '30%' class = 'tabletitle'>Positions <?php echo $CompanyID; ?></th>
+                    <th width= '30%' class = 'tabletitle'>Positions aa<?php echo $CompanyID; ?></th>
                     <th width = '20%' class = 'tabletitle'>From</th>
                     <th width = '20%' class = 'tabletitle'>To</th>
                     <th width = '20%' class = 'tabletitle'>Status</th>
