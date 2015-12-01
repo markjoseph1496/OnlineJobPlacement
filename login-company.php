@@ -61,13 +61,16 @@ if(isset($_POST['btnlogin'])){
 
     $query = ("SELECT * FROM companyinfotbl WHERE Email = '$username' AND Password = '$password' ");
     $Result = mysql_query($query);
+    while($query = mysql_fetch_array($Result)){
+        $CompanyID = $query['CompanyID'];
+    }
 
     if($Result){
 
         if(mysql_num_rows($Result) == 0){
 
             echo "
-            <script type='text/javasczipt'>
+            <script type='text/javascript'>
             alert('Incorrect Password. Please try again.');
             </script>
             ";
@@ -75,7 +78,7 @@ if(isset($_POST['btnlogin'])){
         }
         else{
 
-            $_SESSION['Email'] = $username;
+            $_SESSION['CompanyID'] = $CompanyID;
             echo "
             <script type='text/javascript'>
             alert('You have successfully loggged in.');
