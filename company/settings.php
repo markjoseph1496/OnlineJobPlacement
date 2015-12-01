@@ -3,9 +3,9 @@
 include('../connection.php');
 session_start();
 
-$x = $_SESSION['Email'];
+$CompanyID = $_SESSION['CompanyID'];
 
-$qry = "SELECT * FROM companyinfotbl WHERE Email ='$x'";
+$qry = "SELECT * FROM companyinfotbl WHERE CompanyID ='$CompanyID'";
 $Result = mysql_query($qry);
     while ($qry = mysql_fetch_Array($Result)) {
 
