@@ -204,14 +204,20 @@ $(function() {
 
     <div id="yellow-text-fields">
         <div class="white-holder">
-            <ul class="nav nav-tabs">
-                <li role="presentation" id="myinfo" class="item active"><a href="personal_info.php"><B>My Info</B></a></li>
-                <li role="presentation" id="resumelink" class="item"><a href="../resumelink/resumelink.php">Resumé Link</a></li>
-                <li role="presentation" id="applications" class="item"><a href="../applications/applications.php">Applications</a></li>
-                <li role="presentation" id="search-job" class="item"><a href="../search-job/search-job.php">Jobs</a></li>
-                <li role="presentation" id="settings" class="item"><a href="../settings/settings.php">Settings</a></li>
-            </ul>
-            <div class="space"></div>
+            <div class="row field">
+                <div class="col-md-10">
+                    <ul class="nav nav-tabs">
+                        <li role="presentation" id="myinfo" class="item active"><a href="personal_info.php"><B>My Info</B></a></li>
+                        <li role="presentation" id="resumelink" class="item"><a href="../resumelink/resumelink.php">Resumé Link</a></li>
+                        <li role="presentation" id="applications" class="item"><a href="../applications/applications.php">Applications</a></li>
+                        <li role="presentation" id="search-job" class="item"><a href="../search-job/search-job.php">Jobs</a></li>
+                        <li role="presentation" id="settings" class="item"><a href="../settings/settings.php">Settings</a></li>
+                    </ul>
+                 </div>
+                <div class="col-md-2 text-center">
+                    <label>Your Student ID<h4>008-2012-0805</h4></label>
+                </div>
+            </div>
             <ul class="nav nav-pills nav-stacked col-md-2 col-sm-3">
                 <li class="yellow active"><a href="personal_info.php">Personal Info</a></li>
                 <li class="yellow"><a href="contacts_info.php">Contacts Info</a></li>
@@ -428,6 +434,10 @@ $(function() {
                     <div class="space"></div>
                         <button name="" type="" id="" class="btn btn-hg btn-primary" name="btnDelete">Delete Image</button>
                 </div>
+            </div>
+            <div class="space"></div>
+            <div class="col-md-12 col-sm-6 fieldcol">
+                <label><span>(*) </span>Note: Required fields.</label>
             </div>
             <div class="field">
                 <div class="profile_divider"></div>

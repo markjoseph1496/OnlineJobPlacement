@@ -145,7 +145,7 @@ $result2 = mysql_query($qry2);
             <div class="col-md-2">
                 &nbsp;
             </div><div class="row field">
-            <a data-bb="confirmSubmitResume" class="bb-alert alert alert-info" style="display: none;" href="submitresume.php?PID=<?php echo $PositionID?>&CID=<?php echo $CompanyID?>">
+            <a data-bb="confirmSubmitResume" class="bb-alert alert alert-info" style="display: none;" href="SubmitResume.php?PID=<?php echo $PositionID?>&CID=<?php echo $CompanyID?>">
             <a href=# class="btn btn-lg btn-hg btn-primary btnSubmit" style="float:right;"><i class="fa fa-paper-plane"></i> Submit Resumelink</a>
             </div><div class="row field">
             <a href="search-job.php" class="btn btn-lg btn-hg btn-primary" style="float:right;"><i class="fa fa-arrow-left"></i> Back</a>

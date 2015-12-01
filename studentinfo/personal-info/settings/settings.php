@@ -61,14 +61,20 @@ if(is_null($_SESSION['StudentID'])){
 
     <div id="yellow-text-fields">
         <div class="white-holder">
-            <ul class="nav nav-tabs">
-                <li role="presentation" id="personal_info" class="item"><a href="../MyInfo/personal_info.php">My Info</a></li>
-                <li role="presentation" id="resumelink" class="item"><a href="../Resumelink/resumelink.php">Resumé Link</a></li>
-                <li role="presentation" id="applications" class="item"><a href="../Applications/applications.php">Applications</a></li>
-                <li role="presentation" id="search-job" class="item"><a href="../Search-job/search-job.php">Jobs</a></li>
-                <li role="presentation" id="settings" class="item active"><a href="settings.php"><B>Settings</B></a></li>
-            </ul>
-            <div class="space"></div>
+            <div class="row field">
+                <div class="col-md-10">
+                    <ul class="nav nav-tabs">
+                        <li role="presentation" id="personal_info" class="item"><a href="../myinfo/personal_info.php">My Info</a></li>
+                        <li role="presentation" id="resumelink" class="item"><a href="../resumelink/resumelink.php">Resumé Link</a></li>
+                        <li role="presentation" id="applications" class="item"><a href="../applications/applications.php">Applications</a></li>
+                        <li role="presentation" id="search-job" class="item"><a href="../search-job/search-job.php">Jobs</a></li>
+                        <li role="presentation" id="settings" class="item active"><a href="settings.php"><B>Settings</B></a></li>
+                    </ul>
+                </div>
+                <div class="col-md-2 text-center">
+                    <label>Your Student ID<h4>008-2012-0805</h4></label>
+                </div>
+            </div>
             
             <ul class="nav nav-pills nav-stacked col-md-2 col-sm-3">
                 <li class="yellow active"><a href="settings.php">Change Password</a></li>

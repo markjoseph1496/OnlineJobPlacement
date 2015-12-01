@@ -46,14 +46,20 @@
 
     <div id="yellow-text-fields">
         <div class="white-holder">
-            <ul class="nav nav-tabs">
-                <li role="presentation" id="my_info" class="item"><a href="../myinfo/personal_info.php">My Info</a></li>
-                <li role="presentation" id="resume_link" class="item active"><a href="resumelink.php"><B>Resumé Link</B></a></li>
-                <li role="presentation" id="applications" class="item"><a href="../applications/applications.php">Applications</a></li>
-                <li role="presentation" id="search-job" class="item"><a href="../search-job/search-job.php">Jobs</a></li>
-                <li role="presentation" id="settings" class="item"><a href="../settings/settings.php">Settings</a></li>
-            </ul>
-            <div class="space"></div>
+            <div class="row field">
+                <div class="col-md-10">
+                    <ul class="nav nav-tabs">
+                        <li role="presentation" id="my_info" class="item"><a href="../myinfo/personal_info.php">My Info</a></li>
+                        <li role="presentation" id="resume_link" class="item active"><a href="resumelink.php"><B>Resumé Link</B></a></li>
+                        <li role="presentation" id="applications" class="item"><a href="../applications/applications.php">Applications</a></li>
+                        <li role="presentation" id="search-job" class="item"><a href="../search-job/search-job.php">Jobs</a></li>
+                        <li role="presentation" id="settings" class="item"><a href="../settings/settings.php">Settings</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-2 text-center">
+                    <label>Your Student ID<h4>008-2012-0805</h4></label>
+                </div>
+            </div>
             <ul class="nav nav-pills nav-stacked col-md-2 col-sm-3">
                 <li class="yellow active"><a href="resumelink.php">Resume Link</a></li>
                 <li class="yellow"><a href="background.php">Background</a></li>
@@ -70,7 +76,7 @@
                         </div>
                         <div class="field">
                             <div class="col-md-4">
-                                <a href="../../../resumelinkprofile.php" target="_blank">
+                                <a href="../../../ResumelinkProfile.php" target="_blank">
                                     http://markjoseph1496.ojpms.com <i class="fa fa-external-link-square"></i>
                                 </a>  
                             </div>             

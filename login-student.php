@@ -68,7 +68,7 @@ if($a){
                 echo "
                 <script type='text/javascript'>
                 alert('You have successfully loggged in.');
-                location.href='studentinfo/personal-info/myinfo/personal_info.php';
+                location.href='StudentInfo/personal-info/myinfo/personal_info.php';
                 </script>
                 ";
 
@@ -78,21 +78,14 @@ if($a){
 }
 ?>
 
-<html lang="en">
 
+<html>
 <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="">
-    <meta name="author" content="">
 
     <title>Online JPMS</title>
 
-    <!-- Bootstrap Core CSS -->
-    <link href="css/bootstrap.min.css" rel="stylesheet">
-
-    <!-- CSS -->
+    <!-- CSS-->
+    <link href="css/login-style.css" rel="stylesheet">
     <link href="css/agency.css" rel="stylesheet">
 
     <!-- Fonts -->
@@ -103,32 +96,35 @@ if($a){
     <link href="font-awesome/ffonts/roboto.css" rel="stylesheet" type="text/css">
 </head>
 
-
 <body class="login-background">
-    <form method = "POST" autocomplete="off">
-        <div class="container">
-            <div class="login">
-                <div class="login-screen">
-                    <div class="login-form" id="yellow-text-fields">
-                        <div class="login-form">
+    <div class="register js-register-form" data-view="Register">
+        <div class="grid-container text-center">
+            <div class="grid-row">
+                <div class="grid-col w5 half_on_tablet full_on_mobile">
+                    <form class="register-form js-form" method = "POST" autocomplete="off">
+                        <h2 class="register-title">&nbsp;<span class="break_on_desktop"></span>Hi. It's nice to see you.</h2>
+                        <fieldset class="register-fieldset js-fieldset">
                             <div class="form-group">
-                                <input type="text" class="<?php echo $StudentID_class;?> form-control login-field" placeholder="Your Student ID" id="txtStudentID" name="txtStudentID" style="height:55px;" value="<?php echo htmlspecialchars($server_StudentID)?>">
-                                <div align="left" style="color: red"><?php echo $StudentID_validator?></div>
+                                <input type="text" class="<?php echo $StudentID_class;?> form-control register-input js-password js-input" placeholder="Your Student ID" id="txtStudentID" name="txtStudentID" value="<?php echo htmlspecialchars($server_StudentID)?>">
                             </div>
+                        </fieldset>
+                        <fieldset class="register-fieldset js-fieldset">
                             <div class="form-group">
-                                <input type="password" class="<?php echo $Password_class;?>  form-control login-field" placeholder="Password" id="txtPassword" name="txtPassword" style="height:55px;">
-                                <div align="left" style="color: red"><?php echo $Password_validator?></div>
+                                <input type="password" class="<?php echo $Password_class;?>  form-control register-input js-password js-input" placeholder="Password" id="txtPassword" name="txtPassword">
                             </div>
-                            <input type ="submit" class="btn btn-primary btn-large btn-block" name = "btnLogin" value = "Login"></input>
-                            <a class="login-link btn" href="">Forgot password?</a>
-                            <div>&nbsp;</div>
-                            <a class="btn btn-bordered" href="registration.php">REGISTER NOW!</a>
-                        </div>
-                    </div>
+                        </fieldset>
+                        <fieldset class="register-fieldset js-fieldset">
+                            <div class="form-group">
+                                <button name = "btnLogin" value = "Login" class="btn btn--green register-submit btn--icon">Login
+                                    <span class="btn-icon btn-icon--right"></span>
+                                </button>
+                            </div>
+                        </fieldset>
+                        <a href="">Forgot password?</a>
+                    </form>
                 </div>
             </div>
         </div>
-    </form>
-    <div class="login-footer"></div>
+    </div>
 </body>
 </html>

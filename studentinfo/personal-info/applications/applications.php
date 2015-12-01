@@ -42,7 +42,7 @@ if(is_null($_SESSION['StudentID'])){
     <nav class="navbar navbar-default navbar-fixed-top navbar-shrink">
         <div class="container">
             <div class="navbar-header page-scroll">
-                <a class="navbar-brand page-scroll" href="#page-top">Online Job Placement Management</a>
+                <a class="navbar-brand page-scroll" href="">Online Job Placement Management</a>
             </div>
 
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
@@ -60,14 +60,20 @@ if(is_null($_SESSION['StudentID'])){
 
     <div id="yellow-text-fields">
         <div class="white-holder">
-            <ul class="nav nav-tabs">
-                <li role="presentation" id="personal_info" class="item"><a href="../myinfo/personal_info.php">My Info</a></li>
-                <li role="presentation" id="resumelink" class="item"><a href="../resumelink/resumelink.php">Resumé Link</a></li>
-                <li role="presentation" id="applications" class="item active"><a href="applications.php"><B>Applications</B></a></li>
-                <li role="presentation" id="search-job" class="item"><a href="../search-job/search-job.php">Jobs</a></li>
-                <li role="presentation" id="settings" class="item"><a href="../settings/settings.php">Settings</a></li>
-            </ul>
-            <div class="space"></div>
+            <div class="row field">
+                <div class="col-md-10">
+                    <ul class="nav nav-tabs">
+                        <li role="presentation" id="personal_info" class="item"><a href="../myinfo/personal_info.php">My Info</a></li>
+                        <li role="presentation" id="resumelink" class="item"><a href="../resumelink/resumelink.php">Resumé Link</a></li>
+                        <li role="presentation" id="applications" class="item active"><a href="applications.php"><B>Applications</B></a></li>
+                        <li role="presentation" id="search-job" class="item"><a href="../search-job/search-job.php">Jobs</a></li>
+                        <li role="presentation" id="settings" class="item"><a href="../settings/settings.php">Settings</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-2 text-center">
+                    <label>Your Student ID<h4>008-2012-0805</h4></label>
+                </div>
+            </div>
             
             <table class="table segment table-hover">
                 <thead>
