@@ -2,7 +2,7 @@
 include('../../../../connection.php');
 session_start();
 
-$x= $_SESSION['StudentID'];
+$StudentID= $_SESSION['StudentID'];
 
 if(isset($_GET['School'])){
 
@@ -14,7 +14,7 @@ if(isset($_GET['School'])){
 
 	$Graduation = $GraduatedMonth ." ". $GraduatedYear;
     $Attainment = mysql_real_escape_string($Attainment); 
-    $query = "INSERT INTO schooltbl (StudentID,School,Attainment,Course,Graduated,_Default) values  ('$x','$School','$Attainment','$Course','$Graduation','0')";
+    $query = "INSERT INTO schooltbl (StudentID,School,Attainment,Course,Graduated,_Default) values  ('$StudentID','$School','$Attainment','$Course','$Graduation','0')";
     $Result = mysql_query($query);
     echo "
          <script type='text/javascript'>

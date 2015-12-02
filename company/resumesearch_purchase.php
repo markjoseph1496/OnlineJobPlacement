@@ -274,7 +274,7 @@ background-color: #006681;
                         <a href="#page-top"></a>
                     </li>
                     <li>
-                        <a class="page-scroll" href="#">Sign Out</a>
+                        <a class="page-scroll" href="../login-company.php?id=1">Sign Out</a>
                     </li>
                 </ul>
             </div>
@@ -308,7 +308,7 @@ background-color: #006681;
             <div class = "reports">
                 <div class = "container">
                     <div class = "col-md-6">
-                        <h4>Purchased Resume</h4>
+                        <h4>Accepted Resume</h4>
                      </div>
                      <div class = "col-md-6">
                         <div id="search">
@@ -336,16 +336,17 @@ background-color: #006681;
 
             <tbody>
                 <?php
-                $result = mysql_query('SELECT `CompanyID` FROM `companyinfotbl` WHERE `Email` = \'' . $_SESSION['Email'] . '\';');
-                $company_id = mysql_fetch_array($result)['CompanyID'];
-                $result = mysql_query('SELECT * FROM `resumerequesttbl` WHERE `CompanyID` = \'' . $company_id . '\';');
+                $CompanyID = $_SESSION['CompanyID'];
+
+               
+                $result = mysql_query("SELECT * FROM `resumerequesttbl` WHERE `CompanyID` = '$CompanyID';");
                 while($row = mysql_fetch_array($result)){
                     $status = $row['Status'];
                     $result1 = mysql_query('SELECT * FROM `studentinfotbl` WHERE `StudentID` = ' . $row['StudentID'] . ';');
                     $row1 = mysql_fetch_array($result1);
-                    if($row['Status'] == "ACCEPTED"){
+                    if($row['Status'] == "Accepted"){
                         //http://stie2e.com/resumelinkprofile.php?studentid=1
-                        $name = 'http://stie2e.com/resumelinkprofile.php?studentid=' . $row['StudentID'];
+                        $name = 'http://stie2e.com/resumelinkprofile.php?studentid=1' . $row['StudentID'];
                         $name = '<a href="' . $name . '">' . $row1['FirstName'] . ', ' . $row1['LastName'] . '</a>';
                     }else{
                         $name = $row1['FirstName'] . ', ' . $row1['LastName'];

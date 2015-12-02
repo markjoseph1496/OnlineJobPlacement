@@ -158,7 +158,7 @@ a:-webkit-any-link {
                         <a href="#page-top"></a>
                     </li>
                     <li>
-                        <a class="page-scroll" href="#">Sign Out</a>
+                        <a class="page-scroll" href="../login-company.php?id=1">Sign Out</a>
                     </li>
                 </ul>
             </div>
@@ -203,67 +203,67 @@ a:-webkit-any-link {
                 
                 <tr>
                     <td>
-                    <a href = "fieldofstudly.php?CourseID=Bachelor of Science in Tourism Management">Bachelor of Science in Tourism Management</a>
+                    <a href = "fieldofstudy.php?CourseID=Bachelor of Science in Tourism Management">Bachelor of Science in Tourism Management</a>
                     </td>
                     <td class = "tcenter"><?php echo $TotalBSTM; ?></td>
                 </tr>
                 <tr>
                     <td>
-                    <a href = "fieldofstudly.php?CourseID=Bachelor of Science in Business Management Major in Operations">Bachelor of Science in Business Management Major in Operations</a>
+                    <a href = "fieldofstudy.php?CourseID=Bachelor of Science in Business Management Major in Operations">Bachelor of Science in Business Management Major in Operations</a>
                     </td>
                     <td class = "tcenter"><?php echo $TotalBSBM; ?></td>
                 </tr>
                 <tr>
                     <td>
-                    <a href = "fieldofstudly.php?CourseID=Bachelor of Arts in Communication">Bachelor of Arts in Communication</a>
+                    <a href = "fieldofstudy.php?CourseID=Bachelor of Arts in Communication">Bachelor of Arts in Communication</a>
                     </td>
                     <td class = "tcenter"><?php echo $TotalABCOMM; ?></td>
                 </tr>
                 <tr>
                     <td>
-                    <a href = "fieldofstudly.php?CourseID=Bachelor of Science in Information Technology Major in Digital Arts">Bachelor of Science in Information Technology Major in Digital Arts</a>
+                    <a href = "fieldofstudy.php?CourseID=Bachelor of Science in Information Technology Major in Digital Arts">Bachelor of Science in Information Technology Major in Digital Arts</a>
                     </td>
                     <td class = "tcenter"><?php echo $TotalBSITDMA; ?></td>
                 </tr>
                 <tr>
                     <td>
-                    <a href = "fieldofstudly.php?CourseID=Bachelor of Science in Hotel and Restaurant Management">Bachelor of Science in Hotel and Restaurant Management</a>
+                    <a href = "fieldofstudy.php?CourseID=Bachelor of Science in Hotel and Restaurant Management">Bachelor of Science in Hotel and Restaurant Management</a>
                     </td>
                     <td class = "tcenter"><?php echo $TotalBSHRM; ?></td>
                 </tr>
                 <tr>
                     <td>
-                    <a href = "fieldofstudly.php?CourseID=Bachelor of Science in Computer Science">Bachelor in Science in Computer Science</a>
+                    <a href = "fieldofstudy.php?CourseID=Bachelor of Science in Computer Science">Bachelor in Science in Computer Science</a>
                     </td>
                     <td class = "tcenter"><?php echo $TotalBSCS; ?></td>
                 </tr>
                                 <tr>
                     <td>
-                    <a href = "fieldofstudly.php?CourseID=Bachelor of Science in Information Technology">Bachelor in Science in Information Technology</a>
+                    <a href = "fieldofstudy.php?CourseID=Bachelor of Science in Information Technology">Bachelor in Science in Information Technology</a>
                     </td>
                     <td class = "tcenter"><?php echo $TotalBSIT; ?></td>
                 </tr>
                 <tr>
                     <td>
-                    <a href = "fieldofstudly.php?CourseID=Bachelor of Science in Computer Engineering">Bachelor in Science in Computer Engineering</a>
+                    <a href = "fieldofstudy.php?CourseID=Bachelor of Science in Computer Engineering">Bachelor in Science in Computer Engineering</a>
                     </td>
                     <td class = "tcenter"><?php echo $TotalBSCPE; ?></td>
                 </tr>
                 <tr>
                     <td>
-                    <a href = "fieldofstudly.php?CourseID=Bachelor of Science in Accounting Technology">Bachelor of Science in Accounting Technology</a>
+                    <a href = "fieldofstudy.php?CourseID=Bachelor of Science in Accounting Technology">Bachelor of Science in Accounting Technology</a>
                     </td>
                     <td class = "tcenter"><?php echo $TotalBSAT; ?></td>
                 </tr>
                 <tr>
                     <td>
-                    <a href = "fieldofstudly.php?CourseID=Bachelor of Science in Information Technology with Specialization Digital Arts">Bachelor of Science in Information Technology with Specialization Digital Arts</a>
+                    <a href = "fieldofstudy.php?CourseID=Bachelor of Science in Information Technology with Specialization Digital Arts">Bachelor of Science in Information Technology with Specialization Digital Arts</a>
                     </td>
                     <td class = "tcenter"><?php echo $TotalBSITDA; ?></td>
                 </tr>
                 <tr>
                     <td>
-                    <a href = "fieldofstudly.php?CourseID=2-yr. Associate in Computer Technology">2-yr. Associate in Computer Technology</a>
+                    <a href = "fieldofstudy.php?CourseID=2-yr. Associate in Computer Technology">2-yr. Associate in Computer Technology</a>
                     </td>
                     <td class = "tcenter"><?php echo $TotalASCT; ?></td>
                 </tr>

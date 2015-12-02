@@ -2,6 +2,18 @@
 include('../../../connection.php');
 session_start();
 
+if(isset($_SESSION['StudentID'])){
+    $StudentID = $_SESSION['StudentID'];
+}
+else{
+    $StudentID = '';
+    echo "
+        <script type='text/javascript'>
+        location.href='../../../login-student.php?id=2';
+        </script>
+        ";
+}
+
 $PositionID = $_GET['PID'];
 
 $qry1 = "SELECT * FROM comppositiontbl WHERE PositionID ='$PositionID'";
@@ -87,7 +99,7 @@ $result2 = mysql_query($qry2);
                         <a href="#page-top"></a>
                     </li>
                     <li>
-                        <a href="../../../index.php?id=SignOut">Sign Out</a>
+                        <a href="../../../login-student.php?id=1">Sign Out</a>
                     </li>
                 </ul>
             </div>

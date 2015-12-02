@@ -4,6 +4,18 @@
 session_start();
 include('connection.php');
 
+if(isset($_GET['id'])){
+    if(isset($_POST['btnLogin'])){
+
+    }
+    else{
+        $id = $_GET['id'];
+        if($id == 1){
+            session_destroy();
+        }
+    }
+}
+
 $Email_validator = '';
 $Password_validator = '';
 
@@ -101,6 +113,20 @@ if($a){
                 <div class="login-screen">
                     <div class="login-form" id="yellow-text-fields">
                         <div class="login-form">
+                            <?php
+                            if(isset($_GET['id'])){
+                                $id = $_GET['id'];
+                                if($id == 1){
+                                    echo '
+                                    <div class="alert alert-success">
+                                        <span class="glyphicon glyphicon-info-sign"></span> 
+                                        You have been successfully signed out.
+                                    </div>
+                                    ';
+                                }
+                                
+                            }
+                            ?>
                             <div class="form-group">
                                 <input type="text" class="form-control login-field" placeholder="Email" id="" name="Email" style="height:55px;">
                                 <div style="color: red"><?php echo $Email_validator?></div>

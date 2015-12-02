@@ -262,7 +262,7 @@ input[type="search"]::-webkit-search-decoration {
                     <li class="hidden">
                         <a href="#page-top"></a>
                     </li>
-                        <a class="btn bordered" href="../../../index.php?id=SignOut">Sign Out</a>
+                        <a class="btn bordered" href="../login-admin.php?id=1">Sign Out</a>
                     </li>
                 </ul>
             </div>

@@ -3,17 +3,20 @@
 include('../../../connection.php');
 session_start();
 
-$x = $_SESSION['StudentID'];
-
-if(is_null($x)){
+if(isset($_SESSION['StudentID'])){
+    $StudentID = $_SESSION['StudentID'];
+}
+else{
+    $StudentID = '';
     echo "
         <script type='text/javascript'>
-        location.href='../../../Login-student.php';
+        location.href='../../../login-student.php?id=2';
         </script>
         ";
 }
 
-$qry = "SELECT * FROM studentinfotbl WHERE StudentID ='$x'";
+
+$qry = "SELECT * FROM studentinfotbl WHERE StudentID ='$StudentID'";
 $result = mysql_query($qry);
         while($qry = mysql_fetch_Array($result))
         {       
@@ -123,7 +126,7 @@ if($a){
         unset($a);
         $FacebookLink = "http://www.facebook.com/".$server_FBLink;
 
-        $query = "UPDATE studentinfotbl SET FirstName = '$server_fname', MiddleName = '$server_mname', LastName = '$server_lname', Birthdate = '$server_Birthdate', Gender = '$server_gender', Nationality = '$server_nationality', CivilStatus = '$server_civilstatus', FBLink = '$FacebookLink', TwitterLink = '$server_TwitterLink' WHERE StudentID = '$x'";
+        $query = "UPDATE studentinfotbl SET FirstName = '$server_fname', MiddleName = '$server_mname', LastName = '$server_lname', Birthdate = '$server_Birthdate', Gender = '$server_gender', Nationality = '$server_nationality', CivilStatus = '$server_civilstatus', FBLink = '$FacebookLink', TwitterLink = '$server_TwitterLink' WHERE StudentID = '$StudentID'";
         $Result = mysql_query($query);
         echo "
          <script type='text/javascript'>
@@ -195,7 +198,7 @@ $(function() {
                         <a href="#page-top"></a>
                     </li>
                     <li>
-                        <a href="../../../index.php?id=SignOut">Sign Out</a>
+                        <a href="../../../login-student.php?id=1">Sign Out</a>
                     </li>
                 </ul>
             </div>
@@ -457,7 +460,7 @@ if(isset($_POST['btnSave'])){
 
     $fileToUpload = basename($_FILES["fileToUpload"]["name"]);
     $target_dir = "ProfileImages/";   //eto yung folder or directory kung saan mo ma-sasave yung picture mo
-    $target_file = $target_dir . $x.".jpg";
+    $target_file = $target_dir . $StudentID.".jpg";
     $uploadOk = 1;
     $imageFileType = pathinfo($target_file,PATHINFO_EXTENSION);
 
@@ -474,7 +477,7 @@ if(isset($_POST['btnSave'])){
     else {
         if (move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_file)){
 
-        $query = "UPDATE studentinfotbl SET ProfileImage = '$target_file' WHERE StudentID = '$x'";
+        $query = "UPDATE studentinfotbl SET ProfileImage = '$target_file' WHERE StudentID = '$StudentID'";
         $Result = mysql_query($query);
         echo "
          <script type='text/javascript'>

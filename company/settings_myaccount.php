@@ -3,8 +3,8 @@
 include('../connection.php');
 session_start();
 
-$x = $_SESSION['Email'];
-$qry = "SELECT * FROM companyinfotbl WHERE Email ='$x'";
+$CompanyID = $_SESSION['CompanyID'];
+$qry = "SELECT * FROM companyinfotbl WHERE CompanyID ='$CompanyID'";
 $Result = mysql_query($qry);
 
     while ($qry = mysql_fetch_Array($Result)) {
@@ -306,7 +306,7 @@ background-color: #006681;
                         <a href="#page-top"></a>
                     </li>
                     <li>
-                        <a class="page-scroll" href="#">Sign Out</a>
+                        <a class="page-scroll" href="../login-company.php?id=1">Sign Out</a>
                     </li>
                 </ul>
             </div>
@@ -577,7 +577,7 @@ if(isset($_POST['btnSave'])){
 
 
 
-    $query = "UPDATE companyinfotbl SET FirstName = '$fname', MiddleName = '$mname', LastName = '$lname', Position = '$position', Department = '$dept', Address = '$address', PhoneNum = '$contact' WHERE Email = '$x'";
+    $query = "UPDATE companyinfotbl SET FirstName = '$fname', MiddleName = '$mname', LastName = '$lname', Position = '$position', Department = '$dept', Address = '$address', PhoneNum = '$contact' WHERE CompanyID = '$CompanyID'";
    $Result = mysql_query($query);
    echo "
          <script type='text/javascript'>

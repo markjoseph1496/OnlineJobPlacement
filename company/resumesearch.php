@@ -1,15 +1,19 @@
-<?php session_start(); 
+<!DOCTYPE html>
+<?php 
+
+session_start(); 
     // Checks if request_resume and company_id 
+
+$CompanyID = $_SESSION['CompanyID'];
 
     include('../connection.php');
     $a = isset($_POST['request_resume']);
     $a = $a && isset($_POST['company_id']);
     $a = $a && isset($_POST['student_id']);
     if($a){
-        mysql_query("INSERT INTO `resumerequesttbl`(`CompanyID`, `StudentID`, `Status`) VALUES('" . $_POST['company_id'] . "','" . $_POST['student_id'] . "','PENDING')");
+        mysql_query("INSERT INTO `resumerequesttbl`(`CompanyID`, `StudentID`, `Status`) VALUES('$CompanyID','" . $_POST['student_id'] . "','Pending')");
     }
 ?>
-<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -171,7 +175,7 @@ input[type="search"]::-webkit-search-decoration {
     border-radius: 3px;
     display: inline-block;
     padding: 7px;
-    margin-left: 70px;
+    margin-left: 76px;
 }
 
 #search input {
@@ -187,7 +191,7 @@ input[type="search"]::-webkit-search-decoration {
 #search input[type="search"] {
     background: #fff;
     color: #42454e;
-    min-width: 1000px;
+    min-width: 1010px;
     padding: 6px 8px;
 }
 
@@ -195,7 +199,7 @@ input[type="search"]::-webkit-search-decoration {
     background: #fed136;
     color: #fff;
     font-weight: bold;
-    margin-left: 7px;
+    margin-left: 10px;
     padding: 6px 25px;
 }
 
@@ -250,97 +254,7 @@ background-color: #006681;
 #submenu{
     margin-left: 50px;
 }  
- .multiselect {
-        width: 200px;
 
-    }
-    .selectBox {
-        position: relative;
-
-    }
-    .selectBox select {
-        width: 100%;
-        font-weight: bold;
-    }
-    .overSelect {
-        position: absolute;
-        left: 0; right: 0; top: 0; bottom: 0;
-        
-    
-    }
-    #checkboxes {
-        display: none;
-        border: 1px #dadada solid;
-    }
-    #checkboxes label {
-        display: block;
-    }
-    #checkboxes label:hover {
-        background-color: #1e90ff;
-    }
-     #checkboxes1 {
-        display: none;
-        border: 1px #dadada solid;
-    }
-    #checkboxes1 label {
-        display: block;
-    }
-    #checkboxes1 label:hover {
-        background-color: #1e90ff;
-    }
-
-     #checkboxes2 {
-        display: none;
-        border: 1px #dadada solid;
-    }
-    #checkboxes2 label {
-        display: block;
-    }
-    #checkboxes2 label:hover {
-        background-color: #1e90ff;
-    }
-
-    #checkboxes3 {
-        display: none;
-        border: 1px #dadada solid;
-    }
-    #checkboxes3 label {
-        display: block;
-    }
-    #checkboxes3 label:hover {
-        background-color: #1e90ff;
-    }
-
-    #checkboxes4 {
-        display: none;
-        border: 1px #dadada solid;
-    }
-    #checkboxes4 label {
-        display: block;
-    }
-    #checkboxes4 label:hover {
-        background-color: #1e90ff;
-    }
-    #checkboxes5 {
-        display: none;
-        border: 1px #dadada solid;
-    }
-    #checkboxes5 label {
-        display: block;
-    }
-    #checkboxes5 label:hover {
-        background-color: #1e90ff;
-    }
-
-
-    #chk{
-    border:20px;
-     -webkit-appearance: checkbox;
-    box-sizing: border-box;
-         margin: 3px 3px 3px 4px;
-         border: solid 1px;
-    }
-   
    #save
             {
               width: 100px;
@@ -374,7 +288,27 @@ background-color: #006681;
     margin: 10px;
     max-width:100%;
     max-height:100%;
-}              
+} 
+.box {
+    padding: 5px;
+    border: 1px solid #E5E4E2;
+    background-color: #fff;
+    margin-top: -180px;
+    margin-left: -10px;
+    width: 1125px;
+} 
+.spaces {
+    margin: 1rem 0rem;
+    border-bottom: 0em;
+    line-height: 1;
+    height: 7em;
+}  
+.filter{
+    margin-left: 600px;
+}
+.well{
+    background-color: #FFF;
+}
     </style>
 
 <body id="page-top" class="index resume">
@@ -424,263 +358,65 @@ background-color: #006681;
             <li class="yellow"><a href="resumesearch_bookmark.php">Bookmark Resumelink</a></li>
         </ul>
 
-        <div class="space1"></div>
+        <div class="space"></div>
+                    <div class="container">
+                        <div class="well" align = "right">
+                         <b>Filter by:</b>
+                            <select style = "height: 30px;">
+                                <option value="name_id">Name/ID</option>
+                                <option value="location">Location</option>
+                                <option value="specialization">Specialization</option> 
+                            </select>
+                         </div>   
+                     </div>
         
         <div id="search">
                         <fieldset class="clearfix">
                         <input type="search" name="search" value="Search Student.." onBlur="if(this.value=='')this.value='Search Student..'" onFocus="if(this.value=='Search Student..')this.value=''" > <!-- JS because of IE support; better: placeholder="Search Student.." -->
                         <input type="submit" value="Search" class="button" href = "#" name="btnSearch"> 
                         </fieldset>
-                </div> 
+        </div> 
+        <div class = "space"></div>
         <div class = "container">
-        <ul class="nav nav-pills nav-stacked col-md-2 col-sm-3">
-            <h4>Resume Search Filter </h4>
-<form>
-    <div class="multiselect">
-        <div class="selectBox" onclick="showCheckboxes()">
-            <select>
-                <option>Select Field of Study</option>
-            </select>
-            <div class="overSelect"></div>
-        </div>
-        <div id="checkboxes">
-            <label for="one"><input type="checkbox" id="chk"/>BSCS</label>
-            <label for="two"><input type="checkbox" id="chk"/>BSIT </label>
-            <label for="three"><input type="checkbox" id="chk"/>HRM</label>
-        </div>
-    </div><br><br>
-    <div class="multiselect">
-        <div class="selectBox" onclick="showCheckboxes1()">
-            <select>
-                <option>Select Position Level</option>
-            </select>
-            <div class="overSelect"></div>
-        </div>
-        <div id="checkboxes1">
-            <label for="one"><input type="checkbox" id="chk"/>Manager</label>
-            <label for="two"><input type="checkbox" id="chk"/>Assistant</label>
-            <label for="three"><input type="checkbox" id="chk"/>Faculty</label>
-        </div>
-    </div><br><br>
-    <div class="multiselect">
-        <div class="selectBox" onclick="showCheckboxes2()">
-            <select>
-                <option>Select Industry</option>
-            </select>
-            <div class="overSelect"></div>
-        </div>
-        <div id="checkboxes2">
-            <label for="one"><input type="checkbox" id="chk"/>ashdjs</label>
-            <label for="two"><input type="checkbox" id="chk"/>jshdjsh </label>
-            <label for="three"><input type="checkbox" id="chk"/>jsdhjs</label>
-        </div>
-    </div><br><br>
-    <div class="multiselect">
-        <div class="selectBox" onclick="showCheckboxes3()">
-            <select>
-                <option>Select Gender</option>
-            </select>
-            <div class="overSelect"></div>
-        </div>
-        <div id="checkboxes3">
-            <label for="one"><input type="checkbox" id="chk"/>Male</label>
-            <label for="two"><input type="checkbox" id="chk"/>Female</label>
-           
-        </div>
-    </div><br><br>
-    <div class="multiselect">
-        <div class="selectBox" onclick="showCheckboxes4()">
-            <select>
-                <option>Work Options</option>
-            </select>
-            <div class="overSelect"></div>
-        </div>
-        <div id="checkboxes4">
-            <label for="one"><input type="checkbox" id="chk"/>Day Shift</label>
-            <label for="two"><input type="checkbox" id="chk"/>Night Shift </label>
             
-        </div>
-    </div>
-    <br>
-    <div class="multiselect">
-        <div class="selectBox" onclick="showCheckboxes5()">
-            <select>
-                <option>Work Location</option>
-            </select>
-            <div class="overSelect"></div>
-        </div>
-        <div id="checkboxes5">
-            <label for="one"><input type="checkbox" id="chk"/>Malabon City</label>
-            <label for="two"><input type="checkbox" id="chk"/>Caloocan City</label>
-            <label for="three"><input type="checkbox" id="chk"/>Valenzuela City</label>
-        </div>
-    </div>
-    <br> 
-        <button type = "submit" class = "btn btn-danger " id = "save" name = "btnSave"><b> CLEAR </b></button><br><br>
-        <button type = "submit" class = "btn btn-danger " id = "cancel" name = "btnCancel"><b> FILTER</b> </button>
-    
-</form>  
- <script type="text/javascript">
- var expanded = false;
-    function showCheckboxes() {
-                var checkboxes = document.getElementById("checkboxes");
-        if (!expanded) {
-            checkboxes.style.display = "block";
-            expanded = true;
-        } else {
-            checkboxes.style.display = "none";
-            expanded = false;
-        }
-    }
-</script>
-
-  
- <script type="text/javascript">
- var expanded = false;
-    function showCheckboxes1() {
-                var checkboxes = document.getElementById("checkboxes1");
-        if (!expanded) {
-            checkboxes.style.display = "block";
-            expanded = true;
-        } else {
-            checkboxes.style.display = "none";
-            expanded = false;
-        }
-    }
-</script>
-
-<script type="text/javascript">
- var expanded = false;
-    function showCheckboxes2() {
-                var checkboxes = document.getElementById("checkboxes2");
-        if (!expanded) {
-            checkboxes.style.display = "block";
-            expanded = true;
-        } else {
-            checkboxes.style.display = "none";
-            expanded = false;
-        }
-    }
-</script>
-
-<script type="text/javascript">
- var expanded = false;
-    function showCheckboxes3() {
-                var checkboxes = document.getElementById("checkboxes3");
-        if (!expanded) {
-            checkboxes.style.display = "block";
-            expanded = true;
-        } else {
-            checkboxes.style.display = "none";
-            expanded = false;
-        }
-    }
-</script>
-<script type="text/javascript">
- var expanded = false;
-    function showCheckboxes4() {
-                var checkboxes = document.getElementById("checkboxes4");
-        if (!expanded) {
-            checkboxes.style.display = "block";
-            expanded = true;
-        } else {
-            checkboxes.style.display = "none";
-            expanded = false;
-        }
-    }
-</script>
-<script type="text/javascript">
- var expanded = false;
-    function showCheckboxes5() {
-                var checkboxes = document.getElementById("checkboxes5");
-        if (!expanded) {
-            checkboxes.style.display = "block";
-            expanded = true;
-        } else {
-            checkboxes.style.display = "none";
-            expanded = false;
-        }
-    }
-</script>
-           
-        </ul>
-        <div class = "col-md-10">
-            <table class = "Applicants" width = "100%" cellpadding = "0">
-        <?php 
                 
                 
-                if (isset($_POST['btnSearch'])) {
-                    $search = $_POST['search'];
-                    $qry = "SELECT studentinfotbl.StudentID, studcontactstbl.ContactsID, studcontactstbl.City, studentinfotbl.FirstName, studentinfotbl.LastName FROM studentinfotbl
-                            LEFT JOIN studcontactstbl 
-                            On studentinfotbl.StudentID = studcontactstbl.StudentID WHERE FirstName = '$search'";
 
-                }
-                else{
-                    $qry = "SELECT studentinfotbl.StudentID, studcontactstbl.ContactsID, studcontactstbl.City, studentinfotbl.FirstName, studentinfotbl.LastName FROM studentinfotbl
-                            LEFT JOIN studcontactstbl 
-                            On studentinfotbl.StudentID = studcontactstbl.StudentID";
-                    
-                }
-
-                $result = mysql_query($qry);
-
-                $fname = '';
-                $lname = '';
-                $location = '';
-                $student_id = '';
-
-                while ($qry = mysql_fetch_array($result)) {
-                    $fname = $qry['FirstName'];
-                    $lname = $qry['LastName'];
-                    $location = $qry['City'];
-                    $student_id = $qry['StudentID'];
-                }
-        ?>
-                    <h4>Resume Search Results.. </h4>
-           <thead>
-           <tr>
-    
-           </tr>    
+                
+            
+            <table class = "Applicants table" width = "100%" cellpadding = "0">
+                <thead>
+                    <tr></tr>  
+                    <tr>
+                        <th width = "25%" class = "tabletitle">Name/ID</th>
+                        <th width = "30%" class = "tabletitle">Location </th>
+                        <th width = "30%" class = "tabletitle"> Specialization</th>
+                        <th width = "15%" class = "tabletitle"></th>
+                    <tr>
+                </thead>
+                <tbody>
                 <tr>
-                    <th width= "20%" class = "tabletitle">Name/ID</th>
-                    <th width = "20%" class = "tabletitle">Location</th>
-                    <th width = "10%" class = "tabletitle">Age</th>
-                    <th width = "15%" class = "tabletitle">Skills </th>
-                    <th width = "15%" class = "tabletitle"> Specialization </th>
-                    <th width = "10%" class = "tabletitle"></th>
-                <tr>
-            </thead>
-            <tbody>
-                <tr>
-                   <td><?php echo " $lname, $fname";  ?></td>
-                   <td><?php echo "$location"; ?></td>
-                   <td></td>
-                   <td></td>
-                   <td></td>
-                   <td> 
-                    <?php
-                        $result = mysql_query("SELECT `CompanyID` FROM `companyinfotbl` WHERE `Email` = '" . $_SESSION['Email'] . "'");
-                        $row = mysql_fetch_array($result);
-                        $company_id = $row['CompanyID'];
-                        unset($result, $row);
-                    ?>
-                    <form method="POST">
-                        <input type="hidden" name="company_id" value="<?php echo $company_id?>"/>
-                        <input type="hidden" name="student_id" value="<?php echo $student_id?>"/>
-                         <button id='Edit' name="request_resume" href="" class='btn btn-default'> 
-                        <i class='fa fa-arrow-circle-right'></i>
-                        </button>
-                    </form>
+                    <td> </td>
+                    <td class = "tcenter"></td>
+                    <td class = "tcenter"></td>
+                    <td class = "tcenter">
+                        <form method="POST">
+                            <input type="hidden" name="company_id" value="<?php echo $company_id?>"/>
+                            <input type="hidden" name="student_id" value="<?php echo $student_id?>"/>
+                            <button id='Edit' name="request_resume" href="" class='btn btn-default'> 
+                                <i class='fa fa-arrow-circle-right'></i>
+                            </button>
+                        </form>
                         <button  name = 'btndelete' href="" class='btn btn-danger'> 
                         <i class='fa fa-minus-square'></i> 
-                    </button>
+                        </button> 
                     </td>
                 </tr>
             </tbody>
-        </table>
-            </div>
-         </div>
+            </table>
+        </div>
+    </div>
+    </div>
     </div>
     </form>
 </body>

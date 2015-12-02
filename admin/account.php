@@ -129,7 +129,7 @@ input.form-control{
                         <a href="#page-top"></a>
                     </li>
                     <li>
-                        <a class="page-scroll" href="#">Sign Out</a>
+                        <a class="page-scroll" href="../login-admin.php?id=1">Sign Out</a>
                     </li>
                 </ul>
             </div>

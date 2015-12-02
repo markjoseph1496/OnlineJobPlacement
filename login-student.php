@@ -1,8 +1,19 @@
 <!DOCTYPE html>
-
 <?php 
 session_start();
 include('connection.php');
+
+if(isset($_GET['id'])){
+    if(isset($_POST['btnLogin'])){
+
+    }
+    else{
+        $id = $_GET['id'];
+        if($id == 1){
+            session_destroy();
+        }
+    }
+}
 
 $StudentID_validator = '';
 $Password_validator = '';
@@ -102,7 +113,7 @@ if($a){
             <div class="grid-row">
                 <div class="grid-col w5 half_on_tablet full_on_mobile">
                     <form class="register-form js-form" method = "POST" autocomplete="off">
-                        <h2 class="register-title">&nbsp;<span class="break_on_desktop"></span>Hi. It's nice to see you.</h2>
+                        <h2 class="register-title">&nbsp;<span class="break_on_desktop"></span>Hi. It's nice to see you.</h2> 
                         <fieldset class="register-fieldset js-fieldset">
                             <div class="form-group">
                                 <input type="text" class="<?php echo $StudentID_class;?> form-control register-input js-password js-input" placeholder="Your Student ID" id="txtStudentID" name="txtStudentID" value="<?php echo htmlspecialchars($server_StudentID)?>">

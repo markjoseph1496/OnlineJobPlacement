@@ -4,12 +4,14 @@
 include('../../../../connection.php');
 session_start();
 
-$x = $_SESSION['StudentID'];
-
-if(is_null($x)){
+if(isset($_SESSION['StudentID'])){
+    $StudentID = $_SESSION['StudentID'];
+}
+else{
+    $StudentID = '';
     echo "
         <script type='text/javascript'>
-        location.href='../../../../login-student.php';
+        location.href='../../../../login-student.php?id=2';
         </script>
         ";
 }
@@ -50,7 +52,7 @@ if($a){
     if($a){
         unset($a);
 
-        $query = "INSERT INTO certificationtbl (StudentID,Certification,YearTaken) values  ('$x','$server_txtCertifcation','$server_txtYearTaken')";
+        $query = "INSERT INTO certificationtbl (StudentID,Certification,YearTaken) values  ('$StudentID','$server_txtCertifcation','$server_txtYearTaken')";
         $Result = mysql_query($query);
         echo "
              <script type='text/javascript'>
@@ -104,7 +106,7 @@ if($a){
                         <a href="#page-top"></a>
                     </li>
                     <li>
-                        <a class="page-scroll" href="#">Sign Out</a>
+                        <a class="page-scroll" href="../../../../login-student.php?id=1">Sign Out</a>
                     </li>
                 </ul>
             </div>

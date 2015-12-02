@@ -3,16 +3,17 @@
 include('../../../../connection.php');
 session_start();
 
-$x = $_SESSION['StudentID'];
-
-if(is_null($x)){
+if(isset($_SESSION['StudentID'])){
+    $StudentID = $_SESSION['StudentID'];
+}
+else{
+    $StudentID = '';
     echo "
         <script type='text/javascript'>
-        location.href='../../../../login-student.php';
+        location.href='../../../../login-student.php?id=2';
         </script>
         ";
 }
-
 
 $b=1;
 $txtNameValidator = '';
@@ -107,7 +108,7 @@ if($a){
     if($a){
         unset($a);
 
-        $query = "INSERT INTO referencetbl (StudentID,Name,Relationship,Company,Position,Phone,Email) values  ('$x','$server_txtName','$server_txtRelationship','$server_txtCompany','$server_txtPosition','$server_txtPhone','$server_txtEmail')";
+        $query = "INSERT INTO referencetbl (StudentID,Name,Relationship,Company,Position,Phone,Email) values  ('$StudentID','$server_txtName','$server_txtRelationship','$server_txtCompany','$server_txtPosition','$server_txtPhone','$server_txtEmail')";
         $Result = mysql_query($query);
         echo "
              <script type='text/javascript'>
@@ -158,7 +159,7 @@ if($a){
                         <a href="#page-top"></a>
                     </li>
                     <li>
-                        <a class="page-scroll" href="#">Sign Out</a>
+                        <a class="page-scroll" href="../../../../login-student.php?id=1">Sign Out</a>
                     </li>
                 </ul>
             </div>
@@ -281,7 +282,7 @@ if(isset($_POST['btnSave'])){
     $Phone = $_POST['txtPhone']; 
     $Email = $_POST['txtEmail']; 
 
-   $query = "INSERT INTO referencetbl (StudentID,Name,Relationship,Company,Position,Phone,Email) values  ('$x','$Name','$Relationship','$Company','$Position','$Phone','$Email')";
+   $query = "INSERT INTO referencetbl (StudentID,Name,Relationship,Company,Position,Phone,Email) values  ('$StudentID','$Name','$Relationship','$Company','$Position','$Phone','$Email')";
    $Result = mysql_query($query);
    echo "
          <script type='text/javascript'>

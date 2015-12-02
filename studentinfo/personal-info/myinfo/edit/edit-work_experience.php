@@ -1,15 +1,21 @@
 <!DOCTYPE html>
 
 <?php 
-
 session_start();
-if(is_null($_SESSION['StudentID'])){
+if(isset($_SESSION['StudentID'])){
+    $StudentID = $_SESSION['StudentID'];
+    $x = $_GET['EditAchievementID'];
+}
+else{
+    $StudentID = '';
+    $x="";
     echo "
         <script type='text/javascript'>
-        location.href='../../../../login-student.php';
+        location.href='../../../../login-student.php?id=2';
         </script>
         ";
 }
+
 ?>
 
 <html lang="en">
@@ -51,7 +57,7 @@ if(is_null($_SESSION['StudentID'])){
                         <a href="#page-top"></a>
                     </li>
                     <li>
-                        <a class="page-scroll" href="#">Sign Out</a>
+                        <a class="page-scroll" href="../../../../login-student.php?id=1">Sign Out</a>
                     </li>
                 </ul>
             </div>

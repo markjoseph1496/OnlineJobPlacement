@@ -3,15 +3,18 @@
 include('../../../connection.php');
 session_start();
 
-$x = $_SESSION['StudentID'];
-
-if(is_null($x)){
+if(isset($_SESSION['StudentID'])){
+    $StudentID = $_SESSION['StudentID'];
+}
+else{
+    $StudentID = '';
     echo "
         <script type='text/javascript'>
-        location.href='../../../login-student.php';
+        location.href='../../../login-student.php?id=2';
         </script>
         ";
 }
+
 
 $ReferenceID = 'ReferenceID';
 $Name = 'Name';
@@ -21,7 +24,7 @@ $Position = 'Position';
 $Phone = 'Phone';
 $Email = 'Email';
 
-$qry = "SELECT * FROM referencetbl WHERE StudentID ='$x'";
+$qry = "SELECT * FROM referencetbl WHERE StudentID ='$StudentID'";
 $result = mysql_query($qry);
 ?>
 
@@ -93,7 +96,7 @@ $result = mysql_query($qry);
                         <a href="#page-top"></a>
                     </li>
                     <li>
-                        <a href="../../../index.php?id=SignOut">Sign Out</a>
+                        <a href="../../../login-student.php?id=1">Sign Out</a>
                     </li>
                 </ul>
             </div>

@@ -4,17 +4,19 @@
 include('../../../connection.php');
 session_start();
 
-$x = $_SESSION['StudentID'];
-
-if(is_null($x)){
+if(isset($_SESSION['StudentID'])){
+    $StudentID = $_SESSION['StudentID'];
+}
+else{
+    $StudentID = '';
     echo "
         <script type='text/javascript'>
-        location.href='../../../login-student.php';
+        location.href='../../../login-student.php?id=2';
         </script>
         ";
 }
 
-$qry = "SELECT * FROM studcontactstbl WHERE StudentID ='$x'";
+$qry = "SELECT * FROM studcontactstbl WHERE StudentID ='$StudentID'";
 $result = mysql_query($qry);
         while($qry = mysql_fetch_Array($result))
         {       
@@ -146,7 +148,7 @@ if($a){
     if($a){
         unset($a);
 
-        $query = "UPDATE studcontactstbl SET Email = '$server_txtEmail', Address = '$server_txtAddress', MobileNumber = '$server_txtMobileNumber', Region = '$server_txtRegion', HomeNumber = '$server_txtHomeNumber', City = '$server_txtCity', WorkNumber = '$server_txtWorkNumber', PostalCode = '$server_txtPostalCode' WHERE StudentID = '$x'";
+        $query = "UPDATE studcontactstbl SET Email = '$server_txtEmail', Address = '$server_txtAddress', MobileNumber = '$server_txtMobileNumber', Region = '$server_txtRegion', HomeNumber = '$server_txtHomeNumber', City = '$server_txtCity', WorkNumber = '$server_txtWorkNumber', PostalCode = '$server_txtPostalCode' WHERE StudentID = '$StudentID'";
         $Result = mysql_query($query);
         echo "
              <script type='text/javascript'>
@@ -197,7 +199,7 @@ if($a){
                         <a href="#page-top"></a>
                     </li>
                     <li>
-                        <a href="../../../index.php?id=SignOut">Sign Out</a>
+                        <a href="../../../login-student.php?id=1">Sign Out</a>
                     </li>
                 </ul>
             </div>

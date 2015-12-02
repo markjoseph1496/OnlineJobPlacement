@@ -4,17 +4,18 @@
 include('../../../../connection.php');
 session_start();
 
-$x="";
-
-if(is_null($_SESSION['StudentID'])){
-    echo "
-        <script type='text/javascript'>
-        location.href='../../../../login-student.php';
-        </script>
-        ";
+if(isset($_SESSION['StudentID'])){
+    $StudentID = $_SESSION['StudentID'];
+    $x = $_GET['EditSkillID'];
 }
 else{
-    $x = $_SESSION['delete_SkillID'];
+    $StudentID = '';
+    $x="";
+    echo "
+        <script type='text/javascript'>
+        location.href='../../../../login-student.php?id=2';
+        </script>
+        ";
 }
 
 $qry = "SELECT * FROM skilltbl WHERE SkillID ='$x'";
@@ -68,7 +69,7 @@ $result = mysql_query($qry);
                         <a href="#page-top"></a>
                     </li>
                     <li>
-                        <a class="page-scroll" href="#">Sign Out</a>
+                        <a class="page-scroll" href="../../../../login-student.php?id=1">Sign Out</a>
                     </li>
                 </ul>
             </div>

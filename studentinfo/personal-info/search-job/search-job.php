@@ -1,11 +1,22 @@
-
 <?php 
 include('../../../connection.php');
 session_start();
 
-$x = $_SESSION['StudentID'];
+if(isset($_SESSION['StudentID'])){
+    $StudentID = $_SESSION['StudentID'];
+}
+else{
+    $StudentID = '';
+    echo "
+        <script type='text/javascript'>
+        location.href='../../../login-student.php?id=2';
+        </script>
+        ";
+}
 
-$qry = "select * from studentinfotbl where StudentID = '$x'";
+$StudentID = $_SESSION['StudentID'];
+
+$qry = "select * from studentinfotbl where StudentID = '$StudentID'";
 $result = mysql_query($qry);
 
 while($qry = mysql_fetch_Array($result))
@@ -57,7 +68,7 @@ $course = $qry['MajorCourse'];
                         <a href="#page-top"></a>
                     </li>
                     <li>
-                        <a class="page-scroll" href="#">Sign Out</a>
+                        <a class="page-scroll" href="../../../login-student.php?id=1">Sign Out</a>
                     </li>
                 </ul>
             </div>
@@ -144,10 +155,10 @@ $course = $qry['MajorCourse'];
 
                                 $qry = "select  * from comppositiontbl where MajorCourse = '$course'";
                                 $result = mysql_query($qry);
-                                $x = 0;
+                                $StudentID = 0;
                                 while($qry = mysql_fetch_array($result))
                                 {
-                                    $x++;
+                                    $StudentID++;
                                     $PositionID = $qry['PositionID'];
                                     $position = $qry['PositionLevel'];
                                     $company = $qry['CompanyID'];

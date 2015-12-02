@@ -3,15 +3,18 @@
 include('../../../connection.php');
 session_start();
 
-$x = $_SESSION['StudentID'];
-
-if(is_null($x)){
+if(isset($_SESSION['StudentID'])){
+    $StudentID = $_SESSION['StudentID'];
+}
+else{
+    $StudentID = '';
     echo "
         <script type='text/javascript'>
-        location.href='../../../login-student.php';
+        location.href='../../../login-student.php?id=2';
         </script>
         ";
 }
+
 
 $SchoolID = 'SchoolID';
 $School = 'School';
@@ -23,13 +26,13 @@ $SeminarID = 'SeminarID';
 $Seminar = 'Seminar';
 $YearAttended = 'YearAttended';
 
-$qry = "SELECT * FROM schooltbl WHERE StudentID ='$x' AND _Default = '0'";
+$qry = "SELECT * FROM schooltbl WHERE StudentID ='$StudentID' AND _Default = '0'";
 $result = mysql_query($qry);
 
-$qry1 = "SELECT * FROM seminartbl WHERE StudentID ='$x'";
+$qry1 = "SELECT * FROM seminartbl WHERE StudentID ='$StudentID'";
 $result1 = mysql_query($qry1);
 
-$qry2 = "SELECT * FROM schooltbl WHERE StudentID = '$x' AND _Default = '1'";
+$qry2 = "SELECT * FROM schooltbl WHERE StudentID = '$StudentID' AND _Default = '1'";
 $result2 = mysql_query($qry2);
 
 while($qry2 = mysql_fetch_Array($result2))
@@ -132,7 +135,7 @@ while($qry2 = mysql_fetch_Array($result2))
                         <a href="#page-top"></a>
                     </li>
                     <li>
-                        <a href="../../../index.php?id=SignOut">Sign Out</a>
+                        <a href="../../../login-student.php?id=1">Sign Out</a>
                     </li>
                 </ul>
             </div>

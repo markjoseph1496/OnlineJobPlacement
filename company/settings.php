@@ -218,7 +218,7 @@ background-color: #006681;
                         <a href="#page-top"></a>
                     </li>
                     <li>
-                        <a class="page-scroll" href="#">Sign Out</a>
+                        <a class="page-scroll" href="../login-company.php?id=1">Sign Out</a>
                     </li>
                 </ul>
             </div>
@@ -265,143 +265,151 @@ background-color: #006681;
                 <h3 class = "panel-title">Company Details</h3>
                 </div>
             <div class = "panel-body">
-               <table class = "infotable">
-                <tbody>
-                <tr>
-                <td> 
-                    <label>Company Name<span>(*)</span></label><br>
-                 </td>
-                <td> 
-                    <input type = "text" name = "cname" id = "usr" class = "form-control" value = "<?php echo $CName; ?>" >
-                </td>
-                </tr>
-                
-                <tr>
-                <td> 
-                    <label = "usr" class = "control-label"> Companysite URL: </label>
-                 </td>
-                <td> 
-                    http://www.sample.com/RojasCorpInc
-                </td>
-                </tr>
+                 <div class="row field">
+                                        <div class = "col-md-3 fieldcol">
+                                            <label>Company Name<span>(*)</span></label><br>
+                                        </div>
+                                        <div class = "col-md-8 fieldcol">
+                                            <div class="form-group">
+                                                <input type = "text" name = "cname" id = "usr" class = "form-control" style = "width:550px;" value = "<?php echo $CName; ?>" >
+                                            </div>
+                                        </div>
+                </div> 
+                <div class="row field">
+                                        <div class = "col-md-3 fieldcol">
+                                            <label = "usr" class = "control-label"> Companysite URL: </label>
+                                        </div>
+                                        <div class = "col-md-8 fieldcol">
+                                            <div class="form-group">
+                                                  http://www.sample.com/RojasCorpInc
+                                            </div>
+                                        </div>
+                </div>  
+                <div class="row field">
+                                        <div class = "col-md-3 fieldcol">
+                                            <label = "usr" class = "control-label"> Website Url: </label>
+                                        </div>
+                                        <div class = "col-md-8 fieldcol">
+                                            <div class="form-group">
+                                                   <input type = "text" name = "web" id = "usr" class = "form-control" style = "width:550px;" >
+                                            </div>
+                                        </div>
+                </div>  
+                <div class="row field">
+                                        <div class = "col-md-3 fieldcol">
+                                            <label>Industry<span>(*)</span></label><br>
+                                        </div>
+                                        <div class = "col-md-8 fieldcol">
+                                            <div class="form-group" style = "width:550px;">
+                                                <select id="industry" name="industry" class="industry" style="width:100%; height:30px;"  ?>">
+                                                    <option value = "ind" <?php if($Industry=="ind") echo 'selected="selected"'; ?> >  </option>
+                                                    <option value = "AccountingAudit" <?php if($Industry=="AccountingAudit") echo 'selected="selected"'; ?> > Accounting / Audit </option>
+                                                    <option value = "AdvertisingMarketing Promotion" <?php if($Industry=="AdvertisingMarketing Promotion") echo 'selected="selected"'; ?> >Advertising / Marketing Promotion </option>
+                                                    <option value = "AerospaceAviationAirline" <?php if($Industry=="AerospaceAviationAirline") echo 'selected="selected"'; ?> >Aerospace/Aviation/Airline </option>
+                                                    <option value = "AgriculturalPlantationPoultryFisheries" <?php if($Industry=="AgriculturalPlantationPoultryFisheries") echo 'selected="selected"'; ?> >Agricultural/Plantation/Poultry/Fisheries </option>
+                                                    <option value = "ApparelFashion" <?php if($Industry=="ApparelFashion") echo 'selected="selected"'; ?> >Apparel/Fashion </option>
+                                                    <option value = "ArtsDesign" <?php if($Industry=="ArtsDesign") echo 'selected="selected"'; ?> >Arts/Design </option>
+                                                    <option value = "AutomobileAutomotive" <?php if($Industry=="AutomobileAutomotive") echo 'selected="selected"'; ?> > Automobile/Automotive Ancillary/Vehicle </option>
+                                            </select>
+                                            </div>
+                                        </div>
+                </div>  
+                 <div class="row field">
+                                        <div class = "col-md-3 fieldcol">
+                                            <label>Classification<span>(*)</span></label><br>
+                                        </div>
+                                        <div class = "col-md-8 fieldcol">
+                                            <div class="form-group">
+                                                <select id="classification" name="classification" class="classification" style="width:550px; height:30px;"  ?>">
+                                                    <option value = "">  </option>
+                                                    <option value = "csme" <?php if($classification=="csme") echo 'selected="selected"'; ?> > Corporate/SME </option>
+                                                    <option value = "iag" <?php if($classification=="iag") echo 'selected="selected"'; ?> >Institutions/ (Associations,Government) </option>
+                                                    <option value = "obpo" <?php if($classification=="obpo") echo 'selected="selected"'; ?> >Outsourcing/BPO</option>
+                                                    <option value = "appf" <?php if($classification=="appf") echo 'selected="selected"'; ?> >Recruitment Firm/Consultancy</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                </div> 
+                 <div class="row field">
+                                        <div class = "col-md-3 fieldcol">
+                                            <label>Address<span>(*)</span></label><br>
+                                        </div>
+                                        <div class = "col-md-8 fieldcol">
+                                            <div class="form-group">
+                                                  <input type = "text" name = "address" id = "address" class = "form-control" style = "width:550px;" value = "<?php echo $address; ?>" >
+                                            </div>
+                                        </div>
+                </div> 
+                 <div class="row field">
+                                        <div class = "col-md-3 fieldcol">
+                                            <label = "usr" class = "control-label"> City: </label>
+                                        </div>
+                                        <div class = "col-md-8 fieldcol">
+                                            <div class="form-group">
+                                                 <select id="City" name="City" class="form-control" style = "width:550px;" "height:34px;">
+                                                    <option value="">- Please select one -</option>
+                                                    <option value="Caloocan City" <?php if($City=="Caloocan City") echo 'selected="selected"'; ?>>Caloocan City</option>
+                                                    <option value="Las Pińas City" <?php if($City=="Las Pińas City") echo 'selected="selected"'; ?>>Las Pińas City</option>
+                                                    <option value="Makati City" <?php if($City=="Makati City") echo 'selected="selected"'; ?>>Makati City</option>
+                                                    <option value="Malabon City" <?php if($City=="Malabon City") echo 'selected="selected"'; ?>>Malabon City</option>
+                                                    <option value="Mandaluyong City" <?php if($City=="Mandaluyong City") echo 'selected="selected"'; ?>>Mandaluyong City</option>
+                                                    <option value="Manila" <?php if($City=="Manila") echo 'selected="selected"'; ?>>Manila</option>
+                                                    <option value="Marikina City" <?php if($City=="Marikina City") echo 'selected="selected"'; ?>>Marikina City</option>
+                                                    <option value="Muntinlupa City" <?php if($City=="Muntinlupa City") echo 'selected="selected"'; ?>>Muntinlupa City</option>
+                                                    <option value="Navotas City" <?php if($City=="Navotas City") echo 'selected="selected"'; ?>>Navotas City</option>
+                                                    <option value="Parańaque City" <?php if($City=="Parańaque City") echo 'selected="selected"'; ?>>Parańaque City</option>
+                                                    <option value="Pasay City" <?php if($City=="Pasay City") echo 'selected="selected"'; ?>>Pasay City</option>
+                                                    <option value="Pasig City" <?php if($City=="Pasig City") echo 'selected="selected"'; ?>>Pasig City</option>
+                                                    <option value="Pateros City" <?php if($City=="Pateros City") echo 'selected="selected"'; ?>>Pateros City</option>
+                                                    <option value="Quezon City" <?php if($City=="Quezon City") echo 'selected="selected"'; ?>>Quezon City</option>
+                                                    <option value="San Juan City" <?php if($City=="San Juan City") echo 'selected="selected"'; ?>>San Juan City</option>
+                                                    <option value="Taguig City" <?php if($City=="Taguig City") echo 'selected="selected"'; ?>>Taguig City</option>
+                                                    <option value="Valenzuela City" <?php if($City=="Valenzuela City") echo 'selected="selected"'; ?>>Valenzuela City</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                </div>  
+               <div class="row field">
+                                        <div class = "col-md-3 fieldcol">
+                                             <label = "usr" class = "control-label"> Postal Code: </label>
+                                        </div>
+                                        <div class = "col-md-8 fieldcol">
+                                            <div class="form-group">
+                                                   <input type = "text" name = "postal" id = "usr" class = "form-control" style = "width:550px;" value = "<?php echo $Postal; ?>">
+                                            </div>
+                                        </div>
+                </div> 
+                <div class="row field">
+                                        <div class = "col-md-3 fieldcol">
+                                             <label>Telephone Number<span>(*)</span></label><br>
+                                        </div>
+                                        <div class = "col-md-8 fieldcol">
+                                            <div class="form-group">
+                                                   <input type = "text" name = "phonenum" id = "usr" class = "form-control" style = "width:550px;" value = "<?php echo $Phone; ?>">
+                                            </div>
+                                        </div>
+                </div> 
+                <div class="row field">
+                                        <div class = "col-md-3 fieldcol">
+                                            <label>Mobile Number<span>(*)</span></label><br>
+                                        </div>
+                                        <div class = "col-md-8 fieldcol">
+                                            <div class="form-group">
+                                                   <input type = "text" name = "mobilenum" id = "usr" class = "form-control" style = "width:550px;" value = "<?php echo $Mobile; ?>">
+                                            </div>
+                                        </div>
+                </div> 
+                <div class="row field">
+                                        <div class = "col-md-3 fieldcol">
+                                           <label = "usr" class = "control-label"> Fax: </label>
+                                        </div>
+                                        <div class = "col-md-8 fieldcol">
+                                            <div class="form-group">
+                                                    <input type = "text" name = "fax" id = "usr" class = "form-control" style = "width:550px;" value = "<?php echo $Fax; ?>">
+                                            </div>
+                                        </div>
+                </div> 
 
-               <tr>
-                <td> 
-                    <label = "usr" class = "control-label"> Website Url: </label>
-                 </td>
-                <td> 
-                    <input type = "text" name = "web" id = "usr" class = "form-control" >
-                </td>
-                </tr>
-
-                <tr>
-                <td> 
-                    <label>Industry<span>(*)</span></label><br>
-                 </td>
-                <td> 
-                    <select id="industry" name="industry" class="industry" style="width:100%; height:30px;"  ?>">
-                                           <option value = "ind" <?php if($Industry=="ind") echo 'selected="selected"'; ?> >  </option>
-                                           <option value = "acc" <?php if($Industry=="acc") echo 'selected="selected"'; ?> > Accounting / Audit </option>
-                                            <option value = "amp" <?php if($Industry=="amp") echo 'selected="selected"'; ?> >Advertising / Marketing Promotion </option>
-                                            <option value = "aaa" <?php if($Industry=="aaa") echo 'selected="selected"'; ?> >Aerospace/Aviation/Airline </option>
-                                            <option value = "appf" <?php if($Industry=="appf") echo 'selected="selected"'; ?> >Agricultural/Plantation/Poultry/Fisheries </option>
-                                            <option value = "af" <?php if($Industry=="af") echo 'selected="selected"'; ?> >Apparel/Fashion </option>
-                                            <option value = "ad" <?php if($Industry=="ad") echo 'selected="selected"'; ?> >Arts/Design </option>
-                                            <option value = "aav" <?php if($Industry=="aav") echo 'selected="selected"'; ?> > Automobile/Automotive Ancillary/Vehicle </option>
-                    </select>
-                </td>
-                </tr>
-
-                <tr>
-                <td> 
-                    <label>Classification<span>(*)</span></label><br>
-                 </td>
-                <td> 
-                    <select id="classification" name="classification" class="classification" style="width:100%; height:30px;">
-                                           <option value = "">  </option>
-                                           <option value = "csme" <?php if($classification=="csme") echo 'selected="selected"'; ?> > Corporate/SME </option>
-                                            <option value = "iag" <?php if($classification=="iag") echo 'selected="selected"'; ?> >Institutions/ (Associations,Government) </option>
-                                            <option value = "obpo" <?php if($classification=="obpo") echo 'selected="selected"'; ?> >Outsourcing/BPO</option>
-                                            <option value = "appf" <?php if($classification=="appf") echo 'selected="selected"'; ?> >Recruitment Firm/Consultancy</option>
-                    </select>
-                </td>
-                </tr>
-                
-                <tr>
-                <td> 
-                    <label>Address<span>(*)</span></label><br>
-                 </td>
-                <td> 
-                   <input type = "text" name = "address" id = "address" class = "form-control" value = "<?php echo $address; ?>" >
-                </td>
-                </tr>
-
-                
-
-                <tr>
-                <td> 
-                    <label = "usr" class = "control-label"> City: </label>
-                 </td>
-                <td> 
-                   <select id="City" name="City" class="form-control" style="width:100%; height:34px;">
-                                        <option value="">- Please select one -</option>
-                                        <option value="Caloocan City" <?php if($City=="Caloocan City") echo 'selected="selected"'; ?>>Caloocan City</option>
-                                        <option value="Las Pińas City" <?php if($City=="Las Pińas City") echo 'selected="selected"'; ?>>Las Pińas City</option>
-                                        <option value="Makati City" <?php if($City=="Makati City") echo 'selected="selected"'; ?>>Makati City</option>
-                                        <option value="Malabon City" <?php if($City=="Malabon City") echo 'selected="selected"'; ?>>Malabon City</option>
-                                        <option value="Mandaluyong City" <?php if($City=="Mandaluyong City") echo 'selected="selected"'; ?>>Mandaluyong City</option>
-                                        <option value="Manila" <?php if($City=="Manila") echo 'selected="selected"'; ?>>Manila</option>
-                                        <option value="Marikina City" <?php if($City=="Marikina City") echo 'selected="selected"'; ?>>Marikina City</option>
-                                        <option value="Muntinlupa City" <?php if($City=="Muntinlupa City") echo 'selected="selected"'; ?>>Muntinlupa City</option>
-                                        <option value="Navotas City" <?php if($City=="Navotas City") echo 'selected="selected"'; ?>>Navotas City</option>
-                                        <option value="Parańaque City" <?php if($City=="Parańaque City") echo 'selected="selected"'; ?>>Parańaque City</option>
-                                        <option value="Pasay City" <?php if($City=="Pasay City") echo 'selected="selected"'; ?>>Pasay City</option>
-                                        <option value="Pasig City" <?php if($City=="Pasig City") echo 'selected="selected"'; ?>>Pasig City</option>
-                                        <option value="Pateros City" <?php if($City=="Pateros City") echo 'selected="selected"'; ?>>Pateros City</option>
-                                        <option value="Quezon City" <?php if($City=="Quezon City") echo 'selected="selected"'; ?>>Quezon City</option>
-                                        <option value="San Juan City" <?php if($City=="San Juan City") echo 'selected="selected"'; ?>>San Juan City</option>
-                                        <option value="Taguig City" <?php if($City=="Taguig City") echo 'selected="selected"'; ?>>Taguig City</option>
-                                        <option value="Valenzuela City" <?php if($City=="Valenzuela City") echo 'selected="selected"'; ?>>Valenzuela City</option>
-                                    </select>
-                </td>
-                </tr>
-
-                <tr>
-                <td> 
-                    <label = "usr" class = "control-label"> Postal Code: </label>
-                 </td>
-                <td> 
-                    <input type = "text" name = "postal" id = "usr" class = "form-control" value = "<?php echo $Postal; ?>">
-                </td>
-                </tr>
-
-                 <tr>
-                <td> 
-                    <label>Phone Number<span>(*)</span></label><br>
-                 </td>
-                <td> 
-                    <input type = "text" name = "phonenum" id = "usr" class = "form-control" value = "<?php echo $Phone; ?>">
-                </td>
-                </tr>
-                <td> 
-                    <label>Mobile Number<span>(*)</span></label><br>
-                 </td>
-                <td> 
-                    <input type = "text" name = "mobilenum" id = "usr" class = "form-control" value = "<?php echo $Mobile; ?>">
-                </td>
-                </tr>
-
-                <tr>
-                <td> 
-                    <label = "usr" class = "control-label"> Fax: </label>
-                 </td>
-                <td> 
-                    <input type = "text" name = "fax" id = "usr" class = "form-control" value = "<?php echo $Fax; ?>">
-                </td>
-                </tr>
-
-                </tbody>
-                </table>
             </div>
             </div>
             </div>
@@ -420,7 +428,7 @@ background-color: #006681;
             
            
          </div>
-           <button type = "submit" class = "btn btn-danger " id = "btnsave" name = "btnsave"><b> SAVE </b></button>
+              <button type = "submit" class = "btn btn-danger " id = "btnsave" name = "btnsave"><b> SAVE </b></button>
             <div class = "space"></div>
              <button type = "submit" class = "btn btn-danger " id = "cancel"><b> CANCEL</b> </button>
          </form>
@@ -447,7 +455,7 @@ if(isset($_POST['btnsave'])){
 
 
 
-    $query = "UPDATE companyinfotbl SET CompanyName = '$cname', Industry = '$industry', Classification = '$classification', Address = '$address', StateRegion = '$state', City = '$city', PostalCode = '$postal', PhoneNum = '$phonenum', MobileNum = '$mobilenum', Fax = '$fax' WHERE Email = '$x'";
+    $query = "UPDATE companyinfotbl SET CompanyName = '$cname', Industry = '$industry', Classification = '$classification', Address = '$address', StateRegion = '$state', City = '$city', PostalCode = '$postal', PhoneNum = '$phonenum', MobileNum = '$mobilenum', Fax = '$fax' WHERE CompanyID = '$CompanyID'";
    $Result = mysql_query($query);
    echo "
         <script type='text/javascript'>

@@ -4,8 +4,6 @@ session_start();
 
 $CompanyID = $_SESSION['CompanyID'];
 
-$qry = "SELECT * FROM companyinfotbl WHERE CompanyID = '$CompanyID'";
-$result = mysql_query($qry);
 ?>
 <html lang="en">
 
@@ -257,7 +255,7 @@ background-color: #006681;
                         <a href="#page-top"></a>
                     </li>
                     <li>
-                        <a class="page-scroll" href="#">Sign Out</a>
+                        <a class="page-scroll" href="../login-company.php?id=1">Sign Out</a>
                     </li>
                 </ul>
             </div>

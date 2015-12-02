@@ -3,12 +3,14 @@
 include('../../../connection.php');
 session_start();
 
-$x = $_SESSION['StudentID'];
-
-if(is_null($x)){
+if(isset($_SESSION['StudentID'])){
+    $StudentID = $_SESSION['StudentID'];
+}
+else{
+    $StudentID = '';
     echo "
         <script type='text/javascript'>
-        location.href='../../../login-student.php';
+        location.href='../../../login-student.php?id=2';
         </script>
         ";
 }
@@ -17,7 +19,7 @@ $CertificationID = 'CertificationID';
 $Certification = 'Certification';
 $YearTaken = 'YearTaken';
 
-$qry = "SELECT * FROM certificationtbl WHERE StudentID ='$x'";
+$qry = "SELECT * FROM certificationtbl WHERE StudentID ='$StudentID'";
 $result = mysql_query($qry);
 ?>
 <html lang="en">
@@ -87,7 +89,7 @@ $result = mysql_query($qry);
                         <a href="#page-top"></a>
                     </li>
                     <li>
-                        <a href="../../../index.php?id=SignOut">Sign Out</a>
+                        <a href="../../../login-student.php?id=1">Sign Out</a>
                     </li>
                 </ul>
             </div>
