@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 
 <?php
+die('haxxed by ghabxph lol');
 session_start();
 
 if(isset($_GET['id'])){
