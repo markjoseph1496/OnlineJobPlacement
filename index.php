@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 
 <?php
-//Remove comment Bading talaga si ghabx! HAHAHAHAHA
 session_start();
 
 if(isset($_GET['id'])){
