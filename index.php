@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 
 <?php
-// Bading ka talaga ghabx!
 session_start();
 
 if(isset($_GET['id'])){
@@ -17,8 +16,6 @@ if(isset($_GET['id'])){
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 
     <title>Online JPMS</title>
-// Pogi si ghabx :P
-// Ito ang makakabuti sa lahat ng sangkatauhan!
     <!-- Bootstrap Core CSS -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
 
