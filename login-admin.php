@@ -14,7 +14,7 @@ if(isset($_GET['id'])){
         }
     }
 }
-// Bading ka ghabx! HAHAHAHAHA
+// testing
 $Email_validator = '';
 $Password_validator = '';
 
