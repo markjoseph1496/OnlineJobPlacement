@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 
 <?php
+// added comment
 session_start();
 
 if(isset($_GET['id'])){
