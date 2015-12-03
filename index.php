@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 
 <?php
-// added comment
+// Panibagong edit, para sa ikabubuti ng ating buhay!!
 session_start();
 
 if(isset($_GET['id'])){
