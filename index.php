@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 
 <?php
+// Bading ka talaga ghabx!
 session_start();
 
 if(isset($_GET['id'])){
