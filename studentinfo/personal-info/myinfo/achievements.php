@@ -119,7 +119,7 @@ $result = mysql_query($qry);
                 <li class="yellow"><a href="education.php">Education</a></li>
                 <li class="yellow"><a href="certifications.php">Certifications</a></li>
                 <li class="yellow active"><a href="achievements.php">Achievements</a></li>
-                <li class="yellow"><a href="skills_languages.php">Skills & Languages</a></li>
+                <li class="yellow"><a href="specialization_languages.php">Specialization & Languages</a></li>
                 <li class="yellow"><a href="references.php">References</a></li>
                 <li class="yellow"><a href="portfolio.php">Portfolio</a></li>
             </ul>

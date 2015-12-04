@@ -87,7 +87,7 @@ else{
                 <li class="yellow"><a href="../education.php">Education</a></li>
                 <li class="yellow"><a href="../certifications.php">Certifications</a></li>
                 <li class="yellow"><a href="../achievements.php">Achievements</a></li>
-                <li class="yellow active"><a href="../skills_languages.php">Skills & Languages</a></li>
+                <li class="yellow active"><a href="../specialization_languages.php">Specialization & Languages</a></li>
                 <li class="yellow"><a href="../references.php">References</a></li>
                 <li class="yellow"><a href="../portfolio.php">Portfolio</a></li>
             </ul>
@@ -99,8 +99,8 @@ else{
                         <div class="row field">
                             <div class="col-md-6 fieldcol">
                                 <div class="form-group">
-                                    <label>Skill <span>(*)</span></label>
-                                    <input type="text" class="form-control" id="txtSkill" name="txtSkill">
+                                    <label>Specialization <span>(*)</span></label>
+                                    <input type="text" class="form-control" id="txtSpecialization" name="txtSpecialization">
                                 </div>
                             </div>
                             <div class="col-md-6 fieldcol">
@@ -144,14 +144,14 @@ include('../../../../connection.php');
 
 if(isset($_POST['btnSave'])){
 
-    $Skills = $_POST['txtSkill']; 
+    $Specialization = $_POST['txtSpecialization']; 
     $YearOfExperience = $_POST['txtYOE']; 
 
-   $query = "INSERT INTO skilltbl (StudentID,Skill,YearOfExperience) values  ('$StudentID','$Skills','$YearOfExperience')";
+   $query = "INSERT INTO specializationtbl (StudentID,Specialization,YearOfExperience) values  ('$StudentID','$Specialization','$YearOfExperience')";
    $Result = mysql_query($query);
    echo "
          <script type='text/javascript'>
-         location.href='./add-skill.php';
+         location.href='./add-Specialization.php';
          </script>
          ";
 }

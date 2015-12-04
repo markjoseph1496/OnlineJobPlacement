@@ -185,7 +185,6 @@ $course = $qry['MajorCourse'];
                                             </tr>
                                             </tbody>
                                             ";
-
                                             }
                                 }
                                 ?>

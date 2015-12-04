@@ -6,7 +6,7 @@ session_start();
 
 if(isset($_SESSION['StudentID'])){
     $StudentID = $_SESSION['StudentID'];
-    $x = $_GET['EditSkillID'];
+    $x = $_GET['EditSpecializationID'];
 }
 else{
     $StudentID = '';
@@ -18,18 +18,19 @@ else{
         ";
 }
 
-$qry = "SELECT * FROM skilltbl WHERE SkillID ='$x'";
+$qry = "SELECT * FROM Specializationtbl WHERE SpecializationID ='$x'";
 $result = mysql_query($qry);
         while($qry = mysql_fetch_Array($result))
         {       
-                $SkillID = $qry['SkillID'];
-                $Skill = $qry['Skill'];
+                $SpecializationID = $qry['SpecializationID'];
+                $Specialization = $qry['Specialization'];
                 $YearOfExperience = $qry['YearOfExperience'];
                 $Proficiency = $qry['Proficiency'];
         }
 ?>
 
-<html lang="en">
+<html lang=
+"en">
 
 <head>
     <meta charset="utf-8">
@@ -99,7 +100,7 @@ $result = mysql_query($qry);
                 <li class="yellow"><a href="../education.php">Education</a></li>
                 <li class="yellow"><a href="../certifications.php">Certifications</a></li>
                 <li class="yellow"><a href="../achievements.php">Achievements</a></li>
-                <li class="yellow active"><a href="../skills_languages.php">Skills & Languages</a></li>
+                <li class="yellow active"><a href="../specialization_languages.php">Specialization & Languages</a></li>
                 <li class="yellow"><a href="../references.php">References</a></li>
                 <li class="yellow"><a href="../portfolio.php">Portfolio</a></li>
             </ul>
@@ -110,8 +111,8 @@ $result = mysql_query($qry);
                     <div class="row field">
                         <div class="col-md-6 fieldcol">
                             <div class="form-group">
-                                <label>Skill <span>(*)</span></label>
-                                <input type="text" class="form-control" id="txtSkill" name="txtSkill" value = "<?php echo $Skill; ?>">
+                                <label>Specialization <span>(*)</span></label>
+                                <input type="text" class="form-control" id="txtSpecialization" name="txtSpecialization" value = "<?php echo $Specialization; ?>">
                             </div>
                         </div>
                         <div class="col-md-6 fieldcol">
@@ -155,18 +156,18 @@ include('../../../../connection.php');
 
 if(isset($_POST['btnSave'])){
 
-    $txtSkill = $_POST['txtSkill']; 
+    $txtSpecialization = $_POST['txtSpecialization']; 
     $txtYOE = $_POST['txtYOE']; 
-    /* $txtProficiency = $_POST['txtSkill'];  DITO YUNG PROFICIENCY TAPOS LAGYAN MO PA SA QUERY*/ 
+    /* $txtProficiency = $_POST['txtSpecialization'];  DITO YUNG PROFICIENCY TAPOS LAGYAN MO PA SA QUERY*/ 
 
-    $query = "UPDATE skilltbl SET Skill = '$txtSkill', YearOfExperience = '$txtYOE' WHERE SkillID = '$SkillID'";
+    $query = "UPDATE Specializationtbl SET Specialization = '$txtSpecialization', YearOfExperience = '$txtYOE' WHERE SpecializationID = '$SpecializationID'";
     $Result = mysql_query($query);
     echo "
          <script type='text/javascript'>
-         location.href='../skills_languages.php'
+         location.href='../specialization_languages.php'
          </script>
          ";
-         unset($session['delete_SkillID']);
+         unset($session['delete_SpecializationID']);
 }
 ?>
 

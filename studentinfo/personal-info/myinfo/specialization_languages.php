@@ -17,15 +17,15 @@ else{
 }
 
 
-$SkillID = 'SkillID';
-$Skill = 'Skill';
+$SID = 'SID';
+$Specialization = 'Specialization';
 $YearOfExperience = 'YearOfExperience';
 
 $LangID = 'LanguageID';
 $Language = 'Language';
 
 
-$qry1 = "SELECT * FROM skilltbl WHERE StudentID ='$StudentID'";
+$qry1 = "SELECT * FROM specializationtbl WHERE StudentID ='$StudentID'";
 $result1 = mysql_query($qry1);
 
 $qry2 = "SELECT * FROM languagetbl WHERE StudentID ='$StudentID'";
@@ -86,7 +86,7 @@ $result2 = mysql_query($qry2);
             <div class="row field">
                 <div class="col-md-10">
                     <ul class="nav nav-tabs">
-                        <li role="presentation" id="myinfo" class="item active"><a href="personal_info.php"><B>My Info</B></a></li>
+                        <li role="presentation" id="myinfo" class="item active"><a href="../personal_info.php"><B>My Info</B></a></li>
                         <li role="presentation" id="resumelink" class="item"><a href="../resumelink/resumelink.php">Resumé Link</a></li>
                         <li role="presentation" id="applications" class="item"><a href="../applications/applications.php">Applications</a></li>
                         <li role="presentation" id="search-job" class="item"><a href="../search-job/search-job.php">Jobs</a></li>
@@ -104,7 +104,7 @@ $result2 = mysql_query($qry2);
                 <li class="yellow"><a href="education.php">Education</a></li>
                 <li class="yellow"><a href="certifications.php">Certifications</a></li>
                 <li class="yellow"><a href="achievements.php">Achievements</a></li>
-                <li class="yellow active"><a href="skills_languages.php">Skills & Languages</a></li>
+                <li class="yellow active"><a href="specialization_languages.php">Specialization & Languages</a></li>
                 <li class="yellow"><a href="references.php">References</a></li>
                 <li class="yellow"><a href="portfolio.php">Portfolio</a></li>
             </ul>
@@ -114,11 +114,11 @@ $result2 = mysql_query($qry2);
                 <div class="col-md-10">
                     <div class="row field">
                         <div class="col-md-6 fieldcol">
-                            <label>Skills</label>
+                            <label>Specialization</label>
                         </div>
                         <div class="col-md-6 fieldcol">
-                            <a href="add/add-skill.php" class="btnforadding" style="float:right;">
-                                <span class="fa fa-plus-square"> Add Skill</span>
+                            <a href="add/add-specialization.php" class="btnforadding" style="float:right;">
+                                <span class="fa fa-plus-square"> Add Specialization</span>
                             </a>
                         </div>
                     </div>
@@ -127,7 +127,7 @@ $result2 = mysql_query($qry2);
                         <table class="table segment table-hover">
                             <thead>
                                 <tr class="table-color">
-                                    <th>Skill</th>
+                                    <th>Specialization</th>
                                     <th>Year of Experience</th>
                                     <th class="text-center">Proficiency</th>
                                     <th width="15%">&nbsp;</th>
@@ -139,7 +139,7 @@ $result2 = mysql_query($qry2);
                                     ?>
                                         <tr>
                                   
-                                    <td><?php echo $rows[$Skill]; ?></td>
+                                    <td><?php echo $rows[$Specialization]; ?></td>
                                     <td><?php echo $rows[$YearOfExperience]; ?></td>
                                     <td class="rating text-center">
                                         <span class="star"></span>
@@ -149,12 +149,12 @@ $result2 = mysql_query($qry2);
                                         <span class="star"></span>
                                     </td>
                                     <form method = "POST">
-                                    <input type="hidden" name="delete_SkillID" value="<?php echo $rows['SkillID']; ?>" />
+                                    <input type="hidden" name="delete_SpecializationID" value="<?php echo $rows['SpecializationID']; ?>" />
                                     <td>
-                                        <button name ="btnDeleteSkill" href="" class="btn btn-danger btnformaintenance">
+                                        <button name ="btnDeleteSpecialization" href="" class="btn btn-danger btnformaintenance">
                                             <i class="fa fa-trash fa-1x"></i>
                                         </button>
-                                        <button name ="btnEditSkill" href="" class="btn btn-default btnformaintenance">
+                                        <button name ="btnEditSpecialization" href="" class="btn btn-default btnformaintenance">
                                             <i class="fa fa-pencil-square-o fa-1x"></i>
                                         </button>
                                     </td>
@@ -239,26 +239,26 @@ $result2 = mysql_query($qry2);
 <?php
 include('../../../connection.php');
 
-if(isset($_POST['btnDeleteSkill'])){
+if(isset($_POST['btnDeleteSpecialization'])){
 
-    $Z = $_POST['delete_SkillID'];
+    $Z = $_POST['delete_SpecializationID'];
 
-    $query = "DELETE FROM skilltbl WHERE SkillID='$Z'";
+    $query = "DELETE FROM Specializationtbl WHERE SpecializationID='$Z'";
     $result = mysql_query($query);
 
     echo "
             <script type='text/javascript'>
-            location.href='skills_languages.php';
+            location.href='Specialization_languages.php';
             </script>
             ";
 } 
 
-if(isset($_POST['btnEditSkill'])){
-    $Z = $_POST['delete_SkillID'];
-    $_SESSION['delete_SkillID'] = $Z;
+if(isset($_POST['btnEditSpecialization'])){
+    $Z = $_POST['delete_SpecializationID'];
+    $_SESSION['delete_SpecializationID'] = $Z;
     echo "
             <script type='text/javascript'>
-            location.href='Edit/edit-skill.php';
+            location.href='Edit/edit-specialization.php';
             </script>
             ";
 } 
@@ -272,7 +272,7 @@ if(isset($_POST['btnDeleteLang'])){
 
     echo "
             <script type='text/javascript'>
-            location.href='skills_languages.php';
+            location.href='specialization_languages.php';
             </script>
             ";
 } 
