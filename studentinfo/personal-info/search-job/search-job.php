@@ -155,10 +155,8 @@ $course = $qry['MajorCourse'];
 
                                 $qry = "select  * from comppositiontbl where MajorCourse = '$course'";
                                 $result = mysql_query($qry);
-                                $StudentID = 0;
                                 while($qry = mysql_fetch_array($result))
                                 {
-                                    $StudentID++;
                                     $PositionID = $qry['PositionID'];
                                     $position = $qry['PositionLevel'];
                                     $company = $qry['CompanyID'];

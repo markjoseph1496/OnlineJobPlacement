@@ -271,7 +271,6 @@ input[type="search"]::-webkit-search-decoration {
                     <td width = 40% class = tabletitle></td>
                     <td width = 25% class = tabletitle>$City</td>
                     <form method = 'POST'>
-                    <input type='hidden' name='delete_id' value='' />
                     <td>
                         <button  name = 'btndelete' href='' class='btn btn-danger'> 
                         <i class='fa fa-minus-square'></i> 
@@ -290,6 +289,7 @@ input[type="search"]::-webkit-search-decoration {
            </div>
         </div>
     </div>
+    <input type="text" name="as" value="">
 </form>
 </body>
 </html>
