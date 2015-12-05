@@ -18,11 +18,11 @@ else{
         ";
 }
 
-$qry = "SELECT * FROM Specializationtbl WHERE SpecializationID ='$x'";
+$qry = "SELECT * FROM Specializationtbl WHERE SID ='$x'";
 $result = mysql_query($qry);
         while($qry = mysql_fetch_Array($result))
         {       
-                $SpecializationID = $qry['SpecializationID'];
+                $SpecializationID = $qry['SID'];
                 $Specialization = $qry['Specialization'];
                 $YearOfExperience = $qry['YearOfExperience'];
                 $Proficiency = $qry['Proficiency'];

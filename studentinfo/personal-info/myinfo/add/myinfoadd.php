@@ -22,4 +22,28 @@ if(isset($_GET['School'])){
          </script>
          ";
 }
+
+if(isset($_GET['txtCertification'])){
+    $Certification = $_GET['txtCertification'];
+    $YearTaken = $_GET['txtYearTaken'];
+    $query = "INSERT INTO certificationtbl (StudentID,Certification,YearTaken) values  ('$StudentID','$Certification','$YearTaken')";
+        $Result = mysql_query($query);
+        echo "
+             <script type='text/javascript'>
+             location.href = '../certifications.php?id=CertificationAdd';
+             </script>
+             ";
+}
+
+if(isset($_GET['txtAchievement'])){
+    $Achievement = $_GET['txtAchievement'];
+
+    $query = "INSERT INTO achievementstbl (StudentID,Achievements) values  ('$StudentID','$Achievement')";
+       $Result = mysql_query($query);
+       echo "
+             <script type='text/javascript'>
+             location.href='../achievements.php?id=AchievementAdd';
+             </script>
+             ";
+}
 ?>

@@ -6,7 +6,7 @@ session_start();
 
 if(isset($_SESSION['StudentID'])){
     $StudentID = $_SESSION['StudentID'];
-    $x = $_GET['EditAchievementID'];
+    $x = $_GET['EditLanguageID'];
 }
 else{
     $StudentID = '';
@@ -110,7 +110,7 @@ $result = mysql_query($qry);
                             <div class="col-md-6 fieldcol">
                                 <div class="form-group">
                                     <label>Language <span>(*)</span></label>
-                                    <input type="text" class="form-control" id="txtLanguage" name="txtLanguage" value="<?php echo $Language; ?>" >
+                                    <input type="text" class="form-control" id="txtLanguage" name="txtLanguage" value="<?php echo $Language ?>" >
                                 </div>
                             </div>
                             <div class="col-md-6 fieldcol text-center">

@@ -15,55 +15,6 @@ else{
         </script>
         ";
 }
-
-$b = 1;
-$txtCertificationValidator = '';
-$txtYearTakenValidator = '';
-
-$server_txtCertifcation = isset($_POST['txtCertification']) ? $_POST['txtCertification'] : '';
-$server_txtYearTaken = isset($_POST['txtYearTaken']) ? $_POST['txtYearTaken'] : '';
-
-$server_txtCertifcation = ucwords(strtolower($server_txtCertifcation));
-
-$a = isset($_POST['txtCertification']);
-$a = $a && isset($_POST['txtYearTaken']);
-
-if($a){
-    unset($a);
-    $txtCertificationValid = 1;
-    $txtYearTakenValid = 1;
-
-
-    if(is_null($server_txtCertifcation) || $server_txtCertifcation== ''){
-        $txtCertificationValidator = 'This Field cannot be Empty.';
-        $txtCertificationValid= 0;
-    } 
-
-    if(is_null($server_txtYearTaken) || $server_txtYearTaken== ''){
-        $txtYearTakenValidator = 'Please Select one';
-        $txtYearTakenValid= 0;
-    }  
-
-    $b=0;
-
-    $a = $txtCertificationValid;
-    $a = $a && $txtYearTakenValid;
-
-    if($a){
-        unset($a);
-
-        $query = "INSERT INTO certificationtbl (StudentID,Certification,YearTaken) values  ('$StudentID','$server_txtCertifcation','$server_txtYearTaken')";
-        $Result = mysql_query($query);
-        echo "
-             <script type='text/javascript'>
-             location.href = '../certifications.php?id=CertificationAdd';
-             </script>
-             ";
-        $b=2;
-
-    }
-}
-
 ?>
 <html lang="en">
 
@@ -76,9 +27,20 @@ if($a){
 
     <title>Online JPMS</title>
 
-    <!-- Bootstrap Core CSS -->
-    <link href="../../../css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap CSS -->
+    <link href="../../../css/bootstrap.min.css" rel="stylesheet" />
+    <link href="../../../css/basic-template.css" rel="stylesheet" />
 
+
+    <!-- BootstrapValidator CSS -->
+    <link href="../../../css/bootstrapValidator.min.css" rel="stylesheet"/>
+  
+    <!-- jQuery and Bootstrap JS -->
+    <script src="../../../js/jquery.min.js" type="text/javascript"></script>
+    <script src="../../../js/bootstrap.min.js" type="text/javascript"></script>
+      
+    <!-- BootstrapValidator -->
+    <script src="../../../js/bootstrapValidator.min.js" type="text/javascript"></script>
     <!-- CSS -->
     <link href="../../../css/agency.css" rel="stylesheet">
     
@@ -93,7 +55,7 @@ if($a){
 
 
 <body id="page-top" class="index bg">
-    <form method = "POST" autocomplete="off">
+    <form id="AddCertification" name="AddCertification" autocomplete="off" action="myinfoadd.php">
     <nav class="navbar navbar-default navbar-fixed-top navbar-shrink">
         <div class="container">
             <div class="navbar-header page-scroll">
@@ -147,7 +109,7 @@ if($a){
                     <div class="col-md-12 fieldcol">
                         <div class="form-group">
                             <label>Certification <span>(*)</span></label>
-                            <input type="text" class="form-control" id="txtCertification" name="txtCertification" value="<?php echo htmlspecialchars($server_txtCertifcation)?>">
+                            <input type="text" class="form-control" id="txtCertification" name="txtCertification">
                         </div>
                     </div>
                 </div>
@@ -178,12 +140,44 @@ if($a){
                 <div class="profile_divider"></div>
                 <div class"row field">
                     <div class="col-md-12">
-                        <button class="btn btn-lg btn-hg btn-primary" style="float:right;" name ="btnSave">Add</button>
+                        <button type="submit" class="btn btn-lg btn-hg btn-primary" style="float:right;" name ="btnSave">Add</button>
                     </div>
                 </div>
             </div>
         </div>
     </div>
 </form>
+<script type="text/javascript">
+    $(document).ready(function () {
+            var validator = $("#AddCertification").bootstrapValidator({
+                feedbackIcons:{
+                    valid: "glyphicon glyphicon-ok",
+                    invalid: "glyphicon glyphicon-remove",
+                    validating: "glyphicon glyphicon-refresh"
+                },
+                fields: {
+                    txtCertification: {
+                        validators: {
+                            notEmpty: {
+                                message: "Certification is required."
+                            },
+                            stringLength: {
+                                min: 3,
+                                max: 30,
+                                message: "Certification must be 3-30 characters long."
+                            }
+                        }
+                    },
+                    txtYearTaken: {
+                        validators: {
+                            notEmpty: {
+                                message: "Year Taken is required."
+                            }
+                        }
+                    }
+                }
+            });
+    });
+</script>
 </body>
 </html>

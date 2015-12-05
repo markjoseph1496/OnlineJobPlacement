@@ -30,26 +30,6 @@ $result = mysql_query($qry);
                 $Graduated = $qry['Graduated'];
          
         }
-
-/*
-    if($a){
-        unset($a);
-            $Graduation = $server_txtGradMonth ." ". $server_txtGradYear;
-            $CourseOk = mysql_real_escape_string($server_txtCourse);
-            $EducAttainmentOk = mysql_real_escape_string($server_txtEducAttainment);    
-            $query = "UPDATE schooltbl SET School = '$server_txtSchool', Attainment ='$EducAttainmentOk', Course = '$CourseOk', Graduated = '$Graduation' WHERE SchoolID = '$SchoolID'";
-            $Result = mysql_query($query);
-            echo "
-                 <script type='text/javascript'>
-                 location.href='../education.php?id=SchoolEdited';
-                 </script>
-                 ";
-                 
-        }
-
-}
-
-*/
 ?>
 
 <html lang="en">

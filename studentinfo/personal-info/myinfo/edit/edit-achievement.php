@@ -77,8 +77,20 @@ if($a){
 
     <title>Online JPMS</title>
 
-    <!-- Bootstrap Core CSS -->
-    <link href="../../../css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap CSS -->
+    <link href="../../../css/bootstrap.min.css" rel="stylesheet" />
+    <link href="../../../css/basic-template.css" rel="stylesheet" />
+
+
+    <!-- BootstrapValidator CSS -->
+    <link href="../../../css/bootstrapValidator.min.css" rel="stylesheet"/>
+  
+    <!-- jQuery and Bootstrap JS -->
+    <script src="../../../js/jquery.min.js" type="text/javascript"></script>
+    <script src="../../../js/bootstrap.min.js" type="text/javascript"></script>
+      
+    <!-- BootstrapValidator -->
+    <script src="../../../js/bootstrapValidator.min.js" type="text/javascript"></script>
 
     <!-- CSS -->
     <link href="../../../css/agency.css" rel="stylesheet">
@@ -93,7 +105,7 @@ if($a){
 
 
 <body id="page-top" class="index bg">
-    <form method = "POST">
+    <form id="EditAchievement" name="EditAchievement" autocomplete="off" action="myinfoedit.php">
     <nav class="navbar navbar-default navbar-fixed-top navbar-shrink">
         <div class="container">
             <div class="navbar-header page-scroll">
@@ -141,14 +153,16 @@ if($a){
                 <li class="yellow"><a href="../portfolio.php">Portfolio</a></li>
             </ul>
             <div class="space-1"></div>
-
+            <div class="form-group">
+                <input type="text" class="form-control" id="AchievementID" name="AchievementID" style="display: none;" value="<?php echo $AchievementID;?>">
+            </div>
             <div class"row">
                 <div class="col-md-10">
                     <div class="row field">
                         <div class="col-md-6 fieldcol">
                             <div class="form-group">
                                 <label>Achievement <span>(*)</span></label>
-                                <input type="text" class="form-control" id="" name="txtAchievement" value ="<?php if($b==1){ echo htmlspecialchars($Achievement);} else{ echo htmlspecialchars($server_txtAchievement); } ?>">
+                                <input type="text" class="form-control" id="" name="txtAchievement" value ="<?php echo $Achievement; ?>">
                             </div>
                         </div>
                     </div>
@@ -158,12 +172,36 @@ if($a){
                 <div class="profile_divider"></div>
                 <div class"row field">
                     <div class="col-md-12">
-                        <button class="btn btn-lg btn-hg btn-primary" style="float:right;" name ="btnSave">Save</button>
+                        <button type="submit" class="btn btn-lg btn-hg btn-primary" style="float:right;" name ="btnSave">Save</button>
                     </div>
                 </div>
             </div>
         </div>
     </div>
 </form>
+<script type="text/javascript">
+    $(document).ready(function () {
+            var validator = $("#EditAchievement").bootstrapValidator({
+                feedbackIcons:{
+                    valid: "glyphicon glyphicon-ok",
+                    invalid: "glyphicon glyphicon-remove",
+                    validating: "glyphicon glyphicon-refresh"
+                },
+                fields: {
+                    txtAchievement: {
+                        validators: {
+                            notEmpty: {
+                                message: "Achievement is required."
+                            },
+                            stringLength: {
+                                min: 3,
+                                max: 30,
+                                message: "Achievement must be 3-30 characters long."
+                            }
+                        }
+                    }
+                }
+            });
+    });
 </body>
 </html>

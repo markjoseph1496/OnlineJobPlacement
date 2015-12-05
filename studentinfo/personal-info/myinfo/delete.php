@@ -79,4 +79,18 @@ if(isset($_GET['delete_ReferenceID'])) {
             </script>
             ";
 }
+
+if(isset($_GET['delete_LanguageID'])) {
+    $Z = $_GET['delete_LanguageID'];
+
+    $query = "DELETE FROM languagetbl WHERE LangID='$Z'";
+    $result = mysql_query($query);
+
+    echo "
+            <script type='text/javascript'>
+            location.href='specialization_languages.php';
+            </script>
+            ";
+}
+
 ?>

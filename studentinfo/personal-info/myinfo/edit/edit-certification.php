@@ -26,7 +26,7 @@ $result = mysql_query($qry);
                 $Certification = $qry['Certification'];
                 $YearTaken = $qry['YearTaken'];
         }
-
+/*
 $b = 1;
 $txtCertificationValidator = '';
 $txtYearTakenValidator = '';
@@ -73,6 +73,7 @@ if($a){
     }
 
 }
+*/
 ?>
 
 <html lang="en">
@@ -86,8 +87,20 @@ if($a){
 
     <title>Online JPMS</title>
 
-    <!-- Bootstrap Core CSS -->
-    <link href="../../../css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap CSS -->
+    <link href="../../../css/bootstrap.min.css" rel="stylesheet" />
+    <link href="../../../css/basic-template.css" rel="stylesheet" />
+
+
+    <!-- BootstrapValidator CSS -->
+    <link href="../../../css/bootstrapValidator.min.css" rel="stylesheet"/>
+  
+    <!-- jQuery and Bootstrap JS -->
+    <script src="../../../js/jquery.min.js" type="text/javascript"></script>
+    <script src="../../../js/bootstrap.min.js" type="text/javascript"></script>
+      
+    <!-- BootstrapValidator -->
+    <script src="../../../js/bootstrapValidator.min.js" type="text/javascript"></script>
 
     <!-- CSS -->
     <link href="../../../css/agency.css" rel="stylesheet">
@@ -102,7 +115,7 @@ if($a){
 
 
 <body id="page-top" class="index bg">
-    <form method = "POST">
+    <form id="editCertification" name="editCertification" autocomplete="off" action="myinfoedit.php">
     <nav class="navbar navbar-default navbar-fixed-top navbar-shrink">
         <div class="container">
             <div class="navbar-header page-scroll">
@@ -150,13 +163,15 @@ if($a){
                 <li class="yellow"><a href="../portfolio.php">Portfolio</a></li>
             </ul>
             <div class="space-1"></div>
-
+            <div class="form-group">
+                <input type="text" class="form-control" id="CertificationID" name="CertificationID" style="display: none;" value="<?php echo $CertificationID;?>">
+            </div>
             <div class="col-md-6 col-md-5">
                 <div class="row field">
                     <div class="col-md-12 fieldcol">
                         <div class="form-group">
                             <label>Certification <span>(*)</span></label>
-                            <input type="text" class="form-control" id="txtCertification" name="txtCertification" value="<?php if($b==1) { echo htmlspecialchars($Certification);} else{ echo htmlspecialchars($server_txtCertifcation); }?>">
+                            <input type="text" class="form-control" id="txtCertification" name="txtCertification" value="<?php echo $Certification ?>">
                         </div>
                     </div>
                 </div>
@@ -168,14 +183,9 @@ if($a){
                             <option value="">-Year-</option>
                             <?php
                             $date = 1934;
-                            if($b==1){
-                                $choose = $YearTaken;
-                            }
-                            else{ 
-                                $choose = $server_txtYearTaken;
-                            }
                             while($date != Date("Y")){
                                 $date++;
+                                $choose = $YearTaken;
                                 if($date == $choose){
                                     echo "<option selected value='$date'> $date</option>";
                                     }
@@ -193,12 +203,44 @@ if($a){
                 <div class="profile_divider"></div>
                 <div class"row field">
                     <div class="col-md-12">
-                        <button class="btn btn-lg btn-hg btn-primary" style="float:right;" name ="btnSave">Save</button>
+                        <button type="submit" class="btn btn-lg btn-hg btn-primary" style="float:right;" name ="btnSave">Save</button>
                     </div>
                 </div>
             </div>
         </div>
     </div>
 </form>
+<script type="text/javascript">
+    $(document).ready(function () {
+            var validator = $("#editCertification").bootstrapValidator({
+                feedbackIcons:{
+                    valid: "glyphicon glyphicon-ok",
+                    invalid: "glyphicon glyphicon-remove",
+                    validating: "glyphicon glyphicon-refresh"
+                },
+                fields: {
+                    txtCertification: {
+                        validators: {
+                            notEmpty: {
+                                message: "Certification is required."
+                            },
+                            stringLength: {
+                                min: 3,
+                                max: 30,
+                                message: "Certification must be 3-30 characters long."
+                            }
+                        }
+                    },
+                    txtYearTaken: {
+                        validators: {
+                            notEmpty: {
+                                message: "Year Taken is required."
+                            }
+                        }
+                    }
+                }
+            });
+    });
+</script>
 </body>
 </html>

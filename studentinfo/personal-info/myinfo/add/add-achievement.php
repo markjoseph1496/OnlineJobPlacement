@@ -16,6 +16,7 @@ else{
         ";
 }
 
+/*
 $b = 1;
 $txtAchievementValidator = '';
 
@@ -52,6 +53,7 @@ if($a){
              ";
     }
 }
+*/
 ?>
 
 <html lang="en">
@@ -65,8 +67,20 @@ if($a){
 
     <title>Online JPMS</title>
 
-    <!-- Bootstrap Core CSS -->
-    <link href="../../../css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap CSS -->
+    <link href="../../../css/bootstrap.min.css" rel="stylesheet" />
+    <link href="../../../css/basic-template.css" rel="stylesheet" />
+
+
+    <!-- BootstrapValidator CSS -->
+    <link href="../../../css/bootstrapValidator.min.css" rel="stylesheet"/>
+  
+    <!-- jQuery and Bootstrap JS -->
+    <script src="../../../js/jquery.min.js" type="text/javascript"></script>
+    <script src="../../../js/bootstrap.min.js" type="text/javascript"></script>
+      
+    <!-- BootstrapValidator -->
+    <script src="../../../js/bootstrapValidator.min.js" type="text/javascript"></script>
 
     <!-- CSS -->
     <link href="../../../css/agency.css" rel="stylesheet">
@@ -80,7 +94,7 @@ if($a){
 </head>
 
 <body id="page-top" class="index bg">
-    <form method = "POST">
+    <form id="AddAchievement" name="AddAchievement" autocomplete="off" action="myinfoadd.php">
     <nav class="navbar navbar-default navbar-fixed-top navbar-shrink">
         <div class="container">
             <div class="navbar-header page-scroll">
@@ -136,7 +150,7 @@ if($a){
                             <div class="col-md-6 fieldcol">
                                 <div class="form-group">
                                     <label>Achievement <span>(*)</span></label>
-                                    <input type="text" class="form-control" id="" name="txtAchievement" value="<?php echo htmlspecialchars($server_txtAchievement)?>">
+                                    <input type="text" class="form-control" id="" name="txtAchievement" value="">
                                 </div>
                             </div>
                         </div>
@@ -146,7 +160,7 @@ if($a){
                     <div class="profile_divider"></div>
                     <div class"row field">
                         <div class="col-md-12">
-                            <button class="btn btn-lg btn-hg btn-primary" style="float:right;" name ="btnSave">Add</button>
+                            <button type="submit" class="btn btn-lg btn-hg btn-primary" style="float:right;" name ="btnSave">Add</button>
                         </div>
                     </div>
                 </div>
@@ -154,5 +168,30 @@ if($a){
         </div>
     </div>
 </form>
+<script type="text/javascript">
+    $(document).ready(function () {
+            var validator = $("#AddAchievement").bootstrapValidator({
+                feedbackIcons:{
+                    valid: "glyphicon glyphicon-ok",
+                    invalid: "glyphicon glyphicon-remove",
+                    validating: "glyphicon glyphicon-refresh"
+                },
+                fields: {
+                    txtAchievement: {
+                        validators: {
+                            notEmpty: {
+                                message: "Achievement is required."
+                            },
+                            stringLength: {
+                                min: 3,
+                                max: 30,
+                                message: "Achievement must be 3-30 characters long."
+                            }
+                        }
+                    }
+                }
+            });
+    });
+</script>
 </body>
 </html>

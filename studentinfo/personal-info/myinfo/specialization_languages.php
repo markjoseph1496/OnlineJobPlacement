@@ -21,7 +21,7 @@ $SID = 'SID';
 $Specialization = 'Specialization';
 $YearOfExperience = 'YearOfExperience';
 
-$LangID = 'LanguageID';
+$LangID = 'LangID';
 $Language = 'Language';
 
 
@@ -43,8 +43,13 @@ $result2 = mysql_query($qry2);
 
     <title>Online JPMS</title>
 
+    <script type="text/javascript" src="../../js/jquery.min.js"></script>
+    <script src="../../js/bootstrap.min.js"></script>
+    <script src="../../js/bootbox.min.js"></script>
+
     <!-- Bootstrap Core CSS -->
     <link href="../../css/bootstrap.min.css" rel="stylesheet">
+
 
     <!-- CSS -->
     <link href="../../css/agency.css" rel="stylesheet">
@@ -62,6 +67,29 @@ $result2 = mysql_query($qry2);
 
 
 <body id="page-top" class="index bg">
+    <script>
+            $(document).on("click", ".deleteLanguage", function(result) {
+                bootbox.confirm({
+                  title: 'Delete',
+                  message: 'Are you sure you want to delete this Language?',
+                  buttons: {
+                      'cancel': {
+                          label: 'Cancel',
+                          
+                      },
+                      'confirm': {
+                          label: 'Delete',
+                          className: 'btn-danger pull-right'
+                      }
+                  },
+                  callback: function(result) {
+                      if (result) {
+                           window.location = $("a[data-bb='confirmDeleteLanguage']").attr('href');
+                      }
+                  }
+              });
+            });
+    </script>
     <nav class="navbar navbar-default navbar-fixed-top navbar-shrink">
         <div class="container">
             <div class="navbar-header page-scroll">
@@ -148,17 +176,16 @@ $result2 = mysql_query($qry2);
                                         <span class="star"></span>
                                         <span class="star"></span>
                                     </td>
-                                    <form method = "POST">
-                                    <input type="hidden" name="delete_SpecializationID" value="<?php echo $rows['SpecializationID']; ?>" />
                                     <td>
-                                        <button name ="btnDeleteSpecialization" href="" class="btn btn-danger btnformaintenance">
+                                         <a href=# class="btn btn-danger btnformaintenance deleteSpecialization">
                                             <i class="fa fa-trash fa-1x"></i>
-                                        </button>
-                                        <button name ="btnEditSpecialization" href="" class="btn btn-default btnformaintenance">
+                                        </a>
+                                        <a data-bb="confirmDeleteSpecialization" class="bb-alert alert alert-info" style="display: none;" href="delete.php?delete_SpecializationID=<?php echo $rows[$SID];?>">
+                                        
+                                        <a href="edit/edit-specialization.php?EditSpecializationID=<?php echo $rows[$SID];?>" class="btn btn-default btnformaintenance">
                                             <i class="fa fa-pencil-square-o fa-1x"></i>
-                                        </button>
+                                        </a>
                                     </td>
-                                    </form>
                                 </tr>
                                 <?php
                                     }
@@ -209,17 +236,16 @@ $result2 = mysql_query($qry2);
                                         <span class="star"></span>
                                         <span class="star"></span>
                                     </td>
-                                    <form method = "POST">
-                                    <input type="hidden" name="delete_LangID" value="<?php echo $rows['LangID']; ?>" />
                                     <td>
-                                        <button name ="btnDeleteLang" href="" class="btn btn-danger btnformaintenance">
+                                        <a href=# class="btn btn-danger btnformaintenance deleteLanguage">
                                             <i class="fa fa-trash fa-1x"></i>
-                                        </button>
-                                        <button name ="btnEditLang" href="" class="btn btn-default btnformaintenance">
+                                        </a>
+                                        <a data-bb="confirmDeleteLanguage" class="bb-alert alert alert-info" style="display: none;" href="delete.php?delete_LanguageID=<?php echo $rows[$LangID];?>">
+                                        
+                                        <a href="edit/edit-language.php?EditLanguageID=<?php echo $rows[$LangID];?>" class="btn btn-default btnformaintenance">
                                             <i class="fa fa-pencil-square-o fa-1x"></i>
-                                        </button>
+                                        </a>
                                     </td>
-                                    </form>
                                 </tr>
                                 <?php
                                     }
@@ -237,6 +263,7 @@ $result2 = mysql_query($qry2);
 </body>
 
 <?php
+/*
 include('../../../connection.php');
 
 if(isset($_POST['btnDeleteSpecialization'])){
@@ -286,7 +313,7 @@ if(isset($_POST['btnEditLang'])){
             </script>
             ";
 } 
-
+*/
 ?>
 
 </html>
