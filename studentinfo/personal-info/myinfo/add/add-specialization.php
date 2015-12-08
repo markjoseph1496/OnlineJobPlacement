@@ -151,7 +151,7 @@ if(isset($_POST['btnSave'])){
    $Result = mysql_query($query);
    echo "
          <script type='text/javascript'>
-         location.href='./add-Specialization.php';
+         location.href='./add-specialization.php';
          </script>
          ";
 }
