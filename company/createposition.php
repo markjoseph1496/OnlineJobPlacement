@@ -549,6 +549,20 @@ $CompanyID = $_SESSION['CompanyID'];
 
 if(isset($_POST['btnsave'])){
 
+/*
+  $diff = date_diff(new DateTime(), new DateTime($_POST['datefrom']));
+
+  if(
+    $diff->y == 0 &&
+    $diff->m == 0 &&
+    $diff->d == 0
+  ){
+    echo 'Now is the time';
+  }else{
+    echo 'Wait some time.. :(';
+  }
+  die();   */
+
   $datefrom = $_POST['datefrom'];
   $dateto = $_POST['dateto'];
   $plevel = $_POST['plevel'];
@@ -568,6 +582,8 @@ if(isset($_POST['btnsave'])){
   ";
 
 }
+
+
 ?>
 
  

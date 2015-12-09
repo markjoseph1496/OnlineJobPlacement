@@ -2,13 +2,6 @@
 
 <?php
 session_start();
-
-if(isset($_GET['id'])){
-    $x = $_GET['id'];
-    if($x = "SignOut"){
-    $_SESSION['StudentID'] = null;
-    }
-}
 ?>
 
 <html>

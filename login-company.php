@@ -1,4 +1,20 @@
 <!DOCTYPE html>
+<?php
+session_start();
+include('connection.php');
+
+if(isset($_GET['id'])){
+    if(isset($_POST['btnlogin'])){
+
+    }
+    else{
+        $id = $_GET['id'];
+        if($id == 1){
+            session_destroy();
+        }
+    }
+}
+?>
 <html lang="en">
 <!--testing ng edit sa github -->
 <head>
@@ -32,6 +48,19 @@
                 <div class="login-screen">
                     <div class="login-form" id="yellow-text-fields">
                         <div class="login-form">
+                        <?php
+                        if(isset($_GET['id'])){
+                            $id = $_GET['id'];
+                            if($id = 1){
+                            echo '
+                                    <div class="alert alert-success">
+                                        <span class="glyphicon glyphicon-info-sign"></span> 
+                                        You have been successfully signed out.
+                                    </div>
+                                    ';
+                            }
+                        }
+                        ?>
                             <div class="form-group">
                                 <input type="text" class="form-control login-field" value placeholder="Company ID" id="" name="username" style="height:55px;">
                             </div>
