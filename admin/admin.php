@@ -1,53 +1,11 @@
 <?php
 include('../connection.php');
 
-$Course = 'MajorCourse';
 
 $qry = mysql_query("SELECT DISTINCT MajorCourse FROM studentinfotbl");
 $TotalStudents = mysql_query("SELECT COUNT(*) FROM studentinfotbl");
 $Q1 = mysql_fetch_array($TotalStudents);
 $Total = $Q1[0];
-
-
-$BSTM = mysql_query("SELECT COUNT(*) FROM studentinfotbl WHERE MajorCourse = 'Bachelor of Science in Tourism Management'");
-$qryBSTM = mysql_fetch_array($BSTM);
-$TotalBSTM = $qryBSTM[0];
-
-$BSBM = mysql_query("SELECT COUNT(*) FROM studentinfotbl WHERE MajorCourse = 'Bachelor of Science in Business Management Major in Operations'");
-$qryBSBM = mysql_fetch_array($BSBM);
-$TotalBSBM = $qryBSBM[0];
-
-$ABCOMM = mysql_query("SELECT COUNT(*) FROM studentinfotbl WHERE MajorCourse = 'Bachelor of Arts in Communication'");
-$qryABCOMM = mysql_fetch_array($ABCOMM);
-$TotalABCOMM = $qryABCOMM[0];
-
-$BSITDA= mysql_query("SELECT COUNT(*) FROM studentinfotbl WHERE MajorCourse = 'Bachelor of Science in Information Technology Major in Digital Arts'");
-$qryBSITDA = mysql_fetch_array($BSITDA);
-$TotalBSITDA = $qryBSITDA[0];
-
-$BSHRM = mysql_query("SELECT COUNT(*) FROM studentinfotbl WHERE MajorCourse = 'Bachelor of Science in Hotel & Restaurant Management'");
-$qryBSHRM = mysql_fetch_array($BSHRM);
-$TotalBSHRM = $qryBSHRM[0];
-
-$BSCS = mysql_query("SELECT COUNT(*) FROM studentinfotbl WHERE MajorCourse = 'Bachelor of Science in Computer Science'");
-$qryBSCS = mysql_fetch_array($BSCS);
-$TotalBSCS = $qryBSCS[0];
-
-$BSIT= mysql_query("SELECT COUNT(*) FROM studentinfotbl WHERE MajorCourse = 'Bachelor of Science in Information Technology'");
-$qryBSIT = mysql_fetch_array($BSIT);
-$TotalBSIT = $qryBSIT[0];
-
-$BSCPE = mysql_query("SELECT COUNT(*) FROM studentinfotbl WHERE MajorCourse = 'Bachelor of Science in Computer Engineering'");
-$qryBSCPE = mysql_fetch_array($BSCPE);
-$TotalBSCPE = $qryBSCPE[0];
-
-$BSAT = mysql_query("SELECT COUNT(*) FROM studentinfotbl WHERE MajorCourse = 'Bachelor of Science in Accounting Technology'");
-$qryBSAT = mysql_fetch_array($BSAT);
-$TotalBSAT = $qryBSAT[0];
-
-$ASCT = mysql_query("SELECT COUNT(*) FROM studentinfotbl WHERE MajorCourse = '2-Year Associate in Computer Technology'");
-$qryASCT = mysql_fetch_array($ASCT);
-$TotalASCT = $qryASCT[0];
 
 ?>
 
@@ -305,69 +263,36 @@ $TotalASCT = $qryASCT[0];
                     </tr> 
                 </thead>
                 <!--Fields-->
-                <tbody>
-                <tr>
-                    <td>
-                    <a href = "admin-field.php?CourseID=BSTM">Bachelor of Science in Tourism Management</a>
-                    </td>
-                    <td class = "tcenter"><?php echo $TotalBSTM; ?></td>
-                </tr>
-                <tr>
-                    <td>
-                    <a href = "admin-field.php?CourseID=BSBM">Bachelor of Science in Business Management Major in Operations</a>
-                    </td>
-                    <td class = "tcenter"><?php echo $TotalBSBM; ?></td>
-                </tr>
-                <tr>
-                    <td>
-                    <a href = "admin-field.php?CourseID=ABCOMM">Bachelor of Arts in Communication</a>
-                    </td>
-                    <td class = "tcenter"><?php echo $TotalABCOMM; ?></td>
-                </tr>
-                <tr>
-                    <td>
-                    <a href = "admin-field.php?CourseID=BSITDA">Bachelor of Science in Information Technology Major in Digital Arts</a>
-                    </td>
-                    <td class = "tcenter"><?php echo $TotalBSITDA; ?></td>
-                </tr>
-                <tr>
-                    <td>
-                    <a href = "admin-field.php?CourseID=BSHRM">Bachelor of Science in Hotel &amp; Restaurant Management</a>
-                    </td>
-                    <td class = "tcenter"><?php echo $TotalBSHRM; ?></td>
-                </tr>
-                <tr>
-                    <td>
-                    <a href = "admin-field.php?CourseID=BSCS">Bachelor of Science in Computer Science</a>
-                    </td>
-                    <td class = "tcenter"><?php echo $TotalBSCS; ?></td>
-                </tr>
-                                <tr>
-                    <td>
-                    <a href = "admin-field.php?CourseID=BSIT">Bachelor of Science in Information Technology</a>
-                    </td>
-                    <td class = "tcenter"><?php echo $TotalBSIT; ?></td>
-                </tr>
-                <tr>
-                    <td>
-                    <a href = "admin-field.php?CourseID=BSCPE">Bachelor of Science in Computer Engineering</a>
-                    </td>
-                    <td class = "tcenter"><?php echo $TotalBSCPE; ?></td>
-                </tr>
-                <tr>
-                    <td>
-                    <a href = "admin-field.php?CourseID=BSAT">Bachelor of Science in Accounting Technology</a>
-                    </td>
-                    <td class = "tcenter"><?php echo $TotalBSAT; ?></td>
-                </tr>
-                <tr>
-                    <td>
-                    <a href = "admin-field.php?CourseID=ACT">2-Year Associate in Computer Technology</a>
-                    </td>
-                    <td class = "tcenter"><?php echo $TotalASCT; ?></td>
-                </tr>
+                <?php
 
-                </tbody>
+                    $qry = "SELECT * FROM coursetbl";
+                    $result = mysql_query($qry);
+                    while($qry = mysql_fetch_array($result)){
+                        $CourseID = $qry['CourseID'];
+                        $CourseTitle = $qry['CourseTitle'];
+                        $CourseCode = $qry['CourseCode'];
+
+
+
+                        $qry1 = "SELECT COUNT(*) FROM studentinfotbl WHERE MajorCourse = '$CourseTitle'";
+                        $result1 = mysql_query($qry1);
+                        $qryCount = mysql_fetch_array($result1);
+                        $TotalStudentByCourse = $qryCount[0];
+
+                        echo "
+                        <tbody>
+                        <tr>
+                            <td>
+                            <a href = 'admin-field.php?CourseCode=$CourseCode'>$CourseTitle</a>
+                            </td>
+                            <td class = 'tcenter'>$TotalStudentByCourse</td>
+                        </tr>
+                        </tbody>
+
+
+                        ";
+                    }
+                ?>
                 </table>
 
                 

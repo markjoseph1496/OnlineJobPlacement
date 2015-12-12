@@ -294,6 +294,27 @@ include('../connection.php');
   <br><br><br>
     
      <div class = "container">
+              <?php
+              if(isset($_GET['ID'])){
+                  $ID=$_GET['ID'];
+                      if($ID == "Accepted"){
+                          echo '
+                              <div class="alert alert-success">
+                                  <span class="glyphicon glyphicon-info-sign"></span> 
+                                  Request Accepted.
+                              </div>
+                          ';
+                      }
+                      elseif($ID == "Rejected"){
+                          echo '
+                              <div class="alert alert-success">
+                                  <span class="glyphicon glyphicon-info-sign"></span> 
+                                  Request Rejected.
+                              </div>
+                          ';
+                      }
+              }
+              ?>
           <div class = "col-md-12">
              <table class = 'Applicants' width = '100%' cellpadding = '0'>
           <thead>

@@ -8,6 +8,21 @@
   <!-- Basic -->
   <title>Margo | Home</title>
 
+  <!-- Bootstrap CSS -->
+    <link href="../css/bootstrap.min.css" rel="stylesheet" />
+
+    <!-- BootstrapValidator CSS -->
+    <link href="../css/bootstrapValidator.min.css" rel="stylesheet"/>
+    <link href="../css/basic-template.css" rel="stylesheet" />
+    <!-- jQuery and Bootstrap JS -->
+    <script src="../js/jquery.min.js" type="text/javascript"></script>
+    <script src="../js/bootstrap.min.js" type="text/javascript"></script>
+      
+    <!-- BootstrapValidator -->
+    <script src="../js/bootstrapValidator.min.js" type="text/javascript"></script>
+
+
+
   <!-- Bootstrap CSS  -->
   <link rel="stylesheet" href="../asset/css/bootstrap.min.css" type="text/css" media="screen">
 
@@ -45,10 +60,8 @@
 
 
   <!-- Margo JS  -->
-  <script type="text/javascript" src="../js/jquery-2.1.4.min.js"></script>
   <script type="text/javascript" src="../js/jquery.migrate.js"></script>
   <script type="text/javascript" src="../js/modernizrr.js"></script>
-  <script type="text/javascript" src="../asset/js/bootstrap.min.js"></script>
   <script type="text/javascript" src="../js/jquery.fitvids.js"></script>
   <script type="text/javascript" src="../js/owl.carousel.min.js"></script>
   <script type="text/javascript" src="../js/nivo-lightbox.min.js"></script>
@@ -69,7 +82,6 @@
 </head>
 
 <body>
-
   <!-- Full Body Container -->
   <div id="container">
 
@@ -239,43 +251,80 @@
 
 <!--Content-->
   <br><br><br>
-    
+    <form id="AddCourse" action="addcourse.php">
    <div class = "container">
       <div class = "col-md-12">
-            <div class="row field">
-                                        <div class = "col-md-2 fieldcol">
-                                           <label = "usr" class = "control-label"> Course Title </label>
-                                        </div>
-                                        <div class = "col-md-4 fieldcol">
-                                            <div class="form-group">
-                                                   <input type="text" name="coursetitle" class="form-control" id="coursetitle" >
-                                            </div>
-                                        </div>
+<div class="row field">
+                <div class = "col-md-2 fieldcol">
+                   <label = "usr" class = "control-label"> Course Title </label>
+                </div>
+                <div class = "col-md-4 fieldcol">
+                    <div class="form-group">
+                           <input type="text" name="coursetitle" class="form-control" id="coursetitle" >
+                    </div>
+                </div>
             </div>   
              <div class="row field">
-                                        <div class = "col-md-2 fieldcol">
-                                             <label = "usr" class = "control-label"> Course Code:</label>
-                                        </div>
-                                        <div class = "col-md-4 fieldcol">
-                                            <div class="form-group">
-                                                     <input type="text" name="coursecode" class="form-control" id="coursecode">
-                                            </div>
-                                        </div>
+                <div class = "col-md-2 fieldcol">
+                     <label = "usr" class = "control-label"> Course Code:</label>
+                </div>
+                <div class = "col-md-4 fieldcol">
+                    <div class="form-group">
+                             <input type="text" name="coursecode" class="form-control" id="coursecode">
+                    </div>
+                </div>
             </div>  
              <div class="row field">
-                                        <div class = "col-md-2 fieldcol">
-                                             <label = "usr" class = "control-label"> Course Description: </label>
-                                        </div>
-                                        <div class = "col-md-4 fieldcol">
-                                              <input type="text" name="coursedesc" class="form-control" id="coursedesc">
-                                        </div>
+                <div class = "col-md-2 fieldcol">
+                     <label = "usr" class = "control-label"> Course Description: </label>
+                </div>
+                <div class = "col-md-4 fieldcol">
+                    <div class="form-group">
+                      <input type="text" name="coursedesc" class="form-control" id="coursedesc">
+                    </div>
+                </div>
             </div> 
       </div> 
 
        <br>
-        <button type = "submit" class = "btn btn-primary " href= "#"><b> Save </b></button> &nbsp;
-        <button type = "submit" class = "btn btn-primary "  href= "#"><b> Cancel </b></button>   
+        <button type = "submit" class = "btn btn-lg btn-hg btn-primary" href= "#"><b> Save </b></button> &nbsp;
+        <button type = "submit" class = "btn btn-lg btn-hg btn-primary"  href= "#"><b> Cancel </b></button>   
 
     </div>
+  </form>
+  <script type="text/javascript">
+    $(document).ready(function (){
+        var validator = $("#AddCourse").bootstrapValidator({
+              feedbackIcons: {
+                    valid: "glyphicon glyphicon-ok",
+                    invalid: "glyphicon glyphicon-remove",
+                    validating: "glyphicon glyphicon-refresh"
+              },
+              fields: {
+                    coursetitle: {
+                        validators: {
+                            notEmpty: {
+                                message: "Course title is required"
+                            }
+                        }
+                    },
+                    coursecode: {
+                        validators: {
+                            notEmpty: {
+                                message: "Course code is required"
+                            }
+                        }
+                    },
+                    coursedesc: {
+                        validators: {
+                            notEmpty: {
+                                message: "Course description is required"
+                            }
+                        }
+                    }
+              }
+        });
+    });
+</script>
 </body>
 </html>

@@ -11,7 +11,7 @@ if(isset($_GET['coursetitle'])) {
 
     echo "
             <script type='text/javascript'>
-            location.href='maintenance_addcourse.php?ID';
+            location.href='admin-addcourse.php?ID';
             </script>";
 }
 

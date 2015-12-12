@@ -18,7 +18,7 @@ if(isset($_GET['fn'])) {
     $result = mysql_query($query);
     echo "
             <script type='text/javascript'>
-            location.href='requested.php?ID=Accepted';
+            location.href='admin-requested.php?ID=Accepted';
             </script>";
     }
 }

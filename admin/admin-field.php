@@ -2,7 +2,18 @@
 include('../connection.php');
 session_start();
 
-$Course = $_GET['CourseID'];
+$CourseCode = $_GET['CourseCode'];
+
+$qry = "SELECT CourseTitle FROM coursetbl WHERE CourseCode = '$CourseCode'";
+$result = mysql_query($qry);
+while($qry = mysql_fetch_array($result)){
+    $CourseTitle = $qry['CourseTitle'];
+}
+
+$TotalStudents = mysql_query("SELECT COUNT(*) FROM studentinfotbl WHERE MajorCourse='$CourseTitle'");
+$Q1 = mysql_fetch_array($TotalStudents);
+$Total = $Q1[0];
+/*
 $FirstName = 'FirstName';
 $LastName = 'LastName';
 $EmploymentStatus = 'EmploymentStatus';
@@ -42,13 +53,10 @@ $EmploymentStatus = 'EmploymentStatus';
     }
 
 
-$TotalStudents = mysql_query("SELECT COUNT(*) FROM studentinfotbl WHERE MajorCourse='$Course'");
-$Q1 = mysql_fetch_array($TotalStudents);
-$Total = $Q1[0];
-
 $qry = "SELECT * FROM studentinfotbl WHERE MajorCourse='$Course' ORDER BY LastName";
 $result = mysql_query($qry);
 
+*/
 ?>
 
 <!doctype html>
@@ -302,7 +310,7 @@ $result = mysql_query($qry);
               <div class = "header_advertising">
                    <div class = "container">
                     <div class = "col-md-8">
-                      <h5> <?php echo $Course ?> <h5>
+                      <h5> <?php echo $CourseTitle; ?> <h5>
                     </div>
                     <div class="col-md-4">
                         <div class="form-group text-center">
@@ -399,30 +407,41 @@ $result = mysql_query($qry);
                     <th width = "5%" class = "tabletitle"> </th>
                 <tr>
             </thead>
+            <?php 
+                $qry1 = "SELECT * FROM studentinfotbl WHERE MajorCourse = '$CourseTitle'";
+                $result1 = mysql_query($qry1);
+                while($qry1 = mysql_fetch_array($result1)){
+                    $FirstName = $qry1['FirstName'];
+                    $LastName = $qry1['LastName'];
+                    $FullName = $LastName . ", " . $FirstName;
+                    $EmploymentStatus = $qry1['EmploymentStatus'];
 
-            <tbody>
-                <?php
-                    while($rows = mysql_fetch_array($result)){
-                ?>
-                <tr>
-                    <td>
-                    <a href = "resumelink.php"><?php echo $rows[$LastName] .", ". $rows[$FirstName]; ?></a>
-                    </td>
-                    <td class = "tcenter"></td>
-                    <td class = "tcenter"></td>
-                    <td class = "tcenter"></td>
-                    <td class = "tcenter"><?php echo $rows[$EmploymentStatus]?></td>
-                    <td>
-                        <a id='Edit' name="btnedit" href="editstudent.php" class='btn btn-default'> 
-                        <i class='fa fa-pencil'></i>
-                        </a> 
-                    </td>
+                    echo"
+                      <tbody>
+                          <tr>
+                              <td>
+                              <a href = 'resumelink.php'>$FullName;</a>
+                              </td>
+                              <td class = 'tcenter'></td>
+                              <td class = 'tcenter'></td>
+                              <td class = 'tcenter'></td>
+                              <td class = 'tcenter'>$EmploymentStatus</td>
+                              <td>
+                                  <a id='Edit' name='btnedit' href='editstudent.php' class='btn btn-default'> 
+                                  <i class='fa fa-pencil'></i>
+                                  </a> 
+                              </td>
 
-                </tr>
-                <?php
-                    }
-                ?>
-            </tbody>
+                          </tr>
+                      </tbody>
+
+
+                    ";
+                }
+
+
+            ?>
+
         </table>
         </div>
         <br><br>
