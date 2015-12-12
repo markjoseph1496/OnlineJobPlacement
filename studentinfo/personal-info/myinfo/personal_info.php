@@ -152,9 +152,15 @@ if($a){
 
     <!-- Bootstrap Core CSS -->
     <link href="../../css/bootstrap.min.css" rel="stylesheet">
+    <link href="../../css/fileinput.min.css" rel="stylesheet"/>
 
     <!-- CSS -->
     <link href="../../css/agency.css" rel="stylesheet">
+
+    <!-- Javascript and JQuery -->
+    <script src="../../js/jquery.min.js" type="text/javascript"></script>
+    <script src="../../js/bootstrap.min.js" type="text/javascript"></script>
+    <script src="../../js/fileinput.min.js" type="text/javascript"></script>
     
     <!-- Fonts -->
     <link href="../../font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
@@ -428,15 +434,9 @@ $(function() {
                     </div>
                 </div>
             </div>
-            <div class="col-md-1 col-sm-6 fieldcol">
-                <label>Photo</label>
-                <input id="uploadFile" type="file" name="fileToUpload" class="img"><br>
-                <div id="imagePreview">
-                    <img src="" id="Image1" alt="" style="width:250px;height:250px;">
-                    <div class="space"></div>
-                    <div class="space"></div>
-                        <button name="" type="" id="" class="btn btn-hg btn-primary" name="btnDelete">Delete Image</button>
-                </div>
+            <div class="col-md-5 col-sm-6 fieldcol">
+                <label class="control-label">Select Image</label>
+                <input id="input-1" type="file" class="file" data-allowed-file-extensions='["png", "jpg", "gif", "bmp", "jpeg"]'>
             </div>
             <div class="space"></div>
             <div class="col-md-12 col-sm-6 fieldcol">
