@@ -9,17 +9,17 @@
   <title>Margo | Home</title>
 
   <!-- Bootstrap CSS -->
-    <link href="../css/bootstrap.min.css" rel="stylesheet" />
+  <link href="../css/bootstrap.min.css" rel="stylesheet" />
 
-    <!-- BootstrapValidator CSS -->
-    <link href="../css/bootstrapValidator.min.css" rel="stylesheet"/>
-    <link href="../css/basic-template.css" rel="stylesheet" />
-    <!-- jQuery and Bootstrap JS -->
-    <script src="../js/jquery.min.js" type="text/javascript"></script>
-    <script src="../js/bootstrap.min.js" type="text/javascript"></script>
-      
-    <!-- BootstrapValidator -->
-    <script src="../js/bootstrapValidator.min.js" type="text/javascript"></script>
+  <!-- BootstrapValidator CSS -->
+  <link href="../css/bootstrapValidator.min.css" rel="stylesheet"/>
+  <link href="../css/basic-template.css" rel="stylesheet" />
+  <!-- jQuery and Bootstrap JS -->
+  <script src="../js/jquery.min.js" type="text/javascript"></script>
+  <script src="../js/bootstrap.min.js" type="text/javascript"></script>
+    
+  <!-- BootstrapValidator -->
+  <script src="../js/bootstrapValidator.min.js" type="text/javascript"></script>
 
 
 
@@ -251,7 +251,7 @@
 
 <!--Content-->
   <br><br><br>
-    <form id="AddCourse" action="addcourse.php">
+    <form id="AddCourse" action="functions.php">
    <div class = "container">
       <div class = "col-md-12">
 <div class="row field">

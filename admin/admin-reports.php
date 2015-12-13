@@ -1,143 +1,9 @@
 <?php
 include('../connection.php');
 
-$FieldOfStudy = 'FieldofStudy';
-
-$qry = mysql_query("SELECT DISTINCT FieldOfStudy FROM studentinfotbl");
 $TotalStudents = mysql_query("SELECT COUNT(*) FROM studentinfotbl");
 $Q1 = mysql_fetch_array($TotalStudents);
 $Total = $Q1[0];
-
-/////////////////////////////////////////////////////
-$BSTM = mysql_query("SELECT COUNT(*) FROM studentinfotbl WHERE MajorCourse = 'Bachelor of Science in Tourism Management'");
-$qryBSTM = mysql_fetch_array($BSTM);
-$TotalBSTM = $qryBSTM[0];
-
-$EmployedBSTM = mysql_query("SELECT COUNT(*) FROM studentinfotbl WHERE MajorCourse = 'Bachelor of Science in Tourism Management' AND EmploymentStatus = 'Employed'");
-$qryEmployedBSTM = mysql_fetch_array($EmployedBSTM);
-$TotalEmployedBSTM = $qryEmployedBSTM[0];
-
-$UnemployedBSTM = mysql_query("SELECT COUNT(*) FROM studentinfotbl WHERE MajorCourse = 'Bachelor of Science in Tourism Management' AND EmploymentStatus = 'Unemployed'");
-$qryUnemployedBSTM = mysql_fetch_array($UnemployedBSTM);
-$TotalUnemployedBSTM = $qryUnemployedBSTM[0];
-
-/////////////////////////////////////////////////////
-$BSBM = mysql_query("SELECT COUNT(*) FROM studentinfotbl WHERE MajorCourse ='Bachelor of Science in Business Management Major in Operations'");
-$qryBSBM = mysql_fetch_array($BSBM);
-$TotalBSBM = $qryBSBM[0];
-
-$EmployedBSBM = mysql_query("SELECT COUNT(*) FROM studentinfotbl WHERE MajorCourse ='Bachelor of Science in Business Management Major in Operations' AND EmploymentStatus = 'Employed'");
-$qryEmployedBSBM = mysql_fetch_array($EmployedBSBM);
-$TotalEmployedBSBM = $qryEmployedBSBM[0];
-
-$UnemployedBSBM = mysql_query("SELECT COUNT(*) FROM studentinfotbl WHERE MajorCourse ='Bachelor of Science in Business Management Major in Operations' AND EmploymentStatus = 'Unemployed'");
-$qryUnemployedBSBM = mysql_fetch_array($UnemployedBSBM);
-$TotalUnemployedBSBM = $qryUnemployedBSBM[0];
-
-/////////////////////////////////////////////////////
-$ABCOMM = mysql_query("SELECT COUNT(*) FROM studentinfotbl WHERE MajorCourse ='Bachelor of Arts in Communication'");
-$qryABCOMM = mysql_fetch_array($ABCOMM);
-$TotalABCOMM = $qryABCOMM[0];
-
-$EmployedABCOMM = mysql_query("SELECT COUNT(*) FROM studentinfotbl WHERE MajorCourse ='Bachelor of Arts in Communication' AND EmploymentStatus = 'Employed'");
-$qryEmployedABCOMM = mysql_fetch_array($EmployedABCOMM);
-$TotalEmployedABCOMM = $qryEmployedABCOMM[0];
-
-$UnemployedABCOMM = mysql_query("SELECT COUNT(*) FROM studentinfotbl WHERE MajorCourse ='Bachelor of Arts in Communication' AND EmploymentStatus = 'Unemployed'");
-$qryUnemployedABCOMM = mysql_fetch_array($UnemployedABCOMM);
-$TotalUnemployedABCOMM = $qryUnemployedABCOMM[0];
-
-/////////////////////////////////////////////////////
-$BSITDA = mysql_query("SELECT COUNT(*) FROM studentinfotbl WHERE MajorCourse ='Bachelor of Science in Information Technology Major in Digital Arts'");
-$qryBSITDA = mysql_fetch_array($BSITDA);
-$TotalBSITDA = $qryBSITDA[0];
-
-$EmployedBSITDA = mysql_query("SELECT COUNT(*) FROM studentinfotbl WHERE MajorCourse ='Bachelor of Science in Information Technology Major in Digital Arts' AND EmploymentStatus = 'Employed'");
-$qryEmployedBSITDA = mysql_fetch_array($EmployedBSITDA);
-$TotalEmployedBSITDA = $qryEmployedBSITDA[0];
-
-$UnemployedBSITDA = mysql_query("SELECT COUNT(*) FROM studentinfotbl WHERE MajorCourse ='Bachelor of Science in Information Technology Major in Digital Arts' AND EmploymentStatus = 'Unemployed'");
-$qryUnemployedBSITDA = mysql_fetch_array($UnemployedBSITDA);
-$TotalUnemployedBSITDA = $qryUnemployedBSITDA[0];
-
-/////////////////////////////////////////////////////
-$BSHRM = mysql_query("SELECT COUNT(*) FROM studentinfotbl WHERE MajorCourse ='Bachelor of Science in Hotel &amp; Restaurant Management'");
-$qryBSHRM = mysql_fetch_array($BSHRM);
-$TotalBSHRM = $qryBSHRM[0];
-
-$EmployedBSHRM = mysql_query("SELECT COUNT(*) FROM studentinfotbl WHERE MajorCourse ='Bachelor of Science in Hotel &amp; Restaurant Management' AND EmploymentStatus = 'Employed'");
-$qryEmployedBSHRM = mysql_fetch_array($EmployedBSHRM);
-$TotalEmployedBSHRM = $qryEmployedBSHRM[0];
-
-$UnemployedBSHRM = mysql_query("SELECT COUNT(*) FROM studentinfotbl WHERE MajorCourse ='Bachelor of Science in Hotel &amp; Restaurant Management' AND EmploymentStatus = 'Unemployed'");
-$qryUnemployedBSHRM = mysql_fetch_array($UnemployedBSHRM);
-$TotalUnemployedBSHRM = $qryUnemployedBSHRM[0];
-
-/////////////////////////////////////////////////////
-$BSCS = mysql_query("SELECT COUNT(*) FROM studentinfotbl WHERE MajorCourse ='Bachelor of Science in Computer Science'");
-$qryBSCS = mysql_fetch_array($BSCS);
-$TotalBSCS = $qryBSCS[0];
-
-$EmployedBSCS = mysql_query("SELECT COUNT(*) FROM studentinfotbl WHERE MajorCourse ='Bachelor of Science in Computer Science' AND EmploymentStatus = 'Employed'");
-$qryEmployedBSCS = mysql_fetch_array($EmployedBSCS);
-$TotalEmployedBSCS = $qryEmployedBSCS[0];
-
-$UnemployedBSCS = mysql_query("SELECT COUNT(*) FROM studentinfotbl WHERE MajorCourse ='Bachelor of Science in Computer Science' AND EmploymentStatus = 'Unemployed'");
-$qryUnemployedBSCS = mysql_fetch_array($UnemployedBSCS);
-$TotalUnemployedBSCS = $qryUnemployedBSCS[0];
-
-/////////////////////////////////////////////////////
-$BSIT = mysql_query("SELECT COUNT(*) FROM studentinfotbl WHERE MajorCourse ='Bachelor of Science in Information Technology'");
-$qryBSIT = mysql_fetch_array($BSIT);
-$TotalBSIT = $qryBSIT[0];
-
-$EmployedBSIT = mysql_query("SELECT COUNT(*) FROM studentinfotbl WHERE MajorCourse ='Bachelor of Science in Information Technology' AND EmploymentStatus = 'Employed'");
-$qryEmployedBSIT = mysql_fetch_array($EmployedBSIT);
-$TotalEmployedBSIT = $qryEmployedBSIT[0];
-
-$UnemployedBSIT = mysql_query("SELECT COUNT(*) FROM studentinfotbl WHERE MajorCourse ='Bachelor of Science in Information Technology' AND EmploymentStatus = 'Unemployed'");
-$qryUnemployedBSIT = mysql_fetch_array($UnemployedBSIT);
-$TotalUnemployedBSIT = $qryUnemployedBSIT[0];
-
-/////////////////////////////////////////////////////
-$BSCPE = mysql_query("SELECT COUNT(*) FROM studentinfotbl WHERE MajorCourse ='Bachelor of Science in Computer Engineering'");
-$qryBSCPE = mysql_fetch_array($BSCPE);
-$TotalBSCPE = $qryBSCPE[0];
-
-$EmployedBSCPE = mysql_query("SELECT COUNT(*) FROM studentinfotbl WHERE MajorCourse ='Bachelor of Science in Computer Engineering' AND EmploymentStatus = 'Employed'");
-$qryEmployedBSCPE = mysql_fetch_array($EmployedBSCPE);
-$TotalEmployedBSCPE = $qryEmployedBSCPE[0];
-
-$UnemployedBSCPE = mysql_query("SELECT COUNT(*) FROM studentinfotbl WHERE MajorCourse ='Bachelor of Science in Computer Engineering' AND EmploymentStatus = 'Unemployed'");
-$qryUnemployedBSCPE = mysql_fetch_array($UnemployedBSCPE);
-$TotalUnemployedBSCPE = $qryUnemployedBSCPE[0];
-
-/////////////////////////////////////////////////////
-$BSAT = mysql_query("SELECT COUNT(*) FROM studentinfotbl WHERE MajorCourse ='BBachelor of Science in Accounting Technology'");
-$qryBSAT = mysql_fetch_array($BSAT);
-$TotalBSAT = $qryBSAT[0];
-
-$EmployedBSAT = mysql_query("SELECT COUNT(*) FROM studentinfotbl WHERE MajorCourse ='Bachelor of Science in Accounting Technology' AND EmploymentStatus = 'Employed'");
-$qryEmployedBSAT = mysql_fetch_array($EmployedBSAT);
-$TotalEmployedBSAT = $qryEmployedBSAT[0];
-
-$UnemployedBSAT = mysql_query("SELECT COUNT(*) FROM studentinfotbl WHERE MajorCourse ='Bachelor of Science in Accounting Technology' AND EmploymentStatus = 'Unemployed'");
-$qryUnemployedBSAT = mysql_fetch_array($UnemployedBSAT);
-$TotalUnemployedBSAT = $qryUnemployedBSAT[0];
-
-/////////////////////////////////////////////////////
-
-$ASCT = mysql_query("SELECT COUNT(*) FROM studentinfotbl WHERE MajorCourse ='2-Year Associate in Computer Technology'");
-$qryASCT = mysql_fetch_array($ASCT);
-$TotalASCT = $qryASCT[0];
-
-$EmployedASCT = mysql_query("SELECT COUNT(*) FROM studentinfotbl WHERE MajorCourse ='2-Year Associate in Computer Technology' AND EmploymentStatus = 'Employed'");
-$qryEmployedASCT = mysql_fetch_array($EmployedASCT);
-$TotalEmployedASCT = $qryEmployedASCT[0];
-
-$UnemployedASCT = mysql_query("SELECT COUNT(*) FROM studentinfotbl WHERE MajorCourse ='2-Year Associate in Computer Technology' AND EmploymentStatus = 'Unemployed'");
-$qryUnemployedASCT = mysql_fetch_array($UnemployedASCT);
-$TotalUnemployedASCT = $qryUnemployedASCT[0];
 
 ?>
 <!doctype html>
@@ -448,88 +314,41 @@ $TotalUnemployedASCT = $qryUnemployedASCT[0];
                         <th width = "20%" class = "tabletitle">Number of Unemployed</th>
                     <tr>
                 </thead>
-                <tbody>
-                <tr>
-                    <td>
-                    <a href = "admin-field.php?CourseID=BSTM">BSTM</a>
-                    </td>
-                    <td class = "tcenter"><?php echo $TotalBSTM; ?></td>
-                    <td class = "tcenter"><?php echo $TotalEmployedBSTM; ?></td>
-                    <td class = "tcenter"><?php echo $TotalUnemployedBSTM; ?></td>
-                </tr>
-                <tr>
-                    <td>
-                    <a href = "admin-field.php?CourseID=BSBM">BSBM</a>
-                    </td>
-                    <td class = "tcenter"><?php echo $TotalBSBM; ?></td>
-                    <td class = "tcenter"><?php echo $TotalEmployedBSBM; ?></td>
-                    <td class = "tcenter"><?php echo $TotalUnemployedBSBM; ?></td>
-                </tr>
-                <tr>
-                    <td>
-                    <a href = "admin-field.php?CourseID=ABCOMM">ABCOMM</a>
-                    </td>
-                    <td class = "tcenter"><?php echo $TotalABCOMM; ?></td>
-                    <td class = "tcenter"><?php echo $TotalEmployedABCOMM; ?></td>
-                    <td class = "tcenter"><?php echo $TotalUnemployedABCOMM; ?></td>
-                </tr>
-                <tr>
-                    <td>
-                    <a href = "admin-field.php?CourseID=BSITDA">BSITDA</a>
-                    </td>
-                    <td class = "tcenter"><?php echo $TotalBSITDA; ?></td>
-                    <td class = "tcenter"><?php echo $TotalEmployedBSITDA; ?></td>
-                    <td class = "tcenter"><?php echo $TotalUnemployedBSITDA; ?></td>
-                </tr>
-                <tr>
-                    <td>
-                    <a href = "admin-field.php?CourseID=BSHRM">BSHRM</a>
-                    </td>
-                    <td class = "tcenter"><?php echo $TotalBSHRM; ?></td>
-                    <td class = "tcenter"><?php echo $TotalEmployedBSHRM; ?></td>
-                    <td class = "tcenter"><?php echo $TotalUnemployedBSHRM; ?></td>
-                </tr>
-                <tr>
-                    <td>
-                    <a href = "admin-field.php?CourseID=BSCS">BSCS</a>
-                    </td>
-                    <td class = "tcenter"><?php echo $TotalBSCS; ?></td>
-                    <td class = "tcenter"><?php echo $TotalEmployedBSCS; ?></td>
-                    <td class = "tcenter"><?php echo $TotalUnemployedBSCS; ?></td>
-                </tr>
-                <tr>
-                    <td>
-                    <a href = "admin-field.php?CourseID=BSIT">BSIT</a>
-                    </td>
-                    <td class = "tcenter"><?php echo $TotalBSIT; ?></td>
-                    <td class = "tcenter"><?php echo $TotalEmployedBSIT; ?></td>
-                    <td class = "tcenter"><?php echo $TotalUnemployedBSIT; ?></td>
-                </tr>
-                <tr>
-                    <td>
-                    <a href = "admin-field.php?CourseID=BSCPE">BSAT</a>
-                    </td>
-                    <td class = "tcenter"><?php echo $TotalBSCPE; ?></td>
-                    <td class = "tcenter"><?php echo $TotalEmployedBSCPE; ?></td>
-                    <td class = "tcenter"><?php echo $TotalUnemployedBSCPE; ?></td>
-                </tr>
-                <tr>
-                    <td>
-                    <a href = "admin-field.php?CourseID=BSCPE">BSCPE</a>
-                    </td>
-                    <td class = "tcenter"><?php echo $TotalBSCPE; ?></td>
-                    <td class = "tcenter"><?php echo $TotalEmployedBSCPE; ?></td>
-                    <td class = "tcenter"><?php echo $TotalUnemployedBSCPE; ?></td>
-                </tr>
-                <tr>
-                    <td>
-                    <a href = "admin-field.php?CourseID=ACT">ACT</a>
-                    </td>
-                    <td class = "tcenter"><?php echo $TotalASCT; ?></td>
-                    <td class = "tcenter"><?php echo $TotalEmployedASCT; ?></td>
-                    <td class = "tcenter"><?php echo $TotalUnemployedASCT; ?></td>
-                </tr>
-            </tbody>
+                  <?php
+                      $qry1 = "SELECT * FROM coursetbl";
+                      $result1 = mysql_query($qry1);
+                      while($qry1 = mysql_fetch_array($result1)){
+                        $CourseTitle = $qry1['CourseTitle'];
+                        $CourseCode = $qry1['CourseCode'];
+
+                        $qryTotal = mysql_query("SELECT COUNT(*) FROM studentinfotbl WHERE MajorCourse = '$CourseCode'");
+                        $qryCount = mysql_fetch_array($qryTotal);
+                        $TotalStudents = $qryCount[0];
+
+                        $EmployedTotal = mysql_query("SELECT COUNT(*) FROM studentinfotbl WHERE MajorCourse = '$CourseCode' AND EmploymentStatus = 'Employed'");
+                        $qryCountEmployed = mysql_fetch_array($EmployedTotal);
+                        $TotalEmployed = $qryCountEmployed[0];
+
+                        $UnemployedTotal = mysql_query("SELECT COUNT(*) FROM studentinfotbl WHERE MajorCourse = '$CourseCode' AND EmploymentStatus = 'Unemployed'");
+                        $qryCountUnemployed= mysql_fetch_array($UnemployedTotal);
+                        $TotalUnemployed = $qryCountUnemployed[0];
+
+                        echo"
+                            <tbody>
+                                <tr>
+                                    <td>
+                                    <a href = 'admin-field.php?CourseCode=$CourseCode'>$CourseTitle</a>
+                                    </td>
+                                    <td class = 'tcenter'>$TotalStudents</td>
+                                    <td class = 'tcenter'>$TotalEmployed</td>
+                                    <td class = 'tcenter'>$TotalUnemployed</td>
+                                </tr>
+                            </tbody>
+                        ";
+
+                      }
+
+                  ?>
             </table>
         </div>
 </body>

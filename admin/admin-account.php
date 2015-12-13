@@ -1,8 +1,7 @@
-<?php 
-/*
+a<?php 
+
 include('../connection.php');
 session_start();
-
 
 $x = $_SESSION['AdminID'];
 
@@ -21,12 +20,6 @@ $result = mysql_query($qry);
                 $ContactNumber = $qry['ContactNumber'];
         }
 
-
-$server_Email = isset($_POST['txtEmail']) ? $_POST['txtEmail'] : '';
-$server_NewEmail = isset($_POST['txtNewEmail']) ? $_POST['txtNewEmail'] : '';
-$server_ConfirmEmail = isset($_POST['txtConfirmEmail']) ? $_POST['txtConfirmEmail'] : '';
-
-*/
 ?>
 <!doctype html>
 <!--[if IE 8 ]><html class="ie ie8" lang="en"> <![endif]-->
@@ -37,6 +30,20 @@ $server_ConfirmEmail = isset($_POST['txtConfirmEmail']) ? $_POST['txtConfirmEmai
 
   <!-- Basic -->
   <title>OJPMS</title>
+
+  <!-- Bootstrap CSS -->
+  <link href="../css/bootstrap.min.css" rel="stylesheet" />
+
+  <!-- BootstrapValidator CSS -->
+  <link href="../css/bootstrapValidator.min.css" rel="stylesheet"/>
+  <link href="../css/basic-template.css" rel="stylesheet" />
+  <!-- jQuery and Bootstrap JS -->
+  <script type="text/javascript" src="../js/jquery.min.js"></script>
+  <script src="../js/bootstrap.min.js" type="text/javascript"></script>
+    
+  <!-- BootstrapValidator -->
+  <script src="../js/bootstrapValidator.min.js" type="text/javascript"></script>
+  
 
   <!-- Bootstrap CSS  -->
   <link rel="stylesheet" href="../asset/css/bootstrap.min.css" type="text/css" media="screen">
@@ -75,10 +82,9 @@ $server_ConfirmEmail = isset($_POST['txtConfirmEmail']) ? $_POST['txtConfirmEmai
 
 
   <!-- Margo JS  -->
-  <script type="text/javascript" src="../js/jquery-2.1.4.min.js"></script>
+  
   <script type="text/javascript" src="../js/jquery.migrate.js"></script>
   <script type="text/javascript" src="../js/modernizrr.js"></script>
-  <script type="text/javascript" src="../asset/js/bootstrap.min.js"></script>
   <script type="text/javascript" src="../js/jquery.fitvids.js"></script>
   <script type="text/javascript" src="../js/owl.carousel.min.js"></script>
   <script type="text/javascript" src="../js/nivo-lightbox.min.js"></script>
@@ -99,6 +105,97 @@ $server_ConfirmEmail = isset($_POST['txtConfirmEmail']) ? $_POST['txtConfirmEmai
 </head>
 
 <body>
+<div class="container">
+  <!-- Modal -->
+  <div class="modal fade" id="ChangeEmail" role="dialog">
+    <div class="modal-dialog" style="padding:100px">
+    
+      <!-- Modal content-->
+      <form id="ChangeEmail" autocomplete="off">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">Change Email</h4>
+        </div>
+        <div class="modal-body">
+              <div class = "col-md-15 fieldcol">
+                  <label = "usr" class = "control-label"> Email: </label>
+                  <div class="form-group">
+                        <input type = "email" name = "ModalEmail" id="ModalEmail" class = "form-control" data-fv-emailaddress-message="The value is not a valid email address">
+                  </div>
+              </div>
+              
+
+              <div class = "col-md-15 fieldcol">
+                    <label = "usr" class = "control-label"> New email: </label>
+                    <div class="form-group">
+                        <input type = "email" name = "ModalNewEmail" id = "ModalNewEmail" class = "form-control">
+                    </div>
+              </div>
+
+              
+              <div class = "col-md-15 fieldcol">
+                    <label = "usr" class = "control-label"> Confirm Email: </label>
+                    <div class="form-group">
+                        <input type = "text" name = "ModalConfirmEmail" id = "ModalConfirmEmail" class = "form-control">
+                    </div>
+              </div>
+
+              
+        </div>
+        <div class="modal-footer">
+          <button type="Submit" class="btn btn-primary">Change Email</button>
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+      </form>
+    </div>
+  </div>
+
+
+  <div class="modal fade" id="ChangePassword" role="dialog">
+  <div class="modal-dialog" style="padding:100px">
+    
+      <!-- Modal content-->
+      <form id="ChangePassword" autocomplete="off">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">Change Password</h4>
+        </div>
+        <div class="modal-body">
+              <div class = "col-md-15 fieldcol">
+                  <label = "usr" class = "control-label"> Old Password: </label>
+                  <div class="form-group">
+                        <input type = "password" name = "ModalOldPassword" id="ModalOldPassword" class = "form-control">
+                  </div>
+              </div>
+              
+
+              <div class = "col-md-15 fieldcol">
+                    <label = "usr" class = "control-label"> New Password: </label>
+                    <div class="form-group">
+                        <input type = "password" name = "ModalNewPassword" id = "ModalNewPassword" class = "form-control">
+                    </div>
+              </div>
+
+              
+              <div class = "col-md-15 fieldcol">
+                    <label = "usr" class = "control-label"> Confirm Password: </label>
+                    <div class="form-group">
+                        <input type = "password" name = "ModalConfirmPassword" id = "ModalConfirmPassword" class = "form-control">
+                    </div>
+              </div>
+        </div>
+        <div class="modal-footer">
+          <button type="Submit" class="btn btn-primary">Change Password</button>
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+      </form>
+    </div>
+  </div>
+</div>
 
   <!-- Full Body Container -->
   <div id="container">
@@ -239,7 +336,7 @@ $server_ConfirmEmail = isset($_POST['txtConfirmEmail']) ? $_POST['txtConfirmEmai
                 <li>
                     <a href="admin-companylist.php">Company List</a>
                 </li>
-                 <li><a href="admin-adviser.php"admin-maintenance.php"">Adviser List</a>
+                 <li><a href="admin-adviser.php">Adviser List</a>
                 </li>  
                <li>
                     <a href="admin-maintenance.php">Maintenance</a>
@@ -278,113 +375,187 @@ $server_ConfirmEmail = isset($_POST['txtConfirmEmail']) ? $_POST['txtConfirmEmai
    <div class = "container">
       <div class = "col-md-12">
                    <div class="row field">
-                                        <div class = "col-md-2 fieldcol">
-                                           <label = "usr" class = "control-label"> Email: </label>
-                                        </div>
-                                        <div class = "col-md-4 fieldcol">
-                                            <div class="form-group">
-                                                  <input type = "text" name = "email" class = "form-control" style ="width: 300px;">
-                                            </div>
-                                        </div>
-                                        <div class = "col-md-3 fieldcol">
-                                            <div class="form-group">
-                                                  <div class="box">
-                                                    <a class="btn btn-default" href="#popup1" >Change email</a>
-                                                  </div>
-                                            </div>
-                                        </div>
+                        <div class = "col-md-2 fieldcol">
+                           <label = "usr" class = "control-label"> Email: </label>
+                        </div>
+                        <div class = "col-md-4 fieldcol">
+                            <div class="form-group">
+                                  <label = "usr" class = "control-label"><?php echo $Email; ?></label>
+                            </div>
+                        </div>
+                        <div class = "col-md-3 fieldcol">
+                            <div class="form-group">
+                                  <div class="box">
+                                    <button class="btn btn-default" data-toggle="modal" data-target="#ChangeEmail" >Change email </button>
+                                  </div>
+                            </div>
+                        </div>
                     </div> 
                     <div class="row field">
-                                        <div class = "col-md-2 fieldcol">
-                                           <label = "usr" class = "control-label"> Password: </label>
-                                        </div>
-                                        <div class = "col-md-4 fieldcol">
-                                            <div class="form-group">
-                                                  <input type = "password" name = "password" class = "form-control" style ="width: 300px;">
-                                            </div>
-                                        </div>
-                                        <div class = "col-md-3 fieldcol">
-                                            <div class="form-group">
-                                                  <div class="box">
-                                                    <a class="btn btn-default" href="#popup1" >Change Password</a>
-                                                  </div>
-                                            </div>
-                                        </div>
+                        <div class = "col-md-2 fieldcol">
+                           <label = "usr" class = "control-label"> Password: </label>
+                        </div>
+                        <div class = "col-md-4 fieldcol">
+                            <div class="form-group">
+                                  <label = "usr" class = "control-label">**********</label>
+                            </div>
+                        </div>
+                        <div class = "col-md-3 fieldcol">
+                            <div class="form-group">
+                                  <div class="box">
+                                    <button class="btn btn-default" data-toggle="modal" data-target="#ChangePassword" >Change Password</button>
+                                  </div>
+                            </div>
+                        </div>
                     </div> 
                      <div class="row field">
-                                        <div class = "col-md-2 fieldcol">
-                                             <label>First Name <span>(*)</span></label>
-                                        </div>
-                                        <div class = "col-md-4 fieldcol">
-                                            <div class="form-group">
-                                                  <input type = "text" name = "fname" id = "usr" class = "form-control" style ="width: 550px;" value = "<?php echo $FName; ?>">
-                                            </div>
-                                        </div>
+                        <div class = "col-md-2 fieldcol">
+                             <label>First Name <span>(*)</span></label>
+                        </div>
+                        <div class = "col-md-4 fieldcol">
+                            <div class="form-group">
+                                  <input type = "text" name = "fname" id = "usr" class = "form-control" style ="width: 550px;" value = "<?php echo $FName; ?>">
+                            </div>
+                        </div>
                     </div> 
                      <div class="row field">
-                                        <div class = "col-md-2 fieldcol">
-                                             <label>Middle Name <span>(*)</span></label>
-                                        </div>
-                                        <div class = "col-md-4 fieldcol">
-                                            <div class="form-group">
-                                                 <input type = "text" name = "mname" id = "usr" class = "form-control" style ="width: 550px;" value = "<?php echo $MName; ?>">
-                                            </div>
-                                        </div>
+                        <div class = "col-md-2 fieldcol">
+                             <label>Middle Name <span>(*)</span></label>
+                        </div>
+                        <div class = "col-md-4 fieldcol">
+                            <div class="form-group">
+                                 <input type = "text" name = "mname" id = "usr" class = "form-control" style ="width: 550px;" value = "<?php echo $MName; ?>">
+                            </div>
+                        </div>
                     </div> 
                      <div class="row field">
-                                        <div class = "col-md-2 fieldcol">
-                                            <label>Last Name <span>(*)</span></label>
-                                        </div>
-                                        <div class = "col-md-4 fieldcol">
-                                            <div class="form-group">
-                                                <input type = "text" name = "lname" id = "usr" class = "form-control" style ="width: 550px;" value = "<?php echo $LName; ?>">
-                                            </div>
-                                        </div>
+                        <div class = "col-md-2 fieldcol">
+                            <label>Last Name <span>(*)</span></label>
+                        </div>
+                        <div class = "col-md-4 fieldcol">
+                            <div class="form-group">
+                                <input type = "text" name = "lname" id = "usr" class = "form-control" style ="width: 550px;" value = "<?php echo $LName; ?>">
+                            </div>
+                        </div>
                     </div> 
                     <div class="row field">
-                                        <div class = "col-md-2 fieldcol">
-                                             <label>Position <span>(*)</span></label>
-                                        </div>
-                                        <div class = "col-md-4 fieldcol">
-                                            <div class="form-group">
-                                                 <input type = "text" name = "position" id = "usr" class = "form-control" style ="width: 550px;" value = "<?php echo $Positions; ?>">
-                                            </div>
-                                        </div>
+                        <div class = "col-md-2 fieldcol">
+                             <label>Position <span>(*)</span></label>
+                        </div>
+                        <div class = "col-md-4 fieldcol">
+                            <div class="form-group">
+                                 <input type = "text" name = "position" id = "usr" class = "form-control" style ="width: 550px;" value = "<?php echo $Positions; ?>">
+                            </div>
+                        </div>
                     </div> 
                     <div class="row field">
-                                        <div class = "col-md-2 fieldcol">
-                                             <label>Department<span>(*)</span></label>
-                                        </div>
-                                        <div class = "col-md-4 fieldcol">
-                                            <div class="form-group">
-                                                 <input type = "text" name = "dept" id = "usr" class = "form-control" style ="width: 550px;" value = "<?php echo $Department; ?>">
-                                            </div>
-                                        </div>
+                        <div class = "col-md-2 fieldcol">
+                             <label>Department<span>(*)</span></label>
+                        </div>
+                        <div class = "col-md-4 fieldcol">
+                            <div class="form-group">
+                                 <input type = "text" name = "dept" id = "usr" class = "form-control" style ="width: 550px;" value = "<?php echo $Department; ?>">
+                            </div>
+                        </div>
                     </div> 
                     <div class="row field">
                                      
-                                        <div class = "col-md-2 fieldcol">
-                                           <label>Address <span>(*)</span></label>
-                                        </div>
-                                        <div class = "col-md-4 fieldcol">
-                                            <div class="form-group">
-                                                <input type = "text" name = "address" id = "usr" class = "form-control" style ="width: 550px;" value = "<?php echo $Address; ?>">
-                                            </div>
-                                        </div>
+                        <div class = "col-md-2 fieldcol">
+                           <label>Address <span>(*)</span></label>
+                        </div>
+                        <div class = "col-md-4 fieldcol">
+                            <div class="form-group">
+                                <input type = "text" name = "address" id = "usr" class = "form-control" style ="width: 550px;" value = "<?php echo $Address; ?>">
+                            </div>
+                        </div>
                     </div> 
                      <div class="row field">
-                                        <div class = "col-md-2 fieldcol">
-                                           <label>Contact Number <span>(*)</span></label>
-                                        </div>
-                                        <div class = "col-md-4 fieldcol">
-                                            <div class="form-group">
-                                                <input type = "text" name = "contact" id = "usr" class = "form-control" style ="width: 550px;" value = "<?php echo $PhoneNum ?>">
-                                            </div>
-                                        </div>
+                        <div class = "col-md-2 fieldcol">
+                           <label>Contact Number <span>(*)</span></label>
+                        </div>
+                        <div class = "col-md-4 fieldcol">
+                            <div class="form-group">
+                                <input type = "text" name = "contact" id = "usr" class = "form-control" style ="width: 550px;" value = "<?php echo $PhoneNum ?>">
+                            </div>
+                        </div>
                     </div> 
       </div>
-                    <button type = "submit" class = "btn btn-primary " name="btnSave" id = "save" href= "#"><b> Save </b></button> &nbsp;
-                    <button type = "submit" class = "btn btn-primary " name="btnSave" id = "save" href= "#"><b> Cancel </b></button>
+          <button type = "submit" class = "btn btn-primary " name="btnSave" id = "save" href= "#"><b> Save </b></button> &nbsp;
+          <button type = "submit" class = "btn btn-primary " name="btnSave" id = "save" href= "#"><b> Cancel </b></button>
     </div>
 </body>
 </html>
+
+<script type="text/javascript">
+    $(document).ready(function () {
+            var validator = $("#ChangeEmail").bootstrapValidator({
+                feedbackIcons:{
+                    valid: "glyphicon glyphicon-ok",
+                    invalid: "glyphicon glyphicon-remove",
+                    validating: "glyphicon glyphicon-refresh"
+                },
+                fields: {
+                    ModalEmail: {
+                        validators: {
+                            notEmpty: {
+                                message: "Email is required."
+                            }
+                        }
+                    },
+                    ModalNewEmail: {
+                        validators: {
+                            notEmpty: {
+                                message: "Email is required."
+                            }
+                        }
+                    },
+                    ModalConfirmEmail:{
+                        validators: {
+                            notEmpty: {
+                                message: "Email is required."
+                            },
+                            identical: {
+                                field: "ModalNewEmail",
+                                message: "Email and Confirm email mismatched."
+                            }
+                        }
+                    }
+                }
+            });
+
+            var validator1 = $("#ChangePassword").bootstrapValidator({
+                feedbackIcons:{
+                    valid: "glyphicon glyphicon-ok",
+                    invalid: "glyphicon glyphicon-remove",
+                    validating: "glyphicon glyphicon-refresh"
+                },
+                fields: {
+                    ModalOldPassword: {
+                        validators: {
+                            notEmpty: {
+                                message: "Old Password is required."
+                            }
+                        }
+                    },
+                    ModalNewPassword: {
+                        validators: {
+                            notEmpty: {
+                                message: "New Password is required."
+                            }
+                        }
+                    },
+                    ModalConfirmPassword:{
+                        validators: {
+                            notEmpty: {
+                                message: "Confirm Password is required."
+                            },
+                            identical: {
+                                field: "ModalNewPassword",
+                                message: "Password mismatched."
+                            }
+                        }
+                    }
+                }
+            });
+    });
+</script>

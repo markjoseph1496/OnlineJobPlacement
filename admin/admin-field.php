@@ -408,7 +408,7 @@ $result = mysql_query($qry);
                 <tr>
             </thead>
             <?php 
-                $qry1 = "SELECT * FROM studentinfotbl WHERE MajorCourse = '$CourseTitle'";
+                $qry1 = "SELECT * FROM studentinfotbl WHERE MajorCourse = '$CourseCode'";
                 $result1 = mysql_query($qry1);
                 while($qry1 = mysql_fetch_array($result1)){
                     $FirstName = $qry1['FirstName'];

@@ -268,13 +268,10 @@ $Total = $Q1[0];
                     $qry = "SELECT * FROM coursetbl";
                     $result = mysql_query($qry);
                     while($qry = mysql_fetch_array($result)){
-                        $CourseID = $qry['CourseID'];
                         $CourseTitle = $qry['CourseTitle'];
                         $CourseCode = $qry['CourseCode'];
 
-
-
-                        $qry1 = "SELECT COUNT(*) FROM studentinfotbl WHERE MajorCourse = '$CourseTitle'";
+                        $qry1 = "SELECT COUNT(*) FROM studentinfotbl WHERE MajorCourse = '$CourseCode'";
                         $result1 = mysql_query($qry1);
                         $qryCount = mysql_fetch_array($result1);
                         $TotalStudentByCourse = $qryCount[0];
@@ -294,8 +291,6 @@ $Total = $Q1[0];
                     }
                 ?>
                 </table>
-
-                
                   <div class = "container">
                     <div class = "col-md-5">
                       <div class = "total">

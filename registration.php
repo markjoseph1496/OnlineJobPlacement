@@ -1,3 +1,6 @@
+<?php
+include('connection.php');
+?>
 <!DOCTYPE html>
 <!-- Yung resume link kulang pa. Naka abang pa lang dito -->
 <html lang="en">
@@ -185,18 +188,20 @@
                                 <div class="form-group">
                                     <label>Course <span>(*)</span></label>
                                     <select id="Course" name="Course" class="form-control" style="width:100%; height:34px;">
-                                        <option value="">- Please select one</option>
-                                        <option value="Bachelor of Science in Information Technology Major in Digital Arts">Bachelor of Science in Information Technology Major in Digital Arts</option>
-                                        <option value="Bachelor of Science in Information Technology">Bachelor of Science in Information Technology</option>
-                                        <option value="Bachelor of Science in Computer Science">Bachelor of Science in Computer Science</option>
-                                        <option value="2 - Year Associate in Computer Technology">2 - Year Associate in Computer Technology</option>
-                                        <option value="Bachelor of Science in Business Management Major in Operations">Bachelor of Science in Business Management Major in Operations</option>
-                                        <option value="Bachelor of Science in Business Administration">Bachelor of Science in Business Administration</option>
-                                        <option value="Bachelor of Science in Accounting Technology">Bachelor of Science in Accounting Technology</option>
-                                        <option value="Bachelor of Science in Hotel &amp; Restaurant Management">Bachelor of Science in Hotel &amp; Restaurant Management</option>
-                                        <option value="Bachelor of Science in Tourism Management">Bachelor of Science in Tourism Management</option>
-                                        <option value="Bachelor of Science in Computer Engineering">Bachelor of Science in Computer Engineering</option>
-                                        <option value="Bachelor of Arts in Communication">Bachelor of Arts in Communication</option>
+                                        <option value="">-Please select one</option>
+                                        <?php
+                                            $qry = "SELECT * FROM coursetbl";
+                                            $result = mysql_query($qry);
+                                            while($qry = mysql_fetch_array($result)){
+                                                $CourseTitle = $qry['CourseTitle'];
+                                                $CourseCode = $qry['CourseCode'];
+                                                echo"
+                                                    <option value='$CourseCode'>$CourseTitle</option>
+                                                ";
+                                            }
+
+                                        ?>
+                                        
                                     </select>
                                 </div>
                             </div>
