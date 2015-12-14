@@ -44,10 +44,6 @@ $result = mysql_query($qry);
   <!-- BootstrapValidator -->
   <script src="../js/bootstrapValidator.min.js" type="text/javascript"></script>
   
-
-  <!-- Bootstrap CSS  -->
-  <link rel="stylesheet" href="../asset/css/bootstrap.min.css" type="text/css" media="screen">
-
   <!-- Font Awesome CSS -->
   <link rel="stylesheet" href="../css/font-awesome.min.css" type="text/css" media="screen">
 
@@ -111,7 +107,7 @@ $result = mysql_query($qry);
     <div class="modal-dialog" style="padding:100px">
     
       <!-- Modal content-->
-      <form id="ChangeEmail" autocomplete="off">
+      <form id="ChangeEmail" autocomplete="off" action = "dd.php">
       <div class="modal-content">
         <div class="modal-header">
           <button type="button" class="close" data-dismiss="modal">&times;</button>
@@ -121,7 +117,7 @@ $result = mysql_query($qry);
               <div class = "col-md-15 fieldcol">
                   <label = "usr" class = "control-label"> Email: </label>
                   <div class="form-group">
-                        <input type = "email" name = "ModalEmail" id="ModalEmail" class = "form-control" data-fv-emailaddress-message="The value is not a valid email address">
+                        <input type = "email" name = "ModalEmail" id="ModalEmail" class = "form-control">
                   </div>
               </div>
               
@@ -144,7 +140,7 @@ $result = mysql_query($qry);
               
         </div>
         <div class="modal-footer">
-          <button type="Submit" class="btn btn-primary">Change Email</button>
+          <button type="Submit" class="btn btn-primary" name="btnChangeEmail">Change Email</button>
           <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
         </div>
       </div>
