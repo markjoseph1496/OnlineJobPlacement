@@ -110,7 +110,7 @@ while ($qry = mysql_fetch_Array($result)) {
         <div class="modal-dialog" style="padding:100px">
 
             <!-- Modal content-->
-            <form id="change-email-form" autocomplete="off" action="dd.php">
+            <form id="change-email-form" autocomplete="off" method="POST">
                 <div class="modal-content">
                     <div class="modal-header">
                         <button type="button" class="close" data-dismiss="modal">&times;</button>
@@ -143,7 +143,7 @@ while ($qry = mysql_fetch_Array($result)) {
 
                     </div>
                     <div class="modal-footer">
-                        <button type="Submit" class="btn btn-primary" name="btnChangeEmail">Change Email</button>
+                        <button type="submit" class="btn btn-primary" name="btnChangeEmail">Change Email</button>
                         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
                     </div>
                 </div>
@@ -156,7 +156,7 @@ while ($qry = mysql_fetch_Array($result)) {
         <div class="modal-dialog" style="padding:100px">
 
             <!-- Modal content-->
-            <form id="change-password-form" autocomplete="off">
+            <form id="change-password-form" autocomplete="off" method="POST">
                 <div class="modal-content">
                     <div class="modal-header">
                         <button type="button" class="close" data-dismiss="modal">&times;</button>
@@ -190,7 +190,7 @@ while ($qry = mysql_fetch_Array($result)) {
                         </div>
                     </div>
                     <div class="modal-footer">
-                        <button type="Submit" class="btn btn-primary">Change Password</button>
+                        <button type="submit" class="btn btn-primary">Change Password</button>
                         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
                     </div>
                 </div>
