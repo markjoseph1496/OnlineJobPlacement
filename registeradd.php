@@ -29,6 +29,7 @@ if(isset($_GET['StudentID'])){
 	$Password = $_GET['_Password'];
 	$City = $_GET['City'];
 	$EducAttain = $_GET['EducAttain'];
+	$School = $_GET['School'];
 	$Course = $_GET['Course'];
 	$GraduatedMonth = $_GET['GraduatedMonth'];
 	$GraduatedYear = $_GET['GraduatedYear'];
@@ -36,10 +37,7 @@ if(isset($_GET['StudentID'])){
     $yeargraduated = $GraduatedMonth ." ". $GraduatedYear;
     $EducAttain = mysql_real_escape_string($EducAttain);
 
-    $salt = hash('sha512', mt_rand(0, PHP_INT_MAX) . mt_rand(0, PHP_INT_MAX) . mt_rand(0, PHP_INT_MAX));
-    $Password = hash('sha512',$Password . $salt);
-
-    $query = "INSERT INTO studentinfotbl (StudentID,FirstName,LastName,Birthdate,Password,SaltedPassword,EmploymentStatus,MajorCourse) values  ('$StudentID','$FirstName','$LastName','$Birthday','$Password','$salt','Unemployed','$Course')";
+    $query = "INSERT INTO studentinfotbl (StudentID,FirstName,LastName,Birthdate,Password,EmploymentStatus,MajorCourse) values  ('$StudentID','$FirstName','$LastName','$Birthday','$Password','Unemployed','$Course')";
     $query1 = "INSERT INTO schooltbl (StudentID,School,Attainment,Course,Graduated) values  ('$StudentID','STI College Caloocan','$EducAttain','$Course','$yeargraduated')";
     $query2 = "INSERT INTO studcontactstbl (StudentID,Email,MobileNumber,City) values  ('$StudentID','$Email','$MobileNumber','$City')";
 

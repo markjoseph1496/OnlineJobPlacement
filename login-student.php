@@ -79,7 +79,7 @@ if($a){
                 echo "
                 <script type='text/javascript'>
                 alert('You have successfully loggged in.');
-                location.href='studentinfo/personal-info/myinfo/personal_info.php';
+                location.href='student-view/myinfo/personal-info.php';
                 </script>
                 ";
 
@@ -97,7 +97,7 @@ if($a){
 
     <!-- CSS-->
     <link href="css/login-style.css" rel="stylesheet">
-    <link href="css/agency.css" rel="stylesheet">
+    <link href="css/mystyle.css" rel="stylesheet">
 
     <!-- Fonts -->
     <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
@@ -108,31 +108,40 @@ if($a){
 </head>
 
 <body class="login-background">
-    <div class="register js-register-form" data-view="Register">
-        <div class="grid-container text-center">
+    <div class="js-register-form">
+        <a name="register"></a>
+        <div class="grid-container">
+            <div class="span_h1"></div>
             <div class="grid-row">
                 <div class="grid-col w5 half_on_tablet full_on_mobile">
-                    <form class="register-form js-form" method = "POST" autocomplete="off">
-                        <h2 class="register-title">&nbsp;<span class="break_on_desktop"></span>Hi. It's nice to see you.</h2> 
-                        <fieldset class="register-fieldset js-fieldset">
+                    <form class="" method = "POST" autocomplete="off">
+                        <h2 class="register-title"><span class="break_on_desktop"></span>&nbsp;</h2> 
+                        <fieldset class="register-fieldset">
                             <div class="form-group">
                                 <input type="text" class="<?php echo $StudentID_class;?> form-control register-input js-password js-input" placeholder="Your Student ID" id="txtStudentID" name="txtStudentID" value="<?php echo htmlspecialchars($server_StudentID)?>">
                             </div>
                         </fieldset>
-                        <fieldset class="register-fieldset js-fieldset">
+                        <fieldset class="register-fieldset">
                             <div class="form-group">
                                 <input type="password" class="<?php echo $Password_class;?>  form-control register-input js-password js-input" placeholder="Password" id="txtPassword" name="txtPassword">
                             </div>
                         </fieldset>
-                        <fieldset class="register-fieldset js-fieldset">
-                            <div class="form-group">
-                                <button name = "btnLogin" value = "Login" class="btn btn--green register-submit btn--icon">Login
-                                    <span class="btn-icon btn-icon--right"></span>
-                                </button>
-                            </div>
+                        <fieldset class="register-fieldset">
+                            <button class="btn btn--green register-submit btn--icon">Login              
+                                <span class="btn-icon btn-icon--right"></span>
+                            </button>
                         </fieldset>
-                        <a href="">Forgot password?</a>
                     </form>
+                    <div class="text-center">
+                        <p class="register-terms" style="float:right;"><a href="" target="_blank">Lost your password?</a></p>
+                    </div>
+                </div>
+            </div>
+            <div class="register-screenshot not_mobile">
+                <div class="browser-chrome">
+                    <label class="register-title">&nbsp;<span class="break_on_desktop"></span>Welcome to OJPMS.</label>
+                    <div class="space"></div>
+                    <label class="register-terms">Connect with your friends -- and other fascinating people. Get in-the-moment updates on the things that interest you. And watch events unfold, in real time, from every angle. <a href="" target="_blank">Sign Up.</a></label>
                 </div>
             </div>
         </div>

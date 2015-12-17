@@ -1,764 +1,1392 @@
-<!DOCTYPE html>
+<!doctype html>
+<html lang="en">
 
-<?php
-session_start();
-?>
-
-<html>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-
+<head>
+    <!-- Basic -->
     <title>Online JPMS</title>
-    <!-- Bootstrap Core CSS -->
-    <link href="css/bootstrap.min.css" rel="stylesheet">
 
-    <!-- CSS -->
-    <link href="css/agency.css" rel="stylesheet">
+    <!-- Define Charset -->
+    <meta charset="utf-8">
 
-    <link href="css/agency2.css" rel="stylesheet" type="text/css" media="all">
+    <!-- Responsive Metatag -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
-    <!-- Fonts -->
-    <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
-    <link href="font-awesome/ffonts/montserrat.css" rel="stylesheet" type="text/css">
-    <link href="font-awesome/ffonts/kaushan.css" rel="stylesheet" type="text/css">
-    <link href="font-awesome/ffonts/droid.css" rel="stylesheet" type="text/css">
-    <link href="font-awesome/ffonts/roboto.css" rel="stylesheet" type="text/css">
+    <!-- Page Description and Author -->
+    <meta name="description" content="Margo - Responsive HTML5 Template">
+    <meta name="author" content="iThemesLab">
 
-    <script src="js/jquery.min.js" type="text/javascript"></script>
+    <!-- Bootstrap CSS  -->
+    <link rel="stylesheet" href="asset/css/bootstrap.min.css" type="text/css" media="screen">
+
+    <!-- Font Awesome CSS -->
+    <link rel="stylesheet" href="css/font-awesome.min.css" type="text/css" media="screen">
+
+    <!-- Slicknav -->
+    <link rel="stylesheet" type="text/css" href="css/slicknav.css" media="screen">
+
+    <!-- Margo CSS Styles  -->
+    <link rel="stylesheet" type="text/css" href="css/style.css" media="screen">
+
+    <!-- Responsive CSS Styles  -->
+    <link rel="stylesheet" type="text/css" href="css/responsive.css" media="screen">
+
+    <!-- Css3 Transitions Styles  -->
+    <link rel="stylesheet" type="text/css" href="css/animate.css" media="screen">
+
+    <!-- Color CSS Styles  -->
+    <link rel="stylesheet" type="text/css" href="css/colors/red.css" title="red" media="screen" />
+    <link rel="stylesheet" type="text/css" href="css/colors/jade.css" title="jade" media="screen" />
+    <link rel="stylesheet" type="text/css" href="css/colors/green.css" title="green" media="screen" />
+    <link rel="stylesheet" type="text/css" href="css/colors/blue.css" title="blue" media="screen" />
+    <link rel="stylesheet" type="text/css" href="css/colors/beige.css" title="beige" media="screen" />
+    <link rel="stylesheet" type="text/css" href="css/colors/cyan.css" title="cyan" media="screen" />
+    <link rel="stylesheet" type="text/css" href="css/colors/orange.css" title="orange" media="screen" />
+    <link rel="stylesheet" type="text/css" href="css/colors/peach.css" title="peach" media="screen" />
+    <link rel="stylesheet" type="text/css" href="css/colors/pink.css" title="pink" media="screen" />
+    <link rel="stylesheet" type="text/css" href="css/colors/purple.css" title="purple" media="screen" />
+    <link rel="stylesheet" type="text/css" href="css/colors/sky-blue.css" title="sky-blue" media="screen" />
+    <link rel="stylesheet" type="text/css" href="css/colors/yellow.css" title="yellow" media="screen" />
+
+    <!-- JS  -->
+    <script type="text/javascript" src="js/jquery-2.1.4.min.js"></script>
+    <script type="text/javascript" src="js/jquery.migrate.js"></script>
+    <script type="text/javascript" src="js/modernizrr.js"></script>
+    <script type="text/javascript" src="asset/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="js/jquery.fitvids.js"></script>
+    <script type="text/javascript" src="js/owl.carousel.min.js"></script>
+    <script type="text/javascript" src="js/nivo-lightbox.min.js"></script>
+    <script type="text/javascript" src="js/jquery.isotope.min.js"></script>
+    <script type="text/javascript" src="js/jquery.appear.js"></script>
+    <script type="text/javascript" src="js/count-to.js"></script>
+    <script type="text/javascript" src="js/jquery.textillate.js"></script>
+    <script type="text/javascript" src="js/jquery.lettering.js"></script>
+    <script type="text/javascript" src="js/jquery.easypiechart.min.js"></script>
+    <script type="text/javascript" src="js/jquery.nicescroll.min.js"></script>
+    <script type="text/javascript" src="js/jquery.parallax.js"></script>
+    <script type="text/javascript" src="js/mediaelement-and-player.js"></script>
+    <script type="text/javascript" src="js/jquery.slicknav.js"></script>
 </head>
 
-
-<body id="page-top" class="index"> 
-    <div id="awwwards" class="sotd white right">
-        <a href="http://www.awwwards.com/" target="_blank"></a>
-    </div>
-    <div id="overlay" style="display: none;">
-        <div id="logo-anim-container"></div>
-    </div>
-
-    <nav class="nav-navbar navbar-default navbar-fixed-top">
-        <div class="container">
-            <div class="navbar-header page-scroll">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                <a class="navbar-brand page-scroll" href="#page-top">Online Job Placement Management</a>
-            </div>
-
-            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                <ul class="nav-links nav navbar-nav navbar-right">
-                    <li class="hidden">
-                        <a href="#page-top"></a>
-                    </li>
-                    <li>
-                        <a class="page-scroll" href="#services">OJPMS</a>
-                    </li>
-                    <li>
-                        <a class="page-scroll" href="#portfolio">Events</a>
-                    </li>
-                    <li>
-                        <a class="page-scroll" href="#about">About</a>
-                    </li>
-                    <li>
-                        <a class="page-scroll" href="#team">Team</a>
-                    </li>
-                    <li>
-                        <a class="page-scroll" href="#contact">Join Us</a>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </nav>
-  
-    <!-- SLIDER -->
-    <div class="section-slider clearfix first-slide" id="home-hero" page-slide="1">
-        <a href="" class="down-arrow slide-link" page-slide="2"></a>
-        <div class="bx-wrapper" style="max-width: 100%;">
-            <div class="bx-viewport" style="width: 100%; overflow: hidden; position: relative; height: 660px;">
-                <ul id="home-hero-slider" style="width: auto; position: relative; height: 431px;">
-                    <li>
-                        <div class="slider-content">
-                            <div class="slide-container">
-                                <div class="slide-center intro-heading">
-                                    <div class="heading">STI Senior High School</div>
-                                    <div class="sub-heading">
-                                        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                                    </div>
-                                    <a href="" class="btn">Let's take a look</a>
-                                </div>
-                            </div>
-                        </div>
-                    </li>
-                    <li style="float: none; list-style: none; position: absolute; width: 1007px; z-index: 0; height: 431px; display: none; ">
-                        <div class="slider-content">
-                            <div class="slide-container">
-                                <div class="slide-center">
-                                    <div class="heading">Be college-ready, job-ready, and life-ready!</div>
-                                    <div class="sub-heading">
-                                        Most people think of slavery as a problem of the past. The upsetting reality is that modern day slavery still occurs all over the world, even in the U.S., and is called human trafficking.
-                                    </div>
-                                    <a href="" class="btn">Support Now</a>
-                                </div>
-                            </div>
-                        </div>
-                    </li>
-                    <li style="float: none; list-style: none; position: absolute; width: 1007px; z-index: 0; height: 431px; display: none; ">
-                        <div class="slider-content">
-                            <div class="slide-container">
-                                <div class="slide-center">
-                                    <div class="heading">Build a strong academic foundation</div>
-                                    <div class="sub-heading">
-                                        Most people think of slavery as a problem of the past. The upsetting reality is that modern day slavery still occurs all over the world, even in the U.S., and is called human trafficking.
-                                    </div>
-                                    <a href="" class="btn">Let's take a look</a>
-                                </div>
-                            </div>
-                        </div>
-                    </li>
-                    <li style="float: none; list-style: none; position: absolute; width: 1007px; z-index: 0; height: 431px; display: none; ">
-                        <div class="slider-content">
-                            <div class="slide-container">
-                                <div class="slide-center">
-                                    <div class="heading">STI’s wide range of academic</div>
-                                    <div class="sub-heading">
-                                        Most people think of slavery as a problem of the past. The upsetting reality is that modern day slavery still occurs all over the world, even in the U.S., and is called human trafficking.
-                                    </div>
-                                    <a href="" class="btn">Support Now</a>
-                                </div>
-                            </div>
-                        </div>
-                    </li>
-                    <li style="float: none; list-style: none; position: absolute; width: 1007px; z-index: 0; height: 431px; display: none; ">
-                        <div class="slider-content">
-                            <div class="slide-container">
-                                <div class="slide-center">
-                                    <div class="heading">STI Senior High School graduate</div>
-                                    <div class="sub-heading">
-                                        Most people think of slavery as a problem of the past. The upsetting reality is that modern day slavery still occurs all over the world, even in the U.S., and is called human trafficking.
-                                    </div>
-                                    <a href="" class="btn">Let's take a look</a>
-                                </div>
-                            </div>
-                        </div>
-                    </li>
-                </ul>
-            </div>
-            <div class="bx-controls"></div>
-        </div>
-            
-        <!--<div class="bx-control-bar">
-            <div class="bx-next-control bx-control-btn">
-                <i class="fa fa-chevron-right"></i>
-            </div>
-            <div class="bx-prev-control bx-control-btn">
-                <i class="fa fa-chevron-left"></i>
-            </div>
-        </div>-->
-        
-        <div class="bx-pager bx-default-pager bx-pager-custom" style="padding-top: 81.5px;">
-            <div class="bx-pager-item">
-                <a href="" data-slide-index="0" class="bx-pager-link slide-preview-tip first active"><span>01</span></a>
-            </div>
-            <div class="bx-pager-item">
-                <a href="" data-slide-index="1" class="bx-pager-link slide-preview-tip first active"><span>02</span></a>
-            </div>
-            <div class="bx-pager-item">
-                <a href="" data-slide-index="2" class="bx-pager-link slide-preview-tip first active"><span>03</span></a>
-            </div>
-            <div class="bx-pager-item">
-                <a href="" data-slide-index="3" class="bx-pager-link slide-preview-tip first active"><span>04</span></a>
-            </div>
-            <div class="bx-pager-item">
-                <a href="" data-slide-index="4" class="bx-pager-link slide-preview-tip first active"><span>05</span></a>
-            </div>  
-        </div>
-    </div>
-
-    <!-- PRELOADS -->
-    <div class="preload-global"></div>
-
-    <!-- Services Section -->
-    <section id="services">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12 text-center">
-                    <h2 class="section-heading">Online Job Placement Management</h2>
-                    <h3 class="section-subheading text-muted">Lorem ipsum dolor sit amet consectetur.</h3>
-                </div>
-            </div>
-            <div class="row text-center">
-                <div class="col-md-4">
-                    <span class="fa-stack fa-4x">
-                        <i class="fa fa-circle fa-stack-2x text-primary"></i>
-                        <i class="fa fa-shopping-cart fa-stack-1x fa-inverse"></i>
-                    </span>
-                    <h4 class="service-heading">E-Commerce</h4>
-                    <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima maxime quam architecto quo inventore harum ex magni, dicta impedit.</p>
-                </div>
-                <div class="col-md-4">
-                    <span class="fa-stack fa-4x">
-                        <i class="fa fa-circle fa-stack-2x text-primary"></i>
-                        <i class="fa fa-laptop fa-stack-1x fa-inverse"></i>
-                    </span>
-                    <h4 class="service-heading">Responsive Design</h4>
-                    <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima maxime quam architecto quo inventore harum ex magni, dicta impedit.</p>
-                </div>
-                <div class="col-md-4">
-                    <span class="fa-stack fa-4x">
-                        <i class="fa fa-circle fa-stack-2x text-primary"></i>
-                        <i class="fa fa-book fa-stack-1x fa-inverse"></i>
-                    </span>
-                    <h4 class="service-heading">Web Security</h4>
-                    <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima maxime quam architecto quo inventore harum ex magni, dicta impedit.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Portfolio Grid Section -->
-    <section id="portfolio" class="bg-light-gray">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12 text-center">
-                    <h2 class="section-heading">E2E Events</h2>
-                    <h3 class="section-subheading text-muted">Lorem ipsum dolor sit amet consectetur.</h3>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-md-4 col-sm-6 portfolio-item">
-                    <a href="#portfolioModal1" class="portfolio-link" data-toggle="modal">
-                        <div class="portfolio-hover">
-                            <div class="portfolio-hover-content">
-                                <i class="fa fa-plus fa-3x"></i>
-                            </div>
-                        </div>
-                        <img src="img/portfolio/thesis.png" class="img-responsive" alt="">
-                    </a>
-                    <div class="portfolio-caption">
-                        <h4>Round Icons</h4>
-                        <p class="text-muted">Graphic Design</p>
-                    </div>
-                </div>
-                <div class="col-md-4 col-sm-6 portfolio-item">
-                    <a href="#portfolioModal2" class="portfolio-link" data-toggle="modal">
-                        <div class="portfolio-hover">
-                            <div class="portfolio-hover-content">
-                                <i class="fa fa-plus fa-3x"></i>
-                            </div>
-                        </div>
-                        <img src="img/portfolio/thesis.png" class="img-responsive" alt="">
-                    </a>
-                    <div class="portfolio-caption">
-                        <h4>Startup Framework</h4>
-                        <p class="text-muted">Website Design</p>
-                    </div>
-                </div>
-                <div class="col-md-4 col-sm-6 portfolio-item">
-                    <a href="#portfolioModal3" class="portfolio-link" data-toggle="modal">
-                        <div class="portfolio-hover">
-                            <div class="portfolio-hover-content">
-                                <i class="fa fa-plus fa-3x"></i>
-                            </div>
-                        </div>
-                        <img src="img/portfolio/thesis.png" class="img-responsive" alt="">
-                    </a>
-                    <div class="portfolio-caption">
-                        <h4>Treehouse</h4>
-                        <p class="text-muted">Website Design</p>
-                    </div>
-                </div>
-                <div class="col-md-4 col-sm-6 portfolio-item">
-                    <a href="#portfolioModal4" class="portfolio-link" data-toggle="modal">
-                        <div class="portfolio-hover">
-                            <div class="portfolio-hover-content">
-                                <i class="fa fa-plus fa-3x"></i>
-                            </div>
-                        </div>
-                        <img src="img/portfolio/thesis.png" class="img-responsive" alt="">
-                    </a>
-                    <div class="portfolio-caption">
-                        <h4>Golden</h4>
-                        <p class="text-muted">Website Design</p>
-                    </div>
-                </div>
-                <div class="col-md-4 col-sm-6 portfolio-item">
-                    <a href="#portfolioModal5" class="portfolio-link" data-toggle="modal">
-                        <div class="portfolio-hover">
-                            <div class="portfolio-hover-content">
-                                <i class="fa fa-plus fa-3x"></i>
-                            </div>
-                        </div>
-                        <img src="img/portfolio/thesis.png" class="img-responsive" alt="">
-                    </a>
-                    <div class="portfolio-caption">
-                        <h4>Escape</h4>
-                        <p class="text-muted">Website Design</p>
-                    </div>
-                </div>
-                <div class="col-md-4 col-sm-6 portfolio-item">
-                    <a href="#portfolioModal6" class="portfolio-link" data-toggle="modal">
-                        <div class="portfolio-hover">
-                            <div class="portfolio-hover-content">
-                                <i class="fa fa-plus fa-3x"></i>
-                            </div>
-                        </div>
-                        <img src="img/portfolio/thesis.png" class="img-responsive" alt="">
-                    </a>
-                    <div class="portfolio-caption">
-                        <h4>Dreams</h4>
-                        <p class="text-muted">Website Design</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- ABOUT Section -->
-    <section id="about">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12 text-center">
-                    <h2 class="section-heading">About E2E</h2>
-                    <h3 class="section-subheading text-muted">The Humble Beginnings</h3>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-lg-12">
-                    <ul class="timeline">
-                        <li>
-                            <div class="timeline-image">
-                                <img class="img-circle img-responsive" src="img/about/1.jpg" alt="">
-                            </div>
-                            <div class="timeline-panel">
-                                <div class="timeline-heading">
-                                    <h4>2004</h4>
-                                    <h4 class="subheading">A Great Help is Born</h4>
-                                </div>
-                                <div class="timeline-body">
-                                    <p class="text-muted">STI conceived the first and only Enrollment to Employment or E2E System.</p>
-                                </div>
-                            </div>
-                        </li>
-                        <li class="timeline-inverted">
-                            <div class="timeline-image">
-                                <img class="img-circle img-responsive" src="img/about/1.jpg" alt="">
-                            </div>
-                            <div class="timeline-panel">
-                                <div class="timeline-heading">
-                                    <h4>March 2011</h4>
-                                    <h4 class="subheading">An Agency is Born</h4>
-                                </div>
-                                <div class="timeline-body">
-                                    <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt ut voluptatum eius sapiente, totam reiciendis temporibus qui quibusdam, recusandae sit vero unde, sed, incidunt et ea quo dolore laudantium consectetur!</p>
-                                </div>
-                            </div>
-                        </li>
-                        <li>
-                            <div class="timeline-image">
-                                <img class="img-circle img-responsive" src="img/about/1.jpg" alt="">
-                            </div>
-                            <div class="timeline-panel">
-                                <div class="timeline-heading">
-                                    <h4>December 2012</h4>
-                                    <h4 class="subheading">Transition to Full Service</h4>
-                                </div>
-                                <div class="timeline-body">
-                                    <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt ut voluptatum eius sapiente, totam reiciendis temporibus qui quibusdam, recusandae sit vero unde, sed, incidunt et ea quo dolore laudantium consectetur!</p>
-                                </div>
-                            </div>
-                        </li>
-                        <li class="timeline-inverted">
-                            <div class="timeline-image">
-                                <img class="img-circle img-responsive" src="img/about/1.jpg" alt="">
-                            </div>
-                            <div class="timeline-panel">
-                                <div class="timeline-heading">
-                                    <h4>July 2014</h4>
-                                    <h4 class="subheading">Phase Two Expansion</h4>
-                                </div>
-                                <div class="timeline-body">
-                                    <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt ut voluptatum eius sapiente, totam reiciendis temporibus qui quibusdam, recusandae sit vero unde, sed, incidunt et ea quo dolore laudantium consectetur!</p>
-                                </div>
-                            </div>
-                        </li>
-                        <li class="timeline-inverted">
-                            <div class="timeline-image">
-                                <h4>Be Part
-                                    <br>Of The
-                                    <br>History!</h4>
-                            </div>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Team Section -->
-    <section id="team" class="bg-light-gray">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12 text-center">
-                    <h2 class="section-heading">Our Amazing Team</h2>
-                    <h3 class="section-subheading text-muted">Lorem ipsum dolor sit amet consectetur.</h3>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-sm-4">
-                    <div class="team-member">
-                        <img src="img/team/1.jpg" class="img-responsive img-circle" alt="">
-                        <h4>Kay Garland</h4>
-                        <p class="text-muted">Lead Designer</p>
-                        <ul class="list-inline social-buttons">
-                            <li><a href="#"><i class="fa fa-twitter"></i></a>
-                            </li>
-                            <li><a href="#"><i class="fa fa-facebook"></i></a>
-                            </li>
-                            <li><a href="#"><i class="fa fa-linkedin"></i></a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="col-sm-4">
-                    <div class="team-member">
-                        <img src="img/team/2.jpg" class="img-responsive img-circle" alt="">
-                        <h4>Larry Parker</h4>
-                        <p class="text-muted">Lead Marketer</p>
-                        <ul class="list-inline social-buttons">
-                            <li><a href="#"><i class="fa fa-twitter"></i></a>
-                            </li>
-                            <li><a href="#"><i class="fa fa-facebook"></i></a>
-                            </li>
-                            <li><a href="#"><i class="fa fa-linkedin"></i></a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="col-sm-4">
-                    <div class="team-member">
-                        <img src="img/team/3.jpg" class="img-responsive img-circle" alt="">
-                        <h4>Diana Pertersen</h4>
-                        <p class="text-muted">Lead Developer</p>
-                        <ul class="list-inline social-buttons">
-                            <li><a href="#"><i class="fa fa-twitter"></i></a>
-                            </li>
-                            <li><a href="#"><i class="fa fa-facebook"></i></a>
-                            </li>
-                            <li><a href="#"><i class="fa fa-linkedin"></i></a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-lg-8 col-lg-offset-2 text-center">
-                    <p class="large text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut eaque, laboriosam veritatis, quos non quis ad perspiciatis, totam corporis ea, alias ut unde.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Partner Company -->
-    <aside class="clients">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-3 col-sm-6">
-                    <a href="#">
-                        <img src="img/logos/envato.jpg" class="img-responsive img-centered" alt="">
-                    </a>
-                </div>
-                <div class="col-md-3 col-sm-6">
-                    <a href="#">
-                        <img src="img/logos/designmodo.jpg" class="img-responsive img-centered" alt="">
-                    </a>
-                </div>
-                <div class="col-md-3 col-sm-6">
-                    <a href="#">
-                        <img src="img/logos/themeforest.jpg" class="img-responsive img-centered" alt="">
-                    </a>
-                </div>
-                <div class="col-md-3 col-sm-6">
-                    <a href="#">
-                        <img src="img/logos/creative-market.jpg" class="img-responsive img-centered" alt="">
-                    </a>
-                </div>
-            </div>
-        </div>
-    </aside>
-
-    <!-- JOIN US Section -->
-    <FORM method ="POST">
-    <section id="contact">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12 text-center">
-                    <h2 class="section-heading">Come Join Us!</h2>
-                    <h3 class="section-subheading text-muted">Lorem ipsum dolor sit amet consectetur.</h3>
-                </div>
-            </div>
-            <div class="row text-center">
-                <div class="col-md-4">
-                    <a href="login-student.php"> 
-                        <span class="fa-stack fa-4x">
-                            <i class="fa fa-square fa-stack-2x text-primary2"></i>
-                            <i class="fa fa-users fa-stack-1x fa-inverse"></i>
-                        </span>
-                    </a>
-                    <h4 class="service-heading">Student</h4>
-                    <p class="text-muted"></p>
-                </div>
-                <div class="col-md-4">
-                    <a href="login-admin.php"> 
-                        <span class="fa-stack fa-4x">
-                            <i class="fa fa-square fa-stack-2x text-primary2"></i>
-                            <i class="fa fa-user fa-stack-1x fa-inverse"></i>
-                        </span>
-                    </a>
-                    <h4 class="service-heading">Admin</h4>
-                    <p class="text-muted"></p>
-                </div>
-                <div class="col-md-4">
-                    <a href="login-company.php"> 
-                        <span class="fa-stack fa-4x">
-                            <i class="fa fa-square fa-stack-2x text-primary2"></i>
-                            <i class="fa fa-building fa-stack-1x fa-inverse"></i>
-                        </span>
-                    </a>
-                    <h4 class="service-heading">Company</h4>
-                    <p class="text-muted"></p>
-                </div>
-            </div>
-        </div>
-    </section>
-    </FORM>
-
-    <footer>
-        <div class="container">
-            <div class="col-md-50">
-                <span>Connect With Us:</span>
-                <ul class="list-inline social-buttons">
-                    <li>
-                        <a href="https://twitter.com/sticollege"><i class="fa fa-twitter"></i></a>
-                    </li>
-                    <li>
-                        <a href="https://www.facebook.com/pages/STI-College-Caloocan-Official-Fanpage/133289683408899?pnref=lhc"><i class="fa fa-facebook"></i></a>
-                    </li>
-                    <li>
-                        <a href="#"><i class="fa fa-youtube"></i></a>
-                    </li>
-                </ul>
-                <br><span>Contact us:</span>
-                <br><span><B>109 Samson Road corner Caimito Street, Caloocan City 1400 <br>Tel. no. (+632) 294-4001<B></span>
-            </div>
-        </div>
-    </footer>       
-
-    <div class="" id="footer">
-        <div class="footer-info">
-            <div class="copyright"><p>© 2015, Online JPMS</p></div>
-            <a href="" class="top-button"></a>
-            <a href="" target="_blank" class="brave-people">Made by Brave People</a>
-        </div>
-    </div>
-
-    <!-- Portfolio -->
-    <!-- Use the modals below to showcase details about your portfolio projects! -->
-    <!-- Portfolio 1 -->
-    <div class="portfolio-modal modal fade" id="portfolioModal1" tabindex="-1" role="dialog" aria-hidden="true">
-        <div class="modal-content">
-            <div class="close-modal" data-dismiss="modal">
-                <div class="lr">
-                    <div class="rl">
-                    </div>
-                </div>
-            </div>
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-8 col-lg-offset-2">
-                        <div class="modal-body">
-                            <!-- Project Details Go Here -->
-                            <h2>Project Name</h2>
-                            <p class="item-intro text-muted">Lorem ipsum dolor sit amet consectetur.</p>
-                            <img class="img-responsive img-centered" src="img/portfolio/roundicons-free.png" alt="">
-                            <p>Use this area to describe your project. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est blanditiis dolorem culpa incidunt minus dignissimos deserunt repellat aperiam quasi sunt officia expedita beatae cupiditate, maiores repudiandae, nostrum, reiciendis facere nemo!</p>
-                            <p>
-                                <strong>Want these icons in this portfolio item sample?</strong>You can download 60 of them for free, courtesy of <a href="https://getdpd.com/cart/hoplink/18076?referrer=bvbo4kax5k8ogc">RoundIcons.com</a>, or you can purchase the 1500 icon set <a href="https://getdpd.com/cart/hoplink/18076?referrer=bvbo4kax5k8ogc">here</a>.</p>
-                            <ul class="list-inline">
-                                <li>Date: July 2014</li>
-                                <li>Client: Round Icons</li>
-                                <li>Category: Graphic Design</li>
+<body>
+    <!-- Full Body Container -->
+    <div id="container">
+        <!-- Start Header Section -->
+        <div class="hidden-header"></div>
+        <header class="clearfix">
+            <!-- Start Top Bar -->
+            <div class="top-bar">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-7">
+                            <!-- Start Contact Info -->
+                            <ul class="contact-details">
+                                <li><a href="#"><i class="fa fa-map-marker"></i> House-54/A, London, UK</a></li>
+                                <li><a href="#"><i class="fa fa-envelope-o"></i> info@yourcompany.com</a></li>
+                                <li><a href="#"><i class="fa fa-phone"></i> +12 345 678 000</a></li>
                             </ul>
-                            <button type="button" class="btn btn-primary" data-dismiss="modal"><i class="fa fa-times"></i> Close Project</button>
+                            <!-- End Contact Info -->
+                        </div>
+                        <!-- .col-md-6 -->
+                        <div class="col-md-5">
+                            <!-- Start Social Links -->
+                            <ul class="social-list">
+                                <li><a class="facebook itl-tooltip" data-placement="bottom" title="Facebook" href="#"><i class="fa fa-facebook"></i></a></li>
+                                <li><a class="twitter itl-tooltip" data-placement="bottom" title="Twitter" href="#"><i class="fa fa-twitter"></i></a></li>
+                                <li><a class="google itl-tooltip" data-placement="bottom" title="Google Plus" href="#"><i class="fa fa-google-plus"></i></a></li>
+                                <li><a class="dribbble itl-tooltip" data-placement="bottom" title="Dribble" href="#"><i class="fa fa-dribbble"></i></a></li>
+                                <li><a class="linkdin itl-tooltip" data-placement="bottom" title="Linkedin" href="#"><i class="fa fa-linkedin"></i></a></li>
+                                <li><a class="flickr itl-tooltip" data-placement="bottom" title="Flickr" href="#"><i class="fa fa-flickr"></i></a></li>
+                                <li><a class="tumblr itl-tooltip" data-placement="bottom" title="Tumblr" href="#"><i class="fa fa-tumblr"></i></a></li>
+                                <li><a class="instgram itl-tooltip" data-placement="bottom" title="Instagram" href="#"><i class="fa fa-instagram"></i></a></li>
+                                <li><a class="vimeo itl-tooltip" data-placement="bottom" title="vimeo" href="#"><i class="fa fa-vimeo-square"></i></a></li>
+                                <li><a class="skype itl-tooltip" data-placement="bottom" title="Skype" href="#"><i class="fa fa-skype"></i></a></li>
+                            </ul>
+                            <!-- End Social Links -->
+                        </div>
+                        <!-- .col-md-6 -->
+                    </div>
+                    <!-- .row -->
+                </div>
+                <!-- .container -->
+            </div>
+            <!-- .top-bar -->
+            <!-- End Top Bar -->
+
+            <!-- Start  Logo & Naviagtion  -->
+            <div class="navbar navbar-default navbar-top">
+                <div class="container">
+                    <div class="navbar-header">
+                    <!-- Stat Toggle Nav Link For Mobiles -->
+                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        <!-- End Toggle Nav Link For Mobiles -->
+                        <a class="navbar-brand" href="">Online JPMS</a>
+                    </div>
+                    <div class="navbar-collapse collapse">
+                    <!-- Stat Search -->
+                        <div class="search-side">
+                            <a class="show-search"><i class="fa fa-search"></i></a>
+                            <div class="search-form">
+                                <form autocomplete="off" role="search" method="get" class="searchform" action="#">
+                                    <input type="text" value="" name="s" id="s" placeholder="Search the site...">
+                                </form>
+                            </div>
+                        </div>
+                        <!-- End Search -->
+                        <!-- Start Navigation List -->
+                        <ul class="nav navbar-nav navbar-right">
+                            <li>
+                                <a href="#OJPMS">OJPMS</a>
+                            </li>
+                            <li>
+                                <a href="">Events</a>
+                             </li>
+                            <li>
+                                <a href="">Applications</a>
+                            </li>
+                            <li>
+                                <a href="">Jobs</a>
+                            </li>
+                            <li>
+                                <a href="">Settings</a>
+                            </li>
+                        </ul>
+                        <!-- End Navigation List -->
+                    </div>
+                </div>
+                <!-- Mobile Menu Start -->
+                <ul class="wpb-mobile-menu">
+                    <li>
+                        <a href="">My Info</a>
+                    </li>
+                    <li>
+                        <a href="">Events</a>
+                    </li>
+                    <li>
+                        <a href="">Applications</a>
+                    </li>
+                    <li>
+                        <a href="">Jobs</a>
+                    </li>
+                    <li>
+                        <a href="">Settings</a>
+                    </li>
+                </ul>
+                <!-- Mobile Menu End -->
+            </div>
+        </header>
+        <!-- End Header Section -->
+
+        <!-- Start Home Page Slider -->
+        <section id="home">
+            <!-- Carousel -->
+            <div id="main-slide" class="carousel slide" data-ride="carousel">
+                <!-- Indicators -->
+                <ol class="carousel-indicators">
+                  <li data-target="#main-slide" data-slide-to="0" class="active"></li>
+                  <li data-target="#main-slide" data-slide-to="1"></li>
+                  <li data-target="#main-slide" data-slide-to="2"></li>
+                </ol>
+                 <!--/ Indicators end-->
+
+                <!-- Carousel inner -->
+                <div class="carousel-inner">
+                    <div class="item active">
+                        <img class="img-responsive" src="images/slider/bg1.jpg" alt="slider">
+                        <div class="slider-content">
+                            <div class="col-md-12 text-center">
+                                <h2 class="animated2"><span>Welcome to <strong>Margo</strong></span></h2>
+                                <h3 class="animated3"><span>The ultimate aim of your business</span></h3>
+                                <p class="animated4"><a href="#" class="slider btn btn-system btn-large">Check Now</a></p>
+                            </div>
                         </div>
                     </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- Portfolio 2 -->
-    <div class="portfolio-modal modal fade" id="portfolioModal2" tabindex="-1" role="dialog" aria-hidden="true">
-        <div class="modal-content">
-            <div class="close-modal" data-dismiss="modal">
-                <div class="lr">
-                    <div class="rl">
+                    <!--/ Carousel item end -->
+                    <div class="item">
+                        <img class="img-responsive" src="images/slider/bg2.jpg" alt="slider">
+                        <div class="slider-content">
+                            <div class="col-md-12 text-center">
+                                <h2 class="animated4"><span><strong>Margo</strong> for the highest</span></h2>
+                                <h3 class="animated5"><span>The Key of your Success</span></h3>
+                                <p class="animated6"><a href="#" class="slider btn btn-system btn-large">Buy Now</a></p>
+                            </div>
+                        </div>
                     </div>
+                    <!--/ Carousel item end -->
+                    <div class="item">
+                        <img class="img-responsive" src="images/slider/bg3.jpg" alt="slider">
+                        <div class="slider-content">
+                            <div class="col-md-12 text-center">
+                                <h2 class="animated7 white"><span>The way of <strong>Success</strong></span></h2>
+                                <h3 class="animated8 white"><span>Why you are waiting</span></h3>
+                                <div class="">
+                                    <a class="animated4 slider btn btn-system btn-large btn-min-block" href="#">Get Now</a><a class="animated4 slider btn btn-default btn-min-block" href="#">Live Demo</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!--/ Carousel item end -->
                 </div>
+                <!-- Carousel inner end-->
+
+                <!-- Controls -->
+                <a class="left carousel-control" href="#main-slide" data-slide="prev">
+                    <span><i class="fa fa-angle-left"></i></span>
+                </a>
+                <a class="right carousel-control" href="#main-slide" data-slide="next">
+                    <span><i class="fa fa-angle-right"></i></span>
+                </a>
             </div>
+            <!-- /carousel -->
+        </section>
+        <!-- End Home Page Slider -->
+
+        <!-- Start Services Section -->
+        <div id="OJPMS" class="section service">
             <div class="container">
                 <div class="row">
-                    <div class="col-lg-8 col-lg-offset-2">
-                        <div class="modal-body">
-                            <h2>Project Heading</h2>
-                            <p class="item-intro text-muted">Lorem ipsum dolor sit amet consectetur.</p>
-                            <img class="img-responsive img-centered" src="img/portfolio/startup-framework-preview.png" alt="">
-                            <p><a href="http://designmodo.com/startup/?u=787">Startup Framework</a> is a website builder for professionals. Startup Framework contains components and complex blocks (PSD+HTML Bootstrap themes and templates) which can easily be integrated into almost any design. All of these components are made in the same style, and can easily be integrated into projects, allowing you to create hundreds of solutions for your future projects.</p>
-                            <p>You can preview Startup Framework <a href="http://designmodo.com/startup/?u=787">here</a>.</p>
-                            <button type="button" class="btn btn-primary" data-dismiss="modal"><i class="fa fa-times"></i> Close Project</button>
-                        </div>
-                    </div>
+
+            <!-- Start Service Icon 1 -->
+            <div class="col-md-3 col-sm-6 service-box service-center" data-animation="fadeIn" data-animation-delay="01">
+                <div class="service-icon">
+                    <i class="fa fa-leaf icon-large"></i>
+                </div>
+                <div class="service-content">
+                    <h4>High Quality Theme</h4>
+                    <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat Lorem pariatur</p>
                 </div>
             </div>
+            <!-- End Service Icon 1 -->
+
+            <!-- Start Service Icon 2 -->
+            <div class="col-md-3 col-sm-6 service-box service-center" data-animation="fadeIn" data-animation-delay="02">
+                <div class="service-icon">
+                    <i class="fa fa-desktop icon-large"></i>
+                </div>
+                <div class="service-content">
+                    <h4>Full Responsive</h4>
+                    <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat Lorem pariatur</p>
+                </div>
+            </div>
+            <!-- End Service Icon 2 -->
+
+
+
+          <!-- Start Service Icon 3 -->
+          <div class="col-md-3 col-sm-6 service-box service-center" data-animation="fadeIn" data-animation-delay="03">
+            <div class="service-icon">
+              <i class="fa fa-eye icon-large"></i>
+            </div>
+            <div class="service-content">
+              <h4>Retina Display Ready</h4>
+              <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat Lorem pariatur</p>
+            </div>
+          </div>
+          <!-- End Service Icon 3 -->
+
+          <!-- Start Service Icon 4 -->
+          <div class="col-md-3 col-sm-6 service-box service-center" data-animation="fadeIn" data-animation-delay="04">
+            <div class="service-icon">
+              <i class="fa fa-code icon-large"></i>
+            </div>
+            <div class="service-content">
+              <h4>Clean Modern Code</h4>
+              <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat Lorem pariatur</p>
+            </div>
+          </div>
+          <!-- End Service Icon 4 -->
+
+          <!-- Start Service Icon 5 -->
+          <div class="col-md-3 col-sm-6 service-box service-center" data-animation="fadeIn" data-animation-delay="05">
+            <div class="service-icon">
+              <i class="fa fa-rocket icon-large"></i>
+            </div>
+            <div class="service-content">
+              <h4>Fast & Light Theme</h4>
+              <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat Lorem pariatur</p>
+            </div>
+          </div>
+          <!-- End Service Icon 5 -->
+
+          <!-- Start Service Icon 6 -->
+          <div class="col-md-3 col-sm-6 service-box service-center" data-animation="fadeIn" data-animation-delay="06">
+            <div class="service-icon">
+              <i class="fa fa-css3 icon-large"></i>
+            </div>
+            <div class="service-content">
+              <h4>Css3 Transitions</h4>
+              <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat Lorem pariatur</p>
+            </div>
+          </div>
+          <!-- End Service Icon 6 -->
+
+          <!-- Start Service Icon 7 -->
+          <div class="col-md-3 col-sm-6 service-box service-center" data-animation="fadeIn" data-animation-delay="07">
+            <div class="service-icon">
+              <i class="fa fa-download icon-large"></i>
+            </div>
+            <div class="service-content">
+              <h4>Free Updates</h4>
+              <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat Lorem pariatur</p>
+            </div>
+          </div>
+          <!-- End Service Icon 7 -->
+
+          <!-- Start Service Icon 8 -->
+          <div class="col-md-3 col-sm-6 service-box service-center" data-animation="fadeIn" data-animation-delay="08">
+            <div class="service-icon">
+              <i class="fa fa-umbrella icon-large"></i>
+            </div>
+            <div class="service-content">
+              <h4>Help & Support</h4>
+              <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat Lorem pariatur</p>
+            </div>
+          </div>
+          <!-- End Service Icon 8 -->
+
         </div>
+        <!-- .row -->
+      </div>
+      <!-- .container -->
+    </div>
+    <!-- End Services Section -->
+
+
+    <!-- Start Purchase Section -->
+    <div class="section purchase">
+      <div class="container">
+
+        <!-- Start Video Section Content -->
+        <div class="section-video-content text-center">
+
+          <!-- Start Animations Text -->
+          <h1 class="fittext wite-text uppercase tlt">
+                      <span class="texts">
+                        <span>Modern</span>
+                        <span>Clean</span>
+                        <span>Awesome</span>
+                        <span>Cool</span>
+                        <span>Great</span>
+                      </span>
+                        Margo Template is Ready for <br/>Business, Agency <strong>or</strong> Creative Portfolios
+                    </h1>
+          <!-- End Animations Text -->
+
+
+          <!-- Start Buttons -->
+          <a href="#" class="btn-system btn-large"><i class="fa fa-tasks"></i> Check Out Features</a>
+          <a href="#" class="btn-system btn-large btn-wite"><i class="fa fa-download"></i> Purchase This Now</a>
+
+        </div>
+        <!-- End Section Content -->
+
+      </div>
+      <!-- .container -->
+    </div>
+    <!-- End Purchase Section -->
+
+
+    <!-- Start Portfolio Section -->
+    <div class="section full-width-portfolio" style="border-top:0; border-bottom:0; background:#fff;">
+
+      <!-- Start Big Heading -->
+      <div class="big-title text-center" data-animation="fadeInDown" data-animation-delay="01">
+        <h1>This is Our Latest <strong>Work</strong></h1>
+      </div>
+      <!-- End Big Heading -->
+
+      <p class="text-center">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore
+        <br/>veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit.</p>
+
+
+      <!-- Start Recent Projects Carousel -->
+      <ul id="portfolio-list" data-animated="fadeIn">
+        <li>
+          <img src="images/portfolio-1/1.png" alt="" />
+          <div class="portfolio-item-content">
+            <span class="header">Town winter 2013</span>
+            <p class="body">web develpment, design</p>
+          </div>
+          <a href="#"><i class="more">+</i></a>
+
+        </li>
+        <li>
+          <img src="images/portfolio-1/2.png" alt="" />
+          <div class="portfolio-item-content">
+            <span class="header">Quarterly Musashino</span>
+            <p class="body">web develpment, design</p>
+          </div>
+          <a href="#"><i class="more">+</i></a>
+
+        </li>
+        <li>
+          <img src="images/portfolio-1/3.png" alt="" />
+          <div class="portfolio-item-content">
+            <span class="header">Mainichi April 2014</span>
+            <p class="body">web develpment, design</p>
+          </div>
+          <a href="#"><i class="more">+</i></a>
+
+        </li>
+        <li>
+          <img src="images/portfolio-1/4.png" alt="" />
+          <div class="portfolio-item-content">
+            <span class="header">Shitamachi Rocket</span>
+            <p class="body">web develpment, design</p>
+          </div>
+          <a href="#"><i class="more">+</i></a>
+
+        </li>
+        <li>
+          <img src="images/portfolio-1/5.png" alt="" />
+          <div class="portfolio-item-content">
+            <span class="header">Majesty express vol. 01</span>
+            <p class="body">web develpment, design</p>
+          </div>
+          <a href="#"><i class="more">+</i></a>
+
+        </li>
+        <li>
+          <img src="images/portfolio-1/6.png" alt="" />
+          <div class="portfolio-item-content">
+            <span class="header">Monocle issue 69</span>
+            <p class="body">web develpment, design</p>
+          </div>
+          <a href="#"><i class="more">+</i></a>
+
+        </li>
+        <li>
+          <img src="images/portfolio-1/7.png" alt="" />
+          <div class="portfolio-item-content">
+            <span class="header">Monocle issue 69</span>
+            <p class="body">web develpment, design</p>
+          </div>
+          <a href="#"><i class="more">+</i></a>
+
+        </li>
+        <li>
+          <img src="images/portfolio-1/8.png" alt="" />
+          <div class="portfolio-item-content">
+            <span class="header">Monocle issue 69</span>
+            <p class="body">web develpment, design</p>
+          </div>
+          <a href="#"><i class="more">+</i></a>
+
+        </li>
+        <li>
+          <img src="images/portfolio-1/9.png" alt="" />
+          <div class="portfolio-item-content">
+            <span class="header">Monocle issue 69</span>
+            <p class="body">web develpment, design</p>
+          </div>
+          <a href="#"><i class="more">+</i></a>
+
+        </li>
+        <li>
+          <img src="images/portfolio-1/10.png" alt="" />
+          <div class="portfolio-item-content">
+            <span class="header">Monocle issue 69</span>
+            <p class="body">web develpment, design</p>
+          </div>
+          <a href="#"><i class="more">+</i></a>
+
+        </li>
+        <li>
+          <img src="images/portfolio-1/11.png" alt="" />
+          <div class="portfolio-item-content">
+            <span class="header">Monocle issue 69</span>
+            <p class="body">web develpment, design</p>
+          </div>
+          <a href="#"><i class="more">+</i></a>
+
+        </li>
+        <li>
+          <img src="images/portfolio-1/12.png" alt="" />
+          <div class="portfolio-item-content">
+            <span class="header">Monocle issue 69</span>
+            <p class="body">web develpment, design</p>
+          </div>
+          <a href="#"><i class="more">+</i></a>
+
+        </li>
+      </ul>
+
+      <!-- End Recent Projects Carousel -->
+
+
+    </div>
+    <!-- End Portfolio Section -->
+
+
+    <!-- Start Testimonials Section -->
+    <div>
+      <div class="container">
+        <div class="row">
+          <div class="col-md-8">
+
+            <!-- Start Recent Posts Carousel -->
+            <div class="latest-posts">
+              <h4 class="classic-title"><span>Latest News</span></h4>
+              <div class="latest-posts-classic custom-carousel touch-carousel" data-appeared-items="2">
+
+                <!-- Posts 1 -->
+                <div class="post-row item">
+                  <div class="left-meta-post">
+                    <div class="post-date"><span class="day">28</span><span class="month">Dec</span></div>
+                    <div class="post-type"><i class="fa fa-picture-o"></i></div>
+                  </div>
+                  <h3 class="post-title"><a href="#">Standard Post With Image</a></h3>
+                  <div class="post-content">
+                    <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit. <a class="read-more" href="#">Read More...</a></p>
+                  </div>
+                </div>
+
+                <!-- Posts 2 -->
+                <div class="post-row item">
+                  <div class="left-meta-post">
+                    <div class="post-date"><span class="day">26</span><span class="month">Dec</span></div>
+                    <div class="post-type"><i class="fa fa-picture-o"></i></div>
+                  </div>
+                  <h3 class="post-title"><a href="#">Link Post</a></h3>
+                  <div class="post-content">
+                    <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit. <a class="read-more" href="#">Read More...</a></p>
+                  </div>
+                </div>
+
+                <!-- Posts 3 -->
+                <div class="post-row item">
+                  <div class="left-meta-post">
+                    <div class="post-date"><span class="day">26</span><span class="month">Dec</span></div>
+                    <div class="post-type"><i class="fa fa-picture-o"></i></div>
+                  </div>
+                  <h3 class="post-title"><a href="#">Iframe Video Post</a></h3>
+                  <div class="post-content">
+                    <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit. <a class="read-more" href="#">Read More...</a></p>
+                  </div>
+                </div>
+
+                <!-- Posts 4 -->
+                <div class="post-row item">
+                  <div class="left-meta-post">
+                    <div class="post-date"><span class="day">26</span><span class="month">Dec</span></div>
+                    <div class="post-type"><i class="fa fa-picture-o"></i></div>
+                  </div>
+                  <h3 class="post-title"><a href="#">Gallery Post</a></h3>
+                  <div class="post-content">
+                    <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit. <a class="read-more" href="#">Read More...</a></p>
+                  </div>
+                </div>
+
+                <!-- Posts 5 -->
+                <div class="post-row item">
+                  <div class="left-meta-post">
+                    <div class="post-date"><span class="day">26</span><span class="month">Dec</span></div>
+                    <div class="post-type"><i class="fa fa-picture-o"></i></div>
+                  </div>
+                  <h3 class="post-title"><a href="#">Standard Post without Image</a></h3>
+                  <div class="post-content">
+                    <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit. <a class="read-more" href="#">Read More...</a></p>
+                  </div>
+                </div>
+
+                <!-- Posts 6 -->
+                <div class="post-row item">
+                  <div class="left-meta-post">
+                    <div class="post-date"><span class="day">26</span><span class="month">Dec</span></div>
+                    <div class="post-type"><i class="fa fa-picture-o"></i></div>
+                  </div>
+                  <h3 class="post-title"><a href="#">Iframe Audio Post</a></h3>
+                  <div class="post-content">
+                    <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit. <a class="read-more" href="#">Read More...</a></p>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+            <!-- End Recent Posts Carousel -->
+
+          </div>
+
+          <div class="col-md-4">
+
+            <!-- Classic Heading -->
+            <h4 class="classic-title"><span>Testimonials</span></h4>
+
+            <!-- Start Testimonials Carousel -->
+            <div class="custom-carousel show-one-slide touch-carousel" data-appeared-items="1">
+              <!-- Testimonial 1 -->
+              <div class="classic-testimonials item">
+                <div class="testimonial-content">
+                  <p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim laborum. Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+                </div>
+                <div class="testimonial-author"><span>John Doe</span> - Customer</div>
+              </div>
+              <!-- Testimonial 2 -->
+              <div class="classic-testimonials item">
+                <div class="testimonial-content">
+                  <p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim laborum. Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+                </div>
+                <div class="testimonial-author"><span>John Doe</span> - Customer</div>
+              </div>
+              <!-- Testimonial 3 -->
+              <div class="classic-testimonials item">
+                <div class="testimonial-content">
+                  <p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim laborum. Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+                </div>
+                <div class="testimonial-author"><span>John Doe</span> - Customer</div>
+              </div>
+            </div>
+            <!-- End Testimonials Carousel -->
+
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- End Testimonials Section -->
+
+
+    <!-- Start Team Member Section -->
+    <div class="section" style="background:#fff;">
+      <div class="container">
+
+        <!-- Start Big Heading -->
+        <div class="big-title text-center" data-animation="fadeInDown" data-animation-delay="01">
+          <h1>Our Great <strong>Team</strong></h1>
+        </div>
+        <!-- End Big Heading -->
+
+        <!-- Some Text -->
+        <p class="text-center">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium <span class="accent-color sh-tooltip" data-placement="right" title="Simple Tooltip">doloremque laudantium</span>, totam rem aperiam, eaque ipsa quae ab illo inventore
+          <br/>veritatis et quasi <span class="accent-color sh-tooltip" data-placement="bottom" title="Simple Tooltip">architecto</span> beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit.</p>
+
+
+        <!-- Start Team Members -->
+        <div class="row">
+
+          <!-- Start Memebr 1 -->
+          <div class="col-md-3 col-sm-6 col-xs-12" data-animation="fadeIn" data-animation-delay="03">
+            <div class="team-member modern">
+              <!-- Memebr Photo, Name & Position -->
+              <div class="member-photo">
+                <img alt="" src="images/team/face_1.png" />
+                <div class="member-name">John Doe <span>Developer</span>
+                </div>
+              </div>
+              <!-- Memebr Words -->
+              <div class="member-info">
+                <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore fugiat.</p>
+              </div>
+              <!-- Start Progress Bar 1 -->
+              <div class="progress-label">Photoshop</div>
+              <div class="progress">
+                <div class="progress-bar progress-bar-primary" data-progress-animation="96%" data-appear-animation-delay="400">
+                  <span class="percentage">96%</span>
+                </div>
+              </div>
+              <!-- Start Progress Bar 2 -->
+              <div class="progress-label">Logo Design</div>
+              <div class="progress">
+                <div class="progress-bar progress-bar-primary" data-progress-animation="88%" data-appear-animation-delay="800">
+                  <span class="percentage">88%</span>
+                </div>
+              </div>
+              <!-- Start Progress Bar 3 -->
+              <div class="progress-label">Vectors Design</div>
+              <div class="progress">
+                <div class="progress-bar progress-bar-primary" data-progress-animation="100%" data-appear-animation-delay="1200">
+                  <span class="percentage">100%</span>
+                </div>
+              </div>
+              <!-- Memebr Social Links -->
+              <div class="member-socail">
+                <a class="twitter" href="#"><i class="fa fa-twitter"></i></a>
+                <a class="gplus" href="#"><i class="fa fa-google-plus"></i></a>
+                <a class="linkedin" href="#"><i class="fa fa-linkedin"></i></a>
+                <a class="flickr" href="#"><i class="fa fa-flickr"></i></a>
+                <a class="mail" href="#"><i class="fa fa-envelope"></i></a>
+              </div>
+            </div>
+          </div>
+          <!-- End Memebr 1 -->
+
+          <!-- Start Memebr 2 -->
+          <div class="col-md-3 col-sm-6 col-xs-12" data-animation="fadeIn" data-animation-delay="04">
+            <div class="team-member modern">
+              <!-- Memebr Photo, Name & Position -->
+              <div class="member-photo">
+                <img alt="" src="images/team/face_2.png" />
+                <div class="member-name">Silly Sally <span>Developer</span>
+                </div>
+              </div>
+              <!-- Memebr Words -->
+              <div class="member-info">
+                <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore fugiat.</p>
+              </div>
+              <!-- Start Progress Bar 1 -->
+              <div class="progress-label">Photoshop</div>
+              <div class="progress">
+                <div class="progress-bar progress-bar-primary" data-progress-animation="96%" data-appear-animation-delay="400">
+                  <span class="percentage">96%</span>
+                </div>
+              </div>
+              <!-- Start Progress Bar 2 -->
+              <div class="progress-label">Logo Design</div>
+              <div class="progress">
+                <div class="progress-bar progress-bar-primary" data-progress-animation="88%" data-appear-animation-delay="800">
+                  <span class="percentage">88%</span>
+                </div>
+              </div>
+              <!-- Start Progress Bar 3 -->
+              <div class="progress-label">Vectors Design</div>
+              <div class="progress">
+                <div class="progress-bar progress-bar-primary" data-progress-animation="100%" data-appear-animation-delay="1200">
+                  <span class="percentage">100%</span>
+                </div>
+              </div>
+              <!-- Memebr Social Links -->
+              <div class="member-socail">
+                <a class="twitter" href="#"><i class="fa fa-twitter"></i></a>
+                <a class="gplus" href="#"><i class="fa fa-google-plus"></i></a>
+                <a class="linkedin" href="#"><i class="fa fa-linkedin"></i></a>
+                <a class="flickr" href="#"><i class="fa fa-flickr"></i></a>
+                <a class="mail" href="#"><i class="fa fa-envelope"></i></a>
+              </div>
+            </div>
+          </div>
+          <!-- End Memebr 2 -->
+
+          <!-- Start Memebr 3 -->
+          <div class="col-md-3 col-sm-6 col-xs-12" data-animation="fadeIn" data-animation-delay="05">
+            <div class="team-member modern">
+              <!-- Memebr Photo, Name & Position -->
+              <div class="member-photo">
+                <img alt="" src="images/team/face_3.png" />
+                <div class="member-name">Chris John <span>Developer</span>
+                </div>
+              </div>
+              <!-- Memebr Words -->
+              <div class="member-info">
+                <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore fugiat.</p>
+              </div>
+              <!-- Start Progress Bar 1 -->
+              <div class="progress-label">Photoshop</div>
+              <div class="progress">
+                <div class="progress-bar progress-bar-primary" data-progress-animation="96%" data-appear-animation-delay="400">
+                  <span class="percentage">96%</span>
+                </div>
+              </div>
+              <!-- Start Progress Bar 2 -->
+              <div class="progress-label">Logo Design</div>
+              <div class="progress">
+                <div class="progress-bar progress-bar-primary" data-progress-animation="94%" data-appear-animation-delay="800">
+                  <span class="percentage">94%</span>
+                </div>
+              </div>
+              <!-- Start Progress Bar 3 -->
+              <div class="progress-label">Vectors Design</div>
+              <div class="progress">
+                <div class="progress-bar progress-bar-primary" data-progress-animation="90%" data-appear-animation-delay="1200">
+                  <span class="percentage">90%</span>
+                </div>
+              </div>
+              <!-- Memebr Social Links -->
+              <div class="member-socail">
+                <a class="twitter" href="#"><i class="fa fa-twitter"></i></a>
+                <a class="gplus" href="#"><i class="fa fa-google-plus"></i></a>
+                <a class="linkedin" href="#"><i class="fa fa-linkedin"></i></a>
+                <a class="flickr" href="#"><i class="fa fa-flickr"></i></a>
+                <a class="mail" href="#"><i class="fa fa-envelope"></i></a>
+              </div>
+            </div>
+          </div>
+          <!-- End Memebr 3 -->
+
+          <!-- Start Memebr 4 -->
+          <div class="col-md-3 col-sm-6 col-xs-12" data-animation="fadeIn" data-animation-delay="06">
+            <div class="team-member modern">
+              <!-- Memebr Photo, Name & Position -->
+              <div class="member-photo">
+                <img alt="" src="images/team/face_4.png" />
+                <div class="member-name">Sara John <span>Developer</span>
+                </div>
+              </div>
+              <!-- Memebr Words -->
+              <div class="member-info">
+                <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore fugiat.</p>
+              </div>
+              <!-- Start Progress Bar 1 -->
+              <div class="progress-label">Photoshop</div>
+              <div class="progress">
+                <div class="progress-bar progress-bar-primary" data-progress-animation="96%" data-appear-animation-delay="400">
+                  <span class="percentage">96%</span>
+                </div>
+              </div>
+              <!-- Start Progress Bar 2 -->
+              <div class="progress-label">Logo Design</div>
+              <div class="progress">
+                <div class="progress-bar progress-bar-primary" data-progress-animation="85%" data-appear-animation-delay="800">
+                  <span class="percentage">85%</span>
+                </div>
+              </div>
+              <!-- Start Progress Bar 3 -->
+              <div class="progress-label">Vectors Design</div>
+              <div class="progress">
+                <div class="progress-bar progress-bar-primary" data-progress-animation="100%" data-appear-animation-delay="1200">
+                  <span class="percentage">100%</span>
+                </div>
+              </div>
+              <!-- Memebr Social Links -->
+              <div class="member-socail">
+                <a class="twitter" href="#"><i class="fa fa-twitter"></i></a>
+                <a class="gplus" href="#"><i class="fa fa-google-plus"></i></a>
+                <a class="linkedin" href="#"><i class="fa fa-linkedin"></i></a>
+                <a class="flickr" href="#"><i class="fa fa-flickr"></i></a>
+                <a class="mail" href="#"><i class="fa fa-envelope"></i></a>
+              </div>
+            </div>
+          </div>
+          <!-- End Memebr 4 -->
+
+        </div>
+        <!-- End Team Members -->
+
+      </div>
+      <!-- .container -->
+    </div>
+    <!-- End Team Member Section -->
+
+
+    <div id="parallax-one" class="parallax" style="background-image:url(images/parallax/bg-02.jpg);">
+      <div class="parallax-text-container-1">
+        <div class="parallax-text-item">
+          <div class="container">
+            <div class="row">
+              <div class="col-xs-12 col-sm-3 col-md-3">
+                <div class="counter-item">
+                  <i class="fa fa-cloud-upload"></i>
+                  <div class="timer" id="item1" data-to="991" data-speed="5000"></div>
+                  <h5>Files uploaded</h5>
+                </div>
+              </div>
+              <div class="col-xs-12 col-sm-3 col-md-3">
+                <div class="counter-item">
+                  <i class="fa fa-check"></i>
+                  <div class="timer" id="item2" data-to="7394" data-speed="5000"></div>
+                  <h5>Projects completed</h5>
+                </div>
+              </div>
+              <div class="col-xs-12 col-sm-3 col-md-3">
+                <div class="counter-item">
+                  <i class="fa fa-code"></i>
+                  <div class="timer" id="item3" data-to="18745" data-speed="5000"></div>
+                  <h5>Lines of code written</h5>
+                </div>
+              </div>
+              <div class="col-xs-12 col-sm-3 col-md-3">
+                <div class="counter-item">
+                  <i class="fa fa-male"></i>
+                  <div class="timer" id="item4" data-to="8423" data-speed="5000"></div>
+                  <h5>Happy clients</h5>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
 
-    <!-- Portfolio 3 -->
-    <div class="portfolio-modal modal fade" id="portfolioModal3" tabindex="-1" role="dialog" aria-hidden="true">
-        <div class="modal-content">
-            <div class="close-modal" data-dismiss="modal">
-                <div class="lr">
-                    <div class="rl">
-                    </div>
-                </div>
+
+    <!-- Start Pricing Table Section -->
+    <div class=" section pricing-section">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12">
+            <!-- Start Big Heading -->
+            <div class="big-title text-center">
+              <h1>We Have Nice Pricing Plans For <strong>You!</strong></h1>
             </div>
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-8 col-lg-offset-2">
-                        <div class="modal-body">
-                            <!-- Project Details Go Here -->
-                            <h2>Project Name</h2>
-                            <p class="item-intro text-muted">Lorem ipsum dolor sit amet consectetur.</p>
-                            <img class="img-responsive img-centered" src="img/portfolio/treehouse-preview.png" alt="">
-                            <p>Treehouse is a free PSD web template built by <a href="https://www.behance.net/MathavanJaya">Mathavan Jaya</a>. This is bright and spacious design perfect for people or startup companies looking to showcase their apps or other projects.</p>
-                            <p>You can download the PSD template in this portfolio sample item at <a href="http://freebiesxpress.com/gallery/treehouse-free-psd-web-template/">FreebiesXpress.com</a>.</p>
-                            <button type="button" class="btn btn-primary" data-dismiss="modal"><i class="fa fa-times"></i> Close Project</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
+            <!-- End Big Heading -->
+
+            <!-- Text -->
+            <p class="text-center">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt.</p>
+          </div>
         </div>
-    </div>
 
-    <!-- Portfolio 4 -->
-    <div class="portfolio-modal modal fade" id="portfolioModal4" tabindex="-1" role="dialog" aria-hidden="true">
-        <div class="modal-content">
-            <div class="close-modal" data-dismiss="modal">
-                <div class="lr">
-                    <div class="rl">
-                    </div>
-                </div>
+        <div class="row pricing-tables">
+
+          <div class="col-md-3 col-sm-3 col-xs-12">
+            <div class="pricing-table">
+              <div class="plan-name">
+                <h3>Basic</h3>
+              </div>
+              <div class="plan-price">
+                <div class="price-value">$49<span>.00</span></div>
+                <div class="interval">per month</div>
+              </div>
+              <div class="plan-list">
+                <ul>
+                  <li><strong>40 GB</strong> Storage</li>
+                  <li><strong>40GB</strong> Transfer</li>
+                  <li><strong>10</strong> Domains</li>
+                  <li><strong>20</strong> Projects</li>
+                  <li><strong>Free</strong> installation</li>
+                </ul>
+              </div>
+              <div class="plan-signup">
+                <a href="#" class="btn-system btn-small">Sign Up Now</a>
+              </div>
             </div>
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-8 col-lg-offset-2">
-                        <div class="modal-body">
-                            <!-- Project Details Go Here -->
-                            <h2>Project Name</h2>
-                            <p class="item-intro text-muted">Lorem ipsum dolor sit amet consectetur.</p>
-                            <img class="img-responsive img-centered" src="img/portfolio/golden-preview.png" alt="">
-                            <p>Start Bootstrap's Agency theme is based on Golden, a free PSD website template built by <a href="https://www.behance.net/MathavanJaya">Mathavan Jaya</a>. Golden is a modern and clean one page web template that was made exclusively for Best PSD Freebies. This template has a great portfolio, timeline, and meet your team sections that can be easily modified to fit your needs.</p>
-                            <p>You can download the PSD template in this portfolio sample item at <a href="http://freebiesxpress.com/gallery/golden-free-one-page-web-template/">FreebiesXpress.com</a>.</p>
-                            <button type="button" class="btn btn-primary" data-dismiss="modal"><i class="fa fa-times"></i> Close Project</button>
-                        </div>
-                    </div>
-                </div>
+          </div>
+
+          <div class="col-md-3 col-sm-3 col-xs-12">
+            <div class="pricing-table highlight-plan">
+              <div class="plan-name">
+                <h3>Advanced</h3>
+              </div>
+              <div class="plan-price">
+                <div class="price-value">$99<span>.00</span></div>
+                <div class="interval">per month</div>
+              </div>
+              <div class="plan-list">
+                <ul>
+                  <li><strong>40 GB</strong> Storage</li>
+                  <li><strong>40GB</strong> Transfer</li>
+                  <li><strong>10</strong> Domains</li>
+                  <li><strong>20</strong> Projects</li>
+                  <li><strong>Free</strong> installation</li>
+                </ul>
+              </div>
+              <div class="plan-signup">
+                <a href="#" class="btn-system btn-small border-btn">Sign Up Now</a>
+              </div>
             </div>
+          </div>
+
+
+          <div class="col-md-3 col-sm-3 col-xs-12">
+            <div class="pricing-table">
+              <div class="plan-name">
+                <h3>Professional</h3>
+              </div>
+              <div class="plan-price">
+                <div class="price-value">$199<span>.00</span></div>
+                <div class="interval">per month</div>
+              </div>
+              <div class="plan-list">
+                <ul>
+                  <li><strong>40 GB</strong> Storage</li>
+                  <li><strong>40GB</strong> Transfer</li>
+                  <li><strong>10</strong> Domains</li>
+                  <li><strong>20</strong> Projects</li>
+                  <li><strong>Free</strong> installation</li>
+                </ul>
+              </div>
+              <div class="plan-signup">
+                <a href="#" class="btn-system btn-small">Sign Up Now</a>
+              </div>
+            </div>
+          </div>
+
+
+          <div class="col-md-3 col-sm-3 col-xs-12">
+            <div class="pricing-table">
+              <div class="plan-name">
+                <h3>Extreme</h3>
+              </div>
+              <div class="plan-price">
+                <div class="price-value">$299<span>.00</span></div>
+                <div class="interval">per month</div>
+              </div>
+              <div class="plan-list">
+                <ul>
+                  <li><strong>40 GB</strong> Storage</li>
+                  <li><strong>40GB</strong> Transfer</li>
+                  <li><strong>10</strong> Domains</li>
+                  <li><strong>20</strong> Projects</li>
+                  <li><strong>Free</strong> installation</li>
+                </ul>
+              </div>
+              <div class="plan-signup">
+                <a href="#" class="btn-system btn-small">Sign Up Now</a>
+              </div>
+            </div>
+          </div>
+
+
         </div>
+      </div>
     </div>
+    <!-- End Pricing Table Section -->
 
-    <!-- Portfolio 5 -->
-    <div class="portfolio-modal modal fade" id="portfolioModal5" tabindex="-1" role="dialog" aria-hidden="true">
-        <div class="modal-content">
-            <div class="close-modal" data-dismiss="modal">
-                <div class="lr">
-                    <div class="rl">
-                    </div>
-                </div>
+
+    <!-- Start Client/Partner Section -->
+    <div class="partner">
+      <div class="container">
+        <div class="row">
+
+          <!-- Start Big Heading -->
+          <div class="big-title text-center">
+            <h1>Our Happy <strong>Clients</strong></h1>
+            <p class="title-desc">Partners We Work With</p>
+          </div>
+          <!-- End Big Heading -->
+
+          <!--Start Clients Carousel-->
+          <div class="our-clients">
+            <div class="clients-carousel custom-carousel touch-carousel navigation-3" data-appeared-items="5" data-navigation="true">
+
+              <!-- Client 1 -->
+              <div class="client-item item">
+                <a href="#"><img src="images/c1.png" alt="" /></a>
+              </div>
+
+              <!-- Client 2 -->
+              <div class="client-item item">
+                <a href="#"><img src="images/c2.png" alt="" /></a>
+              </div>
+
+              <!-- Client 3 -->
+              <div class="client-item item">
+                <a href="#"><img src="images/c3.png" alt="" /></a>
+              </div>
+
+              <!-- Client 4 -->
+              <div class="client-item item">
+                <a href="#"><img src="images/c4.png" alt="" /></a>
+              </div>
+
+              <!-- Client 5 -->
+              <div class="client-item item">
+                <a href="#"><img src="images/c5.png" alt="" /></a>
+              </div>
+
+              <!-- Client 6 -->
+              <div class="client-item item">
+                <a href="#"><img src="images/c6.png" alt="" /></a>
+              </div>
+
+              <!-- Client 7 -->
+              <div class="client-item item">
+                <a href="#"><img src="images/c7.png" alt="" /></a>
+              </div>
+
+              <!-- Client 8 -->
+              <div class="client-item item">
+                <a href="#"><img src="images/c8.png" alt="" /></a>
+              </div>
+
             </div>
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-8 col-lg-offset-2">
-                        <div class="modal-body">
-                            <!-- Project Details Go Here -->
-                            <h2>Project Name</h2>
-                            <p class="item-intro text-muted">Lorem ipsum dolor sit amet consectetur.</p>
-                            <img class="img-responsive img-centered" src="img/portfolio/escape-preview.png" alt="">
-                            <p>Escape is a free PSD web template built by <a href="https://www.behance.net/MathavanJaya">Mathavan Jaya</a>. Escape is a one page web template that was designed with agencies in mind. This template is ideal for those looking for a simple one page solution to describe your business and offer your services.</p>
-                            <p>You can download the PSD template in this portfolio sample item at <a href="http://freebiesxpress.com/gallery/escape-one-page-psd-web-template/">FreebiesXpress.com</a>.</p>
-                            <button type="button" class="btn btn-primary" data-dismiss="modal"><i class="fa fa-times"></i> Close Project</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
+          </div>
+          <!-- End Clients Carousel -->
         </div>
+        <!-- .row -->
+      </div>
+      <!-- .container -->
     </div>
+    <!-- End Client/Partner Section -->
 
-    <!-- Portfolio 6 -->
-    <div class="portfolio-modal modal fade" id="portfolioModal6" tabindex="-1" role="dialog" aria-hidden="true">
-        <div class="modal-content">
-            <div class="close-modal" data-dismiss="modal">
-                <div class="lr">
-                    <div class="rl">
-                    </div>
-                </div>
+
+    <!-- Start Footer Section -->
+    <footer>
+      <div class="container">
+        <div class="row footer-widgets">
+
+
+          <!-- Start Subscribe & Social Links Widget -->
+          <div class="col-md-3 col-xs-12">
+            <div class="footer-widget mail-subscribe-widget">
+              <h4>Get in touch<span class="head-line"></span></h4>
+              <p>Join our mailing list to stay up to date and get notices about our new releases!</p>
+              <form class="subscribe">
+                <input type="text" placeholder="mail@example.com">
+                <input type="submit" class="btn-system" value="Send">
+              </form>
             </div>
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-8 col-lg-offset-2">
-                        <div class="modal-body">
-                            <!-- Project Details Go Here -->
-                            <h2>Project Name</h2>
-                            <p class="item-intro text-muted">Lorem ipsum dolor sit amet consectetur.</p>
-                            <img class="img-responsive img-centered" src="img/portfolio/dreams-preview.png" alt="">
-                            <p>Dreams is a free PSD web template built by <a href="https://www.behance.net/MathavanJaya">Mathavan Jaya</a>. Dreams is a modern one page web template designed for almost any purpose. It’s a beautiful template that’s designed with the Bootstrap framework in mind.</p>
-                            <p>You can download the PSD template in this portfolio sample item at <a href="http://freebiesxpress.com/gallery/dreams-free-one-page-web-template/">FreebiesXpress.com</a>.</p>
-                            <button type="button" class="btn btn-primary" data-dismiss="modal"><i class="fa fa-times"></i> Close Project</button>
-                        </div>
-                    </div>
-                </div>
+            <div class="footer-widget social-widget">
+              <h4>Follow Us<span class="head-line"></span></h4>
+              <ul class="social-icons">
+                <li>
+                  <a class="facebook" href="#"><i class="fa fa-facebook"></i></a>
+                </li>
+                <li>
+                  <a class="twitter" href="#"><i class="fa fa-twitter"></i></a>
+                </li>
+                <li>
+                  <a class="google" href="#"><i class="fa fa-google-plus"></i></a>
+                </li>
+                <li>
+                  <a class="dribbble" href="#"><i class="fa fa-dribbble"></i></a>
+                </li>
+                <li>
+                  <a class="linkdin" href="#"><i class="fa fa-linkedin"></i></a>
+                </li>
+                <li>
+                  <a class="flickr" href="#"><i class="fa fa-flickr"></i></a>
+                </li>
+                <li>
+                  <a class="tumblr" href="#"><i class="fa fa-tumblr"></i></a>
+                </li>
+                <li>
+                  <a class="instgram" href="#"><i class="fa fa-instagram"></i></a>
+                </li>
+                <li>
+                  <a class="vimeo" href="#"><i class="fa fa-vimeo-square"></i></a>
+                </li>
+                <li>
+                  <a class="skype" href="#"><i class="fa fa-skype"></i></a>
+                </li>
+              </ul>
             </div>
+          </div>
+          <!-- .col-md-3 -->
+          <!-- End Subscribe & Social Links Widget -->
+
+
+          <!-- Start Twitter Widget -->
+          <div class="col-md-3 col-xs-12">
+            <div class="footer-widget twitter-widget">
+              <h4>Twitter Feed<span class="head-line"></span></h4>
+              <ul>
+                <li>
+                  <p><a href="#">@GrayGrids </a> Lorem ipsum dolor et, consectetur adipiscing eli.</p>
+                  <span>28 February 2014</span>
+                </li>
+                <li>
+                  <p><a href="#">@GrayGrids </a> Lorem ipsum dolor et, consectetur adipiscing eli.An Fusce eleifend aliquet nis application.</p>
+                  <span>26 February 2014</span>
+                </li>
+                <li>
+                  <p><a href="#">@GrayGrids </a> Lorem ipsum dolor et, consectetur adipiscing eli.</p>
+                  <span>28 February 2014</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <!-- .col-md-3 -->
+          <!-- End Twitter Widget -->
+
+
+          <!-- Start Flickr Widget -->
+          <div class="col-md-3 col-xs-12">
+            <div class="footer-widget flickr-widget">
+              <h4>Flicker Feed<span class="head-line"></span></h4>
+              <ul class="flickr-list">
+                <li>
+                  <a href="images/flickr-01.jpg" class="lightbox">
+                    <img alt="" src="images/flickr-01.jpg">
+                  </a>
+                </li>
+                <li>
+                  <a href="images/flickr-02.jpg" class="lightbox">
+                    <img alt="" src="images/flickr-02.jpg">
+                  </a>
+                </li>
+                <li>
+                  <a href="images/flickr-03.jpg" class="lightbox">
+                    <img alt="" src="images/flickr-03.jpg">
+                  </a>
+                </li>
+                <li>
+                  <a href="images/flickr-04.jpg" class="lightbox">
+                    <img alt="" src="images/flickr-04.jpg">
+                  </a>
+                </li>
+                <li>
+                  <a href="images/flickr-05.jpg" class="lightbox">
+                    <img alt="" src="images/flickr-05.jpg">
+                  </a>
+                </li>
+                <li>
+                  <a href="images/flickr-06.jpg" class="lightbox">
+                    <img alt="" src="images/flickr-06.jpg">
+                  </a>
+                </li>
+                <li>
+                  <a href="images/flickr-07.jpg" class="lightbox">
+                    <img alt="" src="images/flickr-07.jpg">
+                  </a>
+                </li>
+                <li>
+                  <a href="images/flickr-08.jpg" class="lightbox">
+                    <img alt="" src="images/flickr-08.jpg">
+                  </a>
+                </li>
+                <li>
+                  <a href="images/flickr-09.jpg" class="lightbox">
+                    <img alt="" src="images/flickr-09.jpg">
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <!-- .col-md-3 -->
+          <!-- End Flickr Widget -->
+
+
+          <!-- Start Contact Widget -->
+          <div class="col-md-3 col-xs-12">
+            <div class="footer-widget contact-widget">
+              <h4><img src="images/footer-margo.png" class="img-responsive" alt="Footer Logo" /></h4>
+              <p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident</p>
+              <ul>
+                <li><span>Phone Number:</span> +01 234 567 890</li>
+                <li><span>Email:</span> company@company.com</li>
+                <li><span>Website:</span> www.yourdomain.com</li>
+              </ul>
+            </div>
+          </div>
+          <!-- .col-md-3 -->
+          <!-- End Contact Widget -->
+
+
         </div>
+        <!-- .row -->
+
+        <!-- Start Copyright -->
+        <div class="copyright-section">
+          <div class="row">
+            <div class="col-md-6">
+              <p>&copy; 2014 Margo - All Rights Reserved <a href="http://graygrids.com">GrayGrids</a> </p>
+            </div>
+            <!-- .col-md-6 -->
+            <div class="col-md-6">
+              <ul class="footer-nav">
+                <li><a href="#">Sitemap</a>
+                </li>
+                <li><a href="#">Privacy Policy</a>
+                </li>
+                <li><a href="#">Contact</a>
+                </li>
+              </ul>
+            </div>
+            <!-- .col-md-6 -->
+          </div>
+          <!-- .row -->
+        </div>
+        <!-- End Copyright -->
+
+      </div>
+    </footer>
+    <!-- End Footer Section -->
+
+
+  </div>
+  <!-- End Full Body Container -->
+
+  <!-- Go To Top Link -->
+  <a href="#" class="back-to-top"><i class="fa fa-angle-up"></i></a>
+
+  <div id="loader">
+    <div class="spinner">
+      <div class="dot1"></div>
+      <div class="dot2"></div>
     </div>
+  </div>
 
+  <!-- Style Switcher -->
+  <div class="switcher-box">
+    <a class="open-switcher show-switcher"><i class="fa fa-cog fa-2x"></i></a>
+    <h4>Style Switcher</h4>
+    <span>12 Predefined Color Skins</span>
+    <ul class="colors-list">
+      <li>
+        <a onClick="setActiveStyleSheet('blue'); return false;" title="Blue" class="blue"></a>
+      </li>
+      <li>
+        <a onClick="setActiveStyleSheet('sky-blue'); return false;" title="Sky Blue" class="sky-blue"></a>
+      </li>
+      <li>
+        <a onClick="setActiveStyleSheet('cyan'); return false;" title="Cyan" class="cyan"></a>
+      </li>
+      <li>
+        <a onClick="setActiveStyleSheet('jade'); return false;" title="Jade" class="jade"></a>
+      </li>
+      <li>
+        <a onClick="setActiveStyleSheet('green'); return false;" title="Green" class="green"></a>
+      </li>
+      <li>
+        <a onClick="setActiveStyleSheet('purple'); return false;" title="Purple" class="purple"></a>
+      </li>
+      <li>
+        <a onClick="setActiveStyleSheet('pink'); return false;" title="Pink" class="pink"></a>
+      </li>
+      <li>
+        <a onClick="setActiveStyleSheet('red'); return false;" title="Red" class="red"></a>
+      </li>
+      <li>
+        <a onClick="setActiveStyleSheet('orange'); return false;" title="Orange" class="orange"></a>
+      </li>
+      <li>
+        <a onClick="setActiveStyleSheet('yellow'); return false;" title="Yellow" class="yellow"></a>
+      </li>
+      <li>
+        <a onClick="setActiveStyleSheet('peach'); return false;" title="Peach" class="peach"></a>
+      </li>
+      <li>
+        <a onClick="setActiveStyleSheet('beige'); return false;" title="Biege" class="beige"></a>
+      </li>
+    </ul>
+    <span>Top Bar Color</span>
+    <select id="topbar-style" class="topbar-style">
+      <option value="1">Light (Default)</option>
+      <option value="2">Dark</option>
+      <option value="3">Color</option>
+    </select>
+    <span>Layout Style</span>
+    <select id="layout-style" class="layout-style">
+      <option value="1">Wide</option>
+      <option value="2">Boxed</option>
+    </select>
+    <span>Patterns for Boxed Version</span>
+    <ul class="bg-list">
+      <li>
+        <a href="#" class="bg1"></a>
+      </li>
+      <li>
+        <a href="#" class="bg2"></a>
+      </li>
+      <li>
+        <a href="#" class="bg3"></a>
+      </li>
+      <li>
+        <a href="#" class="bg4"></a>
+      </li>
+      <li>
+        <a href="#" class="bg5"></a>
+      </li>
+      <li>
+        <a href="#" class="bg6"></a>
+      </li>
+      <li>
+        <a href="#" class="bg7"></a>
+      </li>
+      <li>
+        <a href="#" class="bg8"></a>
+      </li>
+      <li>
+        <a href="#" class="bg9"></a>
+      </li>
+      <li>
+        <a href="#" class="bg10"></a>
+      </li>
+      <li>
+        <a href="#" class="bg11"></a>
+      </li>
+      <li>
+        <a href="#" class="bg12"></a>
+      </li>
+      <li>
+        <a href="#" class="bg13"></a>
+      </li>
+      <li>
+        <a href="#" class="bg14"></a>
+      </li>
+    </ul>
+  </div>
 
-    <!-- SCRIPTS -->
-    <script src="js/jquery.bxslider.min.js" type="text/javascript"></script>
-    <script src="js/isotope.pkgd.min.js" type="text/javascript"></script>
-    <script src="js/waypoints.min.js" type="text/javascript"></script>
-    <script src="js/scripts.js" type="text/javascript"></script>
-    <script src="js/shopify_stats.js" type="text/javascript"></script>
-    <script src="js/ga_urchin_forms-f888be82dfc735c04a5e0b253a366bb5.js" type="text/javascript"></script>
-    
-    <!-- jQuery -->
-    <script src="js/jquery.js"></script>
+  <script type="text/javascript" src="js/script.js"></script>
 
-    <!-- Bootstrap Core JavaScript -->
-    <script src="js/bootstrap.min.js"></script>
-
-    <!-- Plugin JavaScript -->
-    <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
-    <script src="js/classie.js"></script>
-    <script src="js/cbpAnimatedHeader.js"></script>
-    <script src="js/smooth-scroll.js"></script>
-
-    <!-- Contact Form JavaScript -->
-    <script src="js/jqBootstrapValidation.js"></script>
-    <script src="js/contact_me.js"></script>
-
-    <!-- Custom Theme JavaScript -->
-    <script src="js/agency.js"></script>
 </body>
+
 </html>
