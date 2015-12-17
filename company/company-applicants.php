@@ -177,7 +177,7 @@
              <!-- Start Navigation List -->
             <ul class="nav navbar-nav navbar-right">
                 <li>
-                    <a href="index.php">Home</a>
+                    <a href="company.php">Home</a>
                 </li>
                 <li>
                     <a href="company-position.php">Position</a>
@@ -205,7 +205,7 @@
         <!-- Mobile Menu Start -->
     <ul class="wpb-mobile-menu">
        <li>
-                    <a href="index.php">Home</a>
+                    <a href="company.php">Home</a>
                 </li>
                 <li>
                     <a href="company-position.php">Position</a>

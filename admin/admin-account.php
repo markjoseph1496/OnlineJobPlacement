@@ -356,7 +356,7 @@ while ($qry = mysql_fetch_Array($result)) {
 <!-- End Header Section -->
 
 <!-- Start Page Banner -->
-<div class="page-banner" style="padding:40px 0; background: url(images/slide-02-bg.jpg) center #f9f9f9;">
+<div class="page-banner" style="padding:40px 0; center #f9f9f9;">
     <div class="container">
         <div class="row">
             <div class="col-md-6">

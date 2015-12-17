@@ -46,7 +46,7 @@
 
 
   <!-- Margo JS  -->
-  <script type="text/javascript" src="../js/jquery-2.1.4.min.js"></script>
+  <script type="text/javascript" src="../js/jquery.min.js"></script>
   <script type="text/javascript" src="../js/jquery.migrate.js"></script>
   <script type="text/javascript" src="../js/modernizrr.js"></script>
   <script type="text/javascript" src="../asset/js/bootstrap.min.js"></script>
