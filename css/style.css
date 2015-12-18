@@ -495,6 +495,10 @@ ul.social-list li a:hover {
 	color: #fff;
 }
 
+ul.social-list li a.bell:hover {
+	background-color: #0a3d73;
+}
+
 ul.social-list li a.facebook:hover {
 	background-color: #507CBE;
 }
@@ -4200,6 +4204,10 @@ footer a:hover {
 }
 .social-widget ul.social-icons li a:hover {
 	text-decoration: none;
+}
+
+.social-widget ul.social-icons li a.bell:hover i {
+	background-color: #507CBE;
 }
 
 .social-widget ul.social-icons li a.facebook:hover i {
