@@ -177,7 +177,7 @@ if($a){
     <meta name="author" content="iThemesLab">
 
     <!-- Bootstrap CSS  -->
-    <link rel="stylesheet" href="../../asset/css/bootstrap.min.css" type="text/css" media="screen">
+    <link rel="stylesheet" href="../../css/bootstrap.min.css" type="text/css" media="screen">
 
     <!-- Font Awesome CSS -->
     <link rel="stylesheet" href="../../css/font-awesome.min.css" type="text/css" media="screen">
@@ -208,7 +208,7 @@ if($a){
     <link rel="stylesheet" type="text/css" href="../../css/colors/yellow.css" title="yellow" media="screen" />
 
     <!-- JS  -->
-    <script type="text/javascript" src="../../js/jquery-2.1.4.min.js"></script>
+    <script type="text/javascript" src="../../js/jquery.min.js"></script>
     <script type="text/javascript" src="../../js/modernizrr.js"></script>
     <script type="text/javascript" src="../../js/jquery.appear.js"></script>
     <script type="text/javascript" src="../../js/count-to.js"></script>
@@ -216,7 +216,7 @@ if($a){
     <script type="text/javascript" src="../../js/jquery.slicknav.js"></script>
 
     <script type="text/javascript" src="../../js/jquery.migrate.js"></script>
-    <script type="text/javascript" src="../../asset/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../../js/bootstrap.min.js"></script>
     <script type="text/javascript" src="../../js/jquery.fitvids.js"></script>
     <script type="text/javascript" src="../../js/owl.carousel.min.js"></script>
     <script type="text/javascript" src="../../js/nivo-lightbox.min.js"></script>
