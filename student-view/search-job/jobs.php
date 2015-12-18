@@ -80,20 +80,23 @@
                 <div class="container">
                     <div class="row">
                         <div class="col-md-7">
-                            <!-- Start Contact Info  -->
+                            <!-- Start Contact Info -->
                             <ul class="contact-details">
-                                <li><a href="#"><i class="fa fa-map-marker"></i> House-54/A, London, UK</a>
+                                <li>
+                                    <a href="#"><i class="fa fa-map-marker"></i> House-54/A, London, UK</a>
                                 </li>
-                                <li><a href="#"><i class="fa fa-envelope-o"></i> info@yourcompany.com</a>
+                                <li>
+                                    <a href="#"><i class="fa fa-envelope-o"></i> info@yourcompany.com</a>
                                 </li>
-                                <li><a href="#"><i class="fa fa-phone"></i> +12 345 678 000</a>
+                                <li>
+                                    <a href="#"><i class="fa fa-phone"></i> +12 345 678 000</a>
                                 </li>
                             </ul>
                             <!-- End Contact Info -->
                         </div>
                         <!-- .col-md-6 -->
                         <div class="col-md-5">
-                        <!-- Start Social Links  -->
+                        <!-- Start Social Links -->
                             <ul class="social-list">
                                 <li>
                                 <a class="facebook itl-tooltip" data-placement="bottom" title="Facebook" href="#"><i class="fa fa-facebook"></i></a>
@@ -102,28 +105,7 @@
                                     <a class="twitter itl-tooltip" data-placement="bottom" title="Twitter" href="#"><i class="fa fa-twitter"></i></a>
                                 </li>
                                 <li>
-                                    <a class="google itl-tooltip" data-placement="bottom" title="Google Plus" href="#"><i class="fa fa-google-plus"></i></a>
-                                </li>
-                                <li>
-                                    <a class="dribbble itl-tooltip" data-placement="bottom" title="Dribble" href="#"><i class="fa fa-dribbble"></i></a>
-                                </li>
-                                <li>
-                                    <a class="linkdin itl-tooltip" data-placement="bottom" title="Linkedin" href="#"><i class="fa fa-linkedin"></i></a>
-                                </li>
-                                <li>
-                                    <a class="flickr itl-tooltip" data-placement="bottom" title="Flickr" href="#"><i class="fa fa-flickr"></i></a>
-                                </li>
-                                <li>
-                                    <a class="tumblr itl-tooltip" data-placement="bottom" title="Tumblr" href="#"><i class="fa fa-tumblr"></i></a>
-                                </li>
-                                <li>
-                                    <a class="instgram itl-tooltip" data-placement="bottom" title="Instagram" href="#"><i class="fa fa-instagram"></i></a>
-                                </li>
-                                <li>
-                                    <a class="vimeo itl-tooltip" data-placement="bottom" title="vimeo" href="#"><i class="fa fa-vimeo-square"></i></a>
-                                </li>
-                                <li>
-                                    <a class="skype itl-tooltip" data-placement="bottom" title="Skype" href="#"><i class="fa fa-skype"></i></a>
+                                    sadshgdbsgf                                
                                 </li>
                             </ul>
                             <!-- End Social Links -->
@@ -136,125 +118,18 @@
             </div>
             <!-- .top-bar -->
             <!-- End Top Bar -->
-
-            <!-- Start  Logo & Naviagtion  -->
-            <div class="navbar navbar-default navbar-top">
-                <div class="container">
-                    <div class="navbar-header">
-                    <!-- Stat Toggle Nav Link For Mobiles -->
-                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                            <i class="fa fa-bars"></i>
-                        </button>
-                        <!-- End Toggle Nav Link For Mobiles -->
-                        <a class="navbar-brand" href="">Online JPMS</a>
-                    </div>
-                    <div class="navbar-collapse collapse">
-                    <!-- Stat Search -->
-                        <div class="search-side">
-                            <a class="show-search"><i class="fa fa-search"></i></a>
-                            <div class="search-form">
-                                <form autocomplete="off" role="search" method="get" class="searchform" action="#">
-                                    <input type="text" value="" name="s" id="s" placeholder="Search the site...">
-                                </form>
-                            </div>
-                        </div>
-                        <!-- End Search -->
-                        <!-- Start Navigation List -->
-                        <ul class="nav navbar-nav navbar-right">
-                            <li>
-                                <a class="active" href="personal-info.php">My Info</a>
-                                <ul class="dropdown">
-                                    <li><a href="personal-info.php">Personal Info</a></li>
-                                    <li><a href="contacts-info.php">Contacts Info</a></li>
-                                    <li><a href="work.php">Work</a></li>
-                                    <li><a href="education.php">Education</a></li>
-                                    <li><a href="certifications.php">Certifications</a></li>
-                                    <li><a class="active" href="achievements.php">Achievements</a></li>
-                                    <li><a href="skills-and-languages.php">Skills & Languages</a></li>
-                                    <li><a href="references.php">References</a></li>
-                                    <li><a href="portfolio.php">Portfolio</a></li>
-                                </ul>
-                            </li>
-                            <li>
-                                <a href="../resumelink/resume-link.php">Resume Link</a>
-                                <ul class="dropdown">
-                                    <li><a href="../resumelink/resume-link.php">Resume Link</a></li>
-                                    <li><a href="../resumelink/background.php">Background</a></li>
-                                    <li><a href="../resumelink/print-share.php">Print/Share</a></li>
-                                </ul>
-                            </li>
-                            <li>
-                                <a href="../applications/applications.php">Applications</a>
-                            </li>
-                            <li>
-                                <a href="../search-job/search-job.php">Jobs</a>
-                            </li>
-                            <li>
-                                <a href="../settings/privacy-settings.php">Settings</a>
-                                <ul class="dropdown">
-                                    <li><a href="../settings/privacy-settings.php">Privacy Settings</a></li>
-                                    <li><a href="../settings/pass-settings.php">Password Settings</a></li>
-                                </ul>
-                            </li>
-                        </ul>
-                        <!-- End Navigation List -->
-                    </div>
-                </div>
-                <!-- Mobile Menu Start -->
-                <ul class="wpb-mobile-menu">
-                    <li>
-                        <a class="active" href="personal-info.php">My Info</a>
-                        <ul class="dropdown">
-                            <li><a class="active" href="personal-info.php">Personal Info</a></li>
-                            <li><a href="contacts-info.php">Contacts Info</a></li>
-                            <li><a href="work.php">Work</a></li>
-                            <li><a href="education.php">Education</a></li>
-                            <li><a href="certifications.php">Certifications</a></li>
-                            <li><a class="active" href="achievements.php">Achievements</a></li>
-                            <li><a href="skills-and-languages.php">Skills & Languages</a></li>
-                            <li><a href="references.php">References</a></li>
-                            <li><a href="portfolio.php">Portfolio</a></li>
-                        </ul>
-                    </li>
-                    <li>
-                        <a href="../resumelink/resume-link.php">Resume Link</a>
-                        <ul class="dropdown">
-                            <li><a href="../resumelink/resume-link.php">Resume Link</a></li>
-                            <li><a href="../resumelink/background.php">Background</a></li>
-                            <li><a href="../resumelink/print-share.php">Print/Share</a></li>
-                        </ul>
-                    </li>
-                    <li>
-                        <a href="../applications/applications.php">Applications</a>
-                    </li>
-                    <li>
-                        <a href="../search-job/search-job.php">Jobs</a>
-                    </li>
-                    <li>
-                        <a href="../settings/privacy-settings.php">Settings</a>
-                        <ul class="dropdown">
-                            <li><a href="../settings/privacy-settings.php">Privacy Settings</a></li>
-                            <li><a href="../settings/pass-settings.php">Password Settings</a></li>
-                        </ul>
-                    </li>
-                    <li>
-                        <a href="../../login-student.php?id=1"><i class="fa fa-sign-out"></i> Sign Out</a>
-                    </li>
-                </ul>
-                <!-- Mobile Menu End -->
-            </div>
         </header>
 
         <div class="page-banner no-subtitle">
             <div class="container">
                 <div class="row">
                     <div class="col-md-6">
-                        <h2>Achievements</h2>
+                        <h2>Applications</h2>
                     </div>
                     <div class="col-md-6">
                         <ul class="breadcrumbs">
                             <li><a href="#">Home</a></li>
-                            <li>Achievements</li>
+                            <li>Applications</li>
                         </ul>
                     </div>
                 </div>
@@ -265,67 +140,16 @@
         <!-- Start Content -->
         <div id="content">
             <div class="container">
-                <div class="row sidebar-page">
+                <div class="row">
                     <!-- Page Content -->
-                    <div class="col-md-9 page-content">
+                    <div class="col-md-12 page-content">
                         <div class="row">
                             <div class="classic-testimonials">
-                                <!-- Single Testimonial -->
-                                <div class="row field">
-                                    <div class="col-md-6 fieldcol">
-                                        <h4>Achievements <span class="head-line"></span></h4>
-                                    </div>
-                                    <div class="col-md-6 fieldcol">
-                                        <a href="add/add-achievement.php" class="btnforadding" style="float:right;">
-                                            <span class="fa fa-plus-square"> Add Achievement</span>
-                                        </a>
-                                    </div>
-                                </div>
-
-                                <table class="table segment table-hover">
-                                    <thead>
-                                        <tr class="table-color">
-                                            <th>Achievement</th>
-                                            <th width="15%">&nbsp;</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <?php
-                                                $ctr = 0;
-                                                while($rows = mysql_fetch_array($result)){
-                                                $ctr++;
-                                            ?>
-                                        <tr>
-                                            <td><?php echo $rows[$Achievements]; ?></td>
-                                            <td>
-                                                <a href=# class="btn btn-danger btnformaintenance deleteAchievement">
-                                                    <i class="fa fa-trash fa-1x"></i>
-                                                </a>
-                                                <a data-bb="confirmDeleteAchievement" class="bb-alert alert alert-info" style="display: none;" href="delete.php?delete_AchievementID=<?php echo $rows['AchievementID'];?>">
-                                        
-                                                <a href="edit/edit-achievement.php?EditAchievementID=<?php echo $rows['AchievementID'];?>" class="btn btn-default btnformaintenance">
-                                                    <i class="fa fa-pencil-square-o fa-1x"></i>
-                                                </a>
-                                            </td>
-                                        </tr>
-                                        <?php
-                                            }
-                                        ?>
-                                    </tbody>
-                                </table>
+                                
                             </div>
                         </div>
                     </div>
                     <!-- End Page Content -->
-
-                    <!--Sidebar-->
-                    <div class="col-md-3 sidebar right-sidebar">
-                        <!-- Search Widget -->
-                        <div class="call-action call-action-boxed call-action-style2 clearfix">
-                            (*) Note: Required fields.
-                        </div>
-                    </div>
-                    <!--End sidebar-->
                 </div>
             </div>
         </div>
