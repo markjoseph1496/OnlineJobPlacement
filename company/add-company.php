@@ -4,7 +4,7 @@ session_start();
 $CompanyID = $_SESSION['CompanyID'];
 
 // Create Calendar Event
-  if (isset($_GET['datefrom'])) {
+  if (isset($_GET['BtnCalendarsave'])) {
 
       $datefrom = $_GET['datefrom'];
       $dateto = $_GET['dateto'];

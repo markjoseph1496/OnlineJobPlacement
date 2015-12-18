@@ -164,40 +164,35 @@
             </a>
           </div>
           <div class="navbar-collapse collapse">
-            <!-- Stat Search -->
-            <div class="search-side">
-              <a class="show-search"><i class="fa fa-search"></i></a>
-              <div class="search-form">
-                <form autocomplete="off" role="search" method="get" class="searchform" action="#">
-                  <input type="text" value="" name="s" id="s" placeholder="Search the site...">
-                </form>
-              </div>
+            <!-- Sign-out -->
+            <div class="signout-side">
+              <a class="show-signout"><i class="fa fa-sign-out"></i></a>
             </div>
-            <!-- End Search -->
+            <!-- End Sign-out -->
              <!-- Start Navigation List -->
             <ul class="nav navbar-nav navbar-right">
                 <li>
-                    <a  href="index-01.html">Home</a>
+                    <a  href="company.php">Home</a>
                 </li>
                 <li>
-                    <a href="company-position.html">Position</a>
+                    <a href="company-positionlist.php">Position</a>
                     <ul class="dropdown">
-                        <li><a  href="company-positionlist.html">Position List</a></li>
-                        <li><a href="company-createposition.html">Create Position</a></li>
+                        <li><a  href="company-positionlist.php">Position List</a></li>
+                        <li><a href="company-createposition.php">Create Position</a></li>
                     </ul>
                 </li>
                 <li>
-                    <a href="company-calendar.html">Calendar</a>
+                    <a href="company-calendar.php">Calendar</a>
                 </li>
                 <li>
-                    <li><a href="company-settings.html">Settings</a>
+                    <li><a href="company-settings.php">Settings</a>
                 </li>
                 </li>
                <li>
-                    <a href="company-applicants.html">Applicant List</a>
+                    <a href="company-applicants.php">Applicant List</a>
                     <ul class="dropdown">
-                        <li><a href="company-pendingapplicants.html">Pending</a></li>
-                        <li><a href="company-acceptedapplicants.html">Accepted</a></li>
+                        <li><a href="company-pendingapplicants.php">Pending</a></li>
+                        <li><a href="company-acceptedapplicants.php">Accepted</a></li>
                     </ul>
                 </li>
             </ul>
@@ -207,35 +202,35 @@
         <!-- Mobile Menu Start -->
     <ul class="wpb-mobile-menu">
        <li>
-                    <a class="active" href="index-01.html">Home</a>
+                    <a class="active" href="company.php">Home</a>
                 </li>
                 <li>
-                    <a href="company-position.html">Position</a>
+                    <a href="company-positionlist.php">Position</a>
                     <ul class="dropdown">
-                        <li><a  href="company-positionlist.html">Position List</a></li>
-                        <li><a href="company-createposition.html">Create Position</a></li>
+                        <li><a  href="company-positionlist.php">Position List</a></li>
+                        <li><a href="company-createposition.php">Create Position</a></li>
                     </ul>
                 </li>
                 <li>
-                    <a href="company-calendar.html">Calendar</a>
+                    <a href="company-calendar.php">Calendar</a>
                 </li>
                 <li>
-                    <a class = "active" href="company-reports.html">Reports</a>
+                    <a class = "active" href="company-reports.php">Reports</a>
                     <ul class="dropdown">
-                        <li><a  href="index.html">Resumelink</a></li>
-                        <li><a href="index-01.html">Position</a></li>
+                        <li><a  href="index.php">Resumelink</a></li>
+                        <li><a href="index-01.php">Position</a></li>
                     </ul>
                 </li>
-                <li><a href="company-settings.html">Settings</a>
+                <li><a href="company-settings.php">Settings</a>
                 </li>
                 <li>
-                    <a href="company-studentlist.html">Student List</a>
+                    <a href="company-studentlist.php">Student List</a>
                 </li>
                 <li>
-                    <a href="company-applicants.html">Applicant List</a>
+                    <a href="company-applicants.php">Applicant List</a>
                     <ul class="dropdown">
-                        <li><a href="company-pendingapplicants.html">Pending</a></li>
-                        <li><a href="company-acceptedapplicants.html">Accepted</a></li>
+                        <li><a href="company-pendingapplicants.php">Pending</a></li>
+                        <li><a href="company-acceptedapplicants.php">Accepted</a></li>
                     </ul>
                 </li>
     </ul>

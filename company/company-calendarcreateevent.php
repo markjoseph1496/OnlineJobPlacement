@@ -11,7 +11,7 @@ $CompanyID = $_SESSION['CompanyID'];
 <head>
 
   <!-- Basic -->
-  <title>Margo | Home</title>
+  <title>OJPMS</title>
 
   <!-- Define Charset -->
   <meta charset="utf-8">
@@ -179,16 +179,19 @@ $CompanyID = $_SESSION['CompanyID'];
              OJPMS
             </a>
           </div>
-        
-
-            <!-- End Search -->
+             <div class="navbar-collapse collapse">
+            <!-- Sign-out -->
+            <div class="signout-side">
+              <a class="show-signout"><i class="fa fa-sign-out"></i></a>
+            </div>
+            <!-- End Sign-out -->
              <!-- Start Navigation List -->
             <ul class="nav navbar-nav navbar-right">
                 <li>
                     <a  href="company.php">Home</a>
                 </li>
                 <li>
-                    <a href="company-position.php">Position</a>
+                    <a href="company-positionlist.php">Position</a>
                     <ul class="dropdown">
                         <li><a  href="company-positionlist.php">Position List</a></li>
                         <li><a href="company-createposition.php">Create Position</a></li>
@@ -213,10 +216,10 @@ $CompanyID = $_SESSION['CompanyID'];
         <!-- Mobile Menu Start -->
     <ul class="wpb-mobile-menu">
        <li>
-                    <a  href="index-01.php">Home</a>
+                    <a  href="company.php">Home</a>
                 </li>
                 <li>
-                    <a href="company-position.php">Position</a>
+                    <a href="company-positionlist.php">Position</a>
                     <ul class="dropdown">
                         <li><a  href="company-positionlist.php">Position List</a></li>
                         <li><a href="company-createposition.php">Create Position</a></li>
@@ -258,65 +261,64 @@ $CompanyID = $_SESSION['CompanyID'];
 
 <!--Content-->
   <br><br><br>
-  
+  <form action="add-company.php" name="addcalendar" id="addcalendar" autocomplete="off">
     <div class =  "container">
-        <div class = "col-md-12">
-            <div class = "row">
-                <form action="add-company.php" name="addcalendar" id="addcalendar" autocomplete="off">
-                     <div class="row field">
-                        <div class = "col-md-3 fieldcol">
-                             <label = "usr" class = "control-label">Event from: </label>
+      <div class = "col-md-12">
+        <div class = "row">
+                <div class="row field">
+                    <div class = "col-md-3 fieldcol">
+                         <label = "usr" class = "control-label">Event from: </label>
+                    </div>
+                    <div class = "col-md-8 fieldcol">
+                        <div class="form-group">
+                            <div class = "date">
+                               <input type = "date" name = "datefrom" id = "date_from" class = "form-control">
+                                <div class = "date_to">
+                                    <label = "usr" class = "control-label" id = "label">to: </label>
+                                    <input type = "date" name = "dateto" id = "date_to" class = "form-control">
+                                </div>
+                            </div> 
                         </div>
-                        <div class = "col-md-8 fieldcol">
-                            <div class="form-group">
-                                <div class = "date">
-                                   <input type = "date" name = "datefrom" id = "date_from" class = "form-control">
-                                       <div class = "date_to">
-                                            <label = "usr" class = "control-label" id = "label">to: </label>
-                                            <input type = "date" name = "dateto" id = "date_to" class = "form-control">
-                                    </div>
-                                 </div> 
-                            </div>
+                    </div>
+                </div> 
+                <div class="row field">
+                    <div class = "col-md-3 fieldcol">
+                         <label = "usr" class = "control-label"> Event Title: </label>
+                    </div>
+                    <div class = "col-md-8 fieldcol">
+                        <div class="form-group">
+                              <input type = "text" name = "eventtitle" id = "eventtitle" class = "form-control" >
                         </div>
-                    </div> 
-                    <div class="row field">
-                        <div class = "col-md-3 fieldcol">
-                             <label = "usr" class = "control-label"> Event Title: </label>
+                    </div>
+                </div>  
+                <div class="row field">
+                    <div class = "col-md-3 fieldcol">
+                          <label = "usr" class = "control-label"> Location: </label>
+                    </div>
+                    <div class = "col-md-8 fieldcol">
+                        <div class="form-group">
+                              <input type = "text" name = "location" id = "location" class = "form-control" >
                         </div>
-                        <div class = "col-md-8 fieldcol">
-                            <div class="form-group">
-                                  <input type = "text" name = "eventtitle" id = "eventtitle" class = "form-control" >
-                            </div>
+                    </div>
+                </div>  
+                <div class="row field">
+                    <div class = "col-md-3 fieldcol">
+                         <label = "usr" class = "control-label"> Description: </label>
+                    </div>
+                    <div class = "col-md-8 fieldcol">
+                        <div class="form-group">
+                              <input type = "text" class = "form-control" id = "descrip" name = "descrip"  >
                         </div>
-                    </div>  
-                    <div class="row field">
-                      <div class = "col-md-3 fieldcol">
-                            <label = "usr" class = "control-label"> Location: </label>
-                      </div>
-                      <div class = "col-md-8 fieldcol">
-                          <div class="form-group">
-                                <input type = "text" name = "location" id = "location" class = "form-control" >
-                          </div>
-                      </div>
-                    </div>  
-                    <div class="row field">
-                      <div class = "col-md-3 fieldcol">
-                           <label = "usr" class = "control-label"> Description: </label>
-                      </div>
-                      <div class = "col-md-8 fieldcol">
-                          <div class="form-group">
-                                 <input type = "text" class = "form-control" id = "descrip" name = "descrip"  >
-                          </div>
-                      </div>
-                    </div>  
-                         <button class = "btn btn-primary " id = "btnsave" name = "BTNsave" type="submit"><b> SAVE </b></button> 
-                         <a class = "btn btn-primary " id = "cancel" href="#"><b> CANCEL</b> </a>
-
-                </form> 
-            </div>
+                    </div>
+                </div>
+                <div class="col-md-8 fieldcol">  
+                     <button class = "btn btn-primary " id = "BtnCalendarsave" name = "BtnCalendarsave" type="submit"><b> SAVE </b></button> 
+                     <a class = "btn btn-primary " id = "cancel" href="#"><b> CANCEL</b> </a>
+                </div>
         </div>
-    </div>       
-</div>
+      </div>
+    </div>
+  </form>        
 </body>
 <script type="text/javascript">
         $(document).ready(function (){
@@ -348,6 +350,10 @@ $CompanyID = $_SESSION['CompanyID'];
                                 min: 3,
                                 max: 15,
                                 message: "Location must be 3-15 characters long."
+                            },
+                            regexp: {
+                                regexp: /^[a-z\s]+$/i,
+                                message: "Location can consist of alphabetical characters and spaces only"
                             }
                         }
                     },
@@ -360,6 +366,10 @@ $CompanyID = $_SESSION['CompanyID'];
                                 min: 5,
                                 max: 25,
                                 message: "Description must be 5-25 characters long."
+                            },
+                            regexp: {
+                                regexp: /^[a-z\s]+$/i,
+                                message: "Description can consist of alphabetical characters and spaces only"
                             }
                         }
                     },
