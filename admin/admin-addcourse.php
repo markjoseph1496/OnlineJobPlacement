@@ -22,10 +22,6 @@
   <script src="../js/bootstrapValidator.min.js" type="text/javascript"></script>
 
 
-
-  <!-- Bootstrap CSS  -->
-  <link rel="stylesheet" href="../asset/css/bootstrap.min.css" type="text/css" media="screen">
-
   <!-- Font Awesome CSS -->
   <link rel="stylesheet" href="../css/font-awesome.min.css" type="text/css" media="screen">
 
@@ -321,6 +317,6 @@
         });
     });
 </script>
-</body>
 <script type="text/javascript" src="../js/script.js"></script>
+</body>
 </html>
