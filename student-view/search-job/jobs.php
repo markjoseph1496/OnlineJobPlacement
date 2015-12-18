@@ -42,8 +42,6 @@ $result = mysql_query($qry);
 
     <!-- Bootstrap CSS  -->
     <link rel="stylesheet" href="../../css/bootstrap.min.css" type="text/css" media="screen">
-    <link rel="stylesheet" href="../../css/flat-ui.css" type="text/css" media="screen">
-
 
     <!-- Font Awesome CSS -->
     <link rel="stylesheet" href="../../css/font-awesome.min.css" type="text/css" media="screen">
