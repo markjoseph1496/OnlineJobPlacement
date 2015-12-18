@@ -96,7 +96,11 @@ $result = mysql_query($qry);
     <script type="text/javascript" src="../../js/jquery.parallax.js"></script>
     <script type="text/javascript" src="../../js/mediaelement-and-player.js"></script>
 </head>
-
+<style type="text/css">
+    .bs-example{
+        margin: 20px;
+    }
+</style>
 <body>
     <div id="container">
         <!-- Start Header Section -->
@@ -176,26 +180,25 @@ $result = mysql_query($qry);
                         <!-- Search Widget -->
                         <div class="widget widget-search">
                             <form action="#">
-                                <input type="search" placeholder="Enter Keywords..." />
+                                <input type="search" placeholder="Search..." />
                                 <button class="search-btn" type="submit"><i class="fa fa-search"></i></button>
                             </form>
                         </div>
 
                         <!-- Categories Widget -->
                         <div class="widget widget-categories">
-                            <h4>Jobs <span class="head-line"></span></h4>
-                            <ul>
-                                <li>
-                                    <a href="#"><i class="fa fa-bookmark"></i> Bookmarked Jobs</a>
-                                </li>
-                                <li>
-                                    <a href="#"><i class="fa fa-sort"></i> Sort by:</a>
-                                </li>
-                                <li>
-                                    <a href="#"><i class="fa fa-filter"></i> Filter by:</a>
-                                </li>
-                            </ul>
+                            <h4>Categories <span class="head-line"></span></h4>
+                            <li>
+                                <a href="#"><i class="fa fa-bookmark"></i> Bookmarked Jobs</a>
+                            </li>
+                            <li>
+                                <a href="#"><i class="fa fa-sort"></i> Sort by: </a>
+                            </li>
+                            <li>
+                                <a href="#"><i class="fa fa-filter"></i> Filter by:</a>
+                            </li>
                         </div>
+
 
                         <!-- Popular Posts widget -->
                         <div class="widget widget-popular-posts">
@@ -219,6 +222,7 @@ $result = mysql_query($qry);
 
                     <!-- Start Blog Posts -->
                     <div class="col-md-9 blog-box">
+                        <h4 class="classic-title"><span>Jobs</span></h4>
 
                         <!-- Start Post -->
                         <div class="blog-post standard-post">
@@ -319,6 +323,8 @@ $result = mysql_query($qry);
                             <span class="current page-num">1</span>
                             <a class="page-num" href="#">2</a>
                             <a class="page-num" href="#">3</a>
+                            <a class="page-num" href="#">4</a>
+                            <a class="page-num" href="#">5</a>
                             <a class="next-page" href="#">Next</a>
                         </div>
                         <!-- End Pagination -->
