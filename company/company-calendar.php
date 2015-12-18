@@ -292,7 +292,7 @@ $CompanyID = $_SESSION['CompanyID'];
               $eventtitle = 'EventTitle';
               $datefrom = 'EventDatef';
               $dateto = 'EventDatet';
-              $status = 'Status';
+              $location = 'Location';
 
               $query = ("SELECT * FROM compeventtbl WHERE CompanyID = '$CompanyID'");
               $Result = mysql_query($query);
@@ -301,9 +301,10 @@ $CompanyID = $_SESSION['CompanyID'];
         
            </tr>    
                 <tr>
-                    <th width= "40%" class = "tabletitle">Event</th>
-                    <th width = "20%" class = "tabletitle">Event Date </th>
-                    <th width = "25%" class = "tabletitle"> Status </th>
+                    <th width= "20%" class = "tabletitle">Event</th>
+                    <th width = "20%" class = "tabletitle">From</th>
+                    <th width = "20%" class = "tabletitle">To</th>
+                    <th width = "25%" class = "tabletitle"> Location </th>
                     <th width = "15%" class = "tabletitle"> </th>
                 <tr>
             </thead>
@@ -313,9 +314,10 @@ $CompanyID = $_SESSION['CompanyID'];
                   
               ?>
                 <tr>
-                   <td width = 40% class = tabletitle><?php echo $row[$eventtitle];?></td>
-                   <td width = 20% class = tabletitle><?php echo $row[$datefrom]; echo " To "; echo $row[$dateto];?> </td>
-                   <td width = 20% class = tabletitle><?php echo $row[$status];?> </td>
+                   <td width = 20% class = tabletitle><?php echo $row[$eventtitle];?></td>
+                   <td width = 20% class = tabletitle><?php echo $row[$datefrom]; ?> </td>
+                   <td width = 20% class = tabletitle><?php echo $row[$dateto]; ?> </td>
+                   <td width = 20% class = tabletitle><?php echo $row[$location];?> </td>
                    <form method="POST">
                       <input type="hidden" name="delete_id" value="<?php echo $row['EventID']; ?>" />
                    <td> 

@@ -307,6 +307,7 @@ $result = mysql_query($qry);
                     <th width = "20%" class = "tabletitle"> Student Name </th>
                     <th width = "25%" class = "tabletitle">Course</th>
                     <th width = "30%"  class = "tabletitle"> Field of Specialization </th>
+                    <th width = "10%"  class = "tabletitle"></th>
                 <tr>
             </thead>
             <tbody>
@@ -332,6 +333,7 @@ $result = mysql_query($qry);
                                     <td width = '20%'> $lname $fname </td>
                                     <td width = '30%'> $course </td>
                                     <td width = '30%'> $Specialization </td>
+                                    <td width = '10%'> <button id='Edit' name='request_resume' class='btn btn-default'><i class='fa fa-arrow-circle-right'></i> </td>
                                   </tr>
                                   ";  
                                 }
@@ -356,6 +358,7 @@ $result = mysql_query($qry);
                                     <td width = '20%'> $lname $fname </td>
                                     <td width = '30%'> $course </td>
                                     <td width = '30%'> $Specialization </td>
+                                    <td width = '10%'> <button id='Edit' name='request_resume' class='btn btn-default'><i class='fa fa-arrow-circle-right'></i> </td>
                                   </tr>
                                   ";  
                                 }
@@ -381,6 +384,7 @@ $result = mysql_query($qry);
                           <td width = '20%'> $lname $fname </td>
                           <td width = '30%'> $course </td>
                           <td width = '30%'> $Specialization </td>
+                          <td width = '10%'> <button id='requestresume' name='requestresume' class='btn btn-default'><i class='fa fa-arrow-circle-right'></i> </td>
                         </tr>
                         ";  
                       }

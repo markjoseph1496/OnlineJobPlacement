@@ -285,7 +285,7 @@ $CompanyID = $_SESSION['CompanyID'];
                         </div>
                         <div class = "col-md-8 fieldcol">
                             <div class="form-group">
-                                  <input type = "text" name = "eventtitle" id = "eventtitle" class = "form-control"  style ="width: 300px;">
+                                  <input type = "text" name = "eventtitle" id = "eventtitle" class = "form-control" >
                             </div>
                         </div>
                     </div>  
@@ -295,7 +295,7 @@ $CompanyID = $_SESSION['CompanyID'];
                       </div>
                       <div class = "col-md-8 fieldcol">
                           <div class="form-group">
-                                <input type = "text" name = "location" id = "location" class = "form-control"  style ="width: 300px;">
+                                <input type = "text" name = "location" id = "location" class = "form-control" >
                           </div>
                       </div>
                     </div>  
@@ -305,7 +305,7 @@ $CompanyID = $_SESSION['CompanyID'];
                       </div>
                       <div class = "col-md-8 fieldcol">
                           <div class="form-group">
-                                 <input type = "text" class = "form-control" id = "descrip" name = "descrip"  style ="width: 300px;" >
+                                 <input type = "text" class = "form-control" id = "descrip" name = "descrip"  >
                           </div>
                       </div>
                     </div>  
@@ -318,4 +318,53 @@ $CompanyID = $_SESSION['CompanyID'];
     </div>       
 </div>
 </body>
+<script type="text/javascript">
+        $(document).ready(function (){
+            var validator = $("#addcalendar").bootstrapValidator({
+                feedbackIcons: {
+                    valid: "glyphicon glyphicon-ok",
+                    invalid: "glyphicon glyphicon-remove",
+                    validating: "glyphicon glyphicon-refresh"
+                },
+                fields:{
+                    eventtitle: {
+                        validators: {
+                            notEmpty: {
+                                message: "Event Title is required."
+                            },
+                            stringLength: {
+                                min: 5,
+                                max: 25,
+                                message: "Event Title must be 5-25 characters long."
+                            }
+                        }
+                    },
+                    location: {
+                        validators: {
+                            notEmpty: {
+                                message: "Location is required."
+                            },
+                            stringLength: {
+                                min: 3,
+                                max: 15,
+                                message: "Location must be 3-15 characters long."
+                            }
+                        }
+                    },
+                    descrip: {
+                        validators: {
+                            notEmpty: {
+                                message: "Description is required."
+                            },
+                            stringLength: {
+                                min: 5,
+                                max: 25,
+                                message: "Description must be 5-25 characters long."
+                            }
+                        }
+                    },
+                }
+            });
+        });
+    </script>
 </html>
