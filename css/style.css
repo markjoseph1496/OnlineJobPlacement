@@ -5692,3 +5692,167 @@ ul.footer-nav li a:hover {
 .navbar-collapse {
 	max-height: 340px;
 }
+
+/*Aira's Css*/
+.profile-name {
+	line-height: 32px;
+}
+
+.middle-bar {
+	background-color: #444;
+	border-bottom: 1px solid #f2f2f2;
+}
+
+.middle-bar.color-bar {
+	border-bottom: 0;
+}
+
+.middle-bar.color-bar a {
+	color: rgba(255,255,255,.6);
+}
+
+.middle-bar.color-bar a:hover {
+	color: rgba(255,255,255,1) !important;
+}
+
+.middle-bar.color-bar ul.mid-list li a i {
+	border-left: 1px solid rgba(255,255,255,.1);
+}
+
+.middle-bar.color-bar ul.mid-list li:last-child a i {
+	border-right: 1px solid rgba(255,255,255,.1);
+}
+
+.middle-bar.color-bar .contact-details li a:before {
+	color: rgba(255,255,255,.2);
+}
+
+.middle-bar.dark-bar {
+	background-color: #444;
+	border-bottom: 0;
+}
+
+.middle-bar.dark-bar a {
+	color: rgba(255,255,255,.4);
+}
+
+.middle-bar.dark-bar a:hover {
+	color: rgba(255,255,255,1) !important;
+}
+
+.middle-bar.dark-bar ul.mid-list li a i {
+	border-left: 1px solid rgba(255,255,255,.08);
+}
+
+.middle-bar.dark-bar ul.mid-list li:last-child a i {
+	border-right: 1px solid rgba(255,255,255,.08);
+}
+
+.middle-bar.dark-bar .contact-details li a:before {
+	color: rgba(255,255,255,.2);
+}
+
+.middle-bar a {
+	color: #666;
+}
+
+.middle-bar .contact-details li {
+	display: inline-block;
+}
+
+.middle-bar .contact-details li a:before {
+	position: relative;
+	content: "|";
+	font-size: 13px;
+	margin: 0 3px;
+	top: -1px;
+	color: #ddd;
+}
+
+.middle-bar .contact-details li a:before {
+	color: #666;
+}
+
+.middle-bar .contact-details li:first-child a:before {
+	display: none;
+}
+
+.middle-bar .contact-details li a {
+	font-size: 12px;
+	display: block;
+	line-height: 32px;
+}
+
+ul.mid-list {
+    float: left;
+}
+
+ul.mid-list li {
+    float: right;
+}
+
+ul.mid-list li a {
+    display: inline-block;
+	transition: all 0.2s ease-in-out;
+    -moz-transition: all 0.2s ease-in-out;
+    -webkit-transition: all 0.2s ease-in-out;
+    -o-transition: all 0.2s ease-in-out;
+}
+
+ul.mid-list li a:hover {
+	color: #fff;
+}
+
+ul.mid-list li a.facebook:hover {
+	background-color: #507CBE;
+}
+
+ul.mid-list li a.twitter:hover {
+	background-color: #63CDF1;
+}
+
+ul.mid-list li a.google:hover {
+	background-color: #F16261;
+}
+
+ul.mid-list li a.dribbble:hover {
+	background-color: #E46387;
+}
+
+ul.mid-list li a.linkdin:hover {
+	background-color: #90CADD;
+}
+
+ul.mid-list li a.tumblr:hover {
+	background-color: #4D7EA3;
+}
+
+ul.mid-list li a.flickr:hover {
+	background-color: #E474AF;
+}
+
+ul.mid-list li a.instgram:hover {
+	background-color: #4D4F54;
+}
+
+ul.mid-list li a.vimeo:hover {
+	background-color: #87D3E0;
+}
+
+ul.mid-list li a.skype:hover {
+	background-color: #36C4F3
+}
+
+ul.mid-list li a i {
+	font-size: 1em;
+	display: block;
+	width: 34px;
+	height: 33px;
+	line-height: 33px;
+	text-align: center;
+	/*border-left: 1px solid #f2f2f2;*/
+}
+
+ul.mid-list li:last-child a i {
+	/*border-right: 1px solid #f2f2f2;*/
+}
