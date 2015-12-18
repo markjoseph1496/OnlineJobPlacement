@@ -163,7 +163,7 @@
                         </div>
                         <!-- End Search -->
                         <!-- Start Navigation List -->
-                                                <ul class="nav navbar-nav navbar-right">
+                        <ul class="nav navbar-nav navbar-right">
                             <li>
                                 <a class="active" href="../personal-info.php">My Info</a>
                                 <ul class="dropdown">
@@ -173,9 +173,9 @@
                                     <li><a href="../education.php">Education</a></li>
                                     <li><a href="../certifications.php">Certifications</a></li>
                                     <li><a href="../achievements.php">Achievements</a></li>
-                                    <li><a class="active" href="../skills-and-languages.php">Skills & Languages</a></li>
+                                    <li><a href="../skills-and-languages.php">Skills & Languages</a></li>
                                     <li><a href="../references.php">References</a></li>
-                                    <li><a href="../portfolio.php">Portfolio</a></li>
+                                    <li><a class="active" href="../portfolio.php">Portfolio</a></li>
                                 </ul>
                             </li>
                             <li>
@@ -214,9 +214,9 @@
                             <li><a href="../education.php">Education</a></li>
                             <li><a href="../certifications.php">Certifications</a></li>
                             <li><a href="../achievements.php">Achievements</a></li>
-                            <li><a class="active" href="../skills-and-languages.php">Skills & Languages</a></li>
+                            <li><a href="../skills-and-languages.php">Skills & Languages</a></li>
                             <li><a href="../references.php">References</a></li>
-                            <li><a href="../portfolio.php">Portfolio</a></li>
+                            <li><a class="active" href="../portfolio.php">Portfolio</a></li>
                         </ul>
                     </li>
                     <li>
@@ -252,12 +252,12 @@
             <div class="container">
                 <div class="row">
                     <div class="col-md-6">
-                        <h2>Languages</h2>
+                        <h2>Links</h2>
                     </div>
                     <div class="col-md-6">
                         <ul class="breadcrumbs">
                             <li><a href="#">Home</a></li>
-                            <li>Languages</li>
+                            <li>Links</li>
                         </ul>
                     </div>
                 </div>
@@ -272,22 +272,16 @@
                     <!-- Page Content -->
                     <div class="col-md-9 page-content">
                         <div class="row">
-                            <div class="col-md-6">
+                            <div class="col-md-12 fieldcol">
                                 <div class="form-group">
-                                    <label>Language <span>(*)</span></label>
-                                    <input type="text" class="form-control" id="txtLanguage" name="txtLanguage">
+                                    <label>URL <span>(*)</span></label>
+                                    <input type="text" class="form-control" id="txtURL" name="txtURL"  value="<?php echo htmlspecialchars($server_txtURL)?>">
                                 </div>
                             </div>
-                            <div class="col-md-6">
+                            <div class="col-md-12 fieldcol">
                                 <div class="form-group">
-                                    <label>Proficiency <span>(*)</span></label>
-                                    <div class="rating text-center">
-                                        <span class="star"></span>
-                                        <span class="star"></span>
-                                        <span class="star"></span>
-                                        <span class="star"></span>
-                                        <span class="star"></span>
-                                    </div>
+                                    <label>Name/Title/Caption <span>(*)</span></label>
+                                    <input type="text" class="form-control" id="txtCaption" name="txtCaption"value="<?php echo htmlspecialchars($server_txtCaption)?>">
                                 </div>
                             </div>
                         </div>
@@ -306,7 +300,7 @@
                 <div class="hr5" style="margin-top:35px;margin-bottom:40px;"></div>
                 <div class="field">
                     <div class="text-center">
-                        <button class="btn btn-lg btn-hg btn-primary" name ="btnSave">Add</button>
+                        <button class="btn btn-lg btn-hg btn-primary" name ="btnSave">Save</button>
                     </div>
                 </div>
             </div>

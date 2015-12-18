@@ -163,7 +163,7 @@
                         </div>
                         <!-- End Search -->
                         <!-- Start Navigation List -->
-                                                <ul class="nav navbar-nav navbar-right">
+                        <ul class="nav navbar-nav navbar-right">
                             <li>
                                 <a class="active" href="../personal-info.php">My Info</a>
                                 <ul class="dropdown">
@@ -173,8 +173,8 @@
                                     <li><a href="../education.php">Education</a></li>
                                     <li><a href="../certifications.php">Certifications</a></li>
                                     <li><a href="../achievements.php">Achievements</a></li>
-                                    <li><a class="active" href="../skills-and-languages.php">Skills & Languages</a></li>
-                                    <li><a href="../references.php">References</a></li>
+                                    <li><a href="../skills-and-languages.php">Skills & Languages</a></li>
+                                    <li><a class="active" href="../references.php">References</a></li>
                                     <li><a href="../portfolio.php">Portfolio</a></li>
                                 </ul>
                             </li>
@@ -185,7 +185,7 @@
                                     <li><a href="../../resumelink/background.php">Background</a></li>
                                     <li><a href="../../resumelink/print-share.php">Print/Share</a></li>
                                 </ul>
-                            </li>
+                             </li>
                             <li>
                                 <a href="../../applications/applications.php">Applications</a>
                             </li>
@@ -214,8 +214,8 @@
                             <li><a href="../education.php">Education</a></li>
                             <li><a href="../certifications.php">Certifications</a></li>
                             <li><a href="../achievements.php">Achievements</a></li>
-                            <li><a class="active" href="../skills-and-languages.php">Skills & Languages</a></li>
-                            <li><a href="../references.php">References</a></li>
+                            <li><a href="../skills-and-languages.php">Skills & Languages</a></li>
+                            <li><a class="active" href="../references.php">References</a></li>
                             <li><a href="../portfolio.php">Portfolio</a></li>
                         </ul>
                     </li>
@@ -226,7 +226,7 @@
                             <li><a href="../../resumelink/background.php">Background</a></li>
                             <li><a href="../../resumelink/print-share.php">Print/Share</a></li>
                         </ul>
-                    </li>
+                     </li>
                     <li>
                         <a href="../../applications/applications.php">Applications</a>
                     </li>
@@ -252,12 +252,12 @@
             <div class="container">
                 <div class="row">
                     <div class="col-md-6">
-                        <h2>Languages</h2>
+                        <h2>References</h2>
                     </div>
                     <div class="col-md-6">
                         <ul class="breadcrumbs">
                             <li><a href="#">Home</a></li>
-                            <li>Languages</li>
+                            <li>References</li>
                         </ul>
                     </div>
                 </div>
@@ -271,24 +271,60 @@
                 <div class="row sidebar-page">
                     <!-- Page Content -->
                     <div class="col-md-9 page-content">
-                        <div class="row">
-                            <div class="col-md-6">
+                        <div class="row field">
+                            <div class="col-md-6 fieldcol">
                                 <div class="form-group">
-                                    <label>Language <span>(*)</span></label>
-                                    <input type="text" class="form-control" id="txtLanguage" name="txtLanguage">
+                                    <label>Name <span>(*)</span></label>
+                                    <input type="text" class="form-control" id="txtName" name="txtName" value="<?php echo htmlspecialchars($server_txtName)?>">
                                 </div>
                             </div>
-                            <div class="col-md-6">
+                            <div class="col-md-6 fieldcol">
                                 <div class="form-group">
-                                    <label>Proficiency <span>(*)</span></label>
-                                    <div class="rating text-center">
-                                        <span class="star"></span>
-                                        <span class="star"></span>
-                                        <span class="star"></span>
-                                        <span class="star"></span>
-                                        <span class="star"></span>
-                                    </div>
+                                    <label>Relationship <span>(*)</span></label>
+                                    <input type="text" class="form-control" id="txtRelationship" name="txtRelationship" value="<?php echo htmlspecialchars($server_txtRelationship)?>">
                                 </div>
+                            </div>
+                        </div>
+                        <div class="row field">
+                            <div class="col-md-6 fieldcol">
+                                <div class="form-group">
+                                    <label>Company <span>(*)</span></label>
+                                    <input type="text" class="form-control" id="txtCompany" name="txtCompany" value="<?php echo htmlspecialchars($server_txtCompany)?>">
+                                </div>
+                            </div>
+                            <div class="col-md-6 fieldcol">
+                                <div class="form-group">
+                                    <label>Position <span>(*)</span></label>
+                                    <input type="text" class="form-control" id="txtPosition" name="txtPosition" value="<?php echo htmlspecialchars($server_txtPosition)?>">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row field">
+                            <div class="col-md-6 fieldcol">
+                                <div class="form-group">
+                                    <label>Phone <span>(*)</span></label>
+                                    <input type="text" class="form-control" id="txtPhone" name="txtPhone" value="<?php echo htmlspecialchars($server_txtPhone)?>">
+                                </div>
+                            </div>
+                            <div class="col-md-6 fieldcol">
+                                <div class="form-group">
+                                    <label>Email</label>
+                                    <input type="text" class="form-control" id="txtEmail" name="txtEmail" value="<?php echo htmlspecialchars($server_txtEmail)?>">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row field">
+                            <div class="col-md-3 fieldcol">
+                                &nbsp;
+                            </div>
+                            <div class="col-md-6 fieldcol">
+                                <div class="form-group">
+                                    <label>Number of Years You've Known this Person</label>
+                                    <input type="text" class="form-control" id="" name="">
+                                </div>
+                            </div>
+                            <div class="col-md-3 fieldcol">
+                                &nbsp;
                             </div>
                         </div>
                     </div>
@@ -306,7 +342,7 @@
                 <div class="hr5" style="margin-top:35px;margin-bottom:40px;"></div>
                 <div class="field">
                     <div class="text-center">
-                        <button class="btn btn-lg btn-hg btn-primary" name ="btnSave">Add</button>
+                        <button class="btn btn-lg btn-hg btn-primary" name ="btnSave">Save</button>
                     </div>
                 </div>
             </div>

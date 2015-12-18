@@ -48,7 +48,7 @@
     <link rel="stylesheet" type="text/css" href="../../../css/colors/yellow.css" title="yellow" media="screen" />
 
     <!-- JS  -->
-    <script type="text/javascript" src="../../../js/jquery.min.js"></script>
+    <script type="text/javascript" src="../../../js/jquery-2.1.4.min.js"></script>
     <script type="text/javascript" src="../../../js/modernizrr.js"></script>
     <script type="text/javascript" src="../../../js/jquery.appear.js"></script>
     <script type="text/javascript" src="../../../js/count-to.js"></script>
@@ -165,17 +165,17 @@
                         <!-- Start Navigation List -->
                         <ul class="nav navbar-nav navbar-right">
                             <li>
-                                <a class="active" href="personal-info.php">My Info</a>
+                                <a class="active" href="../personal-info.php">My Info</a>
                                 <ul class="dropdown">
-                                    <li><a href="personal-info.php">Personal Info</a></li>
-                                    <li><a href="contacts-info.php">Contacts Info</a></li>
-                                    <li><a class="active" href="work.php">Work</a></li>
-                                    <li><a href="education.php">Education</a></li>
-                                    <li><a href="certifications.php">Certifications</a></li>
-                                    <li><a href="achievements.php">Achievements</a></li>
-                                    <li><a href="skills-and-languages.php">Skills & Languages</a></li>
-                                    <li><a href="references.php">References</a></li>
-                                    <li><a href="portfolio.php">Portfolio</a></li>
+                                    <li><a href="../personal-info.php">Personal Info</a></li>
+                                    <li><a href="../contacts-info.php">Contacts Info</a></li>
+                                    <li><a class="active" href="../work.php">Work</a></li>
+                                    <li><a href="../education.php">Education</a></li>
+                                    <li><a href="../certifications.php">Certifications</a></li>
+                                    <li><a href="../achievements.php">Achievements</a></li>
+                                    <li><a href="../skills-and-languages.php">Skills & Languages</a></li>
+                                    <li><a href="../references.php">References</a></li>
+                                    <li><a href="../portfolio.php">Portfolio</a></li>
                                 </ul>
                             </li>
                             <li>

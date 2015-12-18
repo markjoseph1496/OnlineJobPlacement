@@ -48,7 +48,7 @@
     <link rel="stylesheet" type="text/css" href="../../../css/colors/yellow.css" title="yellow" media="screen" />
 
     <!-- JS  -->
-    <script type="text/javascript" src="../../../js/jquery.min.js"></script>
+    <script type="text/javascript" src="../../../js/jquery-2.1.4.min.js"></script>
     <script type="text/javascript" src="../../../js/modernizrr.js"></script>
     <script type="text/javascript" src="../../../js/jquery.appear.js"></script>
     <script type="text/javascript" src="../../../js/count-to.js"></script>
@@ -165,38 +165,38 @@
                         <!-- Start Navigation List -->
                         <ul class="nav navbar-nav navbar-right">
                             <li>
-                                <a class="active" href="personal-info.php">My Info</a>
+                                <a class="active" href="../personal-info.php">My Info</a>
                                 <ul class="dropdown">
-                                    <li><a class="active" href="personal-info.php">Personal Info</a></li>
-                                    <li><a href="contacts-info.php">Contacts Info</a></li>
-                                    <li><a href="work.php">Work</a></li>
-                                    <li><a href="education.php">Education</a></li>
-                                    <li><a href="certifications.php">Certifications</a></li>
-                                    <li><a href="achievements.php">Achievements</a></li>
-                                    <li><a href="skills-and-languages.php">Skills & Languages</a></li>
-                                    <li><a href="references.php">References</a></li>
-                                    <li><a href="portfolio.php">Portfolio</a></li>
+                                    <li><a href="../personal-info.php">Personal Info</a></li>
+                                    <li><a href="../contacts-info.php">Contacts Info</a></li>
+                                    <li><a href="../work.php">Work</a></li>
+                                    <li><a class="active" href="../education.php">Education</a></li>
+                                    <li><a href="../certifications.php">Certifications</a></li>
+                                    <li><a href="../achievements.php">Achievements</a></li>
+                                    <li><a href="../skills-and-languages.php">Skills & Languages</a></li>
+                                    <li><a href="../references.php">References</a></li>
+                                    <li><a href="../portfolio.php">Portfolio</a></li>
                                 </ul>
                             </li>
                             <li>
-                                <a href="../resumelink/resume-link.php">Resume Link</a>
+                                <a href="../../resumelink/resume-link.php">Resume Link</a>
                                 <ul class="dropdown">
-                                    <li><a href="../resumelink/resume-link.php">Resume Link</a></li>
-                                    <li><a href="../resumelink/background.php">Background</a></li>
-                                    <li><a href="../resumelink/print-share.php">Print/Share</a></li>
+                                    <li><a href="../../resumelink/resume-link.php">Resume Link</a></li>
+                                    <li><a href="../../resumelink/background.php">Background</a></li>
+                                    <li><a href="../../resumelink/print-share.php">Print/Share</a></li>
                                 </ul>
                              </li>
                             <li>
-                                <a href="../applications/applications.php">Applications</a>
+                                <a href="../../applications/applications.php">Applications</a>
                             </li>
                             <li>
-                                <a href="../search-job/search-job.php">Jobs</a>
+                                <a href="../../search-job/search-job.php">Jobs</a>
                             </li>
                             <li>
-                                <a href="../settings/privacy-settings.php">Settings</a>
+                                <a href="../../settings/privacy-settings.php">Settings</a>
                                 <ul class="dropdown">
-                                    <li><a href="../settings/privacy-settings.php">Privacy Settings</a></li>
-                                    <li><a href="../settings/pass-settings.php">Password Settings</a></li>
+                                    <li><a href="../../settings/privacy-settings.php">Privacy Settings</a></li>
+                                    <li><a href="../../settings/pass-settings.php">Password Settings</a></li>
                                 </ul>
                             </li>
                         </ul>
@@ -206,42 +206,39 @@
                 <!-- Mobile Menu Start -->
                 <ul class="wpb-mobile-menu">
                     <li>
-                        <a class="active" href="personal-info.php">My Info</a>
+                        <a class="active" href="../personal-info.php">My Info</a>
                         <ul class="dropdown">
-                            <li><a class="active" href="personal-info.php">Personal Info</a></li>
-                            <li><a href="contacts-info.php">Contacts Info</a></li>
-                            <li><a href="work.php">Work</a></li>
-                            <li><a href="education.php">Education</a></li>
-                            <li><a href="certifications.php">Certifications</a></li>
-                            <li><a href="achievements.php">Achievements</a></li>
-                            <li><a href="skills-and-languages.php">Skills & Languages</a></li>
-                            <li><a href="references.php">References</a></li>
-                            <li><a href="portfolio.php">Portfolio</a></li>
+                            <li><a href="../personal-info.php">Personal Info</a></li>
+                            <li><a href="../contacts-info.php">Contacts Info</a></li>
+                            <li><a href="../work.php">Work</a></li>
+                            <li><a class="active" href="../education.php">Education</a></li>
+                            <li><a href="../certifications.php">Certifications</a></li>
+                            <li><a href="../achievements.php">Achievements</a></li>
+                            <li><a href="../skills-and-languages.php">Skills & Languages</a></li>
+                            <li><a href="../references.php">References</a></li>
+                            <li><a href="../portfolio.php">Portfolio</a></li>
                         </ul>
                     </li>
                     <li>
-                        <a href="../resumelink/resume-link.php">Resume Link</a>
+                        <a href="../../resumelink/resume-link.php">Resume Link</a>
                         <ul class="dropdown">
-                            <li><a href="../resumelink/resume-link.php">Resume Link</a></li>
-                            <li><a href="../resumelink/background.php">Background</a></li>
-                            <li><a href="../resumelink/print-share.php">Print/Share</a></li>
+                            <li><a href="../../resumelink/resume-link.php">Resume Link</a></li>
+                            <li><a href="../../resumelink/background.php">Background</a></li>
+                            <li><a href="../../resumelink/print-share.php">Print/Share</a></li>
                         </ul>
                      </li>
                     <li>
-                        <a href="../applications/applications.php">Applications</a>
+                        <a href="../../applications/applications.php">Applications</a>
                     </li>
                     <li>
-                        <a href="../search-job/search-job.php">Jobs</a>
+                        <a href="../../search-job/search-job.php">Jobs</a>
                     </li>
                     <li>
-                        <a href="../settings/privacy-settings.php">Settings</a>
+                        <a href="../../settings/privacy-settings.php">Settings</a>
                         <ul class="dropdown">
-                            <li><a href="../settings/privacy-settings.php">Privacy Settings</a></li>
-                            <li><a href="../settings/pass-settings.php">Password Settings</a></li>
+                            <li><a href="../../settings/privacy-settings.php">Privacy Settings</a></li>
+                            <li><a href="../../settings/pass-settings.php">Password Settings</a></li>
                         </ul>
-                    </li>
-                    <li>
-                        <a href="../../login-student.php?id=1"><i class="fa fa-sign-out"></i> Sign Out</a>
                     </li>
                 </ul>
                 <!-- Mobile Menu End -->
@@ -252,12 +249,12 @@
             <div class="container">
                 <div class="row">
                     <div class="col-md-6">
-                        <h2>Personal Information</h2>
+                        <h2>Seminar</h2>
                     </div>
                     <div class="col-md-6">
                         <ul class="breadcrumbs">
                             <li><a href="#">Home</a></li>
-                            <li>Personal Information</li>
+                            <li>Seminar</li>
                         </ul>
                     </div>
                 </div>
@@ -273,177 +270,30 @@
                     <div class="col-md-9 page-content">
                         <div class="row">
                             <div class="col-md-7">
-                                <!-- Single Testimonial -->
-                                <div class="classic-testimonials">
-                                    <div class="testimonial-content">
-                                        <div class="form-group">
-                                            <label>First Name <span>(*)</span></label>
-                                            <input type="text" class="form-control" id="fname" name="fname"  value="<?php if($b==1){ echo $FirstName; } else{ echo $server_fname; } ?>">
-                                        </div>
-                                        <div class="form-group">
-                                            <label>Middle Name</label>
-                                            <input type="text" class="form-control" id="mname" name="mname" value="<?php if($b==1){ echo $MiddleName; } else{ echo $server_mname; } ?>">
-                                        </div>
-                                        <div class="form-group">
-                                            <label>Last Name <span>(*)</span></label>
-                                            <input type="text" class="form-control" id="lname" name="lname" value="<?php if($b==1){ echo $LastName; } else{ echo $server_lname; } ?>">
-                                        </div>
-                                        <div class="form-group">
-                                            <label>Gender</label>
-                                            <select id="gender" name="gender" class="form-control" style="width:100%; height:34px;">
-                                                <option value="" selected="selected">- Please Select Gender -</option>
-                                                <option value="Female" 
-                                                <?php 
-                                                if($b==1){
-                                                    if($Gender=="Female") echo 'selected="selected"'; 
-                                                }
-                                                else{
-                                                    if($server_gender=="Female") echo 'selected="selected"'; 
-                                                }
-                                                ?>>
-                                                Female
-                                                </option>
-
-
-                                                <option value="Male" 
-                                                <?php 
-                                                if($b==1){
-                                                    if($Gender=="Male") echo 'selected="selected"';
-                                                }
-                                                else{
-                                                    if($server_gender=="Male") echo 'selected="selected"'; 
-                                                }
-
-                
-                                                ?>>
-                                                Male
-                            
-                                                </option>
-                                            </select>
-                                        </div>
-                                        <div class="form-group">
-                                            <label>Birthdate <span>(*)</span></label><br>
-                                            <input type="date" class="form-control" name="txtBirthdate" id="" value="<?php if($b==1){ echo $Birthdate; } else{ echo $server_Birthdate; } ?>">
-                                        </div>
-                                        <div class="form-group">
-                                            <label>Nationality</label>
-                                            <select id="nationality" name="nationality" class="form-control" style="width:100%; height:34px;">
-                                                <option value="" selected="selected">- Please select one -</option>
-                                                <option value="American"
-                                                <?php
-                                                if($b==1){
-                                                if($Nationality=="American") echo 'selected="selected"';
-                                                }
-                                                else{
-                                                    if($server_nationality=="American") echo 'selected="selected"';
-                                                }
-                                                ?>>
-                                                American
-                                                </option>
-
-                                                <option value="Filipino"
-                                                <?php 
-                                                if($b==1){
-                                                    if($Nationality=="Filipino") echo 'selected="selected"';
-                                                }
-                                                else{
-                                                    if($server_nationality=="Filipino") echo 'selected="selected"';
-                                                }
-                                                ?>>
-                                                Filipino
-                                                </option>
-                                            </select>
-                                        </div>
-                                        <div class="form-group">
-                                            <label>Civil Status</label>
-                                            <select id="civil_status" name="civil_status" class="form-control" style="width:100%; height:34px;">
-                                                <option value ="" >- Please select one -</option>
-                                                <option value="Single" 
-                                                <?php 
-                                                if($b==1){
-                                                    if($CivilStatus=="Single") echo 'selected="selected"';
-                                                }
-                                                else{
-                                                    if($server_civilstatus=="Single") echo 'selected="selected"';
-                                                }
-                                                ?>>
-                                                Single
-                                                </option>
-
-                                                <option value="Married" 
-                                                <?php 
-                                                if($b==1){
-                                                    if($CivilStatus=="Married") echo 'selected="selected"';
-                                                }
-                                                else{
-                                                    if($server_civilstatus=="Married") echo 'selected="selected"';
-                                                }
-                                                ?>>
-                                                Married
-                                                </option>
-
-                                                <option value="Separated" 
-                                                <?php 
-
-                                                if($b==1){
-                                                    if($CivilStatus=="Separated") echo 'selected="selected"';
-                                                }
-                                                else{
-                                                    if($server_civilstatus=="Separated") echo 'selected="selected"';
-                                                }
-                                                ?>>
-                                                Separated
-                                                </option>
-
-                                                <option value="Widowed" 
-
-                                                <?php 
-                                                if($b==1){
-                                                    if($CivilStatus=="Widowed") echo 'selected="selected"'; 
-                                                }
-                                                else{
-                                                    if($server_civilstatus=="Widowed") echo 'selected="selected"'; 
-                                                }
-                                                ?>>
-                                                Widowed
-                                                </option>
-                                            </select>
-                                        </div>
-
-                                        <div class="hr5" style="margin-top:35px;margin-bottom:40px;"></div>
-                                        <div class="form-group">
-                                            <label class="control-label">Facebook <span>(*)</span></label>
-                                            <div class="input-group">
-                                                <span class="input-group-addon">http://www.facebook.com/</span>
-                                                <input name="FBLink" type="text" pattern="^[_A-z0-9.]{1,}$" maxlength="15" class="form-control" id="inputTwitter" required value="<?php if($b==1){ echo $FBLink; } else{ echo $server_FBLink; } ?>" >
-                                            </div>
-                                        </div> 
-                                        <div class="form-group">
-                                            <label class="control-label">Twitter</label>
-                                            <div class="input-group">
-                                                <span class="input-group-addon">@</span>
-                                                <input name="TwitterLink" type="text" pattern="^[_A-z0-9.]{1,}$" maxlength="15" class="form-control" id="inputTwitter" value="<?php if($b==1){ echo $TwitterLink; } else{ echo $server_TwitterLink; } ?>">
-                                            </div>
-                                        </div>
-                                    </div>
+                                <div class="form-group">
+                                    <label>Seminar <span>(*)</span></label>
+                                    <input type="text" class="form-control" id="txtSeminar" name="txtSeminar" value="<?php echo htmlspecialchars($server_txtSeminar)?>">
                                 </div>
-                                <!-- End Single Testimonial -->
                             </div>
                             <div class="col-md-5">
-                                <!-- Single Testimonial -->
-                                <div class="classic-testimonials">
-                                    <div class="testimonial-content">
-                                        <label>Photo</label>
-                                        <input id="uploadFile" type="file" name="fileToUpload" class="img"><br>
-                                        <div id="imagePreview">
-                                            <img src="" id="Image1" alt="" style="width:250px;height:250px;">
-                                            <div class="space"></div>
-                                            <div class="space"></div>
-                                        </div>
-                                    </div>
-                                    <div class="testimonial-author"><button id="" class="btn btn-hg btn-primary" name="btnDelete">Delete Image</button></div>
+                                <div class="form-group">
+                                    <label>Year Attended <span>(*)</span></label>
+                                    <select id="txtYearAttended" name="txtYearAttended" class="form-control" style="width:100%; height:34px;">
+                                            <option value = "">- Year -</option>
+                                            <?php 
+                                                $date = 1934;
+                                                while($date != Date("Y")){
+                                                    $date++;
+                                                    if($date == $server_txtYearAttended){
+                                                        echo "<option selected value='$date'> $date</option>";
+                                                    }
+                                                    else{
+                                                    echo "<option value='$date'> $date</option>";
+                                                    }
+                                                }
+                                            ?>
+                                    </select>
                                 </div>
-                                <!-- End Single Testimonial -->
                             </div>
                         </div>
                     </div>
@@ -461,7 +311,7 @@
                 <div class="hr5" style="margin-top:35px;margin-bottom:40px;"></div>
                 <div class="field">
                     <div class="text-center">
-                        <button class="btn btn-lg btn-hg btn-primary" name ="btnSave">Save</button>
+                        <button class="btn btn-lg btn-hg btn-primary" name ="btnSave">Add</button>
                     </div>
                 </div>
             </div>
@@ -470,40 +320,4 @@
     <!-- End Content -->
     <script type="text/javascript" src="../../../js/script.js"></script>
 </body>
-
-<?php 
-if(isset($_POST['btnSave'])){
-
-    $fileToUpload = basename($_FILES["fileToUpload"]["name"]);
-    $target_dir = "ProfileImages/";   //eto yung folder or directory kung saan mo ma-sasave yung picture mo
-    $target_file = $target_dir . $StudentID.".jpg";
-    $uploadOk = 1;
-    $imageFileType = pathinfo($target_file,PATHINFO_EXTENSION);
-
-    //eto chcheck nya yung format ng file kung GIF ba sya or JPEG or PNG in short Check ng FILE TYPE
-    if($imageFileType != "jpg" && $imageFileType != "png" && $imageFileType != "jpeg") {
-        echo "Sorry, only JPG, JPEG, PNG files are allowed.";
-        $uploadOk = 0;
-    }
-    // Check if $uploadOk is set to 0 by an error
-    if ($uploadOk == 0) {
-        echo "Sorry, your file was not uploaded.";
-
-    } 
-    else {
-        if (move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_file)){
-
-        $query = "UPDATE studentinfotbl SET ProfileImage = '$target_file' WHERE StudentID = '$StudentID'";
-        $Result = mysql_query($query);
-        echo "
-         <script type='text/javascript'>
-         </script>
-         ";
-        } 
-        else {
-            echo "Sorry, there was an error uploading your file.";
-        }
-    }
-}
-?>
 </html>

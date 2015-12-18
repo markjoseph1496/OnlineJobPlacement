@@ -74,7 +74,7 @@ $result = mysql_query($qry);
     <link rel="stylesheet" type="text/css" href="../../css/colors/yellow.css" title="yellow" media="screen" />
 
     <!-- JS  -->
-    <script type="text/javascript" src="../../js/jquery.min.js"></script>
+    <script type="text/javascript" src="../../js/jquery-2.1.4.min.js"></script>
     <script type="text/javascript" src="../../js/modernizrr.js"></script>
     <script type="text/javascript" src="../../js/jquery.appear.js"></script>
     <script type="text/javascript" src="../../js/count-to.js"></script>
@@ -301,7 +301,7 @@ $result = mysql_query($qry);
                                 <!-- Single Testimonial -->
                                 <div class="row field">
                                     <div class="col-md-6 fieldcol">
-                                        <label>Documents</label>
+                                        <h4>Documents<span="head-line"></span="head-line"></h4>
                                     </div>
                                     <div class="col-md-6 fieldcol">
                                         <a href="add/add-document.php" class="btnforadding" style="float:right;">
@@ -338,7 +338,7 @@ $result = mysql_query($qry);
                                 <div class="hr5" style="margin-top:35px;margin-bottom:40px;"></div>
                                 <div class="row field">
                                     <div class="col-md-6 fieldcol">
-                                        <label>Links</label>
+                                        <h4>Links<span="head-line"></span="head-line"></h4>
                                     </div>
                                     <div class="col-md-6 fieldcol">
                                         <a href="add/add-link.php" class="btnforadding" style="float:right;">

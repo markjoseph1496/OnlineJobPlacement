@@ -64,7 +64,7 @@ else{
     <link rel="stylesheet" type="text/css" href="../../css/colors/yellow.css" title="yellow" media="screen" />
 
     <!-- JS  -->
-    <script type="text/javascript" src="../../js/jquery.min.js"></script>
+    <script type="text/javascript" src="../../js/jquery-2.1.4.min.js"></script>
     <script type="text/javascript" src="../../js/modernizrr.js"></script>
     <script type="text/javascript" src="../../js/jquery.appear.js"></script>
     <script type="text/javascript" src="../../js/count-to.js"></script>
@@ -309,87 +309,88 @@ else{
                 <div class="page-content">
                     <div class="row">
                         <div class="col-md-12">
-                                <p><b>Resumé Link URL:</b><a href="../../../resumelinkprofile.php" target="_blank">
-                                    http://markjoseph1496.ojpms.com <i class="fa fa-external-link-square"></i></a>
-                                </p><br>
-                                        <div class="col-md-12 fieldcol">
-                                            <label>Use Background</label><br>
-                                            <input type="radio" name="" id="" value="">Solid Color &nbsp;&nbsp;&nbsp;
-                                            <input type="radio" name="" id="" checked="checked" value="I">Uploaded Image &nbsp;&nbsp;&nbsp;                                    
-                                            <br><br>
-                                            <div id="color" style="display: none;">
-                                                <label>Solid Color</label><br>
-                                                <select id="colorselector_1" style="display: none;">
-                                                    <option value="106" data-color="#A0522D" selected="selected">sienna</option>
-                                                    <option value="47" data-color="#CD5C5C">indianred</option>
-                                                    <option value="87" data-color="#FF4500">orangered</option>
-                                                    <option value="17" data-color="#008B8B">darkcyan</option>
-                                                    <option value="18" data-color="#B8860B">darkgoldenrod</option>
-                                                    <option value="68" data-color="#32CD32">limegreen</option>
-                                                    <option value="42" data-color="#FFD700">gold</option>
-                                                    <option value="77" data-color="#48D1CC">mediumturquoise</option>
-                                                    <option value="107" data-color="#87CEEB">skyblue</option>
-                                                    <option value="46" data-color="#FF69B4">hotpink</option>
-                                                    <option value="64" data-color="#87CEFA">lightskyblue</option>
-                                                    <option value="13" data-color="#6495ED">cornflowerblue</option>
-                                                    <option value="15" data-color="#DC143C">crimson</option>
-                                                    <option value="24" data-color="#FF8C00">darkorange</option>
-                                                    <option value="78" data-color="#C71585">mediumvioletred</option>
-                                                    <option value="123" data-color="#000000">black</option>
-                                                </select>
-                                                <script>
-                                                    $('#colorselector').colorselector();
-                                                </script>
-                                            </div>
-                                            <div id="uploaded" style="display:block;">
-                                                <label>Uploaded Image</label>
-                                                <input id="uploadFile" type="file" name="fileToUpload" class="img"><br>
-                                                <div class="col-md-1 col-sm-6 fieldcol">
-                                                    <div id="imagePreview">
-                                                    <img src="<?php echo $ProfileImage; ?>" id="Image1" alt="" style="width:250px;height:250px;">
-                                                    <div class="space-1"></div>            
-                                                    <button name="" type="" id="" class="btn btn-hg btn-primary" name="btnDelete">Delete Image</button>
-                                                </div>          
-                                                <div id="preset" style="display: none;">
-                                                    <label>Preset Image</label>
-                                                    <select name="preset_id" id="preset_id" class="image-picker show-html" style="display: none;">
-                                                        <option data-img-src="http://cdn.jobs180.com/presets/coverpresets/thumb/4seasons_wallpaper_tn.jpg" value="1" selected="selected">4seasons_wallpaper</option>
-                                                        <option data-img-src="http://cdn.jobs180.com/presets/coverpresets/thumb/190593_4590_tn.jpg" value="2">190593_4590</option>
-                                                        <option data-img-src="http://cdn.jobs180.com/presets/coverpresets/thumb/art_flow_tn.jpg" value="3">art_flow</option>
-                                                        <option data-img-src="http://cdn.jobs180.com/presets/coverpresets/thumb/art_wallpaper_tn.jpg" value="4">art_wallpaper</option>
-                                                        <option data-img-src="http://cdn.jobs180.com/presets/coverpresets/thumb/balloons_tn.jpg" value="5">balloons</option>
-                                                        <option data-img-src="http://cdn.jobs180.com/presets/coverpresets/thumb/be_wallpaper_tn.jpg" value="6">be_wallpaper</option>
-                                                        <option data-img-src="http://cdn.jobs180.com/presets/coverpresets/thumb/beats_tn.jpg" value="7">beats</option>
-                                                        <option data-img-src="http://cdn.jobs180.com/presets/coverpresets/thumb/colorful_tn.jpg" value="8">colorful</option>
-                                                        <option data-img-src="http://cdn.jobs180.com/presets/coverpresets/thumb/corporate_tn.jpg" value="9">corporate</option>
-                                                        <option data-img-src="http://cdn.jobs180.com/presets/coverpresets/thumb/flares_tn.jpg" value="10">flares</option>
-                                                        <option data-img-src="http://cdn.jobs180.com/presets/coverpresets/thumb/gradient_tn.jpg" value="11">gradient</option>
-                                                        <option data-img-src="http://cdn.jobs180.com/presets/coverpresets/thumb/graduate_tn.jpg" value="12">graduate</option>
-                                                        <option data-img-src="http://cdn.jobs180.com/presets/coverpresets/thumb/group_tn.jpg" value="13">group</option>
-                                                        <option data-img-src="http://cdn.jobs180.com/presets/coverpresets/thumb/hand_heart_tn.jpg" value="14">hand_heart</option>
-                                                        <option data-img-src="http://cdn.jobs180.com/presets/coverpresets/thumb/hey_you_little_men_tn.jpg" value="15">hey_you_little_men</option>
-                                                    </select>
-                                                    <ul class="thumbnails image_picker_selector">
-                                                        <li><div class="thumbnail selected"><img class="image_picker_image" src="http://cdn.jobs180.com/presets/coverpresets/thumb/4seasons_wallpaper_tn.jpg"></div></li>
-                                                        <li><div class="thumbnail"><img class="image_picker_image" src="http://cdn.jobs180.com/presets/coverpresets/thumb/190593_4590_tn.jpg"></div></li>
-                                                        <li><div class="thumbnail"><img class="image_picker_image" src="http://cdn.jobs180.com/presets/coverpresets/thumb/art_flow_tn.jpg"></div></li>
-                                                        <li><div class="thumbnail"><img class="image_picker_image" src="http://cdn.jobs180.com/presets/coverpresets/thumb/art_wallpaper_tn.jpg"></div></li>
-                                                        <li><div class="thumbnail"><img class="image_picker_image" src="http://cdn.jobs180.com/presets/coverpresets/thumb/balloons_tn.jpg"></div></li>
-                                                        <li><div class="thumbnail"><img class="image_picker_image" src="http://cdn.jobs180.com/presets/coverpresets/thumb/be_wallpaper_tn.jpg"></div></li>
-                                                        <li><div class="thumbnail"><img class="image_picker_image" src="http://cdn.jobs180.com/presets/coverpresets/thumb/beats_tn.jpg"></div></li>
-                                                        <li><div class="thumbnail"><img class="image_picker_image" src="http://cdn.jobs180.com/presets/coverpresets/thumb/colorful_tn.jpg"></div></li>
-                                                        <li><div class="thumbnail"><img class="image_picker_image" src="http://cdn.jobs180.com/presets/coverpresets/thumb/corporate_tn.jpg"></div></li>
-                                                        <li><div class="thumbnail"><img class="image_picker_image" src="http://cdn.jobs180.com/presets/coverpresets/thumb/flares_tn.jpg"></div></li>
-                                                        <li><div class="thumbnail"><img class="image_picker_image" src="http://cdn.jobs180.com/presets/coverpresets/thumb/gradient_tn.jpg"></div></li>
-                                                        <li><div class="thumbnail"><img class="image_picker_image" src="http://cdn.jobs180.com/presets/coverpresets/thumb/graduate_tn.jpg"></div></li>
-                                                        <li><div class="thumbnail"><img class="image_picker_image" src="http://cdn.jobs180.com/presets/coverpresets/thumb/group_tn.jpg"></div></li>
-                                                        <li><div class="thumbnail"><img class="image_picker_image" src="http://cdn.jobs180.com/presets/coverpresets/thumb/hand_heart_tn.jpg"></div></li>
-                                                        <li><div class="thumbnail"><img class="image_picker_image" src="http://cdn.jobs180.com/presets/coverpresets/thumb/hey_you_little_men_tn.jpg"></div></li>
-                                                    </ul>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
+                            <p><b>Resumé Link URL:</b><a href="../../../resumelinkprofile.php" target="_blank">
+                                http://markjoseph1496.ojpms.com <i class="fa fa-external-link-square"></i></a>
+                            </p><br>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <label>Use Background</label><br>
+                            <input type="radio" name="" id="" value="">Solid Color &nbsp;&nbsp;&nbsp;
+                            <input type="radio" name="" id="" checked="checked" value="I">Uploaded Image &nbsp;&nbsp;&nbsp;                                    
+                            <br><br>
+                            <div id="color" style="display: block;">
+                                <label>Solid Color</label><br>
+                                <select id="colorselector_1" style="display: none;">
+                                    <option value="106" data-color="#A0522D" selected="selected">sienna</option>
+                                    <option value="47" data-color="#CD5C5C">indianred</option>
+                                    <option value="87" data-color="#FF4500">orangered</option>
+                                    <option value="17" data-color="#008B8B">darkcyan</option>
+                                    <option value="18" data-color="#B8860B">darkgoldenrod</option>
+                                    <option value="68" data-color="#32CD32">limegreen</option>
+                                    <option value="42" data-color="#FFD700">gold</option>
+                                    <option value="77" data-color="#48D1CC">mediumturquoise</option>
+                                    <option value="107" data-color="#87CEEB">skyblue</option>
+                                    <option value="46" data-color="#FF69B4">hotpink</option>
+                                    <option value="64" data-color="#87CEFA">lightskyblue</option>
+                                    <option value="13" data-color="#6495ED">cornflowerblue</option>
+                                    <option value="15" data-color="#DC143C">crimson</option>
+                                    <option value="24" data-color="#FF8C00">darkorange</option>
+                                    <option value="78" data-color="#C71585">mediumvioletred</option>
+                                    <option value="123" data-color="#000000">black</option>
+                                </select>
+                                <script>
+                                    $('#colorselector').colorselector();
+                                </script>
+                            </div>
+
+                            <div id="uploaded" style="display:none;">
+                                <label>Uploaded Image</label>
+                                <input id="uploadFile" type="file" name="fileToUpload" class="img"><br>
+                                <div class="col-md-1 col-sm-6">
+                                    <div id="imagePreview">
+                                    <img src="" id="Image1" alt="" style="width:250px;height:250px;">
+                                    <div class="space-1"></div>            
+                                    <button name="" type="" id="" class="btn btn-hg btn-primary" name="btnDelete">Delete Image</button>
+                                </div>
+
+                                <div id="preset" style="display: none;">
+                                    <label>Preset Image</label>
+                                    <select name="preset_id" id="preset_id" class="image-picker show-html" style="display: none;">
+                                        <option data-img-src="http://cdn.jobs180.com/presets/coverpresets/thumb/4seasons_wallpaper_tn.jpg" value="1" selected="selected">4seasons_wallpaper</option>
+                                        <option data-img-src="http://cdn.jobs180.com/presets/coverpresets/thumb/190593_4590_tn.jpg" value="2">190593_4590</option>
+                                        <option data-img-src="http://cdn.jobs180.com/presets/coverpresets/thumb/art_flow_tn.jpg" value="3">art_flow</option>
+                                        <option data-img-src="http://cdn.jobs180.com/presets/coverpresets/thumb/art_wallpaper_tn.jpg" value="4">art_wallpaper</option>
+                                        <option data-img-src="http://cdn.jobs180.com/presets/coverpresets/thumb/balloons_tn.jpg" value="5">balloons</option>
+                                        <option data-img-src="http://cdn.jobs180.com/presets/coverpresets/thumb/be_wallpaper_tn.jpg" value="6">be_wallpaper</option>
+                                        <option data-img-src="http://cdn.jobs180.com/presets/coverpresets/thumb/beats_tn.jpg" value="7">beats</option>
+                                        <option data-img-src="http://cdn.jobs180.com/presets/coverpresets/thumb/colorful_tn.jpg" value="8">colorful</option>
+                                        <option data-img-src="http://cdn.jobs180.com/presets/coverpresets/thumb/corporate_tn.jpg" value="9">corporate</option>
+                                        <option data-img-src="http://cdn.jobs180.com/presets/coverpresets/thumb/flares_tn.jpg" value="10">flares</option>
+                                        <option data-img-src="http://cdn.jobs180.com/presets/coverpresets/thumb/gradient_tn.jpg" value="11">gradient</option>
+                                        <option data-img-src="http://cdn.jobs180.com/presets/coverpresets/thumb/graduate_tn.jpg" value="12">graduate</option>
+                                        <option data-img-src="http://cdn.jobs180.com/presets/coverpresets/thumb/group_tn.jpg" value="13">group</option>
+                                        <option data-img-src="http://cdn.jobs180.com/presets/coverpresets/thumb/hand_heart_tn.jpg" value="14">hand_heart</option>
+                                        <option data-img-src="http://cdn.jobs180.com/presets/coverpresets/thumb/hey_you_little_men_tn.jpg" value="15">hey_you_little_men</option>
+                                    </select>
+                                    <ul class="thumbnails image_picker_selector">
+                                        <li><div class="thumbnail selected"><img class="image_picker_image" src="http://cdn.jobs180.com/presets/coverpresets/thumb/4seasons_wallpaper_tn.jpg"></div></li>
+                                        <li><div class="thumbnail"><img class="image_picker_image" src="http://cdn.jobs180.com/presets/coverpresets/thumb/190593_4590_tn.jpg"></div></li>
+                                        <li><div class="thumbnail"><img class="image_picker_image" src="http://cdn.jobs180.com/presets/coverpresets/thumb/art_flow_tn.jpg"></div></li>
+                                        <li><div class="thumbnail"><img class="image_picker_image" src="http://cdn.jobs180.com/presets/coverpresets/thumb/art_wallpaper_tn.jpg"></div></li>
+                                        <li><div class="thumbnail"><img class="image_picker_image" src="http://cdn.jobs180.com/presets/coverpresets/thumb/balloons_tn.jpg"></div></li>
+                                        <li><div class="thumbnail"><img class="image_picker_image" src="http://cdn.jobs180.com/presets/coverpresets/thumb/be_wallpaper_tn.jpg"></div></li>
+                                        <li><div class="thumbnail"><img class="image_picker_image" src="http://cdn.jobs180.com/presets/coverpresets/thumb/beats_tn.jpg"></div></li>
+                                        <li><div class="thumbnail"><img class="image_picker_image" src="http://cdn.jobs180.com/presets/coverpresets/thumb/colorful_tn.jpg"></div></li>
+                                        <li><div class="thumbnail"><img class="image_picker_image" src="http://cdn.jobs180.com/presets/coverpresets/thumb/corporate_tn.jpg"></div></li>
+                                        <li><div class="thumbnail"><img class="image_picker_image" src="http://cdn.jobs180.com/presets/coverpresets/thumb/flares_tn.jpg"></div></li>
+                                        <li><div class="thumbnail"><img class="image_picker_image" src="http://cdn.jobs180.com/presets/coverpresets/thumb/gradient_tn.jpg"></div></li>
+                                        <li><div class="thumbnail"><img class="image_picker_image" src="http://cdn.jobs180.com/presets/coverpresets/thumb/graduate_tn.jpg"></div></li>
+                                        <li><div class="thumbnail"><img class="image_picker_image" src="http://cdn.jobs180.com/presets/coverpresets/thumb/group_tn.jpg"></div></li>
+                                        <li><div class="thumbnail"><img class="image_picker_image" src="http://cdn.jobs180.com/presets/coverpresets/thumb/hand_heart_tn.jpg"></div></li>
+                                        <li><div class="thumbnail"><img class="image_picker_image" src="http://cdn.jobs180.com/presets/coverpresets/thumb/hey_you_little_men_tn.jpg"></div></li>
+                                    </ul>
                                 </div>
                             </div>
                         </div>

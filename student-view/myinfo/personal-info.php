@@ -1,4 +1,13 @@
+<?php 
+session_start();
+include('../../connection.php');
 
+$StudentID = $_SESSION['StudentID'];
+
+
+
+
+?>
 
 
 
@@ -73,6 +82,7 @@
     <script type="text/javascript" src="../../js/jquery.easypiechart.min.js"></script>
     <script type="text/javascript" src="../../js/jquery.parallax.js"></script>
     <script type="text/javascript" src="../../js/mediaelement-and-player.js"></script>
+    <script type="text/javascript" src="../../js/script.js"></script>
 
      <!-- fileupload -->
     <link href="../../css/fileinput.min.css" media="all" rel="stylesheet" type="text/css" />
@@ -287,151 +297,56 @@
                                     <div class="testimonial-content">
                                         <div class="form-group">
                                             <label>First Name <span>(*)</span></label>
-                                            <input type="text" class="form-control" id="fname" name="fname"  value="<?php if($b==1){ echo $FirstName; } else{ echo $server_fname; } ?>">
+                                            <input type="text" class="form-control" id="fname" name="fname">
                                         </div>
                                         <div class="form-group">
                                             <label>Middle Name</label>
-                                            <input type="text" class="form-control" id="mname" name="mname" value="<?php if($b==1){ echo $MiddleName; } else{ echo $server_mname; } ?>">
+                                            <input type="text" class="form-control" id="mname" name="mname">
                                         </div>
                                         <div class="form-group">
                                             <label>Last Name <span>(*)</span></label>
-                                            <input type="text" class="form-control" id="lname" name="lname" value="<?php if($b==1){ echo $LastName; } else{ echo $server_lname; } ?>">
+                                            <input type="text" class="form-control" id="lname" name="lname">
                                         </div>
                                         <div class="form-group">
                                             <label>Gender</label>
                                             <select id="gender" name="gender" class="form-control" style="width:100%; height:34px;">
                                                 <option value="" selected="selected">- Please Select Gender -</option>
-                                                <option value="Female" 
-                                                <?php 
-                                                if($b==1){
-                                                    if($Gender=="Female") echo 'selected="selected"'; 
-                                                }
-                                                else{
-                                                    if($server_gender=="Female") echo 'selected="selected"'; 
-                                                }
-                                                ?>>
-                                                Female
-                                                </option>
-
-
-                                                <option value="Male" 
-                                                <?php 
-                                                if($b==1){
-                                                    if($Gender=="Male") echo 'selected="selected"';
-                                                }
-                                                else{
-                                                    if($server_gender=="Male") echo 'selected="selected"'; 
-                                                }
-
-                
-                                                ?>>
-                                                Male
-                            
-                                                </option>
+                                                <option value="Female" selected="selected">Female</option>
                                             </select>
                                         </div>
                                         <div class="form-group">
                                             <label>Birthdate <span>(*)</span></label><br>
-                                            <input type="date" class="form-control" name="txtBirthdate" id="" value="<?php if($b==1){ echo $Birthdate; } else{ echo $server_Birthdate; } ?>">
+                                            <input type="date" class="form-control" name="txtBirthdate" id="">
                                         </div>
                                         <div class="form-group">
                                             <label>Nationality</label>
                                             <select id="nationality" name="nationality" class="form-control" style="width:100%; height:34px;">
                                                 <option value="" selected="selected">- Please select one -</option>
-                                                <option value="American"
-                                                <?php
-                                                if($b==1){
-                                                if($Nationality=="American") echo 'selected="selected"';
-                                                }
-                                                else{
-                                                    if($server_nationality=="American") echo 'selected="selected"';
-                                                }
-                                                ?>>
-                                                American
-                                                </option>
-
-                                                <option value="Filipino"
-                                                <?php 
-                                                if($b==1){
-                                                    if($Nationality=="Filipino") echo 'selected="selected"';
-                                                }
-                                                else{
-                                                    if($server_nationality=="Filipino") echo 'selected="selected"';
-                                                }
-                                                ?>>
-                                                Filipino
-                                                </option>
+                                                <option value="American" selected="selected">American</option>
+                                                <option value="Filipino">Filipino</option>
                                             </select>
                                         </div>
                                         <div class="form-group">
                                             <label>Civil Status</label>
                                             <select id="civil_status" name="civil_status" class="form-control" style="width:100%; height:34px;">
                                                 <option value ="" >- Please select one -</option>
-                                                <option value="Single" 
-                                                <?php 
-                                                if($b==1){
-                                                    if($CivilStatus=="Single") echo 'selected="selected"';
-                                                }
-                                                else{
-                                                    if($server_civilstatus=="Single") echo 'selected="selected"';
-                                                }
-                                                ?>>
-                                                Single
-                                                </option>
-
-                                                <option value="Married" 
-                                                <?php 
-                                                if($b==1){
-                                                    if($CivilStatus=="Married") echo 'selected="selected"';
-                                                }
-                                                else{
-                                                    if($server_civilstatus=="Married") echo 'selected="selected"';
-                                                }
-                                                ?>>
-                                                Married
-                                                </option>
-
-                                                <option value="Separated" 
-                                                <?php 
-
-                                                if($b==1){
-                                                    if($CivilStatus=="Separated") echo 'selected="selected"';
-                                                }
-                                                else{
-                                                    if($server_civilstatus=="Separated") echo 'selected="selected"';
-                                                }
-                                                ?>>
-                                                Separated
-                                                </option>
-
-                                                <option value="Widowed" 
-
-                                                <?php 
-                                                if($b==1){
-                                                    if($CivilStatus=="Widowed") echo 'selected="selected"'; 
-                                                }
-                                                else{
-                                                    if($server_civilstatus=="Widowed") echo 'selected="selected"'; 
-                                                }
-                                                ?>>
-                                                Widowed
-                                                </option>
+                                                <option value="Single" selected="selected">Single</option>
+                                                <option value="Married" selected="selected">Married</option>
                                             </select>
                                         </div>
-
                                         <div class="hr5" style="margin-top:35px;margin-bottom:40px;"></div>
                                         <div class="form-group">
                                             <label class="control-label">Facebook <span>(*)</span></label>
                                             <div class="input-group">
                                                 <span class="input-group-addon">http://www.facebook.com/</span>
-                                                <input name="FBLink" type="text" pattern="^[_A-z0-9.]{1,}$" maxlength="15" class="form-control" id="inputTwitter" required value="<?php if($b==1){ echo $FBLink; } else{ echo $server_FBLink; } ?>" >
+                                                <input name="FBLink" type="text" pattern="^[_A-z0-9.]{1,}$" maxlength="15" class="form-control" id="inputTwitter">
                                             </div>
                                         </div> 
                                         <div class="form-group">
                                             <label class="control-label">Twitter</label>
                                             <div class="input-group">
                                                 <span class="input-group-addon">@</span>
-                                                <input name="TwitterLink" type="text" pattern="^[_A-z0-9.]{1,}$" maxlength="15" class="form-control" id="inputTwitter" value="<?php if($b==1){ echo $TwitterLink; } else{ echo $server_TwitterLink; } ?>">
+                                                <input name="TwitterLink" type="text" pattern="^[_A-z0-9.]{1,}$" maxlength="15" class="form-control" id="inputTwitter">
                                             </div>
                                         </div>
                                     </div>
@@ -472,10 +387,10 @@
         </div>
     </div>
     <!-- End Content -->
-    <script type="text/javascript" src="../../js/script.js"></script>
 </body>
 
 <?php 
+/*
 if(isset($_POST['btnSave'])){
 
     $fileToUpload = basename($_FILES["fileToUpload"]["name"]);
@@ -509,5 +424,6 @@ if(isset($_POST['btnSave'])){
         }
     }
 }
+*/
 ?>
 </html>

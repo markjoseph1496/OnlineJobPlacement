@@ -1,27 +1,5 @@
 <!DOCTYPE html>
-<?php 
-include('../../connection.php');
-session_start();
 
-if(isset($_SESSION['StudentID'])){
-    $StudentID = $_SESSION['StudentID'];
-}
-else{
-    $StudentID = '';
-    echo "
-        <script type='text/javascript'>
-        location.href='../../../login-student.php?id=2';
-        </script>
-        ";
-}
-
-$CertificationID = 'CertificationID';
-$Certification = 'Certification';
-$YearTaken = 'YearTaken';
-
-$qry = "SELECT * FROM certificationtbl WHERE StudentID ='$StudentID'";
-$result = mysql_query($qry);
-?>
 <html lang="en">
 
 <head>
@@ -40,59 +18,58 @@ $result = mysql_query($qry);
     <meta name="author" content="iThemesLab">
 
     <!-- Bootstrap CSS  -->
-    <link rel="stylesheet" href="../../asset/css/bootstrap.min.css" type="text/css" media="screen">
+    <link rel="stylesheet" href="../../../asset/css/bootstrap.min.css" type="text/css" media="screen">
 
     <!-- Font Awesome CSS -->
-    <link rel="stylesheet" href="../../css/font-awesome.min.css" type="text/css" media="screen">
+    <link rel="stylesheet" href="../../../css/font-awesome.min.css" type="text/css" media="screen">
 
     <!-- Slicknav -->
-    <link rel="stylesheet" href="../../css/slicknav.css" type="text/css" media="screen">
+    <link rel="stylesheet" type="text/css" href="../../../css/slicknav.css" media="screen">
 
     <!-- CSS Styles  -->
-    <link rel="stylesheet" href="../../css/style.css" type="text/css" media="screen">
+    <link rel="stylesheet" type="text/css" href="../../../css/style.css" media="screen">
 
     <!-- Responsive CSS Styles  -->
-    <link rel="stylesheet" href="../../css/responsive.css" type="text/css" media="screen">
+    <link rel="stylesheet" type="text/css" href="../../../css/responsive.css" media="screen">
 
     <!-- Css3 Transitions Styles  -->
-    <link rel="stylesheet" href="../../css/animate.css" type="text/css"  media="screen">
+    <link rel="stylesheet" type="text/css" href="../../../css/animate.css" media="screen">
 
     <!-- Color CSS Styles  -->
-    <link rel="stylesheet" type="text/css" href="../../css/colors/jade.css" title="jade" media="screen" />
-    <link rel="stylesheet" type="text/css" href="../../css/colors/green.css" title="green" media="screen" />
-    <link rel="stylesheet" type="text/css" href="../../css/colors/blue.css" title="blue" media="screen" />
-    <link rel="stylesheet" type="text/css" href="../../css/colors/beige.css" title="beige" media="screen" />
-    <link rel="stylesheet" type="text/css" href="../../css/colors/cyan.css" title="cyan" media="screen" />
-    <link rel="stylesheet" type="text/css" href="../../css/colors/orange.css" title="orange" media="screen" />
-    <link rel="stylesheet" type="text/css" href="../../css/colors/peach.css" title="peach" media="screen" />
-    <link rel="stylesheet" type="text/css" href="../../css/colors/pink.css" title="pink" media="screen" />
-    <link rel="stylesheet" type="text/css" href="../../css/colors/purple.css" title="purple" media="screen" />
-    <link rel="stylesheet" type="text/css" href="../../css/colors/sky-blue.css" title="sky-blue" media="screen" />
-    <link rel="stylesheet" type="text/css" href="../../css/colors/yellow.css" title="yellow" media="screen" />
+    <link rel="stylesheet" type="text/css" href="../../../css/colors/jade.css" title="jade" media="screen" />
+    <link rel="stylesheet" type="text/css" href="../../../css/colors/green.css" title="green" media="screen" />
+    <link rel="stylesheet" type="text/css" href="../../../css/colors/blue.css" title="blue" media="screen" />
+    <link rel="stylesheet" type="text/css" href="../../../css/colors/beige.css" title="beige" media="screen" />
+    <link rel="stylesheet" type="text/css" href="../../../css/colors/cyan.css" title="cyan" media="screen" />
+    <link rel="stylesheet" type="text/css" href="../../../css/colors/orange.css" title="orange" media="screen" />
+    <link rel="stylesheet" type="text/css" href="../../../css/colors/peach.css" title="peach" media="screen" />
+    <link rel="stylesheet" type="text/css" href="../../../css/colors/pink.css" title="pink" media="screen" />
+    <link rel="stylesheet" type="text/css" href="../../../css/colors/purple.css" title="purple" media="screen" />
+    <link rel="stylesheet" type="text/css" href="../../../css/colors/sky-blue.css" title="sky-blue" media="screen" />
+    <link rel="stylesheet" type="text/css" href="../../../css/colors/yellow.css" title="yellow" media="screen" />
 
     <!-- JS  -->
-    <script type="text/javascript" src="../../js/jquery.min.js"></script>
-    <script type="text/javascript" src="../../js/modernizrr.js"></script>
-    <script type="text/javascript" src="../../js/jquery.appear.js"></script>
-    <script type="text/javascript" src="../../js/count-to.js"></script>
-    <script type="text/javascript" src="../../js/jquery.nicescroll.min.js"></script>
-    <script type="text/javascript" src="../../js/jquery.slicknav.js"></script>
-    <script type="text/javascript" src="../../js/script.js"></script>
+    <script type="text/javascript" src="../../../js/jquery-2.1.4.min.js"></script>
+    <script type="text/javascript" src="../../../js/modernizrr.js"></script>
+    <script type="text/javascript" src="../../../js/jquery.appear.js"></script>
+    <script type="text/javascript" src="../../../js/count-to.js"></script>
+    <script type="text/javascript" src="../../../js/jquery.nicescroll.min.js"></script>
+    <script type="text/javascript" src="../../../js/jquery.slicknav.js"></script>
 
-    <script type="text/javascript" src="../../js/jquery.migrate.js"></script>
-    <script type="text/javascript" src="../../asset/js/bootstrap.min.js"></script>
-    <script type="text/javascript" src="../../js/jquery.fitvids.js"></script>
-    <script type="text/javascript" src="../../js/owl.carousel.min.js"></script>
-    <script type="text/javascript" src="../../js/nivo-lightbox.min.js"></script>
-    <script type="text/javascript" src="../../js/jquery.textillate.js"></script>
+    <script type="text/javascript" src="../../../js/jquery.migrate.js"></script>
+    <script type="text/javascript" src="../../../asset/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../../../js/jquery.fitvids.js"></script>
+    <script type="text/javascript" src="../../../js/owl.carousel.min.js"></script>
+    <script type="text/javascript" src="../../../js/nivo-lightbox.min.js"></script>
+    <script type="text/javascript" src="../../../js/jquery.textillate.js"></script>
 
-    <script type="text/javascript" src="../../js/nivo-lightbox.min.js"></script>
-    <script type="text/javascript" src="../../js/jquery.isotope.min.js"></script>
-    <script type="text/javascript" src="../../js/jquery.textillate.js"></script>
-    <script type="text/javascript" src="../../js/jquery.lettering.js"></script>
-    <script type="text/javascript" src="../../js/jquery.easypiechart.min.js"></script>
-    <script type="text/javascript" src="../../js/jquery.parallax.js"></script>
-    <script type="text/javascript" src="../../js/mediaelement-and-player.js"></script>
+    <script type="text/javascript" src="../../../js/nivo-lightbox.min.js"></script>
+    <script type="text/javascript" src="../../../js/jquery.isotope.min.js"></script>
+    <script type="text/javascript" src="../../../js/jquery.textillate.js"></script>
+    <script type="text/javascript" src="../../../js/jquery.lettering.js"></script>
+    <script type="text/javascript" src="../../../js/jquery.easypiechart.min.js"></script>
+    <script type="text/javascript" src="../../../js/jquery.parallax.js"></script>
+    <script type="text/javascript" src="../../../js/mediaelement-and-player.js"></script>
 </head>
 
 <body>
@@ -210,38 +187,38 @@ $result = mysql_query($qry);
                         <!-- Start Navigation List -->
                         <ul class="nav navbar-nav navbar-right">
                             <li>
-                                <a class="active" href="personal-info.php">My Info</a>
+                                <a class="active" href="../personal-info.php">My Info</a>
                                 <ul class="dropdown">
-                                    <li><a href="personal-info.php">Personal Info</a></li>
-                                    <li><a href="contacts-info.php">Contacts Info</a></li>
-                                    <li><a href="work.php">Work</a></li>
-                                    <li><a href="education.php">Education</a></li>
-                                    <li><a class="active" href="certifications.php">Certifications</a></li>
-                                    <li><a href="achievements.php">Achievements</a></li>
-                                    <li><a href="skills-and-languages.php">Skills & Languages</a></li>
-                                    <li><a href="references.php">References</a></li>
-                                    <li><a href="portfolio.php">Portfolio</a></li>
+                                    <li><a href="../personal-info.php">Personal Info</a></li>
+                                    <li><a href="../contacts-info.php">Contacts Info</a></li>
+                                    <li><a href="../work.php">Work</a></li>
+                                    <li><a href="../education.php">Education</a></li>
+                                    <li><a class="active" href="../certifications.php">Certifications</a></li>
+                                    <li><a href="../achievements.php">Achievements</a></li>
+                                    <li><a href="../skills-and-languages.php">Skills & Languages</a></li>
+                                    <li><a href="../references.php">References</a></li>
+                                    <li><a href="../portfolio.php">Portfolio</a></li>
                                 </ul>
                             </li>
                             <li>
-                                <a href="../resumelink/resume-link.php">Resume Link</a>
+                                <a href="../../resumelink/resume-link.php">Resume Link</a>
                                 <ul class="dropdown">
-                                    <li><a href="../resumelink/resume-link.php">Resume Link</a></li>
-                                    <li><a href="../resumelink/background.php">Background</a></li>
-                                    <li><a href="../resumelink/print-share.php">Print/Share</a></li>
+                                    <li><a href="../../resumelink/resume-link.php">Resume Link</a></li>
+                                    <li><a href="../../resumelink/background.php">Background</a></li>
+                                    <li><a href="../../resumelink/print-share.php">Print/Share</a></li>
                                 </ul>
                             </li>
                             <li>
-                                <a href="../applications/applications.php">Applications</a>
+                                <a href="../../applications/applications.php">Applications</a>
                             </li>
                             <li>
-                                <a href="../search-job/search-job.php">Jobs</a>
+                                <a href="../../search-job/search-job.php">Jobs</a>
                             </li>
                             <li>
-                                <a href="../settings/privacy-settings.php">Settings</a>
+                                <a href="../../settings/privacy-settings.php">Settings</a>
                                 <ul class="dropdown">
-                                    <li><a href="../settings/privacy-settings.php">Privacy Settings</a></li>
-                                    <li><a href="../settings/pass-settings.php">Password Settings</a></li>
+                                    <li><a href="../../settings/privacy-settings.php">Privacy Settings</a></li>
+                                    <li><a href="../../settings/pass-settings.php">Password Settings</a></li>
                                 </ul>
                             </li>
                         </ul>
@@ -251,38 +228,38 @@ $result = mysql_query($qry);
                 <!-- Mobile Menu Start -->
                 <ul class="wpb-mobile-menu">
                     <li>
-                        <a class="active" href="personal-info.php">My Info</a>
+                        <a class="active" href="../personal-info.php">My Info</a>
                         <ul class="dropdown">
-                            <li><a href="personal-info.php">Personal Info</a></li>
-                            <li><a href="contacts-info.php">Contacts Info</a></li>
-                            <li><a href="work.php">Work</a></li>
-                            <li><a href="education.php">Education</a></li>
-                            <li><a class="active" href="certifications.php">Certifications</a></li>
-                            <li><a href="achievements.php">Achievements</a></li>
-                            <li><a href="skills-and-languages.php">Skills & Languages</a></li>
-                            <li><a href="references.php">References</a></li>
-                            <li><a href="portfolio.php">Portfolio</a></li>
+                            <li><a href="../personal-info.php">Personal Info</a></li>
+                            <li><a href="../contacts-info.php">Contacts Info</a></li>
+                            <li><a href="../work.php">Work</a></li>
+                            <li><a href="../education.php">Education</a></li>
+                            <li><a class="active" href="../certifications.php">Certifications</a></li>
+                            <li><a href="../achievements.php">Achievements</a></li>
+                            <li><a href="../skills-and-languages.php">Skills & Languages</a></li>
+                            <li><a href="../references.php">References</a></li>
+                            <li><a href="../portfolio.php">Portfolio</a></li>
                         </ul>
                     </li>
                     <li>
-                        <a href="../resumelink/resume-link.php">Resume Link</a>
+                        <a href="../../resumelink/resume-link.php">Resume Link</a>
                         <ul class="dropdown">
-                            <li><a href="../resumelink/resume-link.php">Resume Link</a></li>
-                            <li><a href="../resumelink/background.php">Background</a></li>
-                            <li><a href="../resumelink/print-share.php">Print/Share</a></li>
+                            <li><a href="../../resumelink/resume-link.php">Resume Link</a></li>
+                            <li><a href="../../resumelink/background.php">Background</a></li>
+                            <li><a href="../../resumelink/print-share.php">Print/Share</a></li>
                         </ul>
                     </li>
                     <li>
-                        <a href="../applications/applications.php">Applications</a>
+                        <a href="../../applications/applications.php">Applications</a>
                     </li>
                     <li>
-                        <a href="../search-job/search-job.php">Jobs</a>
+                        <a href="../../search-job/search-job.php">Jobs</a>
                     </li>
                     <li>
-                        <a href="../settings/privacy-settings.php">Settings</a>
+                        <a href="../../settings/privacy-settings.php">Settings</a>
                         <ul class="dropdown">
-                            <li><a href="../settings/privacy-settings.php">Privacy Settings</a></li>
-                            <li><a href="../settings/pass-settings.php">Password Settings</a></li>
+                            <li><a href="../../settings/privacy-settings.php">Privacy Settings</a></li>
+                            <li><a href="../../settings/pass-settings.php">Password Settings</a></li>
                         </ul>
                     </li>
                     <li>
@@ -317,52 +294,31 @@ $result = mysql_query($qry);
                     <!-- Page Content -->
                     <div class="col-md-9 page-content">
                         <div class="row">
-                            <div class="classic-testimonials">
-                                <!-- Single Testimonial -->
-                                <div class="row field">
-                                    <div class="col-md-6 fieldcol">
-                                        <h4>Certifications <span class="head-line"></span></h4>
-                                    </div>
-                                    <div class="col-md-6 fieldcol">
-                                        <a href="add/add-certification.php" class="btnforadding" style="float:right;">
-                                            <span class="fa fa-plus-square"> Add Certification</span>
-                                        </a>
-                                    </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label>Certification <span>(*)</span></label>
+                                    <input type="text" class="form-control" id="txtCertification" name="txtCertification" value="<?php echo htmlspecialchars($server_txtCertifcation)?>">
                                 </div>
-
-                                <table class="table segment table-hover">
-                                    <thead>
-                                        <tr class="table-color">
-                                            <th>Certification</th>
-                                            <th>Year Taken</th>
-                                            <th width="15%">&nbsp;</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label>Year Taken <span>(*)</span></label>
+                                    <select id="txtYearTaken" name="txtYearTaken" class="form-control" style="width:100%; height:34px;">
+                                        <option value="">- Year -</option>
                                         <?php 
-                                            $ctr = 0;
-                                            while($rows = mysql_fetch_array($result)){
-                                            $ctr++;
-                                        ?>
-                                        <tr class="certification">
-                                            <td><?php echo $rows[$Certification]; ?></td>
-                                            <td><?php echo $rows[$YearTaken]; ?></td>
-                                            <td>
-                                                <a href=# class="btn btn-danger btnformaintenance deleteCertification">
-                                                    <i class="fa fa-trash fa-1x"></i>
-                                                </a>
-                                                <a data-bb="confirmDeleteCertification" class="bb-alert alert alert-info" style="display: none;" href="delete.php?delete_CertificationID=<?php echo $rows['CertificationID'];?>">
-                                        
-                                                <a href="edit/edit-certification.php?EditCertificationID=<?php echo $rows['CertificationID'];?>" class="btn btn-default btnformaintenance">
-                                                    <i class="fa fa-pencil-square-o fa-1x"></i>
-                                                </a>
-                                            </td>
-                                        </tr>
-                                        <?php
+                                            $date = 1934;
+                                            while($date != Date("Y")){
+                                                $date++;
+                                                if($date == $server_txtYearTaken){
+                                                    echo "<option selected value='$date'> $date</option>";
+                                                }
+                                                else{
+                                                echo "<option value='$date'> $date</option>";
+                                                }
                                             }
                                         ?>
-                                    </tbody>
-                                </table>
+                                    </select>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -377,10 +333,16 @@ $result = mysql_query($qry);
                     </div>
                     <!--End sidebar-->
                 </div>
+                <div class="hr5" style="margin-top:35px;margin-bottom:40px;"></div>
+                <div class="field">
+                    <div class="text-center">
+                        <button class="btn btn-lg btn-hg btn-primary" name ="btnSave">Add</button>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
     <!-- End Content -->
-    <script type="text/javascript" src="../../js/script.js"></script>
+    <script type="text/javascript" src="../../../js/script.js"></script>
 </body>
 </html>

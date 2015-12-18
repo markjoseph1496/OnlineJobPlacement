@@ -71,7 +71,7 @@ $result = mysql_query($qry);
     <link rel="stylesheet" type="text/css" href="../../css/colors/yellow.css" title="yellow" media="screen" />
 
     <!-- JS  -->
-    <script type="text/javascript" src="../../js/jquery.min.js"></script>
+    <script type="text/javascript" src="../../js/jquery-2.1.4.min.js"></script>
     <script type="text/javascript" src="../../js/modernizrr.js"></script>
     <script type="text/javascript" src="../../js/jquery.appear.js"></script>
     <script type="text/javascript" src="../../js/count-to.js"></script>
@@ -314,36 +314,30 @@ $result = mysql_query($qry);
                     <!-- Page Content -->
                     <div class="col-md-12 page-content">
                         <div class="row">
-                            <div class="classic-testimonials">
-                                <!-- Single Testimonial -->
+                            <div class="col-md-12">
                                 <p><b>Resumé Link URL:</b><a href="../../../resumelinkprofile.php" target="_blank">
                                     http://markjoseph1496.ojpms.com <i class="fa fa-external-link-square"></i></a>
                                 </p><br>
-                                <div class"row">
-                                    <div>
-                                        <div class="row">
-                                            <div class="space">
-                                                &nbsp;
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="row field">
-                                        <div class="col-md-6 fieldcol">
-                                            <label>About Me</label>
-                                        </div>
-                                    </div>
-                                    <div class="row field">
-                                        <div class="col-md-12 fieldcol">
-                                            <div class="form-group">
-                                                <textarea class="form-control" name="" id="" rows="10"></textarea>
-                                            </div>
-                                        </div>
-                                    </div>
+                            </div>
+                        </div>
+                        <div class"row">
+                            <div class="col-md-6">
+                                <label>About Me</label>
+                            </div>
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <textarea class="form-control" name="" id="" rows="10"></textarea>
                                 </div>
                             </div>
                         </div>
                     </div>
                     <!-- End Page Content -->
+                </div>
+                <div class="hr5" style="margin-top:35px;margin-bottom:40px;"></div>
+                <div class="field">
+                    <div class="text-center">
+                        <button class="btn btn-lg btn-hg btn-primary" name ="btnSave">Save</button>
+                    </div>
                 </div>
             </div>
         </div>

@@ -163,40 +163,40 @@
                         </div>
                         <!-- End Search -->
                         <!-- Start Navigation List -->
-                                                <ul class="nav navbar-nav navbar-right">
+                        <ul class="nav navbar-nav navbar-right">
                             <li>
-                                <a class="active" href="../personal-info.php">My Info</a>
+                                <a class="active" href="personal-info.php">My Info</a>
                                 <ul class="dropdown">
-                                    <li><a href="../personal-info.php">Personal Info</a></li>
-                                    <li><a href="../contacts-info.php">Contacts Info</a></li>
-                                    <li><a href="../work.php">Work</a></li>
-                                    <li><a href="../education.php">Education</a></li>
-                                    <li><a href="../certifications.php">Certifications</a></li>
-                                    <li><a href="../achievements.php">Achievements</a></li>
-                                    <li><a class="active" href="../skills-and-languages.php">Skills & Languages</a></li>
-                                    <li><a href="../references.php">References</a></li>
-                                    <li><a href="../portfolio.php">Portfolio</a></li>
+                                    <li><a href="personal-info.php">Personal Info</a></li>
+                                    <li><a href="contacts-info.php">Contacts Info</a></li>
+                                    <li><a href="work.php">Work</a></li>
+                                    <li><a class="active" href="education.php">Education</a></li>
+                                    <li><a href="certifications.php">Certifications</a></li>
+                                    <li><a href="achievements.php">Achievements</a></li>
+                                    <li><a href="skills-and-languages.php">Skills & Languages</a></li>
+                                    <li><a href="references.php">References</a></li>
+                                    <li><a href="portfolio.php">Portfolio</a></li>
                                 </ul>
                             </li>
                             <li>
-                                <a href="../../resumelink/resume-link.php">Resume Link</a>
+                                <a href="../resumelink/resume-link.php">Resume Link</a>
                                 <ul class="dropdown">
-                                    <li><a href="../../resumelink/resume-link.php">Resume Link</a></li>
-                                    <li><a href="../../resumelink/background.php">Background</a></li>
-                                    <li><a href="../../resumelink/print-share.php">Print/Share</a></li>
+                                    <li><a href="../resumelink/resume-link.php">Resume Link</a></li>
+                                    <li><a href="../resumelink/background.php">Background</a></li>
+                                    <li><a href="../resumelink/print-share.php">Print/Share</a></li>
                                 </ul>
+                             </li>
+                            <li>
+                                <a href="../applications/applications.php">Applications</a>
                             </li>
                             <li>
-                                <a href="../../applications/applications.php">Applications</a>
+                                <a href="../search-job/search-job.php">Jobs</a>
                             </li>
                             <li>
-                                <a href="../../search-job/search-job.php">Jobs</a>
-                            </li>
-                            <li>
-                                <a href="../../settings/privacy-settings.php">Settings</a>
+                                <a href="../settings/privacy-settings.php">Settings</a>
                                 <ul class="dropdown">
-                                    <li><a href="../../settings/privacy-settings.php">Privacy Settings</a></li>
-                                    <li><a href="../../settings/pass-settings.php">Password Settings</a></li>
+                                    <li><a href="../settings/privacy-settings.php">Privacy Settings</a></li>
+                                    <li><a href="../settings/pass-settings.php">Password Settings</a></li>
                                 </ul>
                             </li>
                         </ul>
@@ -206,38 +206,38 @@
                 <!-- Mobile Menu Start -->
                 <ul class="wpb-mobile-menu">
                     <li>
-                        <a class="active" href="../personal-info.php">My Info</a>
+                        <a class="active" href="personal-info.php">My Info</a>
                         <ul class="dropdown">
-                            <li><a href="../personal-info.php">Personal Info</a></li>
-                            <li><a href="../contacts-info.php">Contacts Info</a></li>
-                            <li><a href="../work.php">Work</a></li>
-                            <li><a href="../education.php">Education</a></li>
-                            <li><a href="../certifications.php">Certifications</a></li>
-                            <li><a href="../achievements.php">Achievements</a></li>
-                            <li><a class="active" href="../skills-and-languages.php">Skills & Languages</a></li>
-                            <li><a href="../references.php">References</a></li>
-                            <li><a href="../portfolio.php">Portfolio</a></li>
+                            <li><a  href="personal-info.php">Personal Info</a></li>
+                            <li><a href="contacts-info.php">Contacts Info</a></li>
+                            <li><a href="work.php">Work</a></li>
+                            <li><a class="active" href="education.php">Education</a></li>
+                            <li><a href="certifications.php">Certifications</a></li>
+                            <li><a href="achievements.php">Achievements</a></li>
+                            <li><a href="skills-and-languages.php">Skills & Languages</a></li>
+                            <li><a href="references.php">References</a></li>
+                            <li><a href="portfolio.php">Portfolio</a></li>
                         </ul>
                     </li>
                     <li>
-                        <a href="../../resumelink/resume-link.php">Resume Link</a>
+                        <a href="../resumelink/resume-link.php">Resume Link</a>
                         <ul class="dropdown">
-                            <li><a href="../../resumelink/resume-link.php">Resume Link</a></li>
-                            <li><a href="../../resumelink/background.php">Background</a></li>
-                            <li><a href="../../resumelink/print-share.php">Print/Share</a></li>
+                            <li><a href="../resumelink/resume-link.php">Resume Link</a></li>
+                            <li><a href="../resumelink/background.php">Background</a></li>
+                            <li><a href="../resumelink/print-share.php">Print/Share</a></li>
                         </ul>
+                     </li>
+                    <li>
+                        <a href="../applications/applications.php">Applications</a>
                     </li>
                     <li>
-                        <a href="../../applications/applications.php">Applications</a>
+                        <a href="../search-job/search-job.php">Jobs</a>
                     </li>
                     <li>
-                        <a href="../../search-job/search-job.php">Jobs</a>
-                    </li>
-                    <li>
-                        <a href="../../settings/privacy-settings.php">Settings</a>
+                        <a href="../settings/privacy-settings.php">Settings</a>
                         <ul class="dropdown">
-                            <li><a href="../../settings/privacy-settings.php">Privacy Settings</a></li>
-                            <li><a href="../../settings/pass-settings.php">Password Settings</a></li>
+                            <li><a href="../settings/privacy-settings.php">Privacy Settings</a></li>
+                            <li><a href="../settings/pass-settings.php">Password Settings</a></li>
                         </ul>
                     </li>
                     <li>
@@ -252,12 +252,12 @@
             <div class="container">
                 <div class="row">
                     <div class="col-md-6">
-                        <h2>Languages</h2>
+                        <h2>Seminar</h2>
                     </div>
                     <div class="col-md-6">
                         <ul class="breadcrumbs">
                             <li><a href="#">Home</a></li>
-                            <li>Languages</li>
+                            <li>Seminar</li>
                         </ul>
                     </div>
                 </div>
@@ -272,22 +272,30 @@
                     <!-- Page Content -->
                     <div class="col-md-9 page-content">
                         <div class="row">
-                            <div class="col-md-6">
+                            <div class="col-md-7">
                                 <div class="form-group">
-                                    <label>Language <span>(*)</span></label>
-                                    <input type="text" class="form-control" id="txtLanguage" name="txtLanguage">
+                                    <label>Seminar <span>(*)</span></label>
+                                    <input type="text" class="form-control" id="txtSeminar" name="txtSeminar" value="<?php echo htmlspecialchars($server_txtSeminar)?>">
                                 </div>
                             </div>
-                            <div class="col-md-6">
+                            <div class="col-md-5">
                                 <div class="form-group">
-                                    <label>Proficiency <span>(*)</span></label>
-                                    <div class="rating text-center">
-                                        <span class="star"></span>
-                                        <span class="star"></span>
-                                        <span class="star"></span>
-                                        <span class="star"></span>
-                                        <span class="star"></span>
-                                    </div>
+                                    <label>Year Attended <span>(*)</span></label>
+                                    <select id="txtYearAttended" name="txtYearAttended" class="form-control" style="width:100%; height:34px;">
+                                            <option value = "">- Year -</option>
+                                            <?php 
+                                                $date = 1934;
+                                                while($date != Date("Y")){
+                                                    $date++;
+                                                    if($date == $server_txtYearAttended){
+                                                        echo "<option selected value='$date'> $date</option>";
+                                                    }
+                                                    else{
+                                                    echo "<option value='$date'> $date</option>";
+                                                    }
+                                                }
+                                            ?>
+                                    </select>
                                 </div>
                             </div>
                         </div>
@@ -306,7 +314,7 @@
                 <div class="hr5" style="margin-top:35px;margin-bottom:40px;"></div>
                 <div class="field">
                     <div class="text-center">
-                        <button class="btn btn-lg btn-hg btn-primary" name ="btnSave">Add</button>
+                        <button class="btn btn-lg btn-hg btn-primary" name ="btnSave">Save</button>
                     </div>
                 </div>
             </div>
