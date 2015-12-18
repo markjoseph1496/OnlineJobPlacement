@@ -27,5 +27,22 @@ if(isset($_GET['btnSaveInfo'])){
         ";
 }
 
+if(isset($_GET['btnSaveContactInfo'])){
+	$Email = $_GET['Email'];
+	$MobileNumber = $_GET['MobileNumber'];
+	$HomeNumber = $_GET['HomeNumber'];
+	$WorkNumber = $_GET['WorkNumber'];
+	$Address = $_GET['Address'];
+	$City = $_GET['City'];
+	$PostalCode = $_GET['PostalCode'];
 
+	$query = "UPDATE studcontactstbl SET Email = '$Email', MobileNumber = '$MobileNumber', HomeNumber = '$HomeNumber', WorkNumber = '$WorkNumber', Address = '$Address', City = '$City', PostalCode = '$PostalCode'";
+	$result = mysql_query($query);
+
+	echo "
+		<script type='text/javascript'>
+		location.href='contacts-info.php?id=1';
+		</script>
+		";
+}
 ?>

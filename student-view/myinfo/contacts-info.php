@@ -16,148 +16,20 @@ else{
         ";
 }
 
-$qry = "SELECT * FROM studcontactstbl WHERE StudentID ='$StudentID'";
-$result = mysql_query($qry);
-        while($qry = mysql_fetch_Array($result))
+
+$query = "SELECT * FROM studcontactstbl WHERE StudentID ='$StudentID'";
+$result = mysql_query($query);
+        while($query = mysql_fetch_Array($result))
         {       
-                $Email = $qry['Email'];
-                $Address = $qry['Address'];
-                $MobileNumber = $qry['MobileNumber'];
-                $Region = $qry['Region'];
-                $HomeNumber = $qry['HomeNumber'];
-                $City = $qry['City'];
-                $WorkNumber = $qry['WorkNumber'];
-                $PostalCode = $qry['PostalCode'];
+                $Email = $query['Email'];
+                $Address = $query['Address'];
+                $MobileNumber = $query['MobileNumber'];
+                $Region = $query['Region'];
+                $HomeNumber = $query['HomeNumber'];
+                $City = $query['City'];
+                $WorkNumber = $query['WorkNumber'];
+                $PostalCode = $query['PostalCode'];
         }
-
-/* Validation Starts Here */
-$b = 1;
-$txtEmail_Validator = '';
-$txtAddress_Validator = '';
-$txtMobileNumber_Validator = '';
-$txtRegion_Validator = '';
-$txtHomeNumber_Validator = '';
-$txtCity_Validator = '';
-$txtWorkNumber_Validator = '';
-$txtPostalCode_Validator = '';
-
-$server_txtEmail = isset($_POST['txtEmail']) ? $_POST['txtEmail'] : '';
-$server_txtAddress = isset($_POST['txtAddress']) ? $_POST['txtAddress'] : '';
-$server_txtMobileNumber = isset($_POST['txtMobileNumber']) ? $_POST['txtMobileNumber'] : '';
-$server_txtRegion = isset($_POST['txtRegion']) ? $_POST['txtRegion'] : '';
-$server_txtHomeNumber = isset($_POST['txtHomeNumber']) ? $_POST['txtHomeNumber'] : '';
-$server_txtCity = isset($_POST['txtCity']) ? $_POST['txtCity'] : '';
-$server_txtWorkNumber = isset($_POST['txtWorkNumber']) ? $_POST['txtWorkNumber'] : '';
-$server_txtPostalCode = isset($_POST['txtPostalCode']) ? $_POST['txtPostalCode'] : '';
-
-$server_txtAddress = ucwords(strtolower($server_txtAddress));
-
-$a = isset($_POST['txtEmail']);
-$a = $a && isset($_POST['txtAddress']);
-$a = $a && isset($_POST['txtMobileNumber']);
-$a = $a && isset($_POST['txtRegion']);
-$a = $a && isset($_POST['txtHomeNumber']);
-$a = $a && isset($_POST['txtCity']);
-$a = $a && isset($_POST['txtWorkNumber']);
-$a = $a && isset($_POST['txtPostalCode']);
-
-if($a){
-    unset($a);
-    $txtEmail_Valid = (bool) preg_match('/^[A-Za-z0-9@!#$%&*+-=?^_`{|}~]+$/i', $server_txtEmail);
-    $txtAddress_Valid = (bool) preg_match('/^[A-Za-z0-9 . , -]+$/i', $server_txtAddress);
-    $txtMobileNumber_Valid = (bool) preg_match('/^[0-9]+$/i', $server_txtMobileNumber);
-    $txtHomeNumber_Valid = (bool) preg_match('/^[0-9]+$/i', $server_txtHomeNumber);
-    $txtWorkNumber_Valid = (bool) preg_match('/^[0-9]+$/i', $server_txtWorkNumber);
-    $txtPostalCode_Valid = (bool) preg_match('/^[0-9]+$/i', $server_txtPostalCode);
-    $txtRegion_Valid = 1;
-    $txtCity_Valid = 1;
-
-    // 0 for required field not to be empty.
-    if(is_null($server_txtEmail) || $server_txtEmail == ''){
-        $txtEmail_Validator = 'Email cannot be empty.';
-        $txtEmail_Valid = 0;
-    }
-    elseif(!$txtEmail_Valid){
-        $txtEmail_Validator = 'Email is not valid.';
-    }
-
-
-    if(is_null($server_txtAddress) || $server_txtAddress == ''){
-        $txtAddress_Validator = '';
-        $txtAddress_Valid = 1;
-    }
-    elseif(!$txtAddress_Valid){
-        $txtAddress_Validator = 'Address is not valid.';
-    }
-
-    if(is_null($server_txtMobileNumber) || $server_txtMobileNumber == ''){
-        $txtMobileNumber_Validator = 'Mobile Number cannot be empty.';
-        $txtMobileNumber_Valid = 0;
-    }
-    elseif(!$txtMobileNumber_Valid){
-        $txtMobileNumber_Validator = 'Mobile Number is not valid.';
-    }    
-
-    if(is_null($server_txtRegion) || $server_txtRegion == ''){
-        $txtRegion_Validator = 'Please Select one.';
-        $txtRegion_Valid = 0;
-    }
-
-    if(is_null($server_txtHomeNumber) || $server_txtHomeNumber == ''){
-        $txtHomeNumber_Validator = '';
-        $txtHomeNumber_Valid = 1;
-    }
-    elseif(!$txtHomeNumber_Valid){
-        $txtHomeNumber_Validator = 'Home Number is not valid.';
-    }
-
-    if(is_null($server_txtCity) || $server_txtCity == ''){
-        $txtCity_Validator = 'Please Select one.';
-        $txtCity_Valid = 0;
-    }
-
-    if(is_null($server_txtWorkNumber) || $server_txtWorkNumber == ''){
-        $txtWorkNumber_Validator = '';
-        $txtWorkNumber_Valid = 1;
-    }
-    elseif(!$txtWorkNumber_Valid){
-        $txtWorkNumber_Validator = 'Work Number is not valid.';
-    }
-
-    if(is_null($server_txtPostalCode) || $server_txtPostalCode == ''){
-        $txtPostalCode_Validator = '';
-        $txtPostalCode_Valid = 1;
-    }
-    elseif(!$txtPostalCode_Valid){
-        $txtPostalCode_Validator = 'Postal Code is not vaid.';
-    }
-
-
-    $b=0;
-
-
-    $a = $txtEmail_Valid;
-    $a = $a && $txtAddress_Valid;
-    $a = $a && $txtMobileNumber_Valid;
-    $a = $a && $txtRegion_Valid;
-    $a = $a && $txtHomeNumber_Valid;
-    $a = $a && $txtCity_Valid;
-    $a = $a && $txtWorkNumber_Valid;
-    $a = $a && $txtPostalCode_Valid;
-
-    if($a){
-        unset($a);
-
-        $query = "UPDATE studcontactstbl SET Email = '$server_txtEmail', Address = '$server_txtAddress', MobileNumber = '$server_txtMobileNumber', Region = '$server_txtRegion', HomeNumber = '$server_txtHomeNumber', City = '$server_txtCity', WorkNumber = '$server_txtWorkNumber', PostalCode = '$server_txtPostalCode' WHERE StudentID = '$StudentID'";
-        $Result = mysql_query($query);
-        echo "
-             <script type='text/javascript'>
-             </script>
-             ";
-        $b=2;
-        }
-
-}
 ?>
 <html lang="en">
 
@@ -176,8 +48,18 @@ if($a){
     <meta name="description" content="Margo - Responsive HTML5 Template">
     <meta name="author" content="iThemesLab">
 
-    <!-- Bootstrap CSS  -->
-    <link rel="stylesheet" href="../../css/bootstrap.min.css" type="text/css" media="screen">
+    <!-- Bootstrap CSS -->
+    <link href="../../css/bootstrap.min.css" rel="stylesheet"/>
+
+    <!-- BootstrapValidator CSS -->
+    <link href="../../css/bootstrapValidator.min.css" rel="stylesheet"/>
+    <link href="../../css/basic-template.css" rel="stylesheet"/>
+    <!-- jQuery and Bootstrap JS -->
+    <script type="text/javascript" src="../../js/jquery.min.js"></script>
+    <script src="../../js/bootstrap.min.js" type="text/javascript"></script>
+
+    <!-- BootstrapValidator -->
+    <script src="../../js/bootstrapValidator.min.js" type="text/javascript"></script>
 
     <!-- Font Awesome CSS -->
     <link rel="stylesheet" href="../../css/font-awesome.min.css" type="text/css" media="screen">
@@ -185,7 +67,7 @@ if($a){
     <!-- Slicknav -->
     <link rel="stylesheet" type="text/css" href="../../css/slicknav.css" media="screen">
 
-    <!-- CSS Styles  -->
+    <!-- Margo CSS Styles  -->
     <link rel="stylesheet" type="text/css" href="../../css/style.css" media="screen">
 
     <!-- Responsive CSS Styles  -->
@@ -194,44 +76,45 @@ if($a){
     <!-- Css3 Transitions Styles  -->
     <link rel="stylesheet" type="text/css" href="../../css/animate.css" media="screen">
 
-    <!-- Color CSS Styles  -->
-    <link rel="stylesheet" type="text/css" href="../../css/colors/jade.css" title="jade" media="screen" />
-    <link rel="stylesheet" type="text/css" href="../../css/colors/green.css" title="green" media="screen" />
-    <link rel="stylesheet" type="text/css" href="../../css/colors/blue.css" title="blue" media="screen" />
-    <link rel="stylesheet" type="text/css" href="../../css/colors/beige.css" title="beige" media="screen" />
-    <link rel="stylesheet" type="text/css" href="../../css/colors/cyan.css" title="cyan" media="screen" />
-    <link rel="stylesheet" type="text/css" href="../../css/colors/orange.css" title="orange" media="screen" />
-    <link rel="stylesheet" type="text/css" href="../../css/colors/peach.css" title="peach" media="screen" />
-    <link rel="stylesheet" type="text/css" href="../../css/colors/pink.css" title="pink" media="screen" />
-    <link rel="stylesheet" type="text/css" href="../../css/colors/purple.css" title="purple" media="screen" />
-    <link rel="stylesheet" type="text/css" href="../../css/colors/sky-blue.css" title="sky-blue" media="screen" />
-    <link rel="stylesheet" type="text/css" href="../../css/colors/yellow.css" title="yellow" media="screen" />
+    <!-- OJPMS CSS  -->
+    <link rel="stylesheet" type="text/css" href="../../css/ojpms-style.css" media="screen">
 
-    <!-- JS  -->
-    <script type="text/javascript" src="../../js/jquery.min.js"></script>
-    <script type="text/javascript" src="../../js/modernizrr.js"></script>
-    <script type="text/javascript" src="../../js/jquery.appear.js"></script>
-    <script type="text/javascript" src="../../js/count-to.js"></script>
-    <script type="text/javascript" src="../../js/jquery.nicescroll.min.js"></script>
-    <script type="text/javascript" src="../../js/jquery.slicknav.js"></script>
+    <!-- Color CSS Styles  -->
+    <link rel="stylesheet" type="text/css" href="../../css/colors/red.css" title="red" media="screen"/>
+    <link rel="stylesheet" type="text/css" href="../../css/colors/jade.css" title="jade" media="screen"/>
+    <link rel="stylesheet" type="text/css" href="../../css/colors/blue.css" title="blue" media="screen"/>
+    <link rel="stylesheet" type="text/css" href="../../css/colors/beige.css" title="beige" media="screen"/>
+    <link rel="stylesheet" type="text/css" href="../../css/colors/cyan.css" title="cyan" media="screen"/>
+    <link rel="stylesheet" type="text/css" href="../../css/colors/green.css" title="green" media="screen"/>
+    <link rel="stylesheet" type="text/css" href="../../css/colors/orange.css" title="orange" media="screen"/>
+    <link rel="stylesheet" type="text/css" href="../../css/colors/peach.css" title="peach" media="screen"/>
+    <link rel="stylesheet" type="text/css" href="../../css/colors/pink.css" title="pink" media="screen"/>
+    <link rel="stylesheet" type="text/css" href="../../css/colors/purple.css" title="purple" media="screen"/>
+    <link rel="stylesheet" type="text/css" href="../../css/colors/sky-blue.css" title="sky-blue" media="screen"/>
+    <link rel="stylesheet" type="text/css" href="../../css/colors/yellow.css" title="yellow" media="screen"/>
+
+
+    <!-- Margo JS  -->
 
     <script type="text/javascript" src="../../js/jquery.migrate.js"></script>
-    <script type="text/javascript" src="../../js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../../js/modernizrr.js"></script>
     <script type="text/javascript" src="../../js/jquery.fitvids.js"></script>
     <script type="text/javascript" src="../../js/owl.carousel.min.js"></script>
     <script type="text/javascript" src="../../js/nivo-lightbox.min.js"></script>
-    <script type="text/javascript" src="../../js/jquery.textillate.js"></script>
-
-    <script type="text/javascript" src="../../js/nivo-lightbox.min.js"></script>
     <script type="text/javascript" src="../../js/jquery.isotope.min.js"></script>
+    <script type="text/javascript" src="../../js/jquery.appear.js"></script>
+    <script type="text/javascript" src="../../js/count-to.js"></script>
     <script type="text/javascript" src="../../js/jquery.textillate.js"></script>
     <script type="text/javascript" src="../../js/jquery.lettering.js"></script>
     <script type="text/javascript" src="../../js/jquery.easypiechart.min.js"></script>
+    <script type="text/javascript" src="../../js/jquery.nicescroll.min.js"></script>
     <script type="text/javascript" src="../../js/jquery.parallax.js"></script>
-    <script type="text/javascript" src="../../js/mediaelement-and-player.js"></script>
+    <script type="text/javascript" src="../../js/jquery.slicknav.js"></script>
+
 </head>
 
 <body>
+    <form id="Save" name="Save" autocomplete="off" action="addfunction.php">
     <div id="container">
         <!-- Start Header Section -->
         <div class="hidden-header"></div>
@@ -427,6 +310,20 @@ if($a){
         <div id="content">
             <div class="container">
                 <div class="row sidebar-page">
+                    <?php
+                    if(isset($_GET['id'])){
+                        $id=$_GET['id'];
+
+                        if($id==1){
+                            echo'
+                                <div class="alert alert-success">
+                                    <span class="glyphicon glyphicon-info-sign"></span> 
+                                    Contacts Information successfully updated.
+                                </div>
+                                ';
+                        }
+                    }
+                    ?>
                     <!-- Page Content -->
                     <div class="col-md-9 page-content">
                         <div class="row">
@@ -436,19 +333,19 @@ if($a){
                                     <div class="testimonial-content">
                                         <div class="form-group">
                                             <label>Email <span>(*)</span></label>
-                                            <input type="text" class="form-control" id="Email" name="txtEmail" value="<?php if($b==1){ echo $Email; } else{ echo $server_txtEmail; } ?>">
+                                            <input type="email" class="form-control" id="Email" name="Email" value="<?php echo $Email; ?>" maxlength="30">
                                         </div>
                                         <div class="form-group">
                                             <label>Mobile Number <span>(*)</span></label>
-                                            <input type="text" class="form-control" id="MobileNumber" name="txtMobileNumber" value="<?php if($b==1){ echo $MobileNumber; } else{ echo $server_txtMobileNumber; } ?>">
+                                            <input type="text" class="form-control" id="MobileNumber" name="MobileNumber" value="<?php echo $MobileNumber; ?>" maxlength="11">
                                         </div>
                                         <div class="form-group">
                                             <label>Home Number</label>
-                                            <input type="text" class="form-control" id="HomeNumber" name="txtHomeNumber" value="<?php if($b==1){ echo $HomeNumber; } else{ echo $server_txtHomeNumber; } ?>">
+                                            <input type="text" class="form-control" id="HomeNumber" name="HomeNumber" value="<?php echo $HomeNumber; ?>" maxlength="11">
                                         </div>
                                         <div class="form-group">
                                             <label>Work Number</label>
-                                            <input type="text" class="form-control" id="WorkNumber" name="txtWorkNumber" value="<?php if($b==1){ echo $WorkNumber; } else{ echo $server_txtWorkNumber; } ?>">
+                                            <input type="text" class="form-control" id="WorkNumber" name="WorkNumber" value="<?php echo $WorkNumber; ?>" maxlength="11">
                                         </div>
                                     </div>
                                 </div>
@@ -459,227 +356,35 @@ if($a){
                                 <div class="classic-testimonials">
                                     <div class="testimonial-content">
                                         <div class="form-group">
-                                            <label>Address</label>
-                                            <input type="text" class="form-control" id="Address" name="txtAddress" value="<?php if($b==1){ echo $Address; } else{ echo $server_txtAddress; } ?>">
+                                            <label>Address <span>(*)</span></label>
+                                            <input type="text" class="form-control" id="Address" name="Address" value="<?php echo $Address; ?>" maxlength="60">
                                         </div>
                                         <div class="form-group">
                                             <label>City <span>(*)</span></label>
-                                            <select id="City" name="txtCity" class="form-control" style="width:100%; height:34px;" value = "<?php echo $City; ?>">
-                                                <option value>- Please select one -</option>
-                                                <option value="Caloocan City" 
-                                                    <?php 
-                                                    if($b==1){
-                                                    if($City=="Caloocan City") echo 'selected="selected"'; 
-                                                    }
-                                                    else{
-                                                     if($server_txtCity=="Caloocan City") echo 'selected="selected"';
-                                                    }
-                                                    ?>>
-                                                    Caloocan City
-                                                </option>
-                                                <option value="Las Pińas City" 
-                                                    <?php 
-                                                    if($b==1){
-                                                    if($City=="Las Pińas City") echo 'selected="selected"';
-                                                    }
-                                                    else{
-                                                    if($server_txtCity=="Las Pińas City") echo 'selected="selected"';
-                                                    }
-                                                    
-                                                    ?>>
-                                                    Las Pińas City
-                                                </option>
-                                                <option value="Makati City" 
-                                                    <?php
-                                                    if($b==1){
-                                                    if($City=="Makati City") echo 'selected="selected"';
-                                                    }
-                                                    else{
-                                                    if($server_txtCity=="Makati City") echo 'selected="selected"';
-                                                    } 
-                                                    ?>>
-                                                    Makati City
-                                                </option>
-                                                <option value="Malabon City" 
-                                                    <?php
-                                                    if($b==1){
-                                                    if($City=="Malabon City") echo 'selected="selected"'; 
-                                                    }
-                                                    else{
-                                                    if($server_txtCity=="Malabon City") echo 'selected="selected"'; 
-                                                    }
-                                                    ?>>
-                                                    Malabon City
-                                                </option>
-
-                                                <option value="Mandaluyong City" 
-                                                    <?php 
-                                                    if($b==1){
-                                                        if($City=="Mandaluyong City") echo 'selected="selected"'; 
-                                                    }
-                                                    else{
-                                                        if($server_txtCity=="Mandaluyong City") echo 'selected="selected"'; 
-                                                    }
-                                                    ?>>
-                                                    Mandaluyong City
-                                                </option>
-                                                <option value="Manila" 
-                                    <?php 
-                                    if($b==1){
-                                     if($City=="Manila") echo 'selected="selected"';
-                                    }
-                                    else{
-                                        if($server_txtCity=="Manila") echo 'selected="selected"';
-                                    }
-                                    ?>>
-                                    Manila
-                                    </option>
-
-                                    <option value="Marikina City" 
-                                    <?php 
-                                    if($b==1){
-                                    if($City=="Marikina City") echo 'selected="selected"'; 
-                                    }
-                                    else{
-                                    if($server_txtCity=="Marikina City") echo 'selected="selected"'; 
-                                    }
-                                ?>>
-                                Marikina City
-                                </option>
-
-                                <option value="Muntinlupa City"
-                                <?php 
-                                if($b==1){
-                                    if($City=="Muntinlupa City") echo 'selected="selected"';
-                                }
-                                else{
-                                    if($server_txtCity=="Muntinlupa City") echo 'selected="selected"';
-                                }
-                                ?>>
-                                Muntinlupa City
-                                </option>
-
-                                <option value="Navotas City" 
-                                <?php 
-                                if($b==1){
-                                    if($City=="Navotas City") echo 'selected="selected"'; 
-                                }
-                                else{
-                                    if($server_txtCity=="Navotas City") echo 'selected="selected"'; 
-                                }
-                                ?>>
-                                Navotas City
-                                </option>
-
-                                <option value="Parańaque City"
-                                <?php 
-                                if($b==1){
-                                    if($City=="Parańaque City") echo 'selected="selected"';     
-                                }
-                                else{
-                                    if($server_txtCity=="Parańaque City") echo 'selected="selected"'; 
-                                }
-                                
-                                ?>>
-                                Parańaque City
-                                </option>
-
-
-                                <option value="Pasay City" 
-                                <?php 
-                                if($b==1){
-                                    if($City=="Pasay City") echo 'selected="selected"'; 
-                                }
-                                else{
-                                    if($server_txtCity=="Pasay City") echo 'selected="selected"'; 
-                                }
-                                
-                                ?>>
-                                Pasay City
-                                </option>
-
-                                <option value="Pasig City" 
-                                <?php 
-                                if($b==1){
-                                    if($City=="Pasig City") echo 'selected="selected"'; 
-                                }
-                                else{
-                                    if($server_txtCity=="Pasig City") echo 'selected="selected"'; 
-                                }
-                                
-                                ?>>
-                                Pasig City
-                                </option>
-
-                                <option value="Pateros City" 
-                                <?php 
-                                if($b==1){
-                                    if($City=="Pateros City") echo 'selected="selected"'; 
-                                }
-                                
-                                else{
-                                    if($server_txtCity=="Pateros City") echo 'selected="selected"'; 
-                                }
-                                ?>>
-                                Pateros City
-                                </option>
-
-                                <option value="Quezon City" 
-                                <?php
-                                if($b==1){
-                                    if($City=="Quezon City") echo 'selected="selected"'; 
-                                } 
-                                else{
-                                    if($server_txtCity=="Quezon City") echo 'selected="selected"';
-                                }
-                                
-                                ?>>
-                                Quezon City
-                                </option>
-
-                                <option value="San Juan City" 
-                                <?php 
-                                if($b==1){
-                                    if($City=="San Juan City") echo 'selected="selected"'; 
-                                }
-                                else{
-                                    if($server_txtCity=="San Juan City") echo 'selected="selected"'; 
-                                }
-
-                                ?>>
-                                San Juan City
-                                </option>
-
-                                <option value="Taguig City" 
-                                <?php 
-                                if($b==1){
-                                    if($City=="Taguig City") echo 'selected="selected"'; 
-                                }
-                                else{
-                                    if($server_txtCity=="Taguig City") echo 'selected="selected"';
-                                }
-                                
-                                ?>>
-                                Taguig City
-                                </option>
-
-                                <option value="Valenzuela City" 
-                                <?php 
-                                if($b==1){
-                                    if($City=="Valenzuela City") echo 'selected="selected"'; 
-                                }
-                                else{
-                                    if($server_txtCity=="Valenzuela City") echo 'selected="selected"'; 
-                                }
-                                
-                                ?>>
-                                Valenzuela City
-                                </option>
+                                            <select id="City" name="City" class="form-control" style="width:100%; height:34px;">
+                                                <option value="" <?php if($City=="") echo 'selected="selected"'; ?>>- Please select one -</option>
+                                                <option value="Caloocan City" <?php if($City=="Caloocan City") echo 'selected="selected"'; ?>>Caloocan City</option>
+                                                <option value="Las Piñas City" <?php if($City=="Las Piñas City") echo 'selected="selected"'; ?>>Las Piñas City</option>
+                                                <option value="Makati City" <?php if($City=="Makati City") echo 'selected="selected"'; ?>>Makati City</option>
+                                                <option value="Malabon City" <?php if($City=="Malabon City") echo 'selected="selected"'; ?>>Malabon City</option>
+                                                <option value="Mandaluyong City" <?php if($City=="Mandaluyong City") echo 'selected="selected"'; ?>>Mandaluyong City</option>
+                                                <option value="Manila" <?php if($City=="Manila") echo 'selected="selected"'; ?>>Manila</option>
+                                                <option value="Marikina City" <?php if($City=="Marikina City") echo 'selected="selected"'; ?>>Marikina City</option>
+                                                <option value="Muntinlupa City" <?php if($City=="Muntinlupa City") echo 'selected="selected"'; ?>>Muntinlupa City</option>
+                                                <option value="Navotas City" <?php if($City=="Navotas City") echo 'selected="selected"'; ?>>Navotas City</option>
+                                                <option value="Parañaque City" <?php if($City=="Parañaque City") echo 'selected="selected"'; ?>>Parañaque City</option>
+                                                <option value="Pasay City" <?php if($City=="Pasay City") echo 'selected="selected"'; ?>>Pasay City</option>
+                                                <option value="Pasig City" <?php if($City=="Pasig City") echo 'selected="selected"'; ?>>Pasig City</option>
+                                                <option value="Pateros" <?php if($City=="Pateros") echo 'selected="selected"'; ?>>Pateros</option>
+                                                <option value="Quezon City" <?php if($City=="Quezon City") echo 'selected="selected"'; ?>>Quezon City</option>
+                                                <option value="San Juan City" <?php if($City=="San Juan City") echo 'selected="selected"'; ?>>San Juan City</option>
+                                                <option value="Taguig City" <?php if($City=="Taguig City") echo 'selected="selected"'; ?>>Taguig City</option>
+                                                <option value="Valenzuela City" <?php if($City=="Valenzuela City") echo 'selected="selected"'; ?>>Valenzuela City</option>
                                             </select>
                                         </div>
                                         <div class="form-group">
                                             <label>Postal Code</label>
-                                            <input type="text" class="form-control" id="PostalCode" name="txtPostalCode" value="<?php if($b==1){ echo $PostalCode; } else{ echo $server_txtPostalCode; } ?>">
+                                            <input type="text" class="form-control" id="PostalCode" name="PostalCode" value="<?php echo $PostalCode; ?>" maxlength="11">
                                         </div>
                                     </div>
                                 </div>
@@ -701,13 +406,83 @@ if($a){
                 <div class="hr5" style="margin-top:35px;margin-bottom:40px;"></div>
                 <div class="field">
                     <div class="text-center">
-                        <button class="btn btn-lg btn-hg btn-primary" name ="btnSave">Save</button>
+                        <button type="submit" class="btn btn-lg btn-hg btn-primary" name ="btnSaveContactInfo">Save</button>
                     </div>
                 </div>
             </div>
         </div>
     </div>
+</form>
     <!-- End Content -->
     <script type="text/javascript" src="../../js/script.js"></script>
 </body>
 </html>
+<script type="text/javascript">
+    $(document).ready(function () {
+        $("#Save").bootstrapValidator({
+            feedbackIcons: {
+                valid: "glyphicon glyphicon-ok",
+                invalid: "glyphicon glyphicon-remove",
+                validating: "glyphicon glyphicon-refresh"
+            },
+            fields: {
+                Email: {
+                    validators: {
+                        notEmpty: {
+                            message: "Email is required."
+                        }
+                    }
+                },
+                MobileNumber: {
+                    validators: {
+                            notEmpty: {
+                                message: "Mobile Number is required."
+                            },
+                            regexp: {
+                                regexp: /^[0-9]+$/i,
+                                message: "Mobile Number can consist of numeric characters only."
+                            }
+                    }
+                },
+                HomeNumber: {
+                    validators: {
+                            regexp: {
+                                    regexp: /^[0-9]+$/i,
+                                    message: "Home Number can consist of numeric characters only."
+                            }
+                    }
+                },
+                WorkNumber: {
+                    validators: {
+                            regexp: {
+                                    regexp: /^[0-9]+$/i,
+                                    message: "Work Number can consist of numeric characters only."
+                            }
+                    }
+                },
+                Address: {
+                    validators: {
+                        notEmpty: {
+                            message: "Address is required."
+                        }
+                    }
+                },
+                City: {
+                    validators: {
+                        notEmpty: {
+                            message: "City is required."
+                        }
+                    }
+                },
+                PostalCode: {
+                    validators: {
+                            regexp: {
+                                    regexp: /^[0-9]+$/i,
+                                    message: "Postal Code can consist of numeric characters only."
+                            }
+                    }
+                }
+            }
+        });
+    });
+</script>

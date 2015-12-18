@@ -462,7 +462,6 @@ if(isset($_POST['btnSave'])){
 */
 ?>
 </html>
-
 <script type="text/javascript">
     $(document).ready(function () {
         $("#Save").bootstrapValidator({
