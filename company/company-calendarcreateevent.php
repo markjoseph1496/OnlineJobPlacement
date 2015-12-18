@@ -258,65 +258,64 @@ $CompanyID = $_SESSION['CompanyID'];
 
 <!--Content-->
   <br><br><br>
-  
+  <form action="add-company.php" name="addcalendar" id="addcalendar" autocomplete="off">
     <div class =  "container">
-        <div class = "col-md-12">
-            <div class = "row">
-                <form action="add-company.php" name="addcalendar" id="addcalendar" autocomplete="off">
-                     <div class="row field">
-                        <div class = "col-md-3 fieldcol">
-                             <label = "usr" class = "control-label">Event from: </label>
+      <div class = "col-md-12">
+        <div class = "row">
+                <div class="row field">
+                    <div class = "col-md-3 fieldcol">
+                         <label = "usr" class = "control-label">Event from: </label>
+                    </div>
+                    <div class = "col-md-8 fieldcol">
+                        <div class="form-group">
+                            <div class = "date">
+                               <input type = "date" name = "datefrom" id = "date_from" class = "form-control">
+                                <div class = "date_to">
+                                    <label = "usr" class = "control-label" id = "label">to: </label>
+                                    <input type = "date" name = "dateto" id = "date_to" class = "form-control">
+                                </div>
+                            </div> 
                         </div>
-                        <div class = "col-md-8 fieldcol">
-                            <div class="form-group">
-                                <div class = "date">
-                                   <input type = "date" name = "datefrom" id = "date_from" class = "form-control">
-                                       <div class = "date_to">
-                                            <label = "usr" class = "control-label" id = "label">to: </label>
-                                            <input type = "date" name = "dateto" id = "date_to" class = "form-control">
-                                    </div>
-                                 </div> 
-                            </div>
+                    </div>
+                </div> 
+                <div class="row field">
+                    <div class = "col-md-3 fieldcol">
+                         <label = "usr" class = "control-label"> Event Title: </label>
+                    </div>
+                    <div class = "col-md-8 fieldcol">
+                        <div class="form-group">
+                              <input type = "text" name = "eventtitle" id = "eventtitle" class = "form-control" >
                         </div>
-                    </div> 
-                    <div class="row field">
-                        <div class = "col-md-3 fieldcol">
-                             <label = "usr" class = "control-label"> Event Title: </label>
+                    </div>
+                </div>  
+                <div class="row field">
+                    <div class = "col-md-3 fieldcol">
+                          <label = "usr" class = "control-label"> Location: </label>
+                    </div>
+                    <div class = "col-md-8 fieldcol">
+                        <div class="form-group">
+                              <input type = "text" name = "location" id = "location" class = "form-control" >
                         </div>
-                        <div class = "col-md-8 fieldcol">
-                            <div class="form-group">
-                                  <input type = "text" name = "eventtitle" id = "eventtitle" class = "form-control" >
-                            </div>
+                    </div>
+                </div>  
+                <div class="row field">
+                    <div class = "col-md-3 fieldcol">
+                         <label = "usr" class = "control-label"> Description: </label>
+                    </div>
+                    <div class = "col-md-8 fieldcol">
+                        <div class="form-group">
+                              <input type = "text" class = "form-control" id = "descrip" name = "descrip"  >
                         </div>
-                    </div>  
-                    <div class="row field">
-                      <div class = "col-md-3 fieldcol">
-                            <label = "usr" class = "control-label"> Location: </label>
-                      </div>
-                      <div class = "col-md-8 fieldcol">
-                          <div class="form-group">
-                                <input type = "text" name = "location" id = "location" class = "form-control" >
-                          </div>
-                      </div>
-                    </div>  
-                    <div class="row field">
-                      <div class = "col-md-3 fieldcol">
-                           <label = "usr" class = "control-label"> Description: </label>
-                      </div>
-                      <div class = "col-md-8 fieldcol">
-                          <div class="form-group">
-                                 <input type = "text" class = "form-control" id = "descrip" name = "descrip"  >
-                          </div>
-                      </div>
-                    </div>  
-                         <button class = "btn btn-primary " id = "btnsave" name = "BTNsave" type="submit"><b> SAVE </b></button> 
-                         <a class = "btn btn-primary " id = "cancel" href="#"><b> CANCEL</b> </a>
-
-                </form> 
-            </div>
+                    </div>
+                </div>
+                <div class="col-md-8 fieldcol">  
+                     <button class = "btn btn-primary " id = "BtnCalendarsave" name = "BtnCalendarsave" type="submit"><b> SAVE </b></button> 
+                     <a class = "btn btn-primary " id = "cancel" href="#"><b> CANCEL</b> </a>
+                </div>
         </div>
-    </div>       
-</div>
+      </div>
+    </div>
+  </form>        
 </body>
 <script type="text/javascript">
         $(document).ready(function (){
