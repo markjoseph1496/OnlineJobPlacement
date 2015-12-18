@@ -385,7 +385,7 @@ $CompanyID = $_SESSION['CompanyID'];
                     </div>
                     <div class = "col-md-8 fieldcol">
                         <div class="form-group">
-                               <input type = "text" name = "YExperience" id="YExperience" class = "form-control" style ="width: 300px;">
+                               <input type = "number" name = "YExperience" id="YExperience" class = "form-control" style ="width: 300px;">
                         </div>
                     </div>
                 </div> 
@@ -421,9 +421,11 @@ $CompanyID = $_SESSION['CompanyID'];
                         </div>
                     </div>
                 </div>
-                <div class="col-md-8 fieldcol">   
-                     <button type = "submit" class = "btn btn-primary " id = "btnsave" name = "btnsave"><b> SAVE </b></button>
-                     <button type = "submit" class = "btn btn-primary " id = "cancel"><b> CANCEL</b> </button>
+                <div class="row field">
+                    <div class="col-md-8 fieldcol">   
+                         <button type = "submit" class = "btn btn-primary " id = "btnsave" name = "btnsave"><b> SAVE </b></button>
+                         <button type = "submit" class = "btn btn-primary " id = "cancel"><b> CANCEL</b> </button>
+                    </div>
                 </div>
           </div>
         </div>
@@ -471,6 +473,10 @@ $CompanyID = $_SESSION['CompanyID'];
                                 min: 1,
                                 max: 15,
                                 message: "Available Position must be 1-15 Number long."
+                            },
+                            regexp: {
+                                regexp: /^[0-1\s]+$/i,
+                                message: "Location can consist of alphabetical characters and spaces only"
                             }
                         }
                     },
@@ -490,6 +496,10 @@ $CompanyID = $_SESSION['CompanyID'];
                                 min: 1,
                                 max: 10,
                                 message: "Years of Experience must be 1-10 number long."
+                            },
+                            regexp: {
+                                regexp: /^[0-9\s]+$/i,
+                                message: "Location can consist of alphabetical characters and spaces only"
                             }
                         }
                     }

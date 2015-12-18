@@ -185,6 +185,10 @@
                                 max: 15,
                                 message: "Company Name is invalid."
                             },
+                            regexp: {
+                                regexp: /^[a-z\s]+$/i,
+                                message: "Company Name can consist of alphabetical characters and spaces only"
+                            },
                             remote: {
                                 message: 'The Company Name already exists',
                                 url: 'addcompany.php',
@@ -218,6 +222,10 @@
                                 min: 3,
                                 max: 15,
                                 message: "First name must be 3-15 characters long."
+                            },
+                            regexp: {
+                                regexp: /^[a-z\s]+$/i,
+                                message: "First Name can consist of alphabetical characters and spaces only"
                             }
                         }
                     },
@@ -230,6 +238,10 @@
                                 min: 3,
                                 max: 15,
                                 message: "Middle name must be 3-15 characters long."
+                            },
+                            regexp: {
+                                regexp: /^[a-z\s]+$/i,
+                                message: "Middle Name can consist of alphabetical characters and spaces only"
                             }
                         }
                     },
@@ -242,6 +254,10 @@
                                 min: 3,
                                 max: 15,
                                 message: "Last name must be 3-15 characters long."
+                            },
+                            regexp: {
+                                regexp: /^[a-z\s]+$/i,
+                                message: "Last Name can consist of alphabetical characters and spaces only"
                             }
                         }
                     },
@@ -254,6 +270,10 @@
                                 min: 3,
                                 max: 15,
                                 message: "Position must be 3-15 characters long."
+                            },
+                            regexp: {
+                                regexp: /^[a-z\s]+$/i,
+                                message: "Position can consist of alphabetical characters and spaces only"
                             }
                         }
                     },
@@ -266,6 +286,10 @@
                                 min: 3,
                                 max: 15,
                                 message: "Department must be 3-15 characters long."
+                            },
+                            regexp: {
+                                regexp: /^[a-z\s]+$/i,
+                                message: "Department can consist of alphabetical characters and spaces only"
                             }
                         }
                     },

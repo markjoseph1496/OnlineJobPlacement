@@ -350,6 +350,10 @@ $CompanyID = $_SESSION['CompanyID'];
                                 min: 3,
                                 max: 15,
                                 message: "Location must be 3-15 characters long."
+                            },
+                            regexp: {
+                                regexp: /^[a-z\s]+$/i,
+                                message: "Location can consist of alphabetical characters and spaces only"
                             }
                         }
                     },
@@ -362,6 +366,10 @@ $CompanyID = $_SESSION['CompanyID'];
                                 min: 5,
                                 max: 25,
                                 message: "Description must be 5-25 characters long."
+                            },
+                            regexp: {
+                                regexp: /^[a-z\s]+$/i,
+                                message: "Description can consist of alphabetical characters and spaces only"
                             }
                         }
                     },
