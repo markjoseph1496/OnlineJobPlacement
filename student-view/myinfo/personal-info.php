@@ -1,3 +1,7 @@
+
+
+
+
 <!doctype html>
 <html lang="en">
 
@@ -17,7 +21,7 @@
     <meta name="author" content="iThemesLab">
 
     <!-- Bootstrap CSS  -->
-    <link rel="stylesheet" href="../../asset/css/bootstrap.min.css" type="text/css" media="screen">
+    <link rel="stylesheet" href="../../css/bootstrap.min.css" type="text/css" media="screen">
 
     <!-- Font Awesome CSS -->
     <link rel="stylesheet" href="../../css/font-awesome.min.css" type="text/css" media="screen">
@@ -56,7 +60,7 @@
     <script type="text/javascript" src="../../js/jquery.slicknav.js"></script>
 
     <script type="text/javascript" src="../../js/jquery.migrate.js"></script>
-    <script type="text/javascript" src="../../asset/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../../js/bootstrap.min.js"></script>
     <script type="text/javascript" src="../../js/jquery.fitvids.js"></script>
     <script type="text/javascript" src="../../js/owl.carousel.min.js"></script>
     <script type="text/javascript" src="../../js/nivo-lightbox.min.js"></script>
@@ -69,6 +73,11 @@
     <script type="text/javascript" src="../../js/jquery.easypiechart.min.js"></script>
     <script type="text/javascript" src="../../js/jquery.parallax.js"></script>
     <script type="text/javascript" src="../../js/mediaelement-and-player.js"></script>
+
+     <!-- fileupload -->
+    <link href="../../css/fileinput.min.css" media="all" rel="stylesheet" type="text/css" />
+    <script src="../../js/fileinput.min.js" type="text/javascript"></script>
+
 </head>
 
 <body>
@@ -433,13 +442,8 @@
                                 <!-- Single Testimonial -->
                                 <div class="classic-testimonials">
                                     <div class="testimonial-content">
-                                        <label>Photo</label>
-                                        <input id="uploadFile" type="file" name="fileToUpload" class="img"><br>
-                                        <div id="imagePreview">
-                                            <img src="" id="Image1" alt="" style="width:250px;height:250px;">
-                                            <div class="space"></div>
-                                            <div class="space"></div>
-                                        </div>
+                                        <label class="control-label">Select Image</label>
+                                        <input id="input-7" name="input7[]" multiple type="file" class="file file-loading" data-allowed-file-extensions='["png", "jpg", "bmp", "gif"]'>
                                     </div>
                                     <div class="testimonial-author"><button id="" class="btn btn-hg btn-primary" name="btnDelete">Delete Image</button></div>
                                 </div>
