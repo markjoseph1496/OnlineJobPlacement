@@ -4,16 +4,24 @@ include('../../connection.php');
 
 $StudentID = $_SESSION['StudentID'];
 
+$query = "SELECT * FROM studentinfotbl WHERE StudentID = '$StudentID'";
+$result = mysql_query($query);
 
-
-
+while($query = mysql_fetch_array($result)){
+    $FirstName = $query['FirstName'];
+    $MiddleName = $query['MiddleName'];
+    $LastName = $query['LastName'];
+    $Gender = $query['Gender'];
+    $Birthdate = $query['Birthdate'];
+    $Nationality = $query['Nationality'];
+    $CivilStatus = $query['CivilStatus'];
+    $FBLink = $query['FBLink'];
+    $TwitterLink = $query['TwitterLink'];
+}
 ?>
-
-
 
 <!doctype html>
 <html lang="en">
-
 <head>
 
     <!-- Basic -->
@@ -297,19 +305,19 @@ $StudentID = $_SESSION['StudentID'];
                                     <div class="testimonial-content">
                                         <div class="form-group">
                                             <label>First Name <span>(*)</span></label>
-                                            <input type="text" class="form-control" id="fname" name="fname">
+                                            <input type="text" class="form-control" id="FirstName" name="FirstName" value="<?php echo $FirstName; ?>">
                                         </div>
                                         <div class="form-group">
                                             <label>Middle Name</label>
-                                            <input type="text" class="form-control" id="mname" name="mname">
+                                            <input type="text" class="form-control" id="MiddleName" name="MiddleName" value="<?php echo $MiddleName; ?>">
                                         </div>
                                         <div class="form-group">
                                             <label>Last Name <span>(*)</span></label>
-                                            <input type="text" class="form-control" id="lname" name="lname">
+                                            <input type="text" class="form-control" id="LastName" name="LastName" value="<?php echo $LastName; ?>">
                                         </div>
                                         <div class="form-group">
                                             <label>Gender</label>
-                                            <select id="gender" name="gender" class="form-control" style="width:100%; height:34px;">
+                                            <select id="Gender" name="Gender" class="form-control" style="width:100%; height:34px;">
                                                 <option value="" selected="selected">- Please Select Gender -</option>
                                                 <option value="Female" selected="selected">Female</option>
                                             </select>
