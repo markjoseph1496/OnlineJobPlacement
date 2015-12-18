@@ -451,7 +451,6 @@ if (isset($_POST['requestresume'])) {
 
                                   echo "
                                   <tr>
-<<<<<<< HEAD
                                     <td width = '5%' class = tabletitle><input type='checkbox' id='select'/></td>
                                     <td width = '10%' class = tabletitle> $studentid </td>
                                     <td width = '20%' class = tabletitle> $lname $fname </td>
@@ -459,7 +458,6 @@ if (isset($_POST['requestresume'])) {
                                     <td width = '30%' class = tabletitle> $Specialization </td>
                                     <td width = '10%' class = tabletitle> <button id='Edit' name='request_resume' class='btn btn-default'><i class='fa fa-arrow-circle-right'></i> </td>
                                   <tr>
-=======
                                     <td width = '5%'><input type='checkbox' id='select'/></td>
                                     <td width = '10%'> $studentid </td>
                                     <td width = '20%'> $lname $fname </td>
@@ -472,7 +470,6 @@ if (isset($_POST['requestresume'])) {
                                                         </form>
                                     </td>
                                   </tr>
->>>>>>> origin/master
                                   ";  
                                 }
                     }
@@ -492,8 +489,7 @@ if (isset($_POST['requestresume'])) {
 
                         echo "
                         <tr>
-<<<<<<< HEAD
-                          <td width = '5%' class = tabletitle><input type='checkbox' id='select'/></td>
+                         <td width = '5%' class = tabletitle><input type='checkbox' id='select'/></td>
                           <td width = '10%' class = tabletitle> $studentid </td>
                           <td width = '20%' class = tabletitle> $lname $fname </td>
                           <td width = '30%' class = tabletitle> $course </td>
@@ -505,98 +501,7 @@ if (isset($_POST['requestresume'])) {
                 }
 
               }
-
-
-              if (isset($_POST['filter'])) {
-                $b = $_POST['MajorCourse'];
-                  if($b == ""){
-                    while($qry = mysql_fetch_array($result)){
-                              $fname = $qry['FirstName'];
-                              $lname = $qry['LastName'];
-                              $studentid = $qry['StudentID'];
-                              $course = $qry['MajorCourse'];
-
-                                $y = "SELECT * FROM studentinfotbl WHERE StudentID = '$studentid'";
-                                $k = mysql_query($y);
-                                while ($y = mysql_fetch_array($k)) {
-                                  $majorCourse = $y['MajorCourse'];
-
-                                  echo "
-                                  <tr>
-                                    <td width = '5%' class = tabletitle><input type='checkbox' id='select'/></td>
-                                    <td width = '10%' class = tabletitle> $studentid </td>
-                                    <td width = '20%' class = tabletitle> $lname $fname </td>
-                                    <td width = '30%' class = tabletitle> $course </td>
-                                    <td width = '30%' class = tabletitle> $Specialization </td>
-                                  <tr>
-                                  ";  
-                                }
-                            }
-                  }
-                  else{
-                    while($qry = mysql_fetch_array($result)){
-                              $fname = $qry['FirstName'];
-                              $lname = $qry['LastName'];
-                              $studentid = $qry['StudentID'];
-                              $course = $qry['MajorCourse'];
-
-                                $y = "SELECT * FROM studentinfotbl WHERE StudentID = '$studentid' AND MajorCourse = '$b'";
-                                $k = mysql_query($y);
-                                while ($y = mysql_fetch_array($k)) {
-                                  $majorCourse = $y['MajorCourse'];
-
-                                  echo "
-                                  <tr>
-                                    <td width = '5%' class = tabletitle ><input type='checkbox' id='select'/></td>
-                                    <td width = '10%' class = tabletitle > $studentid </td>
-                                    <td width = '20%' class = tabletitle > $lname $fname </td>
-                                    <td width = '30%' class = tabletitle > $course </td>
-                                    <td width = '30%' class = tabletitle > $Specialization </td>
-                                  <tr>
-                                  ";  
-                                }
-                    }
-                  }
-              }
-              else{
-                  while($qry = mysql_fetch_array($result)){
-                    $fname = $qry['FirstName'];
-                    $lname = $qry['LastName'];
-                    $studentid = $qry['StudentID'];
-                    $course = $qry['MajorCourse'];
-
-                      $q = "SELECT * FROM studentinfotbl WHERE StudentID = '$studentid'";
-                      $r = mysql_query($q);
-                      while ($q = mysql_fetch_array($r)) {
-                        $majorCourse = $q['MajorCourse'];
-
-                        echo "
-                        <tr>
-                          <td width = '5%' class = tabletitle ><input type='checkbox' id='select'/></td>
-                          <td width = '10%' class = tabletitle > $studentid </td>
-                          <td width = '20%' class = tabletitle > $lname $fname </td>
-                          <td width = '30%' class = tabletitle > $course </td>
-                          <td width = '30%' class = tabletitle > $Specialization </td>
-                        <tr>
-=======
-                          <td width = '5%'><input type='checkbox' id='select'/></td>
-                          <td width = '10%'> $studentid </td>
-                          <td width = '20%'> $lname $fname </td>
-                          <td width = '30%'> $course </td>
-                          <td width = '30%'> $Specialization </td>
-                          <td width = '10%'><form method='POST'>
-                                            <input type='hidden' name='company_id' value='$company_id'/>
-                                            <input type='hidden' name='studentid' value='$studentid'/>
-                                            <button id='Edit' name='requestresume' class='btn btn-default'><i class='fa fa-arrow-circle-right'></i></button>
-                                            </form>
-                          </td>
-                        </tr>
->>>>>>> origin/master
-                        ";  
-                      }
-                }
-
-              }              
+            
             ?>
             </tbody>
         </table>
