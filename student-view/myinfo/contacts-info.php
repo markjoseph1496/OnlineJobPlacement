@@ -53,7 +53,6 @@ $result = mysql_query($query);
 
     <!-- BootstrapValidator CSS -->
     <link href="../../css/bootstrapValidator.min.css" rel="stylesheet"/>
-    <link href="../../css/basic-template.css" rel="stylesheet"/>
     <!-- jQuery and Bootstrap JS -->
     <script type="text/javascript" src="../../js/jquery.min.js"></script>
     <script src="../../js/bootstrap.min.js" type="text/javascript"></script>
