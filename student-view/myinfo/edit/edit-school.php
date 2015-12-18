@@ -338,18 +338,17 @@ $result = mysql_query($qry);
                                 <div class="form-group">
                                     <label>Course <span>(*)</span></label>
                                     <select id="Course" name="Course" class="form-control" style="width:100%; height:34px;">
-                                        <option value="" <?php if($Course=="") echo 'selected="selected"'; ?>>- Course -</option>
-                                        <option value="Bachelor of Science in Tourism Management" <?php if($Course=="Bachelor of Science in Tourism Management") echo 'selected="selected"'; ?>>Bachelor of Science in Tourism Management</option>
-                                        <option value="Bachelor of Science in Business Management Major in Operations" <?php if($Course=="Bachelor of Science in Business Management Major in Operations") echo 'selected="selected"'; ?>>Bachelor of Science in Business Management Major in Operations</option>
-                                        <option value="Bachelor of Arts in Communication" <?php if($Course=="Bachelor of Arts in Communication") echo 'selected="selected"'; ?>>Bachelor of Arts in Communication</option>
-                                        <option value="Bachelor of Science in Information Technology Major in Digital Arts" <?php if($Course=="Bachelor of Science in Information Technology Major in Digital Arts") echo 'selected="selected"'; ?>>Bachelor of Science in Information Technology Major in Digital Arts</option>
-                                        <option value="Bachelor of Science in Hotel and Restaurant Management" <?php if($Course=="Bachelor of Science in Hotel and Restaurant Management") echo 'selected="selected"'; ?>>Bachelor of Science in Hotel and Restaurant Management</option>
-                                        <option value="Bachelor of Science in Computer Science" <?php if($Course=="Bachelor of Science in Computer Science") echo 'selected="selected"'; ?>>Bachelor of Science of Computer Science</option>
-                                        <option value="Bachelor of Science in Information Technology" <?php if($Course=="Bachelor of Science in Information Technology") echo 'selected="selected"'; ?>>Bachelor of Science of Information Technology</option>
-                                        <option value="Bachelor of Science in Computer Engineering" <?php if($Course=="Bachelor of Science in Computer Engineering") echo 'selected="selected"'; ?>>Bachelor of Science of Computer Engineering</option>
-                                        <option value="Bachelor of Science in Accounting Technology" <?php if($Course=="Bachelor of Science in Accounting Technology") echo 'selected="selected"'; ?>>Bachelor of Science in Accounting Technology</option>
-                                        <option value="Bachelor of Science in Information Technology with Specialization Digital Arts" <?php if($Course=="Bachelor of Science in Information Technology with Specialization Digital Arts") echo 'selected="selected"'; ?>>Bachelor of Science in Information Technology with Specialization Digital Arts</option>
-                                        <option value="2-yr. Associate in Computer Technology" <?php if($Course=="2-yr. Associate in Computer Technology") echo 'selected="selected"'; ?>>2-yr. Associate in Computer Technology</option>
+                                        <?php   
+                                            $query ="SELECT * FROM coursetbl";
+                                            $result = mysql_query($query);
+                                            while($query = mysql_fetch_array($result)){
+                                                $CourseCode = $query['CourseCode'];
+                                                $CourseTitle = $query['CourseTitle'];
+                                        ?>
+                                            <option value="<?php echo $CourseCode;?>" <?php if($CourseCode==$Course) echo 'selected="selected"'; ?>><?php echo $CourseTitle; ?></option>
+                                        <?php
+                                            }
+                                        ?>
                                     </select>
                                 </div>
                             </div>

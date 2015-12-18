@@ -43,6 +43,12 @@ while($qry2 = mysql_fetch_Array($result2))
                 $Attainment1 = $qry2['Attainment'];
                 $Course1 = $qry2['Course'];
                 $Graduated1 = $qry2['Graduated'];
+
+                $query = "SELECT * FROM coursetbl WHERE CourseCode = '$Course1'";
+                $rslt = mysql_query($query);
+                while($query = mysql_fetch_array($rslt)){
+                    $CourseTitle = $query['CourseTitle'];
+                }
         }
 ?>
 <html lang="en">
@@ -292,7 +298,7 @@ while($qry2 = mysql_fetch_Array($result2))
                                     </div>
                                     <div class="col-md-6 fieldcol">
                                         <a href="add/add-school.php" class="btnforadding" style="float:right;">
-                                            <span class="fa fa-plus-square"> Add School</span>
+                                            <span class="fa fa-plus-square">Add School</span>
                                         </a>
                                     </div>
                                 </div>
@@ -311,7 +317,7 @@ while($qry2 = mysql_fetch_Array($result2))
                                         <tr>
                                             <td><?php echo $School1; ?></td>
                                             <td><?php echo $Attainment1; ?></td>
-                                            <td><?php echo $Course1; ?></td>
+                                            <td><?php echo $CourseTitle; ?></td>
                                             <td><?php
                                             if(substr($Graduated1, 0,2)==1){
                                             echo "January" . substr($Graduated1, 2,5);
@@ -364,7 +370,7 @@ while($qry2 = mysql_fetch_Array($result2))
                                         <tr>
                                             <td><?php echo $rows[$School]; ?></td>
                                             <td><?php echo $rows[$Attainment]; ?></td>
-                                            <td><?php echo $rows[$Course]; ?></td>
+                                            <td><?php echo $rows[$CourseCode]; ?></td>
                                             <td>
                                                 <?php
                                                 if(substr($rows[$Graduated], 0,2)==1){

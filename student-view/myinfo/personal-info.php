@@ -132,7 +132,7 @@ while($query = mysql_fetch_array($result)){
                         <!-- Start Social Links -->
                             <ul class="social-list">
                                <li class="profile-name">
-                                    <i class="fa fa-user"></i> Hello, <b>Aira Jane Cruz</b>                               
+                                    <i class="fa fa-user"></i> Hello, <b><?php echo $FirstName ." ".$LastName; ?></b>                               
                                 </li>
                             </ul>
                             <!-- End Social Links -->
