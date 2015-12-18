@@ -68,7 +68,6 @@ $result = mysql_query($qry);
   <script type="text/javascript" src="../js/jquery.nicescroll.min.js"></script>
   <script type="text/javascript" src="../js/jquery.parallax.js"></script>
   <script type="text/javascript" src="../js/jquery.slicknav.js"></script>
-  <script type="text/javascript" src="../js/script.js"></script>
 
   <!--[if IE 8]><script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
   <!--[if lt IE 9]><script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
@@ -162,16 +161,11 @@ $result = mysql_query($qry);
             </a>
           </div>
           <div class="navbar-collapse collapse">
-            <!-- Stat Search -->
-            <div class="search-side">
-              <a class="show-search"><i class="fa fa-search"></i></a>
-              <div class="search-form">
-                <form autocomplete="off" role="search" method="get" class="searchform" action="#">
-                  <input type="text" value="" name="s" id="s" placeholder="Search the site...">
-                </form>
-              </div>
+             <!-- Sign-out -->
+            <div class="signout-side">
+              <a class="show-signout"><i class="fa fa-sign-out"></i></a>
             </div>
-            <!-- End Search -->
+            <!-- End Sign-out -->
              <!-- Start Navigation List -->
             <ul class="nav navbar-nav navbar-right">
                 <li>
@@ -274,7 +268,7 @@ $result = mysql_query($qry);
                     <td width = 40% class = tabletitle></td>
                     <td width = 25% class = tabletitle>$City</td>
                     <form method = 'POST'>
-                    <td>
+                    <td class = tabletitle>
                         <button  name = 'btndelete' href='' class='btn btn-danger'> 
                         <i class='fa fa-minus-square'></i> 
                         </button> 
@@ -284,6 +278,8 @@ $result = mysql_query($qry);
                     </td>
                     </form>
                     <tr>
+
+
                 ";
                 }
              ?>   
@@ -292,4 +288,5 @@ $result = mysql_query($qry);
           </div> 
       </div>
 </body>
+<script type="text/javascript" src="../js/script.js"></script>
 </html>

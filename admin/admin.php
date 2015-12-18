@@ -72,7 +72,7 @@ $Total = $Q1[0];
   <script type="text/javascript" src="../js/jquery.nicescroll.min.js"></script>
   <script type="text/javascript" src="../js/jquery.parallax.js"></script>
   <script type="text/javascript" src="../js/jquery.slicknav.js"></script>
-  <script type="text/javascript" src="../js/script.js"></script>
+  
 
   <!--[if IE 8]><script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
   <!--[if lt IE 9]><script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
@@ -166,16 +166,11 @@ $Total = $Q1[0];
             </a>
           </div>
           <div class="navbar-collapse collapse">
-            <!-- Stat Search -->
-            <div class="search-side">
-              <a class="show-search"><i class="fa fa-search"></i></a>
-              <div class="search-form">
-                <form autocomplete="off" role="search" method="get" class="searchform" action="#">
-                  <input type="text" value="" name="s" id="s" placeholder="Search the site...">
-                </form>
-              </div>
+            <!-- Sign-out -->
+            <div class="signout-side">
+              <a class="show-signout"><i class="fa fa-sign-out"></i></a>
             </div>
-            <!-- End Search -->
+            <!-- End Sign-out -->
              <!-- Start Navigation List -->
             <ul class="nav navbar-nav navbar-right">
                 <li>
@@ -253,15 +248,16 @@ $Total = $Q1[0];
     
     <div class = "container">
       <div class = "col-md-12">
-         <table class = "Applicants">
-                 <thead>
-                  <tr>
-                 </tr
-                    <tr>
-                    <th width = "70%" class = "tabletitle">Course </th>
-                    <th width = "30%" class = "tabletitle tcenter">Number of Students </th>
-                    </tr> 
+        <table class = 'Applicants' width = '100%' cellpadding = '0'>
+                <thead>
+            <tr>
+            </tr>    
+                <tr>
+                    <th width= '70%' class = 'tabletitle'>Course</th>
+                    <th width = '30%' class = 'tabletitle'>Number of Students </th>
+                <tr>
                 </thead>
+                <tbody>
                 <!--Fields-->
                 <?php
 
@@ -277,28 +273,35 @@ $Total = $Q1[0];
                         $TotalStudentByCourse = $qryCount[0];
 
                         echo "
-                        <tbody>
+                        
                         <tr>
-                            <td>
+                            <td width = 70% class = tabletitle>
                             <a href = 'admin-field.php?CourseCode=$CourseCode'>$CourseTitle</a>
                             </td>
-                            <td class = 'tcenter'>$TotalStudentByCourse</td>
-                        </tr>
-                        </tbody>
+                            <td width = 30% class = 'tabletitle'>$TotalStudentByCourse</td>
+                        <tr>
+                     
 
 
                         ";
                     }
                 ?>
+                </tbody>
+                <tfoot> 
+                  <thead>
+            <tr>
+            </tr>    
+                <tr>
+                    <th width= '70%' class = 'tabletitle'></th>
+                    <th width = '30%' class = 'tabletitle'>Total Number of Students: <?php  echo $Total; ?> </th>
+                <tr>
+                </thead>
+                  </tfoot> 
                 </table>
-                  <div class = "container">
-                    <div class = "col-md-5">
-                      <div class = "total">
-                    <h5>Total Number of Students: <?php  echo $Total; ?></h5>
-                      </div>
-                    </div>
-                  </div>
+                
+                  <br>
       </div>
     </div>
 </body>
+<script type="text/javascript" src="../js/script.js"></script>
 </html>

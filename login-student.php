@@ -79,7 +79,7 @@ if($a){
                 echo "
                 <script type='text/javascript'>
                 alert('You have successfully loggged in.');
-                location.href='student-view/myinfo/personal-info.php';
+                location.href='student-view/jobs.php';
                 </script>
                 ";
 

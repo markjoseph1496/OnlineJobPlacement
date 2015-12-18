@@ -26,9 +26,7 @@ tr {
     border-color: inherit;
 }
 td, th {
-    border-top: 1px solid #ffffff;
-    border-bottom: 1px solid #E5E4E2;
-    text-align: left;
+    text-align: center;
     padding: 7px 10px;
 }
 
@@ -40,93 +38,39 @@ td, th {
 .tcenter {
     text-align: center;
 }
-
-a {
-    color: #5f3333;
+.header_advertising{
+    padding:3px;
+    border: 1px solid #E5E4E2;
 }
-a {
-    text-decoration: none;
-}
-a:-webkit-any-link {
-    cursor: auto;
-}
-
-.bulletinbox{
-    background-color: yellow;
-    padding: 20px;
-    background: #fffdf9;
-    box-shadow: inset 0px 0px 10px 0px #fed136;
-    border: 1px solid black;
-}
-  
-}
-input {
-    border: none;
-    font-family: inherit;
-    font-size: inherit;
-    line-height: 1.5em;
-    margin: 0;
-    outline: none;
-    padding: 0;
-    -webkit-appearance: none;
-}
-
-input[type="search"] {
-    -webkit-appearance: textfield;
-    -moz-box-sizing: content-box;
-    -webkit-box-sizing: content-box;
-    box-sizing: content-box;
-}
-
-input[type="search"]::-webkit-search-cancel-button,
-input[type="search"]::-webkit-search-decoration {
-    -webkit-appearance: none;
-}
-
-.clearfix { *zoom: 1; }
-.clearfix:before, .clearfix:after {
-    content: "";
-    display: table; 
-}
-.clearfix:after { clear: both; }
-#search {
-    background: #42454e;
-    border-radius: 3px;
-    display: inline-block;
-    padding: 7px;
+.header2_advertising{
+    padding:5px;
+    border: 1px solid #E5E4E2;
 
 }
-
-#search input {
-    float: left;
+.filtersearch{
+    margin-top: 20px;
+    margin-left: 70px;
+}
+#date_from{
+    width:250px;
 
 }
-
-#search input[type="search"],
-#search input[type="submit"] {
-    border-radius: 3px;
-    font-size: 12px;
+.date_to{
+    width:250px;
+    margin-left: 300px;
+    margin-top: -60px;
+} 
+#date_to{
+  margin-top: -29px;
 }
-
-#search input[type="search"] {
-    background: #fff;
-    color: #42454e;
-    min-width: 250px;
-    padding: 6px 8px;
+#label{
+  margin-left: -40px;
+  margin-top: 30px;
+} 
+.total{
+    padding:10px;
+    border: 1px solid #E5E4E2;
+    width: 334px;
+    margin-left: 747px;
+    
 }
-
-#search input[type="submit"] {
-    background: #1bba9a;
-    color: #fff;
-    font-weight: bold;
-    margin-left: 7px;
-    padding: 6px 10px;
-}
-
-#search input[type="submit"]:hover {
-    background: #189e83;
-}
-
-#search input[type="search"]::-webkit-input-placeholder { color: #42454e; }
-#search input[type="search"]:-moz-placeholder { color: #42454e; }
-#search input[type="search"]:-ms-input-placeholder { color: #42454e; }

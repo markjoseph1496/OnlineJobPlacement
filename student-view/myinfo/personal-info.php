@@ -90,9 +90,8 @@ while($query = mysql_fetch_array($result)){
     <script type="text/javascript" src="../../js/jquery.easypiechart.min.js"></script>
     <script type="text/javascript" src="../../js/jquery.parallax.js"></script>
     <script type="text/javascript" src="../../js/mediaelement-and-player.js"></script>
-    <script type="text/javascript" src="../../js/script.js"></script>
 
-     <!-- fileupload -->
+    <!-- fileupload -->
     <link href="../../css/fileinput.min.css" media="all" rel="stylesheet" type="text/css" />
     <script src="../../js/fileinput.min.js" type="text/javascript"></script>
 
@@ -395,6 +394,7 @@ while($query = mysql_fetch_array($result)){
         </div>
     </div>
     <!-- End Content -->
+    <script type="text/javascript" src="../../js/script.js"></script>
 </body>
 
 <?php 

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
-<?php
-session_start();
+<?php 
 include('../../connection.php');
+session_start();
 
 if(isset($_SESSION['StudentID'])){
     $StudentID = $_SESSION['StudentID'];
@@ -10,10 +10,17 @@ else{
     $StudentID = '';
     echo "
         <script type='text/javascript'>
-        location.href='../../login-student.php?id=2';
+        location.href='../../../login-student.php?id=2';
         </script>
         ";
 }
+    
+
+$AchievementID= 'AchievementID';
+$Achievements = 'Achievements';
+
+$qry = "SELECT * FROM achievementstbl WHERE StudentID ='$StudentID'";
+$result = mysql_query($qry);
 ?>
 
 <html lang="en">
@@ -34,58 +41,59 @@ else{
     <meta name="author" content="iThemesLab">
 
     <!-- Bootstrap CSS  -->
-    <link rel="stylesheet" href="../../css/bootstrap.min.css" type="text/css" media="screen">
+    <link rel="stylesheet" href="../css/bootstrap.min.css" type="text/css" media="screen">
 
     <!-- Font Awesome CSS -->
-    <link rel="stylesheet" href="../../css/font-awesome.min.css" type="text/css" media="screen">
+    <link rel="stylesheet" href="../css/font-awesome.min.css" type="text/css" media="screen">
 
     <!-- Slicknav -->
-    <link rel="stylesheet" type="text/css" href="../../css/slicknav.css" media="screen">
+    <link rel="stylesheet" href="../css/slicknav.css" type="text/css" media="screen">
 
     <!-- CSS Styles  -->
-    <link rel="stylesheet" type="text/css" href="../../css/style.css" media="screen">
+    <link rel="stylesheet" href="../css/style.css" type="text/css" media="screen">
 
     <!-- Responsive CSS Styles  -->
-    <link rel="stylesheet" type="text/css" href="../../css/responsive.css" media="screen">
+    <link rel="stylesheet" href="../css/responsive.css" type="text/css" media="screen">
 
     <!-- Css3 Transitions Styles  -->
-    <link rel="stylesheet" type="text/css" href="../../css/animate.css" media="screen">
+    <link rel="stylesheet" href="../css/animate.css" type="text/css"  media="screen">
 
     <!-- Color CSS Styles  -->
-    <link rel="stylesheet" type="text/css" href="../../css/colors/jade.css" title="jade" media="screen" />
-    <link rel="stylesheet" type="text/css" href="../../css/colors/green.css" title="green" media="screen" />
-    <link rel="stylesheet" type="text/css" href="../../css/colors/blue.css" title="blue" media="screen" />
-    <link rel="stylesheet" type="text/css" href="../../css/colors/beige.css" title="beige" media="screen" />
-    <link rel="stylesheet" type="text/css" href="../../css/colors/cyan.css" title="cyan" media="screen" />
-    <link rel="stylesheet" type="text/css" href="../../css/colors/orange.css" title="orange" media="screen" />
-    <link rel="stylesheet" type="text/css" href="../../css/colors/peach.css" title="peach" media="screen" />
-    <link rel="stylesheet" type="text/css" href="../../css/colors/pink.css" title="pink" media="screen" />
-    <link rel="stylesheet" type="text/css" href="../../css/colors/purple.css" title="purple" media="screen" />
-    <link rel="stylesheet" type="text/css" href="../../css/colors/sky-blue.css" title="sky-blue" media="screen" />
-    <link rel="stylesheet" type="text/css" href="../../css/colors/yellow.css" title="yellow" media="screen" />
+    <link rel="stylesheet" type="text/css" href="../css/colors/jade.css" title="jade" media="screen" />
+    <link rel="stylesheet" type="text/css" href="../css/colors/green.css" title="green" media="screen" />
+    <link rel="stylesheet" type="text/css" href="../css/colors/blue.css" title="blue" media="screen" />
+    <link rel="stylesheet" type="text/css" href="../css/colors/beige.css" title="beige" media="screen" />
+    <link rel="stylesheet" type="text/css" href="../css/colors/cyan.css" title="cyan" media="screen" />
+    <link rel="stylesheet" type="text/css" href="../css/colors/orange.css" title="orange" media="screen" />
+    <link rel="stylesheet" type="text/css" href="../css/colors/peach.css" title="peach" media="screen" />
+    <link rel="stylesheet" type="text/css" href="../css/colors/pink.css" title="pink" media="screen" />
+    <link rel="stylesheet" type="text/css" href="../css/colors/purple.css" title="purple" media="screen" />
+    <link rel="stylesheet" type="text/css" href="../css/colors/sky-blue.css" title="sky-blue" media="screen" />
+    <link rel="stylesheet" type="text/css" href="../css/colors/yellow.css" title="yellow" media="screen" />
 
     <!-- JS  -->
-    <script type="text/javascript" src="../../js/jquery.min.js"></script>
-    <script type="text/javascript" src="../../js/modernizrr.js"></script>
-    <script type="text/javascript" src="../../js/jquery.appear.js"></script>
-    <script type="text/javascript" src="../../js/count-to.js"></script>
-    <script type="text/javascript" src="../../js/jquery.nicescroll.min.js"></script>
-    <script type="text/javascript" src="../../js/jquery.slicknav.js"></script>
+    <script type="text/javascript" src="../js/jquery.min.js"></script>
+    <script type="text/javascript" src="../js/modernizrr.js"></script>
+    <script type="text/javascript" src="../js/jquery.appear.js"></script>
+    <script type="text/javascript" src="../js/count-to.js"></script>
+    <script type="text/javascript" src="../js/jquery.nicescroll.min.js"></script>
+    <script type="text/javascript" src="../js/jquery.slicknav.js"></script>
+    <script type="text/javascript" src="../js/script.js"></script>
 
-    <script type="text/javascript" src="../../js/jquery.migrate.js"></script>
-    <script type="text/javascript" src="../../js/bootstrap.min.js"></script>
-    <script type="text/javascript" src="../../js/jquery.fitvids.js"></script>
-    <script type="text/javascript" src="../../js/owl.carousel.min.js"></script>
-    <script type="text/javascript" src="../../js/nivo-lightbox.min.js"></script>
-    <script type="text/javascript" src="../../js/jquery.textillate.js"></script>
+    <script type="text/javascript" src="../js/jquery.migrate.js"></script>
+    <script type="text/javascript" src="../js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../js/jquery.fitvids.js"></script>
+    <script type="text/javascript" src="../js/owl.carousel.min.js"></script>
+    <script type="text/javascript" src="../js/nivo-lightbox.min.js"></script>
+    <script type="text/javascript" src="../js/jquery.textillate.js"></script>
 
-    <script type="text/javascript" src="../../js/nivo-lightbox.min.js"></script>
-    <script type="text/javascript" src="../../js/jquery.isotope.min.js"></script>
-    <script type="text/javascript" src="../../js/jquery.textillate.js"></script>
-    <script type="text/javascript" src="../../js/jquery.lettering.js"></script>
-    <script type="text/javascript" src="../../js/jquery.easypiechart.min.js"></script>
-    <script type="text/javascript" src="../../js/jquery.parallax.js"></script>
-    <script type="text/javascript" src="../../js/mediaelement-and-player.js"></script>
+    <script type="text/javascript" src="../js/nivo-lightbox.min.js"></script>
+    <script type="text/javascript" src="../js/jquery.isotope.min.js"></script>
+    <script type="text/javascript" src="../js/jquery.textillate.js"></script>
+    <script type="text/javascript" src="../js/jquery.lettering.js"></script>
+    <script type="text/javascript" src="../js/jquery.easypiechart.min.js"></script>
+    <script type="text/javascript" src="../js/jquery.parallax.js"></script>
+    <script type="text/javascript" src="../js/mediaelement-and-player.js"></script>
 </head>
 
 <body>
@@ -203,17 +211,17 @@ else{
                         <!-- Start Navigation List -->
                         <ul class="nav navbar-nav navbar-right">
                             <li>
-                                <a href="../myinfo/personal-info.php">My Info</a>
+                                <a class="active" href="personal-info.php">My Info</a>
                                 <ul class="dropdown">
-                                    <li><a href="../myinfo/personal-info.php">Personal Info</a></li>
-                                    <li><a href="../myinfo/contacts-info.php">Contacts Info</a></li>
-                                    <li><a href="../myinfo/work.php">Work</a></li>
-                                    <li><a href="../myinfo/education.php">Education</a></li>
-                                    <li><a href="../myinfo/certifications.php">Certifications</a></li>
-                                    <li><a href="../myinfo/achievements.php">Achievements</a></li>
-                                    <li><a href="../myinfo/skills-and-languages.php">Skills & Languages</a></li>
-                                    <li><a href="../myinfo/references.php">References</a></li>
-                                    <li><a href="../myinfo/portfolio.php">Portfolio</a></li>
+                                    <li><a href="personal-info.php">Personal Info</a></li>
+                                    <li><a href="contacts-info.php">Contacts Info</a></li>
+                                    <li><a href="work.php">Work</a></li>
+                                    <li><a href="education.php">Education</a></li>
+                                    <li><a href="certifications.php">Certifications</a></li>
+                                    <li><a class="active" href="achievements.php">Achievements</a></li>
+                                    <li><a href="skills-and-languages.php">Skills & Languages</a></li>
+                                    <li><a href="references.php">References</a></li>
+                                    <li><a href="portfolio.php">Portfolio</a></li>
                                 </ul>
                             </li>
                             <li>
@@ -223,7 +231,7 @@ else{
                                     <li><a href="../resumelink/background.php">Background</a></li>
                                     <li><a href="../resumelink/print-share.php">Print/Share</a></li>
                                 </ul>
-                             </li>
+                            </li>
                             <li>
                                 <a href="../applications/applications.php">Applications</a>
                             </li>
@@ -231,10 +239,10 @@ else{
                                 <a href="../search-job/search-job.php">Jobs</a>
                             </li>
                             <li>
-                                <a class="active" href="privacy-settings.php">Settings</a>
+                                <a href="../settings/privacy-settings.php">Settings</a>
                                 <ul class="dropdown">
-                                    <li><a href="privacy-settings.php">Privacy Settings</a></li>
-                                    <li><a class="active" href="pass-settings.php">Password Settings</a></li>
+                                    <li><a href="../settings/privacy-settings.php">Privacy Settings</a></li>
+                                    <li><a href="../settings/pass-settings.php">Password Settings</a></li>
                                 </ul>
                             </li>
                         </ul>
@@ -244,17 +252,17 @@ else{
                 <!-- Mobile Menu Start -->
                 <ul class="wpb-mobile-menu">
                     <li>
-                        <a href="../myinfo/personal-info.php">My Info</a>
+                        <a class="active" href="personal-info.php">My Info</a>
                         <ul class="dropdown">
-                            <li><a href="../myinfo/personal-info.php">Personal Info</a></li>
-                            <li><a href="../myinfo/contacts-info.php">Contacts Info</a></li>
-                            <li><a href="../myinfo/work.php">Work</a></li>
-                            <li><a href="../myinfo/education.php">Education</a></li>
-                            <li><a href="../myinfo/certifications.php">Certifications</a></li>
-                            <li><a href="../myinfo/achievements.php">Achievements</a></li>
-                            <li><a href="../myinfo/skills-and-languages.php">Skills & Languages</a></li>
-                            <li><a href="../myinfo/references.php">References</a></li>
-                            <li><a href="../myinfo/portfolio.php">Portfolio</a></li>
+                            <li><a class="active" href="personal-info.php">Personal Info</a></li>
+                            <li><a href="contacts-info.php">Contacts Info</a></li>
+                            <li><a href="work.php">Work</a></li>
+                            <li><a href="education.php">Education</a></li>
+                            <li><a href="certifications.php">Certifications</a></li>
+                            <li><a class="active" href="achievements.php">Achievements</a></li>
+                            <li><a href="skills-and-languages.php">Skills & Languages</a></li>
+                            <li><a href="references.php">References</a></li>
+                            <li><a href="portfolio.php">Portfolio</a></li>
                         </ul>
                     </li>
                     <li>
@@ -272,10 +280,10 @@ else{
                         <a href="../search-job/search-job.php">Jobs</a>
                     </li>
                     <li>
-                        <a class="active" href="privacy-settings.php">Settings</a>
+                        <a href="../settings/privacy-settings.php">Settings</a>
                         <ul class="dropdown">
-                            <li><a href="privacy-settings.php">Privacy Settings</a></li>
-                            <li><a class="active" href="pass-settings.php">Password Settings</a></li>
+                            <li><a href="../settings/privacy-settings.php">Privacy Settings</a></li>
+                            <li><a href="../settings/pass-settings.php">Password Settings</a></li>
                         </ul>
                     </li>
                     <li>
@@ -290,12 +298,12 @@ else{
             <div class="container">
                 <div class="row">
                     <div class="col-md-6">
-                        <h2>Change Password</h2>
+                        <h2>Achievements</h2>
                     </div>
                     <div class="col-md-6">
                         <ul class="breadcrumbs">
                             <li><a href="#">Home</a></li>
-                            <li>Change Password</li>
+                            <li>Achievements</li>
                         </ul>
                     </div>
                 </div>
@@ -306,90 +314,30 @@ else{
         <!-- Start Content -->
         <div id="content">
             <div class="container">
-                <div class="row">
+                <div class="row sidebar-page">
                     <!-- Page Content -->
-                    <div class="col-md-12 page-content">
+                    <div class="col-md-9 page-content">
                         <div class="row">
                             <div class="classic-testimonials">
-                                <div class="row field">
-                                    <div class="col-md-6 fieldcol">
-                                        <div class="form-group">
-                                            <label>Current Password <span>(*)</span></label>
-                                            <input type="password" class="form-control" id="txtCurrentPassword" name="txtCurrentPassword">
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="row field">
-                                    <div class="col-md-6 col-sm-6 fieldcol">
-                                        <div class="form-group">
-                                            <label>New Password <span>(*)</span></label>
-                                            <input type="password" class="form-control" id="txtNewPassword" name="txtNewPassword">
-                                        </div>
-                                    </div>
-                                    <div class="col-md-6 col-sm-6 fieldcol">
-                                        <div class="form-group">
-                                            <label>Confirm New Password <span>(*)</span></label>
-                                            <input type="password" class="form-control" id="txtConfPassword" name="txtConfPassword">
-                                        </div>
-                                    </div>
-                                </div>
+                                                             
                             </div>
                         </div>
-                        <div class="hr5" style="margin-top:35px;margin-bottom:40px;"></div>
-                        <button class="btn btn-lg btn-hg btn-primary" style="float:right;" name="btnChangePass">Change Password</button>
                     </div>
                     <!-- End Page Content -->
+
+                    <!--Sidebar-->
+                    <div class="col-md-3 sidebar right-sidebar">
+                        <!-- Search Widget -->
+                        <div class="call-action call-action-boxed call-action-style2 clearfix">
+                            (*) Note: Required fields.
+                        </div>
+                    </div>
+                    <!--End sidebar-->
                 </div>
             </div>
         </div>
     </div>
     <!-- End Content -->
-    <script type="text/javascript" src="../../js/script.js"></script>
+    <script type="text/javascript" src="../js/script.js"></script>
 </body>
-
-<?php
-
-if(isset($_POST['btnChangePass'])){
-
-$x = $_SESSION['StudentID'];
-
-$qry = "SELECT * FROM studentinfotbl WHERE StudentID ='$x'";
-$result = mysql_query($qry);
-        while($qry = mysql_fetch_Array($result))
-        {       
-                $Password = $qry['Password'];
-        }
-
-$oldpassword = $_POST['txtCurrentPassword']; 
-$newpassword = $_POST['txtNewPassword']; 
-$confirmpass = $_POST['txtConfPassword']; 
-
-        if($oldpassword <> $Password){
-            echo "
-            <script type='text/javascript'>
-            alert('Incorrect Password. Please try again.');
-            </script>
-            ";
-        }
-        else {
-            if ($newpassword <> $confirmpass) {
-                echo "
-                <script type='text/javascript'>
-                alert('Password mismatch. Please try again.');
-                </script>
-                ";
-            }
-            else{
-                $query = "UPDATE studentinfotbl SET Password = '$newpassword' WHERE StudentID = '$x'";
-                $Result = mysql_query($query);
-                echo "
-                <script type='text/javascript'>
-                location.href='./settings.php';
-                alert('Password Changed!');
-                </script>
-                ";
-            }
-        }
-}
-?>
 </html>

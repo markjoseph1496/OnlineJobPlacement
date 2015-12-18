@@ -28,7 +28,7 @@ if(is_null($_SESSION['StudentID'])){
     <meta name="author" content="iThemesLab">
 
     <!-- Bootstrap CSS  -->
-    <link rel="stylesheet" href="../../asset/css/bootstrap.min.css" type="text/css" media="screen">
+    <link rel="stylesheet" href="../../css/bootstrap.min.css" type="text/css" media="screen">
 
     <!-- Font Awesome CSS -->
     <link rel="stylesheet" href="../../css/font-awesome.min.css" type="text/css" media="screen">
@@ -67,7 +67,7 @@ if(is_null($_SESSION['StudentID'])){
     <script type="text/javascript" src="../../js/jquery.slicknav.js"></script>
 
     <script type="text/javascript" src="../../js/jquery.migrate.js"></script>
-    <script type="text/javascript" src="../../asset/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../../js/bootstrap.min.js"></script>
     <script type="text/javascript" src="../../js/jquery.fitvids.js"></script>
     <script type="text/javascript" src="../../js/owl.carousel.min.js"></script>
     <script type="text/javascript" src="../../js/nivo-lightbox.min.js"></script>
