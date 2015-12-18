@@ -1,0 +1,49 @@
+<?php
+include('../../../../connection.php');
+session_start();
+
+$StudentID= $_SESSION['StudentID'];
+
+if(isset($_GET['School'])){
+
+	$School = $_GET['School'];
+	$Attainment = $_GET['EducAttainment'];
+	$Course = $_GET['Course'];
+	$GraduatedMonth = $_GET['GraduatedMonth'];
+	$GraduatedYear = $_GET['GraduatedYear'];
+
+	$Graduation = $GraduatedMonth ." ". $GraduatedYear;
+    $Attainment = mysql_real_escape_string($Attainment); 
+    $query = "INSERT INTO schooltbl (StudentID,School,Attainment,Course,Graduated,_Default) values  ('$StudentID','$School','$Attainment','$Course','$Graduation','0')";
+    $Result = mysql_query($query);
+    echo "
+         <script type='text/javascript'>
+         location.href='../education.php?id=SchoolAdd';
+         </script>
+         ";
+}
+
+if(isset($_GET['txtCertification'])){
+    $Certification = $_GET['txtCertification'];
+    $YearTaken = $_GET['txtYearTaken'];
+    $query = "INSERT INTO certificationtbl (StudentID,Certification,YearTaken) values  ('$StudentID','$Certification','$YearTaken')";
+        $Result = mysql_query($query);
+        echo "
+             <script type='text/javascript'>
+             location.href = '../certifications.php?id=CertificationAdd';
+             </script>
+             ";
+}
+
+if(isset($_GET['txtAchievement'])){
+    $Achievement = $_GET['txtAchievement'];
+
+    $query = "INSERT INTO achievementstbl (StudentID,Achievements) values  ('$StudentID','$Achievement')";
+       $Result = mysql_query($query);
+       echo "
+             <script type='text/javascript'>
+             location.href='../achievements.php?id=AchievementAdd';
+             </script>
+             ";
+}
+?>

@@ -23,6 +23,19 @@ $CompanyID = $_SESSION['CompanyID'];
   <meta name="description" content="Margo - Responsive HTML5 Template">
   <meta name="author" content="iThemesLab">
 
+  <!-- Bootstrap CSS -->
+  <link href="../css/bootstrap.min.css" rel="stylesheet" />
+
+  <!-- BootstrapValidator CSS -->
+  <link href="../css/bootstrapValidator.min.css" rel="stylesheet"/>
+
+  <!-- jQuery and Bootstrap JS -->
+  <script src="../js/jquery.min.js" type="text/javascript"></script>
+  <script src="../js/bootstrap.min.js" type="text/javascript"></script>
+    
+  <!-- BootstrapValidator -->
+  <script src="../js/bootstrapValidator.min.js" type="text/javascript"></script>
+
   <!-- Bootstrap CSS  -->
   <link rel="stylesheet" href="../asset/css/bootstrap.min.css" type="text/css" media="screen">
 
@@ -60,10 +73,8 @@ $CompanyID = $_SESSION['CompanyID'];
 
 
   <!-- Margo JS  -->
-  <script type="text/javascript" src="../js/jquery.min.js"></script>
   <script type="text/javascript" src="../js/jquery.migrate.js"></script>
   <script type="text/javascript" src="../js/modernizrr.js"></script>
-  <script type="text/javascript" src="../asset/js/bootstrap.min.js"></script>
   <script type="text/javascript" src="../js/jquery.fitvids.js"></script>
   <script type="text/javascript" src="../js/owl.carousel.min.js"></script>
   <script type="text/javascript" src="../js/nivo-lightbox.min.js"></script>
@@ -76,6 +87,7 @@ $CompanyID = $_SESSION['CompanyID'];
   <script type="text/javascript" src="../js/jquery.nicescroll.min.js"></script>
   <script type="text/javascript" src="../js/jquery.parallax.js"></script>
   <script type="text/javascript" src="../js/jquery.slicknav.js"></script>
+
 
   <!--[if IE 8]><script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
   <!--[if lt IE 9]><script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
@@ -169,16 +181,6 @@ $CompanyID = $_SESSION['CompanyID'];
             </a>
           </div>
           <div class="navbar-collapse collapse">
-            <!-- Stat Search -->
-            <div class="search-side">
-              <a class="show-search"><i class="fa fa-search"></i></a>
-              <div class="search-form">
-                <form autocomplete="off" role="search" method="POST" class="searchform" action="#">
-                  <input type="text" value="" name="s" id="s" placeholder="Search the site...">
-                </form>
-              </div>
-            </div>
-            <!-- End Search -->
              <!-- Start Navigation List -->
             <ul class="nav navbar-nav navbar-right">
                 <li>
@@ -258,11 +260,10 @@ $CompanyID = $_SESSION['CompanyID'];
  <!-- Start Content -->
 
     <br><br><br>
-
+<form action="add-company.php" name="AddPosition" id="AddPosition" autocomplete="off">
            <div class =  "container">
           <div class = "col-md-12">
           <div class = "row">
-          <form method = "POST">
             <h3>Post Position </h3>
             &nbsp;
             <div class="row field">
@@ -272,10 +273,10 @@ $CompanyID = $_SESSION['CompanyID'];
                                         <div class = "col-md-8 fieldcol">
                                             <div class="form-group">
                                                 <div class = "date">
-                                                   <input type = "date" name = "datefrom" id = "date_from" class = "form-control">
+                                                   <input type = "date" name = "DateFrom" id = "date_from" class = "form-control">
                                                        <div class = "date_to">
                                                             <label = "usr" class = "control-label" id = "label">to: </label>
-                                                            <input type = "date" name = "dateto" id = "date_to" class = "form-control">
+                                                            <input type = "date" name = "DateTo" id = "date_to" class = "form-control">
                                                     </div>
                                                  </div> 
                                             </div>
@@ -289,7 +290,7 @@ $CompanyID = $_SESSION['CompanyID'];
                                         </div>
                                         <div class = "col-md-8 fieldcol">
                                             <div class="form-group">
-                                                <select id="position" name="plevel" class="position" style="width: 300px; height:30px;">
+                                                <select id="PLevel" name="PLevel" class="position" style="width: 300px; height:30px;">
                                                     <option value = "" selected="selected"> Select Position </option>
                                                     <option value = "top level management"> Top Level Management </option>
                                                     <option value = "senior manager"> Senior Manager </option>
@@ -309,7 +310,7 @@ $CompanyID = $_SESSION['CompanyID'];
                                         </div>
                                         <div class = "col-md-8 fieldcol">
                                             <div class="form-group">
-                                                   <select id="specialization" name="specialization" class="specialization" style= "width: 300px; height:30px;">
+                                                   <select id="Specialization" name="Specialization" class="specialization" style= "width: 300px; height:30px;">
                                                         <option value = "" selected="selected"> Select Specialization </option>
                                                         <option value = "Actuarial Science"> Actuarial Science/ Statistics </option>
                                                         <option value = "Advertising"> Advertising/ Media Planning </option>
@@ -330,7 +331,7 @@ $CompanyID = $_SESSION['CompanyID'];
                                         </div>
                                         <div class = "col-md-8 fieldcol">
                                             <div class="form-group">
-                                                   <select id="state" name="etype" class="state" style="width: 300px; height:30px;">
+                                                   <select id="EType" name="EType" class="state" style="width: 300px; height:30px;">
                                                         <option value="select">Please select One</option>
                                                         <option value="full">Full Time</option>
                                                         <option value="parttime">Part Time</option> 
@@ -346,7 +347,7 @@ $CompanyID = $_SESSION['CompanyID'];
                                         </div>
                                         <div class = "col-md-8 fieldcol">
                                             <div class="form-group">
-                                                  <input type = "number" name = "avposition" class = "form-control" style ="width: 300px;">
+                                                  <input type = "number" name = "AvPosition" id="AvPosition" class = "form-control" style ="width: 300px;">
                                             </div>
                                         </div>
                 </div> 
@@ -358,7 +359,7 @@ $CompanyID = $_SESSION['CompanyID'];
                                         </div>
                                         <div class = "col-md-8 fieldcol">
                                             <div class="form-group">
-                                                  <select id="salaryrange" name="salary" class="salaryrange" style="width: 300px; height:30px;">
+                                                  <select id="Salary" name="Salary" class="salaryrange" style="width: 300px; height:30px;">
                                                       <option value = "" selected="selected"> Select Salary Range </option>
                                                       <option value = "10,000 - 15,000"> 10,000 - 15,000 </option>
                                                       <option value = "15,000 - 20,000"> 15,000 - 20,000 </option>
@@ -379,7 +380,7 @@ $CompanyID = $_SESSION['CompanyID'];
                                         </div>
                                         <div class = "col-md-8 fieldcol">
                                             <div class="form-group">
-                                                   <input type = "number" name = "yexperience" class = "form-control" style ="width: 300px;">
+                                                   <input type = "text" name = "YExperience" id="YExperience" class = "form-control" style ="width: 300px;">
                                             </div>
                                         </div>
                 </div> 
@@ -417,34 +418,76 @@ $CompanyID = $_SESSION['CompanyID'];
                 </div>   
                        <button type = "submit" class = "btn btn-primary " id = "btnsave" name = "btnsave"><b> SAVE </b></button>
                        <button type = "submit" class = "btn btn-primary " id = "cancel"><b> CANCEL</b> </button>
-           </form> 
             </div>
           </div>
         </div>       
-
+</form> 
 <!--End of Content--> 
   <script type="text/javascript" src="../js/script.js"></script>
 </body>
-<?php
-
-    if (isset($_POST['btnsave'])) {
-        $datefrom = $_POST['datefrom'];
-        $dateto = $_POST['dateto'];
-        $plevel = $_POST['plevel'];
-        $specialization = $_POST['specialization'];
-        $etype = $_POST['etype'];
-        $avposition = $_POST['avposition'];
-        $salary = $_POST['salary'];
-        $yexperience = $_POST['yexperience'];
-
-        $query = ("INSERT INTO comppositiontbl (CompanyID,PostingDateFrom,PostingDateTo,PositionLevel,JSpecialization,EType,AvPosition,MonthlySalary,YExperience) VALUES ('$CompanyID','$datefrom','$dateto','$plevel','$specialization','$etype','$avposition','$salary','$yexperience')");
-        $result = mysql_query($query);
-        echo "
-          <script type='text/javascript'>
-          location.href='company-positionlist.php?id=1'
-          </script>
-        ";
-    }
-?>
-
+<script type="text/javascript">
+        $(document).ready(function (){
+            var validator = $("#AddPosition").bootstrapValidator({
+                feedbackIcons: {
+                    valid: "glyphicon glyphicon-ok",
+                    invalid: "glyphicon glyphicon-remove",
+                    validating: "glyphicon glyphicon-refresh"
+                },
+                fields:{
+                    PLevel: {
+                        validators: {
+                            notEmpty: {
+                                message: "Position Level is required."
+                            }
+                        }
+                    },
+                    Specialization: {
+                        validators: {
+                            notEmpty: {
+                                message: "Specialization is required."
+                            }
+                        }
+                    },
+                    EType: {
+                        validators: {
+                            notEmpty: {
+                                message: "EType is required."
+                            }
+                        }
+                    },
+                    AvPosition: {
+                        validators: {
+                            notEmpty: {
+                                message: "Available Position is required."
+                            },
+                            stringLength: {
+                                min: 1,
+                                max: 15,
+                                message: "Available Position must be 1-15 Number long."
+                            }
+                        }
+                    },
+                    Salary: {
+                        validators: {
+                            notEmpty: {
+                                message: "Salary is required."
+                            }
+                        }
+                    },
+                    YExperience: {
+                       validators: {
+                            notEmpty: {
+                                message: "Years of Experience is required."
+                            },
+                            stringLength: {
+                                min: 1,
+                                max: 10,
+                                message: "Years of Experience must be 1-10 number long."
+                            }
+                        }
+                    }
+                }
+            });
+        });
+    </script>
 </html>
