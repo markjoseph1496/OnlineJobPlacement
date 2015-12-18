@@ -146,11 +146,11 @@ $result = mysql_query($qry);
             <div class="container">
                 <div class="row">
                     <div class="col-md-6">
-                        <h2></h2>
+                        <h2>Find the job that suits your passion</h2>
                     </div>
                     <div class="col-md-6">
                         <ul class="breadcrumbs">
-                            <li><a href="#">Home</a></li>
+                            <li><a href="../myinfo/personal-info.php">Start filling out your information</a></li>
                             <li></li>
                         </ul>
                     </div>
@@ -189,7 +189,7 @@ $result = mysql_query($qry);
                         <div class="widget widget-categories">
                             <h4>Categories <span class="head-line"></span></h4>
                             <li>
-                                <a href="#"><i class="fa fa-bookmark"></i> Bookmarked Jobs</a>
+                                <i class="fa fa-bookmark"></i> Bookmarked Jobs<a href="#"> (0)</a>
                             </li>
                             <li>
                                 <a href="#"><i class="fa fa-sort"></i> Sort by: </a>
