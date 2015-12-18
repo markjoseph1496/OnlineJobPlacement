@@ -335,7 +335,7 @@ while($qry2 = mysql_fetch_Array($result2))
                                             <th>School</th>
                                             <th>Attainment</th>
                                             <th>Course</th>
-                                            <th>Graduated On</th>
+                                            <th width="15%">Graduated On</th>
                                             <th width="15%">&nbsp;</th>
                                         </tr>
                                     </thead>

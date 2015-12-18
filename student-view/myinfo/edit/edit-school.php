@@ -1,3 +1,37 @@
+<?php 
+include('../../../connection.php');
+session_start();
+
+$EditSchoolID="";
+
+if(is_null($_SESSION['StudentID'])){
+    echo "
+        <script type='text/javascript'>
+        location.href='../../../../login-student.php';
+        </script>
+        ";
+}
+else{
+    $EditSchoolID = $_GET['EditSchoolID'];
+}
+
+$qry = "SELECT * FROM schooltbl WHERE SchoolID ='$EditSchoolID'";
+$result = mysql_query($qry);
+        while($qry = mysql_fetch_Array($result))
+        {       
+                $SchoolID = $qry['SchoolID'];
+                $StudentID = $qry['StudentID'];
+                $School = $qry['School'];
+                $Attainment = $qry['Attainment'];
+                $Course = $qry['Course'];
+                $Graduated = $qry['Graduated'];
+                $GraduatedMonth = substr($Graduated, 0,2);
+                $GraduatedYear = substr($Graduated, 3,6);
+         
+        }
+?>
+
+
 <!doctype html>
 <html lang="en">
 
@@ -16,8 +50,18 @@
     <meta name="description" content="Margo - Responsive HTML5 Template">
     <meta name="author" content="iThemesLab">
 
-    <!-- Bootstrap CSS  -->
-    <link rel="stylesheet" href="../../../asset/css/bootstrap.min.css" type="text/css" media="screen">
+    <!-- Bootstrap CSS -->
+    <link href="../../../css/bootstrap.min.css" rel="stylesheet"/>
+
+    <!-- BootstrapValidator CSS -->
+    <link href="../../../css/bootstrapValidator.min.css" rel="stylesheet"/>
+    <link href="../../../css/basic-template.css" rel="stylesheet"/>
+    <!-- jQuery and Bootstrap JS -->
+    <script type="text/javascript" src="../../../js/jquery.min.js"></script>
+    <script src="../../../js/bootstrap.min.js" type="text/javascript"></script>
+
+    <!-- BootstrapValidator -->
+    <script src="../../../js/bootstrapValidator.min.js" type="text/javascript"></script>
 
     <!-- Font Awesome CSS -->
     <link rel="stylesheet" href="../../../css/font-awesome.min.css" type="text/css" media="screen">
@@ -25,7 +69,7 @@
     <!-- Slicknav -->
     <link rel="stylesheet" type="text/css" href="../../../css/slicknav.css" media="screen">
 
-    <!-- CSS Styles  -->
+    <!-- Margo CSS Styles  -->
     <link rel="stylesheet" type="text/css" href="../../../css/style.css" media="screen">
 
     <!-- Responsive CSS Styles  -->
@@ -34,44 +78,44 @@
     <!-- Css3 Transitions Styles  -->
     <link rel="stylesheet" type="text/css" href="../../../css/animate.css" media="screen">
 
-    <!-- Color CSS Styles  -->
-    <link rel="stylesheet" type="text/css" href="../../../css/colors/jade.css" title="jade" media="screen" />
-    <link rel="stylesheet" type="text/css" href="../../../css/colors/green.css" title="green" media="screen" />
-    <link rel="stylesheet" type="text/css" href="../../../css/colors/blue.css" title="blue" media="screen" />
-    <link rel="stylesheet" type="text/css" href="../../../css/colors/beige.css" title="beige" media="screen" />
-    <link rel="stylesheet" type="text/css" href="../../../css/colors/cyan.css" title="cyan" media="screen" />
-    <link rel="stylesheet" type="text/css" href="../../../css/colors/orange.css" title="orange" media="screen" />
-    <link rel="stylesheet" type="text/css" href="../../../css/colors/peach.css" title="peach" media="screen" />
-    <link rel="stylesheet" type="text/css" href="../../../css/colors/pink.css" title="pink" media="screen" />
-    <link rel="stylesheet" type="text/css" href="../../../css/colors/purple.css" title="purple" media="screen" />
-    <link rel="stylesheet" type="text/css" href="../../../css/colors/sky-blue.css" title="sky-blue" media="screen" />
-    <link rel="stylesheet" type="text/css" href="../../../css/colors/yellow.css" title="yellow" media="screen" />
+    <!-- OJPMS CSS  -->
+    <link rel="stylesheet" type="text/css" href="../../../css/ojpms-style.css" media="screen">
 
-    <!-- JS  -->
-    <script type="text/javascript" src="../../../js/jquery-2.1.4.min.js"></script>
-    <script type="text/javascript" src="../../../js/modernizrr.js"></script>
-    <script type="text/javascript" src="../../../js/jquery.appear.js"></script>
-    <script type="text/javascript" src="../../../js/count-to.js"></script>
-    <script type="text/javascript" src="../../../js/jquery.nicescroll.min.js"></script>
-    <script type="text/javascript" src="../../../js/jquery.slicknav.js"></script>
+    <!-- Color CSS Styles  -->
+    <link rel="stylesheet" type="text/css" href="../../../css/colors/red.css" title="red" media="screen"/>
+    <link rel="stylesheet" type="text/css" href="../../../css/colors/jade.css" title="jade" media="screen"/>
+    <link rel="stylesheet" type="text/css" href="../../../css/colors/blue.css" title="blue" media="screen"/>
+    <link rel="stylesheet" type="text/css" href="../../../css/colors/beige.css" title="beige" media="screen"/>
+    <link rel="stylesheet" type="text/css" href="../../../css/colors/cyan.css" title="cyan" media="screen"/>
+    <link rel="stylesheet" type="text/css" href="../../../css/colors/green.css" title="green" media="screen"/>
+    <link rel="stylesheet" type="text/css" href="../../../css/colors/orange.css" title="orange" media="screen"/>
+    <link rel="stylesheet" type="text/css" href="../../../css/colors/peach.css" title="peach" media="screen"/>
+    <link rel="stylesheet" type="text/css" href="../../../css/colors/pink.css" title="pink" media="screen"/>
+    <link rel="stylesheet" type="text/css" href="../../../css/colors/purple.css" title="purple" media="screen"/>
+    <link rel="stylesheet" type="text/css" href="../../../css/colors/sky-blue.css" title="sky-blue" media="screen"/>
+    <link rel="stylesheet" type="text/css" href="../../../css/colors/yellow.css" title="yellow" media="screen"/>
+
+
+    <!-- Margo JS  -->
 
     <script type="text/javascript" src="../../../js/jquery.migrate.js"></script>
-    <script type="text/javascript" src="../../../asset/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../../../js/modernizrr.js"></script>
     <script type="text/javascript" src="../../../js/jquery.fitvids.js"></script>
     <script type="text/javascript" src="../../../js/owl.carousel.min.js"></script>
     <script type="text/javascript" src="../../../js/nivo-lightbox.min.js"></script>
-    <script type="text/javascript" src="../../../js/jquery.textillate.js"></script>
-
-    <script type="text/javascript" src="../../../js/nivo-lightbox.min.js"></script>
     <script type="text/javascript" src="../../../js/jquery.isotope.min.js"></script>
+    <script type="text/javascript" src="../../../js/jquery.appear.js"></script>
+    <script type="text/javascript" src="../../../js/count-to.js"></script>
     <script type="text/javascript" src="../../../js/jquery.textillate.js"></script>
     <script type="text/javascript" src="../../../js/jquery.lettering.js"></script>
     <script type="text/javascript" src="../../../js/jquery.easypiechart.min.js"></script>
+    <script type="text/javascript" src="../../../js/jquery.nicescroll.min.js"></script>
     <script type="text/javascript" src="../../../js/jquery.parallax.js"></script>
-    <script type="text/javascript" src="../../../js/mediaelement-and-player.js"></script>
+    <script type="text/javascript" src="../../../js/jquery.slicknav.js"></script>
 </head>
 
 <body>
+    <form id="EditSchool" name="EditSchool" autocomplete="off" action="myinfoedit.php">
     <div id="container">
         <!-- Start Header Section -->
         <div class="hidden-header"></div>
@@ -148,7 +192,7 @@
                         </button>
                         <!-- End Toggle Nav Link For Mobiles -->
                         <a class="navbar-brand" href="">
-                            <img src="../../images/ojpms.png">
+                            <img src="../../../images/ojpms.png">
                         </a>
                     </div>
                     <div class="navbar-collapse collapse">
@@ -241,7 +285,7 @@
                         </ul>
                     </li>
                     <li>
-                        <a href="../../../login-student.php?id=1"><i class="fa fa-sign-out"></i> Sign Out</a>
+                        <a href="../../../../login-student.php?id=1"><i class="fa fa-sign-out"></i> Sign Out</a>
                     </li>
                 </ul>
                 <!-- Mobile Menu End -->
@@ -249,6 +293,7 @@
         </header>
 
         <div class="page-banner no-subtitle">
+            <input type="text" class="form-control" id="SchoolID" name="SchoolID" style="display: none;" value="<?php echo $SchoolID;?>">
             <div class="container">
                 <div class="row">
                     <div class="col-md-6">
@@ -275,7 +320,7 @@
                             <div class="col-md-12">
                                 <div class="form-group">
                                     <label>School <span>(*)</span></label>
-                                    <input type="text" class="form-control" id="School" name="School" style="height:34px;">
+                                    <input type="text" class="form-control" id="School" name="School" style="height:34px;" value="<?php echo $School; ?>">
                                 </div>
                             </div>
                         </div>
@@ -284,13 +329,13 @@
                                 <div class="form-group">
                                     <label>Educational Attainment <span>(*)</span></label>
                                     <select id="EducAttainment" name="EducAttainment" class="form-control" style="width:100%; height:34px;">
-                                        <option value="">- Please select one -</option>
-                                        <option value="High School Diploma">High School Diploma</option>
-                                        <option value="Technical Vocational/Certificate">Technical Vocational/Certificate</option>
-                                        <option value="Bachelor's/College Degree">Bachelor's/College Degree</option>
-                                        <option value="Post Graduate Diploma/Master's Degree">Post Graduate Diploma/Master's Degree</option>
-                                        <option value="Professional License (Passed Board/Bar/Professional License Exam)">Professional License (Passed Board/Bar/Professional License Exam</option>
-                                        <option value="Doctorate Degree">Doctorate Degree</option>
+                                        <option value="" <?php if($Attainment=="") echo 'selected="selected"'; ?>>- Please select one -</option>
+                                        <option value="High School Diploma" <?php if($Attainment=="High School Diploma") echo 'selected="selected"'; ?>>High School Diploma</option>
+                                        <option value="Technical Vocational/Certificate" <?php if($Attainment=="Technical Vocational/Certificate") echo 'selected="selected"'; ?>>Technical Vocational/Certificate</option>
+                                        <option value="Bachelor's/College Degree" <?php if($Attainment=="Bachelor's/College Degree") echo 'selected="selected"'; ?>>Bachelor's/College Degree</option>
+                                        <option value="Post Graduate Diploma/Master's Degree" <?php if($Attainment=="Post Graduate Diploma/Master's Degree") echo 'selected="selected"'; ?>>Post Graduate Diploma/Master's Degree</option>
+                                        <option value="Professional License (Passed Board/Bar/Professional License Exam)" <?php if($Attainment=="Professional License (Passed Board/Bar/Professional License Exam") echo 'selected="selected"'; ?>>Professional License (Passed Board/Bar/Professional License Exam</option>
+                                        <option value="Doctorate Degree" <?php if($Attainment=="Doctorate Degree") echo 'selected="selected"'; ?>>Doctorate Degree</option>
                                     </select>
                                 </div>
                             </div>
@@ -298,18 +343,18 @@
                                 <div class="form-group">
                                     <label>Course <span>(*)</span></label>
                                     <select id="Course" name="Course" class="form-control" style="width:100%; height:34px;">
-                                        <option value="">- Course -</option>
-                                        <option value="Bachelor of Science in Tourism Management">Bachelor of Science in Tourism Management</option>
-                                        <option value="Bachelor of Science in Business Management Major in Operations">Bachelor of Science in Business Management Major in Operations</option>
-                                        <option value="Bachelor of Arts in Communication">Bachelor of Arts in Communication</option>
-                                        <option value="Bachelor of Science in Information Technology Major in Digital Arts">Bachelor of Science in Information Technology Major in Digital Arts</option>
-                                        <option value="Bachelor of Science in Hotel and Restaurant Management">Bachelor of Science in Hotel and Restaurant Management</option>
-                                        <option value="Bachelor of Science in Computer Science">Bachelor of Science of Computer Science</option>
-                                        <option value="Bachelor of Science in Information Technology">Bachelor of Science of Information Technology</option>
-                                        <option value="Bachelor of Science in Computer Engineering">Bachelor of Science of Computer Engineering</option>
-                                        <option value="Bachelor of Science in Accounting Technology">Bachelor of Science in Accounting Technology</option>
-                                        <option value="Bachelor of Science in Information Technology with Specialization Digital Arts">Bachelor of Science in Information Technology with Specialization Digital Arts</option>
-                                        <option value="2-yr. Associate in Computer Technology">2-yr. Associate in Computer Technology</option>
+                                        <option value="" <?php if($Course=="") echo 'selected="selected"'; ?>>- Course -</option>
+                                        <option value="Bachelor of Science in Tourism Management" <?php if($Course=="Bachelor of Science in Tourism Management") echo 'selected="selected"'; ?>>Bachelor of Science in Tourism Management</option>
+                                        <option value="Bachelor of Science in Business Management Major in Operations" <?php if($Course=="Bachelor of Science in Business Management Major in Operations") echo 'selected="selected"'; ?>>Bachelor of Science in Business Management Major in Operations</option>
+                                        <option value="Bachelor of Arts in Communication" <?php if($Course=="Bachelor of Arts in Communication") echo 'selected="selected"'; ?>>Bachelor of Arts in Communication</option>
+                                        <option value="Bachelor of Science in Information Technology Major in Digital Arts" <?php if($Course=="Bachelor of Science in Information Technology Major in Digital Arts") echo 'selected="selected"'; ?>>Bachelor of Science in Information Technology Major in Digital Arts</option>
+                                        <option value="Bachelor of Science in Hotel and Restaurant Management" <?php if($Course=="Bachelor of Science in Hotel and Restaurant Management") echo 'selected="selected"'; ?>>Bachelor of Science in Hotel and Restaurant Management</option>
+                                        <option value="Bachelor of Science in Computer Science" <?php if($Course=="Bachelor of Science in Computer Science") echo 'selected="selected"'; ?>>Bachelor of Science of Computer Science</option>
+                                        <option value="Bachelor of Science in Information Technology" <?php if($Course=="Bachelor of Science in Information Technology") echo 'selected="selected"'; ?>>Bachelor of Science of Information Technology</option>
+                                        <option value="Bachelor of Science in Computer Engineering" <?php if($Course=="Bachelor of Science in Computer Engineering") echo 'selected="selected"'; ?>>Bachelor of Science of Computer Engineering</option>
+                                        <option value="Bachelor of Science in Accounting Technology" <?php if($Course=="Bachelor of Science in Accounting Technology") echo 'selected="selected"'; ?>>Bachelor of Science in Accounting Technology</option>
+                                        <option value="Bachelor of Science in Information Technology with Specialization Digital Arts" <?php if($Course=="Bachelor of Science in Information Technology with Specialization Digital Arts") echo 'selected="selected"'; ?>>Bachelor of Science in Information Technology with Specialization Digital Arts</option>
+                                        <option value="2-yr. Associate in Computer Technology" <?php if($Course=="2-yr. Associate in Computer Technology") echo 'selected="selected"'; ?>>2-yr. Associate in Computer Technology</option>
                                     </select>
                                 </div>
                             </div>
@@ -319,19 +364,19 @@
                                 <div class="form-group">
                                     <label>Graduation Date <span>(*)</span></label>
                                     <select id="GraduatedMonth" name="GraduatedMonth" class="form-control" style="width:100%; height:34px;">
-                                        <option value="">- Month -</option>
-                                        <option value="01">January</option>
-                                        <option value="02">February</option> 
-                                        <option value="03">March</option> 
-                                        <option value="04">April</option> 
-                                        <option value="05">May</option> 
-                                        <option value="06">June</option> 
-                                        <option value="07">July</option> 
-                                        <option value="08">August</option>
-                                        <option value="09">September</option>
-                                        <option value="10">October</option>
-                                        <option value="11">November</option>
-                                        <option value="12">December</option>
+                                        <option value="" <?php if($GraduatedMonth=="") echo 'selected="selected"'; ?>>- Month -</option>
+                                        <option value="01" <?php if($GraduatedMonth=="01") echo 'selected="selected"'; ?>>January</option>
+                                        <option value="02" <?php if($GraduatedMonth=="02") echo 'selected="selected"'; ?>>February</option> 
+                                        <option value="03" <?php if($GraduatedMonth=="03") echo 'selected="selected"'; ?>>March</option> 
+                                        <option value="04" <?php if($GraduatedMonth=="04") echo 'selected="selected"'; ?>>April</option> 
+                                        <option value="05" <?php if($GraduatedMonth=="05") echo 'selected="selected"'; ?>>May</option> 
+                                        <option value="06" <?php if($GraduatedMonth=="06") echo 'selected="selected"'; ?>>June</option> 
+                                        <option value="07" <?php if($GraduatedMonth=="07") echo 'selected="selected"'; ?>>July</option> 
+                                        <option value="08" <?php if($GraduatedMonth=="08") echo 'selected="selected"'; ?>>August</option>
+                                        <option value="09" <?php if($GraduatedMonth=="09") echo 'selected="selected"'; ?>>September</option>
+                                        <option value="10" <?php if($GraduatedMonth=="10") echo 'selected="selected"'; ?>>October</option>
+                                        <option value="11" <?php if($GraduatedMonth=="11") echo 'selected="selected"'; ?>>November</option>
+                                        <option value="12" <?php if($GraduatedMonth=="12") echo 'selected="selected"'; ?>>December</option>
                                     </select>
                                 </div>
                             </div>
@@ -342,15 +387,16 @@
                                         <option value="">-Year-</option>
                                         <?php 
                                             $date = Date("Y") + 4;
-                                            while($date != 1935){
-                                                $date--;
-                                                if($date == $server_txtGradYear){
-                                                    echo "<option selected value='$date'> $date</option>";
-                                                }
-                                                else{
-                                                echo "<option value='$date'> $date</option>";
-                                                }
-                                            }
+                                            $choose = $GraduatedYear;
+                                                while($date != 1935){
+                                                    $date--;
+                                                    if($date == $choose){
+                                                        echo "<option selected value='$date'> $date</option>";
+                                                        }
+                                                        else{
+                                                        echo "<option value='$date'> $date</option>";
+                                                        }
+                                                    }
                                         ?>
                                     </select>
                                 </div>
@@ -371,7 +417,7 @@
                 <div class="hr5" style="margin-top:35px;margin-bottom:40px;"></div>
                 <div class="field">
                     <div class="text-center">
-                        <button class="btn btn-lg btn-hg btn-primary" name ="btnSave">Save</button>
+                        <button type="submit" class="btn btn-lg btn-hg btn-primary" name ="btnSave">Save</button>
                     </div>
                 </div>
             </div>
@@ -379,41 +425,59 @@
     </div>
     <!-- End Content -->
     <script type="text/javascript" src="../../../js/script.js"></script>
+</form>
 </body>
-
-<?php 
-if(isset($_POST['btnSave'])){
-
-    $fileToUpload = basename($_FILES["fileToUpload"]["name"]);
-    $target_dir = "ProfileImages/";   //eto yung folder or directory kung saan mo ma-sasave yung picture mo
-    $target_file = $target_dir . $StudentID.".jpg";
-    $uploadOk = 1;
-    $imageFileType = pathinfo($target_file,PATHINFO_EXTENSION);
-
-    //eto chcheck nya yung format ng file kung GIF ba sya or JPEG or PNG in short Check ng FILE TYPE
-    if($imageFileType != "jpg" && $imageFileType != "png" && $imageFileType != "jpeg") {
-        echo "Sorry, only JPG, JPEG, PNG files are allowed.";
-        $uploadOk = 0;
-    }
-    // Check if $uploadOk is set to 0 by an error
-    if ($uploadOk == 0) {
-        echo "Sorry, your file was not uploaded.";
-
-    } 
-    else {
-        if (move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_file)){
-
-        $query = "UPDATE studentinfotbl SET ProfileImage = '$target_file' WHERE StudentID = '$StudentID'";
-        $Result = mysql_query($query);
-        echo "
-         <script type='text/javascript'>
-         </script>
-         ";
-        } 
-        else {
-            echo "Sorry, there was an error uploading your file.";
-        }
-    }
-}
-?>
 </html>
+<script type="text/javascript">
+    $(document).ready(function () {
+            var validator = $("#EditSchool").bootstrapValidator({
+                feedbackIcons:{
+                    valid: "glyphicon glyphicon-ok",
+                    invalid: "glyphicon glyphicon-remove",
+                    validating: "glyphicon glyphicon-refresh"
+                },
+                fields: {
+                    School: {
+                        validators: {
+                            notEmpty: {
+                                message: "School is required."
+                            },
+                            stringLength: {
+                                min: 3,
+                                max: 30,
+                                message: "School must be 3-30 characters long."
+                            }
+                        }
+                    },
+                    EducAttainment: {
+                        validators: {
+                            notEmpty: {
+                                message: "Educational Attainment is required."
+                            }
+                        }
+                    },
+                    Course: {
+                        validators: {
+                            notEmpty: {
+                                message: "Course is required."
+                            }
+                        }
+                    },
+                    GraduatedMonth: {
+                        validators: {
+                            notEmpty: {
+                                message: "Month graduated is required."
+                            }
+                        }
+                    },
+                    GraduatedYear: {
+                        validators: {
+                            notEmpty: {
+                                message: "Year graduated is required."
+                            }
+                        }
+                    }
+                }
+            });
+    });
+</script>
