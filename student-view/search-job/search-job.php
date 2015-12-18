@@ -371,25 +371,44 @@ $result = mysql_query($qry);
                                 </tr>
                             </thead>
                             <?php 
+                            
+                                $qry = 
+                                "SELECT
+                                    `comppositiontbl`.`PositionID`,
+                                    `comppositiontbl`.`PositionLevel`,
+                                    `comppositiontbl`.`CompanyID`,
+                                    `companyinfotbl`.`CompanyName`,
+                                    `comppositiontbl`.`PostingDateFrom`,
+                                    `comppositiontbl`.`PostingDateTo`,
+                                    `companyinfotbl`.`City`
+                                FROM
+                                    `comppositiontbl`
+                                INNER JOIN `companyinfotbl` ON `comppositiontbl`.`CompanyID` = `companyinfotbl`.`CompanyID`";
 
-                                $qry = "select  * from comppositiontbl where MajorCourse = '$course'";
                                 $result = mysql_query($qry);
-                                $StudentID = 0;
                                 while($qry = mysql_fetch_array($result))
                                 {
-                                    $StudentID++;
                                     $PositionID = $qry['PositionID'];
                                     $position = $qry['PositionLevel'];
                                     $company = $qry['CompanyID'];
+                                    $company_name = $qry['CompanyName'];
+                                    $location = $qry['City'];
 
+                                    $diff_from = date_diff(new DateTime(), new DateTime($qry['PostingDateFrom']));
+                                    $diff_to = date_diff(new DateTime(), new DateTime($qry['PostingDateTo']));
 
-                                        $q = "select * from companyinfotbl where CompanyID = '$company'";
-                                        $r = mysql_query($q);
-                                            while($q = mysql_fetch_array($r))
-                                            {
-                                            $company_name = $q['CompanyName'];
-                                            $location = $q['City'];
-                                            echo 
+                                    $a =    $diff_from->y >= 0 &&
+                                            $diff_from->m >= 0 &&
+                                            $diff_from->d >= 0 &&
+                                            $diff_from->invert == 1;
+
+                                    $b =    $diff_to->y >= 0 &&
+                                            $diff_to->m >= 0 &&
+                                            $diff_to->d >= 0 &&
+                                            $diff_to->invert == 0;
+
+                                    if($a && $b){
+                                        echo 
                                             "
                                             <tbody>
                                             <tr>
@@ -404,10 +423,9 @@ $result = mysql_query($qry);
                                             </tr>
                                             </tbody>
                                             ";
-
-                                            }
+                                    }
                                 }
-                                ?>
+                            ?>
                         </table>
                     </div>
                     <!-- End Page Content -->

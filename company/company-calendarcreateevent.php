@@ -23,10 +23,12 @@ $CompanyID = $_SESSION['CompanyID'];
   <meta name="description" content="Margo - Responsive HTML5 Template">
   <meta name="author" content="iThemesLab">
 
-  <link href="../css/bootstrap.min.css" rel="stylesheet"/>
+  <!-- Bootstrap CSS -->
+  <link href="../css/bootstrap.min.css" rel="stylesheet" />
+
   <!-- BootstrapValidator CSS -->
   <link href="../css/bootstrapValidator.min.css" rel="stylesheet"/>
-
+  <link href="../css/basic-template.css" rel="stylesheet" />
   <!-- jQuery and Bootstrap JS -->
   <script src="../js/jquery.min.js" type="text/javascript"></script>
   <script src="../js/bootstrap.min.js" type="text/javascript"></script>
@@ -71,7 +73,6 @@ $CompanyID = $_SESSION['CompanyID'];
 
 
   <!-- Margo JS  -->
-  <script type="text/javascript" src="../js/jquery.min.js"></script>
   <script type="text/javascript" src="../js/jquery.migrate.js"></script>
   <script type="text/javascript" src="../js/modernizrr.js"></script>
   <script type="text/javascript" src="../js/jquery.fitvids.js"></script>
@@ -86,12 +87,12 @@ $CompanyID = $_SESSION['CompanyID'];
   <script type="text/javascript" src="../js/jquery.nicescroll.min.js"></script>
   <script type="text/javascript" src="../js/jquery.parallax.js"></script>
   <script type="text/javascript" src="../js/jquery.slicknav.js"></script>
+  <script type="text/javascript" src="../js/script.js"></script>
 
   <!--[if IE 8]><script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
   <!--[if lt IE 9]><script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
 
 </head>
-
 <body>
 
   <!-- Full Body Container -->
@@ -262,7 +263,6 @@ $CompanyID = $_SESSION['CompanyID'];
         <div class = "col-md-12">
             <div class = "row">
                 <form action="add-company.php" name="addcalendar" id="addcalendar" autocomplete="off">
-
                      <div class="row field">
                         <div class = "col-md-3 fieldcol">
                              <label = "usr" class = "control-label">Event from: </label>
@@ -316,58 +316,6 @@ $CompanyID = $_SESSION['CompanyID'];
             </div>
         </div>
     </div>       
-
-    
-    </div>
-
-  <script type="text/javascript" src="../js/script.js"></script>
-
+</div>
 </body>
-<script type="text/javascript">
-        $(document).ready(function (){
-            var validator = $("#addcalendar").bootstrapValidator({
-                feedbackIcons: {
-                    valid: "glyphicon glyphicon-ok",
-                    invalid: "glyphicon glyphicon-remove",
-                    validating: "glyphicon glyphicon-refresh"
-                },
-                eventtitle: {
-                    validators: {
-                        notEmpty: {
-                            message: "Event Title is required."
-                        },
-                        stringLength: {
-                            min: 3,
-                            max: 15,
-                            message: "Event Title must be 5-15 characters long."
-                        }
-                    }
-                },
-                location: {
-                    validators: {
-                        notEmpty: {
-                            message: "Location is required."
-                        },
-                        stringLength: {
-                            min: 3,
-                            max: 15,
-                            message: "Last name must be 3-15 characters long."
-                        }
-                    }
-                },
-                descrip: {
-                    validators: {
-                        notEmpty: {
-                            message: "Description is required."
-                        },
-                        stringLength: {
-                            min: 5,
-                            max: 15,
-                            message: "Mobile number must be 5-20 characters long."
-                        }
-                    }
-                }
-            });
-        });
-    </script>
 </html>
