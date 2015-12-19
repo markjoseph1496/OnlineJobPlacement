@@ -79,7 +79,7 @@ $result = mysql_query($qry);
   <script type="text/javascript" src="../js/jquery.nicescroll.min.js"></script>
   <script type="text/javascript" src="../js/jquery.parallax.js"></script>
   <script type="text/javascript" src="../js/jquery.slicknav.js"></script>
-  <script type="text/javascript" src="../js/script.js"></script>
+
 
   <!--[if IE 8]><script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
   <!--[if lt IE 9]><script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
@@ -173,23 +173,18 @@ $result = mysql_query($qry);
             </a>
           </div>
           <div class="navbar-collapse collapse">
-            <!-- Stat Search -->
-            <div class="search-side">
-              <a class="show-search"><i class="fa fa-search"></i></a>
-              <div class="search-form">
-                <form autocomplete="off" role="search" method="get" class="searchform" action="#">
-                  <input type="text" value="" name="s" id="s" placeholder="Search the site...">
-                </form>
-              </div>
+            <!-- Sign-out -->
+            <div class="signout-side">
+              <a class="show-signout"><i class="fa fa-sign-out"></i></a>
             </div>
-            <!-- End Search -->
+            <!-- End Sign-out -->
              <!-- Start Navigation List -->
             <ul class="nav navbar-nav navbar-right">
                 <li>
                     <a class="active" href="company.php">Home</a>
                 </li>
                 <li>
-                    <a href="company-position.php">Position</a>
+                    <a href="company-positionlist.php">Position</a>
                     <ul class="dropdown">
                         <li><a  href="company-positionlist.php">Position List</a></li>
                         <li><a href="company-createposition.php">Create Position</a></li>
@@ -217,14 +212,14 @@ $result = mysql_query($qry);
                     <a class="active" href="company.php">Home</a>
                 </li>
                 <li>
-                    <a href="company-position.php">Position</a>
+                    <a href="company-positionlist.php">Position</a>
                     <ul class="dropdown">
                         <li><a  href="company-positionlist.php">Position List</a></li>
                         <li><a href="company-createposition.php">Create Position</a></li>
                     </ul>
                 </li>
                 <li>
-                    <a href="company-calendar.php">>Calendar</a>
+                    <a href="company-calendar.php">Calendar</a>
                 </li>
                  <li><a href="company-settings.php">Settings</a>
                 </li>  
@@ -260,13 +255,14 @@ $result = mysql_query($qry);
   <br><br><br>
   <div class = "container">
   <form method="POST">
-                    <div class = "header2_advertising">
-                    <div class = "container">
-                     
-                    <div class="col-sm-4">
+
+                 <div class = "header2_advertising">
+                  <div class = "container">
+                    <div class = "row field">
+                      <div class="col-sm-5">
                         <div class="form-group text-center">
                             <label><center><b>Course</b></label></center>
-                            <select id="" name="MajorCourse" class="form-control" style = "width:250px;">
+                            <select id="" name="MajorCourse" class="form-control" style = "width:400x;">
                                 <option value="" selected="selected">- Please select one -</option>
                                 <option value="Bachelor of Science in Computer Science">Bachelor of Science in Computer Science</option>
                                 <option value="Bachelor of Science in Information Technology">Bachelor of Science in Information Technology</option>
@@ -274,40 +270,115 @@ $result = mysql_query($qry);
                                 <option value="Bachelor of Science in Business Management Major in Operations">Bachelor of Science in Business Management Major in Operations</option>
                             </select>
                         </div>
-                    </div>
-                    <div class="col-sm-4">
+                    </div> <!--col-sm-5-->
+                        <div class="col-sm-5">
                         <div class="form-group text-center">
                             <label><center><b>Field of Specialization</b></label></center>
-                            <select id="" name="Specialization" class="form-control" style = "width:250px;"> 
-                                <option value="" selected="selected">- Please select one -</option>
-                                <option value="Programming">Programming</option>
-                                <option value="Hotelmanagement">Hotel management</option>
-                                <option value="AutoCAD">AutoCAD</option>
-                                <option value="TroubleShooting">TroubleShooting</option>
-                                <option value="TechSupport">TechSupport</option>
+                            <select id="" name="Specialization" class="form-control" style = "width:420px;">
+                                <option value="" selected="selected">- Please select one -</option> 
+                                <option value="12">Actuarial Science/Statistics</option>
+                                <option value="3">Advertising/Media Planning</option>
+                                <option value="9">Agriculture/Forestry/Fisheries</option>
+                                <option value="10">Architecture/Interior Design</option>
+                                <option value="11">Arts and Design</option>
+                                <option value="8">Arts/Creative/Graphics Design</option>
+                                <option value="13">Aviation/Aircraft Maintenance</option>
+                                <option value="34">Banking/Financial Services</option>
+                                <option value="14">Biotechnology</option>
+                                <option value="17">BPO/Call Center</option>
+                                <option value="15">Chemistry</option>
+                                <option value="7">Clerical/Administrative Support</option>
+                                <option value="21">Corporate Strategy/Top Management</option>
+                                <option value="19">Costing Management</option>
+                                <option value="22">Customer Service</option>
+                                <option value="20">Customer Service (Technical)</option>
+                                <option value="23">Design and Development</option>
+                                <option value="26">Education / Academe</option>
+                                <option value="24">Engineering - Chemical</option>
+                                <option value="16">Engineering - Civil/Construction/Structural</option>
+                                <option value="29">Engineering - Electrical</option>
+                                <option value="28">Engineering - Electronics/Communication</option>
+                                <option value="32">Engineering - Environmental/Health/Safety</option>
+                                <option value="27">Engineering - Industrial</option>
+                                <option value="57">Engineering - Mechanical/Automotive</option>
+                                <option value="33">Engineering - Oil/Gas</option>
+                                <option value="30">Engineering - Others</option>
+                                <option value="31">Entertainment/Performing Arts</option>
+                                <option value="4">Finance - Audit/Taxation</option>
+                                <option value="6">Finance - Corporate Finance/Investment/Merchant Banking</option>
+                                <option value="5">Finance - General/Cost Accounting </option>
+                                <option value="36">Food Technology/Nutritionist</option>
+                                <option value="35">Food/Beverage/Restaurant Service</option>
+                                <option value="38">General Work (Housekeeper, Driver, Dispatch, Messenger, etc)</option>
+                                <option value="37">Geology/Geophysics</option>
+                                <option value="58">Health Diagnosing</option>
+                                <option value="41">Healthcare - Doctor/Diagnosis</option>
+                                <option value="39">Healthcare - Nurse/Medical Support and Assistant</option>
+                                <option value="40">Healthcare - Pharmacy</option>
+                                <option value="42">Hotel Management/Tourism Services</option>
+                                <option value="43">Human Resources</option>
+                                <option value="44">IT/Computer - Creative Design</option>
+                                <option value="48">IT/Computer - Hardware</option>
+                                <option value="49">IT/Computer - Network/System/Database Admin</option>
+                                <option value="46">IT/Computer - Project Management</option>
+                                <option value="47">IT/Computer - QA</option>
+                                <option value="45">IT/Computer - Software Development</option>
+                                <option value="50">Journalism</option>
+                                <option value="25">Journalist/Editor</option>
+                                <option value="51">Law/Legal Services</option>
+                                <option value="80">Logistics/Supply Chain</option>
+                                <option value="52">Maintenance/Repair (Facilities and Machinery)</option>
+                                <option value="53">Manufacturing/Production Operations</option>
+                                <option value="55">Marketing / Brand Management</option>
+                                <option value="54">Marketing/Business Development</option>
+                                <option value="18">Medical Transcriptionist</option>
+                                <option value="59">Merchandising</option>
+                                <option value="2">Others</option>
+                                <option value="64">Personal Care/Beauty/Fitness Service</option>
+                                <option value="60">Process Design and Control/Instrumentation</option>
+                                <option value="61">Production Control/Management</option>
+                                <option value="63">Project Management</option>
+                                <option value="65">Public Relations/Communications</option>
+                                <option value="62">Publishing/Printing</option>
+                                <option value="56">Purchasing/Inventory/Material and Warehouse Management</option>
+                                <option value="66">Quality Control/Assurance</option>
+                                <option value="67">Quantity Surveying</option>
+                                <option value="69">Research and Development</option>
+                                <option value="68">Sales - Corporate / B2B</option>
+                                <option value="71">Sales - Engineering/Technical/IT</option>
+                                <option value="72">Sales - Financial Services (Insurance, Unit Trust, etc)</option>
+                                <option value="75">Sales - Retail/General</option>
+                                <option value="76">Sales - Telesales/Telemarketing</option>
+                                <option value="74">Sales – Real Estate</option>
+                                <option value="73">Sales- Medical / Pharmaceutical</option>
+                                <option value="77">Science and Technology/Laboratory</option>
+                                <option value="78">Secretarial/Executive and Personal Assistant</option>
+                                <option value="70">Security/Armed Forces/Protective Services</option>
+                                <option value="79">Social and Counselling Service</option>
+                                <option value="81">Stockbroking</option>
+                                <option value="82">Technical and Helpdesk Support</option>
+                                <option value="83">Training and Development</option>
                             </select>
                         </div>
                     </div> 
-                    <div class="col-sm-4">
-                        <div class = "filtersearch">
-                           <button type = "submit" class = "btn btn-hg btn-primary" id = "filter" name = "filter" style = "width:200px;"><b> Filter </b></button>
-                        </div>
+                    <div class = "col-sm-2">
+                      <button type = "submit" class = "btn btn-primary" name = "filter" style = "width:100px; margin-top: 20px;"><b> Filter </b></button>
                     </div>
-                    </div>
-                </div>
-                 <!--header-->
+                    </div> <!--row field-->
+                  </div>
+                 </div>
                     <!--table-->   
-        <table class = "Applicants">
+        <table class = 'Applicants' width = '100%' cellpadding = '0'>
            <thead>
            <tr>
            </tr>    
                 <tr>
-                    <th width= "5%" class = "tabletitle"> <input type="checkbox" id="selectall"/> </th>
-                    <th width= "10%" class = "tabletitle">Student ID </th>
-                    <th width = "20%" class = "tabletitle"> Student Name </th>
-                    <th width = "25%" class = "tabletitle">Course</th>
-                    <th width = "30%"  class = "tabletitle"> Field of Specialization </th>
-                    <th width = "10%"  class = "tabletitle"></th>
+                    <th width= '5%' class = 'tabletitle'> <input type="checkbox" id="selectall"/> </th>
+                    <th width= '10%' class = 'tabletitle'>Student ID </th>
+                    <th width = '20%'class = 'tabletitle'> Student Name </th>
+                    <th width = '25%'class = 'tabletitle'>Course</th>
+                    <th width = '30%'  class = 'tabletitle'> Field of Specialization </th>
+                    <th width = '10%'  class = 'tabletitle'></th>
                 <tr>
             </thead>
             <tbody>
@@ -328,13 +399,13 @@ $result = mysql_query($qry);
 
                                   echo "
                                   <tr>
-                                    <td width = '5%'><input type='checkbox' id='select'/></td>
-                                    <td width = '10%'> $studentid </td>
-                                    <td width = '20%'> $lname $fname </td>
-                                    <td width = '30%'> $course </td>
-                                    <td width = '30%'> $Specialization </td>
-                                    <td width = '10%'> <button id='Edit' name='request_resume' class='btn btn-default'><i class='fa fa-arrow-circle-right'></i> </td>
-                                  </tr>
+                                    <td width = '5%'  class = tabletitle><input type='checkbox' id='select'/></td>
+                                    <td width = '10%' class = tabletitle > $studentid </td>
+                                    <td width = '20%' class = tabletitle> $lname $fname </td>
+                                    <td width = '30%' class = tabletitle> $course </td>
+                                    <td width = '30%' class = tabletitle> $Specialization </td>
+                                    <td width = '10%' class = tabletitle> <button id='Edit' name='request_resume' class='btn btn-default'><i class='fa fa-arrow-circle-right'></i> </td>
+                                  <tr>
                                   ";  
                                 }
                             }
@@ -353,13 +424,13 @@ $result = mysql_query($qry);
 
                                   echo "
                                   <tr>
-                                    <td width = '5%'><input type='checkbox' id='select'/></td>
-                                    <td width = '10%'> $studentid </td>
-                                    <td width = '20%'> $lname $fname </td>
-                                    <td width = '30%'> $course </td>
-                                    <td width = '30%'> $Specialization </td>
-                                    <td width = '10%'> <button id='Edit' name='request_resume' class='btn btn-default'><i class='fa fa-arrow-circle-right'></i> </td>
-                                  </tr>
+                                    <td width = '5%' class = tabletitle><input type='checkbox' id='select'/></td>
+                                    <td width = '10%' class = tabletitle> $studentid </td>
+                                    <td width = '20%' class = tabletitle> $lname $fname </td>
+                                    <td width = '30%' class = tabletitle> $course </td>
+                                    <td width = '30%' class = tabletitle> $Specialization </td>
+                                    <td width = '10%' class = tabletitle> <button id='Edit' name='request_resume' class='btn btn-default'><i class='fa fa-arrow-circle-right'></i> </td>
+                                  <tr>
                                   ";  
                                 }
                     }
@@ -379,13 +450,13 @@ $result = mysql_query($qry);
 
                         echo "
                         <tr>
-                          <td width = '5%'><input type='checkbox' id='select'/></td>
-                          <td width = '10%'> $studentid </td>
-                          <td width = '20%'> $lname $fname </td>
-                          <td width = '30%'> $course </td>
-                          <td width = '30%'> $Specialization </td>
-                          <td width = '10%'> <button id='requestresume' name='requestresume' class='btn btn-default'><i class='fa fa-arrow-circle-right'></i> </td>
-                        </tr>
+                          <td width = '5%' class = tabletitle><input type='checkbox' id='select'/></td>
+                          <td width = '10%' class = tabletitle> $studentid </td>
+                          <td width = '20%' class = tabletitle> $lname $fname </td>
+                          <td width = '30%' class = tabletitle> $course </td>
+                          <td width = '30%' class = tabletitle> $Specialization </td>
+                          <td width = '10%' class = tabletitle> <button id='requestresume' name='requestresume' class='btn btn-default'><i class='fa fa-arrow-circle-right'></i> </td>
+                        <tr>
                         ";  
                       }
                 }
@@ -409,12 +480,12 @@ $result = mysql_query($qry);
 
                                   echo "
                                   <tr>
-                                    <td width = '5%'><input type='checkbox' id='select'/></td>
-                                    <td width = '10%'> $studentid </td>
-                                    <td width = '20%'> $lname $fname </td>
-                                    <td width = '30%'> $course </td>
-                                    <td width = '30%'> $Specialization </td>
-                                  </tr>
+                                    <td width = '5%' class = tabletitle><input type='checkbox' id='select'/></td>
+                                    <td width = '10%' class = tabletitle> $studentid </td>
+                                    <td width = '20%' class = tabletitle> $lname $fname </td>
+                                    <td width = '30%' class = tabletitle> $course </td>
+                                    <td width = '30%' class = tabletitle> $Specialization </td>
+                                  <tr>
                                   ";  
                                 }
                             }
@@ -433,12 +504,12 @@ $result = mysql_query($qry);
 
                                   echo "
                                   <tr>
-                                    <td width = '5%'><input type='checkbox' id='select'/></td>
-                                    <td width = '10%'> $studentid </td>
-                                    <td width = '20%'> $lname $fname </td>
-                                    <td width = '30%'> $course </td>
-                                    <td width = '30%'> $Specialization </td>
-                                  </tr>
+                                    <td width = '5%' class = tabletitle ><input type='checkbox' id='select'/></td>
+                                    <td width = '10%' class = tabletitle > $studentid </td>
+                                    <td width = '20%' class = tabletitle > $lname $fname </td>
+                                    <td width = '30%' class = tabletitle > $course </td>
+                                    <td width = '30%' class = tabletitle > $Specialization </td>
+                                  <tr>
                                   ";  
                                 }
                     }
@@ -458,12 +529,12 @@ $result = mysql_query($qry);
 
                         echo "
                         <tr>
-                          <td width = '5%'><input type='checkbox' id='select'/></td>
-                          <td width = '10%'> $studentid </td>
-                          <td width = '20%'> $lname $fname </td>
-                          <td width = '30%'> $course </td>
-                          <td width = '30%'> $Specialization </td>
-                        </tr>
+                          <td width = '5%' class = tabletitle ><input type='checkbox' id='select'/></td>
+                          <td width = '10%' class = tabletitle > $studentid </td>
+                          <td width = '20%' class = tabletitle > $lname $fname </td>
+                          <td width = '30%' class = tabletitle > $course </td>
+                          <td width = '30%' class = tabletitle > $Specialization </td>
+                        <tr>
                         ";  
                       }
                 }
@@ -476,7 +547,8 @@ $result = mysql_query($qry);
            </div>
         </div>
     </div>
+</div>
   </form>  
 </body>
-
+  <script type="text/javascript" src="../js/script.js"></script>
 </html>

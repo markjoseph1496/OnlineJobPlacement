@@ -1,3 +1,8 @@
+<?php
+include('../connection.php');
+session_start();
+$CompanyID = $_SESSION['CompanyID'];
+?>
 <!doctype html>
 <!--[if IE 8 ]><html class="ie ie8" lang="en"> <![endif]-->
 <!--[if (gte IE 9)|!(IE)]><html lang="en" class="no-js"> <![endif]-->
@@ -17,6 +22,19 @@
   <!-- Page Description and Author -->
   <meta name="description" content="Margo - Responsive HTML5 Template">
   <meta name="author" content="iThemesLab">
+
+  <!-- Bootstrap CSS -->
+  <link href="../css/bootstrap.min.css" rel="stylesheet" />
+
+  <!-- BootstrapValidator CSS -->
+  <link href="../css/bootstrapValidator.min.css" rel="stylesheet"/>
+
+  <!-- jQuery and Bootstrap JS -->
+  <script src="../js/jquery.min.js" type="text/javascript"></script>
+  <script src="../js/bootstrap.min.js" type="text/javascript"></script>
+    
+  <!-- BootstrapValidator -->
+  <script src="../js/bootstrapValidator.min.js" type="text/javascript"></script>
 
   <!-- Bootstrap CSS  -->
   <link rel="stylesheet" href="../asset/css/bootstrap.min.css" type="text/css" media="screen">
@@ -55,10 +73,8 @@
 
 
   <!-- Margo JS  -->
-  <script type="text/javascript" src="../js/jquery.min.js"></script>
   <script type="text/javascript" src="../js/jquery.migrate.js"></script>
   <script type="text/javascript" src="../js/modernizrr.js"></script>
-  <script type="text/javascript" src="../asset/js/bootstrap.min.js"></script>
   <script type="text/javascript" src="../js/jquery.fitvids.js"></script>
   <script type="text/javascript" src="../js/owl.carousel.min.js"></script>
   <script type="text/javascript" src="../js/nivo-lightbox.min.js"></script>
@@ -71,6 +87,7 @@
   <script type="text/javascript" src="../js/jquery.nicescroll.min.js"></script>
   <script type="text/javascript" src="../js/jquery.parallax.js"></script>
   <script type="text/javascript" src="../js/jquery.slicknav.js"></script>
+
 
   <!--[if IE 8]><script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
   <!--[if lt IE 9]><script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
@@ -101,7 +118,7 @@
                 <li><a href="#"><i class="fa fa-phone"></i> +12 345 678 000</a>
                 </li>
               </ul>
-               End Contact Info -->
+            End Contact Info -->
             </div>
             <!-- .col-md-6 -->
             <div class="col-md-6">
@@ -138,7 +155,7 @@
                   <a class="skype itl-tooltip" data-placement="bottom" title="Skype" href="#"><i class="fa fa-skype"></i></a>
                 </li>
               </ul>
-              End Social Links -->
+               End Social Links -->
             </div>
             <!-- .col-md-6 -->
           </div>
@@ -164,33 +181,29 @@
             </a>
           </div>
           <div class="navbar-collapse collapse">
-            <!-- Stat Search -->
-            <div class="search-side">
-              <a class="show-search"><i class="fa fa-search"></i></a>
-              <div class="search-form">
-                <form autocomplete="off" role="search" method="get" class="searchform" action="#">
-                  <input type="text" value="" name="s" id="s" placeholder="Search the site...">
-                </form>
-              </div>
+            <!-- Sign-out -->
+            <div class="signout-side">
+              <a class="show-signout"><i class="fa fa-sign-out"></i></a>
             </div>
-            <!-- End Search -->
+            <!-- End Sign-out -->
              <!-- Start Navigation List -->
             <ul class="nav navbar-nav navbar-right">
                 <li>
-                    <a href="company.php">Home</a>
+                    <a  href="company.php">Home</a>
                 </li>
                 <li>
-                    <a class="active" href="company-position.php">Position</a>
+                    <a>Position</a>
                     <ul class="dropdown">
                         <li><a  href="company-positionlist.php">Position List</a></li>
-                        <li><a href="company-createposition.php">Create Position</a></li>
+                        <li><a class = "active" href="company-createposition.php">Create Position</a></li>
                     </ul>
                 </li>
                 <li>
                     <a href="company-calendar.php">Calendar</a>
                 </li>
-                <li><a href="company-settings.php">Settings</a>
-                </li>  
+                <li>
+                    <a  href="company-settings.php">Settings</a>
+                </li>
                 <li>
                     <a href="company-applicants.php">Applicant List</a>
                     <ul class="dropdown">
@@ -205,7 +218,7 @@
         <!-- Mobile Menu Start -->
     <ul class="wpb-mobile-menu">
        <li>
-                    <a href="company.php">Home</a>
+                    <a  href="company.php">Home</a>
                 </li>
                 <li>
                     <a class="active" href="company-position.php">Position</a>
@@ -215,12 +228,13 @@
                     </ul>
                 </li>
                 <li>
-                    <a href="company-calendar.php">>Calendar</a>
+                    <a href="company-calendar.php">Calendar</a>
                 </li>
-                <li><a href="company-settings.php">Settings</a>
-                </li>  
+                <li>
+                    <a href="company-settings.php">Settings</a>
+                </li>
                <li>
-                    <a href="company-applicants.php">Applicant List</a>
+                    <a  href="company-applicants.php">Applicant List</a>
                     <ul class="dropdown">
                         <li><a href="company-pendingapplicants.php">Pending</a></li>
                         <li><a href="company-acceptedapplicants.php">Accepted</a></li>
@@ -236,91 +250,141 @@
     </header>
     <!-- End Header Section -->
 
-<!-- Start Page Banner -->
+ <!-- Start Page Banner -->
     <div class="page-banner" style="padding:40px 0; center #f9f9f9;">
       <div class="container">
         <div class="row">
           <div class="col-md-6">
-            <h2>Created Positions</h2>
+            <h2>View Position</h2>
           </div>
         </div>
       </div>
     </div>
     <!-- End Page Banner -->
 
-<!--Content-->
-  <br><br><br>
+ <!-- Start Content -->
 
-      <div class = "container">
-        <div class = "col-md-12">
-          <?php
-        include('../connection.php');
-
-        $CompanyID = $_SESSION['CompanyID'];
-
-            $plevel = 'PositionLevel';
-            $pdatef = 'PostingDateFrom';
-            $pdatet = 'PostingDateTo';
-            $status = 'Status'; 
-        
-
-            $query = "SELECT * FROM comppositiontbl WHERE CompanyID = '$CompanyID'";
-            $Result = mysql_query($query);
-
-            //$query1 = "SELECT * FROM compcoursetbl WHERE Email = '$x'";
-            //$Result1 = mysql_query($query1);  
-        ?>
-        <table class = "Applicants" width = "100%" cellpadding = "0">
-           <thead>
-           <tr>
-  
-           </tr>  
-        <tr>
-          <th width= "30%" class = "tabletitle">Positions</th>
-          <th width = "25%" class = "tabletitle">From </th>
-          <th width = "25%" class = "tabletitle">To </th>
-                    <th width = "25%" class = "tabletitle">Status </th>
-        <tr>
-      </thead>
-
-            <tbody>
-            <?php
-                while ($row = mysql_fetch_array($Result)) { 
-                        
-                    
-            ?>
-                <tr>
-                   <td>
-                    <a href = "#"><?php echo $row[$plevel]; ?></a>
-                    </td>
-                   <td><?php echo $row[$pdatef]; ?></td>
-                   <td><?php echo $row[$pdatet]; ?></td>
-                   <td><?php echo $row[$status]; ?></td>
-                </tr>
-
-            <?php
-
-                }
-            ?> 
-            </tbody>
-        </table>
-        </div>
-      </div>
-
-
-
-<!--End of Content-->  
-
-
-
-
-
-
-
-
-
+    <br><br><br>
+<form action="add-company.php" name="AddPosition" id="AddPosition" autocomplete="off">
+           <div class =  "container">
+          <div class = "col-md-12">
+          <div class = "row">
+            <h3>Post Position </h3>
+            &nbsp;
+            <div class="row field">
+                                        <div class = "col-md-3 fieldcol">
+                                            <label = "usr" class = "control-label"> Posting Date </label>
+                                        </div>
+                                        <div class = "col-md-2 fieldcol">
+                                            <label = "usr" class = "control-label"> December 18,2015 </label>
+                                        </div>
+                                        <div class = "col-md-1 fieldcol">
+                                            <label = "usr" class = "control-label"> to </label>
+                                        </div>
+                                        <div class = "col-md-2 fieldcol">
+                                            <label = "usr" class = "control-label"> December 19,2015 </label>
+                                        </div>
+                                        
+              </div> 
+              &nbsp;
+              <h3> Position Information </h3>
+              &nbsp;
+              <div class="row field">
+                                        <div class = "col-md-3 fieldcol">
+                                            <label = "usr" class = "control-label"> Position Level: </label>
+                                        </div>
+                                        <div class = "col-md-8 fieldcol">
+                                            <div class="form-group">
+                                                <label = "usr" class = "control-label"> Top Level Management </label>
+                                            </div>
+                                        </div>
+                </div> 
+                <div class="row field">
+                                        <div class = "col-md-3 fieldcol">
+                                            <label = "usr" class = "control-label"> Job Specialization: </label>
+                                        </div>
+                                        <div class = "col-md-8 fieldcol">
+                                            <div class="form-group">
+                                                  <label = "usr" class = "control-label"> Arts and Design </label>
+                                            </div>
+                                        </div>
+                </div>  
+                <div class="row field">
+                                        <div class = "col-md-3 fieldcol">
+                                            <label = "usr" class = "control-label"> Employment Type: </label>
+                                        </div>
+                                        <div class = "col-md-8 fieldcol">
+                                            <div class="form-group">
+                                                   <label = "usr" class = "control-label"> Full Time </label>
+                                            </div>
+                                        </div>
+                </div>  
+                <div class="row field">
+                                        <div class = "col-md-3 fieldcol">
+                                            <label = "usr" class = "control-label"> Available Position: </label>
+                                        </div>
+                                        <div class = "col-md-8 fieldcol">
+                                            <div class="form-group">
+                                                  <label = "usr" class = "control-label"> assfsd </label>
+                                            </div>
+                                        </div>
+                </div> 
+                 <h3> Salary Range </h3>
+                 &nbsp;
+                 <div class="row field">
+                                        <div class = "col-md-3 fieldcol">
+                                            <label = "usr" class = "control-label"> Range of Salary: </label>
+                                        </div>
+                                        <div class = "col-md-8 fieldcol">
+                                            <div class="form-group">
+                                                  <label = "usr" class = "control-label"> 10,000-15,000 </label>
+                                            </div>
+                                        </div>
+                </div> 
+                <h3> General Requirements </h3>
+                &nbsp;
+                <div class="row field">
+                                        <div class = "col-md-3 fieldcol">
+                                            <label = "usr" class = "control-label"> Years of Experience: </label>
+                                        </div>
+                                        <div class = "col-md-8 fieldcol">
+                                            <label = "usr" class = "control-label"> 2 </label>
+                                        </div>
+                </div> 
+                <div class="row field">
+                                        <div class = "col-md-3 fieldcol">
+                                            <label = "usr" class = "control-label"> Training: </label>
+                                        </div>
+                                        <div class = "col-md-8 fieldcol">
+                                            <label = "usr" class = "control-label"> asfsa </label>
+                                        </div>
+                </div>  
+                <div class="row field">
+                                        <div class = "col-md-3 fieldcol">
+                                            <label = "usr" class = "control-label"> Knowledge in: </label>
+                                        </div>
+                                        <div class = "col-md-8 fieldcol">
+                                            <label = "usr" class = "control-label"> fasfsd </label>
+                                        </div>
+                </div> 
+                &nbsp;            
+                <h3> Optional Requirements </h3>
+                &nbsp;
+                <div class="row field">
+                                        <div class = "col-md-3 fieldcol">
+                                            <label = "usr" class = "control-label"> Language: </label>
+                                        </div>
+                                        <div class = "col-md-8 fieldcol">
+                                            <label = "usr" class = "control-label"> Filipino </label>
+                                        </div>
+                </div>   
+                <br>
+                      
+            </div>
+          </div>
+        </div>       
+</form> 
+<!--End of Content--> 
   <script type="text/javascript" src="../js/script.js"></script>
-
 </body>
-
 </html>

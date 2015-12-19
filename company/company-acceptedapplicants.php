@@ -164,23 +164,18 @@
             </a>
           </div>
           <div class="navbar-collapse collapse">
-            <!-- Stat Search -->
-            <div class="search-side">
-              <a class="show-search"><i class="fa fa-search"></i></a>
-              <div class="search-form">
-                <form autocomplete="off" role="search" method="get" class="searchform" action="#">
-                  <input type="text" value="" name="s" id="s" placeholder="Search the site...">
-                </form>
-              </div>
+             <!-- Sign-out -->
+            <div class="signout-side">
+              <a class="show-signout"><i class="fa fa-sign-out"></i></a>
             </div>
-            <!-- End Search -->
+            <!-- End Sign-out -->
              <!-- Start Navigation List -->
             <ul class="nav navbar-nav navbar-right">
                 <li>
                     <a href="company.php">Home</a>
                 </li>
                 <li>
-                    <a href="company-position.php">Position</a>
+                    <a href="company-positionlist.php">Position</a>
                     <ul class="dropdown">
                         <li><a  href="company-positionlist.php">Position List</a></li>
                         <li><a href="company-createposition.php">Create Position</a></li>
@@ -205,10 +200,10 @@
         <!-- Mobile Menu Start -->
     <ul class="wpb-mobile-menu">
        <li>
-                    <a href="company.phpome</a>
+                    <a href="company.php"></a>
                 </li>
                 <li>
-                    <a href="company-position.php">Position</a>
+                    <a href="company-positionlist.php">Position</a>
                     <ul class="dropdown">
                         <li><a  href="company-positionlist.php">Position List</a></li>
                         <li><a href="company-createposition.php">Create Position</a></li>
@@ -312,14 +307,6 @@
         </table>
         </div>
     </div>
-
-
-
-
-
-
-
-
   <script type="text/javascript" src="../js/script.js"></script>
 
 </body>

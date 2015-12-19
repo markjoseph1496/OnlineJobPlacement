@@ -169,25 +169,20 @@ $CompanyID = $_SESSION['CompanyID'];
             </a>
           </div>
           <div class="navbar-collapse collapse">
-            <!-- Stat Search -->
-            <div class="search-side">
-              <a class="show-search"><i class="fa fa-search"></i></a>
-              <div class="search-form">
-                <form autocomplete="off" role="search" method="get" class="searchform" action="#">
-                  <input type="text" value="" name="s" id="s" placeholder="Search the site...">
-                </form>
-              </div>
+            <!-- Sign-out -->
+            <div class="signout-side">
+              <a class="show-signout"><i class="fa fa-sign-out"></i></a>
             </div>
-            <!-- End Search -->
+            <!-- End Sign-out -->
              <!-- Start Navigation List -->
             <ul class="nav navbar-nav navbar-right">
                 <li>
                     <a href="company.php">Home</a>
                 </li>
                 <li>
-                    <a class="active" href="company-position.php">Position</a>
+                    <a>Position</a>
                     <ul class="dropdown">
-                        <li><a  href="company-positionlist.php">Position List</a></li>
+                        <li><a class = "active" href="company-positionlist.php">Position List</a></li>
                         <li><a href="company-createposition.php">Create Position</a></li>
                     </ul>
                 </li>
@@ -213,9 +208,9 @@ $CompanyID = $_SESSION['CompanyID'];
                     <a href="company.php">Home</a>
                 </li>
                 <li>
-                    <a class="active" href="company-position.php">Position</a>
+                    <a>Position</a>
                     <ul class="dropdown">
-                        <li><a  href="company-positionlist.php">Position List</a></li>
+                        <li><a class = "active" href="company-positionlist.php">Position List</a></li>
                         <li><a href="company-createposition.php">Create Position</a></li>
                     </ul>
                 </li>
@@ -314,15 +309,15 @@ $CompanyID = $_SESSION['CompanyID'];
                 
             ?>
                 <tr>
-                    <td width= 30% class = tabletitle>
+                    <td width= 30% class = 'tabletitle'>
                       <a href = "viewposition.php?PID=<?php echo $row[$PID]; ?>">  <?php echo $row[$plevel]; ?> </a>
                     </td>
-                    <td width = 20% class = tabletitle><?php echo $row[$pdatef]; ?></td>
-                    <td width = 20% class = tabletitle><?php echo $row[$pdatet]; ?></td>
-                    <td width = 20% class = tabletitle><?php echo $row[$avposition]; ?></td>
+                    <td width = 20% class = 'tabletitle'><?php echo $row[$pdatef]; ?></td>
+                    <td width = 20% class = 'tabletitle'><?php echo $row[$pdatet]; ?></td>
+                    <td width = 20% class = 'tabletitle'><?php echo $row[$avposition]; ?></td>
                     <form method = "POST">
                     <input type="hidden" name="delete_id" value="<?php echo $row['PositionID']; ?>" />
-                    <td width= 15%>
+                    <td width= 15% class = 'tabletitle'>
                         <button  name = 'btndelete' href="" class='btn btn-danger'> 
                         <i class='fa fa-minus-square'></i> 
                         </button> 

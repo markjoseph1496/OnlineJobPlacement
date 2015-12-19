@@ -11,7 +11,7 @@ $CompanyID = $_SESSION['CompanyID'];
 <head>
 
   <!-- Basic -->
-  <title>Margo | Home</title>
+  <title>OJPMS</title>
 
   <!-- Define Charset -->
   <meta charset="utf-8">
@@ -179,16 +179,19 @@ $CompanyID = $_SESSION['CompanyID'];
              OJPMS
             </a>
           </div>
-        
-
-            <!-- End Search -->
+             <div class="navbar-collapse collapse">
+            <!-- Sign-out -->
+            <div class="signout-side">
+              <a class="show-signout"><i class="fa fa-sign-out"></i></a>
+            </div>
+            <!-- End Sign-out -->
              <!-- Start Navigation List -->
             <ul class="nav navbar-nav navbar-right">
                 <li>
                     <a  href="company.php">Home</a>
                 </li>
                 <li>
-                    <a href="company-position.php">Position</a>
+                    <a href="company-positionlist.php">Position</a>
                     <ul class="dropdown">
                         <li><a  href="company-positionlist.php">Position List</a></li>
                         <li><a href="company-createposition.php">Create Position</a></li>
@@ -213,10 +216,10 @@ $CompanyID = $_SESSION['CompanyID'];
         <!-- Mobile Menu Start -->
     <ul class="wpb-mobile-menu">
        <li>
-                    <a  href="index-01.php">Home</a>
+                    <a  href="company.php">Home</a>
                 </li>
                 <li>
-                    <a href="company-position.php">Position</a>
+                    <a href="company-positionlist.php">Position</a>
                     <ul class="dropdown">
                         <li><a  href="company-positionlist.php">Position List</a></li>
                         <li><a href="company-createposition.php">Create Position</a></li>
