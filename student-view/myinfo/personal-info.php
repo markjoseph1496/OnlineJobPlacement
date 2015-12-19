@@ -17,6 +17,7 @@ while($query = mysql_fetch_array($result)){
     $CivilStatus = $query['CivilStatus'];
     $FBLink = $query['FBLink'];
     $TwitterLink = $query['TwitterLink'];
+    $FBLink = substr($FBLink, 24);
 }
 ?>
 
@@ -37,8 +38,18 @@ while($query = mysql_fetch_array($result)){
     <meta name="description" content="Margo - Responsive HTML5 Template">
     <meta name="author" content="iThemesLab">
 
-    <!-- Bootstrap CSS  -->
-    <link rel="stylesheet" href="../../css/bootstrap.min.css" type="text/css" media="screen">
+    <!-- Bootstrap CSS -->
+    <link href="../../css/bootstrap.min.css" rel="stylesheet"/>
+
+    <!-- BootstrapValidator CSS -->
+    <link href="../../css/bootstrapValidator.min.css" rel="stylesheet"/>
+    <link href="../../css/basic-template.css" rel="stylesheet"/>
+    <!-- jQuery and Bootstrap JS -->
+    <script type="text/javascript" src="../../js/jquery.min.js"></script>
+    <script src="../../js/bootstrap.min.js" type="text/javascript"></script>
+
+    <!-- BootstrapValidator -->
+    <script src="../../js/bootstrapValidator.min.js" type="text/javascript"></script>
 
     <!-- Font Awesome CSS -->
     <link rel="stylesheet" href="../../css/font-awesome.min.css" type="text/css" media="screen">
@@ -46,7 +57,7 @@ while($query = mysql_fetch_array($result)){
     <!-- Slicknav -->
     <link rel="stylesheet" type="text/css" href="../../css/slicknav.css" media="screen">
 
-    <!-- CSS Styles  -->
+    <!-- Margo CSS Styles  -->
     <link rel="stylesheet" type="text/css" href="../../css/style.css" media="screen">
 
     <!-- Responsive CSS Styles  -->
@@ -55,41 +66,40 @@ while($query = mysql_fetch_array($result)){
     <!-- Css3 Transitions Styles  -->
     <link rel="stylesheet" type="text/css" href="../../css/animate.css" media="screen">
 
-    <!-- Color CSS Styles  -->
-    <link rel="stylesheet" type="text/css" href="../../css/colors/jade.css" title="jade" media="screen" />
-    <link rel="stylesheet" type="text/css" href="../../css/colors/green.css" title="green" media="screen" />
-    <link rel="stylesheet" type="text/css" href="../../css/colors/blue.css" title="blue" media="screen" />
-    <link rel="stylesheet" type="text/css" href="../../css/colors/beige.css" title="beige" media="screen" />
-    <link rel="stylesheet" type="text/css" href="../../css/colors/cyan.css" title="cyan" media="screen" />
-    <link rel="stylesheet" type="text/css" href="../../css/colors/orange.css" title="orange" media="screen" />
-    <link rel="stylesheet" type="text/css" href="../../css/colors/peach.css" title="peach" media="screen" />
-    <link rel="stylesheet" type="text/css" href="../../css/colors/pink.css" title="pink" media="screen" />
-    <link rel="stylesheet" type="text/css" href="../../css/colors/purple.css" title="purple" media="screen" />
-    <link rel="stylesheet" type="text/css" href="../../css/colors/sky-blue.css" title="sky-blue" media="screen" />
-    <link rel="stylesheet" type="text/css" href="../../css/colors/yellow.css" title="yellow" media="screen" />
+    <!-- OJPMS CSS  -->
+    <link rel="stylesheet" type="text/css" href="../../css/ojpms-style.css" media="screen">
 
-    <!-- JS  -->
-    <script type="text/javascript" src="../../js/jquery.min.js"></script>
-    <script type="text/javascript" src="../../js/modernizrr.js"></script>
-    <script type="text/javascript" src="../../js/jquery.appear.js"></script>
-    <script type="text/javascript" src="../../js/count-to.js"></script>
-    <script type="text/javascript" src="../../js/jquery.nicescroll.min.js"></script>
-    <script type="text/javascript" src="../../js/jquery.slicknav.js"></script>
+    <!-- Color CSS Styles  -->
+    <link rel="stylesheet" type="text/css" href="../../css/colors/red.css" title="red" media="screen"/>
+    <link rel="stylesheet" type="text/css" href="../../css/colors/jade.css" title="jade" media="screen"/>
+    <link rel="stylesheet" type="text/css" href="../../css/colors/blue.css" title="blue" media="screen"/>
+    <link rel="stylesheet" type="text/css" href="../../css/colors/beige.css" title="beige" media="screen"/>
+    <link rel="stylesheet" type="text/css" href="../../css/colors/cyan.css" title="cyan" media="screen"/>
+    <link rel="stylesheet" type="text/css" href="../../css/colors/green.css" title="green" media="screen"/>
+    <link rel="stylesheet" type="text/css" href="../../css/colors/orange.css" title="orange" media="screen"/>
+    <link rel="stylesheet" type="text/css" href="../../css/colors/peach.css" title="peach" media="screen"/>
+    <link rel="stylesheet" type="text/css" href="../../css/colors/pink.css" title="pink" media="screen"/>
+    <link rel="stylesheet" type="text/css" href="../../css/colors/purple.css" title="purple" media="screen"/>
+    <link rel="stylesheet" type="text/css" href="../../css/colors/sky-blue.css" title="sky-blue" media="screen"/>
+    <link rel="stylesheet" type="text/css" href="../../css/colors/yellow.css" title="yellow" media="screen"/>
+
+
+    <!-- Margo JS  -->
 
     <script type="text/javascript" src="../../js/jquery.migrate.js"></script>
-    <script type="text/javascript" src="../../js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../../js/modernizrr.js"></script>
     <script type="text/javascript" src="../../js/jquery.fitvids.js"></script>
     <script type="text/javascript" src="../../js/owl.carousel.min.js"></script>
     <script type="text/javascript" src="../../js/nivo-lightbox.min.js"></script>
-    <script type="text/javascript" src="../../js/jquery.textillate.js"></script>
-
-    <script type="text/javascript" src="../../js/nivo-lightbox.min.js"></script>
     <script type="text/javascript" src="../../js/jquery.isotope.min.js"></script>
+    <script type="text/javascript" src="../../js/jquery.appear.js"></script>
+    <script type="text/javascript" src="../../js/count-to.js"></script>
     <script type="text/javascript" src="../../js/jquery.textillate.js"></script>
     <script type="text/javascript" src="../../js/jquery.lettering.js"></script>
     <script type="text/javascript" src="../../js/jquery.easypiechart.min.js"></script>
+    <script type="text/javascript" src="../../js/jquery.nicescroll.min.js"></script>
     <script type="text/javascript" src="../../js/jquery.parallax.js"></script>
-    <script type="text/javascript" src="../../js/mediaelement-and-player.js"></script>
+    <script type="text/javascript" src="../../js/jquery.slicknav.js"></script>
 
     <!-- fileupload -->
     <link href="../../css/fileinput.min.css" media="all" rel="stylesheet" type="text/css" />
@@ -205,24 +215,24 @@ while($query = mysql_fetch_array($result)){
                                 </ul>
                             </li>
                             <li>
-                                <a href="../resumelink/resume-link.php">Resume Link</a>
+                                <a href="../../resumelink/resume-link.php">Resume Link</a>
                                 <ul class="dropdown">
-                                    <li><a href="../resumelink/resume-link.php">Resume Link</a></li>
-                                    <li><a href="../resumelink/background.php">Background</a></li>
-                                    <li><a href="../resumelink/print-share.php">Print/Share</a></li>
+                                    <li><a href="../../resumelink/resume-link.php">Resume Link</a></li>
+                                    <li><a href="../../resumelink/background.php">Background</a></li>
+                                    <li><a href="../../resumelink/print-share.php">Print/Share</a></li>
                                 </ul>
                              </li>
                             <li>
-                                <a href="../applications/applications.php">Applications</a>
+                                <a href="../../applications/applications.php">Applications</a>
                             </li>
                             <li>
-                                <a href="../search-job/search-job.php">Jobs</a>
+                                <a href="../../search-job/search-job.php">Jobs</a>
                             </li>
                             <li>
-                                <a href="../settings/privacy-settings.php">Settings</a>
+                                <a href="../../settings/privacy-settings.php">Settings</a>
                                 <ul class="dropdown">
-                                    <li><a href="../settings/privacy-settings.php">Privacy Settings</a></li>
-                                    <li><a href="../settings/pass-settings.php">Password Settings</a></li>
+                                    <li><a href="../../settings/privacy-settings.php">Privacy Settings</a></li>
+                                    <li><a href="../../settings/pass-settings.php">Password Settings</a></li>
                                 </ul>
                             </li>
                         </ul>
@@ -246,24 +256,24 @@ while($query = mysql_fetch_array($result)){
                         </ul>
                     </li>
                     <li>
-                        <a href="../resumelink/resume-link.php">Resume Link</a>
+                        <a href="../../resumelink/resume-link.php">Resume Link</a>
                         <ul class="dropdown">
-                            <li><a href="../resumelink/resume-link.php">Resume Link</a></li>
-                            <li><a href="../resumelink/background.php">Background</a></li>
-                            <li><a href="../resumelink/print-share.php">Print/Share</a></li>
+                            <li><a href="../../resumelink/resume-link.php">Resume Link</a></li>
+                            <li><a href="../../resumelink/background.php">Background</a></li>
+                            <li><a href="../../resumelink/print-share.php">Print/Share</a></li>
                         </ul>
                      </li>
                     <li>
-                        <a href="../applications/applications.php">Applications</a>
+                        <a href="../../applications/applications.php">Applications</a>
                     </li>
                     <li>
-                        <a href="../search-job/search-job.php">Jobs</a>
+                        <a href="../../search-job/search-job.php">Jobs</a>
                     </li>
                     <li>
-                        <a href="../settings/privacy-settings.php">Settings</a>
+                        <a href="../../settings/privacy-settings.php">Settings</a>
                         <ul class="dropdown">
-                            <li><a href="../settings/privacy-settings.php">Privacy Settings</a></li>
-                            <li><a href="../settings/pass-settings.php">Password Settings</a></li>
+                            <li><a href="../../settings/privacy-settings.php">Privacy Settings</a></li>
+                            <li><a href="../../settings/pass-settings.php">Password Settings</a></li>
                         </ul>
                     </li>
                     <li>
@@ -292,8 +302,23 @@ while($query = mysql_fetch_array($result)){
         <!-- End Page Banner -->
 
         <!-- Start Content -->
+    <form id="Save" name="Save" autocomplete="off" action="addfunction.php">
         <div id="content">
             <div class="container">
+                <?php
+                if(isset($_GET['id'])){
+                    $id=$_GET['id'];
+
+                    if($id==1){
+                        echo'
+                            <div class="alert alert-success">
+                                <span class="glyphicon glyphicon-info-sign"></span> 
+                                Personal Information successfully updated.
+                            </div>
+                            ';
+                    }
+                }
+                ?>
                 <div class="row sidebar-page">
                     <!-- Page Content -->
                     <div class="col-md-9 page-content">
@@ -315,45 +340,46 @@ while($query = mysql_fetch_array($result)){
                                             <input type="text" class="form-control" id="LastName" name="LastName" value="<?php echo $LastName; ?>">
                                         </div>
                                         <div class="form-group">
-                                            <label>Gender</label>
+                                            <label>Gender <span>(*)</span></label>
                                             <select id="Gender" name="Gender" class="form-control" style="width:100%; height:34px;">
-                                                <option value="" selected="selected">- Please Select Gender -</option>
-                                                <option value="Female" selected="selected">Female</option>
+                                                <option value="" <?php if($Gender=="") echo 'selected="selected"'; ?>>- Please Select Gender -</option>
+                                                <option value="Female" <?php if($Gender=="Female") echo 'selected="selected"'; ?>>Female</option>
+                                                <option value="Male" <?php if($Gender=="Male") echo 'selected="selected"'; ?>>Male</option>
                                             </select>
                                         </div>
                                         <div class="form-group">
                                             <label>Birthdate <span>(*)</span></label><br>
-                                            <input type="date" class="form-control" name="txtBirthdate" id="">
+                                            <input type="date" class="form-control" name="Birthdate" id="Birthdate" value="<?php echo $Birthdate ;?>">
                                         </div>
                                         <div class="form-group">
-                                            <label>Nationality</label>
-                                            <select id="nationality" name="nationality" class="form-control" style="width:100%; height:34px;">
-                                                <option value="" selected="selected">- Please select one -</option>
-                                                <option value="American" selected="selected">American</option>
-                                                <option value="Filipino">Filipino</option>
+                                            <label>Nationality <span>(*)</span></label>
+                                            <select id="Nationality" name="Nationality" class="form-control" style="width:100%; height:34px;">
+                                                <option value="" <?php if($Nationality=="") echo 'selected="selected"'; ?>>- Please select one -</option>
+                                                <option value="American" <?php if($Nationality=="American") echo 'selected="selected"'; ?>>American</option>
+                                                <option value="Filipino" <?php if($Nationality=="Filipino") echo 'selected="selected"'; ?>>Filipino</option>
                                             </select>
                                         </div>
                                         <div class="form-group">
-                                            <label>Civil Status</label>
-                                            <select id="civil_status" name="civil_status" class="form-control" style="width:100%; height:34px;">
-                                                <option value ="" >- Please select one -</option>
-                                                <option value="Single" selected="selected">Single</option>
-                                                <option value="Married" selected="selected">Married</option>
+                                            <label>Civil Status <span>(*)</span></label>
+                                            <select id="CivilStatus" name="CivilStatus" class="form-control" style="width:100%; height:34px;">
+                                                <option value ="" <?php if($CivilStatus=="") echo 'selected="selected"'; ?>>- Please select one -</option>
+                                                <option value="Single" <?php if($CivilStatus=="Single") echo 'selected="selected"'; ?>>Single</option>
+                                                <option value="Married" <?php if($CivilStatus=="Married") echo 'selected="selected"'; ?>>Married</option>
                                             </select>
                                         </div>
                                         <div class="hr5" style="margin-top:35px;margin-bottom:40px;"></div>
-                                        <div class="form-group">
-                                            <label class="control-label">Facebook <span>(*)</span></label>
-                                            <div class="input-group">
-                                                <span class="input-group-addon">http://www.facebook.com/</span>
-                                                <input name="FBLink" type="text" pattern="^[_A-z0-9.]{1,}$" maxlength="15" class="form-control" id="inputTwitter">
+                                        <label class="control-label">Facebook <span>(*)</span></label>
+                                        <div class="input-group">
+                                            <span class="input-group-addon">http://www.facebook.com/</span>
+                                            <div class="form-group">
+                                                <input name="FBLink" id="FBLink" type="text" maxlength="20" class="form-control" value="<?php echo $FBLink; ?>">
                                             </div>
                                         </div> 
-                                        <div class="form-group">
-                                            <label class="control-label">Twitter</label>
-                                            <div class="input-group">
-                                                <span class="input-group-addon">@</span>
-                                                <input name="TwitterLink" type="text" pattern="^[_A-z0-9.]{1,}$" maxlength="15" class="form-control" id="inputTwitter">
+                                        <label class="control-label">Twitter</label>
+                                        <div class="input-group">
+                                            <span class="input-group-addon">@</span>
+                                            <div class="form-group">
+                                                <input name="TwitterLink" id="TwitterLink" type="text" pattern="^[_A-z0-9.]{1,}$" maxlength="20" class="form-control" value="<?php echo $TwitterLink; ?>">
                                             </div>
                                         </div>
                                     </div>
@@ -365,7 +391,7 @@ while($query = mysql_fetch_array($result)){
                                 <div class="classic-testimonials">
                                     <div class="testimonial-content">
                                         <label class="control-label">Select Image</label>
-                                        <input id="input-7" name="input7[]" multiple type="file" class="file file-loading" data-allowed-file-extensions='["png", "jpg", "bmp", "gif"]'>
+                                        <input id="ProfilePicture" name="ProfilePicture" multiple type="file" class="file file-loading" data-allowed-file-extensions='["png", "jpg", "bmp", "gif"]'>
                                     </div>
                                     <div class="testimonial-author"><button id="" class="btn btn-hg btn-primary" name="btnDelete">Delete Image</button></div>
                                 </div>
@@ -387,11 +413,12 @@ while($query = mysql_fetch_array($result)){
                 <div class="hr5" style="margin-top:35px;margin-bottom:40px;"></div>
                 <div class="field">
                     <div class="text-center">
-                        <button class="btn btn-lg btn-hg btn-primary" name ="btnSave">Save</button>
+                        <button type="submit" class="btn btn-lg btn-hg btn-primary" name ="btnSaveInfo">Save</button>
                     </div>
                 </div>
             </div>
         </div>
+    </form>
     </div>
     <!-- End Content -->
     <script type="text/javascript" src="../../js/script.js"></script>
@@ -435,3 +462,90 @@ if(isset($_POST['btnSave'])){
 */
 ?>
 </html>
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        $("#Save").bootstrapValidator({
+            feedbackIcons: {
+                valid: "glyphicon glyphicon-ok",
+                invalid: "glyphicon glyphicon-remove",
+                validating: "glyphicon glyphicon-refresh"
+            },
+            fields: {
+                FirstName: {
+                    validators: {
+                        notEmpty: {
+                            message: "First Name is required."
+                        },
+                        regexp: {
+                                regexp: /^[a-z\s]+$/i,
+                                message: "First Name can consist of alphabetical characters and spaces only"
+                        }
+                    }
+                },
+                MiddleName: {
+                    validators: {
+                            regexp: {
+                                regexp: /^[a-z\s]+$/i,
+                                message: "Middle Name can consist of alphabetical characters and spaces only"
+                        }
+                    }
+                },
+                LastName: {
+                    validators: {
+                        notEmpty: {
+                            message: "Last Name is required."
+                        },
+                        regexp: {
+                                regexp: /^[a-z\s]+$/i,
+                                message: "The full name can consist of alphabetical characters and spaces only"
+                        }
+                    }
+                },
+                Gender: {
+                    validators: {
+                        notEmpty: {
+                            message: "Gender is required."
+                        }
+                    }
+                },
+                Birthdate: {
+                    validators: {
+                        notEmpty: {
+                            message: "Birthdate is required."
+                        }
+                    }
+                },
+                Nationality: {
+                    validators: {
+                        notEmpty: {
+                            message: "Nationality is required."
+                        }
+                    }
+                },
+                CivilStatus: {
+                    validators: {
+                        notEmpty: {
+                            message: "CivilStatus is required."
+                        }
+                    }
+                },
+                FBLink: {
+                    validators: {
+                        notEmpty: {
+                            message: "FBLink is required."
+                        }
+                    }
+                },
+                TwitterLink: {
+                    validators: {
+                        regexp: {
+                                regexp: /^[a-z_0-9\s]+$/i,
+                                message: "Invalid Twitter Link"
+                        }
+                    }
+                }
+            }
+        });
+    });
+</script>

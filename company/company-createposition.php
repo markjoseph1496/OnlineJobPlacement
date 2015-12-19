@@ -265,168 +265,170 @@ $CompanyID = $_SESSION['CompanyID'];
  <!-- Start Content -->
 
     <br><br><br>
-<form action="add-company.php" name="AddPosition" id="AddPosition" autocomplete="off">
-           <div class =  "container">
-          <div class = "col-md-12">
+    <form action="add-company.php" name="AddPosition" id="AddPosition" autocomplete="off">
+      <div class =  "container">
+        <div class = "col-md-12">
           <div class = "row">
             <h3>Post Position </h3>
             &nbsp;
-            <div class="row field">
-                                        <div class = "col-md-3 fieldcol">
-                                            <label = "usr" class = "control-label"> Posting Date: </label>
-                                        </div>
-                                        <div class = "col-md-8 fieldcol">
-                                            <div class="form-group">
-                                                <div class = "date">
-                                                   <input type = "date" name = "DateFrom" id = "date_from" class = "form-control">
-                                                       <div class = "date_to">
-                                                            <label = "usr" class = "control-label" id = "label">to: </label>
-                                                            <input type = "date" name = "DateTo" id = "date_to" class = "form-control">
-                                                    </div>
-                                                 </div> 
-                                            </div>
-                                        </div>
-              </div> 
+                <div class="row field">
+                    <div class = "col-md-3 fieldcol">
+                        <label = "usr" class = "control-label"> Posting Date: </label>
+                    </div>
+                    <div class = "col-md-8 fieldcol">
+                        <div class="form-group">
+                            <div class = "date">
+                               <input type = "date" name = "DateFrom" id = "date_from" class = "form-control">
+                                  <div class = "date_to">
+                                        <label = "usr" class = "control-label" id = "label">to: </label>
+                                        <input type = "date" name = "DateTo" id = "date_to" class = "form-control">
+                                </div>
+                            </div> 
+                        </div>
+                    </div>
+                </div> 
               <h3> Position Information </h3>
               &nbsp;
-              <div class="row field">
-                                        <div class = "col-md-3 fieldcol">
-                                            <label = "usr" class = "control-label"> Position Level: </label>
-                                        </div>
-                                        <div class = "col-md-8 fieldcol">
-                                            <div class="form-group">
-                                                <select id="PLevel" name="PLevel" class="position" style="width: 300px; height:30px;">
-                                                    <option value = "" selected="selected"> Select Position </option>
-                                                    <option value = "top level management"> Top Level Management </option>
-                                                    <option value = "senior manager"> Senior Manager </option>
-                                                    <option value = "manager"> Manager </option>
-                                                    <option value = "supervisor"> Senior Executive/ Supervisor </option>
-                                                    <option value = "junior executive"> Junior Executive </option>
-                                                    <option value = "fresh"> Fresh/Entry Level </option>
-                                                    <option value = "non-executive"> Non-Executive </option>
-                                                    <option value = "trainee"> Trainee </option>
-                                                </select>
-                                            </div>
-                                        </div>
+                <div class="row field">
+                    <div class = "col-md-3 fieldcol">
+                        <label = "usr" class = "control-label"> Position Level: </label>
+                    </div>
+                    <div class = "col-md-8 fieldcol">
+                        <div class="form-group">
+                            <select id="PLevel" name="PLevel" class="position" style="width: 300px; height:30px;">
+                                <option value = "" selected="selected"> Select Position </option>
+                                <option value = "top level management"> Top Level Management </option>
+                                <option value = "senior manager"> Senior Manager </option>
+                                <option value = "manager"> Manager </option>
+                                <option value = "supervisor"> Senior Executive/ Supervisor </option>
+                                <option value = "junior executive"> Junior Executive </option>
+                                <option value = "fresh"> Fresh/Entry Level </option>
+                                <option value = "non-executive"> Non-Executive </option>
+                                <option value = "trainee"> Trainee </option>
+                            </select>
+                        </div>
+                    </div>
                 </div> 
                 <div class="row field">
-                                        <div class = "col-md-3 fieldcol">
-                                            <label = "usr" class = "control-label"> Job Specialization: </label>
-                                        </div>
-                                        <div class = "col-md-8 fieldcol">
-                                            <div class="form-group">
-                                                   <select id="Specialization" name="Specialization" class="specialization" style= "width: 300px; height:30px;">
-                                                        <option value = "" selected="selected"> Select Specialization </option>
-                                                        <option value = "Actuarial Science"> Actuarial Science/ Statistics </option>
-                                                        <option value = "Advertising"> Advertising/ Media Planning </option>
-                                                        <option value = "Architecture"> Architecture/ Interior Design  </option>
-                                                        <option value = "Arts and Design">Arts and Design  </option>
-                                                        <option value = "Arts/ Creative"> Arts/ Creative/ Graphics Design  </option>
-                                                        <option value = "Aviation"> Aviation/ Aircraft Maintenance </option>
-                                                        <option value = "Banking"> Banking/ Financial Services  </option>
-                                                        <option value = "Biotechnology"> Biotechnology  </option>
-                                                        <option value = "Call Center Agent"> Call Center Agent  </option>
-                                                  </select>
-                                            </div>
-                                        </div>
+                    <div class = "col-md-3 fieldcol">
+                        <label = "usr" class = "control-label"> Job Specialization: </label>
+                    </div>
+                    <div class = "col-md-8 fieldcol">
+                        <div class="form-group">
+                               <select id="Specialization" name="Specialization" class="specialization" style= "width: 300px; height:30px;">
+                                    <option value = "" selected="selected"> Select Specialization </option>
+                                    <option value = "Actuarial Science"> Actuarial Science/ Statistics </option>
+                                    <option value = "Advertising"> Advertising/ Media Planning </option>
+                                    <option value = "Architecture"> Architecture/ Interior Design  </option>
+                                    <option value = "Arts and Design">Arts and Design  </option>
+                                    <option value = "Arts/ Creative"> Arts/ Creative/ Graphics Design  </option>
+                                    <option value = "Aviation"> Aviation/ Aircraft Maintenance </option>
+                                    <option value = "Banking"> Banking/ Financial Services  </option>
+                                    <option value = "Biotechnology"> Biotechnology  </option>
+                                    <option value = "Call Center Agent"> Call Center Agent  </option>
+                              </select>
+                        </div>
+                    </div>
                 </div>  
                 <div class="row field">
-                                        <div class = "col-md-3 fieldcol">
-                                            <label = "usr" class = "control-label"> Employment Type: </label>
-                                        </div>
-                                        <div class = "col-md-8 fieldcol">
-                                            <div class="form-group">
-                                                   <select id="EType" name="EType" class="state" style="width: 300px; height:30px;">
-                                                        <option value="select">Please select One</option>
-                                                        <option value="full">Full Time</option>
-                                                        <option value="parttime">Part Time</option> 
-                                                        <option value="contract">Contract</option> 
-                                                        <option value="temporary">Temporary</option>                
-                                                    </select>
-                                            </div>
-                                        </div>
+                    <div class = "col-md-3 fieldcol">
+                        <label = "usr" class = "control-label"> Employment Type: </label>
+                    </div>
+                    <div class = "col-md-8 fieldcol">
+                        <div class="form-group">
+                               <select id="EType" name="EType" class="state" style="width: 300px; height:30px;">
+                                    <option value="">Please select One</option>
+                                    <option value="full">Full Time</option>
+                                    <option value="parttime">Part Time</option> 
+                                    <option value="contract">Contract</option> 
+                                    <option value="temporary">Temporary</option>                
+                                </select>
+                        </div>
+                    </div>
                 </div>  
                 <div class="row field">
-                                        <div class = "col-md-3 fieldcol">
-                                            <label = "usr" class = "control-label"> Available Position: </label>
-                                        </div>
-                                        <div class = "col-md-8 fieldcol">
-                                            <div class="form-group">
-                                                  <input type = "number" name = "AvPosition" id="AvPosition" class = "form-control" style ="width: 300px;">
-                                            </div>
-                                        </div>
+                    <div class = "col-md-3 fieldcol">
+                        <label = "usr" class = "control-label"> Available Position: </label>
+                    </div>
+                    <div class = "col-md-8 fieldcol">
+                        <div class="form-group">
+                              <input type = "number" name = "AvPosition" id="AvPosition" class = "form-control" style ="width: 300px;">
+                        </div>
+                    </div>
                 </div> 
                  <h3> Salary Range </h3>
                  &nbsp;
-                 <div class="row field">
-                                        <div class = "col-md-3 fieldcol">
-                                            <label = "usr" class = "control-label"> Range of Salary: </label>
-                                        </div>
-                                        <div class = "col-md-8 fieldcol">
-                                            <div class="form-group">
-                                                  <select id="Salary" name="Salary" class="salaryrange" style="width: 300px; height:30px;">
-                                                      <option value = "" selected="selected"> Select Salary Range </option>
-                                                      <option value = "10,000 - 15,000"> 10,000 - 15,000 </option>
-                                                      <option value = "15,000 - 20,000"> 15,000 - 20,000 </option>
-                                                      <option value = "20,000 - 25,000"> 20,000 - 25,000 </option>
-                                                      <option value = "25,000 - 30,000"> 25,000 - 30,000 </option>
-                                                      <option value = "30,000 - 40,000"> 30,000 - 40,000 </option>
-                                                      <option value = "40,000 - 45,000"> 40,000 - 45,000 </option>
-                                                      <option value = "45,000 - 50,000"> 45,000 - 50,000 </option>
-                                                   </select>
-                                            </div>
-                                        </div>
+                <div class="row field">
+                    <div class = "col-md-3 fieldcol">
+                        <label = "usr" class = "control-label"> Range of Salary: </label>
+                    </div>
+                    <div class = "col-md-8 fieldcol">
+                        <div class="form-group">
+                              <select id="Salary" name="Salary" class="salaryrange" style="width: 300px; height:30px;">
+                                  <option value = "" selected="selected"> Select Salary Range </option>
+                                  <option value = "10,000 - 15,000"> 10,000 - 15,000 </option>
+                                  <option value = "15,000 - 20,000"> 15,000 - 20,000 </option>
+                                  <option value = "20,000 - 25,000"> 20,000 - 25,000 </option>
+                                  <option value = "25,000 - 30,000"> 25,000 - 30,000 </option>
+                                  <option value = "30,000 - 40,000"> 30,000 - 40,000 </option>
+                                  <option value = "40,000 - 45,000"> 40,000 - 45,000 </option>
+                                  <option value = "45,000 - 50,000"> 45,000 - 50,000 </option>
+                               </select>
+                        </div>
+                    </div>
                 </div> 
                 <h3> General Requirements </h3>
                 &nbsp;
                 <div class="row field">
-                                        <div class = "col-md-3 fieldcol">
-                                            <label = "usr" class = "control-label"> Years of Experience: </label>
-                                        </div>
-                                        <div class = "col-md-8 fieldcol">
-                                            <div class="form-group">
-                                                   <input type = "text" name = "YExperience" id="YExperience" class = "form-control" style ="width: 300px;">
-                                            </div>
-                                        </div>
+                    <div class = "col-md-3 fieldcol">
+                        <label = "usr" class = "control-label"> Years of Experience: </label>
+                    </div>
+                    <div class = "col-md-8 fieldcol">
+                        <div class="form-group">
+                               <input type = "text" name = "YExperience" id="YExperience" class = "form-control" style ="width: 300px;">
+                        </div>
+                    </div>
                 </div> 
                 <div class="row field">
-                                        <div class = "col-md-3 fieldcol">
-                                            <label = "usr" class = "control-label"> Training: </label>
-                                        </div>
-                                        <div class = "col-md-8 fieldcol">
-                                            <div class="form-group">
-                                                   <input type = "text" name = "training" class = "form-control" style ="width: 300px;">
-                                            </div>
-                                        </div>
+                    <div class = "col-md-3 fieldcol">
+                        <label = "usr" class = "control-label"> Training: </label>
+                    </div>
+                    <div class = "col-md-8 fieldcol">
+                        <div class="form-group">
+                               <input type = "text" name = "training" class = "form-control" style ="width: 300px;">
+                        </div>
+                    </div>
                 </div>  
                 <div class="row field">
-                                        <div class = "col-md-3 fieldcol">
-                                            <label = "usr" class = "control-label"> Knowledge in: </label>
-                                        </div>
-                                        <div class = "col-md-8 fieldcol">
-                                            <div class="form-group">
-                                                   <input type = "text" name = "knowledge" class = "form-control" style ="width: 300px;">
-                                            </div>
-                                        </div>
+                    <div class = "col-md-3 fieldcol">
+                        <label = "usr" class = "control-label"> Knowledge in: </label>
+                    </div>
+                    <div class = "col-md-8 fieldcol">
+                        <div class="form-group">
+                               <input type = "text" name = "knowledge" class = "form-control" style ="width: 300px;">
+                        </div>
+                    </div>
                 </div>             
                 <h3> Optional Requirements </h3>
                 &nbsp;
                 <div class="row field">
-                                        <div class = "col-md-3 fieldcol">
-                                            <label = "usr" class = "control-label"> Language: </label>
-                                        </div>
-                                        <div class = "col-md-8 fieldcol">
-                                            <div class="form-group">
-                                                   <input type = "text" name = "skills" class = "form-control" style ="width: 300px;">
-                                            </div>
-                                        </div>
-                </div>   
-                       <button type = "submit" class = "btn btn-primary " id = "btnsave" name = "btnsave"><b> SAVE </b></button>
-                       <button type = "submit" class = "btn btn-primary " id = "cancel"><b> CANCEL</b> </button>
-            </div>
+                    <div class = "col-md-3 fieldcol">
+                        <label = "usr" class = "control-label"> Language: </label>
+                    </div>
+                    <div class = "col-md-8 fieldcol">
+                        <div class="form-group">
+                               <input type = "text" name = "skills" class = "form-control" style ="width: 300px;">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-8 fieldcol">   
+                     <button type = "submit" class = "btn btn-primary " id = "btnsave" name = "btnsave"><b> SAVE </b></button>
+                     <button type = "submit" class = "btn btn-primary " id = "cancel"><b> CANCEL</b> </button>
+                </div>
           </div>
-        </div>       
-</form> 
+        </div>
+      </div>       
+    </form> 
 <!--End of Content--> 
   <script type="text/javascript" src="../js/script.js"></script>
 </body>
