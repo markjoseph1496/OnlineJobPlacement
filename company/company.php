@@ -414,7 +414,6 @@ if (isset($_POST['requestresume'])) {
 
                                   echo "
                                   <tr>
-<<<<<<< HEAD
                                     <td width = '5%'  class = tabletitle><input type='checkbox' id='select'/></td>
                                     <td width = '10%' class = tabletitle > $studentid </td>
                                     <td width = '20%' class = tabletitle> $lname $fname </td>
@@ -422,7 +421,6 @@ if (isset($_POST['requestresume'])) {
                                     <td width = '30%' class = tabletitle> $Specialization </td>
                                     <td width = '10%' class = tabletitle> <button id='Edit' name='request_resume' class='btn btn-default'><i class='fa fa-arrow-circle-right'></i> </td>
                                   <tr>
-=======
                                     <td width = '5%'><input type='checkbox' id='select'/></td>
                                     <td width = '10%'> $studentid </td>
                                     <td width = '20%'> $lname $fname </td>
@@ -435,7 +433,6 @@ if (isset($_POST['requestresume'])) {
                                                         </form>
                                     </td>
                                   </tr>
->>>>>>> origin/master
                                   ";  
                                 }
                             }
