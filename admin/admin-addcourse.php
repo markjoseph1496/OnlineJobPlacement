@@ -6,7 +6,7 @@
 <head>
 
   <!-- Basic -->
-  <title>Margo | Home</title>
+  <title>OJPMS</title>
 
   <!-- Bootstrap CSS -->
   <link href="../css/bootstrap.min.css" rel="stylesheet" />
@@ -74,7 +74,7 @@
   <script type="text/javascript" src="../js/jquery.nicescroll.min.js"></script>
   <script type="text/javascript" src="../js/jquery.parallax.js"></script>
   <script type="text/javascript" src="../js/jquery.slicknav.js"></script>
-  <script type="text/javascript" src="../js/script.js"></script>
+
 
   <!--[if IE 8]><script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
   <!--[if lt IE 9]><script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
@@ -167,16 +167,11 @@
             </a>
           </div>
           <div class="navbar-collapse collapse">
-            <!-- Stat Search -->
-            <div class="search-side">
-              <a class="show-search"><i class="fa fa-search"></i></a>
-              <div class="search-form">
-                <form autocomplete="off" role="search" method="get" class="searchform" action="#">
-                  <input type="text" value="" name="s" id="s" placeholder="Search the site...">
-                </form>
-              </div>
+             <!-- Sign-out -->
+            <div class="signout-side">
+              <a class="show-signout"><i class="fa fa-sign-out"></i></a>
             </div>
-            <!-- End Search -->
+            <!-- End Sign-out -->
              <!-- Start Navigation List -->
             <ul class="nav navbar-nav navbar-right">
                 <li>
@@ -327,4 +322,5 @@
     });
 </script>
 </body>
+<script type="text/javascript" src="../js/script.js"></script>
 </html>
