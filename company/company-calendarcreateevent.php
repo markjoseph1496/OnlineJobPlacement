@@ -191,9 +191,9 @@ $CompanyID = $_SESSION['CompanyID'];
                     <a  href="company.php">Home</a>
                 </li>
                 <li>
-                    <a href="company-positionlist.php">Position</a>
+                    <a>Position</a>
                     <ul class="dropdown">
-                        <li><a  href="company-positionlist.php">Position List</a></li>
+                        <li><a href="company-positionlist.php">Position List</a></li>
                         <li><a href="company-createposition.php">Create Position</a></li>
                     </ul>
                 </li>
@@ -215,13 +215,13 @@ $CompanyID = $_SESSION['CompanyID'];
     </div>
         <!-- Mobile Menu Start -->
     <ul class="wpb-mobile-menu">
-       <li>
+              <li>
                     <a  href="company.php">Home</a>
                 </li>
                 <li>
-                    <a href="company-positionlist.php">Position</a>
+                    <a>Position</a>
                     <ul class="dropdown">
-                        <li><a  href="company-positionlist.php">Position List</a></li>
+                        <li><a href="company-positionlist.php">Position List</a></li>
                         <li><a href="company-createposition.php">Create Position</a></li>
                     </ul>
                 </li>

@@ -192,9 +192,9 @@ if (isset($_POST['requestresume'])) {
                     <a class="active" href="company.php">Home</a>
                 </li>
                 <li>
-                    <a href="company-positionlist.php">Position</a>
+                    <a>Position</a>
                     <ul class="dropdown">
-                        <li><a  href="company-positionlist.php">Position List</a></li>
+                        <li><a href="company-positionlist.php">Position List</a></li>
                         <li><a href="company-createposition.php">Create Position</a></li>
                     </ul>
                 </li>
@@ -220,9 +220,9 @@ if (isset($_POST['requestresume'])) {
                     <a class="active" href="company.php">Home</a>
                 </li>
                 <li>
-                    <a href="company-positionlist.php">Position</a>
+                    <a>Position</a>
                     <ul class="dropdown">
-                        <li><a  href="company-positionlist.php">Position List</a></li>
+                        <li><a href="company-positionlist.php">Position List</a></li>
                         <li><a href="company-createposition.php">Create Position</a></li>
                     </ul>
                 </li>
