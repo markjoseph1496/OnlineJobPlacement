@@ -5,6 +5,14 @@ session_start();
 $qry = "SELECT * FROM studentinfotbl";
 $result = mysql_query($qry);
 
+if (isset($_POST['requestresume'])) {
+    $a = isset($_POST['company_id']);
+    $a = $a && isset($_POST['studentid']);
+    if($a){
+        mysql_query("INSERT INTO `resumerequesttbl`(`CompanyID`, `StudentID`, `Status`) VALUES('" . $_POST['company_id'] . "','" . $_POST['studentid'] . "','Pending')");
+    }
+}    
+
 ?>
 <!doctype html>
 <!--[if IE 8 ]><html class="ie ie8" lang="en"> <![endif]-->
@@ -383,6 +391,13 @@ $result = mysql_query($qry);
             </thead>
             <tbody>
             <?php
+                $result1 = mysql_query("SELECT `CompanyID` FROM `companyinfotbl` WHERE `CompanyID` = '" . $_SESSION['CompanyID'] . "'");
+                $row = mysql_fetch_array($result1);
+                $company_id = $row['CompanyID'];
+                unset($result1, $row);
+            ?>
+
+            <?php
               if (isset($_POST['filter'])){
               $Specialization = $_POST['Specialization'];
                   if($Specialization == ""){
@@ -399,6 +414,7 @@ $result = mysql_query($qry);
 
                                   echo "
                                   <tr>
+<<<<<<< HEAD
                                     <td width = '5%'  class = tabletitle><input type='checkbox' id='select'/></td>
                                     <td width = '10%' class = tabletitle > $studentid </td>
                                     <td width = '20%' class = tabletitle> $lname $fname </td>
@@ -406,6 +422,20 @@ $result = mysql_query($qry);
                                     <td width = '30%' class = tabletitle> $Specialization </td>
                                     <td width = '10%' class = tabletitle> <button id='Edit' name='request_resume' class='btn btn-default'><i class='fa fa-arrow-circle-right'></i> </td>
                                   <tr>
+=======
+                                    <td width = '5%'><input type='checkbox' id='select'/></td>
+                                    <td width = '10%'> $studentid </td>
+                                    <td width = '20%'> $lname $fname </td>
+                                    <td width = '30%'> $course </td>
+                                    <td width = '30%'> $Specialization </td>
+                                    <td width = '10%'>  <form method='POST'>
+                                                        <input type='hidden' name='company_id' value='$company_id'/>
+                                                        <input type='hidden' name='studentid' value=' $studentid'/>
+                                                        <button id='Edit' name='requestresume' class='btn btn-default'><i class='fa fa-arrow-circle-right'></i></button>
+                                                        </form>
+                                    </td>
+                                  </tr>
+>>>>>>> origin/master
                                   ";  
                                 }
                             }
@@ -424,6 +454,7 @@ $result = mysql_query($qry);
 
                                   echo "
                                   <tr>
+<<<<<<< HEAD
                                     <td width = '5%' class = tabletitle><input type='checkbox' id='select'/></td>
                                     <td width = '10%' class = tabletitle> $studentid </td>
                                     <td width = '20%' class = tabletitle> $lname $fname </td>
@@ -431,6 +462,20 @@ $result = mysql_query($qry);
                                     <td width = '30%' class = tabletitle> $Specialization </td>
                                     <td width = '10%' class = tabletitle> <button id='Edit' name='request_resume' class='btn btn-default'><i class='fa fa-arrow-circle-right'></i> </td>
                                   <tr>
+=======
+                                    <td width = '5%'><input type='checkbox' id='select'/></td>
+                                    <td width = '10%'> $studentid </td>
+                                    <td width = '20%'> $lname $fname </td>
+                                    <td width = '30%'> $course </td>
+                                    <td width = '30%'> $Specialization </td>
+                                    <td width = '10%'>  <form method='POST'>
+                                                        <input type='hidden' name='company_id' value='$company_id'/>
+                                                        <input type='hidden' name='studentid' value='$studentid'/>
+                                                        <button id='Edit' name='requestresume' class='btn btn-default'><i class='fa fa-arrow-circle-right'></i></button>
+                                                        </form>
+                                    </td>
+                                  </tr>
+>>>>>>> origin/master
                                   ";  
                                 }
                     }
@@ -450,6 +495,7 @@ $result = mysql_query($qry);
 
                         echo "
                         <tr>
+<<<<<<< HEAD
                           <td width = '5%' class = tabletitle><input type='checkbox' id='select'/></td>
                           <td width = '10%' class = tabletitle> $studentid </td>
                           <td width = '20%' class = tabletitle> $lname $fname </td>
@@ -535,12 +581,25 @@ $result = mysql_query($qry);
                           <td width = '30%' class = tabletitle > $course </td>
                           <td width = '30%' class = tabletitle > $Specialization </td>
                         <tr>
+=======
+                          <td width = '5%'><input type='checkbox' id='select'/></td>
+                          <td width = '10%'> $studentid </td>
+                          <td width = '20%'> $lname $fname </td>
+                          <td width = '30%'> $course </td>
+                          <td width = '30%'> $Specialization </td>
+                          <td width = '10%'><form method='POST'>
+                                            <input type='hidden' name='company_id' value='$company_id'/>
+                                            <input type='hidden' name='studentid' value='$studentid'/>
+                                            <button id='Edit' name='requestresume' class='btn btn-default'><i class='fa fa-arrow-circle-right'></i></button>
+                                            </form>
+                          </td>
+                        </tr>
+>>>>>>> origin/master
                         ";  
                       }
                 }
 
-              }
-              
+              }              
             ?>
             </tbody>
         </table>
