@@ -13,7 +13,7 @@ $result = mysql_query($qry);
 <head>
 
   <!-- Basic -->
-  <title>Margo | Home</title>
+  <title>OJPMS</title>
 
   <!-- Bootstrap CSS  -->
   <link rel="stylesheet" href="../asset/css/bootstrap.min.css" type="text/css" media="screen">
@@ -186,7 +186,10 @@ $result = mysql_query($qry);
                  <li><a href="admin-adviser.php"admin-maintenance.php"">Adviser List</a>
                 </li>  
                <li>
-                    <a href="admin-maintenance.php">Maintenance</a>
+                    <a> Maintenance</a>
+                    <ul class="dropdown">
+                        <li><a href="admin-maintenance.php">Courses</a></li>
+                    </ul>
                 </li>
             </ul>
             <!-- End Navigation List -->
@@ -213,7 +216,10 @@ $result = mysql_query($qry);
                  <li><a href="admin-adviser.php">Adviser List</a>
                 </li>  
                <li>
-                    <a href="admin-maintenance.php">Maintenance</a>
+                    <a> Maintenance</a>
+                    <ul class="dropdown">
+                        <li><a href="admin-maintenance.php">Courses</a></li>
+                    </ul>
                 </li>
             </ul>
     </ul>

@@ -179,7 +179,10 @@
                  <li><a href="admin-adviser.php">Adviser List</a>
                 </li>  
                <li>
-                    <a class= "active" href="admin-maintenance.php">Maintenance</a>
+                    <a> Maintenance</a>
+                    <ul class="dropdown">
+                        <li><a class= "active" href="admin-maintenance.php">Courses</a></li>
+                    </ul>
                 </li>
             </ul>
             <!-- End Navigation List -->
@@ -205,8 +208,11 @@
                 </li>
                  <li><a href="admin-adviser.php">Adviser List</a>
                 </li>  
-               <li>
-                    <a class= "active" href="admin-maintenance.php">Maintenance</a>
+              <li>
+                    <a> Maintenance</a>
+                    <ul class="dropdown">
+                        <li><a class= "active" href="admin-maintenance.php">Courses</a></li>
+                    </ul>
                 </li>
             </ul>
     </ul>
@@ -224,7 +230,7 @@
       <div class="container">
         <div class="row">
           <div class="col-md-6">
-            <h2>Maintenance</h2>
+            <h2>List of Courses</h2>
           </div>
         </div>
       </div>
@@ -233,12 +239,38 @@
 
 <!--Content-->
   <br><br><br>
-    
+
    <div class = "container">
-      <div class = "col-md-12">
-            <a class="btn btn-hg btn-primary" href = "admin-addcourse.php" style = "width:200px;">Add Course</a>       
-      </div>        
-    </div>
+  <div class = "col-md-5">
+           <a href="admin-addcourse.php" class='btn btn-primary'> <i class='fa fa-plus-circle'></i> Add Course </a>       
+ </div> 
+        <div class = "col-md-12">
+          &nbsp;
+     <table class = 'Applicants' width = '100%' cellpadding = '0'>
+          <thead>
+           <tr>
+           </tr>    
+                <tr>
+                    <th width= '25%' class = 'tabletitle'>Course Code</th>
+                    <th width = '25%' class = 'tabletitle'>Course Title</th>
+                    <th width = '35%' class = 'tabletitle'>Course Description</th>
+                    <th width = '15%' class = 'tabletitle'></th>
+                <tr>
+            </thead>
+            <tbody>
+                        <tr>
+                              <td width= 25% class = tabletitle></td>
+                             <td width = 25% class = tabletitle></td>
+                             <td width = 35% class = tabletitle></td>
+                             <td width = 15% class = tabletitle>
+                             <a href=# class='btn btn-default'> <i class='fa fa-check-circle'></i> </a>
+                             <a href=# class='btn btn-danger '> <i class='fa fa-minus-square'></i> </a>
+                            </td>
+                        <tr>            
+                            </tbody>  
+        </table>
+          </div> 
+      </div>     
 </body>
 <script type="text/javascript" src="../js/script.js"></script>
 </html>

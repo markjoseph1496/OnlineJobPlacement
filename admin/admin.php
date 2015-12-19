@@ -191,7 +191,10 @@ $Total = $Q1[0];
                  <li><a href="admin-advisert.php">Adviser List</a>
                 </li>  
                <li>
-                    <a href="admin-maintenance.php">Maintenance</a>
+                    <a> Maintenance</a>
+                    <ul class="dropdown">
+                        <li><a href="admin-maintenance.php">Courses</a></li>
+                    </ul>
                 </li>
             </ul>
             <!-- End Navigation List -->
@@ -218,7 +221,10 @@ $Total = $Q1[0];
                  <li><a href="admin-adviser.php">Adviser List</a>
                 </li>  
                <li>
-                    <a href="admin-maintenance.php">Maintenance</a>
+                    <a> Maintenance</a>
+                    <ul class="dropdown">
+                        <li><a href="admin-maintenance.php">Courses</a></li>
+                    </ul>
                 </li>
             </ul>
     </ul>
