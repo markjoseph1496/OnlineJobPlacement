@@ -12,7 +12,7 @@ if(is_null($_SESSION['StudentID'])){
         ";
 }
 else{
-    $EditSchoolID = $_GET['EditSchoolID'];
+    $EditSchoolID = $_GET['id'];
 }
 
 $qry = "SELECT * FROM schooltbl WHERE SchoolID ='$EditSchoolID'";
@@ -30,8 +30,6 @@ $result = mysql_query($qry);
          
         }
 ?>
-
-
 <!doctype html>
 <html lang="en">
 
@@ -411,7 +409,7 @@ $result = mysql_query($qry);
                 <div class="hr5" style="margin-top:35px;margin-bottom:40px;"></div>
                 <div class="field">
                     <div class="text-center">
-                        <button type="submit" class="btn btn-lg btn-hg btn-primary" name ="btnSave">Save</button>
+                        <button type="submit" class="btn btn-lg btn-hg btn-primary">Save</button>
                     </div>
                 </div>
             </div>
