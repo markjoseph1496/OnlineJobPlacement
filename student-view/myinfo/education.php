@@ -308,6 +308,39 @@ while($qry2 = mysql_fetch_Array($result2))
                             </div>
                             ';
                     }
+                    elseif($id==3){
+                        echo'
+                            <div class="alert alert-success">
+                                <span class="glyphicon glyphicon-info-sign"></span> 
+                                School information successfully deleted.
+                            </div>
+                            ';
+                    }
+                    elseif($id==4){
+                        echo'
+                            <div class="alert alert-success">
+                                <span class="glyphicon glyphicon-info-sign"></span> 
+                                School information successfully added.
+                            </div>
+                            ';
+                    }
+                    elseif($id==5){
+                        echo'
+                            <div class="alert alert-success">
+                                <span class="glyphicon glyphicon-info-sign"></span> 
+                                Seminar successfully added.
+                            </div>
+                            ';
+                    }
+                    elseif($id==6){
+                        echo'
+                            <div class="alert alert-success">
+                                <span class="glyphicon glyphicon-info-sign"></span> 
+                                Seminar successfully deleted.
+                            </div>
+                            ';
+                    }
+
                 }
                 ?>
                 <div class="row sidebar-page">
@@ -472,35 +505,30 @@ while($qry2 = mysql_fetch_Array($result2))
                                                 <button class="btn btn-danger" data-toggle="modal" data-target="#DeleteSchool">
                                                     <i class="fa fa-trash fa-1x"></i>
                                                 </button>
-                                                <input type="text" class="form-control" id="SchoolID" name="SchoolID" style="display: none;" value="<?php echo $SchoolID;?>">
-                                            </td>
                                         </tr>
                                             <!-- Modal -->
                                             <div class="modal fade" id="DeleteSchool" role="dialog">
                                                 <div class="modal-dialog" style="padding:100px">
-
                                                     <!-- Modal content-->
-                                                    <form id="change-email-form" autocomplete="off" method="POST">
-                                                        <div class="modal-content">
-                                                            <div class="modal-header">
-                                                                <button type="button" class="close" data-dismiss="modal">&times;</button>
-                                                                <h4 class="modal-title">Delete School?</h4>
-                                                            </div>
-                                                            <div class="modal-body">
-                                                                <div class="col-md-15 fieldcol">
-                                                                    <label = "usr" class = "control-label">Do you want to delete this information? This cannot be undone.</label>
-                                                                    <div class="form-group">
-                                                                    </div>
-                                                            </div>
-                                                            <div class="modal-footer">
-                                                                <a href="delete.php?delete_SchoolID=<?php echo $_SchoolID; ?>" type="submit" class="btn btn-danger">Delete</a>
-                                                                <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
-                                                            </div>
+                                                    <div class="modal-content">
+                                                        <div class="modal-header">
+                                                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                                            <h4 class="modal-title">Delete School information?</h4>
                                                         </div>
-                                                    </form>
+                                                        <div class="modal-body">
+                                                            <div class="col-md-15 fieldcol">
+                                                                <label = "usr" class = "control-label">Do you want to delete this information? This cannot be undone.</label>
+                                                                <div class="form-group">
+                                                                </div>
+                                                        </div>
+                                                        <div class="modal-footer">
+                                                            <a href="delete.php?delete_SchoolID=<?php echo $_SchoolID; ?>" class="btn btn-danger">Delete</a>
+                                                            <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+                                                        </div>
+                                                        </div>
+                                                    </div>
                                                 </div>
                                             </div>
-                                        </div>
                                         <?php
                                             }
                                         ?>
@@ -543,11 +571,34 @@ while($qry2 = mysql_fetch_Array($result2))
                                                 <a href="edit/edit-seminar.php?id=<?php echo $SeminarID; ?>" class="btn btn-default btnformaintenance">
                                                     <i class="fa fa-pencil-square-o fa-1x"></i>
                                                 </a>
-                                                <a href=# class="btn btn-danger btnformaintenance">
+                                                <button class="btn btn-danger" data-toggle="modal" data-target="#DeleteSeminar">
                                                     <i class="fa fa-trash fa-1x"></i>
-                                                </a>
+                                                </button>
                                             </td>
                                         </tr>
+                                        <!-- Modal -->
+                                            <div class="modal fade" id="DeleteSeminar" role="dialog">
+                                                <div class="modal-dialog" style="padding:100px">
+                                                    <!-- Modal content-->
+                                                    <div class="modal-content">
+                                                        <div class="modal-header">
+                                                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                                            <h4 class="modal-title">Delete Seminar?</h4>
+                                                        </div>
+                                                        <div class="modal-body">
+                                                            <div class="col-md-15 fieldcol">
+                                                                <label = "usr" class = "control-label">Do you want to delete this information? This cannot be undone.</label>
+                                                                <div class="form-group">
+                                                                </div>
+                                                        </div>
+                                                        <div class="modal-footer">
+                                                            <a href="delete.php?delete_SeminarID=<?php echo $SeminarID; ?>" class="btn btn-danger">Delete</a>
+                                                            <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+                                                        </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
                                         <?php
                                         }
                                         ?>
@@ -573,58 +624,4 @@ while($qry2 = mysql_fetch_Array($result2))
     <!-- End Content -->
     <script type="text/javascript" src="../../js/script.js"></script>
 </body>
-
-<?php
-include('../../connection.php');
-
-if(isset($_POST['delete_flagSchool'])){
-    if($_POST['delete_flagSchool'] == "true"){
-        $Z = $_POST['delete_idSchool'];
-
-    $query = "DELETE FROM schooltbl WHERE SchoolID='$Z'";
-    $result = mysql_query($query);
-
-    echo "
-            <script type='text/javascript'>
-            location.href='education.php';
-            </script>
-            ";
-}
-
-    elseif($_POST['delete_flagSchool'] == "edit"){
-        $Z = $_POST['delete_idSchool'];
-        $_SESSION['delete_SchoolID'] = $Z;
-        echo "
-            <script type='text/javascript'>
-            location.href='Edit/edit-school.php';
-            </script>
-            ";
-        }
-}
-
-if(isset($_POST['delete_flagSeminar'])){
-    if($_POST['delete_flagSeminar'] == "true"){
-        $Z = $_POST['delete_idSeminar'];
-
-    $query = "DELETE FROM seminartbl WHERE SeminarID='$Z'";
-    $result = mysql_query($query);
-
-    echo "
-            <script type='text/javascript'>
-            location.href='education.php';
-            </script>
-            ";
-} 
-    elseif($_POST['delete_flagSeminar'] == "edit"){
-        $Z = $_POST['delete_idSeminar'];
-        $_SESSION['delete_SeminarID'] = $Z;
-        echo "
-            <script type='text/javascript'>
-            location.href='Edit/edit-seminar.php';
-            </script>
-            ";
-        }
-}
-
-?>
 </html>

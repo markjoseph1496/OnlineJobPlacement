@@ -1,5 +1,5 @@
 <?php
-include('../../../../connection.php');
+include('../../../connection.php');
 session_start();
 
 $StudentID= $_SESSION['StudentID'];
@@ -18,10 +18,26 @@ if(isset($_GET['School'])){
     $Result = mysql_query($query);
     echo "
          <script type='text/javascript'>
-         location.href='../education.php?id=SchoolAdd';
+         location.href='../education.php?id=4';
          </script>
          ";
 }
+
+if(isset($_GET['Seminar'])){
+
+    $Seminar = $_GET['Seminar'];
+    $YearAttended = $_GET['YearAttended'];
+
+    $query = "INSERT INTO seminartbl (StudentID,Seminar,YearAttended) values ('$StudentID','$Seminar','$YearAttended')";
+    $Result = mysql_query($query);
+    echo "
+        <script type='text/javascript'>
+        location.href='../education.php?id=5';
+        </script>
+        ";
+}
+
+
 
 if(isset($_GET['txtCertification'])){
     $Certification = $_GET['txtCertification'];

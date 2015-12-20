@@ -35,7 +35,7 @@ if(isset($_GET['delete_SeminarID'])) {
 
     echo "
             <script type='text/javascript'>
-            location.href='education.php?id=SeminarDeleted';
+            location.href='education.php?id=6';
             </script>
        
             ";
