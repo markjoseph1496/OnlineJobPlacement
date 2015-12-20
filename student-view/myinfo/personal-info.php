@@ -182,24 +182,24 @@ while($query = mysql_fetch_array($result)){
                                 </ul>
                             </li>
                             <li>
-                                <a href="../../resumelink/resume-link.php">Resume Link</a>
+                                <a href="../resumelink/resume-link.php">Resume Link</a>
                                 <ul class="dropdown">
-                                    <li><a href="../../resumelink/resume-link.php">Resume Link</a></li>
-                                    <li><a href="../../resumelink/background.php">Background</a></li>
-                                    <li><a href="../../resumelink/print-share.php">Print/Share</a></li>
+                                    <li><a href="../resumelink/resume-link.php">Resume Link</a></li>
+                                    <li><a href="../resumelink/background.php">Background</a></li>
+                                    <li><a href="../resumelink/print-share.php">Print/Share</a></li>
                                 </ul>
                              </li>
                             <li>
-                                <a href="../../applications/applications.php">Applications</a>
+                                <a href="../applications/applications.php">Applications</a>
                             </li>
                             <li>
-                                <a href="../../search-job/search-job.php">Jobs</a>
+                                <a href="../search-job/search-job.php">Jobs</a>
                             </li>
                             <li>
-                                <a href="../../settings/privacy-settings.php">Settings</a>
+                                <a href="../settings/privacy-settings.php">Settings</a>
                                 <ul class="dropdown">
-                                    <li><a href="../../settings/privacy-settings.php">Privacy Settings</a></li>
-                                    <li><a href="../../settings/pass-settings.php">Password Settings</a></li>
+                                    <li><a href="../settings/privacy-settings.php">Privacy Settings</a></li>
+                                    <li><a href="../settings/pass-settings.php">Password Settings</a></li>
                                 </ul>
                             </li>
                         </ul>
@@ -223,28 +223,28 @@ while($query = mysql_fetch_array($result)){
                         </ul>
                     </li>
                     <li>
-                        <a href="../../resumelink/resume-link.php">Resume Link</a>
+                        <a href="../resumelink/resume-link.php">Resume Link</a>
                         <ul class="dropdown">
-                            <li><a href="../../resumelink/resume-link.php">Resume Link</a></li>
-                            <li><a href="../../resumelink/background.php">Background</a></li>
-                            <li><a href="../../resumelink/print-share.php">Print/Share</a></li>
+                            <li><a href="../resumelink/resume-link.php">Resume Link</a></li>
+                            <li><a href="../resumelink/background.php">Background</a></li>
+                            <li><a href="../resumelink/print-share.php">Print/Share</a></li>
                         </ul>
                      </li>
                     <li>
-                        <a href="../../applications/applications.php">Applications</a>
+                        <a href="../applications/applications.php">Applications</a>
                     </li>
                     <li>
-                        <a href="../../search-job/search-job.php">Jobs</a>
+                        <a href="../search-job/search-job.php">Jobs</a>
                     </li>
                     <li>
-                        <a href="../../settings/privacy-settings.php">Settings</a>
+                        <a href="../settings/privacy-settings.php">Settings</a>
                         <ul class="dropdown">
-                            <li><a href="../../settings/privacy-settings.php">Privacy Settings</a></li>
-                            <li><a href="../../settings/pass-settings.php">Password Settings</a></li>
+                            <li><a href="../settings/privacy-settings.php">Privacy Settings</a></li>
+                            <li><a href="../settings/pass-settings.php">Password Settings</a></li>
                         </ul>
                     </li>
                     <li>
-                        <a href="../../login-student.php?id=1"><i class="fa fa-sign-out"></i> Sign Out</a>
+                        <a href="../login-student.php?id=1"><i class="fa fa-sign-out"></i> Sign Out</a>
                     </li>
                 </ul>
                 <!-- Mobile Menu End -->
