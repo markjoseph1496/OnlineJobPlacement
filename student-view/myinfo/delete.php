@@ -48,7 +48,7 @@ if(isset($_GET['delete_CertificationID'])) {
 
         echo "
                 <script type='text/javascript'>
-                location.href='certifications.php?id=CertificationDelete';
+                location.href='certifications.php?id=3';
                 </script>
                 ";
  	

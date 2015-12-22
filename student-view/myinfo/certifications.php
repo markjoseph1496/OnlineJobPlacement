@@ -1,4 +1,3 @@
-<!DOCTYPE html>
 <?php 
 include('../../connection.php');
 session_start();
@@ -14,14 +13,8 @@ else{
         </script>
         ";
 }
-
-$CertificationID = 'CertificationID';
-$Certification = 'Certification';
-$YearTaken = 'YearTaken';
-
-$qry = "SELECT * FROM certificationtbl WHERE StudentID ='$StudentID'";
-$result = mysql_query($qry);
 ?>
+<!doctype html>
 <html lang="en">
 
 <head>
@@ -96,29 +89,6 @@ $result = mysql_query($qry);
 
 <body>
     <div id="container">
-        <script>
-            $(document).on("click", ".deleteCertification", function(result) {
-                bootbox.confirm({
-                  title: 'Delete',
-                  message: 'Are you sure you want to delete this Information?',
-                  buttons: {
-                      'cancel': {
-                          label: 'Cancel',
-                          
-                      },
-                      'confirm': {
-                          label: 'Delete',
-                          className: 'btn-danger pull-right'
-                      }
-                  },
-                  callback: function(result) {
-                      if (result) {
-                           window.location = $("a[data-bb='confirmDeleteCertification']").attr('href');
-                      }
-                  }
-              });
-            });
-        </script>
         <!-- Start Header Section -->
         <div class="hidden-header"></div>
         <header class="clearfix">
@@ -280,6 +250,37 @@ $result = mysql_query($qry);
         <!-- Start Content -->
         <div id="content">
             <div class="container">
+                <?php
+                if(isset($_GET['id'])){
+                    $id=$_GET['id'];
+
+                    if($id==1){
+                        echo'
+                            <div class="alert alert-success">
+                                <span class="glyphicon glyphicon-info-sign"></span> 
+                                Certification successfully updated.
+                            </div>
+                            ';
+                    }
+                    elseif($id==2){
+                        echo'
+                            <div class="alert alert-success">
+                                <span class="glyphicon glyphicon-info-sign"></span> 
+                                SCertification successfully added.
+                            </div>
+                            ';
+                    }
+                    elseif($id==3){
+                        echo'
+                            <div class="alert alert-success">
+                                <span class="glyphicon glyphicon-info-sign"></span> 
+                                Certification successfully deleted.
+                            </div>
+                            ';
+                    }
+
+                }
+                ?>
                 <div class="row sidebar-page">
                     <!-- Page Content -->
                     <div class="col-md-9 page-content">
@@ -306,25 +307,50 @@ $result = mysql_query($qry);
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        <?php 
-                                            $ctr = 0;
-                                            while($rows = mysql_fetch_array($result)){
-                                            $ctr++;
+                                        <?php
+                                            $query = "SELECT * FROM certificationtbl WHERE StudentID = '$StudentID'";
+                                            $result = mysql_query($query);
+                                            while($query = mysql_fetch_array($result)){
+                                                $CertificationID = $query['CertificationID'];
+                                                $Certification = $query['Certification'];
+                                                $YearTaken = $query['YearTaken'];
+
                                         ?>
                                         <tr class="certification">
-                                            <td><?php echo $rows[$Certification]; ?></td>
-                                            <td><?php echo $rows[$YearTaken]; ?></td>
+                                            <td><?php echo $Certification; ?></td>
+                                            <td><?php echo $YearTaken; ?></td>
                                             <td>
-                                                <a href=# class="btn btn-danger btnformaintenance deleteCertification">
+                                                <button class="btn btn-danger" data-toggle="modal" data-target="#DeleteCertification">
                                                     <i class="fa fa-trash fa-1x"></i>
-                                                </a>
-                                                <a data-bb="confirmDeleteCertification" class="bb-alert alert alert-info" style="display: none;" href="delete.php?delete_CertificationID=<?php echo $rows['CertificationID'];?>">
-                                        
-                                                <a href="edit/edit-certification.php?EditCertificationID=<?php echo $rows['CertificationID'];?>" class="btn btn-default btnformaintenance">
+                                                </button>
+                                                <a href="edit/edit-certification.php?id=<?php echo $CertificationID; ?>" class="btn btn-default">
                                                     <i class="fa fa-pencil-square-o fa-1x"></i>
                                                 </a>
                                             </td>
                                         </tr>
+                                        <!-- Modal -->
+                                            <div class="modal fade" id="DeleteCertification" role="dialog">
+                                                <div class="modal-dialog" style="padding:100px">
+                                                    <!-- Modal content-->
+                                                    <div class="modal-content">
+                                                        <div class="modal-header">
+                                                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                                            <h4 class="modal-title">Delete Certification?</h4>
+                                                        </div>
+                                                        <div class="modal-body">
+                                                            <div class="col-md-15 fieldcol">
+                                                                <label = "usr" class = "control-label">Do you want to delete this information? This cannot be undone.</label>
+                                                                <div class="form-group">
+                                                                </div>
+                                                        </div>
+                                                        <div class="modal-footer">
+                                                            <a href="delete.php?delete_CertificationID=<?php echo $CertificationID; ?>" class="btn btn-danger">Delete</a>
+                                                            <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+                                                        </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
                                         <?php
                                             }
                                         ?>

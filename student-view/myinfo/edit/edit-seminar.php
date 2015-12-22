@@ -2,7 +2,7 @@
 include('../../../connection.php');
 session_start();
 
-$EditSeminarlID="";
+$EditSeminarID="";
 
 if(is_null($_SESSION['StudentID'])){
     echo "
@@ -12,10 +12,10 @@ if(is_null($_SESSION['StudentID'])){
         ";
 }
 else{
-    $EditSeminarlID = $_GET['id'];
+    $EditSeminarID = $_GET['id'];
 }
 
-$qry = "SELECT * FROM seminartbl WHERE SeminarID ='$EditSeminarlID'";
+$qry = "SELECT * FROM seminartbl WHERE SeminarID ='$EditSeminarID'";
 $result = mysql_query($qry);
         while($qry = mysql_fetch_Array($result))
         {       

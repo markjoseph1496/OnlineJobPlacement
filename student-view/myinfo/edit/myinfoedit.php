@@ -37,4 +37,18 @@ if(isset($_GET['Seminar'])){
          </script>
          ";
 }
+
+if(isset($_GET['Certification'])){
+    $CertificationID = $_GET['CertificationID'];
+    $Certification = $_GET['Certification'];
+    $YearTaken = $_GET['YearTaken'];
+
+    $query = "UPDATE certificationtbl SET Certification = '$Certification', YearTaken = '$YearTaken' WHERE CertificationID = '$CertificationID' AND StudentID = '$StudentID'";
+    $result = mysql_query($query);
+    echo "
+        <script type='text/javascript'>
+        location.href='../certifications.php?id=1';
+        </script>
+        ";
+}
 ?>

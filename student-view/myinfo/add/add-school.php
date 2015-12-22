@@ -2,7 +2,6 @@
 include('../../../connection.php');
 session_start();
 
-
 if(is_null($_SESSION['StudentID'])){
     echo "
         <script type='text/javascript'>
@@ -10,9 +9,7 @@ if(is_null($_SESSION['StudentID'])){
         </script>
         ";
 }
-
 ?>
-
 <!doctype html>
 <html lang="en">
 

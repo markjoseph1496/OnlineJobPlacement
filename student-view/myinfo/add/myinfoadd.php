@@ -39,14 +39,14 @@ if(isset($_GET['Seminar'])){
 
 
 
-if(isset($_GET['txtCertification'])){
-    $Certification = $_GET['txtCertification'];
-    $YearTaken = $_GET['txtYearTaken'];
+if(isset($_GET['Certification'])){
+    $Certification = $_GET['Certification'];
+    $YearTaken = $_GET['YearTaken'];
     $query = "INSERT INTO certificationtbl (StudentID,Certification,YearTaken) values  ('$StudentID','$Certification','$YearTaken')";
         $Result = mysql_query($query);
         echo "
              <script type='text/javascript'>
-             location.href = '../certifications.php?id=CertificationAdd';
+             location.href = '../certifications.php?id=2';
              </script>
              ";
 }
