@@ -1,5 +1,5 @@
 <?php
-include('../../../connection.php');
+include('../../connection.php');
 
 
 if(isset($_GET['delete_URLID'])) {
@@ -22,7 +22,7 @@ if(isset($_GET['delete_SchoolID'])) {
 
     echo "
             <script type='text/javascript'>
-            location.href='education.php?id=SchoolDeleted';
+            location.href='education.php?id=3';
             </script>
             ";
 }
@@ -35,7 +35,7 @@ if(isset($_GET['delete_SeminarID'])) {
 
     echo "
             <script type='text/javascript'>
-            location.href='education.php?id=SeminarDeleted';
+            location.href='education.php?id=6';
             </script>
        
             ";

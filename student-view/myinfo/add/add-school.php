@@ -1,3 +1,18 @@
+<?php 
+include('../../../connection.php');
+session_start();
+
+
+if(is_null($_SESSION['StudentID'])){
+    echo "
+        <script type='text/javascript'>
+        location.href='../../../../login-student.php';
+        </script>
+        ";
+}
+
+?>
+
 <!doctype html>
 <html lang="en">
 
@@ -16,8 +31,18 @@
     <meta name="description" content="Margo - Responsive HTML5 Template">
     <meta name="author" content="iThemesLab">
 
-    <!-- Bootstrap CSS  -->
-    <link rel="stylesheet" href="../../../asset/css/bootstrap.min.css" type="text/css" media="screen">
+    <!-- Bootstrap CSS -->
+    <link href="../../../css/bootstrap.min.css" rel="stylesheet"/>
+
+    <!-- BootstrapValidator CSS -->
+    <link href="../../../css/bootstrapValidator.min.css" rel="stylesheet"/>
+    <link href="../../../css/basic-template.css" rel="stylesheet"/>
+    <!-- jQuery and Bootstrap JS -->
+    <script type="text/javascript" src="../../../js/jquery.min.js"></script>
+    <script src="../../../js/bootstrap.min.js" type="text/javascript"></script>
+
+    <!-- BootstrapValidator -->
+    <script src="../../../js/bootstrapValidator.min.js" type="text/javascript"></script>
 
     <!-- Font Awesome CSS -->
     <link rel="stylesheet" href="../../../css/font-awesome.min.css" type="text/css" media="screen">
@@ -25,7 +50,7 @@
     <!-- Slicknav -->
     <link rel="stylesheet" type="text/css" href="../../../css/slicknav.css" media="screen">
 
-    <!-- CSS Styles  -->
+    <!-- Margo CSS Styles  -->
     <link rel="stylesheet" type="text/css" href="../../../css/style.css" media="screen">
 
     <!-- Responsive CSS Styles  -->
@@ -34,44 +59,44 @@
     <!-- Css3 Transitions Styles  -->
     <link rel="stylesheet" type="text/css" href="../../../css/animate.css" media="screen">
 
-    <!-- Color CSS Styles  -->
-    <link rel="stylesheet" type="text/css" href="../../../css/colors/jade.css" title="jade" media="screen" />
-    <link rel="stylesheet" type="text/css" href="../../../css/colors/green.css" title="green" media="screen" />
-    <link rel="stylesheet" type="text/css" href="../../../css/colors/blue.css" title="blue" media="screen" />
-    <link rel="stylesheet" type="text/css" href="../../../css/colors/beige.css" title="beige" media="screen" />
-    <link rel="stylesheet" type="text/css" href="../../../css/colors/cyan.css" title="cyan" media="screen" />
-    <link rel="stylesheet" type="text/css" href="../../../css/colors/orange.css" title="orange" media="screen" />
-    <link rel="stylesheet" type="text/css" href="../../../css/colors/peach.css" title="peach" media="screen" />
-    <link rel="stylesheet" type="text/css" href="../../../css/colors/pink.css" title="pink" media="screen" />
-    <link rel="stylesheet" type="text/css" href="../../../css/colors/purple.css" title="purple" media="screen" />
-    <link rel="stylesheet" type="text/css" href="../../../css/colors/sky-blue.css" title="sky-blue" media="screen" />
-    <link rel="stylesheet" type="text/css" href="../../../css/colors/yellow.css" title="yellow" media="screen" />
+    <!-- OJPMS CSS  -->
+    <link rel="stylesheet" type="text/css" href="../../../css/ojpms-style.css" media="screen">
 
-    <!-- JS  -->
-    <script type="text/javascript" src="../../../js/jquery-2.1.4.min.js"></script>
-    <script type="text/javascript" src="../../../js/modernizrr.js"></script>
-    <script type="text/javascript" src="../../../js/jquery.appear.js"></script>
-    <script type="text/javascript" src="../../../js/count-to.js"></script>
-    <script type="text/javascript" src="../../../js/jquery.nicescroll.min.js"></script>
-    <script type="text/javascript" src="../../../js/jquery.slicknav.js"></script>
+    <!-- Color CSS Styles  -->
+    <link rel="stylesheet" type="text/css" href="../../../css/colors/red.css" title="red" media="screen"/>
+    <link rel="stylesheet" type="text/css" href="../../../css/colors/jade.css" title="jade" media="screen"/>
+    <link rel="stylesheet" type="text/css" href="../../../css/colors/blue.css" title="blue" media="screen"/>
+    <link rel="stylesheet" type="text/css" href="../../../css/colors/beige.css" title="beige" media="screen"/>
+    <link rel="stylesheet" type="text/css" href="../../../css/colors/cyan.css" title="cyan" media="screen"/>
+    <link rel="stylesheet" type="text/css" href="../../../css/colors/green.css" title="green" media="screen"/>
+    <link rel="stylesheet" type="text/css" href="../../../css/colors/orange.css" title="orange" media="screen"/>
+    <link rel="stylesheet" type="text/css" href="../../../css/colors/peach.css" title="peach" media="screen"/>
+    <link rel="stylesheet" type="text/css" href="../../../css/colors/pink.css" title="pink" media="screen"/>
+    <link rel="stylesheet" type="text/css" href="../../../css/colors/purple.css" title="purple" media="screen"/>
+    <link rel="stylesheet" type="text/css" href="../../../css/colors/sky-blue.css" title="sky-blue" media="screen"/>
+    <link rel="stylesheet" type="text/css" href="../../../css/colors/yellow.css" title="yellow" media="screen"/>
+
+
+    <!-- Margo JS  -->
 
     <script type="text/javascript" src="../../../js/jquery.migrate.js"></script>
-    <script type="text/javascript" src="../../../asset/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../../../js/modernizrr.js"></script>
     <script type="text/javascript" src="../../../js/jquery.fitvids.js"></script>
     <script type="text/javascript" src="../../../js/owl.carousel.min.js"></script>
     <script type="text/javascript" src="../../../js/nivo-lightbox.min.js"></script>
-    <script type="text/javascript" src="../../../js/jquery.textillate.js"></script>
-
-    <script type="text/javascript" src="../../../js/nivo-lightbox.min.js"></script>
     <script type="text/javascript" src="../../../js/jquery.isotope.min.js"></script>
+    <script type="text/javascript" src="../../../js/jquery.appear.js"></script>
+    <script type="text/javascript" src="../../../js/count-to.js"></script>
     <script type="text/javascript" src="../../../js/jquery.textillate.js"></script>
     <script type="text/javascript" src="../../../js/jquery.lettering.js"></script>
     <script type="text/javascript" src="../../../js/jquery.easypiechart.min.js"></script>
+    <script type="text/javascript" src="../../../js/jquery.nicescroll.min.js"></script>
     <script type="text/javascript" src="../../../js/jquery.parallax.js"></script>
-    <script type="text/javascript" src="../../../js/mediaelement-and-player.js"></script>
+    <script type="text/javascript" src="../../../js/jquery.slicknav.js"></script>
 </head>
 
 <body>
+    <form id="AddSchool" name="AddSchool" autocomplete="off" action="myinfoadd.php">
     <div id="container">
         <!-- Start Header Section -->
         <div class="hidden-header"></div>
@@ -148,7 +173,7 @@
                         </button>
                         <!-- End Toggle Nav Link For Mobiles -->
                         <a class="navbar-brand" href="">
-                            <img src="../../images/ojpms.png">
+                            <img src="../../../images/ojpms.png">
                         </a>
                     </div>
                     <div class="navbar-collapse collapse">
@@ -291,17 +316,17 @@
                                     <label>Course <span>(*)</span></label>
                                     <select id="Course" name="Course" class="form-control" style="width:100%; height:34px;">
                                         <option value="">- Course -</option>
-                                        <option value="Bachelor of Science in Tourism Management">Bachelor of Science in Tourism Management</option>
-                                        <option value="Bachelor of Science in Business Management Major in Operations">Bachelor of Science in Business Management Major in Operations</option>
-                                        <option value="Bachelor of Arts in Communication">Bachelor of Arts in Communication</option>
-                                        <option value="Bachelor of Science in Information Technology Major in Digital Arts">Bachelor of Science in Information Technology Major in Digital Arts</option>
-                                        <option value="Bachelor of Science in Hotel and Restaurant Management">Bachelor of Science in Hotel and Restaurant Management</option>
-                                        <option value="Bachelor of Science in Computer Science">Bachelor of Science of Computer Science</option>
-                                        <option value="Bachelor of Science in Information Technology">Bachelor of Science of Information Technology</option>
-                                        <option value="Bachelor of Science in Computer Engineering">Bachelor of Science of Computer Engineering</option>
-                                        <option value="Bachelor of Science in Accounting Technology">Bachelor of Science in Accounting Technology</option>
-                                        <option value="Bachelor of Science in Information Technology with Specialization Digital Arts">Bachelor of Science in Information Technology with Specialization Digital Arts</option>
-                                        <option value="2-yr. Associate in Computer Technology">2-yr. Associate in Computer Technology</option>
+                                        <?php 
+                                            $query = "SELECT * FROM coursetbl";
+                                            $result = mysql_query($query);
+                                            while($query = mysql_fetch_array($result)){
+                                                $CourseCode = $query['CourseCode'];
+                                                $CourseTitle = $query['CourseTitle'];
+                                        ?>
+                                        <option value="<?php echo $CourseCode; ?>"><?php echo $CourseTitle; ?></option>
+                                        <?php
+                                        }
+                                        ?>
                                     </select>
                                 </div>
                             </div>
@@ -336,12 +361,7 @@
                                             $date = Date("Y") + 4;
                                             while($date != 1935){
                                                 $date--;
-                                                if($date == $server_txtGradYear){
-                                                    echo "<option selected value='$date'> $date</option>";
-                                                }
-                                                else{
                                                 echo "<option value='$date'> $date</option>";
-                                                }
                                             }
                                         ?>
                                     </select>
@@ -363,7 +383,7 @@
                 <div class="hr5" style="margin-top:35px;margin-bottom:40px;"></div>
                 <div class="field">
                     <div class="text-center">
-                        <button class="btn btn-lg btn-hg btn-primary" name ="btnSave">Save</button>
+                        <button type="submit" class="btn btn-lg btn-hg btn-primary">Save</button>
                     </div>
                 </div>
             </div>
@@ -371,41 +391,59 @@
     </div>
     <!-- End Content -->
     <script type="text/javascript" src="../../../js/script.js"></script>
+</form>
 </body>
-
-<?php 
-if(isset($_POST['btnSave'])){
-
-    $fileToUpload = basename($_FILES["fileToUpload"]["name"]);
-    $target_dir = "ProfileImages/";   //eto yung folder or directory kung saan mo ma-sasave yung picture mo
-    $target_file = $target_dir . $StudentID.".jpg";
-    $uploadOk = 1;
-    $imageFileType = pathinfo($target_file,PATHINFO_EXTENSION);
-
-    //eto chcheck nya yung format ng file kung GIF ba sya or JPEG or PNG in short Check ng FILE TYPE
-    if($imageFileType != "jpg" && $imageFileType != "png" && $imageFileType != "jpeg") {
-        echo "Sorry, only JPG, JPEG, PNG files are allowed.";
-        $uploadOk = 0;
-    }
-    // Check if $uploadOk is set to 0 by an error
-    if ($uploadOk == 0) {
-        echo "Sorry, your file was not uploaded.";
-
-    } 
-    else {
-        if (move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_file)){
-
-        $query = "UPDATE studentinfotbl SET ProfileImage = '$target_file' WHERE StudentID = '$StudentID'";
-        $Result = mysql_query($query);
-        echo "
-         <script type='text/javascript'>
-         </script>
-         ";
-        } 
-        else {
-            echo "Sorry, there was an error uploading your file.";
-        }
-    }
-}
-?>
 </html>
+<script type="text/javascript">
+    $(document).ready(function () {
+            var validator = $("#AddSchool").bootstrapValidator({
+                feedbackIcons:{
+                    valid: "glyphicon glyphicon-ok",
+                    invalid: "glyphicon glyphicon-remove",
+                    validating: "glyphicon glyphicon-refresh"
+                },
+                fields: {
+                    School: {
+                        validators: {
+                            notEmpty: {
+                                message: "School is required."
+                            },
+                            stringLength: {
+                                min: 3,
+                                max: 30,
+                                message: "School must be 3-30 characters long."
+                            }
+                        }
+                    },
+                    EducAttainment: {
+                        validators: {
+                            notEmpty: {
+                                message: "Educational Attainment is required."
+                            }
+                        }
+                    },
+                    Course: {
+                        validators: {
+                            notEmpty: {
+                                message: "Course is required."
+                            }
+                        }
+                    },
+                    GraduatedMonth: {
+                        validators: {
+                            notEmpty: {
+                                message: "Month graduated is required."
+                            }
+                        }
+                    },
+                    GraduatedYear: {
+                        validators: {
+                            notEmpty: {
+                                message: "Year graduated is required."
+                            }
+                        }
+                    }
+                }
+            });
+    });
+</script>
