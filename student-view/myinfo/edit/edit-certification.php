@@ -265,7 +265,7 @@ while($query = mysql_fetch_array($result)){
         </header>
 
         <div class="page-banner no-subtitle">
-            <input type="text" class="form-control" id="CertificationlID" name="CertificationID" style="display: none;" value="<?php echo $CertificationID; ?>">
+            <input type="text" class="form-control" id="CertificationID" name="CertificationID" style="display: none;" value="<?php echo $CertificationID; ?>">
             <div class="container">
                 <div class="row">
                     <div class="col-md-6">

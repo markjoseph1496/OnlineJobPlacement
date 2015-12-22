@@ -266,7 +266,7 @@ else{
                         echo'
                             <div class="alert alert-success">
                                 <span class="glyphicon glyphicon-info-sign"></span> 
-                                SCertification successfully added.
+                                Certification successfully added.
                             </div>
                             ';
                     }

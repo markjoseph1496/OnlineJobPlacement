@@ -3,24 +3,14 @@
 include('../../../connection.php');
 session_start();
 
-if(isset($_SESSION['StudentID'])){
-    $StudentID = $_SESSION['StudentID'];
-}
-else{
-    $StudentID = '';
-    echo "
-        <script type='text/javascript'>
-        location.href='../../../login-student.php?id=2';
-        </script>
-        ";
-}
-    
 
-$AchievementID= 'AchievementID';
-$Achievements = 'Achievements';
+$AchievementID = $_GET['id'];
 
-$qry = "SELECT * FROM achievementstbl WHERE StudentID ='$StudentID'";
-$result = mysql_query($qry);
+$query = "SELECT * FROM achievementstbl WHERE AchievementID = '$AchievementID'";
+$result = mysql_query($query);
+while($query = mysql_fetch_array($result)){
+    $Achievements = $query['Achievements'];
+}
 ?>
 
 <html lang="en">
@@ -40,8 +30,18 @@ $result = mysql_query($qry);
     <meta name="description" content="Margo - Responsive HTML5 Template">
     <meta name="author" content="iThemesLab">
 
-    <!-- Bootstrap CSS  -->
-    <link rel="stylesheet" href="../../../asset/css/bootstrap.min.css" type="text/css" media="screen">
+    <!-- Bootstrap CSS -->
+    <link href="../../../css/bootstrap.min.css" rel="stylesheet"/>
+
+    <!-- BootstrapValidator CSS -->
+    <link href="../../../css/bootstrapValidator.min.css" rel="stylesheet"/>
+    <link href="../../../css/basic-template.css" rel="stylesheet"/>
+    <!-- jQuery and Bootstrap JS -->
+    <script type="text/javascript" src="../../../js/jquery.min.js"></script>
+    <script src="../../../js/bootstrap.min.js" type="text/javascript"></script>
+
+    <!-- BootstrapValidator -->
+    <script src="../../../js/bootstrapValidator.min.js" type="text/javascript"></script>
 
     <!-- Font Awesome CSS -->
     <link rel="stylesheet" href="../../../css/font-awesome.min.css" type="text/css" media="screen">
@@ -49,7 +49,7 @@ $result = mysql_query($qry);
     <!-- Slicknav -->
     <link rel="stylesheet" type="text/css" href="../../../css/slicknav.css" media="screen">
 
-    <!-- CSS Styles  -->
+    <!-- Margo CSS Styles  -->
     <link rel="stylesheet" type="text/css" href="../../../css/style.css" media="screen">
 
     <!-- Responsive CSS Styles  -->
@@ -58,68 +58,45 @@ $result = mysql_query($qry);
     <!-- Css3 Transitions Styles  -->
     <link rel="stylesheet" type="text/css" href="../../../css/animate.css" media="screen">
 
-    <!-- Color CSS Styles  -->
-    <link rel="stylesheet" type="text/css" href="../../../css/colors/jade.css" title="jade" media="screen" />
-    <link rel="stylesheet" type="text/css" href="../../../css/colors/green.css" title="green" media="screen" />
-    <link rel="stylesheet" type="text/css" href="../../../css/colors/blue.css" title="blue" media="screen" />
-    <link rel="stylesheet" type="text/css" href="../../../css/colors/beige.css" title="beige" media="screen" />
-    <link rel="stylesheet" type="text/css" href="../../../css/colors/cyan.css" title="cyan" media="screen" />
-    <link rel="stylesheet" type="text/css" href="../../../css/colors/orange.css" title="orange" media="screen" />
-    <link rel="stylesheet" type="text/css" href="../../../css/colors/peach.css" title="peach" media="screen" />
-    <link rel="stylesheet" type="text/css" href="../../../css/colors/pink.css" title="pink" media="screen" />
-    <link rel="stylesheet" type="text/css" href="../../../css/colors/purple.css" title="purple" media="screen" />
-    <link rel="stylesheet" type="text/css" href="../../../css/colors/sky-blue.css" title="sky-blue" media="screen" />
-    <link rel="stylesheet" type="text/css" href="../../../css/colors/yellow.css" title="yellow" media="screen" />
+    <!-- OJPMS CSS  -->
+    <link rel="stylesheet" type="text/css" href="../../../css/ojpms-style.css" media="screen">
 
-    <!-- JS  -->
-    <script type="text/javascript" src="../../../js/jquery-2.1.4.min.js"></script>
-    <script type="text/javascript" src="../../../js/modernizrr.js"></script>
-    <script type="text/javascript" src="../../../js/jquery.appear.js"></script>
-    <script type="text/javascript" src="../../../js/count-to.js"></script>
-    <script type="text/javascript" src="../../../js/jquery.nicescroll.min.js"></script>
-    <script type="text/javascript" src="../../../js/jquery.slicknav.js"></script>
+    <!-- Color CSS Styles  -->
+    <link rel="stylesheet" type="text/css" href="../../../css/colors/red.css" title="red" media="screen"/>
+    <link rel="stylesheet" type="text/css" href="../../../css/colors/jade.css" title="jade" media="screen"/>
+    <link rel="stylesheet" type="text/css" href="../../../css/colors/blue.css" title="blue" media="screen"/>
+    <link rel="stylesheet" type="text/css" href="../../../css/colors/beige.css" title="beige" media="screen"/>
+    <link rel="stylesheet" type="text/css" href="../../../css/colors/cyan.css" title="cyan" media="screen"/>
+    <link rel="stylesheet" type="text/css" href="../../../css/colors/green.css" title="green" media="screen"/>
+    <link rel="stylesheet" type="text/css" href="../../../css/colors/orange.css" title="orange" media="screen"/>
+    <link rel="stylesheet" type="text/css" href="../../../css/colors/peach.css" title="peach" media="screen"/>
+    <link rel="stylesheet" type="text/css" href="../../../css/colors/pink.css" title="pink" media="screen"/>
+    <link rel="stylesheet" type="text/css" href="../../../css/colors/purple.css" title="purple" media="screen"/>
+    <link rel="stylesheet" type="text/css" href="../../../css/colors/sky-blue.css" title="sky-blue" media="screen"/>
+    <link rel="stylesheet" type="text/css" href="../../../css/colors/yellow.css" title="yellow" media="screen"/>
+
+
+    <!-- Margo JS  -->
 
     <script type="text/javascript" src="../../../js/jquery.migrate.js"></script>
-    <script type="text/javascript" src="../../../asset/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../../../js/modernizrr.js"></script>
     <script type="text/javascript" src="../../../js/jquery.fitvids.js"></script>
     <script type="text/javascript" src="../../../js/owl.carousel.min.js"></script>
     <script type="text/javascript" src="../../../js/nivo-lightbox.min.js"></script>
-    <script type="text/javascript" src="../../../js/jquery.textillate.js"></script>
-
-    <script type="text/javascript" src="../../../js/nivo-lightbox.min.js"></script>
     <script type="text/javascript" src="../../../js/jquery.isotope.min.js"></script>
+    <script type="text/javascript" src="../../../js/jquery.appear.js"></script>
+    <script type="text/javascript" src="../../../js/count-to.js"></script>
     <script type="text/javascript" src="../../../js/jquery.textillate.js"></script>
     <script type="text/javascript" src="../../../js/jquery.lettering.js"></script>
     <script type="text/javascript" src="../../../js/jquery.easypiechart.min.js"></script>
+    <script type="text/javascript" src="../../../js/jquery.nicescroll.min.js"></script>
     <script type="text/javascript" src="../../../js/jquery.parallax.js"></script>
-    <script type="text/javascript" src="../../../js/mediaelement-and-player.js"></script>
+    <script type="text/javascript" src="../../../js/jquery.slicknav.js"></script>
 </head>
 
 <body>
+    <form id="EditAchievement" name="EditAchievement" autocomplete="off" action="myinfoedit.php">
     <div id="container">
-        <script>
-            $(document).on("click", ".deleteCertification", function(result) {
-                bootbox.confirm({
-                  title: 'Delete',
-                  message: 'Are you sure you want to delete this Information?',
-                  buttons: {
-                      'cancel': {
-                          label: 'Cancel',
-                          
-                      },
-                      'confirm': {
-                          label: 'Delete',
-                          className: 'btn-danger pull-right'
-                      }
-                  },
-                  callback: function(result) {
-                      if (result) {
-                           window.location = $("a[data-bb='confirmDeleteCertification']").attr('href');
-                      }
-                  }
-              });
-            });
-        </script>
         <!-- Start Header Section -->
         <div class="hidden-header"></div>
         <header class="clearfix">
@@ -289,6 +266,7 @@ $result = mysql_query($qry);
         </header>
 
         <div class="page-banner no-subtitle">
+            <input type="text" class="form-control" id="AchievementID" name="AchievementID" style="display: none;" value="<?php echo $AchievementID; ?>">
             <div class="container">
                 <div class="row">
                     <div class="col-md-6">
@@ -315,7 +293,7 @@ $result = mysql_query($qry);
                             <div class="col-md-12">
                                 <div class="form-group">
                                     <label>Achievement <span>(*)</span></label>
-                                    <input type="text" class="form-control" id="" name="txtAchievement" value="<?php echo htmlspecialchars($server_txtAchievement)?>">
+                                    <input type="text" class="form-control" id="Achievement" name="Achievement" value="<?php echo $Achievements?>">
                                 </div>
                             </div>
                         </div>
@@ -334,7 +312,7 @@ $result = mysql_query($qry);
                 <div class="hr5" style="margin-top:35px;margin-bottom:40px;"></div>
                 <div class="field">
                     <div class="text-center">
-                        <button class="btn btn-lg btn-hg btn-primary" name ="btnSave">Save</button>
+                        <button type="submit" class="btn btn-lg btn-hg btn-primary">Save</button>
                     </div>
                 </div>
             </div>
@@ -342,5 +320,26 @@ $result = mysql_query($qry);
     </div>
     <!-- End Content -->
     <script type="text/javascript" src="../../../js/script.js"></script>
+</form>
 </body>
 </html>
+<script type="text/javascript">
+    $(document).ready(function () {
+            var validator = $("#EditAchievement").bootstrapValidator({
+                feedbackIcons:{
+                    valid: "glyphicon glyphicon-ok",
+                    invalid: "glyphicon glyphicon-remove",
+                    validating: "glyphicon glyphicon-refresh"
+                },
+                fields: {
+                    Achievement: {
+                        validators: {
+                            notEmpty: {
+                                message: "This field is required."
+                            }
+                        }
+                    }
+                }
+            });
+    });
+</script>

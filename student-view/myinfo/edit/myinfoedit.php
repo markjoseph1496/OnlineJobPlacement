@@ -51,4 +51,19 @@ if(isset($_GET['Certification'])){
         </script>
         ";
 }
+
+if(isset($_GET['Achievement'])){
+    $AchievementID = $_GET['AchievementID'];
+    $Achievement = $_GET['Achievement'];
+
+    $query = "UPDATE achievementstbl SET Achievements = '$Achievement' WHERE AchievementID = '$AchievementID' AND StudentID = '$StudentID'";
+    $result = mysql_query($query);
+
+    echo "
+        <script type='text/javascript'>
+        location.href='../achievements.php?id=1';
+        </script>
+        ";
+}   
+
 ?>

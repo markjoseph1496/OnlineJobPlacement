@@ -51,14 +51,14 @@ if(isset($_GET['Certification'])){
              ";
 }
 
-if(isset($_GET['txtAchievement'])){
-    $Achievement = $_GET['txtAchievement'];
+if(isset($_GET['Achievement'])){
+    $Achievement = $_GET['Achievement'];
 
     $query = "INSERT INTO achievementstbl (StudentID,Achievements) values  ('$StudentID','$Achievement')";
        $Result = mysql_query($query);
        echo "
              <script type='text/javascript'>
-             location.href='../achievements.php?id=AchievementAdd';
+             location.href='../achievements.php?id=2';
              </script>
              ";
 }
