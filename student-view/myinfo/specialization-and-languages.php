@@ -1,3 +1,19 @@
+<?php 
+include('../../connection.php');
+session_start();
+
+if(isset($_SESSION['StudentID'])){
+    $StudentID = $_SESSION['StudentID'];
+}
+else{
+    $StudentID = '';
+    echo "
+        <script type='text/javascript'>
+        location.href='../../../login-student.php?id=2';
+        </script>
+        ";
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -251,9 +267,18 @@
                                         </tr>
                                     </thead>
                                     <tbody>
+                                        <?php
+                                            $query = "SELECT * FROM specializationtbl WHERE StudentID = '$StudentID'";
+                                            $result = mysql_query($query);
+                                            while($query = mysql_fetch_array($result)){
+                                                $SID = $query['SID'];
+                                                $Specialization = $query['Specialization'];
+                                                $YearOfExperience = $query['YearOfExperience'];
+                                                $Proficiency = $query['Proficiency'];
+                                        ?>
                                         <tr>
-                                            <td>h</td>
-                                            <td>g</td>
+                                            <td><?php echo $Specialization; ?></td>
+                                            <td><?php echo $YearOfExperience; ?></td>
                                             <td class="rating text-center">
                                                 <span class="star"></span>
                                                 <span class="star"></span>
@@ -270,10 +295,11 @@
                                                 </a>
                                             </td>
                                          </tr>
+                                        <?php
+                                            }
+                                        ?>
                                     </tbody>
                                 </table>
-
-                                
                                 <div class="hr5" style="margin-top:35px;margin-bottom:40px;"></div>
                                 <div class="row field">
                                     <div class="col-md-6 fieldcol">
@@ -296,8 +322,17 @@
                                         </tr>
                                     </thead>
                                     <tbody>
+                                        <?php
+                                            $query1 = "SELECT * FROM languagetbl WHERE StudentID = '$StudentID'";
+                                            $result1 = mysql_query($query1);
+                                            while($query1 = mysql_fetch_array($result1)){
+                                                $LangID = $query1['LangID'];
+                                                $Language = $query1['Language'];
+                                                $WrittenProf = $query1['WrittenProf'];
+                                                $SpokenProf = $query1['SpokenProf'];
+                                        ?>
                                         <tr>
-                                            <td></td>
+                                            <td><?php echo $Language; ?></td>
                                             <td class="rating text-center">
                                                 <span class="star"></span>
                                                 <span class="star"></span>
@@ -306,7 +341,7 @@
                                                 <span class="star"></span>
                                             </td>
                                             <td class="rating text-center">
-                                                <span class="star"></span>
+                                                <span class="star" selected></span>
                                                 <span class="star"></span>
                                                 <span class="star"></span>
                                                 <span class="star"></span>
@@ -321,6 +356,9 @@
                                                 </a>
                                             </td>
                                         </tr>
+                                        <?php
+                                            }
+                                        ?>
                                     </tbody>
                                 </table>
                             </div>
