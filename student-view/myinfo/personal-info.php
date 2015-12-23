@@ -43,6 +43,7 @@ while($query = mysql_fetch_array($result)){
 
     <!-- BootstrapValidator CSS -->
     <link href="../../css/bootstrapValidator.min.css" rel="stylesheet"/>
+
     <!-- jQuery and Bootstrap JS -->
     <script type="text/javascript" src="../../js/jquery.min.js"></script>
     <script type="text/javascript" src="../../js/bootstrap.min.js" ></script>
@@ -70,7 +71,6 @@ while($query = mysql_fetch_array($result)){
 
     <!-- Color CSS Styles  -->
     <link rel="stylesheet" type="text/css" href="../../css/colors/yellow.css" title="yellow" media="screen"/>
-
 
     <!-- JS  -->
     <script type="text/javascript" src="../../js/jquery.migrate.js"></script>
