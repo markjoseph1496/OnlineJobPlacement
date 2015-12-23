@@ -75,37 +75,27 @@
             			<a class="navbar-brand" href="index.html"><img alt="" src="images/ojpms.png"></a>
           			</div>
           			<div class="navbar-collapse collapse">
-            			<!-- Stat Search -->
-            			<div class="search-side">
-              				<a class="show-search"><i class="fa fa-search"></i></a>
-              				<div class="search-form">
-                				<form autocomplete="off" role="search" method="get" class="searchform" action="#">
-                  					<input type="text" value="" name="s" id="s" placeholder="Search the site...">
-                				</form>
-              				</div>
-           				</div>
-			            <!-- End Search -->
 			            <!-- Start Navigation List -->
 			            <ul class="nav navbar-nav navbar-right">
-				            <li><a class="active" href="index.html">Home</a></li>
-              				<li><a href="about.html">Pages</a></li>
+				            <li><a href="#">OJPMS</a></li>
+	          				<li><a href="about.html">Events</a></li>
 			              	<li><a href="#">Shortcodes</a></li>
 			              	<li><a href="portfolio-3.html">Portfolio</a></li>
-              				<li><a href="blog.html">Blog</a></li>
-              				<li><a href="contact.html">Contact</a></li>
-            			</ul>
-            			<!-- End Navigation List -->
+	          				<li><a href="blog.html">Blog</a></li>
+	          				<li><a href="#join">Join Us</a></li>
+	        			</ul>
+	        			<!-- End Navigation List -->
           			</div>
         		</div>
 
         		<!-- Mobile Menu Start -->
         		<ul class="wpb-mobile-menu">
-          			<li><a class="active" href="index.html">Home</a></li>
-      				<li><a href="about.html">Pages</a></li>
+          			<li><a class="active" href="index.html">OJPMS</a></li>
+      				<li><a href="about.html">Events</a></li>
 	              	<li><a href="#">Shortcodes</a></li>
 	              	<li><a href="portfolio-3.html">Portfolio</a></li>
       				<li><a href="blog.html">Blog</a></li>
-      				<li><a href="contact.html">Contact</a></li>
+      				<li><a href="#join">Join Us</a></li>
        			</ul>
         		<!-- Mobile Menu End -->
       		</div>
@@ -114,7 +104,7 @@
     	<!-- End Header -->
 
     	<!-- Start HomePage Slider -->
-    	<section id="home">
+    	<div id="home">
       		<!-- Carousel -->
       		<div id="main-slide" class="carousel slide" data-ride="carousel">
 		        <!-- Indicators -->
@@ -177,80 +167,30 @@
 		        </div>
 		        <!-- Carousel inner end-->
 
-			        <!-- Controls -->
-			        <a class="left carousel-control" href="#main-slide" data-slide="prev">
-			          	<span><i class="fa fa-angle-left"></i></span>
-			        </a>
-			        <a class="right carousel-control" href="#main-slide" data-slide="next">
-			          	<span><i class="fa fa-angle-right"></i></span>
-			        </a>
-			    </div>
-			    <!-- /carousel -->
-			</section>
-			<!-- End HomePage Slider -->
+		        <!-- Controls -->
+		        <a class="left carousel-control" href="#main-slide" data-slide="prev">
+		          	<span><i class="fa fa-angle-left"></i></span>
+		        </a>
+		        <a class="right carousel-control" href="#main-slide" data-slide="next">
+		          	<span><i class="fa fa-angle-right"></i></span>
+		        </a>
+		    </div>
+		    <!-- /carousel -->
+		</div>
+		<!-- End HomePage Slider -->
 
-    		<!-- Start Content -->
-    		<div id="content">
-      			<div class="container">
-       				<!-- Start Services Icons -->
-        			<div class="row">
-			          	<!-- Start Service Icon 1 -->
-			          	<div class="col-md-3 col-sm-6 service-box service-center">
-			            	<div class="service-icon">
-			              		<i class="fa fa-magic icon-medium-effect icon-effect-2"></i>
-			            	</div>
-			            	<div class="service-content">
-			              		<h4>High Quality Theme</h4>
-			              		<p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Lorem ipsum dolor.</p>
-			            	</div>
-			          	</div>
-			          	<!-- End Service Icon 1 -->
 
-				        <!-- Start Service Icon 2 -->
-			          	<div class="col-md-3 col-sm-6 service-box service-center">
-			            	<div class="service-icon">
-			              		<i class="fa fa-eye icon-medium-effect icon-effect-2"></i>
-			            	</div>
-			            	<div class="service-content">
-			              		<h4>Retina Display Ready</h4>
-			              		<p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Lorem ipsum dolor.</p>
-			            	</div>
-			          	</div>
-			          	<!-- End Service Icon 2 -->
+		<!-- Start Content -->
+		<div id="content">
+  			<div class="container">
 
-			          	<!-- Start Service Icon 3 -->
-			          	<div class="col-md-3 col-sm-6 service-box service-center">
-			            	<div class="service-icon">
-			              		<i class="fa fa-eye icon-medium-effect icon-effect-2"></i>
-			            	</div>
-			            	<div class="service-content">
-			              		<h4>Retina Display Ready</h4>
-			              		<p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Lorem ipsum dolor.</p>
-			            	</div>
-			          	</div>
-			          	<!-- End Service Icon 3 -->
+    			<!-- Divider -->
+    			<div class="hr1 margin-top"></div>
 
-			          	<!-- Start Service Icon 4 -->
-			          	<div class="col-md-3 col-sm-6 service-box service-center">
-			            	<div class="service-icon">
-			              		<i class="fa fa-eye icon-medium-effect icon-effect-2"></i>
-			            	</div>
-			            	<div class="service-content">
-			              		<h4>Retina Display Ready</h4>
-			              		<p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Lorem ipsum dolor.</p>
-			            	</div>
-			          	</div>
-			          	<!-- End Service Icon 4 -->
-        			</div>
-       	 			<!-- End Services Icons -->
-
-        			<!-- Divider -->
-        			<div class="hr1 margin-top"></div>
-
-			        <!-- Start Recent Projects Carousel -->
-			        <div class="recent-projects">
-			          	<h4 class="title"><span>Recent Projects</span></h4>
-			          	<div class="projects-carousel touch-carousel">
+		        <!-- Start Recent Projects Carousel -->
+		        <div class="recent-projects">
+		          	<h4 class="title"><span>Recent Projects</span></h4>
+		          	<div class="projects-carousel touch-carousel">
 
 			            <div class="portfolio-item item">
 			              	<div class="portfolio-border">
@@ -271,21 +211,21 @@
 				        </div>
 
 			            <div class="portfolio-item item">
-			              <div class="portfolio-border">
-			                <div class="portfolio-thumb">
-			                  <a class="lightbox" title="This is an image title" href="images/portfolio-big-01.jpg">
-			                    <div class="thumb-overlay"><i class="fa fa-arrows-alt"></i></div>
-			                    <img alt="" src="images/portfolio-1/2.png" />
-			                  </a>
-			                </div>
-			                <div class="portfolio-details">
-			                  <a href="#">
-			                    <h4>Lorem Ipsum Dolor</h4>
-			                    <span>Logo</span>
-			                    <span>Animation</span>
-			                  </a>
-			                </div>
-			              </div>
+			              	<div class="portfolio-border">
+			                	<div class="portfolio-thumb">
+			                  		<a class="lightbox" title="This is an image title" href="images/portfolio-big-01.jpg">
+			                    		<div class="thumb-overlay"><i class="fa fa-arrows-alt"></i></div>
+			                    		<img alt="" src="images/portfolio-1/2.png" />
+			                  		</a>
+			                	</div>
+				                <div class="portfolio-details">
+				                  	<a href="#">
+					                    <h4>Lorem Ipsum Dolor</h4>
+					                    <span>Logo</span>
+					                    <span>Animation</span>
+				                  	</a>
+			                	</div>
+			              	</div>
 			            </div>
 
 			            <div class="portfolio-item item">
@@ -393,7 +333,7 @@
 			              	</div>
 			            </div>
 
-            			<div class="portfolio-item item">
+	        			<div class="portfolio-item item">
 			              	<div class="portfolio-border">
 			                	<div class="portfolio-thumb">
 				                  	<a href="#">
@@ -436,7 +376,7 @@
 					                    <div class="thumb-overlay"><i class="fa fa-arrows-alt"></i></div>
 					                    <img alt="" src="images/portfolio-1/11.png" />
 				                  	</a>
-			               		 </div>
+			               		</div>
 			                	<div class="portfolio-details">
 			                  		<a href="#">
 					                    <h4>Lorem Ipsum Dolor</h4>
@@ -465,15 +405,14 @@
 			              	</div>
 			            </div>
 					</div>
-        		</div>
-        		<!-- End Recent Projects Carousel -->
+	    		</div>
+	    		<!-- End Recent Projects Carousel -->
 
-        		<!-- Divider -->
-        		<div class="hr1 margin-60"></div>
+				<!-- Divider -->
+				<div class="hr1 margin-60"></div>
 
-        		<div class="row">
-          			<div class="col-md-8">
-
+				<div class="row">
+		  			<div class="col-md-8">
 		            	<!-- Start Recent Posts Carousel -->
 			            <div class="latest-posts">
 			              	<h4 class="classic-title"><span>Latest News</span></h4>
@@ -550,15 +489,14 @@
 				                    	<p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit. <a class="read-more" href="#">Read More...</a></p>
 				                  	</div>
 				                </div>
-              				</div>
-            			</div>
-            			<!-- End Recent Posts Carousel -->
-          			</div>
+	          				</div>
+	        			</div>
+	        			<!-- End Recent Posts Carousel -->
+	      			</div>
 
-          			<div class="col-md-4">
-
-            			<!-- Classic Heading -->
-            			<h4 class="classic-title"><span>Testimonials</span></h4>
+	      			<div class="col-md-4">
+	        			<!-- Classic Heading -->
+	        			<h4 class="classic-title"><span>Testimonials</span></h4>
 
 			            <!-- Start Testimonials Carousel -->
 			            <div class="custom-carousel show-one-slide touch-carousel" data-appeared-items="1">
@@ -576,34 +514,130 @@
 			                	</div>
 			                	<div class="testimonial-author"><span>John Doe</span> - Customer</div>
 			              	</div>
-          					<!-- Testimonial 2 -->
+	      					<!-- Testimonial 2 -->
 			              	<div class="classic-testimonials item">
 			                	<div class="testimonial-content">
 			                  		<p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim laborum. Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
 			                	</div>
 			                	<div class="testimonial-author"><span>John Doe</span> - Customer</div>
 			              	</div>
-            			</div>
-           				<!-- End Testimonials Carousel -->
-          			</div>
-        		</div>
+	        			</div>
+	       				<!-- End Testimonials Carousel -->
+	      			</div>
+	    		</div>
 
-        		<!-- Divider -->
-        		<div class="hr1 margin-60"></div>
+	    		<!-- Divider -->
+	    		<div class="hr1 margin-60"></div>
 
-		        <!-- Start Call Action -->
-		        <div class="call-action call-action-boxed call-action-style1 clearfix">
-		          	<!-- Call Action Button -->
-		          	<div class="button-side" style="margin-top:4px;"><a href="#" class="btn-system btn-large">Purchase It Now</a></div>
-		          	<!-- Call Action Text -->
-		          	<h2 class="primary"><strong>Margo</strong> is the best theme to create an <strong>awesome website!</strong></h2>
-		          	<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
-		        </div>
-		        <!-- End Call Action -->
-      		</div>
-    	</div>
-    	<!-- End content -->
+				<!-- Start Client/Partner Section -->
+			    <div class="partner">
+			      	<div class="container">
+			        	<div class="row">
 
+			          		<!-- Start Big Heading -->
+			          		<div class="big-title text-center">
+			            		<h1>Our Happy <strong>Clients</strong></h1>
+			            		<p class="title-desc">Partners We Work With</p>
+			          		</div>
+			          		<!-- End Big Heading -->
+
+				          	<!--Start Clients Carousel-->
+				          	<div class="our-clients">
+			            		<div class="clients-carousel custom-carousel touch-carousel navigation-3" data-appeared-items="5" data-navigation="true">
+
+			              			<!-- Client 1 -->
+			              			<div class="client-item item">
+			                			<a href="#"><img src="images/c1.png" alt="" /></a>
+			              			</div>
+
+			              			<!-- Client 2 -->
+			              			<div class="client-item item">
+						                <a href="#"><img src="images/c2.png" alt="" /></a>
+						            </div>
+
+					              	<!-- Client 3 -->
+					              	<div class="client-item item">
+					                	<a href="#"><img src="images/c3.png" alt="" /></a>
+					              	</div>
+
+					              	<!-- Client 4 -->
+					              	<div class="client-item item">
+					                	<a href="#"><img src="images/c4.png" alt="" /></a>
+					              	</div>
+
+					              	<!-- Client 5 -->
+					              	<div class="client-item item">
+					                	<a href="#"><img src="images/c5.png" alt="" /></a>
+					              	</div>
+
+					              	<!-- Client 6 -->
+					              	<div class="client-item item">
+					                	<a href="#"><img src="images/c6.png" alt="" /></a>
+					              	</div>
+
+			              			<!-- Client 7 -->
+					              	<div class="client-item item">
+					                	<a href="#"><img src="images/c7.png" alt="" /></a>
+					              	</div>
+
+					              	<!-- Client 8 -->
+					              	<div class="client-item item">
+					                	<a href="#"><img src="images/c8.png" alt="" /></a>
+					              	</div>
+			            		</div>
+			          		</div>
+			          		<!-- End Clients Carousel -->
+			        	</div>
+			        	<!-- .row -->
+			      	</div>
+			      	<!-- .container -->
+			    </div>
+		    	<!-- End Client/Partner Section -->
+
+	    		<!-- Start Services Icons -->
+	    		<section id="join">
+					<div class="row">
+			          	<!-- Start Service Icon 1 -->
+			          	<div class="col-md-4 col-sm-6 service-box service-center">
+			            	<div class="service-icon">
+			              		<a href="login-student.php"><i class="fa fa-users icon-medium-effect icon-effect-2"></i></a>
+			            	</div>
+			            	<div class="service-content">
+			              		<h4>Student</h4>
+			              		<p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Lorem ipsum dolor.</p>
+			            	</div>
+			          	</div>
+			          	<!-- End Service Icon 1 -->
+
+				        <!-- Start Service Icon 2 -->
+			          	<div class="col-md-4 col-sm-6 service-box service-center">
+			            	<div class="service-icon">
+			              		<a href="login-admin.php"><i class="fa fa-user icon-medium-effect icon-effect-2"></i></a>
+			            	</div>
+			            	<div class="service-content">
+			              		<b><h4>Admin</h4></b>
+			              		<p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Lorem ipsum dolor.</p>
+			            	</div>
+			          	</div>
+			          	<!-- End Service Icon 2 -->
+
+			          	<!-- Start Service Icon 3 -->
+			          	<div class="col-md-4 col-sm-6 service-box service-center">
+			            	<div class="service-icon">
+			              		<a href="login-company.php"><i class="fa fa-building icon-medium-effect icon-effect-2"></i></a>
+			            	</div>
+			            	<div class="service-content">
+			              		<h4>Company</h4>
+			              		<p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Lorem ipsum dolor.</p>
+			            	</div>
+			          	</div>
+			          	<!-- End Service Icon 3 -->
+					</div>
+				</section>
+				<!-- End Services Icons -->
+  			</div>
+		</div>
+		<!-- End content -->
 
 	    <!-- Start Footer -->
 	    <footer>
@@ -626,11 +660,11 @@
 
 		          	<!-- Start Twitter Widget -->
 		          	<div class="col-md-3">
-            			<div class="footer-widget twitter-widget">
-              				<h4>Contact Us<span class="head-line"></span></h4>
-              				<b>Tel. no. (+632) 294-4001</b>
-              				<label>109 Samson Road corner Caimito Street, Caloocan City 1400</label>
-            			</div>
+	        			<div class="footer-widget twitter-widget">
+	          				<h4>Contact Us<span class="head-line"></span></h4>
+	          				<b>Tel. no. (+632) 294-4001</b>
+	          				<label>109 Samson Road corner Caimito Street, Caloocan City 1400</label>
+	        			</div>
 		          	</div>
 		          	<!-- .col-md-3 -->
 		          	<!-- End Twitter Widget -->
@@ -659,8 +693,8 @@
 		          	</div>
 		          	<!-- .col-md-3 -->
 		          	<!-- End Contact Widget -->
-        		</div>
-        		<!-- .row -->
+	    		</div>
+	    		<!-- .row -->
 
 		        <!-- Start Copyright -->
 		        <div class="copyright-section">
@@ -669,27 +703,24 @@
 		              		<p>&copy; 2015 OJPMS - All Rights Reserved</p>
 		            	</div>
 		            	<div class="col-md-6">
-		              	<ul class="footer-nav">
-			                <li><a href="#">Sitemap</a></li>
-			                <li><a href="#">Privacy Policy</a></li>
-			                <li><a href="#">Contact</a></li>
-		              	</ul>
-		            </div>
-		        </div>
-		    </div>
-		    <!-- End Copyright -->
-      	</div>
-    </footer>
-    <!-- End Footer -->
-  	</div>
-  	<!-- End Container -->
+			              	<ul class="footer-nav">
+				                <li><a href="#">Sitemap</a></li>
+				                <li><a href="#">Privacy Policy</a></li>
+				                <li><a href="#">Contact</a></li>
+			              	</ul>
+		            	</div>
+		        	</div>
+		    	</div>
+		    	<!-- End Copyright -->
+	  		</div>
+		</footer>
+		<!-- End Footer -->
+	</div>
+  	<!-- End Full Body Container -->
 
   	<!-- Go To Top Link -->
-  <a href="#" class="back-to-top"><i class="fa fa-angle-up"></i></a>
+  	<a href="#" class="back-to-top"><i class="fa fa-angle-up"></i></a>
 
-  
-  <script type="text/javascript" src="js/script.js"></script>
-
+  	<script type="text/javascript" src="js/script.js"></script>
 </body>
-
 </html>
