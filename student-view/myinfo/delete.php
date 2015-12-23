@@ -75,7 +75,7 @@ if(isset($_GET['delete_ReferenceID'])) {
 
     echo "
             <script type='text/javascript'>
-            location.href='references.php?id=ReferenceDelete';
+            location.href='references.php?id=3';
             </script>
             ";
 }

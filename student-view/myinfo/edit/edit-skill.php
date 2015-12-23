@@ -190,7 +190,7 @@
                                     <li><a href="../education.php">Education</a></li>
                                     <li><a href="../certifications.php">Certifications</a></li>
                                     <li><a href="../achievements.php">Achievements</a></li>
-                                    <li><a class="active" href="../skills-and-languages.php">Skills & Languages</a></li>
+                                    <li><a class="active" href="../specialization-and-languages.php">Specialization & Languages</a></li>
                                     <li><a href="../references.php">References</a></li>
                                     <li><a href="../portfolio.php">Portfolio</a></li>
                                 </ul>
@@ -231,7 +231,7 @@
                             <li><a href="../education.php">Education</a></li>
                             <li><a href="../certifications.php">Certifications</a></li>
                             <li><a href="../achievements.php">Achievements</a></li>
-                            <li><a class="active" href="../skills-and-languages.php">Skills & Languages</a></li>
+                            <li><a class="active" href="../specialization-and-languages.php">Specialization & Languages</a></li>
                             <li><a href="../references.php">References</a></li>
                             <li><a href="../portfolio.php">Portfolio</a></li>
                         </ul>
@@ -269,12 +269,12 @@
             <div class="container">
                 <div class="row">
                     <div class="col-md-6">
-                        <h2>Skills</h2>
+                        <h2>Specialization</h2>
                     </div>
                     <div class="col-md-6">
                         <ul class="breadcrumbs">
                             <li><a href="#">Home</a></li>
-                            <li>Skills</li>
+                            <li>Specialization</li>
                         </ul>
                     </div>
                 </div>

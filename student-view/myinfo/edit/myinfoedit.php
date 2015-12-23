@@ -66,4 +66,22 @@ if(isset($_GET['Achievement'])){
         ";
 }   
 
+if(isset($_GET['ReferenceID'])){
+   $ReferenceID = $_GET['ReferenceID'];
+   $Name = $_GET['Name'];
+   $Relationship = $_GET['Relationship'];
+   $Company = $_GET['Company'];
+   $Position = $_GET['Position'];
+   $Phone = $_GET['Phone'];
+   $Email = $_GET['Email'];
+
+   $query = "UPDATE referencetbl SET Name = '$Name', Relationship = '$Relationship', Company = '$Company', Position = '$Position', Phone = '$Phone', Email = '$Email' WHERE ReferenceID = '$ReferenceID' AND StudentID = '$StudentID'";
+   $result = mysql_query($query);
+
+    echo "
+        <script type='text/javascript'>
+        location.href='../references.php?id=1';
+        </script>
+        ";
+}
 ?>

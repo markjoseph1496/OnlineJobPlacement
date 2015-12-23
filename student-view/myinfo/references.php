@@ -1,4 +1,3 @@
-<!DOCTYPE html>
 <?php 
 include('../../connection.php');
 session_start();
@@ -14,22 +13,8 @@ else{
         </script>
         ";
 }
-
-
-$ReferenceID = 'ReferenceID';
-$Name = 'Name';
-$Relationship = 'Relationship';
-$Company = 'Company';
-$Position = 'Position';
-$Phone = 'Phone';
-$Email = 'Email';
-
-$qry = "SELECT * FROM referencetbl WHERE StudentID ='$StudentID'";
-$result = mysql_query($qry);
 ?>
-
-
-
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -104,29 +89,6 @@ $result = mysql_query($qry);
 
 <body>
     <div id="container">
-        <script>
-            $(document).on("click", ".deleteCertification", function(result) {
-                bootbox.confirm({
-                  title: 'Delete',
-                  message: 'Are you sure you want to delete this Information?',
-                  buttons: {
-                      'cancel': {
-                          label: 'Cancel',
-                          
-                      },
-                      'confirm': {
-                          label: 'Delete',
-                          className: 'btn-danger pull-right'
-                      }
-                  },
-                  callback: function(result) {
-                      if (result) {
-                           window.location = $("a[data-bb='confirmDeleteCertification']").attr('href');
-                      }
-                  }
-              });
-            });
-        </script>
         <!-- Start Header Section -->
         <div class="hidden-header"></div>
         <header class="clearfix">
@@ -193,7 +155,7 @@ $result = mysql_query($qry);
                                     <li><a href="education.php">Education</a></li>
                                     <li><a href="certifications.php">Certifications</a></li>
                                     <li><a href="achievements.php">Achievements</a></li>
-                                    <li><a href="skills-and-languages.php">Skills & Languages</a></li>
+                                    <li><a href="specialization-and-languages.php">Specialization & Languages</a></li>
                                     <li><a class="active" href="references.php">References</a></li>
                                     <li><a href="portfolio.php">Portfolio</a></li>
                                 </ul>
@@ -234,7 +196,7 @@ $result = mysql_query($qry);
                             <li><a href="education.php">Education</a></li>
                             <li><a href="certifications.php">Certifications</a></li>
                             <li><a href="achievements.php">Achievements</a></li>
-                            <li><a href="skills-and-languages.php">Skills & Languages</a></li>
+                            <li><a href="specialization-and-languages.php">Specialization & Languages</a></li>
                             <li><a class="active" href="references.php">References</a></li>
                             <li><a href="portfolio.php">Portfolio</a></li>
                         </ul>
@@ -288,6 +250,37 @@ $result = mysql_query($qry);
         <!-- Start Content -->
         <div id="content">
             <div class="container">
+                <?php
+                if(isset($_GET['id'])){
+                    $id=$_GET['id'];
+
+                    if($id==1){
+                        echo'
+                            <div class="alert alert-success">
+                                <span class="glyphicon glyphicon-info-sign"></span> 
+                                Reference successfully updated.
+                            </div>
+                            ';
+                    }
+                    elseif($id==2){
+                        echo'
+                            <div class="alert alert-success">
+                                <span class="glyphicon glyphicon-info-sign"></span> 
+                                Reference successfully added.
+                            </div>
+                            ';
+                    }
+                    elseif($id==3){
+                        echo'
+                            <div class="alert alert-success">
+                                <span class="glyphicon glyphicon-info-sign"></span> 
+                                Reference successfully deleted.
+                            </div>
+                            ';
+                    }
+
+                }
+                ?>
                 <div class="row sidebar-page">
                     <!-- Page Content -->
                     <div class="col-md-9 page-content">
@@ -314,39 +307,64 @@ $result = mysql_query($qry);
                                             <th>Position</th>
                                             <th>Phone</th>
                                             <th>Email</th>
-                                            <th>No. of Years</th>
                                             <th width="15%">&nbsp;</th>
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        <?php
-                                            while($rows = mysql_fetch_array($result)){
-                                        ?>
-                                        <tr>
-                                            <td><?php echo $rows[$Name]; ?></td>
-                                            <td><?php echo $rows[$Relationship]; ?></td>
-                                            <td><?php echo $rows[$Company]; ?></td>
-                                            <td><?php echo $rows[$Position]; ?></td>
-                                            <td><?php echo $rows[$Phone]; ?></td>
-                                            <td><?php echo $rows[$Email]; ?></td>
-                                            <td>No. of Years</td>
-                                            <form method = "POST">
-                                            <input type="hidden" name="delete_id" value="<?php echo $rows['ReferenceID']; ?>" />
+                                            <?php
+                                                $query = "SELECT * FROM referencetbl WHERE StudentID = '$StudentID'";
+                                                $result = mysql_query($query);
+                                                while($query = mysql_fetch_array($result)){
+                                                    $ReferenceID = $query['ReferenceID'];
+                                                    $Name = $query['Name'];
+                                                    $Relationship = $query['Relationship'];
+                                                    $Company = $query['Company'];
+                                                    $Position = $query['Position'];
+                                                    $Phone = $query['Phone'];
+                                                    $Email = $query['Email'];
+                                            ?>
+                                            <tr>
+                                            <td><?php echo $Name; ?></td>
+                                            <td><?php echo $Relationship; ?></td>
+                                            <td><?php echo $Company; ?></td>
+                                            <td><?php echo $Position; ?></td>
+                                            <td><?php echo $Phone; ?></td>
+                                            <td><?php echo $Email; ?></td>
                                             <td>
-                                                <a href=# class="btn btn-danger btnformaintenance deleteReference">
+                                                <button href=# class="btn btn-danger" data-toggle="modal" data-target="#DeleteReference">
                                                     <i class="fa fa-trash fa-1x"></i>
-                                                </a>
-                                                <a data-bb="confirmDeleteReference" class="bb-alert alert alert-info" style="display: none;" href="delete.php?delete_ReferenceID=<?php echo $rows['ReferenceID'];?>">
-                                        
-                                                <a href="edit/edit-reference.php?EditReferenceID=<?php echo $rows['ReferenceID'];?>" class="btn btn-default btnformaintenance">
+                                                </button>
+                                                <a href="edit/edit-reference.php?id=<?php echo $ReferenceID; ?>" class="btn btn-default">
                                                     <i class="fa fa-pencil-square-o fa-1x"></i>
                                                 </a>
                                             </td>
-                                            </form>
-                                        </tr>
-                                        <?php
-                                            }
-                                        ?>
+                                            </tr>
+                                            <!-- Modal -->
+                                            <div class="modal fade" id="DeleteReference" role="dialog">
+                                                <div class="modal-dialog" style="padding:100px">
+                                                    <!-- Modal content-->
+                                                    <div class="modal-content">
+                                                        <div class="modal-header">
+                                                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                                            <h4 class="modal-title">Delete Reference?</h4>
+                                                        </div>
+                                                        <div class="modal-body">
+                                                            <div class="col-md-15 fieldcol">
+                                                                <label = "usr" class = "control-label">Do you want to delete this information? This cannot be undone.</label>
+                                                                <div class="form-group">
+                                                                </div>
+                                                        </div>
+                                                        <div class="modal-footer">
+                                                            <a href="delete.php?delete_ReferenceID=<?php echo $ReferenceID; ?>" class="btn btn-danger">Delete</a>
+                                                            <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+                                                        </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <?php
+                                                }
+                                            ?>
                                     </tbody>
                                 </table>  
                             </div>
