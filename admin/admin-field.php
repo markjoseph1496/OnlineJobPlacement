@@ -420,7 +420,7 @@ $result = mysql_query($qry);
                       <tbody>
                           <tr>
                               <td>
-                              <a href = 'resumelink.php'>$FullName;</a>
+                              <a href = 'resumelink.php'>$FullName</a>
                               </td>
                               <td class = 'tcenter'></td>
                               <td class = 'tcenter'></td>
@@ -431,17 +431,11 @@ $result = mysql_query($qry);
                                   <i class='fa fa-pencil'></i>
                                   </a> 
                               </td>
-
                           </tr>
                       </tbody>
-
-
                     ";
                 }
-
-
             ?>
-
         </table>
         </div>
         <br><br>
