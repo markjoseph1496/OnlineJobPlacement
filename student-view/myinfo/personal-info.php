@@ -45,7 +45,7 @@ while($query = mysql_fetch_array($result)){
     <link href="../../css/bootstrapValidator.min.css" rel="stylesheet"/>
     <!-- jQuery and Bootstrap JS -->
     <script type="text/javascript" src="../../js/jquery.min.js"></script>
-    <script src="../../js/bootstrap.min.js" type="text/javascript"></script>
+    <script type="text/javascript" src="../../js/bootstrap.min.js" ></script>
 
     <!-- BootstrapValidator -->
     <script src="../../js/bootstrapValidator.min.js" type="text/javascript"></script>
