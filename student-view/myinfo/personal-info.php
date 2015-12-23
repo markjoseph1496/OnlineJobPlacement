@@ -72,8 +72,7 @@ while($query = mysql_fetch_array($result)){
     <link rel="stylesheet" type="text/css" href="../../css/colors/yellow.css" title="yellow" media="screen"/>
 
 
-    <!-- Margo JS  -->
-
+    <!-- JS  -->
     <script type="text/javascript" src="../../js/jquery.migrate.js"></script>
     <script type="text/javascript" src="../../js/modernizrr.js"></script>
     <script type="text/javascript" src="../../js/jquery.fitvids.js"></script>
