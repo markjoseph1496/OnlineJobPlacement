@@ -260,15 +260,15 @@
 			                    		<img alt="" src="images/portfolio-1/1.png" />
 			                  		</a>
 			                	</div>
-			                <div class="portfolio-details">
-			                  <a href="#">
-			                    <h4>Lorem Ipsum Dolor</h4>
-			                    <span>Website</span>
-			                    <span>Drawing</span>
-			                  </a>
-			                </div>
-			              </div>
-			            </div>
+				                <div class="portfolio-details">
+				                  	<a href="#">
+				                    	<h4>Lorem Ipsum Dolor</h4>
+				                    	<span>Website</span>
+				                    	<span>Drawing</span>
+				                  	</a>
+				                </div>
+				             </div>
+				        </div>
 
 			            <div class="portfolio-item item">
 			              <div class="portfolio-border">
@@ -288,509 +288,406 @@
 			              </div>
 			            </div>
 
-            <div class="portfolio-item item">
-              <div class="portfolio-border">
-                <div class="portfolio-thumb">
-                  <a href="#">
-                    <div class="thumb-overlay"><i class="fa fa-arrows-alt"></i></div>
-                    <img alt="" src="images/portfolio-1/3.png" />
-                  </a>
-                </div>
-                <div class="portfolio-details">
-                  <a href="#">
-                    <h4>Lorem Ipsum Dolor</h4>
-                    <span>Drawing</span>
-                  </a>
-                </div>
-              </div>
-            </div>
+			            <div class="portfolio-item item">
+			              	<div class="portfolio-border">
+			                	<div class="portfolio-thumb">
+			                  		<a href="#">
+			                    		<div class="thumb-overlay"><i class="fa fa-arrows-alt"></i></div>
+			                    		<img alt="" src="images/portfolio-1/3.png" />
+			                  		</a>
+			                	</div>
+			                	<div class="portfolio-details">
+			                  		<a href="#">
+					                	<h4>Lorem Ipsum Dolor</h4>
+					                    <span>Drawing</span>
+					                </a>
+			                	</div>
+			              	</div>
+			            </div>
 
-            <div class="portfolio-item item">
-              <div class="portfolio-border">
-                <div class="portfolio-thumb">
-                  <a href="#">
-                    <div class="thumb-overlay"><i class="fa fa-arrows-alt"></i></div>
-                    <img alt="" src="images/portfolio-1/4.png" />
-                  </a>
-                </div>
-                <div class="portfolio-details">
-                  <a href="#">
-                    <h4>Lorem Ipsum Dolor</h4>
-                    <span>Website</span>
-                    <span>Ilustration</span>
-                  </a>
-                </div>
-              </div>
-            </div>
+			            <div class="portfolio-item item">
+			              	<div class="portfolio-border">
+			                	<div class="portfolio-thumb">
+			                  		<a href="#">
+			                    		<div class="thumb-overlay"><i class="fa fa-arrows-alt"></i></div>
+			                    		<img alt="" src="images/portfolio-1/4.png" />
+			                  		</a>
+			                	</div>
+				                <div class="portfolio-details">
+				                  	<a href="#">
+				                    	<h4>Lorem Ipsum Dolor</h4>
+				                    	<span>Website</span>
+				                    	<span>Ilustration</span>
+				                  	</a>
+			                	</div>
+			              	</div>
+			            </div>
 
-            <div class="portfolio-item item">
-              <div class="portfolio-border">
-                <div class="portfolio-thumb">
-                  <a class="lightbox" title="This is an image title" href="images/portfolio-big-02.jpg">
-                    <div class="thumb-overlay"><i class="fa fa-arrows-alt"></i></div>
-                    <img alt="" src="images/portfolio-1/5.png" />
-                  </a>
-                </div>
-                <div class="portfolio-details">
-                  <a href="#">
-                    <h4>Lorem Ipsum Dolor</h4>
-                    <span>Logo</span>
-                    <span>Drawing</span>
-                  </a>
-                </div>
-              </div>
-            </div>
+			            <div class="portfolio-item item">
+			              	<div class="portfolio-border">
+			                	<div class="portfolio-thumb">
+				                  	<a class="lightbox" title="This is an image title" href="images/portfolio-big-02.jpg">
+				                    	<div class="thumb-overlay"><i class="fa fa-arrows-alt"></i></div>
+				                    	<img alt="" src="images/portfolio-1/5.png" />
+				                  	</a>
+			                	</div>
+			                	<div class="portfolio-details">
+			                  		<a href="#">
+				                    	<h4>Lorem Ipsum Dolor</h4>
+				                    	<span>Logo</span>
+				                    	<span>Drawing</span>
+			                  		</a>
+			                	</div>
+			              	</div>
+			            </div>
 
-            <div class="portfolio-item item">
-              <div class="portfolio-border">
-                <div class="portfolio-thumb">
-                  <a href="#">
-                    <div class="thumb-overlay"><i class="fa fa-arrows-alt"></i></div>
-                    <img alt="" src="images/portfolio-1/6.png" />
-                  </a>
-                </div>
-                <div class="portfolio-details">
-                  <a href="#">
-                    <h4>Lorem Ipsum Dolor</h4>
-                    <span>Animation</span>
-                  </a>
-                </div>
-              </div>
-            </div>
+			            <div class="portfolio-item item">
+			              	<div class="portfolio-border">
+			                	<div class="portfolio-thumb">
+			                  		<a href="#">
+			                    		<div class="thumb-overlay"><i class="fa fa-arrows-alt"></i></div>
+			                    		<img alt="" src="images/portfolio-1/6.png" />
+			                  		</a>
+			                	</div>
+				                <div class="portfolio-details">
+				                  	<a href="#">
+					                    <h4>Lorem Ipsum Dolor</h4>
+					                    <span>Animation</span>
+				                  	</a>
+			                	</div>
+			              	</div>
+			            </div>
 
-            <div class="portfolio-item item">
-              <div class="portfolio-border">
-                <div class="portfolio-thumb">
-                  <a class="lightbox" title="This is an image title" href="images/portfolio-big-03.jpg">
-                    <div class="thumb-overlay"><i class="fa fa-arrows-alt"></i></div>
-                    <img alt="" src="images/portfolio-1/7.png" />
-                  </a>
-                </div>
-                <div class="portfolio-details">
-                  <a href="#">
-                    <h4>Lorem Ipsum Dolor</h4>
-                    <span>Website</span>
-                  </a>
-                </div>
-              </div>
-            </div>
+			            <div class="portfolio-item item">
+			              	<div class="portfolio-border">
+				                <div class="portfolio-thumb">
+				                  	<a class="lightbox" title="This is an image title" href="images/portfolio-big-03.jpg">
+					                    <div class="thumb-overlay"><i class="fa fa-arrows-alt"></i></div>
+					                    <img alt="" src="images/portfolio-1/7.png" />
+				                  	</a>
+				                </div>
+			                	<div class="portfolio-details">
+				                  	<a href="#">
+					                    <h4>Lorem Ipsum Dolor</h4>
+					                    <span>Website</span>
+				                  	</a>
+			               		</div>
+			              	</div>
+			            </div>
 
-            <div class="portfolio-item item">
-              <div class="portfolio-border">
-                <div class="portfolio-thumb">
-                  <a href="#">
-                    <div class="thumb-overlay"><i class="fa fa-arrows-alt"></i></div>
-                    <img alt="" src="images/portfolio-1/8.png" />
-                  </a>
-                </div>
-                <div class="portfolio-details">
-                  <a href="#">
-                    <h4>Lorem Ipsum Dolor</h4>
-                    <span>Ilustration</span>
-                    <span>Animation</span>
-                  </a>
-                </div>
-              </div>
-            </div>
+			            <div class="portfolio-item item">
+			              	<div class="portfolio-border">
+			                	<div class="portfolio-thumb">
+				                  	<a href="#">
+					                    <div class="thumb-overlay"><i class="fa fa-arrows-alt"></i></div>
+					                    <img alt="" src="images/portfolio-1/8.png" />
+				                  	</a>
+			               		 </div>
+			                	<div class="portfolio-details">
+			                  		<a href="#">
+					                    <h4>Lorem Ipsum Dolor</h4>
+					                    <span>Ilustration</span>
+					                    <span>Animation</span>
+			                  		</a>
+			                	</div>
+			              	</div>
+			            </div>
 
-            <div class="portfolio-item item">
-              <div class="portfolio-border">
-                <div class="portfolio-thumb">
-                  <a href="#">
-                    <div class="thumb-overlay"><i class="fa fa-arrows-alt"></i></div>
-                    <img alt="" src="images/portfolio-1/9.png" />
-                  </a>
-                </div>
-                <div class="portfolio-details">
-                  <a href="#">
-                    <h4>Lorem Ipsum Dolor</h4>
-                    <span>Ilustration</span>
-                    <span>Animation</span>
-                  </a>
-                </div>
-              </div>
-            </div>
+            			<div class="portfolio-item item">
+			              	<div class="portfolio-border">
+			                	<div class="portfolio-thumb">
+				                  	<a href="#">
+					                    <div class="thumb-overlay"><i class="fa fa-arrows-alt"></i></div>
+					                    <img alt="" src="images/portfolio-1/9.png" />
+				                  	</a>
+			               		 </div>
+			                	<div class="portfolio-details">
+			                  		<a href="#">
+					                    <h4>Lorem Ipsum Dolor</h4>
+					                    <span>Ilustration</span>
+					                    <span>Animation</span>
+			                  		</a>
+			                	</div>
+			              	</div>
+			            </div>
 
-            <div class="portfolio-item item">
-              <div class="portfolio-border">
-                <div class="portfolio-thumb">
-                  <a href="#">
-                    <div class="thumb-overlay"><i class="fa fa-arrows-alt"></i></div>
-                    <img alt="" src="images/portfolio-1/10.png" />
-                  </a>
-                </div>
-                <div class="portfolio-details">
-                  <a href="#">
-                    <h4>Lorem Ipsum Dolor</h4>
-                    <span>Ilustration</span>
-                    <span>Animation</span>
-                  </a>
-                </div>
-              </div>
-            </div>
+			            <div class="portfolio-item item">
+			              	<div class="portfolio-border">
+			                	<div class="portfolio-thumb">
+				                  	<a href="#">
+					                    <div class="thumb-overlay"><i class="fa fa-arrows-alt"></i></div>
+					                    <img alt="" src="images/portfolio-1/10.png" />
+				                  	</a>
+			               		 </div>
+			                	<div class="portfolio-details">
+			                  		<a href="#">
+					                    <h4>Lorem Ipsum Dolor</h4>
+					                    <span>Ilustration</span>
+					                    <span>Animation</span>
+			                  		</a>
+			                	</div>
+			              	</div>
+			            </div>
 
-            <div class="portfolio-item item">
-              <div class="portfolio-border">
-                <div class="portfolio-thumb">
-                  <a href="#">
-                    <div class="thumb-overlay"><i class="fa fa-arrows-alt"></i></div>
-                    <img alt="" src="images/portfolio-1/11.png" />
-                  </a>
-                </div>
-                <div class="portfolio-details">
-                  <a href="#">
-                    <h4>Lorem Ipsum Dolor</h4>
-                    <span>Ilustration</span>
-                    <span>Animation</span>
-                  </a>
-                </div>
-              </div>
-            </div>
+			            <div class="portfolio-item item">
+			              	<div class="portfolio-border">
+			                	<div class="portfolio-thumb">
+				                  	<a href="#">
+					                    <div class="thumb-overlay"><i class="fa fa-arrows-alt"></i></div>
+					                    <img alt="" src="images/portfolio-1/11.png" />
+				                  	</a>
+			               		 </div>
+			                	<div class="portfolio-details">
+			                  		<a href="#">
+					                    <h4>Lorem Ipsum Dolor</h4>
+					                    <span>Ilustration</span>
+					                    <span>Animation</span>
+			                  		</a>
+			                	</div>
+			              	</div>
+			            </div>
 
-            <div class="portfolio-item item">
-              <div class="portfolio-border">
-                <div class="portfolio-thumb">
-                  <a href="#">
-                    <div class="thumb-overlay"><i class="fa fa-arrows-alt"></i></div>
-                    <img alt="" src="images/portfolio-1/12.png" />
-                  </a>
-                </div>
-                <div class="portfolio-details">
-                  <a href="#">
-                    <h4>Lorem Ipsum Dolor</h4>
-                    <span>Ilustration</span>
-                    <span>Animation</span>
-                  </a>
-                </div>
-              </div>
-            </div>
+			            <div class="portfolio-item item">
+			              	<div class="portfolio-border">
+			                	<div class="portfolio-thumb">
+				                  	<a href="#">
+					                    <div class="thumb-overlay"><i class="fa fa-arrows-alt"></i></div>
+					                    <img alt="" src="images/portfolio-1/12.png" />
+				                  	</a>
+			               		 </div>
+			                	<div class="portfolio-details">
+			                  		<a href="#">
+					                    <h4>Lorem Ipsum Dolor</h4>
+					                    <span>Ilustration</span>
+					                    <span>Animation</span>
+			                  		</a>
+			                	</div>
+			              	</div>
+			            </div>
+					</div>
+        		</div>
+        		<!-- End Recent Projects Carousel -->
 
-          </div>
-        </div>
-        <!-- End Recent Projects Carousel -->
+        		<!-- Divider -->
+        		<div class="hr1 margin-60"></div>
 
-        <!-- Divider -->
-        <div class="hr1 margin-60"></div>
+        		<div class="row">
+          			<div class="col-md-8">
 
+		            	<!-- Start Recent Posts Carousel -->
+			            <div class="latest-posts">
+			              	<h4 class="classic-title"><span>Latest News</span></h4>
+			              	<div class="latest-posts-classic custom-carousel touch-carousel" data-appeared-items="2">
 
-        <div class="row">
-          <div class="col-md-8">
+				                <!-- Posts 1 -->
+				                <div class="post-row item">
+				                  	<div class="left-meta-post">
+				                    	<div class="post-date"><span class="day">28</span><span class="month">Dec</span></div>
+				                    	<div class="post-type"><i class="fa fa-picture-o"></i></div>
+				                  	</div>
+				                  	<h3 class="post-title"><a href="#">Standard Post With Image</a></h3>
+				                  	<div class="post-content">
+				                    	<p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit. <a class="read-more" href="#">Read More...</a></p>
+				                  	</div>
+				                </div>
 
-            <!-- Start Recent Posts Carousel -->
-            <div class="latest-posts">
-              <h4 class="classic-title"><span>Latest News</span></h4>
-              <div class="latest-posts-classic custom-carousel touch-carousel" data-appeared-items="2">
+				                <!-- Posts 2 -->
+				                <div class="post-row item">
+				                  	<div class="left-meta-post">
+				                    	<div class="post-date"><span class="day">28</span><span class="month">Dec</span></div>
+				                    	<div class="post-type"><i class="fa fa-picture-o"></i></div>
+				                  	</div>
+				                  	<h3 class="post-title"><a href="#">Standard Post With Image</a></h3>
+				                  	<div class="post-content">
+				                    	<p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit. <a class="read-more" href="#">Read More...</a></p>
+				                  	</div>
+				                </div>
 
-                <!-- Posts 1 -->
-                <div class="post-row item">
-                  <div class="left-meta-post">
-                    <div class="post-date"><span class="day">28</span><span class="month">Dec</span></div>
-                    <div class="post-type"><i class="fa fa-picture-o"></i></div>
-                  </div>
-                  <h3 class="post-title"><a href="#">Standard Post With Image</a></h3>
-                  <div class="post-content">
-                    <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit. <a class="read-more" href="#">Read More...</a></p>
-                  </div>
-                </div>
+				                <!-- Posts 3 -->
+				                <div class="post-row item">
+				                  	<div class="left-meta-post">
+				                    	<div class="post-date"><span class="day">28</span><span class="month">Dec</span></div>
+				                    	<div class="post-type"><i class="fa fa-picture-o"></i></div>
+				                  	</div>
+				                  	<h3 class="post-title"><a href="#">Standard Post With Image</a></h3>
+				                  	<div class="post-content">
+				                    	<p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit. <a class="read-more" href="#">Read More...</a></p>
+				                  	</div>
+				                </div>
 
-                <!-- Posts 2 -->
-                <div class="post-row item">
-                  <div class="left-meta-post">
-                    <div class="post-date"><span class="day">26</span><span class="month">Dec</span></div>
-                    <div class="post-type"><i class="fa fa-picture-o"></i></div>
-                  </div>
-                  <h3 class="post-title"><a href="#">Link Post</a></h3>
-                  <div class="post-content">
-                    <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit. <a class="read-more" href="#">Read More...</a></p>
-                  </div>
-                </div>
+								<!-- Posts 4 -->
+				                <div class="post-row item">
+				                  	<div class="left-meta-post">
+				                    	<div class="post-date"><span class="day">28</span><span class="month">Dec</span></div>
+				                    	<div class="post-type"><i class="fa fa-picture-o"></i></div>
+				                  	</div>
+				                  	<h3 class="post-title"><a href="#">Standard Post With Image</a></h3>
+				                  	<div class="post-content">
+				                    	<p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit. <a class="read-more" href="#">Read More...</a></p>
+				                  	</div>
+				                </div>
 
-                <!-- Posts 3 -->
-                <div class="post-row item">
-                  <div class="left-meta-post">
-                    <div class="post-date"><span class="day">26</span><span class="month">Dec</span></div>
-                    <div class="post-type"><i class="fa fa-picture-o"></i></div>
-                  </div>
-                  <h3 class="post-title"><a href="#">Iframe Video Post</a></h3>
-                  <div class="post-content">
-                    <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit. <a class="read-more" href="#">Read More...</a></p>
-                  </div>
-                </div>
+				                <!-- Posts 5 -->
+				                <div class="post-row item">
+				                  	<div class="left-meta-post">
+				                    	<div class="post-date"><span class="day">28</span><span class="month">Dec</span></div>
+				                    	<div class="post-type"><i class="fa fa-picture-o"></i></div>
+				                  	</div>
+				                  	<h3 class="post-title"><a href="#">Standard Post With Image</a></h3>
+				                  	<div class="post-content">
+				                    	<p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit. <a class="read-more" href="#">Read More...</a></p>
+				                  	</div>
+				                </div>
 
-                <!-- Posts 4 -->
-                <div class="post-row item">
-                  <div class="left-meta-post">
-                    <div class="post-date"><span class="day">26</span><span class="month">Dec</span></div>
-                    <div class="post-type"><i class="fa fa-picture-o"></i></div>
-                  </div>
-                  <h3 class="post-title"><a href="#">Gallery Post</a></h3>
-                  <div class="post-content">
-                    <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit. <a class="read-more" href="#">Read More...</a></p>
-                  </div>
-                </div>
+				                <!-- Posts 6 -->
+				                <div class="post-row item">
+				                  	<div class="left-meta-post">
+				                    	<div class="post-date"><span class="day">28</span><span class="month">Dec</span></div>
+				                    	<div class="post-type"><i class="fa fa-picture-o"></i></div>
+				                  	</div>
+				                  	<h3 class="post-title"><a href="#">Standard Post With Image</a></h3>
+				                  	<div class="post-content">
+				                    	<p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit. <a class="read-more" href="#">Read More...</a></p>
+				                  	</div>
+				                </div>
+              				</div>
+            			</div>
+            			<!-- End Recent Posts Carousel -->
+          			</div>
 
-                <!-- Posts 5 -->
-                <div class="post-row item">
-                  <div class="left-meta-post">
-                    <div class="post-date"><span class="day">26</span><span class="month">Dec</span></div>
-                    <div class="post-type"><i class="fa fa-picture-o"></i></div>
-                  </div>
-                  <h3 class="post-title"><a href="#">Standard Post without Image</a></h3>
-                  <div class="post-content">
-                    <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit. <a class="read-more" href="#">Read More...</a></p>
-                  </div>
-                </div>
+          			<div class="col-md-4">
 
-                <!-- Posts 6 -->
-                <div class="post-row item">
-                  <div class="left-meta-post">
-                    <div class="post-date"><span class="day">26</span><span class="month">Dec</span></div>
-                    <div class="post-type"><i class="fa fa-picture-o"></i></div>
-                  </div>
-                  <h3 class="post-title"><a href="#">Iframe Audio Post</a></h3>
-                  <div class="post-content">
-                    <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit. <a class="read-more" href="#">Read More...</a></p>
-                  </div>
-                </div>
+            			<!-- Classic Heading -->
+            			<h4 class="classic-title"><span>Testimonials</span></h4>
 
-              </div>
-            </div>
-            <!-- End Recent Posts Carousel -->
+			            <!-- Start Testimonials Carousel -->
+			            <div class="custom-carousel show-one-slide touch-carousel" data-appeared-items="1">
+		              		<!-- Testimonial 1 -->
+		              		<div class="classic-testimonials item">
+		                		<div class="testimonial-content">
+		                  			<p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim laborum. Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+		                		</div>
+		                		<div class="testimonial-author"><span>John Doe</span> - Customer</div>
+		              		</div>
+			              	<!-- Testimonial 2 -->
+			              	<div class="classic-testimonials item">
+			                	<div class="testimonial-content">
+			                  		<p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim laborum. Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+			                	</div>
+			                	<div class="testimonial-author"><span>John Doe</span> - Customer</div>
+			              	</div>
+          					<!-- Testimonial 2 -->
+			              	<div class="classic-testimonials item">
+			                	<div class="testimonial-content">
+			                  		<p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim laborum. Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+			                	</div>
+			                	<div class="testimonial-author"><span>John Doe</span> - Customer</div>
+			              	</div>
+            			</div>
+           				<!-- End Testimonials Carousel -->
+          			</div>
+        		</div>
 
-          </div>
+        		<!-- Divider -->
+        		<div class="hr1 margin-60"></div>
 
-          <div class="col-md-4">
-
-            <!-- Classic Heading -->
-            <h4 class="classic-title"><span>Testimonials</span></h4>
-
-            <!-- Start Testimonials Carousel -->
-            <div class="custom-carousel show-one-slide touch-carousel" data-appeared-items="1">
-              <!-- Testimonial 1 -->
-              <div class="classic-testimonials item">
-                <div class="testimonial-content">
-                  <p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim laborum. Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-                </div>
-                <div class="testimonial-author"><span>John Doe</span> - Customer</div>
-              </div>
-              <!-- Testimonial 2 -->
-              <div class="classic-testimonials item">
-                <div class="testimonial-content">
-                  <p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim laborum. Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-                </div>
-                <div class="testimonial-author"><span>John Doe</span> - Customer</div>
-              </div>
-              <!-- Testimonial 3 -->
-              <div class="classic-testimonials item">
-                <div class="testimonial-content">
-                  <p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim laborum. Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-                </div>
-                <div class="testimonial-author"><span>John Doe</span> - Customer</div>
-              </div>
-            </div>
-            <!-- End Testimonials Carousel -->
-
-          </div>
-        </div>
-
-        <!-- Divider -->
-        <div class="hr1 margin-60"></div>
-
-
-        <!-- Start Call Action -->
-        <div class="call-action call-action-boxed call-action-style1 clearfix">
-          <!-- Call Action Button -->
-          <div class="button-side" style="margin-top:4px;"><a href="#" class="btn-system btn-large">Purchase It Now</a></div>
-          <!-- Call Action Text -->
-          <h2 class="primary"><strong>Margo</strong> is the best theme to create an <strong>awesome website!</strong></h2>
-          <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
-        </div>
-        <!-- End Call Action -->
-
-      </div>
-    </div>
-    <!-- End content -->
+		        <!-- Start Call Action -->
+		        <div class="call-action call-action-boxed call-action-style1 clearfix">
+		          	<!-- Call Action Button -->
+		          	<div class="button-side" style="margin-top:4px;"><a href="#" class="btn-system btn-large">Purchase It Now</a></div>
+		          	<!-- Call Action Text -->
+		          	<h2 class="primary"><strong>Margo</strong> is the best theme to create an <strong>awesome website!</strong></h2>
+		          	<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+		        </div>
+		        <!-- End Call Action -->
+      		</div>
+    	</div>
+    	<!-- End content -->
 
 
-    <!-- Start Footer -->
-    <footer>
-      <div class="container">
-        <div class="row footer-widgets">
+	    <!-- Start Footer -->
+	    <footer>
+	      	<div class="container">
+	       		<div class="row footer-widgets">
 
-          <!-- Start Subscribe & Social Links Widget -->
-          <div class="col-md-3">
-            <div class="footer-widget mail-subscribe-widget">
-              <h4>Get in touch<span class="head-line"></span></h4>
-              <p>Join our mailing list to stay up to date and get notices about our new releases!</p>
-              <form class="subscribe">
-                <input type="text" placeholder="mail@example.com">
-                <input type="submit" class="btn-system" value="Send">
-              </form>
-            </div>
-            <div class="footer-widget social-widget">
-              <h4>Follow Us<span class="head-line"></span></h4>
-              <ul class="social-icons">
-                <li>
-                  <a class="facebook" href="#"><i class="fa fa-facebook"></i></a>
-                </li>
-                <li>
-                  <a class="twitter" href="#"><i class="fa fa-twitter"></i></a>
-                </li>
-                <li>
-                  <a class="google" href="#"><i class="fa fa-google-plus"></i></a>
-                </li>
-                <li>
-                  <a class="dribbble" href="#"><i class="fa fa-dribbble"></i></a>
-                </li>
-                <li>
-                  <a class="linkdin" href="#"><i class="fa fa-linkedin"></i></a>
-                </li>
-                <li>
-                  <a class="flickr" href="#"><i class="fa fa-flickr"></i></a>
-                </li>
-                <li>
-                  <a class="tumblr" href="#"><i class="fa fa-tumblr"></i></a>
-                </li>
-                <li>
-                  <a class="instgram" href="#"><i class="fa fa-instagram"></i></a>
-                </li>
-                <li>
-                  <a class="vimeo" href="#"><i class="fa fa-vimeo-square"></i></a>
-                </li>
-                <li>
-                  <a class="skype" href="#"><i class="fa fa-skype"></i></a>
-                </li>
-              </ul>
-            </div>
-          </div>
-          <!-- .col-md-3 -->
-          <!-- End Subscribe & Social Links Widget -->
+		          	<!-- Start Subscribe & Social Links Widget -->
+		          	<div class="col-md-3">
+			            <div class="footer-widget social-widget">
+		              		<h4>Follow Us<span class="head-line"></span></h4>
+		              		<ul class="social-icons">
+			                  	<li><a class="facebook" href="#"><i class="fa fa-facebook"></i></a></li>
+			                  	<li><a class="twitter" href="#"><i class="fa fa-twitter"></i></a></li>
+			                  	<li><a class="google" href="#"><i class="fa fa-youtube"></i></a></li>
+		              		</ul>
+		            	</div>
+		            	
+	          		</div>
+		          	<!-- .col-md-3 -->
+		          	<!-- End Subscribe & Social Links Widget -->
+
+		          	<!-- Start Twitter Widget -->
+		          	<div class="col-md-3">
+            			<div class="footer-widget twitter-widget">
+              				
+            			</div>
+		          	</div>
+		          	<!-- .col-md-3 -->
+		          	<!-- End Twitter Widget -->
 
 
-          <!-- Start Twitter Widget -->
-          <div class="col-md-3">
-            <div class="footer-widget twitter-widget">
-              <h4>Twitter Feed<span class="head-line"></span></h4>
-              <ul>
-                <li>
-                  <p><a href="#">@GrayGrids </a> Lorem ipsum dolor et, consectetur adipiscing eli.</p>
-                  <span>28 February 2014</span>
-                </li>
-                <li>
-                  <p><a href="#">@GrayGrids </a> Lorem ipsum dolor et, consectetur adipiscing eli.An Fusce eleifend aliquet nis application.</p>
-                  <span>26 February 2014</span>
-                </li>
-                <li>
-                  <p><a href="#">@GrayGrids </a> Lorem ipsum dolor et, consectetur adipiscing eli.</p>
-                  <span>28 February 2014</span>
-                </li>
-              </ul>
-            </div>
-          </div>
-          <!-- .col-md-3 -->
-          <!-- End Twitter Widget -->
+		          	<!-- Start Flickr Widget -->
+		          	<div class="col-md-3">
+		            	<div class="footer-widget flickr-widget">
+			                <li>
+			                  <a href="images/flickr-09.jpg" class="lightbox">
+			                    <img alt="" src="images/flickr-09.jpg">
+			                  </a>
+			                </li>
+		            	</div>
+		          	</div>
+		          	<!-- .col-md-3 -->
+		          	<!-- End Flickr Widget -->
 
+		          	<!-- Start Contact Widget -->
+		          	<div class="col-md-3">
+		            	<div class="footer-widget contact-widget">
+		              		<h4><img src="images/ojpms.png" class="img-responsive" alt="Footer Logo" /></h4>
+		              		<!--<p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident</p>-->
+		              		<ul>
+				                <li><span>Phone Number:</span> +01 234 567 890</li>
+				                <li><span>Email:</span> company@company.com</li>
+				                <li><span>Website:</span> www.yourdomain.com</li>
+		              		</ul>
+		            	</div>
+		          	</div>
+		          	<!-- .col-md-3 -->
+		          	<!-- End Contact Widget -->
+        		</div>
+        		<!-- .row -->
 
-          <!-- Start Flickr Widget -->
-          <div class="col-md-3">
-            <div class="footer-widget flickr-widget">
-              <h4>Flicker Feed<span class="head-line"></span></h4>
-              <ul class="flickr-list">
-                <li>
-                  <a href="images/flickr-01.jpg" class="lightbox">
-                    <img alt="" src="images/flickr-01.jpg">
-                  </a>
-                </li>
-                <li>
-                  <a href="images/flickr-02.jpg" class="lightbox">
-                    <img alt="" src="images/flickr-02.jpg">
-                  </a>
-                </li>
-                <li>
-                  <a href="images/flickr-03.jpg" class="lightbox">
-                    <img alt="" src="images/flickr-03.jpg">
-                  </a>
-                </li>
-                <li>
-                  <a href="images/flickr-04.jpg" class="lightbox">
-                    <img alt="" src="images/flickr-04.jpg">
-                  </a>
-                </li>
-                <li>
-                  <a href="images/flickr-05.jpg" class="lightbox">
-                    <img alt="" src="images/flickr-05.jpg">
-                  </a>
-                </li>
-                <li>
-                  <a href="images/flickr-06.jpg" class="lightbox">
-                    <img alt="" src="images/flickr-06.jpg">
-                  </a>
-                </li>
-                <li>
-                  <a href="images/flickr-07.jpg" class="lightbox">
-                    <img alt="" src="images/flickr-07.jpg">
-                  </a>
-                </li>
-                <li>
-                  <a href="images/flickr-08.jpg" class="lightbox">
-                    <img alt="" src="images/flickr-08.jpg">
-                  </a>
-                </li>
-                <li>
-                  <a href="images/flickr-09.jpg" class="lightbox">
-                    <img alt="" src="images/flickr-09.jpg">
-                  </a>
-                </li>
-              </ul>
-            </div>
-          </div>
-          <!-- .col-md-3 -->
-          <!-- End Flickr Widget -->
-
-          <!-- Start Contact Widget -->
-          <div class="col-md-3">
-            <div class="footer-widget contact-widget">
-              <h4><img src="images/ojpms.png" class="img-responsive" alt="Footer Logo" /></h4>
-              <p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident</p>
-              <ul>
-                <li><span>Phone Number:</span> +01 234 567 890</li>
-                <li><span>Email:</span> company@company.com</li>
-                <li><span>Website:</span> www.yourdomain.com</li>
-              </ul>
-            </div>
-          </div>
-          <!-- .col-md-3 -->
-          <!-- End Contact Widget -->
-
-
-        </div>
-        <!-- .row -->
-
-        <!-- Start Copyright -->
-        <div class="copyright-section">
-          <div class="row">
-            <div class="col-md-6">
-              <p>&copy; 2015 OJPMS - All Rights Reserved <a href="http://graygrids.com">GrayGrids</a> </p>
-            </div>
-            <div class="col-md-6">
-              <ul class="footer-nav">
-                <li><a href="#">Sitemap</a></li>
-                <li><a href="#">Privacy Policy</a></li>
-                <li><a href="#">Contact</a></li>
-              </ul>
-            </div>
-          </div>
-        </div>
-        <!-- End Copyright -->
-
-      </div>
+		        <!-- Start Copyright -->
+		        <div class="copyright-section">
+		          	<div class="row">
+		            	<div class="col-md-6">
+		              		<p>&copy; 2015 OJPMS - All Rights Reserved</p>
+		            	</div>
+		            	<div class="col-md-6">
+		              	<ul class="footer-nav">
+			                <li><a href="#">Sitemap</a></li>
+			                <li><a href="#">Privacy Policy</a></li>
+			                <li><a href="#">Contact</a></li>
+		              	</ul>
+		            </div>
+		        </div>
+		    </div>
+		    <!-- End Copyright -->
+      	</div>
     </footer>
     <!-- End Footer -->
+  	</div>
+  	<!-- End Container -->
 
-  </div>
-  <!-- End Container -->
-
-  <!-- Go To Top Link -->
+  	<!-- Go To Top Link -->
   <a href="#" class="back-to-top"><i class="fa fa-angle-up"></i></a>
 
   
