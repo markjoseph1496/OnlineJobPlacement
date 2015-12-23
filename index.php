@@ -111,190 +111,182 @@
       		</div>
       		<!-- End Header ( Logo & Naviagtion ) -->
     	</header>
-    <!-- End Header -->
+    	<!-- End Header -->
 
+    	<!-- Start HomePage Slider -->
+    	<section id="home">
+      		<!-- Carousel -->
+      		<div id="main-slide" class="carousel slide" data-ride="carousel">
+		        <!-- Indicators -->
+		        <ol class="carousel-indicators">
+		          	<li data-target="#main-slide" data-slide-to="0" class="active"></li>
+		          	<li data-target="#main-slide" data-slide-to="1"></li>
+		          	<li data-target="#main-slide" data-slide-to="2"></li>
+		        </ol>
+		        <!--/ Indicators end-->
 
-    <!-- Start HomePage Slider -->
+		        <!-- Carousel inner -->
+		        <div class="carousel-inner">
+		          	<div class="item active">
+		            	<img class="img-responsive" src="images/slider/bg1.jpg" alt="slider">
+	            		<div class="slider-content">
+	              			<div class="col-md-12 text-center">
+	                			<h2 class="animated2">
+	                  				<span>Welcome to <strong>Margo</strong></span>
+	              				</h2>
+	                			<h3 class="animated3">
+	               					<span>The ultimate aim of your business</span>
+	           					</h3>
+	                			<p class="animated4"><a href="#" class="slider btn btn-system btn-large">Check Now</a></p>
+	              			</div>
+	            		</div>
+	          		</div>
+	          		<!--/ Carousel item end -->
+	          		<div class="item">
+	            		<img class="img-responsive" src="images/slider/bg2.jpg" alt="slider">
+	            		<div class="slider-content">
+	              			<div class="col-md-12 text-center">
+	                			<h2 class="animated4">
+	                				<span><strong>Margo</strong> for the highest</span>
+	            				</h2>
+	                			<h3 class="animated5">
+	               					<span>The Key of your Success</span>
+	           					</h3>
+	                			<p class="animated6"><a href="#" class="slider btn btn-system btn-large">Buy Now</a></p>
+	              			</div>
+	            		</div>
+		          	</div>
+		          	<!--/ Carousel item end -->
+		          	<div class="item">
+		            	<img class="img-responsive" src="images/slider/bg3.jpg" alt="slider">
+		           		<div class="slider-content">
+		              		<div class="col-md-12 text-center">
+				                <h2 class="animated7 white">
+				                	<span>The way of <strong>Success</strong></span>
+				            	</h2>
+				                <h3 class="animated8 white">
+					               <span>Why you are waiting</span>
+					           	</h3>
+	                			<div class="">
+	                  				<a class="animated4 slider btn btn-system btn-large btn-min-block" href="#">Get Now</a><a class="animated4 slider btn btn-default btn-min-block" href="#">Live Demo</a>
+	                			</div>
+		              		</div>
+		            	</div>
+		          	</div>
+		         	<!--/ Carousel item end -->
+		        </div>
+		        <!-- Carousel inner end-->
 
-    <section id="home">
-      <!-- Carousel -->
-      <div id="main-slide" class="carousel slide" data-ride="carousel">
+			        <!-- Controls -->
+			        <a class="left carousel-control" href="#main-slide" data-slide="prev">
+			          	<span><i class="fa fa-angle-left"></i></span>
+			        </a>
+			        <a class="right carousel-control" href="#main-slide" data-slide="next">
+			          	<span><i class="fa fa-angle-right"></i></span>
+			        </a>
+			    </div>
+			    <!-- /carousel -->
+			</section>
+			<!-- End HomePage Slider -->
 
-        <!-- Indicators -->
-        <ol class="carousel-indicators">
-          <li data-target="#main-slide" data-slide-to="0" class="active"></li>
-          <li data-target="#main-slide" data-slide-to="1"></li>
-          <li data-target="#main-slide" data-slide-to="2"></li>
-        </ol>
-        <!--/ Indicators end-->
+    		<!-- Start Content -->
+    		<div id="content">
+      			<div class="container">
+       				<!-- Start Services Icons -->
+        			<div class="row">
+			          	<!-- Start Service Icon 1 -->
+			          	<div class="col-md-3 col-sm-6 service-box service-center">
+			            	<div class="service-icon">
+			              		<i class="fa fa-magic icon-medium-effect icon-effect-2"></i>
+			            	</div>
+			            	<div class="service-content">
+			              		<h4>High Quality Theme</h4>
+			              		<p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Lorem ipsum dolor.</p>
+			            	</div>
+			          	</div>
+			          	<!-- End Service Icon 1 -->
 
-        <!-- Carousel inner -->
-        <div class="carousel-inner">
-          <div class="item active">
-            <img class="img-responsive" src="images/slider/bg1.jpg" alt="slider">
-            <div class="slider-content">
-              <div class="col-md-12 text-center">
-                <h2 class="animated2">
-                  <span>Welcome to <strong>Margo</strong></span>
-              </h2>
-                <h3 class="animated3">
-               <span>The ultimate aim of your business</span>
-           </h3>
-                <p class="animated4"><a href="#" class="slider btn btn-system btn-large">Check Now</a></p>
-              </div>
-            </div>
-          </div>
-          <!--/ Carousel item end -->
-          <div class="item">
-            <img class="img-responsive" src="images/slider/bg2.jpg" alt="slider">
-            <div class="slider-content">
-              <div class="col-md-12 text-center">
-                <h2 class="animated4">
-                <span><strong>Margo</strong> for the highest</span>
-            </h2>
-                <h3 class="animated5">
-               <span>The Key of your Success</span>
-           </h3>
-                <p class="animated6"><a href="#" class="slider btn btn-system btn-large">Buy Now</a></p>
-              </div>
-            </div>
-          </div>
-          <!--/ Carousel item end -->
-          <div class="item">
-            <img class="img-responsive" src="images/slider/bg3.jpg" alt="slider">
-            <div class="slider-content">
-              <div class="col-md-12 text-center">
-                <h2 class="animated7 white">
-                <span>The way of <strong>Success</strong></span>
-            </h2>
-                <h3 class="animated8 white">
-               <span>Why you are waiting</span>
-           </h3>
-                <div class="">
-                  <a class="animated4 slider btn btn-system btn-large btn-min-block" href="#">Get Now</a><a class="animated4 slider btn btn-default btn-min-block" href="#">Live Demo</a>
-                </div>
-              </div>
-            </div>
-          </div>
-          <!--/ Carousel item end -->
-        </div>
-        <!-- Carousel inner end-->
+				        <!-- Start Service Icon 2 -->
+			          	<div class="col-md-3 col-sm-6 service-box service-center">
+			            	<div class="service-icon">
+			              		<i class="fa fa-eye icon-medium-effect icon-effect-2"></i>
+			            	</div>
+			            	<div class="service-content">
+			              		<h4>Retina Display Ready</h4>
+			              		<p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Lorem ipsum dolor.</p>
+			            	</div>
+			          	</div>
+			          	<!-- End Service Icon 2 -->
 
-        <!-- Controls -->
-        <a class="left carousel-control" href="#main-slide" data-slide="prev">
-          <span><i class="fa fa-angle-left"></i></span>
-        </a>
-        <a class="right carousel-control" href="#main-slide" data-slide="next">
-          <span><i class="fa fa-angle-right"></i></span>
-        </a>
-      </div>
-      <!-- /carousel -->
-    </section>
-    <!-- End HomePage Slider -->
+			          	<!-- Start Service Icon 3 -->
+			          	<div class="col-md-3 col-sm-6 service-box service-center">
+			            	<div class="service-icon">
+			              		<i class="fa fa-eye icon-medium-effect icon-effect-2"></i>
+			            	</div>
+			            	<div class="service-content">
+			              		<h4>Retina Display Ready</h4>
+			              		<p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Lorem ipsum dolor.</p>
+			            	</div>
+			          	</div>
+			          	<!-- End Service Icon 3 -->
 
+			          	<!-- Start Service Icon 4 -->
+			          	<div class="col-md-3 col-sm-6 service-box service-center">
+			            	<div class="service-icon">
+			              		<i class="fa fa-eye icon-medium-effect icon-effect-2"></i>
+			            	</div>
+			            	<div class="service-content">
+			              		<h4>Retina Display Ready</h4>
+			              		<p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Lorem ipsum dolor.</p>
+			            	</div>
+			          	</div>
+			          	<!-- End Service Icon 4 -->
+        			</div>
+       	 			<!-- End Services Icons -->
 
-    <!-- Start Content -->
-    <div id="content">
-      <div class="container">
+        			<!-- Divider -->
+        			<div class="hr1 margin-top"></div>
 
-        <!-- Start Services Icons -->
-        <div class="row">
+			        <!-- Start Recent Projects Carousel -->
+			        <div class="recent-projects">
+			          	<h4 class="title"><span>Recent Projects</span></h4>
+			          	<div class="projects-carousel touch-carousel">
 
-          <!-- Start Service Icon 1 -->
-          <div class="col-md-3 col-sm-6 service-box service-center">
-            <div class="service-icon">
-              <i class="fa fa-magic icon-medium-effect icon-effect-2"></i>
-            </div>
-            <div class="service-content">
-              <h4>High Quality Theme</h4>
-              <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Lorem ipsum dolor.</p>
-            </div>
-          </div>
-          <!-- End Service Icon 1 -->
+			            <div class="portfolio-item item">
+			              	<div class="portfolio-border">
+			                	<div class="portfolio-thumb">
+			                  		<a class="lightbox" data-lightbox-type="ajax" href="https://vimeo.com/78468485">
+			                    		<div class="thumb-overlay"><i class="fa fa-play"></i></div>
+			                    		<img alt="" src="images/portfolio-1/1.png" />
+			                  		</a>
+			                	</div>
+			                <div class="portfolio-details">
+			                  <a href="#">
+			                    <h4>Lorem Ipsum Dolor</h4>
+			                    <span>Website</span>
+			                    <span>Drawing</span>
+			                  </a>
+			                </div>
+			              </div>
+			            </div>
 
-          <!-- Start Service Icon 2 -->
-          <div class="col-md-3 col-sm-6 service-box service-center">
-            <div class="service-icon">
-              <i class="fa fa-eye icon-medium-effect icon-effect-2"></i>
-            </div>
-            <div class="service-content">
-              <h4>Retina Display Ready</h4>
-              <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Lorem ipsum dolor.</p>
-            </div>
-          </div>
-          <!-- End Service Icon 2 -->
-
-          <!-- Start Service Icon 3 -->
-          <div class="col-md-3 col-sm-6 service-box service-center">
-            <div class="service-icon">
-              <i class="fa fa-code icon-medium-effect icon-effect-2 gray-icon"></i>
-            </div>
-            <div class="service-content">
-              <h4>Clean Modern Code</h4>
-              <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Lorem ipsum dolor.</p>
-            </div>
-          </div>
-          <!-- End Service Icon 3 -->
-
-          <!-- Start Service Icon 4 -->
-          <div class="col-md-3 col-sm-6 service-box service-center">
-            <div class="service-icon">
-              <i class="fa fa-bolt icon-medium-effect icon-effect-2 gray-icon"></i>
-            </div>
-            <div class="service-content">
-              <h4>Fast & Light Theme</h4>
-              <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Lorem ipsum dolor.</p>
-            </div>
-          </div>
-          <!-- End Service Icon 4 -->
-
-        </div>
-        <!-- End Services Icons -->
-
-        <!-- Divider -->
-        <div class="hr1 margin-top"></div>
-
-
-        <!-- Start Recent Projects Carousel -->
-        <div class="recent-projects">
-          <h4 class="title"><span>Recent Projects</span></h4>
-          <div class="projects-carousel touch-carousel">
-
-            <div class="portfolio-item item">
-              <div class="portfolio-border">
-                <div class="portfolio-thumb">
-                  <a class="lightbox" data-lightbox-type="ajax" href="https://vimeo.com/78468485">
-                    <div class="thumb-overlay"><i class="fa fa-play"></i></div>
-                    <img alt="" src="images/portfolio-1/1.png" />
-                  </a>
-                </div>
-                <div class="portfolio-details">
-                  <a href="#">
-                    <h4>Lorem Ipsum Dolor</h4>
-                    <span>Website</span>
-                    <span>Drawing</span>
-                  </a>
-                </div>
-              </div>
-            </div>
-
-            <div class="portfolio-item item">
-              <div class="portfolio-border">
-                <div class="portfolio-thumb">
-                  <a class="lightbox" title="This is an image title" href="images/portfolio-big-01.jpg">
-                    <div class="thumb-overlay"><i class="fa fa-arrows-alt"></i></div>
-                    <img alt="" src="images/portfolio-1/2.png" />
-                  </a>
-                </div>
-                <div class="portfolio-details">
-                  <a href="#">
-                    <h4>Lorem Ipsum Dolor</h4>
-                    <span>Logo</span>
-                    <span>Animation</span>
-                  </a>
-                </div>
-              </div>
-            </div>
+			            <div class="portfolio-item item">
+			              <div class="portfolio-border">
+			                <div class="portfolio-thumb">
+			                  <a class="lightbox" title="This is an image title" href="images/portfolio-big-01.jpg">
+			                    <div class="thumb-overlay"><i class="fa fa-arrows-alt"></i></div>
+			                    <img alt="" src="images/portfolio-1/2.png" />
+			                  </a>
+			                </div>
+			                <div class="portfolio-details">
+			                  <a href="#">
+			                    <h4>Lorem Ipsum Dolor</h4>
+			                    <span>Logo</span>
+			                    <span>Animation</span>
+			                  </a>
+			                </div>
+			              </div>
+			            </div>
 
             <div class="portfolio-item item">
               <div class="portfolio-border">
@@ -755,11 +747,10 @@
           <!-- .col-md-3 -->
           <!-- End Flickr Widget -->
 
-
           <!-- Start Contact Widget -->
           <div class="col-md-3">
             <div class="footer-widget contact-widget">
-              <h4><img src="images/footer-margo.png" class="img-responsive" alt="Footer Logo" /></h4>
+              <h4><img src="images/ojpms.png" class="img-responsive" alt="Footer Logo" /></h4>
               <p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident</p>
               <ul>
                 <li><span>Phone Number:</span> +01 234 567 890</li>
@@ -779,7 +770,7 @@
         <div class="copyright-section">
           <div class="row">
             <div class="col-md-6">
-              <p>&copy; 2014 Margo - All Rights Reserved <a href="http://graygrids.com">GrayGrids</a> </p>
+              <p>&copy; 2015 OJPMS - All Rights Reserved <a href="http://graygrids.com">GrayGrids</a> </p>
             </div>
             <div class="col-md-6">
               <ul class="footer-nav">
