@@ -1,3 +1,15 @@
+<?php 
+include('../../../connection.php');
+session_start();
+
+if(is_null($_SESSION['StudentID'])){
+    echo "
+        <script type='text/javascript'>
+        location.href='../../../../login-student.php';
+        </script>
+        ";
+}
+?>
 <!doctype html>
 <html lang="en">
 
@@ -16,8 +28,18 @@
     <meta name="description" content="Margo - Responsive HTML5 Template">
     <meta name="author" content="iThemesLab">
 
-    <!-- Bootstrap CSS  -->
-    <link rel="stylesheet" href="../../../asset/css/bootstrap.min.css" type="text/css" media="screen">
+    <!-- Bootstrap CSS -->
+    <link href="../../../css/bootstrap.min.css" rel="stylesheet"/>
+
+    <!-- BootstrapValidator CSS -->
+    <link href="../../../css/bootstrapValidator.min.css" rel="stylesheet"/>
+    <link href="../../../css/basic-template.css" rel="stylesheet"/>
+    <!-- jQuery and Bootstrap JS -->
+    <script type="text/javascript" src="../../../js/jquery.min.js"></script>
+    <script src="../../../js/bootstrap.min.js" type="text/javascript"></script>
+
+    <!-- BootstrapValidator -->
+    <script src="../../../js/bootstrapValidator.min.js" type="text/javascript"></script>
 
     <!-- Font Awesome CSS -->
     <link rel="stylesheet" href="../../../css/font-awesome.min.css" type="text/css" media="screen">
@@ -25,7 +47,7 @@
     <!-- Slicknav -->
     <link rel="stylesheet" type="text/css" href="../../../css/slicknav.css" media="screen">
 
-    <!-- CSS Styles  -->
+    <!-- Margo CSS Styles  -->
     <link rel="stylesheet" type="text/css" href="../../../css/style.css" media="screen">
 
     <!-- Responsive CSS Styles  -->
@@ -34,44 +56,44 @@
     <!-- Css3 Transitions Styles  -->
     <link rel="stylesheet" type="text/css" href="../../../css/animate.css" media="screen">
 
-    <!-- Color CSS Styles  -->
-    <link rel="stylesheet" type="text/css" href="../../../css/colors/jade.css" title="jade" media="screen" />
-    <link rel="stylesheet" type="text/css" href="../../../css/colors/green.css" title="green" media="screen" />
-    <link rel="stylesheet" type="text/css" href="../../../css/colors/blue.css" title="blue" media="screen" />
-    <link rel="stylesheet" type="text/css" href="../../../css/colors/beige.css" title="beige" media="screen" />
-    <link rel="stylesheet" type="text/css" href="../../../css/colors/cyan.css" title="cyan" media="screen" />
-    <link rel="stylesheet" type="text/css" href="../../../css/colors/orange.css" title="orange" media="screen" />
-    <link rel="stylesheet" type="text/css" href="../../../css/colors/peach.css" title="peach" media="screen" />
-    <link rel="stylesheet" type="text/css" href="../../../css/colors/pink.css" title="pink" media="screen" />
-    <link rel="stylesheet" type="text/css" href="../../../css/colors/purple.css" title="purple" media="screen" />
-    <link rel="stylesheet" type="text/css" href="../../../css/colors/sky-blue.css" title="sky-blue" media="screen" />
-    <link rel="stylesheet" type="text/css" href="../../../css/colors/yellow.css" title="yellow" media="screen" />
+    <!-- OJPMS CSS  -->
+    <link rel="stylesheet" type="text/css" href="../../../css/ojpms-style.css" media="screen">
 
-    <!-- JS  -->
-    <script type="text/javascript" src="../../../js/jquery-2.1.4.min.js"></script>
-    <script type="text/javascript" src="../../../js/modernizrr.js"></script>
-    <script type="text/javascript" src="../../../js/jquery.appear.js"></script>
-    <script type="text/javascript" src="../../../js/count-to.js"></script>
-    <script type="text/javascript" src="../../../js/jquery.nicescroll.min.js"></script>
-    <script type="text/javascript" src="../../../js/jquery.slicknav.js"></script>
+    <!-- Color CSS Styles  -->
+    <link rel="stylesheet" type="text/css" href="../../../css/colors/red.css" title="red" media="screen"/>
+    <link rel="stylesheet" type="text/css" href="../../../css/colors/jade.css" title="jade" media="screen"/>
+    <link rel="stylesheet" type="text/css" href="../../../css/colors/blue.css" title="blue" media="screen"/>
+    <link rel="stylesheet" type="text/css" href="../../../css/colors/beige.css" title="beige" media="screen"/>
+    <link rel="stylesheet" type="text/css" href="../../../css/colors/cyan.css" title="cyan" media="screen"/>
+    <link rel="stylesheet" type="text/css" href="../../../css/colors/green.css" title="green" media="screen"/>
+    <link rel="stylesheet" type="text/css" href="../../../css/colors/orange.css" title="orange" media="screen"/>
+    <link rel="stylesheet" type="text/css" href="../../../css/colors/peach.css" title="peach" media="screen"/>
+    <link rel="stylesheet" type="text/css" href="../../../css/colors/pink.css" title="pink" media="screen"/>
+    <link rel="stylesheet" type="text/css" href="../../../css/colors/purple.css" title="purple" media="screen"/>
+    <link rel="stylesheet" type="text/css" href="../../../css/colors/sky-blue.css" title="sky-blue" media="screen"/>
+    <link rel="stylesheet" type="text/css" href="../../../css/colors/yellow.css" title="yellow" media="screen"/>
+
+
+    <!-- Margo JS  -->
 
     <script type="text/javascript" src="../../../js/jquery.migrate.js"></script>
-    <script type="text/javascript" src="../../../asset/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../../../js/modernizrr.js"></script>
     <script type="text/javascript" src="../../../js/jquery.fitvids.js"></script>
     <script type="text/javascript" src="../../../js/owl.carousel.min.js"></script>
     <script type="text/javascript" src="../../../js/nivo-lightbox.min.js"></script>
-    <script type="text/javascript" src="../../../js/jquery.textillate.js"></script>
-
-    <script type="text/javascript" src="../../../js/nivo-lightbox.min.js"></script>
     <script type="text/javascript" src="../../../js/jquery.isotope.min.js"></script>
+    <script type="text/javascript" src="../../../js/jquery.appear.js"></script>
+    <script type="text/javascript" src="../../../js/count-to.js"></script>
     <script type="text/javascript" src="../../../js/jquery.textillate.js"></script>
     <script type="text/javascript" src="../../../js/jquery.lettering.js"></script>
     <script type="text/javascript" src="../../../js/jquery.easypiechart.min.js"></script>
+    <script type="text/javascript" src="../../../js/jquery.nicescroll.min.js"></script>
     <script type="text/javascript" src="../../../js/jquery.parallax.js"></script>
-    <script type="text/javascript" src="../../../js/mediaelement-and-player.js"></script>
+    <script type="text/javascript" src="../../../js/jquery.slicknav.js"></script>
 </head>
 
 <body>
+    <form id="AddReference" name="AddReference" autocomplete="off" action="myinfoadd.php">
     <div id="container">
         <!-- Start Header Section -->
         <div class="hidden-header"></div>
@@ -148,7 +170,7 @@
                         </button>
                         <!-- End Toggle Nav Link For Mobiles -->
                         <a class="navbar-brand" href="">
-                            <img src="../../images/ojpms.png">
+                            <img src="../../../images/ojpms.png">
                         </a>
                     </div>
                     <div class="navbar-collapse collapse">
@@ -168,7 +190,7 @@
                                     <li><a href="../education.php">Education</a></li>
                                     <li><a href="../certifications.php">Certifications</a></li>
                                     <li><a href="../achievements.php">Achievements</a></li>
-                                    <li><a href="../skills-and-languages.php">Skills & Languages</a></li>
+                                    <li><a href="../specialization-and-languages.php">Specialization & Languages</a></li>
                                     <li><a class="active" href="../references.php">References</a></li>
                                     <li><a href="../portfolio.php">Portfolio</a></li>
                                 </ul>
@@ -209,7 +231,7 @@
                             <li><a href="../education.php">Education</a></li>
                             <li><a href="../certifications.php">Certifications</a></li>
                             <li><a href="../achievements.php">Achievements</a></li>
-                            <li><a href="../skills-and-languages.php">Skills & Languages</a></li>
+                            <li><a href="../specialization-and-languages.php">Specialization & Languages</a></li>
                             <li><a class="active" href="../references.php">References</a></li>
                             <li><a href="../portfolio.php">Portfolio</a></li>
                         </ul>
@@ -270,13 +292,13 @@
                             <div class="col-md-6 fieldcol">
                                 <div class="form-group">
                                     <label>Name <span>(*)</span></label>
-                                    <input type="text" class="form-control" id="txtName" name="txtName" value="<?php echo htmlspecialchars($server_txtName)?>">
+                                    <input type="text" class="form-control" id="Name" name="Name">
                                 </div>
                             </div>
                             <div class="col-md-6 fieldcol">
                                 <div class="form-group">
                                     <label>Relationship <span>(*)</span></label>
-                                    <input type="text" class="form-control" id="txtRelationship" name="txtRelationship" value="<?php echo htmlspecialchars($server_txtRelationship)?>">
+                                    <input type="text" class="form-control" id="Relationship" name="Relationship">
                                 </div>
                             </div>
                         </div>
@@ -284,13 +306,13 @@
                             <div class="col-md-6 fieldcol">
                                 <div class="form-group">
                                     <label>Company <span>(*)</span></label>
-                                    <input type="text" class="form-control" id="txtCompany" name="txtCompany" value="<?php echo htmlspecialchars($server_txtCompany)?>">
+                                    <input type="text" class="form-control" id="Company" name="Company">
                                 </div>
                             </div>
                             <div class="col-md-6 fieldcol">
                                 <div class="form-group">
                                     <label>Position <span>(*)</span></label>
-                                    <input type="text" class="form-control" id="txtPosition" name="txtPosition" value="<?php echo htmlspecialchars($server_txtPosition)?>">
+                                    <input type="text" class="form-control" id="Position" name="Position">
                                 </div>
                             </div>
                         </div>
@@ -298,25 +320,19 @@
                             <div class="col-md-6 fieldcol">
                                 <div class="form-group">
                                     <label>Phone <span>(*)</span></label>
-                                    <input type="text" class="form-control" id="txtPhone" name="txtPhone" value="<?php echo htmlspecialchars($server_txtPhone)?>">
+                                    <input type="text" class="form-control" id="Phone" name="Phone">
                                 </div>
                             </div>
                             <div class="col-md-6 fieldcol">
                                 <div class="form-group">
                                     <label>Email</label>
-                                    <input type="text" class="form-control" id="txtEmail" name="txtEmail" value="<?php echo htmlspecialchars($server_txtEmail)?>">
+                                    <input type="email" class="form-control" id="Email" name="Email">
                                 </div>
                             </div>
                         </div>
                         <div class="row field">
                             <div class="col-md-3 fieldcol">
                                 &nbsp;
-                            </div>
-                            <div class="col-md-6 fieldcol">
-                                <div class="form-group">
-                                    <label>Number of Years You've Known this Person</label>
-                                    <input type="text" class="form-control" id="" name="">
-                                </div>
                             </div>
                             <div class="col-md-3 fieldcol">
                                 &nbsp;
@@ -337,7 +353,7 @@
                 <div class="hr5" style="margin-top:35px;margin-bottom:40px;"></div>
                 <div class="field">
                     <div class="text-center">
-                        <button class="btn btn-lg btn-hg btn-primary" name ="btnSave">Add</button>
+                        <button type="submit" class="btn btn-lg btn-hg btn-primary">Add</button>
                     </div>
                 </div>
             </div>
@@ -345,5 +361,65 @@
     </div>
     <!-- End Content -->
     <script type="text/javascript" src="../../../js/script.js"></script>
+</form>
 </body>
 </html>
+<script type="text/javascript">
+    $(document).ready(function () {
+            var validator = $("#AddReference").bootstrapValidator({
+                feedbackIcons:{
+                    valid: "glyphicon glyphicon-ok",
+                    invalid: "glyphicon glyphicon-remove",
+                    validating: "glyphicon glyphicon-refresh"
+                },
+                fields: {
+                    Name: {
+                        validators: {
+                            notEmpty: {
+                                message: "This field is required."
+                            }
+                        }
+                    },
+                    Relationship: {
+                        validators: {
+                            notEmpty: {
+                                message: "This field is required."
+                            }
+                        }
+                    },
+                    Company: {
+                        validators: {
+                            notEmpty: {
+                                message: "This field is required."
+                            }
+                        }
+                    },
+                    Position: {
+                        validators: {
+                            notEmpty: {
+                                message: "This field is required."
+                            }
+                        }
+                    },
+                    Phone: {
+                        validators: {
+                            notEmpty: {
+                                message: "This field is required."
+                            },
+                            regexp: {
+                                    regexp: /^[0-9]+$/i,
+                                    message: "Phone number can consist of numeric characters only."
+                            }
+                        }
+                    },
+                    Email: {
+                        validators: {
+                            notEmpty: {
+                                message: "This field is required."
+                            }
+                        }
+                    },
+                }
+            });
+    });
+</script>

@@ -1,3 +1,15 @@
+<?php 
+include('../../../connection.php');
+session_start();
+
+if(is_null($_SESSION['StudentID'])){
+    echo "
+        <script type='text/javascript'>
+        location.href='../../../../login-student.php';
+        </script>
+        ";
+}
+?>
 <!DOCTYPE html>
 
 <html lang="en">
@@ -17,8 +29,18 @@
     <meta name="description" content="Margo - Responsive HTML5 Template">
     <meta name="author" content="iThemesLab">
 
-    <!-- Bootstrap CSS  -->
-    <link rel="stylesheet" href="../../../asset/css/bootstrap.min.css" type="text/css" media="screen">
+    <!-- Bootstrap CSS -->
+    <link href="../../../css/bootstrap.min.css" rel="stylesheet"/>
+
+    <!-- BootstrapValidator CSS -->
+    <link href="../../../css/bootstrapValidator.min.css" rel="stylesheet"/>
+    <link href="../../../css/basic-template.css" rel="stylesheet"/>
+    <!-- jQuery and Bootstrap JS -->
+    <script type="text/javascript" src="../../../js/jquery.min.js"></script>
+    <script src="../../../js/bootstrap.min.js" type="text/javascript"></script>
+
+    <!-- BootstrapValidator -->
+    <script src="../../../js/bootstrapValidator.min.js" type="text/javascript"></script>
 
     <!-- Font Awesome CSS -->
     <link rel="stylesheet" href="../../../css/font-awesome.min.css" type="text/css" media="screen">
@@ -26,7 +48,7 @@
     <!-- Slicknav -->
     <link rel="stylesheet" type="text/css" href="../../../css/slicknav.css" media="screen">
 
-    <!-- CSS Styles  -->
+    <!-- Margo CSS Styles  -->
     <link rel="stylesheet" type="text/css" href="../../../css/style.css" media="screen">
 
     <!-- Responsive CSS Styles  -->
@@ -35,68 +57,45 @@
     <!-- Css3 Transitions Styles  -->
     <link rel="stylesheet" type="text/css" href="../../../css/animate.css" media="screen">
 
-    <!-- Color CSS Styles  -->
-    <link rel="stylesheet" type="text/css" href="../../../css/colors/jade.css" title="jade" media="screen" />
-    <link rel="stylesheet" type="text/css" href="../../../css/colors/green.css" title="green" media="screen" />
-    <link rel="stylesheet" type="text/css" href="../../../css/colors/blue.css" title="blue" media="screen" />
-    <link rel="stylesheet" type="text/css" href="../../../css/colors/beige.css" title="beige" media="screen" />
-    <link rel="stylesheet" type="text/css" href="../../../css/colors/cyan.css" title="cyan" media="screen" />
-    <link rel="stylesheet" type="text/css" href="../../../css/colors/orange.css" title="orange" media="screen" />
-    <link rel="stylesheet" type="text/css" href="../../../css/colors/peach.css" title="peach" media="screen" />
-    <link rel="stylesheet" type="text/css" href="../../../css/colors/pink.css" title="pink" media="screen" />
-    <link rel="stylesheet" type="text/css" href="../../../css/colors/purple.css" title="purple" media="screen" />
-    <link rel="stylesheet" type="text/css" href="../../../css/colors/sky-blue.css" title="sky-blue" media="screen" />
-    <link rel="stylesheet" type="text/css" href="../../../css/colors/yellow.css" title="yellow" media="screen" />
+    <!-- OJPMS CSS  -->
+    <link rel="stylesheet" type="text/css" href="../../../css/ojpms-style.css" media="screen">
 
-    <!-- JS  -->
-    <script type="text/javascript" src="../../../js/jquery-2.1.4.min.js"></script>
-    <script type="text/javascript" src="../../../js/modernizrr.js"></script>
-    <script type="text/javascript" src="../../../js/jquery.appear.js"></script>
-    <script type="text/javascript" src="../../../js/count-to.js"></script>
-    <script type="text/javascript" src="../../../js/jquery.nicescroll.min.js"></script>
-    <script type="text/javascript" src="../../../js/jquery.slicknav.js"></script>
+    <!-- Color CSS Styles  -->
+    <link rel="stylesheet" type="text/css" href="../../../css/colors/red.css" title="red" media="screen"/>
+    <link rel="stylesheet" type="text/css" href="../../../css/colors/jade.css" title="jade" media="screen"/>
+    <link rel="stylesheet" type="text/css" href="../../../css/colors/blue.css" title="blue" media="screen"/>
+    <link rel="stylesheet" type="text/css" href="../../../css/colors/beige.css" title="beige" media="screen"/>
+    <link rel="stylesheet" type="text/css" href="../../../css/colors/cyan.css" title="cyan" media="screen"/>
+    <link rel="stylesheet" type="text/css" href="../../../css/colors/green.css" title="green" media="screen"/>
+    <link rel="stylesheet" type="text/css" href="../../../css/colors/orange.css" title="orange" media="screen"/>
+    <link rel="stylesheet" type="text/css" href="../../../css/colors/peach.css" title="peach" media="screen"/>
+    <link rel="stylesheet" type="text/css" href="../../../css/colors/pink.css" title="pink" media="screen"/>
+    <link rel="stylesheet" type="text/css" href="../../../css/colors/purple.css" title="purple" media="screen"/>
+    <link rel="stylesheet" type="text/css" href="../../../css/colors/sky-blue.css" title="sky-blue" media="screen"/>
+    <link rel="stylesheet" type="text/css" href="../../../css/colors/yellow.css" title="yellow" media="screen"/>
+
+
+    <!-- Margo JS  -->
 
     <script type="text/javascript" src="../../../js/jquery.migrate.js"></script>
-    <script type="text/javascript" src="../../../asset/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../../../js/modernizrr.js"></script>
     <script type="text/javascript" src="../../../js/jquery.fitvids.js"></script>
     <script type="text/javascript" src="../../../js/owl.carousel.min.js"></script>
     <script type="text/javascript" src="../../../js/nivo-lightbox.min.js"></script>
-    <script type="text/javascript" src="../../../js/jquery.textillate.js"></script>
-
-    <script type="text/javascript" src="../../../js/nivo-lightbox.min.js"></script>
     <script type="text/javascript" src="../../../js/jquery.isotope.min.js"></script>
+    <script type="text/javascript" src="../../../js/jquery.appear.js"></script>
+    <script type="text/javascript" src="../../../js/count-to.js"></script>
     <script type="text/javascript" src="../../../js/jquery.textillate.js"></script>
     <script type="text/javascript" src="../../../js/jquery.lettering.js"></script>
     <script type="text/javascript" src="../../../js/jquery.easypiechart.min.js"></script>
+    <script type="text/javascript" src="../../../js/jquery.nicescroll.min.js"></script>
     <script type="text/javascript" src="../../../js/jquery.parallax.js"></script>
-    <script type="text/javascript" src="../../../js/mediaelement-and-player.js"></script>
+    <script type="text/javascript" src="../../../js/jquery.slicknav.js"></script>
 </head>
 
 <body>
+    <form id="AddCertification" name="AddCertification" autocomplete="off" action="myinfoadd.php">
     <div id="container">
-        <script>
-            $(document).on("click", ".deleteCertification", function(result) {
-                bootbox.confirm({
-                  title: 'Delete',
-                  message: 'Are you sure you want to delete this Information?',
-                  buttons: {
-                      'cancel': {
-                          label: 'Cancel',
-                          
-                      },
-                      'confirm': {
-                          label: 'Delete',
-                          className: 'btn-danger pull-right'
-                      }
-                  },
-                  callback: function(result) {
-                      if (result) {
-                           window.location = $("a[data-bb='confirmDeleteCertification']").attr('href');
-                      }
-                  }
-              });
-            });
-        </script>
         <!-- Start Header Section -->
         <div class="hidden-header"></div>
         <header class="clearfix">
@@ -190,7 +189,7 @@
                                     <li><a href="../education.php">Education</a></li>
                                     <li><a class="active" href="../certifications.php">Certifications</a></li>
                                     <li><a href="../achievements.php">Achievements</a></li>
-                                    <li><a href="../skills-and-languages.php">Skills & Languages</a></li>
+                                    <li><a href="../specialization-and-languages.php">Specialization & Languages</a></li>
                                     <li><a href="../references.php">References</a></li>
                                     <li><a href="../portfolio.php">Portfolio</a></li>
                                 </ul>
@@ -231,7 +230,7 @@
                             <li><a href="../education.php">Education</a></li>
                             <li><a class="active" href="../certifications.php">Certifications</a></li>
                             <li><a href="../achievements.php">Achievements</a></li>
-                            <li><a href="../skills-and-languages.php">Skills & Languages</a></li>
+                            <li><a href="../specialization-and-languages.php">Specialization & Languages</a></li>
                             <li><a href="../references.php">References</a></li>
                             <li><a href="../portfolio.php">Portfolio</a></li>
                         </ul>
@@ -292,24 +291,19 @@
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <label>Certification <span>(*)</span></label>
-                                    <input type="text" class="form-control" id="txtCertification" name="txtCertification" value="<?php echo htmlspecialchars($server_txtCertifcation)?>">
+                                    <input type="text" class="form-control" id="Certification" name="Certification">
                                 </div>
                             </div>
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <label>Year Taken <span>(*)</span></label>
-                                    <select id="txtYearTaken" name="txtYearTaken" class="form-control" style="width:100%; height:34px;">
+                                    <select id="YearTaken" name="YearTaken" class="form-control" style="width:100%; height:34px;">
                                         <option value="">- Year -</option>
                                         <?php 
                                             $date = 1934;
                                             while($date != Date("Y")){
                                                 $date++;
-                                                if($date == $server_txtYearTaken){
-                                                    echo "<option selected value='$date'> $date</option>";
-                                                }
-                                                else{
                                                 echo "<option value='$date'> $date</option>";
-                                                }
                                             }
                                         ?>
                                     </select>
@@ -331,7 +325,7 @@
                 <div class="hr5" style="margin-top:35px;margin-bottom:40px;"></div>
                 <div class="field">
                     <div class="text-center">
-                        <button class="btn btn-lg btn-hg btn-primary" name ="btnSave">Add</button>
+                        <button type="submit" class="btn btn-lg btn-hg btn-primary">Add</button>
                     </div>
                 </div>
             </div>
@@ -341,3 +335,30 @@
     <script type="text/javascript" src="../../../js/script.js"></script>
 </body>
 </html>
+<script type="text/javascript">
+    $(document).ready(function () {
+            var validator = $("#AddCertification").bootstrapValidator({
+                feedbackIcons:{
+                    valid: "glyphicon glyphicon-ok",
+                    invalid: "glyphicon glyphicon-remove",
+                    validating: "glyphicon glyphicon-refresh"
+                },
+                fields: {
+                    Certification: {
+                        validators: {
+                            notEmpty: {
+                                message: "This field is required."
+                            }
+                        }
+                    },
+                    YearTaken: {
+                        validators: {
+                            notEmpty: {
+                                message: "This field is required."
+                            }
+                        }
+                    }
+                }
+            });
+    });
+</script>

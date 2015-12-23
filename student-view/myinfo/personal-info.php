@@ -165,7 +165,7 @@ while($query = mysql_fetch_array($result)){
                                     <li><a href="education.php">Education</a></li>
                                     <li><a href="certifications.php">Certifications</a></li>
                                     <li><a href="achievements.php">Achievements</a></li>
-                                    <li><a href="skills-and-languages.php">Skills & Languages</a></li>
+                                    <li><a href="specialization-and-languages.php">Specialization & Languages</a></li>
                                     <li><a href="references.php">References</a></li>
                                     <li><a href="portfolio.php">Portfolio</a></li>
                                 </ul>
@@ -206,7 +206,7 @@ while($query = mysql_fetch_array($result)){
                             <li><a href="education.php">Education</a></li>
                             <li><a href="certifications.php">Certifications</a></li>
                             <li><a href="achievements.php">Achievements</a></li>
-                            <li><a href="skills-and-languages.php">Skills & Languages</a></li>
+                            <li><a href="specialization-and-languages.php">Specialization & Languages</a></li>
                             <li><a href="references.php">References</a></li>
                             <li><a href="portfolio.php">Portfolio</a></li>
                         </ul>

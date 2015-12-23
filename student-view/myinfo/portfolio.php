@@ -156,7 +156,7 @@ $result = mysql_query($qry);
                                     <li><a href="education.php">Education</a></li>
                                     <li><a href="certifications.php">Certifications</a></li>
                                     <li><a href="achievements.php">Achievements</a></li>
-                                    <li><a href="skills-and-languages.php">Skills & Languages</a></li>
+                                    <li><a href="specialization-and-languages.php">Specialization & Languages</a></li>
                                     <li><a href="references.php">References</a></li>
                                     <li><a class="active" href="portfolio.php">Portfolio</a></li>
                                 </ul>
@@ -197,7 +197,7 @@ $result = mysql_query($qry);
                             <li><a href="education.php">Education</a></li>
                             <li><a href="certifications.php">Certifications</a></li>
                             <li><a href="achievements.php">Achievements</a></li>
-                            <li><a href="skills-and-languages.php">Skills & Languages</a></li>
+                            <li><a href="specialization-and-languages.php">Specialization & Languages</a></li>
                             <li><a href="references.php">References</a></li>
                             <li><a class="active" href="portfolio.php">Portfolio</a></li>
                         </ul>
@@ -372,7 +372,7 @@ if(isset($_POST['btnDeleteSkill'])){
 
     echo "
             <script type='text/javascript'>
-            location.href='skills_languages.php';
+            location.href='Specialization_languages.php';
             </script>
             ";
 } 
@@ -396,7 +396,7 @@ if(isset($_POST['btnDeleteLang'])){
 
     echo "
             <script type='text/javascript'>
-            location.href='skills_languages.php';
+            location.href='Specialization_languages.php';
             </script>
             ";
 } 

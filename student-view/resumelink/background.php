@@ -205,7 +205,7 @@ else{
                                     <li><a href="../myinfo/education.php">Education</a></li>
                                     <li><a href="../myinfo/certifications.php">Certifications</a></li>
                                     <li><a href="../myinfo/achievements.php">Achievements</a></li>
-                                    <li><a href="../myinfo/skills-and-languages.php">Skills & Languages</a></li>
+                                    <li><a href="../myinfo/specialization-and-languages.php">Specialization & Languages</a></li>
                                     <li><a href="../myinfo/references.php">References</a></li>
                                     <li><a href="../myinfo/portfolio.php">Portfolio</a></li>
                                 </ul>
@@ -246,7 +246,7 @@ else{
                             <li><a href="../myinfo/education.php">Education</a></li>
                             <li><a href="../myinfo/certifications.php">Certifications</a></li>
                             <li><a href="../myinfo/achievements.php">Achievements</a></li>
-                            <li><a href="../myinfo/skills-and-languages.php">Skills & Languages</a></li>
+                            <li><a href="../myinfo/specialization-and-languages.php">Specialization & Languages</a></li>
                             <li><a href="../myinfo/references.php">References</a></li>
                             <li><a href="../myinfo/portfolio.php">Portfolio</a></li>
                         </ul>

@@ -39,26 +39,42 @@ if(isset($_GET['Seminar'])){
 
 
 
-if(isset($_GET['txtCertification'])){
-    $Certification = $_GET['txtCertification'];
-    $YearTaken = $_GET['txtYearTaken'];
+if(isset($_GET['Certification'])){
+    $Certification = $_GET['Certification'];
+    $YearTaken = $_GET['YearTaken'];
     $query = "INSERT INTO certificationtbl (StudentID,Certification,YearTaken) values  ('$StudentID','$Certification','$YearTaken')";
-        $Result = mysql_query($query);
+    $Result = mysql_query($query);
         echo "
              <script type='text/javascript'>
-             location.href = '../certifications.php?id=CertificationAdd';
+             location.href = '../certifications.php?id=2';
              </script>
              ";
 }
 
-if(isset($_GET['txtAchievement'])){
-    $Achievement = $_GET['txtAchievement'];
+if(isset($_GET['Achievement'])){
+    $Achievement = $_GET['Achievement'];
 
     $query = "INSERT INTO achievementstbl (StudentID,Achievements) values  ('$StudentID','$Achievement')";
-       $Result = mysql_query($query);
+    $Result = mysql_query($query);
        echo "
              <script type='text/javascript'>
-             location.href='../achievements.php?id=AchievementAdd';
+             location.href='../achievements.php?id=2';
+             </script>
+             ";
+}
+if(isset($_GET['Name'])){
+    $Name = $_GET['Name'];
+    $Relationship = $_GET['Relationship'];
+    $Company = $_GET['Company'];
+    $Position = $_GET['Position'];
+    $Phone = $_GET['Phone'];
+    $Email = $_GET['Email'];
+
+    $query = "INSERT INTO referencetbl(StudentID, Name, Relationship, Company, Position, Phone, Email) values ('$StudentID', '$Name', '$Relationship', '$Company', '$Position', '$Phone', '$Email')";
+    $Result = mysql_query($query);
+        echo "
+             <script type='text/javascript'>
+             location.href='../references.php?id=2';
              </script>
              ";
 }

@@ -48,7 +48,7 @@ if(isset($_GET['delete_CertificationID'])) {
 
         echo "
                 <script type='text/javascript'>
-                location.href='certifications.php?id=CertificationDelete';
+                location.href='certifications.php?id=3';
                 </script>
                 ";
  	
@@ -62,7 +62,7 @@ if(isset($_GET['delete_AchievementID'])) {
 
     echo "
             <script type='text/javascript'>
-            location.href='achievements.php?id=AchievementDelete';
+            location.href='achievements.php?id=3';
             </script>
             ";
 }
@@ -75,7 +75,7 @@ if(isset($_GET['delete_ReferenceID'])) {
 
     echo "
             <script type='text/javascript'>
-            location.href='references.php?id=ReferenceDelete';
+            location.href='references.php?id=3';
             </script>
             ";
 }

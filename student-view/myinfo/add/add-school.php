@@ -2,7 +2,6 @@
 include('../../../connection.php');
 session_start();
 
-
 if(is_null($_SESSION['StudentID'])){
     echo "
         <script type='text/javascript'>
@@ -10,9 +9,7 @@ if(is_null($_SESSION['StudentID'])){
         </script>
         ";
 }
-
 ?>
-
 <!doctype html>
 <html lang="en">
 
@@ -193,7 +190,7 @@ if(is_null($_SESSION['StudentID'])){
                                     <li><a class="active" href="../education.php">Education</a></li>
                                     <li><a href="../certifications.php">Certifications</a></li>
                                     <li><a href="../achievements.php">Achievements</a></li>
-                                    <li><a href="../skills-and-languages.php">Skills & Languages</a></li>
+                                    <li><a href="../specialization-and-languages.php">Specialization & Languages</a></li>
                                     <li><a href="../references.php">References</a></li>
                                     <li><a href="../portfolio.php">Portfolio</a></li>
                                 </ul>
@@ -234,7 +231,7 @@ if(is_null($_SESSION['StudentID'])){
                             <li><a class="active" href="../education.php">Education</a></li>
                             <li><a href="../certifications.php">Certifications</a></li>
                             <li><a href="../achievements.php">Achievements</a></li>
-                            <li><a href="../skills-and-languages.php">Skills & Languages</a></li>
+                            <li><a href="../specialization-and-languages.php">Specialization & Languages</a></li>
                             <li><a href="../references.php">References</a></li>
                             <li><a href="../portfolio.php">Portfolio</a></li>
                         </ul>

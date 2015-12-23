@@ -14,44 +14,6 @@ else{
         </script>
         ";
 }
-
-/*
-
-$SchoolID = 'SchoolID';
-$School = 'School';
-$Attainment = 'Attainment';
-$Course = 'Course';
-$Graduated = 'Graduated';
-
-$SeminarID = 'SeminarID';
-$Seminar = 'Seminar';
-$YearAttended = 'YearAttended';
-
-$qry = "SELECT * FROM schooltbl WHERE StudentID ='$StudentID' AND _Default = '0'";
-$result = mysql_query($qry);
-
-$qry1 = "SELECT * FROM seminartbl WHERE StudentID ='$StudentID'";
-$result1 = mysql_query($qry1);
-
-$qry2 = "SELECT * FROM schooltbl WHERE StudentID = '$StudentID' AND _Default = '1'";
-$result2 = mysql_query($qry2);
-
-while($qry2 = mysql_fetch_Array($result2))
-        {       
-                $SchoolID1 = $qry2['SchoolID'];
-                $StudentID1 = $qry2['StudentID'];
-                $School1 = $qry2['School'];
-                $Attainment1 = $qry2['Attainment'];
-                $Course1 = $qry2['Course'];
-                $Graduated1 = $qry2['Graduated'];
-
-                $query = "SELECT * FROM coursetbl WHERE CourseCode = '$Course1'";
-                $rslt = mysql_query($query);
-                while($query = mysql_fetch_array($rslt)){
-                    $CourseTitle = $query['CourseTitle'];
-                }
-        }
-    */
 ?>
 <html lang="en">
 
@@ -183,7 +145,7 @@ while($qry2 = mysql_fetch_Array($result2))
                                     <li><a class="active" href="education.php">Education</a></li>
                                     <li><a href="certifications.php">Certifications</a></li>
                                     <li><a href="achievements.php">Achievements</a></li>
-                                    <li><a href="skills-and-languages.php">Skills & Languages</a></li>
+                                    <li><a href="specialization-and-languages.php">Specialization & Languages</a></li>
                                     <li><a href="references.php">References</a></li>
                                     <li><a href="portfolio.php">Portfolio</a></li>
                                 </ul>
@@ -224,7 +186,7 @@ while($qry2 = mysql_fetch_Array($result2))
                             <li><a class="active" href="education.php">Education</a></li>
                             <li><a href="certifications.php">Certifications</a></li>
                             <li><a href="achievements.php">Achievements</a></li>
-                            <li><a href="skills-and-languages.php">Skills & Languages</a></li>
+                            <li><a href="specialization-and-languages.php">Specialization & Languages</a></li>
                             <li><a href="references.php">References</a></li>
                             <li><a href="portfolio.php">Portfolio</a></li>
                         </ul>

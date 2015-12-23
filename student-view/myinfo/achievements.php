@@ -1,4 +1,3 @@
-<!DOCTYPE html>
 <?php 
 include('../../connection.php');
 session_start();
@@ -14,15 +13,8 @@ else{
         </script>
         ";
 }
-    
-
-$AchievementID= 'AchievementID';
-$Achievements = 'Achievements';
-
-$qry = "SELECT * FROM achievementstbl WHERE StudentID ='$StudentID'";
-$result = mysql_query($qry);
 ?>
-
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -87,29 +79,6 @@ $result = mysql_query($qry);
 
 <body>
     <div id="container">
-        <script>
-            $(document).on("click", ".deleteCertification", function(result) {
-                bootbox.confirm({
-                  title: 'Delete',
-                  message: 'Are you sure you want to delete this Information?',
-                  buttons: {
-                      'cancel': {
-                          label: 'Cancel',
-                          
-                      },
-                      'confirm': {
-                          label: 'Delete',
-                          className: 'btn-danger pull-right'
-                      }
-                  },
-                  callback: function(result) {
-                      if (result) {
-                           window.location = $("a[data-bb='confirmDeleteCertification']").attr('href');
-                      }
-                  }
-              });
-            });
-        </script>
         <!-- Start Header Section -->
         <div class="hidden-header"></div>
         <header class="clearfix">
@@ -176,7 +145,7 @@ $result = mysql_query($qry);
                                     <li><a href="education.php">Education</a></li>
                                     <li><a href="certifications.php">Certifications</a></li>
                                     <li><a class="active" href="achievements.php">Achievements</a></li>
-                                    <li><a href="skills-and-languages.php">Skills & Languages</a></li>
+                                    <li><a href="specialization-and-languages.php">Specialization & Languages</a></li>
                                     <li><a href="references.php">References</a></li>
                                     <li><a href="portfolio.php">Portfolio</a></li>
                                 </ul>
@@ -217,7 +186,7 @@ $result = mysql_query($qry);
                             <li><a href="education.php">Education</a></li>
                             <li><a href="certifications.php">Certifications</a></li>
                             <li><a class="active" href="achievements.php">Achievements</a></li>
-                            <li><a href="skills-and-languages.php">Skills & Languages</a></li>
+                            <li><a href="specialization-and-languages.php">Specialization & Languages</a></li>
                             <li><a href="references.php">References</a></li>
                             <li><a href="portfolio.php">Portfolio</a></li>
                         </ul>
@@ -271,6 +240,37 @@ $result = mysql_query($qry);
         <!-- Start Content -->
         <div id="content">
             <div class="container">
+                <?php
+                if(isset($_GET['id'])){
+                    $id=$_GET['id'];
+
+                    if($id==1){
+                        echo'
+                            <div class="alert alert-success">
+                                <span class="glyphicon glyphicon-info-sign"></span> 
+                                Achievement successfully updated.
+                            </div>
+                            ';
+                    }
+                    elseif($id==2){
+                        echo'
+                            <div class="alert alert-success">
+                                <span class="glyphicon glyphicon-info-sign"></span> 
+                                Achievement successfully added.
+                            </div>
+                            ';
+                    }
+                    elseif($id==3){
+                        echo'
+                            <div class="alert alert-success">
+                                <span class="glyphicon glyphicon-info-sign"></span> 
+                                Achievement successfully deleted.
+                            </div>
+                            ';
+                    }
+
+                }
+                ?>
                 <div class="row sidebar-page">
                     <!-- Page Content -->
                     <div class="col-md-9 page-content">
@@ -297,25 +297,49 @@ $result = mysql_query($qry);
                                     </thead>
                                     <tbody>
                                         <?php
-                                                $ctr = 0;
-                                                while($rows = mysql_fetch_array($result)){
-                                                $ctr++;
-                                            ?>
+
+                                        $query = "SELECT * FROM achievementstbl WHERE StudentID = '$StudentID'";
+                                        $result = mysql_query($query);
+                                        while($query = mysql_fetch_array($result)){
+                                            $AchievementID = $query['AchievementID'];
+                                            $Achievements = $query['Achievements'];
+                                        ?>
                                         <tr>
-                                            <td><?php echo $rows[$Achievements]; ?></td>
+                                            <td><?php echo $Achievements; ?></td>
                                             <td>
-                                                <a href=# class="btn btn-danger btnformaintenance deleteAchievement">
+                                                <button href=# class="btn btn-danger" data-toggle="modal" data-target="#DeleteAchievement">
                                                     <i class="fa fa-trash fa-1x"></i>
-                                                </a>
-                                                <a data-bb="confirmDeleteAchievement" class="bb-alert alert alert-info" style="display: none;" href="delete.php?delete_AchievementID=<?php echo $rows['AchievementID'];?>">
-                                        
-                                                <a href="edit/edit-achievement.php?EditAchievementID=<?php echo $rows['AchievementID'];?>" class="btn btn-default btnformaintenance">
+                                                </button>
+                                                <a href="edit/edit-achievement.php?id=<?php echo $AchievementID; ?>" class="btn btn-default">
                                                     <i class="fa fa-pencil-square-o fa-1x"></i>
                                                 </a>
                                             </td>
                                         </tr>
+                                        <!-- Modal -->
+                                            <div class="modal fade" id="DeleteAchievement" role="dialog">
+                                                <div class="modal-dialog" style="padding:100px">
+                                                    <!-- Modal content-->
+                                                    <div class="modal-content">
+                                                        <div class="modal-header">
+                                                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                                            <h4 class="modal-title">Delete Achievement?</h4>
+                                                        </div>
+                                                        <div class="modal-body">
+                                                            <div class="col-md-15 fieldcol">
+                                                                <label = "usr" class = "control-label">Do you want to delete this information? This cannot be undone.</label>
+                                                                <div class="form-group">
+                                                                </div>
+                                                        </div>
+                                                        <div class="modal-footer">
+                                                            <a href="delete.php?delete_AchievementID=<?php echo $AchievementID; ?>" class="btn btn-danger">Delete</a>
+                                                            <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+                                                        </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
                                         <?php
-                                            }
+                                        }
                                         ?>
                                     </tbody>
                                 </table>

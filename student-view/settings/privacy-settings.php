@@ -177,7 +177,7 @@ if(is_null($_SESSION['StudentID'])){
                                     <li><a href="../myinfo/education.php">Education</a></li>
                                     <li><a href="../myinfo/certifications.php">Certifications</a></li>
                                     <li><a href="../myinfo/achievements.php">Achievements</a></li>
-                                    <li><a href="../myinfo/skills-and-languages.php">Skills & Languages</a></li>
+                                    <li><a href="../myinfo/specialization-and-languages.php">Specialization & Languages</a></li>
                                     <li><a href="../myinfo/references.php">References</a></li>
                                     <li><a href="../myinfo/portfolio.php">Portfolio</a></li>
                                 </ul>
@@ -218,7 +218,7 @@ if(is_null($_SESSION['StudentID'])){
                             <li><a href="../myinfo/education.php">Education</a></li>
                             <li><a href="../myinfo/certifications.php">Certifications</a></li>
                             <li><a href="../myinfo/achievements.php">Achievements</a></li>
-                            <li><a href="../myinfo/skills-and-languages.php">Skills & Languages</a></li>
+                            <li><a href="../myinfo/specialization-and-languages.php">Specialization & Languages</a></li>
                             <li><a href="../myinfo/references.php">References</a></li>
                             <li><a href="../myinfo/portfolio.php">Portfolio</a></li>
                         </ul>
@@ -378,9 +378,9 @@ if(is_null($_SESSION['StudentID'])){
                             </div>
 
                             <div class="project-content col-md-3">
-                                <h4><span>Skills & Languages</span></h4>
+                                <h4><span>Specialization & Languages</span></h4>
                                 <div>
-                                    <input type="checkbox"/><b> Skills</b>
+                                    <input type="checkbox"/><b> Specialization</b>
                                 </div>
                                 <div>
                                     <input type="checkbox"/><b> Languages</b>

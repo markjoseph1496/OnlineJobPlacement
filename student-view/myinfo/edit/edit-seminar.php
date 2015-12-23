@@ -2,7 +2,7 @@
 include('../../../connection.php');
 session_start();
 
-$EditSeminarlID="";
+$EditSeminarID="";
 
 if(is_null($_SESSION['StudentID'])){
     echo "
@@ -12,10 +12,10 @@ if(is_null($_SESSION['StudentID'])){
         ";
 }
 else{
-    $EditSeminarlID = $_GET['id'];
+    $EditSeminarID = $_GET['id'];
 }
 
-$qry = "SELECT * FROM seminartbl WHERE SeminarID ='$EditSeminarlID'";
+$qry = "SELECT * FROM seminartbl WHERE SeminarID ='$EditSeminarID'";
 $result = mysql_query($qry);
         while($qry = mysql_fetch_Array($result))
         {       
@@ -204,7 +204,7 @@ $result = mysql_query($qry);
                                     <li><a class="active" href="education.php">Education</a></li>
                                     <li><a href="certifications.php">Certifications</a></li>
                                     <li><a href="achievements.php">Achievements</a></li>
-                                    <li><a href="skills-and-languages.php">Skills & Languages</a></li>
+                                    <li><a href="specialization-and-languages.php">Specialization & Languages</a></li>
                                     <li><a href="references.php">References</a></li>
                                     <li><a href="portfolio.php">Portfolio</a></li>
                                 </ul>
@@ -245,7 +245,7 @@ $result = mysql_query($qry);
                             <li><a class="active" href="education.php">Education</a></li>
                             <li><a href="certifications.php">Certifications</a></li>
                             <li><a href="achievements.php">Achievements</a></li>
-                            <li><a href="skills-and-languages.php">Skills & Languages</a></li>
+                            <li><a href="specialization-and-languages.php">Specialization & Languages</a></li>
                             <li><a href="references.php">References</a></li>
                             <li><a href="portfolio.php">Portfolio</a></li>
                         </ul>
