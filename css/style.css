@@ -1125,8 +1125,9 @@ ul.breadcrumbs li a {
 label {
 	font-size: 13px;
 	color: #666;
-	font-weight: 300;
+	font-weight: 700;
 	cursor: pointer;
+
 }
 
 label .required {

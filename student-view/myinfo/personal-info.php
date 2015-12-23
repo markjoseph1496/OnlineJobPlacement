@@ -345,11 +345,10 @@ while($query = mysql_fetch_array($result)){
                             <div class="col-md-5">
                                 <!-- Single Testimonial -->
                                 <div class="classic-testimonials">
-                                    <div class="testimonial-content">
-                                        <label class="control-label">Select Image</label>
-                                        <input id="ProfilePicture" name="ProfilePicture" multiple type="file" class="file file-loading" data-allowed-file-extensions='["png", "jpg", "bmp", "gif"]'>
-                                    </div>
-                                    <div class="testimonial-author"><button id="" class="btn btn-hg btn-primary" name="btnDelete">Delete Image</button></div>
+                                    <label class="control-label">Select Image</label>
+                                    <input id="ProfilePicture" name="ProfilePicture" multiple type="file" class="file file-loading" data-allowed-file-extensions='["png", "jpg", "bmp", "gif"]'>
+                                    <br>
+                                    <button id="" class="btn btn-hg btn-primary" name="btnDelete">Delete Image</button>
                                 </div>
                                 <!-- End Single Testimonial -->
                             </div>
