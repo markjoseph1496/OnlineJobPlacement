@@ -615,12 +615,11 @@
 			            <div class="footer-widget social-widget">
 		              		<h4>Follow Us<span class="head-line"></span></h4>
 		              		<ul class="social-icons">
-			                  	<li><a class="facebook" href="#"><i class="fa fa-facebook"></i></a></li>
-			                  	<li><a class="twitter" href="#"><i class="fa fa-twitter"></i></a></li>
+			                  	<li><a class="facebook" href="https://www.facebook.com/pages/STI-College-Caloocan-Official-Fanpage/133289683408899?pnref=lhc"><i class="fa fa-facebook"></i></a></li>
+			                  	<li><a class="twitter" href="https://twitter.com/sticollege"><i class="fa fa-twitter"></i></a></li>
 			                  	<li><a class="google" href="#"><i class="fa fa-youtube"></i></a></li>
 		              		</ul>
 		            	</div>
-		            	
 	          		</div>
 		          	<!-- .col-md-3 -->
 		          	<!-- End Subscribe & Social Links Widget -->
@@ -628,7 +627,9 @@
 		          	<!-- Start Twitter Widget -->
 		          	<div class="col-md-3">
             			<div class="footer-widget twitter-widget">
-              				
+              				<h4>Contact Us<span class="head-line"></span></h4>
+              				<b>Tel. no. (+632) 294-4001</b>
+              				<label>109 Samson Road corner Caimito Street, Caloocan City 1400</label>
             			</div>
 		          	</div>
 		          	<!-- .col-md-3 -->
@@ -638,11 +639,7 @@
 		          	<!-- Start Flickr Widget -->
 		          	<div class="col-md-3">
 		            	<div class="footer-widget flickr-widget">
-			                <li>
-			                  <a href="images/flickr-09.jpg" class="lightbox">
-			                    <img alt="" src="images/flickr-09.jpg">
-			                  </a>
-			                </li>
+			                
 		            	</div>
 		          	</div>
 		          	<!-- .col-md-3 -->
