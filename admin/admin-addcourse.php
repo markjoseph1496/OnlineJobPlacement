@@ -6,7 +6,7 @@
 <head>
 
   <!-- Basic -->
-  <title>Margo | Home</title>
+  <title>OJPMS</title>
 
   <!-- Bootstrap CSS -->
   <link href="../css/bootstrap.min.css" rel="stylesheet" />
@@ -21,10 +21,6 @@
   <!-- BootstrapValidator -->
   <script src="../js/bootstrapValidator.min.js" type="text/javascript"></script>
 
-
-
-  <!-- Bootstrap CSS  -->
-  <link rel="stylesheet" href="../asset/css/bootstrap.min.css" type="text/css" media="screen">
 
   <!-- Font Awesome CSS -->
   <link rel="stylesheet" href="../css/font-awesome.min.css" type="text/css" media="screen">
@@ -74,7 +70,7 @@
   <script type="text/javascript" src="../js/jquery.nicescroll.min.js"></script>
   <script type="text/javascript" src="../js/jquery.parallax.js"></script>
   <script type="text/javascript" src="../js/jquery.slicknav.js"></script>
-  <script type="text/javascript" src="../js/script.js"></script>
+
 
   <!--[if IE 8]><script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
   <!--[if lt IE 9]><script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
@@ -167,16 +163,11 @@
             </a>
           </div>
           <div class="navbar-collapse collapse">
-            <!-- Stat Search -->
-            <div class="search-side">
-              <a class="show-search"><i class="fa fa-search"></i></a>
-              <div class="search-form">
-                <form autocomplete="off" role="search" method="get" class="searchform" action="#">
-                  <input type="text" value="" name="s" id="s" placeholder="Search the site...">
-                </form>
-              </div>
+             <!-- Sign-out -->
+            <div class="signout-side">
+              <a class="show-signout"><i class="fa fa-sign-out"></i></a>
             </div>
-            <!-- End Search -->
+            <!-- End Sign-out -->
              <!-- Start Navigation List -->
             <ul class="nav navbar-nav navbar-right">
                 <li>
@@ -197,7 +188,10 @@
                  <li><a href="admin-adviser.php">Adviser List</a>
                 </li>  
                <li>
-                    <a class= "active" href="admin-maintenance.php">Maintenance</a>
+                    <a> Maintenance</a>
+                    <ul class="dropdown">
+                        <li><a href="admin-maintenance.php">Courses</a></li>
+                    </ul>
                 </li>
             </ul>
             <!-- End Navigation List -->
@@ -224,7 +218,10 @@
                  <li><a href="admin-adviser.php">Adviser List</a>
                 </li>  
                <li>
-                    <a class= "active" href="admin-maintenance.php">Maintenance</a>
+                    <a> Maintenance</a>
+                    <ul class="dropdown">
+                        <li><a href="admin-maintenance.php">Courses</a></li>
+                    </ul>
                 </li>
             </ul>
     </ul>
@@ -238,7 +235,7 @@
     <!-- End Header Section -->
 
 <!-- Start Page Banner -->
-    <div class="page-banner" style="padding:40px 0; background: url(images/slide-02-bg.jpg) center #f9f9f9;">
+    <div class="page-banner" style="padding:40px 0; center #f9f9f9;">
       <div class="container">
         <div class="row">
           <div class="col-md-6">
@@ -292,7 +289,7 @@
 
     </div>
   </form>
-  <script type="text/javascript">
+<script type="text/javascript">
     $(document).ready(function (){
         var validator = $("#AddCourse").bootstrapValidator({
               feedbackIcons: {
@@ -326,5 +323,6 @@
         });
     });
 </script>
+<script type="text/javascript" src="../js/script.js"></script>
 </body>
 </html>

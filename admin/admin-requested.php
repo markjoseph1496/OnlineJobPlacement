@@ -10,7 +10,7 @@ include('../connection.php');
 <head>
 
   <!-- Basic -->
-  <title>Margo | Home</title>
+  <title>OJPMS</title>
 
   <!-- JQuery -->
   <script type="text/javascript" src="../js/jquery.min.js"></script>
@@ -54,7 +54,7 @@ include('../connection.php');
 
 
   <!-- Margo JS  -->
-  <script type="text/javascript" src="../js/jquery-2.1.4.min.js"></script>
+  <script type="text/javascript" src="../js/jquery.min.js"></script>
   <script type="text/javascript" src="../js/jquery.migrate.js"></script>
   <script type="text/javascript" src="../js/modernizrr.js"></script>
   <script type="text/javascript" src="../asset/js/bootstrap.min.js"></script>
@@ -70,7 +70,6 @@ include('../connection.php');
   <script type="text/javascript" src="../js/jquery.nicescroll.min.js"></script>
   <script type="text/javascript" src="../js/jquery.parallax.js"></script>
   <script type="text/javascript" src="../js/jquery.slicknav.js"></script>
-  <script type="text/javascript" src="../js/script.js"></script>
 
   <!--[if IE 8]><script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
   <!--[if lt IE 9]><script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
@@ -208,16 +207,11 @@ include('../connection.php');
             </a>
           </div>
           <div class="navbar-collapse collapse">
-            <!-- Stat Search -->
-            <div class="search-side">
-              <a class="show-search"><i class="fa fa-search"></i></a>
-              <div class="search-form">
-                <form autocomplete="off" role="search" method="get" class="searchform" action="#">
-                  <input type="text" value="" name="s" id="s" placeholder="Search the site...">
-                </form>
-              </div>
+             <!-- Sign-out -->
+            <div class="signout-side">
+              <a class="show-signout"><i class="fa fa-sign-out"></i></a>
             </div>
-            <!-- End Search -->
+            <!-- End Sign-out -->
              <!-- Start Navigation List -->
             <ul class="nav navbar-nav navbar-right">
                 <li>
@@ -238,7 +232,10 @@ include('../connection.php');
                  <li><a href="admin-adviser.php">Adviser List</a>
                 </li>  
                <li>
-                    <a href="admin-maintenance.php">Maintenance</a>
+                    <a> Maintenance</a>
+                    <ul class="dropdown">
+                        <li><a href="admin-maintenance.php">Courses</a></li>
+                    </ul>
                 </li>
             </ul>
             <!-- End Navigation List -->
@@ -265,7 +262,10 @@ include('../connection.php');
                  <li><a href="admin-adviser.php"admin-maintenance.php"">Adviser List</a>
                 </li>  
                <li>
-                    <a href="admin-maintenance.php">Maintenance</a>
+                    <a> Maintenance</a>
+                    <ul class="dropdown">
+                        <li><a href="admin-maintenance.php">Courses</a></li>
+                    </ul>
                 </li>
             </ul>
     </ul>
@@ -279,7 +279,7 @@ include('../connection.php');
     <!-- End Header Section -->
 
 <!-- Start Page Banner -->
-    <div class="page-banner" style="padding:40px 0; background: url(images/slide-02-bg.jpg) center #f9f9f9;">
+    <div class="page-banner" style="padding:40px 0; center #f9f9f9;">
       <div class="container">
         <div class="row">
           <div class="col-md-6">
@@ -358,7 +358,7 @@ include('../connection.php');
                                             <td width = 25% class = tabletitle>$StudentID</td>
                                             <td width = 25% class = tabletitle>$FullName</td>
                                             <td width = 15% class = tabletitle>$Status</td>
-                                            <td>
+                                            <td class = tabletitle>
                                                 <a href=# class='btn btn-default btnAccept'> <i class='fa fa-check-circle'></i> </a>
                                                 <a href=# class='btn btn-danger btnDecline'> <i class='fa fa-minus-square'></i> </a>    
                                                 
@@ -377,4 +377,5 @@ include('../connection.php');
           </div> 
       </div>
 </body>
+<script type="text/javascript" src="../js/script.js"></script>
 </html>

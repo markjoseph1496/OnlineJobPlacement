@@ -6,7 +6,7 @@
 <head>
 
   <!-- Basic -->
-  <title>Margo | Home</title>
+  <title>OJPMS</title>
 
   <!-- Bootstrap CSS  -->
   <link rel="stylesheet" href="../asset/css/bootstrap.min.css" type="text/css" media="screen">
@@ -45,7 +45,7 @@
 
 
   <!-- Margo JS  -->
-  <script type="text/javascript" src="../js/jquery-2.1.4.min.js"></script>
+  <script type="text/javascript" src="../js/jquery.min.js"></script>
   <script type="text/javascript" src="../js/jquery.migrate.js"></script>
   <script type="text/javascript" src="../js/modernizrr.js"></script>
   <script type="text/javascript" src="../asset/js/bootstrap.min.js"></script>
@@ -61,7 +61,6 @@
   <script type="text/javascript" src="../js/jquery.nicescroll.min.js"></script>
   <script type="text/javascript" src="../js/jquery.parallax.js"></script>
   <script type="text/javascript" src="../js/jquery.slicknav.js"></script>
-  <script type="text/javascript" src="../js/script.js"></script>
 
   <!--[if IE 8]><script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
   <!--[if lt IE 9]><script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
@@ -155,16 +154,11 @@
             </a>
           </div>
           <div class="navbar-collapse collapse">
-            <!-- Stat Search -->
-            <div class="search-side">
-              <a class="show-search"><i class="fa fa-search"></i></a>
-              <div class="search-form">
-                <form autocomplete="off" role="search" method="get" class="searchform" action="#">
-                  <input type="text" value="" name="s" id="s" placeholder="Search the site...">
-                </form>
-              </div>
+             <!-- Sign-out -->
+            <div class="signout-side">
+              <a class="show-signout"><i class="fa fa-sign-out"></i></a>
             </div>
-            <!-- End Search -->
+            <!-- End Sign-out -->
              <!-- Start Navigation List -->
             <ul class="nav navbar-nav navbar-right">
                 <li>
@@ -182,10 +176,13 @@
                 <li>
                     <a href="admin-companylist.php">Company List</a>
                 </li>
-                 <li><a href="admin-adviserlist.php">Adviser List</a>
+                 <li><a href="admin-adviser.php">Adviser List</a>
                 </li>  
                <li>
-                    <a class= "active" href="admin-maintenance.php">Maintenance</a>
+                    <a> Maintenance</a>
+                    <ul class="dropdown">
+                        <li><a class= "active" href="admin-maintenance.php">Courses</a></li>
+                    </ul>
                 </li>
             </ul>
             <!-- End Navigation List -->
@@ -211,8 +208,11 @@
                 </li>
                  <li><a href="admin-adviser.php">Adviser List</a>
                 </li>  
-               <li>
-                    <a class= "active" href="admin-maintenance.php">Maintenance</a>
+              <li>
+                    <a> Maintenance</a>
+                    <ul class="dropdown">
+                        <li><a class= "active" href="admin-maintenance.php">Courses</a></li>
+                    </ul>
                 </li>
             </ul>
     </ul>
@@ -226,11 +226,11 @@
     <!-- End Header Section -->
 
 <!-- Start Page Banner -->
-    <div class="page-banner" style="padding:40px 0; background: url(images/slide-02-bg.jpg) center #f9f9f9;">
+    <div class="page-banner" style="padding:40px 0; center #f9f9f9;">
       <div class="container">
         <div class="row">
           <div class="col-md-6">
-            <h2>Maintenance</h2>
+            <h2>List of Courses</h2>
           </div>
         </div>
       </div>
@@ -239,11 +239,38 @@
 
 <!--Content-->
   <br><br><br>
-    
+
    <div class = "container">
-      <div class = "col-md-12">
-            <a class="btn btn-hg btn-primary" href = "admin-addcourse.php" style = "width:200px;">Add Course</a>       
-      </div>        
-    </div>
+  <div class = "col-md-5">
+           <a href="admin-addcourse.php" class='btn btn-primary'> <i class='fa fa-plus-circle'></i> Add Course </a>       
+ </div> 
+        <div class = "col-md-12">
+          &nbsp;
+     <table class = 'Applicants' width = '100%' cellpadding = '0'>
+          <thead>
+           <tr>
+           </tr>    
+                <tr>
+                    <th width= '25%' class = 'tabletitle'>Course Code</th>
+                    <th width = '25%' class = 'tabletitle'>Course Title</th>
+                    <th width = '35%' class = 'tabletitle'>Course Description</th>
+                    <th width = '15%' class = 'tabletitle'></th>
+                <tr>
+            </thead>
+            <tbody>
+                        <tr>
+                              <td width= 25% class = tabletitle></td>
+                             <td width = 25% class = tabletitle></td>
+                             <td width = 35% class = tabletitle></td>
+                             <td width = 15% class = tabletitle>
+                             <a href=# class='btn btn-default'> <i class='fa fa-check-circle'></i> </a>
+                             <a href=# class='btn btn-danger '> <i class='fa fa-minus-square'></i> </a>
+                            </td>
+                        <tr>            
+                            </tbody>  
+        </table>
+          </div> 
+      </div>     
 </body>
+<script type="text/javascript" src="../js/script.js"></script>
 </html>

@@ -106,7 +106,7 @@ $result = mysql_query($qry);
 
 
   <!-- Margo JS  -->
-  <script type="text/javascript" src="../js/jquery-2.1.4.min.js"></script>
+  <script type="text/javascript" src="../js/jquery.min.js"></script>
   <script type="text/javascript" src="../js/jquery.migrate.js"></script>
   <script type="text/javascript" src="../js/modernizrr.js"></script>
   <script type="text/javascript" src="../asset/js/bootstrap.min.js"></script>
@@ -122,7 +122,6 @@ $result = mysql_query($qry);
   <script type="text/javascript" src="../js/jquery.nicescroll.min.js"></script>
   <script type="text/javascript" src="../js/jquery.parallax.js"></script>
   <script type="text/javascript" src="../js/jquery.slicknav.js"></script>
-  <script type="text/javascript" src="../js/script.js"></script>
 
   <!--[if IE 8]><script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
   <!--[if lt IE 9]><script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
@@ -216,16 +215,11 @@ $result = mysql_query($qry);
             </a>
           </div>
           <div class="navbar-collapse collapse">
-            <!-- Stat Search -->
-            <div class="search-side">
-              <a class="show-search"><i class="fa fa-search"></i></a>
-              <div class="search-form">
-                <form autocomplete="off" role="search" method="get" class="searchform" action="#">
-                  <input type="text" value="" name="s" id="s" placeholder="Search the site...">
-                </form>
-              </div>
+             <!-- Sign-out -->
+            <div class="signout-side">
+              <a class="show-signout"><i class="fa fa-sign-out"></i></a>
             </div>
-            <!-- End Search -->
+            <!-- End Sign-out -->
              <!-- Start Navigation List -->
             <ul class="nav navbar-nav navbar-right">
                 <li>
@@ -246,7 +240,10 @@ $result = mysql_query($qry);
                  <li><a href="admin-adviser.php">Adviser List</a>
                 </li>  
                <li>
-                    <a href="admin-maintenance.php">Maintenance</a>
+                    <a> Maintenance</a>
+                    <ul class="dropdown">
+                        <li><a href="admin-maintenance.php">Courses</a></li>
+                    </ul>
                 </li>
             </ul>
             <!-- End Navigation List -->
@@ -272,8 +269,11 @@ $result = mysql_query($qry);
                 </li>
                  <li><a href="admin-adviser.php">Adviser List</a>
                 </li>  
-               <li>
-                    <a href="admin-maintenance.php">Maintenance</a>
+              <li>
+                    <a> Maintenance</a>
+                    <ul class="dropdown">
+                        <li><a  href="admin-maintenance.php">Courses</a></li>
+                    </ul>
                 </li>
             </ul>
     </ul>
@@ -287,7 +287,7 @@ $result = mysql_query($qry);
     <!-- End Header Section -->
 
 <!-- Start Page Banner -->
-    <div class="page-banner" style="padding:40px 0; background: url(images/slide-02-bg.jpg) center #f9f9f9;">
+    <div class="page-banner" style="padding:40px 0; center #f9f9f9;">
       <div class="container">
         <div class="row">
           <div class="col-md-6">
@@ -420,7 +420,7 @@ $result = mysql_query($qry);
                       <tbody>
                           <tr>
                               <td>
-                              <a href = 'resumelink.php'>$FullName;</a>
+                              <a href = 'resumelink.php'>$FullName</a>
                               </td>
                               <td class = 'tcenter'></td>
                               <td class = 'tcenter'></td>
@@ -431,19 +431,14 @@ $result = mysql_query($qry);
                                   <i class='fa fa-pencil'></i>
                                   </a> 
                               </td>
-
                           </tr>
                       </tbody>
-
-
                     ";
                 }
-
-
             ?>
-
         </table>
         </div>
         <br><br>
 </body>
+<script type="text/javascript" src="../js/script.js"></script>
 </html>
