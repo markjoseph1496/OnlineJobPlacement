@@ -78,10 +78,8 @@
 			            <!-- Start Navigation List -->
 			            <ul class="nav navbar-nav navbar-right">
 				            <li><a href="#">OJPMS</a></li>
-	          				<li><a href="about.html">Events</a></li>
-			              	<li><a href="#">Shortcodes</a></li>
-			              	<li><a href="portfolio-3.html">Portfolio</a></li>
-	          				<li><a href="blog.html">Blog</a></li>
+	          				<li><a href="#events">Events</a></li>
+	          				<li><a href="#about">About</a></li>
 	          				<li><a href="#join">Join Us</a></li>
 	        			</ul>
 	        			<!-- End Navigation List -->
@@ -91,10 +89,8 @@
         		<!-- Mobile Menu Start -->
         		<ul class="wpb-mobile-menu">
           			<li><a class="active" href="index.html">OJPMS</a></li>
-      				<li><a href="about.html">Events</a></li>
-	              	<li><a href="#">Shortcodes</a></li>
-	              	<li><a href="portfolio-3.html">Portfolio</a></li>
-      				<li><a href="blog.html">Blog</a></li>
+      				<li><a href="#events">Events</a></li>
+      				<li><a href="#about">About</a></li>
       				<li><a href="#join">Join Us</a></li>
        			</ul>
         		<!-- Mobile Menu End -->
@@ -598,6 +594,11 @@
 	    		<section id="join">
 					<div class="row">
 			          	<!-- Start Service Icon 1 -->
+			          	<div class="big-title text-center animated fadeInDown delay-01" data-animation="fadeInDown" data-animation-delay="01">
+          					<h1>Come and Be Part</h1>
+        				</div>
+        				<p class="text-center">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore
+        				<br>veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit.</p>
 			          	<div class="col-md-4 col-sm-6 service-box service-center">
 			            	<div class="service-icon">
 			              		<a href="login-student.php"><i class="fa fa-users icon-medium-effect icon-effect-2"></i></a>

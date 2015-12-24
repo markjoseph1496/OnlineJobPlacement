@@ -141,7 +141,7 @@ if($a){
                 <div class="browser-chrome">
                     <label class="register-title">&nbsp;<span class="break_on_desktop"></span>Welcome to OJPMS.</label>
                     <div class="space"></div>
-                    <label class="register-terms">Connect with your friends -- and other fascinating people. Get in-the-moment updates on the things that interest you. And watch events unfold, in real time, from every angle. <a href="" target="_blank">Sign Up.</a></label>
+                    <label class="register-terms">Connect with your friends -- and other fascinating people. Get in-the-moment updates on the things that interest you. And watch events unfold, in real time, from every angle. <a href="registration.php" target="_blank">Sign Up.</a></label>
                 </div>
             </div>
         </div>
