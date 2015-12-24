@@ -60,7 +60,7 @@ if($a){
 
     if($a){
         unset($a);
-        $query = "SELECT * FROM studentinfotbl WHERE StudentID='$server_StudentID' AND Password='$server_Password'";
+        $query = "SELECT * FROM studentinfotbl WHERE StudentID='" . mysql_real_escape_string($server_StudentID) . "' AND Password='" . mysql_real_escape_string($server_Password) . "'";
         $result = mysql_query($query);
 
         if($result){

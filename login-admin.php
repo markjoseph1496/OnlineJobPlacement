@@ -48,7 +48,7 @@ if($a){
 
     if($a){
         unset($a);
-        $query = "SELECT * FROM admintbl WHERE Email='$server_Email' AND Password='$server_Password'";
+        $query = "SELECT * FROM admintbl WHERE Email='" . mysql_real_escape_string($server_Email) . "' AND Password='" . mysql_real_escape_string($server_Password) . "'";
         $result = mysql_query($query);
         while($query = mysql_fetch_Array($result))
             {       
