@@ -118,7 +118,7 @@
 	            		<div class="slider-content">
 	              			<div class="col-md-12 text-center">
 	                			<h2 class="animated2">
-	                  				<span>Welcome to <strong>Margo</strong></span>
+	                  				<span>Welcome to <strong>OJPMS</strong></span>
 	              				</h2>
 	                			<h3 class="animated3">
 	               					<span>The ultimate aim of your business</span>
@@ -133,7 +133,7 @@
 	            		<div class="slider-content">
 	              			<div class="col-md-12 text-center">
 	                			<h2 class="animated4">
-	                				<span><strong>Margo</strong> for the highest</span>
+	                				<span><strong>OJPMS</strong> for the highest</span>
 	            				</h2>
 	                			<h3 class="animated5">
 	               					<span>The Key of your Success</span>
@@ -154,7 +154,7 @@
 					               <span>Why you are waiting</span>
 					           	</h3>
 	                			<div class="">
-	                  				<a class="animated4 slider btn btn-system btn-large btn-min-block" href="#">Get Now</a><a class="animated4 slider btn btn-default btn-min-block" href="#">Live Demo</a>
+	                  				<a class="animated4 slider btn btn-system btn-large btn-min-block" href="#">Get Now</a><a class="animated4 slider btn btn-default btn-min-block" href="#">Click</a>
 	                			</div>
 		              		</div>
 		            	</div>
