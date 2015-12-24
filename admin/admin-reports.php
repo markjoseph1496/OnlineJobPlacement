@@ -338,7 +338,7 @@ $Total = $Q1[0];
                             <tbody>
                                 <tr>
                                     <td class = tabletitle>
-                                    <a href = 'admin-field.php?CourseCode=$CourseCode'>$CourseTitle</a>
+                                    <a href = 'admin-field.php?CourseCode=" . htmlspecialchars($CourseCode) . "'>" . htmlspecialchars($CourseTitle) . "</a>
                                     </td>
                                     <td class = 'tabletitle'>$TotalStudents</td>
                                     <td class = 'tabletitle'>$TotalEmployed</td>
