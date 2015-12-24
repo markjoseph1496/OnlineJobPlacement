@@ -195,7 +195,7 @@ $result = mysql_query($qry);
                             <ul>
                                 <li>
                                     <div class="widget-thumb">
-                                        <a href="#"><img src="images/blog-mini-03.jpg" alt="" /></a>
+                                        <a href="#"><img src="../../images/blog-mini-03.jpg" alt="" /></a>
                                     </div>
                                     <div class="widget-content">
                                         <h5><a href="#">Senior Accountant</a></h5>
