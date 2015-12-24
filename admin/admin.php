@@ -282,7 +282,7 @@ $Total = $Q1[0];
                         
                         <tr>
                             <td width = 70% class = tabletitle>
-                            <a href = 'admin-field.php?CourseCode=$CourseCode'>$CourseTitle</a>
+                            <a href = 'admin-field.php?CourseCode=" . htmlspecialchars($CourseCode) . "'>$CourseTitle</a>
                             </td>
                             <td width = 30% class = 'tabletitle'>$TotalStudentByCourse</td>
                         <tr>
