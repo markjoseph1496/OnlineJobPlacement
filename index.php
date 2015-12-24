@@ -595,9 +595,9 @@
 					<div class="row">
 			          	<!-- Start Service Icon 1 -->
 			          	<div class="big-title text-center animated fadeInDown delay-01" data-animation="fadeInDown" data-animation-delay="01">
-          					<h1>Come and Be Part</h1>
+          					<h1>Be Part of Us</h1>
         				</div>
-        				<p class="text-center">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore
+        				<p class="text-center">Choose between <b>Student</b> and <b>Company</b>.
         				<br>veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit.</p>
 			          	<div class="col-md-4 col-sm-6 service-box service-center">
 			            	<div class="service-icon">
