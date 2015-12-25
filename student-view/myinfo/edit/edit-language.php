@@ -252,6 +252,7 @@ while($query = mysql_fetch_array($result)){
         </header>
 
         <div class="page-banner no-subtitle">
+            <input type="text" class="form-control" id="LangID" name="LangID" style="display: none;" value="<?php echo $LangID; ?>">
             <div class="container">
                 <div class="row">
                     <div class="col-md-6">
@@ -276,7 +277,7 @@ while($query = mysql_fetch_array($result)){
                     <div class="col-md-9 page-content">
                         <div class="row">
                             <div class="col-md-6">
-                                <div class="form-group">
+                                <div class="</-group">
                                     <label>Language <span>(*)</span></label>
                                     <input type="text" class="form-control" id="Language" name="Language" value="<?php echo $Language; ?>">
                                 </div>

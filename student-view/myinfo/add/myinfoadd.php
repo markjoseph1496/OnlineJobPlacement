@@ -90,4 +90,16 @@ if(isset($_POST['Specialization'])){
              </script>
              ";
 }
+
+if(isset($_POST['Language'])){
+    $Language = $_POST['Language'];
+
+    $query = "INSERT INTO languagetbl (StudentID, Language) values ('$StudentID', '$Language')";
+    $result = mysql_query($query);
+    echo "
+             <script type='text/javascript'>
+             location.href='../specialization-and-languages.php?id=5';
+             </script>
+             ";
+}
 ?>

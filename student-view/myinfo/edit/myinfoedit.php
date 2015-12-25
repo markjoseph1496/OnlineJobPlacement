@@ -93,14 +93,24 @@ if(isset($_POST['Specialization'])){
     $query = "UPDATE specializationtbl SET Specialization = '$Specialization', YearOfExperience = '$YearOfExperience' WHERE SID = '$SID' AND StudentID";
     $result = mysql_query($query);
         echo "
-        <script type='text/javascript'>
-        location.href='../specialization-and-languages.php?id=1';
-        </script>
-        ";
+            <script type='text/javascript'>
+            location.href='../specialization-and-languages.php?id=1';
+            </script>
+            ";
 }
 
 if(isset($_POST['Language'])){
     $LangID = $_POST['LangID'];
     $Language = $_POST['Language'];
+
+    $query = "UPDATE languagetbl SET Language = '$Language' WHERE LangID = '$LangID' AND StudentID = '$StudentID'";
+    $result = mysql_query($query);
+
+        echo "
+            <script type='text/javascript'>
+            location.href='../specialization-and-languages.php?id=4';
+            </script>
+            ";
+
 }
 ?>

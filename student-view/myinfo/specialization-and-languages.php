@@ -268,6 +268,30 @@ else{
                             </div>
                             ';
                     }
+                    elseif($id==4){
+                        echo'
+                            <div class="alert alert-success">
+                                <span class="glyphicon glyphicon-info-sign"></span> 
+                                Languages successfully updated.
+                            </div>
+                            ';
+                    }
+                    elseif($id==5){
+                        echo'
+                            <div class="alert alert-success">
+                                <span class="glyphicon glyphicon-info-sign"></span> 
+                                Languages successfully added.
+                            </div>
+                            ';
+                    }
+                    elseif($id==6){
+                        echo'
+                            <div class="alert alert-success">
+                                <span class="glyphicon glyphicon-info-sign"></span> 
+                                Language successfully deleted.
+                            </div>
+                            ';
+                    }
 
                 }
                 ?>
@@ -415,6 +439,29 @@ else{
                                                 </a>
                                             </td>
                                         </tr>
+                                         <!-- Modal -->
+                                            <div class="modal fade" id="DeleteLanguage" role="dialog">
+                                                <div class="modal-dialog" style="padding:100px">
+                                                    <!-- Modal content-->
+                                                    <div class="modal-content">
+                                                        <div class="modal-header">
+                                                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                                            <h4 class="modal-title">Delete Language?</h4>
+                                                        </div>
+                                                        <div class="modal-body">
+                                                            <div class="col-md-15 fieldcol">
+                                                                <label = "usr" class = "control-label">Do you want to delete this information? This cannot be undone.</label>
+                                                                <div class="form-group">
+                                                                </div>
+                                                        </div>
+                                                        <div class="modal-footer">
+                                                            <a href="delete.php?delete_LangID=<?php echo $LangID; ?>" class="btn btn-danger">Delete</a>
+                                                            <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+                                                        </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
                                         <?php
                                             }
                                         ?>
