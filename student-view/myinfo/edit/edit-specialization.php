@@ -339,6 +339,7 @@ while($query = mysql_fetch_array($result)){
     </div>
     <!-- End Content -->
     <script type="text/javascript" src="../../../js/script.js"></script>
+</form>
 </body>
 </html>
 <script type="text/javascript">

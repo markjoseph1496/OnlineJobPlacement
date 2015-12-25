@@ -407,10 +407,10 @@ else{
                                                 <span class="star"></span>
                                             </td>
                                             <td>
-                                                <button name ="btnDeleteLang" href="" class="btn btn-danger">
+                                                <button class="btn btn-danger" data-toggle="modal" data-target="#DeleteLanguage">
                                                     <i class="fa fa-trash fa-1x"></i>
                                                 </button>
-                                                <a href="" class="btn btn-default">
+                                                <a href="edit/edit-language.php?id=<?php echo $LangID; ?>" class="btn btn-default">
                                                     <i class="fa fa-pencil-square-o fa-1x"></i>
                                                 </a>
                                             </td>

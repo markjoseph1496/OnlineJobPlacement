@@ -1,3 +1,15 @@
+<?php 
+include('../../../connection.php');
+session_start();
+
+$LangID = $_GET['id'];
+
+$query = "SELECT * FROM languagetbl WHERE LangID = '$LangID'";
+$result = mysql_query($query);
+while($query = mysql_fetch_array($result)){
+    $Language = $query['Language'];
+}
+?>
 <!doctype html>
 <html lang="en">
 
@@ -64,10 +76,10 @@
     <script type="text/javascript" src="../../../js/jquery.easypiechart.min.js"></script>
     <script type="text/javascript" src="../../../js/jquery.nicescroll.min.js"></script>
     <script type="text/javascript" src="../../../js/jquery.parallax.js"></script>
-    <script type="text/javascript" src="../../../js/jquery.slicknav.js"></script>
 </head>
 
 <body>
+    <form id="form" name="form" autocomplete="off" action="myinfoedit.php" method="POST">
     <div id="container">
         <!-- Start Header Section -->
         <div class="hidden-header"></div>
@@ -144,7 +156,7 @@
                         </button>
                         <!-- End Toggle Nav Link For Mobiles -->
                         <a class="navbar-brand" href="">
-                            <img src="../../images/ojpms.png">
+                            <img src="../../../images/ojpms.png">
                         </a>
                     </div>
                     <div class="navbar-collapse collapse">
@@ -154,7 +166,7 @@
                         </div>
                      <!-- End Sign-out -->
                         <!-- Start Navigation List -->
-                                                <ul class="nav navbar-nav navbar-right">
+                        <ul class="nav navbar-nav navbar-right">
                             <li>
                                 <a class="active" href="../personal-info.php">My Info</a>
                                 <ul class="dropdown">
@@ -266,7 +278,7 @@
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <label>Language <span>(*)</span></label>
-                                    <input type="text" class="form-control" id="txtLanguage" name="txtLanguage">
+                                    <input type="text" class="form-control" id="Language" name="Language" value="<?php echo $Language; ?>">
                                 </div>
                             </div>
                             <div class="col-md-6">
@@ -297,7 +309,7 @@
                 <div class="hr5" style="margin-top:35px;margin-bottom:40px;"></div>
                 <div class="field">
                     <div class="text-center">
-                        <button class="btn btn-lg btn-hg btn-primary" name ="btnSave">Save</button>
+                        <button type="submit" class="btn btn-lg btn-hg btn-primary">Save</button>
                     </div>
                 </div>
             </div>
@@ -307,3 +319,23 @@
     <script type="text/javascript" src="../../../js/script.js"></script>
 </body>
 </html>
+<script type="text/javascript">
+    $(document).ready(function () {
+            var validator = $("#form").bootstrapValidator({
+                feedbackIcons:{
+                    valid: "glyphicon glyphicon-ok",
+                    invalid: "glyphicon glyphicon-remove",
+                    validating: "glyphicon glyphicon-refresh"
+                },
+                fields: {
+                    Language: {
+                        validators: {
+                            notEmpty: {
+                                message: "This field is required."
+                            }
+                        }
+                    }
+                }
+            });
+    });
+</script>

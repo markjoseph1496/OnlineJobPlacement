@@ -11,6 +11,7 @@ while($query = mysql_fetch_array($result)){
     $YearTaken = $query['YearTaken'];
 }
 ?>
+
 <!doctype html>
 <html lang="en">
 
