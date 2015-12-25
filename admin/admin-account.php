@@ -3,9 +3,9 @@
 include('../connection.php');
 session_start();
 
-$x = $_SESSION['AdminID'];
+$AdminID = $_SESSION['AdminID'];
 
-$qry = "SELECT * FROM admintbl WHERE AdminID ='$x'";
+$qry = "SELECT * FROM admintbl WHERE AdminID ='$AdminID'";
 $result = mysql_query($qry);
 while ($qry = mysql_fetch_Array($result)) {
     $Email = $qry['Email'];
@@ -21,10 +21,6 @@ while ($qry = mysql_fetch_Array($result)) {
 
 ?>
 <!doctype html>
-<!--[if IE 8 ]>
-<html class="ie ie8" lang="en"> <![endif]-->
-<!--[if (gte IE 9)|!(IE)]>
-<html lang="en" class="no-js"> <![endif]-->
 <html lang="en">
 
 <head>
@@ -64,22 +60,10 @@ while ($qry = mysql_fetch_Array($result)) {
     <link rel="stylesheet" type="text/css" href="../css/ojpms-style.css" media="screen">
 
     <!-- Color CSS Styles  -->
-    <link rel="stylesheet" type="text/css" href="../css/colors/red.css" title="red" media="screen"/>
-    <link rel="stylesheet" type="text/css" href="../css/colors/jade.css" title="jade" media="screen"/>
-    <link rel="stylesheet" type="text/css" href="../css/colors/blue.css" title="blue" media="screen"/>
-    <link rel="stylesheet" type="text/css" href="../css/colors/beige.css" title="beige" media="screen"/>
-    <link rel="stylesheet" type="text/css" href="../css/colors/cyan.css" title="cyan" media="screen"/>
-    <link rel="stylesheet" type="text/css" href="../css/colors/green.css" title="green" media="screen"/>
-    <link rel="stylesheet" type="text/css" href="../css/colors/orange.css" title="orange" media="screen"/>
-    <link rel="stylesheet" type="text/css" href="../css/colors/peach.css" title="peach" media="screen"/>
-    <link rel="stylesheet" type="text/css" href="../css/colors/pink.css" title="pink" media="screen"/>
-    <link rel="stylesheet" type="text/css" href="../css/colors/purple.css" title="purple" media="screen"/>
-    <link rel="stylesheet" type="text/css" href="../css/colors/sky-blue.css" title="sky-blue" media="screen"/>
     <link rel="stylesheet" type="text/css" href="../css/colors/yellow.css" title="yellow" media="screen"/>
 
 
     <!-- Margo JS  -->
-
     <script type="text/javascript" src="../js/jquery.migrate.js"></script>
     <script type="text/javascript" src="../js/modernizrr.js"></script>
     <script type="text/javascript" src="../js/jquery.fitvids.js"></script>
@@ -94,12 +78,6 @@ while ($qry = mysql_fetch_Array($result)) {
     <script type="text/javascript" src="../js/jquery.nicescroll.min.js"></script>
     <script type="text/javascript" src="../js/jquery.parallax.js"></script>
     <script type="text/javascript" src="../js/jquery.slicknav.js"></script>
-
-    <!--[if IE 8]>
-    <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
-    <!--[if lt IE 9]>
-    <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
-
 </head>
 
 <body>
@@ -109,7 +87,7 @@ while ($qry = mysql_fetch_Array($result)) {
         <div class="modal-dialog" style="padding:100px">
 
             <!-- Modal content-->
-            <form id="change-email-form" autocomplete="off" method="POST">
+            <form id="change-email-form" autocomplete="off" method="POST" action="functions.php">
                 <div class="modal-content">
                     <div class="modal-header">
                         <button type="button" class="close" data-dismiss="modal">&times;</button>
@@ -155,7 +133,7 @@ while ($qry = mysql_fetch_Array($result)) {
         <div class="modal-dialog" style="padding:100px">
 
             <!-- Modal content-->
-            <form id="change-password-form" autocomplete="off" method="POST">
+            <form id="change-password-form" autocomplete="off" method="POST" action="functions.php">
                 <div class="modal-content">
                     <div class="modal-header">
                         <button type="button" class="close" data-dismiss="modal">&times;</button>
@@ -165,8 +143,7 @@ while ($qry = mysql_fetch_Array($result)) {
                         <div class="col-md-15 fieldcol">
                             <label = "usr" class = "control-label"> Old Password: </label>
                             <div class="form-group">
-                                <input type="password" name="ModalOldPassword" id="ModalOldPassword"
-                                       class="form-control">
+                                <input type="password" name="ModalOldPassword" id="ModalOldPassword" class="form-control">
                             </div>
                         </div>
 
@@ -174,8 +151,7 @@ while ($qry = mysql_fetch_Array($result)) {
                         <div class="col-md-15 fieldcol">
                             <label = "usr" class = "control-label"> New Password: </label>
                             <div class="form-group">
-                                <input type="password" name="ModalNewPassword" id="ModalNewPassword"
-                                       class="form-control">
+                                <input type="password" name="ModalNewPassword" id="ModalNewPassword" class="form-control">
                             </div>
                         </div>
 
@@ -183,8 +159,7 @@ while ($qry = mysql_fetch_Array($result)) {
                         <div class="col-md-15 fieldcol">
                             <label = "usr" class = "control-label"> Confirm Password: </label>
                             <div class="form-group">
-                                <input type="password" name="ModalConfirmPassword" id="ModalConfirmPassword"
-                                       class="form-control">
+                                <input type="password" name="ModalConfirmPassword" id="ModalConfirmPassword" class="form-control">
                             </div>
                         </div>
                     </div>
@@ -388,8 +363,7 @@ while ($qry = mysql_fetch_Array($result)) {
             <div class="col-md-3 fieldcol">
                 <div class="form-group">
                     <div class="box">
-                        <button class="btn btn-default" data-toggle="modal" data-target="#ChangeEmail">Change email
-                        </button>
+                        <button class="btn btn-default" data-toggle="modal" data-target="#ChangeEmail">Change email</button>
                     </div>
                 </div>
             </div>
@@ -406,9 +380,7 @@ while ($qry = mysql_fetch_Array($result)) {
             <div class="col-md-3 fieldcol">
                 <div class="form-group">
                     <div class="box">
-                        <button class="btn btn-default" data-toggle="modal" data-target="#ChangePassword">Change
-                            Password
-                        </button>
+                        <button class="btn btn-default" data-toggle="modal" data-target="#ChangePassword">ChangePassword</button>
                     </div>
                 </div>
             </div>
@@ -419,8 +391,7 @@ while ($qry = mysql_fetch_Array($result)) {
             </div>
             <div class="col-md-4 fieldcol">
                 <div class="form-group">
-                    <input type="text" name="fname" id="usr" class="form-control" style="width: 550px;"
-                           value="<?php echo $FName; ?>">
+                    <input type="text" name="fname" id="usr" class="form-control" style="width: 550px;" value="<?php echo $FirstName; ?>">
                 </div>
             </div>
         </div>
@@ -430,8 +401,7 @@ while ($qry = mysql_fetch_Array($result)) {
             </div>
             <div class="col-md-4 fieldcol">
                 <div class="form-group">
-                    <input type="text" name="mname" id="usr" class="form-control" style="width: 550px;"
-                           value="<?php echo $MName; ?>">
+                    <input type="text" name="mname" id="usr" class="form-control" style="width: 550px;" value="<?php echo $MiddleName; ?>">
                 </div>
             </div>
         </div>
@@ -441,8 +411,7 @@ while ($qry = mysql_fetch_Array($result)) {
             </div>
             <div class="col-md-4 fieldcol">
                 <div class="form-group">
-                    <input type="text" name="lname" id="usr" class="form-control" style="width: 550px;"
-                           value="<?php echo $LName; ?>">
+                    <input type="text" name="lname" id="usr" class="form-control" style="width: 550px;" value="<?php echo $LastName; ?>">
                 </div>
             </div>
         </div>
@@ -452,8 +421,7 @@ while ($qry = mysql_fetch_Array($result)) {
             </div>
             <div class="col-md-4 fieldcol">
                 <div class="form-group">
-                    <input type="text" name="position" id="usr" class="form-control" style="width: 550px;"
-                           value="<?php echo $Positions; ?>">
+                    <input type="text" name="position" id="usr" class="form-control" style="width: 550px;" value="<?php echo $Position; ?>">
                 </div>
             </div>
         </div>
@@ -463,8 +431,7 @@ while ($qry = mysql_fetch_Array($result)) {
             </div>
             <div class="col-md-4 fieldcol">
                 <div class="form-group">
-                    <input type="text" name="dept" id="usr" class="form-control" style="width: 550px;"
-                           value="<?php echo $Department; ?>">
+                    <input type="text" name="dept" id="usr" class="form-control" style="width: 550px;" value="<?php echo $Department; ?>">
                 </div>
             </div>
         </div>
@@ -475,8 +442,7 @@ while ($qry = mysql_fetch_Array($result)) {
             </div>
             <div class="col-md-4 fieldcol">
                 <div class="form-group">
-                    <input type="text" name="address" id="usr" class="form-control" style="width: 550px;"
-                           value="<?php echo $Address; ?>">
+                    <input type="text" name="address" id="usr" class="form-control" style="width: 550px;" value="<?php echo $Address; ?>">
                 </div>
             </div>
         </div>
@@ -486,8 +452,7 @@ while ($qry = mysql_fetch_Array($result)) {
             </div>
             <div class="col-md-4 fieldcol">
                 <div class="form-group">
-                    <input type="text" name="contact" id="usr" class="form-control" style="width: 550px;"
-                           value="<?php echo $PhoneNum ?>">
+                    <input type="text" name="contact" id="usr" class="form-control" style="width: 550px;" value="<?php echo $ContactNumber ?>">
                 </div>
             </div>
         </div>

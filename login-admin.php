@@ -59,7 +59,7 @@ if($a){
 
             if(mysql_num_rows($result) == 0){
                 echo "
-                <script type='text/javasczipt'>
+                <script type='text/javascript'>
                 alert('Incorrect Password. Please try again.');
                 </script>
                 ";
