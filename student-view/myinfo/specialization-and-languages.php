@@ -251,7 +251,7 @@ else{
                                         <h4>Specialization<span="head-line"></span></h4>
                                     </div>
                                     <div class="col-md-6 fieldcol">
-                                        <a href="add/add-skill.php" class="btnforadding" style="float:right;">
+                                        <a href="add/add-specialization.php" class="btnforadding" style="float:right;">
                                             <span class="fa fa-plus-square"> Add Specialization</span>
                                         </a>
                                     </div>
@@ -287,7 +287,7 @@ else{
                                                 <span class="star"></span>
                                             </td>
                                             <td>
-                                                <button name ="btnDeleteSkill" href="" class="btn btn-danger">
+                                                <button name ="btnDeletespecialization" href="" class="btn btn-danger">
                                                     <i class="fa fa-trash fa-1x"></i>
                                                 </button>
                                                 <a href="" class="btn btn-default">

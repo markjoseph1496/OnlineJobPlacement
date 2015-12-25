@@ -3,8 +3,6 @@ include('../connection.php');
 ?>
 
 <!doctype html>
-<!--[if IE 8 ]><html class="ie ie8" lang="en"> <![endif]-->
-<!--[if (gte IE 9)|!(IE)]><html lang="en" class="no-js"> <![endif]-->
 <html lang="en">
 
 <head>
@@ -12,114 +10,57 @@ include('../connection.php');
   <!-- Basic -->
   <title>OJPMS</title>
 
-  <!-- JQuery -->
-  <script type="text/javascript" src="../js/jquery.min.js"></script>
-  <script src="../js/bootstrap.min.js"></script>
-  <script src="../js/bootbox.min.js"></script>
+  <!-- Bootstrap CSS -->
+    <link href="../css/bootstrap.min.css" rel="stylesheet"/>
 
-  <!-- Bootstrap CSS  -->
-  <link rel="stylesheet" href="../asset/css/bootstrap.min.css" type="text/css" media="screen">
+    <!-- BootstrapValidator CSS -->
+    <link href="../css/bootstrapValidator.min.css" rel="stylesheet"/>
 
-  <!-- Font Awesome CSS -->
-  <link rel="stylesheet" href="../css/font-awesome.min.css" type="text/css" media="screen">
+    <!-- jQuery and Bootstrap JS -->
+    <script type="text/javascript" src="../js/jquery.min.js"></script>
+    <script src="../js/bootstrap.min.js" type="text/javascript"></script>
 
-  <!-- Slicknav -->
-  <link rel="stylesheet" type="text/css" href="../css/slicknav.css" media="screen">
+    <!-- BootstrapValidator -->
+    <script src="../js/bootstrapValidator.min.js" type="text/javascript"></script>
 
-  <!-- Margo CSS Styles  -->
-  <link rel="stylesheet" type="text/css" href="../css/style.css" media="screen">
+    <!-- Font Awesome CSS -->
+    <link rel="stylesheet" href="../css/font-awesome.min.css" type="text/css" media="screen">
 
-  <!-- Responsive CSS Styles  -->
-  <link rel="stylesheet" type="text/css" href="../css/responsive.css" media="screen">
+    <!-- Slicknav -->
+    <link rel="stylesheet" type="text/css" href="../css/slicknav.css" media="screen">
 
-  <!-- Css3 Transitions Styles  -->
-  <link rel="stylesheet" type="text/css" href="../css/animate.css" media="screen">
+    <!-- Margo CSS Styles  -->
+    <link rel="stylesheet" type="text/css" href="../css/style.css" media="screen">
 
-  <!-- OJPMS CSS  -->
-  <link rel="stylesheet" type="text/css" href="../css/ojpms-style.css" media="screen">
+    <!-- Responsive CSS Styles  -->
+    <link rel="stylesheet" type="text/css" href="../css/responsive.css" media="screen">
 
-  <!-- Color CSS Styles  -->
-  <link rel="stylesheet" type="text/css" href="../css/colors/red.css" title="red" media="screen" />
-  <link rel="stylesheet" type="text/css" href="../css/colors/jade.css" title="jade" media="screen" />
-  <link rel="stylesheet" type="text/css" href="../css/colors/blue.css" title="blue" media="screen" />
-  <link rel="stylesheet" type="text/css" href="../css/colors/beige.css" title="beige" media="screen" />
-  <link rel="stylesheet" type="text/css" href="../css/colors/cyan.css" title="cyan" media="screen" />
-  <link rel="stylesheet" type="text/css" href="../css/colors/green.css" title="green" media="screen" />
-  <link rel="stylesheet" type="text/css" href="../css/colors/orange.css" title="orange" media="screen" />
-  <link rel="stylesheet" type="text/css" href="../css/colors/peach.css" title="peach" media="screen" />
-  <link rel="stylesheet" type="text/css" href="../css/colors/pink.css" title="pink" media="screen" />
-  <link rel="stylesheet" type="text/css" href="../css/colors/purple.css" title="purple" media="screen" />
-  <link rel="stylesheet" type="text/css" href="../css/colors/sky-blue.css" title="sky-blue" media="screen" />
-  <link rel="stylesheet" type="text/css" href="../css/colors/yellow.css" title="yellow" media="screen" />
+    <!-- Css3 Transitions Styles  -->
+    <link rel="stylesheet" type="text/css" href="../css/animate.css" media="screen">
+
+    <!-- OJPMS CSS  -->
+    <link rel="stylesheet" type="text/css" href="../css/ojpms-style.css" media="screen">
+
+    <!-- Color CSS Styles  -->
+    <link rel="stylesheet" type="text/css" href="../css/colors/yellow.css" title="yellow" media="screen"/>
 
 
-  <!-- Margo JS  -->
-  <script type="text/javascript" src="../js/jquery.min.js"></script>
-  <script type="text/javascript" src="../js/jquery.migrate.js"></script>
-  <script type="text/javascript" src="../js/modernizrr.js"></script>
-  <script type="text/javascript" src="../asset/js/bootstrap.min.js"></script>
-  <script type="text/javascript" src="../js/jquery.fitvids.js"></script>
-  <script type="text/javascript" src="../js/owl.carousel.min.js"></script>
-  <script type="text/javascript" src="../js/nivo-lightbox.min.js"></script>
-  <script type="text/javascript" src="../js/jquery.isotope.min.js"></script>
-  <script type="text/javascript" src="../js/jquery.appear.js"></script>
-  <script type="text/javascript" src="../js/count-to.js"></script>
-  <script type="text/javascript" src="../js/jquery.textillate.js"></script>
-  <script type="text/javascript" src="../js/jquery.lettering.js"></script>
-  <script type="text/javascript" src="../js/jquery.easypiechart.min.js"></script>
-  <script type="text/javascript" src="../js/jquery.nicescroll.min.js"></script>
-  <script type="text/javascript" src="../js/jquery.parallax.js"></script>
-  <script type="text/javascript" src="../js/jquery.slicknav.js"></script>
-
-  <!--[if IE 8]><script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
-  <!--[if lt IE 9]><script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
-
+    <!-- Margo JS  -->
+    <script type="text/javascript" src="../js/jquery.migrate.js"></script>
+    <script type="text/javascript" src="../js/modernizrr.js"></script>
+    <script type="text/javascript" src="../js/jquery.fitvids.js"></script>
+    <script type="text/javascript" src="../js/owl.carousel.min.js"></script>
+    <script type="text/javascript" src="../js/nivo-lightbox.min.js"></script>
+    <script type="text/javascript" src="../js/jquery.isotope.min.js"></script>
+    <script type="text/javascript" src="../js/jquery.appear.js"></script>
+    <script type="text/javascript" src="../js/count-to.js"></script>
+    <script type="text/javascript" src="../js/jquery.textillate.js"></script>
+    <script type="text/javascript" src="../js/jquery.lettering.js"></script>
+    <script type="text/javascript" src="../js/jquery.easypiechart.min.js"></script>
+    <script type="text/javascript" src="../js/jquery.nicescroll.min.js"></script>
+    <script type="text/javascript" src="../js/jquery.parallax.js"></script>
+    <script type="text/javascript" src="../js/jquery.slicknav.js"></script>
 </head>
-<script>
-        $(document).on("click", ".btnDecline", function(result) {
-            bootbox.confirm({
-              title: 'Decline Request',
-              message: 'Are you sure you want to decline this request?',
-              buttons: {
-                  'cancel': {
-                      label: 'Cancel',
-                      
-                  },
-                  'confirm': {
-                      label: 'Decline',
-                      className: 'btn-danger pull-right'
-                  }
-              },
-              callback: function(result) {
-                  if (result) {
-                       window.location = $("a[data-bb='confirmDeleteRequest']").attr('href');
-                  }
-              }
-          });
-        });
-
-        $(document).on("click", ".btnAccept", function(result) {
-            bootbox.confirm({
-              title: 'Accept Request',
-              message: 'Are you sure you want to accept this request?',
-              buttons: {
-                  'cancel': {
-                      label: 'Cancel',
-                      
-                  },
-                  'confirm': {
-                      label: 'Accept',
-                      className: 'btn-primary pull-right'
-                  }
-              },
-              callback: function(result) {
-                  if (result) {
-                       window.location = $("a[data-bb='confirmAcceptRequest']").attr('href');
-                  }
-              }
-          });
-        });
-</script>
 <body>
 
   <!-- Full Body Container -->
@@ -295,9 +236,9 @@ include('../connection.php');
     
      <div class = "container">
               <?php
-              if(isset($_GET['ID'])){
-                  $ID=$_GET['ID'];
-                      if($ID == "Accepted"){
+              if(isset($_GET['id'])){
+                  $id=$_GET['id'];
+                      if($id == "1"){
                           echo '
                               <div class="alert alert-success">
                                   <span class="glyphicon glyphicon-info-sign"></span> 
@@ -305,7 +246,7 @@ include('../connection.php');
                               </div>
                           ';
                       }
-                      elseif($ID == "Rejected"){
+                      elseif($id == "2"){
                           echo '
                               <div class="alert alert-success">
                                   <span class="glyphicon glyphicon-info-sign"></span> 
@@ -350,7 +291,6 @@ include('../connection.php');
                                 $FirstName = $q1['FirstName'];
                                 $LastName = $q1['LastName'];
                                 $FullName = $LastName . ", " . $FirstName;
-
                                     echo"
                                     <tbody>
                                         <tr>
@@ -359,14 +299,57 @@ include('../connection.php');
                                             <td width = 25% class = tabletitle>$FullName</td>
                                             <td width = 15% class = tabletitle>$Status</td>
                                             <td class = tabletitle>
-                                                <a href=# class='btn btn-default btnAccept'> <i class='fa fa-check-circle'></i> </a>
-                                                <a href=# class='btn btn-danger btnDecline'> <i class='fa fa-minus-square'></i> </a>    
-                                                
-                                                <a data-bb='confirmDeleteRequest' class='bb-alert alert alert-info' style='display: none;' href='request.php?fn=Delete&ID=$RequestID'>
-                                                <a data-bb='confirmAcceptRequest' class='bb-alert alert alert-info' style='display: none;' href='request.php?fn=Accept&ID=$RequestID'>
+                                                <button class='btn btn-default' data-toggle='modal' data-target='#AcceptRequest'> <i class='fa fa-check-circle'></i> </button>
+                                                <button class='btn btn-danger' data-toggle='modal' data-target='#DeclineRequest'> <i class='fa fa-minus-square'></i> </button>    
                                             </td>
                                         <tr>            
-                                    </tbody>                                        
+                                    </tbody>
+                                    <!-- Modal -->
+                                            <div class='modal fade' id='AcceptRequest' role='dialog'>
+                                                <div class='modal-dialog' style='padding:100px'>
+                                                    <!-- Modal content-->
+                                                    <div class='modal-content'>
+                                                        <div class='modal-header'>
+                                                            <button type='button' class='close' data-dismiss='modal'>&times;</button>
+                                                            <h4 class='modal-title'>Accept Resume?</h4>
+                                                        </div>
+                                                        <div class='modal-body'>
+                                                            <div class='col-md-15 fieldcol'>
+                                                                <label = 'usr' class = 'control-label'>Do you want to accept this resume request?</label>
+                                                                <div class='form-group'>
+                                                                </div>
+                                                        </div>
+                                                        <div class='modal-footer'>
+                                                            <a href='functions.php?id=1&rid=$RequestID' class='btn btn-danger'>Accept</a>
+                                                            <button type='button' class='btn btn-default' data-dismiss='modal'>Cancel</button>
+                                                        </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>           
+
+                                            <div class='modal fade' id='DeclineRequest' role='dialog'>
+                                                <div class='modal-dialog' style='padding:100px'>
+                                                    <!-- Modal content-->
+                                                    <div class='modal-content'>
+                                                        <div class='modal-header'>
+                                                            <button type='button' class='close' data-dismiss='modal'>&times;</button>
+                                                            <h4 class='modal-title'>Reject Resume?</h4>
+                                                        </div>
+                                                        <div class='modal-body'>
+                                                            <div class='col-md-15 fieldcol'>
+                                                                <label = 'usr' class = 'control-label'>Do you want to reject this resume request?</label>
+                                                                <div class='form-group'>
+                                                                </div>
+                                                        </div>
+                                                        <div class='modal-footer'>
+                                                            <a href='functions.php?id=2&rid=$RequestID' class='btn btn-danger'>Delete</a>
+                                                            <button type='button' class='btn btn-default' data-dismiss='modal'>Cancel</button>
+                                                        </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>                              
                                     ";
 
                             }

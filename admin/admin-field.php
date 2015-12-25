@@ -13,6 +13,7 @@ while($qry = mysql_fetch_array($result)){
 $TotalStudents = mysql_query("SELECT COUNT(*) FROM studentinfotbl WHERE MajorCourse='$CourseTitle'");
 $Q1 = mysql_fetch_array($TotalStudents);
 $Total = $Q1[0];
+
 /*
 $FirstName = 'FirstName';
 $LastName = 'LastName';

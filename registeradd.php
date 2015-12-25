@@ -19,25 +19,28 @@ if(isset($_POST['type'])){
 	));
 }
 
-if(isset($_GET['StudentID'])){
-	$StudentID = $_GET['StudentID'];
-	$FirstName = $_GET['FirstName'];
-	$LastName = $_GET['LastName'];
-	$Birthday = $_GET['Birthday'];
-	$MobileNumber = $_GET['MobileNumber'];
-	$Email = $_GET['Email'];
-	$Password = $_GET['_Password'];
-	$City = $_GET['City'];
-	$EducAttain = $_GET['EducAttain'];
-	$School = $_GET['School'];
-	$Course = $_GET['Course'];
-	$GraduatedMonth = $_GET['GraduatedMonth'];
-	$GraduatedYear = $_GET['GraduatedYear'];
+if(isset($_POST['StudentID'])){
+	$StudentID = $_POST['StudentID'];
+	$FirstName = $_POST['FirstName'];
+	$LastName = $_POST['LastName'];
+	$Birthday = $_POST['Birthday'];
+	$MobileNumber = $_POST['MobileNumber'];
+	$Email = $_POST['Email'];
+	$Password = $_POST['_Password'];
+	$City = $_POST['City'];
+	$EducAttain = $_POST['EducAttain'];
+	$School = $_POST['School'];
+	$Course = $_POST['Course'];
+	$GraduatedMonth = $_POST['GraduatedMonth'];
+	$GraduatedYear = $_POST['GraduatedYear'];
+
+    $salt = hash('sha512', mt_rand(0, PHP_INT_MAX) . mt_rand(0, PHP_INT_MAX) . mt_rand(0, PHP_INT_MAX));
+    $password = hash('sha512', $password . $salt);
 
     $yeargraduated = $GraduatedMonth ." ". $GraduatedYear;
     $EducAttain = mysql_real_escape_string($EducAttain);
 
-    $query = "INSERT INTO studentinfotbl (StudentID,FirstName,LastName,Birthdate,Password,EmploymentStatus,MajorCourse) values  ('$StudentID','$FirstName','$LastName','$Birthday','$Password','Unemployed','$Course')";
+    $query = "INSERT INTO studentinfotbl (StudentID,FirstName,LastName,Birthdate,Password,SaltedPassword,EmploymentStatus,MajorCourse) values  ('$StudentID','$FirstName','$LastName','$Birthday','$Password','$salt','Unemployed','$Course')";
     $query1 = "INSERT INTO schooltbl (StudentID,School,Attainment,Course,Graduated) values  ('$StudentID','STI College Caloocan','$EducAttain','$Course','$yeargraduated')";
     $query2 = "INSERT INTO studcontactstbl (StudentID,Email,MobileNumber,City) values  ('$StudentID','$Email','$MobileNumber','$City')";
 

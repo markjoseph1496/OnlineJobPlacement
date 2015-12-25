@@ -95,14 +95,6 @@ while ($qry = mysql_fetch_Array($result)) {
                     </div>
                     <div class="modal-body">
                         <div class="col-md-15 fieldcol">
-                            <label = "usr" class = "control-label"> Email: </label>
-                            <div class="form-group">
-                                <input type="email" name="ModalEmail" id="ModalEmail" class="form-control">
-                            </div>
-                        </div>
-
-
-                        <div class="col-md-15 fieldcol">
                             <label = "usr" class = "control-label"> New email: </label>
                             <div class="form-group">
                                 <input type="email" name="ModalNewEmail" id="ModalNewEmail" class="form-control">
@@ -474,17 +466,14 @@ while ($qry = mysql_fetch_Array($result)) {
                 validating: "glyphicon glyphicon-refresh"
             },
             fields: {
-                ModalEmail: {
-                    validators: {
-                        notEmpty: {
-                            message: "Email is required."
-                        }
-                    }
-                },
                 ModalNewEmail: {
                     validators: {
                         notEmpty: {
                             message: "Email is required."
+                        },
+                        identical: {
+                            field: "ModalConfirmEmail",
+                            message: "Email and Confirm email mismatched."
                         }
                     }
                 },

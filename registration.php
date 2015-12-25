@@ -12,7 +12,6 @@
 
     <!-- Bootstrap CSS -->
     <link href="css/bootstrap.min.css" rel="stylesheet" />
-    <link href="css/basic-template.css" rel="stylesheet" />
 
     <!-- BootstrapValidator CSS -->
     <link href="css/bootstrapValidator.min.css" rel="stylesheet"/>
@@ -37,7 +36,7 @@
 
 
 <body id="page-top" class="index bg">
-    <form name="registration" id="registration" autocomplete="off" action="registeradd.php">
+    <form name="registration" id="registration" autocomplete="off" action="registeradd.php" method="POST">
         <nav class="navbar navbar-default navbar-fixed-top navbar-shrink">
             <div class="container">
                 <!-- Brand and toggle get grouped for better mobile display -->
@@ -381,13 +380,6 @@
                         validators: {
                             notEmpty: {
                                 message: "City is required."
-                            }
-                        }
-                    },
-                    EducAttain: {
-                        validators:{
-                            notEmpty: {
-                                message: "Educational Attainment is required."
                             }
                         }
                     },

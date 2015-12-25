@@ -17,8 +17,8 @@ if(isset($_GET['coursetitle'])) {
         </script>";
 }
 
-if(isset($_POST['ModalEmail'])){
-	$Email = $_POST['ModalEmail'];
+if(isset($_POST['ModalNewEmail'])){
+	$Email = $_POST['ModalNewEmail'];
 
 	$query = "UPDATE admintbl SET Email = '$Email' WHERE AdminID = '$AdminID'";
 	$result = mysql_query($query);
@@ -27,6 +27,28 @@ if(isset($_POST['ModalEmail'])){
         <script type='text/javascript'>
         location.href='admin-account.php?id=1';
         </script>";
+}
+
+if(isset($_GET['id'])) {
+    $fn = $_GET['id'];
+    $RequestID = $_GET['rid'];
+
+    if($fn=="2"){
+    $query = "UPDATE resumerequesttbl SET Status = 'Rejected' WHERE RequestID='$RequestID'";
+    $result = mysql_query($query);
+    echo "
+            <script type='text/javascript'>
+            location.href='admin-requested.php?id=2';
+            </script>";
+    }
+    elseif($fn=="1"){
+    $query = "UPDATE resumerequesttbl SET Status = 'Accept' WHERE RequestID='$RequestID'";
+    $result = mysql_query($query);
+    echo "
+            <script type='text/javascript'>
+            location.href='admin-requested.php?id=1';
+            </script>";
+    }
 }
 
 ?>

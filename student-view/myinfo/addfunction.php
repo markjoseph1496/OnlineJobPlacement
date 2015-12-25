@@ -17,7 +17,7 @@ if(isset($_GET['btnSaveInfo'])){
 
 	$FBLink = "http://www.facebook.com/" . $FBLink;
 
-	$query = "UPDATE studentinfotbl SET FirstName = '$FirstName', MiddleName ='$MiddleName', LastName = '$LastName', Gender = '$Gender', Birthdate = '$Birthdate', Nationality = '$Nationality', CivilStatus = '$CivilStatus', FBLink = '$FBLink', TwitterLink = '$TwitterLink'";
+	$query = "UPDATE studentinfotbl SET FirstName = '$FirstName', MiddleName ='$MiddleName', LastName = '$LastName', Gender = '$Gender', Birthdate = '$Birthdate', Nationality = '$Nationality', CivilStatus = '$CivilStatus', FBLink = '$FBLink', TwitterLink = '$TwitterLink' WHERE StudentID = '$StudentID'";
 	$result = mysql_query($query);
 
 	echo "
