@@ -84,4 +84,18 @@ if(isset($_GET['ReferenceID'])){
         </script>
         ";
 }
+
+if(isset($_POST['Specialization'])){
+    $SID = $_POST['SpecializationID'];
+    $Specialization = $_POST['Specialization'];
+    $YearOfExperience = $_POST['YearsOfExperience'];
+
+    $query = "UPDATE specializationtbl SET Specialization = '$Specialization', YearOfExperience = '$YearOfExperience' WHERE SID = '$SID' AND StudentID";
+    $result = mysql_query($query);
+        echo "
+        <script type='text/javascript'>
+        location.href='../specialization-and-languages.php?id=1';
+        </script>
+        ";
+}
 ?>

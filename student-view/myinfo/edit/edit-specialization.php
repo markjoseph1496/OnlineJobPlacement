@@ -1,5 +1,17 @@
-<!DOCTYPE html>
+<?php 
+include('../../../connection.php');
+session_start();
 
+$SpecializationID = $_GET['id'];
+
+$query = "SELECT * FROM specializationtbl WHERE SID = '$SpecializationID'";
+$result = mysql_query($query);
+while($query = mysql_fetch_array($result)){
+    $Specialization = $query['Specialization'];
+    $YearOfExperience = $query['YearOfExperience'];
+}
+?>
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -69,6 +81,7 @@
 </head>
 
 <body>
+    <form id="form" name="form" autocomplete="off" action="myinfoedit.php" method="POST">
     <div id="container">
         <!-- Start Header Section -->
         <div class="hidden-header"></div>
@@ -239,6 +252,7 @@
         </header>
 
         <div class="page-banner no-subtitle">
+            <input type="text" class="form-control" id="SpecializationID" name="SpecializationID" style="display: none;" value="<?php echo $SpecializationID;?>">
             <div class="container">
                 <div class="row">
                     <div class="col-md-6">
@@ -264,8 +278,21 @@
                         <div class="row">
                             <div class="col-md-6">
                                 <div class="form-group">
-                                    <label>Skill <span>(*)</span></label>
-                                    <input type="text" class="form-control" id="txtSkill" name="txtSkill">
+                                    <label>Specialization <span>(*)</span></label>
+                                    <select id="" name="Specialization" class="form-control" style = "width:420px;">
+                                        <option value="" selected="selected">- Please select one -</option>
+                                        <?php
+                                        $q = "SELECT * FROM listofspecializationtbl";
+                                        $r = mysql_query($q);
+                                        while($q = mysql_fetch_array($r)){
+                                            $SID = $q['id'];
+                                            $_Specialization = $q['Specialization'];
+                                        ?>
+                                            <option value="<?php echo $SID; ?>" <?php if($SID == $Specialization) echo 'selected="selected"' ?> ><?php echo $_Specialization; ?></option>
+                                        <?php
+                                        }
+                                        ?>
+                                    </select>
                                 </div>
                             </div>
                             <div class="col-md-6">
@@ -285,7 +312,7 @@
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <label>Years of Experience <span>(*)</span></label>
-                                    <input type="text" class="form-control" id="txtYOE" name="txtYOE">
+                                    <input type="text" class="form-control" id="YearsOfExperience" name="YearsOfExperience" value="<?php echo $YearOfExperience; ?>">
                                 </div>
                             </div>
                         </div> 
@@ -304,7 +331,7 @@
                 <div class="hr5" style="margin-top:35px;margin-bottom:40px;"></div>
                 <div class="field">
                     <div class="text-center">
-                        <button class="btn btn-lg btn-hg btn-primary" name ="btnSave">Save</button>
+                        <button type="submit" class="btn btn-lg btn-hg btn-primary">Save</button>
                     </div>
                 </div>
             </div>
@@ -314,3 +341,34 @@
     <script type="text/javascript" src="../../../js/script.js"></script>
 </body>
 </html>
+<script type="text/javascript">
+    $(document).ready(function () {
+            var validator = $("#form").bootstrapValidator({
+                feedbackIcons:{
+                    valid: "glyphicon glyphicon-ok",
+                    invalid: "glyphicon glyphicon-remove",
+                    validating: "glyphicon glyphicon-refresh"
+                },
+                fields: {
+                    Specialization: {
+                        validators: {
+                            notEmpty: {
+                                message: "This field is required."
+                            }
+                        }
+                    },
+                    YearsOfExperience: {
+                        validators: {
+                            notEmpty: {
+                                message: "This field is required."
+                            },
+                            regexp: {
+                                    regexp: /^[0-9]+$/i,
+                                    message: "This field can consist of numeric characters only."
+                            }
+                        }
+                    }
+                }
+            });
+    });
+</script>

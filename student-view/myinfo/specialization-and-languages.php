@@ -240,6 +240,37 @@ else{
         <!-- Start Content -->
         <div id="content">
             <div class="container">
+                <?php
+                if(isset($_GET['id'])){
+                    $id=$_GET['id'];
+
+                    if($id==1){
+                        echo'
+                            <div class="alert alert-success">
+                                <span class="glyphicon glyphicon-info-sign"></span> 
+                                Specialization successfully updated.
+                            </div>
+                            ';
+                    }
+                    elseif($id==2){
+                        echo'
+                            <div class="alert alert-success">
+                                <span class="glyphicon glyphicon-info-sign"></span> 
+                                Specialization successfully added.
+                            </div>
+                            ';
+                    }
+                    elseif($id==3){
+                        echo'
+                            <div class="alert alert-success">
+                                <span class="glyphicon glyphicon-info-sign"></span> 
+                                Specialization successfully deleted.
+                            </div>
+                            ';
+                    }
+
+                }
+                ?>
                 <div class="row sidebar-page">
                     <!-- Page Content -->
                     <div class="col-md-9 page-content">
@@ -275,6 +306,11 @@ else{
                                                 $Specialization = $query['Specialization'];
                                                 $YearOfExperience = $query['YearOfExperience'];
                                                 $Proficiency = $query['Proficiency'];
+                                                $q = "SELECT * FROM listofspecializationtbl WHERE id = '$Specialization'";
+                                                $r = mysql_query($q);
+                                                while($q = mysql_fetch_array($r)){
+                                                    $Specialization = $q['Specialization'];
+                                                }
                                         ?>
                                         <tr>
                                             <td><?php echo $Specialization; ?></td>
@@ -287,14 +323,37 @@ else{
                                                 <span class="star"></span>
                                             </td>
                                             <td>
-                                                <button name ="btnDeletespecialization" href="" class="btn btn-danger">
+                                                <button class="btn btn-danger" data-toggle="modal" data-target="#DeleteSpecialization">
                                                     <i class="fa fa-trash fa-1x"></i>
                                                 </button>
-                                                <a href="" class="btn btn-default">
+                                                <a href="edit/edit-specialization.php?id=<?php echo $SID; ?>" class="btn btn-default">
                                                     <i class="fa fa-pencil-square-o fa-1x"></i>
                                                 </a>
                                             </td>
                                          </tr>
+                                         <!-- Modal -->
+                                            <div class="modal fade" id="DeleteSpecialization" role="dialog">
+                                                <div class="modal-dialog" style="padding:100px">
+                                                    <!-- Modal content-->
+                                                    <div class="modal-content">
+                                                        <div class="modal-header">
+                                                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                                            <h4 class="modal-title">Delete Specialization?</h4>
+                                                        </div>
+                                                        <div class="modal-body">
+                                                            <div class="col-md-15 fieldcol">
+                                                                <label = "usr" class = "control-label">Do you want to delete this information? This cannot be undone.</label>
+                                                                <div class="form-group">
+                                                                </div>
+                                                        </div>
+                                                        <div class="modal-footer">
+                                                            <a href="delete.php?delete_SID=<?php echo $SID; ?>" class="btn btn-danger">Delete</a>
+                                                            <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+                                                        </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
                                         <?php
                                             }
                                         ?>

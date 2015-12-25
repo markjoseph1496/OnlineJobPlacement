@@ -80,6 +80,7 @@ if(is_null($_SESSION['StudentID'])){
 </head>
 
 <body>
+    <form id="AddSpecialization" name="AddSpecialization" autocomplete="off" action="myinfoadd.php" method="POST">
     <div id="container">
         <!-- Start Header Section -->
         <div class="hidden-header"></div>
@@ -282,7 +283,7 @@ if(is_null($_SESSION['StudentID'])){
                                         $query = "SELECT * FROM listofspecializationtbl";
                                         $result = mysql_query($query);
                                         while($query = mysql_fetch_array($result)){
-                                            $SID = $query['SID'];
+                                            $SID = $query['id'];
                                             $Specialization = $query['Specialization'];
                                         ?>
                                             <option value="<?php echo $SID; ?>"><?php echo $Specialization; ?></option>
@@ -310,7 +311,7 @@ if(is_null($_SESSION['StudentID'])){
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <label>Years of Experience <span>(*)</span></label>
-                                    <input type="text" class="form-control" id="txtYOE" name="txtYOE">
+                                    <input type="text" class="form-control" maxlength="2" id="YearsOfExperience" name="YearsOfExperience">
                                 </div>
                             </div>
                         </div> 
@@ -329,7 +330,7 @@ if(is_null($_SESSION['StudentID'])){
                 <div class="hr5" style="margin-top:35px;margin-bottom:40px;"></div>
                 <div class="field">
                     <div class="text-center">
-                        <button class="btn btn-lg btn-hg btn-primary" name ="btnSave">Add</button>
+                        <button type="submit" class="btn btn-lg btn-hg btn-primary">Add</button>
                     </div>
                 </div>
             </div>
@@ -339,3 +340,34 @@ if(is_null($_SESSION['StudentID'])){
     <script type="text/javascript" src="../../../js/script.js"></script>
 </body>
 </html>
+<script type="text/javascript">
+    $(document).ready(function () {
+            var validator = $("#AddSpecialization").bootstrapValidator({
+                feedbackIcons:{
+                    valid: "glyphicon glyphicon-ok",
+                    invalid: "glyphicon glyphicon-remove",
+                    validating: "glyphicon glyphicon-refresh"
+                },
+                fields: {
+                    Specialization: {
+                        validators: {
+                            notEmpty: {
+                                message: "This field is required."
+                            }
+                        }
+                    },
+                    YearsOfExperience: {
+                        validators: {
+                            notEmpty: {
+                                message: "This field is required."
+                            },
+                            regexp: {
+                                    regexp: /^[0-9]+$/i,
+                                    message: "This field can consist of numeric characters only."
+                            }
+                        }
+                    }
+                }
+            });
+    });
+</script>

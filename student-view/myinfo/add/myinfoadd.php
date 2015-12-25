@@ -78,4 +78,16 @@ if(isset($_GET['Name'])){
              </script>
              ";
 }
+if(isset($_POST['Specialization'])){
+    $Specialization = $_POST['Specialization'];
+    $YearsOfExperience = $_POST['YearsOfExperience'];
+
+    $query = "INSERT INTO specializationtbl (StudentID, Specialization, YearOfExperience) values ('$StudentID','$Specialization','$YearsOfExperience')";
+    $result = mysql_query($query);
+    echo "
+             <script type='text/javascript'>
+             location.href='../specialization-and-languages.php?id=2';
+             </script>
+             ";
+}
 ?>
