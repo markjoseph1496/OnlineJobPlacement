@@ -17,7 +17,6 @@
 
     <!-- Bootstrap CSS  -->
     <link rel="stylesheet" href="asset/css/bootstrap.min.css" type="text/css" media="screen">
-    <link rel="stylesheet" href="css/about-style.css" type="text/css" media="screen">  
 
     <!-- Font Awesome CSS -->
     <link rel="stylesheet" href="css/font-awesome.min.css" type="text/css" media="screen">
