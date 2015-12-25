@@ -98,4 +98,9 @@ if(isset($_POST['Specialization'])){
         </script>
         ";
 }
+
+if(isset($_POST['Language'])){
+    $LangID = $_POST['LangID'];
+    $Language = $_POST['Language'];
+}
 ?>
