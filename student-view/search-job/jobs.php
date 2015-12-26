@@ -10,17 +10,10 @@ else{
     $StudentID = '';
     echo "
         <script type='text/javascript'>
-        location.href='../../../login-student.php?id=2';
+        location.href='../../login-student.php?id=2';
         </script>
         ";
 }
-    
-
-$AchievementID= 'AchievementID';
-$Achievements = 'Achievements';
-
-$qry = "SELECT * FROM achievementstbl WHERE StudentID ='$StudentID'";
-$result = mysql_query($qry);
 ?>
 
 <html lang="en">
@@ -153,7 +146,7 @@ $result = mysql_query($qry);
                 <div class="row">
                     <div class="col-md-5">
                         <ul class="mid-list">
-                            sample
+                            .
                         </ul>
                     </div>
                 </div>
@@ -212,98 +205,72 @@ $result = mysql_query($qry);
                     <!-- Start Blog Posts -->
                     <div class="col-md-9 blog-box">
                         <h4 class="classic-title"><span>Jobs</span></h4>
+                        <?php 
+                            $qry = 
+                            "SELECT
+                                `comppositiontbl`.`PositionID`,
+                                `comppositiontbl`.`PositionLevel`,
+                                `comppositiontbl`.`CompanyID`,
+                                `companyinfotbl`.`CompanyName`,
+                                `comppositiontbl`.`PostingDateFrom`,
+                                `comppositiontbl`.`PostingDateTo`,
+                                `companyinfotbl`.`City`
+                            FROM
+                                `comppositiontbl`
+                            INNER JOIN `companyinfotbl` ON `comppositiontbl`.`CompanyID` = `companyinfotbl`.`CompanyID`";
+
+                            $result = mysql_query($qry);
+                            while($qry = mysql_fetch_array($result))
+                            {
+                                $PositionID = $qry['PositionID'];
+                                $position = $qry['PositionLevel'];
+                                $company = $qry['CompanyID'];
+                                $company_name = $qry['CompanyName'];
+                                $location = $qry['City'];
+
+                                $diff_from = date_diff(new DateTime(), new DateTime($qry['PostingDateFrom']));
+                                $diff_to = date_diff(new DateTime(), new DateTime($qry['PostingDateTo']));
+
+                                $a =    $diff_from->y >= 0 &&
+                                        $diff_from->m >= 0 &&
+                                        $diff_from->d >= 0 &&
+                                        $diff_from->invert == 1;
+
+                                $b =    $diff_to->y >= 0 &&
+                                        $diff_to->m >= 0 &&
+                                        $diff_to->d >= 0 &&
+                                        $diff_to->invert == 0;
+
+                                if($a && $b){
+                                    echo 
+                                        "
+                                        <div class='blog-post standard-post'>
+                                            <!-- Post Content -->
+                                            <div class='post-content'>
+                                                <div class='post-type'><i class='fa fa-picture-o'></i></div>
+                                                <h2><a href='#'>$position</a></h2>
+                                                <h1><p>$company_name</p></h1>
+                                                <ul class='icons-list'>
+                                                    <li><i class='fa fa-check-circle'></i> s</li>
+                                                    <li><i class='fa fa-check-circle'></i> Financial Planning</li>
+                                                    <li><i class='fa fa-check-circle'></i> Treasury and Budget</li>
+                                                </ul>
+                                                <div class='hr1' style='margin-bottom:14px;'></div>
+                                                <ul class='post-meta'>
+                                                    <li>4 years experience</li>
+                                                    <li>$location</li>
+                                                </ul>
+                                                <a class='main-button' href='#'>View Details <i class='fa fa-angle-right'></i></a>
+                                            </div>
+                                        </div>
+                                        ";
+                                }
+                            }
+                        ?>
+
 
                         <!-- Start Post -->
-                        <div class="blog-post standard-post">
-                            <!-- Post Content -->
-                            <div class="post-content">
-                                <div class="post-type"><i class="fa fa-picture-o"></i></div>
-                                <h2><a href="#">Senior Accountant</a></h2>
-                                <h1><p>Wallem Philippines Shipping Inc.</p></h1>
-                                <ul class="icons-list">
-                                    <li><i class="fa fa-check-circle"></i> Taxation and Audit</li>
-                                    <li><i class="fa fa-check-circle"></i> Financial Planning</li>
-                                    <li><i class="fa fa-check-circle"></i> Treasury and Budget</li>
-                                </ul>
-                                <div class="hr1" style="margin-bottom:14px;"></div>
-                                <ul class="post-meta">
-                                    <li>Posted 1 hour ago</li>
-                                    <li>4 years experience</li>
-                                    <li>Valenzuela City</li>
-                                </ul>
-                                <a class="main-button" href="#">View Details <i class="fa fa-angle-right"></i></a>
-                            </div>
-                        </div>
-                        <!-- End Post -->
-
-
-                        <!-- Start Post -->
-                        <div class="blog-post standard-post">
-                            <!-- Post Content -->
-                            <div class="post-content">
-                                <div class="post-type"><i class="fa fa-picture-o"></i></div>
-                                <h2><a href="#">Senior Accountant</a></h2>
-                                <h1><p>Wallem Philippines Shipping Inc.</p></h1>
-                                <ul class="icons-list">
-                                    <li><i class="fa fa-check-circle"></i> Taxation and Audit</li>
-                                    <li><i class="fa fa-check-circle"></i> Financial Planning</li>
-                                    <li><i class="fa fa-check-circle"></i> Treasury and Budget</li>
-                                </ul>
-                                <div class="hr1" style="margin-bottom:14px;"></div>
-                                <ul class="post-meta">
-                                    <li>Posted 1 hour ago</li>
-                                    <li>4 years experience</li>
-                                    <li>Valenzuela City</li>
-                                </ul>
-                                <a class="main-button" href="#">View Details <i class="fa fa-angle-right"></i></a>
-                            </div>
-                        </div>
-                        <!-- End Post -->
-
-                        <!-- Start Post -->
-                        <div class="blog-post standard-post">
-                            <!-- Post Content -->
-                            <div class="post-content">
-                                <div class="post-type"><i class="fa fa-picture-o"></i></div>
-                                <h2><a href="#">Senior Accountant</a></h2>
-                                <h1><p>Wallem Philippines Shipping Inc.</p></h1>
-                                <ul class="icons-list">
-                                    <li><i class="fa fa-check-circle"></i> Taxation and Audit</li>
-                                    <li><i class="fa fa-check-circle"></i> Financial Planning</li>
-                                    <li><i class="fa fa-check-circle"></i> Treasury and Budget</li>
-                                </ul>
-                                <div class="hr1" style="margin-bottom:14px;"></div>
-                                <ul class="post-meta">
-                                    <li>Posted 1 hour ago</li>
-                                    <li>4 years experience</li>
-                                    <li>Valenzuela City</li>
-                                </ul>
-                                <a class="main-button" href="#">View Details <i class="fa fa-angle-right"></i></a>
-                            </div>
-                        </div>
-                        <!-- End Post -->
-
-                        <!-- Start Post -->
-                        <div class="blog-post standard-post">
-                            <!-- Post Content -->
-                            <div class="post-content">
-                                <div class="post-type"><i class="fa fa-picture-o"></i></div>
-                                <h2><a href="#">Senior Accountant</a></h2>
-                                <h1><p>Wallem Philippines Shipping Inc.</p></h1>
-                                <ul class="icons-list">
-                                    <li><i class="fa fa-check-circle"></i> Taxation and Audit</li>
-                                    <li><i class="fa fa-check-circle"></i> Financial Planning</li>
-                                    <li><i class="fa fa-check-circle"></i> Treasury and Budget</li>
-                                </ul>
-                                <div class="hr1" style="margin-bottom:14px;"></div>
-                                <ul class="post-meta">
-                                    <li>Posted 1 hour ago</li>
-                                    <li>4 years experience</li>
-                                    <li>Valenzuela City</li>
-                                </ul>
-                                <a class="main-button" href="#">View Details <i class="fa fa-angle-right"></i></a>
-                            </div>
-                        </div>
+                        
                         <!-- End Post -->
 
                         <!-- Start Pagination -->

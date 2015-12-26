@@ -14,18 +14,6 @@ else{
         </script>
         ";
 }
-
-
-$ReferenceID = 'ReferenceID';
-$Name = 'Name';
-$Relationship = 'Relationship';
-$Company = 'Company';
-$Position = 'Position';
-$Phone = 'Phone';
-$Email = 'Email';
-
-$qry = "SELECT * FROM referencetbl WHERE StudentID ='$StudentID'";
-$result = mysql_query($qry);
 ?>
 
 
@@ -371,7 +359,6 @@ $result = mysql_query($qry);
                                 </tr>
                             </thead>
                             <?php 
-                            
                                 $qry = 
                                 "SELECT
                                     `comppositiontbl`.`PositionID`,
