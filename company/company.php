@@ -183,7 +183,7 @@ if (isset($_POST['requestresume'])) {
           <div class="navbar-collapse collapse">
             <!-- Sign-out -->
             <div class="signout-side">
-              <a class="show-signout"><i class="fa fa-sign-out"></i></a>
+              <a class="show-signout" href="../login-company.php?id=1"><i class="fa fa-sign-out"></i></a>
             </div>
             <!-- End Sign-out -->
              <!-- Start Navigation List -->

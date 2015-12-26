@@ -1,3 +1,19 @@
+<?php
+session_start();
+include('connection.php');
+
+if(isset($_GET['id'])){
+    if(isset($_POST['btnlogin'])){
+
+    }
+    else{
+        $id = $_GET['id'];
+        if($id == 1){
+            session_destroy();
+        }
+    }
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 <!--testing ng edit sa github -->
@@ -52,8 +68,6 @@
 </body>
 
 <?php
-session_start();
-include ("connection.php");
 if(isset($_POST['btnlogin'])){
 
     $username = $_POST['username'];

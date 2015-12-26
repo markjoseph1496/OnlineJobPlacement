@@ -183,7 +183,7 @@ $CompanyID = $_SESSION['CompanyID'];
           <div class="navbar-collapse collapse">
             <!-- Sign-out -->
             <div class="signout-side">
-              <a class="show-signout"><i class="fa fa-sign-out"></i></a>
+              <a class="show-signout" href="../login-company.php?id=1"><i class="fa fa-sign-out"></i></a>
             </div>
             <!-- End Sign-out -->
              <!-- Start Navigation List -->
@@ -443,6 +443,20 @@ $CompanyID = $_SESSION['CompanyID'];
                     validating: "glyphicon glyphicon-refresh"
                 },
                 fields:{
+                  DateFrom: {
+                        validators: {
+                            notEmpty: {
+                                message: "Date From is required."
+                            }
+                        }
+                    },
+                    DateTo: {
+                        validators: {
+                            notEmpty: {
+                                message: "Date To is required."
+                            }
+                        }
+                    },
                     PLevel: {
                         validators: {
                             notEmpty: {
@@ -476,7 +490,7 @@ $CompanyID = $_SESSION['CompanyID'];
                             },
                             regexp: {
                                 regexp: /^[0-1\s]+$/i,
-                                message: "Location can consist of alphabetical characters and spaces only"
+                                message: "Location can consist of Positive Numbers only"
                             }
                         }
                     },
@@ -499,7 +513,7 @@ $CompanyID = $_SESSION['CompanyID'];
                             },
                             regexp: {
                                 regexp: /^[0-9\s]+$/i,
-                                message: "Location can consist of alphabetical characters and spaces only"
+                                message: "Location can consist of Positive Numbers only"
                             }
                         }
                     }
