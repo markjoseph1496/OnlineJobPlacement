@@ -394,8 +394,8 @@ $result = mysql_query($qry);
                                     $company_name = $qry['CompanyName'];
                                     $location = $qry['City'];
 
-                                    $diff_from = datediff(new DateTime(), new DateTime($qry['PostingDateFrom']));
-                                    $diff_to = datediff(new DateTime(), new DateTime($qry['PostingDateTo']));
+                                    $diff_from = date_diff(new DateTime(), new DateTime($qry['PostingDateFrom']));
+                                    $diff_to = date_diff(new DateTime(), new DateTime($qry['PostingDateTo']));
 
                                     $a =    $diff_from->y >= 0 &&
                                             $diff_from->m >= 0 &&
