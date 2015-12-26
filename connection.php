@@ -12,8 +12,8 @@ $database ="u987316885_e2edb";
 
 
 
-$bd = mysqli_connect($hostname,$user,$password) or die ("Could not connect"); //connection of php to navicat
+$bd = mysql_connect($hostname,$user,$password) or die ("Could not connect"); //connection of php to navicat
 		//sensitive yung spacing... dito lang ^
- mysqli_select_db($database,$bd) or die("could not select"); //selection ng DATABASE name w/c is mydatabase;
+ mysql_select_db($database,$bd) or die("could not select"); //selection ng DATABASE name w/c is mydatabase;
 
 ?>
