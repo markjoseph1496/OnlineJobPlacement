@@ -1,6 +1,8 @@
+<?php
+include('../connection.php');
+session_start();
+?>
 <!doctype html>
-<!--[if IE 8 ]><html class="ie ie8" lang="en"> <![endif]-->
-<!--[if (gte IE 9)|!(IE)]><html lang="en" class="no-js"> <![endif]-->
 <html lang="en">
 
 <head>
@@ -257,17 +259,28 @@
                     <th width = '15%' class = 'tabletitle'></th>
                 <tr>
             </thead>
-            <tbody>
-                        <tr>
-                              <td width= 25% class = tabletitle></td>
-                             <td width = 25% class = tabletitle></td>
-                             <td width = 35% class = tabletitle></td>
-                             <td width = 15% class = tabletitle>
-                             <a href=# class='btn btn-default'> <i class='fa fa-check-circle'></i> </a>
-                             <a href=# class='btn btn-danger '> <i class='fa fa-minus-square'></i> </a>
-                            </td>
-                        <tr>            
-                            </tbody>  
+              <?php 
+                $ListCourseQuery = "SELECT * FROM coursetbl";
+                $ListCourseResult = mysql_query($ListCourseQuery);
+                while($ListCourseQuery = mysql_fetch_array($ListCourseResult)){
+                    $CourseCode = $ListCourseQuery['CourseCode'];
+                    $CourseTitle = $ListCourseQuery['CourseTitle'];
+                    $CourseDesc = $ListCourseQuery['CourseDescription'];
+              ?>
+              <tbody>
+                <tr>
+                    <td width= 25% class = tabletitle><?php echo $CourseCode; ?></td>
+                    <td width = 25% class = tabletitle><?php echo $CourseTitle; ?></td>
+                    <td width = 35% class = tabletitle><?php echo $CourseDesc; ?></td>
+                    <td width = 15% class = tabletitle>
+                    <a href=# class='btn btn-default'> <i class='fa fa-check-circle'></i> </a>
+                    <a href=# class='btn btn-danger '> <i class='fa fa-minus-square'></i> </a>
+                    </td>
+                <tr>            
+              </tbody>
+              <?php
+                }
+              ?>
         </table>
           </div> 
       </div>     

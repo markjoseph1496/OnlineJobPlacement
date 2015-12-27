@@ -133,6 +133,7 @@ while ($qry = mysql_fetch_Array($result)) {
                     </div>
                     <div class="modal-body">
                         <div class="col-md-15 fieldcol">
+                            <div id="message"></div><br>
                             <label = "usr" class = "control-label"> Old Password: </label>
                             <div class="form-group">
                                 <input type="password" name="ModalOldPassword" id="ModalOldPassword" class="form-control">
@@ -156,7 +157,7 @@ while ($qry = mysql_fetch_Array($result)) {
                         </div>
                     </div>
                     <div class="modal-footer">
-                        <button type="submit" class="btn btn-primary">Change Password</button>
+                        <button type="submit" id="submitPassword"class="btn btn-primary">Change Password</button>
                         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
                     </div>
                 </div>
@@ -329,9 +330,6 @@ while ($qry = mysql_fetch_Array($result)) {
                 <h2>Personal Information</h2>
             </div>
             <div class="col-md-6">
-                <ul class="breadcrumbs">
-                    <li><a href="admin-userlist.php">View User's List</a></li>
-                </ul>
             </div>
         </div>
     </div>
@@ -342,8 +340,42 @@ while ($qry = mysql_fetch_Array($result)) {
 <br><br><br>
 
 <div class="container">
+    <form name="UpdateAdmin" id ="UpdateAdmin" autocomplete="off" action="functions.php" method="POST">
     <div class="col-md-12">
         <div class="row field">
+            <?php
+
+            if(isset($_GET['id'])){
+                $id = $_GET['id'];
+                if($id == 1){
+                    echo'
+                    <div class="alert alert-success">
+                        <span class="glyphicon glyphicon-info-sign"></span> 
+                        Email successfully changed.
+                    </div>
+                    ';
+                }
+                elseif($id == 2){
+                    echo'
+                    <div class="alert alert-success">
+                        <span class="glyphicon glyphicon-info-sign"></span> 
+                        Password successfully changed.
+                    </div>
+                    ';
+                }
+                elseif($id == 3){
+                    echo'
+                    <div class="alert alert-success">
+                        <span class="glyphicon glyphicon-info-sign"></span> 
+                        Personal info successfully updated.
+                    </div>
+                    ';
+                }
+
+            }
+            
+
+            ?>
             <div class="col-md-2 fieldcol">
                 <label = "usr" class = "control-label"> Email: </label>
             </div>
@@ -383,7 +415,7 @@ while ($qry = mysql_fetch_Array($result)) {
             </div>
             <div class="col-md-4 fieldcol">
                 <div class="form-group">
-                    <input type="text" name="fname" id="usr" class="form-control" style="width: 550px;" value="<?php echo $FirstName; ?>">
+                    <input type="text" name="FirstName" id="FirstName" class="form-control" value="<?php echo $FirstName; ?>">
                 </div>
             </div>
         </div>
@@ -393,7 +425,7 @@ while ($qry = mysql_fetch_Array($result)) {
             </div>
             <div class="col-md-4 fieldcol">
                 <div class="form-group">
-                    <input type="text" name="mname" id="usr" class="form-control" style="width: 550px;" value="<?php echo $MiddleName; ?>">
+                    <input type="text" name="MiddleName" id="MiddleName" class="form-control" value="<?php echo $MiddleName; ?>">
                 </div>
             </div>
         </div>
@@ -403,7 +435,7 @@ while ($qry = mysql_fetch_Array($result)) {
             </div>
             <div class="col-md-4 fieldcol">
                 <div class="form-group">
-                    <input type="text" name="lname" id="usr" class="form-control" style="width: 550px;" value="<?php echo $LastName; ?>">
+                    <input type="text" name="LastName" id="LastName" class="form-control" value="<?php echo $LastName; ?>">
                 </div>
             </div>
         </div>
@@ -413,7 +445,7 @@ while ($qry = mysql_fetch_Array($result)) {
             </div>
             <div class="col-md-4 fieldcol">
                 <div class="form-group">
-                    <input type="text" name="position" id="usr" class="form-control" style="width: 550px;" value="<?php echo $Position; ?>">
+                    <input type="text" name="Position" id="Position" class="form-control" value="<?php echo $Position; ?>">
                 </div>
             </div>
         </div>
@@ -423,7 +455,7 @@ while ($qry = mysql_fetch_Array($result)) {
             </div>
             <div class="col-md-4 fieldcol">
                 <div class="form-group">
-                    <input type="text" name="dept" id="usr" class="form-control" style="width: 550px;" value="<?php echo $Department; ?>">
+                    <input type="text" name="Department" id="Department" class="form-control" value="<?php echo $Department; ?>">
                 </div>
             </div>
         </div>
@@ -434,7 +466,7 @@ while ($qry = mysql_fetch_Array($result)) {
             </div>
             <div class="col-md-4 fieldcol">
                 <div class="form-group">
-                    <input type="text" name="address" id="usr" class="form-control" style="width: 550px;" value="<?php echo $Address; ?>">
+                    <input type="text" name="Address" id="Address" class="form-control" value="<?php echo $Address; ?>">
                 </div>
             </div>
         </div>
@@ -444,14 +476,15 @@ while ($qry = mysql_fetch_Array($result)) {
             </div>
             <div class="col-md-4 fieldcol">
                 <div class="form-group">
-                    <input type="text" name="contact" id="usr" class="form-control" style="width: 550px;" value="<?php echo $ContactNumber ?>">
+                    <input type="text" name="ContactNumber" id="ContactNumber" class="form-control" value="<?php echo $ContactNumber ?>">
                 </div>
             </div>
         </div>
     </div>
-    <button type="submit" class="btn btn-primary " name="btnSave" id="save" href="#"><b> Save </b></button>
+    <button type="submit" class="btn btn-primary" ><b> Save </b></button>
     &nbsp;
-    <button type="submit" class="btn btn-primary " name="btnSave" id="save" href="#"><b> Cancel </b></button>
+    <button type="submit" class="btn btn-primary"><b> Cancel </b></button>
+    </form>
 </div>
 </body>
 <script type="text/javascript" src="../js/script.js"></script>
@@ -524,6 +557,91 @@ while ($qry = mysql_fetch_Array($result)) {
                     }
                 }
             }
+        });
+
+        $("#UpdateAdmin").bootstrapValidator({
+            feedbackIcons: {
+                valid: "glyphicon glyphicon-ok",
+                invalid: "glyphicon glyphicon-remove",
+                validating: "glyphicon glyphicon-refresh"
+            },
+            fields: {
+                FirstName: {
+                    validators: {
+                        notEmpty: {
+                            message: "This field is required."
+                        },
+                        regexp: {
+                                regexp: /^[a-z\s]+$/i,
+                                message: "First Name can consist of alphabetical characters and spaces only"
+                        }
+                    }
+                },
+                MiddleName: {
+                    validators: {
+                        regexp: {
+                                regexp: /^[a-z\s]+$/i,
+                                message: "Middle Name can consist of alphabetical characters and spaces only"
+                        }
+                    }
+                },
+                LastName: {
+                    validators: {
+                        notEmpty: {
+                            message: "This field is required."
+                        },
+                        regexp: {
+                                regexp: /^[a-z\s]+$/i,
+                                message: "Last Name Name can consist of alphabetical characters and spaces only"
+                        }
+                    }
+                },
+                Position: {
+                    validators: {
+                        notEmpty: {
+                            message: "This field is required."
+                        }
+                    }
+                },
+                Department: {
+                    validators: {
+                        notEmpty: {
+                            message: "This field is required."
+                        }
+                    }
+                },
+                Address: {
+                    validators: {
+                        notEmpty: {
+                            message: "This field is required."
+                        }
+                    }
+                },
+                ContactNumber: {
+                    validators: {
+                        notEmpty: {
+                            message: "This field is required."
+                        },
+                        regexp: {
+                                regexp: /^[0-9]+$/i,
+                                message: "Contact Number can consist of numeric characters only"
+                        }
+                    }
+                }
+            }
+        });
+    });
+
+
+    $("button#submitPassword").click( function() {
+        $.post( $("#change-password-form").attr("action"),
+                $("#change-password-form :input").serializeArray(),
+                function(data) {
+                  $("div#message").html(data);
+                });
+     
+        $("#change-password-form").submit( function() {
+           return false;    
         });
     });
 </script>

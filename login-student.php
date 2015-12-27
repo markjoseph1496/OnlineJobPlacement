@@ -38,9 +38,19 @@ if($result){
 
     <title>Online JPMS</title>
 
+    
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+
+    <!-- BootstrapValidator CSS -->
+    <link rel="stylesheet" href="css/bootstrapValidator.min.css" />
+
+    <!-- jQuery and Bootstrap JS -->
     <script type="text/javascript" src="js/jquery.min.js"></script>
     <script type="text/javascript" src="js/bootstrap.min.js" ></script>
-    <script type="text/javascript" src="myscript.js"></script>
+
+    <!-- BootstrapValidator -->
+    <script type="text/javascript" src="js/bootstrapValidator.min.js" ></script>
 
     <!-- CSS-->
     <link href="css/login-style.css" rel="stylesheet">
@@ -55,22 +65,22 @@ if($result){
             <div class="span_h1"></div>
             <div class="grid-row">
                 <div class="grid-col w5 half_on_tablet full_on_mobile">
-                    <form action="login.php" id="myForm" method="POST" autocomplete="off">
+                    <form id="myForm" action="login.php" method="POST" autocomplete="off">
                         <h2 class="register-title"><span class="break_on_desktop"></span>&nbsp;</h2> 
                         <fieldset class="register-fieldset">
                             <div class="form-group">
+                                <div id="message" ></div><br>
                                 <input type="text" class="form-control register-input js-password js-input" placeholder="Your Student ID" id="StudentID" name="StudentID" value="">
                             </div>
                         </fieldset>
                         <fieldset class="register-fieldset">
                             <div class="form-group">
-                                <input type="password" class="<form-control register-input js-password js-input" placeholder="Password" id="_Password" name="_Password">
+                                <input type="password" class="<form-control register-input js-password js-input" placeholder="Password" id="password" name="password">
                             </div>
                         </fieldset>
                         <fieldset class="register-fieldset">
-                            <button class="btn btn--green register-submit btn--icon" id="submit">Login              
+                            <button class="btn btn--green register-submit btn--icon" id="submit" type="submit">Login              
                                 <span class="btn-icon btn-icon--right"></span>
-                                <div id="ack"></div>
                             </button>
                         </fieldset>
                     </form>
@@ -90,3 +100,43 @@ if($result){
     </div>
 </body>
 </html>
+<script type="text/javascript">
+    $(document).ready(function () {
+            var validator = $("#myForm").bootstrapValidator({
+                feedbackIcons:{
+                    valid: "glyphicon glyphicon-ok",
+                    invalid: "glyphicon glyphicon-remove",
+                    validating: "glyphicon glyphicon-refresh"
+                },
+                fields: {
+                    StudentID: {
+                        validators: {
+                            notEmpty: {
+                                message: "Student ID cannot be empty."
+                            }
+                        }
+                    },
+                    password: {
+                        validators: {
+                            notEmpty: {
+                                message: "Password cannot be empty."
+                            }
+                        }
+                    },
+                }
+            });
+    });
+
+    $("button#submit").click( function() {
+     
+        $.post( $("#myForm").attr("action"),
+                $("#myForm :input").serializeArray(),
+                function(data) {
+                  $("div#message").html(data);
+                });
+     
+        $("#myForm").submit( function() {
+           return false;    
+        });
+    });
+</script>
