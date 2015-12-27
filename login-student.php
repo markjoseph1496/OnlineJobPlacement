@@ -40,6 +40,7 @@ if($result){
 
     <script type="text/javascript" src="js/jquery.min.js"></script>
     <script type="text/javascript" src="js/bootstrap.min.js" ></script>
+    <script type="text/javascript" src="myscript.js"></script>
 
     <!-- CSS-->
     <link href="css/login-style.css" rel="stylesheet">
@@ -54,7 +55,7 @@ if($result){
             <div class="span_h1"></div>
             <div class="grid-row">
                 <div class="grid-col w5 half_on_tablet full_on_mobile">
-                    <form action="login.php" method = "POST" autocomplete="off">
+                    <form action="login.php" id="myForm" method="POST" autocomplete="off">
                         <h2 class="register-title"><span class="break_on_desktop"></span>&nbsp;</h2> 
                         <fieldset class="register-fieldset">
                             <div class="form-group">
@@ -63,12 +64,13 @@ if($result){
                         </fieldset>
                         <fieldset class="register-fieldset">
                             <div class="form-group">
-                                <input type="password" class="<form-control register-input js-password js-input" placeholder="Password" id="txtPassword" name="txtPassword">
+                                <input type="password" class="<form-control register-input js-password js-input" placeholder="Password" id="_Password" name="_Password">
                             </div>
                         </fieldset>
                         <fieldset class="register-fieldset">
-                            <button class="btn btn--green register-submit btn--icon">Login              
+                            <button class="btn btn--green register-submit btn--icon" id="submit">Login              
                                 <span class="btn-icon btn-icon--right"></span>
+                                <div id="ack"></div>
                             </button>
                         </fieldset>
                     </form>
