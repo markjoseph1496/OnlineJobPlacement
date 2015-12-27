@@ -69,7 +69,7 @@ if($result){
                         <h2 class="register-title"><span class="break_on_desktop"></span>&nbsp;</h2> 
                         <fieldset class="register-fieldset">
                             <div class="form-group">
-                                <div id="message" class="register-terms"></div><br>
+                                <div id="message" ></div><br>
                                 <input type="text" class="form-control register-input js-password js-input" placeholder="Your Student ID" id="StudentID" name="StudentID" value="">
                             </div>
                         </fieldset>
