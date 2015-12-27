@@ -13,7 +13,21 @@ if(isset($_GET['coursetitle'])) {
 
     echo "
         <script type='text/javascript'>
-        location.href='admin-addcourse.php?ID';
+        location.href='admin-maintenance.php?id=1';
+        </script>";
+}
+
+if(isset($_POST['CourseID'])){
+    $CourseID = $_POST['CourseID'];
+    $CourseTitle = $_POST['coursetitle'];
+    $CourseCode = $_POST['coursecode'];
+    $CourseDesc = $_POST['coursedesc'];
+
+    $query = "UPDATE coursetbl SET CourseTitle = '$CourseTitle', CourseCode = '$CourseCode', CourseDescription = '$CourseDesc' WHERE CourseID = '$CourseID'";
+    $result =  mysql_query($query);
+    echo "
+        <script type='text/javascript'>
+        location.href='admin-maintenance.php?id=2';
         </script>";
 }
 
@@ -89,4 +103,14 @@ if(isset($_GET['id'])) {
     }
 }
 
+if(isset($_GET['DeleteID'])){
+    $DeleteID = $_GET['DeleteID'];
+
+    $query = "DELETE FROM coursetbl WHERE CourseID = '$DeleteID'";
+    $result = mysql_query($query);
+    echo "
+            <script type='text/javascript'>
+            location.href='admin-maintenance.php?id=3';
+            </script>";
+}
 ?>
