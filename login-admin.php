@@ -3,13 +3,12 @@
 session_start();
 include('connection.php');
 
-if(isset($_GET['id'])){
-    if(isset($_POST['btnLogin'])){
+if (isset($_GET['id'])) {
+    if (isset($_POST['btnLogin'])) {
 
-    }
-    else{
+    } else {
         $id = $_GET['id'];
-        if($id == 1){
+        if ($id == 1) {
             session_destroy();
         }
     }
@@ -27,17 +26,17 @@ $server_Password = isset($_POST['Password']) ? $_POST['Password'] : '';
 $a = isset($_POST['Email']);
 $a = $a && isset($_POST['Password']);
 
-if($a){
+if ($a) {
     unset($a);
     $EmailValid = 1;
     $PasswordValid = 1;
 
-    if(is_null($server_Email) || $server_Email == ''){
+    if (is_null($server_Email) || $server_Email == '') {
         $Email_validator = 'Email cannot be empty.';
         $Email_class = 'error';
     }
 
-    if(is_null($server_Password) || $server_Password == ''){
+    if (is_null($server_Password) || $server_Password == '') {
         $Password_validator = 'Password cannot be empty.';
         $Password_class = 'error';
     }
@@ -46,34 +45,33 @@ if($a){
     $a = $a && $PasswordValid;
 
 
-    if($a){
+    if ($a) {
         unset($a);
-        $query = "SELECT * FROM admintbl WHERE Email='" . mysql_real_escape_string($server_Email) . "' AND Password='" . mysql_real_escape_string($server_Password) . "'";
-        $result = mysql_query($query);
-        while($query = mysql_fetch_Array($result))
-            {       
-                    $AdminID = $query['AdminID'];
-            }
 
-        if($result){
 
-            if(mysql_num_rows($result) == 0){
-                echo "
+        $admin_tbl = GSecureSQL::query(
+            "SELECT * FROM admintbl WHERE Email = ? AND Password = ? ",
+            TRUE,
+            "ss",
+            $server_Email,
+            $server_Password
+        );
+
+        if (!count($admin_tbl)) {
+            echo "
                 <script type='text/javascript'>
                 alert('Incorrect Password. Please try again.');
                 </script>
                 ";
-            }
-            else{
-                $_SESSION['AdminID'] = $AdminID;
-                echo "
+        } else {
+            $_SESSION['AdminID'] = $admin_tbl[0]->AdminID;
+            echo "
                 <script type='text/javascript'>
                 alert('You have successfully loggged in.');
                 location.href='admin/admin.php';
                 </script>
                 ";
 
-            }   
         }
     }
 }
@@ -106,44 +104,47 @@ if($a){
 
 
 <body class="login-background">
-    <form method = "POST" autocomplete="off">
-        <div class="container">
-            <div class="login">
-                <div class="login-screen">
-                    <div class="login-form" id="yellow-text-fields">
-                        <div class="login-form">
-                            <?php
-                            if(isset($_GET['id'])){
-                                $id = $_GET['id'];
-                                if($id == 1){
-                                    echo '
+<form method="POST" autocomplete="off">
+    <div class="container">
+        <div class="login">
+            <div class="login-screen">
+                <div class="login-form" id="yellow-text-fields">
+                    <div class="login-form">
+                        <?php
+                        if (isset($_GET['id'])) {
+                            $id = $_GET['id'];
+                            if ($id == 1) {
+                                echo '
                                     <div class="alert alert-success">
                                         <span class="glyphicon glyphicon-info-sign"></span> 
                                         You have been successfully signed out.
                                     </div>
                                     ';
-                                }
-                                
                             }
-                            ?>
-                            <div class="form-group">
-                                <input type="text" class="form-control login-field" placeholder="Email" id="" name="Email" style="height:55px;">
-                                <div style="color: red"><?php echo $Email_validator?></div>
-                            </div>
-                            <div class="form-group">
-                                <input type="password" class="form-control login-field" placeholder="Password" id="" name="Password" style="height:55px;">
-                                <div style="color: red"><?php echo $Password_validator?></div>
-                            </div>
-                            <input type ="submit" class="btn btn-primary btn-large btn-block" name = "btnLogin" value = "Login"></input>
-                            <a class="login-link btn" href="">Forgot password?</a>
-                            <div>&nbsp;</div>
-                            <a class="btn btn-bordered" href="registration.php">REGISTER NOW!</a>
+
+                        }
+                        ?>
+                        <div class="form-group">
+                            <input type="text" class="form-control login-field" placeholder="Email" id="" name="Email"
+                                   style="height:55px;">
+                            <div style="color: red"><?php echo $Email_validator ?></div>
                         </div>
+                        <div class="form-group">
+                            <input type="password" class="form-control login-field" placeholder="Password" id=""
+                                   name="Password" style="height:55px;">
+                            <div style="color: red"><?php echo $Password_validator ?></div>
+                        </div>
+                        <input type="submit" class="btn btn-primary btn-large btn-block" name="btnLogin"
+                               value="Login"></input>
+                        <a class="login-link btn" href="">Forgot password?</a>
+                        <div>&nbsp;</div>
+                        <a class="btn btn-bordered" href="registration.php">REGISTER NOW!</a>
                     </div>
                 </div>
             </div>
         </div>
-    </form>
-    <div class="login-footer"></div>
+    </div>
+</form>
+<div class="login-footer"></div>
 </body>
 </html>

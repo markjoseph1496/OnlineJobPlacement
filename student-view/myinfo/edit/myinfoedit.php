@@ -2,21 +2,29 @@
 include('../../../connection.php');
 session_start();
 
-$StudentID=$_SESSION['StudentID'];
+$StudentID = $_SESSION['StudentID'];
 
-if(isset($_GET['School'])){
-	$SchoolID = $_GET['SchoolID'];
-	$School = $_GET['School'];
-	$Attainment = $_GET['EducAttainment'];
-	$Course = $_GET['Course'];
-	$GraduatedMonth = $_GET['GraduatedMonth'];
-	$GraduatedYear = $_GET['GraduatedYear'];
+if (isset($_GET['School'])) {
+    $SchoolID = $_GET['SchoolID'];
+    $School = $_GET['School'];
+    $Attainment = $_GET['EducAttainment'];
+    $Course = $_GET['Course'];
+    $GraduatedMonth = $_GET['GraduatedMonth'];
+    $GraduatedYear = $_GET['GraduatedYear'];
+    $Graduation = $GraduatedMonth . " " . $GraduatedYear;
 
-	$Graduation = $GraduatedMonth ." ". $GraduatedYear;
-    $Attainment = mysql_real_escape_string($Attainment); 
 
-    $query = "UPDATE schooltbl SET School = '$School', Attainment ='$Attainment', Course = '$Course', Graduated = '$Graduation' WHERE SchoolID = '$SchoolID' AND StudentID = '$StudentID'";
-    $result = mysql_query($query);
+    GSecureSQL::query(
+        "UPDATE schooltbl SET School = ?, Attainment =?, Course = ?, Graduated = ? WHERE SchoolID = ? AND StudentID = ?",
+        FALSE,
+        "ssssss",
+        $School,
+        $Attainment,
+        $Course,
+        $Graduation,
+        $SchoolID,
+        $StudentID
+    );
     echo "
          <script type='text/javascript'>
          location.href='../education.php?id=1';
@@ -24,13 +32,20 @@ if(isset($_GET['School'])){
          ";
 }
 
-if(isset($_GET['Seminar'])){
+if (isset($_GET['Seminar'])) {
     $SeminarID = $_GET['SeminarID'];
     $Seminar = $_GET['Seminar'];
     $YearAttended = $_GET['YearAttended'];
 
-    $query = "UPDATE seminartbl SET Seminar = '$Seminar', YearAttended = '$YearAttended' WHERE SeminarID = '$SeminarID' AND StudentID = '$StudentID'";
-    $result = mysql_query($query);
+    GSecureSQL::query(
+        "UPDATE seminartbl SET Seminar = ?, YearAttended = ? WHERE SeminarID = ? AND StudentID = ?",
+        FALSE,
+        "ssss",
+        $Seminar,
+        $YearAttended,
+        $Seminar,
+        $StudentID
+    );
     echo "
          <script type='text/javascript'>
          location.href='../education.php?id=2';
@@ -38,13 +53,20 @@ if(isset($_GET['Seminar'])){
          ";
 }
 
-if(isset($_GET['Certification'])){
+if (isset($_GET['Certification'])) {
     $CertificationID = $_GET['CertificationID'];
     $Certification = $_GET['Certification'];
     $YearTaken = $_GET['YearTaken'];
 
-    $query = "UPDATE certificationtbl SET Certification = '$Certification', YearTaken = '$YearTaken' WHERE CertificationID = '$CertificationID' AND StudentID = '$StudentID'";
-    $result = mysql_query($query);
+    GSecureSQL::query(
+        "UPDATE certificationtbl SET Certification = ?, YearTaken = ? WHERE CertificationID = ? AND StudentID = ?",
+        FALSE,
+        "ssss",
+        $Certification,
+        $YearTaken,
+        $CertificationID,
+        $StudentID
+    );
     echo "
         <script type='text/javascript'>
         location.href='../certifications.php?id=1';
@@ -52,32 +74,46 @@ if(isset($_GET['Certification'])){
         ";
 }
 
-if(isset($_GET['Achievement'])){
+if (isset($_GET['Achievement'])) {
     $AchievementID = $_GET['AchievementID'];
     $Achievement = $_GET['Achievement'];
 
-    $query = "UPDATE achievementstbl SET Achievements = '$Achievement' WHERE AchievementID = '$AchievementID' AND StudentID = '$StudentID'";
-    $result = mysql_query($query);
-
+    GSecureSQL::query(
+        "UPDATE achievementstbl SET Achievements = ? WHERE AchievementID = ? AND StudentID = ?",
+        FALSE,
+        "sss",
+        $Achievement,
+        $AchievementID,
+        $StudentID
+    );
     echo "
         <script type='text/javascript'>
         location.href='../achievements.php?id=1';
         </script>
         ";
-}   
+}
 
-if(isset($_GET['ReferenceID'])){
-   $ReferenceID = $_GET['ReferenceID'];
-   $Name = $_GET['Name'];
-   $Relationship = $_GET['Relationship'];
-   $Company = $_GET['Company'];
-   $Position = $_GET['Position'];
-   $Phone = $_GET['Phone'];
-   $Email = $_GET['Email'];
+if (isset($_GET['ReferenceID'])) {
+    $ReferenceID = $_GET['ReferenceID'];
+    $Name = $_GET['Name'];
+    $Relationship = $_GET['Relationship'];
+    $Company = $_GET['Company'];
+    $Position = $_GET['Position'];
+    $Phone = $_GET['Phone'];
+    $Email = $_GET['Email'];
 
-   $query = "UPDATE referencetbl SET Name = '$Name', Relationship = '$Relationship', Company = '$Company', Position = '$Position', Phone = '$Phone', Email = '$Email' WHERE ReferenceID = '$ReferenceID' AND StudentID = '$StudentID'";
-   $result = mysql_query($query);
-
+    GSecureSQL::query(
+        "UPDATE referencetbl SET Name = ?, Relationship = ?, Company = ?, Position = ?, Phone = ?, Email = ? WHERE ReferenceID = ? AND StudentID = ?",
+        FALSE,
+        "ssssssss",
+        $Name,
+        $Relationship,
+        $Position,
+        $Phone,
+        $Email,
+        $ReferenceID,
+        $StudentID
+    );
     echo "
         <script type='text/javascript'>
         location.href='../references.php?id=1';
@@ -85,28 +121,40 @@ if(isset($_GET['ReferenceID'])){
         ";
 }
 
-if(isset($_POST['Specialization'])){
+if (isset($_POST['Specialization'])) {
     $SID = $_POST['SpecializationID'];
     $Specialization = $_POST['Specialization'];
     $YearOfExperience = $_POST['YearsOfExperience'];
 
-    $query = "UPDATE specializationtbl SET Specialization = '$Specialization', YearOfExperience = '$YearOfExperience' WHERE SID = '$SID' AND StudentID";
-    $result = mysql_query($query);
-        echo "
+    GSecureSQL::query(
+        "UPDATE specializationtbl SET Specialization = '$Specialization', YearOfExperience = '$YearOfExperience' WHERE SID = '$SID' AND StudentID",
+        FALSE,
+        "ssss",
+        $Specialization,
+        $YearOfExperience,
+        $SID,
+        $StudentID
+    );
+    echo "
             <script type='text/javascript'>
             location.href='../specialization-and-languages.php?id=1';
             </script>
             ";
 }
 
-if(isset($_POST['Language'])){
+if (isset($_POST['Language'])) {
     $LangID = $_POST['LangID'];
     $Language = $_POST['Language'];
 
-    $query = "UPDATE languagetbl SET Language = '$Language' WHERE LangID = '$LangID' AND StudentID = '$StudentID'";
-    $result = mysql_query($query);
-
-        echo "
+    GSecureSQL::query(
+        "UPDATE languagetbl SET Language = ? WHERE LangID = ? AND StudentID = ?",
+        FALSE,
+        "sss",
+        $Language,
+        $LangID,
+        $StudentID
+    );
+    echo "
             <script type='text/javascript'>
             location.href='../specialization-and-languages.php?id=4';
             </script>
