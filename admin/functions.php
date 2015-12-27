@@ -29,6 +29,44 @@ if(isset($_POST['ModalNewEmail'])){
         </script>";
 }
 
+if(isset($_POST['ModalNewPassword'])){
+    $OldPassword = $_POST['ModalOldPassword'];
+    $NewPassword = $_POST['ModalNewPassword'];
+    $query = "SELECT COUNT(*) FROM admintbl WHERE (AdminID = '$AdminID' AND Password = '$OldPassword')";
+    $result = mysql_query($query);
+    $Row = mysql_fetch_array($result);
+
+    if($Row[0] > 0){
+        $ChangePassQuery = "UPDATE admintbl SET Password = '$NewPassword' WHERE AdminID = '$AdminID'";
+        $ChangePassResult = mysql_query($ChangePassQuery);
+        echo "
+        <script type='text/javascript'>
+        location.href='admin-account.php?id=2';
+        </script>";
+    }
+    else{
+        echo "Wrong Password";
+    }
+
+}
+
+if(isset($_POST['FirstName'])){
+    $FirstName = $_POST['FirstName'];
+    $MiddleName = $_POST['MiddleName'];
+    $LastName = $_POST['LastName'];
+    $Position = $_POST['Position'];
+    $Department = $_POST['Department'];
+    $Address = $_POST['Address'];
+    $ContactNumber = $_POST['ContactNumber']; 
+
+    $query = "UPDATE admintbl SET FirstName = '$FirstName', MiddleName = '$MiddleName', LastName = '$LastName', Position = '$Position', Department = '$Department', Address = '$Address', ContactNumber = '$ContactNumber' WHERE AdminID = '$AdminID'";
+    $result = mysql_query($query);
+    echo "
+        <script type='text/javascript'>
+        location.href='admin-account.php?id=3';
+        </script>";
+}
+
 if(isset($_GET['id'])) {
     $fn = $_GET['id'];
     $RequestID = $_GET['rid'];
