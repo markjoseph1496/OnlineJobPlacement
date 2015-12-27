@@ -19,7 +19,7 @@ if(isset($_POST['type'])){
 	));
 }
 
-if(isset($_POST['StudentID'])){
+if(isset($_POST['btnRegister'])){
 	$StudentID = $_POST['StudentID'];
 	$FirstName = $_POST['FirstName'];
 	$LastName = $_POST['LastName'];
@@ -29,13 +29,12 @@ if(isset($_POST['StudentID'])){
 	$Password = $_POST['_Password'];
 	$City = $_POST['City'];
 	$EducAttain = $_POST['EducAttain'];
-	$School = $_POST['School'];
 	$Course = $_POST['Course'];
 	$GraduatedMonth = $_POST['GraduatedMonth'];
 	$GraduatedYear = $_POST['GraduatedYear'];
 
     $salt = hash('sha512', mt_rand(0, PHP_INT_MAX) . mt_rand(0, PHP_INT_MAX) . mt_rand(0, PHP_INT_MAX));
-    $password = hash('sha512', $password . $salt);
+    $Password = hash('sha512', $Password . $salt);
 
     $yeargraduated = $GraduatedMonth ." ". $GraduatedYear;
     $EducAttain = mysql_real_escape_string($EducAttain);
@@ -55,6 +54,3 @@ if(isset($_POST['StudentID'])){
             ";
 }
 ?>
-
-
-

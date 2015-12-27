@@ -254,7 +254,7 @@
                                 <label><b>By clicking the "Sign Up" button below, I certify that I have read and agree to the <a href="" target="_blank">Terms of Use</a>.</b></label>
                             </div>
                             <div class="col-md-6">
-                                <button type="submit" class="btn btn-log" style="float:right;">Sign Up</button>
+                                <button type="submit" class="btn btn-log" style="float:right;" name="btnRegister">Sign Up</button>
                             </div>
                         </div>
                         <div class="field">
