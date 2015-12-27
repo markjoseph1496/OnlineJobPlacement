@@ -108,6 +108,7 @@ if (isset($_GET['ReferenceID'])) {
         "ssssssss",
         $Name,
         $Relationship,
+        $Company,
         $Position,
         $Phone,
         $Email,
@@ -127,7 +128,7 @@ if (isset($_POST['Specialization'])) {
     $YearOfExperience = $_POST['YearsOfExperience'];
 
     GSecureSQL::query(
-        "UPDATE specializationtbl SET Specialization = '$Specialization', YearOfExperience = '$YearOfExperience' WHERE SID = '$SID' AND StudentID",
+        "UPDATE specializationtbl SET Specialization = ?, YearOfExperience = ? WHERE SID = ? AND StudentID = ?",
         FALSE,
         "ssss",
         $Specialization,

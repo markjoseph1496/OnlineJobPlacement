@@ -103,6 +103,7 @@ if (isset($_GET['Name'])) {
         "sssssss",
         $StudentID,
         $Name,
+        $Relationship,
         $Company,
         $Position,
         $Phone,
