@@ -64,11 +64,6 @@
     <script type="text/javascript" src="../../js/jquery.nicescroll.min.js"></script>
     <script type="text/javascript" src="../../js/jquery.parallax.js"></script>
     <script type="text/javascript" src="../../js/jquery.slicknav.js"></script>
-
-    <!-- fileupload -->
-    <link href="../../css/fileinput.min.css" media="all" rel="stylesheet" type="text/css" />
-    <script src="../../js/fileinput.min.js" type="text/javascript"></script>
-
 </head>
 
 <body>
@@ -225,5 +220,45 @@
     </div>
     <!-- End Content -->
     <script type="text/javascript" src="../../js/script.js"></script>
+
+
+    <!-- Start Footer Section -->
+    <footer>
+        <div class="container">
+            <!-- Start Copyright -->
+            <div class="copyright-section">
+                <div class="row">
+                    <div class="col-md-6">
+                        <p>&copy; 2015 OJPMS - All Rights Reserved</p>
+                    </div>
+                    <!-- .col-md-6 -->
+                    <div class="col-md-6">
+                        <ul class="footer-nav">
+                            <li><a href="#">Sitemap</a>
+                            </li>
+                            <li><a href="#">Privacy Policy</a>
+                            </li>
+                            <li><a href="#">Contact</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <!-- .col-md-6 -->
+                </div>
+                <!-- .row -->
+            </div>
+            <!-- End Copyright -->
+        </div>
+    </footer>
+    <!-- End Footer Section -->
+
+    <!-- Go To Top Link -->
+    <a href="#" class="back-to-top"><i class="fa fa-angle-up"></i></a>
+
+    <div id="loader">
+        <div class="spinner">
+            <div class="dot1"></div>
+            <div class="dot2"></div>
+        </div>
+    </div>
 </body>
 </html>
