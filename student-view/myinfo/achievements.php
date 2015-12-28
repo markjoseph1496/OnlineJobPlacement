@@ -1,4 +1,4 @@
-<?php 
+<?php
 include('../../connection.php');
 session_start();
 
@@ -87,7 +87,7 @@ else{
                 <div class="container">
                     <div class="row">
                         <div class="col-md-7">
-                            <!-- Start Contact Info 
+                            <!-- Start Contact Info
                             <ul class="contact-details">
                                 <li><a href="#"><i class="fa fa-map-marker"></i> House-54/A, London, UK</a>
                                 </li>
@@ -103,7 +103,7 @@ else{
                         <!-- Start Social Links -->
                             <ul class="social-list">
                                <li class="profile-name">
-                                    <i class="fa fa-user"></i> Hello, <b>Aira Jane Cruz</b>                               
+                                    <i class="fa fa-user"></i> Hello, <b>Aira Jane Cruz</b>
                                 </li>
                             </ul>
                             <!-- End Social Links -->
@@ -326,7 +326,9 @@ else{
                                                         </div>
                                                         <div class="modal-body">
                                                             <div class="col-md-15 fieldcol">
-                                                                <label = "usr" class = "control-label">Do you want to delete this information? This cannot be undone. <?php echo $AchievementID; ?></label>
+                                                                <label = "usr" class = "control-label">Do you want to delete this information? This cannot be undone. </label>
+                                                                <div class="form-group">
+                                                                </div>
                                                         </div>
                                                         <div class="modal-footer">
                                                             <a href="delete.php?delete_AchievementID=<?php echo $AchievementID; ?>" class="btn btn-danger">Delete</a>
