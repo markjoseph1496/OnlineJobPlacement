@@ -334,6 +334,23 @@
                                 <a href="#"><i class="fa fa-exclamation"></i> Report this Job</a>
                             </li>
                         </div>
+
+                        <div class="widget widget-tags">
+                            <h4>Keywords: <span class="head-line"></span></h4>
+                            <div class="tagcloud">
+                                <a href="#">cpa</a>
+                                <a href="#">mnc</a>
+                                <a href="#">accountant</a>
+                                <a href="#">multinational</a>
+                                <a href="#">accounting</a>
+                                <a href="#">asset</a>
+                                <a href="#">taguig</a>
+                                <a href="#">senior accountant</a>
+                                <a href="#">audit</a>
+                                <a href="#">tax</a>
+                                <a href="#">global accounting</a>
+                            </div>
+                        </div>
                     </div>
                     <!--End sidebar-->
                 </div>
