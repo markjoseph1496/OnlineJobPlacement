@@ -144,12 +144,12 @@
             <div class="container">
                 <div class="row">
                     <div class="col-md-6">
-                        <h2>Personal Information</h2>
+                        <h2</h2>
                     </div>
                     <div class="col-md-6">
                         <ul class="breadcrumbs">
-                            <li><a href="#">Home</a></li>
-                            <li>Personal Information</li>
+                            <li><a href="#"></a></li>
+                            <li></li>
                         </ul>
                     </div>
                 </div>
@@ -165,21 +165,17 @@
                     <!-- Page Content -->
                     <div class="col-md-9 page-content">
                         <div class="row">
-                            <div class="col-md-7">
+                            <div class="col-md-6">
                                 <!-- Single Testimonial -->
                                 <div class="classic-testimonials">
-                                    <div class="testimonial-content">
-                                        
-                                            
-    
-                                    </div>
+                                    ddddddd
                                 </div>
                                 <!-- End Single Testimonial -->
                             </div>
-                            <div class="col-md-5">
+                            <div class="col-md-6">
                                 <!-- Single Testimonial -->
-                                <div class="classic-testimonials">
-                                   
+                                <div class="classic-testimonials" style="float:right;">
+                                   dddddddd
                                 </div>
                                 <!-- End Single Testimonial -->
                             </div>
