@@ -168,18 +168,80 @@
                             <div class="col-md-6">
                                 <!-- Single Testimonial -->
                                 <div class="classic-testimonials">
-                                    ddddddd
+                                    Post Date 18-Dec-15
                                 </div>
                                 <!-- End Single Testimonial -->
                             </div>
                             <div class="col-md-6">
                                 <!-- Single Testimonial -->
                                 <div class="classic-testimonials" style="float:right;">
-                                   dddddddd
+                                   ojpms Ref. JPH500003003534608
                                 </div>
                                 <!-- End Single Testimonial -->
                             </div>
                         </div>
+
+                        <div class="row">
+                            <div class="col-md-12">
+                                <!-- Single Testimonial -->
+                                <div class="hr5" style="margin-top:35px;margin-bottom:40px;"></div>
+                                <div class="classic-testimonials text-center">
+                                    <img src="../../images/margo.png">
+                                </div>
+                                <!-- End Single Testimonial -->
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="classic-testimonials">
+                                    <h4>HR Network, Inc. (Non-IT)</h4>
+                                </div>
+                                <label>We are an executive search firm that specializes in sourcing of Non IT professionals catering to large local and multinational companies. Currently, we are seeking highly dynamic individuals to assume the following positions:</label>
+                                <div class="hr5" style="margin-top:35px;margin-bottom:40px;"></div>
+                                <div class="text-center"><h3>Senior Accountant (Taguig)</h3></div>
+                                <div class="hr5" style="margin-top:35px;margin-bottom:40px;"></div>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="classic-testimonials">
+                                    <label>Good candidate must have the following qualifications:</label>
+                                </div>
+                                <li>Must be a CPA</li>
+                                <li>At least 5 years of experience in General Accounting and Finance</li>
+                                <li>With experience in Tax Accounting and Assets Management</li>
+                                <li>With experience in using SAP System</li>
+                                <li>With excellent communication skills both oral and written</li>
+                                <li>With working experience in a Global Operation is a must</li>
+                                <li>With experience in dealing with regional counterparts</li>
+                                <li>With high level of professionalism and results oriented</li>
+                                <li>Willing to work in Global, Taguig City</li>
+                            </div>
+                        </div>
+                        <div class="hr5" style="margin-top:35px;margin-bottom:40px;"></div>
+
+                        <table class="">
+                            <tbody>
+                                <tr>
+                                    <th>Career Level</th>
+                                    <td>Middle</td>
+                                </tr>
+                                <tr>
+                                    <th>Years of Experience</th>
+                                    <td>5 years</td>
+                                </tr>
+                                <tr>
+                                    <th>Qualification</th>
+                                    <td>Degree</td>
+                                </tr>
+                                <tr>
+                                    <th>Industry</th>
+                                    <td>Information Technology</td>
+                                    <td>Information Technology</td>
+                                </tr>
+                        </table>
                     </div>
                     <!-- End Page Content -->
 
@@ -203,12 +265,6 @@
                         </div>
                     </div>
                     <!--End sidebar-->
-                </div>
-                <div class="hr5" style="margin-top:35px;margin-bottom:40px;"></div>
-                <div class="field">
-                    <div class="text-center">
-                        <button type="submit" class="btn btn-lg btn-hg btn-primary" name ="btnSaveInfo">Save</button>
-                    </div>
                 </div>
             </div>
         </div>
