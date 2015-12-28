@@ -222,26 +222,97 @@
                         </div>
                         <div class="hr5" style="margin-top:35px;margin-bottom:40px;"></div>
 
-                        <table class="">
-                            <tbody>
-                                <tr>
-                                    <th>Career Level</th>
-                                    <td>Middle</td>
-                                </tr>
-                                <tr>
-                                    <th>Years of Experience</th>
-                                    <td>5 years</td>
-                                </tr>
-                                <tr>
-                                    <th>Qualification</th>
-                                    <td>Degree</td>
-                                </tr>
-                                <tr>
-                                    <th>Industry</th>
-                                    <td>Information Technology</td>
-                                    <td>Information Technology</td>
-                                </tr>
-                        </table>
+
+                        <div class="row">
+                            <div class="col-md-3">
+                                <label>Career Level</label>
+                            </div>
+                            <div class="col-md-3">Middle</div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-3">
+                                <label>Year(s) of Experience</label>
+                            </div>
+                            <div class="col-md-3">5 years</div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-3">
+                                <label>Qualification</label>
+                            </div>
+                            <div class="col-md-3">Degree</div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-3">
+                                <label>Industry</label>
+                            </div>
+                            <div class="col-md-3">Information Technology</div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-3">
+                                <label>Job Function</label>
+                            </div>
+                            <div class="col-md-4"> <a href="">Accounting </a><i class="fa fa-arrow-right"></i><a href=""> General Accounting</a></div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-3">
+                                <label>&nbsp;</label>
+                            </div>
+                            <div class="col-md-4"> <a href="">Accounting </a><i class="fa fa-arrow-right"></i><a href=""> Audit & Taxation</a></div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-3">
+                                <label>&nbsp;</label>
+                            </div>
+                            <div class="col-md-3"> <a href="">Accounting </a><i class="fa fa-arrow-right"></i><a href=""> Others</a></div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-3">
+                                <label>Location</label>
+                            </div>
+                            <div class="col-md-3"><a href="">Taguig City</a></div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-3">
+                                <label>Salary</label>
+                            </div>
+                            <div class="col-md-3">Salary Negotiable</div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-3">
+                                <label>Employment Type</label>
+                            </div>
+                            <div class="col-md-3">Full time, Permanent</div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-3">
+                                <label>Benefits</label>
+                            </div>
+                            <div class="col-md-3">Life insurance</div>
+                            <div class="col-md-3">Medical insurance</div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-3">
+                                <label>&nbsp;</label>
+                            </div>
+                            <div class="col-md-3">Performance bonus</div>
+                            <div class="col-md-3">Transportation allowance</div>
+                        </div>
+
+                        <div class="hr5" style="margin-top:35px;margin-bottom:40px;"></div>
+                        <div><h3>People also viewed</h3></div>
+                        <div class="hr5" style="margin-top:35px;margin-bottom:40px;"></div>
+                        <div><h3>Related Searches</h3></div>
+                        <div class="row">
+                            <div class="col-md-4"><a href="">Life insurance</a></div>
+                            <div class="col-md-4"><a href="">Medical insurance</a></div>
+                            <div class="col-md-4"><a href="">Medical insurance</a></div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-4"><a href="">Performance bonus</a></div>
+                            <div class="col-md-4"><a href="">Transportation allowance</a></div>
+                            <div class="col-md-4"><a href="">Transportation allowance</a></div>
+                        </div>
+
                     </div>
                     <!-- End Page Content -->
 
