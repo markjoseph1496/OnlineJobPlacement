@@ -326,9 +326,7 @@ else{
                                                         </div>
                                                         <div class="modal-body">
                                                             <div class="col-md-15 fieldcol">
-                                                                <label = "usr" class = "control-label">Do you want to delete this information? This cannot be undone.</label>
-                                                                <div class="form-group">
-                                                                </div>
+                                                                <label = "usr" class = "control-label">Do you want to delete this information? This cannot be undone. <?php echo $AchievementID; ?></label>
                                                         </div>
                                                         <div class="modal-footer">
                                                             <a href="delete.php?delete_AchievementID=<?php echo $AchievementID; ?>" class="btn btn-danger">Delete</a>
