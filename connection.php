@@ -1,9 +1,22 @@
 <?php
 
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> origin/master
 $hostname = "mysql.hostinger.ph";
 $user = "u987316885_e2edb";
 $password = "o2ehQX3wqO";
 $database ="u987316885_e2edb";
+<<<<<<< HEAD
+=======
+=======
+//hostname = "mysql.hostinger.ph";
+//user = "u987316885_e2edb";
+//password = "o2ehQX3wqO";
+//database ="u987316885_e2edb";
+>>>>>>> origin/master
+>>>>>>> origin/master
 
 //$hostname = "localhost:3306";
 //$user = "root";
