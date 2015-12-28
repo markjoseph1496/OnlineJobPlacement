@@ -201,10 +201,13 @@
                                 <i class="fa fa-bookmark"></i> Bookmarked Jobs<a href="#"> (0)</a>
                             </li>
                             <li>
-                                <a href="#"><i class="fa fa-sort"></i> Sort by: </a>
+                                <a href="#"><i class="fa fa-share"></i> Share</a>
                             </li>
                             <li>
-                                <a href="#"><i class="fa fa-filter"></i> Filter by:</a>
+                                <a href="#"><i class="fa fa-print"></i> Print this Job Ad</a>
+                            </li>
+                            <li>
+                                <a href="#"><i class="fa fa-exclamation"></i> Report this Job</a>
                             </li>
                         </div>
                     </div>
