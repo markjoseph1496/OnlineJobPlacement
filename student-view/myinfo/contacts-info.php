@@ -362,7 +362,7 @@ $result = mysql_query($query);
                 <div class="hr5" style="margin-top:35px;margin-bottom:40px;"></div>
                 <div class="field">
                     <div class="text-center">
-                        <button type="submit" class="btn btn-lg btn-hg btn-primary" name ="btnSaveContactInfo">Save</button>
+                        <button type="submit" class="btn-system btn-large" name ="btnSaveContactInfo">Save</button>
                     </div>
                 </div>
             </div>

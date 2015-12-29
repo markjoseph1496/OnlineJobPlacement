@@ -298,176 +298,174 @@ else{
                 <div class="row sidebar-page">
                     <!-- Page Content -->
                     <div class="col-md-9 page-content">
-                        <div class="row">
-                            <div class="classic-testimonials">
-                                <!-- Single Testimonial -->
-                                <div class="row field">
-                                    <div class="col-md-6 fieldcol">
-                                        <h4>Specialization<span="head-line"></span></h4>
-                                    </div>
-                                    <div class="col-md-6 fieldcol">
-                                        <a href="add/add-specialization.php" class="btnforadding" style="float:right;">
-                                            <span class="fa fa-plus-square"> Add Specialization</span>
-                                        </a>
-                                    </div>
+                        <div class="classic-testimonials">
+                            <!-- Single Testimonial -->
+                            <div class="row field">
+                                <div class="col-md-6 fieldcol">
+                                    <h4>Specialization<span="head-line"></span></h4>
                                 </div>
-
-                                <table class="table segment table-hover">
-                                    <thead>
-                                        <tr class="table-color">
-                                            <th>Specialization</th>
-                                            <th>Year of Experience</th>
-                                            <th class="text-center">Proficiency</th>
-                                            <th width="15%">&nbsp;</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <?php
-                                            $query = "SELECT * FROM specializationtbl WHERE StudentID = '$StudentID'";
-                                            $result = mysql_query($query);
-                                            while($query = mysql_fetch_array($result)){
-                                                $SID = $query['SID'];
-                                                $Specialization = $query['Specialization'];
-                                                $YearOfExperience = $query['YearOfExperience'];
-                                                $Proficiency = $query['Proficiency'];
-                                                $q = "SELECT * FROM listofspecializationtbl WHERE id = '$Specialization'";
-                                                $r = mysql_query($q);
-                                                while($q = mysql_fetch_array($r)){
-                                                    $Specialization = $q['Specialization'];
-                                                }
-                                        ?>
-                                        <tr>
-                                            <td><?php echo $Specialization; ?></td>
-                                            <td><?php echo $YearOfExperience; ?></td>
-                                            <td class="rating text-center">
-                                                <span class="star"></span>
-                                                <span class="star"></span>
-                                                <span class="star"></span>
-                                                <span class="star"></span>
-                                                <span class="star"></span>
-                                            </td>
-                                            <td>
-                                                <button class="btn btn-danger" data-toggle="modal" data-target="#DeleteSpecialization<?php echo $SID; ?>">
-                                                    <i class="fa fa-trash fa-1x"></i>
-                                                </button>
-                                                <a href="edit/edit-specialization.php?id=<?php echo $SID; ?>" class="btn btn-default">
-                                                    <i class="fa fa-pencil-square-o fa-1x"></i>
-                                                </a>
-                                            </td>
-                                         </tr>
-                                         <!-- Modal -->
-                                            <div class="modal fade" id="DeleteSpecialization<?php echo $SID; ?>" role="dialog">
-                                                <div class="modal-dialog" style="padding:100px">
-                                                    <!-- Modal content-->
-                                                    <div class="modal-content">
-                                                        <div class="modal-header">
-                                                            <button type="button" class="close" data-dismiss="modal">&times;</button>
-                                                            <h4 class="modal-title">Delete Specialization?</h4>
-                                                        </div>
-                                                        <div class="modal-body">
-                                                            <div class="col-md-15 fieldcol">
-                                                                <label = "usr" class = "control-label">Do you want to delete this information? This cannot be undone.</label>
-                                                                <div class="form-group">
-                                                                </div>
-                                                        </div>
-                                                        <div class="modal-footer">
-                                                            <a href="delete.php?delete_SID=<?php echo $SID; ?>" class="btn btn-danger">Delete</a>
-                                                            <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
-                                                        </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        <?php
-                                            }
-                                        ?>
-                                    </tbody>
-                                </table>
-                                <div class="hr5" style="margin-top:35px;margin-bottom:40px;"></div>
-                                <div class="row field">
-                                    <div class="col-md-6 fieldcol">
-                                        <h4>Languages<span="head-line"></span></h4>
-                                    </div>
-                                    <div class="col-md-6 fieldcol">
-                                        <a href="add/add-language.php" class="btnforadding" style="float:right;">
-                                            <span class="fa fa-plus-square"> Add Language</span>
-                                        </a>
-                                    </div>
+                                <div class="col-md-6 fieldcol">
+                                    <a href="add/add-specialization.php" class="btnforadding" style="float:right;">
+                                        <span class="fa fa-plus-square"> Add Specialization</span>
+                                    </a>
                                 </div>
-
-                                <table class="table segment table-hover">
-                                    <thead>
-                                        <tr class="table-color">
-                                            <th>Language</th>
-                                            <th class="text-center">Written Proficiency</th>
-                                            <th class="text-center">Spoken Proficiency</th>
-                                            <th width="15%">&nbsp;</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <?php
-                                            $query1 = "SELECT * FROM languagetbl WHERE StudentID = '$StudentID'";
-                                            $result1 = mysql_query($query1);
-                                            while($query1 = mysql_fetch_array($result1)){
-                                                $LangID = $query1['LangID'];
-                                                $Language = $query1['Language'];
-                                                $WrittenProf = $query1['WrittenProf'];
-                                                $SpokenProf = $query1['SpokenProf'];
-                                        ?>
-                                        <tr>
-                                            <td><?php echo $Language; ?></td>
-                                            <td class="rating text-center">
-                                                <span class="star"></span>
-                                                <span class="star"></span>
-                                                <span class="star"></span>
-                                                <span class="star"></span>
-                                                <span class="star"></span>
-                                            </td>
-                                            <td class="rating text-center">
-                                                <span class="star" selected></span>
-                                                <span class="star"></span>
-                                                <span class="star"></span>
-                                                <span class="star"></span>
-                                                <span class="star"></span>
-                                            </td>
-                                            <td>
-                                                <button class="btn btn-danger" data-toggle="modal" data-target="#DeleteLanguage">
-                                                    <i class="fa fa-trash fa-1x"></i>
-                                                </button>
-                                                <a href="edit/edit-language.php?id=<?php echo $LangID; ?>" class="btn btn-default">
-                                                    <i class="fa fa-pencil-square-o fa-1x"></i>
-                                                </a>
-                                            </td>
-                                        </tr>
-                                         <!-- Modal -->
-                                            <div class="modal fade" id="DeleteLanguage" role="dialog">
-                                                <div class="modal-dialog" style="padding:100px">
-                                                    <!-- Modal content-->
-                                                    <div class="modal-content">
-                                                        <div class="modal-header">
-                                                            <button type="button" class="close" data-dismiss="modal">&times;</button>
-                                                            <h4 class="modal-title">Delete Language?</h4>
-                                                        </div>
-                                                        <div class="modal-body">
-                                                            <div class="col-md-15 fieldcol">
-                                                                <label = "usr" class = "control-label">Do you want to delete this information? This cannot be undone.</label>
-                                                                <div class="form-group">
-                                                                </div>
-                                                        </div>
-                                                        <div class="modal-footer">
-                                                            <a href="delete.php?delete_LangID=<?php echo $LangID; ?>" class="btn btn-danger">Delete</a>
-                                                            <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
-                                                        </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        <?php
-                                            }
-                                        ?>
-                                    </tbody>
-                                </table>
                             </div>
+
+                            <table class="table segment table-hover">
+                                <thead>
+                                    <tr class="table-color">
+                                        <th>Specialization</th>
+                                        <th>Year of Experience</th>
+                                        <th class="text-center">Proficiency</th>
+                                        <th width="15%">&nbsp;</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <?php
+                                        $query = "SELECT * FROM specializationtbl WHERE StudentID = '$StudentID'";
+                                        $result = mysql_query($query);
+                                        while($query = mysql_fetch_array($result)){
+                                            $SID = $query['SID'];
+                                            $Specialization = $query['Specialization'];
+                                            $YearOfExperience = $query['YearOfExperience'];
+                                            $Proficiency = $query['Proficiency'];
+                                            $q = "SELECT * FROM listofspecializationtbl WHERE id = '$Specialization'";
+                                            $r = mysql_query($q);
+                                            while($q = mysql_fetch_array($r)){
+                                                $Specialization = $q['Specialization'];
+                                            }
+                                    ?>
+                                    <tr>
+                                        <td><?php echo $Specialization; ?></td>
+                                        <td><?php echo $YearOfExperience; ?></td>
+                                        <td class="rating text-center">
+                                            <span class="star"></span>
+                                            <span class="star"></span>
+                                            <span class="star"></span>
+                                            <span class="star"></span>
+                                            <span class="star"></span>
+                                        </td>
+                                        <td>
+                                            <button class="btn btn-danger" data-toggle="modal" data-target="#DeleteSpecialization<?php echo $SID; ?>">
+                                                <i class="fa fa-trash fa-1x"></i>
+                                            </button>
+                                            <a href="edit/edit-specialization.php?id=<?php echo $SID; ?>" class="btn btn-default">
+                                                <i class="fa fa-pencil-square-o fa-1x"></i>
+                                            </a>
+                                        </td>
+                                     </tr>
+                                     <!-- Modal -->
+                                        <div class="modal fade" id="DeleteSpecialization<?php echo $SID; ?>" role="dialog">
+                                            <div class="modal-dialog" style="padding:100px">
+                                                <!-- Modal content-->
+                                                <div class="modal-content">
+                                                    <div class="modal-header">
+                                                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                                        <h4 class="modal-title">Delete Specialization?</h4>
+                                                    </div>
+                                                    <div class="modal-body">
+                                                        <div class="col-md-15 fieldcol">
+                                                            <label = "usr" class = "control-label">Do you want to delete this information? This cannot be undone.</label>
+                                                            <div class="form-group">
+                                                            </div>
+                                                    </div>
+                                                    <div class="modal-footer">
+                                                        <a href="delete.php?delete_SID=<?php echo $SID; ?>" class="btn btn-danger">Delete</a>
+                                                        <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+                                                    </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    <?php
+                                        }
+                                    ?>
+                                </tbody>
+                            </table>
+                            <div class="hr5" style="margin-top:35px;margin-bottom:40px;"></div>
+                            <div class="row field">
+                                <div class="col-md-6 fieldcol">
+                                    <h4>Languages<span="head-line"></span></h4>
+                                </div>
+                                <div class="col-md-6 fieldcol">
+                                    <a href="add/add-language.php" class="btnforadding" style="float:right;">
+                                        <span class="fa fa-plus-square"> Add Language</span>
+                                    </a>
+                                </div>
+                            </div>
+
+                            <table class="table segment table-hover">
+                                <thead>
+                                    <tr class="table-color">
+                                        <th>Language</th>
+                                        <th class="text-center">Written Proficiency</th>
+                                        <th class="text-center">Spoken Proficiency</th>
+                                        <th width="15%">&nbsp;</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <?php
+                                        $query1 = "SELECT * FROM languagetbl WHERE StudentID = '$StudentID'";
+                                        $result1 = mysql_query($query1);
+                                        while($query1 = mysql_fetch_array($result1)){
+                                            $LangID = $query1['LangID'];
+                                            $Language = $query1['Language'];
+                                            $WrittenProf = $query1['WrittenProf'];
+                                            $SpokenProf = $query1['SpokenProf'];
+                                    ?>
+                                    <tr>
+                                        <td><?php echo $Language; ?></td>
+                                        <td class="rating text-center">
+                                            <span class="star"></span>
+                                            <span class="star"></span>
+                                            <span class="star"></span>
+                                            <span class="star"></span>
+                                            <span class="star"></span>
+                                        </td>
+                                        <td class="rating text-center">
+                                            <span class="star" selected></span>
+                                            <span class="star"></span>
+                                            <span class="star"></span>
+                                            <span class="star"></span>
+                                            <span class="star"></span>
+                                        </td>
+                                        <td>
+                                            <button class="btn btn-danger" data-toggle="modal" data-target="#DeleteLanguage">
+                                                <i class="fa fa-trash fa-1x"></i>
+                                            </button>
+                                            <a href="edit/edit-language.php?id=<?php echo $LangID; ?>" class="btn btn-default">
+                                                <i class="fa fa-pencil-square-o fa-1x"></i>
+                                            </a>
+                                        </td>
+                                    </tr>
+                                     <!-- Modal -->
+                                        <div class="modal fade" id="DeleteLanguage" role="dialog">
+                                            <div class="modal-dialog" style="padding:100px">
+                                                <!-- Modal content-->
+                                                <div class="modal-content">
+                                                    <div class="modal-header">
+                                                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                                        <h4 class="modal-title">Delete Language?</h4>
+                                                    </div>
+                                                    <div class="modal-body">
+                                                        <div class="col-md-15 fieldcol">
+                                                            <label = "usr" class = "control-label">Do you want to delete this information? This cannot be undone.</label>
+                                                            <div class="form-group">
+                                                            </div>
+                                                    </div>
+                                                    <div class="modal-footer">
+                                                        <a href="delete.php?delete_LangID=<?php echo $LangID; ?>" class="btn btn-danger">Delete</a>
+                                                        <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+                                                    </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    <?php
+                                        }
+                                    ?>
+                                </tbody>
+                            </table>
                         </div>
                     </div>
                     <!-- End Page Content -->

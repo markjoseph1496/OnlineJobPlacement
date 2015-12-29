@@ -273,76 +273,74 @@ else{
                 <div class="row sidebar-page">
                     <!-- Page Content -->
                     <div class="col-md-9 page-content">
-                        <div class="row">
-                            <div class="classic-testimonials">
-                                <!-- Single Testimonial -->
-                                <div class="row field">
-                                    <div class="col-md-6 fieldcol">
-                                        <h4>Achievements <span class="head-line"></span></h4>
-                                    </div>
-                                    <div class="col-md-6 fieldcol">
-                                        <a href="add/add-achievement.php" class="btnforadding" style="float:right;">
-                                            <span class="fa fa-plus-square"> Add Achievement</span>
-                                        </a>
-                                    </div>
+                        <div class="classic-testimonials">
+                            <!-- Single Testimonial -->
+                            <div class="row field">
+                                <div class="col-md-6 fieldcol">
+                                    <h4>Achievements <span class="head-line"></span></h4>
                                 </div>
+                                <div class="col-md-6 fieldcol">
+                                    <a href="add/add-achievement.php" class="btnforadding" style="float:right;">
+                                        <span class="fa fa-plus-square"> Add Achievement</span>
+                                    </a>
+                                </div>
+                            </div>
 
-                                <table class="table segment table-hover">
-                                    <thead>
-                                        <tr class="table-color">
-                                            <th>Achievement</th>
-                                            <th width="15%">&nbsp;</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <?php
+                            <table class="table segment table-hover">
+                                <thead>
+                                    <tr class="table-color">
+                                        <th>Achievement</th>
+                                        <th width="15%">&nbsp;</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <?php
 
-                                        $query = "SELECT * FROM achievementstbl WHERE StudentID = '$StudentID'";
-                                        $result = mysql_query($query);
-                                        while($query = mysql_fetch_array($result)){
-                                            $AchievementID = $query['AchievementID'];
-                                            $Achievements = $query['Achievements'];
-                                        ?>
-                                        <tr>
-                                            <td><?php echo $Achievements; ?></td>
-                                            <td>
-                                                <button href=# class="btn btn-danger" data-toggle="modal" data-target="#DeleteAchievement<?php echo $AchievementID; ?>">
-                                                    <i class="fa fa-trash fa-1x"></i>
-                                                </button>
-                                                <a href="edit/edit-achievement.php?id=<?php echo $AchievementID; ?>" class="btn btn-default">
-                                                    <i class="fa fa-pencil-square-o fa-1x"></i>
-                                                </a>
-                                            </td>
-                                        </tr>
-                                        <!-- Modal -->
-                                            <div class="modal fade" id="DeleteAchievement<?php echo $AchievementID; ?>" role="dialog">
-                                                <div class="modal-dialog" style="padding:100px">
-                                                    <!-- Modal content-->
-                                                    <div class="modal-content">
-                                                        <div class="modal-header">
-                                                            <button type="button" class="close" data-dismiss="modal">&times;</button>
-                                                            <h4 class="modal-title">Delete Achievement?</h4>
-                                                        </div>
-                                                        <div class="modal-body">
-                                                            <div class="col-md-15 fieldcol">
-                                                                <label = "usr" class = "control-label">Do you want to delete this information? This cannot be undone.</label>
-                                                                <div class="form-group">
-                                                                </div>
-                                                        </div>
-                                                        <div class="modal-footer">
-                                                            <a href="delete.php?delete_AchievementID=<?php echo $AchievementID; ?>" class="btn btn-danger">Delete</a>
-                                                            <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
-                                                        </div>
-                                                        </div>
+                                    $query = "SELECT * FROM achievementstbl WHERE StudentID = '$StudentID'";
+                                    $result = mysql_query($query);
+                                    while($query = mysql_fetch_array($result)){
+                                        $AchievementID = $query['AchievementID'];
+                                        $Achievements = $query['Achievements'];
+                                    ?>
+                                    <tr>
+                                        <td><?php echo $Achievements; ?></td>
+                                        <td>
+                                            <button href=# class="btn btn-danger" data-toggle="modal" data-target="#DeleteAchievement<?php echo $AchievementID; ?>">
+                                                <i class="fa fa-trash fa-1x"></i>
+                                            </button>
+                                            <a href="edit/edit-achievement.php?id=<?php echo $AchievementID; ?>" class="btn btn-default">
+                                                <i class="fa fa-pencil-square-o fa-1x"></i>
+                                            </a>
+                                        </td>
+                                    </tr>
+                                    <!-- Modal -->
+                                        <div class="modal fade" id="DeleteAchievement<?php echo $AchievementID; ?>" role="dialog">
+                                            <div class="modal-dialog" style="padding:100px">
+                                                <!-- Modal content-->
+                                                <div class="modal-content">
+                                                    <div class="modal-header">
+                                                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                                        <h4 class="modal-title">Delete Achievement?</h4>
+                                                    </div>
+                                                    <div class="modal-body">
+                                                        <div class="col-md-15 fieldcol">
+                                                            <label = "usr" class = "control-label">Do you want to delete this information? This cannot be undone.</label>
+                                                            <div class="form-group">
+                                                            </div>
+                                                    </div>
+                                                    <div class="modal-footer">
+                                                        <a href="delete.php?delete_AchievementID=<?php echo $AchievementID; ?>" class="btn btn-danger">Delete</a>
+                                                        <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+                                                    </div>
                                                     </div>
                                                 </div>
                                             </div>
-                                        <?php
-                                        }
-                                        ?>
-                                    </tbody>
-                                </table>
-                            </div>
+                                        </div>
+                                    <?php
+                                    }
+                                    ?>
+                                </tbody>
+                            </table>
                         </div>
                     </div>
                     <!-- End Page Content -->
