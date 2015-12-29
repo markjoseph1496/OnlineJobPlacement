@@ -122,7 +122,7 @@
                     <div class="navbar-collapse collapse">
                         <!-- Sign-out -->
                         <div class="signout-side">
-                            <a href="">Apply Now</i></a>
+                            <a href="#" class="btn-system btn-mini border-btn">Apply Now</a>
                         </div>
                         <!-- End Sign-out -->
                     </div>
@@ -130,7 +130,7 @@
                 <!-- Mobile Menu Start -->
                 <ul class="wpb-mobile-menu">
                     <li>
-                        <a href="">Apply Now</a>
+                        <a href="#">Apply Now</a>
                     </li>
                     <li>
                         <a href="../login-student.php?id=1"><i class="fa fa-sign-out"></i> Sign Out</a>
