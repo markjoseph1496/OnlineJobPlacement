@@ -332,54 +332,210 @@
                         </div>
                     </div>
                 </div>
-
+                <div class="hr5" style="margin-top:40px;margin-bottom:40px;"></div>
                 <div class"row field">
                     <div class="col-md-6">
                         <label><b>By clicking the "Sign Up" button below, I certify that I have read and agree to the <a href="" target="_blank">Terms of Use</a>.</b></label>
                     </div>
                     <div class="col-md-6">
-                        <a href="#" class="btn-system btn-large border-btn" style="float:right;">Button</a>
+                        <button type="submit" href="registration.php" class="btn-system btn-large border-btn" style="float:right;">Submit</button>
                     </div>
                 </div>
             </div>
         </div>
         <!-- End content -->
 
-
-    <!-- Start Footer Section -->
-    <footer>
-        <div class="container">
-            <!-- Start Copyright -->
-            <div class="copyright-section">
-                <div class="row">
-                    <div class="col-md-6">
-                        <p>&copy; 2015 OJPMS - All Rights Reserved</p>
+        <!-- Start Footer Section -->
+        <footer>
+            <div class="container">
+                <!-- Start Copyright -->
+                <div class="copyright-section">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <p>&copy; 2015 OJPMS - All Rights Reserved</p>
+                        </div>
+                        <!-- .col-md-6 -->
+                        <div class="col-md-6">
+                            <ul class="footer-nav">
+                                <li><a href="#">Sitemap</a>
+                                </li>
+                                <li><a href="#">Privacy Policy</a>
+                                </li>
+                                <li><a href="#">Contact</a>
+                                </li>
+                            </ul>
+                        </div>
+                        <!-- .col-md-6 -->
                     </div>
-                    <!-- .col-md-6 -->
-                    <div class="col-md-6">
-                        <ul class="footer-nav">
-                            <li><a href="#">Sitemap</a>
-                            </li>
-                            <li><a href="#">Privacy Policy</a>
-                            </li>
-                            <li><a href="#">Contact</a>
-                            </li>
-                        </ul>
-                    </div>
-                    <!-- .col-md-6 -->
+                    <!-- .row -->
                 </div>
-                <!-- .row -->
+                <!-- End Copyright -->
             </div>
-            <!-- End Copyright -->
-        </div>
-    </footer>
-    <!-- End Footer Section -->
+        </footer>
+        <!-- End Footer Section -->
 
-    <!-- Go To Top Link -->
-    <a href="#" class="back-to-top"><i class="fa fa-angle-up"></i></a>
-
+        <!-- Go To Top Link -->
+        <a href="#" class="back-to-top"><i class="fa fa-angle-up"></i></a>
+    </div>
 
     <script type="text/javascript" src="js/script.js"></script>
-</body>
 
+    <script type="text/javascript">
+        $(document).ready(function (){
+            var validator = $("#registration").bootstrapValidator({
+                feedbackIcons: {
+                    valid: "glyphicon glyphicon-ok",
+                    invalid: "glyphicon glyphicon-remove",
+                    validating: "glyphicon glyphicon-refresh"
+                },
+                fields:{
+                    StudentID: {
+                        validators: {
+                            notEmpty: {
+                                message: "Student ID is required."
+                            },
+                            stringLength: {
+                                min: 11,
+                                max: 11,
+                                message: "Student ID is invalid."
+                            },
+                            remote: {
+                                message: 'The student ID already exists',
+                                url: 'registeradd.php',
+                                data: {
+                                    type: 'StudentID'
+                                },
+                                type: 'POST'
+                                }
+                            }
+                    },
+                    FirstName: {
+                        validators: {
+                            notEmpty: {
+                                message: "First name is required."
+                            },
+                            stringLength: {
+                                min: 3,
+                                max: 15,
+                                message: "First name must be 3-15 characters long."
+                            }
+                        }
+                    },
+                    LastName: {
+                        validators: {
+                            notEmpty: {
+                                message: "Last name is required."
+                            },
+                            stringLength: {
+                                min: 3,
+                                max: 15,
+                                message: "Last name must be 3-15 characters long."
+                            }
+                        }
+                    },
+                    MobileNumber: {
+                        validators: {
+                            notEmpty: {
+                                message: "Mobile number is required."
+                            },
+                            stringLength: {
+                                min: 7,
+                                max: 11,
+                                message: "Mobile number must be 7-11 characters long."
+                            }
+                        }
+                    },
+                    Email: {
+                        validators: {
+                            notEmpty: {
+                                message: "Email address is required."
+                            },
+                            stringLength: {
+                                min: 6,
+                                max: 35,
+                                message: "Email address must be 6-35 characters long."
+                            }
+                        }
+                    },
+                    ConfirmEmail: {
+                        validators: {
+                            notEmpty: {
+                                message: "Confirm Email is required."
+                            },
+                            identical: {
+                                field: "Email",
+                                message: "Email and Confirm email mismatched."
+                            }
+                        }
+                    },
+                    _Password: {
+                        validators: {
+                            notEmpty: {
+                                message: "Password is required."
+                            },
+                            stringLength: {
+                                min: 8,
+                                max: 16,
+                                message: "Email address must be 8-16 characters long."
+                            }
+                        }
+                    },
+                    ConfirmPassword: {
+                        validators: {
+                            notEmpty: {
+                                message: "Confirm password is required."
+                            },
+                            identical: {
+                                field: "_Password",
+                                message: "Password and confirm password mismatched."
+                            }
+                        }
+                    },
+                    City: {
+                        validators: {
+                            notEmpty: {
+                                message: "City is required."
+                            }
+                        }
+                    },
+                    EducAttain: {
+                        validators:{
+                            notEmpty: {
+                                message: "Educational Attainment is required."
+                            }
+                        }
+                    },
+                    EducAttain: {
+                        validators:{
+                            notEmpty: {
+                                message: "Educational Attainment is required."
+                            }
+                        }
+                    },
+                    Course: {
+                        validators:{
+                            notEmpty: {
+                                message: "Course is required."
+                            }
+                        }
+                    },
+                    GraduatedMonth: {
+                        validators:{
+                            notEmpty: {
+                                message: "Month graduated is required."
+                            }
+                        }
+                    },
+                    GraduatedYear: {
+                        validators:{
+                            notEmpty: {
+                                message: "Year graduated is required."
+                            }
+                        }
+                    }
+                }
+            });
+        });
+    </script>
+</body>
 </html>
