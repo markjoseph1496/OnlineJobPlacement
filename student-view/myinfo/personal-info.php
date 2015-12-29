@@ -148,11 +148,11 @@ while($query = mysql_fetch_array($result)){
                         </a>
                     </div>
                     <div class="navbar-collapse collapse">
-                    <!-- Sign-out -->
+                        <!-- Sign-out -->
                         <div class="signout-side">
                                <a class="show-signout"><i class="fa fa-sign-out"></i></a>
                         </div>
-                     <!-- End Sign-out -->
+                        <!-- End Sign-out -->
                         <!-- Start Navigation List -->
                         <ul class="nav navbar-nav navbar-right">
                             <li>
