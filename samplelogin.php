@@ -89,10 +89,7 @@ if($result){
                 </div>
             </div>
 </div>
-
-
-        <script src="js/index.js"></script>
-
+        <script src="js/script.js"></script>
 </body>
 </html>
 <script type="text/javascript">

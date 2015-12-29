@@ -454,12 +454,12 @@ else{
                                                 <a href="edit/edit-school.php?id=<?php echo $_SchoolID; ?>" class="btn btn-default btnformaintenance">
                                                     <i class="fa fa-pencil-square-o fa-1x"></i>
                                                 </a>
-                                                <button class="btn btn-danger" data-toggle="modal" data-target="#DeleteSchool">
+                                                <button class="btn btn-danger" data-toggle="modal" data-target="#DeleteSchool<?php echo $_SchoolID; ?>">
                                                     <i class="fa fa-trash fa-1x"></i>
                                                 </button>
                                         </tr>
                                             <!-- Modal -->
-                                            <div class="modal fade" id="DeleteSchool" role="dialog">
+                                            <div class="modal fade" id="DeleteSchool<?php echo $_SchoolID; ?>" role="dialog">
                                                 <div class="modal-dialog" style="padding:100px">
                                                     <!-- Modal content-->
                                                     <div class="modal-content">

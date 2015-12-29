@@ -321,7 +321,7 @@ else{
                                             <td><?php echo $Phone; ?></td>
                                             <td><?php echo $Email; ?></td>
                                             <td>
-                                                <button href=# class="btn btn-danger" data-toggle="modal" data-target="#DeleteReference">
+                                                <button href=# class="btn btn-danger" data-toggle="modal" data-target="#DeleteReference<?php echo $ReferenceID; ?>">
                                                     <i class="fa fa-trash fa-1x"></i>
                                                 </button>
                                                 <a href="edit/edit-reference.php?id=<?php echo $ReferenceID; ?>" class="btn btn-default">
@@ -330,7 +330,7 @@ else{
                                             </td>
                                             </tr>
                                             <!-- Modal -->
-                                            <div class="modal fade" id="DeleteReference" role="dialog">
+                                            <div class="modal fade" id="DeleteReference<?php echo $ReferenceID; ?>" role="dialog">
                                                 <div class="modal-dialog" style="padding:100px">
                                                     <!-- Modal content-->
                                                     <div class="modal-content">

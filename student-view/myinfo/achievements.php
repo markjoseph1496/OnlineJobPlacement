@@ -268,7 +268,6 @@ else{
                             </div>
                             ';
                     }
-
                 }
                 ?>
                 <div class="row sidebar-page">
@@ -307,7 +306,7 @@ else{
                                         <tr>
                                             <td><?php echo $Achievements; ?></td>
                                             <td>
-                                                <button href=# class="btn btn-danger" data-toggle="modal" data-target="#DeleteAchievement">
+                                                <button href=# class="btn btn-danger" data-toggle="modal" data-target="#DeleteAchievement<?php echo $AchievementID; ?>">
                                                     <i class="fa fa-trash fa-1x"></i>
                                                 </button>
                                                 <a href="edit/edit-achievement.php?id=<?php echo $AchievementID; ?>" class="btn btn-default">
@@ -316,7 +315,7 @@ else{
                                             </td>
                                         </tr>
                                         <!-- Modal -->
-                                            <div class="modal fade" id="DeleteAchievement" role="dialog">
+                                            <div class="modal fade" id="DeleteAchievement<?php echo $AchievementID; ?>" role="dialog">
                                                 <div class="modal-dialog" style="padding:100px">
                                                     <!-- Modal content-->
                                                     <div class="modal-content">
@@ -326,7 +325,7 @@ else{
                                                         </div>
                                                         <div class="modal-body">
                                                             <div class="col-md-15 fieldcol">
-                                                                <label = "usr" class = "control-label">Do you want to delete this information? This cannot be undone. </label>
+                                                                <label = "usr" class = "control-label">Do you want to delete this information? This cannot be undone.</label>
                                                                 <div class="form-group">
                                                                 </div>
                                                         </div>

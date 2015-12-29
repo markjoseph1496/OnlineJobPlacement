@@ -310,7 +310,7 @@ else{
                                             <td><?php echo $Certification; ?></td>
                                             <td><?php echo $YearTaken; ?></td>
                                             <td>
-                                                <button class="btn btn-danger" data-toggle="modal" data-target="#DeleteCertification">
+                                                <button class="btn btn-danger" data-toggle="modal" data-target="#DeleteCertification<?php echo $CertificationID; ?>">
                                                     <i class="fa fa-trash fa-1x"></i>
                                                 </button>
                                                 <a href="edit/edit-certification.php?id=<?php echo $CertificationID; ?>" class="btn btn-default">
@@ -319,7 +319,7 @@ else{
                                             </td>
                                         </tr>
                                         <!-- Modal -->
-                                            <div class="modal fade" id="DeleteCertification" role="dialog">
+                                            <div class="modal fade" id="DeleteCertification<?php echo $CertificationID; ?>" role="dialog">
                                                 <div class="modal-dialog" style="padding:100px">
                                                     <!-- Modal content-->
                                                     <div class="modal-content">

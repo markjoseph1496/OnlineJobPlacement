@@ -347,7 +347,7 @@ else{
                                                 <span class="star"></span>
                                             </td>
                                             <td>
-                                                <button class="btn btn-danger" data-toggle="modal" data-target="#DeleteSpecialization">
+                                                <button class="btn btn-danger" data-toggle="modal" data-target="#DeleteSpecialization<?php echo $SID; ?>">
                                                     <i class="fa fa-trash fa-1x"></i>
                                                 </button>
                                                 <a href="edit/edit-specialization.php?id=<?php echo $SID; ?>" class="btn btn-default">
@@ -356,7 +356,7 @@ else{
                                             </td>
                                          </tr>
                                          <!-- Modal -->
-                                            <div class="modal fade" id="DeleteSpecialization" role="dialog">
+                                            <div class="modal fade" id="DeleteSpecialization<?php echo $SID; ?>" role="dialog">
                                                 <div class="modal-dialog" style="padding:100px">
                                                     <!-- Modal content-->
                                                     <div class="modal-content">
