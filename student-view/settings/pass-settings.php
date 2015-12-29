@@ -52,16 +52,6 @@ else{
     <link rel="stylesheet" type="text/css" href="../../css/animate.css" media="screen">
 
     <!-- Color CSS Styles  -->
-    <link rel="stylesheet" type="text/css" href="../../css/colors/jade.css" title="jade" media="screen" />
-    <link rel="stylesheet" type="text/css" href="../../css/colors/green.css" title="green" media="screen" />
-    <link rel="stylesheet" type="text/css" href="../../css/colors/blue.css" title="blue" media="screen" />
-    <link rel="stylesheet" type="text/css" href="../../css/colors/beige.css" title="beige" media="screen" />
-    <link rel="stylesheet" type="text/css" href="../../css/colors/cyan.css" title="cyan" media="screen" />
-    <link rel="stylesheet" type="text/css" href="../../css/colors/orange.css" title="orange" media="screen" />
-    <link rel="stylesheet" type="text/css" href="../../css/colors/peach.css" title="peach" media="screen" />
-    <link rel="stylesheet" type="text/css" href="../../css/colors/pink.css" title="pink" media="screen" />
-    <link rel="stylesheet" type="text/css" href="../../css/colors/purple.css" title="purple" media="screen" />
-    <link rel="stylesheet" type="text/css" href="../../css/colors/sky-blue.css" title="sky-blue" media="screen" />
     <link rel="stylesheet" type="text/css" href="../../css/colors/yellow.css" title="yellow" media="screen" />
 
     <!-- JS  -->
@@ -301,40 +291,38 @@ else{
         <!-- Start Content -->
         <div id="content">
             <div class="container">
-                <div class="row">
-                    <!-- Page Content -->
-                    <div class="col-md-12 page-content">
-                        <div class="row">
-                            <div class="classic-testimonials">
-                                <div class="row field">
-                                    <div class="col-md-6 fieldcol">
-                                        <div class="form-group">
-                                            <label>Current Password <span>(*)</span></label>
-                                            <input type="password" class="form-control" id="txtCurrentPassword" name="txtCurrentPassword">
-                                        </div>
+                <!-- Page Content -->
+                <div class="col-md-12 page-content">
+                    <div class="row">
+                        <div class="classic-testimonials">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label>Current Password <span>(*)</span></label>
+                                        <input type="password" class="form-control" id="txtCurrentPassword" name="txtCurrentPassword">
                                     </div>
                                 </div>
-                                <div class="row field">
-                                    <div class="col-md-6 col-sm-6 fieldcol">
-                                        <div class="form-group">
-                                            <label>New Password <span>(*)</span></label>
-                                            <input type="password" class="form-control" id="txtNewPassword" name="txtNewPassword">
-                                        </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6 col-sm-6">
+                                    <div class="form-group">
+                                        <label>New Password <span>(*)</span></label>
+                                        <input type="password" class="form-control" id="txtNewPassword" name="txtNewPassword">
                                     </div>
-                                    <div class="col-md-6 col-sm-6 fieldcol">
-                                        <div class="form-group">
-                                            <label>Confirm New Password <span>(*)</span></label>
-                                            <input type="password" class="form-control" id="txtConfPassword" name="txtConfPassword">
-                                        </div>
+                                </div>
+                                <div class="col-md-6 col-sm-6">
+                                    <div class="form-group">
+                                        <label>Confirm New Password <span>(*)</span></label>
+                                        <input type="password" class="form-control" id="txtConfPassword" name="txtConfPassword">
                                     </div>
                                 </div>
                             </div>
                         </div>
-                        <div class="hr5" style="margin-top:35px;margin-bottom:40px;"></div>
-                        <button class="btn btn-lg btn-hg btn-primary" style="float:right;" name="btnChangePass">Change Password</button>
                     </div>
-                    <!-- End Page Content -->
+                    <div class="hr5" style="margin-top:35px;margin-bottom:40px;"></div>
+                    <button type="submit" class="btn-system btn-large" style="float:right;" name="btnChangePass">Change Password</button>
                 </div>
+                <!-- End Page Content -->
             </div>
         </div>
     </div>

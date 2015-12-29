@@ -77,11 +77,7 @@ else{
     <script type="text/javascript" src="../../js/jquery.parallax.js"></script>
     <script type="text/javascript" src="../../js/mediaelement-and-player.js"></script>
 </head>
-<style type="text/css">
-    .bs-example{
-        margin: 20px;
-    }
-</style>
+
 <body>
     <div id="container">
         <!-- Start Header Section -->
@@ -171,7 +167,7 @@ else{
                         <div class="widget widget-categories">
                             <h4>Categories <span class="head-line"></span></h4>
                             <li>
-                                <i class="fa fa-bookmark"></i> Bookmarked Jobs<a href="#"> (0)</a>
+                                <a href="#"><i class="fa fa-bookmark"></i> Bookmarked Jobs <b>(0)</b></a>
                             </li>
                             <li>
                                 <a href="#"><i class="fa fa-sort"></i> Sort by: </a>
@@ -260,7 +256,7 @@ else{
                                                     <li>4 years experience</li>
                                                     <li>$location</li>
                                                 </ul>
-                                                <a class='main-button' href='#'>View Details <i class='fa fa-angle-right'></i></a>
+                                                <a class='main-button' href='view-details.php'>View Details <i class='fa fa-angle-right'></i></a>
                                             </div>
                                         </div>
                                         ";

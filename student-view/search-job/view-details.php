@@ -207,7 +207,7 @@
                         <div class="row">
                             <div class="col-md-12">
                                 <div class="classic-testimonials">
-                                    <label>Good candidate must have the following qualifications:</label>
+                                    <label><u>Good candidate must have the following qualifications:</u></label>
                                 </div>
                                 <li>Must be a CPA</li>
                                 <li>At least 5 years of experience in General Accounting and Finance</li>
@@ -322,7 +322,7 @@
                         <div class="widget widget-categories">
                             <h4>Tools <span class="head-line"></span></h4>
                             <li>
-                                <i class="fa fa-bookmark"></i> Bookmarked Jobs<a href="#"> (0)</a>
+                                <a href="#"><i class="fa fa-bookmark"></i> Bookmarked Jobs <b>(0)</b></a>
                             </li>
                             <li>
                                 <a href="#"><i class="fa fa-share"></i> Share</a>
