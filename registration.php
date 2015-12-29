@@ -69,9 +69,8 @@
     <div id="container">
         <div class="hidden-header"></div>
  
-
-     <!-- Start Page Banner -->
-    <div class="page-banner no-subtitle">
+        <!-- Start Page Banner -->
+        <div class="page-banner no-subtitle">
             <div class="container">
                 <div class="row">
                     <div class="col-md-6">
@@ -89,37 +88,35 @@
         <!-- End Page Banner -->
 
 
-    <!-- Start Content -->
-    <div id="content">
-      <div class="container">
-        <div class="big-title text-center">
-           <h1><strong>Registration</strong></h1>
-        </div>
-       <h3><strong>Student Details:</strong></h3>
-       <div class="row">
-                <div class="col-md-3">
-                    &nbsp;
+        <!-- Start Content -->
+        <div id="content">
+            <div class="container">
+                <div class="big-title text-center">
+                    <h1><strong>Registration</strong></h1>
                 </div>
-                <div class="col-md-6 text-center">
-                    <div class="form-group">
-                        <label><span>(*) </span>Resumé Link: </label>
-                        <input type="text" class="form-control" id="resumelink" placeholder="http://YourName.sticaloocan.edu" name="resumelink">
-                        <p class="note">ex.http://YourName.sticaloocan.edu</p>
+                <h3><strong>Student Details:</strong></h3>
+                <div class="row">
+                    <div class="col-md-3">
+                        &nbsp;
+                    </div>
+                    <div class="col-md-6 text-center">
+                        <div class="form-group">
+                            <label><span>(*) </span>Resumé Link: </label>
+                            <input type="text" class="form-control" id="resumelink" placeholder="http://YourName.sticaloocan.edu" name="resumelink">
+                            <p class="note">ex.http://YourName.sticaloocan.edu</p>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        &nbsp;
                     </div>
                 </div>
-                <div class="col-md-3">
-                    &nbsp;
-                </div>
-            </div>
-            <p class="note text-center">You may only use alphanumeric characters, including period (.), dash (-), or underscore (_). This will be the name that will identify your personalized ResumeLink. This name will be permanent and no longer be changeable.</p>
-            <br>
+                <p class="note text-center">You may only use alphanumeric characters, including period (.), dash (-), or underscore (_). This will be the name that will identify your personalized ResumeLink. This name will be permanent and no longer be changeable.</p>
+                <br>
 
-        <div class="row">
-
-          <div class="col-md-6">
-
-            <!-- Classic Heading -->
-            <h4 class="classic-title"><span>Contact Us</span></h4>
+                <div class="row">
+                    <div class="col-md-6">
+                        <!-- Classic Heading -->
+                        <h4 class="classic-title"><span>Contact Us</span></h4>
 
             <!-- Start Contact Form -->
             <form role="form" class="contact-form" id="contact-form" method="post">
