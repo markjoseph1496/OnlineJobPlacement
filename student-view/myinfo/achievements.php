@@ -297,11 +297,18 @@ else{
                                     <tbody>
                                         <?php
 
-                                        $query = "SELECT * FROM achievementstbl WHERE StudentID = '$StudentID'";
-                                        $result = mysql_query($query);
-                                        while($query = mysql_fetch_array($result)){
-                                            $AchievementID = $query['AchievementID'];
-                                            $Achievements = $query['Achievements'];
+                                        $achievements_tbl =
+                                            GSecureSQL::query(
+                                                "SELECT * FROM achievementstbl WHERE StudentID = ?",
+                                                TRUE,
+                                                "s",
+                                                $StudentID
+                                            );
+                                        $count = 0;
+                                        foreach ($achievements_tbl as $value) {
+                                            $AchievementID = $achievements_tbl[$count]->AchievementID;
+                                            $Achievements = $achievements_tbl[$count]->Achievements;
+                                            $count++;
                                         ?>
                                         <tr>
                                             <td><?php echo $Achievements; ?></td>

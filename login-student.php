@@ -2,34 +2,7 @@
 <?php 
 session_start();
 include('connection.php');
-/*
-$query = "SELECT * FROM studentinfotbl WHERE StudentID='" . mysql_real_escape_string($server_StudentID) . "' AND Password='" . mysql_real_escape_string($server_Password) . "'";
-$result = mysql_query($query);
 
-
-if($result){
-
-    if(mysql_num_rows($result) == 0){
-        echo "
-        <script type='text/javascript'>
-        alert('Incorrect Password. Please try again.');
-        </script>
-        ";
-        $StudentID_class='error';
-        $Password_class='error';
-    }
-    else{
-        $_SESSION['StudentID'] = $server_StudentID;
-        echo "
-        <script type='text/javascript'>
-        alert('You have successfully loggged in.');
-        location.href='student-view/search-job/jobs.php';
-        </script>
-        ";
-
-    }   
-}
-*/
 ?>
 
 

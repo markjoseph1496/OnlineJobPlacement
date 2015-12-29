@@ -312,7 +312,7 @@ while($query = mysql_fetch_array($result)){
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <label>Years of Experience <span>(*)</span></label>
-                                    <input type="text" class="form-control" id="YearsOfExperience" name="YearsOfExperience" value="<?php echo $YearOfExperience; ?>">
+                                    <input type="number" class="form-control" id="YearsOfExperience" name="YearsOfExperience" value="<?php echo $YearOfExperience; ?>">
                                 </div>
                             </div>
                         </div> 

@@ -4,21 +4,25 @@ include('../../connection.php');
 
 $StudentID = $_SESSION['StudentID'];
 
-$query = "SELECT * FROM studentinfotbl WHERE StudentID = '$StudentID'";
-$result = mysql_query($query);
+    $student_tbl =
+    GSecureSQL::query(
+        "SELECT * FROM studentinfotbl WHERE StudentID = ?",
+        TRUE,
+        "s",
+        $StudentID
+    );
 
-while($query = mysql_fetch_array($result)){
-    $FirstName = $query['FirstName'];
-    $MiddleName = $query['MiddleName'];
-    $LastName = $query['LastName'];
-    $Gender = $query['Gender'];
-    $Birthdate = $query['Birthdate'];
-    $Nationality = $query['Nationality'];
-    $CivilStatus = $query['CivilStatus'];
-    $FBLink = $query['FBLink'];
-    $TwitterLink = $query['TwitterLink'];
+    $FirstName = $student_tbl[0]->FirstName;
+    $MiddleName = $student_tbl[0]->MiddleName;
+    $LastName = $student_tbl[0]->LastName;
+    $Gender = $student_tbl[0]->Gender;
+    $Birthdate = $student_tbl[0]->Birthdate;
+    $Nationality = $student_tbl[0]->Nationality;
+    $CivilStatus = $student_tbl[0]->CivilStatus;
+    $FBLink = $student_tbl[0]->FBLink;
+    $TwitterLink = $student_tbl[0]->TwitterLink;
     $FBLink = substr($FBLink, 24);
-}
+
 ?>
 
 <!doctype html>
