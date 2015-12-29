@@ -15,22 +15,14 @@ if(isset($_GET['id'])){
 }
 ?>
 <!DOCTYPE html>
-<html lang="en">
-<!--testing ng edit sa github -->
+<html>
 <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="">
-    <meta name="author" content="">
 
     <title>Online JPMS</title>
 
-    <!-- Bootstrap Core CSS -->
-    <link href="css/bootstrap.min.css" rel="stylesheet">
-
-    <!-- CSS -->
-    <link href="css/agency.css" rel="stylesheet">
+    <!-- CSS-->
+    <link href="css/login-style.css" rel="stylesheet">
+    <link href="css/mystyle.css" rel="stylesheet">
 
     <!-- Fonts -->
     <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
@@ -40,31 +32,45 @@ if(isset($_GET['id'])){
     <link href="font-awesome/ffonts/roboto.css" rel="stylesheet" type="text/css">
 </head>
 
-
 <body class="login-background">
-    <form method = "POST">
-        <div class="container">
-            <div class="login">
-                <div class="login-screen">
-                    <div class="login-form" id="yellow-text-fields">
-                        <div class="login-form">
+    <div class="js-register-form">
+        <a name="register"></a>
+        <div class="grid-container">
+            <div class="span_h1"></div>
+            <div class="grid-row">
+                <div class="grid-col w5 half_on_tablet full_on_mobile">
+                    <form class="" method = "POST" autocomplete="off">
+                        <h2 class="register-title"><span class="break_on_desktop"></span>&nbsp;</h2> 
+                        <fieldset class="register-fieldset">
                             <div class="form-group">
-                                <input type="text" class="form-control login-field" value placeholder="Company ID" id="" name="username" style="height:55px;">
+                                <input type="text" class="<?php echo $StudentID_class;?> form-control register-input js-password js-input" placeholder="Your Company ID" id="txtStudentID" name="txtStudentID" value="<?php echo htmlspecialchars($server_StudentID)?>">
                             </div>
+                        </fieldset>
+                        <fieldset class="register-fieldset">
                             <div class="form-group">
-                                <input type="password" class="form-control login-field" value placeholder="Password" id="" name="password" style="height:55px;">
+                                <input type="password" class="<?php echo $Password_class;?>  form-control register-input js-password js-input" placeholder="Password" id="txtPassword" name="txtPassword">
                             </div>
-                            <input type ="submit" class="btn btn-primary btn-large btn-block" name = "btnlogin" value = "Login"></input>
-                            <a class="login-link btn" href="">Forgot password?</a>
-                            <div>&nbsp;</div>
-                            <a class="btn btn-bordered" href="registration-company.php">REGISTER NOW!</a>
-                        </div>
+                        </fieldset>
+                        <fieldset class="register-fieldset">
+                            <button class="btn btn--green register-submit btn--icon">Login              
+                                <span class="btn-icon btn-icon--right"></span>
+                            </button>
+                        </fieldset>
+                    </form>
+                    <div class="text-center">
+                        <p class="register-terms" style="float:right;"><a href="" target="_blank">Lost your password?</a></p>
                     </div>
                 </div>
             </div>
+            <div class="register-screenshot not_mobile">
+                <div class="browser-chrome">
+                    <label class="register-title">&nbsp;<span class="break_on_desktop"></span>Welcome to OJPMS.</label>
+                    <div class="space"></div>
+                    <label class="register-terms">Connect with your friends -- and other fascinating people. Get in-the-moment updates on the things that interest you. And watch events unfold, in real time, from every angle. <a href="registration.php" target="_blank">Sign Up.</a></label>
+                </div>
+            </div>
         </div>
-    </form>
-    <div class="login-footer"></div>
+    </div>
 </body>
 
 <?php
