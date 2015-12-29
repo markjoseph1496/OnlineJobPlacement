@@ -18,9 +18,8 @@
   <meta name="description" content="Margo - Responsive HTML5 Template">
   <meta name="author" content="iThemesLab">
 
-
   <!-- Bootstrap CSS  -->
-  <link rel="stylesheet" href="asset/css/bootstrap.min.css" type="text/css" media="screen">
+  <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css" media="screen">
 
   <!-- Font Awesome CSS -->
   <link rel="stylesheet" href="css/font-awesome.min.css" type="text/css" media="screen">
@@ -35,9 +34,7 @@
   <link rel="stylesheet" type="text/css" href="css/responsive.css" media="screen">
 
   <!-- Color CSS Styles  -->
-
   <link rel="stylesheet" type="text/css" href="css/colors/yellow.css" title="yellow" media="screen" />
-
 
   <!-- Margo JS  -->
   <script type="text/javascript" src="js/jquery-2.1.4.min.js"></script>
@@ -56,11 +53,6 @@
   <script type="text/javascript" src="js/jquery.nicescroll.min.js"></script>
   <script type="text/javascript" src="js/jquery.parallax.js"></script>
   <script type="text/javascript" src="js/jquery.slicknav.js"></script>
-
-
-  <!--[if IE 8]><script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
-  <!--[if lt IE 9]><script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
-
 </head>
 
 <body>
@@ -96,17 +88,17 @@
                 </div>
                 <h3><strong>Student Details:</strong></h3>
                 <div class="row">
-                    <div class="col-md-3">
+                    <div class="col-md-2">
                         &nbsp;
                     </div>
-                    <div class="col-md-6 text-center">
+                    <div class="col-md-8 text-center">
                         <div class="form-group">
-                            <label><span>(*) </span>Resumé Link: </label>
+                            <label><span>(*) </span>Resumé Link: </label><br>
                             <input type="text" class="form-control" id="resumelink" placeholder="http://YourName.sticaloocan.edu" name="resumelink">
                             <p class="note">ex.http://YourName.sticaloocan.edu</p>
                         </div>
                     </div>
-                    <div class="col-md-3">
+                    <div class="col-md-2">
                         &nbsp;
                     </div>
                 </div>
@@ -116,28 +108,28 @@
                 <form role="form" class="contact-form" id="contact-form" method="post">
                     <div class="row">
                         <div class="col-md-3">
-                            <label>Student ID</label>
+                            <label>Student ID <span>(*)</span></label>
                             <div class="form-group">
                                 <div class="controls">
-                                    <input type="text" placeholder="Name" name="name">
+                                    <input type="text" class="" id="StudentID" name="StudentID" maxlength="11">
                                 </div>
                             </div>
                         </div>
                     </div>
                     <div class="row">
                         <div class="col-md-6">
-                            <label>First Name</label>
+                            <label>First Name <span>(*)</span></label>
                             <div class="form-group">
                                 <div class="controls">
-                                    <input type="text" placeholder="Name" name="name">
+                                    <input type="text" class="" id="FirstName" name="FirstName">
                                 </div>
                             </div>
                         </div>
                         <div class="col-md-6">
-                            <label>Last Name</label>
+                            <label>Last Name <span>(*)</span></label>
                             <div class="form-group">
                                 <div class="controls">
-                                    <input type="text" placeholder="Name" name="name">
+                                    <input type="text" class="" id="LastName" name="LastName">
                                 </div>
                             </div>
                         </div>
@@ -155,53 +147,53 @@
                             <label>Mobile Number <span>(*)</span></label>
                             <div class="form-group">
                                 <div class="controls">
-                                    <input type="text" placeholder="" name="">
+                                    <input type="text" class="" id="MobileNumber" name="MobileNumber">
                                 </div>
                             </div>
                         </div>
                     </div>
                     <div class="row">
                         <div class="col-md-6">
-                            <label>Email</label>
+                            <label>Email <span>(*)</span></label>
                             <div class="form-group">
                                 <div class="controls">
-                                    <input type="text" placeholder="" name="">
+                                    <input type="text" class="" id="Email" name="Email">
                                 </div>
                             </div>
                         </div>
                         <div class="col-md-6">
-                            <label>Confirm Email</label>
+                            <label>Confirm Email <span>(*)</span></label>
                             <div class="form-group">
                                 <div class="controls">
-                                    <input type="text" placeholder="" name="">
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-md-6">
-                            <label>Password</label>
-                            <div class="form-group">
-                                <div class="controls">
-                                    <input type="text" placeholder="" name="">
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-6">
-                            <label>Confirm Password</label>
-                            <div class="form-group">
-                                <div class="controls">
-                                    <input type="text" placeholder="" name="">
+                                    <input type="text" class="" id="ConfirmEmail" name="ConfirmEmail">
                                 </div>
                             </div>
                         </div>
                     </div>
                     <div class="row">
                         <div class="col-md-6">
-                            <label>City</label>
+                            <label>Password <span>(*)</span></label>
                             <div class="form-group">
                                 <div class="controls">
-                                    <select id="City" name="City" class="form-control" style="width:100%; height:34px;">
+                                    <input type="password" class="form-control" id="_Password" name="_Password">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <label>Confirm Password <span>(*)</span></label>
+                            <div class="form-group">
+                                <div class="controls">
+                                    <input type="password" class="form-control" id="ConfirmPassword" name="ConfirmPassword">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <label>City <span>(*)</span></label>
+                            <div class="form-group">
+                                <div class="controls">
+                                    <select id="City" name="City" class="" style="width:100%; height:34px;">
                                         <option value="">- Please select one -</option>
                                         <option value="Caloocan City">Caloocan City</option>
                                         <option value="Las Pińas City">Las Pińas City</option>
@@ -227,68 +219,47 @@
                     </div>
                 </form>
 
-                <h3><strong>Educational Background:</strong></h3>
+                <br><br>
+                <h3><strong>Educational Background:</strong></h3><br>
                 <div class="row">
                     <div class="col-md-6">
-                        <label>Educational Attainment</label>
+                        <label>Educational Attainment <span>(*)</span></label>
                         <div class="form-group">
                             <div class="controls">
-                                <select id="City" name="City" class="form-control" style="width:100%; height:34px;">
+                                <select id="EducAttain" name="EducAttain" class="" style="width:100%; height:34px;">
                                     <option value="">- Please select one -</option>
-                                    <option value="Caloocan City">Caloocan City</option>
-                                    <option value="Las Pińas City">Las Pińas City</option>
-                                    <option value="Makati City">Makati City</option>
-                                    <option value="Malabon City">Malabon City</option>
-                                    <option value="Mandaluyong City">Mandaluyong City</option>
-                                    <option value="Manila">Manila</option>
-                                    <option value="Marikina City">Marikina City</option>
-                                    <option value="Muntinlupa City">Muntinlupa City</option>
-                                    <option value="Navotas City">Navotas City</option>
-                                    <option value="Parańaque City">Parańaque City</option>
-                                    <option value="Pasay City">Pasay City</option>
-                                    <option value="Pasig City">Pasig City</option>
-                                    <option value="Pateros City">Pateros City</option>
-                                    <option value="Quezon City">Quezon City</option>
-                                    <option value="San Juan City">San Juan City</option>
-                                    <option value="Taguig City">Taguig City</option>
-                                    <option value="Valenzuela City">Valenzuela City</option>
+                                    <option value="Bachelor's/College Degree">Bachelor's/College Degree</option>
                                 </select>
                             </div>
                         </div>
                     </div>
                     <div class="col-md-6">
-                        <label>Course</label>
+                        <label>Course <span>(*)</span></label>
                         <div class="form-group">
                             <div class="controls">
-                                <select id="City" name="City" class="form-control" style="width:100%; height:34px;">
-                                    <option value="">- Please select one -</option>
-                                    <option value="Caloocan City">Caloocan City</option>
-                                    <option value="Las Pińas City">Las Pińas City</option>
-                                    <option value="Makati City">Makati City</option>
-                                    <option value="Malabon City">Malabon City</option>
-                                    <option value="Mandaluyong City">Mandaluyong City</option>
-                                    <option value="Manila">Manila</option>
-                                    <option value="Marikina City">Marikina City</option>
-                                    <option value="Muntinlupa City">Muntinlupa City</option>
-                                    <option value="Navotas City">Navotas City</option>
-                                    <option value="Parańaque City">Parańaque City</option>
-                                    <option value="Pasay City">Pasay City</option>
-                                    <option value="Pasig City">Pasig City</option>
-                                    <option value="Pateros City">Pateros City</option>
-                                    <option value="Quezon City">Quezon City</option>
-                                    <option value="San Juan City">San Juan City</option>
-                                    <option value="Taguig City">Taguig City</option>
-                                    <option value="Valenzuela City">Valenzuela City</option>
+                                <select id="Course" name="Course" class="" style="width:100%; height:34px;">
+                                    <option value="">- Please select one</option>
+                                    <option value="Bachelor of Science in Information Technology Major in Digital Arts">Bachelor of Science in Information Technology Major in Digital Arts</option>
+                                    <option value="Bachelor of Science in Information Technology">Bachelor of Science in Information Technology</option>
+                                    <option value="Bachelor of Science in Computer Science">Bachelor of Science in Computer Science</option>
+                                    <option value="2 - Year Associate in Computer Technology">2 - Year Associate in Computer Technology</option>
+                                    <option value="Bachelor of Science in Business Management Major in Operations">Bachelor of Science in Business Management Major in Operations</option>
+                                    <option value="Bachelor of Science in Business Administration">Bachelor of Science in Business Administration</option>
+                                    <option value="Bachelor of Science in Accounting Technology">Bachelor of Science in Accounting Technology</option>
+                                    <option value="Bachelor of Science in Hotel &amp; Restaurant Management">Bachelor of Science in Hotel &amp; Restaurant Management</option>
+                                    <option value="Bachelor of Science in Tourism Management">Bachelor of Science in Tourism Management</option>
+                                    <option value="Bachelor of Science in Computer Engineering">Bachelor of Science in Computer Engineering</option>
+                                    <option value="Bachelor of Arts in Communication">Bachelor of Arts in Communication</option>
                                 </select>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="row field">
-                    <div class="col-md-3 fieldcol">
+                <div class="row">
+                    <div class="col-md-3">
                         <div class="form-group">
                             <label>Graduation Date <span>(*)</span></label>
-                            <select id="GraduatedMonth" name="GraduatedMonth" class="form-control" style="width:100%; height:34px;">
+                            <select id="GraduatedMonth" name="GraduatedMonth" class="" style="width:100%; height:34px;">
                                 <option value="">- Month -</option>
                                 <option value="01">January</option>
                                 <option value="02">February</option> 
@@ -305,10 +276,10 @@
                             </select>
                         </div>
                     </div>
-                    <div class="col-md-3 fieldcol">
+                    <div class="col-md-3">
                         <div class="form-group">
                             <label>&nbsp;</label>
-                            <select id="GraduatedYear" name="GraduatedYear" class="form-control" style="width:100%; height:34px;">
+                            <select id="GraduatedYear" name="GraduatedYear" class="" style="width:100%; height:34px;">
                                 <option value="">- Year -</option>
                                 <?php 
                                     $date = Date("Y") + 4;
@@ -333,7 +304,7 @@
                     </div>
                 </div>
                 <div class="hr5" style="margin-top:40px;margin-bottom:40px;"></div>
-                <div class"row field">
+                <div class"row">
                     <div class="col-md-6">
                         <label><b>By clicking the "Sign Up" button below, I certify that I have read and agree to the <a href="" target="_blank">Terms of Use</a>.</b></label>
                     </div>
@@ -388,7 +359,7 @@
                     invalid: "glyphicon glyphicon-remove",
                     validating: "glyphicon glyphicon-refresh"
                 },
-                fields:{
+               s:{
                     StudentID: {
                         validators: {
                             notEmpty: {
@@ -463,7 +434,7 @@
                                 message: "Confirm Email is required."
                             },
                             identical: {
-                                field: "Email",
+                               : "Email",
                                 message: "Email and Confirm email mismatched."
                             }
                         }
@@ -486,7 +457,7 @@
                                 message: "Confirm password is required."
                             },
                             identical: {
-                                field: "_Password",
+                               : "_Password",
                                 message: "Password and confirm password mismatched."
                             }
                         }
