@@ -113,82 +113,237 @@
                 <p class="note text-center">You may only use alphanumeric characters, including period (.), dash (-), or underscore (_). This will be the name that will identify your personalized ResumeLink. This name will be permanent and no longer be changeable.</p>
                 <br>
 
+                <form role="form" class="contact-form" id="contact-form" method="post">
+                    <div class="row">
+                        <div class="col-md-3">
+                            <label>Student ID</label>
+                            <div class="form-group">
+                                <div class="controls">
+                                    <input type="text" placeholder="Name" name="name">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <label>First Name</label>
+                            <div class="form-group">
+                                <div class="controls">
+                                    <input type="text" placeholder="Name" name="name">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <label>Last Name</label>
+                            <div class="form-group">
+                                <div class="controls">
+                                    <input type="text" placeholder="Name" name="name">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <label>Birthdate <span>(*)</span></label>
+                            <div class="form-group">
+                                <div class="controls">
+                                    <input type="date" class="form-control" name="Birthday" id="Birthday">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <label>Mobile Number <span>(*)</span></label>
+                            <div class="form-group">
+                                <div class="controls">
+                                    <input type="text" placeholder="" name="">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <label>Email</label>
+                            <div class="form-group">
+                                <div class="controls">
+                                    <input type="text" placeholder="" name="">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <label>Confirm Email</label>
+                            <div class="form-group">
+                                <div class="controls">
+                                    <input type="text" placeholder="" name="">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <label>Password</label>
+                            <div class="form-group">
+                                <div class="controls">
+                                    <input type="text" placeholder="" name="">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <label>Confirm Password</label>
+                            <div class="form-group">
+                                <div class="controls">
+                                    <input type="text" placeholder="" name="">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <label>City</label>
+                            <div class="form-group">
+                                <div class="controls">
+                                    <select id="City" name="City" class="form-control" style="width:100%; height:34px;">
+                                        <option value="">- Please select one -</option>
+                                        <option value="Caloocan City">Caloocan City</option>
+                                        <option value="Las Pińas City">Las Pińas City</option>
+                                        <option value="Makati City">Makati City</option>
+                                        <option value="Malabon City">Malabon City</option>
+                                        <option value="Mandaluyong City">Mandaluyong City</option>
+                                        <option value="Manila">Manila</option>
+                                        <option value="Marikina City">Marikina City</option>
+                                        <option value="Muntinlupa City">Muntinlupa City</option>
+                                        <option value="Navotas City">Navotas City</option>
+                                        <option value="Parańaque City">Parańaque City</option>
+                                        <option value="Pasay City">Pasay City</option>
+                                        <option value="Pasig City">Pasig City</option>
+                                        <option value="Pateros City">Pateros City</option>
+                                        <option value="Quezon City">Quezon City</option>
+                                        <option value="San Juan City">San Juan City</option>
+                                        <option value="Taguig City">Taguig City</option>
+                                        <option value="Valenzuela City">Valenzuela City</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+
+                <h3><strong>Educational Background:</strong></h3>
                 <div class="row">
                     <div class="col-md-6">
-                        <!-- Classic Heading -->
-                        <h4 class="classic-title"><span>Contact Us</span></h4>
-
-            <!-- Start Contact Form -->
-            <form role="form" class="contact-form" id="contact-form" method="post">
-              <div class="form-group">
-                <div class="controls">
-                  <input type="text" placeholder="Name" name="name">
+                        <label>Educational Attainment</label>
+                        <div class="form-group">
+                            <div class="controls">
+                                <select id="City" name="City" class="form-control" style="width:100%; height:34px;">
+                                    <option value="">- Please select one -</option>
+                                    <option value="Caloocan City">Caloocan City</option>
+                                    <option value="Las Pińas City">Las Pińas City</option>
+                                    <option value="Makati City">Makati City</option>
+                                    <option value="Malabon City">Malabon City</option>
+                                    <option value="Mandaluyong City">Mandaluyong City</option>
+                                    <option value="Manila">Manila</option>
+                                    <option value="Marikina City">Marikina City</option>
+                                    <option value="Muntinlupa City">Muntinlupa City</option>
+                                    <option value="Navotas City">Navotas City</option>
+                                    <option value="Parańaque City">Parańaque City</option>
+                                    <option value="Pasay City">Pasay City</option>
+                                    <option value="Pasig City">Pasig City</option>
+                                    <option value="Pateros City">Pateros City</option>
+                                    <option value="Quezon City">Quezon City</option>
+                                    <option value="San Juan City">San Juan City</option>
+                                    <option value="Taguig City">Taguig City</option>
+                                    <option value="Valenzuela City">Valenzuela City</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <label>Course</label>
+                        <div class="form-group">
+                            <div class="controls">
+                                <select id="City" name="City" class="form-control" style="width:100%; height:34px;">
+                                    <option value="">- Please select one -</option>
+                                    <option value="Caloocan City">Caloocan City</option>
+                                    <option value="Las Pińas City">Las Pińas City</option>
+                                    <option value="Makati City">Makati City</option>
+                                    <option value="Malabon City">Malabon City</option>
+                                    <option value="Mandaluyong City">Mandaluyong City</option>
+                                    <option value="Manila">Manila</option>
+                                    <option value="Marikina City">Marikina City</option>
+                                    <option value="Muntinlupa City">Muntinlupa City</option>
+                                    <option value="Navotas City">Navotas City</option>
+                                    <option value="Parańaque City">Parańaque City</option>
+                                    <option value="Pasay City">Pasay City</option>
+                                    <option value="Pasig City">Pasig City</option>
+                                    <option value="Pateros City">Pateros City</option>
+                                    <option value="Quezon City">Quezon City</option>
+                                    <option value="San Juan City">San Juan City</option>
+                                    <option value="Taguig City">Taguig City</option>
+                                    <option value="Valenzuela City">Valenzuela City</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-              </div>
-              <div class="form-group">
-                <div class="controls">
-                  <input type="email" class="email" placeholder="Email" name="email">
+                <div class="row field">
+                    <div class="col-md-3 fieldcol">
+                        <div class="form-group">
+                            <label>Graduation Date <span>(*)</span></label>
+                            <select id="GraduatedMonth" name="GraduatedMonth" class="form-control" style="width:100%; height:34px;">
+                                <option value="">- Month -</option>
+                                <option value="01">January</option>
+                                <option value="02">February</option> 
+                                <option value="03">March</option> 
+                                <option value="04">April</option> 
+                                <option value="05">May</option> 
+                                <option value="06">June</option> 
+                                <option value="07">July</option> 
+                                <option value="08">August</option>
+                                <option value="09">September</option>
+                                <option value="10">October</option>
+                                <option value="11">November</option>
+                                <option value="12">December</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col-md-3 fieldcol">
+                        <div class="form-group">
+                            <label>&nbsp;</label>
+                            <select id="GraduatedYear" name="GraduatedYear" class="form-control" style="width:100%; height:34px;">
+                                <option value="">- Year -</option>
+                                <?php 
+                                    $date = Date("Y") + 4;
+                                        if($b==1){
+                                            $choose = "";
+                                        }
+                                        else{
+                                            $choose = $server_graduatedyear;
+                                        }
+                                        while($date != 1935){
+                                            $date--;
+                                            if($date == $choose){
+                                                echo "<option selected value='$date'> $date</option>";
+                                                }
+                                                else{
+                                                echo "<option value='$date'> $date</option>";
+                                                }
+                                            }
+                                ?>
+                            </select>
+                        </div>
+                    </div>
                 </div>
-              </div>
-              <div class="form-group">
-                <div class="controls">
-                  <input type="text" class="requiredField" placeholder="Subject" name="subject">
+
+                <div class"row field">
+                    <div class="col-md-6">
+                        <label><b>By clicking the "Sign Up" button below, I certify that I have read and agree to the <a href="" target="_blank">Terms of Use</a>.</b></label>
+                    </div>
+                    <div class="col-md-6">
+                        <a href="#" class="btn-system btn-large border-btn" style="float:right;">Button</a>
+                    </div>
                 </div>
-              </div>
-
-              <div class="form-group">
-
-                <div class="controls">
-                  <textarea rows="7" placeholder="Message" name="message"></textarea>
-                </div>
-              </div>
-              <button type="submit" id="submit" class="btn-system btn-large">Send</button>
-              <div id="success" style="color:#34495e;"></div>
-            </form>
-            <!-- End Contact Form -->
-
-          </div>
-
-          <div class="col-md-6">
-
-            <!-- Classic Heading -->
-            <h4 class="classic-title"><span>Information</span></h4>
-
-            <!-- Start Contact Form -->
-            <form role="form" class="contact-form" id="contact-form" method="post">
-              <div class="form-group">
-                <div class="controls">
-                  <input type="text" placeholder="Name" name="name">
-                </div>
-              </div>
-              <div class="form-group">
-                <div class="controls">
-                  <input type="email" class="email" placeholder="Email" name="email">
-                </div>
-              </div>
-              <div class="form-group">
-                <div class="controls">
-                  <input type="text" class="requiredField" placeholder="Subject" name="subject">
-                </div>
-              </div>
-
-              <div class="form-group">
-
-                <div class="controls">
-                  <textarea rows="7" placeholder="Message" name="message"></textarea>
-                </div>
-              </div>
-              <button type="submit" id="submit" class="btn-system btn-large">Send</button>
-              <div id="success" style="color:#34495e;"></div>
-            </form>
-            <!-- End Contact Form -->
-          </div>
-
+            </div>
         </div>
-
-      </div>
-    </div>
-    <!-- End content -->
+        <!-- End content -->
 
 
     <!-- Start Footer Section -->
