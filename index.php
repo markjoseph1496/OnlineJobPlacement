@@ -17,6 +17,7 @@
 
     <!-- Bootstrap CSS  -->
     <link rel="stylesheet" href="asset/css/bootstrap.min.css" type="text/css" media="screen">
+    <link rel="stylesheet" href="css/about-style.css" type="text/css" media="screen">
 
     <!-- Font Awesome CSS -->
     <link rel="stylesheet" href="css/font-awesome.min.css" type="text/css" media="screen">
@@ -24,7 +25,7 @@
     <!-- Slicknav -->
     <link rel="stylesheet" type="text/css" href="css/slicknav.css" media="screen">
 
-    <!-- Margo CSS Styles  -->
+    <!-- CSS Styles  -->
     <link rel="stylesheet" type="text/css" href="css/style.css" media="screen">
 
     <!-- Responsive CSS Styles  -->
@@ -73,7 +74,7 @@
                         <i class="fa fa-bars"></i>
                     </button>
                     <!-- End Toggle Nav Link For Mobiles -->
-                    <a class="navbar-brand" href="index.html"><img alt="" src="images/ojpms.png"></a>
+                    <a class="navbar-brand" href="index.php"><img alt="" src="images/ojpms.png"></a>
                 </div>
                 <div class="navbar-collapse collapse">
                     <!-- Start Navigation List -->

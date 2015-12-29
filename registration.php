@@ -6,7 +6,7 @@
 <head>
 
   <!-- Basic -->
-  <title>Margo | Contact</title>
+  <title>OJPMS</title>
 
   <!-- Define Charset -->
   <meta charset="utf-8">
