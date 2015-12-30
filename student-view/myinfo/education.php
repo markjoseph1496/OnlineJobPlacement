@@ -397,56 +397,68 @@ if (isset($_SESSION['StudentID'])) {
                             }
                             ?>
                             <?php
-                            $_query = "SELECT * FROM schooltbl WHERE StudentID = '$StudentID' AND _Default = 0";
-                            $_result = mysql_query($_query);
-                            while ($_query = mysql_fetch_array($_result)) {
-                                $_SchoolID = $_query['SchoolID'];
-                                $_School = $_query['School'];
-                                $_Attainment = $_query['Attainment'];
-                                $_Course = $_query['Course'];
-                                $_Graduated = $_query['Graduated'];
+                            $_school_tbl =
+                                GSecureSQL::query(
+                                    "SELECT * FROM schooltbl WHERE StudentID = ? AND _Default = 0",
+                                    TRUE,
+                                    "s",
+                                    $StudentID
+                                );
+                            $_count = 0;
+                            foreach ($_school_tbl as $_value) {
+                                $_SchoolID = $_school_tbl[$_count]->SchoolID;
+                                $_School = $_school_tbl[$_count]->School;
+                                $_Attainment = $_school_tbl[$_count]->Attainment;
+                                $_Course = $_school_tbl[$_count]->Course;
+                                $_Graduated = $_school_tbl[$_count]->Graduated;
+                                $_count++;
 
-                                $_CourseQuery = "SELECT * FROM coursetbl WHERE CourseCode = '$_Course'";
-                                $_CourseResult = mysql_query($_CourseQuery);
-                                while ($_CourseQuery = mysql_fetch_array($_CourseResult)) {
-                                    $_Course = $_CourseQuery['CourseTitle'];
-                                }
-
-                                if (substr($_Graduated, 0, 2) == 1) {
-                                    $_Graduated = 'January' . substr($_Graduated, 2, 5);
-                                }
-                                if (substr($_Graduated, 0, 2) == 2) {
-                                    $_Graduated = 'February' . substr($_Graduated, 2, 5);
-                                }
-                                if (substr($_Graduated, 0, 2) == 3) {
-                                    $_Graduated = 'March' . substr($_Graduated, 2, 5);
-                                }
-                                if (substr($_Graduated, 0, 2) == 4) {
-                                    $_Graduated = 'April' . substr($_Graduated, 2, 5);
-                                }
-                                if (substr($_Graduated, 0, 2) == 5) {
-                                    $_Graduated = 'May' . substr($_Graduated, 2, 5);
-                                }
-                                if (substr($_Graduated, 0, 2) == 6) {
-                                    $_Graduated = 'June' . substr($_Graduated, 2, 5);
-                                }
-                                if (substr($_Graduated, 0, 2) == 7) {
-                                    $_Graduated = 'July' . substr($_Graduated, 2, 5);
-                                }
-                                if (substr($_Graduated, 0, 2) == 8) {
-                                    $_Graduated = 'August' . substr($_Graduated, 2, 5);
-                                }
-                                if (substr($_Graduated, 0, 2) == 9) {
-                                    $_Graduated = 'September' . substr($_Graduated, 2, 5);
-                                }
-                                if (substr($_Graduated, 0, 2) == 10) {
-                                    $_Graduated = 'October' . substr($_Graduated, 2, 5);
-                                }
-                                if (substr($_Graduated, 0, 2) == 11) {
-                                    $_Graduated = 'November' . substr($_Graduated, 2, 5);
-                                }
-                                if (substr($_Graduated, 0, 2) == 12) {
-                                    $_Graduated = 'December' . substr($_Graduated, 2, 5);
+                                $_course_tbl =
+                                    GSecureSQL::query(
+                                        "SELECT * FROM schooltbl WHERE StudentID = ? AND _Default = 1",
+                                        TRUE,
+                                        "s",
+                                        $_Course
+                                    );
+                                $_count1 = 0;
+                                foreach ($_course_tbl as $_value1) {
+                                    $_CourseTitle = $_course_tbl[$_count1]->_CourseTitle;
+                                    if (substr($_Graduated, 0, 2) == 1) {
+                                        $_Graduated = 'January' . substr($_Graduated, 2, 5);
+                                    }
+                                    if (substr($_Graduated, 0, 2) == 2) {
+                                        $_Graduated = 'February' . substr($_Graduated, 2, 5);
+                                    }
+                                    if (substr($_Graduated, 0, 2) == 3) {
+                                        $_Graduated = 'March' . substr($_Graduated, 2, 5);
+                                    }
+                                    if (substr($_Graduated, 0, 2) == 4) {
+                                        $_Graduated = 'April' . substr($_Graduated, 2, 5);
+                                    }
+                                    if (substr($_Graduated, 0, 2) == 5) {
+                                        $_Graduated = 'May' . substr($_Graduated, 2, 5);
+                                    }
+                                    if (substr($_Graduated, 0, 2) == 6) {
+                                        $_Graduated = 'June' . substr($_Graduated, 2, 5);
+                                    }
+                                    if (substr($_Graduated, 0, 2) == 7) {
+                                        $_Graduated = 'July' . substr($_Graduated, 2, 5);
+                                    }
+                                    if (substr($_Graduated, 0, 2) == 8) {
+                                        $_Graduated = 'August' . substr($_Graduated, 2, 5);
+                                    }
+                                    if (substr($_Graduated, 0, 2) == 9) {
+                                        $_Graduated = 'September' . substr($_Graduated, 2, 5);
+                                    }
+                                    if (substr($_Graduated, 0, 2) == 10) {
+                                        $_Graduated = 'October' . substr($_Graduated, 2, 5);
+                                    }
+                                    if (substr($_Graduated, 0, 2) == 11) {
+                                        $_Graduated = 'November' . substr($_Graduated, 2, 5);
+                                    }
+                                    if (substr($_Graduated, 0, 2) == 12) {
+                                        $_Graduated = 'December' . substr($_Graduated, 2, 5);
+                                    }
                                 }
                                 ?>
                                 <tr>
@@ -520,12 +532,18 @@ if (isset($_SESSION['StudentID'])) {
                             </thead>
                             <tbody>
                             <?php
-                            $SQuery = "SELECT * FROM seminartbl WHERE StudentID = '$StudentID'";
-                            $SResult = mysql_query($SQuery);
-                            while ($SQuery = mysql_fetch_array($SResult)) {
-                                $SeminarID = $SQuery['SeminarID'];
-                                $Seminar = $SQuery['Seminar'];
-                                $YearAttended = $SQuery['YearAttended'];
+                            $seminar_tbl =
+                                GSecureSQL::query(
+                                    "SELECT * FROM seminartbl WHERE StudentID = ?",
+                                    TRUE,
+                                    "s",
+                                    $StudentID
+                                );
+                            $count2 = 0;
+                            foreach ($seminar_tbl as $item) {
+                                $SeminarID = $seminar_tbl[$count2]->SeminarID;
+                                $Seminar = $seminar_tbl[$count2]->Seminar;
+                                $YearAttended = $seminar_tbl[$count2]->YearAttended;
                                 ?>
                                 <tr>
                                     <td><?php echo $Seminar; ?></td>

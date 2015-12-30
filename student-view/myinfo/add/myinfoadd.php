@@ -138,7 +138,7 @@ if (isset($_POST['Language'])) {
     $Language = $_POST['Language'];
 
     GSecureSQL::query(
-        "INSERT INTO languagetbl (StudentID, Language) values ('$StudentID', '$Language')",
+        "INSERT INTO languagetbl (StudentID, Language) values (?, ?)",
         FALSE,
         "ss",
         $StudentID,
