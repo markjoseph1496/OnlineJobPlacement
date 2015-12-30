@@ -5703,6 +5703,9 @@ ul.footer-nav li a:hover {
 }
 
 /*Aira's Css*/
+span {
+	color: #d95c5c;
+}
 .profile-name {
 	line-height: 32px;
 }
