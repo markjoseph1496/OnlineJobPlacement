@@ -351,7 +351,7 @@ $StudentID = $_SESSION['StudentID'];
                                     <label class="control-label">Select Image</label>
                                     <input id="ProfilePicture" name="ProfilePicture" multiple type="file" class="file file-loading" data-allowed-file-extensions='["png", "jpg", "bmp", "gif"]'>
                                     <br>
-                                    <button id="" class="btn btn-hg btn-primary" name="btnDelete">Delete Image</button>
+                                    <button id="" class="btn-system btn-mini border-btn" name="btnDelete">Delete Image</button>
                                 </div>
                                 <!-- End Single Testimonial -->
                             </div>
@@ -371,7 +371,7 @@ $StudentID = $_SESSION['StudentID'];
                 <div class="hr5" style="margin-top:35px;margin-bottom:40px;"></div>
                 <div class="field">
                     <div class="text-center">
-                        <button type="submit" class="btn btn-lg btn-hg btn-primary" name ="btnSaveInfo">Save</button>
+                        <button type="submit" class="btn-system btn-large" name ="btnSaveInfo">Save</button>
                     </div>
                 </div>
             </div>

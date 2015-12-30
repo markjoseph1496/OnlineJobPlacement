@@ -298,265 +298,263 @@ else{
                 <div class="row sidebar-page">
                     <!-- Page Content -->
                     <div class="col-md-9 page-content">
-                        <div class="row">
-                            <div class="classic-testimonials">
-                                <!-- Single Testimonial -->
-                                <div class="row field">
-                                    <div class="col-md-6 fieldcol">
-                                        <h4>Schools<span class="head-line"></span></h4>
-                                    </div>
-                                    <div class="col-md-6 fieldcol">
-                                        <a href="add/add-school.php" class="btnforadding" style="float:right;">
-                                            <span class="fa fa-plus-square">Add School</span>
-                                        </a>
-                                    </div>
+                        <div class="classic-testimonials">
+                            <!-- Single Testimonial -->
+                            <div class="row field">
+                                <div class="col-md-6 fieldcol">
+                                    <h4>Schools<span class="head-line"></span></h4>
                                 </div>
-
-                                <table class="table segment table-hover">
-                                    <thead>
-                                        <tr class="table-color">
-                                            <th>School</th>
-                                            <th>Attainment</th>
-                                            <th>Course</th>
-                                            <th width="15%">Graduated On</th>
-                                            <th width="15%">&nbsp;</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <?php 
-
-                                            $query = "SELECT * FROM schooltbl WHERE StudentID = '$StudentID' AND _Default = 1";
-                                            $result = mysql_query($query);
-                                            while($query = mysql_fetch_array($result)){
-                                                $SchoolID = $query['SchoolID'];
-                                                $School = $query['School'];
-                                                $Attainment = $query['Attainment'];
-                                                $Course = $query['Course'];
-                                                $Graduated = $query['Graduated'];
-
-                                                $CourseQuery = "SELECT * FROM coursetbl WHERE CourseCode = '$Course'";
-                                                $CourseResult = mysql_query($CourseQuery);
-                                                while($CourseQuery = mysql_fetch_array($CourseResult)){
-                                                    $Course = $CourseQuery['CourseTitle'];
-                                                }
-                                                if(substr($Graduated, 0,2)==1){
-                                                    $Graduated = 'January' . substr($Graduated, 2,5);
-                                                }
-                                                if(substr($Graduated, 0,2)==2){
-                                                    $Graduated = 'February' . substr($Graduated, 2,5);
-                                                }
-                                                if(substr($Graduated, 0,2)==3){
-                                                    $Graduated = 'March' . substr($Graduated, 2,5);
-                                                }
-                                                if(substr($Graduated, 0,2)==4){
-                                                    $Graduated = 'April' . substr($Graduated, 2,5);
-                                                }
-                                                if(substr($Graduated, 0,2)==5){
-                                                    $Graduated = 'May' . substr($Graduated, 2,5);
-                                                }
-                                                if(substr($Graduated, 0,2)==6){
-                                                    $Graduated = 'June' . substr($Graduated, 2,5);
-                                                }
-                                                if(substr($Graduated, 0,2)==7){
-                                                    $Graduated = 'July' . substr($Graduated, 2,5);
-                                                }
-                                                if(substr($Graduated, 0,2)==8){
-                                                    $Graduated = 'August' . substr($Graduated, 2,5);
-                                                }
-                                                if(substr($Graduated, 0,2)==9){
-                                                    $Graduated = 'September' . substr($Graduated, 2,5);
-                                                }
-                                                if(substr($Graduated, 0,2)==10){
-                                                    $Graduated = 'October' . substr($Graduated, 2,5);
-                                                }
-                                                if(substr($Graduated, 0,2)==11){
-                                                    $Graduated = 'November' . substr($Graduated, 2,5);
-                                                }
-                                                if(substr($Graduated, 0,2)==12){
-                                                    $Graduated = 'December' . substr($Graduated, 2,5);
-                                                }
-                                        ?>
-                                         <tr>
-                                            <td><?php echo $School;?></td>
-                                            <td><?php echo $Attainment;?></td>
-                                            <td><?php echo $Course;?></td>
-                                            <td><?php echo $Graduated; ?></td>
-                                            <td>
-                                                <a href="edit/edit-school.php?id=<?php echo $SchoolID; ?>" class="btn btn-default btnformaintenance">
-                                                    <i class="fa fa-pencil-square-o fa-1x"></i>
-                                                </a> 
-                                            </td>
-                                        </tr>
-                                        <?php
-                                            }
-
-                                        ?>
-                                        <?php
-                                        $_query = "SELECT * FROM schooltbl WHERE StudentID = '$StudentID' AND _Default = 0";
-                                        $_result = mysql_query($_query);
-                                        while($_query = mysql_fetch_array($_result)){
-                                            $_SchoolID = $_query['SchoolID'];
-                                            $_School = $_query['School'];
-                                            $_Attainment = $_query['Attainment'];
-                                            $_Course = $_query['Course'];
-                                            $_Graduated = $_query['Graduated'];
-
-                                            $_CourseQuery = "SELECT * FROM coursetbl WHERE CourseCode = '$_Course'";
-                                            $_CourseResult = mysql_query($_CourseQuery);
-                                            while($_CourseQuery = mysql_fetch_array($_CourseResult)){
-                                                $_Course = $_CourseQuery['CourseTitle'];
-                                            }
-
-                                            if(substr($_Graduated, 0,2)==1){
-                                                $_Graduated = 'January' . substr($_Graduated, 2,5);
-                                            }
-                                            if(substr($_Graduated, 0,2)==2){
-                                                $_Graduated = 'February' . substr($_Graduated, 2,5);
-                                            }
-                                            if(substr($_Graduated, 0,2)==3){
-                                                $_Graduated = 'March' . substr($_Graduated, 2,5);
-                                            }
-                                            if(substr($_Graduated, 0,2)==4){
-                                                $_Graduated = 'April' . substr($_Graduated, 2,5);
-                                            }
-                                            if(substr($_Graduated, 0,2)==5){
-                                                $_Graduated = 'May' . substr($_Graduated, 2,5);
-                                            }
-                                            if(substr($_Graduated, 0,2)==6){
-                                                $_Graduated = 'June' . substr($_Graduated, 2,5);
-                                            }
-                                            if(substr($_Graduated, 0,2)==7){
-                                                $_Graduated = 'July' . substr($_Graduated, 2,5);
-                                            }
-                                            if(substr($_Graduated, 0,2)==8){
-                                                $_Graduated = 'August' . substr($_Graduated, 2,5);
-                                            }
-                                            if(substr($_Graduated, 0,2)==9){
-                                                $_Graduated = 'September' . substr($_Graduated, 2,5);
-                                            }
-                                            if(substr($_Graduated, 0,2)==10){
-                                                $_Graduated = 'October' . substr($_Graduated, 2,5);
-                                            }
-                                            if(substr($_Graduated, 0,2)==11){
-                                                $_Graduated = 'November' . substr($_Graduated, 2,5);
-                                            }
-                                            if(substr($_Graduated, 0,2)==12){
-                                                $_Graduated = 'December' . substr($_Graduated, 2,5);
-                                            }
-
-                                        ?>
-                                        <tr>
-                                            <td><?php echo $_School ;?></td>
-                                            <td><?php echo $_Attainment; ?></td>
-                                            <td><?php echo $_Course; ?></td>
-                                            <td><?php echo $_Graduated; ?></td>
-                                            <td>
-                                                <a href="edit/edit-school.php?id=<?php echo $_SchoolID; ?>" class="btn btn-default btnformaintenance">
-                                                    <i class="fa fa-pencil-square-o fa-1x"></i>
-                                                </a>
-                                                <button class="btn btn-danger" data-toggle="modal" data-target="#DeleteSchool<?php echo $_SchoolID; ?>">
-                                                    <i class="fa fa-trash fa-1x"></i>
-                                                </button>
-                                        </tr>
-                                            <!-- Modal -->
-                                            <div class="modal fade" id="DeleteSchool<?php echo $_SchoolID; ?>" role="dialog">
-                                                <div class="modal-dialog" style="padding:100px">
-                                                    <!-- Modal content-->
-                                                    <div class="modal-content">
-                                                        <div class="modal-header">
-                                                            <button type="button" class="close" data-dismiss="modal">&times;</button>
-                                                            <h4 class="modal-title">Delete School information?</h4>
-                                                        </div>
-                                                        <div class="modal-body">
-                                                            <div class="col-md-15 fieldcol">
-                                                                <label = "usr" class = "control-label">Do you want to delete this information? This cannot be undone.</label>
-                                                                <div class="form-group">
-                                                                </div>
-                                                        </div>
-                                                        <div class="modal-footer">
-                                                            <a href="delete.php?delete_SchoolID=<?php echo $_SchoolID; ?>" class="btn btn-danger">Delete</a>
-                                                            <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
-                                                        </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        <?php
-                                            }
-                                        ?>
-                                        
-                                    </tbody>
-                                </table>
-                                <div class="hr5" style="margin-top:35px;margin-bottom:40px;"></div>
-                                <div class="row field">
-                                    <div class="col-md-6 fieldcol">
-                                        <h4>Seminars<span class="head-line"></span></h4>
-                                    </div>
-                                    <div class="col-md-6 fieldcol">
-                                        <a href="add/add-seminar.php" class="btnforadding" style="float:right;">
-                                            <span class="fa fa-plus-square"> Add Seminar</span>
-                                        </a>
-                                    </div>
+                                <div class="col-md-6 fieldcol">
+                                    <a href="add/add-school.php" class="btnforadding" style="float:right;">
+                                        <span class="fa fa-plus-square">Add School</span>
+                                    </a>
                                 </div>
-
-                                <table class="table segment table-hover">
-                                    <thead>
-                                        <tr class="table-color">
-                                            <th>Seminar</th>
-                                            <th>Year Attended</th>
-                                            <th width="15%">&nbsp;</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <?php
-                                        $SQuery = "SELECT * FROM seminartbl WHERE StudentID = '$StudentID'";
-                                        $SResult = mysql_query($SQuery);
-                                        while($SQuery = mysql_fetch_array($SResult)){
-                                            $SeminarID = $SQuery['SeminarID'];
-                                            $Seminar = $SQuery['Seminar'];
-                                            $YearAttended = $SQuery['YearAttended'];
-                                        ?>
-                                        <tr>
-                                            <td><?php echo $Seminar; ?></td>
-                                            <td><?php echo $YearAttended; ?></td>
-                                            <td>
-                                                <a href="edit/edit-seminar.php?id=<?php echo $SeminarID; ?>" class="btn btn-default btnformaintenance">
-                                                    <i class="fa fa-pencil-square-o fa-1x"></i>
-                                                </a>
-                                                <button class="btn btn-danger" data-toggle="modal" data-target="#DeleteSeminar">
-                                                    <i class="fa fa-trash fa-1x"></i>
-                                                </button>
-                                            </td>
-                                        </tr>
-                                        <!-- Modal -->
-                                            <div class="modal fade" id="DeleteSeminar" role="dialog">
-                                                <div class="modal-dialog" style="padding:100px">
-                                                    <!-- Modal content-->
-                                                    <div class="modal-content">
-                                                        <div class="modal-header">
-                                                            <button type="button" class="close" data-dismiss="modal">&times;</button>
-                                                            <h4 class="modal-title">Delete Seminar?</h4>
-                                                        </div>
-                                                        <div class="modal-body">
-                                                            <div class="col-md-15 fieldcol">
-                                                                <label = "usr" class = "control-label">Do you want to delete this information? This cannot be undone.</label>
-                                                                <div class="form-group">
-                                                                </div>
-                                                        </div>
-                                                        <div class="modal-footer">
-                                                            <a href="delete.php?delete_SeminarID=<?php echo $SeminarID; ?>" class="btn btn-danger">Delete</a>
-                                                            <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
-                                                        </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        <?php
-                                        }
-                                        ?>
-                                    </tbody>
-                                </table>
                             </div>
+
+                            <table class="table segment table-hover">
+                                <thead>
+                                    <tr class="table-color">
+                                        <th>School</th>
+                                        <th>Attainment</th>
+                                        <th>Course</th>
+                                        <th width="15%">Graduated On</th>
+                                        <th width="15%">&nbsp;</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <?php 
+
+                                        $query = "SELECT * FROM schooltbl WHERE StudentID = '$StudentID' AND _Default = 1";
+                                        $result = mysql_query($query);
+                                        while($query = mysql_fetch_array($result)){
+                                            $SchoolID = $query['SchoolID'];
+                                            $School = $query['School'];
+                                            $Attainment = $query['Attainment'];
+                                            $Course = $query['Course'];
+                                            $Graduated = $query['Graduated'];
+
+                                            $CourseQuery = "SELECT * FROM coursetbl WHERE CourseCode = '$Course'";
+                                            $CourseResult = mysql_query($CourseQuery);
+                                            while($CourseQuery = mysql_fetch_array($CourseResult)){
+                                                $Course = $CourseQuery['CourseTitle'];
+                                            }
+                                            if(substr($Graduated, 0,2)==1){
+                                                $Graduated = 'January' . substr($Graduated, 2,5);
+                                            }
+                                            if(substr($Graduated, 0,2)==2){
+                                                $Graduated = 'February' . substr($Graduated, 2,5);
+                                            }
+                                            if(substr($Graduated, 0,2)==3){
+                                                $Graduated = 'March' . substr($Graduated, 2,5);
+                                            }
+                                            if(substr($Graduated, 0,2)==4){
+                                                $Graduated = 'April' . substr($Graduated, 2,5);
+                                            }
+                                            if(substr($Graduated, 0,2)==5){
+                                                $Graduated = 'May' . substr($Graduated, 2,5);
+                                            }
+                                            if(substr($Graduated, 0,2)==6){
+                                                $Graduated = 'June' . substr($Graduated, 2,5);
+                                            }
+                                            if(substr($Graduated, 0,2)==7){
+                                                $Graduated = 'July' . substr($Graduated, 2,5);
+                                            }
+                                            if(substr($Graduated, 0,2)==8){
+                                                $Graduated = 'August' . substr($Graduated, 2,5);
+                                            }
+                                            if(substr($Graduated, 0,2)==9){
+                                                $Graduated = 'September' . substr($Graduated, 2,5);
+                                            }
+                                            if(substr($Graduated, 0,2)==10){
+                                                $Graduated = 'October' . substr($Graduated, 2,5);
+                                            }
+                                            if(substr($Graduated, 0,2)==11){
+                                                $Graduated = 'November' . substr($Graduated, 2,5);
+                                            }
+                                            if(substr($Graduated, 0,2)==12){
+                                                $Graduated = 'December' . substr($Graduated, 2,5);
+                                            }
+                                    ?>
+                                     <tr>
+                                        <td><?php echo $School;?></td>
+                                        <td><?php echo $Attainment;?></td>
+                                        <td><?php echo $Course;?></td>
+                                        <td><?php echo $Graduated; ?></td>
+                                        <td>
+                                            <a href="edit/edit-school.php?id=<?php echo $SchoolID; ?>" class="btn btn-default btnformaintenance">
+                                                <i class="fa fa-pencil-square-o fa-1x"></i>
+                                            </a> 
+                                        </td>
+                                    </tr>
+                                    <?php
+                                        }
+
+                                    ?>
+                                    <?php
+                                    $_query = "SELECT * FROM schooltbl WHERE StudentID = '$StudentID' AND _Default = 0";
+                                    $_result = mysql_query($_query);
+                                    while($_query = mysql_fetch_array($_result)){
+                                        $_SchoolID = $_query['SchoolID'];
+                                        $_School = $_query['School'];
+                                        $_Attainment = $_query['Attainment'];
+                                        $_Course = $_query['Course'];
+                                        $_Graduated = $_query['Graduated'];
+
+                                        $_CourseQuery = "SELECT * FROM coursetbl WHERE CourseCode = '$_Course'";
+                                        $_CourseResult = mysql_query($_CourseQuery);
+                                        while($_CourseQuery = mysql_fetch_array($_CourseResult)){
+                                            $_Course = $_CourseQuery['CourseTitle'];
+                                        }
+
+                                        if(substr($_Graduated, 0,2)==1){
+                                            $_Graduated = 'January' . substr($_Graduated, 2,5);
+                                        }
+                                        if(substr($_Graduated, 0,2)==2){
+                                            $_Graduated = 'February' . substr($_Graduated, 2,5);
+                                        }
+                                        if(substr($_Graduated, 0,2)==3){
+                                            $_Graduated = 'March' . substr($_Graduated, 2,5);
+                                        }
+                                        if(substr($_Graduated, 0,2)==4){
+                                            $_Graduated = 'April' . substr($_Graduated, 2,5);
+                                        }
+                                        if(substr($_Graduated, 0,2)==5){
+                                            $_Graduated = 'May' . substr($_Graduated, 2,5);
+                                        }
+                                        if(substr($_Graduated, 0,2)==6){
+                                            $_Graduated = 'June' . substr($_Graduated, 2,5);
+                                        }
+                                        if(substr($_Graduated, 0,2)==7){
+                                            $_Graduated = 'July' . substr($_Graduated, 2,5);
+                                        }
+                                        if(substr($_Graduated, 0,2)==8){
+                                            $_Graduated = 'August' . substr($_Graduated, 2,5);
+                                        }
+                                        if(substr($_Graduated, 0,2)==9){
+                                            $_Graduated = 'September' . substr($_Graduated, 2,5);
+                                        }
+                                        if(substr($_Graduated, 0,2)==10){
+                                            $_Graduated = 'October' . substr($_Graduated, 2,5);
+                                        }
+                                        if(substr($_Graduated, 0,2)==11){
+                                            $_Graduated = 'November' . substr($_Graduated, 2,5);
+                                        }
+                                        if(substr($_Graduated, 0,2)==12){
+                                            $_Graduated = 'December' . substr($_Graduated, 2,5);
+                                        }
+
+                                    ?>
+                                    <tr>
+                                        <td><?php echo $_School ;?></td>
+                                        <td><?php echo $_Attainment; ?></td>
+                                        <td><?php echo $_Course; ?></td>
+                                        <td><?php echo $_Graduated; ?></td>
+                                        <td>
+                                            <a href="edit/edit-school.php?id=<?php echo $_SchoolID; ?>" class="btn btn-default btnformaintenance">
+                                                <i class="fa fa-pencil-square-o fa-1x"></i>
+                                            </a>
+                                            <button class="btn btn-danger" data-toggle="modal" data-target="#DeleteSchool<?php echo $_SchoolID; ?>">
+                                                <i class="fa fa-trash fa-1x"></i>
+                                            </button>
+                                    </tr>
+                                        <!-- Modal -->
+                                        <div class="modal fade" id="DeleteSchool<?php echo $_SchoolID; ?>" role="dialog">
+                                            <div class="modal-dialog" style="padding:100px">
+                                                <!-- Modal content-->
+                                                <div class="modal-content">
+                                                    <div class="modal-header">
+                                                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                                        <h4 class="modal-title">Delete School information?</h4>
+                                                    </div>
+                                                    <div class="modal-body">
+                                                        <div class="col-md-15 fieldcol">
+                                                            <label = "usr" class = "control-label">Do you want to delete this information? This cannot be undone.</label>
+                                                            <div class="form-group">
+                                                            </div>
+                                                    </div>
+                                                    <div class="modal-footer">
+                                                        <a href="delete.php?delete_SchoolID=<?php echo $_SchoolID; ?>" class="btn btn-danger">Delete</a>
+                                                        <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+                                                    </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    <?php
+                                        }
+                                    ?>
+                                    
+                                </tbody>
+                            </table>
+                            <div class="hr5" style="margin-top:35px;margin-bottom:40px;"></div>
+                            <div class="row field">
+                                <div class="col-md-6 fieldcol">
+                                    <h4>Seminars<span class="head-line"></span></h4>
+                                </div>
+                                <div class="col-md-6 fieldcol">
+                                    <a href="add/add-seminar.php" class="btnforadding" style="float:right;">
+                                        <span class="fa fa-plus-square"> Add Seminar</span>
+                                    </a>
+                                </div>
+                            </div>
+
+                            <table class="table segment table-hover">
+                                <thead>
+                                    <tr class="table-color">
+                                        <th>Seminar</th>
+                                        <th>Year Attended</th>
+                                        <th width="15%">&nbsp;</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <?php
+                                    $SQuery = "SELECT * FROM seminartbl WHERE StudentID = '$StudentID'";
+                                    $SResult = mysql_query($SQuery);
+                                    while($SQuery = mysql_fetch_array($SResult)){
+                                        $SeminarID = $SQuery['SeminarID'];
+                                        $Seminar = $SQuery['Seminar'];
+                                        $YearAttended = $SQuery['YearAttended'];
+                                    ?>
+                                    <tr>
+                                        <td><?php echo $Seminar; ?></td>
+                                        <td><?php echo $YearAttended; ?></td>
+                                        <td>
+                                            <a href="edit/edit-seminar.php?id=<?php echo $SeminarID; ?>" class="btn btn-default btnformaintenance">
+                                                <i class="fa fa-pencil-square-o fa-1x"></i>
+                                            </a>
+                                            <button class="btn btn-danger" data-toggle="modal" data-target="#DeleteSeminar">
+                                                <i class="fa fa-trash fa-1x"></i>
+                                            </button>
+                                        </td>
+                                    </tr>
+                                    <!-- Modal -->
+                                        <div class="modal fade" id="DeleteSeminar" role="dialog">
+                                            <div class="modal-dialog" style="padding:100px">
+                                                <!-- Modal content-->
+                                                <div class="modal-content">
+                                                    <div class="modal-header">
+                                                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                                        <h4 class="modal-title">Delete Seminar?</h4>
+                                                    </div>
+                                                    <div class="modal-body">
+                                                        <div class="col-md-15 fieldcol">
+                                                            <label = "usr" class = "control-label">Do you want to delete this information? This cannot be undone.</label>
+                                                            <div class="form-group">
+                                                            </div>
+                                                    </div>
+                                                    <div class="modal-footer">
+                                                        <a href="delete.php?delete_SeminarID=<?php echo $SeminarID; ?>" class="btn btn-danger">Delete</a>
+                                                        <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+                                                    </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    <?php
+                                    }
+                                    ?>
+                                </tbody>
+                            </table>
                         </div>
                     </div>
                     <!-- End Page Content -->

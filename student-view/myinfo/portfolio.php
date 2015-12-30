@@ -138,12 +138,11 @@ $result = mysql_query($qry);
                         <a class="navbar-brand" href="">Online JPMS</a>
                     </div>
                     <div class="navbar-collapse collapse">
-                    <!-- Sign-out -->
+                        <!-- Sign-out -->
                         <div class="signout-side">
                                <a class="show-signout"><i class="fa fa-sign-out"></i></a>
                         </div>
-                     <!-- End Sign-out -->
-                        <!-- End Search -->
+                        <!-- End Sign-out -->
                         <!-- Start Navigation List -->
                         <ul class="nav navbar-nav navbar-right">
                             <li>
@@ -172,7 +171,7 @@ $result = mysql_query($qry);
                                 <a href="../applications/applications.php">Applications</a>
                             </li>
                             <li>
-                                <a href="../search-job/search-job.php">Jobs</a>
+                                <a href="../search-job/jobs.php">Jobs</a>
                             </li>
                             <li>
                                 <a href="../settings/privacy-settings.php">Settings</a>
@@ -213,7 +212,7 @@ $result = mysql_query($qry);
                         <a href="../applications/applications.php">Applications</a>
                     </li>
                     <li>
-                        <a href="../search-job/search-job.php">Jobs</a>
+                        <a href="../search-job/jobs.php">Jobs</a>
                     </li>
                     <li>
                         <a href="../settings/privacy-settings.php">Settings</a>
@@ -253,92 +252,91 @@ $result = mysql_query($qry);
                 <div class="row sidebar-page">
                     <!-- Page Content -->
                     <div class="col-md-9 page-content">
-                        <div class="row">
-                            <div class="classic-testimonials">
-                                <!-- Single Testimonial -->
-                                <div class="row field">
-                                    <div class="col-md-6 fieldcol">
-                                        <h4>Documents<span="head-line"></span="head-line"></h4>
-                                    </div>
-                                    <div class="col-md-6 fieldcol">
-                                        <a href="add/add-document.php" class="btnforadding" style="float:right;">
-                                            <span class="fa fa-plus-square"> Add Document</span>
-                                        </a>
-                                    </div>
+                        
+                        <div class="classic-testimonials">
+                            <!-- Single Testimonial -->
+                            <div class="row field">
+                                <div class="col-md-6 fieldcol">
+                                    <h4>Documents<span="head-line"></span="head-line"></h4>
                                 </div>
-
-                                <table class="table segment table-hover">
-                                    <thead>
-                                        <tr class="table-color">
-                                            <th>File</th>
-                                            <th width="15%">&nbsp;</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <tr>
-                                            <td>sdfdsfs</td>
-                                            <form method = "POST">
-                                            <input type="hidden" name="delete_DocumentID" value="" />
-                                            <td>
-                                                <button name ="btnDelete" href="" class="btn btn-danger btnformaintenance">
-                                                    <i class="fa fa-trash fa-1x"></i>
-                                                </button>
-                                                <button name ="btnEdit" href="" class="btn btn-default btnformaintenance">
-                                                    <i class="fa fa-pencil-square-o fa-1x"></i>
-                                                </button>
-                                            </td>
-                                            </form>
-                                        </tr>
-                                    </tbody>
-                                </table>
-
-                                <div class="hr5" style="margin-top:35px;margin-bottom:40px;"></div>
-                                <div class="row field">
-                                    <div class="col-md-6 fieldcol">
-                                        <h4>Links<span="head-line"></span="head-line"></h4>
-                                    </div>
-                                    <div class="col-md-6 fieldcol">
-                                        <a href="add/add-link.php" class="btnforadding" style="float:right;">
-                                            <span class="fa fa-plus-square"> Add Links</h6></span>
-                                        </a>
-                                    </div>
+                                <div class="col-md-6 fieldcol">
+                                    <a href="add/add-document.php" class="btnforadding" style="float:right;">
+                                        <span class="fa fa-plus-square"> Add Document</span>
+                                    </a>
                                 </div>
-
-                                <table class="table segment table-hover">
-                                    <thead>
-                                        <tr class="table-color">
-                                            <th>URL</th>
-                                            <th>Caption</th>
-                                            <th width="15%">&nbsp;</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <?php
-                                            while($rows = mysql_fetch_array($result)){
-                                        ?>
-                                        <tr>
-                                            <td><?php echo $rows[$URL]; ?></td>
-                                            <td><?php echo $rows[$Caption]; ?></td>
-
-                                            <form method = "POST">
-                                            <input type="hidden" name="delete_URLID" value="<?php echo $rows['URLID']; ?>" />
-                                            <td>
-                                                <a href=# class="btn btn-danger btnformaintenance  deleteURL">
-                                                    <i class="fa fa-trash fa-1x"></i>
-                                                </a>
-                                                <a data-bb="confirmDeleteURL" class="bb-alert alert alert-info" style="display: none;" href="delete.php?delete_URLID=<?php echo $rows['URLID'];?>"> </a>
-                                                <a href="edit/edit-link.php?EditURLID=<?php echo $rows['URLID']; ?>" class="btn btn-default btnformaintenance">
-                                                    <i class="fa fa-pencil-square-o fa-1x"></i>
-                                                </a>
-                                            </td>
-                                            </form>
-                                        </tr>
-                                        <?php
-                                            }
-                                        ?>
-                                    </tbody>
-                                </table>
                             </div>
+
+                            <table class="table segment table-hover">
+                                <thead>
+                                    <tr class="table-color">
+                                        <th>File</th>
+                                        <th width="15%">&nbsp;</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>sdfdsfs</td>
+                                        <form method = "POST">
+                                        <input type="hidden" name="delete_DocumentID" value="" />
+                                        <td>
+                                            <button name ="btnDelete" href="" class="btn btn-danger btnformaintenance">
+                                                <i class="fa fa-trash fa-1x"></i>
+                                            </button>
+                                            <button name ="btnEdit" href="" class="btn btn-default btnformaintenance">
+                                                <i class="fa fa-pencil-square-o fa-1x"></i>
+                                            </button>
+                                        </td>
+                                        </form>
+                                    </tr>
+                                </tbody>
+                            </table>
+
+                            <div class="hr5" style="margin-top:35px;margin-bottom:40px;"></div>
+                            <div class="row field">
+                                <div class="col-md-6 fieldcol">
+                                    <h4>Links<span="head-line"></span="head-line"></h4>
+                                </div>
+                                <div class="col-md-6 fieldcol">
+                                    <a href="add/add-link.php" class="btnforadding" style="float:right;">
+                                        <span class="fa fa-plus-square"> Add Links</h6></span>
+                                    </a>
+                                </div>
+                            </div>
+
+                            <table class="table segment table-hover">
+                                <thead>
+                                    <tr class="table-color">
+                                        <th>URL</th>
+                                        <th>Caption</th>
+                                        <th width="15%">&nbsp;</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <?php
+                                        while($rows = mysql_fetch_array($result)){
+                                    ?>
+                                    <tr>
+                                        <td><?php echo $rows[$URL]; ?></td>
+                                        <td><?php echo $rows[$Caption]; ?></td>
+
+                                        <form method = "POST">
+                                        <input type="hidden" name="delete_URLID" value="<?php echo $rows['URLID']; ?>" />
+                                        <td>
+                                            <a href=# class="btn btn-danger btnformaintenance  deleteURL">
+                                                <i class="fa fa-trash fa-1x"></i>
+                                            </a>
+                                            <a data-bb="confirmDeleteURL" class="bb-alert alert alert-info" style="display: none;" href="delete.php?delete_URLID=<?php echo $rows['URLID'];?>"> </a>
+                                            <a href="edit/edit-link.php?EditURLID=<?php echo $rows['URLID']; ?>" class="btn btn-default btnformaintenance">
+                                                <i class="fa fa-pencil-square-o fa-1x"></i>
+                                            </a>
+                                        </td>
+                                        </form>
+                                    </tr>
+                                    <?php
+                                        }
+                                    ?>
+                                </tbody>
+                            </table>
                         </div>
                     </div>
                     <!-- End Page Content -->
