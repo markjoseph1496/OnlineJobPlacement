@@ -29,4 +29,33 @@ if (isset($_POST['StudentID'])) {
         echo "Incorrect Student ID or Password";
     }
 }
+
+if (isset($_POST['CompanyEmail'])) {
+    $CompanyEmail = $_POST['CompanyEmail'];
+    $_Password = $_POST['password'];
+
+    $companyinfo_tbl =
+        GSecureSQL::query(
+            "SELECT * FROM companyinfotbl WHERE Email = ?",
+            TRUE,
+            "s",
+            $CompanyEmail
+        );
+
+    if (count($companyinfo_tbl)) {
+        if (hash('sha512', $_Password . $companyinfo_tbl[0]->SaltedPassword) == $companyinfo_tbl[0]->Password) {
+            $_SESSION['CompanyID'] = $CompanyEmail;
+            echo "
+		        <script type='text/javascript'>
+		        alert('You have successfully loggged in.');
+		        location.href='company/company.php';
+		        </script>";
+        }
+        else{
+            echo "Incorrect Company email or Password";
+        }
+    } else {
+        echo "Incorrect Company email or Password";
+    }
+}
 ?>

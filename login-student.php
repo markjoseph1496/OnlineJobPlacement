@@ -95,7 +95,7 @@ include('connection.php');
                                 message: "Password cannot be empty."
                             }
                         }
-                    },
+                    }
                 }
             });
     });

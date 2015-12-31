@@ -270,11 +270,6 @@ else{
                             }
                         ?>
 
-
-                        <!-- Start Post -->
-                        
-                        <!-- End Post -->
-
                         <!-- Start Pagination -->
                         <div id="pagination">
                             <span class="all-pages">Page 1 of 3</span>
