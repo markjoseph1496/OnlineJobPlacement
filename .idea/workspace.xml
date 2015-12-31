@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="051b0cd3-7356-45f8-a628-886970fee761" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/student-view/myinfo/add/add-achievement.php" afterPath="$PROJECT_DIR$/student-view/myinfo/add/add-achievement.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/student-view/myinfo/add/add-workexperience.php" afterPath="$PROJECT_DIR$/student-view/myinfo/add/add-workexperience.php" />
     </list>
     <ignored path="OnlineJobPlacement.iws" />
@@ -28,8 +28,8 @@
       <file leaf-file-name="add-workexperience.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/student-view/myinfo/add/add-workexperience.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-0.39181286">
-              <caret line="563" column="35" selection-start-line="563" selection-start-column="35" selection-end-line="563" selection-end-column="35" />
+            <state vertical-scroll-proportion="0.30847952">
+              <caret line="572" column="25" selection-start-line="572" selection-start-column="25" selection-end-line="572" selection-end-column="25" />
               <folding>
                 <element signature="n#style#0;n#select#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#form#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#select#0;n#div#0;n#div#0;n#div#2;n#div#0;n#div#0;n#div#0;n#div#0;n#form#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
@@ -39,10 +39,35 @@
                 <element signature="n#style#0;n#select#0;n#div#0;n#div#0;n#div#4;n#div#0;n#div#0;n#div#0;n#div#0;n#form#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#select#0;n#div#0;n#div#1;n#div#4;n#div#0;n#div#0;n#div#0;n#div#0;n#form#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#div#1;n#div#0;n#div#0;n#form#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <marker date="1451544812586" expanded="true" signature="14797:14828" placeholder="SELECT * FRO... listofindustrytbl" />
-                <marker date="1451544812586" expanded="true" signature="21482:21513" placeholder="SELECT * FRO... listofpositiontbl" />
-                <marker date="1451544812586" expanded="true" signature="23063:23100" placeholder="SELECT * FRO... listofspecializationtbl" />
-                <marker date="1451544812586" expanded="true" signature="24653:24687" placeholder="SELECT * FRO... listofsalaryrangetbl" />
+                <marker date="1451545860881" expanded="true" signature="14797:14828" placeholder="SELECT * FRO... listofindustrytbl" />
+                <marker date="1451545860881" expanded="true" signature="21482:21513" placeholder="SELECT * FRO... listofpositiontbl" />
+                <marker date="1451545860881" expanded="true" signature="23071:23108" placeholder="SELECT * FRO... listofspecializationtbl" />
+                <marker date="1451545860881" expanded="true" signature="24661:24695" placeholder="SELECT * FRO... listofsalaryrangetbl" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="myinfoadd.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/student-view/myinfo/add/myinfoadd.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-49.0">
+              <caret line="140" column="68" selection-start-line="140" selection-start-column="68" selection-end-line="140" selection-end-column="68" />
+              <folding>
+                <marker date="1451476503385" expanded="true" signature="416:515" placeholder="INSERT INTO schooltbl... " />
+                <marker date="1451476503385" expanded="true" signature="716:783" placeholder="..." />
+                <marker date="1451476503385" expanded="true" signature="941:1011" placeholder="INSERT INTO seminartbl... " />
+                <marker date="1451476503385" expanded="true" signature="1161:1226" placeholder="..." />
+                <marker date="1451476503385" expanded="true" signature="1394:1474" placeholder="INSERT INTO certificationtbl... " />
+                <marker date="1451476503385" expanded="true" signature="1632:1714" placeholder="..." />
+                <marker date="1451476503385" expanded="true" signature="1845:1911" placeholder="INSERT INTO achievementstbl... " />
+                <marker date="1451476503385" expanded="true" signature="2046:2124" placeholder="..." />
+                <marker date="1451476503385" expanded="true" signature="2401:2512" placeholder="INSERT INTO referencetbl... " />
+                <marker date="1451476503385" expanded="true" signature="2736:2812" placeholder="..." />
+                <marker date="1451476503385" expanded="true" signature="3006:3096" placeholder="INSERT INTO specializationtbl... " />
+                <marker date="1451476503385" expanded="true" signature="3262:3356" placeholder="..." />
+                <marker date="1451476503385" expanded="true" signature="3479:3538" placeholder="INSERT INTO languagetbl... " />
+                <marker date="1451476503385" expanded="true" signature="3669:3763" placeholder="..." />
               </folding>
             </state>
           </provider>
@@ -303,7 +328,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1616" height="876" extended-state="6" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -616,13 +641,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/student-view/myinfo/add/myinfoadd.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.7615708">
-          <caret line="136" column="32" selection-start-line="136" selection-start-column="32" selection-end-line="136" selection-end-column="32" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/student-view/myinfo/references.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.11781206">
@@ -718,10 +736,33 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/student-view/myinfo/add/myinfoadd.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-49.0">
+          <caret line="140" column="68" selection-start-line="140" selection-start-column="68" selection-end-line="140" selection-end-column="68" />
+          <folding>
+            <marker date="1451476503385" expanded="true" signature="416:515" placeholder="INSERT INTO schooltbl... " />
+            <marker date="1451476503385" expanded="true" signature="716:783" placeholder="..." />
+            <marker date="1451476503385" expanded="true" signature="941:1011" placeholder="INSERT INTO seminartbl... " />
+            <marker date="1451476503385" expanded="true" signature="1161:1226" placeholder="..." />
+            <marker date="1451476503385" expanded="true" signature="1394:1474" placeholder="INSERT INTO certificationtbl... " />
+            <marker date="1451476503385" expanded="true" signature="1632:1714" placeholder="..." />
+            <marker date="1451476503385" expanded="true" signature="1845:1911" placeholder="INSERT INTO achievementstbl... " />
+            <marker date="1451476503385" expanded="true" signature="2046:2124" placeholder="..." />
+            <marker date="1451476503385" expanded="true" signature="2401:2512" placeholder="INSERT INTO referencetbl... " />
+            <marker date="1451476503385" expanded="true" signature="2736:2812" placeholder="..." />
+            <marker date="1451476503385" expanded="true" signature="3006:3096" placeholder="INSERT INTO specializationtbl... " />
+            <marker date="1451476503385" expanded="true" signature="3262:3356" placeholder="..." />
+            <marker date="1451476503385" expanded="true" signature="3479:3538" placeholder="INSERT INTO languagetbl... " />
+            <marker date="1451476503385" expanded="true" signature="3669:3763" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/student-view/myinfo/add/add-workexperience.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.39181286">
-          <caret line="563" column="35" selection-start-line="563" selection-start-column="35" selection-end-line="563" selection-end-column="35" />
+        <state vertical-scroll-proportion="0.30847952">
+          <caret line="572" column="25" selection-start-line="572" selection-start-column="25" selection-end-line="572" selection-end-column="25" />
           <folding>
             <element signature="n#style#0;n#select#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#form#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#select#0;n#div#0;n#div#0;n#div#2;n#div#0;n#div#0;n#div#0;n#div#0;n#form#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
@@ -731,10 +772,10 @@
             <element signature="n#style#0;n#select#0;n#div#0;n#div#0;n#div#4;n#div#0;n#div#0;n#div#0;n#div#0;n#form#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#select#0;n#div#0;n#div#1;n#div#4;n#div#0;n#div#0;n#div#0;n#div#0;n#form#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#div#1;n#div#0;n#div#0;n#form#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <marker date="1451544812586" expanded="true" signature="14797:14828" placeholder="SELECT * FRO... listofindustrytbl" />
-            <marker date="1451544812586" expanded="true" signature="21482:21513" placeholder="SELECT * FRO... listofpositiontbl" />
-            <marker date="1451544812586" expanded="true" signature="23063:23100" placeholder="SELECT * FRO... listofspecializationtbl" />
-            <marker date="1451544812586" expanded="true" signature="24653:24687" placeholder="SELECT * FRO... listofsalaryrangetbl" />
+            <marker date="1451545860881" expanded="true" signature="14797:14828" placeholder="SELECT * FRO... listofindustrytbl" />
+            <marker date="1451545860881" expanded="true" signature="21482:21513" placeholder="SELECT * FRO... listofpositiontbl" />
+            <marker date="1451545860881" expanded="true" signature="23071:23108" placeholder="SELECT * FRO... listofspecializationtbl" />
+            <marker date="1451545860881" expanded="true" signature="24661:24695" placeholder="SELECT * FRO... listofsalaryrangetbl" />
           </folding>
         </state>
       </provider>

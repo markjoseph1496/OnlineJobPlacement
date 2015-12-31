@@ -425,7 +425,7 @@ session_start();
                         <div class="col-md-6 fieldcol">
                             <div class="form-group">
                                 <label>Specialization <span>(*)</span></label>
-                                <select id="Specialization" name="Specialization" class="form-control"
+                                <select id="WorkSpecialization" name="WorkSpecialization" class="form-control"
                                         style="width:100%; height:34px;">
                                     <option value="">- Select Specialization -</option>
                                     <?php
@@ -499,7 +499,7 @@ session_start();
             <div class="hr5" style="margin-top:35px;margin-bottom:40px;"></div>
             <div class="field">
                 <div class="text-center">
-                    <button class="btn btn-lg btn-hg btn-primary" name="btnSave">Add</button>
+                    <button type="submit" class="btn btn-lg btn-hg btn-primary" name="btnSave">Add</button>
                 </div>
             </div>
         </div>
@@ -573,20 +573,6 @@ session_start();
                         }
                     }
                 },
-                ToMonth: {
-                    validators: {
-                        notEmpty: {
-                            message: "This field is required."
-                        }
-                    }
-                },
-                ToYear: {
-                    validators: {
-                        notEmpty: {
-                            message: "This field is required."
-                        }
-                    }
-                },
                 PositionLevel: {
                     validators: {
                         notEmpty: {
@@ -594,7 +580,7 @@ session_start();
                         }
                     }
                 },
-                Specialization: {
+                WorkSpecialization: {
                     validators: {
                         notEmpty: {
                             message: "This field is required."
