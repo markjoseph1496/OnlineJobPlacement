@@ -308,21 +308,21 @@ if(is_null($_SESSION['StudentID'])){
 </html>
 <script type="text/javascript">
     $(document).ready(function () {
-            var validator = $("#AddAchievement").bootstrapValidator({
-                feedbackIcons:{
-                    valid: "glyphicon glyphicon-ok",
-                    invalid: "glyphicon glyphicon-remove",
-                    validating: "glyphicon glyphicon-refresh"
-                },
-                fields: {
-                    Achievement: {
-                        validators: {
-                            notEmpty: {
-                                message: "This field is required."
-                            }
+        var validator = $("#AddAchievement").bootstrapValidator({
+            feedbackIcons:{
+                valid: "glyphicon glyphicon-ok",
+                invalid: "glyphicon glyphicon-remove",
+                validating: "glyphicon glyphicon-refresh"
+            },
+            fields: {
+                Achievement: {
+                    validators: {
+                        notEmpty: {
+                            message: "This field is required."
                         }
                     }
                 }
-            });
+            }
+        });
     });
 </script>

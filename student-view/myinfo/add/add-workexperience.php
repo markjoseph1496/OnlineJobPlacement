@@ -22,17 +22,17 @@ session_start();
     <meta name="author" content="iThemesLab">
 
     <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="../../../css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="../../../css/bootstrap.min.css" />
 
     <!-- BootstrapValidator CSS -->
-    <link rel="stylesheet" href="../../../css/bootstrapValidator.min.css"/>
+    <link rel="stylesheet" href="../../../css/bootstrapValidator.min.css" />
 
     <!-- jQuery and Bootstrap JS -->
     <script type="text/javascript" src="../../../js/jquery.min.js"></script>
-    <script type="text/javascript" src="../../../js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../../../js/bootstrap.min.js" ></script>
 
     <!-- BootstrapValidator -->
-    <script type="text/javascript" src="../../../js/bootstrapValidator.min.js"></script>
+    <script type="text/javascript" src="../../../js/bootstrapValidator.min.js" ></script>
 
     <!-- Font Awesome CSS -->
     <link rel="stylesheet" type="text/css" href="../../../css/font-awesome.min.css" media="screen">
@@ -262,6 +262,7 @@ session_start();
     <!-- End Page Banner -->
 
     <!-- Start Content -->
+    <form id="myForm" name="myForm" action="myinfoadd.php" method="POST" autocomplete="off">
     <div id="content">
         <div class="container">
             <div class="row sidebar-page">
@@ -277,7 +278,7 @@ session_start();
                         <div class="col-md-6">
                             <div class="form-group">
                                 <label>Company Website</label>
-                                <input type="text" class="form-control" id="CompanyWebsite" name="CompanyWebsite">
+                                <input type="url" class="form-control" id="CompanyWebsite" name="CompanyWebsite">
                             </div>
                         </div>
                     </div>
@@ -450,7 +451,7 @@ session_start();
                         <div class="col-md-6 fieldcol">
                             <div class="form-group">
                                 <label>Monthly Salary</label><br>
-                                <select id="Monthly Salary" name="Monthly Salary" class="form-control"
+                                <select id="MonthlySalary" name="MonthlySalary" class="form-control"
                                         style="width:100%; height:34px;">
                                     <option value="">- Select Monthly Salary -</option>
                                     <?php
@@ -478,7 +479,7 @@ session_start();
                             <div class="form-group">
                                 <label>Nature of Work</label><br>
                                 <textarea class="form-control" id="NatureOfWork" name="NatureOfWork"
-                                          rows="5"></textarea>
+                                          rows="5" maxlength="150"></textarea>
                                 <div id="textarea_feedback"></div>
                             </div>
                         </div>
@@ -504,6 +505,7 @@ session_start();
         </div>
     </div>
 </div>
+</form>
 <!-- End Content -->
 <script type="text/javascript" src="../../../js/script.js"></script>
 </body>
@@ -535,4 +537,78 @@ session_start();
         });
     });
 
+    $(document).ready(function () {
+        var validator = $("#myForm").bootstrapValidator({
+            feedbackIcons:{
+                valid: "glyphicon glyphicon-ok",
+                invalid: "glyphicon glyphicon-remove",
+                validating: "glyphicon glyphicon-refresh"
+            },
+            fields: {
+                CompanyName: {
+                    validators: {
+                        notEmpty: {
+                            message: "This field is required."
+                        }
+                    }
+                },
+                Industry: {
+                    validators: {
+                        notEmpty: {
+                            message: "This field is required."
+                        }
+                    }
+                },
+                FromMonth: {
+                    validators: {
+                        notEmpty: {
+                            message: "This field is required."
+                        }
+                    }
+                },
+                FromYear: {
+                    validators: {
+                        notEmpty: {
+                            message: "This field is required."
+                        }
+                    }
+                },
+                ToMonth: {
+                    validators: {
+                        notEmpty: {
+                            message: "This field is required."
+                        }
+                    }
+                },
+                ToYear: {
+                    validators: {
+                        notEmpty: {
+                            message: "This field is required."
+                        }
+                    }
+                },
+                PositionLevel: {
+                    validators: {
+                        notEmpty: {
+                            message: "This field is required."
+                        }
+                    }
+                },
+                Specialization: {
+                    validators: {
+                        notEmpty: {
+                            message: "This field is required."
+                        }
+                    }
+                },
+                MonthlySalary: {
+                    validators: {
+                        notEmpty: {
+                            message: "This field is required."
+                        }
+                    }
+                }
+            }
+        });
+    });
 </script>
