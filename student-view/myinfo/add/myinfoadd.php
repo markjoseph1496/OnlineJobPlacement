@@ -150,4 +150,20 @@ if (isset($_POST['Language'])) {
              </script>
              ";
 }
+if(isset($_POST['CompanyName'])){
+    $CompanyName = $_POST['CompanyName'];
+    $CompanyWebsite = $_POST['CompanyWebsite'];
+    $Industry = $_POST['Industry'];
+    $FromMonth = $_POST['FromMonth'];
+    $FromYear = $_POST['FromYear'];
+    $PositionLevel = $_POST['PositionLevel'];
+    $WorkSpecialization = $_POST['WorkSpecialization'];
+    $MonthlySalary = $_POST['MonthlySalary'];
+    $NatureOfWork = $_POST['NatureOfWork'];
+
+    GSecureSQL::query(
+        "INSERT INTO workexperiencetbl (StudentID, CompanyName, CompanyWebsite, Industry, DateFrom, )"
+    );
+
+}
 ?>
