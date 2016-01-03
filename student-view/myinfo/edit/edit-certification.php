@@ -194,7 +194,7 @@ while($query = mysql_fetch_array($result)){
                                 <a href="../../applications/applications.php">Applications</a>
                             </li>
                             <li>
-                                <a href="../../search-job/search-job.php">Jobs</a>
+                                <a href="../../search-job/jobs.php">Jobs</a>
                             </li>
                             <li>
                                 <a href="../../settings/privacy-settings.php">Settings</a>
@@ -235,7 +235,7 @@ while($query = mysql_fetch_array($result)){
                         <a href="../../applications/applications.php">Applications</a>
                     </li>
                     <li>
-                        <a href="../../search-job/search-job.php">Jobs</a>
+                        <a href="../../search-job/jobs.php">Jobs</a>
                     </li>
                     <li>
                         <a href="../../settings/privacy-settings.php">Settings</a>

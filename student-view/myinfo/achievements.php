@@ -1,4 +1,4 @@
-<?php 
+<?php
 include('../../connection.php');
 session_start();
 
@@ -87,7 +87,7 @@ else{
                 <div class="container">
                     <div class="row">
                         <div class="col-md-7">
-                            <!-- Start Contact Info 
+                            <!-- Start Contact Info
                             <ul class="contact-details">
                                 <li><a href="#"><i class="fa fa-map-marker"></i> House-54/A, London, UK</a>
                                 </li>
@@ -103,7 +103,7 @@ else{
                         <!-- Start Social Links -->
                             <ul class="social-list">
                                <li class="profile-name">
-                                    <i class="fa fa-user"></i> Hello, <b>Aira Jane Cruz</b>                               
+                                    <i class="fa fa-user"></i> Hello, <b>Aira Jane Cruz</b>
                                 </li>
                             </ul>
                             <!-- End Social Links -->
@@ -162,7 +162,7 @@ else{
                                 <a href="../applications/applications.php">Applications</a>
                             </li>
                             <li>
-                                <a href="../search-job/search-job.php">Jobs</a>
+                                <a href="../search-job/jobs.php">Jobs</a>
                             </li>
                             <li>
                                 <a href="../settings/privacy-settings.php">Settings</a>
@@ -203,7 +203,7 @@ else{
                         <a href="../applications/applications.php">Applications</a>
                     </li>
                     <li>
-                        <a href="../search-job/search-job.php">Jobs</a>
+                        <a href="../search-job/jobs.php">Jobs</a>
                     </li>
                     <li>
                         <a href="../settings/privacy-settings.php">Settings</a>
@@ -268,7 +268,6 @@ else{
                             </div>
                             ';
                     }
-
                 }
                 ?>
                 <div class="row sidebar-page">
@@ -307,7 +306,7 @@ else{
                                         <tr>
                                             <td><?php echo $Achievements; ?></td>
                                             <td>
-                                                <button href=# class="btn btn-danger" data-toggle="modal" data-target="#DeleteAchievement">
+                                                <button href=# class="btn btn-danger" data-toggle="modal" data-target="#DeleteAchievement<?php echo $AchievementID; ?>">
                                                     <i class="fa fa-trash fa-1x"></i>
                                                 </button>
                                                 <a href="edit/edit-achievement.php?id=<?php echo $AchievementID; ?>" class="btn btn-default">
@@ -316,7 +315,7 @@ else{
                                             </td>
                                         </tr>
                                         <!-- Modal -->
-                                            <div class="modal fade" id="DeleteAchievement" role="dialog">
+                                            <div class="modal fade" id="DeleteAchievement<?php echo $AchievementID; ?>" role="dialog">
                                                 <div class="modal-dialog" style="padding:100px">
                                                     <!-- Modal content-->
                                                     <div class="modal-content">

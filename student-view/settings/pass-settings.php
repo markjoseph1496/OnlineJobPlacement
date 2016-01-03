@@ -223,7 +223,7 @@ else{
                                 <a href="../applications/applications.php">Applications</a>
                             </li>
                             <li>
-                                <a href="../search-job/search-job.php">Jobs</a>
+                                <a href="../search-job/jobs.php">Jobs</a>
                             </li>
                             <li>
                                 <a class="active" href="privacy-settings.php">Settings</a>
@@ -264,7 +264,7 @@ else{
                         <a href="../applications/applications.php">Applications</a>
                     </li>
                     <li>
-                        <a href="../search-job/search-job.php">Jobs</a>
+                        <a href="../search-job/jobs.php">Jobs</a>
                     </li>
                     <li>
                         <a class="active" href="privacy-settings.php">Settings</a>

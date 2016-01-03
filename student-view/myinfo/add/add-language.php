@@ -187,7 +187,7 @@ session_start();
                                 <a href="../../applications/applications.php">Applications</a>
                             </li>
                             <li>
-                                <a href="../../search-job/search-job.php">Jobs</a>
+                                <a href="../../search-job/jobs.php">Jobs</a>
                             </li>
                             <li>
                                 <a href="../../settings/privacy-settings.php">Settings</a>
@@ -228,7 +228,7 @@ session_start();
                         <a href="../../applications/applications.php">Applications</a>
                     </li>
                     <li>
-                        <a href="../../search-job/search-job.php">Jobs</a>
+                        <a href="../../search-job/jobs.php">Jobs</a>
                     </li>
                     <li>
                         <a href="../../settings/privacy-settings.php">Settings</a>

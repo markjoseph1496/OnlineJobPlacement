@@ -132,7 +132,7 @@ else{
                     </div>
                     <div class="col-md-6">
                         <ul class="breadcrumbs">
-                            <li><a href="../myinfo/personal-info.php">Start filling out your information</a></li>
+                            <li><a href="../myinfo/personal-info.php">Fill out your information</a></li>
                             <li></li>
                         </ul>
                     </div>
