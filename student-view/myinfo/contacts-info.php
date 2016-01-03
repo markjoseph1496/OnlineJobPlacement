@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 
-<?php 
+<?php
 include('../../connection.php');
 session_start();
 
@@ -15,21 +15,22 @@ else{
         </script>
         ";
 }
+    $student_tbl =
+    GSecureSQL::query(
+        "SELECT * FROM studcontactstbl WHERE StudentID = ?",
+        TRUE,
+        "s",
+        $StudentID
+    );
 
-
-$query = "SELECT * FROM studcontactstbl WHERE StudentID ='$StudentID'";
-$result = mysql_query($query);
-        while($query = mysql_fetch_Array($result))
-        {       
-                $Email = $query['Email'];
-                $Address = $query['Address'];
-                $MobileNumber = $query['MobileNumber'];
-                $Region = $query['Region'];
-                $HomeNumber = $query['HomeNumber'];
-                $City = $query['City'];
-                $WorkNumber = $query['WorkNumber'];
-                $PostalCode = $query['PostalCode'];
-        }
+        $Email = $student_tbl[0]->Email;
+        $Address = $student_tbl[0]->Address;
+        $MobileNumber = $student_tbl[0]->MobileNumber;
+        $Region = $student_tbl[0]->Region;
+        $HomeNumber = $student_tbl[0]->HomeNumber;
+        $City = $student_tbl[0]->City;
+        $WorkNumber = $student_tbl[0]->WorkNumber;
+        $PostalCode = $student_tbl[0]->PostalCode;
 ?>
 <html lang="en">
 
@@ -128,7 +129,7 @@ $result = mysql_query($query);
                         <!-- Start Social Links -->
                             <ul class="social-list">
                                <li class="profile-name">
-                                    <i class="fa fa-user"></i> Hello, <b>Aira Jane Cruz</b>                               
+                                    <i class="fa fa-user"></i> Hello, <b>Aira Jane Cruz</b>
                                 </li>
                             </ul>
                             <!-- End Social Links -->
@@ -362,7 +363,7 @@ $result = mysql_query($query);
                 <div class="hr5" style="margin-top:35px;margin-bottom:40px;"></div>
                 <div class="field">
                     <div class="text-center">
-                        <button type="submit" class="btn btn-lg btn-hg btn-primary" name ="btnSaveContactInfo">Save</button>
+                        <button type="submit" class="btn-system btn-large" name ="btnSaveContactInfo">Save</button>
                     </div>
                 </div>
             </div>

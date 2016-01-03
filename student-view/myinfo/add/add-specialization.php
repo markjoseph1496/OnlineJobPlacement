@@ -311,7 +311,7 @@ if(is_null($_SESSION['StudentID'])){
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <label>Years of Experience <span>(*)</span></label>
-                                    <input type="text" class="form-control" maxlength="2" id="YearsOfExperience" name="YearsOfExperience">
+                                    <input type="number" class="form-control" maxlength="2" id="YearsOfExperience" name="YearsOfExperience">
                                 </div>
                             </div>
                         </div> 

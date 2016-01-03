@@ -228,28 +228,26 @@
                     <!-- Page Content -->
                     <div class="col-md-9 page-content">
                         <div class="row">
-                            <div class="col-md-5">
+                            <div class="col-md-4">
                                 <!-- Single Testimonial -->
                                 <div class="classic-testimonials">
-                                    <div class="testimonial-content">
-                                        <label>Work Options</label>
-                                        <div>
-                                            <input type="checkbox"/><b> Willing to work night shifts</b>
-                                        </div>
-                                        <div>
-                                            <input type="checkbox"/><b> Willing to relocate</b>
-                                        </div>
-                                        <div>
-                                            <input type="checkbox"/><b> Looking for OJT position</b>
-                                        </div>
-                                        <div>
-                                            <input type="checkbox"/><b> Willing to work overseas</b>
-                                        </div>
+                                    <label>Work Options</label>
+                                    <div>
+                                        <input type="checkbox"/><b> Willing to work night shifts</b>
+                                    </div>
+                                    <div>
+                                        <input type="checkbox"/><b> Willing to relocate</b>
+                                    </div>
+                                    <div>
+                                        <input type="checkbox"/><b> Looking for OJT position</b>
+                                    </div>
+                                    <div>
+                                        <input type="checkbox"/><b> Willing to work overseas</b>
                                     </div>
                                 </div>
                                 <!-- End Single Testimonial -->
                             </div>
-                            <div class="col-md-7">
+                            <div class="col-md-8">
                                 <!-- Single Testimonial -->
                                 <div class="classic-testimonials">
                                     <div class="testimonial-content">
@@ -257,55 +255,11 @@
                                         <textarea class="form-control" id="" name="" rows="7"></textarea>
                                         <span class="counter">120 characters remaining.</span>
                                     </div>
-                                    <div class="testimonial-author"><button id="" class="btn btn-hg btn-primary" name="btnDelete">Save</button></div>
+                                    <div class="testimonial-author"><button type="submit" id="" class="btn-system btn-large" name="" style="float:right;">Save</button></div>
                                 </div>
                                 <!-- End Single Testimonial -->
                             </div>
-                        </div>
-
-                        <div class="row">
-                            <div class="hr5" style="margin-top:35px;margin-bottom:40px;"></div>
-                            <div class="row field">
-                                <div class="col-md-6 fieldcol">
-                                    <h4>Work Experiences<span class="head-line"></span></h4>
-                                </div>
-                                <div class="col-md-6 fieldcol">
-                                    <a href="add/add-workexperience.php" class="btnforadding" style="float:right;">
-                                        <span class="fa fa-plus-square"> Add Work Experience</span>
-                                    </a>
-                                </div>
-                            </div>
-
-                            <table class="table segment table-hover">
-                                <thead>
-                                    <tr class="table-color">
-                                        <th>Company</th>
-                                        <th>Position</th>
-                                        <th>Industry</th>
-                                        <th>Specialization</th>
-                                        <th>From - To</th>
-                                        <th width="15%">&nbsp;</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td>
-                                            <button href="" class="btn btn-danger btnformaintenance">
-                                                <i class="fa fa-trash fa-1x"></i>
-                                            </button>
-                                            <button href="" class="btn btn-default btnformaintenance">
-                                                <i class="fa fa-pencil-square-o fa-1x"></i>
-                                            </button>
-                                        </td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                        </div>
+                        </div> 
                     </div>
                     <!-- End Page Content -->
 
@@ -318,6 +272,47 @@
                     </div>
                     <!--End sidebar-->
                 </div>
+                <div class="hr5" style="margin-top:35px;margin-bottom:40px;"></div>
+                <div class="row">
+                    <div class="col-md-6 fieldcol">
+                        <h4>Work Experiences<span class="head-line"></span></h4>
+                    </div>
+                    <div class="col-md-6 fieldcol">
+                        <a href="add/add-workexperience.php" class="btnforadding" style="float:right;">
+                            <span class="fa fa-plus-square"> Add Work Experience</span>
+                        </a>
+                    </div>
+                </div>
+
+                <table class="table segment table-hover">
+                    <thead>
+                        <tr class="table-color">
+                            <th>Company</th>
+                            <th>Position</th>
+                            <th>Industry</th>
+                            <th>Specialization</th>
+                            <th>From - To</th>
+                            <th width="15%">&nbsp;</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td>
+                                <button href="" class="btn btn-danger btnformaintenance">
+                                    <i class="fa fa-trash fa-1x"></i>
+                                </button>
+                                <button href="" class="btn btn-default btnformaintenance">
+                                    <i class="fa fa-pencil-square-o fa-1x"></i>
+                                </button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
             </div>
         </div>
     </div>

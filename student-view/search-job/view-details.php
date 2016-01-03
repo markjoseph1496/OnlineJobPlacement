@@ -122,7 +122,7 @@
                     <div class="navbar-collapse collapse">
                         <!-- Sign-out -->
                         <div class="signout-side">
-                            <a href="">Apply Now</i></a>
+                            <a href="#" class="btn-system btn-mini border-btn">Apply Now</a>
                         </div>
                         <!-- End Sign-out -->
                     </div>
@@ -130,7 +130,7 @@
                 <!-- Mobile Menu Start -->
                 <ul class="wpb-mobile-menu">
                     <li>
-                        <a href="">Apply Now</a>
+                        <a href="#">Apply Now</a>
                     </li>
                     <li>
                         <a href="../login-student.php?id=1"><i class="fa fa-sign-out"></i> Sign Out</a>
@@ -207,7 +207,7 @@
                         <div class="row">
                             <div class="col-md-12">
                                 <div class="classic-testimonials">
-                                    <label>Good candidate must have the following qualifications:</label>
+                                    <label><u>Good candidate must have the following qualifications:</u></label>
                                 </div>
                                 <li>Must be a CPA</li>
                                 <li>At least 5 years of experience in General Accounting and Finance</li>
@@ -322,7 +322,7 @@
                         <div class="widget widget-categories">
                             <h4>Tools <span class="head-line"></span></h4>
                             <li>
-                                <i class="fa fa-bookmark"></i> Bookmarked Jobs<a href="#"> (0)</a>
+                                <a href="#"><i class="fa fa-bookmark"></i> Bookmarked Jobs <b>(0)</b></a>
                             </li>
                             <li>
                                 <a href="#"><i class="fa fa-share"></i> Share</a>

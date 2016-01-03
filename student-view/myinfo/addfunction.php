@@ -4,42 +4,66 @@ session_start();
 
 $StudentID = $_SESSION['StudentID'];
 
-if(isset($_GET['btnSaveInfo'])){
-	$FirstName = $_GET['FirstName'];
-	$MiddleName = $_GET['MiddleName'];
-	$LastName = $_GET['LastName'];
-	$Gender = $_GET['Gender'];
-	$Birthdate = $_GET['Birthdate'];
-	$Nationality = $_GET['Nationality'];
-	$CivilStatus = $_GET['CivilStatus'];
-	$FBLink = $_GET['FBLink'];
-	$TwitterLink = $_GET['TwitterLink'];
+if (isset($_GET['btnSaveInfo'])) {
+    $FirstName = $_GET['FirstName'];
+    $MiddleName = $_GET['MiddleName'];
+    $LastName = $_GET['LastName'];
+    $Gender = $_GET['Gender'];
+    $Birthdate = $_GET['Birthdate'];
+    $Nationality = $_GET['Nationality'];
+    $CivilStatus = $_GET['CivilStatus'];
+    $FBLink = $_GET['FBLink'];
+    $TwitterLink = $_GET['TwitterLink'];
 
-	$FBLink = "http://www.facebook.com/" . $FBLink;
+    $FBLink = "http://www.facebook.com/" . $FBLink;
 
-	$query = "UPDATE studentinfotbl SET FirstName = '$FirstName', MiddleName ='$MiddleName', LastName = '$LastName', Gender = '$Gender', Birthdate = '$Birthdate', Nationality = '$Nationality', CivilStatus = '$CivilStatus', FBLink = '$FBLink', TwitterLink = '$TwitterLink' WHERE StudentID = '$StudentID'";
-	$result = mysql_query($query);
-
-	echo "
+    GSecureSQL::query(
+        "UPDATE studentinfotbl SET FirstName = ?, MiddleName = ?, LastName = ?, Gender = ?, Birthdate = ?, Nationality = ?, CivilStatus = ?, FBLink = ?, TwitterLink = ? WHERE StudentID = ?",
+        FALSE,
+        "ssssssssss",
+        $FirstName,
+        $MiddleName,
+        $LastName,
+        $Gender,
+        $Birthdate,
+        $Nationality,
+        $CivilStatus,
+        $FBLink,
+        $TwitterLink,
+        $StudentID
+    );
+    echo "
         <script type='text/javascript'>
         location.href='personal-info.php?id=1';
         </script>
         ";
 }
 
-if(isset($_GET['btnSaveContactInfo'])){
-	$Email = $_GET['Email'];
-	$MobileNumber = $_GET['MobileNumber'];
-	$HomeNumber = $_GET['HomeNumber'];
-	$WorkNumber = $_GET['WorkNumber'];
-	$Address = $_GET['Address'];
-	$City = $_GET['City'];
-	$PostalCode = $_GET['PostalCode'];
+if (isset($_GET['btnSaveContactInfo'])) {
+    $Email = $_GET['Email'];
+    $MobileNumber = $_GET['MobileNumber'];
+    $HomeNumber = $_GET['HomeNumber'];
+    $WorkNumber = $_GET['WorkNumber'];
+    $Address = $_GET['Address'];
+    $City = $_GET['City'];
+    $PostalCode = $_GET['PostalCode'];
 
-	$query = "UPDATE studcontactstbl SET Email = '$Email', MobileNumber = '$MobileNumber', HomeNumber = '$HomeNumber', WorkNumber = '$WorkNumber', Address = '$Address', City = '$City', PostalCode = '$PostalCode'";
-	$result = mysql_query($query);
+    GSecureSQL::query(
+        "UPDATE studcontactstbl SET Email = ?, MobileNumber = ?, HomeNumber = ?, WorkNumber = ?, Address = ?, City = ?, PostalCode = ? WHERE StudentID = ?",
+        FALSE,
+        "ssssssss",
+        $Email,
+        $MobileNumber,
+        $HomeNumber,
+        $WorkNumber,
+        $Address,
+        $City,
+        $PostalCode,
+        $StudentID
 
-	echo "
+    );
+
+    echo "
 		<script type='text/javascript'>
 		location.href='contacts-info.php?id=1';
 		</script>

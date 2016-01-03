@@ -4,21 +4,25 @@ include('../../connection.php');
 
 $StudentID = $_SESSION['StudentID'];
 
-$query = "SELECT * FROM studentinfotbl WHERE StudentID = '$StudentID'";
-$result = mysql_query($query);
+    $student_tbl =
+    GSecureSQL::query(
+        "SELECT * FROM studentinfotbl WHERE StudentID = ?",
+        TRUE,
+        "s",
+        $StudentID
+    );
 
-while($query = mysql_fetch_array($result)){
-    $FirstName = $query['FirstName'];
-    $MiddleName = $query['MiddleName'];
-    $LastName = $query['LastName'];
-    $Gender = $query['Gender'];
-    $Birthdate = $query['Birthdate'];
-    $Nationality = $query['Nationality'];
-    $CivilStatus = $query['CivilStatus'];
-    $FBLink = $query['FBLink'];
-    $TwitterLink = $query['TwitterLink'];
+    $FirstName = $student_tbl[0]->FirstName;
+    $MiddleName = $student_tbl[0]->MiddleName;
+    $LastName = $student_tbl[0]->LastName;
+    $Gender = $student_tbl[0]->Gender;
+    $Birthdate = $student_tbl[0]->Birthdate;
+    $Nationality = $student_tbl[0]->Nationality;
+    $CivilStatus = $student_tbl[0]->CivilStatus;
+    $FBLink = $student_tbl[0]->FBLink;
+    $TwitterLink = $student_tbl[0]->TwitterLink;
     $FBLink = substr($FBLink, 24);
-}
+
 ?>
 
 <!doctype html>
@@ -148,11 +152,11 @@ while($query = mysql_fetch_array($result)){
                         </a>
                     </div>
                     <div class="navbar-collapse collapse">
-                    <!-- Sign-out -->
+                        <!-- Sign-out -->
                         <div class="signout-side">
                                <a class="show-signout"><i class="fa fa-sign-out"></i></a>
                         </div>
-                     <!-- End Sign-out -->
+                        <!-- End Sign-out -->
                         <!-- Start Navigation List -->
                         <ul class="nav navbar-nav navbar-right">
                             <li>
@@ -347,7 +351,7 @@ while($query = mysql_fetch_array($result)){
                                     <label class="control-label">Select Image</label>
                                     <input id="ProfilePicture" name="ProfilePicture" multiple type="file" class="file file-loading" data-allowed-file-extensions='["png", "jpg", "bmp", "gif"]'>
                                     <br>
-                                    <button id="" class="btn btn-hg btn-primary" name="btnDelete">Delete Image</button>
+                                    <button id="" class="btn-system btn-mini border-btn" name="btnDelete">Delete Image</button>
                                 </div>
                                 <!-- End Single Testimonial -->
                             </div>
@@ -367,7 +371,7 @@ while($query = mysql_fetch_array($result)){
                 <div class="hr5" style="margin-top:35px;margin-bottom:40px;"></div>
                 <div class="field">
                     <div class="text-center">
-                        <button type="submit" class="btn btn-lg btn-hg btn-primary" name ="btnSaveInfo">Save</button>
+                        <button type="submit" class="btn-system btn-large" name ="btnSaveInfo">Save</button>
                     </div>
                 </div>
             </div>

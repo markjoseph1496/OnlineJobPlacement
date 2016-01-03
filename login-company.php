@@ -1,18 +1,6 @@
 <?php
 session_start();
 include('connection.php');
-
-if(isset($_GET['id'])){
-    if(isset($_POST['btnlogin'])){
-
-    }
-    else{
-        $id = $_GET['id'];
-        if($id == 1){
-            session_destroy();
-        }
-    }
-}
 ?>
 <!DOCTYPE html>
 <html>
@@ -20,16 +8,22 @@ if(isset($_GET['id'])){
 
     <title>Online JPMS</title>
 
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+
+    <!-- BootstrapValidator CSS -->
+    <link rel="stylesheet" href="css/bootstrapValidator.min.css" />
+
+    <!-- jQuery and Bootstrap JS -->
+    <script type="text/javascript" src="js/jquery.min.js"></script>
+    <script type="text/javascript" src="js/bootstrap.min.js" ></script>
+
+    <!-- BootstrapValidator -->
+    <script type="text/javascript" src="js/bootstrapValidator.min.js" ></script>
+
     <!-- CSS-->
     <link href="css/login-style.css" rel="stylesheet">
     <link href="css/mystyle.css" rel="stylesheet">
-
-    <!-- Fonts -->
-    <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
-    <link href="font-awesome/ffonts/montserrat.css" rel="stylesheet" type="text/css">
-    <link href="font-awesome/ffonts/kaushan.css" rel="stylesheet" type="text/css">
-    <link href="font-awesome/ffonts/droid.css" rel="stylesheet" type="text/css">
-    <link href="font-awesome/ffonts/roboto.css" rel="stylesheet" type="text/css">
 </head>
 
 <body class="login-background">
@@ -39,20 +33,21 @@ if(isset($_GET['id'])){
             <div class="span_h1"></div>
             <div class="grid-row">
                 <div class="grid-col w5 half_on_tablet full_on_mobile">
-                    <form class="" method = "POST" autocomplete="off">
+                    <form id="myForm" name="myForm" action="login.php" method = "POST" autocomplete="off">
                         <h2 class="register-title"><span class="break_on_desktop"></span>&nbsp;</h2> 
                         <fieldset class="register-fieldset">
                             <div class="form-group">
-                                <input type="text" class="<?php echo $StudentID_class;?> form-control register-input js-password js-input" placeholder="Your Company ID" id="txtStudentID" name="txtStudentID" value="<?php echo htmlspecialchars($server_StudentID)?>">
+                                <div id="message" ></div><br>
+                                <input type="text" class="form-control register-input js-password js-input" placeholder="Your Email" id="CompanyEmail" name="CompanyEmail">
                             </div>
                         </fieldset>
                         <fieldset class="register-fieldset">
                             <div class="form-group">
-                                <input type="password" class="<?php echo $Password_class;?>  form-control register-input js-password js-input" placeholder="Password" id="txtPassword" name="txtPassword">
+                                <input type="password" class="form-control register-input js-password js-input" placeholder="Password" id="password" name="password">
                             </div>
                         </fieldset>
                         <fieldset class="register-fieldset">
-                            <button class="btn btn--green register-submit btn--icon">Login              
+                            <button type="submit" id="submit" class="btn btn--green register-submit btn--icon">Login
                                 <span class="btn-icon btn-icon--right"></span>
                             </button>
                         </fieldset>
@@ -72,42 +67,44 @@ if(isset($_GET['id'])){
         </div>
     </div>
 </body>
-
-<?php
-if(isset($_POST['btnlogin'])){
-
-    $username = $_POST['username'];
-    $password = $_POST['password'];
-
-    $query = ("SELECT * FROM companyinfotbl WHERE Email = '$username' AND Password = '$password' ");
-    $Result = mysql_query($query);
-    while($query = mysql_fetch_array($Result)){
-        $CompanyID = $query['CompanyID'];
-    }
-
-    if($Result){
-
-        if(mysql_num_rows($Result) == 0){
-
-            echo "
-            <script type='text/javascript'>
-            alert('Incorrect Password. Please try again.');
-            </script>
-            ";
-
-        }
-        else{
-
-            $_SESSION['CompanyID'] = $CompanyID;
-            echo "
-            <script type='text/javascript'>
-            alert('You have successfully loggged in.');
-            location.href='company/company.php';
-            </script>
-            ";
-        }
-    }
-}
-?>
-
 </html>
+<script type="text/javascript">
+    $(document).ready(function () {
+        var validator = $("#myForm").bootstrapValidator({
+            feedbackIcons:{
+                valid: "glyphicon glyphicon-ok",
+                invalid: "glyphicon glyphicon-remove",
+                validating: "glyphicon glyphicon-refresh"
+            },
+            fields: {
+                CompanyEmail: {
+                    validators: {
+                        notEmpty: {
+                            message: "Student ID cannot be empty."
+                        }
+                    }
+                },
+                password: {
+                    validators: {
+                        notEmpty: {
+                            message: "Password cannot be empty."
+                        }
+                    }
+                }
+            }
+        });
+    });
+
+    $("button#submit").click( function() {
+
+        $.post( $("#myForm").attr("action"),
+            $("#myForm :input").serializeArray(),
+            function(data) {
+                $("div#message").html(data);
+            });
+
+        $("#myForm").submit( function() {
+            return false;
+        });
+    });
+</script>

@@ -52,16 +52,6 @@ else{
     <link rel="stylesheet" type="text/css" href="../../css/animate.css" media="screen">
 
     <!-- Color CSS Styles  -->
-    <link rel="stylesheet" type="text/css" href="../../css/colors/jade.css" title="jade" media="screen" />
-    <link rel="stylesheet" type="text/css" href="../../css/colors/green.css" title="green" media="screen" />
-    <link rel="stylesheet" type="text/css" href="../../css/colors/blue.css" title="blue" media="screen" />
-    <link rel="stylesheet" type="text/css" href="../../css/colors/beige.css" title="beige" media="screen" />
-    <link rel="stylesheet" type="text/css" href="../../css/colors/cyan.css" title="cyan" media="screen" />
-    <link rel="stylesheet" type="text/css" href="../../css/colors/orange.css" title="orange" media="screen" />
-    <link rel="stylesheet" type="text/css" href="../../css/colors/peach.css" title="peach" media="screen" />
-    <link rel="stylesheet" type="text/css" href="../../css/colors/pink.css" title="pink" media="screen" />
-    <link rel="stylesheet" type="text/css" href="../../css/colors/purple.css" title="purple" media="screen" />
-    <link rel="stylesheet" type="text/css" href="../../css/colors/sky-blue.css" title="sky-blue" media="screen" />
     <link rel="stylesheet" type="text/css" href="../../css/colors/yellow.css" title="yellow" media="screen" />
 
     <!-- JS  -->
@@ -89,30 +79,6 @@ else{
 </head>
 
 <body>
-    <div id="container">
-        <script>
-            $(document).on("click", ".deleteCertification", function(result) {
-                bootbox.confirm({
-                  title: 'Delete',
-                  message: 'Are you sure you want to delete this Information?',
-                  buttons: {
-                      'cancel': {
-                          label: 'Cancel',
-                          
-                      },
-                      'confirm': {
-                          label: 'Delete',
-                          className: 'btn-danger pull-right'
-                      }
-                  },
-                  callback: function(result) {
-                      if (result) {
-                           window.location = $("a[data-bb='confirmDeleteCertification']").attr('href');
-                      }
-                  }
-              });
-            });
-        </script>
         <!-- Start Header Section -->
         <div class="hidden-header"></div>
         <header class="clearfix">
@@ -134,37 +100,10 @@ else{
                         </div>
                         <!-- .col-md-6 -->
                         <div class="col-md-5">
-                        <!-- Start Social Links 
+                        <!-- Start Social Links -->
                             <ul class="social-list">
-                                <li>
-                                <a class="facebook itl-tooltip" data-placement="bottom" title="Facebook" href="#"><i class="fa fa-facebook"></i></a>
-                                </li>
-                                <li>
-                                    <a class="twitter itl-tooltip" data-placement="bottom" title="Twitter" href="#"><i class="fa fa-twitter"></i></a>
-                                </li>
-                                <li>
-                                    <a class="google itl-tooltip" data-placement="bottom" title="Google Plus" href="#"><i class="fa fa-google-plus"></i></a>
-                                </li>
-                                <li>
-                                    <a class="dribbble itl-tooltip" data-placement="bottom" title="Dribble" href="#"><i class="fa fa-dribbble"></i></a>
-                                </li>
-                                <li>
-                                    <a class="linkdin itl-tooltip" data-placement="bottom" title="Linkedin" href="#"><i class="fa fa-linkedin"></i></a>
-                                </li>
-                                <li>
-                                    <a class="flickr itl-tooltip" data-placement="bottom" title="Flickr" href="#"><i class="fa fa-flickr"></i></a>
-                                </li>
-                                <li>
-                                    <a class="tumblr itl-tooltip" data-placement="bottom" title="Tumblr" href="#"><i class="fa fa-tumblr"></i></a>
-                                </li>
-                                <li>
-                                    <a class="instgram itl-tooltip" data-placement="bottom" title="Instagram" href="#"><i class="fa fa-instagram"></i></a>
-                                </li>
-                                <li>
-                                    <a class="vimeo itl-tooltip" data-placement="bottom" title="vimeo" href="#"><i class="fa fa-vimeo-square"></i></a>
-                                </li>
-                                <li>
-                                    <a class="skype itl-tooltip" data-placement="bottom" title="Skype" href="#"><i class="fa fa-skype"></i></a>
+                               <li class="profile-name">
+                                    <i class="fa fa-user"></i> Hello, <b>Aira Jane Cruz</b>
                                 </li>
                             </ul>
                             <!-- End Social Links -->
@@ -301,40 +240,38 @@ else{
         <!-- Start Content -->
         <div id="content">
             <div class="container">
-                <div class="row">
-                    <!-- Page Content -->
-                    <div class="col-md-12 page-content">
-                        <div class="row">
-                            <div class="classic-testimonials">
-                                <div class="row field">
-                                    <div class="col-md-6 fieldcol">
-                                        <div class="form-group">
-                                            <label>Current Password <span>(*)</span></label>
-                                            <input type="password" class="form-control" id="txtCurrentPassword" name="txtCurrentPassword">
-                                        </div>
+                <!-- Page Content -->
+                <div class="col-md-12 page-content">
+                    <div class="row">
+                        <div class="classic-testimonials">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label>Current Password <span>(*)</span></label>
+                                        <input type="password" class="form-control" id="txtCurrentPassword" name="txtCurrentPassword">
                                     </div>
                                 </div>
-                                <div class="row field">
-                                    <div class="col-md-6 col-sm-6 fieldcol">
-                                        <div class="form-group">
-                                            <label>New Password <span>(*)</span></label>
-                                            <input type="password" class="form-control" id="txtNewPassword" name="txtNewPassword">
-                                        </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6 col-sm-6">
+                                    <div class="form-group">
+                                        <label>New Password <span>(*)</span></label>
+                                        <input type="password" class="form-control" id="txtNewPassword" name="txtNewPassword">
                                     </div>
-                                    <div class="col-md-6 col-sm-6 fieldcol">
-                                        <div class="form-group">
-                                            <label>Confirm New Password <span>(*)</span></label>
-                                            <input type="password" class="form-control" id="txtConfPassword" name="txtConfPassword">
-                                        </div>
+                                </div>
+                                <div class="col-md-6 col-sm-6">
+                                    <div class="form-group">
+                                        <label>Confirm New Password <span>(*)</span></label>
+                                        <input type="password" class="form-control" id="txtConfPassword" name="txtConfPassword">
                                     </div>
                                 </div>
                             </div>
                         </div>
-                        <div class="hr5" style="margin-top:35px;margin-bottom:40px;"></div>
-                        <button class="btn btn-lg btn-hg btn-primary" style="float:right;" name="btnChangePass">Change Password</button>
                     </div>
-                    <!-- End Page Content -->
+                    <div class="hr5" style="margin-top:35px;margin-bottom:40px;"></div>
+                    <button type="submit" class="btn-system btn-large" style="float:right;" name="btnChangePass">Change Password</button>
                 </div>
+                <!-- End Page Content -->
             </div>
         </div>
     </div>
