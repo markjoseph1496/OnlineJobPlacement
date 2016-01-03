@@ -391,12 +391,54 @@ $CompanyID = $_SESSION['CompanyID'];
                 </div> 
                 <div class="row field">
                     <div class = "col-md-3 fieldcol">
-                        <label = "usr" class = "control-label"> Training: </label>
+                      <label = "usr" class = "control-label"> Training: </label>
                     </div>
                     <div class = "col-md-8 fieldcol">
-                        <div class="form-group">
-                               <input type = "text" name = "training" class = "form-control" style ="width: 300px;">
-                        </div>
+                      <div class="input-group" style="width: 300px; margin-bottom: 15px">
+                        <input type = "text" class = "form-control" id="txt-training">
+                        <script>
+                          var tl_index = -1;
+                          function delete_training(index){
+                            $('#tl-span-' + index).remove();
+                            $('#tl-a-' + index).remove();
+                            $('#tl-input-' + index).remove();
+                          }
+                        </script>
+                        <span class="input-group-btn">
+                          <a class="btn btn-primary" onclick="(function(){
+                            tl_index++;
+                            var tt = $('#training-template');
+                            var tt_span = tt.find('span');
+                            var tt_a = tt.find('a');
+                            var tt_input = tt.find('input');
+
+                            tt_span.text($('#txt-training').val());
+                            tt_span.attr('id', 'tl-span-' + tl_index);
+                            tt_a.attr('id', 'tl-a-' + tl_index);
+                            tt_a.attr('onclick', 'delete_training(' + tl_index + ')');
+                            tt_input.attr('id', 'tl-input-' + tl_index);
+                            tt_input.attr('name', 'training[' + tl_index +']');
+                            $('#training-list').append($('#training-template').html());
+
+                            //disposal of used resource in #training-template
+                            tt_span.removeAttr('id');
+                            tt_a.removeAttr('id');
+                            tt_a.removeAttr('onclick');
+                            tt_input.removeAttr('id');
+                            tt_input.removeAttr('name');
+                          })()">Add</a>
+                        </span>
+                      </div>
+                    </div>
+                </div>
+                <div class="row field" style="margin-bottom: 15px">
+                    <div id="training-template" class="hidden">
+                      <span>dito_yung_text</span>
+                      <a href="javascript:void(0)">[remove]</a>
+                      <input type="hidden"/>
+                    </div>
+                    <div id="training-list" class = "col-md-offset-3 col-md-8 fieldcol" style="width: 300px; word-wrap: break-word">
+                      
                     </div>
                 </div>  
                 <div class="row field">

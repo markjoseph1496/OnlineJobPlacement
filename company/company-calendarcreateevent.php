@@ -329,6 +329,20 @@ $CompanyID = $_SESSION['CompanyID'];
                     validating: "glyphicon glyphicon-refresh"
                 },
                 fields:{
+                  datefrom: {
+                        validators: {
+                            notEmpty: {
+                                message: "Date From is required."
+                            }
+                        }
+                    },
+                    dateto: {
+                        validators: {
+                            notEmpty: {
+                                message: "Date To is required."
+                            }
+                        }
+                    },
                     eventtitle: {
                         validators: {
                             notEmpty: {
