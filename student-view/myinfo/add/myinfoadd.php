@@ -150,7 +150,7 @@ if (isset($_POST['Language'])) {
              </script>
              ";
 }
-if(isset($_POST['CompanyName'])){
+if (isset($_POST['CompanyName'])) {
     $CompanyName = $_POST['CompanyName'];
     $CompanyWebsite = $_POST['CompanyWebsite'];
     $Industry = $_POST['Industry'];
@@ -163,8 +163,14 @@ if(isset($_POST['CompanyName'])){
     $MonthlySalary = $_POST['MonthlySalary'];
     $NatureOfWork = $_POST['NatureOfWork'];
 
-    $DateFrom = $FromMonth . " - " . $FromYear;
-    $DateTo = $ToMonth . " = " . $ToYear;
+    $DateFrom = $FromMonth . " " . $FromYear;
+    $DateTo = $ToMonth . " " . $ToYear;
+
+    if ($DateTo == " ") {
+        $DateTo = "Current";
+    } else {
+        $DateTo = $ToMonth . " " . $ToYear;
+    }
 
     GSecureSQL::query(
         "INSERT INTO workexperiencetbl (StudentID, CompanyName, CompanyWebsite, Industry, DateFrom, DateTo, PositionLevel, Specialization, MonthlySalary, NatureOfWork) value (?,?,?,?,?,?,?,?,?,?)",

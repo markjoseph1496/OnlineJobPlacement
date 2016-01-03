@@ -573,6 +573,22 @@ session_start();
                         }
                     }
                 },
+                ToMonth: {
+                    required: "#Duration:checked",
+                    validators: {
+                        notEmpty: {
+                            message: "This field is required."
+                        }
+                    }
+                },
+                ToYear: {
+                    required: "#Duration:checked",
+                    validators: {
+                        notEmpty: {
+                            message: "This field is required."
+                        }
+                    }
+                },
                 PositionLevel: {
                     validators: {
                         notEmpty: {
