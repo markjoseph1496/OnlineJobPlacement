@@ -156,14 +156,35 @@ if(isset($_POST['CompanyName'])){
     $Industry = $_POST['Industry'];
     $FromMonth = $_POST['FromMonth'];
     $FromYear = $_POST['FromYear'];
+    $ToMonth = $_POST['ToMonth'];
+    $ToYear = $_POST['ToYear'];
     $PositionLevel = $_POST['PositionLevel'];
     $WorkSpecialization = $_POST['WorkSpecialization'];
     $MonthlySalary = $_POST['MonthlySalary'];
     $NatureOfWork = $_POST['NatureOfWork'];
 
-    GSecureSQL::query(
-        "INSERT INTO workexperiencetbl (StudentID, CompanyName, CompanyWebsite, Industry, DateFrom, )"
-    );
+    $DateFrom = $FromMonth . " - " . $FromYear;
+    $DateTo = $ToMonth . " = " . $ToYear;
 
+    GSecureSQL::query(
+        "INSERT INTO workexperiencetbl (StudentID, CompanyName, CompanyWebsite, Industry, DateFrom, DateTo, PositionLevel, Specialization, MonthlySalary, NatureOfWork) value (?,?,?,?,?,?,?,?,?,?)",
+        FALSE,
+        "ssssssssss",
+        $StudentID,
+        $CompanyName,
+        $CompanyWebsite,
+        $Industry,
+        $DateFrom,
+        $DateTo,
+        $PositionLevel,
+        $WorkSpecialization,
+        $MonthlySalary,
+        $NatureOfWork
+    );
+    echo "
+             <script type='text/javascript'>
+             location.href='../work.php?id=1';
+             </script>
+             ";
 }
 ?>
