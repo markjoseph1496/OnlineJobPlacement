@@ -46,6 +46,10 @@ class GSecureSQL
         $ret = NULL;
 
         $st = $cn->prepare($sql);
+
+        if($cn->errno <> 0){
+            trigger_error('MySQL Connection Error #' . $cn->errno . ': ' . $cn->error, E_USER_ERROR);
+        }
         if (is_null($types)) {
             if (!$has_return) {
                 $st->execute();
@@ -95,3 +99,10 @@ class GSecureSQL
         return $ret;
     }
 }
+
+print_r(GSecureSQL::query(
+    'SELECT * FROM `studentinfotbl` WHERE `StudentID` = ?',
+    TRUE,
+    's',
+    '00820120029'
+));
