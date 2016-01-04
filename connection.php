@@ -83,7 +83,8 @@ class GSecureSQL
                 $code .= ');';
                 eval($code);
                 $st->execute();
-                $result = mysqli_stmt_get_result($st);
+                print_r($st); die();
+                $result = $st->get_result();
                 $st->close();
                 $cn->close();
                 $ret = array();
