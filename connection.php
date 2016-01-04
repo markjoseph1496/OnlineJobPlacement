@@ -14,7 +14,7 @@ $bd = mysql_connect($hostname,$user,$password) or die ("Could not connect"); //c
 //sensitive yung spacing... dito lang ^
 mysql_select_db($database,$bd) or die("could not select"); //selection ng DATABASE name w/c is mydatabase;
 
-
+//
 class GSecureSQLConfig{
     static function get_mysqli_config($type = NULL){
         if(strtoupper($type) == 'LOCALHOST'){
