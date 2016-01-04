@@ -42,6 +42,9 @@ class GSecureSQL{
     }
 
     static function query($sql, $has_return = FALSE, $types = NULL){
+        // validation
+
+        // -----
         self::_get_mysqli_config();
         $cn = new mysqli(
             self::$config['host'],
