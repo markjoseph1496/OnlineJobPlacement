@@ -83,6 +83,7 @@ class GSecureSQL
                 $code .= ');';
                 eval($code);
                 $st->execute();
+                $st->get_result();
                 if($st->num_rows){
                     $result = $st->get_result();
                     $st->close();
