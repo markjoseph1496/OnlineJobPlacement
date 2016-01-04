@@ -83,7 +83,6 @@ class GSecureSQL
                 $code .= ');';
                 eval($code);
                 $st->execute();
-                print_r($st); die();
                 $result = $st->get_result();
                 $st->close();
                 $cn->close();
