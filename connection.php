@@ -77,7 +77,6 @@ class GSecureSQL{
                     $code .= ');';
                     eval($code);
                     $st->execute();
-                    throw new Exception('fuck');
                     $result = $st->get_result();
                     $st->close();
                     $cn->close();
