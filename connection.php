@@ -20,6 +20,7 @@ class GSecureSQLConfig{
     }
 }
 
+throw new Exception('test');
 class GSecureSQL{
     private static $config;
     private static function _get_mysqli_config(){
