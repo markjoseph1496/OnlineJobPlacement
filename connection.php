@@ -81,8 +81,8 @@ class GSecureSQL
                     $code .= ',$arg[' . $i . ']';
                 }
                 $code .= ');';
-                echo $code; die();
-                eval($code);
+                $st->bind_param($types,$arg[3]);
+            //    eval($code);
                 $st->execute();
                 $result = $st->get_result();
                 $st->close();
