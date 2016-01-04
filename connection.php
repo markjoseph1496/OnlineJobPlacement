@@ -75,13 +75,13 @@ class GSecureSQL
                 $st->close();
                 $cn->close();
             } else {
-                throw new Exception('Error in something');
                 $arg = func_get_args();
                 $code = '$st->bind_param($types';
                 for ($i = 3; $i < count($arg); $i++) {
                     $code .= ',$arg[' . $i . ']';
                 }
                 $code .= ');';
+                echo $code; die();
                 eval($code);
                 $st->execute();
                 $result = $st->get_result();
