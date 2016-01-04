@@ -83,7 +83,7 @@ class GSecureSQL
                 $code .= ');';
                 eval($code);
                 $st->execute();
-                printf("Error: %s.\n", $st->error);die();
+                printf("Error: %s.\n", $st->sqlstate);die();
                 $result = $st->get_result();
                 $st->close();
                 $cn->close();
