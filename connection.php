@@ -59,11 +59,26 @@ class GSecureSQL
                 $ret = 'Query has been executed';
             } else {
                 $st->execute();
-                $result = $st->get_result();
-                $ret = array();
-                while ($field = $result->fetch_object()) {
-                    array_push($ret, $field);
+                $st->execute();
+                $code_result = '$st->bind_result(';
+                $bool = false;
+                $p = array();
+                for($i = 0; $i < $st->field_count; $i++){
+                    if(!$bool){
+                        $bool = true;
+                        $code_result .= '$p[' . $i . ']';
+                    }else{
+                        $code_result .= ',$p[' . $i . ']';
+                    }
                 }
+                $code_result .= ');';
+                eval($code_result);
+
+                $ret = array();
+                while($st->fetch()){
+                    array_push($ret, $p);
+                }
+
                 $st->close();
                 $cn->close();
             }
@@ -88,8 +103,6 @@ class GSecureSQL
                 $code .= ');';
                 eval($code);
                 $st->execute();
-                echo $st->field_count;
-
                 $code_result = '$st->bind_result(';
                 $bool = false;
                 $p = array();
@@ -116,12 +129,3 @@ class GSecureSQL
         return $ret;
     }
 }
-
-print_r(GSecureSQL::query(
-    'SELECT * FROM `studentinfotbl` WHERE `StudentID` = ?',
-    TRUE,
-    's',
-    '00820120029'
-));
-
-echo '<br/>';
