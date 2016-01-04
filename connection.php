@@ -37,54 +37,59 @@ class GSecureSQL{
             self::$config['pass'],
             self::$config['db']
         );
-        $st = $cn->prepare($sql);
-        if(is_null($types)){
-            if(!$has_return){
-                $st->execute();
-                $st->close();
-                $cn->close();
-                return 'Query has been executed';
+        $ret = NULL;
+        try{
+            $st = $cn->prepare($sql);
+            if(is_null($types)){
+                if(!$has_return){
+                    $st->execute();
+                    $st->close();
+                    $cn->close();
+                    $ret = 'Query has been executed';
+                }else{
+                    $st->execute();
+                    $result = $st->get_result();
+                    $st->close();
+                    $cn->close();
+                    $ret = array();
+                    while($field = $result->fetch_object()){
+                        array_push($ret, $field);
+                    }
+                }
             }else{
-                $st->execute();
-                $result = $st->get_result();
-                $st->close();
-                $cn->close();
-                $ret = array();
-                while($field = $result->fetch_object()){
-                    array_push($ret, $field);
+                if(!$has_return){
+                    $arg = func_get_args();
+                    $code = '$st->bind_param($types';
+                    for($i = 3; $i < count($arg); $i++){
+                        $code .= ',$arg[' . $i . ']';
+                    }
+                    $code .= ');';
+                    eval($code);
+                    $st->execute();
+                    $st->close();
+                    $cn->close();
+                }else{
+                    $arg = func_get_args();
+                    $code = '$st->bind_param($types';
+                    for($i = 3; $i < count($arg); $i++){
+                        $code .= ',$arg[' . $i . ']';
+                    }
+                    $code .= ');';
+                    eval($code);
+                    $st->execute();
+                    $result = $st->get_result();
+                    $st->close();
+                    $cn->close();
+                    $ret = array();
+                    while($field = $result->fetch_object()){
+                        array_push($ret, $field);
+                    }
                 }
-                return $ret;
             }
-        }else{
-            if(!$has_return){
-                $arg = func_get_args();
-                $code = '$st->bind_param($types';
-                for($i = 3; $i < count($arg); $i++){
-                    $code .= ',$arg[' . $i . ']';
-                }
-                $code .= ');';
-                eval($code);
-                $st->execute();
-                $st->close();
-                $cn->close();
-            }else{
-                $arg = func_get_args();
-                $code = '$st->bind_param($types';
-                for($i = 3; $i < count($arg); $i++){
-                    $code .= ',$arg[' . $i . ']';
-                }
-                $code .= ');';
-                eval($code);
-                $st->execute();
-                $result = $st->get_result();
-                $st->close();
-                $cn->close();
-                $ret = array();
-                while($field = $result->fetch_object()){
-                    array_push($ret, $field);
-                }
-                return $ret;
-            }
+        }catch(Exception $e){
+            throw $e;
+        }finally{
+            return $ret;
         }
     }
 }
