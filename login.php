@@ -7,14 +7,17 @@ if (isset($_POST['StudentID'])) {
 
     $student_tbl =
         GSecureSQL::query(
-            "SELECT * FROM studentinfotbl WHERE StudentID = ?",
+            "SELECT
+                `Password`,
+                `SaltedPassword`
+            FROM `studentinfotbl` WHERE `StudentID` = ?",
             TRUE,
             "s",
             $StudentID
         );
 
     if (count($student_tbl)) {
-        if (hash('sha512', $_Password . $student_tbl[0]->SaltedPassword) == $student_tbl[0]->Password) {
+        if (hash('sha512', $_Password . $student_tbl[0][1]) == $student_tbl[0][0]) {
             $_SESSION['StudentID'] = $StudentID;
             echo "
 		        <script type='text/javascript'>
