@@ -83,17 +83,12 @@ class GSecureSQL
                 $code .= ');';
                 eval($code);
                 $st->execute();
-                $st->get_result();
-                if($st->num_rows){
-                    $result = $st->get_result();
-                    $st->close();
-                    $cn->close();
-                    $ret = array();
-                    while ($field = $result->fetch_object()) {
-                        array_push($ret, $field);
-                    }
-                }else{
-                    $ret = array();
+                $result = $st->get_result();
+                $st->close();
+                $cn->close();
+                $ret = array();
+                while ($field = $result->fetch_object()) {
+                    array_push($ret, $field);
                 }
             }
         }
