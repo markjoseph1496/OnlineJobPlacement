@@ -443,24 +443,108 @@ $CompanyID = $_SESSION['CompanyID'];
                 </div>  
                 <div class="row field">
                     <div class = "col-md-3 fieldcol">
-                        <label = "usr" class = "control-label"> Knowledge in: </label>
+                      <label = "usr" class = "control-label"> Knowledge in: </label>
                     </div>
                     <div class = "col-md-8 fieldcol">
-                        <div class="form-group">
-                               <input type = "text" name = "knowledge" class = "form-control" style ="width: 300px;">
-                        </div>
+                      <div class="input-group" style="width: 300px; margin-bottom: 15px">
+                        <input type = "text" class = "form-control" id="txt-knowledge">
+                        <script>
+                          var tl_index = -1;
+                          function delete_knowledge(index){
+                            $('#tl-span-' + index).remove();
+                            $('#tl-a-' + index).remove();
+                            $('#tl-input-' + index).remove();
+                          }
+                        </script>
+                        <span class="input-group-btn">
+                          <a class="btn btn-primary" onclick="(function(){
+                            tl_index++;
+                            var tt = $('#knowledge-template');
+                            var tt_span = tt.find('span');
+                            var tt_a = tt.find('a');
+                            var tt_input = tt.find('input');
+
+                            tt_span.text($('#txt-knowledge').val());
+                            tt_span.attr('id', 'tl-span-' + tl_index);
+                            tt_a.attr('id', 'tl-a-' + tl_index);
+                            tt_a.attr('onclick', 'delete_knowledge(' + tl_index + ')');
+                            tt_input.attr('id', 'tl-input-' + tl_index);
+                            tt_input.attr('name', 'knowledge[' + tl_index +']');
+                            $('#knowledge-list').append($('#knowledge-template').html());
+
+                            //disposal of used resource in #knowledge-template
+                            tt_span.removeAttr('id');
+                            tt_a.removeAttr('id');
+                            tt_a.removeAttr('onclick');
+                            tt_input.removeAttr('id');
+                            tt_input.removeAttr('name');
+                          })()">Add</a>
+                        </span>
+                      </div>
+                    </div>
+                </div>
+                <div class="row field" style="margin-bottom: 15px">
+                    <div id="knowledge-template" class="hidden">
+                      <span>dito_yung_text</span>
+                      <a href="javascript:void(0)">[remove]</a>
+                      <input type="hidden"/>
+                    </div>
+                    <div id="knowledge-list" class = "col-md-offset-3 col-md-8 fieldcol" style="width: 300px; word-wrap: break-word">
+                      
                     </div>
                 </div>             
                 <h3> Optional Requirements </h3>
                 &nbsp;
                 <div class="row field">
                     <div class = "col-md-3 fieldcol">
-                        <label = "usr" class = "control-label"> Language: </label>
+                      <label = "usr" class = "control-label"> Language: </label>
                     </div>
                     <div class = "col-md-8 fieldcol">
-                        <div class="form-group">
-                               <input type = "text" name = "skills" class = "form-control" style ="width: 300px;">
-                        </div>
+                      <div class="input-group" style="width: 300px; margin-bottom: 15px">
+                        <input type = "text" class = "form-control" id="txt-language">
+                        <script>
+                          var tl_index = -1;
+                          function delete_language(index){
+                            $('#tl-span-' + index).remove();
+                            $('#tl-a-' + index).remove();
+                            $('#tl-input-' + index).remove();
+                          }
+                        </script>
+                        <span class="input-group-btn">
+                          <a class="btn btn-primary" onclick="(function(){
+                            tl_index++;
+                            var tt = $('#language-template');
+                            var tt_span = tt.find('span');
+                            var tt_a = tt.find('a');
+                            var tt_input = tt.find('input');
+
+                            tt_span.text($('#txt-language').val());
+                            tt_span.attr('id', 'tl-span-' + tl_index);
+                            tt_a.attr('id', 'tl-a-' + tl_index);
+                            tt_a.attr('onclick', 'delete_language(' + tl_index + ')');
+                            tt_input.attr('id', 'tl-input-' + tl_index);
+                            tt_input.attr('name', 'language[' + tl_index +']');
+                            $('#language-list').append($('#language-template').html());
+
+                            //disposal of used resource in #language-template
+                            tt_span.removeAttr('id');
+                            tt_a.removeAttr('id');
+                            tt_a.removeAttr('onclick');
+                            tt_input.removeAttr('id');
+                            tt_input.removeAttr('name');
+                          })()">Add</a>
+                        </span>
+                      </div>
+                    </div>
+                </div>
+                <div class="row field" style="margin-bottom: 15px">
+                    <div id="language-template" class="hidden">
+                      <span>dito_yung_text</span>
+                      <a href="javascript:void(0)">[remove]</a>
+                      <input type="hidden"/>
+                    </div>
+                    <div id="language-list" class = "col-md-offset-3 col-md-8 fieldcol" style="width: 300px; word-wrap: break-word">
+                      
                     </div>
                 </div>
                 <div class="row field">
