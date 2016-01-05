@@ -1,7 +1,6 @@
 <?php
 include('../connection.php');
 session_start();
-$CompanyID = $_SESSION['CompanyID'];
 
 $qry = "SELECT * FROM studentinfotbl";
 $result = mysql_query($qry);
