@@ -324,25 +324,22 @@ if (isset($_SESSION['StudentID'])) {
                                     "s",
                                     $StudentID
                                 );
-                            $count = 0;
                             foreach ($school_tbl as $value) {
-                                $SchoolID = $school_tbl[$count]->SchoolID;
-                                $School = $school_tbl[$count]->School;
-                                $Attainment = $school_tbl[$count]->Attainment;
-                                $Course = $school_tbl[$count]->Course;
-                                $Graduated = $school_tbl[$count]->Graduated;
-                                $count++;
+                                $SchoolID = $value[0];
+                                $School = $value[2];
+                                $Attainment = $value[3];
+                                $Course = $value[4];
+                                $Graduated = $value[5];
 
                                 $course_tbl =
                                     GSecureSQL::query(
-                                        "SELECT * FROM schooltbl WHERE StudentID = ? AND _Default = 1",
+                                        "SELECT * FROM coursetbl WHERE CourseID = ?",
                                         TRUE,
                                         "s",
                                         $Course
                                     );
-                                $count1 = 0;
                                 foreach ($course_tbl as $value1) {
-                                    $CourseTitle = $course_tbl[$count1]->CourseTitle;
+                                    $CourseTitle = $value1[1];
                                     if (substr($Graduated, 0, 2) == 1) {
                                         $Graduated = 'January' . substr($Graduated, 2, 5);
                                     }
@@ -404,25 +401,22 @@ if (isset($_SESSION['StudentID'])) {
                                     "s",
                                     $StudentID
                                 );
-                            $_count = 0;
                             foreach ($_school_tbl as $_value) {
-                                $_SchoolID = $_school_tbl[$_count]->SchoolID;
-                                $_School = $_school_tbl[$_count]->School;
-                                $_Attainment = $_school_tbl[$_count]->Attainment;
-                                $_Course = $_school_tbl[$_count]->Course;
-                                $_Graduated = $_school_tbl[$_count]->Graduated;
-                                $_count++;
+                                $_SchoolID = $_value[0];
+                                $_School = $_value[2];
+                                $_Attainment = $_value[3];
+                                $_Course = $_value[4];
+                                $_Graduated = $_value[5];
 
                                 $_course_tbl =
                                     GSecureSQL::query(
-                                        "SELECT * FROM schooltbl WHERE StudentID = ? AND _Default = 1",
+                                        "SELECT * FROM coursetbl WHERE CourseID = ?",
                                         TRUE,
                                         "s",
                                         $_Course
                                     );
-                                $_count1 = 0;
                                 foreach ($_course_tbl as $_value1) {
-                                    $_CourseTitle = $_course_tbl[$_count1]->_CourseTitle;
+                                    $_CourseTitle = $_value1[1];
                                     if (substr($_Graduated, 0, 2) == 1) {
                                         $_Graduated = 'January' . substr($_Graduated, 2, 5);
                                     }
@@ -539,11 +533,10 @@ if (isset($_SESSION['StudentID'])) {
                                     "s",
                                     $StudentID
                                 );
-                            $count2 = 0;
                             foreach ($seminar_tbl as $item) {
-                                $SeminarID = $seminar_tbl[$count2]->SeminarID;
-                                $Seminar = $seminar_tbl[$count2]->Seminar;
-                                $YearAttended = $seminar_tbl[$count2]->YearAttended;
+                                $SeminarID = $item[0];
+                                $Seminar = $item[2];
+                                $YearAttended = $item[3];
                                 ?>
                                 <tr>
                                     <td><?php echo $Seminar; ?></td>

@@ -4,12 +4,17 @@ session_start();
 
 $CertificationID = $_GET['id'];
 
-$query = "SELECT * FROM certificationtbl WHERE CertificationID = '$CertificationID'";
-$result = mysql_query($query);
-while($query = mysql_fetch_array($result)){
-    $Certification = $query['Certification'];
-    $YearTaken = $query['YearTaken'];
-}
+$certification_tbl =
+    GSecureSQL::query(
+        "SELECT * FROM certificationtbl WHERE CertificationID = ?",
+        TRUE,
+        "s",
+        $CertificationID
+    );
+
+    $Certification = $certification_tbl[0][2];
+    $YearTaken = $certification_tbl[0][3];
+
 ?>
 
 <!doctype html>

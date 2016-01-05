@@ -290,17 +290,14 @@ session_start();
                                         style="width:100%; height:34px;">
                                     <option value="">- Please select one -</option>
                                     <?php
-
                                     $industry_tbl =
                                         GSecureSQL::query(
                                             "SELECT * FROM listofindustrytbl",
                                             TRUE
                                         );
-                                    $count = 0;
                                     foreach ($industry_tbl as $value) {
-                                        $IndustryID = $industry_tbl[$count]->id;
-                                        $Industry = $industry_tbl[$count]->Industry;
-                                        $count++;
+                                        $IndustryID = $value[0];
+                                        $Industry = $value[1];
                                         ?>
                                         <option value="<?php echo $IndustryID; ?>"><?php echo $Industry; ?></option>
                                         <?php
@@ -407,11 +404,9 @@ session_start();
                                             "SELECT * FROM listofpositiontbl",
                                             TRUE
                                         );
-                                    $count = 0;
                                     foreach ($position_tbl as $value) {
-                                        $PositionID = $position_tbl[$count]->id;
-                                        $Position = $position_tbl[$count]->Position;
-                                        $count++;
+                                        $PositionID = $value[0];
+                                        $Position = $value[1];
                                         ?>
                                         <option value="<?php echo $PositionID; ?>"><?php echo $Position; ?></option>
                                         <?php
@@ -436,8 +431,8 @@ session_start();
                                         );
                                     $count = 0;
                                     foreach ($specialization_tbl as $value) {
-                                        $SpecializationID = $specialization_tbl[$count]->id;
-                                        $Specialization = $specialization_tbl[$count]->Specialization;
+                                        $SpecializationID = $value[0];
+                                        $Specialization = $value[1];
                                         $count++;
                                         ?>
                                         <option
@@ -460,11 +455,9 @@ session_start();
                                             "SELECT * FROM listofsalaryrangetbl",
                                             TRUE
                                         );
-                                    $count = 0;
                                     foreach ($salaryrange_tbl as $value) {
-                                        $SalaryID = $salaryrange_tbl[$count]->id;
-                                        $Salary = $salaryrange_tbl[$count]->SalaryRange;
-                                        $count++;
+                                        $SalaryID = $value[0];
+                                        $Salary = $value[1];
                                         ?>
                                         <option value="<?php echo $SalaryID; ?>"><?php echo $Salary; ?></option>
                                         <?php

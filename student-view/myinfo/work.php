@@ -314,16 +314,16 @@ $StudentID = $_SESSION['StudentID'];
                     );
                 $count = 0;
                 foreach ($workexperience_tbl as $value) {
-                    $WorkID = $workexperience_tbl[$count]->WorkID;
-                    $CompanyName = $workexperience_tbl[$count]->CompanyName;
-                    $CompanyWebsite = $workexperience_tbl[$count]->CompanyWebsite;
-                    $Industry = $workexperience_tbl[$count]->Industry;
-                    $WorkSpecialization = $workexperience_tbl[$count]->Specialization;
-                    $DateFrom = $workexperience_tbl[$count]->DateFrom;
-                    $DateTo = $workexperience_tbl[$count]->DateTo;
-                    $PositionLevel = $workexperience_tbl[$count]->PositionLevel;
-                    $MonthlySalary = $workexperience_tbl[$count]->MonthlySalary;
-                    $NatureOfWork = $workexperience_tbl[$count]->NatureOfWork;
+                    $WorkID = $value[0];
+                    $CompanyName = $value[2];
+                    $CompanyWebsite = $value[3];
+                    $Industry = $value[4];
+                    $WorkSpecialization = $value[5];
+                    $DateFrom = $value[6];
+                    $DateTo = $value[7];
+                    $PositionLevel = $value[8];
+                    $MonthlySalary = $value[9];
+                    $NatureOfWork = $value[10];
                     $count++;
 
                     $specialization_tbl =
@@ -333,10 +333,8 @@ $StudentID = $_SESSION['StudentID'];
                             "s",
                             $WorkSpecialization
                         );
-                    $count1 = 0;
                     foreach ($specialization_tbl as $value1) {
-                        $WorkSpecialization = $specialization_tbl[$count1]->Specialization;
-                        $count1++;
+                        $WorkSpecialization = $value1[0];
                     }
 
                     $industry_tbl =
@@ -348,7 +346,7 @@ $StudentID = $_SESSION['StudentID'];
                         );
                     $count2 = 0;
                     foreach ($industry_tbl as $value2) {
-                        $Industry = $industry_tbl[$count2]->Industry;
+                        $Industry = $value2[0];
                         $count2++;
                     }
 
@@ -359,10 +357,8 @@ $StudentID = $_SESSION['StudentID'];
                             "s",
                             $PositionLevel
                         );
-                    $count3 = 0;
-                    foreach ($position_tbl as $valu3) {
-                        $PositionLevel = $position_tbl[$count3]->Position;
-                        $count3++;
+                    foreach ($position_tbl as $value3) {
+                        $PositionLevel = $value3[0];
                     }
                     if (substr($DateFrom, 0, 2) == 1) {
                         $DateFrom = 'January' . substr($DateFrom, 2, 5);

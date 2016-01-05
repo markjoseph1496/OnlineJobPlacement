@@ -301,12 +301,10 @@ if (isset($_SESSION['StudentID'])) {
                                     "s",
                                     $StudentID
                                 );
-                            $count = 0;
                             foreach ($certification_tbl as $value) {
-                                $CertificationID = $certification_tbl[$count]->CertificationID;
-                                $Certification = $certification_tbl[$count]->Certification;
-                                $YearTaken = $certification_tbl[$count]->YearTaken;
-                                $count++;
+                                $CertificationID = $value[0];
+                                $Certification =  $value[2];
+                                $YearTaken =  $value[3];
                             ?>
                             <tr class="certification">
                                 <td><?php echo $Certification; ?></td>

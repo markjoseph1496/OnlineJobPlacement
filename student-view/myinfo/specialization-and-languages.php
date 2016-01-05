@@ -322,17 +322,29 @@ else{
                                 </thead>
                                 <tbody>
                                     <?php
-                                        $query = "SELECT * FROM specializationtbl WHERE StudentID = '$StudentID'";
-                                        $result = mysql_query($query);
-                                        while($query = mysql_fetch_array($result)){
-                                            $SID = $query['SID'];
-                                            $Specialization = $query['Specialization'];
-                                            $YearOfExperience = $query['YearOfExperience'];
-                                            $Proficiency = $query['Proficiency'];
-                                            $q = "SELECT * FROM listofspecializationtbl WHERE id = '$Specialization'";
-                                            $r = mysql_query($q);
-                                            while($q = mysql_fetch_array($r)){
-                                                $Specialization = $q['Specialization'];
+
+                                    $specialization_tbl =
+                                        GSecureSQL::query(
+                                            "SELECT * FROM specializationtbl WHERE StudentID = ?",
+                                            TRUE,
+                                            "s",
+                                            $StudentID
+                                        );
+                                        foreach($specialization_tbl as $value){
+                                            $SID = $value[0];
+                                            $Specialization = $value[2];
+                                            $YearOfExperience = $value[3];
+                                            $Proficiency = $value[4];
+
+                                            $listofspecialization_tbl =
+                                                GSecureSQL::query(
+                                                    "SELECT * FROM listofspecializationtbl WHERE id = ?",
+                                                    TRUE,
+                                                    "s",
+                                                    $Specialization
+                                                );
+                                            foreach($listofspecialization_tbl as $value1){
+                                                $Specialization = $value1[1];
                                             }
                                     ?>
                                     <tr>
@@ -405,13 +417,19 @@ else{
                                 </thead>
                                 <tbody>
                                     <?php
-                                        $query1 = "SELECT * FROM languagetbl WHERE StudentID = '$StudentID'";
-                                        $result1 = mysql_query($query1);
-                                        while($query1 = mysql_fetch_array($result1)){
-                                            $LangID = $query1['LangID'];
-                                            $Language = $query1['Language'];
-                                            $WrittenProf = $query1['WrittenProf'];
-                                            $SpokenProf = $query1['SpokenProf'];
+
+                                        $language_tbl =
+                                            GSecureSQL::query(
+                                                "SELECT * FROM languagetbl WHERE StudentID = ?",
+                                                TRUE,
+                                                "s",
+                                                $StudentID
+                                            );
+                                        foreach ($language_tbl as $value2) {
+                                            $LangID = $value2[0];
+                                            $Language = $value2[2];
+                                            $WrittenProf = $value2[3];
+                                            $SpokenProf = $value2[4];
                                     ?>
                                     <tr>
                                         <td><?php echo $Language; ?></td>

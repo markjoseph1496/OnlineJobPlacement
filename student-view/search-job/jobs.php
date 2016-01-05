@@ -1,12 +1,11 @@
 <!DOCTYPE html>
-<?php 
+<?php
 include('../../connection.php');
 session_start();
 
-if(isset($_SESSION['StudentID'])){
+if (isset($_SESSION['StudentID'])) {
     $StudentID = $_SESSION['StudentID'];
-}
-else{
+} else {
     $StudentID = '';
     echo "
         <script type='text/javascript'>
@@ -41,7 +40,7 @@ else{
 
     <!-- jQuery and Bootstrap JS -->
     <script type="text/javascript" src="../../js/jquery.min.js"></script>
-    <script type="text/javascript" src="../../js/bootstrap.min.js" ></script>
+    <script type="text/javascript" src="../../js/bootstrap.min.js"></script>
 
     <!-- BootstrapValidator -->
     <script src="../../js/bootstrapValidator.min.js" type="text/javascript"></script>
@@ -85,130 +84,133 @@ else{
 </head>
 
 <body>
-    <div id="container">
-        <!-- Start Header Section -->
-        <div class="hidden-header"></div>
-        <header class="clearfix">
+<div id="container">
+    <!-- Start Header Section -->
+    <div class="hidden-header"></div>
+    <header class="clearfix">
         <!-- Start Top Bar -->
-            <div class="top-bar">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-md-7">
-                            <!-- Start Contact Info -->
-                            <ul class="contact-details">
-                                <li><a href="#"><i class="fa fa-hashtag"></i> 008-2012-0805</a></li>
-                            </ul>
-                            <!-- End Contact Info -->
-                        </div>
-                        <!-- .col-md-6 -->
-                        <div class="col-md-5">
-                        <!-- Start Social Links -->
-                            <ul class="social-list">
-                                <li class="profile-name">
-                                    <a class="bell itl-tooltip" data-placement="bottom" title="" href="#" data-original-title="Notification"><i class="fa fa-bell"></i></a>                            
-                                </li>
-                                <li class="profile-name">
-                                    &nbsp;
-                                </li>
-                                <li class="profile-name">
-                                    <i class="fa fa-user"></i> Hello, <b>Aira Jane Cruz</b>                               
-                                </li>
-                            </ul>
-                            <!-- End Social Links -->
-                        </div>
-                        <!-- .col-md-6 -->
-                    </div>
-                    <!-- .row -->
-                </div>
-                <!-- .container -->
-            </div>
-            <!-- .top-bar -->
-            <!-- End Top Bar -->   
-        </header>
-
-        <div class="page-banner no-subtitle">
+        <div class="top-bar">
             <div class="container">
                 <div class="row">
-                    <div class="col-md-6">
-                        <h2>Find the job that suits your passion</h2>
-                    </div>
-                    <div class="col-md-6">
-                        <ul class="breadcrumbs">
-                            <li><a href="../myinfo/personal-info.php">Fill out your information</a></li>
-                            <li></li>
+                    <div class="col-md-7">
+                        <!-- Start Contact Info -->
+                        <ul class="contact-details">
+                            <li><a href="#"><i class="fa fa-hashtag"></i> 008-2012-0805</a></li>
                         </ul>
+                        <!-- End Contact Info -->
                     </div>
-                </div>
-            </div>
-        </div>
-        <!-- End Page Banner -->
-
-        <div class="middle-bar">
-            <div class="container">
-                <div class="row">
+                    <!-- .col-md-6 -->
                     <div class="col-md-5">
-                        <ul class="mid-list">
-                            .
+                        <!-- Start Social Links -->
+                        <ul class="social-list">
+                            <li class="profile-name">
+                                <a class="bell itl-tooltip" data-placement="bottom" title="" href="#"
+                                   data-original-title="Notification"><i class="fa fa-bell"></i></a>
+                            </li>
+                            <li class="profile-name">
+                                &nbsp;
+                            </li>
+                            <li class="profile-name">
+                                <i class="fa fa-user"></i> Hello, <b>Aira Jane Cruz</b>
+                            </li>
                         </ul>
+                        <!-- End Social Links -->
                     </div>
+                    <!-- .col-md-6 -->
+                </div>
+                <!-- .row -->
+            </div>
+            <!-- .container -->
+        </div>
+        <!-- .top-bar -->
+        <!-- End Top Bar -->
+    </header>
+
+    <div class="page-banner no-subtitle">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <h2>Find the job that suits your passion</h2>
+                </div>
+                <div class="col-md-6">
+                    <ul class="breadcrumbs">
+                        <li><a href="../myinfo/personal-info.php">Fill out your information</a></li>
+                        <li></li>
+                    </ul>
                 </div>
             </div>
         </div>
+    </div>
+    <!-- End Page Banner -->
 
-        <!-- Start Content -->
-        <div id="content">
-            <div class="container">
-                <div class="row blog-page">
-                    <!--Sidebar-->
-                    <div class="col-md-3 sidebar left-sidebar">
-                        <!-- Search Widget -->
-                        <div class="widget widget-search">
-                            <form action="#">
-                                <input type="search" placeholder="Search..." />
-                                <button class="search-btn" type="submit"><i class="fa fa-search"></i></button>
-                            </form>
-                        </div>
+    <div class="middle-bar">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-5">
+                    <ul class="mid-list">
+                        .
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
 
-                        <!-- Categories Widget -->
-                        <div class="widget widget-categories">
-                            <h4>Categories <span class="head-line"></span></h4>
-                            <li>
-                                <a href="#"><i class="fa fa-bookmark"></i> Bookmarked Jobs <b>(0)</b></a>
-                            </li>
-                            <li>
-                                <a href="#"><i class="fa fa-sort"></i> Sort by: </a>
-                            </li>
-                            <li>
-                                <a href="#"><i class="fa fa-filter"></i> Filter by:</a>
-                            </li>
-                        </div>
-
-
-                        <!-- Popular Posts widget -->
-                        <div class="widget widget-popular-posts">
-                            <h4>Popular Jobs <span class="head-line"></span></h4>
-                            <ul>
-                                <li>
-                                    <div class="widget-thumb">
-                                        <a href="#"><img src="../../images/blog-mini-03.jpg" alt="" /></a>
-                                    </div>
-                                    <div class="widget-content">
-                                        <h5><a href="#">Senior Accountant</a></h5>
-                                        <span>Jul 29 2013</span>
-                                    </div>
-                                    <div class="clearfix"></div>
-                                </li>
-                            </ul>
-                        </div>
+    <!-- Start Content -->
+    <div id="content">
+        <div class="container">
+            <div class="row blog-page">
+                <!--Sidebar-->
+                <div class="col-md-3 sidebar left-sidebar">
+                    <!-- Search Widget -->
+                    <div class="widget widget-search">
+                        <form action="#">
+                            <input type="search" placeholder="Search..."/>
+                            <button class="search-btn" type="submit"><i class="fa fa-search"></i></button>
+                        </form>
                     </div>
-                    <!--End sidebar-->
+
+                    <!-- Categories Widget -->
+                    <div class="widget widget-categories">
+                        <h4>Categories <span class="head-line"></span></h4>
+                        <li>
+                            <a href="#"><i class="fa fa-bookmark"></i> Bookmarked Jobs <b>(0)</b></a>
+                        </li>
+                        <li>
+                            <a href="#"><i class="fa fa-sort"></i> Sort by: </a>
+                        </li>
+                        <li>
+                            <a href="#"><i class="fa fa-filter"></i> Filter by:</a>
+                        </li>
+                    </div>
 
 
-                    <!-- Start Blog Posts -->
-                    <div class="col-md-9 blog-box">
-                        <h4 class="classic-title"><span>Jobs</span></h4>
-                        <?php 
-                            $qry = 
+                    <!-- Popular Posts widget -->
+                    <div class="widget widget-popular-posts">
+                        <h4>Popular Jobs <span class="head-line"></span></h4>
+                        <ul>
+                            <li>
+                                <div class="widget-thumb">
+                                    <a href="#"><img src="../../images/blog-mini-03.jpg" alt=""/></a>
+                                </div>
+                                <div class="widget-content">
+                                    <h5><a href="#">Senior Accountant</a></h5>
+                                    <span>Jul 29 2013</span>
+                                </div>
+                                <div class="clearfix"></div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <!--End sidebar-->
+
+
+                <!-- Start Blog Posts -->
+                <div class="col-md-9 blog-box">
+                    <h4 class="classic-title"><span>Jobs</span></h4>
+                    <?php
+
+                    $qry =
+                        GSecureSQL::query(
                             "SELECT
                                 `comppositiontbl`.`PositionID`,
                                 `comppositiontbl`.`PositionLevel`,
@@ -219,33 +221,32 @@ else{
                                 `companyinfotbl`.`City`
                             FROM
                                 `comppositiontbl`
-                            INNER JOIN `companyinfotbl` ON `comppositiontbl`.`CompanyID` = `companyinfotbl`.`CompanyID`";
+                            INNER JOIN `companyinfotbl` ON `comppositiontbl`.`CompanyID` = `companyinfotbl`.`CompanyID`",
+                            TRUE
+                        );
+                    foreach ($qry as $value) {
+                        $PositionID = $value[0];
+                        $position = $value[1];
+                        $company = $value[2];
+                        $company_name = $value[3];
+                        $location = $value[6];
 
-                            $result = mysql_query($qry);
-                            while($qry = mysql_fetch_array($result))
-                            {
-                                $PositionID = $qry['PositionID'];
-                                $position = $qry['PositionLevel'];
-                                $company = $qry['CompanyID'];
-                                $company_name = $qry['CompanyName'];
-                                $location = $qry['City'];
+                        $diff_from = date_diff(new DateTime(), new DateTime($value[4]));
+                        $diff_to = date_diff(new DateTime(), new DateTime($value[5]));
 
-                                $diff_from = date_diff(new DateTime(), new DateTime($qry['PostingDateFrom']));
-                                $diff_to = date_diff(new DateTime(), new DateTime($qry['PostingDateTo']));
+                        $a = $diff_from->y >= 0 &&
+                            $diff_from->m >= 0 &&
+                            $diff_from->d >= 0 &&
+                            $diff_from->invert == 1;
 
-                                $a =    $diff_from->y >= 0 &&
-                                        $diff_from->m >= 0 &&
-                                        $diff_from->d >= 0 &&
-                                        $diff_from->invert == 1;
+                        $b = $diff_to->y >= 0 &&
+                            $diff_to->m >= 0 &&
+                            $diff_to->d >= 0 &&
+                            $diff_to->invert == 0;
 
-                                $b =    $diff_to->y >= 0 &&
-                                        $diff_to->m >= 0 &&
-                                        $diff_to->d >= 0 &&
-                                        $diff_to->invert == 0;
-
-                                if($a && $b){
-                                    echo 
-                                        "
+                        if ($a && $b) {
+                            echo
+                            "
                                         <div class='blog-post standard-post'>
                                             <!-- Post Content -->
                                             <div class='post-content'>
@@ -266,67 +267,67 @@ else{
                                             </div>
                                         </div>
                                         ";
-                                }
-                            }
-                        ?>
+                        }
+                    }
+                    ?>
 
-                        <!-- Start Pagination -->
-                        <div id="pagination">
-                            <span class="all-pages">Page 1 of 3</span>
-                            <span class="current page-num">1</span>
-                            <a class="page-num" href="#">2</a>
-                            <a class="page-num" href="#">3</a>
-                            <a class="page-num" href="#">4</a>
-                            <a class="page-num" href="#">5</a>
-                            <a class="next-page" href="#">Next</a>
-                        </div>
-                        <!-- End Pagination -->
+                    <!-- Start Pagination -->
+                    <div id="pagination">
+                        <span class="all-pages">Page 1 of 3</span>
+                        <span class="current page-num">1</span>
+                        <a class="page-num" href="#">2</a>
+                        <a class="page-num" href="#">3</a>
+                        <a class="page-num" href="#">4</a>
+                        <a class="page-num" href="#">5</a>
+                        <a class="next-page" href="#">Next</a>
                     </div>
+                    <!-- End Pagination -->
                 </div>
             </div>
         </div>
     </div>
-    <!-- End Content -->
-    <script type="text/javascript" src="../../js/script.js"></script>
+</div>
+<!-- End Content -->
+<script type="text/javascript" src="../../js/script.js"></script>
 
 
-    <!-- Start Footer Section -->
-    <footer>
-        <div class="container">
-            <!-- Start Copyright -->
-            <div class="copyright-section">
-                <div class="row">
-                    <div class="col-md-6">
-                        <p>&copy; 2015 OJPMS - All Rights Reserved</p>
-                    </div>
-                    <!-- .col-md-6 -->
-                    <div class="col-md-6">
-                        <ul class="footer-nav">
-                            <li><a href="#">Sitemap</a>
-                            </li>
-                            <li><a href="#">Privacy Policy</a>
-                            </li>
-                            <li><a href="#">Contact</a>
-                            </li>
-                        </ul>
-                    </div>
-                    <!-- .col-md-6 -->
+<!-- Start Footer Section -->
+<footer>
+    <div class="container">
+        <!-- Start Copyright -->
+        <div class="copyright-section">
+            <div class="row">
+                <div class="col-md-6">
+                    <p>&copy; 2015 OJPMS - All Rights Reserved</p>
                 </div>
-                <!-- .row -->
+                <!-- .col-md-6 -->
+                <div class="col-md-6">
+                    <ul class="footer-nav">
+                        <li><a href="#">Sitemap</a>
+                        </li>
+                        <li><a href="#">Privacy Policy</a>
+                        </li>
+                        <li><a href="#">Contact</a>
+                        </li>
+                    </ul>
+                </div>
+                <!-- .col-md-6 -->
             </div>
-            <!-- End Copyright -->
+            <!-- .row -->
         </div>
-    </footer>
-    <!-- End Footer Section -->
-
-    <!-- Go To Top Link -->
-    <a href="#" class="back-to-top"><i class="fa fa-angle-up"></i></a>
-
-    <div id="loader">
-        <div class="spinner">
-            <div class="dot1"></div>
-            <div class="dot2"></div>
-        </div>
+        <!-- End Copyright -->
     </div>
+</footer>
+<!-- End Footer Section -->
+
+<!-- Go To Top Link -->
+<a href="#" class="back-to-top"><i class="fa fa-angle-up"></i></a>
+
+<div id="loader">
+    <div class="spinner">
+        <div class="dot1"></div>
+        <div class="dot2"></div>
+    </div>
+</div>
 </body>
 </html>

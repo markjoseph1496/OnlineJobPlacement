@@ -4,11 +4,16 @@ session_start();
 
 $LangID = $_GET['id'];
 
-$query = "SELECT * FROM languagetbl WHERE LangID = '$LangID'";
-$result = mysql_query($query);
-while($query = mysql_fetch_array($result)){
-    $Language = $query['Language'];
-}
+$language_tbl =
+    GSecureSQL::query(
+        "SELECT * FROM languagetbl WHERE LangID = ?",
+        TRUE,
+        "s",
+        $LangID
+    );
+
+    $Language = $language_tbl[0][2];
+
 ?>
 <!doctype html>
 <html lang="en">

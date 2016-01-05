@@ -2,11 +2,15 @@
 include('../../connection.php');
 
 
-if(isset($_GET['delete_URLID'])) {
+if (isset($_GET['delete_URLID'])) {
     $Z = $_GET['delete_URLID'];
 
-    $query = "DELETE FROM urltbl WHERE URLID='$Z'";
-    $result = mysql_query($query);
+    GSecureSQL::query(
+        "DELETE FROM urltbl WHERE URLID=?",
+        FALSE,
+        "s",
+        $Z
+    );
 
     echo "
             <script type='text/javascript'>
@@ -14,11 +18,15 @@ if(isset($_GET['delete_URLID'])) {
             </script>";
 }
 
-if(isset($_GET['delete_SchoolID'])) {
+if (isset($_GET['delete_SchoolID'])) {
     $Z = $_GET['delete_SchoolID'];
 
-	$query = "DELETE FROM schooltbl WHERE SchoolID='$Z'";
-    $result = mysql_query($query);
+    GSecureSQL::query(
+        "DELETE FROM schooltbl WHERE SchoolID=?",
+        FALSE,
+        "s",
+        $Z
+    );
 
     echo "
             <script type='text/javascript'>
@@ -27,11 +35,16 @@ if(isset($_GET['delete_SchoolID'])) {
             ";
 }
 
-if(isset($_GET['delete_SeminarID'])) {
+if (isset($_GET['delete_SeminarID'])) {
     $Z = $_GET['delete_SeminarID'];
 
- 	$query = "DELETE FROM seminartbl WHERE SeminarID='$Z'";
-    $result = mysql_query($query);
+
+    GSecureSQL::query(
+        "DELETE FROM seminartbl WHERE SeminarID=?",
+        FALSE,
+        "s",
+        $Z
+    );
 
     echo "
             <script type='text/javascript'>
@@ -40,25 +53,33 @@ if(isset($_GET['delete_SeminarID'])) {
        
             ";
 }
-if(isset($_GET['delete_CertificationID'])) {
+if (isset($_GET['delete_CertificationID'])) {
     $Z = $_GET['delete_CertificationID'];
 
- 	$query = "DELETE FROM certificationtbl WHERE CertificationID='$Z'";
-    $result = mysql_query($query);
+    GSecureSQL::query(
+        "DELETE FROM certificationtbl WHERE CertificationID=?",
+        FALSE,
+        "s",
+        $Z
+    );
 
-        echo "
+    echo "
                 <script type='text/javascript'>
                 location.href='certifications.php?id=3';
                 </script>
                 ";
- 	
+
 }
 
-if(isset($_GET['delete_AchievementID'])) {
+if (isset($_GET['delete_AchievementID'])) {
     $Z = $_GET['delete_AchievementID'];
 
- 	$query = "DELETE FROM achievementstbl WHERE AchievementID='$Z'";
-    $result = mysql_query($query);
+    GSecureSQL::query(
+        "DELETE FROM achievementstbl WHERE AchievementID=?",
+        FALSE,
+        "s",
+        $Z
+    );
 
     echo "
             <script type='text/javascript'>
@@ -67,11 +88,15 @@ if(isset($_GET['delete_AchievementID'])) {
             ";
 }
 
-if(isset($_GET['delete_ReferenceID'])) {
+if (isset($_GET['delete_ReferenceID'])) {
     $Z = $_GET['delete_ReferenceID'];
 
-	$query = "DELETE FROM referencetbl WHERE ReferenceID='$Z'";
-    $result = mysql_query($query);
+    GSecureSQL::query(
+        "DELETE FROM referencetbl WHERE ReferenceID=?",
+        FALSE,
+        "s",
+        $Z
+    );
 
     echo "
             <script type='text/javascript'>
@@ -80,11 +105,15 @@ if(isset($_GET['delete_ReferenceID'])) {
             ";
 }
 
-if(isset($_GET['delete_SID'])){
+if (isset($_GET['delete_SID'])) {
     $id = $_GET['delete_SID'];
 
-    $query = "DELETE FROM specializationtbl WHERE SID = '$id'";
-    $result = mysql_query($query);
+    GSecureSQL::query(
+        "DELETE FROM specializationtbl WHERE SID = ?",
+        FALSE,
+        "s",
+        $id
+    );
 
     echo "
             <script type='text/javascript'>
@@ -93,11 +122,15 @@ if(isset($_GET['delete_SID'])){
             ";
 }
 
-if(isset($_GET['delete_LangID'])){
+if (isset($_GET['delete_LangID'])) {
     $id = $_GET['delete_LangID'];
 
-    $query = "DELETE FROM languagetbl WHERE LangID = '$id'";
-    $result = mysql_query($query);
+    GSecureSQL::query(
+        "DELETE FROM languagetbl WHERE LangID = ?",
+        FALSE,
+        "s",
+        $id
+    );
 
     echo "
             <script type='text/javascript'>

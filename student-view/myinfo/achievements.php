@@ -299,11 +299,9 @@ if (isset($_SESSION['StudentID'])) {
                                     "s",
                                     $StudentID
                                 );
-                            $count = 0;
                             foreach ($achievements_tbl as $value) {
-                            $AchievementID = $achievements_tbl[$count]->AchievementID;
-                            $Achievements = $achievements_tbl[$count]->Achievements;
-                            $count++;
+                                $AchievementID = $value[0];
+                                $Achievements = $value[2];
                             ?>
                             <tr>
                                 <td><?php echo $Achievements; ?></td>

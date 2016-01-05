@@ -5,11 +5,15 @@ session_start();
 
 $AchievementID = $_GET['id'];
 
-$query = "SELECT * FROM achievementstbl WHERE AchievementID = '$AchievementID'";
-$result = mysql_query($query);
-while($query = mysql_fetch_array($result)){
-    $Achievements = $query['Achievements'];
-}
+$achievements_tbl =
+    GSecureSQL::query(
+        "SELECT * FROM achievementstbl WHERE AchievementID = ?",
+        TRUE,
+        "s",
+        $AchievementID
+    );
+
+    $Achievements = $achievements_tbl[0][2];
 ?>
 
 <!DOCTYPE html>

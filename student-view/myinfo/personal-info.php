@@ -12,15 +12,15 @@ $StudentID = $_SESSION['StudentID'];
         $StudentID
     );
 
-    $FirstName = $student_tbl[0]->FirstName;
-    $MiddleName = $student_tbl[0]->MiddleName;
-    $LastName = $student_tbl[0]->LastName;
-    $Gender = $student_tbl[0]->Gender;
-    $Birthdate = $student_tbl[0]->Birthdate;
-    $Nationality = $student_tbl[0]->Nationality;
-    $CivilStatus = $student_tbl[0]->CivilStatus;
-    $FBLink = $student_tbl[0]->FBLink;
-    $TwitterLink = $student_tbl[0]->TwitterLink;
+    $FirstName = $student_tbl[0][3];
+    $MiddleName = $student_tbl[0][4];
+    $LastName = $student_tbl[0][5];
+    $Gender = $student_tbl[0][6];
+    $Birthdate = $student_tbl[0][7];
+    $Nationality = $student_tbl[0][10];
+    $CivilStatus = $student_tbl[0][9];
+    $FBLink = $student_tbl[0][12];
+    $TwitterLink = $student_tbl[0][13];
     $FBLink = substr($FBLink, 24);
 
 ?>

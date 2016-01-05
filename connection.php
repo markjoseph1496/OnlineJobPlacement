@@ -59,7 +59,6 @@ class GSecureSQL
                 $ret = 'Query has been executed';
             } else {
                 $st->execute();
-                $st->execute();
                 $code_result = '$st->bind_result(';
                 $bool = false;
                 $p = array();
@@ -75,8 +74,12 @@ class GSecureSQL
                 eval($code_result);
 
                 $ret = array();
+                $k = 0;
                 while($st->fetch()){
-                    array_push($ret, $p);
+                    for($i = 0; $i < count($p); $i++){
+                        $ret[$k][$i] = $p[$i];
+                    }
+                    $k++;
                 }
 
                 $st->close();
@@ -118,8 +121,12 @@ class GSecureSQL
                 eval($code_result);
 
                 $ret = array();
+                $k = 0;
                 while($st->fetch()){
-                    array_push($ret, $p);
+                    for($i = 0; $i < count($p); $i++){
+                        $ret[$k][$i] = $p[$i];
+                    }
+                    $k++;
                 }
 
                 $st->close();

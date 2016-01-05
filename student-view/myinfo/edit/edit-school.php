@@ -15,20 +15,22 @@ else{
     $EditSchoolID = $_GET['id'];
 }
 
-$qry = "SELECT * FROM schooltbl WHERE SchoolID ='$EditSchoolID'";
-$result = mysql_query($qry);
-        while($qry = mysql_fetch_Array($result))
-        {       
-                $SchoolID = $qry['SchoolID'];
-                $StudentID = $qry['StudentID'];
-                $School = $qry['School'];
-                $Attainment = $qry['Attainment'];
-                $Course = $qry['Course'];
-                $Graduated = $qry['Graduated'];
-                $GraduatedMonth = substr($Graduated, 0,2);
-                $GraduatedYear = substr($Graduated, 3,6);
-         
-        }
+$school_tbl =
+    GSecureSQL::query(
+        "SELECT * FROM schooltbl WHERE SchoolID = ?",
+        TRUE,
+        "s",
+        $EditSchoolID
+    );
+    $SchoolID = $school_tbl[0][0];
+    $StudentID = $school_tbl[0][1];
+    $School = $school_tbl[0][2];
+    $Attainment = $school_tbl[0][3];
+    $Course = $school_tbl[0][4];
+    $Graduated = $school_tbl[0][5];
+    $GraduatedMonth = substr($Graduated, 0,2);
+    $GraduatedYear = substr($Graduated, 3,6);
+
 ?>
 <!doctype html>
 <html lang="en">

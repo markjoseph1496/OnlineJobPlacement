@@ -4,16 +4,20 @@ session_start();
 
 $ReferenceID = $_GET['id'];
 
-$query = "SELECT * FROM referencetbl WHERE ReferenceID = '$ReferenceID'";
-$result = mysql_query($query);
-while($query = mysql_fetch_array($result)){
-    $Name = $query['Name'];
-    $Relationship = $query['Relationship'];
-    $Company = $query['Company'];
-    $Position = $query['Position'];
-    $Phone = $query['Phone'];
-    $Email = $query['Email'];
-}
+$reference_tbl =
+    GSecureSQL::query(
+        "SELECT * FROM referencetbl WHERE ReferenceID = ?",
+        TRUE,
+        "s",
+        $ReferenceID
+    );
+
+    $Name = $reference_tbl[0][2];
+    $Relationship = $reference_tbl[0][3];
+    $Company = $reference_tbl[0][4];
+    $Position = $reference_tbl[0][5];
+    $Phone = $reference_tbl[0][6];
+    $Email = $reference_tbl[0][7];
 ?>
 
 <!doctype html>
