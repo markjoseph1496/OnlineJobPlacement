@@ -3632,3 +3632,9 @@ html.flexbox .testimonial-company--coinbase {
     width: 100%;
     height: 100%;
 }
+.admin-login {
+    background: url(../img/b.jpg) no-repeat center center fixed;
+    background-size: cover;
+    width: 100%;
+    height: 100%;
+}
