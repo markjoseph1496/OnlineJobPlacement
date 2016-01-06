@@ -56,7 +56,6 @@
     <script type="text/javascript" src="js/jquery.parallax.js"></script>
     <script type="text/javascript" src="js/mediaelement-and-player.js"></script>
     <script type="text/javascript" src="js/jquery.slicknav.js"></script>
-    <script type="text/javascript" src="js/smoothscroll.js"></script>
 </head>
 
 <body>
@@ -75,15 +74,16 @@
                             <i class="fa fa-bars"></i>
                         </button>
                         <!-- End Toggle Nav Link For Mobiles -->
-                        <a class="navbar-brand" href="index.php"><img alt="" src="images/ojpms.png"></a>
+                        <div class="navbar-brand" ><img alt="" src="images/ojpms.png"></div>
                     </div>
                     <div class="navbar-collapse collapse">
                         <!-- Start Navigation List -->
                         <ul class="nav navbar-nav navbar-right">
-                            <li><a href="#jobs">Jobs</a></li>
-                            <li><a href="#events">Events</a></li>
-                            <li><a href="#about">About</a></li>
-                            <li><a href="#join">Join Us</a></li>
+                        	<li><a href="#home" class="smoothScroll">Home</a></li>
+                            <li><a href="#jobs" class="smoothScroll">Jobs</a></li>
+                            <li><a href="#events" class="smoothScroll">Events</a></li>
+                            <li><a href="#about" class="smoothScroll">About</a></li>
+                            <li><a href="#join" class="smoothScroll">Join Us</a></li>
                         </ul>
                         <!-- End Navigation List -->
                     </div>
@@ -91,9 +91,11 @@
 
                 <!-- Mobile Menu Start -->
                 <ul class="wpb-mobile-menu">
-                    <li><a href="#events">Events</a></li>
-                    <li><a href="#about">About</a></li>
-                    <li><a href="#join">Join Us</a></li>
+                	<li><a href="#home" class="smoothScroll">Home</a></li>
+                	<li><a href="#jobs" class="smoothScroll">Jobs</a></li>
+                    <li><a href="#events" class="smoothScroll">Events</a></li>
+                    <li><a href="#about" class="smoothScroll">About</a></li>
+                    <li><a href="#join" class="smoothScroll">Join Us</a></li>
                 </ul>
                 <!-- Mobile Menu End -->
             </div>
@@ -175,6 +177,8 @@
                 </a>
             </div>
             <!-- /carousel -->
+
+
         </div>
         <!-- End HomePage Slider -->
 
@@ -182,450 +186,52 @@
         <!-- Start Content -->
         <div id="content">
             
-            <section id="jobs">
+            <section id="jobs" style="background-color:#4275F4;">
                 <!-- Start News & Skill Section -->
                 <div class="container">
                     <div class="row">
-                        <div class="big-title text-center">
-                            <h1>Search for Your <span class="accent-color">Jobs</span></h1>
-                            <p class="title-desc"></p>
-                        </div>
+                    	<div class="big-title text-center animated fadeInDown delay-01" data-animation="fadeInDown" data-animation-delay="01">
+		                   <h1>Search for Your <span class="accent-color">Jobs</span></h1>
+		                   <p class="title-desc"></p>
+		                </div>
+
                         <div class="col-md-8">
                             <div class="tabs-section">
                                 <!-- Nav Tabs -->
                                 <ul class="nav nav-tabs">
                                     <li class="active"><a href="#tab-1" data-toggle="tab"><i class="fa fa-globe"></i>Industry</a></li>
                                     <li><a href="#tab-2" data-toggle="tab"><i class="fa fa-leaf"></i>Specialization</a></li>
-                                    <li><a href="#tab-3" data-toggle="tab"><i class="fa fa-thumb-tack"></i>Location</a></li>
+                                    <li><a href="#tab-3" data-toggle="tab"><i class="fa fa-map-marker"></i>Location</a></li>
                                 </ul>
 
                                 <!-- Tab Panels -->
                                 <div class="tab-content">
                                     <!-- Tab Content 1 -->
                                     <div class="tab-pane fade in active" id="tab-1">
-                                        <div class="row">
+                                    	<div class="row">
                                             <div class="col-md-6">
-                                                
-                                                <div class="panel-group" id="accordion">
-
-                                                    <!-- Start Accordion 1 -->
-                                                    <div class="panel panel-default">
-                                                        <div class="panel-heading">
-                                                            <h4 class="panel-title">
-                                                                <a data-toggle="collapse" data-parent="#accordion" href="#collapse-1" class="collapsed">
-                                                                    <i class="fa fa-angle-down control-icon"></i>
-                                                                    Accounting
-                                                                </a>
-                                                            </h4>
-                                                        </div>
-                                                        <div id="collapse-1" class="panel-collapse collapse">
-                                                            <div class="panel-body">
-                                                                <div class="col-md-6">
-                                                                    Accounting
-                                                                    Audit & Taxation (148)
-                                                                    Consulting (21)
-                                                                    Credit Control (25)
-                                                                    Financial Analyst (52)
-                                                                </div>
-                                                                <div class="col-md-6">
-                                                                    Financial Controller (40)
-                                                                </div>
-                                                            </div>
-                                                            <div class="hr4"></div>
-                                                            <label class="text-center"><a href="">View All <i class="fa fa-angle-double-right"></i></a></label>
-                                                        </div>
-                                                    </div>
-                                                    <!-- End Accordion 1 -->
-
-                                                    <!-- Start Accordion 2 -->
-                                                    <div class="panel panel-default">
-                                                        <div class="panel-heading">
-                                                            <h4 class="panel-title">
-                                                                <a data-toggle="collapse" data-parent="#accordion" href="#collapse-2" class="collapsed">
-                                                                    <i class="fa fa-angle-down control-icon"></i>
-                                                                    Admin & HR
-                                                                </a>
-                                                            </h4>
-                                                        </div>
-                                                        <div id="collapse-2" class="panel-collapse collapse">
-                                                            <div class="panel-body">Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. The point of using Lorem Ipsum is that it has a <strong>more-or-less</strong> normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore...</div>
-                                                        </div>
-                                                    </div>
-                                                    <!-- End Accordion 2 -->
-
-                                                    <!-- Start Accordion 3 -->
-                                                    <div class="panel panel-default">
-                                                        <div class="panel-heading">
-                                                            <h4 class="panel-title">
-                                                                <a data-toggle="collapse" data-parent="#accordion" href="#collapse-3" class="collapsed">
-                                                                    <i class="fa fa-angle-down control-icon"></i>
-                                                                    Banking / Finance
-                                                                </a>
-                                                            </h4>
-                                                        </div>
-                                                        <div id="collapse-3" class="panel-collapse collapse">
-                                                            <div class="panel-body"><strong>Duis</strong> aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore...</div>
-                                                        </div>
-                                                    </div>
-                                                    <!-- End Accordion 3 -->
-
-                                                    <!-- Start Accordion 4 -->
-                                                    <div class="panel panel-default">
-                                                        <div class="panel-heading">
-                                                            <h4 class="panel-title">
-                                                                <a data-toggle="collapse" data-parent="#accordion" href="#collapse-4" class="collapsed">
-                                                                    <i class="fa fa-angle-down control-icon"></i>
-                                                                    Beauty Care / Health
-                                                                </a>
-                                                            </h4>
-                                                        </div>
-                                                        <div id="collapse-4" class="panel-collapse collapse">
-                                                            <div class="panel-body"><strong>Duis</strong> aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore...</div>
-                                                        </div>
-                                                    </div>
-                                                    <!-- End Accordion 4 -->
-
-                                                    <!-- Start Accordion 5 -->
-                                                    <div class="panel panel-default">
-                                                        <div class="panel-heading">
-                                                            <h4 class="panel-title">
-                                                                <a data-toggle="collapse" data-parent="#accordion" href="#collapse-5" class="collapsed">
-                                                                    <i class="fa fa-angle-down control-icon"></i>
-                                                                    Building & Construction
-                                                                </a>
-                                                            </h4>
-                                                        </div>
-                                                        <div id="collapse-5" class="panel-collapse collapse">
-                                                            <div class="panel-body"><strong>Duis</strong> aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore...</div>
-                                                        </div>
-                                                    </div>
-                                                    <!-- End Accordion 5 -->
-
-                                                    <!-- Start Accordion 6 -->
-                                                    <div class="panel panel-default">
-                                                        <div class="panel-heading">
-                                                            <h4 class="panel-title">
-                                                                <a data-toggle="collapse" data-parent="#accordion" href="#collapse-6" class="collapsed">
-                                                                    <i class="fa fa-angle-down control-icon"></i>
-                                                                    Design
-                                                                </a>
-                                                            </h4>
-                                                        </div>
-                                                        <div id="collapse-6" class="panel-collapse collapse">
-                                                            <div class="panel-body"><strong>Duis</strong> aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore...</div>
-                                                        </div>
-                                                    </div>
-                                                    <!-- End Accordion 6 -->
-
-                                                    <!-- Start Accordion 7-->
-                                                    <div class="panel panel-default">
-                                                        <div class="panel-heading">
-                                                            <h4 class="panel-title">
-                                                                <a data-toggle="collapse" data-parent="#accordion" href="#collapse-7" class="collapsed">
-                                                                    <i class="fa fa-angle-down control-icon"></i>
-                                                                    Education
-                                                                </a>
-                                                            </h4>
-                                                        </div>
-                                                        <div id="collapse-7" class="panel-collapse collapse">
-                                                            <div class="panel-body"><strong>Duis</strong> aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore...</div>
-                                                        </div>
-                                                    </div>
-                                                    <!-- End Accordion 7 -->
-
-                                                    <!-- Start Accordion 8 -->
-                                                    <div class="panel panel-default">
-                                                        <div class="panel-heading">
-                                                            <h4 class="panel-title">
-                                                                <a data-toggle="collapse" data-parent="#accordion" href="#collapse-8" class="collapsed">
-                                                                    <i class="fa fa-angle-down control-icon"></i>
-                                                                    Engineering
-                                                                </a>
-                                                            </h4>
-                                                        </div>
-                                                        <div id="collapse-8" class="panel-collapse collapse">
-                                                            <div class="panel-body"><strong>Duis</strong> aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore...</div>
-                                                        </div>
-                                                    </div>
-                                                    <!-- End Accordion 8 -->
-
-                                                    <!-- Start Accordion 9 -->
-                                                    <div class="panel panel-default">
-                                                        <div class="panel-heading">
-                                                            <h4 class="panel-title">
-                                                                <a data-toggle="collapse" data-parent="#accordion" href="#collapse-9" class="collapsed">
-                                                                    <i class="fa fa-angle-down control-icon"></i>
-                                                                    Hospitality / F & B
-                                                                </a>
-                                                            </h4>
-                                                        </div>
-                                                        <div id="collapse-9" class="panel-collapse collapse">
-                                                            <div class="panel-body"><strong>Duis</strong> aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore...</div>
-                                                        </div>
-                                                    </div>
-                                                    <!-- End Accordion 9 -->
-
-                                                    <!-- Start Accordion 10 -->
-                                                    <div class="panel panel-default">
-                                                        <div class="panel-heading">
-                                                            <h4 class="panel-title">
-                                                                <a data-toggle="collapse" data-parent="#accordion" href="#collapse-10" class="collapsed">
-                                                                    <i class="fa fa-angle-down control-icon"></i>
-                                                                    Information Technology (IT)
-                                                                </a>
-                                                            </h4>
-                                                        </div>
-                                                        <div id="collapse-10" class="panel-collapse collapse">
-                                                            <div class="panel-body"><strong>Duis</strong> aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore...</div>
-                                                        </div>
-                                                    </div>
-                                                    <!-- End Accordion 10 -->
-
-                                                    <!-- Start Accordion 11 -->
-                                                    <div class="panel panel-default">
-                                                        <div class="panel-heading">
-                                                            <h4 class="panel-title">
-                                                                <a data-toggle="collapse" data-parent="#accordion" href="#collapse-11" class="collapsed">
-                                                                    <i class="fa fa-angle-down control-icon"></i>
-                                                                    Insurance
-                                                                </a>
-                                                            </h4>
-                                                        </div>
-                                                        <div id="collapse-11" class="panel-collapse collapse">
-                                                            <div class="panel-body"><strong>Duis</strong> aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore...</div>
-                                                        </div>
-                                                    </div>
-                                                    <!-- End Accordion 11 -->
-
-                                                    <!-- Start Accordion 12 -->
-                                                    <div class="panel panel-default">
-                                                        <div class="panel-heading">
-                                                            <h4 class="panel-title">
-                                                                <a data-toggle="collapse" data-parent="#accordion" href="#collapse-12" class="collapsed">
-                                                                    <i class="fa fa-angle-down control-icon"></i>
-                                                                    Management
-                                                                </a>
-                                                            </h4>
-                                                        </div>
-                                                        <div id="collapse-12" class="panel-collapse collapse">
-                                                            <div class="panel-body"><strong>Duis</strong> aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore...</div>
-                                                        </div>
-                                                    </div>
-                                                    <!-- End Accordion 12 -->
-
-                                                    <!-- Start Accordion 13 -->
-                                                    <div class="panel panel-default">
-                                                        <div class="panel-heading">
-                                                            <h4 class="panel-title">
-                                                                <a data-toggle="collapse" data-parent="#accordion" href="#collapse-13" class="collapsed">
-                                                                    <i class="fa fa-angle-down control-icon"></i>
-                                                                    Manufacturing
-                                                                </a>
-                                                            </h4>
-                                                        </div>
-                                                        <div id="collapse-13" class="panel-collapse collapse">
-                                                            <div class="panel-body"><strong>Duis</strong> aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore...</div>
-                                                        </div>
-                                                    </div>
-                                                    <!-- End Accordion 13 -->
-                                                </div>
-                                                <!-- End Accordion -->                                                    
-        
+                                                <ul class="icons-list">
+													<li style="color:#fff;"><a href="">BPO / Call Center</a></li>
+													<li><a href="">Food / Beverage / RestaurantService</a></li>
+													<li><a href="">Customer Service</a></li>
+													<li><a href="">Clerical / Administrative Support</a></li>
+													<li><a href="">Human Resources</a></li>
+													<li><a href="">Finance - General / Cost Accounting </a></li>
+													<li><a href="">Healthcare - Nurse / Medical Support and Assistant</a></li>
+													<li><a href="">IT / Computer - Network / System / Database Admin</a></li>
+													<li><a href="">Sales - Retail / General</a></li>										
+                                                </ul>
                                             </div>
                                             <div class="col-md-6">
-                                                <div class="panel-group" id="accordion">
-                                                    <!-- Start Accordion 14 -->
-                                                    <div class="panel panel-default">
-                                                        <div class="panel-heading">
-                                                            <h4 class="panel-title">
-                                                                <a data-toggle="collapse" data-parent="#accordion" href="#collapse-14" class="collapsed">
-                                                                    <i class="fa fa-angle-down control-icon"></i>
-                                                                    Marketing / Public Relations
-                                                                </a>
-                                                            </h4>
-                                                        </div>
-                                                        <div id="collapse-14" class="panel-collapse collapse">
-                                                            <div class="panel-body"><strong>Duis</strong> aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore...</div>
-                                                        </div>
-                                                    </div>
-                                                    <!-- End Accordion 14 -->
-
-                                                    <!-- Start Accordion 15 -->
-                                                    <div class="panel panel-default">
-                                                        <div class="panel-heading">
-                                                            <h4 class="panel-title">
-                                                                <a data-toggle="collapse" data-parent="#accordion" href="#collapse-15" class="collapsed">
-                                                                    <i class="fa fa-angle-down control-icon"></i>
-                                                                    Media & Advertising
-                                                                </a>
-                                                            </h4>
-                                                        </div>
-                                                        <div id="collapse-15" class="panel-collapse collapse">
-                                                            <div class="panel-body"><strong>Duis</strong> aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore...</div>
-                                                        </div>
-                                                    </div>
-                                                    <!-- End Accordion 15 -->
-
-                                                    <!-- Start Accordion 16 -->
-                                                    <div class="panel panel-default">
-                                                        <div class="panel-heading">
-                                                            <h4 class="panel-title">
-                                                                <a data-toggle="collapse" data-parent="#accordion" href="#collapse-16" class="collapsed">
-                                                                    <i class="fa fa-angle-down control-icon"></i>
-                                                                    Medical Services
-                                                                </a>
-                                                            </h4>
-                                                        </div>
-                                                        <div id="collapse-16" class="panel-collapse collapse">
-                                                            <div class="panel-body"><strong>Duis</strong> aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore...</div>
-                                                        </div>
-                                                    </div>
-                                                    <!-- End Accordion 16 -->
-
-                                                    <!-- Start Accordion 17 -->
-                                                    <div class="panel panel-default">
-                                                        <div class="panel-heading">
-                                                            <h4 class="panel-title">
-                                                                <a data-toggle="collapse" data-parent="#accordion" href="#collapse-17" class="collapsed">
-                                                                    <i class="fa fa-angle-down control-icon"></i>
-                                                                    Merchandising & Purchasing
-                                                                </a>
-                                                            </h4>
-                                                        </div>
-                                                        <div id="collapse-17" class="panel-collapse collapse">
-                                                            <div class="panel-body"><strong>Duis</strong> aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore...</div>
-                                                        </div>
-                                                    </div>
-                                                    <!-- End Accordion 17 -->
-
-                                                    <!-- Start Accordion 18 -->
-                                                    <div class="panel panel-default">
-                                                        <div class="panel-heading">
-                                                            <h4 class="panel-title">
-                                                                <a data-toggle="collapse" data-parent="#accordion" href="#collapse-18" class="collapsed">
-                                                                    <i class="fa fa-angle-down control-icon"></i>
-                                                                    Professional Services
-                                                                </a>
-                                                            </h4>
-                                                        </div>
-                                                        <div id="collapse-18" class="panel-collapse collapse">
-                                                            <div class="panel-body"><strong>Duis</strong> aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore...</div>
-                                                        </div>
-                                                    </div>
-                                                    <!-- End Accordion 18 -->
-
-                                                    <!-- Start Accordion 19 -->
-                                                    <div class="panel panel-default">
-                                                        <div class="panel-heading">
-                                                            <h4 class="panel-title">
-                                                                <a data-toggle="collapse" data-parent="#accordion" href="#collapse-19" class="collapsed">
-                                                                    <i class="fa fa-angle-down control-icon"></i>
-                                                                    Property
-                                                                </a>
-                                                            </h4>
-                                                        </div>
-                                                        <div id="collapse-19" class="panel-collapse collapse">
-                                                            <div class="panel-body"><strong>Duis</strong> aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore...</div>
-                                                        </div>
-                                                    </div>
-                                                    <!-- End Accordion 19 -->
-
-                                                    <!-- Start Accordion 20 -->
-                                                    <div class="panel panel-default">
-                                                        <div class="panel-heading">
-                                                            <h4 class="panel-title">
-                                                                <a data-toggle="collapse" data-parent="#accordion" href="#collapse-20" class="collapsed">
-                                                                    <i class="fa fa-angle-down control-icon"></i>
-                                                                    Public / Civil
-                                                                </a>
-                                                            </h4>
-                                                        </div>
-                                                        <div id="collapse-20" class="panel-collapse collapse">
-                                                            <div class="panel-body"><strong>Duis</strong> aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore...</div>
-                                                        </div>
-                                                    </div>
-                                                    <!-- End Accordion 20 -->
-
-                                                    <!-- Start Accordion 21 -->
-                                                    <div class="panel panel-default">
-                                                        <div class="panel-heading">
-                                                            <h4 class="panel-title">
-                                                                <a data-toggle="collapse" data-parent="#accordion" href="#collapse-21" class="collapsed">
-                                                                    <i class="fa fa-angle-down control-icon"></i>
-                                                                    Sales, CS & Business Devpt
-                                                                </a>
-                                                            </h4>
-                                                        </div>
-                                                        <div id="collapse-21" class="panel-collapse collapse">
-                                                            <div class="panel-body"><strong>Duis</strong> aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore...</div>
-                                                        </div>
-                                                    </div>
-                                                    <!-- End Accordion 21 -->
-
-                                                    <!-- Start Accordion 22 -->
-                                                    <div class="panel panel-default">
-                                                        <div class="panel-heading">
-                                                            <h4 class="panel-title">
-                                                                <a data-toggle="collapse" data-parent="#accordion" href="#collapse-22" class="collapsed">
-                                                                    <i class="fa fa-angle-down control-icon"></i>
-                                                                    Sciences, Lab, R&D
-                                                                </a>
-                                                            </h4>
-                                                        </div>
-                                                        <div id="collapse-22" class="panel-collapse collapse">
-                                                            <div class="panel-body"><strong>Duis</strong> aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore...</div>
-                                                        </div>
-                                                    </div>
-                                                    <!-- End Accordion 22 -->
-
-                                                    <!-- Start Accordion 23 -->
-                                                    <div class="panel panel-default">
-                                                        <div class="panel-heading">
-                                                            <h4 class="panel-title">
-                                                                <a data-toggle="collapse" data-parent="#accordion" href="#collapse-23" class="collapsed">
-                                                                    <i class="fa fa-angle-down control-icon"></i>
-                                                                    Telecomm
-                                                                </a>
-                                                            </h4>
-                                                        </div>
-                                                        <div id="collapse-23" class="panel-collapse collapse">
-                                                            <div class="panel-body"><strong>Duis</strong> aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore...</div>
-                                                        </div>
-                                                    </div>
-                                                    <!-- End Accordion 23 -->
-
-                                                    <!-- Start Accordion 24 -->
-                                                    <div class="panel panel-default">
-                                                        <div class="panel-heading">
-                                                            <h4 class="panel-title">
-                                                                <a data-toggle="collapse" data-parent="#accordion" href="#collapse-24" class="collapsed">
-                                                                    <i class="fa fa-angle-down control-icon"></i>
-                                                                    Transportation & Logistics
-                                                                </a>
-                                                            </h4>
-                                                        </div>
-                                                        <div id="collapse-24" class="panel-collapse collapse">
-                                                            <div class="panel-body"><strong>Duis</strong> aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore...</div>
-                                                        </div>
-                                                    </div>
-                                                    <!-- End Accordion 24 -->
-
-                                                    <!-- Start Accordion 25 -->
-                                                    <div class="panel panel-default">
-                                                        <div class="panel-heading">
-                                                            <h4 class="panel-title">
-                                                                <a data-toggle="collapse" data-parent="#accordion" href="#collapse-25" class="collapsed">
-                                                                    <i class="fa fa-angle-down control-icon"></i>
-                                                                    Others
-                                                                </a>
-                                                            </h4>
-                                                        </div>
-                                                        <div id="collapse-25" class="panel-collapse collapse">
-                                                            <div class="panel-body"><strong>Duis</strong> aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore...</div>
-                                                        </div>
-                                                    </div>
-                                                    <!-- End Accordion 25 -->
-                                                 </div>
+                                                <ul class="icons-list">
+													<li><a href="">IT / Computer - Software Development</a></li>
+													<li><a href="">Engineering - Civil / Construction / Structural</a></li>
+													<li><a href="">Finance - Audit/Taxation</a></li>
+													<li><a href="">Purchasing / Inventory/ Material and Warehouse Management</a></li>
+													<li><a href="">Sales - Corporate / B2B</a></li>
+													<li><a href="">Engineering - Electronics / Communication</a></li>
+													<li><a href="">Others</a></li>
+                                                </ul>
                                             </div>
                                         </div>
                                     </div>
@@ -633,52 +239,32 @@
                                     <div class="tab-pane fade" id="tab-2">
                                         <div class="row">
                                             <div class="col-md-6">
-                                                <ul class="icons-list">
-                                                    <li><a href="">Accounting / Audit / Tax Services</a> (8)</li>
-                                                    <li><a href="">Advertising / Public Relations / Marketing Services</a> (11)</li>
-                                                    <li><a href="">Agriculture / Forestry / Fishing</a> (2)</li>
-                                                    <li><a href="">Animal / Livestock / Poultry Production</a> (1)</li>
-                                                    <li><a href="">Architecture / Building / Construction</a> (36)</li>
-                                                    <li><a href="">Athletics / Sports</a> (13)</li>
-                                                    <li><a href="">Charity / Social Services / Non-Profit Organisation</a> (2)</li>
-                                                    <li><a href="">Civil Services (Government, Armed Forces)</a> (1)</li>
-                                                    <li><a href="">Contact Center / BPO</a> (290)</li>
-                                                    <li><a href="">Education</a> (180)</li>
-                                                    <li><a href="">Energy / Power / Water / Oil & Gas / Waste Management</a> (17)</li>
-                                                    <li><a href="">Engineering - Building, Civil, Construction / Quantity Survey</a> (35)</li>
-                                                    <li><a href="">Engineering - Electrical / Electronic / Mechanical</a> (9)</li>
-                                                    <li><a href="">Engineering - Others</a> (4)</li>
-                                                    <li><a href="">Entertainment / Recreation</a> (18)</li>
-                                                    <li><a href="">Financial Services</a> (39)</li>
-                                                    <li><a href="">FMCG</a> (61)</li>
-                                                    <li><a href="">Food and Catering Services</a> (41)</li>
-                                                    <li><a href="">Freight Forwarding / Delivery / Shipping</a> (9)</li>
-                                                </ul>
+	                                            <ul class="icons-list">
+	                                                <li><a href="">Agricultural / Plantation / Poultry / Fisheries</a></li>
+													<li><a href="">Banking / Financial Services</a></li>
+													<li><a href="">Computer / Information Technology (Software)</a></li>
+													<li><a href="">Construction / Building / Engineering</a></li>
+													<li><a href="">Consulting (IT, Science, Engineering and Technical)</a></li>
+													<li><a href="">Education</a></li>
+													<li><a href="">Food and Beverage</a></li>
+													<li><a href="">Grooming / Beauty / Fitness</a></li>
+	                                            </ul>
                                             </div>
                                             <div class="col-md-6">
-                                                <ul class="icons-list">
-                                                    <li><a href="">General Business Services</a> (120)</li>
-                                                    <li><a href="">General Engineering Services</a> (1)</li>
-                                                    <li><a href="">Health Services & Beauty Care</a> (47)</li>
-                                                    <li><a href="">Hospitality / Hotel Services</a> (150)</li>
-                                                    <li><a href="">Information Technology</a> (282)</li>
-                                                    <li><a href="">Insurance / Pension Funding</a> (10)</li>
-                                                    <li><a href="">Life Sciences</a> (1)</li>
-                                                    <li><a href="">Manpower / Personnel Recruitment</a> (1945)</li>
-                                                    <li><a href="">Manufacturing</a> (164)</li>
-                                                    <li><a href="">Mass Transportation (Land, Air, Sea)</a> (10)</li>
-                                                    <li><a href="">Media / Publishing / Printing</a> (4)</li>
-                                                    <li><a href="">Medical / Pharmaceutical</a> (2)</li>
-                                                    <li><a href="">Mining and Quarrying</a> (1)</li>
-                                                    <li><a href="">Property Management / Consultancy</a> (391)</li>
-                                                    <li><a href="">Telecommunication</a> (80)</li>
-                                                    <li><a href="">Tourism / Travel Agency</a> (2)</li>
-                                                    <li><a href="">Trading and Distribution</a> (188)</li>
-                                                    <li><a href="">Others</a> (423)</li>
-                                                </ul>
-                                            </div>
+	                                            <ul class="icons-list">
+	                                            	<li><a href="">Healthcare / Medical</a></li>
+													<li><a href="">Hotel / Hospitality</a></li>
+													<li><a href="">Human Resources Management / Consulting</a></li>
+													<li><a href="">Online / E-commerce Business</a></li>
+													<li><a href="">Outsourcing (Call Center / BPO)</a></li>
+													<li><a href="">Retail / Merchandising</a></li>
+													<li><a href="">Utilities / Power</a></li>
+													<li><a href="">Others</a></li>
+												</ul>
+											</div>
                                         </div>
                                     </div>
+
                                     <!-- Tab Content 3 -->
                                     <div class="tab-pane fade" id="tab-3">
                                         BICOL REGION (25)
@@ -698,22 +284,18 @@
                                         WESTERN VISAYAS (47)
                                         Others (82)
                                     </div>
-                                    <div class="tab-pane fade" id="tab-4">
-
-
-                                            
-
-
-                                    </div>
                                 </div>
                                 <!-- End Tab Panels -->
                             </div>
                         </div>
-
-
                         <div class="col-md-4">
-
-                            
+                        	<div class="call-action call-action-boxed call-action-style2 clearfix" style="background-color:#3756A0;">
+					            <h4><span class="accent-color">Latest Jobs</span></h4>
+					            <div style="float:right;">
+					            	<a href="">Refresh</a> |
+					            	<a href="">View More</a>
+					            </div>
+					        </div>
                         </div>
                     </div>
                     <!-- .row -->
@@ -725,7 +307,7 @@
                 <!-- Start Recent Projects Carousel -->
                 <section id="events">
                     <div class="recent-projects">
-                        <h4 class="title"><span>Recent Projects</span></h4>
+                        <h4 class="title"><span>Events</span></h4>
                         <div class="projects-carousel touch-carousel">
 
                             <div class="portfolio-item item">
@@ -1060,7 +642,7 @@
 
                         <div class="col-md-4">
                             <!-- Classic Heading -->
-                            <h4 class="classic-title"><span>Testimonials</span></h4>
+                            <h4 class="classic-title"><span><strong>Shoutouts</strong></span></h4>
 
                             <!-- Start Testimonials Carousel -->
                             <div class="custom-carousel show-one-slide touch-carousel" data-appeared-items="1">
@@ -1193,64 +775,72 @@
             </div>
 
             <!-- Start Services Icons -->
-            <section id="join" class="bg-light-gray">
-               <div class="container">
-                    <div class="row">
-                        <!-- Start Service Icon 1 -->
-                        <div class="big-title text-center animated fadeInDown delay-01" data-animation="fadeInDown"
-                             data-animation-delay="01">
-                            <h1>Be Part of Us</h1>
-                        </div>
-                        <p class="text-center">Choose between <b>Student</b> and <b>Company</b>.</p>
-                        <div class="col-md-4 col-sm-6 service-box service-center">
-                            <div class="service-icon">
-                                <a href="login-student.php"><i class="fa fa-users icon-medium-effect icon-effect-2"></i></a>
-                            </div>
-                            <div class="service-content">
-                                <h4>Student</h4>
-                                <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat
-                                    nulla pariatur. Lorem ipsum dolor.</p>
-                            </div>
-                        </div>
-                        <!-- End Service Icon 1 -->
+            <section id="join">
+	            <div class="section purchase">
+	      			<div class="container">
+				        <!-- Start Video Section Content -->
+				        <div class="section-video-content text-center">
 
-                        <!-- Start Service Icon 2 -->
-                        <div class="col-md-4 col-sm-6 service-box service-center">
-                            <div class="service-icon">
-                                <a href="login-admin.php"><i class="fa fa-user icon-medium-effect icon-effect-2"></i></a>
-                            </div>
-                            <div class="service-content">
-                                <b><h4>Admin</h4></b>
-                                <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat
-                                    nulla pariatur. Lorem ipsum dolor.</p>
-                            </div>
-                        </div>
-                        <!-- End Service Icon 2 -->
+				        	<div class="row">
+		                        <!-- Start Service Icon 1 -->
+		                        <div class="big-title text-center animated fadeInDown delay-01" data-animation="fadeInDown"
+		                             data-animation-delay="01">
+		                            <h1>Be Part of Us</h1>
+		                        </div>
+		                        <p class="text-center">Choose between <b>Student</b> and <b>Company</b>.</p>
+		                        <div class="col-md-4 col-sm-6 service-box service-center">
+		                            <div class="service-icon">
+		                                <a href="login-student.php"><i class="fa fa-users icon-medium-effect icon-effect-2"></i></a>
+		                            </div>
+		                            <div class="service-content">
+		                                <h4>Student</h4>
+		                                <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat
+		                                    nulla pariatur. Lorem ipsum dolor.</p>
+		                            </div>
+		                        </div>
+		                        <!-- End Service Icon 1 -->
 
-                        <!-- Start Service Icon 3 -->
-                        <div class="col-md-4 col-sm-6 service-box service-center">
-                            <div class="service-icon">
-                                <a href="login-company.php"><i class="fa fa-building icon-medium-effect icon-effect-2"></i></a>
-                            </div>
-                            <div class="service-content">
-                                <h4>Company</h4>
-                                <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat
-                                    nulla pariatur. Lorem ipsum dolor.</p>
-                            </div>
-                        </div>
-                        <!-- End Service Icon 3 -->
-                    </div>
-                </div>  
-            </section>
-            <!-- End Services Icons -->
+		                        <!-- Start Service Icon 2 -->
+		                        <div class="col-md-4 col-sm-6 service-box service-center">
+		                            <div class="service-icon">
+		                                <a href="login-admin.php"><i class="fa fa-user icon-medium-effect icon-effect-2"></i></a>
+		                            </div>
+		                            <div class="service-content">
+		                                <b><h4>Admin</h4></b>
+		                                <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat
+		                                    nulla pariatur. Lorem ipsum dolor.</p>
+		                            </div>
+		                        </div>
+		                        <!-- End Service Icon 2 -->
 
-            <div class="hr1 margin-top"></div>
+		                        <!-- Start Service Icon 3 -->
+		                        <div class="col-md-4 col-sm-6 service-box service-center">
+		                            <div class="service-icon">
+		                                <a href="login-company.php"><i class="fa fa-building icon-medium-effect icon-effect-2"></i></a>
+		                            </div>
+		                            <div class="service-content">
+		                                <h4>Company</h4>
+		                                <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat
+		                                    nulla pariatur. Lorem ipsum dolor.</p>
+		                            </div>
+		                        </div>
+		                        <!-- End Service Icon 3 -->
+		                    </div>
+				        </div>
+				        <!-- End Section Content -->
+			      	</div>
+			      <!-- .container -->			    
+				</div>  
+	        </section>
+	        <!-- End Services Icons -->
+
+
             <!-- Start Client/Partner Section -->
             <div class="container">
                 <!-- Start Big Heading -->
                 <div class="big-title text-center">
-                    <h1>Our Happy <span class="accent-color">Clients</span></h1>
-                    <p class="title-desc">Partners We Work With</p>
+                    <h1>Our Happy <span class="accent-color">Partners</span></h1>
+                    <p class="title-desc">Featured Companies</p>
                 </div>
                 <!-- End Big Heading -->
 
@@ -1390,6 +980,8 @@
     <!-- Go To Top Link -->
     <a href="#" class="back-to-top"><i class="fa fa-angle-up"></i></a>
 
+    <!-- important-->
     <script type="text/javascript" src="js/script.js"></script>
+	<script type="text/javascript" src="js/smoothscroll.js"></script>
 </body>
 </html>

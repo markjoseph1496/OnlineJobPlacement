@@ -1314,7 +1314,7 @@ input[type="submit"] {
 /*************** Call To Action ***************/
 
 .call-action-boxed {
-	padding: 30px 40px;
+	padding: 20px 30px;
 }
 
 .call-action.no-descripton h2.primary {
@@ -2004,18 +2004,18 @@ ul.icons-list li i {
 /*************** Tabs ***************/
 
 .nav-tabs {
-	border-color: #eee;
+	border-color: #3756A0;
 }
 
 .nav-tabs > li > a {
 	font-weight: 600;
-	color: #666;
+	color: #fff;
 	padding: 8px 14px;
 	border-radius: 3px 3px 0 0;
 	-webkit-border-radius: 3px 3px 0 0;
     -moz-border-radius: 3px 3px 0 0;
     -o-border-radius: 3px 3px 0 0;
-	border: 1px solid #eee;
+	border: 3px solid #3756A0;
 	border-bottom: none;
 	box-shadow: 0 0 15px rgba(0,0,0,.04) inset;
 	-o-box-shadow: 0 0 15px rgba(0,0,0,.04) inset;
@@ -2054,7 +2054,7 @@ ul.icons-list li i {
 }
 
 .tab-content {
-	border: 1px solid #eee;
+	border: 3px solid #3756A0;
 	border-top: none;
 	padding: 12px 16px;
 }
@@ -5280,7 +5280,7 @@ ul.footer-nav li a:hover {
 	background-color: #38cbcb;
 }
 .switcher-box .colors-list li a.yellow {
-	background-color: #f8ba01;
+	background-color: #F2C631;
 }
 .switcher-box .colors-list li a.green {
 	background-color: #94c523;
@@ -5693,9 +5693,8 @@ ul.footer-nav li a:hover {
 
 
 .purchase {
-    background: url(../images/parallax/bg-01.jpg) no-repeat;
-    background-attachment: fixed;
-    padding: 100px 0;
+    background: url(../img/login-bg.jpg); no-repeat;
+background:cover;    padding: 100px 0;
 }
 
 .navbar-collapse {
