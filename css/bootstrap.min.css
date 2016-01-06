@@ -3722,29 +3722,29 @@ fieldset[disabled] a.btn {
 }
 
 .btn-default {
-    color: #333;
-    background-color: #fff;
-    border-color: #ccc
+    color: #fff;
+    background-color: #bdc3c7;
+    /*border-color: #ccc*/
 }
 
 .btn-default.focus,
 .btn-default:focus {
-    color: #333;
-    background-color: #e6e6e6;
+    color: #fff;
+    background-color: #85888A;
     border-color: #8c8c8c
 }
 
 .btn-default:hover {
-    color: #333;
-    background-color: #e6e6e6;
+    color: #fff;
+    background-color: #A3A8AB;
     border-color: #adadad
 }
 
 .btn-default.active,
 .btn-default:active,
 .open>.dropdown-toggle.btn-default {
-    color: #333;
-    background-color: #e6e6e6;
+    color: #fff;
+    background-color: #85888A;
     border-color: #adadad
 }
 

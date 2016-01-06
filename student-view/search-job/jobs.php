@@ -96,7 +96,7 @@ else{
                         <div class="col-md-7">
                             <!-- Start Contact Info -->
                             <ul class="contact-details">
-                                <li><a href="#"><i class="fa fa-hashtag"></i> 008-2012-0805</a></li>
+                                <li class="profile-name"><i class="fa fa-hashtag"></i><b> 008-2012-0805</b></li>
                             </ul>
                             <!-- End Contact Info -->
                         </div>
@@ -148,12 +148,31 @@ else{
                 <div class="row">
                     <div class="col-md-5">
                         <ul class="mid-list">
-                            .
+                            &nbsp;
                         </ul>
                     </div>
                 </div>
             </div>
         </div>
+
+        <div class="hr1" style="margin-bottom:5px;"></div>
+        <div class="container">
+            <div>
+                <i class="fa fa-bookmark"></i> Bookmarked Jobs <a>(0)</a>&nbsp;
+                <i class="fa fa-sort"></i> Sort by: 
+                <select id="" name="" class="" style="height:9%; width:15%;">
+                    <option value="">Location</option>
+                    <option value="">Years of Experience</option>
+                </select>&nbsp;
+
+                <i class="fa fa-filter"></i> Filter by:
+                <select id="" name="" class="" style="height:9%; width:15%;">
+                    <option value=""></option>
+                    <option value=""></option>
+                </select>
+            </div>
+        </div>                
+        <div class="hr4" style="margin-top:5px;"></div>
 
         <!-- Start Content -->
         <div id="content">
@@ -164,24 +183,12 @@ else{
                         <!-- Search Widget -->
                         <div class="widget widget-search">
                             <form action="#">
-                                <input type="search" placeholder="Search..." />
+                                <input type="search" placeholder="Search Jobs..." />
                                 <button class="search-btn" type="submit"><i class="fa fa-search"></i></button>
                             </form>
                         </div>
 
-                        <!-- Categories Widget -->
-                        <div class="widget widget-categories">
-                            <h4>Categories <span class="head-line"></span></h4>
-                            <li>
-                                <a href="#"><i class="fa fa-bookmark"></i> Bookmarked Jobs <b>(0)</b></a>
-                            </li>
-                            <li>
-                                <a href="#"><i class="fa fa-sort"></i> Sort by: </a>
-                            </li>
-                            <li>
-                                <a href="#"><i class="fa fa-filter"></i> Filter by:</a>
-                            </li>
-                        </div>
+
 
 
                         <!-- Popular Posts widget -->

@@ -1467,7 +1467,7 @@ input[type="submit"] {
 }
 
 .panel-default {
-	border-color: #e8e8e8;
+	border-color: #fff;
 }
 
 .panel-body {
@@ -5869,14 +5869,15 @@ ul.mid-list li:last-child a i {
 	/*border-right: 1px solid #f2f2f2;*/
 }
 
-
-
-
-
-
-
-
-
 section {
     padding: 100px 0;
+}
+
+.bg-light-gray {
+	background-color: #f7f7f7;
+}
+
+::selection {
+    text-shadow: none;
+    background: #fed136;
 }

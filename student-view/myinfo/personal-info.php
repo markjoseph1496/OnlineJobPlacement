@@ -108,14 +108,9 @@ $StudentID = $_SESSION['StudentID'];
                 <div class="container">
                     <div class="row">
                         <div class="col-md-7">
-                            <!-- Start Contact Info
+                            <!-- Start Contact Info -->
                             <ul class="contact-details">
-                                <li><a href="#"><i class="fa fa-map-marker"></i> House-54/A, London, UK</a>
-                                </li>
-                                <li><a href="#"><i class="fa fa-envelope-o"></i> info@yourcompany.com</a>
-                                </li>
-                                <li><a href="#"><i class="fa fa-phone"></i> +12 345 678 000</a>
-                                </li>
+                                <li class="profile-name"><i class="fa fa-hashtag"></i><b> 008-2012-0805</b></li>
                             </ul>
                             <!-- End Contact Info -->
                         </div>
@@ -123,7 +118,13 @@ $StudentID = $_SESSION['StudentID'];
                         <div class="col-md-5">
                         <!-- Start Social Links -->
                             <ul class="social-list">
-                               <li class="profile-name">
+                                <li class="profile-name">
+                                    <a class="bell itl-tooltip" data-placement="bottom" title="" href="#" data-original-title="Notification"><i class="fa fa-bell"></i></a>
+                                </li>
+                                <li class="profile-name">
+                                    &nbsp;
+                                </li>
+                                <li class="profile-name">
                                     <i class="fa fa-user"></i> Hello, <b><?php echo $FirstName ." ".$LastName; ?></b>                               
                                 </li>
                             </ul>
@@ -154,7 +155,7 @@ $StudentID = $_SESSION['StudentID'];
                     <div class="navbar-collapse collapse">
                         <!-- Sign-out -->
                         <div class="signout-side">
-                               <a class="show-signout"><i class="fa fa-sign-out"></i></a>
+                            <a class="show-signout"><i class="fa fa-sign-out"></i></a>
                         </div>
                         <!-- End Sign-out -->
                         <!-- Start Navigation List -->
@@ -251,7 +252,7 @@ $StudentID = $_SESSION['StudentID'];
                     </div>
                     <div class="col-md-6">
                         <ul class="breadcrumbs">
-                            <li><a href="#">Home</a></li>
+                            <li><a href="../myinfo/contacts-info.php">Contacts Info</a></li>
                             <li>Personal Information</li>
                         </ul>
                     </div>
@@ -333,7 +334,8 @@ $StudentID = $_SESSION['StudentID'];
                                             <div class="form-group">
                                                 <input name="FBLink" id="FBLink" type="text" maxlength="20" class="form-control" value="<?php echo $FBLink; ?>">
                                             </div>
-                                        </div> 
+                                        </div>
+                                        <div class="hr1" style="margin-bottom:12px;"></div>
                                         <label class="control-label">Twitter</label>
                                         <div class="input-group">
                                             <span class="input-group-addon">@</span>
@@ -363,7 +365,7 @@ $StudentID = $_SESSION['StudentID'];
                     <div class="col-md-3 sidebar right-sidebar">
                         <!-- Search Widget -->
                         <div class="call-action call-action-boxed call-action-style2 clearfix">
-                            (*) Note: Required fields.
+                            <label><span>(*)</span> Note: Required fields.</label>
                         </div>
                     </div>
                     <!--End sidebar-->
