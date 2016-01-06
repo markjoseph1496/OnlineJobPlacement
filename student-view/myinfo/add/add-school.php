@@ -300,12 +300,16 @@ if(is_null($_SESSION['StudentID'])){
                                     <label>Course <span>(*)</span></label>
                                     <select id="Course" name="Course" class="form-control" style="width:100%; height:34px;">
                                         <option value="">- Course -</option>
-                                        <?php 
-                                            $query = "SELECT * FROM coursetbl";
-                                            $result = mysql_query($query);
-                                            while($query = mysql_fetch_array($result)){
-                                                $CourseCode = $query['CourseCode'];
-                                                $CourseTitle = $query['CourseTitle'];
+                                        <?php
+
+                                            $course_tbl =
+                                                GSecureSQL::query(
+                                                    "SELECT * FROM coursetbl",
+                                                    TRUE
+                                                );
+                                            foreach($course_tbl as $value){
+                                                $CourseCode = $value[2];
+                                                $CourseTitle = $value[1];
                                         ?>
                                         <option value="<?php echo $CourseCode; ?>"><?php echo $CourseTitle; ?></option>
                                         <?php

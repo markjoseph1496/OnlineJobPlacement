@@ -309,16 +309,14 @@ if (isset($_SESSION['StudentID'])) {
                                     "s",
                                     $StudentID
                                 );
-                            $count = 0;
                             foreach ($reference_tbl as $value) {
-                                $ReferenceID = $reference_tbl[$count]->ReferenceID;
-                                $Name = $reference_tbl[$count]->Name;
-                                $Relationship = $reference_tbl[$count]->Relationship;
-                                $Company = $reference_tbl[$count]->Company;
-                                $Position = $reference_tbl[$count]->Position;
-                                $Phone = $reference_tbl[$count]->Phone;
-                                $Email = $reference_tbl[$count]->Email;
-                                $count++;
+                                $ReferenceID = $value[0];
+                                $Name = $value[2];
+                                $Relationship = $value[3];
+                                $Company = $value[4];
+                                $Position = $value[5];
+                                $Phone = $value[6];
+                                $Email = $value[7];
                                 ?>
                                 <tr>
                                     <td><?php echo $Name; ?></td>

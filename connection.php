@@ -1,48 +1,42 @@
 <?php
 
-
-$hostname = "mysql.hostinger.ph";
-$user = "u987316885_e2edb";
-$password = "o2ehQX3wqO";
-$database ="u987316885_e2edb";
-
-//$hostname = "localhost:3306";
-//$user = "root";
-//$password = "";
-//$database = "e2edb";
-
-$bd = mysql_connect($hostname, $user, $password) or die ("Could not connect"); //connection of php to navicat
-//sensitive yung spacing... dito lang ^
-mysql_select_db($database, $bd) or die("could not select"); //selection ng DATABASE name w/c is mydatabase;
-
-
-class GSecureSQLConfig{
-    static function get_mysqli_config($type = NULL){
-        if(strtoupper($type) == 'LOCALHOST'){
+class GSecureSQLConfig
+{
+    static function get_mysqli_config($type = NULL)
+    {
+        if (strtoupper($type) == 'LOCALHOST') {
             return array(
-                'host'  => 'localhost:3306',
-                'user'  => 'root',
-                'pass'  => '',
-                'db'    => 'e2edb'
+                'host' => 'localhost:3306',
+                'user' => 'root',
+                'pass' => '',
+                'db' => 'e2edb'
             );
-        }else{
+        } else {
             return array(
-                'host'  => 'mysql.hostinger.ph',
-                'user'  => 'u987316885_e2edb',
-                'pass'  => 'o2ehQX3wqO',
-                'db'    => 'u987316885_e2edb'
+                'host' => 'mysql.hostinger.ph',
+                'user' => 'u987316885_e2edb',
+                'pass' => 'o2ehQX3wqO',
+                'db' => 'u987316885_e2edb'
             );
         }
     }
 }
 
-class GSecureSQL{
+
+class GSecureSQL
+{
     private static $config;
-    private static function _get_mysqli_config(){
+
+    private static function _get_mysqli_config()
+    {
         self::$config = GSecureSQLConfig::get_mysqli_config();
     }
 
-    static function query($sql, $has_return = FALSE, $types = NULL){
+    static function query($sql, $has_return = FALSE, $types = NULL)
+    {
+        // validation
+
+        // -----
         self::_get_mysqli_config();
         $cn = new mysqli(
             self::$config['host'],
@@ -50,29 +44,52 @@ class GSecureSQL{
             self::$config['pass'],
             self::$config['db']
         );
+        $ret = NULL;
+
         $st = $cn->prepare($sql);
-        if(is_null($types)){
-            if(!$has_return){
+
+        if($cn->errno <> 0){
+            trigger_error('MySQL Connection Error #' . $cn->errno . ': ' . $cn->error, E_USER_ERROR);
+        }
+        if (is_null($types)) {
+            if (!$has_return) {
                 $st->execute();
                 $st->close();
                 $cn->close();
-                return 'Query has been executed';
-            }else{
+                $ret = 'Query has been executed';
+            } else {
                 $st->execute();
-                $result = $st->get_result();
-                $st->close();
-                $cn->close();
-                $ret = array();
-                while($field = $result->fetch_object()){
-                    array_push($ret, $field);
+                $code_result = '$st->bind_result(';
+                $bool = false;
+                $p = array();
+                for($i = 0; $i < $st->field_count; $i++){
+                    if(!$bool){
+                        $bool = true;
+                        $code_result .= '$p[' . $i . ']';
+                    }else{
+                        $code_result .= ',$p[' . $i . ']';
+                    }
                 }
-                return $ret;
+                $code_result .= ');';
+                eval($code_result);
+
+                $ret = array();
+                $k = 0;
+                while($st->fetch()){
+                    for($i = 0; $i < count($p); $i++){
+                        $ret[$k][$i] = $p[$i];
+                    }
+                    $k++;
+                }
+
+                $st->close();
+                $cn->close();
             }
-        }else{
-            if(!$has_return){
+        } else {
+            if (!$has_return) {
                 $arg = func_get_args();
                 $code = '$st->bind_param($types';
-                for($i = 3; $i < count($arg); $i++){
+                for ($i = 3; $i < count($arg); $i++) {
                     $code .= ',$arg[' . $i . ']';
                 }
                 $code .= ');';
@@ -80,24 +97,42 @@ class GSecureSQL{
                 $st->execute();
                 $st->close();
                 $cn->close();
-            }else{
+            } else {
                 $arg = func_get_args();
                 $code = '$st->bind_param($types';
-                for($i = 3; $i < count($arg); $i++){
+                for ($i = 3; $i < count($arg); $i++) {
                     $code .= ',$arg[' . $i . ']';
                 }
                 $code .= ');';
                 eval($code);
                 $st->execute();
-                $result = $st->get_result();
-                $st->close();
-                $cn->close();
+                $code_result = '$st->bind_result(';
+                $bool = false;
+                $p = array();
+                for($i = 0; $i < $st->field_count; $i++){
+                    if(!$bool){
+                        $bool = true;
+                        $code_result .= '$p[' . $i . ']';
+                    }else{
+                        $code_result .= ',$p[' . $i . ']';
+                    }
+                }
+                $code_result .= ');';
+                eval($code_result);
+
                 $ret = array();
-                while($field = $result->fetch_object()){
-                    array_push($ret, $field);
+                $k = 0;
+                while($st->fetch()){
+                    for($i = 0; $i < count($p); $i++){
+                        $ret[$k][$i] = $p[$i];
+                    }
+                    $k++;
                 }
-                return $ret;
+
+                $st->close();
+                $cn->close();
             }
         }
+        return $ret;
     }
 }

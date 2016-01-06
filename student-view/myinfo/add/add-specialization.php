@@ -280,11 +280,15 @@ if(is_null($_SESSION['StudentID'])){
                                     <select id="" name="Specialization" class="form-control" style = "width:420px;">
                                         <option value="" selected="selected">- Please select one -</option>
                                         <?php
-                                        $query = "SELECT * FROM listofspecializationtbl";
-                                        $result = mysql_query($query);
-                                        while($query = mysql_fetch_array($result)){
-                                            $SID = $query['id'];
-                                            $Specialization = $query['Specialization'];
+
+                                        $listofspecialization_tbl =
+                                            GSecureSQL::query(
+                                                "SELECT * FROM listofspecializationtbl",
+                                                TRUE
+                                            );
+                                        foreach($listofspecialization_tbl as $value){
+                                            $SID = $value[0];
+                                            $Specialization = $value[1];
                                         ?>
                                             <option value="<?php echo $SID; ?>"><?php echo $Specialization; ?></option>
                                         <?php

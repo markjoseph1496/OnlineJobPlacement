@@ -4,12 +4,15 @@ session_start();
 
 $SpecializationID = $_GET['id'];
 
-$query = "SELECT * FROM specializationtbl WHERE SID = '$SpecializationID'";
-$result = mysql_query($query);
-while($query = mysql_fetch_array($result)){
-    $Specialization = $query['Specialization'];
-    $YearOfExperience = $query['YearOfExperience'];
-}
+$specialization_tbl =
+    GSecureSQL::query(
+        "SELECT * FROM specializationtbl WHERE SID = ?",
+        TRUE,
+        "s",
+        $SpecializationID
+    );
+    $Specialization = $specialization_tbl[0][2];
+    $YearOfExperience = $specialization_tbl[0][3];
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -282,11 +285,15 @@ while($query = mysql_fetch_array($result)){
                                     <select id="" name="Specialization" class="form-control" style = "width:420px;">
                                         <option value="" selected="selected">- Please select one -</option>
                                         <?php
-                                        $q = "SELECT * FROM listofspecializationtbl";
-                                        $r = mysql_query($q);
-                                        while($q = mysql_fetch_array($r)){
-                                            $SID = $q['id'];
-                                            $_Specialization = $q['Specialization'];
+
+                                        $listofspecialization_tbl =
+                                            GSecureSQL::query(
+                                                "SELECT * FROM listofspecializationtbl",
+                                                TRUE
+                                            );
+                                            foreach($listofspecialization_tbl as $value){
+                                                $SID = $value[0];
+                                                $_Specialization = $value[1];
                                         ?>
                                             <option value="<?php echo $SID; ?>" <?php if($SID == $Specialization) echo 'selected="selected"' ?> ><?php echo $_Specialization; ?></option>
                                         <?php

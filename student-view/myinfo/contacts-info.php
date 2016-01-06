@@ -23,14 +23,14 @@ else{
         $StudentID
     );
 
-        $Email = $student_tbl[0]->Email;
-        $Address = $student_tbl[0]->Address;
-        $MobileNumber = $student_tbl[0]->MobileNumber;
-        $Region = $student_tbl[0]->Region;
-        $HomeNumber = $student_tbl[0]->HomeNumber;
-        $City = $student_tbl[0]->City;
-        $WorkNumber = $student_tbl[0]->WorkNumber;
-        $PostalCode = $student_tbl[0]->PostalCode;
+        $Email = $student_tbl[0][2];
+        $Address = $student_tbl[0][3];
+        $MobileNumber = $student_tbl[0][4];
+        $Region = $student_tbl[0][5];
+        $HomeNumber = $student_tbl[0][6];
+        $PostalCode = $student_tbl[0][7];
+        $WorkNumber = $student_tbl[0][8];
+        $City = $student_tbl[0][9];
 ?>
 <html lang="en">
 

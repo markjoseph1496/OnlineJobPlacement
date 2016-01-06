@@ -1,28 +1,31 @@
-<?php 
+<?php
 include('../../../connection.php');
 session_start();
 
-$EditSeminarID="";
+$EditSeminarID = "";
 
-if(is_null($_SESSION['StudentID'])){
+if (is_null($_SESSION['StudentID'])) {
     echo "
         <script type='text/javascript'>
         location.href='../../../../login-student.php';
         </script>
         ";
-}
-else{
+} else {
     $EditSeminarID = $_GET['id'];
 }
 
-$qry = "SELECT * FROM seminartbl WHERE SeminarID ='$EditSeminarID'";
-$result = mysql_query($qry);
-        while($qry = mysql_fetch_Array($result))
-        {       
-                $SeminarID = $qry['SeminarID'];
-                $Seminar = $qry['Seminar'];
-                $YearAttended = $qry['YearAttended'];
-        }
+$seminar_tbl =
+    GSecureSQL::query(
+        "SELECT * FROM seminartbl WHERE SeminarID = ?",
+        TRUE,
+        "s",
+        $EditSeminarID
+    );
+
+    $SeminarID = $seminar_tbl[0][0];
+    $Seminar = $seminar_tbl[0][2];
+    $YearAttended = $seminar_tbl[0][3];
+
 ?>
 <!doctype html>
 <html lang="en">
@@ -42,18 +45,18 @@ $result = mysql_query($qry);
     <meta name="description" content="Margo - Responsive HTML5 Template">
     <meta name="author" content="iThemesLab">
 
-   <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="../../../css/bootstrap.min.css" />
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="../../../css/bootstrap.min.css"/>
 
     <!-- BootstrapValidator CSS -->
-    <link rel="stylesheet" href="../../../css/bootstrapValidator.min.css" />
+    <link rel="stylesheet" href="../../../css/bootstrapValidator.min.css"/>
 
     <!-- jQuery and Bootstrap JS -->
     <script type="text/javascript" src="../../../js/jquery.min.js"></script>
-    <script type="text/javascript" src="../../../js/bootstrap.min.js" ></script>
+    <script type="text/javascript" src="../../../js/bootstrap.min.js"></script>
 
     <!-- BootstrapValidator -->
-    <script type="text/javascript" src="../../../js/bootstrapValidator.min.js" ></script>
+    <script type="text/javascript" src="../../../js/bootstrapValidator.min.js"></script>
 
     <!-- Font Awesome CSS -->
     <link rel="stylesheet" type="text/css" href="../../../css/font-awesome.min.css" media="screen">
@@ -94,12 +97,12 @@ $result = mysql_query($qry);
 </head>
 
 <body>
-    <form id="EditSeminar" name="EditSeminar" autocomplete="off" action="myinfoedit.php">
+<form id="EditSeminar" name="EditSeminar" autocomplete="off" action="myinfoedit.php">
     <div id="container">
         <!-- Start Header Section -->
         <div class="hidden-header"></div>
         <header class="clearfix">
-        <!-- Start Top Bar -->
+            <!-- Start Top Bar -->
             <div class="top-bar">
                 <div class="container">
                     <div class="row">
@@ -117,40 +120,40 @@ $result = mysql_query($qry);
                         </div>
                         <!-- .col-md-6 -->
                         <div class="col-md-5">
-                        <!-- Start Social Links 
-                            <ul class="social-list">
-                                <li>
-                                <a class="facebook itl-tooltip" data-placement="bottom" title="Facebook" href="#"><i class="fa fa-facebook"></i></a>
-                                </li>
-                                <li>
-                                    <a class="twitter itl-tooltip" data-placement="bottom" title="Twitter" href="#"><i class="fa fa-twitter"></i></a>
-                                </li>
-                                <li>
-                                    <a class="google itl-tooltip" data-placement="bottom" title="Google Plus" href="#"><i class="fa fa-google-plus"></i></a>
-                                </li>
-                                <li>
-                                    <a class="dribbble itl-tooltip" data-placement="bottom" title="Dribble" href="#"><i class="fa fa-dribbble"></i></a>
-                                </li>
-                                <li>
-                                    <a class="linkdin itl-tooltip" data-placement="bottom" title="Linkedin" href="#"><i class="fa fa-linkedin"></i></a>
-                                </li>
-                                <li>
-                                    <a class="flickr itl-tooltip" data-placement="bottom" title="Flickr" href="#"><i class="fa fa-flickr"></i></a>
-                                </li>
-                                <li>
-                                    <a class="tumblr itl-tooltip" data-placement="bottom" title="Tumblr" href="#"><i class="fa fa-tumblr"></i></a>
-                                </li>
-                                <li>
-                                    <a class="instgram itl-tooltip" data-placement="bottom" title="Instagram" href="#"><i class="fa fa-instagram"></i></a>
-                                </li>
-                                <li>
-                                    <a class="vimeo itl-tooltip" data-placement="bottom" title="vimeo" href="#"><i class="fa fa-vimeo-square"></i></a>
-                                </li>
-                                <li>
-                                    <a class="skype itl-tooltip" data-placement="bottom" title="Skype" href="#"><i class="fa fa-skype"></i></a>
-                                </li>
-                            </ul>
-                            <!-- End Social Links -->
+                            <!-- Start Social Links
+                                <ul class="social-list">
+                                    <li>
+                                    <a class="facebook itl-tooltip" data-placement="bottom" title="Facebook" href="#"><i class="fa fa-facebook"></i></a>
+                                    </li>
+                                    <li>
+                                        <a class="twitter itl-tooltip" data-placement="bottom" title="Twitter" href="#"><i class="fa fa-twitter"></i></a>
+                                    </li>
+                                    <li>
+                                        <a class="google itl-tooltip" data-placement="bottom" title="Google Plus" href="#"><i class="fa fa-google-plus"></i></a>
+                                    </li>
+                                    <li>
+                                        <a class="dribbble itl-tooltip" data-placement="bottom" title="Dribble" href="#"><i class="fa fa-dribbble"></i></a>
+                                    </li>
+                                    <li>
+                                        <a class="linkdin itl-tooltip" data-placement="bottom" title="Linkedin" href="#"><i class="fa fa-linkedin"></i></a>
+                                    </li>
+                                    <li>
+                                        <a class="flickr itl-tooltip" data-placement="bottom" title="Flickr" href="#"><i class="fa fa-flickr"></i></a>
+                                    </li>
+                                    <li>
+                                        <a class="tumblr itl-tooltip" data-placement="bottom" title="Tumblr" href="#"><i class="fa fa-tumblr"></i></a>
+                                    </li>
+                                    <li>
+                                        <a class="instgram itl-tooltip" data-placement="bottom" title="Instagram" href="#"><i class="fa fa-instagram"></i></a>
+                                    </li>
+                                    <li>
+                                        <a class="vimeo itl-tooltip" data-placement="bottom" title="vimeo" href="#"><i class="fa fa-vimeo-square"></i></a>
+                                    </li>
+                                    <li>
+                                        <a class="skype itl-tooltip" data-placement="bottom" title="Skype" href="#"><i class="fa fa-skype"></i></a>
+                                    </li>
+                                </ul>
+                                <!-- End Social Links -->
                         </div>
                         <!-- .col-md-6 -->
                     </div>
@@ -165,8 +168,9 @@ $result = mysql_query($qry);
             <div class="navbar navbar-default navbar-top">
                 <div class="container">
                     <div class="navbar-header">
-                    <!-- Stat Toggle Nav Link For Mobiles -->
-                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <!-- Stat Toggle Nav Link For Mobiles -->
+                        <button type="button" class="navbar-toggle" data-toggle="collapse"
+                                data-target=".navbar-collapse">
                             <i class="fa fa-bars"></i>
                         </button>
                         <!-- End Toggle Nav Link For Mobiles -->
@@ -175,11 +179,11 @@ $result = mysql_query($qry);
                         </a>
                     </div>
                     <div class="navbar-collapse collapse">
-                   <!-- Sign-out -->
+                        <!-- Sign-out -->
                         <div class="signout-side">
-                               <a class="show-signout"><i class="fa fa-sign-out"></i></a>
+                            <a class="show-signout"><i class="fa fa-sign-out"></i></a>
                         </div>
-                     <!-- End Sign-out -->
+                        <!-- End Sign-out -->
                         <!-- Start Navigation List -->
                         <ul class="nav navbar-nav navbar-right">
                             <li>
@@ -203,7 +207,7 @@ $result = mysql_query($qry);
                                     <li><a href="../resumelink/background.php">Background</a></li>
                                     <li><a href="../resumelink/print-share.php">Print/Share</a></li>
                                 </ul>
-                             </li>
+                            </li>
                             <li>
                                 <a href="../applications/applications.php">Applications</a>
                             </li>
@@ -226,7 +230,7 @@ $result = mysql_query($qry);
                     <li>
                         <a class="active" href="personal-info.php">My Info</a>
                         <ul class="dropdown">
-                            <li><a  href="personal-info.php">Personal Info</a></li>
+                            <li><a href="personal-info.php">Personal Info</a></li>
                             <li><a href="contacts-info.php">Contacts Info</a></li>
                             <li><a href="work.php">Work</a></li>
                             <li><a class="active" href="education.php">Education</a></li>
@@ -244,7 +248,7 @@ $result = mysql_query($qry);
                             <li><a href="../resumelink/background.php">Background</a></li>
                             <li><a href="../resumelink/print-share.php">Print/Share</a></li>
                         </ul>
-                     </li>
+                    </li>
                     <li>
                         <a href="../applications/applications.php">Applications</a>
                     </li>
@@ -267,7 +271,8 @@ $result = mysql_query($qry);
         </header>
 
         <div class="page-banner no-subtitle">
-            <input type="text" class="form-control" id="SeminarID" name="SeminarID" style="display: none;" value="<?php echo $SeminarID;?>">
+            <input type="text" class="form-control" id="SeminarID" name="SeminarID" style="display: none;"
+                   value="<?php echo $SeminarID; ?>">
             <div class="container">
                 <div class="row">
                     <div class="col-md-6">
@@ -294,26 +299,27 @@ $result = mysql_query($qry);
                             <div class="col-md-7">
                                 <div class="form-group">
                                     <label>Seminar <span>(*)</span></label>
-                                    <input type="text" class="form-control" id="Seminar" name="Seminar" value="<?php echo $Seminar;?>">
+                                    <input type="text" class="form-control" id="Seminar" name="Seminar"
+                                           value="<?php echo $Seminar; ?>">
                                 </div>
                             </div>
                             <div class="col-md-5">
                                 <div class="form-group">
                                     <label>Year Attended <span>(*)</span></label>
-                                    <select id="YearAttended" name="YearAttended" class="form-control" style="width:100%; height:34px;">
-                                            <option value = "">- Year -</option>
-                                            <?php 
-                                                $date = 1934;
-                                                while($date != Date("Y")){
-                                                    $date++;
-                                                    if($date == $YearAttended){
-                                                        echo "<option selected value='$date'> $date</option>";
-                                                    }
-                                                    else{
-                                                    echo "<option value='$date'> $date</option>";
-                                                    }
-                                                }
-                                            ?>
+                                    <select id="YearAttended" name="YearAttended" class="form-control"
+                                            style="width:100%; height:34px;">
+                                        <option value="">- Year -</option>
+                                        <?php
+                                        $date = 1934;
+                                        while ($date != Date("Y")) {
+                                            $date++;
+                                            if ($date == $YearAttended) {
+                                                echo "<option selected value='$date'> $date</option>";
+                                            } else {
+                                                echo "<option value='$date'> $date</option>";
+                                            }
+                                        }
+                                        ?>
                                     </select>
                                 </div>
                             </div>
@@ -346,28 +352,28 @@ $result = mysql_query($qry);
 </html>
 <script type="text/javascript">
     $(document).ready(function () {
-            var validator = $("#EditSeminar").bootstrapValidator({
-                feedbackIcons:{
-                    valid: "glyphicon glyphicon-ok",
-                    invalid: "glyphicon glyphicon-remove",
-                    validating: "glyphicon glyphicon-refresh"
-                },
-                fields: {
-                    Seminar: {
-                        validators: {
-                            notEmpty: {
-                                message: "Seminar is required."
-                            }
+        var validator = $("#EditSeminar").bootstrapValidator({
+            feedbackIcons: {
+                valid: "glyphicon glyphicon-ok",
+                invalid: "glyphicon glyphicon-remove",
+                validating: "glyphicon glyphicon-refresh"
+            },
+            fields: {
+                Seminar: {
+                    validators: {
+                        notEmpty: {
+                            message: "Seminar is required."
                         }
-                    },
-                    YearAttended: {
-                        validators: {
-                            notEmpty: {
-                                message: "Year Attended is required."
-                            }
+                    }
+                },
+                YearAttended: {
+                    validators: {
+                        notEmpty: {
+                            message: "Year Attended is required."
                         }
                     }
                 }
-            });
+            }
+        });
     });
 </script>
