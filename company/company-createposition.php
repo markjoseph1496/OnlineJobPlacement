@@ -394,42 +394,44 @@ $CompanyID = $_SESSION['CompanyID'];
                       <label = "usr" class = "control-label"> Training: </label>
                     </div>
                     <div class = "col-md-8 fieldcol">
-                      <div class="input-group" style="width: 300px; margin-bottom: 15px">
-                        <input type = "text" class = "form-control" id="txt-training">
-                        <script>
-                          var tl_index = -1;
-                          function delete_training(index){
-                            $('#tl-span-' + index).remove();
-                            $('#tl-a-' + index).remove();
-                            $('#tl-input-' + index).remove();
-                          }
-                        </script>
-                        <span class="input-group-btn">
-                          <a class="btn btn-primary" onclick="(function(){
-                            tl_index++;
-                            var tt = $('#training-template');
-                            var tt_span = tt.find('span');
-                            var tt_a = tt.find('a');
-                            var tt_input = tt.find('input');
+                      <div class="form-group">
+                        <div class="input-group" style="width: 300px; margin-bottom: 15px">
+                          <input type = "text" class = "form-control" id="txt-training" name="Training">
+                          <script>
+                            var tl_index = -1;
+                            function delete_training(index){
+                              $('#tl-span-' + index).remove();
+                              $('#tl-a-' + index).remove();
+                              $('#tl-input-' + index).remove();
+                            }
+                          </script>
+                          <span class="input-group-btn">
+                            <a class="btn btn-primary" onclick="(function(){
+                              tl_index++;
+                              var tt = $('#training-template');
+                              var tt_span = tt.find('span');
+                              var tt_a = tt.find('a');
+                              var tt_input = tt.find('input');
 
-                            tt_span.text($('#txt-training').val());
-                            tt_span.attr('id', 'tl-span-' + tl_index);
-                            tt_a.attr('id', 'tl-a-' + tl_index);
-                            tt_a.attr('onclick', 'delete_training(' + tl_index + ')');
-                            tt_input.attr('id', 'tl-input-' + tl_index);
-                            tt_input.attr('name', 'training[' + tl_index +']');
-                            tt_input.val(tt_span.text());
-                            $('#training-list').append($('#training-template').html());
+                              tt_span.text($('#txt-training').val());
+                              tt_span.attr('id', 'tl-span-' + tl_index);
+                              tt_a.attr('id', 'tl-a-' + tl_index);
+                              tt_a.attr('onclick', 'delete_training(' + tl_index + ')');
+                              tt_input.attr('id', 'tl-input-' + tl_index);
+                              tt_input.attr('name', 'training[' + tl_index +']');
+                              tt_input.val(tt_span.text());
+                              $('#training-list').append($('#training-template').html());
 
-                            //disposal of used resource in #training-template
-                            tt_span.removeAttr('id');
-                            tt_a.removeAttr('id');
-                            tt_a.removeAttr('onclick');
-                            tt_input.removeAttr('id');
-                            tt_input.removeAttr('name');
-                            tt_input.removeAttr('value');
-                          })()">Add</a>
-                        </span>
+                              //disposal of used resource in #training-template
+                              tt_span.removeAttr('id');
+                              tt_a.removeAttr('id');
+                              tt_a.removeAttr('onclick');
+                              tt_input.removeAttr('id');
+                              tt_input.removeAttr('name');
+                              tt_input.removeAttr('value');
+                            })()">Add</a>
+                          </span>
+                        </div>
                       </div>
                     </div>
                 </div>
@@ -443,47 +445,49 @@ $CompanyID = $_SESSION['CompanyID'];
                       
                     </div>
                 </div>  
-                                <div class="row field">
+                <div class="row field">
                     <div class = "col-md-3 fieldcol">
                       <label = "usr" class = "control-label"> Knowledge In: </label>
                     </div>
                     <div class = "col-md-8 fieldcol">
-                      <div class="input-group" style="width: 300px; margin-bottom: 15px">
-                        <input type = "text" class = "form-control" id="txt-knowledge">
-                        <script>
-                          var kl_index = -1;
-                          function delete_knowledge(index){
-                            $('#kl-span-' + index).remove();
-                            $('#kl-a-' + index).remove();
-                            $('#kl-input-' + index).remove();
-                          }
-                        </script>
-                        <span class="input-group-btn">
-                          <a class="btn btn-primary" onclick="(function(){
-                            kl_index++;
-                            var kk = $('#knowledge-template');
-                            var kk_span = kk.find('span');
-                            var kk_a = kk.find('a');
-                            var kk_input = kk.find('input');
+                      <div class="form-group">
+                        <div class="input-group" style="width: 300px; margin-bottom: 15px">
+                          <input type = "text" class = "form-control" id="txt-knowledge" name="Knowledge">
+                          <script>
+                            var kl_index = -1;
+                            function delete_knowledge(index){
+                              $('#kl-span-' + index).remove();
+                              $('#kl-a-' + index).remove();
+                              $('#kl-input-' + index).remove();
+                            }
+                          </script>
+                          <span class="input-group-btn">
+                            <a class="btn btn-primary" onclick="(function(){
+                              kl_index++;
+                              var kk = $('#knowledge-template');
+                              var kk_span = kk.find('span');
+                              var kk_a = kk.find('a');
+                              var kk_input = kk.find('input');
 
-                            kk_span.text($('#txt-knowledge').val());
-                            kk_span.attr('id', 'kl-span-' + kl_index);
-                            kk_a.attr('id', 'kl-a-' + kl_index);
-                            kk_a.attr('onclick', 'delete_knowledge(' + kl_index + ')');
-                            kk_input.attr('id', 'kl-input-' + kl_index);
-                            kk_input.attr('name', 'knowledge[' + kl_index +']');
-                            kk_input.val(kk_span.text());
-                            $('#knowledge-list').append($('#knowledge-template').html());
+                              kk_span.text($('#txt-knowledge').val());
+                              kk_span.attr('id', 'kl-span-' + kl_index);
+                              kk_a.attr('id', 'kl-a-' + kl_index);
+                              kk_a.attr('onclick', 'delete_knowledge(' + kl_index + ')');
+                              kk_input.attr('id', 'kl-input-' + kl_index);
+                              kk_input.attr('name', 'knowledge[' + kl_index +']');
+                              kk_input.val(kk_span.text());
+                              $('#knowledge-list').append($('#knowledge-template').html());
 
-                            //disposal of used resource in #knowledge-template
-                            kk_span.removeAttr('id');
-                            kk_a.removeAttr('id');
-                            kk_a.removeAttr('onclick');
-                            kk_input.removeAttr('id');
-                            kk_input.removeAttr('name');
-                            kk_input.removeAttr('value');
-                          })()">Add</a>
-                        </span>
+                              //disposal of used resource in #knowledge-template
+                              kk_span.removeAttr('id');
+                              kk_a.removeAttr('id');
+                              kk_a.removeAttr('onclick');
+                              kk_input.removeAttr('id');
+                              kk_input.removeAttr('name');
+                              kk_input.removeAttr('value');
+                            })()">Add</a>
+                          </span>
+                        </div>
                       </div>
                     </div>
                 </div>
@@ -504,40 +508,44 @@ $CompanyID = $_SESSION['CompanyID'];
                       <label = "usr" class = "control-label"> Language: </label>
                     </div>
                     <div class = "col-md-8 fieldcol">
-                      <div class="input-group" style="width: 300px; margin-bottom: 15px">
-                        <input type = "text" class = "form-control" id="txt-language">
-                        <script>
-                          var tl_index = -1;
-                          function delete_language(index){
-                            $('#tl-span-' + index).remove();
-                            $('#tl-a-' + index).remove();
-                            $('#tl-input-' + index).remove();
-                          }
-                        </script>
-                        <span class="input-group-btn">
-                          <a class="btn btn-primary" onclick="(function(){
-                            tl_index++;
-                            var tt = $('#language-template');
-                            var tt_span = tt.find('span');
-                            var tt_a = tt.find('a');
-                            var tt_input = tt.find('input');
+                      <div class="form-group">
+                        <div class="input-group" style="width: 300px; margin-bottom: 15px">
+                          <input type = "text" class = "form-control" id="txt-language" name="Language">
+                          <script>
+                            var lll_index = -1;
+                            function delete_language(index){
+                              $('#lll-span-' + index).remove();
+                              $('#lll-a-' + index).remove();
+                              $('#lll-input-' + index).remove();
+                            }
+                          </script>
+                          <span class="input-group-btn">
+                            <a class="btn btn-primary" onclick="(function(){
+                              lll_index++;
+                              var ll = $('#language-template');
+                              var ll_span = ll.find('span');
+                              var ll_a = ll.find('a');
+                              var ll_input = ll.find('input');
 
-                            tt_span.text($('#txt-language').val());
-                            tt_span.attr('id', 'tl-span-' + tl_index);
-                            tt_a.attr('id', 'tl-a-' + tl_index);
-                            tt_a.attr('onclick', 'delete_language(' + tl_index + ')');
-                            tt_input.attr('id', 'tl-input-' + tl_index);
-                            tt_input.attr('name', 'language[' + tl_index +']');
-                            $('#language-list').append($('#language-template').html());
+                              ll_span.text($('#txt-language').val());
+                              ll_span.attr('id', 'lll-span-' + lll_index);
+                              ll_a.attr('id', 'lll-a-' + lll_index);
+                              ll_a.attr('onclick', 'delete_language(' + lll_index + ')');
+                              ll_input.attr('id', 'lll-input-' + lll_index);
+                              ll_input.attr('name', 'language[' + lll_index +']');
+                              ll_input.val(ll_span.text());
+                              $('#language-list').append($('#language-template').html());
 
-                            //disposal of used resource in #language-template
-                            tt_span.removeAttr('id');
-                            tt_a.removeAttr('id');
-                            tt_a.removeAttr('onclick');
-                            tt_input.removeAttr('id');
-                            tt_input.removeAttr('name');
-                          })()">Add</a>
-                        </span>
+                              //disposal of used resource in #language-template
+                              ll_span.removeAttr('id');
+                              ll_a.removeAttr('id');
+                              ll_a.removeAttr('onclick');
+                              ll_input.removeAttr('id');
+                              ll_input.removeAttr('name');
+                              ll_input.removeAttr('value');
+                            })()">Add</a>
+                          </span>
+                        </div>
                       </div>
                     </div>
                 </div>
@@ -646,7 +654,55 @@ $CompanyID = $_SESSION['CompanyID'];
                                 message: "Location can consist of Positive Numbers only"
                             }
                         }
-                    }
+                    },
+                    Training: {
+                       validators: {
+                            notEmpty: {
+                                message: "Trainings is required."
+                            },
+                            stringLength: {
+                                min: 5,
+                                max: 70,
+                                message: "Trainings must be 5-70 number long."
+                            },
+                            regexp: {
+                                regexp: /^[a-z\s]+$/i,
+                                message: "Trainings can consist of alphabetical characters and spaces only"
+                            }
+                        }
+                    },
+                    Knowledge: {
+                       validators: {
+                            notEmpty: {
+                                message: "Knowledge is required."
+                            },
+                            stringLength: {
+                                min: 5,
+                                max: 80,
+                                message: "Knowledge must be 5-80 number long."
+                            },
+                            regexp: {
+                                regexp: /^[a-z\s]+$/i,
+                                message: "Knowledge can consist of alphabetical characters and spaces only"
+                            }
+                        }
+                    },
+                    Language: {
+                       validators: {
+                            notEmpty: {
+                                message: "Language is required."
+                            },
+                            stringLength: {
+                                min: 5,
+                                max: 80,
+                                message: "Language must be 5-80 number long."
+                            },
+                            regexp: {
+                                regexp: /^[a-z\s]+$/i,
+                                message: "Language can consist of alphabetical characters and spaces only"
+                            }
+                        }
+                    },
                 }
             });
         });

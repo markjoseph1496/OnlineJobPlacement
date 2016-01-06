@@ -38,7 +38,7 @@ $CompanyID = $_SESSION['CompanyID'];
         $result1 = mysql_query($query1);
         echo "
           <script type='text/javascript'>
-          
+          location.href='company-positionlist.php?id=1'
           </script>
         ";
         
@@ -53,6 +53,11 @@ $CompanyID = $_SESSION['CompanyID'];
           
           $query4 = "INSERT INTO comprequirementtbl (CompanyID,PositionID,Knowledge) VALUES ('$CompanyID','$PositionID','$knowledge')";
           mysql_query($query4);
+        }
+        foreach ($_GET['language'] as $language) {
+          
+          $query5 = "INSERT INTO complanguagetbl (CompanyID,PositionID,Language) VALUES ('$CompanyID','$PositionID','$language')";
+          mysql_query($query5);
         }
     }
 // End of Create Position
