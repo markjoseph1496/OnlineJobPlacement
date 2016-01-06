@@ -418,6 +418,7 @@ $CompanyID = $_SESSION['CompanyID'];
                             tt_a.attr('onclick', 'delete_training(' + tl_index + ')');
                             tt_input.attr('id', 'tl-input-' + tl_index);
                             tt_input.attr('name', 'training[' + tl_index +']');
+                            tt_input.val(tt_span.text());
                             $('#training-list').append($('#training-template').html());
 
                             //disposal of used resource in #training-template
@@ -426,6 +427,7 @@ $CompanyID = $_SESSION['CompanyID'];
                             tt_a.removeAttr('onclick');
                             tt_input.removeAttr('id');
                             tt_input.removeAttr('name');
+                            tt_input.removeAttr('value');
                           })()">Add</a>
                         </span>
                       </div>
@@ -441,43 +443,45 @@ $CompanyID = $_SESSION['CompanyID'];
                       
                     </div>
                 </div>  
-                <div class="row field">
+                                <div class="row field">
                     <div class = "col-md-3 fieldcol">
-                      <label = "usr" class = "control-label"> Knowledge in: </label>
+                      <label = "usr" class = "control-label"> Knowledge In: </label>
                     </div>
                     <div class = "col-md-8 fieldcol">
                       <div class="input-group" style="width: 300px; margin-bottom: 15px">
                         <input type = "text" class = "form-control" id="txt-knowledge">
                         <script>
-                          var tl_index = -1;
+                          var kl_index = -1;
                           function delete_knowledge(index){
-                            $('#tl-span-' + index).remove();
-                            $('#tl-a-' + index).remove();
-                            $('#tl-input-' + index).remove();
+                            $('#kl-span-' + index).remove();
+                            $('#kl-a-' + index).remove();
+                            $('#kl-input-' + index).remove();
                           }
                         </script>
                         <span class="input-group-btn">
                           <a class="btn btn-primary" onclick="(function(){
-                            tl_index++;
-                            var tt = $('#knowledge-template');
-                            var tt_span = tt.find('span');
-                            var tt_a = tt.find('a');
-                            var tt_input = tt.find('input');
+                            kl_index++;
+                            var kk = $('#knowledge-template');
+                            var kk_span = kk.find('span');
+                            var kk_a = kk.find('a');
+                            var kk_input = kk.find('input');
 
-                            tt_span.text($('#txt-knowledge').val());
-                            tt_span.attr('id', 'tl-span-' + tl_index);
-                            tt_a.attr('id', 'tl-a-' + tl_index);
-                            tt_a.attr('onclick', 'delete_knowledge(' + tl_index + ')');
-                            tt_input.attr('id', 'tl-input-' + tl_index);
-                            tt_input.attr('name', 'knowledge[' + tl_index +']');
+                            kk_span.text($('#txt-knowledge').val());
+                            kk_span.attr('id', 'kl-span-' + kl_index);
+                            kk_a.attr('id', 'kl-a-' + kl_index);
+                            kk_a.attr('onclick', 'delete_knowledge(' + kl_index + ')');
+                            kk_input.attr('id', 'kl-input-' + kl_index);
+                            kk_input.attr('name', 'knowledge[' + kl_index +']');
+                            kk_input.val(kk_span.text());
                             $('#knowledge-list').append($('#knowledge-template').html());
 
                             //disposal of used resource in #knowledge-template
-                            tt_span.removeAttr('id');
-                            tt_a.removeAttr('id');
-                            tt_a.removeAttr('onclick');
-                            tt_input.removeAttr('id');
-                            tt_input.removeAttr('name');
+                            kk_span.removeAttr('id');
+                            kk_a.removeAttr('id');
+                            kk_a.removeAttr('onclick');
+                            kk_input.removeAttr('id');
+                            kk_input.removeAttr('name');
+                            kk_input.removeAttr('value');
                           })()">Add</a>
                         </span>
                       </div>
@@ -492,7 +496,7 @@ $CompanyID = $_SESSION['CompanyID'];
                     <div id="knowledge-list" class = "col-md-offset-3 col-md-8 fieldcol" style="width: 300px; word-wrap: break-word">
                       
                     </div>
-                </div>             
+                </div>              
                 <h3> Optional Requirements </h3>
                 &nbsp;
                 <div class="row field">

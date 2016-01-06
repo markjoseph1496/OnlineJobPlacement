@@ -39,14 +39,17 @@ if (isset($_POST['CompanyEmail'])) {
 
     $companyinfo_tbl =
         GSecureSQL::query(
-            "SELECT * FROM companyinfotbl WHERE Email = ?",
+            "SELECT 
+                `Password`,
+                `SaltedPassword`
+            FROM `companyinfotbl` WHERE `Email` = ?",
             TRUE,
             "s",
             $CompanyEmail
         );
 
     if (count($companyinfo_tbl)) {
-        if (hash('sha512', $_Password . $companyinfo_tbl[0]->SaltedPassword) == $companyinfo_tbl[0]->Password) {
+        if (hash('sha512', $_Password . $companyinfo_tbl[0][1]) == $companyinfo_tbl[0][0]) {
             $_SESSION['CompanyID'] = $CompanyEmail;
             echo "
 		        <script type='text/javascript'>
