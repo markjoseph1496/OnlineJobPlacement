@@ -57,7 +57,7 @@ if($result){
     <link href="css/mystyle.css" rel="stylesheet"> 
 
 </head>
-<body class="login-background">
+<body class="company-login">
 <div class="container">
   <div class="card">
     <h1 class="title">OJPMS</h1><br>
