@@ -66,6 +66,9 @@ if (isset($_SESSION['StudentID'])) {
     <!-- Color CSS Styles  -->
     <link rel="stylesheet" type="text/css" href="../../css/colors/yellow.css" title="yellow" media="screen"/>
 
+    <!-- Pagination -->
+    <link rel="stylesheet" href="../../css/simplePagination.css"/>
+
     <!-- JS  -->
     <script type="text/javascript" src="../../js/jquery.migrate.js"></script>
     <script type="text/javascript" src="../../js/modernizrr.js"></script>
@@ -81,6 +84,7 @@ if (isset($_SESSION['StudentID'])) {
     <script type="text/javascript" src="../../js/jquery.nicescroll.min.js"></script>
     <script type="text/javascript" src="../../js/jquery.parallax.js"></script>
     <script type="text/javascript" src="../../js/jquery.slicknav.js"></script>
+
 </head>
 
 <body>
@@ -209,79 +213,90 @@ if (isset($_SESSION['StudentID'])) {
                     <h4 class="classic-title"><span>Jobs</span></h4>
                     <?php
 
-                    $qry =
+                    $compposition_tbl =
                         GSecureSQL::query(
-                            "SELECT
-                                `comppositiontbl`.`PositionID`,
-                                `comppositiontbl`.`PositionLevel`,
-                                `comppositiontbl`.`CompanyID`,
-                                `companyinfotbl`.`CompanyName`,
-                                `comppositiontbl`.`PostingDateFrom`,
-                                `comppositiontbl`.`PostingDateTo`,
-                                `companyinfotbl`.`City`
-                            FROM
-                                `comppositiontbl`
-                            INNER JOIN `companyinfotbl` ON `comppositiontbl`.`CompanyID` = `companyinfotbl`.`CompanyID`",
+                            "SELECT * FROM comppositiontbl",
                             TRUE
                         );
-                    foreach ($qry as $value) {
+                    foreach ($compposition_tbl as $value) {
                         $PositionID = $value[0];
-                        $position = $value[1];
-                        $company = $value[2];
-                        $company_name = $value[3];
-                        $location = $value[6];
+                        $CompanyID = $value[1];
+                        $PostingDateFrom = $value[3];
+                        $PostingDateTo = $value[4];
+                        $Position = $value[5];
+                        $YearExperience = $value[10];
 
-                        $diff_from = date_diff(new DateTime(), new DateTime($value[4]));
-                        $diff_to = date_diff(new DateTime(), new DateTime($value[5]));
+                        $company_tbl =
+                            GSecureSQL::query(
+                                "SELECT * FROM companyinfotbl WHERE CompanyID = ?",
+                                TRUE,
+                                "s",
+                                $CompanyID
+                            );
+                        foreach ($company_tbl as $value1) {
+                            $CompanyName = $value1[1];
+                            $Location = $value1[4];
 
-                        $a = $diff_from->y >= 0 &&
-                            $diff_from->m >= 0 &&
-                            $diff_from->d >= 0 &&
-                            $diff_from->invert == 1;
+                            $diff_from = date_diff(new DateTime(), new DateTime($PostingDateFrom));
+                            $diff_to = date_diff(new DateTime(), new DateTime($PostingDateTo));
 
-                        $b = $diff_to->y >= 0 &&
-                            $diff_to->m >= 0 &&
-                            $diff_to->d >= 0 &&
-                            $diff_to->invert == 0;
+                            $a = $diff_from->y >= 0 &&
+                                $diff_from->m >= 0 &&
+                                $diff_from->d >= 0 &&
+                                $diff_from->invert == 1;
 
-                        if ($a && $b) {
-                            echo
-                            "
-                                        <div class='blog-post standard-post'>
-                                            <!-- Post Content -->
-                                            <div class='post-content'>
-                                                <div class='post-type'><i class='fa fa-picture-o'></i></div>
-                                                <h2><a href='#'>$position</a></h2>
-                                                <h1><p>$company_name</p></h1>
-                                                <ul class='icons-list'>
-                                                    <li><i class='fa fa-check-circle'></i> s</li>
-                                                    <li><i class='fa fa-check-circle'></i> Financial Planning</li>
-                                                    <li><i class='fa fa-check-circle'></i> Treasury and Budget</li>
-                                                </ul>
-                                                <div class='hr1' style='margin-bottom:14px;'></div>
-                                                <ul class='post-meta'>
-                                                    <li>4 years experience</li>
-                                                    <li>$location</li>
-                                                </ul>
-                                                <a class='main-button' href='view-details.php'>View Details <i class='fa fa-angle-right'></i></a>
-                                            </div>
-                                        </div>
-                                        ";
+                            $b = $diff_to->y >= 0 &&
+                                $diff_to->m >= 0 &&
+                                $diff_to->d >= 0 &&
+                                $diff_to->invert == 0;
+
+                            if ($a && $b) {
+                                ?>
+                                <div class='blog-post standard-post'>
+                                    <!-- Post Content -->
+                                    <div class='post-content'>
+                                        <div class='post-type'><i class='fa fa-picture-o'></i></div>
+                                        <h2><a href='#'><?php echo $Position; ?></a></h2>
+                                        <h1><p><?php echo $CompanyName; ?></p></h1>
+                                        <ul class='icons-list'>
+                                            <?php
+                                            $requirements_tbl =
+                                                GSecureSQL::query(
+                                                    "SELECT * FROM comprequirementtbl WHERE PositionID = ? AND CompanyID = ?",
+                                                    TRUE,
+                                                    "ss",
+                                                    $PositionID,
+                                                    $CompanyID
+                                                );
+                                            $count = 0;
+                                            foreach ($requirements_tbl as $value2) {
+                                                $RID = $value2[0];
+                                                $Requirement = $value2[3];
+                                                if($count < 3) {
+                                                    $count++;
+                                                    ?>
+                                                    <li><i class='fa fa-check-circle'></i> <?php echo $Requirement; ?>
+                                                    </li>
+                                                    <?php
+                                                }
+                                            }
+                                            ?>
+
+                                        </ul>
+                                        <div class='hr1' style='margin-bottom:14px;'></div>
+                                        <ul class='post-meta'>
+                                            <li><?php echo $YearExperience; ?> year(s) experience</li>
+                                            <li><?php echo $Location; ?></li>
+                                        </ul>
+                                        <a class='main-button' href='view-details.php?id=<?php echo $PositionID; ?>'>View
+                                            Details <i class='fa fa-angle-right'></i></a>
+                                    </div>
+                                </div>
+                                <?php
+                            }
                         }
                     }
                     ?>
-
-                    <!-- Start Pagination -->
-                    <div id="pagination">
-                        <span class="all-pages">Page 1 of 3</span>
-                        <span class="current page-num">1</span>
-                        <a class="page-num" href="#">2</a>
-                        <a class="page-num" href="#">3</a>
-                        <a class="page-num" href="#">4</a>
-                        <a class="page-num" href="#">5</a>
-                        <a class="next-page" href="#">Next</a>
-                    </div>
-                    <!-- End Pagination -->
                 </div>
             </div>
         </div>

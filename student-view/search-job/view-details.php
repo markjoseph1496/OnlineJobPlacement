@@ -1,3 +1,38 @@
+<?php
+include('../../connection.php');
+session_start();
+
+$PositionID = $_GET['id'];
+
+$position_tbl =
+    GSecureSQL::query(
+        "SELECT * FROM comppositiontbl WHERE PositionID = ?",
+        TRUE,
+        "s",
+        $PositionID
+    );
+$CompanyID = $position_tbl[0][1];
+$Email = $position_tbl[0][2];
+$PostingDateFrom = $position_tbl[0][3];
+$PostingDateTo = $position_tbl[0][4];
+$PositionLevel = $position_tbl[0][5];
+$Specialization = $position_tbl[0][6];
+$EmployementType = $position_tbl[0][7];
+$AvailablePosition = $position_tbl[0][8];
+$MonthlySalary = $position_tbl[0][9];
+$YearExperience = $position_tbl[0][10];
+
+$companyinfo_tbl =
+    GSecureSQL::query(
+        "SELECT * FROM companyinfotbl WHERE CompanyID = ?",
+        TRUE,
+        "s",
+        $CompanyID
+    );
+$CompanyName = $companyinfo_tbl[0][1];
+
+?>
+
 <!doctype html>
 <html lang="en">
 <head>
@@ -92,7 +127,7 @@
                         <!-- Start Social Links -->
                             <ul class="social-list">
                                <li class="profile-name">
-                                    <i class="fa fa-user"></i> Hello, <b><?php echo $FirstName ." ".$LastName; ?></b>                               
+                                    <i class="fa fa-user"></i> Hello, <b>Aasdasd</b>
                                 </li>
                             </ul>
                             <!-- End Social Links -->
