@@ -5693,8 +5693,9 @@ ul.footer-nav li a:hover {
 
 
 .purchase {
-    background: url(../img/login-bg.jpg); no-repeat;
-background:cover;    padding: 100px 0;
+    background: url(../img/login-bg.jpg) no-repeat;
+	background-attachment: fixed;
+	padding: 100px 0;
 }
 
 .navbar-collapse {
