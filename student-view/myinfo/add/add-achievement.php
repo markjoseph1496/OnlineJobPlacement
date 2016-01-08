@@ -294,10 +294,8 @@ if(is_null($_SESSION['StudentID'])){
                     <!--End sidebar-->
                 </div>
                 <div class="hr5" style="margin-top:35px;margin-bottom:40px;"></div>
-                <div class="field">
-                    <div class="text-center">
-                        <button type="submit" class="btn btn-lg btn-hg btn-primary">Add</button>
-                    </div>
+                <div class="text-center">
+                    <button type="submit" class="btn-system btn-large">Add</button>
                 </div>
             </div>
         </div>
