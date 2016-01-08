@@ -158,6 +158,7 @@ if (isset($_SESSION['StudentID'])) {
             </div>
         </div>
     </div>
+    
     <div class="hr1" style="margin-bottom:5px;"></div>
     <div class="container">
         <div>
