@@ -221,7 +221,7 @@ $CompanyName = $companyinfo_tbl[0][1];
                                 <!-- Single Testimonial -->
                                 <div class="hr5" style="margin-top:35px;margin-bottom:40px;"></div>
                                 <div class="classic-testimonials text-center">
-                                    <img src="../../images/margo.png">
+                                    <img src="../../images/marg.png">
                                 </div>
                                 <!-- End Single Testimonial -->
                             </div>

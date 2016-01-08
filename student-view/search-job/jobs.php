@@ -158,6 +158,24 @@ if (isset($_SESSION['StudentID'])) {
             </div>
         </div>
     </div>
+    <div class="hr1" style="margin-bottom:5px;"></div>
+    <div class="container">
+        <div>
+            <i class="fa fa-bookmark"></i> Bookmarked Jobs <a>(0)</a>&nbsp;
+            <i class="fa fa-sort"></i> Sort by:
+            <select id="" name="" class="" style="height:9%; width:15%;">
+                <option value="">Location</option>
+                <option value="">Years of Experience</option>
+            </select>&nbsp;
+
+            <i class="fa fa-filter"></i> Filter by:
+            <select id="" name="" class="" style="height:9%; width:15%;">
+                <option value=""></option>
+                <option value=""></option>
+            </select>
+        </div>
+    </div>
+    <div class="hr4" style="margin-top:5px;"></div>
 
     <!-- Start Content -->
     <div id="content">
@@ -172,21 +190,6 @@ if (isset($_SESSION['StudentID'])) {
                             <button class="search-btn" type="submit"><i class="fa fa-search"></i></button>
                         </form>
                     </div>
-
-                    <!-- Categories Widget -->
-                    <div class="widget widget-categories">
-                        <h4>Categories <span class="head-line"></span></h4>
-                        <li>
-                            <a href="#"><i class="fa fa-bookmark"></i> Bookmarked Jobs <b>(0)</b></a>
-                        </li>
-                        <li>
-                            <a href="#"><i class="fa fa-sort"></i> Sort by: </a>
-                        </li>
-                        <li>
-                            <a href="#"><i class="fa fa-filter"></i> Filter by:</a>
-                        </li>
-                    </div>
-
 
                     <!-- Popular Posts widget -->
                     <div class="widget widget-popular-posts">
@@ -288,7 +291,7 @@ if (isset($_SESSION['StudentID'])) {
                                             <li><?php echo $YearExperience; ?> year(s) experience</li>
                                             <li><?php echo $Location; ?></li>
                                         </ul>
-                                        <a class='main-button' href='view-details.php?id=<?php echo $PositionID; ?>'>View
+                                        <a class='main-button' target="_blank" href='view-details.php?id=<?php echo $PositionID; ?>'>View
                                             Details <i class='fa fa-angle-right'></i></a>
                                     </div>
                                 </div>
