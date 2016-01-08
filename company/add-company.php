@@ -24,7 +24,7 @@ $CompanyID = $_SESSION['CompanyID'];
 
 
 // Create Position
-  if (isset($_GET['DateFrom'])) {
+  if (isset($_GET['btnsave'])) {
         $DateFrom = $_GET['DateFrom'];
         $DateTo = $_GET['DateTo'];
         $PLevel = $_GET['PLevel'];
@@ -41,6 +41,24 @@ $CompanyID = $_SESSION['CompanyID'];
           location.href='company-positionlist.php?id=1'
           </script>
         ";
+        
+        $PositionID = mysql_fetch_array(mysql_query("SELECT MAX(PositionID) AS `index` FROM comppositiontbl"))['index'];
+
+        foreach ($_GET['training'] as $training) {
+
+          $query3 = "INSERT INTO comptrainingtbl (CompanyID,PositionID,Training) VALUES ('$CompanyID','$PositionID','$training')";
+          mysql_query($query3);
+        } 
+        foreach ($_GET['knowledge'] as $knowledge ) {
+          
+          $query4 = "INSERT INTO comprequirementtbl (CompanyID,PositionID,Knowledge) VALUES ('$CompanyID','$PositionID','$knowledge')";
+          mysql_query($query4);
+        }
+        foreach ($_GET['language'] as $language) {
+          
+          $query5 = "INSERT INTO complanguagetbl (CompanyID,PositionID,Language) VALUES ('$CompanyID','$PositionID','$language')";
+          mysql_query($query5);
+        }
     }
 // End of Create Position
-?>
+

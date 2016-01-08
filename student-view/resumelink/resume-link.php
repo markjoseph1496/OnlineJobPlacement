@@ -1,12 +1,11 @@
 <!DOCTYPE html>
-<?php 
+<?php
 include('../../connection.php');
 session_start();
 
-if(isset($_SESSION['StudentID'])){
+if (isset($_SESSION['StudentID'])) {
     $StudentID = $_SESSION['StudentID'];
-}
-else{
+} else {
     $StudentID = '';
     echo "
         <script type='text/javascript'>
@@ -47,7 +46,7 @@ $result = mysql_query($qry);
 
     <!-- jQuery and Bootstrap JS -->
     <script type="text/javascript" src="../../js/jquery.min.js"></script>
-    <script type="text/javascript" src="../../js/bootstrap.min.js" ></script>
+    <script type="text/javascript" src="../../js/bootstrap.min.js"></script>
 
     <!-- BootstrapValidator -->
     <script src="../../js/bootstrapValidator.min.js" type="text/javascript"></script>
@@ -93,37 +92,37 @@ $result = mysql_query($qry);
 <body>
     <div id="container">
         <script>
-            $(document).on("click", ".deleteCertification", function(result) {
+            $(document).on("click", ".deleteCertification", function (result) {
                 bootbox.confirm({
-                  title: 'Delete',
-                  message: 'Are you sure you want to delete this Information?',
-                  buttons: {
-                      'cancel': {
-                          label: 'Cancel',
-                          
-                      },
-                      'confirm': {
-                          label: 'Delete',
-                          className: 'btn-danger pull-right'
-                      }
-                  },
-                  callback: function(result) {
-                      if (result) {
-                           window.location = $("a[data-bb='confirmDeleteCertification']").attr('href');
-                      }
-                  }
-              });
+                    title: 'Delete',
+                    message: 'Are you sure you want to delete this Information?',
+                    buttons: {
+                        'cancel': {
+                            label: 'Cancel',
+
+                        },
+                        'confirm': {
+                            label: 'Delete',
+                            className: 'btn-danger pull-right'
+                        }
+                    },
+                    callback: function (result) {
+                        if (result) {
+                            window.location = $("a[data-bb='confirmDeleteCertification']").attr('href');
+                        }
+                    }
+                });
             });
         </script>
         <!-- Start Header Section -->
         <div class="hidden-header"></div>
         <header class="clearfix">
-        <!-- Start Top Bar -->
+            <!-- Start Top Bar -->
             <div class="top-bar">
                 <div class="container">
                     <div class="row">
                         <div class="col-md-7">
-                            <!-- Start Contact Info 
+                            <!-- Start Contact Info
                             <ul class="contact-details">
                                 <li><a href="#"><i class="fa fa-map-marker"></i> House-54/A, London, UK</a>
                                 </li>
@@ -136,40 +135,40 @@ $result = mysql_query($qry);
                         </div>
                         <!-- .col-md-6 -->
                         <div class="col-md-5">
-                        <!-- Start Social Links 
-                            <ul class="social-list">
-                                <li>
-                                <a class="facebook itl-tooltip" data-placement="bottom" title="Facebook" href="#"><i class="fa fa-facebook"></i></a>
-                                </li>
-                                <li>
-                                    <a class="twitter itl-tooltip" data-placement="bottom" title="Twitter" href="#"><i class="fa fa-twitter"></i></a>
-                                </li>
-                                <li>
-                                    <a class="google itl-tooltip" data-placement="bottom" title="Google Plus" href="#"><i class="fa fa-google-plus"></i></a>
-                                </li>
-                                <li>
-                                    <a class="dribbble itl-tooltip" data-placement="bottom" title="Dribble" href="#"><i class="fa fa-dribbble"></i></a>
-                                </li>
-                                <li>
-                                    <a class="linkdin itl-tooltip" data-placement="bottom" title="Linkedin" href="#"><i class="fa fa-linkedin"></i></a>
-                                </li>
-                                <li>
-                                    <a class="flickr itl-tooltip" data-placement="bottom" title="Flickr" href="#"><i class="fa fa-flickr"></i></a>
-                                </li>
-                                <li>
-                                    <a class="tumblr itl-tooltip" data-placement="bottom" title="Tumblr" href="#"><i class="fa fa-tumblr"></i></a>
-                                </li>
-                                <li>
-                                    <a class="instgram itl-tooltip" data-placement="bottom" title="Instagram" href="#"><i class="fa fa-instagram"></i></a>
-                                </li>
-                                <li>
-                                    <a class="vimeo itl-tooltip" data-placement="bottom" title="vimeo" href="#"><i class="fa fa-vimeo-square"></i></a>
-                                </li>
-                                <li>
-                                    <a class="skype itl-tooltip" data-placement="bottom" title="Skype" href="#"><i class="fa fa-skype"></i></a>
-                                </li>
-                            </ul>
-                            <!-- End Social Links -->
+                            <!-- Start Social Links 
+                                <ul class="social-list">
+                                    <li>
+                                    <a class="facebook itl-tooltip" data-placement="bottom" title="Facebook" href="#"><i class="fa fa-facebook"></i></a>
+                                    </li>
+                                    <li>
+                                        <a class="twitter itl-tooltip" data-placement="bottom" title="Twitter" href="#"><i class="fa fa-twitter"></i></a>
+                                    </li>
+                                    <li>
+                                        <a class="google itl-tooltip" data-placement="bottom" title="Google Plus" href="#"><i class="fa fa-google-plus"></i></a>
+                                    </li>
+                                    <li>
+                                        <a class="dribbble itl-tooltip" data-placement="bottom" title="Dribble" href="#"><i class="fa fa-dribbble"></i></a>
+                                    </li>
+                                    <li>
+                                        <a class="linkdin itl-tooltip" data-placement="bottom" title="Linkedin" href="#"><i class="fa fa-linkedin"></i></a>
+                                    </li>
+                                    <li>
+                                        <a class="flickr itl-tooltip" data-placement="bottom" title="Flickr" href="#"><i class="fa fa-flickr"></i></a>
+                                    </li>
+                                    <li>
+                                        <a class="tumblr itl-tooltip" data-placement="bottom" title="Tumblr" href="#"><i class="fa fa-tumblr"></i></a>
+                                    </li>
+                                    <li>
+                                        <a class="instgram itl-tooltip" data-placement="bottom" title="Instagram" href="#"><i class="fa fa-instagram"></i></a>
+                                    </li>
+                                    <li>
+                                        <a class="vimeo itl-tooltip" data-placement="bottom" title="vimeo" href="#"><i class="fa fa-vimeo-square"></i></a>
+                                    </li>
+                                    <li>
+                                        <a class="skype itl-tooltip" data-placement="bottom" title="Skype" href="#"><i class="fa fa-skype"></i></a>
+                                    </li>
+                                </ul>
+                                <!-- End Social Links -->
                         </div>
                         <!-- .col-md-6 -->
                     </div>
@@ -184,7 +183,7 @@ $result = mysql_query($qry);
             <div class="navbar navbar-default navbar-top">
                 <div class="container">
                     <div class="navbar-header">
-                    <!-- Stat Toggle Nav Link For Mobiles -->
+                        <!-- Stat Toggle Nav Link For Mobiles -->
                         <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
                             <i class="fa fa-bars"></i>
                         </button>
@@ -192,11 +191,11 @@ $result = mysql_query($qry);
                         <a class="navbar-brand" href="">Online JPMS</a>
                     </div>
                     <div class="navbar-collapse collapse">
-                   <!-- Sign-out -->
+                        <!-- Sign-out -->
                         <div class="signout-side">
-                               <a class="show-signout"><i class="fa fa-sign-out"></i></a>
+                            <a class="show-signout"><i class="fa fa-sign-out"></i></a>
                         </div>
-                     <!-- End Sign-out -->
+                        <!-- End Sign-out -->
                         <!-- Start Navigation List -->
                         <ul class="nav navbar-nav navbar-right">
                             <li>
@@ -208,7 +207,8 @@ $result = mysql_query($qry);
                                     <li><a href="../myinfo/education.php">Education</a></li>
                                     <li><a href="../myinfo/certifications.php">Certifications</a></li>
                                     <li><a href="../myinfo/achievements.php">Achievements</a></li>
-                                    <li><a href="../myinfo/specialization-and-languages.php">Specialization & Languages</a></li>
+                                    <li><a href="../myinfo/specialization-and-languages.php">Specialization & Languages</a>
+                                    </li>
                                     <li><a href="../myinfo/references.php">References</a></li>
                                     <li><a href="../myinfo/portfolio.php">Portfolio</a></li>
                                 </ul>
@@ -306,14 +306,16 @@ $result = mysql_query($qry);
                         <div class="row">
                             <div class="col-md-12">
                                 <p><b>Resumé Link URL:</b><a href="../../../resumelinkprofile.php" target="_blank">
-                                    http://markjoseph1496.ojpms.com <i class="fa fa-external-link-square"></i></a>
+                                http://markjoseph1496.ojpms.com <i class="fa fa-external-link-square"></i></a>
                                 </p><br>
                             </div>
                         </div>
-                        <div class"row">
-                            <div class="col-md-6">
+                        <div class "row">
+                            <div class="col-md-12">
                                 <label>About Me</label>
                             </div>
+                        </div>
+                        <div class "row">
                             <div class="col-md-12">
                                 <div class="form-group">
                                     <textarea class="form-control" name="" id="" rows="10"></textarea>
@@ -326,7 +328,7 @@ $result = mysql_query($qry);
                 <div class="hr5" style="margin-top:35px;margin-bottom:40px;"></div>
                 <div class="field">
                     <div class="text-center">
-                        <button type="submit" class="btn-system btn-large" name ="btnSave">Save</button>
+                        <button type="submit" class="btn-system btn-large" name="btnSave">Save</button>
                     </div>
                 </div>
             </div>

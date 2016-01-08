@@ -9,9 +9,8 @@ $CompanyID = $_SESSION['CompanyID'];
 
             $CName = $qry['CompanyName'];
             $Industry = $qry['Industry'];
-            $classification = $qry['Classification'];
-            $address = $qry['Address'];
-            $State = $qry['StateRegion'];
+            $Classification = $qry['Classification'];
+            $Address = $qry['Address'];
             $City = $qry['City'];
             $Postal = $qry['PostalCode'];
             $Phone = $qry['PhoneNum'];
@@ -285,7 +284,7 @@ $CompanyID = $_SESSION['CompanyID'];
                         Achievement successfully updated.
                         </div>';
                     } 
-                }  
+                }
             ?>
               <div class="row field">
                                         <div class = "col-md-3 fieldcol">
@@ -309,11 +308,11 @@ $CompanyID = $_SESSION['CompanyID'];
                 </div>  
                  <div class="row field">
                                         <div class = "col-md-3 fieldcol">
-                                            <label = "usr" class = "control-label"> Website Url: </label>
+                                            <label = "usr" class = "control-label"> Company Description: </label>
                                         </div>
                                         <div class = "col-md-4 fieldcol">
                                             <div class="form-group">
-                                                   <input type = "text" name = "web" id = "usr" class = "form-control" style ="width: 300px;" >
+                                                   <input type = "text" name = "description" id = "usr" class = "form-control" style ="width: 300px;" >
                                             </div>
                                         </div>
                 </div>  
@@ -460,7 +459,6 @@ $CompanyID = $_SESSION['CompanyID'];
        $industry = $_POST['industry'];
        $classification = $_POST['classification'];
        $address = $_POST['address'];
-       $state = $_POST['state'];
        $city = $_POST['City'];
        $postal = $_POST['postal'];
        $phonenum = $_POST['phonenum'];
@@ -469,7 +467,7 @@ $CompanyID = $_SESSION['CompanyID'];
 
 
 
-        $query = "UPDATE companyinfotbl SET CompanyName = '$cname', Industry = '$industry', Classification = '$classification', Address = '$address', StateRegion = '$state', City = '$city', PostalCode = '$postal', PhoneNum = '$phonenum', MobileNum = '$mobilenum', Fax = '$fax' WHERE CompanyID = '$CompanyID'";
+        $query = "UPDATE companyinfotbl SET CompanyName = '$cname', Industry = '$industry', Classification = '$classification', Address = '$address', City = '$city', PostalCode = '$postal', PhoneNum = '$phonenum', MobileNum = '$mobilenum', Fax = '$fax' WHERE CompanyID = '$CompanyID'";
        $Result = mysql_query($query);
        echo "
             <script type='text/javascript'>
