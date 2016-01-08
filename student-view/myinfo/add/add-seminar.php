@@ -234,8 +234,8 @@ if(is_null($_SESSION['StudentID'])){
                     </div>
                     <div class="col-md-6">
                         <ul class="breadcrumbs">
-                            <li><a href="#">Home</a></li>
-                            <li>Seminar</li>
+                            <li><a href="#"></a></li>
+                            <li>Add Seminar</li>
                         </ul>
                     </div>
                 </div>

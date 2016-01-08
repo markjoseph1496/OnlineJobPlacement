@@ -226,8 +226,8 @@ session_start();
                 </div>
                 <div class="col-md-6">
                     <ul class="breadcrumbs">
-                        <li><a href="#">Home</a></li>
-                        <li>Work Experience</li>
+                        <li><a href="#"></a></li>
+                        <li>Add Work Experience</li>
                     </ul>
                 </div>
             </div>

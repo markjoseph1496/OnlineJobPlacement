@@ -228,7 +228,7 @@ session_start();
                     <div class="col-md-6">
                         <ul class="breadcrumbs">
                             <li><a href="#">Home</a></li>
-                            <li>Languages</li>
+                            <li>Add Language</li>
                         </ul>
                     </div>
                 </div>

@@ -221,8 +221,8 @@
                     </div>
                     <div class="col-md-6">
                         <ul class="breadcrumbs">
-                            <li><a href="#">Home</a></li>
-                            <li>Links</li>
+                            <li><a href="#"></a></li>
+                            <li>Add a link</li>
                         </ul>
                     </div>
                 </div>
