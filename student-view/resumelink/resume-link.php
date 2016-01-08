@@ -90,250 +90,251 @@ $result = mysql_query($qry);
 </head>
 
 <body>
-<div id="container">
-    <script>
-        $(document).on("click", ".deleteCertification", function (result) {
-            bootbox.confirm({
-                title: 'Delete',
-                message: 'Are you sure you want to delete this Information?',
-                buttons: {
-                    'cancel': {
-                        label: 'Cancel',
+    <div id="container">
+        <script>
+            $(document).on("click", ".deleteCertification", function (result) {
+                bootbox.confirm({
+                    title: 'Delete',
+                    message: 'Are you sure you want to delete this Information?',
+                    buttons: {
+                        'cancel': {
+                            label: 'Cancel',
 
+                        },
+                        'confirm': {
+                            label: 'Delete',
+                            className: 'btn-danger pull-right'
+                        }
                     },
-                    'confirm': {
-                        label: 'Delete',
-                        className: 'btn-danger pull-right'
+                    callback: function (result) {
+                        if (result) {
+                            window.location = $("a[data-bb='confirmDeleteCertification']").attr('href');
+                        }
                     }
-                },
-                callback: function (result) {
-                    if (result) {
-                        window.location = $("a[data-bb='confirmDeleteCertification']").attr('href');
-                    }
-                }
+                });
             });
-        });
-    </script>
-    <!-- Start Header Section -->
-    <div class="hidden-header"></div>
-    <header class="clearfix">
-        <!-- Start Top Bar -->
-        <div class="top-bar">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-7">
-                        <!-- Start Contact Info
-                        <ul class="contact-details">
-                            <li><a href="#"><i class="fa fa-map-marker"></i> House-54/A, London, UK</a>
+        </script>
+        <!-- Start Header Section -->
+        <div class="hidden-header"></div>
+        <header class="clearfix">
+            <!-- Start Top Bar -->
+            <div class="top-bar">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-7">
+                            <!-- Start Contact Info
+                            <ul class="contact-details">
+                                <li><a href="#"><i class="fa fa-map-marker"></i> House-54/A, London, UK</a>
+                                </li>
+                                <li><a href="#"><i class="fa fa-envelope-o"></i> info@yourcompany.com</a>
+                                </li>
+                                <li><a href="#"><i class="fa fa-phone"></i> +12 345 678 000</a>
+                                </li>
+                            </ul>
+                            <!-- End Contact Info -->
+                        </div>
+                        <!-- .col-md-6 -->
+                        <div class="col-md-5">
+                            <!-- Start Social Links 
+                                <ul class="social-list">
+                                    <li>
+                                    <a class="facebook itl-tooltip" data-placement="bottom" title="Facebook" href="#"><i class="fa fa-facebook"></i></a>
+                                    </li>
+                                    <li>
+                                        <a class="twitter itl-tooltip" data-placement="bottom" title="Twitter" href="#"><i class="fa fa-twitter"></i></a>
+                                    </li>
+                                    <li>
+                                        <a class="google itl-tooltip" data-placement="bottom" title="Google Plus" href="#"><i class="fa fa-google-plus"></i></a>
+                                    </li>
+                                    <li>
+                                        <a class="dribbble itl-tooltip" data-placement="bottom" title="Dribble" href="#"><i class="fa fa-dribbble"></i></a>
+                                    </li>
+                                    <li>
+                                        <a class="linkdin itl-tooltip" data-placement="bottom" title="Linkedin" href="#"><i class="fa fa-linkedin"></i></a>
+                                    </li>
+                                    <li>
+                                        <a class="flickr itl-tooltip" data-placement="bottom" title="Flickr" href="#"><i class="fa fa-flickr"></i></a>
+                                    </li>
+                                    <li>
+                                        <a class="tumblr itl-tooltip" data-placement="bottom" title="Tumblr" href="#"><i class="fa fa-tumblr"></i></a>
+                                    </li>
+                                    <li>
+                                        <a class="instgram itl-tooltip" data-placement="bottom" title="Instagram" href="#"><i class="fa fa-instagram"></i></a>
+                                    </li>
+                                    <li>
+                                        <a class="vimeo itl-tooltip" data-placement="bottom" title="vimeo" href="#"><i class="fa fa-vimeo-square"></i></a>
+                                    </li>
+                                    <li>
+                                        <a class="skype itl-tooltip" data-placement="bottom" title="Skype" href="#"><i class="fa fa-skype"></i></a>
+                                    </li>
+                                </ul>
+                                <!-- End Social Links -->
+                        </div>
+                        <!-- .col-md-6 -->
+                    </div>
+                    <!-- .row -->
+                </div>
+                <!-- .container -->
+            </div>
+            <!-- .top-bar -->
+            <!-- End Top Bar -->
+
+            <!-- Start  Logo & Naviagtion  -->
+            <div class="navbar navbar-default navbar-top">
+                <div class="container">
+                    <div class="navbar-header">
+                        <!-- Stat Toggle Nav Link For Mobiles -->
+                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        <!-- End Toggle Nav Link For Mobiles -->
+                        <a class="navbar-brand" href="">Online JPMS</a>
+                    </div>
+                    <div class="navbar-collapse collapse">
+                        <!-- Sign-out -->
+                        <div class="signout-side">
+                            <a class="show-signout"><i class="fa fa-sign-out"></i></a>
+                        </div>
+                        <!-- End Sign-out -->
+                        <!-- Start Navigation List -->
+                        <ul class="nav navbar-nav navbar-right">
+                            <li>
+                                <a href="../myinfo/personal-info.php">My Info</a>
+                                <ul class="dropdown">
+                                    <li><a href="../myinfo/personal-info.php">Personal Info</a></li>
+                                    <li><a href="../myinfo/contacts-info.php">Contacts Info</a></li>
+                                    <li><a href="../myinfo/work.php">Work</a></li>
+                                    <li><a href="../myinfo/education.php">Education</a></li>
+                                    <li><a href="../myinfo/certifications.php">Certifications</a></li>
+                                    <li><a href="../myinfo/achievements.php">Achievements</a></li>
+                                    <li><a href="../myinfo/specialization-and-languages.php">Specialization & Languages</a>
+                                    </li>
+                                    <li><a href="../myinfo/references.php">References</a></li>
+                                    <li><a href="../myinfo/portfolio.php">Portfolio</a></li>
+                                </ul>
                             </li>
-                            <li><a href="#"><i class="fa fa-envelope-o"></i> info@yourcompany.com</a>
+                            <li>
+                                <a class="active" href="resume-link.php">Resume Link</a>
+                                <ul class="dropdown">
+                                    <li><a class="active" href="resume-link.php">Resume Link</a></li>
+                                    <li><a href="background.php">Background</a></li>
+                                    <li><a href="print-share.php">Print/Share</a></li>
+                                </ul>
                             </li>
-                            <li><a href="#"><i class="fa fa-phone"></i> +12 345 678 000</a>
+                            <li>
+                                <a href="../applications/applications.php">Applications</a>
+                            </li>
+                            <li>
+                                <a href="../search-job/jobs.php">Jobs</a>
+                            </li>
+                            <li>
+                                <a href="../settings/privacy-settings.php">Settings</a>
+                                <ul class="dropdown">
+                                    <li><a href="../settings/privacy-settings.php">Privacy Settings</a></li>
+                                    <li><a href="../settings/pass-settings.php">Password Settings</a></li>
+                                </ul>
                             </li>
                         </ul>
-                        <!-- End Contact Info -->
+                        <!-- End Navigation List -->
                     </div>
-                    <!-- .col-md-6 -->
-                    <div class="col-md-5">
-                        <!-- Start Social Links 
-                            <ul class="social-list">
-                                <li>
-                                <a class="facebook itl-tooltip" data-placement="bottom" title="Facebook" href="#"><i class="fa fa-facebook"></i></a>
-                                </li>
-                                <li>
-                                    <a class="twitter itl-tooltip" data-placement="bottom" title="Twitter" href="#"><i class="fa fa-twitter"></i></a>
-                                </li>
-                                <li>
-                                    <a class="google itl-tooltip" data-placement="bottom" title="Google Plus" href="#"><i class="fa fa-google-plus"></i></a>
-                                </li>
-                                <li>
-                                    <a class="dribbble itl-tooltip" data-placement="bottom" title="Dribble" href="#"><i class="fa fa-dribbble"></i></a>
-                                </li>
-                                <li>
-                                    <a class="linkdin itl-tooltip" data-placement="bottom" title="Linkedin" href="#"><i class="fa fa-linkedin"></i></a>
-                                </li>
-                                <li>
-                                    <a class="flickr itl-tooltip" data-placement="bottom" title="Flickr" href="#"><i class="fa fa-flickr"></i></a>
-                                </li>
-                                <li>
-                                    <a class="tumblr itl-tooltip" data-placement="bottom" title="Tumblr" href="#"><i class="fa fa-tumblr"></i></a>
-                                </li>
-                                <li>
-                                    <a class="instgram itl-tooltip" data-placement="bottom" title="Instagram" href="#"><i class="fa fa-instagram"></i></a>
-                                </li>
-                                <li>
-                                    <a class="vimeo itl-tooltip" data-placement="bottom" title="vimeo" href="#"><i class="fa fa-vimeo-square"></i></a>
-                                </li>
-                                <li>
-                                    <a class="skype itl-tooltip" data-placement="bottom" title="Skype" href="#"><i class="fa fa-skype"></i></a>
-                                </li>
-                            </ul>
-                            <!-- End Social Links -->
-                    </div>
-                    <!-- .col-md-6 -->
                 </div>
-                <!-- .row -->
+                <!-- Mobile Menu Start -->
+                <ul class="wpb-mobile-menu">
+                    <li>
+                        <a href="../myinfo/personal-info.php">My Info</a>
+                        <ul class="dropdown">
+                            <li><a href="../myinfo/personal-info.php">Personal Info</a></li>
+                            <li><a href="../myinfo/contacts-info.php">Contacts Info</a></li>
+                            <li><a href="../myinfo/work.php">Work</a></li>
+                            <li><a href="../myinfo/education.php">Education</a></li>
+                            <li><a href="../myinfo/certifications.php">Certifications</a></li>
+                            <li><a href="../myinfo/achievements.php">Achievements</a></li>
+                            <li><a href="../myinfo/specialization-and-languages.php">Specialization & Languages</a></li>
+                            <li><a href="../myinfo/references.php">References</a></li>
+                            <li><a href="../myinfo/portfolio.php">Portfolio</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a class="active" href="resume-link.php">Resume Link</a>
+                        <ul class="dropdown">
+                            <li><a class="active" href="resume-link.php">Resume Link</a></li>
+                            <li><a href="background.php">Background</a></li>
+                            <li><a href="print-share.php">Print/Share</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="../applications/applications.php">Applications</a>
+                    </li>
+                    <li>
+                        <a href="../search-job/jobs.php">Jobs</a>
+                    </li>
+                    <li>
+                        <a href="../settings/privacy-settings.php">Settings</a>
+                        <ul class="dropdown">
+                            <li><a href="../settings/privacy-settings.php">Privacy Settings</a></li>
+                            <li><a href="../settings/pass-settings.php">Password Settings</a></li>
+                        </ul>
+                    </li>
+                </ul>
+                <!-- Mobile Menu End -->
             </div>
-            <!-- .container -->
-        </div>
-        <!-- .top-bar -->
-        <!-- End Top Bar -->
+        </header>
 
-        <!-- Start  Logo & Naviagtion  -->
-        <div class="navbar navbar-default navbar-top">
+        <div class="page-banner no-subtitle">
             <div class="container">
-                <div class="navbar-header">
-                    <!-- Stat Toggle Nav Link For Mobiles -->
-                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                        <i class="fa fa-bars"></i>
-                    </button>
-                    <!-- End Toggle Nav Link For Mobiles -->
-                    <a class="navbar-brand" href="">Online JPMS</a>
-                </div>
-                <div class="navbar-collapse collapse">
-                    <!-- Sign-out -->
-                    <div class="signout-side">
-                        <a class="show-signout"><i class="fa fa-sign-out"></i></a>
-                    </div>
-                    <!-- End Sign-out -->
-                    <!-- Start Navigation List -->
-                    <ul class="nav navbar-nav navbar-right">
-                        <li>
-                            <a href="../myinfo/personal-info.php">My Info</a>
-                            <ul class="dropdown">
-                                <li><a href="../myinfo/personal-info.php">Personal Info</a></li>
-                                <li><a href="../myinfo/contacts-info.php">Contacts Info</a></li>
-                                <li><a href="../myinfo/work.php">Work</a></li>
-                                <li><a href="../myinfo/education.php">Education</a></li>
-                                <li><a href="../myinfo/certifications.php">Certifications</a></li>
-                                <li><a href="../myinfo/achievements.php">Achievements</a></li>
-                                <li><a href="../myinfo/specialization-and-languages.php">Specialization & Languages</a>
-                                </li>
-                                <li><a href="../myinfo/references.php">References</a></li>
-                                <li><a href="../myinfo/portfolio.php">Portfolio</a></li>
-                            </ul>
-                        </li>
-                        <li>
-                            <a class="active" href="resume-link.php">Resume Link</a>
-                            <ul class="dropdown">
-                                <li><a class="active" href="resume-link.php">Resume Link</a></li>
-                                <li><a href="background.php">Background</a></li>
-                                <li><a href="print-share.php">Print/Share</a></li>
-                            </ul>
-                        </li>
-                        <li>
-                            <a href="../applications/applications.php">Applications</a>
-                        </li>
-                        <li>
-                            <a href="../search-job/jobs.php">Jobs</a>
-                        </li>
-                        <li>
-                            <a href="../settings/privacy-settings.php">Settings</a>
-                            <ul class="dropdown">
-                                <li><a href="../settings/privacy-settings.php">Privacy Settings</a></li>
-                                <li><a href="../settings/pass-settings.php">Password Settings</a></li>
-                            </ul>
-                        </li>
-                    </ul>
-                    <!-- End Navigation List -->
-                </div>
-            </div>
-            <!-- Mobile Menu Start -->
-            <ul class="wpb-mobile-menu">
-                <li>
-                    <a href="../myinfo/personal-info.php">My Info</a>
-                    <ul class="dropdown">
-                        <li><a href="../myinfo/personal-info.php">Personal Info</a></li>
-                        <li><a href="../myinfo/contacts-info.php">Contacts Info</a></li>
-                        <li><a href="../myinfo/work.php">Work</a></li>
-                        <li><a href="../myinfo/education.php">Education</a></li>
-                        <li><a href="../myinfo/certifications.php">Certifications</a></li>
-                        <li><a href="../myinfo/achievements.php">Achievements</a></li>
-                        <li><a href="../myinfo/specialization-and-languages.php">Specialization & Languages</a></li>
-                        <li><a href="../myinfo/references.php">References</a></li>
-                        <li><a href="../myinfo/portfolio.php">Portfolio</a></li>
-                    </ul>
-                </li>
-                <li>
-                    <a class="active" href="resume-link.php">Resume Link</a>
-                    <ul class="dropdown">
-                        <li><a class="active" href="resume-link.php">Resume Link</a></li>
-                        <li><a href="background.php">Background</a></li>
-                        <li><a href="print-share.php">Print/Share</a></li>
-                    </ul>
-                </li>
-                <li>
-                    <a href="../applications/applications.php">Applications</a>
-                </li>
-                <li>
-                    <a href="../search-job/jobs.php">Jobs</a>
-                </li>
-                <li>
-                    <a href="../settings/privacy-settings.php">Settings</a>
-                    <ul class="dropdown">
-                        <li><a href="../settings/privacy-settings.php">Privacy Settings</a></li>
-                        <li><a href="../settings/pass-settings.php">Password Settings</a></li>
-                    </ul>
-                </li>
-            </ul>
-            <!-- Mobile Menu End -->
-        </div>
-    </header>
-
-    <div class="page-banner no-subtitle">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-6">
-                    <h2>Resume Link</h2>
-                </div>
-                <div class="col-md-6">
-                    <ul class="breadcrumbs">
-                        <li><a href="#">Home</a></li>
-                        <li>Resume Link</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- End Page Banner -->
-
-    <!-- Start Content -->
-    <div id="content">
-        <div class="container">
-            <div class="row sidebar-page">
-                <!-- Page Content -->
-                <div class="col-md-12 page-content">
-                    <div class="row">
-                        <div class="col-md-12">
-                            <p><b>Resumé Link URL:</b><a href="../../../resumelinkprofile.php" target="_blank">
-                                    http://markjoseph1496.ojpms.com <i class="fa fa-external-link-square"></i></a>
-                            </p><br>
-                        </div>
-                    </div>
-                    <div class
-                    "row">
+                <div class="row">
                     <div class="col-md-6">
-                        <label>About Me</label>
+                        <h2>Resume Link</h2>
                     </div>
-                    <div class="col-md-12">
-                        <div class="form-group">
-                            <textarea class="form-control" name="" id="" rows="10"></textarea>
-                        </div>
+                    <div class="col-md-6">
+                        <ul class="breadcrumbs">
+                            <li><a href="#">Home</a></li>
+                            <li>Resume Link</li>
+                        </ul>
                     </div>
                 </div>
             </div>
-            <!-- End Page Content -->
         </div>
-        <div class="hr5" style="margin-top:35px;margin-bottom:40px;"></div>
-        <div class="field">
-            <div class="text-center">
-                <button type="submit" class="btn-system btn-large" name="btnSave">Save</button>
+        <!-- End Page Banner -->
+
+        <!-- Start Content -->
+        <div id="content">
+            <div class="container">
+                <div class="row sidebar-page">
+                    <!-- Page Content -->
+                    <div class="col-md-12 page-content">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <p><b>Resumé Link URL:</b><a href="../../../resumelinkprofile.php" target="_blank">
+                                http://markjoseph1496.ojpms.com <i class="fa fa-external-link-square"></i></a>
+                                </p><br>
+                            </div>
+                        </div>
+                        <div class "row">
+                            <div class="col-md-12">
+                                <label>About Me</label>
+                            </div>
+                        </div>
+                        <div class "row">
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <textarea class="form-control" name="" id="" rows="10"></textarea>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- End Page Content -->
+                </div>
+                <div class="hr5" style="margin-top:35px;margin-bottom:40px;"></div>
+                <div class="field">
+                    <div class="text-center">
+                        <button type="submit" class="btn-system btn-large" name="btnSave">Save</button>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
-</div>
-</div>
-<!-- End Content -->
-<script type="text/javascript" src="../../js/script.js"></script>
+    <!-- End Content -->
+    <script type="text/javascript" src="../../js/script.js"></script>
 </body>
 </html>
