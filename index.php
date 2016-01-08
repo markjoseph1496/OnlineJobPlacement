@@ -782,48 +782,52 @@
 				        <div class="section-video-content text-center">
 
 				        	<div class="row">
-		                        <!-- Start Service Icon 1 -->
 		                        <div class="big-title text-center animated fadeInDown delay-01" data-animation="fadeInDown"
 		                             data-animation-delay="01">
 		                            <h1>Be Part of Us</h1>
 		                        </div>
 		                        <p class="text-center">Choose between <b>Student</b> and <b>Company</b>.</p>
+
+                                <!-- Start Service Icon 1 -->
 		                        <div class="col-md-4 col-sm-6 service-box service-center">
-		                            <div class="service-icon">
-		                                <a href="login-student.php"><i class="fa fa-users icon-medium-effect icon-effect-2"></i></a>
-		                            </div>
-		                            <div class="service-content">
-		                                <h4>Student</h4>
-		                                <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat
-		                                    nulla pariatur. Lorem ipsum dolor.</p>
-		                            </div>
-		                        </div>
+                                    <div class="service-boxed">
+                                        <div class="service-icon" style="margin-top:-25px;">
+                                            <a href="login-student.php"><i class="fa fa-users icon-medium-effect icon-effect-2"></i></a>
+                                        </div>
+                                        <div class="service-content">
+                                            <h4>Student</h4>
+                                            <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Lorem Ipsum is simply dummy text of the printing.</p>
+                                        </div>
+                                    </div>
+                                </div>
 		                        <!-- End Service Icon 1 -->
 
 		                        <!-- Start Service Icon 2 -->
-		                        <div class="col-md-4 col-sm-6 service-box service-center">
-		                            <div class="service-icon">
-		                                <a href="login-admin.php"><i class="fa fa-user icon-medium-effect icon-effect-2"></i></a>
-		                            </div>
-		                            <div class="service-content">
-		                                <b><h4>Admin</h4></b>
-		                                <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat
-		                                    nulla pariatur. Lorem ipsum dolor.</p>
-		                            </div>
-		                        </div>
+                                <div class="col-md-4 col-sm-6 service-box service-center">
+                                    <div class="service-boxed">
+                                        <div class="service-icon" style="margin-top:-25px;">
+                                            <a href="login-admin.php"><i class="fa fa-user icon-medium-effect icon-effect-2"></i></a>
+                                        </div>
+                                        <div class="service-content">
+                                            <h4>Admin</h4>
+                                            <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Lorem Ipsum is simply dummy text of the printing.</p>
+                                        </div>
+                                    </div>
+                                </div>
 		                        <!-- End Service Icon 2 -->
 
 		                        <!-- Start Service Icon 3 -->
-		                        <div class="col-md-4 col-sm-6 service-box service-center">
-		                            <div class="service-icon">
-		                                <a href="login-company.php"><i class="fa fa-building icon-medium-effect icon-effect-2"></i></a>
-		                            </div>
-		                            <div class="service-content">
-		                                <h4>Company</h4>
-		                                <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat
-		                                    nulla pariatur. Lorem ipsum dolor.</p>
-		                            </div>
-		                        </div>
+                                <div class="col-md-4 col-sm-6 service-box service-center">
+                                    <div class="service-boxed">
+                                        <div class="service-icon" style="margin-top:-25px;">
+                                            <a href="login-company.php"><i class="fa fa-building icon-medium-effect icon-effect-2"></i></a>
+                                        </div>
+                                        <div class="service-content">
+                                            <h4>Company</h4>
+                                            <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Lorem Ipsum is simply dummy text of the printing.</p>
+                                        </div>
+                                    </div>
+                                </div>
 		                        <!-- End Service Icon 3 -->
 		                    </div>
 				        </div>
