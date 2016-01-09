@@ -1,17 +1,9 @@
 <!DOCTYPE html>
-<?php 
-session_start();
-include('connection.php');
-
-?>
-
-
 <html>
 <head>
 
     <title>Online JPMS</title>
 
-    
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="css/bootstrap.min.css" />
 
