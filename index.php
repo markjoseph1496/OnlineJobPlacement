@@ -178,134 +178,135 @@
             </div>
             <!-- /carousel -->
 
-
         </div>
         <!-- End HomePage Slider -->
 
 
         <!-- Start Content -->
-        <div id="content">
-            
-            <section id="jobs" style="background-color:#4275F4;">
-                <!-- Start News & Skill Section -->
+        <div id="content" class="full-sections">
+            <div id="jobs" class="section" style="background-color:#4275F4;">
                 <div class="container">
                     <div class="row">
-                    	<div class="big-title text-center animated fadeInDown delay-01" data-animation="fadeInDown" data-animation-delay="01">
-		                   <h1>Search for Your <span class="accent-color">Jobs</span></h1>
-		                   <p class="title-desc"></p>
-		                </div>
+                        <!-- Start News & Skill Section -->
+                        <div class="container">
+                            <div class="row">
+                                <div class="big-title text-center animated fadeInDown delay-01" data-animation="fadeInDown" data-animation-delay="01">
+                                   <h1>Search for Your <span class="accent-color">Jobs</span></h1>
+                                   <p class="title-desc"></p>
+                                </div>
 
-                        <div class="col-md-8">
-                            <div class="tabs-section">
-                                <!-- Nav Tabs -->
-                                <ul class="nav nav-tabs">
-                                    <li class="active"><a href="#tab-1" data-toggle="tab"><i class="fa fa-globe"></i>Industry</a></li>
-                                    <li><a href="#tab-2" data-toggle="tab"><i class="fa fa-leaf"></i>Specialization</a></li>
-                                    <li><a href="#tab-3" data-toggle="tab"><i class="fa fa-map-marker"></i>Location</a></li>
-                                </ul>
+                                <div class="col-md-8">
+                                    <div class="tabs-section">
+                                        <!-- Nav Tabs -->
+                                        <ul class="nav nav-tabs">
+                                            <li class="active"><a href="#tab-1" data-toggle="tab"><i class="fa fa-globe"></i>Industry</a></li>
+                                            <li><a href="#tab-2" data-toggle="tab"><i class="fa fa-leaf"></i>Specialization</a></li>
+                                            <li><a href="#tab-3" data-toggle="tab"><i class="fa fa-map-marker"></i>Location</a></li>
+                                        </ul>
 
-                                <!-- Tab Panels -->
-                                <div class="tab-content">
-                                    <!-- Tab Content 1 -->
-                                    <div class="tab-pane fade in active" id="tab-1">
-                                    	<div class="row">
-                                            <div class="col-md-6">
-                                                <ul class="icons-list">
-													<li style="color:#fff;"><a href="">BPO / Call Center</a></li>
-													<li><a href="">Food / Beverage / RestaurantService</a></li>
-													<li><a href="">Customer Service</a></li>
-													<li><a href="">Clerical / Administrative Support</a></li>
-													<li><a href="">Human Resources</a></li>
-													<li><a href="">Finance - General / Cost Accounting </a></li>
-													<li><a href="">Healthcare - Nurse / Medical Support and Assistant</a></li>
-													<li><a href="">IT / Computer - Network / System / Database Admin</a></li>
-													<li><a href="">Sales - Retail / General</a></li>										
-                                                </ul>
+                                        <!-- Tab Panels -->
+                                        <div class="tab-content">
+                                            <!-- Tab Content 1 -->
+                                            <div class="tab-pane fade in active" id="tab-1">
+                                                <div class="row">
+                                                    <div class="col-md-6">
+                                                        <ul class="icons-list">
+                                                            <li style="color:#fff;"><a href="">BPO / Call Center</a></li>
+                                                            <li><a href="">Food / Beverage / RestaurantService</a></li>
+                                                            <li><a href="">Customer Service</a></li>
+                                                            <li><a href="">Clerical / Administrative Support</a></li>
+                                                            <li><a href="">Human Resources</a></li>
+                                                            <li><a href="">Finance - General / Cost Accounting </a></li>
+                                                            <li><a href="">Healthcare - Nurse / Medical Support and Assistant</a></li>
+                                                            <li><a href="">IT / Computer - Network / System / Database Admin</a></li>
+                                                            <li><a href="">Sales - Retail / General</a></li>                                        
+                                                        </ul>
+                                                    </div>
+                                                    <div class="col-md-6">
+                                                        <ul class="icons-list">
+                                                            <li><a href="">IT / Computer - Software Development</a></li>
+                                                            <li><a href="">Engineering - Civil / Construction / Structural</a></li>
+                                                            <li><a href="">Finance - Audit/Taxation</a></li>
+                                                            <li><a href="">Purchasing / Inventory/ Material and Warehouse Management</a></li>
+                                                            <li><a href="">Sales - Corporate / B2B</a></li>
+                                                            <li><a href="">Engineering - Electronics / Communication</a></li>
+                                                            <li><a href="">Others</a></li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
                                             </div>
-                                            <div class="col-md-6">
-                                                <ul class="icons-list">
-													<li><a href="">IT / Computer - Software Development</a></li>
-													<li><a href="">Engineering - Civil / Construction / Structural</a></li>
-													<li><a href="">Finance - Audit/Taxation</a></li>
-													<li><a href="">Purchasing / Inventory/ Material and Warehouse Management</a></li>
-													<li><a href="">Sales - Corporate / B2B</a></li>
-													<li><a href="">Engineering - Electronics / Communication</a></li>
-													<li><a href="">Others</a></li>
-                                                </ul>
+                                            <!-- Tab Content 2 -->
+                                            <div class="tab-pane fade" id="tab-2">
+                                                <div class="row">
+                                                    <div class="col-md-6">
+                                                        <ul class="icons-list">
+                                                            <li><a href="">Agricultural / Plantation / Poultry / Fisheries</a></li>
+                                                            <li><a href="">Banking / Financial Services</a></li>
+                                                            <li><a href="">Computer / Information Technology (Software)</a></li>
+                                                            <li><a href="">Construction / Building / Engineering</a></li>
+                                                            <li><a href="">Consulting (IT, Science, Engineering and Technical)</a></li>
+                                                            <li><a href="">Education</a></li>
+                                                            <li><a href="">Food and Beverage</a></li>
+                                                            <li><a href="">Grooming / Beauty / Fitness</a></li>
+                                                        </ul>
+                                                    </div>
+                                                    <div class="col-md-6">
+                                                        <ul class="icons-list">
+                                                            <li><a href="">Healthcare / Medical</a></li>
+                                                            <li><a href="">Hotel / Hospitality</a></li>
+                                                            <li><a href="">Human Resources Management / Consulting</a></li>
+                                                            <li><a href="">Online / E-commerce Business</a></li>
+                                                            <li><a href="">Outsourcing (Call Center / BPO)</a></li>
+                                                            <li><a href="">Retail / Merchandising</a></li>
+                                                            <li><a href="">Utilities / Power</a></li>
+                                                            <li><a href="">Others</a></li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <!-- Tab Content 3 -->
+                                            <div class="tab-pane fade" id="tab-3">
+                                                BICOL REGION (25)
+                                                C.A.R (22)
+                                                CAGAYAN VALLEY (13)
+                                                CARAGA (5)
+                                                CENTRAL LUZON (159)
+                                                CENTRAL MINDANAO (5)
+                                                CENTRAL VISAYAS (109)
+                                                EASTERN VISAYAS (10)
+                                                ILOCOS REGION (34)
+                                                NCR (3737)
+                                                NORTHERN MINDANAO (23)
+                                                SOUTHERN MINDANAO (92)
+                                                SOUTHERN TAGALOG (230)
+                                                WESTERN MINDANAO (5)
+                                                WESTERN VISAYAS (47)
+                                                Others (82)
                                             </div>
                                         </div>
-                                    </div>
-                                    <!-- Tab Content 2 -->
-                                    <div class="tab-pane fade" id="tab-2">
-                                        <div class="row">
-                                            <div class="col-md-6">
-	                                            <ul class="icons-list">
-	                                                <li><a href="">Agricultural / Plantation / Poultry / Fisheries</a></li>
-													<li><a href="">Banking / Financial Services</a></li>
-													<li><a href="">Computer / Information Technology (Software)</a></li>
-													<li><a href="">Construction / Building / Engineering</a></li>
-													<li><a href="">Consulting (IT, Science, Engineering and Technical)</a></li>
-													<li><a href="">Education</a></li>
-													<li><a href="">Food and Beverage</a></li>
-													<li><a href="">Grooming / Beauty / Fitness</a></li>
-	                                            </ul>
-                                            </div>
-                                            <div class="col-md-6">
-	                                            <ul class="icons-list">
-	                                            	<li><a href="">Healthcare / Medical</a></li>
-													<li><a href="">Hotel / Hospitality</a></li>
-													<li><a href="">Human Resources Management / Consulting</a></li>
-													<li><a href="">Online / E-commerce Business</a></li>
-													<li><a href="">Outsourcing (Call Center / BPO)</a></li>
-													<li><a href="">Retail / Merchandising</a></li>
-													<li><a href="">Utilities / Power</a></li>
-													<li><a href="">Others</a></li>
-												</ul>
-											</div>
-                                        </div>
-                                    </div>
-
-                                    <!-- Tab Content 3 -->
-                                    <div class="tab-pane fade" id="tab-3">
-                                        BICOL REGION (25)
-                                        C.A.R (22)
-                                        CAGAYAN VALLEY (13)
-                                        CARAGA (5)
-                                        CENTRAL LUZON (159)
-                                        CENTRAL MINDANAO (5)
-                                        CENTRAL VISAYAS (109)
-                                        EASTERN VISAYAS (10)
-                                        ILOCOS REGION (34)
-                                        NCR (3737)
-                                        NORTHERN MINDANAO (23)
-                                        SOUTHERN MINDANAO (92)
-                                        SOUTHERN TAGALOG (230)
-                                        WESTERN MINDANAO (5)
-                                        WESTERN VISAYAS (47)
-                                        Others (82)
+                                        <!-- End Tab Panels -->
                                     </div>
                                 </div>
-                                <!-- End Tab Panels -->
+                                <div class="col-md-4">
+                                    <div class="call-action call-action-boxed call-action-style2 clearfix" style="background-color:#3756A0;">
+                                        <h4><span class="accent-color">Latest Jobs</span></h4>
+                                        <div style="float:right;">
+                                            <a href="">Refresh</a> |
+                                            <a href="">View More</a>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
-                        </div>
-                        <div class="col-md-4">
-                        	<div class="call-action call-action-boxed call-action-style2 clearfix" style="background-color:#3756A0;">
-					            <h4><span class="accent-color">Latest Jobs</span></h4>
-					            <div style="float:right;">
-					            	<a href="">Refresh</a> |
-					            	<a href="">View More</a>
-					            </div>
-					        </div>
+                            <!-- .row -->
                         </div>
                     </div>
-                    <!-- .row -->
                 </div>
-                <!-- .container -->
-            </section>
-
-            <div class="container">
-                <!-- Start Recent Projects Carousel -->
-                <section id="events">
+            </div>
+        
+            <!-- Start Recent Projects Carousel -->
+            <div id="events" class="section">
+                <div class="container">
                     <div class="recent-projects">
                         <h4 class="title"><span>Events</span></h4>
                         <div class="projects-carousel touch-carousel">
@@ -527,7 +528,6 @@
                             </div>
                         </div>
                     </div>
-
                     <!-- End Recent Projects Carousel -->
 
                     <!-- Divider -->
@@ -677,105 +677,107 @@
                             <!-- End Testimonials Carousel -->
                         </div>
                     </div>
-                </section>
-
-                <!-- Divider -->
-                <div class="hr1 margin-60"></div>
-
-                <!-- ABOUT Section -->
-                <section id="about">
-                    <div class="container">
-                        <div class="row">
-                            <div class="col-lg-12 text-center">
-                                <h2 class="section-heading">About E2E</h2>
-                                <h3 class="section-subheading text-muted">The Humble Beginnings</h3>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-lg-12">
-                                <ul class="timeline">
-                                    <li>
-                                        <div class="timeline-image">
-                                            <img class="img-circle img-responsive" src="img/about/1.jpg" alt="">
-                                        </div>
-                                        <div class="timeline-panel">
-                                            <div class="timeline-heading">
-                                                <h4>2004</h4>
-                                                <h4 class="subheading">A Great Help is Born</h4>
-                                            </div>
-                                            <div class="timeline-body">
-                                                <p class="text-muted">STI conceived the first and only Enrollment to
-                                                    Employment or E2E System.</p>
-                                            </div>
-                                        </div>
-                                    </li>
-                                    <li class="timeline-inverted">
-                                        <div class="timeline-image">
-                                            <img class="img-circle img-responsive" src="img/about/1.jpg" alt="">
-                                        </div>
-                                        <div class="timeline-panel">
-                                            <div class="timeline-heading">
-                                                <h4>March 2011</h4>
-                                                <h4 class="subheading">An Agency is Born</h4>
-                                            </div>
-                                            <div class="timeline-body">
-                                                <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing
-                                                    elit. Sunt ut voluptatum eius sapiente, totam reiciendis temporibus qui
-                                                    quibusdam, recusandae sit vero unde, sed, incidunt et ea quo dolore
-                                                    laudantium consectetur!</p>
-                                            </div>
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <div class="timeline-image">
-                                            <img class="img-circle img-responsive" src="img/about/1.jpg" alt="">
-                                        </div>
-                                        <div class="timeline-panel">
-                                            <div class="timeline-heading">
-                                                <h4>December 2012</h4>
-                                                <h4 class="subheading">Transition to Full Service</h4>
-                                            </div>
-                                            <div class="timeline-body">
-                                                <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing
-                                                    elit. Sunt ut voluptatum eius sapiente, totam reiciendis temporibus qui
-                                                    quibusdam, recusandae sit vero unde, sed, incidunt et ea quo dolore
-                                                    laudantium consectetur!</p>
-                                            </div>
-                                        </div>
-                                    </li>
-                                    <li class="timeline-inverted">
-                                        <div class="timeline-image">
-                                            <img class="img-circle img-responsive" src="img/about/1.jpg" alt="">
-                                        </div>
-                                        <div class="timeline-panel">
-                                            <div class="timeline-heading">
-                                                <h4>July 2014</h4>
-                                                <h4 class="subheading">Phase Two Expansion</h4>
-                                            </div>
-                                            <div class="timeline-body">
-                                                <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing
-                                                    elit. Sunt ut voluptatum eius sapiente, totam reiciendis temporibus qui
-                                                    quibusdam, recusandae sit vero unde, sed, incidunt et ea quo dolore
-                                                    laudantium consectetur!</p>
-                                            </div>
-                                        </div>
-                                    </li>
-                                    <li class="timeline-inverted">
-                                        <div class="timeline-image">
-                                            <h4>Be Part
-                                                <br>Of The
-                                                <br>History!</h4>
-                                        </div>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </section>
+                </div>
             </div>
 
+            <!-- Divider -->
+            <div class="hr1 margin-60"></div>
+
+            <!-- ABOUT Section -->
+            <div id="about" class="section">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-12 text-center">
+                            <h2 class="section-heading">About E2E</h2>
+                            <h3 class="section-subheading text-muted">The Humble Beginnings</h3>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <ul class="timeline">
+                                <li>
+                                    <div class="timeline-image">
+                                        <img class="img-circle img-responsive" src="img/about/1.jpg" alt="">
+                                    </div>
+                                    <div class="timeline-panel">
+                                        <div class="timeline-heading">
+                                            <h4>2004</h4>
+                                            <h4 class="subheading">A Great Help is Born</h4>
+                                        </div>
+                                        <div class="timeline-body">
+                                            <p class="text-muted">STI conceived the first and only Enrollment to
+                                                Employment or E2E System.</p>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="timeline-inverted">
+                                    <div class="timeline-image">
+                                        <img class="img-circle img-responsive" src="img/about/1.jpg" alt="">
+                                    </div>
+                                    <div class="timeline-panel">
+                                        <div class="timeline-heading">
+                                            <h4>March 2011</h4>
+                                            <h4 class="subheading">An Agency is Born</h4>
+                                        </div>
+                                        <div class="timeline-body">
+                                            <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing
+                                                elit. Sunt ut voluptatum eius sapiente, totam reiciendis temporibus qui
+                                                quibusdam, recusandae sit vero unde, sed, incidunt et ea quo dolore
+                                                laudantium consectetur!</p>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="timeline-image">
+                                        <img class="img-circle img-responsive" src="img/about/1.jpg" alt="">
+                                    </div>
+                                    <div class="timeline-panel">
+                                        <div class="timeline-heading">
+                                            <h4>December 2012</h4>
+                                            <h4 class="subheading">Transition to Full Service</h4>
+                                        </div>
+                                        <div class="timeline-body">
+                                            <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing
+                                                elit. Sunt ut voluptatum eius sapiente, totam reiciendis temporibus qui
+                                                quibusdam, recusandae sit vero unde, sed, incidunt et ea quo dolore
+                                                laudantium consectetur!</p>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="timeline-inverted">
+                                    <div class="timeline-image">
+                                        <img class="img-circle img-responsive" src="img/about/1.jpg" alt="">
+                                    </div>
+                                    <div class="timeline-panel">
+                                        <div class="timeline-heading">
+                                            <h4>July 2014</h4>
+                                            <h4 class="subheading">Phase Two Expansion</h4>
+                                        </div>
+                                        <div class="timeline-body">
+                                            <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing
+                                                elit. Sunt ut voluptatum eius sapiente, totam reiciendis temporibus qui
+                                                quibusdam, recusandae sit vero unde, sed, incidunt et ea quo dolore
+                                                laudantium consectetur!</p>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="timeline-inverted">
+                                    <div class="timeline-image">
+                                        <h4>Be Part
+                                            <br>Of The
+                                            <br>History!
+                                        </h4>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        
+
             <!-- Start Services Icons -->
-            <section id="join">
+            <div id="join" class="section">
 	            <div class="section purchase">
 	      			<div class="container">
 				        <!-- Start Video Section Content -->
@@ -833,9 +835,9 @@
 				        </div>
 				        <!-- End Section Content -->
 			      	</div>
-			      <!-- .container -->			    
+                    <!-- .container -->			    
 				</div>  
-	        </section>
+	        </div>
 	        <!-- End Services Icons -->
 
 
