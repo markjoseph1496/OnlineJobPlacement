@@ -177,133 +177,130 @@
                 </a>
             </div>
             <!-- /carousel -->
-
         </div>
         <!-- End HomePage Slider -->
 
 
         <!-- Start Content -->
-        <div id="content" class="full-sections">
+        <div id="content">
             <div id="jobs" class="section" style="background-color:#4275F4;">
+                <!-- Start News & Skill Section -->
                 <div class="container">
                     <div class="row">
-                        <!-- Start News & Skill Section -->
-                        <div class="container">
-                            <div class="row">
-                                <div class="big-title text-center animated fadeInDown delay-01" data-animation="fadeInDown" data-animation-delay="01">
-                                   <h1>Search for Your <span class="accent-color">Jobs</span></h1>
-                                   <p class="title-desc"></p>
-                                </div>
+                    	<div class="big-title text-center animated fadeInDown delay-01" data-animation="fadeInDown" data-animation-delay="01">
+		                   <h1>Search for Your <span class="accent-color">Jobs</span></h1>
+		                   <p class="title-desc"></p>
+		                </div>
 
-                                <div class="col-md-8">
-                                    <div class="tabs-section">
-                                        <!-- Nav Tabs -->
-                                        <ul class="nav nav-tabs">
-                                            <li class="active"><a href="#tab-1" data-toggle="tab"><i class="fa fa-globe"></i>Industry</a></li>
-                                            <li><a href="#tab-2" data-toggle="tab"><i class="fa fa-leaf"></i>Specialization</a></li>
-                                            <li><a href="#tab-3" data-toggle="tab"><i class="fa fa-map-marker"></i>Location</a></li>
-                                        </ul>
+                        <div class="col-md-8">
+                            <div class="tabs-section">
+                                <!-- Nav Tabs -->
+                                <ul class="nav nav-tabs">
+                                    <li class="active"><a href="#tab-1" data-toggle="tab"><i class="fa fa-globe"></i>Industry</a></li>
+                                    <li><a href="#tab-2" data-toggle="tab"><i class="fa fa-leaf"></i>Specialization</a></li>
+                                    <li><a href="#tab-3" data-toggle="tab"><i class="fa fa-map-marker"></i>Location</a></li>
+                                </ul>
 
-                                        <!-- Tab Panels -->
-                                        <div class="tab-content">
-                                            <!-- Tab Content 1 -->
-                                            <div class="tab-pane fade in active" id="tab-1">
-                                                <div class="row">
-                                                    <div class="col-md-6">
-                                                        <ul class="icons-list">
-                                                            <li style="color:#fff;"><a href="">BPO / Call Center</a></li>
-                                                            <li><a href="">Food / Beverage / RestaurantService</a></li>
-                                                            <li><a href="">Customer Service</a></li>
-                                                            <li><a href="">Clerical / Administrative Support</a></li>
-                                                            <li><a href="">Human Resources</a></li>
-                                                            <li><a href="">Finance - General / Cost Accounting </a></li>
-                                                            <li><a href="">Healthcare - Nurse / Medical Support and Assistant</a></li>
-                                                            <li><a href="">IT / Computer - Network / System / Database Admin</a></li>
-                                                            <li><a href="">Sales - Retail / General</a></li>                                        
-                                                        </ul>
-                                                    </div>
-                                                    <div class="col-md-6">
-                                                        <ul class="icons-list">
-                                                            <li><a href="">IT / Computer - Software Development</a></li>
-                                                            <li><a href="">Engineering - Civil / Construction / Structural</a></li>
-                                                            <li><a href="">Finance - Audit/Taxation</a></li>
-                                                            <li><a href="">Purchasing / Inventory/ Material and Warehouse Management</a></li>
-                                                            <li><a href="">Sales - Corporate / B2B</a></li>
-                                                            <li><a href="">Engineering - Electronics / Communication</a></li>
-                                                            <li><a href="">Others</a></li>
-                                                        </ul>
-                                                    </div>
-                                                </div>
+                                <!-- Tab Panels -->
+                                <div class="tab-content">
+                                    <!-- Tab Content 1 -->
+                                    <div class="tab-pane fade in active" id="tab-1">
+                                    	<div class="row">
+                                            <div class="col-md-6">
+                                                <ul class="icons-list">
+													<li style="color:#fff;"><a href="">BPO / Call Center</a></li>
+													<li><a href="">Food / Beverage / RestaurantService</a></li>
+													<li><a href="">Customer Service</a></li>
+													<li><a href="">Clerical / Administrative Support</a></li>
+													<li><a href="">Human Resources</a></li>
+													<li><a href="">Finance - General / Cost Accounting </a></li>
+													<li><a href="">Healthcare - Nurse / Medical Support and Assistant</a></li>
+													<li><a href="">IT / Computer - Network / System / Database Admin</a></li>
+													<li><a href="">Sales - Retail / General</a></li>										
+                                                </ul>
                                             </div>
-                                            <!-- Tab Content 2 -->
-                                            <div class="tab-pane fade" id="tab-2">
-                                                <div class="row">
-                                                    <div class="col-md-6">
-                                                        <ul class="icons-list">
-                                                            <li><a href="">Agricultural / Plantation / Poultry / Fisheries</a></li>
-                                                            <li><a href="">Banking / Financial Services</a></li>
-                                                            <li><a href="">Computer / Information Technology (Software)</a></li>
-                                                            <li><a href="">Construction / Building / Engineering</a></li>
-                                                            <li><a href="">Consulting (IT, Science, Engineering and Technical)</a></li>
-                                                            <li><a href="">Education</a></li>
-                                                            <li><a href="">Food and Beverage</a></li>
-                                                            <li><a href="">Grooming / Beauty / Fitness</a></li>
-                                                        </ul>
-                                                    </div>
-                                                    <div class="col-md-6">
-                                                        <ul class="icons-list">
-                                                            <li><a href="">Healthcare / Medical</a></li>
-                                                            <li><a href="">Hotel / Hospitality</a></li>
-                                                            <li><a href="">Human Resources Management / Consulting</a></li>
-                                                            <li><a href="">Online / E-commerce Business</a></li>
-                                                            <li><a href="">Outsourcing (Call Center / BPO)</a></li>
-                                                            <li><a href="">Retail / Merchandising</a></li>
-                                                            <li><a href="">Utilities / Power</a></li>
-                                                            <li><a href="">Others</a></li>
-                                                        </ul>
-                                                    </div>
-                                                </div>
-                                            </div>
-
-                                            <!-- Tab Content 3 -->
-                                            <div class="tab-pane fade" id="tab-3">
-                                                BICOL REGION (25)
-                                                C.A.R (22)
-                                                CAGAYAN VALLEY (13)
-                                                CARAGA (5)
-                                                CENTRAL LUZON (159)
-                                                CENTRAL MINDANAO (5)
-                                                CENTRAL VISAYAS (109)
-                                                EASTERN VISAYAS (10)
-                                                ILOCOS REGION (34)
-                                                NCR (3737)
-                                                NORTHERN MINDANAO (23)
-                                                SOUTHERN MINDANAO (92)
-                                                SOUTHERN TAGALOG (230)
-                                                WESTERN MINDANAO (5)
-                                                WESTERN VISAYAS (47)
-                                                Others (82)
+                                            <div class="col-md-6">
+                                                <ul class="icons-list">
+													<li><a href="">IT / Computer - Software Development</a></li>
+													<li><a href="">Engineering - Civil / Construction / Structural</a></li>
+													<li><a href="">Finance - Audit/Taxation</a></li>
+													<li><a href="">Purchasing / Inventory/ Material and Warehouse Management</a></li>
+													<li><a href="">Sales - Corporate / B2B</a></li>
+													<li><a href="">Engineering - Electronics / Communication</a></li>
+													<li><a href="">Others</a></li>
+                                                </ul>
                                             </div>
                                         </div>
-                                        <!-- End Tab Panels -->
                                     </div>
-                                </div>
-                                <div class="col-md-4">
-                                    <div class="call-action call-action-boxed call-action-style2 clearfix" style="background-color:#3756A0;">
-                                        <h4><span class="accent-color">Latest Jobs</span></h4>
-                                        <div style="float:right;">
-                                            <a href="">Refresh</a> |
-                                            <a href="">View More</a>
+                                    <!-- Tab Content 2 -->
+                                    <div class="tab-pane fade" id="tab-2">
+                                        <div class="row">
+                                            <div class="col-md-6">
+	                                            <ul class="icons-list">
+	                                                <li><a href="">Agricultural / Plantation / Poultry / Fisheries</a></li>
+													<li><a href="">Banking / Financial Services</a></li>
+													<li><a href="">Computer / Information Technology (Software)</a></li>
+													<li><a href="">Construction / Building / Engineering</a></li>
+													<li><a href="">Consulting (IT, Science, Engineering and Technical)</a></li>
+													<li><a href="">Education</a></li>
+													<li><a href="">Food and Beverage</a></li>
+													<li><a href="">Grooming / Beauty / Fitness</a></li>
+	                                            </ul>
+                                            </div>
+                                            <div class="col-md-6">
+	                                            <ul class="icons-list">
+	                                            	<li><a href="">Healthcare / Medical</a></li>
+													<li><a href="">Hotel / Hospitality</a></li>
+													<li><a href="">Human Resources Management / Consulting</a></li>
+													<li><a href="">Online / E-commerce Business</a></li>
+													<li><a href="">Outsourcing (Call Center / BPO)</a></li>
+													<li><a href="">Retail / Merchandising</a></li>
+													<li><a href="">Utilities / Power</a></li>
+													<li><a href="">Others</a></li>
+												</ul>
+											</div>
                                         </div>
                                     </div>
+
+                                    <!-- Tab Content 3 -->
+                                    <div class="tab-pane fade" id="tab-3">
+                                        BICOL REGION (25)
+                                        C.A.R (22)
+                                        CAGAYAN VALLEY (13)
+                                        CARAGA (5)
+                                        CENTRAL LUZON (159)
+                                        CENTRAL MINDANAO (5)
+                                        CENTRAL VISAYAS (109)
+                                        EASTERN VISAYAS (10)
+                                        ILOCOS REGION (34)
+                                        NCR (3737)
+                                        NORTHERN MINDANAO (23)
+                                        SOUTHERN MINDANAO (92)
+                                        SOUTHERN TAGALOG (230)
+                                        WESTERN MINDANAO (5)
+                                        WESTERN VISAYAS (47)
+                                        Others (82)
+                                    </div>
                                 </div>
+                                <!-- End Tab Panels -->
                             </div>
-                            <!-- .row -->
+                        </div>
+                        <div class="col-md-4">
+                        	<div class="call-action call-action-boxed call-action-style2 clearfix" style="background-color:#3756A0;">
+					            <h4><span class="accent-color">Latest Jobs</span></h4>
+					            <div style="float:right;">
+					            	<a href="">Refresh</a> |
+					            	<a href="">View More</a>
+					            </div>
+					        </div>
                         </div>
                     </div>
+                    <!-- .row -->
                 </div>
+                <!-- .container -->
             </div>
-        
+
+            
             <!-- Start Recent Projects Carousel -->
             <div id="events" class="section">
                 <div class="container">
@@ -765,8 +762,7 @@
                                     <div class="timeline-image">
                                         <h4>Be Part
                                             <br>Of The
-                                            <br>History!
-                                        </h4>
+                                            <br>History!</h4>
                                     </div>
                                 </li>
                             </ul>
@@ -774,72 +770,69 @@
                     </div>
                 </div>
             </div>
-        
 
-            <!-- Start Services Icons -->
-            <div id="join" class="section">
-	            <div class="section purchase">
-	      			<div class="container">
-				        <!-- Start Video Section Content -->
-				        <div class="section-video-content text-center">
-
-				        	<div class="row">
-		                        <div class="big-title text-center animated fadeInDown delay-01" data-animation="fadeInDown"
-		                             data-animation-delay="01">
-		                            <h1>Be Part of Us</h1>
-		                        </div>
-		                        <p class="text-center">Choose between <b>Student</b> and <b>Company</b>.</p>
-
-                                <!-- Start Service Icon 1 -->
-		                        <div class="col-md-4 col-sm-6 service-box service-center">
-                                    <div class="service-boxed">
-                                        <div class="service-icon" style="margin-top:-25px;">
-                                            <a href="login-student.php"><i class="fa fa-users icon-medium-effect icon-effect-2"></i></a>
-                                        </div>
-                                        <div class="service-content">
-                                            <h4>Student</h4>
-                                            <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Lorem Ipsum is simply dummy text of the printing.</p>
+            
+            <div id="join" class="parallax" style="background-image:url(img/login-bg.jpg);">
+                <div class="overlay">
+                    <div class="parallax-text-container-1">
+                        <div class="parallax-text-item">
+                            <div class="container">
+                                <div class="row">
+                                    <div class="big-title text-center animated fadeInDown delay-01" data-animation="fadeInDown" data-animation-delay="01">
+                                        <h1>Be Part of Us</h1>
+                                    </div>
+                                    <p class="text-center">Choose between <b>Student</b> and <b>Company</b>.</p>
+                                        
+                                    <!-- Start Service Icon 1 -->
+                                    <div class="col-md-4 col-sm-6 service-box service-center">
+                                        <div class="service-boxed">
+                                            <div class="service-icon" style="margin-top:-25px;">
+                                                <a href="login-student.php"><i class="fa fa-users icon-medium-effect icon-effect-2"></i></a>
+                                            </div>
+                                            <div class="service-content">
+                                                <h4>Student</h4>
+                                                <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Lorem Ipsum is simply dummy text of the printing.</p>
+                                            </div>
                                         </div>
                                     </div>
-                                </div>
-		                        <!-- End Service Icon 1 -->
+                                    <!-- End Service Icon 1 -->
 
-		                        <!-- Start Service Icon 2 -->
-                                <div class="col-md-4 col-sm-6 service-box service-center">
-                                    <div class="service-boxed">
-                                        <div class="service-icon" style="margin-top:-25px;">
-                                            <a href="login-admin.php"><i class="fa fa-user icon-medium-effect icon-effect-2"></i></a>
-                                        </div>
-                                        <div class="service-content">
-                                            <h4>Admin</h4>
-                                            <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Lorem Ipsum is simply dummy text of the printing.</p>
+                                    <!-- Start Service Icon 2 -->
+                                    <div class="col-md-4 col-sm-6 service-box service-center">
+                                        <div class="service-boxed">
+                                            <div class="service-icon" style="margin-top:-25px;">
+                                                <a href="login-admin.php"><i class="fa fa-user icon-medium-effect icon-effect-2"></i></a>
+                                            </div>
+                                            <div class="service-content">
+                                                <h4>Admin</h4>
+                                                <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Lorem Ipsum is simply dummy text of the printing.</p>
+                                            </div>
                                         </div>
                                     </div>
-                                </div>
-		                        <!-- End Service Icon 2 -->
-
-		                        <!-- Start Service Icon 3 -->
-                                <div class="col-md-4 col-sm-6 service-box service-center">
-                                    <div class="service-boxed">
-                                        <div class="service-icon" style="margin-top:-25px;">
-                                            <a href="login-company.php"><i class="fa fa-building icon-medium-effect icon-effect-2"></i></a>
-                                        </div>
-                                        <div class="service-content">
-                                            <h4>Company</h4>
-                                            <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Lorem Ipsum is simply dummy text of the printing.</p>
+                                    <!-- End Service Icon 2 -->
+                                    
+                                    <!-- Start Service Icon 3 -->
+                                    <div class="col-md-4 col-sm-6 service-box service-center">
+                                        <div class="service-boxed">
+                                            <div class="service-icon" style="margin-top:-25px;">
+                                                <a href="login-company.php"><i class="fa fa-building icon-medium-effect icon-effect-2"></i></a>
+                                            </div>
+                                            <div class="service-content">
+                                                <h4>Company</h4>
+                                                <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Lorem Ipsum is simply dummy text of the printing.</p>
+                                            </div>
                                         </div>
                                     </div>
+                                    <!-- End Service Icon 3 -->
                                 </div>
-		                        <!-- End Service Icon 3 -->
-		                    </div>
-				        </div>
-				        <!-- End Section Content -->
-			      	</div>
-                    <!-- .container -->			    
-				</div>  
-	        </div>
-	        <!-- End Services Icons -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
 
+            <!-- Divider -->
+            <div class="hr1 margin-60"></div>
 
             <!-- Start Client/Partner Section -->
             <div class="container">
@@ -952,7 +945,7 @@
                             <ul>
                                 <li><span>Phone Number:</span> +01 234 567 890</li>
                                 <li><span>Email:</span> company@company.com</li>
-                                <li><span>Website:</span> www.yourdomain.com</li>
+                                <li><span>Website:</span> www.sticaloocan-jobplacement.com</li>
                             </ul>
                         </div>
                     </div>
