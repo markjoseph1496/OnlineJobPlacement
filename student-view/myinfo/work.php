@@ -307,7 +307,7 @@ $StudentID = $_SESSION['StudentID'];
                 <?php
                 $workexperience_tbl =
                     GSecureSQL::query(
-                        "SELECT * FROM workexperiencetbl WHERE StudentID = ? ORDER BY SUBSTRING(DateFrom, 2,5)",
+                        "SELECT * FROM workexperiencetbl WHERE StudentID = ? ORDER BY DateToYear DESC",
                         TRUE,
                         "s",
                         $StudentID
@@ -319,11 +319,13 @@ $StudentID = $_SESSION['StudentID'];
                     $CompanyWebsite = $value[3];
                     $Industry = $value[4];
                     $WorkSpecialization = $value[5];
-                    $DateFrom = $value[6];
-                    $DateTo = $value[7];
-                    $PositionLevel = $value[8];
-                    $MonthlySalary = $value[9];
-                    $NatureOfWork = $value[10];
+                    $DateFromMonth = $value[6];
+                    $DateFromYear = $value[7];
+                    $DateToMonth = $value[8];
+                    $DateToYear = $value[9];
+                    $PositionLevel = $value[10];
+                    $MonthlySalary = $value[11];
+                    $NatureOfWork = $value[12];
                     $count++;
 
                     $specialization_tbl =
@@ -360,81 +362,81 @@ $StudentID = $_SESSION['StudentID'];
                     foreach ($position_tbl as $value3) {
                         $PositionLevel = $value3[0];
                     }
-                    if (substr($DateFrom, 0, 2) == 1) {
-                        $DateFrom = 'January' . substr($DateFrom, 2, 5);
+                    if ($DateFromMonth == 1) {
+                        $DateFromMonth = 'January';
                     }
-                    if (substr($DateFrom, 0, 2) == 2) {
-                        $DateFrom = 'February' . substr($DateFrom, 2, 5);
+                    if ($DateFromMonth == 2) {
+                        $DateFromMonth = 'February';
                     }
-                    if (substr($DateFrom, 0, 2) == 3) {
-                        $DateFrom = 'March' . substr($DateFrom, 2, 5);
+                    if ($DateFromMonth == 3) {
+                        $DateFromMonth = 'March';
                     }
-                    if (substr($DateFrom, 0, 2) == 4) {
-                        $DateFrom = 'April' . substr($DateFrom, 2, 5);
+                    if ($DateFromMonth == 4) {
+                        $DateFromMonth = 'April';
                     }
-                    if (substr($DateFrom, 0, 2) == 5) {
-                        $DateFrom = 'May' . substr($DateFrom, 2, 5);
+                    if ($DateFromMonth == 5) {
+                        $DateFromMonth = 'May';
                     }
-                    if (substr($DateFrom, 0, 2) == 6) {
-                        $DateFrom = 'June' . substr($DateFrom, 2, 5);
+                    if ($DateFromMonth == 6) {
+                        $DateFromMonth = 'June';
                     }
-                    if (substr($DateFrom, 0, 2) == 7) {
-                        $DateFrom = 'July' . substr($DateFrom, 2, 5);
+                    if ($DateFromMonth == 7) {
+                        $DateFromMonth = 'July';
                     }
-                    if (substr($DateFrom, 0, 2) == 8) {
-                        $DateFrom = 'August' . substr($DateFrom, 2, 5);
+                    if ($DateFromMonth == 8) {
+                        $DateFromMonth = 'August';
                     }
-                    if (substr($DateFrom, 0, 2) == 9) {
-                        $DateFrom = 'September' . substr($DateFrom, 2, 5);
+                    if ($DateFromMonth == 9) {
+                        $DateFromMonth = 'September';
                     }
-                    if (substr($DateFrom, 0, 2) == 10) {
-                        $DateFrom = 'October' . substr($DateFrom, 2, 5);
+                    if ($DateFromMonth == 10) {
+                        $DateFromMonth = 'October';
                     }
-                    if (substr($DateFrom, 0, 2) == 11) {
-                        $DateFrom = 'November' . substr($DateFrom, 2, 5);
+                    if ($DateFromMonth == 11) {
+                        $DateFromMonth = 'November';
                     }
-                    if (substr($DateFrom, 0, 2) == 12) {
-                        $DateFrom = 'December' . substr($DateFrom, 2, 5);
+                    if ($DateFromMonth == 12) {
+                        $DateFromMonth = 'December';
                     }
 
                     /* Year */
-                    if (substr($DateTo, 0, 2) == 1) {
-                        $DateTo = 'January' . substr($DateTo, 2, 5);
+                    if ($DateToMonth == 1) {
+                        $DateToMonth = 'January';
                     }
-                    if (substr($DateTo, 0, 2) == 2) {
-                        $DateTo = 'February' . substr($DateTo, 2, 5);
+                    if ($DateToMonth == 2) {
+                        $DateToMonth = 'February';
                     }
-                    if (substr($DateTo, 0, 2) == 3) {
-                        $DateTo = 'March' . substr($DateTo, 2, 5);
+                    if ($DateToMonth == 3) {
+                        $DateToMonth = 'March';
                     }
-                    if (substr($DateTo, 0, 2) == 4) {
-                        $DateTo = 'April' . substr($DateTo, 2, 5);
+                    if ($DateToMonth == 4) {
+                        $DateToMonth = 'April';
                     }
-                    if (substr($DateTo, 0, 2) == 5) {
-                        $DateTo = 'May' . substr($DateTo, 2, 5);
+                    if ($DateToMonth == 5) {
+                        $DateToMonth = 'May';
                     }
-                    if (substr($DateTo, 0, 2) == 6) {
-                        $DateTo = 'June' . substr($DateTo, 2, 5);
+                    if ($DateToMonth == 6) {
+                        $DateToMonth = 'June';
                     }
-                    if (substr($DateTo, 0, 2) == 7) {
-                        $DateTo = 'July' . substr($DateTo, 2, 5);
+                    if ($DateToMonth == 7) {
+                        $DateToMonth = 'July';
                     }
-                    if (substr($DateTo, 0, 2) == 8) {
-                        $DateTo = 'August' . substr($DateTo, 2, 5);
+                    if ($DateToMonth == 8) {
+                        $DateToMonth = 'August';
                     }
-                    if (substr($DateTo, 0, 2) == 9) {
-                        $DateTo = 'September' . substr($DateTo, 2, 5);
+                    if ($DateToMonth == 9) {
+                        $DateToMonth = 'September';
                     }
-                    if (substr($DateTo, 0, 2) == 10) {
-                        $DateTo = 'October' . substr($DateTo, 2, 5);
+                    if ($DateToMonth == 10) {
+                        $DateToMonth = 'October';
                     }
-                    if (substr($DateTo, 0, 2) == 11) {
-                        $DateTo = 'November' . substr($DateTo, 2, 5);
+                    if ($DateToMonth == 11) {
+                        $DateToMonth = 'November';
                     }
-                    if (substr($DateTo, 0, 2) == 12) {
-                        $DateTo = 'December' . substr($DateTo, 2, 5);
+                    if ($DateToMonth == 12) {
+                        $DateToMonth = 'December';
                     }
-                    $Duration = $DateFrom . " - " . $DateTo;
+                    $Duration = $DateFromMonth . " " .$DateFromYear . " - " . $DateToMonth . " " . $DateToYear;
                     ?>
                     <tbody>
                     <tr>
@@ -464,38 +466,4 @@ $StudentID = $_SESSION['StudentID'];
 <!-- End Content -->
 <script type="text/javascript" src="../../js/script.js"></script>
 </body>
-
-<?php
-if (isset($_POST['btnSave'])) {
-
-    $fileToUpload = basename($_FILES["fileToUpload"]["name"]);
-    $target_dir = "ProfileImages/";   //eto yung folder or directory kung saan mo ma-sasave yung picture mo
-    $target_file = $target_dir . $StudentID . ".jpg";
-    $uploadOk = 1;
-    $imageFileType = pathinfo($target_file, PATHINFO_EXTENSION);
-
-    //eto chcheck nya yung format ng file kung GIF ba sya or JPEG or PNG in short Check ng FILE TYPE
-    if ($imageFileType != "jpg" && $imageFileType != "png" && $imageFileType != "jpeg") {
-        echo "Sorry, only JPG, JPEG, PNG files are allowed.";
-        $uploadOk = 0;
-    }
-    // Check if $uploadOk is set to 0 by an error
-    if ($uploadOk == 0) {
-        echo "Sorry, your file was not uploaded.";
-
-    } else {
-        if (move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_file)) {
-
-            $query = "UPDATE studentinfotbl SET ProfileImage = '$target_file' WHERE StudentID = '$StudentID'";
-            $Result = mysql_query($query);
-            echo "
-         <script type='text/javascript'>
-         </script>
-         ";
-        } else {
-            echo "Sorry, there was an error uploading your file.";
-        }
-    }
-}
-?>
 </html>

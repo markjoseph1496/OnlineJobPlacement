@@ -1,23 +1,26 @@
 <?php
-
 include('../connection.php');
 session_start();
 
 $AdminID = $_SESSION['AdminID'];
 
-$qry = "SELECT * FROM admintbl WHERE AdminID ='$AdminID'";
-$result = mysql_query($qry);
-while ($qry = mysql_fetch_Array($result)) {
-    $Email = $qry['Email'];
-    $Password = $qry['Password'];
-    $FirstName = $qry['FirstName'];
-    $MiddleName = $qry['MiddleName'];
-    $LastName = $qry['LastName'];
-    $Position = $qry['Position'];
-    $Department = $qry['Department'];
-    $Address = $qry['Address'];
-    $ContactNumber = $qry['ContactNumber'];
-}
+
+$admin_tbl =
+    GSecureSQL::query(
+        "SELECT * FROM admintbl WHERE AdminID =?",
+        TRUE,
+        "s",
+        $AdminID
+    );
+
+    $Email = $admin_tbl[0][1];
+    $FirstName = $admin_tbl[0][4];
+    $MiddleName = $admin_tbl[0][5];
+    $LastName = $admin_tbl[0][6];
+    $Position = $admin_tbl[0][7];
+    $Department = $admin_tbl[0][8];
+    $Address = $admin_tbl[0][9];
+    $ContactNumber = $admin_tbl[0][10];
 
 ?>
 <!doctype html>

@@ -390,13 +390,14 @@ $Total = $studentinfo_tbl[0][0];
             $LastName = $value[5];
             $FullName = $LastName . ", " . $FirstName;
             $EmploymentStatus = $value[11];
+
             ?>
             <tbody>
             <tr>
                 <td>
-                    <a href = 'resumelink.php'>$FullName</a>
+                    <a href = 'resumelink.php'><?php echo $FullName; ?></a>
                 </td>
-                <td class = 'tcenter'><?php echo $FirstName ?></td>
+                <td class = 'tcenter'></td>
                 <td class = 'tcenter'></td>
                 <td class = 'tcenter'></td>
                 <td class = 'tcenter'><?php echo $EmploymentStatus; ?></td>

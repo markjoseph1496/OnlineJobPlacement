@@ -154,34 +154,33 @@ if (isset($_POST['CompanyName'])) {
     $CompanyName = $_POST['CompanyName'];
     $CompanyWebsite = $_POST['CompanyWebsite'];
     $Industry = $_POST['Industry'];
-    $FromMonth = $_POST['FromMonth'];
-    $FromYear = $_POST['FromYear'];
-    $ToMonth = $_POST['ToMonth'];
-    $ToYear = $_POST['ToYear'];
+    $DateFromMonth = $_POST['FromMonth'];
+    $DateFromYear = $_POST['FromYear'];
+    $DateToMonth = $_POST['ToMonth'];
+    $DateToYear = $_POST['ToYear'];
     $PositionLevel = $_POST['PositionLevel'];
     $WorkSpecialization = $_POST['WorkSpecialization'];
     $MonthlySalary = $_POST['MonthlySalary'];
     $NatureOfWork = $_POST['NatureOfWork'];
 
-    $DateFrom = $FromMonth . " " . $FromYear;
-    $DateTo = $ToMonth . " " . $ToYear;
-
-    if ($DateTo == " ") {
-        $DateTo = "Current";
-    } else {
-        $DateTo = $ToMonth . " " . $ToYear;
+    if(isset($_POST['Duration'])){
+        $Duration = $_POST['Duration'];
+        if($Duration == "on"){
+            $DateToYear = "Current";
+        }
     }
-
     GSecureSQL::query(
-        "INSERT INTO workexperiencetbl (StudentID, CompanyName, CompanyWebsite, Industry, DateFrom, DateTo, PositionLevel, Specialization, MonthlySalary, NatureOfWork) value (?,?,?,?,?,?,?,?,?,?)",
+        "INSERT INTO workexperiencetbl (StudentID, CompanyName, CompanyWebsite, Industry, DateFromMonth, DateFromYear, DateToMonth, DateToYear, PositionLevel, Specialization, MonthlySalary, NatureOfWork) value (?,?,?,?,?,?,?,?,?,?,?,?)",
         FALSE,
-        "ssssssssss",
+        "ssssssssssss",
         $StudentID,
         $CompanyName,
         $CompanyWebsite,
         $Industry,
-        $DateFrom,
-        $DateTo,
+        $DateFromMonth,
+        $DateFromYear,
+        $DateToMonth,
+        $DateToYear,
         $PositionLevel,
         $WorkSpecialization,
         $MonthlySalary,
