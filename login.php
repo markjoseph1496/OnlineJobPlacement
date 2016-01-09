@@ -24,16 +24,13 @@ if (isset($_POST['StudentID'])) {
 		        alert('You have successfully loggged in.');
 		        location.href='student-view/search-job/jobs.php';
 		        </script>";
-        }
-        else{
+        } else {
             echo "Incorrect Student ID or Password";
         }
     } else {
         echo "Incorrect Student ID or Password";
     }
-}
-
-if (isset($_POST['CompanyEmail'])) {
+} elseif (isset($_POST['CompanyEmail'])) {
     $CompanyEmail = $_POST['CompanyEmail'];
     $_Password = $_POST['password'];
 
@@ -57,12 +54,41 @@ if (isset($_POST['CompanyEmail'])) {
 		        alert('You have successfully loggged in.');
 		        location.href='company/company.php';
 		        </script>";
-        }
-        else{
+        } else {
             echo "Incorrect Company email or Password";
         }
     } else {
         echo "Incorrect Company email or Password";
+    }
+} elseif (isset($_POST['AdminEmail'])) {
+    $AdminEmail = $_POST['AdminEmail'];
+    $_Password = $_POST['password'];
+
+    $admin_tbl =
+        GSecureSQL::query(
+            "SELECT
+                `AdminID`,
+                `Password`,
+                `SaltedPassword`
+            FROM `admintbl` WHERE `Email` = ?",
+            TRUE,
+            "s",
+            $AdminEmail
+        );
+
+    if (count($admin_tbl)) {
+        if (hash('sha512', $_Password . $admin_tbl[0][2]) == $admin_tbl[0][1]) {
+            $_SESSION['AdminID'] = $admin_tbl[0][0];
+            echo "
+		        <script type='text/javascript'>
+		        alert('You have successfully loggged in.');
+		        location.href='admin/admin.php';
+		        </script>";
+        } else {
+            echo "Incorrect email or Password";
+        }
+    } else {
+        echo "Incorrect email or Password";
     }
 }
 ?>
