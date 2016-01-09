@@ -195,7 +195,7 @@ $CompanyID = $_SESSION['CompanyID'];
                     <a  href="company.php">Home</a>
                 </li>
                <li>
-                    <a>Position</a>
+                    <a>Position <?php echo $CompanyID ?></a>
                     <ul class="dropdown">
                         <li><a href="company-positionlist.php">Position List</a></li>
                         <li><a href="company-createposition.php">Create Position</a></li>
