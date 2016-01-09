@@ -2004,18 +2004,18 @@ ul.icons-list li i {
 /*************** Tabs ***************/
 
 .nav-tabs {
-	border-color: #3756A0;
+	border-color: #eee;
 }
 
 .nav-tabs > li > a {
 	font-weight: 600;
-	color: #fff;
+	color: #666;
 	padding: 8px 14px;
 	border-radius: 3px 3px 0 0;
 	-webkit-border-radius: 3px 3px 0 0;
     -moz-border-radius: 3px 3px 0 0;
     -o-border-radius: 3px 3px 0 0;
-	border: 3px solid #3756A0;
+	border: 1px solid #eee;
 	border-bottom: none;
 	box-shadow: 0 0 15px rgba(0,0,0,.04) inset;
 	-o-box-shadow: 0 0 15px rgba(0,0,0,.04) inset;
@@ -2054,7 +2054,7 @@ ul.icons-list li i {
 }
 
 .tab-content {
-	border: 3px solid #3756A0;
+	border: 1px solid #eee;
 	border-top: none;
 	padding: 12px 16px;
 }
@@ -5611,7 +5611,6 @@ ul.footer-nav li a:hover {
   	text-align:center;
 }
 
-
 .parallax-mobile {
 	background-position: 50% 0px !important; 
 	background-attachment: scroll !important;
@@ -5703,7 +5702,9 @@ ul.footer-nav li a:hover {
 }
 
 /*Aira's Css*/
-
+.white-color {
+	color: #fff;
+}
 .overlay {
 	background-color: rgba(0, 0, 0, 0.6);
 }

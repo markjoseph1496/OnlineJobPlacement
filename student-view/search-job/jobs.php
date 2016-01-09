@@ -257,43 +257,50 @@ if (isset($_SESSION['StudentID'])) {
                             if ($a && $b) {
                                 ?>
                                 <div class='blog-post standard-post'>
-                                    <!-- Post Content -->
-                                    <div class='post-content'>
-                                        <div class='post-type'><i class='fa fa-picture-o'></i></div>
-                                        <h2><a href='#'><?php echo $Position; ?></a></h2>
-                                        <h1><p><?php echo $CompanyName; ?></p></h1>
-                                        <ul class='icons-list'>
-                                            <?php
-                                            $requirements_tbl =
-                                                GSecureSQL::query(
-                                                    "SELECT * FROM comprequirementtbl WHERE PositionID = ? AND CompanyID = ?",
-                                                    TRUE,
-                                                    "ss",
-                                                    $PositionID,
-                                                    $CompanyID
-                                                );
-                                            $count = 0;
-                                            foreach ($requirements_tbl as $value2) {
-                                                $RID = $value2[0];
-                                                $Requirement = $value2[3];
-                                                if($count < 3) {
-                                                    $count++;
-                                                    ?>
-                                                    <li><i class='fa fa-check-circle'></i> <?php echo $Requirement; ?>
-                                                    </li>
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <!-- Post Content -->
+                                            <div class='post-content'>
+                                                <div class='post-type'><i class='fa fa-picture-o'></i></div>
+                                                <h2><a href='#'><?php echo $Position; ?></a></h2>
+                                                <h1><p><?php echo $CompanyName; ?></p></h1>
+                                                <ul class='icons-list'>
                                                     <?php
-                                                }
-                                            }
-                                            ?>
+                                                    $requirements_tbl =
+                                                        GSecureSQL::query(
+                                                            "SELECT * FROM comprequirementtbl WHERE PositionID = ? AND CompanyID = ?",
+                                                            TRUE,
+                                                            "ss",
+                                                            $PositionID,
+                                                            $CompanyID
+                                                        );
+                                                    $count = 0;
+                                                    foreach ($requirements_tbl as $value2) {
+                                                        $RID = $value2[0];
+                                                        $Requirement = $value2[3];
+                                                        if($count < 3) {
+                                                            $count++;
+                                                            ?>
+                                                            <li><i class='fa fa-check-circle'></i> <?php echo $Requirement; ?>
+                                                            </li>
+                                                            <?php
+                                                        }
+                                                    }
+                                                    ?>
 
-                                        </ul>
-                                        <div class='hr1' style='margin-bottom:14px;'></div>
-                                        <ul class='post-meta'>
-                                            <li><?php echo $YearExperience; ?> year(s) experience</li>
-                                            <li><?php echo $Location; ?></li>
-                                        </ul>
-                                        <a class='main-button' target="_blank" href='view-details.php?id=<?php echo $PositionID; ?>'>View
-                                            Details <i class='fa fa-angle-right'></i></a>
+                                                </ul>
+                                                <div class='hr1' style='margin-bottom:14px;'></div>
+                                                <ul class='post-meta'>
+                                                    <li><?php echo $YearExperience; ?> year(s) experience</li>
+                                                    <li><?php echo $Location; ?></li>
+                                                </ul>
+                                                <a class='main-button' target="_blank" href='view-details.php?id=<?php echo $PositionID; ?>'>View
+                                                    Details <i class='fa fa-angle-right'></i></a>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <p>Desciption | Desciption | Desciption Desciption | Desciption </p>
+                                        </div>
                                     </div>
                                 </div>
                                 <?php

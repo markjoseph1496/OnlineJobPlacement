@@ -183,7 +183,7 @@
 
         <!-- Start Content -->
         <div id="content">
-            <div id="jobs" class="section" style="background-color:#4275F4;">
+            <div id="jobs" class="section">
                 <!-- Start News & Skill Section -->
                 <div class="container">
                     <div class="row">
@@ -193,98 +193,97 @@
 		                </div>
 
                         <div class="col-md-8">
-                            <div class="tabs-section">
-                                <!-- Nav Tabs -->
-                                <ul class="nav nav-tabs">
-                                    <li class="active"><a href="#tab-1" data-toggle="tab"><i class="fa fa-globe"></i>Industry</a></li>
-                                    <li><a href="#tab-2" data-toggle="tab"><i class="fa fa-leaf"></i>Specialization</a></li>
-                                    <li><a href="#tab-3" data-toggle="tab"><i class="fa fa-map-marker"></i>Location</a></li>
-                                </ul>
+                            <!-- Nav Tabs -->
+                            <ul class="nav nav-tabs">
+                                <li class="active"><a href="#tab1" data-toggle="tab" aria-expanded="true"><i class="icon-award-1"></i>Industry</a></li>
+                                <li><a href="#tab2" data-toggle="tab" aria-expanded="false"><i class="icon-beaker"></i>Specialization</a></li>
+                                <li><a href="#tab3" data-toggle="tab"><i class="icon-droplet"></i>Location</a></li>
+                            </ul>
 
-                                <!-- Tab Panels -->
-                                <div class="tab-content">
-                                    <!-- Tab Content 1 -->
-                                    <div class="tab-pane fade in active" id="tab-1">
-                                    	<div class="row">
-                                            <div class="col-md-6">
-                                                <ul class="icons-list">
-													<li style="color:#fff;"><a href="">BPO / Call Center</a></li>
-													<li><a href="">Food / Beverage / RestaurantService</a></li>
-													<li><a href="">Customer Service</a></li>
-													<li><a href="">Clerical / Administrative Support</a></li>
-													<li><a href="">Human Resources</a></li>
-													<li><a href="">Finance - General / Cost Accounting </a></li>
-													<li><a href="">Healthcare - Nurse / Medical Support and Assistant</a></li>
-													<li><a href="">IT / Computer - Network / System / Database Admin</a></li>
-													<li><a href="">Sales - Retail / General</a></li>										
-                                                </ul>
-                                            </div>
-                                            <div class="col-md-6">
-                                                <ul class="icons-list">
-													<li><a href="">IT / Computer - Software Development</a></li>
-													<li><a href="">Engineering - Civil / Construction / Structural</a></li>
-													<li><a href="">Finance - Audit/Taxation</a></li>
-													<li><a href="">Purchasing / Inventory/ Material and Warehouse Management</a></li>
-													<li><a href="">Sales - Corporate / B2B</a></li>
-													<li><a href="">Engineering - Electronics / Communication</a></li>
-													<li><a href="">Others</a></li>
-                                                </ul>
-                                            </div>
+                            <!-- Tab Panels -->
+                            <div class="tab-content">
+                                <!-- Tab Content 1 -->
+                                <div class="tab-pane fade active in" id="tab1">
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <ul class="icons-list">
+                                                <li style="color:#fff;"><a href="">BPO / Call Center</a></li>
+                                                <li><a href="">Food / Beverage / RestaurantService</a></li>
+                                                <li><a href="">Customer Service</a></li>
+                                                <li><a href="">Clerical / Administrative Support</a></li>
+                                                <li><a href="">Human Resources</a></li>
+                                                <li><a href="">Finance - General / Cost Accounting </a></li>
+                                                <li><a href="">Healthcare - Nurse / Medical Support and Assistant</a></li>
+                                                <li><a href="">IT / Computer - Network / System / Database Admin</a></li>
+                                                <li><a href="">Sales - Retail / General</a></li>                                        
+                                            </ul>
                                         </div>
-                                    </div>
-                                    <!-- Tab Content 2 -->
-                                    <div class="tab-pane fade" id="tab-2">
-                                        <div class="row">
-                                            <div class="col-md-6">
-	                                            <ul class="icons-list">
-	                                                <li><a href="">Agricultural / Plantation / Poultry / Fisheries</a></li>
-													<li><a href="">Banking / Financial Services</a></li>
-													<li><a href="">Computer / Information Technology (Software)</a></li>
-													<li><a href="">Construction / Building / Engineering</a></li>
-													<li><a href="">Consulting (IT, Science, Engineering and Technical)</a></li>
-													<li><a href="">Education</a></li>
-													<li><a href="">Food and Beverage</a></li>
-													<li><a href="">Grooming / Beauty / Fitness</a></li>
-	                                            </ul>
-                                            </div>
-                                            <div class="col-md-6">
-	                                            <ul class="icons-list">
-	                                            	<li><a href="">Healthcare / Medical</a></li>
-													<li><a href="">Hotel / Hospitality</a></li>
-													<li><a href="">Human Resources Management / Consulting</a></li>
-													<li><a href="">Online / E-commerce Business</a></li>
-													<li><a href="">Outsourcing (Call Center / BPO)</a></li>
-													<li><a href="">Retail / Merchandising</a></li>
-													<li><a href="">Utilities / Power</a></li>
-													<li><a href="">Others</a></li>
-												</ul>
-											</div>
+                                        <div class="col-md-6">
+                                            <ul class="icons-list">
+                                                <li><a href="">IT / Computer - Software Development</a></li>
+                                                <li><a href="">Engineering - Civil / Construction / Structural</a></li>
+                                                <li><a href="">Finance - Audit/Taxation</a></li>
+                                                <li><a href="">Purchasing / Inventory/ Material and Warehouse Management</a></li>
+                                                <li><a href="">Sales - Corporate / B2B</a></li>
+                                                <li><a href="">Engineering - Electronics / Communication</a></li>
+                                                <li><a href="">Others</a></li>
+                                            </ul>
                                         </div>
-                                    </div>
-
-                                    <!-- Tab Content 3 -->
-                                    <div class="tab-pane fade" id="tab-3">
-                                        BICOL REGION (25)
-                                        C.A.R (22)
-                                        CAGAYAN VALLEY (13)
-                                        CARAGA (5)
-                                        CENTRAL LUZON (159)
-                                        CENTRAL MINDANAO (5)
-                                        CENTRAL VISAYAS (109)
-                                        EASTERN VISAYAS (10)
-                                        ILOCOS REGION (34)
-                                        NCR (3737)
-                                        NORTHERN MINDANAO (23)
-                                        SOUTHERN MINDANAO (92)
-                                        SOUTHERN TAGALOG (230)
-                                        WESTERN MINDANAO (5)
-                                        WESTERN VISAYAS (47)
-                                        Others (82)
                                     </div>
                                 </div>
-                                <!-- End Tab Panels -->
+
+                                <!-- Tab Content 2 -->
+                                <div class="tab-pane fade" id="tab2">
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <ul class="icons-list">
+                                                <li><a href="">Agricultural / Plantation / Poultry / Fisheries</a></li>
+                                                <li><a href="">Banking / Financial Services</a></li>
+                                                <li><a href="">Computer / Information Technology (Software)</a></li>
+                                                <li><a href="">Construction / Building / Engineering</a></li>
+                                                <li><a href="">Consulting (IT, Science, Engineering and Technical)</a></li>
+                                                <li><a href="">Education</a></li>
+                                                <li><a href="">Food and Beverage</a></li>
+                                                <li><a href="">Grooming / Beauty / Fitness</a></li>
+                                            </ul>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <ul class="icons-list">
+                                                <li><a href="">Healthcare / Medical</a></li>
+                                                <li><a href="">Hotel / Hospitality</a></li>
+                                                <li><a href="">Human Resources Management / Consulting</a></li>
+                                                <li><a href="">Online / E-commerce Business</a></li>
+                                                <li><a href="">Outsourcing (Call Center / BPO)</a></li>
+                                                <li><a href="">Retail / Merchandising</a></li>
+                                                <li><a href="">Utilities / Power</a></li>
+                                                <li><a href="">Others</a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Tab Content 3 -->
+                                <div class="tab-pane fade" id="tab3">
+                                    BICOL REGION (25)
+                                    C.A.R (22)
+                                    CAGAYAN VALLEY (13)
+                                    CARAGA (5)
+                                    CENTRAL LUZON (159)
+                                    CENTRAL MINDANAO (5)
+                                    CENTRAL VISAYAS (109)
+                                    EASTERN VISAYAS (10)
+                                    ILOCOS REGION (34)
+                                    NCR (3737)
+                                    NORTHERN MINDANAO (23)
+                                    SOUTHERN MINDANAO (92)
+                                    SOUTHERN TAGALOG (230)
+                                    WESTERN MINDANAO (5)
+                                    WESTERN VISAYAS (47)
+                                    Others (82)
+                                </div>
                             </div>
                         </div>
+
                         <div class="col-md-4">
                         	<div class="call-action call-action-boxed call-action-style2 clearfix" style="background-color:#3756A0;">
 					            <h4><span class="accent-color">Latest Jobs</span></h4>
@@ -302,7 +301,7 @@
 
             
             <!-- Start Recent Projects Carousel -->
-            <div id="events" class="section">
+            <div id="events" class="section" style="background-color:#FCC824;">
                 <div class="container">
                     <div class="recent-projects">
                         <h4 class="title"><span>Events</span></h4>
