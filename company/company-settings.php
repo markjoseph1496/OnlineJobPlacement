@@ -8,9 +8,10 @@ $CompanyID = $_SESSION['CompanyID'];
         while ($qry = mysql_fetch_Array($Result)) {
 
             $CName = $qry['CompanyName'];
+            $Description = $qry['Description'];
             $Industry = $qry['Industry'];
-            $Classification = $qry['Classification'];
-            $Address = $qry['Address'];
+            $classification = $qry['Classification'];
+            $address = $qry['Address'];
             $City = $qry['City'];
             $Postal = $qry['PostalCode'];
             $Phone = $qry['PhoneNum'];
@@ -37,6 +38,16 @@ $CompanyID = $_SESSION['CompanyID'];
   <!-- Page Description and Author -->
   <meta name="description" content="Margo - Responsive HTML5 Template">
   <meta name="author" content="iThemesLab">
+
+  <!-- BootstrapValidator CSS -->
+  <link href="../css/bootstrapValidator.min.css" rel="stylesheet"/>
+
+  <!-- jQuery and Bootstrap JS -->
+  <script src="../js/jquery.min.js" type="text/javascript"></script>
+  <script src="../js/bootstrap.min.js" type="text/javascript"></script>
+    
+  <!-- BootstrapValidator -->
+  <script src="../js/bootstrapValidator.min.js" type="text/javascript"></script>
 
   <!-- Bootstrap CSS  -->
   <link rel="stylesheet" href="../asset/css/bootstrap.min.css" type="text/css" media="screen">
@@ -274,7 +285,7 @@ $CompanyID = $_SESSION['CompanyID'];
 <br><br><br>
     <div class = "container">
       <div class = "col-md-6">
-        <form method="POST">
+        <form method="POST" name="CompanySetting" id="CompanySetting" autocomplete="off">
             <?php
                 if(isset($_GET['id'])){
                     $id=$_GET['id'];
@@ -312,7 +323,7 @@ $CompanyID = $_SESSION['CompanyID'];
                                         </div>
                                         <div class = "col-md-4 fieldcol">
                                             <div class="form-group">
-                                                   <input type = "text" name = "description" id = "usr" class = "form-control" style ="width: 300px;" >
+                                                   <input type = "text" name = "description" id = "usr" class = "form-control" style ="width: 300px;" value="<?php echo $Description; ?>">
                                             </div>
                                         </div>
                 </div>  
@@ -396,7 +407,7 @@ $CompanyID = $_SESSION['CompanyID'];
                                         </div>
                                         <div class = "col-md-4 fieldcol">
                                             <div class="form-group">
-                                                   <input type = "text" name = "postal" id = "usr" class = "form-control" style ="width: 300px; height: 34px;" value = "<?php echo $Postal; ?>">
+                                                   <input type = "text" name = "postal" id = "postal" class = "form-control" style ="width: 300px; height: 34px;" value = "<?php echo $Postal; ?>">
                                             </div>
                                         </div>
                 </div> 
@@ -456,18 +467,19 @@ $CompanyID = $_SESSION['CompanyID'];
     if(isset($_POST['btnSave'])){
 
        $cname = $_POST['cname'];
+       $description = $_POST['description'];
        $industry = $_POST['industry'];
        $classification = $_POST['classification'];
        $address = $_POST['address'];
        $city = $_POST['City'];
        $postal = $_POST['postal'];
-       $phonenum = $_POST['phonenum'];
+       $telnum = $_POST['telnum'];
        $mobilenum = $_POST['mobilenum'];
        $fax = $_POST['fax'];
 
 
 
-        $query = "UPDATE companyinfotbl SET CompanyName = '$cname', Industry = '$industry', Classification = '$classification', Address = '$address', City = '$city', PostalCode = '$postal', PhoneNum = '$phonenum', MobileNum = '$mobilenum', Fax = '$fax' WHERE CompanyID = '$CompanyID'";
+        $query = "UPDATE companyinfotbl SET CompanyName = '$cname', Description = '$description', Industry = '$industry', Classification = '$classification', Address = '$address', City = '$city', PostalCode = '$postal', PhoneNum = '$telnum', MobileNum = '$mobilenum', Fax = '$fax' WHERE CompanyID = '$CompanyID'";
        $Result = mysql_query($query);
        echo "
             <script type='text/javascript'>
@@ -511,5 +523,42 @@ $CompanyID = $_SESSION['CompanyID'];
 }
 */
 ?>
+<script type="text/javascript">
+        $(document).ready(function (){
+            var validator = $("#CompanySetting").bootstrapValidator({
+                feedbackIcons: {
+                    valid: "glyphicon glyphicon-ok",
+                    invalid: "glyphicon glyphicon-remove",
+                    validating: "glyphicon glyphicon-refresh"
+                },
+                fields:{
+                  cname: {
+                        validators: {
+                            notEmpty: {
+                                message: "Compamy Name is required."
+                            },
+                            stringLength: {
+                                min: 5,
+                                max: 15,
+                                message: "Company Name is invalid."
+                            },
+                            regexp: {
+                                regexp: /^[a-z\s]+$/i,
+                                message: "Company Name can consist of alphabetical characters and spaces only"
+                            },
+                            remote: {
+                                message: 'The Company Name already exists',
+                                url: '../addcompany.php',
+                                data: {
+                                    type: 'cname'
+                                },
+                                type: 'POST'
+                                }
+                            }
+                    }
+                }
+            });
+        });
+    </script>
 
 </html>
