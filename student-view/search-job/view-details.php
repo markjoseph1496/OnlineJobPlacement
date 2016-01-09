@@ -111,14 +111,9 @@ $CompanyName = $companyinfo_tbl[0][1];
                 <div class="container">
                     <div class="row">
                         <div class="col-md-7">
-                            <!-- Start Contact Info
+                            <!-- Start Contact Info -->
                             <ul class="contact-details">
-                                <li><a href="#"><i class="fa fa-map-marker"></i> House-54/A, London, UK</a>
-                                </li>
-                                <li><a href="#"><i class="fa fa-envelope-o"></i> info@yourcompany.com</a>
-                                </li>
-                                <li><a href="#"><i class="fa fa-phone"></i> +12 345 678 000</a>
-                                </li>
+                                <li class="profile-name"><i class="fa fa-hashtag"></i><b> 008-2012-0805</b></li>
                             </ul>
                             <!-- End Contact Info -->
                         </div>
@@ -126,8 +121,14 @@ $CompanyName = $companyinfo_tbl[0][1];
                         <div class="col-md-5">
                         <!-- Start Social Links -->
                             <ul class="social-list">
-                               <li class="profile-name">
-                                    <i class="fa fa-user"></i> Hello, <b>Aasdasd</b>
+                                <li class="profile-name">
+                                    <a class="bell itl-tooltip" data-placement="bottom" title="" href="#" data-original-title="Notification"><i class="fa fa-bell"></i></a>
+                                </li>
+                                <li class="profile-name">
+                                    &nbsp;
+                                </li>
+                                <li class="profile-name">
+                                    <i class="fa fa-user"></i> Hello, <b>Aira Jane Cruz</b>                               
                                 </li>
                             </ul>
                             <!-- End Social Links -->
@@ -175,22 +176,18 @@ $CompanyName = $companyinfo_tbl[0][1];
             </div>
         </header>
 
-        <div class="page-banner no-subtitle">
+        <div class="middle-bar">
             <div class="container">
                 <div class="row">
-                    <div class="col-md-6">
-                        <h2</h2>
-                    </div>
-                    <div class="col-md-6">
-                        <ul class="breadcrumbs">
-                            <li><a href="#"></a></li>
-                            <li></li>
+                    <div class="col-md-5">
+                        <ul class="mid-list">
+                            &nbsp;
                         </ul>
                     </div>
                 </div>
             </div>
         </div>
-        <!-- End Page Banner -->
+        
 
         <!-- Start Content -->
         <form id="Save" name="Save" autocomplete="off" action="addfunction.php">
@@ -233,9 +230,9 @@ $CompanyName = $companyinfo_tbl[0][1];
                                     <h4>HR Network, Inc. (Non-IT)</h4>
                                 </div>
                                 <label>We are an executive search firm that specializes in sourcing of Non IT professionals catering to large local and multinational companies. Currently, we are seeking highly dynamic individuals to assume the following positions:</label>
-                                <div class="hr5" style="margin-top:35px;margin-bottom:40px;"></div>
+                                <div class="hr3" style="margin-top:35px;margin-bottom:40px;"></div>
                                 <div class="text-center"><h3>Senior Accountant (Taguig)</h3></div>
-                                <div class="hr5" style="margin-top:35px;margin-bottom:40px;"></div>
+                                <div class="hr3" style="margin-top:35px;margin-bottom:40px;"></div>
                             </div>
                         </div>
 
@@ -356,18 +353,20 @@ $CompanyName = $companyinfo_tbl[0][1];
                         <!-- Search Widget -->
                         <div class="widget widget-categories">
                             <h4>Tools <span class="head-line"></span></h4>
-                            <li>
-                                <a href="#"><i class="fa fa-bookmark"></i> Bookmarked Jobs <b>(0)</b></a>
-                            </li>
-                            <li>
-                                <a href="#"><i class="fa fa-share"></i> Share</a>
-                            </li>
-                            <li>
-                                <a href="#"><i class="fa fa-print"></i> Print this Job Ad</a>
-                            </li>
-                            <li>
-                                <a href="#"><i class="fa fa-exclamation"></i> Report this Job</a>
-                            </li>
+                            <ul>
+                                <li>
+                                    <a href="#"><i class="fa fa-bookmark"></i> Bookmark this Job</a>
+                                </li>
+                                <li>
+                                    <a href="#"><i class="fa fa-share-alt"></i> Share</a>
+                                </li>
+                                <li>
+                                    <a href="#"><i class="fa fa-print"></i> Print this Job Ad</a>
+                                </li>
+                                <li>
+                                    <a href="#"><i class="fa fa-exclamation-triangle"></i> Report this Job</a>
+                                </li>
+                            </ul>
                         </div>
 
                         <div class="widget widget-tags">

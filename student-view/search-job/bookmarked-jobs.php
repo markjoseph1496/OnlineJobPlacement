@@ -134,13 +134,7 @@ if (isset($_SESSION['StudentID'])) {
         <div class="container">
             <div class="row">
                 <div class="col-md-6">
-                    <h2>Find the job that suits your passion</h2>
-                </div>
-                <div class="col-md-6">
-                    <ul class="breadcrumbs">
-                        <li><a href="../myinfo/personal-info.php">Fill out your information</a></li>
-                        <li></li>
-                    </ul>
+                    <h2>Your Bookmarked Jobs</h2>
                 </div>
             </div>
         </div>
@@ -161,20 +155,12 @@ if (isset($_SESSION['StudentID'])) {
     
     <div class="hr1" style="margin-bottom:5px;"></div>
     <div class="container">
-        <div>
-            <i class="fa fa-bookmark"></i> Bookmarked Jobs <a href="bookmarked-jobs.php">(0)</a>&nbsp;
-            <i class="fa fa-sort"></i> Sort by:
-            <select id="" name="" class="" style="height:9%; width:15%;">
-                <option value="">Location</option>
-                <option value="">Years of Experience</option>
-            </select>&nbsp;
-
-            <i class="fa fa-filter"></i> Filter by:
-            <select id="" name="" class="" style="height:9%; width:15%;">
-                <option value=""></option>
-                <option value=""></option>
-            </select>
-        </div>
+        <a href="jobs.php"><i class="fa fa-undo"></i></a> <label>Go back to your search result</label>&nbsp;
+        <i class="fa fa-sort"></i> Sort by:
+        <select id="" name="" class="" style="height:9%; width:15%;">
+            <option value="">Location</option>
+            <option value="">Years of Experience</option>
+        </select>&nbsp;
     </div>
     <div class="hr4" style="margin-top:5px;"></div>
 
@@ -182,35 +168,6 @@ if (isset($_SESSION['StudentID'])) {
     <div id="content">
         <div class="container">
             <div class="row blog-page">
-                <!--Sidebar-->
-                <div class="col-md-3 sidebar left-sidebar">
-                    <!-- Search Widget -->
-                    <div class="widget widget-search">
-                        <form action="#">
-                            <input type="search" placeholder="Search..."/>
-                            <button class="search-btn" type="submit"><i class="fa fa-search"></i></button>
-                        </form>
-                    </div>
-
-                    <!-- Popular Posts widget -->
-                    <div class="widget widget-popular-posts">
-                        <h4>Popular Jobs <span class="head-line"></span></h4>
-                        <ul>
-                            <li>
-                                <div class="widget-thumb">
-                                    <a href="#"><img src="../../images/blog-mini-03.jpg" alt=""/></a>
-                                </div>
-                                <div class="widget-content">
-                                    <h5><a href="#">Senior Accountant</a></h5>
-                                    <span>Jul 29 2013</span>
-                                </div>
-                                <div class="clearfix"></div>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-                <!--End sidebar-->
-
 
                 <!-- Start Blog Posts -->
                 <div class="col-md-9 blog-box">
@@ -302,6 +259,18 @@ if (isset($_SESSION['StudentID'])) {
                     }
                     ?>
                 </div>
+
+                <!--Sidebar-->
+                <div class="col-md-3 sidebar right-sidebar">
+                    <!-- Search Widget -->
+                    <div class="widget widget-search">
+                        <form action="#">
+                            <input type="search" placeholder="Search..."/>
+                            <button class="search-btn" type="submit"><i class="fa fa-search"></i></button>
+                        </form>
+                    </div>
+                </div>
+                <!--End sidebar-->
             </div>
         </div>
     </div>
