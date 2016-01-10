@@ -44,6 +44,12 @@ if(is_null($_SESSION['StudentID'])){
     <!-- Font Awesome CSS -->
     <link rel="stylesheet" type="text/css" href="../../../css/font-awesome.min.css" media="screen">
 
+    <!-- Fonts -->
+    <link href="../../../fonts/ffonts/montserrat.css" rel="stylesheet" type="text/css">
+    <link href="../../../fonts/ffonts/kaushan.css" rel="stylesheet" type="text/css">
+    <link href="../../../fonts/ffonts/droid.css" rel="stylesheet" type="text/css">
+    <link href="../../../fonts/ffonts/roboto.css" rel="stylesheet" type="text/css">
+
     <!-- Slicknav -->
     <link rel="stylesheet" type="text/css" href="../../../css/slicknav.css" media="screen">
 
@@ -248,10 +254,10 @@ if(is_null($_SESSION['StudentID'])){
                     <!-- Page Content -->
                     <div class="col-md-9 page-content">
                         <div class="row">
-                            <div class="col-md-6">
+                            <div class="col-md-8">
                                 <div class="form-group">
                                     <label>Specialization <span>(*)</span></label>
-                                    <select id="" name="Specialization" class="form-control" style = "width:420px;">
+                                    <select id="" name="Specialization" class="form-control">
                                         <option value="" selected="selected">- Please select one -</option>
                                         <?php
 
@@ -272,7 +278,7 @@ if(is_null($_SESSION['StudentID'])){
                                     </select>
                                 </div>
                             </div>
-                            <div class="col-md-6">
+                            <div class="col-md-4">
                                 <div class="form-group">
                                     <label>Proficiency <span>(*)</span></label>
                                     <div class="rating text-center">
