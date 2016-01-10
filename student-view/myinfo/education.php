@@ -37,6 +37,12 @@ if (isset($_SESSION['StudentID'])) {
     <!-- Font Awesome CSS -->
     <link rel="stylesheet" href="../../css/font-awesome.min.css" type="text/css" media="screen">
 
+    <!-- Fonts -->
+    <link href="../../fonts/ffonts/montserrat.css" rel="stylesheet" type="text/css">
+    <link href="../../fonts/ffonts/kaushan.css" rel="stylesheet" type="text/css">
+    <link href="../../fonts/ffonts/droid.css" rel="stylesheet" type="text/css">
+    <link href="../../fonts/ffonts/roboto.css" rel="stylesheet" type="text/css">
+
     <!-- Slicknav -->
     <link rel="stylesheet" type="text/css" href="../../css/slicknav.css" media="screen">
 
@@ -303,7 +309,7 @@ if (isset($_SESSION['StudentID'])) {
                             </div>
                             <div class="col-md-6 fieldcol">
                                 <a href="add/add-school.php" class="btnforadding" style="float:right;">
-                                    <span class="fa fa-plus-square">Add School</span>
+                                    <span class="fa fa-plus-square"> Add School</span>
                                 </a>
                             </div>
                         </div>

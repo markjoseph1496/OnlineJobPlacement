@@ -48,6 +48,12 @@ if (isset($_SESSION['StudentID'])) {
     <!-- Font Awesome CSS -->
     <link rel="stylesheet" href="../../css/font-awesome.min.css" type="text/css" media="screen">
 
+    <!-- Fonts -->
+    <link href="../../fonts/ffonts/montserrat.css" rel="stylesheet" type="text/css">
+    <link href="../../fonts/ffonts/kaushan.css" rel="stylesheet" type="text/css">
+    <link href="../../fonts/ffonts/droid.css" rel="stylesheet" type="text/css">
+    <link href="../../fonts/ffonts/roboto.css" rel="stylesheet" type="text/css">
+
     <!-- Slicknav -->
     <link rel="stylesheet" type="text/css" href="../../css/slicknav.css" media="screen">
 
@@ -98,8 +104,8 @@ if (isset($_SESSION['StudentID'])) {
                 <div class="row">
                     <div class="col-md-7">
                         <!-- Start Contact Info -->
-                        <ul class="contact-details">
-                            <li><a href="#"><i class="fa fa-hashtag"></i> 008-2012-0805</a></li>
+                        <ul class="profile-name">
+                            <li><i class="fa fa-hashtag"></i> <b>008-2012-0805</b></li>
                         </ul>
                         <!-- End Contact Info -->
                     </div>
@@ -162,15 +168,15 @@ if (isset($_SESSION['StudentID'])) {
     <div class="hr1" style="margin-bottom:5px;"></div>
     <div class="container">
         <div>
-            <i class="fa fa-bookmark"></i> Bookmarked Jobs <a href="bookmarked-jobs.php">(0)</a>&nbsp;
-            <i class="fa fa-sort"></i> Sort by:
-            <select id="" name="" class="" style="height:9%; width:15%;">
+            <label><i class="fa fa-bookmark"></i> Bookmarked Jobs <a href="bookmarked-jobs.php">(0)</a>&nbsp;</label>
+            <label><i class="fa fa-sort"></i> Sort by:</label>
+            <select id="" name="" class="" style="height:15%; width:15%;">
                 <option value="">Location</option>
                 <option value="">Years of Experience</option>
             </select>&nbsp;
 
-            <i class="fa fa-filter"></i> Filter by:
-            <select id="" name="" class="" style="height:9%; width:15%;">
+            <label><i class="fa fa-filter"></i> Filter by:</label>
+            <select id="" name="" class="" style="height:15%; width:15%;">
                 <option value=""></option>
                 <option value=""></option>
             </select>

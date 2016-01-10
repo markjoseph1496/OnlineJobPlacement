@@ -264,7 +264,7 @@
                 </div>
                 <div class="hr5" style="margin-top:35px;margin-bottom:40px;"></div>
                 <div class="text-center">
-                    <button type="submit" class="btn-system btn-large">Add</button>
+                    <button type="submit" class="btn-system btn-large border-btn">Add</button>
                 </div>
             </div>
         </div>

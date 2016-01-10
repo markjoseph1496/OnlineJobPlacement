@@ -298,10 +298,10 @@
                                 <div class="plan-price">
                                     <div class="row">
                                         <div class="col-md-6">
-                                            <a href="#" class="btn-system btn-mini border-btn btn-gray">Refresh</a>
+                                            <button href="#" class="btn-system btn-mini border-btn btn-gray">Refresh</button>
                                         </div>
                                         <div class="col-md-6">
-                                            <a href="#" class="btn-system btn-mini border-btn">View More</a>                       
+                                            <button href="#" class="btn-system btn-mini border-btn">View More</button>                       
                                         </div>
                                     </div>
                                 </div>

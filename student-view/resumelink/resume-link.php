@@ -54,6 +54,12 @@ $result = mysql_query($qry);
     <!-- Font Awesome CSS -->
     <link rel="stylesheet" href="../../css/font-awesome.min.css" type="text/css" media="screen">
 
+    <!-- Fonts -->
+    <link href="../../fonts/ffonts/montserrat.css" rel="stylesheet" type="text/css">
+    <link href="../../fonts/ffonts/kaushan.css" rel="stylesheet" type="text/css">
+    <link href="../../fonts/ffonts/droid.css" rel="stylesheet" type="text/css">
+    <link href="../../fonts/ffonts/roboto.css" rel="stylesheet" type="text/css">
+
     <!-- Slicknav -->
     <link rel="stylesheet" type="text/css" href="../../css/slicknav.css" media="screen">
 

@@ -35,7 +35,7 @@
 /*	     01 - General & Basic Styles
 /*------------------------------------------*/
 body {
-	font-family: 'Open Sans', sans-serif;
+	font-family: "Roboto Slab","Helvetica Neue",Helvetica,Arial,sans-serif;
 	font-size: 13px;
     line-height: 21px;
 	font-weight: 300;
@@ -680,7 +680,7 @@ ul.social-list li:last-child a i {
     display: block;
     color: #666;
     font-size: 13px;
-    font-family: Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-family: "Roboto Slab","Helvetica Neue",Helvetica,Arial,sans-serif;
     padding: 11px 16px;
     text-decoration: none;
     text-transform: capitalize;
@@ -2897,6 +2897,7 @@ ul.icons-list li i {
 	font-size: 26px;
 	line-height: 32px;
 	font-weight: 300;
+	text-transform: uppercase;
 }
 
 .big-title h1 strong, .big-title h2 strong {

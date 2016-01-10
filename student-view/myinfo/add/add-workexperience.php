@@ -466,7 +466,7 @@ session_start();
             <div class="hr5" style="margin-top:35px;margin-bottom:40px;"></div>
             <div class="field">
                 <div class="text-center">
-                    <button type="submit" class="btn btn-lg btn-hg btn-primary" name="btnSave">Add</button>
+                    <button type="submit" class="btn-system btn-large border-btn">Add</button>
                 </div>
             </div>
         </div>
