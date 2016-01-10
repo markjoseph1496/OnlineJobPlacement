@@ -262,12 +262,6 @@ else{
                     <div class="col-md-6">
                         <h2>Contacts Information</h2>
                     </div>
-                    <div class="col-md-6">
-                        <ul class="breadcrumbs">
-                            <li><a href="../myinfo/work.php">Work</a></li>
-                            <li>Contacts Information</li>
-                        </ul>
-                    </div>
                 </div>
             </div>
         </div>

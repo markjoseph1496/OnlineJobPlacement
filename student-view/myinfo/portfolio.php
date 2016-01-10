@@ -250,12 +250,6 @@ $result = mysql_query($qry);
                     <div class="col-md-6">
                         <h2>Portfolio</h2>
                     </div>
-                    <div class="col-md-6">
-                        <ul class="breadcrumbs">
-                            <li><a href="#">Home</a></li>
-                            <li>Portfolio</li>
-                        </ul>
-                    </div>
                 </div>
             </div>
         </div>

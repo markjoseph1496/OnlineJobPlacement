@@ -266,7 +266,7 @@
                 <div class="hr5" style="margin-top:35px;margin-bottom:40px;"></div>
                 <div class="field">
                     <div class="text-center">
-                        <button class="btn btn-lg btn-hg btn-primary" name ="btnSave">Save</button>
+                        <button type="submit" class="btn-system btn-large" name="btnSave">Save</button>
                     </div>
                 </div>
             </div>

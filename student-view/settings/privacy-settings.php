@@ -227,12 +227,6 @@ if(is_null($_SESSION['StudentID'])){
                     <div class="col-md-6">
                         <h2>Privacy Settings</h2>
                     </div>
-                    <div class="col-md-6">
-                        <ul class="breadcrumbs">
-                            <li><a href="#">Home</a></li>
-                            <li>Privacy Settings</li>
-                        </ul>
-                    </div>
                 </div>
             </div>
         </div>

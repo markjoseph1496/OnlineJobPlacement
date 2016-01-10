@@ -123,7 +123,9 @@ $StudentID = $_SESSION['StudentID'];
                         <i class="fa fa-bars"></i>
                     </button>
                     <!-- End Toggle Nav Link For Mobiles -->
-                    <a class="navbar-brand" href="">Online JPMS</a>
+                    <a class="navbar-brand" href="">
+                        <img src="../../images/ojpms.png">
+                    </a>
                 </div>
                 <div class="navbar-collapse collapse">
                     <!-- Sign-out -->
@@ -222,12 +224,6 @@ $StudentID = $_SESSION['StudentID'];
             <div class="row">
                 <div class="col-md-6">
                     <h2>Work</h2>
-                </div>
-                <div class="col-md-6">
-                    <ul class="breadcrumbs">
-                        <li><a href="#">Home</a></li>
-                        <li>Work</li>
-                    </ul>
                 </div>
             </div>
         </div>

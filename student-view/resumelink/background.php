@@ -125,8 +125,8 @@ else{
                     <div class="row">
                         <div class="col-md-7">
                             <!-- Start Contact Info -->
-                            <ul class="contact-details">
-                                <li class="profile-name"><i class="fa fa-hashtag"></i><b> 008-2012-0805</b></li>
+                            <ul class="profile-name">
+                                <li><i class="fa fa-hashtag"></i><b> 008-2012-0805</b></li>
                             </ul>
                             <!-- End Contact Info -->
                         </div>
@@ -164,7 +164,9 @@ else{
                             <i class="fa fa-bars"></i>
                         </button>
                         <!-- End Toggle Nav Link For Mobiles -->
-                        <a class="navbar-brand" href="">Online JPMS</a>
+                        <a class="navbar-brand" href="">
+                            <img src="../../images/ojpms.png">
+                        </a>
                     </div>
                     <div class="navbar-collapse collapse">
                     <!-- Sign-out -->
@@ -263,12 +265,6 @@ else{
                 <div class="row">
                     <div class="col-md-6">
                         <h2>Background</h2>
-                    </div>
-                    <div class="col-md-6">
-                        <ul class="breadcrumbs">
-                            <li><a href="#">Home</a></li>
-                            <li>Background</li>
-                        </ul>
                     </div>
                 </div>
             </div>

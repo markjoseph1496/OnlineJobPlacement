@@ -1,12 +1,11 @@
 <!DOCTYPE html>
 <?php
-session_start();
 include('../../connection.php');
+session_start();
 
-if(isset($_SESSION['StudentID'])){
+if (isset($_SESSION['StudentID'])) {
     $StudentID = $_SESSION['StudentID'];
-}
-else{
+} else {
     $StudentID = '';
     echo "
         <script type='text/javascript'>
@@ -14,8 +13,14 @@ else{
         </script>
         ";
 }
-?>
 
+$CertificationID = 'CertificationID';
+$Certification = 'Certification';
+$YearTaken = 'YearTaken';
+
+$qry = "SELECT * FROM certificationtbl WHERE StudentID ='$StudentID'";
+$result = mysql_query($qry);
+?>
 <html lang="en">
 
 <head>
@@ -33,8 +38,18 @@ else{
     <meta name="description" content="Margo - Responsive HTML5 Template">
     <meta name="author" content="iThemesLab">
 
-    <!-- Bootstrap CSS  -->
-    <link rel="stylesheet" href="../../css/bootstrap.min.css" type="text/css" media="screen">
+    <!-- Bootstrap CSS -->
+    <link href="../../css/bootstrap.min.css" rel="stylesheet"/>
+
+    <!-- BootstrapValidator CSS -->
+    <link href="../../css/bootstrapValidator.min.css" rel="stylesheet"/>
+
+    <!-- jQuery and Bootstrap JS -->
+    <script type="text/javascript" src="../../js/jquery.min.js"></script>
+    <script type="text/javascript" src="../../js/bootstrap.min.js"></script>
+
+    <!-- BootstrapValidator -->
+    <script src="../../js/bootstrapValidator.min.js" type="text/javascript"></script>
 
     <!-- Font Awesome CSS -->
     <link rel="stylesheet" href="../../css/font-awesome.min.css" type="text/css" media="screen">
@@ -48,7 +63,7 @@ else{
     <!-- Slicknav -->
     <link rel="stylesheet" type="text/css" href="../../css/slicknav.css" media="screen">
 
-    <!-- CSS Styles  -->
+    <!-- Margo CSS Styles  -->
     <link rel="stylesheet" type="text/css" href="../../css/style.css" media="screen">
 
     <!-- Responsive CSS Styles  -->
@@ -57,50 +72,42 @@ else{
     <!-- Css3 Transitions Styles  -->
     <link rel="stylesheet" type="text/css" href="../../css/animate.css" media="screen">
 
+    <!-- Important! -->
+    <link rel="stylesheet" type="text/css" href="../../css/about-style.css" media="screen">
+
     <!-- Color CSS Styles  -->
-    <link rel="stylesheet" type="text/css" href="../../css/colors/yellow.css" title="yellow" media="screen" />
+    <link rel="stylesheet" type="text/css" href="../../css/colors/yellow.css" title="yellow" media="screen"/>
 
     <!-- JS  -->
-    <script type="text/javascript" src="../../js/jquery.min.js"></script>
-    <script type="text/javascript" src="../../js/modernizrr.js"></script>
-    <script type="text/javascript" src="../../js/jquery.appear.js"></script>
-    <script type="text/javascript" src="../../js/count-to.js"></script>
-    <script type="text/javascript" src="../../js/jquery.nicescroll.min.js"></script>
-    <script type="text/javascript" src="../../js/jquery.slicknav.js"></script>
-
     <script type="text/javascript" src="../../js/jquery.migrate.js"></script>
-    <script type="text/javascript" src="../../js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../../js/modernizrr.js"></script>
     <script type="text/javascript" src="../../js/jquery.fitvids.js"></script>
     <script type="text/javascript" src="../../js/owl.carousel.min.js"></script>
     <script type="text/javascript" src="../../js/nivo-lightbox.min.js"></script>
-    <script type="text/javascript" src="../../js/jquery.textillate.js"></script>
-
-    <script type="text/javascript" src="../../js/nivo-lightbox.min.js"></script>
     <script type="text/javascript" src="../../js/jquery.isotope.min.js"></script>
+    <script type="text/javascript" src="../../js/jquery.appear.js"></script>
+    <script type="text/javascript" src="../../js/count-to.js"></script>
     <script type="text/javascript" src="../../js/jquery.textillate.js"></script>
     <script type="text/javascript" src="../../js/jquery.lettering.js"></script>
     <script type="text/javascript" src="../../js/jquery.easypiechart.min.js"></script>
+    <script type="text/javascript" src="../../js/jquery.nicescroll.min.js"></script>
     <script type="text/javascript" src="../../js/jquery.parallax.js"></script>
-    <script type="text/javascript" src="../../js/mediaelement-and-player.js"></script>
+    <script type="text/javascript" src="../../js/jquery.slicknav.js"></script>
 </head>
 
 <body>
+    <div id="container">
         <!-- Start Header Section -->
         <div class="hidden-header"></div>
         <header class="clearfix">
-        <!-- Start Top Bar -->
+            <!-- Start Top Bar -->
             <div class="top-bar">
                 <div class="container">
                     <div class="row">
                         <div class="col-md-7">
-                            <!-- Start Contact Info 
-                            <ul class="contact-details">
-                                <li><a href="#"><i class="fa fa-map-marker"></i> House-54/A, London, UK</a>
-                                </li>
-                                <li><a href="#"><i class="fa fa-envelope-o"></i> info@yourcompany.com</a>
-                                </li>
-                                <li><a href="#"><i class="fa fa-phone"></i> +12 345 678 000</a>
-                                </li>
+                            <!-- Start Contact Info -->
+                            <ul class="profile-name">
+                                <li><i class="fa fa-hashtag"></i><b> 008-2012-0805</b></li>
                             </ul>
                             <!-- End Contact Info -->
                         </div>
@@ -108,8 +115,14 @@ else{
                         <div class="col-md-5">
                         <!-- Start Social Links -->
                             <ul class="social-list">
-                               <li class="profile-name">
-                                    <i class="fa fa-user"></i> Hello, <b>Aira Jane Cruz</b>
+                                <li class="profile-name">
+                                    <a class="bell itl-tooltip" data-placement="bottom" title="" href="#" data-original-title="Notification"><i class="fa fa-bell"></i></a>
+                                </li>
+                                <li class="profile-name">
+                                    &nbsp;
+                                </li>
+                                <li class="profile-name">
+                                    <i class="fa fa-user"></i> Hello, <b>Aira Jane Cruz</b>                               
                                 </li>
                             </ul>
                             <!-- End Social Links -->
@@ -127,19 +140,21 @@ else{
             <div class="navbar navbar-default navbar-top">
                 <div class="container">
                     <div class="navbar-header">
-                    <!-- Stat Toggle Nav Link For Mobiles -->
+                        <!-- Stat Toggle Nav Link For Mobiles -->
                         <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
                             <i class="fa fa-bars"></i>
                         </button>
                         <!-- End Toggle Nav Link For Mobiles -->
-                        <a class="navbar-brand" href="">Online JPMS</a>
+                        <a class="navbar-brand" href="">
+                            <img src="../../images/ojpms.png">
+                        </a>
                     </div>
                     <div class="navbar-collapse collapse">
-                    <!-- Sign-out -->
+                        <!-- Sign-out -->
                         <div class="signout-side">
-                               <a class="show-signout"><i class="fa fa-sign-out"></i></a>
+                            <a class="show-signout"><i class="fa fa-sign-out"></i></a>
                         </div>
-                     <!-- End Sign-out -->
+                        <!-- End Sign-out -->
                         <!-- Start Navigation List -->
                         <ul class="nav navbar-nav navbar-right">
                             <li>
@@ -151,19 +166,20 @@ else{
                                     <li><a href="../myinfo/education.php">Education</a></li>
                                     <li><a href="../myinfo/certifications.php">Certifications</a></li>
                                     <li><a href="../myinfo/achievements.php">Achievements</a></li>
-                                    <li><a href="../myinfo/specialization-and-languages.php">Specialization & Languages</a></li>
+                                    <li><a href="../myinfo/specialization-and-languages.php">Specialization & Languages</a>
+                                    </li>
                                     <li><a href="../myinfo/references.php">References</a></li>
                                     <li><a href="../myinfo/portfolio.php">Portfolio</a></li>
                                 </ul>
                             </li>
                             <li>
-                                <a href="../resumelink/resume-link.php">Resume Link</a>
+                                <a class="active" href="resume-link.php">Resume Link</a>
                                 <ul class="dropdown">
-                                    <li><a href="../resumelink/resume-link.php">Resume Link</a></li>
-                                    <li><a href="../resumelink/background.php">Background</a></li>
-                                    <li><a href="../resumelink/print-share.php">Print/Share</a></li>
+                                    <li><a href="resume-link.php">Resume Link</a></li>
+                                    <li><a href="background.php">Background</a></li>
+                                    <li><a class="active" href="print-share.php">Print/Share</a></li>
                                 </ul>
-                             </li>
+                            </li>
                             <li>
                                 <a href="../applications/applications.php">Applications</a>
                             </li>
@@ -171,10 +187,10 @@ else{
                                 <a href="../search-job/jobs.php">Jobs</a>
                             </li>
                             <li>
-                                <a class="active" href="privacy-settings.php">Settings</a>
+                                <a href="../settings/privacy-settings.php">Settings</a>
                                 <ul class="dropdown">
-                                    <li><a href="privacy-settings.php">Privacy Settings</a></li>
-                                    <li><a class="active" href="pass-settings.php">Password Settings</a></li>
+                                    <li><a href="../settings/privacy-settings.php">Privacy Settings</a></li>
+                                    <li><a href="../settings/pass-settings.php">Password Settings</a></li>
                                 </ul>
                             </li>
                         </ul>
@@ -198,11 +214,11 @@ else{
                         </ul>
                     </li>
                     <li>
-                        <a href="../resumelink/resume-link.php">Resume Link</a>
+                        <a class="active" href="resume-link.php">Resume Link</a>
                         <ul class="dropdown">
-                            <li><a href="../resumelink/resume-link.php">Resume Link</a></li>
-                            <li><a href="../resumelink/background.php">Background</a></li>
-                            <li><a href="../resumelink/print-share.php">Print/Share</a></li>
+                            <li><a href="resume-link.php">Resume Link</a></li>
+                            <li><a href="background.php">Background</a></li>
+                            <li><a class="active" href="print-share.php">Print/Share</a></li>
                         </ul>
                     </li>
                     <li>
@@ -212,14 +228,11 @@ else{
                         <a href="../search-job/jobs.php">Jobs</a>
                     </li>
                     <li>
-                        <a class="active" href="privacy-settings.php">Settings</a>
+                        <a href="../settings/privacy-settings.php">Settings</a>
                         <ul class="dropdown">
-                            <li><a href="privacy-settings.php">Privacy Settings</a></li>
-                            <li><a class="active" href="pass-settings.php">Password Settings</a></li>
+                            <li><a href="../settings/privacy-settings.php">Privacy Settings</a></li>
+                            <li><a href="../settings/pass-settings.php">Password Settings</a></li>
                         </ul>
-                    </li>
-                    <li>
-                        <a href="../../login-student.php?id=1"><i class="fa fa-sign-out"></i> Sign Out</a>
                     </li>
                 </ul>
                 <!-- Mobile Menu End -->
@@ -230,7 +243,7 @@ else{
             <div class="container">
                 <div class="row">
                     <div class="col-md-6">
-                        <h2>Change Password</h2>
+                        <h2>Print/Share</h2>
                     </div>
                 </div>
             </div>
@@ -240,88 +253,41 @@ else{
         <!-- Start Content -->
         <div id="content">
             <div class="container">
-                <!-- Page Content -->
-                <div class="col-md-12 page-content">
-                    <div class="row">
-                        <div class="classic-testimonials">
-                            <div class="row">
-                                <div class="col-md-6">
-                                    <div class="form-group">
-                                        <label>Current Password <span>(*)</span></label>
-                                        <input type="password" class="form-control" id="txtCurrentPassword" name="txtCurrentPassword">
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-md-6 col-sm-6">
-                                    <div class="form-group">
-                                        <label>New Password <span>(*)</span></label>
-                                        <input type="password" class="form-control" id="txtNewPassword" name="txtNewPassword">
-                                    </div>
-                                </div>
-                                <div class="col-md-6 col-sm-6">
-                                    <div class="form-group">
-                                        <label>Confirm New Password <span>(*)</span></label>
-                                        <input type="password" class="form-control" id="txtConfPassword" name="txtConfPassword">
-                                    </div>
-                                </div>
+                <div class="row sidebar-page">
+                    <!-- Page Content -->
+                    <div class="col-md-12 page-content">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <p><b>Resumé Link URL:</b><a href="../../../resumelinkprofile.php" target="_blank">
+                                http://markjoseph1496.ojpms.com <i class="fa fa-external-link-square"></i></a>
+                                </p><br>
                             </div>
                         </div>
+                        
+                        <div class="row">
+                            <div class="col-md-6">
+                                <label>Download PDF <i class="fa fa-chevron-right"></i> Print</label>
+                            </div>
+                        </div>
+                        <div class "row">
+                            <div class="print">
+                                <div class="column">
+                                    <div class="overlay">
+                                        <p>Your Resume</p>
+                                        <button href="#" class="btn-system btn-mini border-btn"><i class="fa fa-file-text"></i> Download PDF</button>
+                                    </div>
+                                    <img src="../../img/one-column.jpg">
+                                </div>
+                            </div>  
+                        </div>
                     </div>
-                    <div class="hr5" style="margin-top:35px;margin-bottom:40px;"></div>
-                    <button type="submit" class="btn-system btn-large" style="float:right;" name="btnChangePass">Change Password</button>
+                    <!-- End Page Content -->
                 </div>
-                <!-- End Page Content -->
+                <div class="hr3" style="margin-top:35px;margin-bottom:40px;"></div>
             </div>
         </div>
     </div>
     <!-- End Content -->
     <script type="text/javascript" src="../../js/script.js"></script>
 </body>
-
-<?php
-
-if(isset($_POST['btnChangePass'])){
-
-$x = $_SESSION['StudentID'];
-
-$qry = "SELECT * FROM studentinfotbl WHERE StudentID ='$x'";
-$result = mysql_query($qry);
-        while($qry = mysql_fetch_Array($result))
-        {       
-                $Password = $qry['Password'];
-        }
-
-$oldpassword = $_POST['txtCurrentPassword']; 
-$newpassword = $_POST['txtNewPassword']; 
-$confirmpass = $_POST['txtConfPassword']; 
-
-        if($oldpassword <> $Password){
-            echo "
-            <script type='text/javascript'>
-            alert('Incorrect Password. Please try again.');
-            </script>
-            ";
-        }
-        else {
-            if ($newpassword <> $confirmpass) {
-                echo "
-                <script type='text/javascript'>
-                alert('Password mismatch. Please try again.');
-                </script>
-                ";
-            }
-            else{
-                $query = "UPDATE studentinfotbl SET Password = '$newpassword' WHERE StudentID = '$x'";
-                $Result = mysql_query($query);
-                echo "
-                <script type='text/javascript'>
-                location.href='./settings.php';
-                alert('Password Changed!');
-                </script>
-                ";
-            }
-        }
-}
-?>
 </html>

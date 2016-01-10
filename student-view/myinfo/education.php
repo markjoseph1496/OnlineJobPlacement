@@ -240,12 +240,6 @@ if (isset($_SESSION['StudentID'])) {
                 <div class="col-md-6">
                     <h2>Education</h2>
                 </div>
-                <div class="col-md-6">
-                    <ul class="breadcrumbs">
-                        <li><a href="../myinfo/certifications.php">Certifications</a></li>
-                        <li>Education</li>
-                    </ul>
-                </div>
             </div>
         </div>
     </div>

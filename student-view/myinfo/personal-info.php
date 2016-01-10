@@ -257,12 +257,6 @@ $StudentID = $_SESSION['StudentID'];
                     <div class="col-md-6">
                         <h2>Personal Information</h2>
                     </div>
-                    <div class="col-md-6">
-                        <ul class="breadcrumbs">
-                            <li><a href="../myinfo/contacts-info.php">Contacts Info</a></li>
-                            <li>Personal Information</li>
-                        </ul>
-                    </div>
                 </div>
             </div>
         </div>

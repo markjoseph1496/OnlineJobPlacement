@@ -236,12 +236,6 @@ else{
                     <div class="col-md-6">
                         <h2>Specialization & Languages</h2>
                     </div>
-                    <div class="col-md-6">
-                        <ul class="breadcrumbs">
-                            <li><a href="#">Home</a></li>
-                            <li>Specialization & Languages</li>
-                        </ul>
-                    </div>
                 </div>
             </div>
         </div>
