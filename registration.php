@@ -95,9 +95,6 @@
         <!-- Start Content -->
         <div id="content">
             <div class="container">
-                <div class="col-md-6">
-                        <span>(*) - </span><em> Required Fields</em>
-                    </div>
                 <div class="big-title text-center">
                     <h1><strong>Registration</strong></h1>
                 </div>
@@ -311,6 +308,8 @@
                             </select>
                         </div>
                     </div>
+                    <br><br>
+                    <label style="float:right;"><span>(*)</span> <em> - Required Fields</em></label>
                 </div>
                 <div class="hr5" style="margin-top:40px;margin-bottom:40px;"></div>
                 <div class"row">
