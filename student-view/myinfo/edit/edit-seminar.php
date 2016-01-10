@@ -261,8 +261,7 @@ $seminar_tbl =
                     </div>
                     <div class="col-md-6">
                         <ul class="breadcrumbs">
-                            <li><a href="#">Home</a></li>
-                            <li>Seminar</li>
+                            <li>Edit Seminar</li>
                         </ul>
                     </div>
                 </div>

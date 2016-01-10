@@ -252,8 +252,7 @@ $reference_tbl =
                     </div>
                     <div class="col-md-6">
                         <ul class="breadcrumbs">
-                            <li><a href="#">Home</a></li>
-                            <li>References</li>
+                            <li>Edit References</li>
                         </ul>
                     </div>
                 </div>

@@ -264,8 +264,7 @@ $school_tbl =
                     </div>
                     <div class="col-md-6">
                         <ul class="breadcrumbs">
-                            <li><a href="#">Home</a></li>
-                            <li>School</li>
+                            <li>Edit School</li>
                         </ul>
                     </div>
                 </div>

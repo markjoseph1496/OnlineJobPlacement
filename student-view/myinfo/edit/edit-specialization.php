@@ -244,8 +244,7 @@ $specialization_tbl =
                     </div>
                     <div class="col-md-6">
                         <ul class="breadcrumbs">
-                            <li><a href="#">Home</a></li>
-                            <li>Specialization</li>
+                            <li>Edit Specialization</li>
                         </ul>
                     </div>
                 </div>
