@@ -22,6 +22,12 @@
     <!-- Font Awesome CSS -->
     <link rel="stylesheet" href="css/font-awesome.min.css" type="text/css" media="screen">
 
+    <!-- Fonts -->
+    <link href="fonts/ffonts/montserrat.css" rel="stylesheet" type="text/css">
+    <link href="fonts/ffonts/kaushan.css" rel="stylesheet" type="text/css">
+    <link href="fonts/ffonts/droid.css" rel="stylesheet" type="text/css">
+    <link href="fonts/ffonts/roboto.css" rel="stylesheet" type="text/css">
+
     <!-- Slicknav -->
     <link rel="stylesheet" type="text/css" href="css/slicknav.css" media="screen">
 
@@ -118,7 +124,7 @@
                 <!-- Carousel inner -->
                 <div class="carousel-inner">
                     <div class="item active">
-                        <img class="img-responsive" src="images/slider/bg1.jpg" alt="slider">
+                        <img class="img-responsive" src="img/slider/1.jpg" alt="slider">
                         <div class="slider-content">
                             <div class="col-md-12 text-center">
                                 <h2 class="animated2">
@@ -133,7 +139,7 @@
                     </div>
                     <!--/ Carousel item end -->
                     <div class="item">
-                        <img class="img-responsive" src="images/slider/bg2.jpg" alt="slider">
+                        <img class="img-responsive" src="img/slider/2.jpg" alt="slider">
                         <div class="slider-content">
                             <div class="col-md-12 text-center">
                                 <h2 class="animated4">
@@ -148,7 +154,7 @@
                     </div>
                     <!--/ Carousel item end -->
                     <div class="item">
-                        <img class="img-responsive" src="images/slider/bg3.jpg" alt="slider">
+                        <img class="img-responsive" src="img/slider/3.jpg" alt="slider">
                         <div class="slider-content">
                             <div class="col-md-12 text-center">
                                 <h2 class="animated7 white">
@@ -192,7 +198,7 @@
 		                   <p class="title-desc"></p>
 		                </div>
 
-                        <div class="col-md-8">
+                        <div class="col-md-9">
                             <!-- Nav Tabs -->
                             <ul class="nav nav-tabs">
                                 <li class="active"><a href="#tab1" data-toggle="tab" aria-expanded="true"><i class="icon-award-1"></i>Industry</a></li>
@@ -207,7 +213,7 @@
                                     <div class="row">
                                         <div class="col-md-6">
                                             <ul class="icons-list">
-                                                <li style="color:#fff;"><a href="">BPO / Call Center</a></li>
+                                                <li><a href="">BPO / Call Center</a></li>
                                                 <li><a href="">Food / Beverage / RestaurantService</a></li>
                                                 <li><a href="">Customer Service</a></li>
                                                 <li><a href="">Clerical / Administrative Support</a></li>
@@ -284,14 +290,34 @@
                             </div>
                         </div>
 
-                        <div class="col-md-4">
-                        	<div class="call-action call-action-boxed call-action-style2 clearfix" style="background-color:#3756A0;">
-					            <h4><span class="accent-color">Latest Jobs</span></h4>
-					            <div style="float:right;">
-					            	<a href="">Refresh</a> |
-					            	<a href="">View More</a>
-					            </div>
-					        </div>
+                        <div class="col-md-3 pricing-tables">
+                            <div class="pricing-table highlight-plan">
+                                <div class="plan-name">
+                                    <h3>Latest Jobs</h3>
+                                </div>
+                                <div class="plan-price">
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <a href="#" class="btn-system btn-mini border-btn btn-gray">Refresh</a>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <a href="#" class="btn-system btn-mini border-btn">View More</a>                       
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="plan-list">
+                                    <ul>
+                                        <li><strong><a href="">ONLINE English Educator (Part-time Home-based)</a></strong><div class="interval">Posted By: 51Talk</div></li>
+                                        <li><strong><a href="">ONLINE English Educator (Part-time Home-based)</a></strong><div class="interval">Posted By: 51Talk</div></li>
+                                        <li><strong><a href="">ONLINE English Educator (Part-time Home-based)</a></strong><div class="interval">Posted By: 51Talk</div></li>
+                                        <li><strong><a href="">ONLINE English Educator (Part-time Home-based)</a></strong><div class="interval">Posted By: 51Talk</div></li>
+                                        <li><strong><a href="">ONLINE English Educator (Part-time Home-based)</a></strong><div class="interval">Posted By: 51Talk</div></li>
+                                    </ul>
+                                </div>
+                                <div class="plan-signup">
+                                    &nbsp;
+                                </div>
+                            </div>
                         </div>
                     </div>
                     <!-- .row -->
@@ -301,10 +327,10 @@
 
             
             <!-- Start Recent Projects Carousel -->
-            <div id="events" class="section" style="background-color:#FCC824;">
+            <div id="events" class="section" style="background-color:#4C5462;">
                 <div class="container">
                     <div class="recent-projects">
-                        <h4 class="title"><span>Events</span></h4>
+                        <h4 class="title wite-text">Events</h4>
                         <div class="projects-carousel touch-carousel">
 
                             <div class="portfolio-item item">
@@ -533,7 +559,7 @@
                         <div class="col-md-8">
                             <!-- Start Recent Posts Carousel -->
                             <div class="latest-posts">
-                                <h4 class="classic-title"><span>Latest News</span></h4>
+                                <h4 class="classic-title wite-text"><strong>Latest News</strong></h4>
                                 <div class="latest-posts-classic custom-carousel touch-carousel" data-appeared-items="2">
 
                                     <!-- Posts 1 -->
@@ -638,7 +664,7 @@
 
                         <div class="col-md-4">
                             <!-- Classic Heading -->
-                            <h4 class="classic-title"><span><strong>Shoutouts</strong></span></h4>
+                            <h4 class="classic-title wite-text"><strong>Shoutouts</strong></h4>
 
                             <!-- Start Testimonials Carousel -->
                             <div class="custom-carousel show-one-slide touch-carousel" data-appeared-items="1">
@@ -684,8 +710,10 @@
                 <div class="container">
                     <div class="row">
                         <div class="col-lg-12 text-center">
-                            <h2 class="section-heading">About E2E</h2>
-                            <h3 class="section-subheading text-muted">The Humble Beginnings</h3>
+                            <div class="big-title text-center animated fadeInDown delay-01" data-animation="fadeInDown" data-animation-delay="01">
+                                <h1>About E2E</h1>
+                                <p class="title-desc">The Humble Beginnings</p>
+                            </div>
                         </div>
                     </div>
                     <div class="row">
@@ -701,8 +729,9 @@
                                             <h4 class="subheading">A Great Help is Born</h4>
                                         </div>
                                         <div class="timeline-body">
-                                            <p class="text-muted">STI conceived the first and only Enrollment to
-                                                Employment or E2E System.</p>
+                                            <p>STI conceived the first and only Enrollment to
+                                                Employment or E2E System.
+                                            </p>
                                         </div>
                                     </div>
                                 </li>
@@ -716,10 +745,11 @@
                                             <h4 class="subheading">An Agency is Born</h4>
                                         </div>
                                         <div class="timeline-body">
-                                            <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing
+                                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing
                                                 elit. Sunt ut voluptatum eius sapiente, totam reiciendis temporibus qui
                                                 quibusdam, recusandae sit vero unde, sed, incidunt et ea quo dolore
-                                                laudantium consectetur!</p>
+                                                laudantium consectetur!
+                                            </p>
                                         </div>
                                     </div>
                                 </li>
@@ -733,10 +763,11 @@
                                             <h4 class="subheading">Transition to Full Service</h4>
                                         </div>
                                         <div class="timeline-body">
-                                            <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing
+                                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing
                                                 elit. Sunt ut voluptatum eius sapiente, totam reiciendis temporibus qui
                                                 quibusdam, recusandae sit vero unde, sed, incidunt et ea quo dolore
-                                                laudantium consectetur!</p>
+                                                laudantium consectetur!
+                                            </p>
                                         </div>
                                     </div>
                                 </li>
@@ -750,10 +781,11 @@
                                             <h4 class="subheading">Phase Two Expansion</h4>
                                         </div>
                                         <div class="timeline-body">
-                                            <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing
+                                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing
                                                 elit. Sunt ut voluptatum eius sapiente, totam reiciendis temporibus qui
                                                 quibusdam, recusandae sit vero unde, sed, incidunt et ea quo dolore
-                                                laudantium consectetur!</p>
+                                                laudantium consectetur!
+                                            </p>
                                         </div>
                                     </div>
                                 </li>
@@ -761,7 +793,8 @@
                                     <div class="timeline-image">
                                         <h4>Be Part
                                             <br>Of The
-                                            <br>History!</h4>
+                                            <br>History!
+                                        </h4>
                                     </div>
                                 </li>
                             </ul>
@@ -778,19 +811,19 @@
                             <div class="container">
                                 <div class="row">
                                     <div class="big-title text-center animated fadeInDown delay-01" data-animation="fadeInDown" data-animation-delay="01">
-                                        <h1>Be Part of Us</h1>
+                                        <h1 class="wite-text">Be Part of Us</h1>
                                     </div>
-                                    <p class="text-center">Choose between <b>Student</b> and <b>Company</b>.</p>
+                                    <p class="text-center wite-text">Choose between <b>Student</b> and <b>Company</b>.</p>
                                         
                                     <!-- Start Service Icon 1 -->
                                     <div class="col-md-4 col-sm-6 service-box service-center">
                                         <div class="service-boxed">
                                             <div class="service-icon" style="margin-top:-25px;">
-                                                <a href="login-student.php"><i class="fa fa-users icon-medium-effect icon-effect-2"></i></a>
+                                                <a href="login-student.php"><i class="fa fa-users icon-medium-effect icon-effect-1"></i></a>
                                             </div>
                                             <div class="service-content">
-                                                <h4>Student</h4>
-                                                <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Lorem Ipsum is simply dummy text of the printing.</p>
+                                                <h4 class="wite-text">Student</h4>
+                                                <p class="accent-color">This section is exclusively made for STI Caloocan's current and former students.</p>
                                             </div>
                                         </div>
                                     </div>
@@ -803,8 +836,8 @@
                                                 <a href="login-admin.php"><i class="fa fa-user icon-medium-effect icon-effect-2"></i></a>
                                             </div>
                                             <div class="service-content">
-                                                <h4>Admin</h4>
-                                                <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Lorem Ipsum is simply dummy text of the printing.</p>
+                                                <h4 class="wite-text">Admin</h4>
+                                                <p class="accent-color"></p>
                                             </div>
                                         </div>
                                     </div>
@@ -814,11 +847,11 @@
                                     <div class="col-md-4 col-sm-6 service-box service-center">
                                         <div class="service-boxed">
                                             <div class="service-icon" style="margin-top:-25px;">
-                                                <a href="login-company.php"><i class="fa fa-building icon-medium-effect icon-effect-2"></i></a>
+                                                <a href="login-company.php"><i class="fa fa-building icon-medium-effect icon-effect-1"></i></a>
                                             </div>
                                             <div class="service-content">
-                                                <h4>Company</h4>
-                                                <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Lorem Ipsum is simply dummy text of the printing.</p>
+                                                <h4 class="wite-text">Company</h4>
+                                                <p class="accent-color"></p>
                                             </div>
                                         </div>
                                     </div>
@@ -848,42 +881,42 @@
 
                         <!-- Client 1 -->
                         <div class="client-item item">
-                          <a href="#"><img src="images/c1.png" alt="" /></a>
+                          <a href="#"><img src="img/partner-company/ihop.png" alt="" /></a>
                         </div>
 
                         <!-- Client 2 -->
                         <div class="client-item item">
-                          <a href="#"><img src="images/c2.png" alt="" /></a>
+                          <a href="#"><img src="img/partner-company/suysing.png" alt="" /></a>
                         </div>
 
                         <!-- Client 3 -->
                         <div class="client-item item">
-                          <a href="#"><img src="images/c3.png" alt="" /></a>
+                          <a href="#"><img src="img/partner-company/pf-chang.png" alt="" /></a>
                         </div>
 
                         <!-- Client 4 -->
                         <div class="client-item item">
-                          <a href="#"><img src="images/c4.png" alt="" /></a>
+                          <a href="#"><img src="img/partner-company/sykes.jpg" alt="" /></a>
                         </div>
 
                         <!-- Client 5 -->
                         <div class="client-item item">
-                          <a href="#"><img src="images/c5.png" alt="" /></a>
+                          <a href="#"><img src="img/partner-company/teletech.jpg" alt="" /></a>
                         </div>
 
                         <!-- Client 6 -->
                         <div class="client-item item">
-                          <a href="#"><img src="images/c6.png" alt="" /></a>
+                          <a href="#"><img src="img/partner-company/redfox.jpg" alt="" /></a>
                         </div>
 
                         <!-- Client 7 -->
                         <div class="client-item item">
-                          <a href="#"><img src="images/c7.png" alt="" /></a>
+                          <a href="#"><img src="img/partner-company/californiapizza.png" alt="" /></a>
                         </div>
 
                         <!-- Client 8 -->
                         <div class="client-item item">
-                          <a href="#"><img src="images/c8.png" alt="" /></a>
+                          <a href="#"><img src="img/partner-company/enoz.jpg" alt="" /></a>
                         </div>
                     </div>
                 </div>
@@ -919,7 +952,7 @@
                     <div class="col-md-3">
                         <div class="footer-widget twitter-widget">
                             <h4>Contact Us<span class="head-line"></span></h4>
-                            <b>Tel. no. (+632) 294-4001</b>
+                            <b>Tel. no. (+632) 294-4001 / 361-6070</b>
                             <label>109 Samson Road corner Caimito Street, Caloocan City 1400</label>
                         </div>
                     </div>
