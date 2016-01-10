@@ -31,8 +31,18 @@ if (isset($_SESSION['StudentID'])) {
     <meta name="description" content="Margo - Responsive HTML5 Template">
     <meta name="author" content="iThemesLab">
 
-    <!-- Bootstrap CSS  -->
-    <link rel="stylesheet" href="../../css/bootstrap.min.css" type="text/css" media="screen">
+    <!-- Bootstrap CSS -->
+    <link href="../../css/bootstrap.min.css" rel="stylesheet"/>
+
+    <!-- BootstrapValidator CSS -->
+    <link href="../../css/bootstrapValidator.min.css" rel="stylesheet"/>
+
+    <!-- jQuery and Bootstrap JS -->
+    <script type="text/javascript" src="../../js/jquery.min.js"></script>
+    <script src="../../js/bootstrap.min.js" type="text/javascript"></script>
+
+    <!-- BootstrapValidator -->
+    <script src="../../js/bootstrapValidator.min.js" type="text/javascript"></script>
 
     <!-- Font Awesome CSS -->
     <link rel="stylesheet" href="../../css/font-awesome.min.css" type="text/css" media="screen">
@@ -46,7 +56,7 @@ if (isset($_SESSION['StudentID'])) {
     <!-- Slicknav -->
     <link rel="stylesheet" type="text/css" href="../../css/slicknav.css" media="screen">
 
-    <!-- CSS Styles  -->
+    <!-- Margo CSS Styles  -->
     <link rel="stylesheet" type="text/css" href="../../css/style.css" media="screen">
 
     <!-- Responsive CSS Styles  -->
@@ -55,31 +65,27 @@ if (isset($_SESSION['StudentID'])) {
     <!-- Css3 Transitions Styles  -->
     <link rel="stylesheet" type="text/css" href="../../css/animate.css" media="screen">
 
+    <!-- OJPMS CSS  -->
+    <link rel="stylesheet" type="text/css" href="../../css/ojpms-style.css" media="screen">
+
     <!-- Color CSS Styles  -->
     <link rel="stylesheet" type="text/css" href="../../css/colors/yellow.css" title="yellow" media="screen"/>
 
     <!-- JS  -->
-    <script type="text/javascript" src="../../js/jquery.min.js"></script>
-    <script type="text/javascript" src="../../js/modernizrr.js"></script>
-    <script type="text/javascript" src="../../js/jquery.appear.js"></script>
-    <script type="text/javascript" src="../../js/count-to.js"></script>
-    <script type="text/javascript" src="../../js/jquery.nicescroll.min.js"></script>
-    <script type="text/javascript" src="../../js/jquery.slicknav.js"></script>
-
     <script type="text/javascript" src="../../js/jquery.migrate.js"></script>
-    <script type="text/javascript" src="../../js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../../js/modernizrr.js"></script>
     <script type="text/javascript" src="../../js/jquery.fitvids.js"></script>
     <script type="text/javascript" src="../../js/owl.carousel.min.js"></script>
     <script type="text/javascript" src="../../js/nivo-lightbox.min.js"></script>
-    <script type="text/javascript" src="../../js/jquery.textillate.js"></script>
-
-    <script type="text/javascript" src="../../js/nivo-lightbox.min.js"></script>
     <script type="text/javascript" src="../../js/jquery.isotope.min.js"></script>
+    <script type="text/javascript" src="../../js/jquery.appear.js"></script>
+    <script type="text/javascript" src="../../js/count-to.js"></script>
     <script type="text/javascript" src="../../js/jquery.textillate.js"></script>
     <script type="text/javascript" src="../../js/jquery.lettering.js"></script>
     <script type="text/javascript" src="../../js/jquery.easypiechart.min.js"></script>
+    <script type="text/javascript" src="../../js/jquery.nicescroll.min.js"></script>
     <script type="text/javascript" src="../../js/jquery.parallax.js"></script>
-    <script type="text/javascript" src="../../js/mediaelement-and-player.js"></script>
+    <script type="text/javascript" src="../../js/jquery.slicknav.js"></script>
 </head>
 
 <body>
@@ -93,8 +99,8 @@ if (isset($_SESSION['StudentID'])) {
                 <div class="row">
                     <div class="col-md-7">
                         <!-- Start Contact Info-->
-                        <ul class="contact-details">
-                            <li class="profile-name"><i class="fa fa-hashtag"></i><b> 008-2012-0805</b></li>
+                        <ul class="profile-name">
+                            <li><i class="fa fa-hashtag"></i><b> 008-2012-0805</b></li>
                         </ul>
                         <!-- End Contact Info -->
                     </div>

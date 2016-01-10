@@ -89,7 +89,7 @@ else{
     <link rel="stylesheet" type="text/css" href="../../css/colors/yellow.css" title="yellow" media="screen"/>
 
 
-    <!-- Margo JS  -->
+    <!-- JS  -->
 
     <script type="text/javascript" src="../../js/jquery.migrate.js"></script>
     <script type="text/javascript" src="../../js/modernizrr.js"></script>
@@ -120,17 +120,18 @@ else{
                     <div class="row">
                         <div class="col-md-7">
                             <!-- Start Contact Info -->
-                            <ul class="contact-details">
-                                <li class="profile-name"><i class="fa fa-hashtag"></i><b> 008-2012-0805</b></li>
+                            <ul class="profile-name">
+                                <li><i class="fa fa-hashtag"></i> <b>008-2012-0805</b></li>
                             </ul>
                             <!-- End Contact Info -->
                         </div>
                         <!-- .col-md-6 -->
                         <div class="col-md-5">
-                        <!-- Start Social Links -->
+                            <!-- Start Social Links -->
                             <ul class="social-list">
                                 <li class="profile-name">
-                                    <a class="bell itl-tooltip" data-placement="bottom" title="" href="#" data-original-title="Notification"><i class="fa fa-bell"></i></a>                            
+                                    <a class="bell itl-tooltip" data-placement="bottom" title="" href="#"
+                                       data-original-title="Notification"><i class="fa fa-bell"></i></a>
                                 </li>
                                 <li class="profile-name">
                                     &nbsp;

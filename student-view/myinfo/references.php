@@ -92,9 +92,9 @@ if (isset($_SESSION['StudentID'])) {
             <div class="container">
                 <div class="row">
                     <div class="col-md-7">
-                        <!-- Start Contact Info-->
-                        <ul class="contact-details">
-                            <li class="profile-name"><i class="fa fa-hashtag"></i><b> 008-2012-0805</b></li>
+                        <!-- Start Contact Info -->
+                        <ul class="profile-name">
+                            <li><i class="fa fa-hashtag"></i> <b>008-2012-0805</b></li>
                         </ul>
                         <!-- End Contact Info -->
                     </div>
@@ -103,7 +103,8 @@ if (isset($_SESSION['StudentID'])) {
                         <!-- Start Social Links -->
                         <ul class="social-list">
                             <li class="profile-name">
-                                <a class="bell itl-tooltip" data-placement="bottom" title="" href="#" data-original-title="Notification"><i class="fa fa-bell"></i></a>                            
+                                <a class="bell itl-tooltip" data-placement="bottom" title="" href="#"
+                                   data-original-title="Notification"><i class="fa fa-bell"></i></a>
                             </li>
                             <li class="profile-name">
                                 &nbsp;
