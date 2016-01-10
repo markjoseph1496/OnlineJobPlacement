@@ -164,7 +164,7 @@ if (isset($_SESSION['StudentID'])) {
             </div>
         </div>
     </div>
-    
+
     <div class="hr1" style="margin-bottom:5px;"></div>
     <div class="container">
         <div>
@@ -222,7 +222,6 @@ if (isset($_SESSION['StudentID'])) {
                 <div class="col-md-9 blog-box">
                     <h4 class="classic-title"><span>Jobs</span></h4>
                     <?php
-
                     $compposition_tbl =
                         GSecureSQL::query(
                             "SELECT * FROM comppositiontbl",
@@ -245,7 +244,7 @@ if (isset($_SESSION['StudentID'])) {
                             );
                         foreach ($company_tbl as $value1) {
                             $CompanyName = $value1[1];
-                            $Location = $value1[4];
+                            $Location = $value1[5];
 
                             $diff_from = date_diff(new DateTime(), new DateTime($PostingDateFrom));
                             $diff_to = date_diff(new DateTime(), new DateTime($PostingDateTo));
@@ -284,23 +283,24 @@ if (isset($_SESSION['StudentID'])) {
                                                     foreach ($requirements_tbl as $value2) {
                                                         $RID = $value2[0];
                                                         $Requirement = $value2[3];
-                                                        if($count < 3) {
+                                                        if ($count < 3) {
                                                             $count++;
                                                             ?>
-                                                            <li><i class='fa fa-check-circle'></i> <?php echo $Requirement; ?>
+                                                            <li>
+                                                                <i class='fa fa-check-circle'></i> <?php echo $Requirement; ?>
                                                             </li>
                                                             <?php
                                                         }
                                                     }
                                                     ?>
-
                                                 </ul>
                                                 <div class='hr1' style='margin-bottom:14px;'></div>
                                                 <ul class='post-meta'>
                                                     <li><?php echo $YearExperience; ?> year(s) experience</li>
                                                     <li><?php echo $Location; ?></li>
                                                 </ul>
-                                                <a class='main-button' target="_blank" href='view-details.php?id=<?php echo $PositionID; ?>'>View
+                                                <a class='main-button' target="_blank"
+                                                   href='view-details.php?id=<?php echo $PositionID; ?>'>View
                                                     Details <i class='fa fa-angle-right'></i></a>
                                             </div>
                                         </div>
