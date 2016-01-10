@@ -323,9 +323,9 @@ $StudentID = $_SESSION['StudentID'];
                     $DateFromYear = $value[7];
                     $DateToMonth = $value[8];
                     $DateToYear = $value[9];
-                    $PositionLevel = $value[10];
-                    $MonthlySalary = $value[11];
-                    $NatureOfWork = $value[12];
+                    $PositionLevel = $value[11];
+                    $MonthlySalary = $value[12];
+                    $NatureOfWork = $value[10];
                     $count++;
 
                     $specialization_tbl =
@@ -458,7 +458,6 @@ $StudentID = $_SESSION['StudentID'];
                     <?php
                 }
                 ?>
-
             </table>
         </div>
     </div>
