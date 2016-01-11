@@ -28,13 +28,14 @@ $CompanyID = $_SESSION['CompanyID'];
         $DateFrom = $_GET['DateFrom'];
         $DateTo = $_GET['DateTo'];
         $PLevel = $_GET['PLevel'];
+        $JobDesc = $_GET['JobDesc'];
         $Specialization = $_GET['Specialization'];
         $EType = $_GET['EType'];
         $AvPosition = $_GET['AvPosition'];
         $Salary = $_GET['Salary'];
         $YExperience = $_GET['YExperience'];
 
-        $query1 = ("INSERT INTO comppositiontbl (CompanyID,PostingDateFrom,PostingDateTo,PositionLevel,JSpecialization,EType,AvPosition,MonthlySalary,YExperience) VALUES ('$CompanyID','$DateFrom','$DateTo','$PLevel','$Specialization','$EType','$AvPosition','$Salary','$YExperience')");
+        $query1 = ("INSERT INTO comppositiontbl (CompanyID,PostingDateFrom,PostingDateTo,PositionLevel,JobDescription,JSpecialization,EType,AvPosition,MonthlySalary,YExperience) VALUES ('$CompanyID','$DateFrom','$DateTo','$PLevel','$JobDesc','$Specialization','$EType','$AvPosition','$Salary','$YExperience')");
         $result1 = mysql_query($query1);
         echo "
           <script type='text/javascript'>

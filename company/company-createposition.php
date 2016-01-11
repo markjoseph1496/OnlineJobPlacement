@@ -308,6 +308,16 @@ $CompanyID = $_SESSION['CompanyID'];
                             </select>
                         </div>
                     </div>
+                </div>
+                <div class="row field">
+                    <div class = "col-md-3 fieldcol">
+                        <label = "usr" class = "control-label"> Job Description: </label>
+                    </div>
+                    <div class = "col-md-8 fieldcol">
+                        <div class="form-group">
+                              <input type = "text" name = "JobDesc" id="JobDesc" class = "form-control" style ="width: 300px;">
+                        </div>
+                    </div>
                 </div> 
                 <div class="row field">
                     <div class = "col-md-3 fieldcol">
@@ -599,6 +609,22 @@ $CompanyID = $_SESSION['CompanyID'];
                         validators: {
                             notEmpty: {
                                 message: "Position Level is required."
+                            }
+                        }
+                    },
+                    JobDesc: {
+                        validators: {
+                            notEmpty: {
+                                message: "Job Description is required."
+                            },
+                            stringLength: {
+                                min: 3,
+                                max: 15,
+                                message: "Last name must be 5-70 characters long."
+                            },
+                            regexp: {
+                                regexp: /^[a-z\s]+$/i,
+                                message: "Job Description can consist of alphabetical characters and spaces only"
                             }
                         }
                     },
