@@ -28,15 +28,15 @@
     <div class="card">
         <h1 class="title">OJPMS</h1><br>
         <form id="myForm" action="login.php" method="POST" autocomplete="off">
-            
-        <div class="login-block">
-            <input type="text" value="" placeholder="Username" id="username" />
-            <input type="password" value="" placeholder="Password" id="password"/>
-            &nbsp;
-            <button type="submit" href="#">Submit</button>
-        </div>
-            
-        <div class="footer"><a href="#">Forgot your password?</a></div>
+            <div class="login-block">
+                <div id="message"></div>
+                <input type="text" value="" placeholder="Email" id="CompanyEmail" name="CompanyEmail"/>
+                <input type="password" value="" placeholder="Password" id="password" name="password"/>
+                &nbsp;
+                <button type="submit" id="button">Submit</button>
+            </div>
+
+            <div class="footer"><a href="#">Forgot your password?</a></div>
         </form>
     </div>
     <div class="register-screenshot not_mobile">
@@ -52,7 +52,7 @@
 </body>
 </html>
 <script type="text/javascript">
-    $("button#login").click(function () {
+    $("button#button").click(function () {
 
         $.post($("#myForm").attr("action"),
             $("#myForm :input").serializeArray(),

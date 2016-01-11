@@ -29,10 +29,11 @@
         <form id="myForm" action="login.php" method="POST" autocomplete="off">
             
         <div class="login-block">
-            <input type="text" value="" placeholder="Username" id="username" />
-            <input type="password" value="" placeholder="Password" id="password"/>
+            <div id="message"></div>
+            <input type="text" placeholder="Email" id="AdminEmail" name="AdminEmail" />
+            <input type="password" placeholder="Password" id="password" name="password"/>
             &nbsp;
-            <button type="submit" href="#">Submit</button>
+            <button type="submit" id="button">Submit</button>
         </div>
             
         <div class="footer"><a href="#">Forgot your password?</a></div>
@@ -51,7 +52,7 @@
 </body>
 </html>
 <script type="text/javascript">
-    $("button#login").click(function () {
+    $("button#button").click(function () {
 
         $.post($("#myForm").attr("action"),
             $("#myForm :input").serializeArray(),

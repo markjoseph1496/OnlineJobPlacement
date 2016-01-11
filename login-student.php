@@ -14,6 +14,8 @@
     <script type="text/javascript" src="js/jquery.min.js"></script>
     <script type="text/javascript" src="js/bootstrap.min.js" ></script>
 
+    <!-- BootstrapValidator -->
+    <script type="text/javascript" src="js/bootstrapValidator.min.js" ></script>
 
     <!-- CSS-->
     <link href="css/login-style.css" rel="stylesheet">
@@ -22,18 +24,17 @@
 </head>
 <body class="login-background">
 <div class="container">
-
     <div class="card">
         <h1 class="title">OJPMS</h1><br>
         <form id="myForm" action="login.php" method="POST" autocomplete="off">
-            
-<div class="login-block">
-    <input type="text" value="" placeholder="Username" id="username" />
-    <input type="password" value="" placeholder="Password" id="password"/>
-    &nbsp;
-    <button type="submit" href="#">Submit</button>
-</div>
-            
+            <div class="login-block">
+                <div id="message"></div>
+                <input type="text" placeholder="StudentID" id="StudentID" name="StudentID"/>
+                <input type="password"  placeholder="Password" id="password" name="password"/>
+                &nbsp;
+                <button type="submit" id="button">Submit</button>
+            </div>
+
             <div class="footer"><a href="#">Forgot your password?</a></div>
         </form>
     </div>
@@ -50,15 +51,15 @@
 </body>
 </html>
 <script type="text/javascript">
-    $("button#login").click( function() {
+    $("button#button").click(function () {
 
-        $.post( $("#myForm").attr("action"),
+        $.post($("#myForm").attr("action"),
             $("#myForm :input").serializeArray(),
-            function(data) {
+            function (data) {
                 $("div#message").html(data);
             });
 
-        $("#myForm").submit( function() {
+        $("#myForm").submit(function () {
             return false;
         });
     });
