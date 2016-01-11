@@ -234,7 +234,6 @@ if (isset($_SESSION['StudentID'])) {
                         $PostingDateTo = $value[4];
                         $Position = $value[5];
                         $YearExperience = $value[11];
-                        print_r($PositionID);
                         $company_tbl =
                             GSecureSQL::query(
                                 "SELECT * FROM companyinfotbl WHERE CompanyID = ?",

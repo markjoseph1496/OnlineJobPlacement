@@ -30,7 +30,7 @@
             <div class="login-block">
                 <div id="message"></div>
                 <input type="text" placeholder="StudentID" id="StudentID" name="StudentID"/>
-                <input type="password"  placeholder="Password" id="password" name="password"/>
+                <input type="password" placeholder="Password" id="password" name="password"/>
                 &nbsp;
                 <button type="submit" id="button">Submit</button>
             </div>
