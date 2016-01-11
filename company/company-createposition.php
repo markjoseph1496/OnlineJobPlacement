@@ -649,12 +649,12 @@ $CompanyID = $_SESSION['CompanyID'];
                             },
                             stringLength: {
                                 min: 1,
-                                max: 15,
-                                message: "Available Position must be 1-15 Number long."
+                                max: 2,
+                                message: "Available Position must be 2 digit long."
                             },
                             regexp: {
-                                regexp: /^[0-1\s]+$/i,
-                                message: "Location can consist of Positive Numbers only"
+                                regexp: /^[0-9\s]+$/i,
+                                message: "Available Position can consist of Positive Numbers only"
                             }
                         }
                     },
@@ -672,8 +672,8 @@ $CompanyID = $_SESSION['CompanyID'];
                             },
                             stringLength: {
                                 min: 1,
-                                max: 10,
-                                message: "Years of Experience must be 1-10 number long."
+                                max: 3,
+                                message: "Years of Experience must be 3 digit long."
                             },
                             regexp: {
                                 regexp: /^[0-9\s]+$/i,
@@ -688,8 +688,8 @@ $CompanyID = $_SESSION['CompanyID'];
                             },
                             stringLength: {
                                 min: 5,
-                                max: 70,
-                                message: "Trainings must be 5-70 number long."
+                                max: 50,
+                                message: "Trainings must be 5-50 characters long."
                             },
                             regexp: {
                                 regexp: /^[a-z\s]+$/i,
@@ -704,8 +704,8 @@ $CompanyID = $_SESSION['CompanyID'];
                             },
                             stringLength: {
                                 min: 5,
-                                max: 80,
-                                message: "Knowledge must be 5-80 number long."
+                                max: 50,
+                                message: "Knowledge must be 5-50 characters long."
                             },
                             regexp: {
                                 regexp: /^[a-z\s]+$/i,
@@ -720,8 +720,8 @@ $CompanyID = $_SESSION['CompanyID'];
                             },
                             stringLength: {
                                 min: 5,
-                                max: 80,
-                                message: "Language must be 5-80 number long."
+                                max: 50,
+                                message: "Language must be 5-50 characters long."
                             },
                             regexp: {
                                 regexp: /^[a-z\s]+$/i,

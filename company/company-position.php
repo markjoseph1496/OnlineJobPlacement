@@ -291,7 +291,7 @@
             ?>
                 <tr>
                    <td>
-                    <a href = "#"><?php echo $row[$plevel]; ?></a>
+                    <a href = "company-viewposition.php"><?php echo $row[$plevel]; ?></a>
                     </td>
                    <td><?php echo $row[$pdatef]; ?></td>
                    <td><?php echo $row[$pdatet]; ?></td>

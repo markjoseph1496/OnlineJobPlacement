@@ -264,7 +264,7 @@ while ($qry = mysql_fetch_Array($Result)) {
 <br><br><br>
 <div class="container">
     <div class="col-md-6">
-        <form method="POST" name="CompanySetting" id="CompanySetting" autocomplete="off">
+        <form method="POST" name="CompanySetting" id="CompanySetting" autocomplete="off" action="company-setting.php">
             <?php
             if (isset($_GET['id'])) {
                 $id = $_GET['id'];
@@ -460,22 +460,22 @@ while ($qry = mysql_fetch_Array($Result)) {
     </div>
     <div class="row field">
         <div class="col-md-3 fieldcol">
-            <label>Telephone Number<span>(*)</span></label><br>
+            <label>Mobile Number<span>(*)</span></label><br>
         </div>
         <div class="col-md-8 fieldcol">
             <div class="form-group">
-                <input type="text" name="telnum" id="usr" class="form-control" style="width: 300px;"
+                <input type="text" name="mobilenum" id="usr" class="form-control" style="width: 300px;"
                        value="<?php echo $Phone; ?>">
             </div>
         </div>
     </div>
     <div class="row field">
         <div class="col-md-3 fieldcol">
-            <label>Mobile Number<span>(*)</span></label><br>
+            <label>TelPhone Number<span>(*)</span></label><br>
         </div>
         <div class="col-md-4 fieldcol">
             <div class="form-group">
-                <input type="text" name="mobilenum" id="usr" class="form-control" style="width: 300px;"
+                <input type="text" name="telnum" id="usr" class="form-control" style="width: 300px;"
                        value="<?php echo $Mobile; ?>">
             </div>
         </div>
@@ -598,14 +598,127 @@ else {
                         },
                         remote: {
                             message: 'The Company Name already exists',
-                            url: '../addcompany.php',
+                            url: 'company-settings.php',
                             data: {
                                 type: 'cname'
                             },
                             type: 'POST'
                         }
                     }
-                }
+                },
+                description: {
+                    validators: {
+                        notEmpty: {
+                            message: "Company Description is required."
+                        },
+                        stringLength: {
+                            min: 5,
+                            max: 70,
+                            message: "Company Description must be 5-70 characters long."
+                        },
+                        regexp: {
+                            regexp: /^[a-z\s]+$/i,
+                            message: "Company Description can consist of alphabetical characters and spaces only"
+                        }
+                    }
+                },
+                industry: {
+                    validators: {
+                        notEmpty: {
+                            message: "Industry is required."
+                        }
+                    }
+                },
+                classification: {
+                    validators: {
+                        notEmpty: {
+                            message: "Classification is required."
+                        }
+                    }
+                },
+                address: {
+                    validators: {
+                        notEmpty: {
+                            message: "Address is required."
+                        },
+                        stringLength: {
+                            min: 5,
+                            max: 50,
+                            message: "Address must be 5-50 characters long."
+                        }
+                    }
+                },
+                City: {
+                    validators: {
+                        notEmpty: {
+                            message: "City is required."
+                        }
+                    }
+                },
+                postal: {
+                    validators: {
+                        notEmpty: {
+                            message: "Postal Code is required."
+                        },
+                        stringLength: {
+                            min: 1,
+                            max: 4,
+                            message: "Postal Code must be 4 Number long."
+                        },
+                        regexp: {
+                            regexp: /^[0-9\s]+$/i,
+                            message: "Postal Code can consist of Positive Numbers only"
+                        }
+                    }
+                },
+                mobilenum: {
+                    validators: {
+                        notEmpty: {
+                            message: "Mobile Number is required."
+                        },
+                        stringLength: {
+                            min: 3,
+                            max: 13,
+                            message: "Mobile Number must be 13 Number long."
+                        },
+                        regexp: {
+                            regexp: /^[0-9\s]+$/i,
+                            message: "Mobile Number can consist of Positive Numbers only"
+                        }
+                    }
+                },
+                telnum: {
+                    validators: {
+                        notEmpty: {
+                            message: "TelPhone Number is required."
+                        },
+                        stringLength: {
+                            min: 3,
+                            max: 8,
+                            message: "TelPhone Number must be 8 Number long."
+                        },
+                        regexp: {
+                            regexp: /^[0-9\s]+$/i,
+                            message: "TelPhone Number can consist of Positive Numbers only"
+                        }
+                    }
+                },
+                fax: {
+                    validators: {
+                        notEmpty: {
+                            message: "Fax Number is required."
+                        },
+                        stringLength: {
+                            min: 3,
+                            max: 12,
+                            message: "Fax Number must be 12 Number long."
+                        },
+                        regexp: {
+                            regexp: /^[0-9\s]+$/i,
+                            message: "Fax Number can consist of Positive Numbers only"
+                        }
+                    }
+                },
             }
         });
     });
