@@ -246,8 +246,7 @@ $achievements_tbl =
                     </div>
                     <div class="col-md-6">
                         <ul class="breadcrumbs">
-                            <li><a href="#">Home</a></li>
-                            <li>Achievements</li>
+                            <li>Edit Achievements</li>
                         </ul>
                     </div>
                 </div>
