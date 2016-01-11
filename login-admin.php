@@ -26,20 +26,16 @@
 <div class="container">
     <div class="card">
         <h1 class="title">OJPMS</h1><br>
-        <form id="myForm" name="myForm" action="login.php" method="POST" autocomplete="off">
-            <div class="input-container">
-                <div id="message"></div>
-                <input type="text" id="AdminEmail" name="AdminEmail" required="required" autocomplete="off"/>
-                <label class="label-edit">Username</label>
-                <div class="bar"></div>
-            </div>
-            <div class="input-container">
-                <input type="password" id="password" name="password" required="required" autocomplete="off"/>
-                <label class="label-edit">Password</label>
-                <div class="bar"></div>
-            </div>
-            <button type="submit" class="btn-primary" id="login">Log In</button>
-            <div class="footer"><a href="#">Forgot your password?</a></div>
+        <form id="myForm" action="login.php" method="POST" autocomplete="off">
+            
+        <div class="login-block">
+            <input type="text" value="" placeholder="Username" id="username" />
+            <input type="password" value="" placeholder="Password" id="password"/>
+            &nbsp;
+            <button type="submit" href="#">Submit</button>
+        </div>
+            
+        <div class="footer"><a href="#">Forgot your password?</a></div>
         </form>
     </div>
     <div class="register-screenshot not_mobile">

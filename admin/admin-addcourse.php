@@ -251,7 +251,7 @@
     <form id="AddCourse" action="functions.php">
    <div class = "container">
       <div class = "col-md-12">
-<div class="row field">
+      <div class="row field">
                 <div class = "col-md-2 fieldcol">
                    <label = "usr" class = "control-label"> Course Title </label>
                 </div>
