@@ -211,7 +211,7 @@
     position: relative;
 }
 
-.myoverlay {
+.mymyoverlay {
     background-color: rgba(0, 0, 0, 0.6);
     border-radius: 4px;
     height: 100%;
@@ -224,7 +224,7 @@
     transition: all 0.3s ease-in;
 }
 
-.print .column > .overlay > p {
+.print .column > .myoverlay > p {
     color: #fff;
     font-size: 30px;
     line-height: normal;
@@ -242,7 +242,7 @@
     position: relative;
 }
 
-.print .column > .overlay {
+.print .column > .myoverlay {
     background-color: rgba(0, 0, 0, 0.6);
     border-radius: 4px;
     height: 100%;
@@ -259,16 +259,16 @@
     width: 100%;
 }
 
-.print .column:hover .overlay {
+.print .column:hover .myoverlay {
     opacity: 1;
     transition: all 0.3s ease-in;
 }
 
-.print .column > .overlay > a {
+.print .column > .myoverlay > a {
     background-color: #7eba99 !important;
 }
 
-.print .column > .overlay > a {
+.print .column > .myoverlay > a {
     background-color: #333;
     border: 1px solid #666;
     border-radius: 4px;
@@ -276,7 +276,7 @@
     padding: 10px;
 }
 
-.print .column > .overlay > a > img {
+.print .column > .myoverlay > a > img {
     height: 20px;
     margin-right: 5px;
 }

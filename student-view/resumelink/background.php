@@ -86,6 +86,9 @@ else{
     <script type="text/javascript" src="../../js/jquery.parallax.js"></script>
     <script type="text/javascript" src="../../js/jquery.slicknav.js"></script>
 
+    <link rel="stylesheet" type="text/css" href="../../css/color-selector/prettify.css" />
+    <link rel="stylesheet" type="text/css" href="../../css/color-selector/bootstrap-colorselector.css" />
+
     <!-- fileupload -->
     <link href="../../css/fileinput.min.css" media="all" rel="stylesheet" type="text/css" />
     <script src="../../js/fileinput.min.js" type="text/javascript"></script>
@@ -287,13 +290,13 @@ else{
                         <div class "row">
                             <div class="col-md-12">
                                 <label>Use Background</label><br>
-                                <input type="radio" name="" id="Color" CHECKED="checked">Solid Color &nbsp;&nbsp;&nbsp;
-                                <input type="radio" name="" id="Image">Uploaded Image &nbsp;&nbsp;&nbsp;
+                                <input type="radio" name="selection" id="Color" checked="checked">Solid Color &nbsp;&nbsp;&nbsp;
+                                <input type="radio" name="selection" id="Image">Uploaded Image &nbsp;&nbsp;&nbsp;
                             </div>
                         </div>
                         <div class "row">
                             <div class="col-md-6" id="ToColor">
-                                <div id="color">
+                                <div id="">
                                     <label class="accent-color">Solid Color</label><br>
                                     <select id="colorselector_1" style="display: none;">
                                         <option value="106" data-color="#A0522D" selected="selected">sienna</option>
@@ -314,12 +317,12 @@ else{
                                         <option value="123" data-color="#000000">black</option>
                                     </select>
                                     <script>
-                                        $('#colorselector').colorselector();
+                                        $('#colorselector_1').colorselector();
                                     </script>
                                 </div>
                             </div>
                             <div class="col-md-6" id="ToImage">
-                                <div id="uploaded">
+                                <div id="">
                                     <label class="accent-color">Uploaded Image</label>
                                     <div class="classic-testimonials">
                                         <input id="ProfilePicture" name="" multiple type="file" class="file file-loading" data-allowed-file-extensions='["png", "jpg", "bmp", "gif"]'>
@@ -379,14 +382,15 @@ else{
         </div>
     </div>
     <!-- End Content -->
-    <script type="text/javascript" src="../../js/script.js"></script><script src="../../js/bootstrap.min.js"></script>
-    <script src="../../js/bootstrap-colorselector.js"></script>
-    <script src="../../js/prettify.js"></script>
-</body>
+    <script type="text/javascript" src="../../js/script.js"></script>
+
     
+</body>
+    <script src="../../css/color-selector/jquery-1.10.2.min.js"></script>
+    <script src="../../css/color-selector/bootstrap-colorselector.js"></script>
+    <script src="../../css/color-selector/prettify.js"></script>
 
     <script>
-    
       $(function() {
 
         window.prettyPrint && prettyPrint();
@@ -409,30 +413,6 @@ else{
         })
 
       });
-    </script>
-
-    <script type="text/javascript">
-        $('#Color').click(function () {
-            if ($(this).is(':checked')) {
-                $('#ToImage').hide();
-            } else {
-                $('#ToColor').show();
-            }
-        });
-
-        $('#Image').click(function () {
-            if ($(this).is(':checked')) {
-                $('#ToColor').hide();
-            } else {
-                $('#ToImage').show();
-            }
-        });
-
-        if ($('#Image').is(':checked')) {
-            $('#ToColor').hide();
-        } else {
-            $('#ToImage').show();
-        }
     </script>
 
 </html>
