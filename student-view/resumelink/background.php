@@ -287,13 +287,13 @@ else{
                         <div class "row">
                             <div class="col-md-12">
                                 <label>Use Background</label><br>
-                                <input type="radio" name="" id="">Solid Color &nbsp;&nbsp;&nbsp;
-                                <input type="radio" name="" id="">Uploaded Image &nbsp;&nbsp;&nbsp;
+                                <input type="radio" name="" id="Color" CHECKED="checked">Solid Color &nbsp;&nbsp;&nbsp;
+                                <input type="radio" name="" id="Image">Uploaded Image &nbsp;&nbsp;&nbsp;
                             </div>
                         </div>
                         <div class "row">
-                            <div class="col-md-6">
-                                <div id="color" style="display: block;">
+                            <div class="col-md-6" id="ToColor">
+                                <div id="color">
                                     <label class="accent-color">Solid Color</label><br>
                                     <select id="colorselector_1" style="display: none;">
                                         <option value="106" data-color="#A0522D" selected="selected">sienna</option>
@@ -318,8 +318,8 @@ else{
                                     </script>
                                 </div>
                             </div>
-                            <div class="col-md-6">
-                                <div id="uploaded" style="display:block;">
+                            <div class="col-md-6" id="ToImage">
+                                <div id="uploaded">
                                     <label class="accent-color">Uploaded Image</label>
                                     <div class="classic-testimonials">
                                         <input id="ProfilePicture" name="" multiple type="file" class="file file-loading" data-allowed-file-extensions='["png", "jpg", "bmp", "gif"]'>
@@ -410,4 +410,29 @@ else{
 
       });
     </script>
+
+    <script type="text/javascript">
+        $('#Color').click(function () {
+            if ($(this).is(':checked')) {
+                $('#ToImage').hide();
+            } else {
+                $('#ToColor').show();
+            }
+        });
+
+        $('#Image').click(function () {
+            if ($(this).is(':checked')) {
+                $('#ToColor').hide();
+            } else {
+                $('#ToImage').show();
+            }
+        });
+
+        if ($('#Image').is(':checked')) {
+            $('#ToColor').hide();
+        } else {
+            $('#ToImage').show();
+        }
+    </script>
+
 </html>

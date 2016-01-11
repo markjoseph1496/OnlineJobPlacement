@@ -289,8 +289,7 @@ session_start();
                         <div class="col-md-6">
                             <div class="form-group">
                                 <label>Duration</label><br>
-                                <label><input type="checkbox" name="Duration" id="Duration" checked="checked"> Currently
-                                    Work Here</label>
+                                <label><input type="checkbox" name="Duration" id="Duration" checked="checked"> Currently Work Here</label>
                             </div>
                         </div>
                     </div>
@@ -336,8 +335,7 @@ session_start();
                             <div class="col-md-3">
                                 <div class="form-group">
                                     <label>To <span>(*)</span></label>
-                                    <select id="ToMonth" name="ToMonth" class="form-control"
-                                            style="width:100%; height:34px;">
+                                    <select id="ToMonth" name="ToMonth" class="form-control" style="width:100%; height:34px;">
                                         <option value="">- Select Month -</option>
                                         <option value="01">January</option>
                                         <option value="02">February</option>
