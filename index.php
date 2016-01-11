@@ -213,7 +213,7 @@
                                     <div class="row">
                                         <div class="col-md-6">
                                             <ul class="icons-list">
-                                                <li><a href="">BPO / Call Center</a></li>
+                                                <li><a href="student-view/search-job/search-result.php">BPO / Call Center</a></li>
                                                 <li><a href="">Food / Beverage / RestaurantService</a></li>
                                                 <li><a href="">Customer Service</a></li>
                                                 <li><a href="">Clerical / Administrative Support</a></li>
