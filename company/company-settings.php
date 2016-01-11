@@ -105,6 +105,10 @@ while ($qry = mysql_fetch_Array($Result)) {
     <script type="text/javascript" src="../js/jquery.parallax.js"></script>
     <script type="text/javascript" src="../js/jquery.slicknav.js"></script>
 
+    <!-- fileupload -->
+    <link href="../css/fileinput.min.css" media="all" rel="stylesheet" type="text/css" />
+    <script src="../js/fileinput.min.js" type="text/javascript"></script>
+
 </head>
 
 <body>
@@ -518,14 +522,15 @@ while ($qry = mysql_fetch_Array($Result)) {
     </form>
 </div>
 
-<div class="col-md-3 fieldcol">
-    <label>Upload Logo</label>
-    <input id="uploadFile" type="file" name="fileToUpload" class="img"><br>
-    <div id="imagePreview">
-        <img src="<?php echo $ProfileImage; ?>" id="Image1" alt="" style="width:250px;height:250px;">
+<div class="col-md-5">
+    <!-- Single Testimonial -->
+    <div class="classic-testimonials">
+        <label class="control-label">Select Image</label>
+        <input id="ProfilePicture" name="ProfilePicture" multiple type="file" class="file file-loading" data-allowed-file-extensions='["png", "jpg", "bmp", "gif"]'>
+        <br>
+        <button id="" class="btn-system btn-mini border-btn" name="btnDelete">Delete Image</button>
     </div>
-    <br>
-    <button name="" type="" id="" class="btn btn-hg btn-primary" name="btnDelete">Delete Image</button>
+    <!-- End Single Testimonial -->
 </div>
 </div>
 
