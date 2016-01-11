@@ -238,7 +238,7 @@ $CompanyDescription = $companyinfo_tbl[0][2];
                                 </div>
                                 <label><?php echo nl2br($CompanyDescription); ?></label>
                                 <div class="hr3" style="margin-top:35px;margin-bottom:40px;"></div>
-                                <div class="text-center"><h3>Senior Accountant (Taguig)</h3></div>
+                                <div class="text-center"><h3><?php echo $PositionLevel; ?></h3></div>
                                 <div class="hr3" style="margin-top:35px;margin-bottom:40px;"></div>
                             </div>
                         </div>
@@ -249,14 +249,6 @@ $CompanyDescription = $companyinfo_tbl[0][2];
                                     <label><u>Good candidate must have the following qualifications:</u></label>
                                 </div>
                                 <li>Must be a CPA</li>
-                                <li>At least 5 years of experience in General Accounting and Finance</li>
-                                <li>With experience in Tax Accounting and Assets Management</li>
-                                <li>With experience in using SAP System</li>
-                                <li>With excellent communication skills both oral and written</li>
-                                <li>With working experience in a Global Operation is a must</li>
-                                <li>With experience in dealing with regional counterparts</li>
-                                <li>With high level of professionalism and results oriented</li>
-                                <li>Willing to work in Global, Taguig City</li>
                             </div>
                         </div>
                         <div class="hr5" style="margin-top:35px;margin-bottom:40px;"></div>
