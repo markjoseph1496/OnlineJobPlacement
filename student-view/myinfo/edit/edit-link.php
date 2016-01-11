@@ -228,8 +228,7 @@
                     </div>
                     <div class="col-md-6">
                         <ul class="breadcrumbs">
-                            <li><a href="#">Home</a></li>
-                            <li>Links</li>
+                            <li>Edit Links</li>
                         </ul>
                     </div>
                 </div>

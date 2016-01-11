@@ -272,7 +272,7 @@ $result = mysql_query($qry);
                         <div class "row">
                             <div class="print">
                                 <div class="column">
-                                    <div class="overlay">
+                                    <div class="myoverlay">
                                         <p>Your Resume</p>
                                         <button href="#" class="btn-system btn-mini border-btn"><i class="fa fa-file-text"></i> Download PDF</button>
                                     </div>

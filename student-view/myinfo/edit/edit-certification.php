@@ -248,8 +248,7 @@ $certification_tbl =
                     </div>
                     <div class="col-md-6">
                         <ul class="breadcrumbs">
-                            <li><a href="#">Home</a></li>
-                            <li>Certifications</li>
+                            <li>Edit Certifications</li>
                         </ul>
                     </div>
                 </div>
