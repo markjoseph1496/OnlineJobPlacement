@@ -3205,12 +3205,12 @@ html.flexbox .testimonial-company--coinbase {
     outline: none;
 }
 
-.login-block input#username {
+.login-block input#StudentID {
     background: #fff url(../img/user.png) 20px top no-repeat;
     background-size: 16px 80px;
 }
 
-.login-block input#username:focus {
+.login-block input#StudentID:focus {
     background: #fff url(../img/user.png) 20px bottom no-repeat;
     background-size: 16px 80px;
 }
