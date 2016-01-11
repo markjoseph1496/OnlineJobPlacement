@@ -30,6 +30,7 @@ $companyinfo_tbl =
         $CompanyID
     );
 $CompanyName = $companyinfo_tbl[0][1];
+$CompanyDescription = $companyinfo_tbl[0][2];
 
 ?>
 
@@ -233,9 +234,9 @@ $CompanyName = $companyinfo_tbl[0][1];
                         <div class="row">
                             <div class="col-md-12">
                                 <div class="classic-testimonials">
-                                    <h4>HR Network, Inc. (Non-IT)</h4>
+                                    <h4><?php echo $CompanyName; ?></h4>
                                 </div>
-                                <label>We are an executive search firm that specializes in sourcing of Non IT professionals catering to large local and multinational companies. Currently, we are seeking highly dynamic individuals to assume the following positions:</label>
+                                <label><?php echo nl2br($CompanyDescription); ?></label>
                                 <div class="hr3" style="margin-top:35px;margin-bottom:40px;"></div>
                                 <div class="text-center"><h3>Senior Accountant (Taguig)</h3></div>
                                 <div class="hr3" style="margin-top:35px;margin-bottom:40px;"></div>
