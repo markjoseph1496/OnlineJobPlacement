@@ -264,7 +264,7 @@ $CompanyDescription = $companyinfo_tbl[0][2];
                             <div class="col-md-3">
                                 <label>Year(s) of Experience</label>
                             </div>
-                            <div class="col-md-3">5 years</div>
+                            <div class="col-md-3"><?php echo $YearExperience;?> year(s)</div>
                         </div>
                         <div class="row">
                             <div class="col-md-3">

@@ -31,28 +31,17 @@ while ($qry = mysql_fetch_Array($Result)) {
     <!-- Basic -->
     <title>OJPMS</title>
 
-    <!-- Define Charset -->
-    <meta charset="utf-8">
-
-    <!-- Responsive Metatag -->
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-
-    <!-- Page Description and Author -->
-    <meta name="description" content="Margo - Responsive HTML5 Template">
-    <meta name="author" content="iThemesLab">
+    <!-- Bootstrap CSS -->
+    <link href="../css/bootstrap.min.css" rel="stylesheet"/>
 
     <!-- BootstrapValidator CSS -->
     <link href="../css/bootstrapValidator.min.css" rel="stylesheet"/>
-
     <!-- jQuery and Bootstrap JS -->
-    <script src="../js/jquery.min.js" type="text/javascript"></script>
+    <script type="text/javascript" src="../js/jquery.min.js"></script>
     <script src="../js/bootstrap.min.js" type="text/javascript"></script>
 
     <!-- BootstrapValidator -->
     <script src="../js/bootstrapValidator.min.js" type="text/javascript"></script>
-
-    <!-- Bootstrap CSS  -->
-    <link rel="stylesheet" href="../css/bootstrap.min.css" type="text/css" media="screen">
 
     <!-- Font Awesome CSS -->
     <link rel="stylesheet" href="../css/font-awesome.min.css" type="text/css" media="screen">
@@ -73,25 +62,12 @@ while ($qry = mysql_fetch_Array($Result)) {
     <link rel="stylesheet" type="text/css" href="../css/ojpms-style.css" media="screen">
 
     <!-- Color CSS Styles  -->
-    <link rel="stylesheet" type="text/css" href="../css/colors/red.css" title="red" media="screen"/>
-    <link rel="stylesheet" type="text/css" href="../css/colors/jade.css" title="jade" media="screen"/>
-    <link rel="stylesheet" type="text/css" href="../css/colors/blue.css" title="blue" media="screen"/>
-    <link rel="stylesheet" type="text/css" href="../css/colors/beige.css" title="beige" media="screen"/>
-    <link rel="stylesheet" type="text/css" href="../css/colors/cyan.css" title="cyan" media="screen"/>
-    <link rel="stylesheet" type="text/css" href="../css/colors/green.css" title="green" media="screen"/>
-    <link rel="stylesheet" type="text/css" href="../css/colors/orange.css" title="orange" media="screen"/>
-    <link rel="stylesheet" type="text/css" href="../css/colors/peach.css" title="peach" media="screen"/>
-    <link rel="stylesheet" type="text/css" href="../css/colors/pink.css" title="pink" media="screen"/>
-    <link rel="stylesheet" type="text/css" href="../css/colors/purple.css" title="purple" media="screen"/>
-    <link rel="stylesheet" type="text/css" href="../css/colors/sky-blue.css" title="sky-blue" media="screen"/>
     <link rel="stylesheet" type="text/css" href="../css/colors/yellow.css" title="yellow" media="screen"/>
 
 
     <!-- Margo JS  -->
-    <script type="text/javascript" src="../js/jquery.min.js"></script>
     <script type="text/javascript" src="../js/jquery.migrate.js"></script>
     <script type="text/javascript" src="../js/modernizrr.js"></script>
-    <script type="text/javascript" src="../asset/js/bootstrap.min.js"></script>
     <script type="text/javascript" src="../js/jquery.fitvids.js"></script>
     <script type="text/javascript" src="../js/owl.carousel.min.js"></script>
     <script type="text/javascript" src="../js/nivo-lightbox.min.js"></script>
@@ -306,7 +282,7 @@ while ($qry = mysql_fetch_Array($Result)) {
                 </div>
                 <div class="col-md-4 fieldcol">
                     <div class="form-group">
-                        <input type="text" name="cname" id="usr" class="form-control" style="width: 300px;"
+                        <input type="text" name="cname" id="cname" class="form-control" style="width: 300px;"
                                value="<?php echo $CName; ?>">
                     </div>
                 </div>
@@ -531,7 +507,6 @@ while ($qry = mysql_fetch_Array($Result)) {
         <button id="" class="btn-system btn-mini border-btn" name="btnDelete">Delete Image</button>
     </div>
     <!-- End Single Testimonial -->
-</div>
 </div>
 
 
