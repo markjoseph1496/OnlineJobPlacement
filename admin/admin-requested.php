@@ -7,10 +7,20 @@ include('../connection.php');
 
 <head>
 
-  <!-- Basic -->
-  <title>OJPMS</title>
+    <!-- Basic -->
+    <title>OJPMS</title>
 
-  <!-- Bootstrap CSS -->
+    <!-- Define Charset -->
+    <meta charset="utf-8">
+
+    <!-- Responsive Metatag -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    <!-- Page Description and Author -->
+    <meta name="description" content="Margo - Responsive HTML5 Template">
+    <meta name="author" content="iThemesLab">
+
+    <!-- Bootstrap CSS -->
     <link href="../css/bootstrap.min.css" rel="stylesheet"/>
 
     <!-- BootstrapValidator CSS -->
@@ -26,6 +36,12 @@ include('../connection.php');
     <!-- Font Awesome CSS -->
     <link rel="stylesheet" href="../css/font-awesome.min.css" type="text/css" media="screen">
 
+    <!-- Fonts -->
+    <link href="../fonts/ffonts/montserrat.css" rel="stylesheet" type="text/css">
+    <link href="../fonts/ffonts/kaushan.css" rel="stylesheet" type="text/css">
+    <link href="../fonts/ffonts/droid.css" rel="stylesheet" type="text/css">
+    <link href="../fonts/ffonts/roboto.css" rel="stylesheet" type="text/css">
+
     <!-- Slicknav -->
     <link rel="stylesheet" type="text/css" href="../css/slicknav.css" media="screen">
 
@@ -38,14 +54,10 @@ include('../connection.php');
     <!-- Css3 Transitions Styles  -->
     <link rel="stylesheet" type="text/css" href="../css/animate.css" media="screen">
 
-    <!-- OJPMS CSS  -->
-    <link rel="stylesheet" type="text/css" href="../css/ojpms-style.css" media="screen">
-
     <!-- Color CSS Styles  -->
     <link rel="stylesheet" type="text/css" href="../css/colors/yellow.css" title="yellow" media="screen"/>
 
-
-    <!-- Margo JS  -->
+    <!-- JS  -->
     <script type="text/javascript" src="../js/jquery.migrate.js"></script>
     <script type="text/javascript" src="../js/modernizrr.js"></script>
     <script type="text/javascript" src="../js/jquery.fitvids.js"></script>
@@ -67,86 +79,56 @@ include('../connection.php');
   <div id="container">
 
 
-    <!-- Start Header Section -->
-    <div class="hidden-header"></div>
-    <header class="clearfix">
-
-      <!-- Start Top Bar -->
-      <div class="top-bar">
-        <div class="container">
-          <div class="row">
-            <div class="col-md-6">
-              <!-- Start Contact Info
-              <ul class="contact-details">
-                <li><a href="#"><i class="fa fa-map-marker"></i> House-54/A, London, UK</a>
-                </li>
-                <li><a href="#"><i class="fa fa-envelope-o"></i> info@yourcompany.com</a>
-                </li>
-                <li><a href="#"><i class="fa fa-phone"></i> +12 345 678 000</a>
-                </li>
-              </ul>
-               End Contact Info -->
+            <!-- Start Top Bar -->
+        <div class="top-bar">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6">
+                        <!-- Start Contact Info -->
+                            <ul class="contact-details">
+                                <li class="profile-name"><i class="fa fa-hashtag"></i> <b>008-2012-0805</b></li>
+                            </ul>
+                        <!-- End Contact Info -->
+                    </div>
+                    <!-- .col-md-6 -->
+                    <div class="col-md-6">
+                        <!-- Start Social Links -->
+                            <ul class="social-list">
+                                <li class="profile-name">
+                                    <a class="bell itl-tooltip" data-placement="bottom" title="" href="#" data-original-title="Notification"><i class="fa fa-bell"></i></a>
+                                </li>
+                                <li class="profile-name">
+                                    &nbsp;
+                                </li>
+                                <li class="profile-name">
+                                    <i class="fa fa-user"></i> Hello, <b>Aira Jane Cruz</b>                               
+                                </li>
+                            </ul>
+                            <!-- End Social Links -->
+                    </div>
+                    <!-- .col-md-6 -->
+                </div>
+                <!-- .row -->
             </div>
-            <!-- .col-md-6 -->
-            <div class="col-md-6">
-              <!-- Start Social Links 
-              <ul class="social-list">
-                <li>
-                  <a class="facebook itl-tooltip" data-placement="bottom" title="Facebook" href="#"><i class="fa fa-facebook"></i></a>
-                </li>
-                <li>
-                  <a class="twitter itl-tooltip" data-placement="bottom" title="Twitter" href="#"><i class="fa fa-twitter"></i></a>
-                </li>
-                <li>
-                  <a class="google itl-tooltip" data-placement="bottom" title="Google Plus" href="#"><i class="fa fa-google-plus"></i></a>
-                </li>
-                <li>
-                  <a class="dribbble itl-tooltip" data-placement="bottom" title="Dribble" href="#"><i class="fa fa-dribbble"></i></a>
-                </li>
-                <li>
-                  <a class="linkdin itl-tooltip" data-placement="bottom" title="Linkedin" href="#"><i class="fa fa-linkedin"></i></a>
-                </li>
-                <li>
-                  <a class="flickr itl-tooltip" data-placement="bottom" title="Flickr" href="#"><i class="fa fa-flickr"></i></a>
-                </li>
-                <li>
-                  <a class="tumblr itl-tooltip" data-placement="bottom" title="Tumblr" href="#"><i class="fa fa-tumblr"></i></a>
-                </li>
-                <li>
-                  <a class="instgram itl-tooltip" data-placement="bottom" title="Instagram" href="#"><i class="fa fa-instagram"></i></a>
-                </li>
-                <li>
-                  <a class="vimeo itl-tooltip" data-placement="bottom" title="vimeo" href="#"><i class="fa fa-vimeo-square"></i></a>
-                </li>
-                <li>
-                  <a class="skype itl-tooltip" data-placement="bottom" title="Skype" href="#"><i class="fa fa-skype"></i></a>
-                </li>
-              </ul>
-               End Social Links -->
-            </div>
-            <!-- .col-md-6 -->
-          </div>
-          <!-- .row -->
+            <!-- .container -->
         </div>
-        <!-- .container -->
-      </div>
-      <!-- .top-bar -->
-      <!-- End Top Bar -->
+        <!-- .top-bar -->
+        <!-- End Top Bar -->
 
 
-      <!-- Start  Logo & Naviagtion  -->
-      <div class="navbar navbar-default navbar-top">
-        <div class="container">
-          <div class="navbar-header">
-            <!-- Stat Toggle Nav Link For Mobiles -->
-            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-              <i class="fa fa-bars"></i>
-            </button>
-            <!-- End Toggle Nav Link For Mobiles -->
-            <a class="navbar-brand" href="index.html">
-             OJPMS
-            </a>
-          </div>
+        <!-- Start  Logo & Naviagtion  -->
+        <div class="navbar navbar-default navbar-top">
+            <div class="container">
+                <div class="navbar-header">
+                    <!-- Stat Toggle Nav Link For Mobiles -->
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <i class="fa fa-bars"></i>
+                    </button>
+                    <!-- End Toggle Nav Link For Mobiles -->
+                     <a class="navbar-brand" href="">
+                        <img src="../images/ojpms.png">
+                    </a>
+                </div>
           <div class="navbar-collapse collapse">
              <!-- Sign-out -->
             <div class="signout-side">
@@ -257,7 +239,7 @@ include('../connection.php');
               }
               ?>
           <div class = "col-md-12">
-             <table class = 'Applicants' width = '100%' cellpadding = '0'>
+          <table class="table segment table-hover">
           <thead>
            <tr>
            </tr>    
@@ -300,7 +282,7 @@ include('../connection.php');
                                             <td width = 15% class = tabletitle>$Status</td>
                                             <td class = tabletitle>
                                                 <button class='btn btn-default' data-toggle='modal' data-target='#AcceptRequest'> <i class='fa fa-check-circle'></i> </button>
-                                                <button class='btn btn-danger' data-toggle='modal' data-target='#DeclineRequest'> <i class='fa fa-minus-square'></i> </button>    
+                                                <button class='btn btn-danger' data-toggle='modal' data-target='#DeclineRequest'> <i class='fa fa-trash fa-1x'></i> </button>    
                                             </td>
                                         <tr>            
                                     </tbody>
