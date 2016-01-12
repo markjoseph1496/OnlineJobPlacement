@@ -32,17 +32,20 @@ $CompanyID = $_SESSION['CompanyID'];
     <link href="../css/bootstrapValidator.min.css" rel="stylesheet"/>
 
     <!-- jQuery and Bootstrap JS -->
-    <script src="../js/jquery.min.js" type="text/javascript"></script>
+    <script type="text/javascript" src="../js/jquery.min.js"></script>
     <script src="../js/bootstrap.min.js" type="text/javascript"></script>
 
     <!-- BootstrapValidator -->
     <script src="../js/bootstrapValidator.min.js" type="text/javascript"></script>
 
-    <!-- Bootstrap CSS  -->
-    <link rel="stylesheet" href="../asset/css/bootstrap.min.css" type="text/css" media="screen">
-
     <!-- Font Awesome CSS -->
     <link rel="stylesheet" href="../css/font-awesome.min.css" type="text/css" media="screen">
+
+    <!-- Fonts -->
+    <link href="../fonts/ffonts/montserrat.css" rel="stylesheet" type="text/css">
+    <link href="../fonts/ffonts/kaushan.css" rel="stylesheet" type="text/css">
+    <link href="../fonts/ffonts/droid.css" rel="stylesheet" type="text/css">
+    <link href="../fonts/ffonts/roboto.css" rel="stylesheet" type="text/css">
 
     <!-- Slicknav -->
     <link rel="stylesheet" type="text/css" href="../css/slicknav.css" media="screen">
@@ -50,31 +53,19 @@ $CompanyID = $_SESSION['CompanyID'];
     <!-- Margo CSS Styles  -->
     <link rel="stylesheet" type="text/css" href="../css/style.css" media="screen">
 
+    <!-- OJPMS CSS  -->
+    <link rel="stylesheet" type="text/css" href="../css/ojpms-style.css" media="screen">
+
     <!-- Responsive CSS Styles  -->
     <link rel="stylesheet" type="text/css" href="../css/responsive.css" media="screen">
 
     <!-- Css3 Transitions Styles  -->
     <link rel="stylesheet" type="text/css" href="../css/animate.css" media="screen">
 
-    <!-- OJPMS CSS  -->
-    <link rel="stylesheet" type="text/css" href="../css/ojpms-style.css" media="screen">
-
     <!-- Color CSS Styles  -->
-    <link rel="stylesheet" type="text/css" href="../css/colors/red.css" title="red" media="screen"/>
-    <link rel="stylesheet" type="text/css" href="../css/colors/jade.css" title="jade" media="screen"/>
-    <link rel="stylesheet" type="text/css" href="../css/colors/blue.css" title="blue" media="screen"/>
-    <link rel="stylesheet" type="text/css" href="../css/colors/beige.css" title="beige" media="screen"/>
-    <link rel="stylesheet" type="text/css" href="../css/colors/cyan.css" title="cyan" media="screen"/>
-    <link rel="stylesheet" type="text/css" href="../css/colors/green.css" title="green" media="screen"/>
-    <link rel="stylesheet" type="text/css" href="../css/colors/orange.css" title="orange" media="screen"/>
-    <link rel="stylesheet" type="text/css" href="../css/colors/peach.css" title="peach" media="screen"/>
-    <link rel="stylesheet" type="text/css" href="../css/colors/pink.css" title="pink" media="screen"/>
-    <link rel="stylesheet" type="text/css" href="../css/colors/purple.css" title="purple" media="screen"/>
-    <link rel="stylesheet" type="text/css" href="../css/colors/sky-blue.css" title="sky-blue" media="screen"/>
     <link rel="stylesheet" type="text/css" href="../css/colors/yellow.css" title="yellow" media="screen"/>
 
-
-    <!-- Margo JS  -->
+    <!-- JS  -->
     <script type="text/javascript" src="../js/jquery.migrate.js"></script>
     <script type="text/javascript" src="../js/modernizrr.js"></script>
     <script type="text/javascript" src="../js/jquery.fitvids.js"></script>
@@ -89,13 +80,6 @@ $CompanyID = $_SESSION['CompanyID'];
     <script type="text/javascript" src="../js/jquery.nicescroll.min.js"></script>
     <script type="text/javascript" src="../js/jquery.parallax.js"></script>
     <script type="text/javascript" src="../js/jquery.slicknav.js"></script>
-
-
-    <!--[if IE 8]>
-    <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
-    <!--[if lt IE 9]>
-    <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
-
 </head>
 
 <body>
@@ -113,53 +97,27 @@ $CompanyID = $_SESSION['CompanyID'];
             <div class="container">
                 <div class="row">
                     <div class="col-md-6">
-                        <!-- Start Contact Info
-                        <ul class="contact-details">
-                          <li><a href="#"><i class="fa fa-map-marker"></i> House-54/A, London, UK</a>
-                          </li>
-                          <li><a href="#"><i class="fa fa-envelope-o"></i> info@yourcompany.com</a>
-                          </li>
-                          <li><a href="#"><i class="fa fa-phone"></i> +12 345 678 000</a>
-                          </li>
-                        </ul>
-                      End Contact Info -->
+                        <!-- Start Contact Info -->
+                            <ul class="contact-details">
+                                <li class="profile-name"><i class="fa fa-hashtag"></i> <b>008-2012-0805</b></li>
+                            </ul>
+                        <!-- End Contact Info -->
                     </div>
                     <!-- .col-md-6 -->
                     <div class="col-md-6">
-                        <!-- Start Social Links
-                        <ul class="social-list">
-                          <li>
-                            <a class="facebook itl-tooltip" data-placement="bottom" title="Facebook" href="#"><i class="fa fa-facebook"></i></a>
-                          </li>
-                          <li>
-                            <a class="twitter itl-tooltip" data-placement="bottom" title="Twitter" href="#"><i class="fa fa-twitter"></i></a>
-                          </li>
-                          <li>
-                            <a class="google itl-tooltip" data-placement="bottom" title="Google Plus" href="#"><i class="fa fa-google-plus"></i></a>
-                          </li>
-                          <li>
-                            <a class="dribbble itl-tooltip" data-placement="bottom" title="Dribble" href="#"><i class="fa fa-dribbble"></i></a>
-                          </li>
-                          <li>
-                            <a class="linkdin itl-tooltip" data-placement="bottom" title="Linkedin" href="#"><i class="fa fa-linkedin"></i></a>
-                          </li>
-                          <li>
-                            <a class="flickr itl-tooltip" data-placement="bottom" title="Flickr" href="#"><i class="fa fa-flickr"></i></a>
-                          </li>
-                          <li>
-                            <a class="tumblr itl-tooltip" data-placement="bottom" title="Tumblr" href="#"><i class="fa fa-tumblr"></i></a>
-                          </li>
-                          <li>
-                            <a class="instgram itl-tooltip" data-placement="bottom" title="Instagram" href="#"><i class="fa fa-instagram"></i></a>
-                          </li>
-                          <li>
-                            <a class="vimeo itl-tooltip" data-placement="bottom" title="vimeo" href="#"><i class="fa fa-vimeo-square"></i></a>
-                          </li>
-                          <li>
-                            <a class="skype itl-tooltip" data-placement="bottom" title="Skype" href="#"><i class="fa fa-skype"></i></a>
-                          </li>
-                        </ul>
-                         End Social Links -->
+                        <!-- Start Social Links -->
+                            <ul class="social-list">
+                                <li class="profile-name">
+                                    <a class="bell itl-tooltip" data-placement="bottom" title="" href="#" data-original-title="Notification"><i class="fa fa-bell"></i></a>
+                                </li>
+                                <li class="profile-name">
+                                    &nbsp;
+                                </li>
+                                <li class="profile-name">
+                                    <i class="fa fa-user"></i> Hello, <b>Aira Jane Cruz</b>                               
+                                </li>
+                            </ul>
+                            <!-- End Social Links -->
                     </div>
                     <!-- .col-md-6 -->
                 </div>
@@ -180,8 +138,8 @@ $CompanyID = $_SESSION['CompanyID'];
                         <i class="fa fa-bars"></i>
                     </button>
                     <!-- End Toggle Nav Link For Mobiles -->
-                    <a class="navbar-brand" href="index.html">
-                        OJPMS
+                     <a class="navbar-brand" href="">
+                        <img src="../images/ojpms.png">
                     </a>
                 </div>
                 <div class="navbar-collapse collapse">
@@ -297,9 +255,9 @@ $CompanyID = $_SESSION['CompanyID'];
                     <div class="col-md-3 fieldcol">
                         <label = "usr" class = "control-label"> Position Level: </label>
                     </div>
-                    <div class="col-md-8 fieldcol">
+                    <div class="col-md-4 fieldcol">
                         <div class="form-group">
-                            <select id="PLevel" name="PLevel" class="position" style="width: 300px; height:30px;">
+                            <select id="PLevel" name="PLevel" class="position" style=" width: 100%; height:30px;">
                                 <option value="" selected="selected"> Select Position</option>
                                 <?php
                                 $position_tbl =
@@ -322,9 +280,9 @@ $CompanyID = $_SESSION['CompanyID'];
                     <div class="col-md-3 fieldcol">
                         <label = "usr" class = "control-label"> Job Description: </label>
                     </div>
-                    <div class="col-md-8 fieldcol">
+                    <div class="col-md-4 fieldcol">
                         <div class="form-group">
-                            <input type="text" name="JobDesc" id="JobDesc" class="form-control" style="width: 300px;">
+                            <input type="text" name="JobDesc" id="JobDesc" class="form-control" style="width: 100%;">
                         </div>
                     </div>
                 </div>
@@ -332,10 +290,10 @@ $CompanyID = $_SESSION['CompanyID'];
                     <div class="col-md-3 fieldcol">
                         <label = "usr" class = "control-label"> Job Specialization: </label>
                     </div>
-                    <div class="col-md-8 fieldcol">
+                    <div class="col-md-4 fieldcol">
                         <div class="form-group">
                             <select id="Specialization" name="Specialization" class="specialization"
-                                    style="width: 300px; height:30px;">
+                                    style="width: 100%; height:30px;">
                                 <option value="" selected="selected"> Select Specialization</option>
                                 <?php
                                 $specialization_tbl =
@@ -358,9 +316,9 @@ $CompanyID = $_SESSION['CompanyID'];
                     <div class="col-md-3 fieldcol">
                         <label = "usr" class = "control-label"> Employment Type: </label>
                     </div>
-                    <div class="col-md-8 fieldcol">
+                    <div class="col-md-4 fieldcol">
                         <div class="form-group">
-                            <select id="EType" name="EType" class="state" style="width: 300px; height:30px;">
+                            <select id="EType" name="EType" class="state" style="width: 100%; height:30px;">
                                 <option value="">Please select One</option>
                                 <option value="full">Full Time</option>
                                 <option value="parttime">Part Time</option>
@@ -374,10 +332,10 @@ $CompanyID = $_SESSION['CompanyID'];
                     <div class="col-md-3 fieldcol">
                         <label = "usr" class = "control-label"> Available Position: </label>
                     </div>
-                    <div class="col-md-8 fieldcol">
+                    <div class="col-md-4 fieldcol">
                         <div class="form-group">
                             <input type="number" name="AvPosition" id="AvPosition" class="form-control"
-                                   style="width: 300px;">
+                                   style="width: 100%;">
                         </div>
                     </div>
                 </div>
@@ -387,9 +345,9 @@ $CompanyID = $_SESSION['CompanyID'];
                     <div class="col-md-3 fieldcol">
                         <label = "usr" class = "control-label"> Range of Salary: </label>
                     </div>
-                    <div class="col-md-8 fieldcol">
+                    <div class="col-md-4 fieldcol">
                         <div class="form-group">
-                            <select id="Salary" name="Salary" class="salaryrange" style="width: 300px; height:30px;">
+                            <select id="Salary" name="Salary" class="salaryrange" style="width: 100%; height:30px;">
                                 <option value="" selected="selected"> Select Salary Range</option>
                                 <?php
                                 $salaryrange_tbl =
@@ -414,10 +372,10 @@ $CompanyID = $_SESSION['CompanyID'];
                     <div class="col-md-3 fieldcol">
                         <label = "usr" class = "control-label"> Years of Experience: </label>
                     </div>
-                    <div class="col-md-8 fieldcol">
+                    <div class="col-md-4 fieldcol">
                         <div class="form-group">
                             <input type="number" name="YExperience" id="YExperience" class="form-control"
-                                   style="width: 300px;">
+                                   style="width: 100%;">
                         </div>
                     </div>
                 </div>
@@ -425,9 +383,9 @@ $CompanyID = $_SESSION['CompanyID'];
                     <div class="col-md-3 fieldcol">
                         <label = "usr" class = "control-label"> Training: </label>
                     </div>
-                    <div class="col-md-8 fieldcol">
+                    <div class="col-md-4 fieldcol">
                         <div class="form-group">
-                            <div class="input-group" style="width: 300px; margin-bottom: 15px">
+                            <div class="input-group" style="width: 100%; margin-bottom: 15px">
                                 <input type="text" class="form-control" id="txt-training" name="Training">
                                 <script>
                                     var tl_index = -1;
@@ -482,7 +440,7 @@ $CompanyID = $_SESSION['CompanyID'];
                     <div class="col-md-3 fieldcol">
                         <label = "usr" class = "control-label"> Knowledge In: </label>
                     </div>
-                    <div class="col-md-8 fieldcol">
+                    <div class="col-md-4 fieldcol">
                         <div class="form-group">
                             <div class="input-group" style="width: 300px; margin-bottom: 15px">
                                 <input type="text" class="form-control" id="txt-knowledge" name="Knowledge">
@@ -530,7 +488,7 @@ $CompanyID = $_SESSION['CompanyID'];
                         <a href="javascript:void(0)">[remove]</a>
                         <input type="hidden"/>
                     </div>
-                    <div id="knowledge-list" class="col-md-offset-3 col-md-8 fieldcol"
+                    <div id="knowledge-list" class="col-md-offset-3 col-md-4 fieldcol"
                          style="width: 300px; word-wrap: break-word">
 
                     </div>
@@ -541,9 +499,9 @@ $CompanyID = $_SESSION['CompanyID'];
                     <div class="col-md-3 fieldcol">
                         <label = "usr" class = "control-label"> Language: </label>
                     </div>
-                    <div class="col-md-8 fieldcol">
+                    <div class="col-md-4 fieldcol">
                         <div class="form-group">
-                            <div class="input-group" style="width: 300px; margin-bottom: 15px">
+                            <div class="input-group" style="width: 100%; margin-bottom: 15px">
                                 <input type="text" class="form-control" id="txt-language" name="Language">
                                 <script>
                                     var lll_index = -1;
@@ -594,12 +552,13 @@ $CompanyID = $_SESSION['CompanyID'];
 
                     </div>
                 </div>
-                <div class="row field">
-                    <div class="col-md-8 fieldcol">
-                        <button type="submit" class="btn btn-primary " id="btnsave" name="btnsave"><b> SAVE </b>
-                        </button>
-                        <button type="submit" class="btn btn-primary " id="cancel"><b> CANCEL</b></button>
-                    </div>
+                &nbsp;
+                <div class="hr5" style="margin-top:35px;margin-bottom:40px;"></div>
+                <div class="field">
+                    <div class="text-center">
+                        <button type="submit" class="btn-system btn-large" id="btnsave" name="btnsave">Save</button>
+                        <button type="submit" class="btn-system btn-large" id="cancel">Cancel</button>
+                    </div>           
                 </div>
             </div>
         </div>

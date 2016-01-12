@@ -330,7 +330,6 @@ $Total = $studentinfo_tbl[0][0];
                         <option value="emp">Employed</option>
                         <option value="unemp">Unemployed</option>
                     </select><br>
-
                         <button type="submit" class="btn-system btn-large border-btn" href="#">Filter</button>
                 </div>
             </div>

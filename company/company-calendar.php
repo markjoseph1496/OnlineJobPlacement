@@ -10,164 +10,133 @@ $CompanyID = $_SESSION['CompanyID'];
 
 <head>
 
-  <!-- Basic -->
-  <title>OJPMS</title>
+    <!-- Basic -->
+    <title>OJPMS</title>
 
-  <!-- Define Charset -->
-  <meta charset="utf-8">
+    <!-- Define Charset -->
+    <meta charset="utf-8">
 
-  <!-- Responsive Metatag -->
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <!-- Responsive Metatag -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
-  <!-- Page Description and Author -->
-  <meta name="description" content="Margo - Responsive HTML5 Template">
-  <meta name="author" content="iThemesLab">
+    <!-- Page Description and Author -->
+    <meta name="description" content="Margo - Responsive HTML5 Template">
+    <meta name="author" content="iThemesLab">
 
-  <!-- Bootstrap CSS  -->
-  <link rel="stylesheet" href="../asset/css/bootstrap.min.css" type="text/css" media="screen">
+    <!-- Bootstrap CSS -->
+    <link href="../css/bootstrap.min.css" rel="stylesheet"/>
 
-  <!-- Font Awesome CSS -->
-  <link rel="stylesheet" href="../css/font-awesome.min.css" type="text/css" media="screen">
+    <!-- BootstrapValidator CSS -->
+    <link href="../css/bootstrapValidator.min.css" rel="stylesheet"/>
 
-  <!-- Slicknav -->
-  <link rel="stylesheet" type="text/css" href="../css/slicknav.css" media="screen">
+    <!-- jQuery and Bootstrap JS -->
+    <script type="text/javascript" src="../js/jquery.min.js"></script>
+    <script src="../js/bootstrap.min.js" type="text/javascript"></script>
 
-  <!-- Margo CSS Styles  -->
-  <link rel="stylesheet" type="text/css" href="../css/style.css" media="screen">
+    <!-- BootstrapValidator -->
+    <script src="../js/bootstrapValidator.min.js" type="text/javascript"></script>
 
-  <!-- Responsive CSS Styles  -->
-  <link rel="stylesheet" type="text/css" href="../css/responsive.css" media="screen">
+    <!-- Font Awesome CSS -->
+    <link rel="stylesheet" href="../css/font-awesome.min.css" type="text/css" media="screen">
 
-  <!-- Css3 Transitions Styles  -->
-  <link rel="stylesheet" type="text/css" href="../css/animate.css" media="screen">
+    <!-- Fonts -->
+    <link href="../fonts/ffonts/montserrat.css" rel="stylesheet" type="text/css">
+    <link href="../fonts/ffonts/kaushan.css" rel="stylesheet" type="text/css">
+    <link href="../fonts/ffonts/droid.css" rel="stylesheet" type="text/css">
+    <link href="../fonts/ffonts/roboto.css" rel="stylesheet" type="text/css">
 
-  <!-- OJPMS CSS  -->
-  <link rel="stylesheet" type="text/css" href="../css/ojpms-style.css" media="screen">
+    <!-- Slicknav -->
+    <link rel="stylesheet" type="text/css" href="../css/slicknav.css" media="screen">
 
-  <!-- Color CSS Styles  -->
-  <link rel="stylesheet" type="text/css" href="../css/colors/red.css" title="red" media="screen" />
-  <link rel="stylesheet" type="text/css" href="../css/colors/jade.css" title="jade" media="screen" />
-  <link rel="stylesheet" type="text/css" href="../css/colors/blue.css" title="blue" media="screen" />
-  <link rel="stylesheet" type="text/css" href="../css/colors/beige.css" title="beige" media="screen" />
-  <link rel="stylesheet" type="text/css" href="../css/colors/cyan.css" title="cyan" media="screen" />
-  <link rel="stylesheet" type="text/css" href="../css/colors/green.css" title="green" media="screen" />
-  <link rel="stylesheet" type="text/css" href="../css/colors/orange.css" title="orange" media="screen" />
-  <link rel="stylesheet" type="text/css" href="../css/colors/peach.css" title="peach" media="screen" />
-  <link rel="stylesheet" type="text/css" href="../css/colors/pink.css" title="pink" media="screen" />
-  <link rel="stylesheet" type="text/css" href="../css/colors/purple.css" title="purple" media="screen" />
-  <link rel="stylesheet" type="text/css" href="../css/colors/sky-blue.css" title="sky-blue" media="screen" />
-  <link rel="stylesheet" type="text/css" href="../css/colors/yellow.css" title="yellow" media="screen" />
+    <!-- Margo CSS Styles  -->
+    <link rel="stylesheet" type="text/css" href="../css/style.css" media="screen">
 
+    <!-- Responsive CSS Styles  -->
+    <link rel="stylesheet" type="text/css" href="../css/responsive.css" media="screen">
 
-  <!-- Margo JS  -->
-  <script type="text/javascript" src="../js/jquery.min.js"></script>
-  <script type="text/javascript" src="../js/jquery.migrate.js"></script>
-  <script type="text/javascript" src="../js/modernizrr.js"></script>
-  <script type="text/javascript" src="../asset/js/bootstrap.min.js"></script>
-  <script type="text/javascript" src="../js/jquery.fitvids.js"></script>
-  <script type="text/javascript" src="../js/owl.carousel.min.js"></script>
-  <script type="text/javascript" src="../js/nivo-lightbox.min.js"></script>
-  <script type="text/javascript" src="../js/jquery.isotope.min.js"></script>
-  <script type="text/javascript" src="../js/jquery.appear.js"></script>
-  <script type="text/javascript" src="../js/count-to.js"></script>
-  <script type="text/javascript" src="../js/jquery.textillate.js"></script>
-  <script type="text/javascript" src="../js/jquery.lettering.js"></script>
-  <script type="text/javascript" src="../js/jquery.easypiechart.min.js"></script>
-  <script type="text/javascript" src="../js/jquery.nicescroll.min.js"></script>
-  <script type="text/javascript" src="../js/jquery.parallax.js"></script>
-  <script type="text/javascript" src="../js/jquery.slicknav.js"></script>
+    <!-- Css3 Transitions Styles  -->
+    <link rel="stylesheet" type="text/css" href="../css/animate.css" media="screen">
 
-  <!--[if IE 8]><script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
-  <!--[if lt IE 9]><script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+    <!-- Color CSS Styles  -->
+    <link rel="stylesheet" type="text/css" href="../css/colors/yellow.css" title="yellow" media="screen"/>
 
+    <!-- JS  -->
+    <script type="text/javascript" src="../js/jquery.migrate.js"></script>
+    <script type="text/javascript" src="../js/modernizrr.js"></script>
+    <script type="text/javascript" src="../js/jquery.fitvids.js"></script>
+    <script type="text/javascript" src="../js/owl.carousel.min.js"></script>
+    <script type="text/javascript" src="../js/nivo-lightbox.min.js"></script>
+    <script type="text/javascript" src="../js/jquery.isotope.min.js"></script>
+    <script type="text/javascript" src="../js/jquery.appear.js"></script>
+    <script type="text/javascript" src="../js/count-to.js"></script>
+    <script type="text/javascript" src="../js/jquery.textillate.js"></script>
+    <script type="text/javascript" src="../js/jquery.lettering.js"></script>
+    <script type="text/javascript" src="../js/jquery.easypiechart.min.js"></script>
+    <script type="text/javascript" src="../js/jquery.nicescroll.min.js"></script>
+    <script type="text/javascript" src="../js/jquery.parallax.js"></script>
+    <script type="text/javascript" src="../js/jquery.slicknav.js"></script>
 </head>
 
 <body>
 
-  <!-- Full Body Container -->
-  <div id="container">
+<!-- Full Body Container -->
+<div id="container">
 
 
     <!-- Start Header Section -->
     <div class="hidden-header"></div>
     <header class="clearfix">
 
-      <!-- Start Top Bar -->
-      <div class="top-bar">
-        <div class="container">
-          <div class="row">
-            <div class="col-md-6">
-              <!-- Start Contact Info 
-              <ul class="contact-details">
-                <li><a href="#"><i class="fa fa-map-marker"></i> House-54/A, London, UK</a>
-                </li>
-                <li><a href="#"><i class="fa fa-envelope-o"></i> info@yourcompany.com</a>
-                </li>
-                <li><a href="#"><i class="fa fa-phone"></i> +12 345 678 000</a>
-                </li>
-              </ul>
-               End Contact Info -->
+        <!-- Start Top Bar -->
+        <div class="top-bar">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6">
+                        <!-- Start Contact Info -->
+                            <ul class="contact-details">
+                                <li class="profile-name"><i class="fa fa-hashtag"></i> <b>008-2012-0805</b></li>
+                            </ul>
+                        <!-- End Contact Info -->
+                    </div>
+                    <!-- .col-md-6 -->
+                    <div class="col-md-6">
+                        <!-- Start Social Links -->
+                            <ul class="social-list">
+                                <li class="profile-name">
+                                    <a class="bell itl-tooltip" data-placement="bottom" title="" href="#" data-original-title="Notification"><i class="fa fa-bell"></i></a>
+                                </li>
+                                <li class="profile-name">
+                                    &nbsp;
+                                </li>
+                                <li class="profile-name">
+                                    <i class="fa fa-user"></i> Hello, <b>Aira Jane Cruz</b>                               
+                                </li>
+                            </ul>
+                            <!-- End Social Links -->
+                    </div>
+                    <!-- .col-md-6 -->
+                </div>
+                <!-- .row -->
             </div>
-            <!-- .col-md-6 -->
-            <div class="col-md-6">
-              <!-- Start Social Links 
-              <ul class="social-list">
-                <li>
-                  <a class="facebook itl-tooltip" data-placement="bottom" title="Facebook" href="#"><i class="fa fa-facebook"></i></a>
-                </li>
-                <li>
-                  <a class="twitter itl-tooltip" data-placement="bottom" title="Twitter" href="#"><i class="fa fa-twitter"></i></a>
-                </li>
-                <li>
-                  <a class="google itl-tooltip" data-placement="bottom" title="Google Plus" href="#"><i class="fa fa-google-plus"></i></a>
-                </li>
-                <li>
-                  <a class="dribbble itl-tooltip" data-placement="bottom" title="Dribble" href="#"><i class="fa fa-dribbble"></i></a>
-                </li>
-                <li>
-                  <a class="linkdin itl-tooltip" data-placement="bottom" title="Linkedin" href="#"><i class="fa fa-linkedin"></i></a>
-                </li>
-                <li>
-                  <a class="flickr itl-tooltip" data-placement="bottom" title="Flickr" href="#"><i class="fa fa-flickr"></i></a>
-                </li>
-                <li>
-                  <a class="tumblr itl-tooltip" data-placement="bottom" title="Tumblr" href="#"><i class="fa fa-tumblr"></i></a>
-                </li>
-                <li>
-                  <a class="instgram itl-tooltip" data-placement="bottom" title="Instagram" href="#"><i class="fa fa-instagram"></i></a>
-                </li>
-                <li>
-                  <a class="vimeo itl-tooltip" data-placement="bottom" title="vimeo" href="#"><i class="fa fa-vimeo-square"></i></a>
-                </li>
-                <li>
-                  <a class="skype itl-tooltip" data-placement="bottom" title="Skype" href="#"><i class="fa fa-skype"></i></a>
-                </li>
-              </ul>
-               End Social Links -->
-            </div>
-            <!-- .col-md-6 -->
-          </div>
-          <!-- .row -->
+            <!-- .container -->
         </div>
-        <!-- .container -->
-      </div>
-      <!-- .top-bar -->
-      <!-- End Top Bar -->
+        <!-- .top-bar -->
+        <!-- End Top Bar -->
 
 
-      <!-- Start  Logo & Naviagtion  -->
-      <div class="navbar navbar-default navbar-top">
-        <div class="container">
-          <div class="navbar-header">
-            <!-- Stat Toggle Nav Link For Mobiles -->
-            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-              <i class="fa fa-bars"></i>
-            </button>
-            <!-- End Toggle Nav Link For Mobiles -->
-            <a class="navbar-brand" href="index.html">
-             OJPMS
-            </a>
-          </div>
+        <!-- Start  Logo & Naviagtion  -->
+        <div class="navbar navbar-default navbar-top">
+            <div class="container">
+                <div class="navbar-header">
+                    <!-- Stat Toggle Nav Link For Mobiles -->
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <i class="fa fa-bars"></i>
+                    </button>
+                    <!-- End Toggle Nav Link For Mobiles -->
+                     <a class="navbar-brand" href="">
+                        <img src="../images/ojpms.png">
+                    </a>
+                </div>
           <div class="navbar-collapse collapse">
             <!-- Sign-out -->
             <div class="signout-side">
@@ -243,11 +212,6 @@ $CompanyID = $_SESSION['CompanyID'];
           <div class="col-md-6">
             <h2>List of Events</h2>
           </div>
-          <div class="col-md-6">
-            <ul class="breadcrumbs">
-              <li><a href="company-calendarcreateevent.php">Create an Event</a></li>
-            </ul>
-          </div>
         </div>
       </div>
     </div>
@@ -257,6 +221,12 @@ $CompanyID = $_SESSION['CompanyID'];
   <br><br><br>
   
   <div class = "container">
+    <div class="col-md-12 fieldcol">
+                    <a href="company-calendarcreateevent.php" class="btnforadding" style="float:right;">
+                        <span class="fa fa-pencil-square-o fa-1x"> Create an Event </span>
+                    </a>
+   </div>
+   &nbsp;
     <div class = "col-md-12">
             <?php
               if(isset($_GET['id'])){
@@ -281,7 +251,7 @@ $CompanyID = $_SESSION['CompanyID'];
                     }
                 }   
             ?>
-      <table class = "Applicants" width = "100%" cellpadding = "0">
+      <table class="table segment table-hover">
            <thead>
            <?php
               $eventtitle = 'EventTitle';
@@ -317,11 +287,11 @@ $CompanyID = $_SESSION['CompanyID'];
                       <input type="hidden" name="delete_id" value="<?php echo $row['EventID']; ?>" />
                    <td class = tabletitle> 
                         <button id="Adduser" href="" name="btnedit" class=" btn btn-primary"> 
-                        <i class="fa fa-pencil"></i></button> 
+                        <i class="fa fa-pencil-square-o fa-1x"></i></button> 
                         <button id="Adduser" href="#" class=" btn btn-primary"> 
                         <i class="fa fa-exclamation"></i> </button>
                         <button id="Adduser" name="btndelete" href="#" class=" btn btn-primary"> 
-                        <i class="fa fa-minus-square"></i> </button> 
+                        <i class="fa fa-trash fa-1x"></i> </button> 
                    </td>
                    </form>
                 <tr> 
