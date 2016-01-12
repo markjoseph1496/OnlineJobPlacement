@@ -1,9 +1,6 @@
 <?php
 include('../connection.php');
 session_start();
-
-$qry = "select * from companyinfotbl";
-$result = mysql_query($qry);
 ?>
 <!doctype html>
 <!--[if IE 8 ]>
@@ -267,16 +264,27 @@ $result = mysql_query($qry);
             </thead>
             <tbody>
             <?php
-            while ($qry = mysql_fetch_Array($result)) {
-                $CompanyName = $qry['CompanyName'];
-                $City = $qry['City'];
-                echo "
+            $companyinfo_tbl =
+                GSecureSQL::query(
+                    "SELECT * FROM companyinfotbl",
+                    TRUE
+                );
+            foreach ($companyinfo_tbl as $value) {
+                $CompanyID = $value[0];
+                $CompanyName = $value[1];
+                $Industry = $value[3];
+                $City = $value[5];
+                $PhoneNo = $value[7];
+                $MobileNo = $value[8];
+                $Website = $value[9];
+            }
+            ?>
                  <tr>
                     <td width= 20% class = tabletitle>
-                      <a href = '#'>$CompanyName</a>
+                      <a href = '#'></a>
                     </td>
                     <td width = 40% class = tabletitle></td>
-                    <td width = 25% class = tabletitle>$City</td>
+                    <td width = 25% class = tabletitle></td>
                     <form method = 'POST'>
                     <td class = tabletitle>
                         <button  name = 'btndelete' href='' class='btn btn-danger'> 
@@ -288,11 +296,6 @@ $result = mysql_query($qry);
                     </td>
                     </form>
                     <tr>
-
-
-                ";
-            }
-            ?>
             </tbody>
         </table>
     </div>

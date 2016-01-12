@@ -1,13 +1,11 @@
 <?php
 include('../connection.php');
 session_start();
-
 $AdminID = $_SESSION['AdminID'];
-
 
 $admin_tbl =
     GSecureSQL::query(
-        "SELECT * FROM admintbl WHERE AdminID =?",
+        "SELECT * FROM admintbl WHERE AdminID = ?",
         TRUE,
         "s",
         $AdminID
