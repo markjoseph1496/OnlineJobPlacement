@@ -215,7 +215,7 @@
                                             <ul class="icons-list">
                                                 <li><a href="student-view/search-job/search-result.php">BPO / Call Center</a></li>
                                                 <li><a href="">Food / Beverage / RestaurantService</a></li>
-                                                <li><a href="">Customer Service</a></li>
+                                                <li><a href="">Lorem Service</a></li>
                                                 <li><a href="">Clerical / Administrative Support</a></li>
                                                 <li><a href="">Human Resources</a></li>
                                                 <li><a href="">Finance - General / Cost Accounting </a></li>
@@ -675,7 +675,7 @@
                                             deserunt mollit anim laborum. Lorem ipsum dolor sit amet, consectetur
                                             adipisicing elit.</p>
                                     </div>
-                                    <div class="testimonial-author"><span>John Doe</span> - Customer</div>
+                                    <div class="testimonial-author"><span>Lorem</span> - Lorem</div>
                                 </div>
                                 <!-- Testimonial 2 -->
                                 <div class="classic-testimonials item">
@@ -684,7 +684,7 @@
                                             deserunt mollit anim laborum. Lorem ipsum dolor sit amet, consectetur
                                             adipisicing elit.</p>
                                     </div>
-                                    <div class="testimonial-author"><span>John Doe</span> - Customer</div>
+                                    <div class="testimonial-author"><span>Lorem</span> - Lorem</div>
                                 </div>
                                 <!-- Testimonial 2 -->
                                 <div class="classic-testimonials item">
@@ -693,7 +693,7 @@
                                             deserunt mollit anim laborum. Lorem ipsum dolor sit amet, consectetur
                                             adipisicing elit.</p>
                                     </div>
-                                    <div class="testimonial-author"><span>John Doe</span> - Customer</div>
+                                    <div class="testimonial-author"><span>Lorem</span> - Lorem</div>
                                 </div>
                             </div>
                             <!-- End Testimonials Carousel -->
