@@ -2,6 +2,14 @@
 include('../connection.php');
 session_start();
 $CompanyID = $_SESSION['CompanyID'];
+
+$PostionID = 'PostionID';
+$PostingDateFrom = 'PostingDateFrom';
+$PostingDateTo = 'PostingDateTo';
+$PositionLevel = 'PositionLevel';
+$AvPosition = 'AvPosition';
+$
+$
 ?>
 <!doctype html>
 <!--[if IE 8 ]><html class="ie ie8" lang="en"> <![endif]-->

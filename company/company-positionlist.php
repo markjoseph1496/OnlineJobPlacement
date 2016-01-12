@@ -279,7 +279,7 @@ $CompanyID = $_SESSION['CompanyID'];
             ?>
                
                 
-        <table class = "Applicants" width = "100%" cellpadding = "0">
+        <table class = "table segment table-hover" width = "100%" cellpadding = "0">
 
         <?php
             $PID = 'PositionID';
@@ -310,7 +310,7 @@ $CompanyID = $_SESSION['CompanyID'];
             ?>
                 <tr>
                     <td width= 30% class = 'tabletitle'>
-                      <a href = "viewposition.php?PID=<?php echo $row[$PID]; ?>">  <?php echo $row[$plevel]; ?> </a>
+                      <a href = "company-viewposition.php?PID=<?php echo $row[$PID]; ?>">  <?php echo $row[$plevel]; ?> </a>
                     </td>
                     <td width = 20% class = 'tabletitle'><?php echo $row[$pdatef]; ?></td>
                     <td width = 20% class = 'tabletitle'><?php echo $row[$pdatet]; ?></td>
