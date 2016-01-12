@@ -2,15 +2,17 @@
 include('../connection.php');
 
 $CourseID = $_GET['id'];
-$query = "SELECT * FROM coursetbl WHERE CourseID = '$CourseID'";
-$result = mysql_query($query);
-while ($query = mysql_fetch_array($result)) {
-    $coursetitle = $query['CourseTitle'];
-    $coursecode = $query['CourseCode'];
-    $coursedescription = $query['CourseDescription'];
+$course_tbl =
+    GSecureSQL::query(
+        "SELECT * FROM coursetbl WHERE CourseID = ?",
+        TRUE,
+        "s",
+        $CourseID
+    );
 
-}
-
+    $coursetitle = $course_tbl[0][1];
+    $coursecode = $course_tbl[0][2];
+    $coursedescription = $course_tbl[0][3];
 ?>
 
 <!doctype html>
