@@ -13,67 +13,71 @@ $Total = $Q1[0];
 
 <head>
 
-  <!-- Basic -->
-  <title>OJPMS</title>
+    <!-- Basic -->
+    <title>OJPMS</title>
 
-  <!-- Bootstrap CSS  -->
-  <link rel="stylesheet" href="../asset/css/bootstrap.min.css" type="text/css" media="screen">
+    <!-- Define Charset -->
+    <meta charset="utf-8">
 
-  <!-- Font Awesome CSS -->
-  <link rel="stylesheet" href="../css/font-awesome.min.css" type="text/css" media="screen">
+    <!-- Responsive Metatag -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
-  <!-- Slicknav -->
-  <link rel="stylesheet" type="text/css" href="../css/slicknav.css" media="screen">
+    <!-- Page Description and Author -->
+    <meta name="description" content="Margo - Responsive HTML5 Template">
+    <meta name="author" content="iThemesLab">
 
-  <!-- Margo CSS Styles  -->
-  <link rel="stylesheet" type="text/css" href="../css/style.css" media="screen">
+    <!-- Bootstrap CSS -->
+    <link href="../css/bootstrap.min.css" rel="stylesheet"/>
 
-  <!-- Responsive CSS Styles  -->
-  <link rel="stylesheet" type="text/css" href="../css/responsive.css" media="screen">
+    <!-- BootstrapValidator CSS -->
+    <link href="../css/bootstrapValidator.min.css" rel="stylesheet"/>
 
-  <!-- Css3 Transitions Styles  -->
-  <link rel="stylesheet" type="text/css" href="../css/animate.css" media="screen">
+    <!-- jQuery and Bootstrap JS -->
+    <script type="text/javascript" src="../js/jquery.min.js"></script>
+    <script src="../js/bootstrap.min.js" type="text/javascript"></script>
 
-  <!-- OJPMS CSS  -->
-  <link rel="stylesheet" type="text/css" href="../css/ojpms-style.css" media="screen">
+    <!-- BootstrapValidator -->
+    <script src="../js/bootstrapValidator.min.js" type="text/javascript"></script>
 
-  <!-- Color CSS Styles  -->
-  <link rel="stylesheet" type="text/css" href="../css/colors/red.css" title="red" media="screen" />
-  <link rel="stylesheet" type="text/css" href="../css/colors/jade.css" title="jade" media="screen" />
-  <link rel="stylesheet" type="text/css" href="../css/colors/blue.css" title="blue" media="screen" />
-  <link rel="stylesheet" type="text/css" href="../css/colors/beige.css" title="beige" media="screen" />
-  <link rel="stylesheet" type="text/css" href="../css/colors/cyan.css" title="cyan" media="screen" />
-  <link rel="stylesheet" type="text/css" href="../css/colors/green.css" title="green" media="screen" />
-  <link rel="stylesheet" type="text/css" href="../css/colors/orange.css" title="orange" media="screen" />
-  <link rel="stylesheet" type="text/css" href="../css/colors/peach.css" title="peach" media="screen" />
-  <link rel="stylesheet" type="text/css" href="../css/colors/pink.css" title="pink" media="screen" />
-  <link rel="stylesheet" type="text/css" href="../css/colors/purple.css" title="purple" media="screen" />
-  <link rel="stylesheet" type="text/css" href="../css/colors/sky-blue.css" title="sky-blue" media="screen" />
-  <link rel="stylesheet" type="text/css" href="../css/colors/yellow.css" title="yellow" media="screen" />
+    <!-- Font Awesome CSS -->
+    <link rel="stylesheet" href="../css/font-awesome.min.css" type="text/css" media="screen">
 
+    <!-- Fonts -->
+    <link href="../fonts/ffonts/montserrat.css" rel="stylesheet" type="text/css">
+    <link href="../fonts/ffonts/kaushan.css" rel="stylesheet" type="text/css">
+    <link href="../fonts/ffonts/droid.css" rel="stylesheet" type="text/css">
+    <link href="../fonts/ffonts/roboto.css" rel="stylesheet" type="text/css">
 
-  <!-- Margo JS  -->
-  <script type="text/javascript" src="../js/jquery.min.js"></script>
-  <script type="text/javascript" src="../js/jquery.migrate.js"></script>
-  <script type="text/javascript" src="../js/modernizrr.js"></script>
-  <script type="text/javascript" src="../asset/js/bootstrap.min.js"></script>
-  <script type="text/javascript" src="../js/jquery.fitvids.js"></script>
-  <script type="text/javascript" src="../js/owl.carousel.min.js"></script>
-  <script type="text/javascript" src="../js/nivo-lightbox.min.js"></script>
-  <script type="text/javascript" src="../js/jquery.isotope.min.js"></script>
-  <script type="text/javascript" src="../js/jquery.appear.js"></script>
-  <script type="text/javascript" src="../js/count-to.js"></script>
-  <script type="text/javascript" src="../js/jquery.textillate.js"></script>
-  <script type="text/javascript" src="../js/jquery.lettering.js"></script>
-  <script type="text/javascript" src="../js/jquery.easypiechart.min.js"></script>
-  <script type="text/javascript" src="../js/jquery.nicescroll.min.js"></script>
-  <script type="text/javascript" src="../js/jquery.parallax.js"></script>
-  <script type="text/javascript" src="../js/jquery.slicknav.js"></script>
+    <!-- Slicknav -->
+    <link rel="stylesheet" type="text/css" href="../css/slicknav.css" media="screen">
 
+    <!-- Margo CSS Styles  -->
+    <link rel="stylesheet" type="text/css" href="../css/style.css" media="screen">
 
-  <!--[if IE 8]><script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
-  <!--[if lt IE 9]><script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+    <!-- Responsive CSS Styles  -->
+    <link rel="stylesheet" type="text/css" href="../css/responsive.css" media="screen">
 
+    <!-- Css3 Transitions Styles  -->
+    <link rel="stylesheet" type="text/css" href="../css/animate.css" media="screen">
+
+    <!-- Color CSS Styles  -->
+    <link rel="stylesheet" type="text/css" href="../css/colors/yellow.css" title="yellow" media="screen"/>
+
+    <!-- JS  -->
+    <script type="text/javascript" src="../js/jquery.migrate.js"></script>
+    <script type="text/javascript" src="../js/modernizrr.js"></script>
+    <script type="text/javascript" src="../js/jquery.fitvids.js"></script>
+    <script type="text/javascript" src="../js/owl.carousel.min.js"></script>
+    <script type="text/javascript" src="../js/nivo-lightbox.min.js"></script>
+    <script type="text/javascript" src="../js/jquery.isotope.min.js"></script>
+    <script type="text/javascript" src="../js/jquery.appear.js"></script>
+    <script type="text/javascript" src="../js/count-to.js"></script>
+    <script type="text/javascript" src="../js/jquery.textillate.js"></script>
+    <script type="text/javascript" src="../js/jquery.lettering.js"></script>
+    <script type="text/javascript" src="../js/jquery.easypiechart.min.js"></script>
+    <script type="text/javascript" src="../js/jquery.nicescroll.min.js"></script>
+    <script type="text/javascript" src="../js/jquery.parallax.js"></script>
+    <script type="text/javascript" src="../js/jquery.slicknav.js"></script>
 </head>
 
 <body>
@@ -305,7 +309,7 @@ $Total = $Q1[0];
                     </div>
                     </div>
                 </div>
-             <table class = 'Applicants' width = '100%' cellpadding = '0'>
+             <table class="table segment table-hover">
                 <thead>
                     <tr></tr>  
                     <tr>

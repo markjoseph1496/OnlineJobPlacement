@@ -30,11 +30,37 @@ $Total = $studentinfo_tbl[0][0];
     <!-- Basic -->
     <title>OJPMS</title>
 
-    <!-- Bootstrap CSS  -->
-    <link rel="stylesheet" href="../asset/css/bootstrap.min.css" type="text/css" media="screen">
+    <!-- Define Charset -->
+    <meta charset="utf-8">
+
+    <!-- Responsive Metatag -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    <!-- Page Description and Author -->
+    <meta name="description" content="Margo - Responsive HTML5 Template">
+    <meta name="author" content="iThemesLab">
+
+    <!-- Bootstrap CSS -->
+    <link href="../css/bootstrap.min.css" rel="stylesheet"/>
+
+    <!-- BootstrapValidator CSS -->
+    <link href="../css/bootstrapValidator.min.css" rel="stylesheet"/>
+
+    <!-- jQuery and Bootstrap JS -->
+    <script type="text/javascript" src="../js/jquery.min.js"></script>
+    <script src="../js/bootstrap.min.js" type="text/javascript"></script>
+
+    <!-- BootstrapValidator -->
+    <script src="../js/bootstrapValidator.min.js" type="text/javascript"></script>
 
     <!-- Font Awesome CSS -->
     <link rel="stylesheet" href="../css/font-awesome.min.css" type="text/css" media="screen">
+
+    <!-- Fonts -->
+    <link href="../fonts/ffonts/montserrat.css" rel="stylesheet" type="text/css">
+    <link href="../fonts/ffonts/kaushan.css" rel="stylesheet" type="text/css">
+    <link href="../fonts/ffonts/droid.css" rel="stylesheet" type="text/css">
+    <link href="../fonts/ffonts/roboto.css" rel="stylesheet" type="text/css">
 
     <!-- Slicknav -->
     <link rel="stylesheet" type="text/css" href="../css/slicknav.css" media="screen">
@@ -48,29 +74,12 @@ $Total = $studentinfo_tbl[0][0];
     <!-- Css3 Transitions Styles  -->
     <link rel="stylesheet" type="text/css" href="../css/animate.css" media="screen">
 
-    <!-- OJPMS CSS  -->
-    <link rel="stylesheet" type="text/css" href="../css/ojpms-style.css" media="screen">
-
     <!-- Color CSS Styles  -->
-    <link rel="stylesheet" type="text/css" href="../css/colors/red.css" title="red" media="screen"/>
-    <link rel="stylesheet" type="text/css" href="../css/colors/jade.css" title="jade" media="screen"/>
-    <link rel="stylesheet" type="text/css" href="../css/colors/blue.css" title="blue" media="screen"/>
-    <link rel="stylesheet" type="text/css" href="../css/colors/beige.css" title="beige" media="screen"/>
-    <link rel="stylesheet" type="text/css" href="../css/colors/cyan.css" title="cyan" media="screen"/>
-    <link rel="stylesheet" type="text/css" href="../css/colors/green.css" title="green" media="screen"/>
-    <link rel="stylesheet" type="text/css" href="../css/colors/orange.css" title="orange" media="screen"/>
-    <link rel="stylesheet" type="text/css" href="../css/colors/peach.css" title="peach" media="screen"/>
-    <link rel="stylesheet" type="text/css" href="../css/colors/pink.css" title="pink" media="screen"/>
-    <link rel="stylesheet" type="text/css" href="../css/colors/purple.css" title="purple" media="screen"/>
-    <link rel="stylesheet" type="text/css" href="../css/colors/sky-blue.css" title="sky-blue" media="screen"/>
     <link rel="stylesheet" type="text/css" href="../css/colors/yellow.css" title="yellow" media="screen"/>
 
-
-    <!-- Margo JS  -->
-    <script type="text/javascript" src="../js/jquery.min.js"></script>
+    <!-- JS  -->
     <script type="text/javascript" src="../js/jquery.migrate.js"></script>
     <script type="text/javascript" src="../js/modernizrr.js"></script>
-    <script type="text/javascript" src="../asset/js/bootstrap.min.js"></script>
     <script type="text/javascript" src="../js/jquery.fitvids.js"></script>
     <script type="text/javascript" src="../js/owl.carousel.min.js"></script>
     <script type="text/javascript" src="../js/nivo-lightbox.min.js"></script>
@@ -271,10 +280,9 @@ $Total = $studentinfo_tbl[0][0];
             </div>
             <div class="col-md-4">
                 <div class="form-group text-center">
-                    <label>
-                        <center><b>Export</b>
-                    </label></center>
-                    <div class="btn btn-hg btn-primary" style="width:100px;">XLS</div>
+                    <a href="" >
+                        <span class="fa fa-download"> Export XLS </span>
+                    </a>
                 </div>
             </div>
         </div>
@@ -357,13 +365,13 @@ $Total = $studentinfo_tbl[0][0];
                         <option value="emp">Employed</option>
                         <option value="unemp">Unemployed</option>
                     </select><br>
-                    <button type="submit" class="btn btn-hg btn-primary" style="width:100px;" href="#"><b> FILTER </b>
-                    </button>
+
+                        <button type="submit" class="btn-system btn-large border-btn" href="#">Filter</button>
                 </div>
             </div>
         </div>
     </div>
-    <table class="Applicants" width="100%" cellpadding="0">
+    <table class="table segment table-hover">
         <thead>
         <tr>
 

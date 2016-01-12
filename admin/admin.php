@@ -18,11 +18,37 @@ $Total = $TotalStudents[0][0];
     <!-- Basic -->
     <title>OJPMS</title>
 
-    <!-- Bootstrap CSS  -->
-    <link rel="stylesheet" href="../asset/css/bootstrap.min.css" type="text/css" media="screen">
+    <!-- Define Charset -->
+    <meta charset="utf-8">
+
+    <!-- Responsive Metatag -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    <!-- Page Description and Author -->
+    <meta name="description" content="Margo - Responsive HTML5 Template">
+    <meta name="author" content="iThemesLab">
+
+    <!-- Bootstrap CSS -->
+    <link href="../css/bootstrap.min.css" rel="stylesheet"/>
+
+    <!-- BootstrapValidator CSS -->
+    <link href="../css/bootstrapValidator.min.css" rel="stylesheet"/>
+
+    <!-- jQuery and Bootstrap JS -->
+    <script type="text/javascript" src="../js/jquery.min.js"></script>
+    <script src="../js/bootstrap.min.js" type="text/javascript"></script>
+
+    <!-- BootstrapValidator -->
+    <script src="../js/bootstrapValidator.min.js" type="text/javascript"></script>
 
     <!-- Font Awesome CSS -->
     <link rel="stylesheet" href="../css/font-awesome.min.css" type="text/css" media="screen">
+
+    <!-- Fonts -->
+    <link href="../fonts/ffonts/montserrat.css" rel="stylesheet" type="text/css">
+    <link href="../fonts/ffonts/kaushan.css" rel="stylesheet" type="text/css">
+    <link href="../fonts/ffonts/droid.css" rel="stylesheet" type="text/css">
+    <link href="../fonts/ffonts/roboto.css" rel="stylesheet" type="text/css">
 
     <!-- Slicknav -->
     <link rel="stylesheet" type="text/css" href="../css/slicknav.css" media="screen">
@@ -36,29 +62,12 @@ $Total = $TotalStudents[0][0];
     <!-- Css3 Transitions Styles  -->
     <link rel="stylesheet" type="text/css" href="../css/animate.css" media="screen">
 
-    <!-- OJPMS CSS  -->
-    <link rel="stylesheet" type="text/css" href="../css/ojpms-style.css" media="screen">
-
     <!-- Color CSS Styles  -->
-    <link rel="stylesheet" type="text/css" href="../css/colors/red.css" title="red" media="screen"/>
-    <link rel="stylesheet" type="text/css" href="../css/colors/jade.css" title="jade" media="screen"/>
-    <link rel="stylesheet" type="text/css" href="../css/colors/blue.css" title="blue" media="screen"/>
-    <link rel="stylesheet" type="text/css" href="../css/colors/beige.css" title="beige" media="screen"/>
-    <link rel="stylesheet" type="text/css" href="../css/colors/cyan.css" title="cyan" media="screen"/>
-    <link rel="stylesheet" type="text/css" href="../css/colors/green.css" title="green" media="screen"/>
-    <link rel="stylesheet" type="text/css" href="../css/colors/orange.css" title="orange" media="screen"/>
-    <link rel="stylesheet" type="text/css" href="../css/colors/peach.css" title="peach" media="screen"/>
-    <link rel="stylesheet" type="text/css" href="../css/colors/pink.css" title="pink" media="screen"/>
-    <link rel="stylesheet" type="text/css" href="../css/colors/purple.css" title="purple" media="screen"/>
-    <link rel="stylesheet" type="text/css" href="../css/colors/sky-blue.css" title="sky-blue" media="screen"/>
     <link rel="stylesheet" type="text/css" href="../css/colors/yellow.css" title="yellow" media="screen"/>
 
-
-    <!-- Margo JS  -->
-    <script type="text/javascript" src="../js/jquery.min.js"></script>
+    <!-- JS  -->
     <script type="text/javascript" src="../js/jquery.migrate.js"></script>
     <script type="text/javascript" src="../js/modernizrr.js"></script>
-    <script type="text/javascript" src="../asset/js/bootstrap.min.js"></script>
     <script type="text/javascript" src="../js/jquery.fitvids.js"></script>
     <script type="text/javascript" src="../js/owl.carousel.min.js"></script>
     <script type="text/javascript" src="../js/nivo-lightbox.min.js"></script>
@@ -71,13 +80,6 @@ $Total = $TotalStudents[0][0];
     <script type="text/javascript" src="../js/jquery.nicescroll.min.js"></script>
     <script type="text/javascript" src="../js/jquery.parallax.js"></script>
     <script type="text/javascript" src="../js/jquery.slicknav.js"></script>
-
-
-    <!--[if IE 8]>
-    <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
-    <!--[if lt IE 9]>
-    <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
-
 </head>
 
 <body>
@@ -162,8 +164,8 @@ $Total = $TotalStudents[0][0];
                         <i class="fa fa-bars"></i>
                     </button>
                     <!-- End Toggle Nav Link For Mobiles -->
-                    <a class="navbar-brand" href="index.html">
-                        OJPMS
+                     <a class="navbar-brand" href="">
+                        <img src="../images/ojpms.png">
                     </a>
                 </div>
                 <div class="navbar-collapse collapse">
@@ -255,7 +257,7 @@ $Total = $TotalStudents[0][0];
 
 <div class="container">
     <div class="col-md-12">
-        <table class='Applicants' width='100%' cellpadding='0'>
+        <table class="table segment table-hover">
             <thead>
             <tr>
             </tr>

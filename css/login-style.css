@@ -3215,6 +3215,24 @@ html.flexbox .testimonial-company--coinbase {
     background-size: 16px 80px;
 }
 
+.login-block input#AdminEmail {
+    background: #fff url(../img/user.png) 20px top no-repeat;
+    background-size: 16px 80px;
+}
+
+.login-block input#AdminEmail:focus {
+    background: #fff url(../img/user.png) 20px bottom no-repeat;
+    background-size: 16px 80px;
+}
+.login-block input#CompanyEmail {
+    background: #fff url(../img/user.png) 20px top no-repeat;
+    background-size: 16px 80px;
+}
+
+.login-block input#CompanyEmail:focus {
+    background: #fff url(../img/user.png) 20px bottom no-repeat;
+    background-size: 16px 80px;
+}
 .login-block input#password {
     background: #fff url(../img/user.png) 20px top no-repeat;
     background-size: 16px 80px;

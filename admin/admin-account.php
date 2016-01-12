@@ -29,11 +29,22 @@ $admin_tbl =
     <!-- Basic -->
     <title>OJPMS</title>
 
+    <!-- Define Charset -->
+    <meta charset="utf-8">
+
+    <!-- Responsive Metatag -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    <!-- Page Description and Author -->
+    <meta name="description" content="Margo - Responsive HTML5 Template">
+    <meta name="author" content="iThemesLab">
+
     <!-- Bootstrap CSS -->
     <link href="../css/bootstrap.min.css" rel="stylesheet"/>
 
     <!-- BootstrapValidator CSS -->
     <link href="../css/bootstrapValidator.min.css" rel="stylesheet"/>
+
     <!-- jQuery and Bootstrap JS -->
     <script type="text/javascript" src="../js/jquery.min.js"></script>
     <script src="../js/bootstrap.min.js" type="text/javascript"></script>
@@ -43,6 +54,12 @@ $admin_tbl =
 
     <!-- Font Awesome CSS -->
     <link rel="stylesheet" href="../css/font-awesome.min.css" type="text/css" media="screen">
+
+    <!-- Fonts -->
+    <link href="../fonts/ffonts/montserrat.css" rel="stylesheet" type="text/css">
+    <link href="../fonts/ffonts/kaushan.css" rel="stylesheet" type="text/css">
+    <link href="../fonts/ffonts/droid.css" rel="stylesheet" type="text/css">
+    <link href="../fonts/ffonts/roboto.css" rel="stylesheet" type="text/css">
 
     <!-- Slicknav -->
     <link rel="stylesheet" type="text/css" href="../css/slicknav.css" media="screen">
@@ -56,14 +73,10 @@ $admin_tbl =
     <!-- Css3 Transitions Styles  -->
     <link rel="stylesheet" type="text/css" href="../css/animate.css" media="screen">
 
-    <!-- OJPMS CSS  -->
-    <link rel="stylesheet" type="text/css" href="../css/ojpms-style.css" media="screen">
-
     <!-- Color CSS Styles  -->
     <link rel="stylesheet" type="text/css" href="../css/colors/yellow.css" title="yellow" media="screen"/>
 
-
-    <!-- Margo JS  -->
+    <!-- JS  -->
     <script type="text/javascript" src="../js/jquery.migrate.js"></script>
     <script type="text/javascript" src="../js/modernizrr.js"></script>
     <script type="text/javascript" src="../js/jquery.fitvids.js"></script>
@@ -481,9 +494,14 @@ $admin_tbl =
             </div>
         </div>
     </div>
-    <button type="submit" class="btn btn-primary" ><b> Save </b></button>
     &nbsp;
-    <button type="submit" class="btn btn-primary"><b> Cancel </b></button>
+    <div class="hr5" style="margin-top:35px;margin-bottom:40px;"></div>
+    <div class="field">
+                    <div class="text-center">
+                        <button type="submit" class="btn-system btn-large">Save</button>
+                        <button type="submit" class="btn-system btn-large">Cancel</button>
+                    </div>           
+     </div>
     </form>
 </div>
 </body>
