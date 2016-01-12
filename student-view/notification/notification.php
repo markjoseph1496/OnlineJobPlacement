@@ -13,10 +13,16 @@ if (isset($_SESSION['StudentID'])) {
         </script>
         ";
 }
-?>
 
-<!doctype html>
+$CertificationID = 'CertificationID';
+$Certification = 'Certification';
+$YearTaken = 'YearTaken';
+
+$qry = "SELECT * FROM certificationtbl WHERE StudentID ='$StudentID'";
+$result = mysql_query($qry);
+?>
 <html lang="en">
+
 <head>
 
     <!-- Basic -->
@@ -40,7 +46,7 @@ if (isset($_SESSION['StudentID'])) {
 
     <!-- jQuery and Bootstrap JS -->
     <script type="text/javascript" src="../../js/jquery.min.js"></script>
-    <script type="text/javascript" src="../../js/bootstrap.min.js" ></script>
+    <script type="text/javascript" src="../../js/bootstrap.min.js"></script>
 
     <!-- BootstrapValidator -->
     <script src="../../js/bootstrapValidator.min.js" type="text/javascript"></script>
@@ -66,8 +72,8 @@ if (isset($_SESSION['StudentID'])) {
     <!-- Css3 Transitions Styles  -->
     <link rel="stylesheet" type="text/css" href="../../css/animate.css" media="screen">
 
-    <!-- OJPMS CSS  -->
-    <link rel="stylesheet" type="text/css" href="../../css/ojpms-style.css" media="screen">
+    <!-- Important! -->
+    <link rel="stylesheet" type="text/css" href="../../css/about-style.css" media="screen">
 
     <!-- Color CSS Styles  -->
     <link rel="stylesheet" type="text/css" href="../../css/colors/yellow.css" title="yellow" media="screen"/>
@@ -94,14 +100,14 @@ if (isset($_SESSION['StudentID'])) {
         <!-- Start Header Section -->
         <div class="hidden-header"></div>
         <header class="clearfix">
-        <!-- Start Top Bar -->
+            <!-- Start Top Bar -->
             <div class="top-bar">
                 <div class="container">
                     <div class="row">
                         <div class="col-md-7">
                             <!-- Start Contact Info -->
-                            <ul class="contact-details">
-                                <li class="profile-name"><i class="fa fa-hashtag"></i> <b>008-2012-0805</b></li>
+                            <ul class="profile-name">
+                                <li><i class="fa fa-hashtag"></i><b> 008-2012-0805</b></li>
                             </ul>
                             <!-- End Contact Info -->
                         </div>
@@ -134,7 +140,7 @@ if (isset($_SESSION['StudentID'])) {
             <div class="navbar navbar-default navbar-top">
                 <div class="container">
                     <div class="navbar-header">
-                    <!-- Stat Toggle Nav Link For Mobiles -->
+                        <!-- Stat Toggle Nav Link For Mobiles -->
                         <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
                             <i class="fa fa-bars"></i>
                         </button>
@@ -143,94 +149,25 @@ if (isset($_SESSION['StudentID'])) {
                             <img src="../../images/ojpms.png">
                         </a>
                     </div>
-                    <div class="navbar-collapse collapse">
-                        <!-- Sign-out -->
-                        <div class="signout-side">
-                            <a href="#" class="btn-system btn-mini border-btn">Apply Now</a>
-                        </div>
-                        <!-- End Sign-out -->
-                    </div>
                 </div>
-                <!-- Mobile Menu Start -->
-                <ul class="wpb-mobile-menu">
-                    <li>
-                        <a href="#">Apply Now</a>
-                    </li>
-                    <li>
-                        <a href="../login-student.php?id=1"><i class="fa fa-sign-out"></i> Sign Out</a>
-                    </li>
-                </ul>
-                <!-- Mobile Menu End -->
             </div>
         </header>
-
-        <div class="middle-bar">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-5">
-                        <ul class="mid-list">
-                            &nbsp;
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-        
 
         <!-- Start Content -->
         <div id="content">
             <div class="container">
                 <div class="row sidebar-page">
                     <!-- Page Content -->
-                    <div class="col-md-9 page-content">
+                    <div class="page-content">
                         
                     </div>
                     <!-- End Page Content -->
                 </div>
+                <div class="hr3" style="margin-top:35px;margin-bottom:40px;"></div>
             </div>
         </div>
     </div>
     <!-- End Content -->
     <script type="text/javascript" src="../../js/script.js"></script>
-
-
-    <!-- Start Footer Section -->
-    <footer>
-        <div class="container">
-            <!-- Start Copyright -->
-            <div class="copyright-section">
-                <div class="row">
-                    <div class="col-md-6">
-                        <p>&copy; 2015 OJPMS - All Rights Reserved</p>
-                    </div>
-                    <!-- .col-md-6 -->
-                    <div class="col-md-6">
-                        <ul class="footer-nav">
-                            <li><a href="#">Sitemap</a>
-                            </li>
-                            <li><a href="#">Privacy Policy</a>
-                            </li>
-                            <li><a href="#">Contact</a>
-                            </li>
-                        </ul>
-                    </div>
-                    <!-- .col-md-6 -->
-                </div>
-                <!-- .row -->
-            </div>
-            <!-- End Copyright -->
-        </div>
-    </footer>
-    <!-- End Footer Section -->
-
-    <!-- Go To Top Link -->
-    <a href="#" class="back-to-top"><i class="fa fa-angle-up"></i></a>
-
-    <div id="loader">
-        <div class="spinner">
-            <div class="dot1"></div>
-            <div class="dot2"></div>
-        </div>
-    </div>
 </body>
 </html>
