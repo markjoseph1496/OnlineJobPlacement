@@ -1,20 +1,3 @@
-<!DOCTYPE html>
-<?php
-include('../../connection.php');
-session_start();
-
-if (isset($_SESSION['StudentID'])) {
-    $StudentID = $_SESSION['StudentID'];
-} else {
-    $StudentID = '';
-    echo "
-        <script type='text/javascript'>
-        location.href='../../login-student.php?id=2';
-        </script>
-        ";
-}
-?>
-
 <html lang="en">
 
 <head>
@@ -133,19 +116,72 @@ if (isset($_SESSION['StudentID'])) {
                 <div class="row blog-page">
 
                     <!--Sidebar-->
-                    <div class="col-md-3 sidebar left-sidebar">
+                    <div class="col-md-4 sidebar left-sidebar">
                         <!-- Search Widget -->
                         <div class="widget widget-search">
                             <h3 class="classic-title">Job Search Result Filter</h3>
                             <div class="call-action call-action-boxed call-action-style3 clearfix">
-                                <label>Specialization - what is your specific expertise or knowledge?</label>
+                                <label class="wite-text">Specialization - what is your specific expertise or knowledge?</label>
+                                <div class="form-group">
+                                    <select id="" name="" class="form-control">
+                                        <option value="">- Please Select One -</option>
+                                        <option value=""></option>
+                                        <option value=""></option>
+                                    </select>
+                                </div>
+
+                                <label class="wite-text">Position Level</label>
+                                <div class="form-group">
+                                    <select id="" name="" class="form-control">
+                                        <option value="">- Please Select One -</option>
+                                        <option value=""></option>
+                                        <option value=""></option>
+                                    </select>
+                                </div>
+
+                                <label class="wite-text">Employment Type</label>
+                                <div class="form-group">
+                                    <select id="" name="" class="form-control">
+                                        <option value="">- Please Select One -</option>
+                                        <option value=""></option>
+                                        <option value=""></option>
+                                    </select>
+                                </div>
+
+                                <label class="wite-text">Industry</label>
+                                <div class="form-group">
+                                    <select id="" name="" class="form-control">
+                                        <option value="">- Please Select One -</option>
+                                        <option value=""></option>
+                                        <option value=""></option>
+                                    </select>
+                                </div>
+
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <label class="wite-text">Year of Experience:</label>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <input type="text" class="form-control" id="" name="" value="">
+                                    </div>
+                                </div>
+                                <div class="hr1" style="margin-top:2px;"></div>
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <label class="wite-text">Minimum Monthly Salary:</label>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <input type="text" class="form-control" id="" name="" value="">
+                                    </div>
+                                </div>
+                                <button type="submit" class="btn-system btn-large" name ="" style="float:right;">Filter Search</button>
                             </div>
                         </div>
                     </div>
                     <!--End sidebar-->
 
                     <!-- Start Blog Posts -->
-                    <div class="col-md-9 blog-box" style="background-color:white;">
+                    <div class="col-md-8 blog-box" style="background-color:white;">
                         <h3 class="classic-title">Search Results</h3>
                         <div class='blog-post standard-post'>
                             <h2><a href='#'>English Language Instructor (Part-time, Home-based)</a></h2>
@@ -167,7 +203,29 @@ if (isset($_SESSION['StudentID'])) {
                                     <button class="btn-system btn-mini border-btn btn-gray"><i class="fa fa-bookmark"> Bookmark this Job</i></button>  
                                 </div>
                             </div>
-                        </div>        
+                        </div>
+
+                        <div class='blog-post standard-post'>
+                            <h2><a href='#'>English Language Instructor (Part-time, Home-based)</a></h2>
+                            <label><p><a href="view-details.php">51Talk</a></p></label>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <ul class='icons-list'>
+                                        <li><i class='fa fa-check-circle'></i> <b>Industry: </b>Education</li>
+                                        <li><i class='fa fa-check-circle'></i> <b>Specialization: </b>Customer Service</li>
+                                    </ul>
+                                </div>
+                                <div class="col-md-3">
+                                    <ul>
+                                        <li>NCR</li>
+                                        <li>Makati</li>
+                                    </ul>
+                                </div>
+                                <div class="col-md-3">
+                                    <button class="btn-system btn-mini border-btn btn-gray"><i class="fa fa-bookmark"> Bookmark this Job</i></button>  
+                                </div>
+                            </div>
+                        </div>     
                     </div>
                 </div>
 
@@ -210,11 +268,11 @@ if (isset($_SESSION['StudentID'])) {
     <!-- Go To Top Link -->
     <a href="#" class="back-to-top"><i class="fa fa-angle-up"></i></a>
 
-    <div id="loader">
+    <!--<div id="loader">
         <div class="spinner">
             <div class="dot1"></div>
             <div class="dot2"></div>
         </div>
-    </div>
+    </div>-->
 </body>
 </html>
