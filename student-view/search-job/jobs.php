@@ -233,6 +233,7 @@ if (isset($_SESSION['StudentID'])) {
                         $PostingDateFrom = $value[3];
                         $PostingDateTo = $value[4];
                         $Position = $value[5];
+                        $PositionDescription = $value[6];
                         $YearExperience = $value[11];
                         $company_tbl =
                             GSecureSQL::query(
@@ -243,7 +244,6 @@ if (isset($_SESSION['StudentID'])) {
                             );
                         foreach ($company_tbl as $value1) {
                             $CompanyName = $value1[1];
-                            $Description = $value1[2];
                             $Location = $value1[5];
 
                             $diff_from = date_diff(new DateTime(), new DateTime($PostingDateFrom));
@@ -305,7 +305,7 @@ if (isset($_SESSION['StudentID'])) {
                                             </div>
                                         </div>
                                         <div class="col-md-6">
-                                            <p> <?php echo $Description; ?></p>
+                                            <p><B>Description: </B><?php echo $PositionDescription; ?></p>
                                         </div>
                                     </div>
                                 </div>
