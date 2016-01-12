@@ -144,7 +144,7 @@ if (isset($_SESSION['StudentID'])) {
                     <div class="navbar-collapse collapse">
                         <!-- Sign-out -->
                         <div class="signout-side">
-                            <a href="#" class="btn-system btn-mini border-btn">Apply Now</a>
+                            <a class=""><i class="fa fa-sign-out"></i></a>
                         </div>
                         <!-- End Sign-out -->
                     </div>

@@ -39,7 +39,7 @@ body {
 	font-size: 13px;
     line-height: 21px;
 	font-weight: 300;
-	color: #666;
+	color: #424242;
 	/*background: url(../images/patterns/1.png) fixed repeat;*/
 }
 strong, b {
@@ -117,7 +117,7 @@ h6 {
 }
 
 p {
-    color: #666;
+    color: #000;
     font-size: 13px;
     font-family: "Roboto Slab","Helvetica Neue",Helvetica,Arial,sans-serif;
     line-height: 22px;
