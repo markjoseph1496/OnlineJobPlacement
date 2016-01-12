@@ -381,7 +381,6 @@ if (isset($_POST['requestresume'])) {
            <tr>
            </tr>    
                 <tr>
-                    <th width= '5%' class = 'tabletitle'> <input type="checkbox" id="selectall"/> </th>
                     <th width= '10%' class = 'tabletitle'>Student ID </th>
                     <th width = '20%'class = 'tabletitle'> Student Name </th>
                     <th width = '25%'class = 'tabletitle'>Course</th>
@@ -414,7 +413,6 @@ if (isset($_POST['requestresume'])) {
 
                                   echo "
                                   <tr>
-                                    <td width = '5%'  class = tabletitle><input type='checkbox' id='select'/></td>
                                     <td width = '10%' class = tabletitle > $studentid </td>
                                     <td width = '20%' class = tabletitle> $lname $fname </td>
                                     <td width = '30%' class = tabletitle> $course </td>
@@ -451,7 +449,6 @@ if (isset($_POST['requestresume'])) {
 
                                   echo "
                                   <tr>
-                                    <td width = '5%' class = tabletitle><input type='checkbox' id='select'/></td>
                                     <td width = '10%' class = tabletitle> $studentid </td>
                                     <td width = '20%' class = tabletitle> $lname $fname </td>
                                     <td width = '30%' class = tabletitle> $course </td>
@@ -489,7 +486,6 @@ if (isset($_POST['requestresume'])) {
 
                         echo "
                         <tr>
-                         <td width = '5%' class = tabletitle><input type='checkbox' id='select'/></td>
                           <td width = '10%' class = tabletitle> $studentid </td>
                           <td width = '20%' class = tabletitle> $lname $fname </td>
                           <td width = '30%' class = tabletitle> $course </td>

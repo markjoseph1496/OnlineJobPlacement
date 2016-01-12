@@ -3,13 +3,19 @@ include('../connection.php');
 session_start();
 $CompanyID = $_SESSION['CompanyID'];
 
-$PostionID = 'PostionID';
+$PID = 'PostionID';
 $PostingDateFrom = 'PostingDateFrom';
 $PostingDateTo = 'PostingDateTo';
 $PositionLevel = 'PositionLevel';
+$JSpecialization = 'JSpecialization';
+$JobDescription = 'JobDescription';
+$EType = 'EType';
 $AvPosition = 'AvPosition';
-$
-$
+$MonthlySalary = 'MonthlySalary';
+$YExperience = 'YExperience';
+
+$query = "SELECT * FROM comppositiontbl WHERE CompanyID = '$CompanyID'";
+$Result = mysql_query($query);
 ?>
 <!doctype html>
 <!--[if IE 8 ]><html class="ie ie8" lang="en"> <![endif]-->
@@ -269,11 +275,13 @@ $
       </div>
     </div>
     <!-- End Page Banner -->
+<?php
+while ($row = mysql_fetch_array($Result)) {
 
+?>
  <!-- Start Content -->
-
     <br><br><br>
-<form action="add-company.php" name="AddPosition" id="AddPosition" autocomplete="off">
+<form action="company-positionlist.php" name="AddPosition" id="AddPosition" autocomplete="off">
            <div class =  "container">
           <div class = "col-md-12">
           <div class = "row">
@@ -284,13 +292,13 @@ $
                                             <label = "usr" class = "control-label"> Posting Date </label>
                                         </div>
                                         <div class = "col-md-2 fieldcol">
-                                            <label = "usr" class = "control-label"> December 18,2015 </label>
+                                            <label = "usr" class = "control-label"><?php echo $row['PostingDateFrom']; ?></label>
                                         </div>
                                         <div class = "col-md-1 fieldcol">
                                             <label = "usr" class = "control-label"> to </label>
                                         </div>
                                         <div class = "col-md-2 fieldcol">
-                                            <label = "usr" class = "control-label"> December 19,2015 </label>
+                                            <label = "usr" class = "control-label"><?php echo $row['PostingDateTo']; ?></label>
                                         </div>
                                         
               </div> 
@@ -303,7 +311,17 @@ $
                                         </div>
                                         <div class = "col-md-8 fieldcol">
                                             <div class="form-group">
-                                                <label = "usr" class = "control-label"> Top Level Management </label>
+                                                <label = "usr" class = "control-label"s><?php echo $row['PositionLevel']; ?></label>
+                                            </div>
+                                        </div>
+                </div> 
+                <div class="row field">
+                                        <div class = "col-md-3 fieldcol">
+                                            <label = "usr" class = "control-label"> Job Description: </label>
+                                        </div>
+                                        <div class = "col-md-8 fieldcol">
+                                            <div class="form-group">
+                                                <label = "usr" class = "control-label"><?php echo $row['JobDescription']; ?></label>
                                             </div>
                                         </div>
                 </div> 
@@ -313,7 +331,7 @@ $
                                         </div>
                                         <div class = "col-md-8 fieldcol">
                                             <div class="form-group">
-                                                  <label = "usr" class = "control-label"> Arts and Design </label>
+                                                  <label = "usr" class = "control-label"><?php echo $row['JSpecialization']; ?></label>
                                             </div>
                                         </div>
                 </div>  
@@ -323,7 +341,7 @@ $
                                         </div>
                                         <div class = "col-md-8 fieldcol">
                                             <div class="form-group">
-                                                   <label = "usr" class = "control-label"> Full Time </label>
+                                                   <label = "usr" class = "control-label"><?php echo $row['EType']; ?></label>
                                             </div>
                                         </div>
                 </div>  
@@ -333,7 +351,7 @@ $
                                         </div>
                                         <div class = "col-md-8 fieldcol">
                                             <div class="form-group">
-                                                  <label = "usr" class = "control-label"> assfsd </label>
+                                                  <label = "usr" class = "control-label"><?php echo $row['AvPosition']; ?></label>
                                             </div>
                                         </div>
                 </div> 
@@ -345,7 +363,7 @@ $
                                         </div>
                                         <div class = "col-md-8 fieldcol">
                                             <div class="form-group">
-                                                  <label = "usr" class = "control-label"> 10,000-15,000 </label>
+                                                  <label = "usr" class = "control-label"><?php echo $row['MonthlySalary']; ?></label>
                                             </div>
                                         </div>
                 </div> 
@@ -356,7 +374,7 @@ $
                                             <label = "usr" class = "control-label"> Years of Experience: </label>
                                         </div>
                                         <div class = "col-md-8 fieldcol">
-                                            <label = "usr" class = "control-label"> 2 </label>
+                                            <label = "usr" class = "control-label"><?php echo $row['YExperience']; ?></label>
                                         </div>
                 </div> 
                 <div class="row field">
@@ -391,7 +409,10 @@ $
             </div>
           </div>
         </div>       
-</form> 
+</form>
+<?php
+} 
+?>
 <!--End of Content--> 
   <script type="text/javascript" src="../js/script.js"></script>
 </body>
