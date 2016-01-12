@@ -327,10 +327,10 @@
 
             
             <!-- Start Recent Projects Carousel -->
-            <div id="events" class="section" style="background-color:#4C5462;">
+            <div id="events" class="section" style="background-color:#f8ba01;">
                 <div class="container">
                     <div class="recent-projects">
-                        <h4 class="title wite-text">Events</h4>
+                        <h4 class="title">Events</h4>
                         <div class="projects-carousel touch-carousel">
 
                             <div class="portfolio-item item">
@@ -559,7 +559,7 @@
                         <div class="col-md-8">
                             <!-- Start Recent Posts Carousel -->
                             <div class="latest-posts">
-                                <h4 class="classic-title wite-text"><strong>Latest News</strong></h4>
+                                <h4 class="classic-title"><strong>Latest News</strong></h4>
                                 <div class="latest-posts-classic custom-carousel touch-carousel" data-appeared-items="2">
 
                                     <!-- Posts 1 -->
@@ -664,7 +664,7 @@
 
                         <div class="col-md-4">
                             <!-- Classic Heading -->
-                            <h4 class="classic-title wite-text"><strong>Shoutouts</strong></h4>
+                            <h4 class="classic-title"><strong>Shoutouts</strong></h4>
 
                             <!-- Start Testimonials Carousel -->
                             <div class="custom-carousel show-one-slide touch-carousel" data-appeared-items="1">
