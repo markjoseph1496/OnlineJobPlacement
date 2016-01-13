@@ -115,8 +115,22 @@ if (isset($_POST['FirstName'])) {
     $Address = $_POST['Address'];
     $ContactNumber = $_POST['ContactNumber'];
 
-    $query = "UPDATE admintbl SET FirstName = '$FirstName', MiddleName = '$MiddleName', LastName = '$LastName', Position = '$Position', Department = '$Department', Address = '$Address', ContactNumber = '$ContactNumber' WHERE AdminID = '$AdminID'";
-    $result = mysql_query($query);
+
+    GSecureSQL::query(
+        "UPDATE admintbl SET FirstName = ?, MiddleName = ?, LastName = ?, Position = ?, Department = ?, Address = ?, ContactNumber = ? WHERE AdminID = ?",
+        FALSE,
+        "ssssssss",
+        $FirstName,
+        $MiddleName,
+        $LastName,
+        $Position,
+        $Department,
+        $Address,
+        $ContactNumber,
+        $AdminID
+
+    );
+
     echo "
         <script type='text/javascript'>
         location.href='admin-account.php?id=3';
@@ -128,15 +142,26 @@ if (isset($_GET['id'])) {
     $RequestID = $_GET['rid'];
 
     if ($fn == "2") {
-        $query = "UPDATE resumerequesttbl SET Status = 'Rejected' WHERE RequestID='$RequestID'";
-        $result = mysql_query($query);
+
+        GSecureSQL::query(
+            "UPDATE resumerequesttbl SET Status = 'Rejected' WHERE RequestID=?",
+            FALSE,
+            "s",
+            $RequestID
+        );
+
         echo "
             <script type='text/javascript'>
             location.href='admin-requested.php?id=2';
             </script>";
     } elseif ($fn == "1") {
-        $query = "UPDATE resumerequesttbl SET Status = 'Accept' WHERE RequestID='$RequestID'";
-        $result = mysql_query($query);
+        GSecureSQL::query(
+            "UPDATE resumerequesttbl SET Status = 'Accept' WHERE RequestID=?",
+            FALSE,
+            "s",
+            $RequestID
+        );
+
         echo "
             <script type='text/javascript'>
             location.href='admin-requested.php?id=1';
@@ -147,8 +172,12 @@ if (isset($_GET['id'])) {
 if (isset($_GET['DeleteID'])) {
     $DeleteID = $_GET['DeleteID'];
 
-    $query = "DELETE FROM coursetbl WHERE CourseID = '$DeleteID'";
-    $result = mysql_query($query);
+    GSecureSQL::query(
+        "DELETE FROM coursetbl WHERE CourseID = ?",
+        FALSE,
+        "s",
+        $DeleteID
+    );
     echo "
             <script type='text/javascript'>
             location.href='admin-maintenance.php?id=3';

@@ -72,40 +72,41 @@
 
 <body>
 
-  <!-- Full Body Container -->
-  <div id="container">
+<!-- Full Body Container -->
+<div id="container">
 
 
     <!-- Start Header Section -->
     <div class="hidden-header"></div>
     <header class="clearfix">
 
-              <!-- Start Top Bar -->
+        <!-- Start Top Bar -->
         <div class="top-bar">
             <div class="container">
                 <div class="row">
                     <div class="col-md-6">
                         <!-- Start Contact Info -->
-                            <ul class="contact-details">
-                                <li class="profile-name"><i class="fa fa-hashtag"></i> <b>008-2012-0805</b></li>
-                            </ul>
+                        <ul class="contact-details">
+                            <li class="profile-name"><i class="fa fa-hashtag"></i> <b>008-2012-0805</b></li>
+                        </ul>
                         <!-- End Contact Info -->
                     </div>
                     <!-- .col-md-6 -->
                     <div class="col-md-6">
                         <!-- Start Social Links -->
-                            <ul class="social-list">
-                                <li class="profile-name">
-                                    <a class="bell itl-tooltip" data-placement="bottom" title="" href="#" data-original-title="Notification"><i class="fa fa-bell"></i></a>
-                                </li>
-                                <li class="profile-name">
-                                    &nbsp;
-                                </li>
-                                <li class="profile-name">
-                                    <i class="fa fa-user"></i> Hello, <b>Aira Jane Cruz</b>                               
-                                </li>
-                            </ul>
-                            <!-- End Social Links -->
+                        <ul class="social-list">
+                            <li class="profile-name">
+                                <a class="bell itl-tooltip" data-placement="bottom" title="" href="#"
+                                   data-original-title="Notification"><i class="fa fa-bell"></i></a>
+                            </li>
+                            <li class="profile-name">
+                                &nbsp;
+                            </li>
+                            <li class="profile-name">
+                                <i class="fa fa-user"></i> Hello, <b>Aira Jane Cruz</b>
+                            </li>
+                        </ul>
+                        <!-- End Social Links -->
                     </div>
                     <!-- .col-md-6 -->
                 </div>
@@ -126,199 +127,208 @@
                         <i class="fa fa-bars"></i>
                     </button>
                     <!-- End Toggle Nav Link For Mobiles -->
-                     <a class="navbar-brand" href="">
+                    <a class="navbar-brand" href="">
                         <img src="../images/ojpms.png">
                     </a>
                 </div>
-          <div class="navbar-collapse collapse">
-            <!-- Sign-out -->
-            <div class="signout-side">
-              <a class="show-signout"><i class="fa fa-sign-out"></i></a>
+                <div class="navbar-collapse collapse">
+                    <!-- Sign-out -->
+                    <div class="signout-side">
+                        <a class="show-signout"><i class="fa fa-sign-out"></i></a>
+                    </div>
+                    <!-- End Sign-out -->
+                    <!-- Start Navigation List -->
+                    <ul class="nav navbar-nav navbar-right">
+                        <li>
+                            <a href="admin.php">Home</a>
+                        </li>
+                        <li>
+                            <a href="admin-reports.php">Reports</a>
+                        </li>
+                        <li>
+                            <a href="admin-account.php">Account</a>
+                        </li>
+                        <li>
+                            <a href="admin-requested.php">Requested</a>
+                        </li>
+                        <li>
+                            <a href="admin-companylist.php">Company List</a>
+                        </li>
+                        <li><a class="active" href="admin-adviser.php">Adviser List</a>
+                        </li>
+                        <li>
+                            <a> Maintenance</a>
+                            <ul class="dropdown">
+                                <li><a href="admin-maintenance.php">Courses</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <!-- End Navigation List -->
+                </div>
             </div>
-            <!-- End Sign-out -->
-             <!-- Start Navigation List -->
-            <ul class="nav navbar-nav navbar-right">
-                <li>
-                    <a  href="admin.php">Home</a>
-                </li>
-                <li>
-                    <a  href="admin-reports.php">Reports</a>
-                </li>
-                <li>
-                    <a  href="admin-account.php">Account</a>
-                </li>
-                <li>
-                    <a href="admin-requested.php">Requested</a>
-                </li>
-                <li>
-                    <a href="admin-companylist.php">Company List</a>
-                </li>
-                 <li><a class= "active" href="admin-adviser.php">Adviser List</a>
-                </li>  
-               <li>
-                    <a> Maintenance</a>
-                    <ul class="dropdown">
-                        <li><a href="admin-maintenance.php">Courses</a></li>
-                    </ul>
-                </li>
+            <!-- Mobile Menu Start -->
+            <ul class="wpb-mobile-menu">
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a href="admin.php">Home</a>
+                    </li>
+                    <li>
+                        <a href="admin-reports.php">Reports</a>
+                    </li>
+                    <li>
+                        <a href="admin-account.php">Account</a>
+                    </li>
+                    <li>
+                        <a href="admin-requested.php">Requested</a>
+                    </li>
+                    <li>
+                        <a href="admin-companylist.php">Company List</a>
+                    </li>
+                    <li><a class="active" href="admin-adviser.php">Adviser List</a>
+                    </li>
+                    <li>
+                        <a> Maintenance</a>
+                        <ul class="dropdown">
+                            <li><a href="admin-maintenance.php">Courses</a></li>
+                        </ul>
+                    </li>
+                </ul>
             </ul>
-            <!-- End Navigation List -->
-        </div>
-    </div>
-        <!-- Mobile Menu Start -->
-    <ul class="wpb-mobile-menu">
-            <ul class="nav navbar-nav navbar-right">
-                <li>
-                    <a href="admin.php">Home</a>
-                </li>
-                <li>
-                    <a  href="admin-reports.php">Reports</a>
-                </li>
-                <li>
-                    <a  href="admin-account.php">Account</a>
-                </li>
-                <li>
-                    <a href="admin-requested.php">Requested</a>
-                </li>
-                <li>
-                    <a href="admin-companylist.php">Company List</a>
-                </li>
-                 <li><a class= "active" href="admin-adviser.php">Adviser List</a>
-                </li>  
-               <li>
-                    <a> Maintenance</a>
-                    <ul class="dropdown">
-                        <li><a  href="admin-maintenance.php">Courses</a></li>
-                    </ul>
-                </li>
-            </ul>
-    </ul>
     </header>
     <!-- Mobile Menu End -->
 
-      </div>
-      <!-- End Header Logo & Naviagtion -->
+</div>
+<!-- End Header Logo & Naviagtion -->
 
-    </header>
-    <!-- End Header Section -->
+</header>
+<!-- End Header Section -->
 
 <!-- Start Page Banner -->
-    <div class="page-banner" style="padding:40px 0; center #f9f9f9;">
-      <div class="container">
+<div class="page-banner" style="padding:40px 0; center #f9f9f9;">
+    <div class="container">
         <div class="row">
-          <div class="col-md-6">
-            <h2>Add Adviser</h2>
-          </div>
+            <div class="col-md-6">
+                <h2>Add Adviser</h2>
+            </div>
         </div>
-      </div>
     </div>
-    <!-- End Page Banner -->
+</div>
+<!-- End Page Banner -->
 
 <!--Content-->
-  <br><br><br>
-    
-   <div class = "container">
-      <div class = "col-md-12">
-                   <div class="row field">
-                                        <div class = "col-md-2 fieldcol">
-                                             <label>Email </label>
-                                        </div>
-                                        <div class = "col-md-4 fieldcol">
-                                            <div class="form-group">
-                                                  <input type = "text" name = "fname" id = "usr" class = "form-control" style ="width: 550px;" value = "<?php echo $FName; ?>">
-                                            </div>
-                                        </div>
-                    </div> 
-                   <div class="row field">
-                                        <div class = "col-md-2 fieldcol">
-                                             <label>Password</label>
-                                        </div>
-                                        <div class = "col-md-4 fieldcol">
-                                            <div class="form-group">
-                                                  <input type = "text" name = "fname" id = "usr" class = "form-control" style ="width: 550px;" value = "<?php echo $FName; ?>">
-                                            </div>
-                                        </div>
-                    </div> 
-                     <div class="row field">
-                                        <div class = "col-md-2 fieldcol">
-                                             <label>First Name <span>(*)</span></label>
-                                        </div>
-                                        <div class = "col-md-4 fieldcol">
-                                            <div class="form-group">
-                                                  <input type = "text" name = "fname" id = "usr" class = "form-control" style ="width: 550px;" value = "<?php echo $FName; ?>">
-                                            </div>
-                                        </div>
-                    </div> 
-                     <div class="row field">
-                                        <div class = "col-md-2 fieldcol">
-                                             <label>Middle Name <span>(*)</span></label>
-                                        </div>
-                                        <div class = "col-md-4 fieldcol">
-                                            <div class="form-group">
-                                                 <input type = "text" name = "mname" id = "usr" class = "form-control" style ="width: 550px;" value = "<?php echo $MName; ?>">
-                                            </div>
-                                        </div>
-                    </div> 
-                     <div class="row field">
-                                        <div class = "col-md-2 fieldcol">
-                                            <label>Last Name <span>(*)</span></label>
-                                        </div>
-                                        <div class = "col-md-4 fieldcol">
-                                            <div class="form-group">
-                                                <input type = "text" name = "lname" id = "usr" class = "form-control" style ="width: 550px;" value = "<?php echo $LName; ?>">
-                                            </div>
-                                        </div>
-                    </div> 
-                    <div class="row field">
-                                        <div class = "col-md-2 fieldcol">
-                                             <label>Position <span>(*)</span></label>
-                                        </div>
-                                        <div class = "col-md-4 fieldcol">
-                                            <div class="form-group">
-                                                 <input type = "text" name = "position" id = "usr" class = "form-control" style ="width: 550px;" value = "<?php echo $Positions; ?>">
-                                            </div>
-                                        </div>
-                    </div> 
-                    <div class="row field">
-                                        <div class = "col-md-2 fieldcol">
-                                             <label>Department<span>(*)</span></label>
-                                        </div>
-                                        <div class = "col-md-4 fieldcol">
-                                            <div class="form-group">
-                                                 <input type = "text" name = "dept" id = "usr" class = "form-control" style ="width: 550px;" value = "<?php echo $Department; ?>">
-                                            </div>
-                                        </div>
-                    </div> 
-                    <div class="row field">
-                                        <div class = "col-md-2 fieldcol">
-                                           <label>Address <span>(*)</span></label>
-                                        </div>
-                                        <div class = "col-md-4 fieldcol">
-                                            <div class="form-group">
-                                                <input type = "text" name = "address" id = "usr" class = "form-control" style ="width: 550px;" value = "<?php echo $Address; ?>">
-                                            </div>
-                                        </div>
-                    </div> 
-                     <div class="row field">
-                                        <div class = "col-md-2 fieldcol">
-                                           <label>Contact Number <span>(*)</span></label>
-                                        </div>
-                                        <div class = "col-md-4 fieldcol">
-                                            <div class="form-group">
-                                                <input type = "text" name = "contact" id = "usr" class = "form-control" style ="width: 550px;" value = "<?php echo $PhoneNum ?>">
-                                            </div>
-                                        </div>
-                    </div> 
-      </div>
-                     &nbsp;
+<br><br><br>
+
+<div class="container">
+    <div class="col-md-12">
+        <div class="row field">
+            <div class="col-md-2 fieldcol">
+                <label>Email </label>
+            </div>
+            <div class="col-md-4 fieldcol">
+                <div class="form-group">
+                    <input type="text" name="fname" id="usr" class="form-control" style="width: 550px;"
+                           value="<?php echo $FName; ?>">
+                </div>
+            </div>
+        </div>
+        <div class="row field">
+            <div class="col-md-2 fieldcol">
+                <label>Password</label>
+            </div>
+            <div class="col-md-4 fieldcol">
+                <div class="form-group">
+                    <input type="text" name="fname" id="usr" class="form-control" style="width: 550px;"
+                           value="<?php echo $FName; ?>">
+                </div>
+            </div>
+        </div>
+        <div class="row field">
+            <div class="col-md-2 fieldcol">
+                <label>First Name <span>(*)</span></label>
+            </div>
+            <div class="col-md-4 fieldcol">
+                <div class="form-group">
+                    <input type="text" name="fname" id="usr" class="form-control" style="width: 550px;"
+                           value="<?php echo $FName; ?>">
+                </div>
+            </div>
+        </div>
+        <div class="row field">
+            <div class="col-md-2 fieldcol">
+                <label>Middle Name <span>(*)</span></label>
+            </div>
+            <div class="col-md-4 fieldcol">
+                <div class="form-group">
+                    <input type="text" name="mname" id="usr" class="form-control" style="width: 550px;"
+                           value="<?php echo $MName; ?>">
+                </div>
+            </div>
+        </div>
+        <div class="row field">
+            <div class="col-md-2 fieldcol">
+                <label>Last Name <span>(*)</span></label>
+            </div>
+            <div class="col-md-4 fieldcol">
+                <div class="form-group">
+                    <input type="text" name="lname" id="usr" class="form-control" style="width: 550px;"
+                           value="<?php echo $LName; ?>">
+                </div>
+            </div>
+        </div>
+        <div class="row field">
+            <div class="col-md-2 fieldcol">
+                <label>Position <span>(*)</span></label>
+            </div>
+            <div class="col-md-4 fieldcol">
+                <div class="form-group">
+                    <input type="text" name="position" id="usr" class="form-control" style="width: 550px;"
+                           value="<?php echo $Positions; ?>">
+                </div>
+            </div>
+        </div>
+        <div class="row field">
+            <div class="col-md-2 fieldcol">
+                <label>Department<span>(*)</span></label>
+            </div>
+            <div class="col-md-4 fieldcol">
+                <div class="form-group">
+                    <input type="text" name="dept" id="usr" class="form-control" style="width: 550px;"
+                           value="<?php echo $Department; ?>">
+                </div>
+            </div>
+        </div>
+        <div class="row field">
+            <div class="col-md-2 fieldcol">
+                <label>Address <span>(*)</span></label>
+            </div>
+            <div class="col-md-4 fieldcol">
+                <div class="form-group">
+                    <input type="text" name="address" id="usr" class="form-control" style="width: 550px;"
+                           value="<?php echo $Address; ?>">
+                </div>
+            </div>
+        </div>
+        <div class="row field">
+            <div class="col-md-2 fieldcol">
+                <label>Contact Number <span>(*)</span></label>
+            </div>
+            <div class="col-md-4 fieldcol">
+                <div class="form-group">
+                    <input type="text" name="contact" id="usr" class="form-control" style="width: 550px;"
+                           value="<?php echo $PhoneNum ?>">
+                </div>
+            </div>
+        </div>
+    </div>
+    &nbsp;
     <div class="hr5" style="margin-top:35px;margin-bottom:40px;"></div>
     <div class="field">
-                    <div class="text-center">
-                        <button type="submit" class="btn-system btn-large" name="btnSave" id = "save">Save</button>
-                        <button type="submit" class="btn-system btn-large" name="btnCancel" id = "cancel">Cancel</button>
-                    </div>           
-     </div>
+        <div class="text-center">
+            <button type="submit" class="btn-system btn-large" name="btnSave" id="save">Save</button>
+            <button type="submit" class="btn-system btn-large" name="btnCancel" id="cancel">Cancel</button>
+        </div>
     </div>
+</div>
 </body>
 <script type="text/javascript" src="../js/script.js"></script>
 </html>
