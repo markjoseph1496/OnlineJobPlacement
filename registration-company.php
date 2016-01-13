@@ -313,9 +313,6 @@
                     },
                     MiddleName: {
                         validators: {
-                            notEmpty: {
-                                message: "Middle name is required."
-                            },
                             stringLength: {
                                 min: 3,
                                 max: 15,
