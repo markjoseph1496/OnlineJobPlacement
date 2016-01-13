@@ -20,7 +20,7 @@ $JobDescription = $position_tbl[0][6];
 $EmployementType = $position_tbl[0][7];
 $AvailablePosition = $position_tbl[0][8];
 $MonthlySalary = $position_tbl[0][10];
-$YearExperience = $position_tbl[0][9];
+$YearExperience = $position_tbl[0][11];
 
 $companyinfo_tbl =
     GSecureSQL::query(
