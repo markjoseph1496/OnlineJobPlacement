@@ -1,67 +1,111 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 
 <head>
+
+    <!-- Basic -->
+    <title>OJPMS</title>
+
+    <!-- Define Charset -->
     <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="">
-    <meta name="author" content="">
 
-    <title>Online JPMS</title>
+    <!-- Responsive Metatag -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
-    <!-- Bootstrap Core CSS -->
-    <link href="css/bootstrap.min.css" rel="stylesheet">
-    <link href="css/basic-template.css" rel="stylesheet" />
+    <!-- Page Description and Author -->
+    <meta name="description" content="Margo - Responsive HTML5 Template">
+    <meta name="author" content="iThemesLab">
+
+    <!-- Bootstrap CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet"/>
 
     <!-- BootstrapValidator CSS -->
     <link href="css/bootstrapValidator.min.css" rel="stylesheet"/>
-  
+
     <!-- jQuery and Bootstrap JS -->
-    <script src="js/jquery.min.js" type="text/javascript"></script>
-    <script src="js/bootstrap.min.js" type="text/javascript"></script>
-      
+    <script type="text/javascript" src="js/jquery.min.js"></script>
+    <script type="text/javascript" src="js/bootstrap.min.js" ></script>
+
     <!-- BootstrapValidator -->
     <script src="js/bootstrapValidator.min.js" type="text/javascript"></script>
 
-    <!-- CSS -->
-    <link href="css/agency_style.css" rel="stylesheet">
+    <!-- Font Awesome CSS -->
+    <link rel="stylesheet" href="css/font-awesome.min.css" type="text/css" media="screen">
 
     <!-- Fonts -->
-    <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
-    <link href="font-awesome/ffonts/montserrat.css" rel="stylesheet" type="text/css">
-    <link href="font-awesome/ffonts/kaushan.css" rel="stylesheet" type="text/css">
-    <link href="font-awesome/ffonts/droid.css" rel="stylesheet" type="text/css">
-    <link href="font-awesome/ffonts/roboto.css" rel="stylesheet" type="text/css">
+    <link href="fonts/ffonts/montserrat.css" rel="stylesheet" type="text/css">
+    <link href="fonts/ffonts/kaushan.css" rel="stylesheet" type="text/css">
+    <link href="fonts/ffonts/droid.css" rel="stylesheet" type="text/css">
+    <link href="fonts/ffonts/roboto.css" rel="stylesheet" type="text/css">
+
+    <!-- Slicknav -->
+    <link rel="stylesheet" type="text/css" href="css/slicknav.css" media="screen">
+
+    <!-- Margo CSS Styles  -->
+    <link rel="stylesheet" type="text/css" href="css/style.css" media="screen">
+
+    <!-- Responsive CSS Styles  -->
+    <link rel="stylesheet" type="text/css" href="css/responsive.css" media="screen">
+
+    <!-- Css3 Transitions Styles  -->
+    <link rel="stylesheet" type="text/css" href="css/animate.css" media="screen">
+
+    <!-- OJPMS CSS  -->
+    <link rel="stylesheet" type="text/css" href="css/ojpms-style.css" media="screen">
+
+    <!-- Color CSS Styles  -->
+    <link rel="stylesheet" type="text/css" href="css/colors/yellow.css" title="yellow" media="screen"/>
+
+    <!-- JS  -->
+    <script type="text/javascript" src="js/jquery.migrate.js"></script>
+    <script type="text/javascript" src="js/modernizrr.js"></script>
+    <script type="text/javascript" src="js/jquery.fitvids.js"></script>
+    <script type="text/javascript" src="js/owl.carousel.min.js"></script>
+    <script type="text/javascript" src="js/nivo-lightbox.min.js"></script>
+    <script type="text/javascript" src="js/jquery.isotope.min.js"></script>
+    <script type="text/javascript" src="js/jquery.appear.js"></script>
+    <script type="text/javascript" src="js/count-to.js"></script>
+    <script type="text/javascript" src="js/jquery.textillate.js"></script>
+    <script type="text/javascript" src="js/jquery.lettering.js"></script>
+    <script type="text/javascript" src="js/jquery.easypiechart.min.js"></script>
+    <script type="text/javascript" src="js/jquery.nicescroll.min.js"></script>
+    <script type="text/javascript" src="js/jquery.parallax.js"></script>
+    <script type="text/javascript" src="js/jquery.slicknav.js"></script>
 </head>
 
-
-<body id="page-top" class="index">
-    <form name="companyregistration" id="companyregistration" action="addcompany.php"  autocomplete="off" >
-        <nav class="navbar navbar-default navbar-fixed-top navbar-shrink">
-            <div class="container">
-                <!-- Brand and toggle get grouped for better mobile display -->
-                <div class="navbar-header page-scroll">
-                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-                        <span class="sr-only">Toggle navigation</span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                    </button>
-                    <a class="navbar-brand page-scroll" href="index.php">Online Job Placement Management</a>
-                </div>
-            </div>
-        </nav>
-
-        <div id="yellow-text-fields" class="bg">
+<body>
+<form name="companyregistration" id="companyregistration" action="addcompany.php"  autocomplete="off" >
+    <!-- Container -->
+    <div id="container">
+        <div class="hidden-header"></div>
+ 
+        <!-- Start Page Banner -->
+        <div class="page-banner no-subtitle">
             <div class="container">
                 <div class="row">
-                    <div class="register_form">
-                        <div class="col-md-12 text-center">
-                            <h1>REGISTRATION</h1><br><br>
-                        </div>
-                            <div class = "row"> 
-                                <div class = "col-md-6">
+                    <div class="col-md-6">
+                        <img src="images/ojpms.png">
+                    </div>
+                    <div class="col-md-6">
+                        <ul class="breadcrumbs">
+                            <li>Already a member?</li>
+                            <li><a href="login-company.php">Login</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- End Page Banner -->
+
+
+        <!-- Start Content -->
+        <div id="content">
+
+            <div class="container">
+                <div class="big-title text-center">
+                    <h1><strong>Registration</strong></h1>
+                </div>
+                <div class = "col-md-6">
                                     <div class="ribbon"><h4>Company Information:</h4></div><br><br>
                                         <div class="row field">
                                             <div class="form-group">
@@ -115,57 +159,95 @@
                                                 <input type="text" class="form-control" id="ConfirmPassword" name="ConfirmPassword">
                                             </div>
                                         </div> 
-                                </div>  <!--Company Info-->   
-
-                                <div class = "col-md-6">
-                                        <div class="ribbon"><h4>Primary User Information:</h4></div><br><br>
-                                        <div class="row field">
-                                            <div class="form-group">
+                    </div>
+                
+                <h3><strong>Primary User Information:</strong></h3><br>
+                <div class="row">
+                    &nbsp;
+                    <div class="col-md-6">
+                        <div class="form-group">
                                                 <label>First Name <span>(*)</span></label>
                                                 <input type="text" class="form-control" id="FirstName" name="FirstName">
-                                            </div>
-                                        </div>
-                                        <div class="row field">
-                                            <div class="form-group">
+                         </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
                                                 <label>Middle Name <span>(*)</span></label>
                                                 <input type="text" class="form-control" id="MiddleName" name="MiddleName">
-                                            </div>
-                                        </div>
-                                        <div class="row field">
-                                            <div class="form-group">
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
                                                 <label>Last Name <span>(*)</span></label>
                                                 <input type="text" class="form-control" id="LastName" name="LastName">
-                                            </div>
-                                        </div>
-                                        <div class="row field">
-                                            <div class="form-group">
+                        </div>
+                    </div>
+                     <div class="col-md-6">
+                        <div class="form-group">
                                                 <label>Position <span>(*)</span></label>
                                                 <input type="text" class="form-control" id="Position" name="Position">
-                                            </div>
-                                        </div>
-                                        <div class="row field">
-                                            <div class="form-group">
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
                                                 <label>Department <span>(*)</span></label>
                                                 <input type="text" class="form-control" id="Department" name="Department">
-                                            </div>
-                                        </div>  
-                                </div> 
-                            </div>      
-                                    <div class="divider"></div>
-                                    <div class"row field">
-                                        <div class="col-md-6">
-                                            <label><b>By clicking the "Sign Up" button below, I certify that I have read and agree to the <a href="" target="_blank">Terms of Use</a>.</b></label>
-                                        </div>
-                                        <div class="col-md-6">
-                                            <button type="submit" name="btnsave" id="btnsave" class="btn btn-log" style="float:right;">Sign Up</button>
-                                        </div>
-                                    </div>
+                        </div>
                     </div>
-                </div> <!-- End of reg_form-->
+                </div>
+                <div class="row">
+                    
+                    <br><br>
+                    <label style="float:right;"><span>(*)</span> <em> - Required Fields</em></label>
+                </div>
+                <div class="hr5" style="margin-top:40px;margin-bottom:40px;"></div>
+                <div class"row">
+                    <div class="col-md-6">
+                        <label><b>By clicking the "Sign Up" button below, I certify that I have read and agree to the <a href="" target="_blank">Terms of Use</a>.</b></label>
+                    </div>
+                    <div class="col-md-6">
+                        <button type="submit" name="btnsave" id="btnsave" class="btn-system btn-large border-btn" style="float:right;">Submit</button>
+                    </div>
+                </div>
             </div>
         </div>
+        <!-- End content -->
+
+        <!-- Start Footer Section -->
+        <footer>
+            <div class="container">
+                <!-- Start Copyright -->
+                <div class="copyright-section">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <p>&copy; 2015 OJPMS - All Rights Reserved</p>
+                        </div>
+                        <!-- .col-md-6 -->
+                        <div class="col-md-6">
+                            <ul class="footer-nav">
+                                <li><a href="#">Sitemap</a>
+                                </li>
+                                <li><a href="#">Privacy Policy</a>
+                                </li>
+                                <li><a href="#">Contact</a>
+                                </li>
+                            </ul>
+                        </div>
+                        <!-- .col-md-6 -->
+                    </div>
+                    <!-- .row -->
+                </div>
+                <!-- End Copyright -->
+            </div>
+        </footer>
+        <!-- End Footer Section -->
+
+        <!-- Go To Top Link -->
+        <a href="#" class="back-to-top"><i class="fa fa-angle-up"></i></a>
     </div>
     </form>
+    <script type="text/javascript" src="js/script.js"></script>
+
     <script type="text/javascript">
         $(document).ready(function (){
             var validator = $("#companyregistration").bootstrapValidator({
@@ -333,5 +415,4 @@
         });
     </script>
 </body>
-
 </html>
