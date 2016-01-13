@@ -74,7 +74,7 @@
 </head>
 
 <body>
-
+<form id="registration" name="registration" autocomplete="off" action="registeradd.php"></form>
     <!-- Container -->
     <div id="container">
         <div class="hidden-header"></div>
@@ -448,7 +448,7 @@
                                 message: "Confirm Email is required."
                             },
                             identical: {
-                               : "Email",
+                                field: "Email",
                                 message: "Email and Confirm email mismatched."
                             }
                         }
@@ -471,7 +471,7 @@
                                 message: "Confirm password is required."
                             },
                             identical: {
-                               : "_Password",
+                                field: "_Password",
                                 message: "Password and confirm password mismatched."
                             }
                         }
@@ -480,13 +480,6 @@
                         validators: {
                             notEmpty: {
                                 message: "City is required."
-                            }
-                        }
-                    },
-                    EducAttain: {
-                        validators:{
-                            notEmpty: {
-                                message: "Educational Attainment is required."
                             }
                         }
                     },

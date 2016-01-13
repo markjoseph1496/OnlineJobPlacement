@@ -68,8 +68,6 @@ if (isset($_GET['btnsave'])) {
         );
     $PositionID = $position_tbl[0][0];
 
-    /*$PositionID = mysql_fetch_array(mysql_query("SELECT MAX(PositionID) AS `index` FROM comppositiontbl"))['index'];
-*/
     foreach ($_GET['training'] as $training) {
 
         GSecureSQL::query(
