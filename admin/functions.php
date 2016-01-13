@@ -3,13 +3,20 @@ include('../connection.php');
 session_start();
 $AdminID = $_SESSION['AdminID'];
 
-if(isset($_GET['coursetitle'])) {
-	$CourseTitle = $_GET['coursetitle'];
+if (isset($_GET['coursetitle'])) {
+    $CourseTitle = $_GET['coursetitle'];
     $CourseCode = $_GET['coursecode'];
     $CourseDesc = $_GET['coursedesc'];
 
-    $query = "INSERT INTO coursetbl (CourseTitle,CourseCode,CourseDescription) values ('$CourseTitle','$CourseCode','$CourseDesc')";
-    $result = mysql_query($query);
+
+    GSecureSQL::query(
+        "INSERT INTO coursetbl (CourseTitle,CourseCode,CourseDescription) values (?,?,?)",
+        FALSE,
+        "sss",
+        $CourseTitle,
+        $CourseCode,
+        $CourseDesc
+    );
 
     echo "
         <script type='text/javascript'>
@@ -17,61 +24,96 @@ if(isset($_GET['coursetitle'])) {
         </script>";
 }
 
-if(isset($_POST['CourseID'])){
+if (isset($_POST['CourseID'])) {
     $CourseID = $_POST['CourseID'];
     $CourseTitle = $_POST['coursetitle'];
     $CourseCode = $_POST['coursecode'];
     $CourseDesc = $_POST['coursedesc'];
 
-    $query = "UPDATE coursetbl SET CourseTitle = '$CourseTitle', CourseCode = '$CourseCode', CourseDescription = '$CourseDesc' WHERE CourseID = '$CourseID'";
-    $result =  mysql_query($query);
+
+    GSecureSQL::query(
+        "UPDATE coursetbl SET CourseTitle = ?, CourseCode = ?, CourseDescription = ? WHERE CourseID = ?",
+        FALSE,
+        "ssss",
+        $CourseTitle,
+        $CourseCode,
+        $CourseDesc,
+        $CourseID
+    );
+
     echo "
         <script type='text/javascript'>
         location.href='admin-maintenance.php?id=2';
         </script>";
 }
 
-if(isset($_POST['ModalNewEmail'])){
-	$Email = $_POST['ModalNewEmail'];
+if (isset($_POST['ModalNewEmail'])) {
+    $Email = $_POST['ModalNewEmail'];
 
-	$query = "UPDATE admintbl SET Email = '$Email' WHERE AdminID = '$AdminID'";
-	$result = mysql_query($query);
+    GSecureSQL::query(
+        "UPDATE admintbl SET Email = ? WHERE AdminID = ?",
+        FALSE,
+        "ss",
+        $Email,
+        $AdminID
+    );
 
-	echo "
+    echo "
         <script type='text/javascript'>
         location.href='admin-account.php?id=1';
         </script>";
 }
 
-if(isset($_POST['ModalNewPassword'])){
+if (isset($_POST['ModalNewPassword'])) {
     $OldPassword = $_POST['ModalOldPassword'];
     $NewPassword = $_POST['ModalNewPassword'];
-    $query = "SELECT COUNT(*) FROM admintbl WHERE (AdminID = '$AdminID' AND Password = '$OldPassword')";
-    $result = mysql_query($query);
-    $Row = mysql_fetch_array($result);
 
-    if($Row[0] > 0){
-        $ChangePassQuery = "UPDATE admintbl SET Password = '$NewPassword' WHERE AdminID = '$AdminID'";
-        $ChangePassResult = mysql_query($ChangePassQuery);
-        echo "
+    $admin_tbl =
+        GSecureSQL::query(
+            "SELECT
+                `Password`,
+                `SaltedPassword`
+            FROM `admintbl` WHERE `AdminID` = ?",
+            TRUE,
+            "s",
+            $AdminID
+        );
+
+    if (count($admin_tbl)) {
+        if (hash('sha512', $OldPassword . $admin_tbl[0][1]) == $admin_tbl[0][0]) {
+
+            $salt = hash('sha512', mt_rand(0, PHP_INT_MAX) . mt_rand(0, PHP_INT_MAX) . mt_rand(0, PHP_INT_MAX));
+            $NewPassword = hash('sha512', $NewPassword . $salt);
+
+            GSecureSQL::query(
+                "UPDATE admintbl SET Password = ? , SaltedPassword = ? WHERE AdminID = ?",
+                FALSE,
+                "sss",
+                $NewPassword,
+                $salt,
+                $AdminID
+            );
+            echo "
         <script type='text/javascript'>
         location.href='admin-account.php?id=2';
         </script>";
-    }
-    else{
-        echo "Wrong Password";
-    }
 
+        } else {
+            echo "Username or Password";
+        }
+    } else {
+        echo "Username ID or Password";
+    }
 }
 
-if(isset($_POST['FirstName'])){
+if (isset($_POST['FirstName'])) {
     $FirstName = $_POST['FirstName'];
     $MiddleName = $_POST['MiddleName'];
     $LastName = $_POST['LastName'];
     $Position = $_POST['Position'];
     $Department = $_POST['Department'];
     $Address = $_POST['Address'];
-    $ContactNumber = $_POST['ContactNumber']; 
+    $ContactNumber = $_POST['ContactNumber'];
 
     $query = "UPDATE admintbl SET FirstName = '$FirstName', MiddleName = '$MiddleName', LastName = '$LastName', Position = '$Position', Department = '$Department', Address = '$Address', ContactNumber = '$ContactNumber' WHERE AdminID = '$AdminID'";
     $result = mysql_query($query);
@@ -81,29 +123,28 @@ if(isset($_POST['FirstName'])){
         </script>";
 }
 
-if(isset($_GET['id'])) {
+if (isset($_GET['id'])) {
     $fn = $_GET['id'];
     $RequestID = $_GET['rid'];
 
-    if($fn=="2"){
-    $query = "UPDATE resumerequesttbl SET Status = 'Rejected' WHERE RequestID='$RequestID'";
-    $result = mysql_query($query);
-    echo "
+    if ($fn == "2") {
+        $query = "UPDATE resumerequesttbl SET Status = 'Rejected' WHERE RequestID='$RequestID'";
+        $result = mysql_query($query);
+        echo "
             <script type='text/javascript'>
             location.href='admin-requested.php?id=2';
             </script>";
-    }
-    elseif($fn=="1"){
-    $query = "UPDATE resumerequesttbl SET Status = 'Accept' WHERE RequestID='$RequestID'";
-    $result = mysql_query($query);
-    echo "
+    } elseif ($fn == "1") {
+        $query = "UPDATE resumerequesttbl SET Status = 'Accept' WHERE RequestID='$RequestID'";
+        $result = mysql_query($query);
+        echo "
             <script type='text/javascript'>
             location.href='admin-requested.php?id=1';
             </script>";
     }
 }
 
-if(isset($_GET['DeleteID'])){
+if (isset($_GET['DeleteID'])) {
     $DeleteID = $_GET['DeleteID'];
 
     $query = "DELETE FROM coursetbl WHERE CourseID = '$DeleteID'";

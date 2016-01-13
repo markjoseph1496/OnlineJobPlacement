@@ -80,93 +80,64 @@ session_start();
 <div id="container">
 
 
-            <!-- Start Top Bar -->
-        <div class="top-bar">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-6">
-                        <!-- Start Contact Info -->
-                            <ul class="contact-details">
-                                <li class="profile-name"><i class="fa fa-hashtag"></i> <b>008-2012-0805</b></li>
-                            </ul>
-                        <!-- End Contact Info -->
-                    </div>
-                    <!-- .col-md-6 -->
-                    <div class="col-md-6">
-                        <!-- Start Social Links -->
-                            <ul class="social-list">
-                                <li class="profile-name">
-                                    <a class="bell itl-tooltip" data-placement="bottom" title="" href="#" data-original-title="Notification"><i class="fa fa-bell"></i></a>
-                                </li>
-                                <li class="profile-name">
-                                    &nbsp;
-                                </li>
-                                <li class="profile-name">
-                                    <i class="fa fa-user"></i> Hello, <b>Aira Jane Cruz</b>                               
-                                </li>
-                            </ul>
-                            <!-- End Social Links -->
-                    </div>
-                    <!-- .col-md-6 -->
+    <!-- Start Top Bar -->
+    <div class="top-bar">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <!-- Start Contact Info -->
+                    <ul class="contact-details">
+                        <li class="profile-name"><i class="fa fa-hashtag"></i> <b>008-2012-0805</b></li>
+                    </ul>
+                    <!-- End Contact Info -->
                 </div>
-                <!-- .row -->
-            </div>
-            <!-- .container -->
-        </div>
-        <!-- .top-bar -->
-        <!-- End Top Bar -->
-
-
-        <!-- Start  Logo & Naviagtion  -->
-        <div class="navbar navbar-default navbar-top">
-            <div class="container">
-                <div class="navbar-header">
-                    <!-- Stat Toggle Nav Link For Mobiles -->
-                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                        <i class="fa fa-bars"></i>
-                    </button>
-                    <!-- End Toggle Nav Link For Mobiles -->
-                     <a class="navbar-brand" href="">
-                        <img src="../images/ojpms.png">
-                    </a>
-                </div>
-                <div class="navbar-collapse collapse">
-                    <!-- Sign-out -->
-                    <div class="signout-side">
-                        <a class="show-signout"><i class="fa fa-sign-out"></i></a>
-                    </div>
-                    <!-- End Sign-out -->
-                    <!-- Start Navigation List -->
-                    <ul class="nav navbar-nav navbar-right">
-                        <li>
-                            <a href="admin.php">Home</a>
+                <!-- .col-md-6 -->
+                <div class="col-md-6">
+                    <!-- Start Social Links -->
+                    <ul class="social-list">
+                        <li class="profile-name">
+                            <a class="bell itl-tooltip" data-placement="bottom" title="" href="#"
+                               data-original-title="Notification"><i class="fa fa-bell"></i></a>
                         </li>
-                        <li>
-                            <a href="admin-reports.php">Reports</a>
+                        <li class="profile-name">
+                            &nbsp;
                         </li>
-                        <li>
-                            <a href="admin-account.php">Account</a>
-                        </li>
-                        <li>
-                            <a href="admin-requested.php">Requested</a>
-                        </li>
-                        <li>
-                            <a href="admin-companylist.php">Company List</a>
-                        </li>
-                        <li><a href="admin-adviser.php">Adviser List</a>
-                        </li>
-                        <li>
-                            <a> Maintenance</a>
-                            <ul class="dropdown">
-                                <li><a class="active" href="admin-maintenance.php">Courses</a></li>
-                            </ul>
+                        <li class="profile-name">
+                            <i class="fa fa-user"></i> Hello, <b>Aira Jane Cruz</b>
                         </li>
                     </ul>
-                    <!-- End Navigation List -->
+                    <!-- End Social Links -->
                 </div>
+                <!-- .col-md-6 -->
             </div>
-            <!-- Mobile Menu Start -->
-            <ul class="wpb-mobile-menu">
+            <!-- .row -->
+        </div>
+        <!-- .container -->
+    </div>
+    <!-- .top-bar -->
+    <!-- End Top Bar -->
+
+
+    <!-- Start  Logo & Naviagtion  -->
+    <div class="navbar navbar-default navbar-top">
+        <div class="container">
+            <div class="navbar-header">
+                <!-- Stat Toggle Nav Link For Mobiles -->
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <i class="fa fa-bars"></i>
+                </button>
+                <!-- End Toggle Nav Link For Mobiles -->
+                <a class="navbar-brand" href="">
+                    <img src="../images/ojpms.png">
+                </a>
+            </div>
+            <div class="navbar-collapse collapse">
+                <!-- Sign-out -->
+                <div class="signout-side">
+                    <a class="show-signout"><i class="fa fa-sign-out"></i></a>
+                </div>
+                <!-- End Sign-out -->
+                <!-- Start Navigation List -->
                 <ul class="nav navbar-nav navbar-right">
                     <li>
                         <a href="admin.php">Home</a>
@@ -192,110 +163,139 @@ session_start();
                         </ul>
                     </li>
                 </ul>
+                <!-- End Navigation List -->
+            </div>
+        </div>
+        <!-- Mobile Menu Start -->
+        <ul class="wpb-mobile-menu">
+            <ul class="nav navbar-nav navbar-right">
+                <li>
+                    <a href="admin.php">Home</a>
+                </li>
+                <li>
+                    <a href="admin-reports.php">Reports</a>
+                </li>
+                <li>
+                    <a href="admin-account.php">Account</a>
+                </li>
+                <li>
+                    <a href="admin-requested.php">Requested</a>
+                </li>
+                <li>
+                    <a href="admin-companylist.php">Company List</a>
+                </li>
+                <li><a href="admin-adviser.php">Adviser List</a>
+                </li>
+                <li>
+                    <a> Maintenance</a>
+                    <ul class="dropdown">
+                        <li><a class="active" href="admin-maintenance.php">Courses</a></li>
+                    </ul>
+                </li>
             </ul>
+        </ul>
+        </header>
+        <!-- Mobile Menu End -->
+
+    </div>
+    <!-- End Header Logo & Naviagtion -->
+
     </header>
-    <!-- Mobile Menu End -->
+    <!-- End Header Section -->
 
-</div>
-<!-- End Header Logo & Naviagtion -->
-
-</header>
-<!-- End Header Section -->
-
-<!-- Start Page Banner -->
-<div class="page-banner" style="padding:40px 0; center #f9f9f9;">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-6">
-                <h2>List of Courses</h2>
+    <!-- Start Page Banner -->
+    <div class="page-banner" style="padding:40px 0; center #f9f9f9;">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <h2>List of Courses</h2>
+                </div>
             </div>
         </div>
     </div>
-</div>
-<!-- End Page Banner -->
+    <!-- End Page Banner -->
 
-<!--Content-->
-<br><br><br>
+    <!--Content-->
+    <br><br><br>
 
-<div class="container">
-    <div class="col-md-12 fieldcol">
-                    <a href="admin-addcourse.php" class="btnforadding" style="float:right;">
-                        <span class="fa fa-plus-square"> Add Course </span>
-                    </a>
-   </div>
-    <div class="col-md-12">
-        &nbsp;
-        <table class="table segment table-hover">
-            <thead>
-            <tr>
-            </tr>
-            <tr>
-                <th width='10%' class='tabletitle'>Course Code</th>
-                <th width='20%' class='tabletitle'>Course Title</th>
-                <th width='15%' class='tabletitle'>Industry</th>
-                <th width='10%' class='tabletitle'>Contact Number</th>
-                <th width='15%' class='tabletitle'>Email Address</th>
-                <th width='15%' class='tabletitle'>Website</th>
-                <th width='15%' class='tabletitle'></th>
-            <tr>
-            </thead>
-            <?php
-            $ListCourseQuery = "SELECT * FROM coursetbl";
-            $ListCourseResult = mysql_query($ListCourseQuery);
-            while ($ListCourseQuery = mysql_fetch_array($ListCourseResult)) {
-                $CourseID = $ListCourseQuery['CourseID'];
-                $CourseCode = $ListCourseQuery['CourseCode'];
-                $CourseTitle = $ListCourseQuery['CourseTitle'];
-                $CourseDesc = $ListCourseQuery['CourseDescription'];
-                ?>
-                <tbody>
+    <div class="container">
+        <div class="col-md-12 fieldcol">
+            <a href="admin-addcourse.php" class="btnforadding" style="float:right;">
+                <span class="fa fa-plus-square"> Add Course </span>
+            </a>
+        </div>
+        <div class="col-md-12">
+            &nbsp;
+            <table class="table segment table-hover">
+                <thead>
                 <tr>
-                    <td width=10% class=tabletitle><?php echo $CourseCode; ?></td>
-                    <td width=20% class=tabletitle><?php echo $CourseTitle; ?></td>
-                    <td width=15% class=tabletitle></td>
-                    <td width=10% class=tabletitle></td>
-                    <td width=15% class=tabletitle></td>
-                    <td width=15% class=tabletitle></td>
-                    <td width=15% class=tabletitle>
-                        <a href="admin-editcourse.php?id=<?php echo $CourseID; ?>" class='btn btn-default'> <i
-                                class='fa fa-pencil-square-o fa-1x'></i> </a>
-                        <button class='btn btn-danger' data-toggle='modal' data-target='#DeleteCourse'><i
-                                class='fa fa-trash fa-1x'></i></button>
-                    </td>
                 </tr>
-                <!-- Modal -->
-                <div class="modal fade" id="DeleteCourse" role="dialog">
-                    <div class="modal-dialog" style="padding:100px">
-                        <!-- Modal content-->
-                        <div class="modal-content">
-                            <div class="modal-header">
-                                <button type="button" class="close" data-dismiss="modal">&times;</button>
-                                <h4 class="modal-title">Delete Course?</h4>
-                            </div>
-                            <div class="modal-body">
-                                <div class="col-md-15 fieldcol">
-                                    <label = "usr" class = "control-label">Do you want to delete this
-                                    course?</label>
-                                    <div class="form-group">
-                                    </div>
+                <tr>
+                    <th width='10%' class='tabletitle'>Course Code</th>
+                    <th width='20%' class='tabletitle'>Course Title</th>
+                    <th width='30%' class='tabletitle'>Course Description</th>
+                    <th width='10%' class='tabletitle'></th>
+                <tr>
+                </thead>
+                <?php
+
+                $ListCourseQuery =
+                    GSecureSQL::query(
+                        "SELECT * FROM coursetbl",
+                        TRUE
+                    );
+                foreach ($ListCourseQuery as $value) {
+                    $CourseID = $value[0];
+                    $CourseTitle = $value[1];
+                    $CourseCode = $value[2];
+                    $CourseDesc = $value[3];
+                    ?>
+                    <tbody>
+                    <tr>
+                        <td width=10% class=tabletitle><?php echo $CourseCode; ?></td>
+                        <td width=20% class=tabletitle><?php echo $CourseTitle; ?></td>
+                        <td width=30% class=tabletitle><?php echo $CourseDesc; ?></td>
+                        <td width=10% class=tabletitle>
+                            <a href="admin-editcourse.php?id=<?php echo $CourseID; ?>" class='btn btn-default'> <i
+                                    class='fa fa-pencil-square-o fa-1x'></i> </a>
+                            <button class='btn btn-danger' data-toggle='modal'
+                                    data-target='#DeleteCourse<?php echo $CourseID; ?>'><i
+                                    class='fa fa-trash fa-1x'></i></button>
+                        </td>
+                    </tr>
+                    <!-- Modal -->
+                    <div class="modal fade" id="DeleteCourse<?php echo $CourseID; ?>" role="dialog">
+                        <div class="modal-dialog" style="padding:100px">
+                            <!-- Modal content-->
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                    <h4 class="modal-title">Delete Course?</h4>
                                 </div>
-                                <div class="modal-footer">
-                                    <a href="functions.php?DeleteID=<?php echo $CourseID; ?>"
-                                       class="btn btn-danger">Delete <?php echo $CourseCode; ?></a>
-                                    <button type="button" class="btn btn-default" data-dismiss="modal">Cancel
-                                    </button>
+                                <div class="modal-body">
+                                    <div class="col-md-15 fieldcol">
+                                        <label = "usr" class = "control-label">Do you want to delete this
+                                        course?</label>
+                                        <div class="form-group">
+                                        </div>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <a href="functions.php?DeleteID=<?php echo $CourseID; ?>"
+                                           class="btn btn-danger">Delete <?php echo $CourseCode; ?></a>
+                                        <button type="button" class="btn btn-default" data-dismiss="modal">Cancel
+                                        </button>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                </div>
-                </tbody>
-                <?php
-            }
-            ?>
-        </table>
+                    </tbody>
+                    <?php
+                }
+                ?>
+            </table>
+        </div>
     </div>
-</div>
 </body>
 <script type="text/javascript" src="../js/script.js"></script>
 </html>

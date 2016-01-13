@@ -84,99 +84,70 @@ session_start();
 <div id="container">
 
 
-            <!-- Start Top Bar -->
-        <div class="top-bar">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-6">
-                        <!-- Start Contact Info -->
-                            <ul class="contact-details">
-                                <li class="profile-name"><i class="fa fa-hashtag"></i> <b>008-2012-0805</b></li>
-                            </ul>
-                        <!-- End Contact Info -->
-                    </div>
-                    <!-- .col-md-6 -->
-                    <div class="col-md-6">
-                        <!-- Start Social Links -->
-                            <ul class="social-list">
-                                <li class="profile-name">
-                                    <a class="bell itl-tooltip" data-placement="bottom" title="" href="#" data-original-title="Notification"><i class="fa fa-bell"></i></a>
-                                </li>
-                                <li class="profile-name">
-                                    &nbsp;
-                                </li>
-                                <li class="profile-name">
-                                    <i class="fa fa-user"></i> Hello, <b>Aira Jane Cruz</b>                               
-                                </li>
-                            </ul>
-                            <!-- End Social Links -->
-                    </div>
-                    <!-- .col-md-6 -->
+    <!-- Start Top Bar -->
+    <div class="top-bar">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <!-- Start Contact Info -->
+                    <ul class="contact-details">
+                        <li class="profile-name"><i class="fa fa-hashtag"></i> <b>008-2012-0805</b></li>
+                    </ul>
+                    <!-- End Contact Info -->
                 </div>
-                <!-- .row -->
-            </div>
-            <!-- .container -->
-        </div>
-        <!-- .top-bar -->
-        <!-- End Top Bar -->
-
-
-        <!-- Start  Logo & Naviagtion  -->
-        <div class="navbar navbar-default navbar-top">
-            <div class="container">
-                <div class="navbar-header">
-                    <!-- Stat Toggle Nav Link For Mobiles -->
-                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                        <i class="fa fa-bars"></i>
-                    </button>
-                    <!-- End Toggle Nav Link For Mobiles -->
-                     <a class="navbar-brand" href="">
-                        <img src="../images/ojpms.png">
-                    </a>
-                </div>
-                <div class="navbar-collapse collapse">
-                    <!-- Sign-out -->
-                    <div class="signout-side">
-                        <a class="show-signout"><i class="fa fa-sign-out"></i></a>
-                    </div>
-                    <!-- End Sign-out -->
-                    <!-- Start Navigation List -->
-                    <ul class="nav navbar-nav navbar-right">
-                        <li>
-                            <a href="admin.php">Home</a>
+                <!-- .col-md-6 -->
+                <div class="col-md-6">
+                    <!-- Start Social Links -->
+                    <ul class="social-list">
+                        <li class="profile-name">
+                            <a class="bell itl-tooltip" data-placement="bottom" title="" href="#"
+                               data-original-title="Notification"><i class="fa fa-bell"></i></a>
                         </li>
-                        <li>
-                            <a href="admin-reports.php">Reports</a>
+                        <li class="profile-name">
+                            &nbsp;
                         </li>
-                        <li>
-                            <a href="admin-account.php">Account</a>
-                        </li>
-                        <li>
-                            <a href="admin-requested.php">Requested</a>
-                        </li>
-                        <li>
-                            <a class="active" href="admin-companylist.php">Company List</a>
-                        </li>
-                        <li><a href="admin-adviser.php" admin-maintenance.php"">Adviser List</a>
-                        </li>
-                        <li>
-                            <a> Maintenance</a>
-                            <ul class="dropdown">
-                                <li><a href="admin-maintenance.php">Courses</a></li>
-                            </ul>
+                        <li class="profile-name">
+                            <i class="fa fa-user"></i> Hello, <b>Aira Jane Cruz</b>
                         </li>
                     </ul>
-                    <!-- End Navigation List -->
+                    <!-- End Social Links -->
                 </div>
+                <!-- .col-md-6 -->
             </div>
-            <!-- Mobile Menu Start -->
-            <ul class="wpb-mobile-menu">
+            <!-- .row -->
+        </div>
+        <!-- .container -->
+    </div>
+    <!-- .top-bar -->
+    <!-- End Top Bar -->
+
+
+    <!-- Start  Logo & Naviagtion  -->
+    <div class="navbar navbar-default navbar-top">
+        <div class="container">
+            <div class="navbar-header">
+                <!-- Stat Toggle Nav Link For Mobiles -->
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <i class="fa fa-bars"></i>
+                </button>
+                <!-- End Toggle Nav Link For Mobiles -->
+                <a class="navbar-brand" href="">
+                    <img src="../images/ojpms.png">
+                </a>
+            </div>
+            <div class="navbar-collapse collapse">
+                <!-- Sign-out -->
+                <div class="signout-side">
+                    <a class="show-signout"><i class="fa fa-sign-out"></i></a>
+                </div>
+                <!-- End Sign-out -->
+                <!-- Start Navigation List -->
                 <ul class="nav navbar-nav navbar-right">
                     <li>
                         <a href="admin.php">Home</a>
                     </li>
                     <li>
-                        <a class="admin-reports.php" href="">Reports</a>
+                        <a href="admin-reports.php">Reports</a>
                     </li>
                     <li>
                         <a href="admin-account.php">Account</a>
@@ -187,7 +158,7 @@ session_start();
                     <li>
                         <a class="active" href="admin-companylist.php">Company List</a>
                     </li>
-                    <li><a href="admin-adviser.php">Adviser List</a>
+                    <li><a href="admin-adviser.php" admin-maintenance.php"">Adviser List</a>
                     </li>
                     <li>
                         <a> Maintenance</a>
@@ -196,83 +167,120 @@ session_start();
                         </ul>
                     </li>
                 </ul>
+                <!-- End Navigation List -->
+            </div>
+        </div>
+        <!-- Mobile Menu Start -->
+        <ul class="wpb-mobile-menu">
+            <ul class="nav navbar-nav navbar-right">
+                <li>
+                    <a href="admin.php">Home</a>
+                </li>
+                <li>
+                    <a class="admin-reports.php" href="">Reports</a>
+                </li>
+                <li>
+                    <a href="admin-account.php">Account</a>
+                </li>
+                <li>
+                    <a href="admin-requested.php">Requested</a>
+                </li>
+                <li>
+                    <a class="active" href="admin-companylist.php">Company List</a>
+                </li>
+                <li><a href="admin-adviser.php">Adviser List</a>
+                </li>
+                <li>
+                    <a> Maintenance</a>
+                    <ul class="dropdown">
+                        <li><a href="admin-maintenance.php">Courses</a></li>
+                    </ul>
+                </li>
             </ul>
+        </ul>
+        </header>
+        <!-- Mobile Menu End -->
+
+    </div>
+    <!-- End Header Logo & Naviagtion -->
+
     </header>
-    <!-- Mobile Menu End -->
+    <!-- End Header Section -->
 
-</div>
-<!-- End Header Logo & Naviagtion -->
-
-</header>
-<!-- End Header Section -->
-
-<!-- Start Page Banner -->
-<div class="page-banner" style="padding:40px 0; center #f9f9f9;">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-6">
-                <h2>List of Company</h2>
+    <!-- Start Page Banner -->
+    <div class="page-banner" style="padding:40px 0; center #f9f9f9;">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <h2>List of Company</h2>
+                </div>
             </div>
         </div>
     </div>
-</div>
-<!-- End Page Banner -->
+    <!-- End Page Banner -->
 
-<!--Content-->
-<br><br><br>
+    <!--Content-->
+    <br><br><br>
 
-<div class="container">
-    <div class="col-md-12">
-        <table class="table segment table-hover">
-            <thead>
-            <tr>
+    <div class="container">
+        <div class="col-md-12">
+            <table class="table segment table-hover">
+                <thead>
+                <tr>
 
-            </tr>
-            <tr>
-                <th width='20%' class='tabletitle'>Company Name</th>
-                <th width='40%' class='tabletitle'>Description</th>
-                <th width='25%' class='tabletitle'>Location</th>
-                <th width='10%' class='tabletitle'></th>
-            <tr>
-            </thead>
-            <tbody>
-            <?php
-            $companyinfo_tbl =
-                GSecureSQL::query(
-                    "SELECT * FROM companyinfotbl",
-                    TRUE
-                );
-            foreach ($companyinfo_tbl as $value) {
+                </tr>
+                <tr>
+                    <th width='15%' class='tabletitle'>Company Name</th>
+                    <th width='10%' class='tabletitle'>Location</th>
+                    <th width='15%' class='tabletitle'>Industry</th>
+                    <th width='10%' class='tabletitle'>Contact Number</th>
+                    <th width='15%' class='tabletitle'>Email Address</th>
+                    <th width='15%' class='tabletitle'>Website</th>
+                    <th width='10%' class='tabletitle'></th>
+                <tr>
+                </thead>
+                <tbody>
+                <?php
+                $companyinfo_tbl =
+                    GSecureSQL::query(
+                        "SELECT * FROM companyinfotbl",
+                        TRUE
+                    );
+                foreach ($companyinfo_tbl as $value) {
                 $CompanyID = $value[0];
                 $CompanyName = $value[1];
                 $Industry = $value[3];
                 $City = $value[5];
                 $PhoneNo = $value[7];
                 $MobileNo = $value[8];
-                $Website = $value[9];
-            }
-            ?>
-                 <tr>
-                    <td width= 20% class = tabletitle>
-                      <a href = '#'></a>
+                $Email = $value[15];
+                ?>
+                <tr>
+                    <td width=15% class=tabletitle>
+                        <a href='#'><?php echo $CompanyName; ?></a>
                     </td>
-                    <td width = 40% class = tabletitle></td>
-                    <td width = 25% class = tabletitle></td>
-                    <form method = 'POST'>
-                    <td class = tabletitle>
-                        <button id='Edit' name='btnedit' href='' class='btn btn-default'> 
-                        <i class='fa fa-pencil-square-o fa-1x'></i>
-                        </button> 
-                        <button  name = 'btndelete' href='' class='btn btn-danger'> 
-                        <i class='fa fa-trash fa-1x'></i> 
-                        </button> 
+                    <td width=10% class=tabletitle><?php echo $City; ?></td>
+                    <td width='15%' class='tabletitle'><?php echo $Industry; ?></td>
+                    <td width='10%' class='tabletitle'><?php echo $PhoneNo; ?></td>
+                    <td width='15%' class='tabletitle'>WEBSITE</td>
+                    <td width='15%' class='tabletitle'><?php echo $Email; ?></td>
+
+                    <td class=tabletitle>
+                        <button id='Edit' name='btnedit' href='' class='btn btn-default'>
+                            <i class='fa fa-pencil-square-o fa-1x'></i>
+                        </button>
+                        <button name='btndelete' href='' class='btn btn-danger'>
+                            <i class='fa fa-trash fa-1x'></i>
+                        </button>
                     </td>
-                    </form>
-                    <tr>
-            </tbody>
-        </table>
+                <tr>
+                    <?php
+                    }
+                    ?>
+                </tbody>
+            </table>
+        </div>
     </div>
-</div>
 </body>
 <script type="text/javascript" src="../js/script.js"></script>
 </html>

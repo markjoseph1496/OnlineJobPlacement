@@ -1,14 +1,20 @@
 <?php
 include('../connection.php');
+session_start();
+$AdminID = $_SESSION['AdminID'];
 
-$TotalStudents = mysql_query("SELECT COUNT(*) FROM studentinfotbl");
-$Q1 = mysql_fetch_array($TotalStudents);
-$Total = $Q1[0];
-
+$TotalStudents =
+    GSecureSQL::query(
+        "SELECT COUNT(*) FROM studentinfotbl",
+        TRUE
+    );
+$Total = $TotalStudents[0][0];
 ?>
 <!doctype html>
-<!--[if IE 8 ]><html class="ie ie8" lang="en"> <![endif]-->
-<!--[if (gte IE 9)|!(IE)]><html lang="en" class="no-js"> <![endif]-->
+<!--[if IE 8 ]>
+<html class="ie ie8" lang="en"> <![endif]-->
+<!--[if (gte IE 9)|!(IE)]>
+<html lang="en" class="no-js"> <![endif]-->
 <html lang="en">
 
 <head>
@@ -82,97 +88,98 @@ $Total = $Q1[0];
 
 <body>
 
-  <!-- Full Body Container -->
-  <div id="container">
+<!-- Full Body Container -->
+<div id="container">
 
 
-           <!-- Start Top Bar -->
-        <div class="top-bar">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-6">
-                        <!-- Start Contact Info -->
-                            <ul class="contact-details">
-                                <li class="profile-name"><i class="fa fa-hashtag"></i> <b>008-2012-0805</b></li>
-                            </ul>
-                        <!-- End Contact Info -->
-                    </div>
-                    <!-- .col-md-6 -->
-                    <div class="col-md-6">
-                        <!-- Start Social Links -->
-                            <ul class="social-list">
-                                <li class="profile-name">
-                                    <a class="bell itl-tooltip" data-placement="bottom" title="" href="#" data-original-title="Notification"><i class="fa fa-bell"></i></a>
-                                </li>
-                                <li class="profile-name">
-                                    &nbsp;
-                                </li>
-                                <li class="profile-name">
-                                    <i class="fa fa-user"></i> Hello, <b>Aira Jane Cruz</b>                               
-                                </li>
-                            </ul>
-                            <!-- End Social Links -->
-                    </div>
-                    <!-- .col-md-6 -->
-                </div>
-                <!-- .row -->
-            </div>
-            <!-- .container -->
-        </div>
-        <!-- .top-bar -->
-        <!-- End Top Bar -->
-
-
-        <!-- Start  Logo & Naviagtion  -->
-        <div class="navbar navbar-default navbar-top">
-            <div class="container">
-                <div class="navbar-header">
-                    <!-- Stat Toggle Nav Link For Mobiles -->
-                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                        <i class="fa fa-bars"></i>
-                    </button>
-                    <!-- End Toggle Nav Link For Mobiles -->
-                     <a class="navbar-brand" href="">
-                        <img src="../images/ojpms.png">
-                    </a>
-                </div>
-          <div class="navbar-collapse collapse">
-             <!-- Sign-out -->
-            <div class="signout-side">
-              <a class="show-signout"><i class="fa fa-sign-out"></i></a>
-            </div>
-            <!-- End Sign-out -->
-             <!-- Start Navigation List -->
-            <ul class="nav navbar-nav navbar-right">
-                <li>
-                    <a  href="admin.php">Home</a>
-                </li>
-                <li>
-                    <a class="active" href="admin-reports.php">Reports</a>
-                </li>
-                <li>
-                    <a href="admin-account.php">Account</a>
-                </li>
-                <li>
-                    <a href="admin-requested.php">Requested</a>
-                </li>
-                <li>
-                    <a href="admin-companylist.php">Company List</a>
-                </li>
-                 <li><a href="admin-adviser.php">Adviser List</a>
-                </li>  
-               <li>
-                    <a> Maintenance</a>
-                    <ul class="dropdown">
-                        <li><a href="admin-maintenance.php">Courses</a></li>
+    <!-- Start Top Bar -->
+    <div class="top-bar">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <!-- Start Contact Info -->
+                    <ul class="contact-details">
+                        <li class="profile-name"><i class="fa fa-hashtag"></i> <b>008-2012-0805</b></li>
                     </ul>
-                </li>
-            </ul>
-            <!-- End Navigation List -->
+                    <!-- End Contact Info -->
+                </div>
+                <!-- .col-md-6 -->
+                <div class="col-md-6">
+                    <!-- Start Social Links -->
+                    <ul class="social-list">
+                        <li class="profile-name">
+                            <a class="bell itl-tooltip" data-placement="bottom" title="" href="#"
+                               data-original-title="Notification"><i class="fa fa-bell"></i></a>
+                        </li>
+                        <li class="profile-name">
+                            &nbsp;
+                        </li>
+                        <li class="profile-name">
+                            <i class="fa fa-user"></i> Hello, <b>Aira Jane Cruz</b>
+                        </li>
+                    </ul>
+                    <!-- End Social Links -->
+                </div>
+                <!-- .col-md-6 -->
+            </div>
+            <!-- .row -->
         </div>
+        <!-- .container -->
     </div>
+    <!-- .top-bar -->
+    <!-- End Top Bar -->
+
+
+    <!-- Start  Logo & Naviagtion  -->
+    <div class="navbar navbar-default navbar-top">
+        <div class="container">
+            <div class="navbar-header">
+                <!-- Stat Toggle Nav Link For Mobiles -->
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <i class="fa fa-bars"></i>
+                </button>
+                <!-- End Toggle Nav Link For Mobiles -->
+                <a class="navbar-brand" href="">
+                    <img src="../images/ojpms.png">
+                </a>
+            </div>
+            <div class="navbar-collapse collapse">
+                <!-- Sign-out -->
+                <div class="signout-side">
+                    <a class="show-signout"><i class="fa fa-sign-out"></i></a>
+                </div>
+                <!-- End Sign-out -->
+                <!-- Start Navigation List -->
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a href="admin.php">Home</a>
+                    </li>
+                    <li>
+                        <a class="active" href="admin-reports.php">Reports</a>
+                    </li>
+                    <li>
+                        <a href="admin-account.php">Account</a>
+                    </li>
+                    <li>
+                        <a href="admin-requested.php">Requested</a>
+                    </li>
+                    <li>
+                        <a href="admin-companylist.php">Company List</a>
+                    </li>
+                    <li><a href="admin-adviser.php">Adviser List</a>
+                    </li>
+                    <li>
+                        <a> Maintenance</a>
+                        <ul class="dropdown">
+                            <li><a href="admin-maintenance.php">Courses</a></li>
+                        </ul>
+                    </li>
+                </ul>
+                <!-- End Navigation List -->
+            </div>
+        </div>
         <!-- Mobile Menu Start -->
-    <ul class="wpb-mobile-menu">
+        <ul class="wpb-mobile-menu">
             <ul class="nav navbar-nav navbar-right">
                 <li>
                     <a href="admin.php">Home</a>
@@ -189,142 +196,170 @@ $Total = $Q1[0];
                 <li>
                     <a href="admin-companylist.php">Company List</a>
                 </li>
-                 <li><a href="admin-advisert.php"admin-maintenance.php"">Adviser List</a>
-                </li>  
-               <li>
+                <li><a href="admin-advisert.php" admin-maintenance.php"">Adviser List</a>
+                </li>
+                <li>
                     <a> Maintenance</a>
                     <ul class="dropdown">
                         <li><a href="admin-maintenance.php">Courses</a></li>
                     </ul>
                 </li>
             </ul>
-    </ul>
-    </header>
-    <!-- Mobile Menu End -->
+        </ul>
+        </header>
+        <!-- Mobile Menu End -->
 
-      </div>
-      <!-- End Header Logo & Naviagtion -->
+    </div>
+    <!-- End Header Logo & Naviagtion -->
 
     </header>
     <!-- End Header Section -->
 
-<!-- Start Page Banner -->
+    <!-- Start Page Banner -->
     <div class="page-banner" style="padding:40px 0; center #f9f9f9;">
-      <div class="container">
-        <div class="row">
-          <div class="col-md-6">
-            <h2>Reports</h2>
-          </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <h2>Reports</h2>
+                </div>
+            </div>
         </div>
-      </div>
     </div>
     <!-- End Page Banner -->
 
-<!--Content-->
-  <br><br><br>
-    
-     <div class = "container">
+    <!--Content-->
+    <br><br><br>
 
-            <div class = "header2_advertising">
-                    <div class = "container">
-                      <div class = "col-md-12">
-                         <a class="btn-system btn-mini border-btn" href="admin-ojtreports.php" style = "float:right;">OJT REPORTS</a>
-                      </div>
-                    <div class="col-sm-4">
-                             <label><b>TOTAL NUMBER OF STUDENTS: <?php echo $Total; ?></b></label>
-                    </div>
-                    <div class="col-sm-4">
-                        <div class="form-group text-center">
-                            <label><center><b>Month</b></label></center>
-                             <select id="grad_month" name="grad_month" class="form-control" style = "width:250px;">
-                                <option value="00">- Please select Month</option>
-                                <option value="01">January</option>
-                                <option value="02">February</option> 
-                                <option value="03">March</option> 
-                                <option value="04">April</option> 
-                                <option value="05">May</option> 
-                                <option value="06">June</option> 
-                                <option value="07">July</option> 
-                                <option value="08">August</option>
-                                <option value="09">September</option>
-                                <option value="10">October</option>
-                                <option value="11">November</option>
-                                <option value="12">December</option>
-                            </select>
-                        </div>
-                    </div> 
-                    <div class="col-sm-4">
-                        <label><center><b>Year Graduated</b></label></center>
-                             <select id="grad_year" name="grad_year" class="form-control" style = "width:250px;">
-                                <option value="00">- Please select Year Graduated</option>
-                                <option value="2015">2015</option>
-                                <option value="2014">2014</option>
-                                <option value="2013">2013</option>
-                                <option value="2012">2012</option>
-                                <option value="2011">2011</option>
-                                <option value="2010">2010</option>
-                                <option value="2009">2009</option>
-                                <option value="2008">2008</option>
-                                <option value="2007">2007</option>
-                                <option value="2006">2006</option>
-                                <option value="2005">2005</option>
-                                <option value="2004">2004</option>
-                                <option value="2003">2003</option>
-                                <option value="2002">2002</option>
-                                <option value="2001">2001</option>
-                                <option value="2000">2000</option>
-                            </select>
-                    </div>
+    <div class="container">
+
+        <div class="header2_advertising">
+            <div class="container">
+                <div class="col-md-12">
+                    <a class="btn-system btn-mini border-btn" href="admin-ojtreports.php" style="float:right;">OJT
+                        REPORTS</a>
+                </div>
+                <div class="col-sm-4">
+                    <label><b>TOTAL NUMBER OF STUDENTS: <?php echo $Total; ?></b></label>
+                </div>
+                <div class="col-sm-4">
+                    <div class="form-group text-center">
+                        <label>
+                            <center><b>Month</b>
+                        </label></center>
+                        <select id="grad_month" name="grad_month" class="form-control" style="width:250px;">
+                            <option value="00">- Please select Month</option>
+                            <option value="01">January</option>
+                            <option value="02">February</option>
+                            <option value="03">March</option>
+                            <option value="04">April</option>
+                            <option value="05">May</option>
+                            <option value="06">June</option>
+                            <option value="07">July</option>
+                            <option value="08">August</option>
+                            <option value="09">September</option>
+                            <option value="10">October</option>
+                            <option value="11">November</option>
+                            <option value="12">December</option>
+                        </select>
                     </div>
                 </div>
-             <table class="table segment table-hover">
-                <thead>
-                    <tr></tr>  
-                    <tr>
-                        <th width = '40%' class = 'tabletitle'>Course</th>
-                        <th width = '20%' class = 'tabletitle'>Number of Students </th>
-                        <th width = '20%' class = 'tabletitle'> Number of Employed </th>
-                        <th width = '20%' class = 'tabletitle'>Number of Unemployed</th>
-                    <tr>
-                </thead>
-                  <?php
-                      $qry1 = "SELECT * FROM coursetbl";
-                      $result1 = mysql_query($qry1);
-                      while($qry1 = mysql_fetch_array($result1)){
-                        $CourseTitle = $qry1['CourseTitle'];
-                        $CourseCode = $qry1['CourseCode'];
-
-                        $qryTotal = mysql_query("SELECT COUNT(*) FROM studentinfotbl WHERE MajorCourse = '$CourseCode'");
-                        $qryCount = mysql_fetch_array($qryTotal);
-                        $TotalStudents = $qryCount[0];
-
-                        $EmployedTotal = mysql_query("SELECT COUNT(*) FROM studentinfotbl WHERE MajorCourse = '$CourseCode' AND EmploymentStatus = 'Employed'");
-                        $qryCountEmployed = mysql_fetch_array($EmployedTotal);
-                        $TotalEmployed = $qryCountEmployed[0];
-
-                        $UnemployedTotal = mysql_query("SELECT COUNT(*) FROM studentinfotbl WHERE MajorCourse = '$CourseCode' AND EmploymentStatus = 'Unemployed'");
-                        $qryCountUnemployed= mysql_fetch_array($UnemployedTotal);
-                        $TotalUnemployed = $qryCountUnemployed[0];
-
-                        echo"
-                            <tbody>
-                                <tr>
-                                    <td class = tabletitle>
-                                    <a href = 'admin-field.php?CourseCode=" . htmlspecialchars($CourseCode) . "'>" . htmlspecialchars($CourseTitle) . "</a>
-                                    </td>
-                                    <td class = 'tabletitle'>$TotalStudents</td>
-                                    <td class = 'tabletitle'>$TotalEmployed</td>
-                                    <td class = 'tabletitle'>$TotalUnemployed</td>
-                                <tr>
-                            </tbody>
-                        ";
-
-                      }
-
-                  ?>
-            </table>
-            <br>
+                <div class="col-sm-4">
+                    <label>
+                        <center><b>Year Graduated</b>
+                    </label></center>
+                    <select id="grad_year" name="grad_year" class="form-control" style="width:250px;">
+                        <option value="00">- Please select Year Graduated</option>
+                        <option value="2015">2015</option>
+                        <option value="2014">2014</option>
+                        <option value="2013">2013</option>
+                        <option value="2012">2012</option>
+                        <option value="2011">2011</option>
+                        <option value="2010">2010</option>
+                        <option value="2009">2009</option>
+                        <option value="2008">2008</option>
+                        <option value="2007">2007</option>
+                        <option value="2006">2006</option>
+                        <option value="2005">2005</option>
+                        <option value="2004">2004</option>
+                        <option value="2003">2003</option>
+                        <option value="2002">2002</option>
+                        <option value="2001">2001</option>
+                        <option value="2000">2000</option>
+                    </select>
+                </div>
+            </div>
         </div>
+        <table class="table segment table-hover">
+            <thead>
+            <tr></tr>
+            <tr>
+                <th width='40%' class='tabletitle'>Course</th>
+                <th width='20%' class='tabletitle'>Number of Students</th>
+                <th width='20%' class='tabletitle'> Number of Employed</th>
+                <th width='20%' class='tabletitle'>Number of Unemployed</th>
+            <tr>
+            </thead>
+            <?php
+
+            $course_tbl =
+                GSecureSQL::query(
+                    "SELECT * FROM coursetbl",
+                    TRUE
+                );
+            foreach ($course_tbl as $value) {
+                $CourseID = $value[0];
+                $CourseTitle = $value[1];
+                $CourseCode = $value[2];
+
+                $qryTotal =
+                    GSecureSQL::query(
+                        "SELECT COUNT(*) FROM studentinfotbl WHERE MajorCourse = ?",
+                        TRUE,
+                        "s",
+                        $CourseCode
+                    );
+                foreach ($qryTotal as $value1) {
+                    $TotalStudents = $value1[0];
+                }
+
+                $EmployedTotal =
+                    GSecureSQL::query(
+                        "SELECT COUNT(*) FROM studentinfotbl WHERE MajorCourse = ? AND EmploymentStatus = 'Employed'",
+                        TRUE,
+                        "s",
+                        $CourseCode
+                    );
+                foreach ($EmployedTotal as $value2) {
+                    $TotalEmployed = $value2[0];
+                }
+
+                $UnemployedTotal =
+                    GSecureSQL::query(
+                        "SELECT COUNT(*) FROM studentinfotbl WHERE MajorCourse = ? AND EmploymentStatus = 'Unemployed'",
+                        TRUE,
+                        "s",
+                        $CourseCode
+                    );
+                foreach ($UnemployedTotal as $value3) {
+                    $TotalUnemployed = $value3[0];
+                }
+                ?>
+                <tbody>
+                <tr>
+                    <td class=tabletitle>
+                        <a href='admin-field.php?id=<?php echo $CourseID; ?>'><?php echo $CourseTitle; ?></a>
+                    </td>
+                    <td class='tabletitle'><?php echo $TotalStudents; ?></td>
+                    <td class='tabletitle'><?php echo $TotalEmployed; ?></td>
+                    <td class='tabletitle'><?php echo $TotalUnemployed; ?></td>
+                <tr>
+                </tbody>
+                <?php
+            }
+            ?>
+        </table>
+        <br>
+    </div>
 </body>
 <script type="text/javascript" src="../js/script.js"></script>
 </html>
