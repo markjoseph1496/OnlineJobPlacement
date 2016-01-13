@@ -171,7 +171,31 @@
                                 </div>
                                 <!-- End Single Testimonial -->
                             </div>
+                            &nbsp;
+                            <div class="hr5" style="margin-top:35px;margin-bottom:40px;"></div>
+        <div class ="container">
+        <div class="col-md-12">
+                                <div class="classic-testimonials">
+                                    <center><h1>Sykes Asia</h1></center>
+                                </div>
+                                &nbsp;
+                                <label>Archway International & Marketing Services, Inc. was officially registered with the Philippine SEC on October 25, 2006 and began its operations in the January 2007 and since then has deployed close to a
+                                thousand skilled, non-skilled and professional workers to the Middle East countries, especially to the 
+                                Kingdom of Saudi Arabia. Its key mission is two-pronged: To provide our dedicated and hardworking countrymen decent job opportunities abroad, helping them achieve their lifelong dream of prosperity on the one hand, while providing fully-qualified workmen and professionals to clients of high ethical andsadsa
+                                moral standards, helping them in turn achieve their business goals on the other. In just a liitle over three years in the business, Archway International has already given hundreds of deserving Filipinos stable overseas employment as domestic helpers, nurses, doctors, laboratory technicians, accountants and office personnel, food service workers, programmer and computer engineers, construction people, teachers, carpenters, masons, and maintenance personnel. 
+                                They are our living testimonies to Archway�s competence and dependability. We stand proud by our clean record of Zero-complaint and Zero-citation/sanction from POEA.
+                                </label>
+                                &nbsp;
+                            <div class="hr5" style="margin-top:35px;margin-bottom:40px;"></div> 
+                            <div class="classic-testimonials">
+                                    <h3>List of Available Position</h3>
+                            </div>  
+                            <br><br><br><br> <br><br> <br><br>                  
+                                
+          </div>
          </div>
+         </div>
+         
         
         <!-- End Page Content -->
 
