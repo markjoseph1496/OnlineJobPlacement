@@ -4,8 +4,10 @@ session_start();
 $CompanyID = $_SESSION['CompanyID'];
 ?>
 <!doctype html>
-<!--[if IE 8 ]><html class="ie ie8" lang="en"> <![endif]-->
-<!--[if (gte IE 9)|!(IE)]><html lang="en" class="no-js"> <![endif]-->
+<!--[if IE 8 ]>
+<html class="ie ie8" lang="en"> <![endif]-->
+<!--[if (gte IE 9)|!(IE)]>
+<html lang="en" class="no-js"> <![endif]-->
 <html lang="en">
 
 <head>
@@ -89,26 +91,27 @@ $CompanyID = $_SESSION['CompanyID'];
                 <div class="row">
                     <div class="col-md-6">
                         <!-- Start Contact Info -->
-                            <ul class="contact-details">
-                                <li class="profile-name"><i class="fa fa-hashtag"></i> <b>008-2012-0805</b></li>
-                            </ul>
+                        <ul class="contact-details">
+                            <li class="profile-name"><i class="fa fa-hashtag"></i> <b>008-2012-0805</b></li>
+                        </ul>
                         <!-- End Contact Info -->
                     </div>
                     <!-- .col-md-6 -->
                     <div class="col-md-6">
                         <!-- Start Social Links -->
-                            <ul class="social-list">
-                                <li class="profile-name">
-                                    <a class="bell itl-tooltip" data-placement="bottom" title="" href="#" data-original-title="Notification"><i class="fa fa-bell"></i></a>
-                                </li>
-                                <li class="profile-name">
-                                    &nbsp;
-                                </li>
-                                <li class="profile-name">
-                                    <i class="fa fa-user"></i> Hello, <b>Aira Jane Cruz</b>                               
-                                </li>
-                            </ul>
-                            <!-- End Social Links -->
+                        <ul class="social-list">
+                            <li class="profile-name">
+                                <a class="bell itl-tooltip" data-placement="bottom" title="" href="#"
+                                   data-original-title="Notification"><i class="fa fa-bell"></i></a>
+                            </li>
+                            <li class="profile-name">
+                                &nbsp;
+                            </li>
+                            <li class="profile-name">
+                                <i class="fa fa-user"></i> Hello, <b>Aira Jane Cruz</b>
+                            </li>
+                        </ul>
+                        <!-- End Social Links -->
                     </div>
                     <!-- .col-md-6 -->
                 </div>
@@ -129,47 +132,47 @@ $CompanyID = $_SESSION['CompanyID'];
                         <i class="fa fa-bars"></i>
                     </button>
                     <!-- End Toggle Nav Link For Mobiles -->
-                     <a class="navbar-brand" href="">
+                    <a class="navbar-brand" href="">
                         <img src="../images/ojpms.png">
                     </a>
                 </div>
-          <div class="navbar-collapse collapse">
-            <!-- Sign-out -->
-            <div class="signout-side">
-              <a class="show-signout" href="../login-company.php?id=1"><i class="fa fa-sign-out"></i></a>
+                <div class="navbar-collapse collapse">
+                    <!-- Sign-out -->
+                    <div class="signout-side">
+                        <a class="show-signout" href="../login-company.php?id=1"><i class="fa fa-sign-out"></i></a>
+                    </div>
+                    <!-- End Sign-out -->
+                    <!-- Start Navigation List -->
+                    <ul class="nav navbar-nav navbar-right">
+                        <li>
+                            <a href="company.php">Home</a>
+                        </li>
+                        <li>
+                            <a>Position</a>
+                            <ul class="dropdown">
+                                <li><a href="company-positionlist.php">Position List</a></li>
+                                <li><a href="company-createposition.php">Create Position</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="company-calendar.php">Calendar</a>
+                        </li>
+                        <li><a href="company-settings.php">Settings</a>
+                        </li>
+                        <li>
+                            <a class="active" href="company-applicants.php">Applicant List</a>
+                            <ul class="dropdown">
+                                <li><a href="company-pendingapplicants.php" class="active">Pending</a></li>
+                                <li><a href="company-acceptedapplicants.php">Accepted</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <!-- End Navigation List -->
+                </div>
             </div>
-            <!-- End Sign-out -->
-             <!-- Start Navigation List -->
-            <ul class="nav navbar-nav navbar-right">
+            <!-- Mobile Menu Start -->
+            <ul class="wpb-mobile-menu">
                 <li>
-                    <a href="company.php">Home</a>
-                </li>
-                <li>
-                    <a>Position</a>
-                    <ul class="dropdown">
-                        <li><a href="company-positionlist.php">Position List</a></li>
-                        <li><a href="company-createposition.php">Create Position</a></li>
-                    </ul>
-                </li>
-                <li>
-                    <a href="company-calendar.php">Calendar</a>
-                </li>
-                 <li><a  href="company-settings.php">Settings</a>
-                </li>  
-                <li>
-                    <a class="active" href="company-applicants.php">Applicant List</a>
-                    <ul class="dropdown">
-                        <li><a href="company-pendingapplicants.php" class="active">Pending</a></li>
-                        <li><a href="company-acceptedapplicants.php">Accepted</a></li>
-                    </ul>
-                </li>
-            </ul>
-            <!-- End Navigation List -->
-        </div>
-    </div>
-        <!-- Mobile Menu Start -->
-    <ul class="wpb-mobile-menu">
-       <li>
                     <a href="company.php">Home</a>
                 </li>
                 <li>
@@ -182,159 +185,163 @@ $CompanyID = $_SESSION['CompanyID'];
                 <li>
                     <a href="company-calendar.php">>Calendar</a>
                 </li>
-                 <li><a href="company-settings.php">Settings</a>
-                </li>  
-               <li>
+                <li><a href="company-settings.php">Settings</a>
+                </li>
+                <li>
                     <a class="active" href="company-applicants.php">Applicant List</a>
                     <ul class="dropdown">
                         <li><a href="company-pendingapplicants.php" class="active">Pending</a></li>
                         <li><a href="company-acceptedapplicants.php">Accepted</a></li>
                     </ul>
                 </li>
-    </ul>
+            </ul>
     </header>
     <!-- Mobile Menu End -->
 
-      </div>
-      <!-- End Header Logo & Naviagtion -->
+</div>
+<!-- End Header Logo & Naviagtion -->
 
-    </header>
-    <!-- End Header Section -->
+</header>
+<!-- End Header Section -->
 
 <!-- Start Page Banner -->
-    <div class="page-banner" style="padding:40px 0; center #f9f9f9;">
-      <div class="container">
+<div class="page-banner" style="padding:40px 0; center #f9f9f9;">
+    <div class="container">
         <div class="row">
-          <div class="col-md-6">
-            <h2>List of Pending Applicants</h2>
-          </div>
+            <div class="col-md-6">
+                <h2>List of Pending Applicants</h2>
+            </div>
         </div>
-      </div>
     </div>
-    <!-- End Page Banner -->
+</div>
+<!-- End Page Banner -->
 
 <!--Content-->
-  <br><br><br>
-   <div class = "container">
-            <div class = "col-md-12">
-                
+<br><br><br>
+<div class="container">
+    <div class="col-md-12">
+
         <table class="table segment table-hover">
-          <thead>
-           <tr>
-    
-           </tr>    
-                <tr>
-                    <th width= '20%' class = 'tabletitle'>Position</th>
-                    <th width = '20%' class = 'tabletitle'>Applicant Name</th>
-                    <th width = '15%' class = 'tabletitle'>Course</th>
-                    <th width = '20%' class = 'tabletitle'>Location</th>
-                    <th width = '15%' class = 'tabletitle'>Email</th>
-                    <th width = '15%' class = 'tabletitle'></th>
-                <tr>
+            <thead>
+            <tr>
+
+            </tr>
+            <tr>
+                <th width='20%' class='tabletitle'>Position</th>
+                <th width='20%' class='tabletitle'>Applicant Name</th>
+                <th width='15%' class='tabletitle'>Course</th>
+                <th width='20%' class='tabletitle'>Location</th>
+                <th width='15%' class='tabletitle'>Email</th>
+                <th width='15%' class='tabletitle'></th>
+            <tr>
             </thead>
-                <?php
-                    $qry1 = "SELECT * FROM requesttocompanytbl WHERE CompanyID = '$CompanyID' AND Status = 'Pending'";
-                    $result1 = mysql_query($qry1);
-                    while($qry1 = mysql_fetch_array($result1)){
-                        $RID = $qry1['RID'];
-                        $StudentID = $qry1['StudentID'];
-                        $PositionID = $qry1['PositionID'];
+            <?php
+            $qry1 = "SELECT * FROM requesttocompanytbl WHERE CompanyID = '$CompanyID' AND Status = 'Pending'";
+            $result1 = mysql_query($qry1);
+            while ($qry1 = mysql_fetch_array($result1)) {
+                $RID = $qry1['RID'];
+                $StudentID = $qry1['StudentID'];
+                $PositionID = $qry1['PositionID'];
 
-                        $qry2 = "SELECT * FROM studentinfotbl WHERE StudentID = '$StudentID'";
-                        $result2 = mysql_query($qry2);
-                        while($qry2 = mysql_fetch_array($result2)){
-                            $FirstName = $qry2['FirstName'];
-                            $LastName = $qry2['LastName'];
-                            $Course = $qry2['MajorCourse'];
-                            $FullName = $LastName . ", " . $FirstName;
+                $qry2 = "SELECT * FROM studentinfotbl WHERE StudentID = '$StudentID'";
+                $result2 = mysql_query($qry2);
+                while ($qry2 = mysql_fetch_array($result2)) {
+                    $FirstName = $qry2['FirstName'];
+                    $LastName = $qry2['LastName'];
+                    $Course = $qry2['MajorCourse'];
+                    $FullName = $LastName . ", " . $FirstName;
 
-                            $qry3 = "SELECT * FROM studcontactstbl WHERE StudentID = '$StudentID'";
-                            $result3 = mysql_query($qry3);
-                            while($qry3 = mysql_fetch_array($result3)){
-                                $Location = $qry3['City'];
-                                $Email = $qry3['Email'];
+                    $qry3 = "SELECT * FROM studcontactstbl WHERE StudentID = '$StudentID'";
+                    $result3 = mysql_query($qry3);
+                    while ($qry3 = mysql_fetch_array($result3)) {
+                        $Location = $qry3['City'];
+                        $Email = $qry3['Email'];
 
-                                $qry4 = "SELECT * FROM  comppositiontbl WHERE PositionID = '$PositionID'";
-                                $result4 = mysql_query($qry4);
-                                while($qry4 = mysql_fetch_array($result4)){
-                                    $PositionLevel = $qry4['PositionLevel'];
-                                    ?>
-                                        <tbody>
-                                            <tr>
-                                                <td width= 20% class = tabletitle><?php echo $PositionLevel; ?> </td>
-                                                <td width = 20% class = tabletitle> <a href = ''><?php echo  $FullName; ?> </a></td>
-                                                <td width = 15% class = tabletitle><?php echo $Course; ?></td>
-                                                <td width = 15% class = tabletitle><?php echo $Location; ?></td>
-                                                <td width = 15% class = tabletitle><?php echo $Email; ?></td>
-                                                <td width = '10%'> 
-                                                        <button class='btn btn-default' data-toggle='modal'
-                                                        data-target='#AcceptRequest<?php echo $RID; ?>'><i
-                                                        class='fa fa-check-circle'></i></button>
-                                                        <button class='btn btn-danger' data-toggle='modal'
-                                                        data-target='#DeclineRequest<?php echo $RID; ?>'><i
-                                                        class='fa fa-trash fa-1x'></i></button>
-                                                    </td>
-                                                <tr>
-                                        </tbody>
-                    <!-- Modal -->
-                    <div class='modal fade' id='AcceptRequest<?php echo $RID; ?>' role='dialog'>
-                        <div class='modal-dialog' style='padding:100px'>
-                            <!-- Modal content-->
-                            <div class='modal-content'>
-                                <div class='modal-header'>
-                                    <button type='button' class='close' data-dismiss='modal'>&times;</button>
-                                    <h4 class='modal-title'>Accept Resume?</h4>
-                                </div>
-                                <div class='modal-body'>
-                                    <div class='col-md-15 fieldcol'>
-                                        <label = 'usr' class = 'control-label'>Do you want to accept this resume
-                                        request?</label>
-                                        <div class='form-group'>
+                        $qry4 = "SELECT * FROM  comppositiontbl WHERE PositionID = '$PositionID'";
+                        $result4 = mysql_query($qry4);
+                        while ($qry4 = mysql_fetch_array($result4)) {
+                            $PositionLevel = $qry4['PositionLevel'];
+                            ?>
+                            <tbody>
+                            <tr>
+                                <td width=20% class=tabletitle><?php echo $PositionLevel; ?> </td>
+                                <td width=20% class=tabletitle><a href=''><?php echo $FullName; ?> </a></td>
+                                <td width=15% class=tabletitle><?php echo $Course; ?></td>
+                                <td width=15% class=tabletitle><?php echo $Location; ?></td>
+                                <td width=15% class=tabletitle><?php echo $Email; ?></td>
+                                <td width='10%'>
+                                    <button class='btn btn-default' data-toggle='modal'
+                                            data-target='#AcceptRequest<?php echo $RID; ?>'><i
+                                            class='fa fa-check-circle'></i></button>
+                                    <button class='btn btn-danger' data-toggle='modal'
+                                            data-target='#DeclineRequest<?php echo $RID; ?>'><i
+                                            class='fa fa-trash fa-1x'></i></button>
+                                </td>
+                            <tr>
+                            </tbody>
+                            <!-- Modal -->
+                            <div class='modal fade' id='AcceptRequest<?php echo $RID; ?>' role='dialog'>
+                                <div class='modal-dialog' style='padding:100px'>
+                                    <!-- Modal content-->
+                                    <div class='modal-content'>
+                                        <div class='modal-header'>
+                                            <button type='button' class='close' data-dismiss='modal'>&times;</button>
+                                            <h4 class='modal-title'>Accept Resume?</h4>
                                         </div>
-                                    </div>
-                                    <div class='modal-footer'>
-                                        <a href='add-company.php?id=1&rid=<?php echo $RID ;?>' class='btn btn-danger'>Accept</a>
-                                        <button type='button' class='btn btn-default' data-dismiss='modal'>Cancel
-                                        </button>
+                                        <div class='modal-body'>
+                                            <div class='col-md-15 fieldcol'>
+                                                <label = 'usr' class = 'control-label'>Do you want to accept this
+                                                Applicant?</label>
+                                                <div class='form-group'>
+                                                </div>
+                                            </div>
+                                            <div class='modal-footer'>
+                                                <a href='add-company.php?id=1&rid=<?php echo $RID; ?>'
+                                                   class='btn btn-danger'>Accept</a>
+                                                <button type='button' class='btn btn-default' data-dismiss='modal'>
+                                                    Cancel
+                                                </button>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                    </div>
 
-                    <div class='modal fade' id='DeclineRequest<?php echo $RID; ?>' role='dialog'>
-                        <div class='modal-dialog' style='padding:100px'>
-                            <!-- Modal content-->
-                            <div class='modal-content'>
-                                <div class='modal-header'>
-                                    <button type='button' class='close' data-dismiss='modal'>&times;</button>
-                                    <h4 class='modal-title'>Reject Resume?</h4>
-                                </div>
-                                <div class='modal-body'>
-                                    <div class='col-md-15 fieldcol'>
-                                        <label = 'usr' class = 'control-label'>Do you want to reject this resume
-                                        request?</label>
-                                        <div class='form-group'>
+                            <div class='modal fade' id='DeclineRequest<?php echo $RID; ?>' role='dialog'>
+                                <div class='modal-dialog' style='padding:100px'>
+                                    <!-- Modal content-->
+                                    <div class='modal-content'>
+                                        <div class='modal-header'>
+                                            <button type='button' class='close' data-dismiss='modal'>&times;</button>
+                                            <h4 class='modal-title'>Reject Resume?</h4>
                                         </div>
-                                    </div>
-                                    <div class='modal-footer'>
-                                        <a href='add-company.php?id=2&rid=<?php echo $RID; ?>' class='btn btn-danger'>Delete</a>
-                                        <button type='button' class='btn btn-default' data-dismiss='modal'>Cancel
-                                        </button>
+                                        <div class='modal-body'>
+                                            <div class='col-md-15 fieldcol'>
+                                                <label = 'usr' class = 'control-label'>Do you want to Decline this
+                                                applicant?</label>
+                                                <div class='form-group'>
+                                                </div>
+                                            </div>
+                                            <div class='modal-footer'>
+                                                <a href='add-company.php?id=2&rid=<?php echo $RID; ?>'
+                                                   class='btn btn-danger'>Delete</a>
+                                                <button type='button' class='btn btn-default' data-dismiss='modal'>
+                                                    Cancel
+                                                </button>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                    </div>
-                                        <?php
-                                } 
-                            }
+                            <?php
                         }
                     }
-                ?>
+                }
+            }
+            ?>
         </table>
-        </div>
     </div>
-  <script type="text/javascript" src="../js/script.js"></script>
+</div>
+<script type="text/javascript" src="../js/script.js"></script>
 </body>
 </html>
