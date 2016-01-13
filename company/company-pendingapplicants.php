@@ -19,10 +19,6 @@ $CompanyID = $_SESSION['CompanyID'];
     <!-- Responsive Metatag -->
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
-    <!-- Page Description and Author -->
-    <meta name="description" content="Margo - Responsive HTML5 Template">
-    <meta name="author" content="iThemesLab">
-
     <!-- Bootstrap CSS -->
     <link href="../css/bootstrap.min.css" rel="stylesheet"/>
 
@@ -233,6 +229,7 @@ $CompanyID = $_SESSION['CompanyID'];
                     <th width = '15%' class = 'tabletitle'>Course</th>
                     <th width = '20%' class = 'tabletitle'>Location</th>
                     <th width = '15%' class = 'tabletitle'>Email</th>
+                    <th width = '15%' class = 'tabletitle'></th>
                 <tr>
             </thead>
                 <?php
@@ -261,17 +258,75 @@ $CompanyID = $_SESSION['CompanyID'];
                                 $result4 = mysql_query($qry4);
                                 while($qry4 = mysql_fetch_array($result4)){
                                     $PositionLevel = $qry4['PositionLevel'];
-                                    echo"
+                                    ?>
                                         <tbody>
                                             <tr>
-                                                <td width= 20% class = tabletitle> $PositionLevel </td>
-                                                <td width = 20% class = tabletitle> <a href = ''> $FullName </a></td>
-                                                <td width = 15% class = tabletitle>$Course</td>
-                                                <td width = 15% class = tabletitle>$Location</td>
-                                                <td width = 15% class = tabletitle>$Email</td>
+                                                <td width= 20% class = tabletitle><?php echo $PositionLevel; ?> </td>
+                                                <td width = 20% class = tabletitle> <a href = ''><?php echo  $FullName; ?> </a></td>
+                                                <td width = 15% class = tabletitle><?php echo $Course; ?></td>
+                                                <td width = 15% class = tabletitle><?php echo $Location; ?></td>
+                                                <td width = 15% class = tabletitle><?php echo $Email; ?></td>
+                                                <td width = '10%'> 
+                                                        <button class='btn btn-default' data-toggle='modal'
+                                                        data-target='#AcceptRequest<?php echo $RID; ?>'><i
+                                                        class='fa fa-check-circle'></i></button>
+                                                        <button class='btn btn-danger' data-toggle='modal'
+                                                        data-target='#DeclineRequest<?php echo $RID; ?>'><i
+                                                        class='fa fa-trash fa-1x'></i></button>
+                                                    </td>
                                                 <tr>
                                         </tbody>
-                                        ";
+                    <!-- Modal -->
+                    <div class='modal fade' id='AcceptRequest<?php echo $RID; ?>' role='dialog'>
+                        <div class='modal-dialog' style='padding:100px'>
+                            <!-- Modal content-->
+                            <div class='modal-content'>
+                                <div class='modal-header'>
+                                    <button type='button' class='close' data-dismiss='modal'>&times;</button>
+                                    <h4 class='modal-title'>Accept Resume?</h4>
+                                </div>
+                                <div class='modal-body'>
+                                    <div class='col-md-15 fieldcol'>
+                                        <label = 'usr' class = 'control-label'>Do you want to accept this resume
+                                        request?</label>
+                                        <div class='form-group'>
+                                        </div>
+                                    </div>
+                                    <div class='modal-footer'>
+                                        <a href='add-company.php?id=1&rid=<?php echo $RID ;?>' class='btn btn-danger'>Accept</a>
+                                        <button type='button' class='btn btn-default' data-dismiss='modal'>Cancel
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class='modal fade' id='DeclineRequest<?php echo $RID; ?>' role='dialog'>
+                        <div class='modal-dialog' style='padding:100px'>
+                            <!-- Modal content-->
+                            <div class='modal-content'>
+                                <div class='modal-header'>
+                                    <button type='button' class='close' data-dismiss='modal'>&times;</button>
+                                    <h4 class='modal-title'>Reject Resume?</h4>
+                                </div>
+                                <div class='modal-body'>
+                                    <div class='col-md-15 fieldcol'>
+                                        <label = 'usr' class = 'control-label'>Do you want to reject this resume
+                                        request?</label>
+                                        <div class='form-group'>
+                                        </div>
+                                    </div>
+                                    <div class='modal-footer'>
+                                        <a href='add-company.php?id=2&rid=<?php echo $RID; ?>' class='btn btn-danger'>Delete</a>
+                                        <button type='button' class='btn btn-default' data-dismiss='modal'>Cancel
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                                        <?php
                                 } 
                             }
                         }
