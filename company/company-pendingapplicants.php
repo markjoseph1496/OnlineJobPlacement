@@ -236,7 +236,7 @@ $CompanyID = $_SESSION['CompanyID'];
                 <tr>
             </thead>
                 <?php
-                    $qry1 = "SELECT * FROM requesttocompanytbl WHERE CompanyID = '$CompanyID' AND Status = 'Accepted'";
+                    $qry1 = "SELECT * FROM requesttocompanytbl WHERE CompanyID = '$CompanyID' AND Status = 'Pending'";
                     $result1 = mysql_query($qry1);
                     while($qry1 = mysql_fetch_array($result1)){
                         $RID = $qry1['RID'];
@@ -280,16 +280,6 @@ $CompanyID = $_SESSION['CompanyID'];
         </table>
         </div>
     </div>
-
-
-
-
-
-
-
-
   <script type="text/javascript" src="../js/script.js"></script>
-
 </body>
-
 </html>

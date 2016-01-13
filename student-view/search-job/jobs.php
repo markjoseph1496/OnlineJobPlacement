@@ -167,6 +167,18 @@ if (isset($_SESSION['StudentID'])) {
 
     <div class="hr1" style="margin-bottom:5px;"></div>
     <div class="container">
+        <?php
+        if (isset($_GET['id'])) {
+            $id = $_GET['id'];
+            if ($id == 1) {
+                echo '<div class="alert alert-success">
+            <span class="glyphicon glyphicon-info-sign"></span>
+            Resume Submitted.
+        </div>';
+            }
+        }
+        ?>
+
         <div>
             <label><i class="fa fa-bookmark"></i> Bookmarked Jobs <a href="bookmarked-jobs.php">(0)</a>&nbsp;</label>
             <label><i class="fa fa-sort"></i> Sort by:</label>

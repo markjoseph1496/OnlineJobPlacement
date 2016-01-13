@@ -16,11 +16,11 @@ $Email = $position_tbl[0][2];
 $PostingDateFrom = $position_tbl[0][3];
 $PostingDateTo = $position_tbl[0][4];
 $PositionLevel = $position_tbl[0][5];
-$Specialization = $position_tbl[0][6];
+$JobDescription = $position_tbl[0][6];
 $EmployementType = $position_tbl[0][7];
 $AvailablePosition = $position_tbl[0][8];
-$MonthlySalary = $position_tbl[0][9];
-$YearExperience = $position_tbl[0][10];
+$MonthlySalary = $position_tbl[0][10];
+$YearExperience = $position_tbl[0][9];
 
 $companyinfo_tbl =
     GSecureSQL::query(
@@ -59,7 +59,7 @@ $CompanyDescription = $companyinfo_tbl[0][2];
 
     <!-- jQuery and Bootstrap JS -->
     <script type="text/javascript" src="../../js/jquery.min.js"></script>
-    <script type="text/javascript" src="../../js/bootstrap.min.js" ></script>
+    <script type="text/javascript" src="../../js/bootstrap.min.js"></script>
 
     <!-- BootstrapValidator -->
     <script src="../../js/bootstrapValidator.min.js" type="text/javascript"></script>
@@ -109,95 +109,126 @@ $CompanyDescription = $companyinfo_tbl[0][2];
 </head>
 
 <body>
-    <div id="container">
-        <!-- Start Header Section -->
-        <div class="hidden-header"></div>
-        <header class="clearfix">
+<div id="container">
+    <!-- Start Header Section -->
+    <div class="hidden-header"></div>
+    <header class="clearfix">
         <!-- Start Top Bar -->
-            <div class="top-bar">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-md-7">
-                            <!-- Start Contact Info -->
-                            <ul class="contact-details">
-                                <li class="profile-name"><i class="fa fa-hashtag"></i> <b>008-2012-0805</b></li>
-                            </ul>
-                            <!-- End Contact Info -->
-                        </div>
-                        <!-- .col-md-6 -->
-                        <div class="col-md-5">
-                        <!-- Start Social Links -->
-                            <ul class="social-list">
-                                <li class="profile-name">
-                                    <a class="bell itl-tooltip" data-placement="bottom" title="" href="#" data-original-title="Notification"><i class="fa fa-bell"></i></a>
-                                </li>
-                                <li class="profile-name">
-                                    &nbsp;
-                                </li>
-                                <li class="profile-name">
-                                    <i class="fa fa-user"></i> Hello, <b>Aira Jane Cruz</b>                               
-                                </li>
-                            </ul>
-                            <!-- End Social Links -->
-                        </div>
-                        <!-- .col-md-6 -->
-                    </div>
-                    <!-- .row -->
-                </div>
-                <!-- .container -->
-            </div>
-            <!-- .top-bar -->
-            <!-- End Top Bar -->
-
-            <!-- Start  Logo & Naviagtion  -->
-            <div class="navbar navbar-default navbar-top">
-                <div class="container">
-                    <div class="navbar-header">
-                    <!-- Stat Toggle Nav Link For Mobiles -->
-                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                            <i class="fa fa-bars"></i>
-                        </button>
-                        <!-- End Toggle Nav Link For Mobiles -->
-                        <a class="navbar-brand" href="">
-                            <img src="../../images/ojpms.png">
-                        </a>
-                    </div>
-                    <div class="navbar-collapse collapse">
-                        <!-- Sign-out -->
-                        <div class="signout-side">
-                            <a href="#" class="btn-system btn-mini border-btn">Apply Now</a>
-                        </div>
-                        <!-- End Sign-out -->
-                    </div>
-                </div>
-                <!-- Mobile Menu Start -->
-                <ul class="wpb-mobile-menu">
-                    <li>
-                        <a href="#">Apply Now</a>
-                    </li>
-                    <li>
-                        <a href="../login-student.php?id=1"><i class="fa fa-sign-out"></i> Sign Out</a>
-                    </li>
-                </ul>
-                <!-- Mobile Menu End -->
-            </div>
-        </header>
-
-        <div class="middle-bar">
+        <div class="top-bar">
             <div class="container">
                 <div class="row">
-                    <div class="col-md-5">
-                        <ul class="mid-list">
-                            &nbsp;
+                    <div class="col-md-7">
+                        <!-- Start Contact Info -->
+                        <ul class="contact-details">
+                            <li class="profile-name"><i class="fa fa-hashtag"></i> <b>008-2012-0805</b></li>
                         </ul>
+                        <!-- End Contact Info -->
                     </div>
+                    <!-- .col-md-6 -->
+                    <div class="col-md-5">
+                        <!-- Start Social Links -->
+                        <ul class="social-list">
+                            <li class="profile-name">
+                                <a class="bell itl-tooltip" data-placement="bottom" title="" href="#"
+                                   data-original-title="Notification"><i class="fa fa-bell"></i></a>
+                            </li>
+                            <li class="profile-name">
+                                &nbsp;
+                            </li>
+                            <li class="profile-name">
+                                <i class="fa fa-user"></i> Hello, <b>Aira Jane Cruz</b>
+                            </li>
+                        </ul>
+                        <!-- End Social Links -->
+                    </div>
+                    <!-- .col-md-6 -->
+                </div>
+                <!-- .row -->
+            </div>
+            <!-- .container -->
+        </div>
+        <!-- .top-bar -->
+        <!-- End Top Bar -->
+
+        <!-- Start  Logo & Naviagtion  -->
+        <div class="navbar navbar-default navbar-top">
+            <div class="container">
+                <div class="navbar-header">
+                    <!-- Stat Toggle Nav Link For Mobiles -->
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <i class="fa fa-bars"></i>
+                    </button>
+                    <!-- End Toggle Nav Link For Mobiles -->
+                    <a class="navbar-brand" href="">
+                        <img src="../../images/ojpms.png">
+                    </a>
+                </div>
+                <div class="navbar-collapse collapse">
+                    <!-- Sign-out -->
+                    <div class="signout-side">
+                        <button class="btn-system btn-mini border-btn" data-toggle="modal"
+                                data-target="#ApplyNow">Apply Now
+                        </button>
+                    </div>
+                    <!-- End Sign-out -->
+                    <!-- Modal -->
+                    <div class="modal fade" id="ApplyNow" role="dialog">
+                        <div class="modal-dialog" style="padding:100px">
+                            <!-- Modal content-->
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                    <h4 class="modal-title">Apply Job?</h4>
+                                </div>
+                                <div class="modal-body">
+                                    <div class="col-md-15 fieldcol">
+                                        <label = "usr" class = "control-label">Do you want to Apply to this position?
+                                        Your resume will be sent to this company.</label>
+                                        <div class="form-group">
+                                        </div>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <a href="function.php?id=<?php echo $PositionID; ?>&cid=<?php echo $CompanyID; ?>"
+                                           class="btn-system btn-large">Send</a>
+                                        <button type="button" class="btn btn-default" data-dismiss="modal">
+                                            Cancel
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Modal End -->
+                </div>
+            </div>
+            <!-- Mobile Menu Start -->
+            <ul class="wpb-mobile-menu">
+                <li>
+                    <a href="#">Apply Now</a>
+                </li>
+                <li>
+                    <a href="../login-student.php?id=1"><i class="fa fa-sign-out"></i> Sign Out</a>
+                </li>
+            </ul>
+            <!-- Mobile Menu End -->
+        </div>
+    </header>
+
+    <div class="middle-bar">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-5">
+                    <ul class="mid-list">
+                        &nbsp;
+                    </ul>
                 </div>
             </div>
         </div>
-        
+    </div>
 
-        <!-- Start Content -->
-        <form id="Save" name="Save" autocomplete="off" action="addfunction.php">
+
+    <!-- Start Content -->
+    <form id="Save" name="Save" autocomplete="off" action="addfunction.php">
         <div id="content">
             <div class="container">
                 <div class="row sidebar-page">
@@ -214,7 +245,7 @@ $CompanyDescription = $companyinfo_tbl[0][2];
                             <div class="col-md-6">
                                 <!-- Single Testimonial -->
                                 <div class="classic-testimonials" style="float:right;">
-                                   ojpms Ref. JPH500003003534608
+                                    ojpms Ref. JPH500003003534608
                                 </div>
                                 <!-- End Single Testimonial -->
                             </div>
@@ -253,18 +284,11 @@ $CompanyDescription = $companyinfo_tbl[0][2];
                         </div>
                         <div class="hr5" style="margin-top:35px;margin-bottom:40px;"></div>
 
-
-                        <div class="row">
-                            <div class="col-md-3">
-                                <label>Career Level</label>
-                            </div>
-                            <div class="col-md-3">Middle</div>
-                        </div>
                         <div class="row">
                             <div class="col-md-3">
                                 <label>Year(s) of Experience</label>
                             </div>
-                            <div class="col-md-3"><?php echo $YearExperience;?> year(s)</div>
+                            <div class="col-md-3"><?php echo $YearExperience; ?> year(s)</div>
                         </div>
                         <div class="row">
                             <div class="col-md-3">
@@ -282,19 +306,7 @@ $CompanyDescription = $companyinfo_tbl[0][2];
                             <div class="col-md-3">
                                 <label>Job Function</label>
                             </div>
-                            <div class="col-md-4"> <a href="">Accounting </a><i class="fa fa-arrow-right"></i><a href=""> General Accounting</a></div>
-                        </div>
-                        <div class="row">
-                            <div class="col-md-3">
-                                <label>&nbsp;</label>
-                            </div>
-                            <div class="col-md-4"> <a href="">Accounting </a><i class="fa fa-arrow-right"></i><a href=""> Audit & Taxation</a></div>
-                        </div>
-                        <div class="row">
-                            <div class="col-md-3">
-                                <label>&nbsp;</label>
-                            </div>
-                            <div class="col-md-3"> <a href="">Accounting </a><i class="fa fa-arrow-right"></i><a href=""> Others</a></div>
+                            <div class="col-md-4"><?php echo $JobDescription; ?></div>
                         </div>
                         <div class="row">
                             <div class="col-md-3">
@@ -316,33 +328,14 @@ $CompanyDescription = $companyinfo_tbl[0][2];
                         </div>
                         <div class="row">
                             <div class="col-md-3">
-                                <label>Benefits</label>
-                            </div>
-                            <div class="col-md-3">Life insurance</div>
-                            <div class="col-md-3">Medical insurance</div>
-                        </div>
-                        <div class="row">
-                            <div class="col-md-3">
                                 <label>&nbsp;</label>
                             </div>
-                            <div class="col-md-3">Performance bonus</div>
-                            <div class="col-md-3">Transportation allowance</div>
                         </div>
 
                         <div class="hr5" style="margin-top:35px;margin-bottom:40px;"></div>
                         <div><h3>People also viewed</h3></div>
                         <div class="hr5" style="margin-top:35px;margin-bottom:40px;"></div>
                         <div><h3>Related Searches</h3></div>
-                        <div class="row">
-                            <div class="col-md-4"><a href="">Life insurance</a></div>
-                            <div class="col-md-4"><a href="">Medical insurance</a></div>
-                            <div class="col-md-4"><a href="">Medical insurance</a></div>
-                        </div>
-                        <div class="row">
-                            <div class="col-md-4"><a href="">Performance bonus</a></div>
-                            <div class="col-md-4"><a href="">Transportation allowance</a></div>
-                            <div class="col-md-4"><a href="">Transportation allowance</a></div>
-                        </div>
 
                     </div>
                     <!-- End Page Content -->
@@ -390,48 +383,48 @@ $CompanyDescription = $companyinfo_tbl[0][2];
             </div>
         </div>
     </form>
-    </div>
-    <!-- End Content -->
-    <script type="text/javascript" src="../../js/script.js"></script>
+</div>
+<!-- End Content -->
+<script type="text/javascript" src="../../js/script.js"></script>
 
 
-    <!-- Start Footer Section -->
-    <footer>
-        <div class="container">
-            <!-- Start Copyright -->
-            <div class="copyright-section">
-                <div class="row">
-                    <div class="col-md-6">
-                        <p>&copy; 2015 OJPMS - All Rights Reserved</p>
-                    </div>
-                    <!-- .col-md-6 -->
-                    <div class="col-md-6">
-                        <ul class="footer-nav">
-                            <li><a href="#">Sitemap</a>
-                            </li>
-                            <li><a href="#">Privacy Policy</a>
-                            </li>
-                            <li><a href="#">Contact</a>
-                            </li>
-                        </ul>
-                    </div>
-                    <!-- .col-md-6 -->
+<!-- Start Footer Section -->
+<footer>
+    <div class="container">
+        <!-- Start Copyright -->
+        <div class="copyright-section">
+            <div class="row">
+                <div class="col-md-6">
+                    <p>&copy; 2015 OJPMS - All Rights Reserved</p>
                 </div>
-                <!-- .row -->
+                <!-- .col-md-6 -->
+                <div class="col-md-6">
+                    <ul class="footer-nav">
+                        <li><a href="#">Sitemap</a>
+                        </li>
+                        <li><a href="#">Privacy Policy</a>
+                        </li>
+                        <li><a href="#">Contact</a>
+                        </li>
+                    </ul>
+                </div>
+                <!-- .col-md-6 -->
             </div>
-            <!-- End Copyright -->
+            <!-- .row -->
         </div>
-    </footer>
-    <!-- End Footer Section -->
-
-    <!-- Go To Top Link -->
-    <a href="#" class="back-to-top"><i class="fa fa-angle-up"></i></a>
-
-    <div id="loader">
-        <div class="spinner">
-            <div class="dot1"></div>
-            <div class="dot2"></div>
-        </div>
+        <!-- End Copyright -->
     </div>
+</footer>
+<!-- End Footer Section -->
+
+<!-- Go To Top Link -->
+<a href="#" class="back-to-top"><i class="fa fa-angle-up"></i></a>
+
+<div id="loader">
+    <div class="spinner">
+        <div class="dot1"></div>
+        <div class="dot2"></div>
+    </div>
+</div>
 </body>
 </html>
