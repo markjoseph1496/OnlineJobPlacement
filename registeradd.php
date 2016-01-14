@@ -19,7 +19,7 @@ if (isset($_POST['type'])) {
 }
 
 if (isset($_POST['resumelink'])) {
-    $StudentID = $_POST['StudentID'];
+    /*$StudentID = $_POST['StudentID'];*/
     $FirstName = $_POST['FirstName'];
     $LastName = $_POST['LastName'];
     $Birthday = $_POST['Birthday'];
@@ -32,13 +32,25 @@ if (isset($_POST['resumelink'])) {
     $GraduatedMonth = $_POST['GraduatedMonth'];
     $GraduatedYear = $_POST['GraduatedYear'];
 
+    $Password = "1";
+
+    $FirstName = ucwords(strtolower($FirstName));
+    $LastName = ucwords(strtolower($LastName));
+
     $salt = hash('sha512', mt_rand(0, PHP_INT_MAX) . mt_rand(0, PHP_INT_MAX) . mt_rand(0, PHP_INT_MAX));
     $Password = hash('sha512', $Password . $salt);
 
     $yeargraduated = $GraduatedMonth . " " . $GraduatedYear;
     $EducAttain = mysql_real_escape_string($EducAttain);
 
-    $query = "INSERT INTO studentinfotbl (StudentID,FirstName,LastName,Birthdate,Password,SaltedPassword,EmploymentStatus,MajorCourse) values  ('$StudentID','$FirstName','$LastName','$Birthday','$Password','$salt','Unemployed','$Course')";
+    $query = "INSERT INTO studentinfotbl (FirstName,LastName,Birthdate,Password,SaltedPassword,EmploymentStatus,MajorCourse) values  ('$FirstName','$LastName','$Birthday','$Password','$salt','Unemployed','$Course')";
+    $getstudid =
+        GSecureSQL::query(
+            "SELECT StudentID FROM studentinfotbl ORDER BY StudentID DESC LIMIT 1",
+            TRUE
+        );
+    $StudentID = $getstudid[0][0] + 1;
+
     $query1 = "INSERT INTO schooltbl (StudentID,School,Attainment,Course,Graduated) values  ('$StudentID','STI College Caloocan','$EducAttain','$Course','$yeargraduated')";
     $query2 = "INSERT INTO studcontactstbl (StudentID,Email,MobileNumber,City) values  ('$StudentID','$Email','$MobileNumber','$City')";
 

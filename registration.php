@@ -392,7 +392,7 @@
                 validating: "glyphicon glyphicon-refresh"
             },
             fields: {
-                StudentID: {
+                /*)                StudentID: {
                     validators: {
                         notEmpty: {
                             message: "Student ID is required."
@@ -412,6 +412,7 @@
                         }
                     }
                 },
+                */
                 FirstName: {
                     validators: {
                         notEmpty: {
@@ -466,7 +467,7 @@
                             message: "Email address must be 6-35 characters long."
                         }
                     }
-                },
+                }, /*
                 ConfirmEmail: {
                     validators: {
                         notEmpty: {
@@ -482,12 +483,14 @@
                     validators: {
                         notEmpty: {
                             message: "Password is required."
-                        },
+                        }/*,
+
                         stringLength: {
                             min: 8,
                             max: 16,
                             message: "Email address must be 8-16 characters long."
                         }
+
                     }
                 },
                 ConfirmPassword: {
@@ -500,7 +503,7 @@
                             message: "Password and confirm password mismatched."
                         }
                     }
-                },
+                }, */
                 City: {
                     validators: {
                         notEmpty: {
