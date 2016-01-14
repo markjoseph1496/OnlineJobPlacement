@@ -1,3 +1,6 @@
+<?php
+include('connection.php');
+?>
 <!doctype html>
 <html lang="en">
 
@@ -243,7 +246,7 @@
                             <select id="EducAttain" name="EducAttain" class="form-control"
                                     style="width:100%; height:34px;">
                                 <option value="">- Please select one -</option>
-                                <option value="Bachelor's/College Degree">Bachelor's/College Degree</option>
+                                <option value="Bachelor's/College Degree" selected="selected">Bachelor's/College Degree</option>
                             </select>
                         </div>
                     </div>
@@ -252,38 +255,21 @@
                         <div class="form-group">
                             <select id="Course" name="Course" class="form-control" style="width:100%; height:34px;">
                                 <option value="">- Please select one</option>
-                                <option value="Bachelor of Science in Information Technology Major in Digital Arts">
-                                    Bachelor of Science in Information Technology Major in Digital Arts
-                                </option>
-                                <option value="Bachelor of Science in Information Technology">Bachelor of Science in
-                                    Information Technology
-                                </option>
-                                <option value="Bachelor of Science in Computer Science">Bachelor of Science in Computer
-                                    Science
-                                </option>
-                                <option value="2 - Year Associate in Computer Technology">2 - Year Associate in Computer
-                                    Technology
-                                </option>
-                                <option value="Bachelor of Science in Business Management Major in Operations">Bachelor
-                                    of Science in Business Management Major in Operations
-                                </option>
-                                <option value="Bachelor of Science in Business Administration">Bachelor of Science in
-                                    Business Administration
-                                </option>
-                                <option value="Bachelor of Science in Accounting Technology">Bachelor of Science in
-                                    Accounting Technology
-                                </option>
-                                <option value="Bachelor of Science in Hotel &amp; Restaurant Management">Bachelor of
-                                    Science in Hotel &amp; Restaurant Management
-                                </option>
-                                <option value="Bachelor of Science in Tourism Management">Bachelor of Science in Tourism
-                                    Management
-                                </option>
-                                <option value="Bachelor of Science in Computer Engineering">Bachelor of Science in
-                                    Computer Engineering
-                                </option>
-                                <option value="Bachelor of Arts in Communication">Bachelor of Arts in Communication
-                                </option>
+                                <?php
+                                $course_tbl =
+                                    GSecureSQL::query(
+                                        "SELECT CourseCode,CourseTitle FROM coursetbl",
+                                        TRUE
+                                    );
+                                foreach ($course_tbl as $value) {
+                                    $CourseCode = $value[0];
+                                    $CourseTitle = $value[1];
+                                    print_r($course_tbl);
+                                    ?>
+                                    <option value="<?php echo $CourseCode; ?>"><?php echo $CourseTitle; ?></option>
+                                <?php
+                                }
+                                ?>
                             </select>
                         </div>
                     </div>
@@ -299,7 +285,7 @@
                                 <option value="02">February</option>
                                 <option value="03">March</option>
                                 <option value="04">April</option>
-                                <option value="05">May</option>
+                                <option value="05" selected="selected">May</option>
                                 <option value="06">June</option>
                                 <option value="07">July</option>
                                 <option value="08">August</option>
@@ -315,14 +301,16 @@
                             <label>&nbsp;</label>
                             <select id="GraduatedYear" name="GraduatedYear" class="form-control"
                                     style="width:100%; height:34px;">
-                                <option value="">- Year -</option>
+                                <option value="2015">2015</option>
                                 <?php
+                                /*
                                 $date = Date("Y") + 4;
                                 while ($date != 1935) {
                                     $date--;
                                     echo "<option value='$date'>$date</option>";
 
                                 }
+                                */
                                 ?>
                             </select>
                         </div>
