@@ -217,7 +217,7 @@ session_start();
         <div class="container">
             <div class="row">
                 <div class="col-md-6">
-                    <h2>List of Courses</h2>
+                    <h2>List of Users</h2>
                 </div>
             </div>
         </div>
@@ -229,8 +229,8 @@ session_start();
 
     <div class="container">
         <div class="col-md-12 fieldcol">
-            <a href="admin-addcourse.php" class="btnforadding" style="float:right;">
-                <span class="fa fa-plus-square"> Add Course </span>
+            <a href="admin-adduser.php" class="btnforadding" style="float:right;">
+                <span class="fa fa-plus-square"> Add User </span>
             </a>
         </div>
         <div class="col-md-12">
@@ -240,9 +240,12 @@ session_start();
                 <tr>
                 </tr>
                 <tr>
-                    <th width='10%' class='tabletitle'>Course Code</th>
-                    <th width='20%' class='tabletitle'>Course Title</th>
-                    <th width='30%' class='tabletitle'>Course Description</th>
+                    <th width='15%' class='tabletitle'>Name</th>
+                    <th width='15%' class='tabletitle'>Position</th>
+                    <th width='20%' class='tabletitle'>Department</th>
+                    <th width='15%' class='tabletitle'>Address</th>
+                    <th width='10%' class='tabletitle'>Email</th>
+                    <th width='15%' class='tabletitle'>Contact Number</th>
                     <th width='10%' class='tabletitle'></th>
                 <tr>
                 </thead>
@@ -261,9 +264,12 @@ session_start();
                     ?>
                     <tbody>
                     <tr>
-                        <td width=10% class=tabletitle><?php echo $CourseCode; ?></td>
-                        <td width=20% class=tabletitle><?php echo $CourseTitle; ?></td>
-                        <td width=30% class=tabletitle><?php echo $CourseDesc; ?></td>
+                        <td width=15% class=tabletitle></td>
+                        <td width=15% class=tabletitle></td>
+                        <td width=20% class=tabletitle></td>
+                        <td width=15% class=tabletitle></td>
+                        <td width=10% class=tabletitle></td>
+                        <td width=15% class=tabletitle></td>
                         <td width=10% class=tabletitle>
                             <a href="admin-editcourse.php?id=<?php echo $CourseID; ?>" class='btn btn-default'> <i
                                     class='fa fa-pencil-square-o fa-1x'></i> </a>
@@ -272,32 +278,6 @@ session_start();
                                     class='fa fa-trash fa-1x'></i></button>
                         </td>
                     </tr>
-                    <!-- Modal -->
-                    <div class="modal fade" id="DeleteCourse<?php echo $CourseID; ?>" role="dialog">
-                        <div class="modal-dialog" style="padding:100px">
-                            <!-- Modal content-->
-                            <div class="modal-content">
-                                <div class="modal-header">
-                                    <button type="button" class="close" data-dismiss="modal">&times;</button>
-                                    <h4 class="modal-title">Delete Course?</h4>
-                                </div>
-                                <div class="modal-body">
-                                    <div class="col-md-15 fieldcol">
-                                        <label = "usr" class = "control-label">Do you want to delete this
-                                        course?</label>
-                                        <div class="form-group">
-                                        </div>
-                                    </div>
-                                    <div class="modal-footer">
-                                        <a href="functions.php?DeleteID=<?php echo $CourseID; ?>"
-                                           class="btn btn-danger">Delete <?php echo $CourseCode; ?></a>
-                                        <button type="button" class="btn btn-default" data-dismiss="modal">Cancel
-                                        </button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
                     </tbody>
                     <?php
                 }

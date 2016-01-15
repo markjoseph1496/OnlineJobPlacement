@@ -3,6 +3,10 @@ include('../connection.php');
 session_start();
 ?>
 <!doctype html>
+<!--[if IE 8 ]>
+<html class="ie ie8" lang="en"> <![endif]-->
+<!--[if (gte IE 9)|!(IE)]>
+<html lang="en" class="no-js"> <![endif]-->
 <html lang="en">
 
 <head>
@@ -152,19 +156,18 @@ session_start();
                         <a href="admin-requested.php">Requested</a>
                     </li>
                     <li>
-                        <a>Company List</a>
+                        <a class="active">Company List</a>
                         <ul class="dropdown">
                             <li><a href="admin-companylist.php">Active</a></li>
-                            <li><a href="admin-company_pending.php">Pending</a></li>
+                            <li><a class="active" href="admin-company_pending.php">Pending</a></li>
                         </ul>
                     </li>
-                    <li><a href="admin-adviser.php">Adviser List</a>
+                    <li><a href="admin-adviser.php" admin-maintenance.php"">Adviser List</a>
                     </li>
                     <li>
-                        <a class="active"> Maintenance</a>
+                        <a> Maintenance</a>
                         <ul class="dropdown">
-                            <li><a class="active" href="admin-maintenance.php">Courses</a></li>
-                            <li><a href="admin-users.php">Users</a></li>
+                            <li><a href="admin-maintenance.php">Courses</a></li>
                         </ul>
                     </li>
                 </ul>
@@ -178,7 +181,7 @@ session_start();
                     <a href="admin.php">Home</a>
                 </li>
                 <li>
-                    <a href="admin-reports.php">Reports</a>
+                    <a class="admin-reports.php" href="">Reports</a>
                 </li>
                 <li>
                     <a href="admin-account.php">Account</a>
@@ -187,10 +190,10 @@ session_start();
                     <a href="admin-requested.php">Requested</a>
                 </li>
                 <li>
-                   <a>Company List</a>
+                    <a class="active">Company List</a>
                         <ul class="dropdown">
                             <li><a href="admin-companylist.php">Active</a></li>
-                            <li><a href="admin-company_pending.php">Pending</a></li>
+                            <li><a class="active" href="admin-company_pending.php">Pending</a></li>
                         </ul>
                 </li>
                 <li><a href="admin-adviser.php">Adviser List</a>
@@ -198,7 +201,7 @@ session_start();
                 <li>
                     <a> Maintenance</a>
                     <ul class="dropdown">
-                        <li><a class="active" href="admin-maintenance.php">Courses</a></li>
+                        <li><a href="admin-maintenance.php">Courses</a></li>
                     </ul>
                 </li>
             </ul>
@@ -217,7 +220,7 @@ session_start();
         <div class="container">
             <div class="row">
                 <div class="col-md-6">
-                    <h2>List of Courses</h2>
+                    <h2>List of Company</h2>
                 </div>
             </div>
         </div>
@@ -228,80 +231,61 @@ session_start();
     <br><br><br>
 
     <div class="container">
-        <div class="col-md-12 fieldcol">
-            <a href="admin-addcourse.php" class="btnforadding" style="float:right;">
-                <span class="fa fa-plus-square"> Add Course </span>
-            </a>
-        </div>
         <div class="col-md-12">
-            &nbsp;
             <table class="table segment table-hover">
                 <thead>
                 <tr>
+
                 </tr>
                 <tr>
-                    <th width='10%' class='tabletitle'>Course Code</th>
-                    <th width='20%' class='tabletitle'>Course Title</th>
-                    <th width='30%' class='tabletitle'>Course Description</th>
+                    <th width='15%' class='tabletitle'>Company Name</th>
+                    <th width='10%' class='tabletitle'>Location</th>
+                    <th width='15%' class='tabletitle'>Industry</th>
+                    <th width='10%' class='tabletitle'>Contact Number</th>
+                    <th width='15%' class='tabletitle'>Email Address</th>
+                    <th width='15%' class='tabletitle'>Website</th>
                     <th width='10%' class='tabletitle'></th>
                 <tr>
                 </thead>
+                <tbody>
                 <?php
-
-                $ListCourseQuery =
+                $companyinfo_tbl =
                     GSecureSQL::query(
-                        "SELECT * FROM coursetbl",
+                        "SELECT * FROM companyinfotbl",
                         TRUE
                     );
-                foreach ($ListCourseQuery as $value) {
-                    $CourseID = $value[0];
-                    $CourseTitle = $value[1];
-                    $CourseCode = $value[2];
-                    $CourseDesc = $value[3];
-                    ?>
-                    <tbody>
-                    <tr>
-                        <td width=10% class=tabletitle><?php echo $CourseCode; ?></td>
-                        <td width=20% class=tabletitle><?php echo $CourseTitle; ?></td>
-                        <td width=30% class=tabletitle><?php echo $CourseDesc; ?></td>
-                        <td width=10% class=tabletitle>
-                            <a href="admin-editcourse.php?id=<?php echo $CourseID; ?>" class='btn btn-default'> <i
-                                    class='fa fa-pencil-square-o fa-1x'></i> </a>
-                            <button class='btn btn-danger' data-toggle='modal'
-                                    data-target='#DeleteCourse<?php echo $CourseID; ?>'><i
-                                    class='fa fa-trash fa-1x'></i></button>
-                        </td>
-                    </tr>
-                    <!-- Modal -->
-                    <div class="modal fade" id="DeleteCourse<?php echo $CourseID; ?>" role="dialog">
-                        <div class="modal-dialog" style="padding:100px">
-                            <!-- Modal content-->
-                            <div class="modal-content">
-                                <div class="modal-header">
-                                    <button type="button" class="close" data-dismiss="modal">&times;</button>
-                                    <h4 class="modal-title">Delete Course?</h4>
-                                </div>
-                                <div class="modal-body">
-                                    <div class="col-md-15 fieldcol">
-                                        <label = "usr" class = "control-label">Do you want to delete this
-                                        course?</label>
-                                        <div class="form-group">
-                                        </div>
-                                    </div>
-                                    <div class="modal-footer">
-                                        <a href="functions.php?DeleteID=<?php echo $CourseID; ?>"
-                                           class="btn btn-danger">Delete <?php echo $CourseCode; ?></a>
-                                        <button type="button" class="btn btn-default" data-dismiss="modal">Cancel
-                                        </button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    </tbody>
-                    <?php
-                }
+                foreach ($companyinfo_tbl as $value) {
+                $CompanyID = $value[0];
+                $CompanyName = $value[1];
+                $Industry = $value[3];
+                $City = $value[5];
+                $PhoneNo = $value[7];
+                $MobileNo = $value[8];
+                $Email = $value[15];
                 ?>
+                <tr>
+                    <td width=15% class=tabletitle>
+                        <a href='#'><?php echo $CompanyName; ?></a>
+                    </td>
+                    <td width=10% class=tabletitle><?php echo $City; ?></td>
+                    <td width='15%' class='tabletitle'><?php echo $Industry; ?></td>
+                    <td width='10%' class='tabletitle'><?php echo $PhoneNo; ?></td>
+                    <td width='15%' class='tabletitle'>WEBSITE</td>
+                    <td width='15%' class='tabletitle'><?php echo $Email; ?></td>
+
+                    <td class=tabletitle>
+                        <button id='Edit' name='btnedit' href='' class='btn btn-default'>
+                            <i class='fa fa-check-square-o'></i>
+                        </button>
+                        <button name='btndelete' href='' class='btn btn-danger'>
+                            <i class='fa fa-trash fa-1x'></i>
+                        </button>
+                    </td>
+                <tr>
+                    <?php
+                    }
+                    ?>
+                </tbody>
             </table>
         </div>
     </div>

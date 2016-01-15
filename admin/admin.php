@@ -163,7 +163,11 @@ $Total = $TotalStudents[0][0];
                             <a href="admin-requested.php">Requested</a>
                         </li>
                         <li>
-                            <a href="admin-companylist.php">Company List</a>
+                           <a>Company List</a>
+                        <ul class="dropdown">
+                            <li><a href="admin-companylist.php">Active</a></li>
+                            <li><a href="admin-company_pending.php">Pending</a></li>
+                        </ul>
                         </li>
                         <li><a href="admin-advisert.php">Adviser List</a>
                         </li>
@@ -193,7 +197,11 @@ $Total = $TotalStudents[0][0];
                         <a href="admin-requested.php">Requested</a>
                     </li>
                     <li>
-                        <a href="admin-companylist.php">Company List</a>
+                      <a>Company List</a>
+                        <ul class="dropdown">
+                            <li><a href="admin-companylist.php">Active</a></li>
+                            <li><a href="admin-company_pending.php">Pending</a></li>
+                        </ul>
                     </li>
                     <li><a href="admin-adviser.php">Adviser List</a>
                     </li>

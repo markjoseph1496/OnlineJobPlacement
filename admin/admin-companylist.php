@@ -156,7 +156,11 @@ session_start();
                         <a href="admin-requested.php">Requested</a>
                     </li>
                     <li>
-                        <a class="active" href="admin-companylist.php">Company List</a>
+                        <a class="active">Company List</a>
+                        <ul class="dropdown">
+                            <li><a class="active" href="admin-companylist.php">Active</a></li>
+                            <li><a href="admin-company_pending.php">Pending</a></li>
+                        </ul>
                     </li>
                     <li><a href="admin-adviser.php" admin-maintenance.php"">Adviser List</a>
                     </li>
@@ -186,7 +190,11 @@ session_start();
                     <a href="admin-requested.php">Requested</a>
                 </li>
                 <li>
-                    <a class="active" href="admin-companylist.php">Company List</a>
+                    <a class="active">Company List</a>
+                        <ul class="dropdown">
+                            <li><a class="active" href="admin-companylist.php">Active</a></li>
+                            <li><a href="admin-company_pending.php">Pending</a></li>
+                        </ul>
                 </li>
                 <li><a href="admin-adviser.php">Adviser List</a>
                 </li>
