@@ -92,7 +92,7 @@
         <div class="container">
           <div class="row">
             <div class="col-md-6">
-              <!-- Start Contact Info 
+              <!-- Start Contact Info
               <ul class="contact-details">
                 <li><a href="#"><i class="fa fa-map-marker"></i> House-54/A, London, UK</a>
                 </li>
@@ -105,7 +105,7 @@
             </div>
             <!-- .col-md-6 -->
             <div class="col-md-6">
-              <!-- Start Social Links 
+              <!-- Start Social Links
               <ul class="social-list">
                 <li>
                   <a class="facebook itl-tooltip" data-placement="bottom" title="Facebook" href="#"><i class="fa fa-facebook"></i></a>
@@ -190,7 +190,7 @@
                     <a href="company-calendar.php">Calendar</a>
                 </li>
                 <li><a href="company-settings.php">Settings</a>
-                </li>  
+                </li>
                 <li>
                     <a href="company-applicants.php">Applicant List</a>
                     <ul class="dropdown">
@@ -218,7 +218,7 @@
                     <a href="company-calendar.php">>Calendar</a>
                 </li>
                 <li><a href="company-settings.php">Settings</a>
-                </li>  
+                </li>
                <li>
                     <a href="company-applicants.php">Applicant List</a>
                     <ul class="dropdown">
@@ -261,20 +261,20 @@
             $plevel = 'PositionLevel';
             $pdatef = 'PostingDateFrom';
             $pdatet = 'PostingDateTo';
-            $status = 'Status'; 
-        
+            $status = 'Status';
+
 
             $query = "SELECT * FROM comppositiontbl WHERE CompanyID = '$CompanyID'";
             $Result = mysql_query($query);
 
             //$query1 = "SELECT * FROM compcoursetbl WHERE Email = '$x'";
-            //$Result1 = mysql_query($query1);  
+            //$Result1 = mysql_query($query1);
         ?>
         <table class = "Applicants" width = "100%" cellpadding = "0">
            <thead>
            <tr>
-  
-           </tr>  
+
+           </tr>
         <tr>
           <th width= "30%" class = "tabletitle">Positions</th>
           <th width = "25%" class = "tabletitle">From </th>
@@ -285,9 +285,9 @@
 
             <tbody>
             <?php
-                while ($row = mysql_fetch_array($Result)) { 
-                        
-                    
+                while ($row = mysql_fetch_array($Result)) {
+
+
             ?>
                 <tr>
                    <td>
@@ -301,7 +301,7 @@
             <?php
 
                 }
-            ?> 
+            ?>
             </tbody>
         </table>
         </div>
@@ -309,7 +309,7 @@
 
 
 
-<!--End of Content-->  
+<!--End of Content-->
   <script type="text/javascript" src="../js/script.js"></script>
 
 </body>

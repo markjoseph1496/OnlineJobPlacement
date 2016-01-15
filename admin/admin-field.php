@@ -352,16 +352,17 @@ $Total = $studentinfo_tbl[0][0];
         <?php
         $studentinfocourse_tbl =
             GSecureSQL::query(
-                "SELECT * FROM studentinfotbl WHERE MajorCourse = ?",
+                "SELECT `StudentID`,`FirstName`,`LastName`,`EmploymentStatus`  FROM studentinfotbl WHERE MajorCourse = ?",
                 TRUE,
                 "s",
                 $CourseCode
             );
         foreach ($studentinfocourse_tbl as $value) {
-            $FirstName = $value[3];
-            $LastName = $value[5];
+            $StudentID = $value[0];
+            $FirstName = $value[1];
+            $LastName = $value[2];
             $FullName = $LastName . ", " . $FirstName;
-            $EmploymentStatus = $value[11];
+            $EmploymentStatus = $value[3];
 
             ?>
             <tbody>
@@ -374,7 +375,7 @@ $Total = $studentinfo_tbl[0][0];
                 <td class = 'tcenter'></td>
                 <td class = 'tcenter'><?php echo $EmploymentStatus; ?></td>
                 <td>
-                    <a id='Edit' name='btnedit' href='editstudent.php' class='btn btn-default'>
+                    <a id='Edit' href='admin-editstudent.php' class='btn btn-default'>
                         <i class='fa fa-pencil'></i>
                     </a>
                 </td>
