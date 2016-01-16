@@ -272,6 +272,17 @@ $CompanyID = $_SESSION['CompanyID'];
                 $MajorCourse = $value[7];
                 $Location = $value[9];
                 $Email = $value[10];
+
+                $coursetbl =
+                GSecureSQL::query(
+                    "SELECT CourseTitle FROM coursetbl WHERE CourseCode = ?",
+                    TRUE,
+                    "s",
+                    $MajorCourse
+                );
+                foreach($coursetbl as $value1){
+                    $MajorCourse = $value1[0];
+                }
                 ?>
                 <tbody>
                 <tr>

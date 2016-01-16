@@ -347,7 +347,7 @@ $companyinfo_tbl =
         <div class="col-md-4 fieldcol">
             <div class="form-group">
                 <input type="text" name="address" id="address" class="form-control" style="width: 300px;"
-                       value="<?php echo $address; ?>">
+                       value="<?php echo $Address; ?>">
             </div>
         </div>
     </div>
@@ -509,41 +509,6 @@ if (isset($_POST['btnSave'])) {
             </script>
              ";
 }
-/*
-if(isset($_POST['btnIpasa'])){
-
-$fileToUpload = basename($_FILES["fileToUpload"]["name"]);
-$target_dir = "ProfileImages/";   //eto yung folder or directory kung saan mo ma-sasave yung picture mo
-$target_file = $target_dir . $StudentID.".jpg";
-$uploadOk = 1;
-$imageFileType = pathinfo($target_file,PATHINFO_EXTENSION);
-
-//eto chcheck nya yung format ng file kung GIF ba sya or JPEG or PNG in short Check ng FILE TYPE
-if($imageFileType != "jpg" && $imageFileType != "png" && $imageFileType != "jpeg") {
-    echo "Sorry, only JPG, JPEG, PNG files are allowed.";
-    $uploadOk = 0;
-}
-// Check if $uploadOk is set to 0 by an error
-if ($uploadOk == 0) {
-    echo "Sorry, your file was not uploaded.";
-
-}
-else {
-    if (move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_file)){
-
-    $query = "UPDATE studentinfotbl SET ProfileImage = '$target_file' WHERE StudentID = '$StudentID'";
-    $Result = mysql_query($query);
-    echo "
-     <script type='text/javascript'>
-     </script>
-     ";
-    }
-    else {
-        echo "Sorry, there was an error uploading your file.";
-    }
-}
-}
-*/
 ?>
 <script type="text/javascript">
     $(document).ready(function () {
