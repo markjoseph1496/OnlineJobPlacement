@@ -233,9 +233,9 @@ $CompanyID = $_SESSION['CompanyID'];
                     <div class="col-md-3 fieldcol">
                         <label = "usr" class = "control-label"> Posting Date: </label>
                     </div>
-                    <div class="col-md-8 fieldcol">
+                    <div class="col-md-3 fieldcol">
                         <div class="form-group">
-                            <div class="date">
+                            <div class= "row field">
                                 <input type="date" name="DateFrom" id="date_from" class="form-control">
                                 <div class="date_to">
                                     <label = "usr" class = "control-label" id = "label">to: </label>

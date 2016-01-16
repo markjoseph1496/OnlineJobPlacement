@@ -274,7 +274,7 @@ $companyinfo_tbl =
                 <div class="col-md-3 fieldcol">
                     <label>Company Name<span>(*)</span></label><br>
                 </div>
-                <div class="col-md-4 fieldcol">
+                <div class="col-md-7 fieldcol">
                     <div class="form-group">
                         <input type="text" name="cname" id="cname" class="form-control" style="width: 300px;"
                                value="<?php echo $CompanyName; ?>">
@@ -285,7 +285,7 @@ $companyinfo_tbl =
                 <div class="col-md-3 fieldcol">
                     <label = "usr" class = "control-label"> Companysite URL: </label>
                 </div>
-                <div class="col-md-4 fieldcol">
+                <div class="col-md-7 fieldcol">
                     <div class="form-group">
                         http://www.sample.com/RojasCorpInc
                     </div>
@@ -295,7 +295,7 @@ $companyinfo_tbl =
                 <div class="col-md-3 fieldcol">
                     <label = "usr" class = "control-label"> Company Description: </label>
                 </div>
-                <div class="col-md-4 fieldcol">
+                <div class="col-md-7 fieldcol">
                     <div class="form-group">
                         <textarea type="text" name="description" id="usr" class="form-control" style="width: 300px;"><?php echo $Description; ?></textarea>
                     </div>
@@ -305,7 +305,7 @@ $companyinfo_tbl =
                 <div class="col-md-3 fieldcol">
                     <label>Industry<span>(*)</span></label><br>
                 </div>
-                <div class="col-md-4 fieldcol">
+                <div class="col-md-7 fieldcol">
                     <div class="form-group" style="width: 300px;"
                     ">
                     <select id="industry" name="industry" class="industry" style="width:100%; height:30px;" ?>">
@@ -331,7 +331,7 @@ $companyinfo_tbl =
         <div class="col-md-3 fieldcol">
             <label>Classification<span>(*)</span></label><br>
         </div>
-        <div class="col-md-4 fieldcol">
+        <div class="col-md-7 fieldcol">
             <div class="form-group">
                 <select id="classification" name="classification" class="classification"
                         style="width: 300px; height: 30px;" ?>">
@@ -344,7 +344,7 @@ $companyinfo_tbl =
         <div class="col-md-3 fieldcol">
             <label>Address<span>(*)</span></label><br>
         </div>
-        <div class="col-md-4 fieldcol">
+        <div class="col-md-7 fieldcol">
             <div class="form-group">
                 <input type="text" name="address" id="address" class="form-control" style="width: 300px;"
                        value="<?php echo $Address; ?>">
@@ -355,7 +355,7 @@ $companyinfo_tbl =
         <div class="col-md-3 fieldcol">
             <label = "usr" class = "control-label"> City: </label>
         </div>
-        <div class="col-md-4 fieldcol">
+        <div class="col-md-7 fieldcol">
             <div class="form-group">
                 <select id="City" name="City" class="form-control" style="width: 300px;">
                     <option value="">- Please select one -</option>
@@ -419,7 +419,7 @@ $companyinfo_tbl =
         <div class="col-md-3 fieldcol">
             <label = "usr" class = "control-label"> Postal Code: </label>
         </div>
-        <div class="col-md-4 fieldcol">
+        <div class="col-md-7 fieldcol">
             <div class="form-group">
                 <input type="text" name="postal" id="postal" class="form-control" style="width: 300px; height: 34px;"
                        value="<?php echo $PostalCode; ?>">
@@ -430,7 +430,7 @@ $companyinfo_tbl =
         <div class="col-md-3 fieldcol">
             <label>Mobile Number<span>(*)</span></label><br>
         </div>
-        <div class="col-md-8 fieldcol">
+        <div class="col-md-7 fieldcol">
             <div class="form-group">
                 <input type="text" name="mobilenum" id="usr" class="form-control" style="width: 300px;"
                        value="<?php echo $PhoneNum; ?>">
@@ -441,7 +441,7 @@ $companyinfo_tbl =
         <div class="col-md-3 fieldcol">
             <label>TelPhone Number<span>(*)</span></label><br>
         </div>
-        <div class="col-md-4 fieldcol">
+        <div class="col-md-7 fieldcol">
             <div class="form-group">
                 <input type="text" name="telnum" id="usr" class="form-control" style="width: 300px;"
                        value="<?php echo $MobileNumber; ?>">
@@ -452,7 +452,7 @@ $companyinfo_tbl =
         <div class="col-md-3 fieldcol">
             <label = "usr" class = "control-label"> Fax: </label>
         </div>
-        <div class="col-md-4 fieldcol">
+        <div class="col-md-7 fieldcol">
             <div class="form-group">
                 <input type="text" name="fax" id="usr" class="form-control" style="width: 300px;"
                        value="<?php echo $Fax; ?>">
