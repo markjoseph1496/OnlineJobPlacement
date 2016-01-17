@@ -550,7 +550,7 @@ if (isset($_SESSION['StudentID'])) {
                                 <tr>
                                     <td><?php echo $Seminar; ?></td>
                                     <td><?php echo $YearAttended; ?></td>
-                                    <td>
+                                    <td class="text-center">
                                         <a href="edit/edit-seminar.php?id=<?php echo $SeminarID; ?>"
                                            class="btn btn-default btnformaintenance">
                                             <i class="fa fa-pencil-square-o fa-1x"></i>
