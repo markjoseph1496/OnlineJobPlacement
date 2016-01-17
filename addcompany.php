@@ -25,20 +25,28 @@ if(isset($_GET['CompanyName'])){
    $industry = $_GET['Industry'];
    $city_id = $_GET['City'];
    $email = $_GET['Email'];
-   $password = $_GET['sPassword'];
    $fname = $_GET['FirstName'];
    $mname = $_GET['MiddleName'];
    $lname = $_GET['LastName'];
    $position = $_GET['Position'];
    $department = $_GET['Department'];
 
-   $query = "INSERT INTO companyinfotbl (CompanyName,Industry,City,Email,Password,FirstName,MiddleName,LastName,Position,Department) values  ('$CompanyName','$industry','$city_id','$email','$password','$fname','$mname','$lname','$position','$department')";
+    $password = "1";
+
+    $fname = ucwords(strtolower($fname));
+    $mname = ucwords(strtolower($mname));
+    $lname = ucwords(strtolower($lname));
+
+    $salt = hash('sha512', mt_rand(0, PHP_INT_MAX) . mt_rand(0, PHP_INT_MAX) . mt_rand(0, PHP_INT_MAX));
+    $password = hash('sha512', $password . $salt);
+
+   $query = "INSERT INTO companyinfotbl (CompanyName,Industry,City,Email,Password,SaltedPassword,FirstName,MiddleName,LastName,Position,Department) values  ('$CompanyName','$industry','$city_id','$email','$password','$salt','$fname','$mname','$lname','$position','$department')";
 
    $Result = mysql_query($query);
    echo "
           <script type='text/javascript'>
          alert('You have successfully registered');
-         location.href='login-company.php';
+         location.href='registration-company.php';
          </script>
          ";
 }

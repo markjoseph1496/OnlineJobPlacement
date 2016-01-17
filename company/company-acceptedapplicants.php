@@ -236,6 +236,7 @@ $CompanyID = $_SESSION['CompanyID'];
                 <th width='15%' class='tabletitle'>Course</th>
                 <th width='20%' class='tabletitle'>Location</th>
                 <th width='15%' class='tabletitle'>Email</th>
+                <th width='5%' class='tabletitle'>Remove</th>
             <tr>
             </thead>
             <?php
@@ -264,7 +265,7 @@ $CompanyID = $_SESSION['CompanyID'];
                           ",
                     TRUE
                 );
-            foreach($requesttocompany_tbl as $value){
+            foreach ($requesttocompany_tbl as $value) {
                 $RID = $value[0];
                 $PositionLevel = $value[12];
                 $FirstName = $value[5];
@@ -274,26 +275,31 @@ $CompanyID = $_SESSION['CompanyID'];
                 $Email = $value[10];
 
                 $coursetbl =
-                GSecureSQL::query(
-                    "SELECT CourseTitle FROM coursetbl WHERE CourseCode = ?",
-                    TRUE,
-                    "s",
-                    $MajorCourse
-                );
-                foreach($coursetbl as $value1){
+                    GSecureSQL::query(
+                        "SELECT CourseTitle FROM coursetbl WHERE CourseCode = ?",
+                        TRUE,
+                        "s",
+                        $MajorCourse
+                    );
+                foreach ($coursetbl as $value1) {
                     $MajorCourse = $value1[0];
                 }
                 ?>
                 <tbody>
                 <tr>
                     <td width=20% class=tabletitle><a href=''><?php echo $LastName . ", " . $FirstName; ?></td>
-                    <td width=20% class=tabletitle><?php echo $PositionLevel;  ?></a></td>
+                    <td width=20% class=tabletitle><?php echo $PositionLevel; ?></a></td>
                     <td width=15% class=tabletitle><?php echo $MajorCourse; ?></td>
                     <td width=15% class=tabletitle><?php echo $Location; ?></td>
                     <td width=15% class=tabletitle><?php echo $Email; ?></td>
+                    <td width="5%" class="tabletitle">
+                        <button class='btn btn-danger' data-toggle='modal'
+                                data-target='#DeclineRequest<?php echo $RID; ?>'><i
+                                class='fa fa-trash fa-1x'></i></button>
+                    </td>
                 <tr>
                 </tbody>
-            <?php
+                <?php
             }
             ?>
         </table>

@@ -410,7 +410,8 @@ include('connection.php');
                                 message: "Email address must be 6-35 characters long."
                             }
                         }
-                    },
+                    }
+                    /*
                     sPassword: {
                         validators: {
                             notEmpty: {
@@ -433,7 +434,8 @@ include('connection.php');
                                 message: "Password and confirm password mismatched."
                             }
                         }
-                    },
+                    }
+                     */
                 }
             });
         });

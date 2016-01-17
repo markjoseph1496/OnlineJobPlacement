@@ -2,24 +2,8 @@
 include('../connection.php');
 session_start();
 $CompanyID = $_SESSION['CompanyID'];
-
-$PID = 'PostionID';
-$PostingDateFrom = 'PostingDateFrom';
-$PostingDateTo = 'PostingDateTo';
-$PositionLevel = 'PositionLevel';
-$JSpecialization = 'JSpecialization';
-$JobDescription = 'JobDescription';
-$EType = 'EType';
-$AvPosition = 'AvPosition';
-$MonthlySalary = 'MonthlySalary';
-$YExperience = 'YExperience';
-
-$query = "SELECT * FROM comppositiontbl WHERE CompanyID = '$CompanyID'";
-$Result = mysql_query($query);
 ?>
 <!doctype html>
-<!--[if IE 8 ]><html class="ie ie8" lang="en"> <![endif]-->
-<!--[if (gte IE 9)|!(IE)]><html lang="en" class="no-js"> <![endif]-->
 <html lang="en">
 
 <head>
@@ -107,26 +91,27 @@ $Result = mysql_query($query);
                 <div class="row">
                     <div class="col-md-6">
                         <!-- Start Contact Info -->
-                            <ul class="contact-details">
-                                <li class="profile-name"><i class="fa fa-hashtag"></i> <b>008-2012-0805</b></li>
-                            </ul>
+                        <ul class="contact-details">
+                            <li class="profile-name"><i class="fa fa-hashtag"></i> <b>008-2012-0805</b></li>
+                        </ul>
                         <!-- End Contact Info -->
                     </div>
                     <!-- .col-md-6 -->
                     <div class="col-md-6">
                         <!-- Start Social Links -->
-                            <ul class="social-list">
-                                <li class="profile-name">
-                                    <a class="bell itl-tooltip" data-placement="bottom" title="" href="#" data-original-title="Notification"><i class="fa fa-bell"></i></a>
-                                </li>
-                                <li class="profile-name">
-                                    &nbsp;
-                                </li>
-                                <li class="profile-name">
-                                    <i class="fa fa-user"></i> Hello, <b>Aira Jane Cruz</b>                               
-                                </li>
-                            </ul>
-                            <!-- End Social Links -->
+                        <ul class="social-list">
+                            <li class="profile-name">
+                                <a class="bell itl-tooltip" data-placement="bottom" title="" href="#"
+                                   data-original-title="Notification"><i class="fa fa-bell"></i></a>
+                            </li>
+                            <li class="profile-name">
+                                &nbsp;
+                            </li>
+                            <li class="profile-name">
+                                <i class="fa fa-user"></i> Hello, <b>Aira Jane Cruz</b>
+                            </li>
+                        </ul>
+                        <!-- End Social Links -->
                     </div>
                     <!-- .col-md-6 -->
                 </div>
@@ -147,54 +132,54 @@ $Result = mysql_query($query);
                         <i class="fa fa-bars"></i>
                     </button>
                     <!-- End Toggle Nav Link For Mobiles -->
-                     <a class="navbar-brand" href="">
+                    <a class="navbar-brand" href="">
                         <img src="../images/ojpms.png">
                     </a>
                 </div>
-          <div class="navbar-collapse collapse">
-            <!-- Sign-out -->
-            <div class="signout-side">
-              <a class="show-signout"><i class="fa fa-sign-out"></i></a>
+                <div class="navbar-collapse collapse">
+                    <!-- Sign-out -->
+                    <div class="signout-side">
+                        <a class="show-signout"><i class="fa fa-sign-out"></i></a>
+                    </div>
+                    <!-- End Sign-out -->
+                    <!-- Start Navigation List -->
+                    <ul class="nav navbar-nav navbar-right">
+                        <li>
+                            <a href="company.php">Home</a>
+                        </li>
+                        <li>
+                            <a>Position</a>
+                            <ul class="dropdown">
+                                <li><a href="company-positionlist.php">Position List</a></li>
+                                <li><a class="active" href="company-createposition.php">Create Position</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="company-calendar.php">Calendar</a>
+                        </li>
+                        <li>
+                            <a href="company-settings.php">Settings</a>
+                        </li>
+                        <li>
+                            <a href="company-applicants.php">Applicant List</a>
+                            <ul class="dropdown">
+                                <li><a href="company-pendingapplicants.php">Pending</a></li>
+                                <li><a href="company-acceptedapplicants.php">Accepted</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <!-- End Navigation List -->
+                </div>
             </div>
-            <!-- End Sign-out -->
-             <!-- Start Navigation List -->
-            <ul class="nav navbar-nav navbar-right">
+            <!-- Mobile Menu Start -->
+            <ul class="wpb-mobile-menu">
                 <li>
-                    <a  href="company.php">Home</a>
-                </li>
-                <li>
-                    <a>Position</a>
-                    <ul class="dropdown">
-                        <li><a  href="company-positionlist.php">Position List</a></li>
-                        <li><a class = "active" href="company-createposition.php">Create Position</a></li>
-                    </ul>
-                </li>
-                <li>
-                    <a href="company-calendar.php">Calendar</a>
-                </li>
-                <li>
-                    <a  href="company-settings.php">Settings</a>
-                </li>
-                <li>
-                    <a href="company-applicants.php">Applicant List</a>
-                    <ul class="dropdown">
-                        <li><a href="company-pendingapplicants.php">Pending</a></li>
-                        <li><a href="company-acceptedapplicants.php">Accepted</a></li>
-                    </ul>
-                </li>
-            </ul>
-            <!-- End Navigation List -->
-        </div>
-    </div>
-        <!-- Mobile Menu Start -->
-    <ul class="wpb-mobile-menu">
-       <li>
-                    <a  href="company.php">Home</a>
+                    <a href="company.php">Home</a>
                 </li>
                 <li>
                     <a class="active" href="company-position.php">Position</a>
                     <ul class="dropdown">
-                        <li><a  href="company-positionlist.php">Position List</a></li>
+                        <li><a href="company-positionlist.php">Position List</a></li>
                         <li><a href="company-createposition.php">Create Position</a></li>
                     </ul>
                 </li>
@@ -204,170 +189,170 @@ $Result = mysql_query($query);
                 <li>
                     <a href="company-settings.php">Settings</a>
                 </li>
-               <li>
-                    <a  href="company-applicants.php">Applicant List</a>
+                <li>
+                    <a href="company-applicants.php">Applicant List</a>
                     <ul class="dropdown">
                         <li><a href="company-pendingapplicants.php">Pending</a></li>
                         <li><a href="company-acceptedapplicants.php">Accepted</a></li>
                     </ul>
                 </li>
-    </ul>
+            </ul>
     </header>
     <!-- Mobile Menu End -->
 
-      </div>
-      <!-- End Header Logo & Naviagtion -->
+</div>
+<!-- End Header Logo & Naviagtion -->
 
-    </header>
-    <!-- End Header Section -->
+</header>
+<!-- End Header Section -->
 
- <!-- Start Page Banner -->
-    <div class="page-banner" style="padding:40px 0; center #f9f9f9;">
-      <div class="container">
+<!-- Start Page Banner -->
+<div class="page-banner" style="padding:40px 0; center #f9f9f9;">
+    <div class="container">
         <div class="row">
-          <div class="col-md-6">
-            <h2>View Position</h2>
-          </div>
+            <div class="col-md-6">
+                <h2>View Position</h2>
+            </div>
         </div>
-      </div>
     </div>
-    <!-- End Page Banner -->
+</div>
+<!-- End Page Banner -->
 <?php
 while ($row = mysql_fetch_array($Result)) {
 
-?>
- <!-- Start Content -->
+    ?>
+    <!-- Start Content -->
     <br><br><br>
-<form action="company-positionlist.php" name="AddPosition" id="AddPosition" autocomplete="off">
-           <div class =  "container">
-          <div class = "col-md-12">
-          <div class = "row">
-            <h3>Post Position </h3>
-            &nbsp;
-            <div class="row field">
-                                        <div class = "col-md-3 fieldcol">
-                                            <label = "usr" class = "control-label"> Posting Date </label>
-                                        </div>
-                                        <div class = "col-md-2 fieldcol">
-                                            <label = "usr" class = "control-label"><?php echo $row['PostingDateFrom']; ?></label>
-                                        </div>
-                                        <div class = "col-md-1 fieldcol">
-                                            <label = "usr" class = "control-label"> to </label>
-                                        </div>
-                                        <div class = "col-md-2 fieldcol">
-                                            <label = "usr" class = "control-label"><?php echo $row['PostingDateTo']; ?></label>
-                                        </div>
-                                        
-              </div> 
-              &nbsp;
-              <h3> Position Information </h3>
-              &nbsp;
-              <div class="row field">
-                                        <div class = "col-md-3 fieldcol">
-                                            <label = "usr" class = "control-label"> Position Level: </label>
-                                        </div>
-                                        <div class = "col-md-8 fieldcol">
-                                            <div class="form-group">
-                                                <label = "usr" class = "control-label"s><?php echo $row['PositionLevel']; ?></label>
-                                            </div>
-                                        </div>
-                </div> 
-                <div class="row field">
-                                        <div class = "col-md-3 fieldcol">
-                                            <label = "usr" class = "control-label"> Job Description: </label>
-                                        </div>
-                                        <div class = "col-md-8 fieldcol">
-                                            <div class="form-group">
-                                                <label = "usr" class = "control-label"><?php echo $row['JobDescription']; ?></label>
-                                            </div>
-                                        </div>
-                </div> 
-                <div class="row field">
-                                        <div class = "col-md-3 fieldcol">
-                                            <label = "usr" class = "control-label"> Job Specialization: </label>
-                                        </div>
-                                        <div class = "col-md-8 fieldcol">
-                                            <div class="form-group">
-                                                  <label = "usr" class = "control-label"><?php echo $row['JSpecialization']; ?></label>
-                                            </div>
-                                        </div>
-                </div>  
-                <div class="row field">
-                                        <div class = "col-md-3 fieldcol">
-                                            <label = "usr" class = "control-label"> Employment Type: </label>
-                                        </div>
-                                        <div class = "col-md-8 fieldcol">
-                                            <div class="form-group">
-                                                   <label = "usr" class = "control-label"><?php echo $row['EType']; ?></label>
-                                            </div>
-                                        </div>
-                </div>  
-                <div class="row field">
-                                        <div class = "col-md-3 fieldcol">
-                                            <label = "usr" class = "control-label"> Available Position: </label>
-                                        </div>
-                                        <div class = "col-md-8 fieldcol">
-                                            <div class="form-group">
-                                                  <label = "usr" class = "control-label"><?php echo $row['AvPosition']; ?></label>
-                                            </div>
-                                        </div>
-                </div> 
-                 <h3> Salary Range </h3>
-                 &nbsp;
-                 <div class="row field">
-                                        <div class = "col-md-3 fieldcol">
-                                            <label = "usr" class = "control-label"> Range of Salary: </label>
-                                        </div>
-                                        <div class = "col-md-8 fieldcol">
-                                            <div class="form-group">
-                                                  <label = "usr" class = "control-label"><?php echo $row['MonthlySalary']; ?></label>
-                                            </div>
-                                        </div>
-                </div> 
-                <h3> General Requirements </h3>
-                &nbsp;
-                <div class="row field">
-                                        <div class = "col-md-3 fieldcol">
-                                            <label = "usr" class = "control-label"> Years of Experience: </label>
-                                        </div>
-                                        <div class = "col-md-8 fieldcol">
-                                            <label = "usr" class = "control-label"><?php echo $row['YExperience']; ?></label>
-                                        </div>
-                </div> 
-                <div class="row field">
-                                        <div class = "col-md-3 fieldcol">
-                                            <label = "usr" class = "control-label"> Training: </label>
-                                        </div>
-                                        <div class = "col-md-8 fieldcol">
-                                            <label = "usr" class = "control-label"> asfsa </label>
-                                        </div>
-                </div>  
-                <div class="row field">
-                                        <div class = "col-md-3 fieldcol">
-                                            <label = "usr" class = "control-label"> Knowledge in: </label>
-                                        </div>
-                                        <div class = "col-md-8 fieldcol">
-                                            <label = "usr" class = "control-label"> fasfsd </label>
-                                        </div>
-                </div>            
-                <h3> Optional Requirements </h3>
-                &nbsp;
-                <div class="row field">
-                                        <div class = "col-md-3 fieldcol">
-                                            <label = "usr" class = "control-label"> Language: </label>
-                                        </div>
-                                        <div class = "col-md-8 fieldcol">
-                                            <label = "usr" class = "control-label"> Filipino </label>
-                                        </div>
-                </div>       
+    <form action="company-positionlist.php" name="AddPosition" id="AddPosition" autocomplete="off">
+        <div class="container">
+            <div class="col-md-12">
+                <div class="row">
+                    <h3>Post Position </h3>
+                    &nbsp;
+                    <div class="row field">
+                        <div class="col-md-3 fieldcol">
+                            <label = "usr" class = "control-label"> Posting Date </label>
+                        </div>
+                        <div class="col-md-2 fieldcol">
+                            <label = "usr" class = "control-label"><?php echo $row['PostingDateFrom']; ?></label>
+                        </div>
+                        <div class="col-md-1 fieldcol">
+                            <label = "usr" class = "control-label"> to </label>
+                        </div>
+                        <div class="col-md-2 fieldcol">
+                            <label = "usr" class = "control-label"><?php echo $row['PostingDateTo']; ?></label>
+                        </div>
+
+                    </div>
+                    &nbsp;
+                    <h3> Position Information </h3>
+                    &nbsp;
+                    <div class="row field">
+                        <div class="col-md-3 fieldcol">
+                            <label = "usr" class = "control-label"> Position Level: </label>
+                        </div>
+                        <div class="col-md-8 fieldcol">
+                            <div class="form-group">
+                                <label = "usr" class = "control-label"s><?php echo $row['PositionLevel']; ?></label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row field">
+                        <div class="col-md-3 fieldcol">
+                            <label = "usr" class = "control-label"> Job Description: </label>
+                        </div>
+                        <div class="col-md-8 fieldcol">
+                            <div class="form-group">
+                                <label = "usr" class = "control-label"><?php echo $row['JobDescription']; ?></label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row field">
+                        <div class="col-md-3 fieldcol">
+                            <label = "usr" class = "control-label"> Job Specialization: </label>
+                        </div>
+                        <div class="col-md-8 fieldcol">
+                            <div class="form-group">
+                                <label = "usr" class = "control-label"><?php echo $row['JSpecialization']; ?></label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row field">
+                        <div class="col-md-3 fieldcol">
+                            <label = "usr" class = "control-label"> Employment Type: </label>
+                        </div>
+                        <div class="col-md-8 fieldcol">
+                            <div class="form-group">
+                                <label = "usr" class = "control-label"><?php echo $row['EType']; ?></label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row field">
+                        <div class="col-md-3 fieldcol">
+                            <label = "usr" class = "control-label"> Available Position: </label>
+                        </div>
+                        <div class="col-md-8 fieldcol">
+                            <div class="form-group">
+                                <label = "usr" class = "control-label"><?php echo $row['AvPosition']; ?></label>
+                            </div>
+                        </div>
+                    </div>
+                    <h3> Salary Range </h3>
+                    &nbsp;
+                    <div class="row field">
+                        <div class="col-md-3 fieldcol">
+                            <label = "usr" class = "control-label"> Range of Salary: </label>
+                        </div>
+                        <div class="col-md-8 fieldcol">
+                            <div class="form-group">
+                                <label = "usr" class = "control-label"><?php echo $row['MonthlySalary']; ?></label>
+                            </div>
+                        </div>
+                    </div>
+                    <h3> General Requirements </h3>
+                    &nbsp;
+                    <div class="row field">
+                        <div class="col-md-3 fieldcol">
+                            <label = "usr" class = "control-label"> Years of Experience: </label>
+                        </div>
+                        <div class="col-md-8 fieldcol">
+                            <label = "usr" class = "control-label"><?php echo $row['YExperience']; ?></label>
+                        </div>
+                    </div>
+                    <div class="row field">
+                        <div class="col-md-3 fieldcol">
+                            <label = "usr" class = "control-label"> Training: </label>
+                        </div>
+                        <div class="col-md-8 fieldcol">
+                            <label = "usr" class = "control-label"> asfsa </label>
+                        </div>
+                    </div>
+                    <div class="row field">
+                        <div class="col-md-3 fieldcol">
+                            <label = "usr" class = "control-label"> Knowledge in: </label>
+                        </div>
+                        <div class="col-md-8 fieldcol">
+                            <label = "usr" class = "control-label"> fasfsd </label>
+                        </div>
+                    </div>
+                    <h3> Optional Requirements </h3>
+                    &nbsp;
+                    <div class="row field">
+                        <div class="col-md-3 fieldcol">
+                            <label = "usr" class = "control-label"> Language: </label>
+                        </div>
+                        <div class="col-md-8 fieldcol">
+                            <label = "usr" class = "control-label"> Filipino </label>
+                        </div>
+                    </div>
+                </div>
             </div>
-          </div>
-        </div>       
-</form>
-<?php
-} 
+        </div>
+    </form>
+    <?php
+}
 ?>
-<!--End of Content--> 
-  <script type="text/javascript" src="../js/script.js"></script>
+<!--End of Content-->
+<script type="text/javascript" src="../js/script.js"></script>
 </body>
 </html>
