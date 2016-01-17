@@ -311,6 +311,7 @@ if (isset($_SESSION['StudentID'])) {
                             </div>
                         </div>
 
+                        <div class="hr2" style="margin-top:35px;"></div>
                         <table class="table segment table-hover">
                             <thead>
                             <tr class="table-color">
@@ -509,7 +510,9 @@ if (isset($_SESSION['StudentID'])) {
 
                             </tbody>
                         </table>
-                        <div class="hr5" style="margin-top:35px;margin-bottom:40px;"></div>
+                        <div class="hr2"></div>
+
+                        <div class="hr4" style="margin-top:40px;margin-bottom:40px;"></div>
                         <div class="row field">
                             <div class="col-md-6 fieldcol">
                                 <h4>Seminars<span class="head-line"></span></h4>
@@ -521,6 +524,7 @@ if (isset($_SESSION['StudentID'])) {
                             </div>
                         </div>
 
+                        <div class="hr2" style="margin-top:35px;"></div>
                         <table class="table segment table-hover">
                             <thead>
                             <tr class="table-color">
@@ -589,6 +593,7 @@ if (isset($_SESSION['StudentID'])) {
                             ?>
                             </tbody>
                         </table>
+                        <div class="hr2"></div>
                     </div>
                 </div>
                 <!-- End Page Content -->
