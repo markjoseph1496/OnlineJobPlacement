@@ -84,8 +84,8 @@
                     <div class="row">
                         <div class="col-md-7">
                             <!-- Start Contact Info -->
-                            <ul class="contact-details">
-                                <li class="profile-name"><i class="fa fa-hashtag"></i> <b>008-2012-0805</b></li>
+                            <ul class="profile-name">
+                                <li><i class="fa fa-hashtag"></i> <b>008-2012-0805</b></li>
                             </ul>
                             <!-- End Contact Info -->
                         </div>
@@ -118,7 +118,7 @@
             <div class="navbar navbar-default navbar-top">
                 <div class="container">
                     <div class="navbar-header">
-                    <!-- Stat Toggle Nav Link For Mobiles -->
+                        <!-- Stat Toggle Nav Link For Mobiles -->
                         <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
                             <i class="fa fa-bars"></i>
                         </button>
@@ -160,78 +160,65 @@
             </div>
         </div>
         
-
         <!-- Start Content -->
-        <div class="row">
-                            <div class="col-md-12">
-                                <!-- Single Testimonial -->
-                                <div class="hr5" style="margin-top:35px;margin-bottom:40px;"></div>
-                                <div class="classic-testimonials text-center">
-                                    <img src="img/partner-company/sykes-logo.png">
-                                </div>
-                                <!-- End Single Testimonial -->
-                            </div>
-                            &nbsp;
-                            <div class="hr5" style="margin-top:35px;margin-bottom:40px;"></div>
-        <div class ="container">
-        <div class="col-md-12">
-                                <div class="classic-testimonials">
-                                    <center><h1>Sykes Asia</h1></center>
-                                </div>
-                                &nbsp;
-                                <label>Archway International & Marketing Services, Inc. was officially registered with the Philippine SEC on October 25, 2006 and began its operations in the January 2007 and since then has deployed close to a
-                                thousand skilled, non-skilled and professional workers to the Middle East countries, especially to the 
-                                Kingdom of Saudi Arabia. Its key mission is two-pronged: To provide our dedicated and hardworking countrymen decent job opportunities abroad, helping them achieve their lifelong dream of prosperity on the one hand, while providing fully-qualified workmen and professionals to clients of high ethical andsadsa
-                                moral standards, helping them in turn achieve their business goals on the other. In just a liitle over three years in the business, Archway International has already given hundreds of deserving Filipinos stable overseas employment as domestic helpers, nurses, doctors, laboratory technicians, accountants and office personnel, food service workers, programmer and computer engineers, construction people, teachers, carpenters, masons, and maintenance personnel. 
-                                They are our living testimonies to Archway�s competence and dependability. We stand proud by our clean record of Zero-complaint and Zero-citation/sanction from POEA.
-                                </label>
-                                &nbsp;
-                            <div class="hr5" style="margin-top:35px;margin-bottom:40px;"></div> 
-                            <div class="classic-testimonials">
-                                    <h3>List of Available Position</h3>
-                            </div>  
-                            <br><br><br><br> <br><br> <br><br>                  
-                                
-          </div>
-         </div>
-         </div>
-         
-        
-        <!-- End Page Content -->
-
-                   
-        <!-- End Content -->
-    <script type="text/javascript" src="js/script.js"></script>
-
-
-    <!-- Start Footer Section -->
-    <footer>
-        <div class="container">
-            <!-- Start Copyright -->
-            <div class="copyright-section">
+        <div id="content">
+            <div class="container">
                 <div class="row">
-                    <div class="col-md-6">
-                        <p>&copy; 2015 OJPMS - All Rights Reserved</p>
+                    <div class="col-md-12 page-content">
+                        <div class="hr4" style="margin-bottom:35px;"></div>
+                        <div class="classic-testimonials text-center">
+                            <img src="img/partner-company/sykes-logo.png">
+                        </div>
+                        <div class="hr4" style="margin-top:35px;margin-bottom:35px;"></div>  
                     </div>
-                    <!-- .col-md-6 -->
-                    <div class="col-md-6">
-                        <ul class="footer-nav">
-                            <li><a href="#">Sitemap</a>
-                            </li>
-                            <li><a href="#">Privacy Policy</a>
-                            </li>
-                            <li><a href="#">Contact</a>
-                            </li>
-                        </ul>
-                    </div>
-                    <!-- .col-md-6 -->
+
+                    <h1 class="text-center">Sykes Asia</h1>
+
+                    <label>Archway International & Marketing Services, Inc. was officially registered with the Philippine SEC on October 25, 2006 and began its operations in the January 2007 and since then has deployed close to a
+                        thousand skilled, non-skilled and professional workers to the Middle East countries, especially to the 
+                        Kingdom of Saudi Arabia. Its key mission is two-pronged: To provide our dedicated and hardworking countrymen decent job opportunities abroad, helping them achieve their lifelong dream of prosperity on the one hand, while providing fully-qualified workmen and professionals to clients of high ethical andsadsa
+                        moral standards, helping them in turn achieve their business goals on the other. In just a liitle over three years in the business, Archway International has already given hundreds of deserving Filipinos stable overseas employment as domestic helpers, nurses, doctors, laboratory technicians, accountants and office personnel, food service workers, programmer and computer engineers, construction people, teachers, carpenters, masons, and maintenance personnel. 
+                        They are our living testimonies to Archway�s competence and dependability. We stand proud by our clean record of Zero-complaint and Zero-citation/sanction from POEA.
+                    </label>
+
+                    <div class="hr5" style="margin-top:35px;margin-bottom:35px;"></div>
+                    <h3>List of Available Position</h3>
                 </div>
-                <!-- .row -->
             </div>
-            <!-- End Copyright -->
-        </div>
-    </footer>
-    <!-- End Footer Section -->
+        </div>  
+        <!-- End Content -->
+        <script type="text/javascript" src="js/script.js"></script>
+
+
+        <!-- Start Footer Section -->
+        <footer>
+            <div class="container">
+                <!-- Start Copyright -->
+                <div class="copyright-section">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <p>&copy; 2015 OJPMS - All Rights Reserved</p>
+                        </div>
+                        <!-- .col-md-6 -->
+                        <div class="col-md-6">
+                            <ul class="footer-nav">
+                                <li><a href="#">Sitemap</a>
+                                </li>
+                                <li><a href="#">Privacy Policy</a>
+                                </li>
+                                <li><a href="#">Contact</a>
+                                </li>
+                            </ul>
+                        </div>
+                        <!-- .col-md-6 -->
+                    </div>
+                    <!-- .row -->
+                </div>
+                <!-- End Copyright -->
+            </div>
+        </footer>
+        <!-- End Footer Section -->
+    </div>
 
     <!-- Go To Top Link -->
     <a href="#" class="back-to-top"><i class="fa fa-angle-up"></i></a>
