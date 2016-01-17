@@ -140,15 +140,20 @@ if (isset($_SESSION['StudentID'])) {
                         <ul class="social-list">
                             <li id="notification_li">
                                 <span id="notification_count">3</span>
-                                <a class="bell itl-tooltip" data-placement="bottom" title="" href="#" id="notificationLink"><i class="fa fa-bell"></i></a>
+                                <a class="bell itl-tooltip" data-placement="bottom" title="" id="notificationLink"><i class="fa fa-bell"></i></a>
                                 <div id="notificationContainer">
                                     <div id="notificationTitle">Notifications</div>
                                     <div id="notificationsBody" class="notifications">
                                         <div class="hr1" style="margin-top:40px;"></div>
-                                        The admin granted your request.
-                                        <div class="hr1" style="margin-top:40px;"></div>
+
+                                        <label><a href="">The admin granted your request.</a></label>
+                                        <div class="hr2" style="margin-top:1px; margin-bottom:1px;"></div>
+                                        <label><a href="">The admin granted your request.</a></label>
+                                        <div class="hr2" style="margin-top:1px; margin-bottom:1px;"></div>
+                                        <label><a href="">The admin granted your request.</a></label>
+                                        <div class="hr2" style="margin-top:1px; margin-bottom:1px;"></div>
                                     </div>
-                                    <div id="notificationFooter"><a href="#">See All</a></div>
+                                    <div id="notificationFooter"><a href="../notification/notification.php">See All</a></div>
                                 </div>
                             </li>
                             <li class="profile-name">
