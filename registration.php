@@ -1,3 +1,6 @@
+<?php
+include('connection.php');
+?>
 <!doctype html>
 <html lang="en">
 
@@ -24,7 +27,7 @@
 
     <!-- jQuery and Bootstrap JS -->
     <script type="text/javascript" src="js/jquery.min.js"></script>
-    <script type="text/javascript" src="js/bootstrap.min.js" ></script>
+    <script type="text/javascript" src="js/bootstrap.min.js"></script>
 
     <!-- BootstrapValidator -->
     <script src="js/bootstrapValidator.min.js" type="text/javascript"></script>
@@ -74,11 +77,11 @@
 </head>
 
 <body>
-<form id="registration" name="registration" autocomplete="off" action="registeradd.php"></form>
+<form method="POST" id="registration" name="registration" autocomplete="off" action="registeradd.php">
     <!-- Container -->
     <div id="container">
         <div class="hidden-header"></div>
- 
+
         <!-- Start Page Banner -->
         <div class="page-banner no-subtitle">
             <div class="container">
@@ -112,7 +115,8 @@
                     <div class="col-md-8 text-center">
                         <div class="form-group">
                             <label><span>(*) </span>Resumé Link: </label><br>
-                            <input type="text" class="form-control" id="resumelink" placeholder="http://YourName.sticaloocan.edu" name="resumelink">
+                            <input type="text" class="form-control" id="resumelink"
+                                   placeholder="http://YourName.sticaloocan.edu" name="resumelink">
                             <p class="note">ex.http://YourName.sticaloocan.edu</p>
                         </div>
                     </div>
@@ -120,16 +124,16 @@
                         &nbsp;
                     </div>
                 </div>
-                <p class="note text-center">You may only use alphanumeric characters, including period (.), dash (-), or underscore (_). This will be the name that will identify your personalized ResumeLink. This name will be permanent and no longer be changeable.</p>
+                <p class="note text-center">You may only use alphanumeric characters, including period (.), dash (-), or
+                    underscore (_). This will be the name that will identify your personalized ResumeLink. This name
+                    will be permanent and no longer be changeable.</p>
                 <br>
 
                 <div class="row">
                     <div class="col-md-3">
                         <label>Student ID <span>(*)</span></label>
                         <div class="form-group">
-                            
-                                <input type="text" class="form-control" id="StudentID" name="StudentID" maxlength="11">
-                            
+                            <input type="text" class="form-control" id="StudentID" name="StudentID" maxlength="11">
                         </div>
                     </div>
                 </div>
@@ -137,9 +141,7 @@
                     <div class="col-md-6">
                         <label>First Name <span>(*)</span></label>
                         <div class="form-group">
-                            
-                                <input type="text" class="form-control" id="FirstName" name="FirstName">
-                            
+                            <input type="text" class="form-control" id="FirstName" name="FirstName">
                         </div>
                     </div>
                     <div class="col-md-6">
@@ -241,9 +243,10 @@
                     <div class="col-md-6">
                         <label>Educational Attainment <span>(*)</span></label>
                         <div class="form-group">
-                            <select id="EducAttain" name="EducAttain" class="form-control" style="width:100%; height:34px;">
+                            <select id="EducAttain" name="EducAttain" class="form-control"
+                                    style="width:100%; height:34px;">
                                 <option value="">- Please select one -</option>
-                                <option value="Bachelor's/College Degree">Bachelor's/College Degree</option>
+                                <option value="Bachelor's/College Degree" selected="selected">Bachelor's/College Degree</option>
                             </select>
                         </div>
                     </div>
@@ -252,17 +255,21 @@
                         <div class="form-group">
                             <select id="Course" name="Course" class="form-control" style="width:100%; height:34px;">
                                 <option value="">- Please select one</option>
-                                <option value="Bachelor of Science in Information Technology Major in Digital Arts">Bachelor of Science in Information Technology Major in Digital Arts</option>
-                                <option value="Bachelor of Science in Information Technology">Bachelor of Science in Information Technology</option>
-                                <option value="Bachelor of Science in Computer Science">Bachelor of Science in Computer Science</option>
-                                <option value="2 - Year Associate in Computer Technology">2 - Year Associate in Computer Technology</option>
-                                <option value="Bachelor of Science in Business Management Major in Operations">Bachelor of Science in Business Management Major in Operations</option>
-                                <option value="Bachelor of Science in Business Administration">Bachelor of Science in Business Administration</option>
-                                <option value="Bachelor of Science in Accounting Technology">Bachelor of Science in Accounting Technology</option>
-                                <option value="Bachelor of Science in Hotel &amp; Restaurant Management">Bachelor of Science in Hotel &amp; Restaurant Management</option>
-                                <option value="Bachelor of Science in Tourism Management">Bachelor of Science in Tourism Management</option>
-                                <option value="Bachelor of Science in Computer Engineering">Bachelor of Science in Computer Engineering</option>
-                                <option value="Bachelor of Arts in Communication">Bachelor of Arts in Communication</option>
+                                <?php
+                                $course_tbl =
+                                    GSecureSQL::query(
+                                        "SELECT CourseCode,CourseTitle FROM coursetbl",
+                                        TRUE
+                                    );
+                                foreach ($course_tbl as $value) {
+                                    $CourseCode = $value[0];
+                                    $CourseTitle = $value[1];
+                                    print_r($course_tbl);
+                                    ?>
+                                    <option value="<?php echo $CourseCode; ?>"><?php echo $CourseTitle; ?></option>
+                                <?php
+                                }
+                                ?>
                             </select>
                         </div>
                     </div>
@@ -271,15 +278,16 @@
                     <div class="col-md-3">
                         <div class="form-group">
                             <label>Graduation Date <span>(*)</span></label>
-                            <select id="GraduatedMonth" name="GraduatedMonth" class="form-control" style="width:100%; height:34px;">
+                            <select id="GraduatedMonth" name="GraduatedMonth" class="form-control"
+                                    style="width:100%; height:34px;">
                                 <option value="">- Month -</option>
                                 <option value="01">January</option>
-                                <option value="02">February</option> 
-                                <option value="03">March</option> 
-                                <option value="04">April</option> 
-                                <option value="05">May</option> 
-                                <option value="06">June</option> 
-                                <option value="07">July</option> 
+                                <option value="02">February</option>
+                                <option value="03">March</option>
+                                <option value="04">April</option>
+                                <option value="05" selected="selected">May</option>
+                                <option value="06">June</option>
+                                <option value="07">July</option>
                                 <option value="08">August</option>
                                 <option value="09">September</option>
                                 <option value="10">October</option>
@@ -291,25 +299,18 @@
                     <div class="col-md-3">
                         <div class="form-group">
                             <label>&nbsp;</label>
-                            <select id="GraduatedYear" name="GraduatedYear" class="form-control" style="width:100%; height:34px;">
-                                <option value="">- Year -</option>
-                                <?php 
-                                    $date = Date("Y") + 4;
-                                        if($b==1){
-                                            $choose = "";
-                                        }
-                                        else{
-                                            $choose = $server_graduatedyear;
-                                        }
-                                        while($date != 1935){
-                                            $date--;
-                                            if($date == $choose){
-                                                echo "<option selected value='$date'> $date</option>";
-                                                }
-                                                else{
-                                                echo "<option value='$date'> $date</option>";
-                                                }
-                                            }
+                            <select id="GraduatedYear" name="GraduatedYear" class="form-control"
+                                    style="width:100%; height:34px;">
+                                <option value="2015">2015</option>
+                                <?php
+                                /*
+                                $date = Date("Y") + 4;
+                                while ($date != 1935) {
+                                    $date--;
+                                    echo "<option value='$date'>$date</option>";
+
+                                }
+                                */
                                 ?>
                             </select>
                         </div>
@@ -318,202 +319,215 @@
                     <label style="float:right;"><span>(*)</span> <em> - Required Fields</em></label>
                 </div>
                 <div class="hr5" style="margin-top:40px;margin-bottom:40px;"></div>
-                <div class"row">
-                    <div class="col-md-6">
-                        <label><b>By clicking the "Sign Up" button below, I certify that I have read and agree to the <a href="" target="_blank">Terms of Use</a>.</b></label>
-                    </div>
-                    <div class="col-md-6">
-                        <button type="submit" href="registration.php" class="btn-system btn-large border-btn" style="float:right;">Submit</button>
-                    </div>
+                <div class
+                "row">
+                <div class="col-md-6">
+                    <label><b>By clicking the "Sign Up" button below, I certify that I have read and agree to the <a
+                                href="" target="_blank">Terms of Use</a>.</b></label>
+                </div>
+                <div class="col-md-6">
+                    <button type="submit" name="btnSave" class="btn-system btn-large border-btn"
+                            style="float:right;">Submit
+                    </button>
                 </div>
             </div>
         </div>
-        <!-- End content -->
-
-        <!-- Start Footer Section -->
-        <footer>
-            <div class="container">
-                <!-- Start Copyright -->
-                <div class="copyright-section">
-                    <div class="row">
-                        <div class="col-md-6">
-                            <p>&copy; 2015 OJPMS - All Rights Reserved</p>
-                        </div>
-                        <!-- .col-md-6 -->
-                        <div class="col-md-6">
-                            <ul class="footer-nav">
-                                <li><a href="#">Sitemap</a>
-                                </li>
-                                <li><a href="#">Privacy Policy</a>
-                                </li>
-                                <li><a href="#">Contact</a>
-                                </li>
-                            </ul>
-                        </div>
-                        <!-- .col-md-6 -->
-                    </div>
-                    <!-- .row -->
-                </div>
-                <!-- End Copyright -->
-            </div>
-        </footer>
-        <!-- End Footer Section -->
-
-        <!-- Go To Top Link -->
-        <a href="#" class="back-to-top"><i class="fa fa-angle-up"></i></a>
     </div>
+    <!-- End content -->
+
+    <!-- Start Footer Section -->
+    <footer>
+        <div class="container">
+            <!-- Start Copyright -->
+            <div class="copyright-section">
+                <div class="row">
+                    <div class="col-md-6">
+                        <p>&copy; 2015 OJPMS - All Rights Reserved</p>
+                    </div>
+                    <!-- .col-md-6 -->
+                    <div class="col-md-6">
+                        <ul class="footer-nav">
+                            <li><a href="#">Sitemap</a>
+                            </li>
+                            <li><a href="#">Privacy Policy</a>
+                            </li>
+                            <li><a href="#">Contact</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <!-- .col-md-6 -->
+                </div>
+                <!-- .row -->
+            </div>
+            <!-- End Copyright -->
+        </div>
+    </footer>
+    <!-- End Footer Section -->
+
+    <!-- Go To Top Link -->
+    <a href="#" class="back-to-top"><i class="fa fa-angle-up"></i></a>
 
     <script type="text/javascript" src="js/script.js"></script>
-
-    <script type="text/javascript">
-        $(document).ready(function (){
-            var validator = $("#registration").bootstrapValidator({
-                feedbackIcons: {
-                    valid: "glyphicon glyphicon-ok",
-                    invalid: "glyphicon glyphicon-remove",
-                    validating: "glyphicon glyphicon-refresh"
+</form>
+</body>
+</html>
+<script type="text/javascript">
+    $(document).ready(function () {
+        var validator = $("#registration").bootstrapValidator({
+            feedbackIcons: {
+                valid: "glyphicon glyphicon-ok",
+                invalid: "glyphicon glyphicon-remove",
+                validating: "glyphicon glyphicon-refresh"
+            },
+            fields: {
+                /*)                StudentID: {
+                    validators: {
+                        notEmpty: {
+                            message: "Student ID is required."
+                        },
+                        stringLength: {
+                            min: 11,
+                            max: 11,
+                            message: "Student ID is invalid."
+                        },
+                        remote: {
+                            message: 'The student ID already exists',
+                            url: 'registeradd.php',
+                            data: {
+                                type: 'StudentID'
+                            },
+                            type: 'POST'
+                        }
+                    }
                 },
-               s:{
-                    StudentID: {
-                        validators: {
-                            notEmpty: {
-                                message: "Student ID is required."
-                            },
-                            stringLength: {
-                                min: 11,
-                                max: 11,
-                                message: "Student ID is invalid."
-                            },
-                            remote: {
-                                message: 'The student ID already exists',
-                                url: 'registeradd.php',
-                                data: {
-                                    type: 'StudentID'
-                                },
-                                type: 'POST'
-                                }
-                            }
-                    },
-                    FirstName: {
-                        validators: {
-                            notEmpty: {
-                                message: "First name is required."
-                            },
-                            stringLength: {
-                                min: 3,
-                                max: 15,
-                                message: "First name must be 3-15 characters long."
-                            }
+                */
+                FirstName: {
+                    validators: {
+                        notEmpty: {
+                            message: "First name is required."
+                        },
+                        stringLength: {
+                            min: 3,
+                            max: 15,
+                            message: "First name must be 3-15 characters long."
                         }
-                    },
-                    LastName: {
-                        validators: {
-                            notEmpty: {
-                                message: "Last name is required."
-                            },
-                            stringLength: {
-                                min: 3,
-                                max: 15,
-                                message: "Last name must be 3-15 characters long."
-                            }
+                    }
+                },
+                LastName: {
+                    validators: {
+                        notEmpty: {
+                            message: "Last name is required."
+                        },
+                        stringLength: {
+                            min: 3,
+                            max: 15,
+                            message: "Last name must be 3-15 characters long."
                         }
-                    },
-                    MobileNumber: {
-                        validators: {
-                            notEmpty: {
-                                message: "Mobile number is required."
-                            },
-                            stringLength: {
-                                min: 7,
-                                max: 11,
-                                message: "Mobile number must be 7-11 characters long."
-                            }
+                    }
+                },
+                Birthday: {
+                    validators: {
+                        notEmpty: {
+                            message: "Birthdate is required."
                         }
-                    },
-                    Email: {
-                        validators: {
-                            notEmpty: {
-                                message: "Email address is required."
-                            },
-                            stringLength: {
-                                min: 6,
-                                max: 35,
-                                message: "Email address must be 6-35 characters long."
-                            }
+                    }
+                },
+                MobileNumber: {
+                    validators: {
+                        notEmpty: {
+                            message: "Mobile number is required."
+                        },
+                        stringLength: {
+                            min: 7,
+                            max: 11,
+                            message: "Mobile number must be 7-11 characters long."
                         }
-                    },
-                    ConfirmEmail: {
-                        validators: {
-                            notEmpty: {
-                                message: "Confirm Email is required."
-                            },
-                            identical: {
-                                field: "Email",
-                                message: "Email and Confirm email mismatched."
-                            }
+                    }
+                },
+                Email: {
+                    validators: {
+                        notEmpty: {
+                            message: "Email address is required."
+                        },
+                        stringLength: {
+                            min: 6,
+                            max: 35,
+                            message: "Email address must be 6-35 characters long."
                         }
-                    },
-                    _Password: {
-                        validators: {
-                            notEmpty: {
-                                message: "Password is required."
-                            },
-                            stringLength: {
-                                min: 8,
-                                max: 16,
-                                message: "Email address must be 8-16 characters long."
-                            }
+                    }
+                }, /*
+                ConfirmEmail: {
+                    validators: {
+                        notEmpty: {
+                            message: "Confirm Email is required."
+                        },
+                        identical: {
+                            field: "Email",
+                            message: "Email and Confirm email mismatched."
                         }
-                    },
-                    ConfirmPassword: {
-                        validators: {
-                            notEmpty: {
-                                message: "Confirm password is required."
-                            },
-                            identical: {
-                                field: "_Password",
-                                message: "Password and confirm password mismatched."
-                            }
+                    }
+                },
+                _Password: {
+                    validators: {
+                        notEmpty: {
+                            message: "Password is required."
+                        }/*,
+
+                        stringLength: {
+                            min: 8,
+                            max: 16,
+                            message: "Email address must be 8-16 characters long."
                         }
-                    },
-                    City: {
-                        validators: {
-                            notEmpty: {
-                                message: "City is required."
-                            }
+
+                    }
+                },
+                ConfirmPassword: {
+                    validators: {
+                        notEmpty: {
+                            message: "Confirm password is required."
+                        },
+                        identical: {
+                            field: "_Password",
+                            message: "Password and confirm password mismatched."
                         }
-                    },
-                    EducAttain: {
-                        validators:{
-                            notEmpty: {
-                                message: "Educational Attainment is required."
-                            }
+                    }
+                }, */
+                City: {
+                    validators: {
+                        notEmpty: {
+                            message: "City is required."
                         }
-                    },
-                    Course: {
-                        validators:{
-                            notEmpty: {
-                                message: "Course is required."
-                            }
+                    }
+                },
+                EducAttain: {
+                    validators: {
+                        notEmpty: {
+                            message: "Educational Attainment is required."
                         }
-                    },
-                    GraduatedMonth: {
-                        validators:{
-                            notEmpty: {
-                                message: "Month graduated is required."
-                            }
+                    }
+                },
+                Course: {
+                    validators: {
+                        notEmpty: {
+                            message: "Course is required."
                         }
-                    },
-                    GraduatedYear: {
-                        validators:{
-                            notEmpty: {
-                                message: "Year graduated is required."
-                            }
+                    }
+                },
+                GraduatedMonth: {
+                    validators: {
+                        notEmpty: {
+                            message: "Month graduated is required."
+                        }
+                    }
+                },
+                GraduatedYear: {
+                    validators: {
+                        notEmpty: {
+                            message: "Year graduated is required."
                         }
                     }
                 }
-            });
+            }
         });
-    </script>
-</body>
-</html>
+    });
+</script>

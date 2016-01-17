@@ -142,7 +142,7 @@ if(is_null($_SESSION['StudentID'])){
                     <div class="navbar-collapse collapse">
                     <!-- Sign-out -->
                         <div class="signout-side">
-                               <a class="show-signout"><i class="fa fa-sign-out"></i></a>
+                               <a href="../../../login-student.php?id=1" class="show-signout"><i class="fa fa-sign-out"></i></a>
                         </div>
                      <!-- End Sign-out -->
                         <!-- Start Navigation List -->

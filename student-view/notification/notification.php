@@ -1,17 +1,6 @@
 <!DOCTYPE html>
 <?php
 session_start();
-
-if (isset($_SESSION['StudentID'])) {
-    $StudentID = $_SESSION['StudentID'];
-} else {
-    $StudentID = '';
-    echo "
-        <script type='text/javascript'>
-        location.href='../../../login-student.php?id=2';
-        </script>
-        ";
-}
 ?>
 
 <html lang="en">

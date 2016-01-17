@@ -108,4 +108,35 @@ if (isset($_GET['btnsave'])) {
         ";
 }
 // End of Create Position
+if(isset($_GET['id'])){
+    $id = $_GET['id'];
+    $RID = $_GET['rid'];
 
+    if($id == 1){
+        GSecureSQL::query(
+        "UPDATE requesttocompanytbl SET Status = 'Accepted' WHERE RID = ?",
+        FALSE,
+        "s",
+        $RID
+        );
+        echo "
+          <script type='text/javascript'>
+          location.href='company-pendingapplicants.php?id=1'
+          </script>
+        ";
+    }
+    elseif($id == 2){
+        GSecureSQL::query(
+        "UPDATE requesttocompanytbl SET Status = 'Rejected' WHERE RID = ?",
+        FALSE,
+        "s",
+        $RID
+        );
+        echo "
+          <script type='text/javascript'>
+          location.href='company-pendingapplicants.php?id=2'
+          </script>
+        ";
+    }
+    
+}

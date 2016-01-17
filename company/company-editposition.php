@@ -4,8 +4,6 @@ session_start();
 $CompanyID = $_SESSION['CompanyID'];
 ?>
 <!doctype html>
-<!--[if IE 8 ]><html class="ie ie8" lang="en"> <![endif]-->
-<!--[if (gte IE 9)|!(IE)]><html lang="en" class="no-js"> <![endif]-->
 <html lang="en">
 
 <head>
@@ -24,7 +22,7 @@ $CompanyID = $_SESSION['CompanyID'];
   <meta name="author" content="iThemesLab">
 
   <!-- Bootstrap CSS  -->
-  <link rel="stylesheet" href="asset/css/bootstrap.min.css" type="text/css" media="screen">
+  <link rel="stylesheet" href="../css/bootstrap.min.css" type="text/css" media="screen">
 
   <!-- Font Awesome CSS -->
   <link rel="stylesheet" href="../css/font-awesome.min.css" type="text/css" media="screen">
@@ -76,9 +74,6 @@ $CompanyID = $_SESSION['CompanyID'];
   <script type="text/javascript" src="../js/jquery.nicescroll.min.js"></script>
   <script type="text/javascript" src="../js/jquery.parallax.js"></script>
   <script type="text/javascript" src="../js/jquery.slicknav.js"></script>
-
-  <!--[if IE 8]><script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
-  <!--[if lt IE 9]><script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
 
 </head>
 

@@ -153,7 +153,7 @@ $Total = $studentinfo_tbl[0][0];
                 <div class="navbar-collapse collapse">
                     <!-- Sign-out -->
                     <div class="signout-side">
-                        <a class="show-signout"><i class="fa fa-sign-out"></i></a>
+                        <a href="../login-admin.php?id=1" class="show-signout"><i class="fa fa-sign-out"></i></a>
                     </div>
                     <!-- End Sign-out -->
                     <!-- Start Navigation List -->
@@ -171,7 +171,11 @@ $Total = $studentinfo_tbl[0][0];
                             <a href="admin-requested.php">Requested</a>
                         </li>
                         <li>
-                            <a href="admin-companylist.php">Company List</a>
+                           <a>Company List</a>
+                        <ul class="dropdown">
+                            <li><a href="admin-companylist.php">Active</a></li>
+                            <li><a href="admin-company_pending.php">Pending</a></li>
+                        </ul>
                         </li>
                         <li><a href="admin-adviser.php">Adviser List</a>
                         </li>
@@ -201,7 +205,11 @@ $Total = $studentinfo_tbl[0][0];
                         <a href="admin-requested.php">Requested</a>
                     </li>
                     <li>
-                        <a href="admin-companylist.php">Company List</a>
+                       <a>Company List</a>
+                        <ul class="dropdown">
+                            <li><a href="admin-companylist.php">Active</a></li>
+                            <li><a href="admin-company_pending.php">Pending</a></li>
+                        </ul>
                     </li>
                     <li><a href="admin-adviser.php">Adviser List</a>
                     </li>
@@ -352,16 +360,17 @@ $Total = $studentinfo_tbl[0][0];
         <?php
         $studentinfocourse_tbl =
             GSecureSQL::query(
-                "SELECT * FROM studentinfotbl WHERE MajorCourse = ?",
+                "SELECT `StudentID`,`FirstName`,`LastName`,`EmploymentStatus`  FROM studentinfotbl WHERE MajorCourse = ?",
                 TRUE,
                 "s",
                 $CourseCode
             );
         foreach ($studentinfocourse_tbl as $value) {
-            $FirstName = $value[3];
-            $LastName = $value[5];
+            $StudentID = $value[0];
+            $FirstName = $value[1];
+            $LastName = $value[2];
             $FullName = $LastName . ", " . $FirstName;
-            $EmploymentStatus = $value[11];
+            $EmploymentStatus = $value[3];
 
             ?>
             <tbody>
@@ -374,7 +383,7 @@ $Total = $studentinfo_tbl[0][0];
                 <td class = 'tcenter'></td>
                 <td class = 'tcenter'><?php echo $EmploymentStatus; ?></td>
                 <td>
-                    <a id='Edit' name='btnedit' href='editstudent.php' class='btn btn-default'>
+                    <a id='Edit' href='admin-editstudent.php' class='btn btn-default'>
                         <i class='fa fa-pencil'></i>
                     </a>
                 </td>

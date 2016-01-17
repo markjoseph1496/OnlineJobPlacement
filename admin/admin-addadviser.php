@@ -134,7 +134,7 @@
                 <div class="navbar-collapse collapse">
                     <!-- Sign-out -->
                     <div class="signout-side">
-                        <a class="show-signout"><i class="fa fa-sign-out"></i></a>
+                        <a href="../login-admin.php?id=1" class="show-signout"><i class="fa fa-sign-out"></i></a>
                     </div>
                     <!-- End Sign-out -->
                     <!-- Start Navigation List -->
@@ -152,7 +152,11 @@
                             <a href="admin-requested.php">Requested</a>
                         </li>
                         <li>
-                            <a href="admin-companylist.php">Company List</a>
+                            <a>Company List</a>
+                        <ul class="dropdown">
+                            <li><a href="admin-companylist.php">Active</a></li>
+                            <li><a href="admin-company_pending.php">Pending</a></li>
+                        </ul>
                         </li>
                         <li><a class="active" href="admin-adviser.php">Adviser List</a>
                         </li>
@@ -182,7 +186,11 @@
                         <a href="admin-requested.php">Requested</a>
                     </li>
                     <li>
-                        <a href="admin-companylist.php">Company List</a>
+                       <a>Company List</a>
+                        <ul class="dropdown">
+                            <li><a href="admin-companylist.php">Active</a></li>
+                            <li><a href="admin-company_pending.php">Pending</a></li>
+                        </ul>
                     </li>
                     <li><a class="active" href="admin-adviser.php">Adviser List</a>
                     </li>

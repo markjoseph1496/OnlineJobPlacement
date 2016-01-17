@@ -3,27 +3,41 @@ include('../connection.php');
 session_start();
 $CompanyID = $_SESSION['CompanyID'];
 
-$qry = "SELECT * FROM companyinfotbl WHERE CompanyID ='$CompanyID'";
-$Result = mysql_query($qry);
-while ($qry = mysql_fetch_Array($Result)) {
+$companyinfo_tbl =
+    GSecureSQL::query(
+        "SELECT
+            CompanyName,
+            Description,
+            Industry,
+            Classification,
+            Address,
+            City,
+            PostalCode,
+            PhoneNum,
+            MobileNum,
+            Fax
+        FROM
+            companyinfotbl
+        WHERE
+            CompanyID = ?",
+        TRUE,
+        "s",
+        $CompanyID
+    );
 
-    $CName = $qry['CompanyName'];
-    $Description = $qry['Description'];
-    $Industry = $qry['Industry'];
-    $classification = $qry['Classification'];
-    $address = $qry['Address'];
-    $City = $qry['City'];
-    $Postal = $qry['PostalCode'];
-    $Phone = $qry['PhoneNum'];
-    $Mobile = $qry['MobileNum'];
-    $Fax = $qry['Fax'];
-}
+    $CompanyName = $companyinfo_tbl[0][0];
+    $Description = $companyinfo_tbl[0][1];
+    $Industry = $companyinfo_tbl[0][2];
+    $Classification = $companyinfo_tbl[0][3];
+    $Address = $companyinfo_tbl[0][4];
+    $City = $companyinfo_tbl[0][5];
+    $PostalCode = $companyinfo_tbl[0][6];
+    $PhoneNum = $companyinfo_tbl[0][7];
+    $MobileNumber = $companyinfo_tbl[0][8];
+    $Fax = $companyinfo_tbl[0][9];
+
 ?>
 <!doctype html>
-<!--[if IE 8 ]>
-<html class="ie ie8" lang="en"> <![endif]-->
-<!--[if (gte IE 9)|!(IE)]>
-<html lang="en" class="no-js"> <![endif]-->
 <html lang="en">
 
 <head>
@@ -260,10 +274,10 @@ while ($qry = mysql_fetch_Array($Result)) {
                 <div class="col-md-3 fieldcol">
                     <label>Company Name<span>(*)</span></label><br>
                 </div>
-                <div class="col-md-4 fieldcol">
+                <div class="col-md-7 fieldcol">
                     <div class="form-group">
                         <input type="text" name="cname" id="cname" class="form-control" style="width: 300px;"
-                               value="<?php echo $CName; ?>">
+                               value="<?php echo $CompanyName; ?>">
                     </div>
                 </div>
             </div>
@@ -271,7 +285,7 @@ while ($qry = mysql_fetch_Array($Result)) {
                 <div class="col-md-3 fieldcol">
                     <label = "usr" class = "control-label"> Companysite URL: </label>
                 </div>
-                <div class="col-md-4 fieldcol">
+                <div class="col-md-7 fieldcol">
                     <div class="form-group">
                         http://www.sample.com/RojasCorpInc
                     </div>
@@ -281,7 +295,7 @@ while ($qry = mysql_fetch_Array($Result)) {
                 <div class="col-md-3 fieldcol">
                     <label = "usr" class = "control-label"> Company Description: </label>
                 </div>
-                <div class="col-md-4 fieldcol">
+                <div class="col-md-7 fieldcol">
                     <div class="form-group">
                         <textarea type="text" name="description" id="usr" class="form-control" style="width: 300px;"><?php echo $Description; ?></textarea>
                     </div>
@@ -291,38 +305,24 @@ while ($qry = mysql_fetch_Array($Result)) {
                 <div class="col-md-3 fieldcol">
                     <label>Industry<span>(*)</span></label><br>
                 </div>
-                <div class="col-md-4 fieldcol">
+                <div class="col-md-7 fieldcol">
                     <div class="form-group" style="width: 300px;"
                     ">
                     <select id="industry" name="industry" class="industry" style="width:100%; height:30px;" ?>">
-                        <option value="ind" <?php if ($Industry == "ind") echo 'selected="selected"'; ?> ></option>
-                        <option
-                            value="AccountingAudit" <?php if ($Industry == "AccountingAudit") echo 'selected="selected"'; ?> >
-                            Accounting / Audit
-                        </option>
-                        <option
-                            value="AdvertisingMarketing Promotion" <?php if ($Industry == "AdvertisingMarketing Promotion") echo 'selected="selected"'; ?> >
-                            Advertising / Marketing Promotion
-                        </option>
-                        <option
-                            value="AerospaceAviationAirline" <?php if ($Industry == "AerospaceAviationAirline") echo 'selected="selected"'; ?> >
-                            Aerospace/Aviation/Airline
-                        </option>
-                        <option
-                            value="AgriculturalPlantationPoultryFisheries" <?php if ($Industry == "AgriculturalPlantationPoultryFisheries") echo 'selected="selected"'; ?> >
-                            Agricultural/Plantation/Poultry/Fisheries
-                        </option>
-                        <option
-                            value="ApparelFashion" <?php if ($Industry == "ApparelFashion") echo 'selected="selected"'; ?> >
-                            Apparel/Fashion
-                        </option>
-                        <option value="ArtsDesign" <?php if ($Industry == "ArtsDesign") echo 'selected="selected"'; ?> >
-                            Arts/Design
-                        </option>
-                        <option
-                            value="AutomobileAutomotive" <?php if ($Industry == "AutomobileAutomotive") echo 'selected="selected"'; ?> >
-                            Automobile/Automotive Ancillary/Vehicle
-                        </option>
+                        <option value="">- Select one -</option>
+                        <?php
+                        $industrytbl =
+                            GSecureSQL::query(
+                                "SELECT Industry FROM listofindustrytbl",
+                                TRUE
+                            );
+                        foreach($industrytbl as $value){
+                            $Industry = $value[0];
+                            ?>
+                            <option value="<?php echo $Industry; ?>"><?php echo $Industry; ?></option>
+                        <?php
+                        }
+                        ?>
                     </select>
                 </div>
             </div>
@@ -331,23 +331,11 @@ while ($qry = mysql_fetch_Array($Result)) {
         <div class="col-md-3 fieldcol">
             <label>Classification<span>(*)</span></label><br>
         </div>
-        <div class="col-md-4 fieldcol">
+        <div class="col-md-7 fieldcol">
             <div class="form-group">
                 <select id="classification" name="classification" class="classification"
                         style="width: 300px; height: 30px;" ?>">
                     <option value=""></option>
-                    <option value="csme" <?php if ($classification == "csme") echo 'selected="selected"'; ?> >
-                        Corporate/SME
-                    </option>
-                    <option value="iag" <?php if ($classification == "iag") echo 'selected="selected"'; ?> >
-                        Institutions/ (Associations,Government)
-                    </option>
-                    <option value="obpo" <?php if ($classification == "obpo") echo 'selected="selected"'; ?> >
-                        Outsourcing/BPO
-                    </option>
-                    <option value="appf" <?php if ($classification == "appf") echo 'selected="selected"'; ?> >
-                        Recruitment Firm/Consultancy
-                    </option>
                 </select>
             </div>
         </div>
@@ -356,10 +344,10 @@ while ($qry = mysql_fetch_Array($Result)) {
         <div class="col-md-3 fieldcol">
             <label>Address<span>(*)</span></label><br>
         </div>
-        <div class="col-md-4 fieldcol">
+        <div class="col-md-7 fieldcol">
             <div class="form-group">
                 <input type="text" name="address" id="address" class="form-control" style="width: 300px;"
-                       value="<?php echo $address; ?>">
+                       value="<?php echo $Address; ?>">
             </div>
         </div>
     </div>
@@ -367,7 +355,7 @@ while ($qry = mysql_fetch_Array($Result)) {
         <div class="col-md-3 fieldcol">
             <label = "usr" class = "control-label"> City: </label>
         </div>
-        <div class="col-md-4 fieldcol">
+        <div class="col-md-7 fieldcol">
             <div class="form-group">
                 <select id="City" name="City" class="form-control" style="width: 300px;">
                     <option value="">- Please select one -</option>
@@ -431,10 +419,10 @@ while ($qry = mysql_fetch_Array($Result)) {
         <div class="col-md-3 fieldcol">
             <label = "usr" class = "control-label"> Postal Code: </label>
         </div>
-        <div class="col-md-4 fieldcol">
+        <div class="col-md-7 fieldcol">
             <div class="form-group">
                 <input type="text" name="postal" id="postal" class="form-control" style="width: 300px; height: 34px;"
-                       value="<?php echo $Postal; ?>">
+                       value="<?php echo $PostalCode; ?>">
             </div>
         </div>
     </div>
@@ -442,10 +430,10 @@ while ($qry = mysql_fetch_Array($Result)) {
         <div class="col-md-3 fieldcol">
             <label>Mobile Number<span>(*)</span></label><br>
         </div>
-        <div class="col-md-8 fieldcol">
+        <div class="col-md-7 fieldcol">
             <div class="form-group">
                 <input type="text" name="mobilenum" id="usr" class="form-control" style="width: 300px;"
-                       value="<?php echo $Phone; ?>">
+                       value="<?php echo $PhoneNum; ?>">
             </div>
         </div>
     </div>
@@ -453,10 +441,10 @@ while ($qry = mysql_fetch_Array($Result)) {
         <div class="col-md-3 fieldcol">
             <label>TelPhone Number<span>(*)</span></label><br>
         </div>
-        <div class="col-md-4 fieldcol">
+        <div class="col-md-7 fieldcol">
             <div class="form-group">
                 <input type="text" name="telnum" id="usr" class="form-control" style="width: 300px;"
-                       value="<?php echo $Mobile; ?>">
+                       value="<?php echo $MobileNumber; ?>">
             </div>
         </div>
     </div>
@@ -464,7 +452,7 @@ while ($qry = mysql_fetch_Array($Result)) {
         <div class="col-md-3 fieldcol">
             <label = "usr" class = "control-label"> Fax: </label>
         </div>
-        <div class="col-md-4 fieldcol">
+        <div class="col-md-7 fieldcol">
             <div class="form-group">
                 <input type="text" name="fax" id="usr" class="form-control" style="width: 300px;"
                        value="<?php echo $Fax; ?>">
@@ -521,41 +509,6 @@ if (isset($_POST['btnSave'])) {
             </script>
              ";
 }
-/*
-if(isset($_POST['btnIpasa'])){
-
-$fileToUpload = basename($_FILES["fileToUpload"]["name"]);
-$target_dir = "ProfileImages/";   //eto yung folder or directory kung saan mo ma-sasave yung picture mo
-$target_file = $target_dir . $StudentID.".jpg";
-$uploadOk = 1;
-$imageFileType = pathinfo($target_file,PATHINFO_EXTENSION);
-
-//eto chcheck nya yung format ng file kung GIF ba sya or JPEG or PNG in short Check ng FILE TYPE
-if($imageFileType != "jpg" && $imageFileType != "png" && $imageFileType != "jpeg") {
-    echo "Sorry, only JPG, JPEG, PNG files are allowed.";
-    $uploadOk = 0;
-}
-// Check if $uploadOk is set to 0 by an error
-if ($uploadOk == 0) {
-    echo "Sorry, your file was not uploaded.";
-
-}
-else {
-    if (move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_file)){
-
-    $query = "UPDATE studentinfotbl SET ProfileImage = '$target_file' WHERE StudentID = '$StudentID'";
-    $Result = mysql_query($query);
-    echo "
-     <script type='text/javascript'>
-     </script>
-     ";
-    }
-    else {
-        echo "Sorry, there was an error uploading your file.";
-    }
-}
-}
-*/
 ?>
 <script type="text/javascript">
     $(document).ready(function () {
@@ -707,5 +660,4 @@ else {
         });
     });
 </script>
-
 </html>

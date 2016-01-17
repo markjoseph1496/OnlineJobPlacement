@@ -163,8 +163,8 @@ session_start();
                     <li>
                         <a class="active"> Maintenance</a>
                         <ul class="dropdown">
-                            <li><a class="active" href="admin-maintenance.php">Courses</a></li>
-                            <li><a href="admin-users.php">Users</a></li>
+                            <li><a  href="admin-maintenance.php">Courses</a></li>
+                            <li><a class="active" href="admin-users.php">Users</a></li>
                         </ul>
                     </li>
                 </ul>
@@ -198,7 +198,10 @@ session_start();
                 <li>
                     <a> Maintenance</a>
                     <ul class="dropdown">
-                        <li><a class="active" href="admin-maintenance.php">Courses</a></li>
+                       <ul class="dropdown">
+                            <li><a  href="admin-maintenance.php">Courses</a></li>
+                            <li><a class="active" href="admin-users.php">Users</a></li>
+                        </ul>
                     </ul>
                 </li>
             </ul>
@@ -217,7 +220,7 @@ session_start();
         <div class="container">
             <div class="row">
                 <div class="col-md-6">
-                    <h2>List of Courses</h2>
+                    <h2>Add User</h2>
                 </div>
             </div>
         </div>
@@ -228,82 +231,107 @@ session_start();
     <br><br><br>
 
     <div class="container">
-        <div class="col-md-12 fieldcol">
-            <a href="admin-addcourse.php" class="btnforadding" style="float:right;">
-                <span class="fa fa-plus-square"> Add Course </span>
-            </a>
-        </div>
         <div class="col-md-12">
-            &nbsp;
-            <table class="table segment table-hover">
-                <thead>
-                <tr>
-                </tr>
-                <tr>
-                    <th width='10%' class='tabletitle'>Course Code</th>
-                    <th width='20%' class='tabletitle'>Course Title</th>
-                    <th width='30%' class='tabletitle'>Course Description</th>
-                    <th width='10%' class='tabletitle'></th>
-                <tr>
-                </thead>
-                <?php
-
-                $ListCourseQuery =
-                    GSecureSQL::query(
-                        "SELECT * FROM coursetbl",
-                        TRUE
-                    );
-                foreach ($ListCourseQuery as $value) {
-                    $CourseID = $value[0];
-                    $CourseTitle = $value[1];
-                    $CourseCode = $value[2];
-                    $CourseDesc = $value[3];
-                    ?>
-                    <tbody>
-                    <tr>
-                        <td width=10% class=tabletitle><?php echo $CourseCode; ?></td>
-                        <td width=20% class=tabletitle><?php echo $CourseTitle; ?></td>
-                        <td width=30% class=tabletitle><?php echo $CourseDesc; ?></td>
-                        <td width=10% class=tabletitle>
-                            <a href="admin-editcourse.php?id=<?php echo $CourseID; ?>" class='btn btn-default'> <i
-                                    class='fa fa-pencil-square-o fa-1x'></i> </a>
-                            <button class='btn btn-danger' data-toggle='modal'
-                                    data-target='#DeleteCourse<?php echo $CourseID; ?>'><i
-                                    class='fa fa-trash fa-1x'></i></button>
-                        </td>
-                    </tr>
-                    <!-- Modal -->
-                    <div class="modal fade" id="DeleteCourse<?php echo $CourseID; ?>" role="dialog">
-                        <div class="modal-dialog" style="padding:100px">
-                            <!-- Modal content-->
-                            <div class="modal-content">
-                                <div class="modal-header">
-                                    <button type="button" class="close" data-dismiss="modal">&times;</button>
-                                    <h4 class="modal-title">Delete Course?</h4>
-                                </div>
-                                <div class="modal-body">
-                                    <div class="col-md-15 fieldcol">
-                                        <label = "usr" class = "control-label">Do you want to delete this
-                                        course?</label>
-                                        <div class="form-group">
-                                        </div>
-                                    </div>
-                                    <div class="modal-footer">
-                                        <a href="functions.php?DeleteID=<?php echo $CourseID; ?>"
-                                           class="btn btn-danger">Delete <?php echo $CourseCode; ?></a>
-                                        <button type="button" class="btn btn-default" data-dismiss="modal">Cancel
-                                        </button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    </tbody>
-                    <?php
-                }
-                ?>
-            </table>
+        <div class="row field">
+            <div class="col-md-2 fieldcol">
+                <label>Username:</label>
+            </div>
+            <div class="col-md-4 fieldcol">
+                <div class="form-group">
+                    <input type="text" name="Email" id="Email" class="form-control" >
+                </div>
+            </div>
         </div>
+        <div class="row field">
+            <div class="col-md-2 fieldcol">
+                <label>Password:</label>
+            </div>
+            <div class="col-md-4 fieldcol">
+                <div class="form-group">
+                    <input type="password" name="Password" id="Password" class="form-control" >
+                </div>
+            </div>
+        </div>
+        <div class="row field">
+            <div class="col-md-2 fieldcol">
+                <label>First Name:</label>
+            </div>
+            <div class="col-md-4 fieldcol">
+                <div class="form-group">
+                   <input type="text" name="FirstName" id="FirstName" class="form-control">
+                </div>
+            </div>
+        </div>
+        <div class="row field">
+            <div class="col-md-2 fieldcol">
+                <label>MiddleName:</label>
+            </div>
+            <div class="col-md-4 fieldcol">
+                <div class="form-group">
+                    <input type="text" name="MiddleName" id="MiddleName" class="form-control">
+                </div>
+            </div>
+        </div>
+         <div class="row field">
+            <div class="col-md-2 fieldcol">
+                <label>Last Name: </label>
+            </div>
+            <div class="col-md-4 fieldcol">
+                <div class="form-group">
+                    <input type="text" name="LastName" id="LastName" class="form-control">
+                </div>
+            </div>
+        </div>
+        <div class="row field">
+            <div class="col-md-2 fieldcol">
+                <label>Position:</label>
+            </div>
+            <div class="col-md-4 fieldcol">
+                <div class="form-group">
+                    <input type="text" name="Position" id="Position" class="form-control">
+                </div>
+            </div>
+        </div>
+        <div class="row field">
+            <div class="col-md-2 fieldcol">
+                <label>Department:</label>
+            </div>
+            <div class="col-md-4 fieldcol">
+                <div class="form-group">
+                    <input type="text" name="Department" id="Department" class="form-control">
+                </div>
+            </div>
+        </div>
+        <div class="row field">
+
+            <div class="col-md-2 fieldcol">
+                <label>Address:</label>
+            </div>
+            <div class="col-md-4 fieldcol">
+                <div class="form-group">
+                    <input type="text" name="Address" id="Address" class="form-control">
+                </div>
+            </div>
+        </div>
+        <div class="row field">
+            <div class="col-md-2 fieldcol">
+                <label>Contact Number:</label>
+            </div>
+            <div class="col-md-4 fieldcol">
+                <div class="form-group">
+                    <input type="text" name="ContactNumber" id="ContactNumber" class="form-control">
+                </div>
+            </div>
+        </div>
+        </div>
+        &nbsp;
+    <div class="hr5" style="margin-top:35px;margin-bottom:40px;"></div>
+    <div class="field">
+                    <div class="text-center">
+                        <button type="submit" class="btn-system btn-large">Save</button>
+                        <button type="submit" class="btn-system btn-large">Cancel</button>
+                    </div>           
+     </div>
     </div>
 </body>
 <script type="text/javascript" src="../js/script.js"></script>

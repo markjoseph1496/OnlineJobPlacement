@@ -254,7 +254,7 @@ if(is_null($_SESSION['StudentID'])){
                         </ul>
                     </li>
                     <li>
-                        <a href="../../login-student.php?id=1"><i class="fa fa-sign-out"></i> Sign Out</a>
+                        <a href=d><i class="fa fa-sign-out"></i> Sign Out</a>
                     </li>
                 </ul>
                 <!-- Mobile Menu End -->

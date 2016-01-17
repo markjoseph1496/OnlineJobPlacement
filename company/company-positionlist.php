@@ -4,8 +4,6 @@ session_start();
 $CompanyID = $_SESSION['CompanyID'];
 ?>
 <!doctype html>
-<!--[if IE 8 ]><html class="ie ie8" lang="en"> <![endif]-->
-<!--[if (gte IE 9)|!(IE)]><html lang="en" class="no-js"> <![endif]-->
 <html lang="en">
 
 <head>
@@ -93,26 +91,27 @@ $CompanyID = $_SESSION['CompanyID'];
                 <div class="row">
                     <div class="col-md-6">
                         <!-- Start Contact Info -->
-                            <ul class="contact-details">
-                                <li class="profile-name"><i class="fa fa-hashtag"></i> <b>008-2012-0805</b></li>
-                            </ul>
+                        <ul class="contact-details">
+                            <li class="profile-name"><i class="fa fa-hashtag"></i> <b>008-2012-0805</b></li>
+                        </ul>
                         <!-- End Contact Info -->
                     </div>
                     <!-- .col-md-6 -->
                     <div class="col-md-6">
                         <!-- Start Social Links -->
-                            <ul class="social-list">
-                                <li class="profile-name">
-                                    <a class="bell itl-tooltip" data-placement="bottom" title="" href="#" data-original-title="Notification"><i class="fa fa-bell"></i></a>
-                                </li>
-                                <li class="profile-name">
-                                    &nbsp;
-                                </li>
-                                <li class="profile-name">
-                                    <i class="fa fa-user"></i> Hello, <b>Aira Jane Cruz</b>                               
-                                </li>
-                            </ul>
-                            <!-- End Social Links -->
+                        <ul class="social-list">
+                            <li class="profile-name">
+                                <a class="bell itl-tooltip" data-placement="bottom" title="" href="#"
+                                   data-original-title="Notification"><i class="fa fa-bell"></i></a>
+                            </li>
+                            <li class="profile-name">
+                                &nbsp;
+                            </li>
+                            <li class="profile-name">
+                                <i class="fa fa-user"></i> Hello, <b>Aira Jane Cruz</b>
+                            </li>
+                        </ul>
+                        <!-- End Social Links -->
                     </div>
                     <!-- .col-md-6 -->
                 </div>
@@ -133,61 +132,61 @@ $CompanyID = $_SESSION['CompanyID'];
                         <i class="fa fa-bars"></i>
                     </button>
                     <!-- End Toggle Nav Link For Mobiles -->
-                     <a class="navbar-brand" href="">
+                    <a class="navbar-brand" href="">
                         <img src="../images/ojpms.png">
                     </a>
                 </div>
-          <div class="navbar-collapse collapse">
-            <!-- Sign-out -->
-            <div class="signout-side">
-              <a class="show-signout" href="../login-company.php?id=1"><i class="fa fa-sign-out"></i></a>
+                <div class="navbar-collapse collapse">
+                    <!-- Sign-out -->
+                    <div class="signout-side">
+                        <a class="show-signout" href="../login-company.php?id=1"><i class="fa fa-sign-out"></i></a>
+                    </div>
+                    <!-- End Sign-out -->
+                    <!-- Start Navigation List -->
+                    <ul class="nav navbar-nav navbar-right">
+                        <li>
+                            <a href="company.php">Home</a>
+                        </li>
+                        <li>
+                            <a>Position</a>
+                            <ul class="dropdown">
+                                <li><a class="active" href="company-positionlist.php">Position List</a></li>
+                                <li><a href="company-createposition.php">Create Position</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="company-calendar.php">Calendar</a>
+                        </li>
+                        <li><a href="company-settings.php">Settings</a>
+                        </li>
+                        <li>
+                            <a href="company-applicants.php">Applicant List</a>
+                            <ul class="dropdown">
+                                <li><a href="company-pendingapplicants.php">Pending</a></li>
+                                <li><a href="company-acceptedapplicants.php">Accepted</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <!-- End Navigation List -->
+                </div>
             </div>
-            <!-- End Sign-out -->
-             <!-- Start Navigation List -->
-            <ul class="nav navbar-nav navbar-right">
+            <!-- Mobile Menu Start -->
+            <ul class="wpb-mobile-menu">
                 <li>
                     <a href="company.php">Home</a>
                 </li>
                 <li>
                     <a>Position</a>
                     <ul class="dropdown">
-                        <li><a class = "active" href="company-positionlist.php">Position List</a></li>
+                        <li><a class="active" href="company-positionlist.php">Position List</a></li>
                         <li><a href="company-createposition.php">Create Position</a></li>
                     </ul>
                 </li>
                 <li>
                     <a href="company-calendar.php">Calendar</a>
                 </li>
-                 <li><a href="company-settings.php">Settings</a>
-                </li>  
-                <li>
-                    <a  href="company-applicants.php">Applicant List</a>
-                    <ul class="dropdown">
-                        <li><a href="company-pendingapplicants.php">Pending</a></li>
-                        <li><a href="company-acceptedapplicants.php">Accepted</a></li>
-                    </ul>
+                <li><a href="company-settings.php">Settings</a>
                 </li>
-            </ul>
-            <!-- End Navigation List -->
-        </div>
-    </div>
-        <!-- Mobile Menu Start -->
-    <ul class="wpb-mobile-menu">
-       <li>
-                    <a href="company.php">Home</a>
-                </li>
-                <li>
-                    <a>Position</a>
-                    <ul class="dropdown">
-                        <li><a class = "active" href="company-positionlist.php">Position List</a></li>
-                        <li><a href="company-createposition.php">Create Position</a></li>
-                    </ul>
-                </li>
-                <li>
-                    <a href="company-calendar.php">Calendar</a>
-                </li>
-                 <li><a href="company-settings.php">Settings</a>
-                </li>  
                 <li>
                     <a href="company-applicants.php">Applicant List</a>
                     <ul class="dropdown">
@@ -195,144 +194,113 @@ $CompanyID = $_SESSION['CompanyID'];
                         <li><a href="company-acceptedapplicants.php">Accepted</a></li>
                     </ul>
                 </li>
-    </ul>
+            </ul>
     </header>
     <!-- Mobile Menu End -->
 
-      </div>
-      <!-- End Header Logo & Naviagtion -->
+</div>
+<!-- End Header Logo & Naviagtion -->
 
-    </header>
-    <!-- End Header Section -->
+</header>
+<!-- End Header Section -->
 
 <!-- Start Page Banner -->
-    <div class="page-banner" style="padding:40px 0; center #f9f9f9;">
-      <div class="container">
+<div class="page-banner" style="padding:40px 0; center #f9f9f9;">
+    <div class="container">
         <div class="row">
-          <div class="col-md-6">
-            <h2>List of Positions</h2>
-          </div>
+            <div class="col-md-6">
+                <h2>List of Positions</h2>
+            </div>
         </div>
-      </div>
     </div>
-    <!-- End Page Banner -->
+</div>
+<!-- End Page Banner -->
 
 <!--Content-->
-  <br><br><br>
+<br><br><br>
 
-          <div class = "container">
-            <div class = "col-md-12">
-
-            <?php
-                if(isset($_GET['id'])){
-                    $id=$_GET['id'];
-                    if($id=="2"){
-                        echo '<div class="alert alert-success">
+<div class="container">
+    <div class="col-md-12">
+        <?php
+        if (isset($_GET['id'])) {
+            $id = $_GET['id'];
+            if ($id == "2") {
+                echo '<div class="alert alert-success">
                         <span class="glyphicon glyphicon-info-sign"></span> 
                         Achievement successfully updated.
                         </div>';
-                    }
-                    elseif($id=="3"){
-                        echo '<div class="alert alert-success">
+            } elseif ($id == "3") {
+                echo '<div class="alert alert-success">
                         <span class="glyphicon glyphicon-info-sign"></span> 
                         Achievement successfully deleted.
                         </div>';
-                    }
-                    elseif($id=="1"){
-                        echo '<div class="alert alert-success">
+            } elseif ($id == "1") {
+                echo '<div class="alert alert-success">
                         <span class="glyphicon glyphicon-info-sign"></span> 
                         Achievement successfully added.
                         </div>';
-                    }
-                }   
-            ?>
-               
-                
-        <table class = "table segment table-hover" width = "100%" cellpadding = "0">
-
-        <?php
-            $PID = 'PositionID';
-            $plevel = 'PositionLevel';
-            $avposition = 'AvPosition';
-            $pdatef = 'PostingDateFrom';
-            $pdatet = 'PostingDateTo';
-            
-            $query = ("SELECT * FROM comppositiontbl WHERE CompanyID='$CompanyID'");
-            $Result = mysql_query($query);
+            }
+        }
         ?>
-          <thead>
-           <tr>
-    
-           </tr>    
-                <tr>
-                    <th width= '30%' class = 'tabletitle'>Positions</th>
-                    <th width = '20%' class = 'tabletitle'>From</th>
-                    <th width = '20%' class = 'tabletitle'>To</th>
-                    <th width = '20%' class = 'tabletitle'>Available Position</th>
-                    <th width = '15%' class = 'tabletitle'>Action</th>
-                <tr>
+        <table class="table segment table-hover" width="100%" cellpadding="0">
+            <thead>
+            <tr>
+
+            </tr>
+            <tr>
+                <th width='30%' class='tabletitle'>Positions</th>
+                <th width='20%' class='tabletitle'>From</th>
+                <th width='20%' class='tabletitle'>To</th>
+                <th width='20%' class='tabletitle'>Available Position</th>
+                <th width='15%' class='tabletitle'>Action</th>
+            <tr>
             </thead>
-            <tbody>
             <?php
-                while ($row = mysql_fetch_array($Result)) {
-                
-            ?>
+            $compposition_tbl =
+                GSecureSQL::query(
+                    "SELECT
+                        PositionID,
+                        PositionLevel,
+                        PostingDateFrom,
+                        PostingDateTo,
+                        AvPosition
+                    FROM
+                      comppositiontbl
+                    WHERE CompanyID = ? ORDER BY PostingDateFrom ASC",
+                    TRUE,
+                    "s",
+                    $CompanyID
+                );
+            foreach ($compposition_tbl as $value) {
+                $PositionID = $value[0];
+                $PositionLevel = $value[1];
+                $PostingDateFrom = $value[2];
+                $PostingDateTo = $value[3];
+                $AvPosition = $value[4];
+                ?>
+                <tbody>
                 <tr>
-                    <td width= 30% class = 'tabletitle'>
-                      <a href = "company-viewposition.php?PID=<?php echo $row[$PID]; ?>">  <?php echo $row[$plevel]; ?> </a>
-                    </td>
-                    <td width = 20% class = 'tabletitle'><?php echo $row[$pdatef]; ?></td>
-                    <td width = 20% class = 'tabletitle'><?php echo $row[$pdatet]; ?></td>
-                    <td width = 20% class = 'tabletitle'><?php echo $row[$avposition]; ?></td>
-                    <form method = "POST">
-                    <input type="hidden" name="delete_id" value="<?php echo $row['PositionID']; ?>" />
-                    <td width= 15% class = 'tabletitle'>
-                        <button id='Edit' name="btnedit" href="company-editposition.php" class='btn btn-default'> 
-                        <i class='fa fa-pencil-square-o fa-1x'></i>
-                        </button> 
-                        <button  name = 'btndelete' href="" class='btn btn-danger'> 
-                        <i class='fa fa-trash fa-1x'></i> 
-                        </button> 
+                    <td width=20% class='tabletitle'><?php echo $PositionLevel; ?></td>
+                    <td width=20% class='tabletitle'><?php echo $PostingDateFrom; ?></td>
+                    <td width=20% class='tabletitle'><?php echo $PostingDateTo; ?></td>
+                    <td width=20% class='tabletitle'><?php echo $AvPosition; ?></td>
+                    <td width=15% class='tabletitle'>
+                        <a id='Edit' name="btnedit" href="company-editposition.php" class='btn btn-default'>
+                            <i class='fa fa-pencil-square-o fa-1x'></i>
+                        </a>
+                        <button name='btndelete' href="" class='btn btn-danger'>
+                            <i class='fa fa-trash fa-1x'></i>
+                        </button>
                     </td>
                     </form>
-                    <tr>
-            <?php
-                }
+                </tr>
+                </tbody>
+                <?php
+            }
             ?>
-            </tbody>
-      
         </table>
-        </div>
     </div>
-
-<!--End of Content-->  
-  <script type="text/javascript" src="../js/script.js"></script>
+</div>
 </body>
-
-<?php
-
-    if(isset($_POST['btndelete'])){
-
-    $Z = $_POST['delete_id'];
-    
-    $query = "DELETE FROM comppositiontbl WHERE PositionID='$Z'";
-    $Result = mysql_query($query);
-
-    echo "
-            <script type='text/javascript'>
-            location.href='company-positionlist.php?id=3';
-            </script>
-            ";
-    }
-    if(isset($_POST['btnedit'])){
-        $Z = $_POST['delete_id'];
-        $_SESSION['delete_id'] = $Z;
-        echo "
-                <script type='text/javascript'>
-                location.href='editposition.php';
-                </script>
-                ";
-    }
-?>
-
 </html>
+<script type="text/javascript" src="../js/script.js"></script>

@@ -4,10 +4,6 @@ session_start();
 $CompanyID = $_SESSION['CompanyID'];
 ?>
 <!doctype html>
-<!--[if IE 8 ]>
-<html class="ie ie8" lang="en"> <![endif]-->
-<!--[if (gte IE 9)|!(IE)]>
-<html lang="en" class="no-js"> <![endif]-->
 <html lang="en">
 
 <head>
@@ -237,9 +233,9 @@ $CompanyID = $_SESSION['CompanyID'];
                     <div class="col-md-3 fieldcol">
                         <label = "usr" class = "control-label"> Posting Date: </label>
                     </div>
-                    <div class="col-md-8 fieldcol">
+                    <div class="col-md-3 fieldcol">
                         <div class="form-group">
-                            <div class="date">
+                            <div class= "row field">
                                 <input type="date" name="DateFrom" id="date_from" class="form-control">
                                 <div class="date_to">
                                     <label = "usr" class = "control-label" id = "label">to: </label>

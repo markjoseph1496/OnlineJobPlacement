@@ -1,3 +1,6 @@
+<?php
+include('connection.php');
+?>
 <!doctype html>
 <html lang="en">
 
@@ -124,9 +127,19 @@
                                                 <label>Industry <span>(*)</span></label><br>
                                                 <select id="Industry" name="Industry" class="industry" style="width:100%; height:34px;">
                                                     <option value>Select Industry</option>
-                                                    <option value="NCR">NCR</option>
-                                                    <option value="CAR">CAR</option>
-                                                    <option value="Ilocos Region">Ilocos Region</option>
+                                                    <?php
+                                                        $listofindustrytbl =
+                                                        GSecureSQL::query(
+                                                            "SELECT * FROM listofindustrytbl",
+                                                            TRUE
+                                                            );
+                                                        foreach ($listofindustrytbl as $value) {
+                                                            $Industry = $value[1];
+                                                            ?>
+                                                            <option value="<?php echo $Industry; ?>"><?php echo $Industry; ?></option>
+                                                            <?php
+                                                        }
+                                                    ?>
                                                 </select>
                                             </div>
                                         </div>
@@ -134,10 +147,24 @@
                                             <div class="form-group">
                                             <label>City<span>(*)</span></label><br>
                                             <select id="City" name="City" class="city_id" style="width:100%; height:34px;">
-                                                <option value>- Please select one</option>
-                                                <option value="NCR">NCR</option>
-                                                <option value="CAR">CAR</option>
-                                                <option value="Ilocos Region">Ilocos Region</option>
+                                                    <option value="">- Please select one -</option>
+                                                    <option value="Caloocan City">Caloocan City</option>
+                                                    <option value="Las Pińas City">Las Pińas City</option>
+                                                    <option value="Makati City">Makati City</option>
+                                                    <option value="Malabon City">Malabon City</option>
+                                                    <option value="Mandaluyong City">Mandaluyong City</option>
+                                                    <option value="Manila">Manila</option>
+                                                    <option value="Marikina City">Marikina City</option>
+                                                    <option value="Muntinlupa City">Muntinlupa City</option>
+                                                    <option value="Navotas City">Navotas City</option>
+                                                    <option value="Parańaque City">Parańaque City</option>
+                                                    <option value="Pasay City">Pasay City</option>
+                                                    <option value="Pasig City">Pasig City</option>
+                                                    <option value="Pateros City">Pateros City</option>
+                                                    <option value="Quezon City">Quezon City</option>
+                                                    <option value="San Juan City">San Juan City</option>
+                                                    <option value="Taguig City">Taguig City</option>
+                                                    <option value="Valenzuela City">Valenzuela City</option>
                                             </select>
                                             </div>
                                         </div>

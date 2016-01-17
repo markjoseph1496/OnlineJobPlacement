@@ -263,14 +263,13 @@ if(is_null($_SESSION['StudentID'])){
 
                                         $listofspecialization_tbl =
                                             GSecureSQL::query(
-                                                "SELECT * FROM listofspecializationtbl",
+                                                "SELECT Specialization FROM listofspecializationtbl",
                                                 TRUE
                                             );
                                         foreach($listofspecialization_tbl as $value){
-                                            $SID = $value[0];
-                                            $Specialization = $value[1];
+                                            $Specialization = $value[0];
                                         ?>
-                                            <option value="<?php echo $SID; ?>"><?php echo $Specialization; ?></option>
+                                            <option value="<?php echo $Specialization; ?>"><?php echo $Specialization; ?></option>
                                         <?php
                                         }
                                         ?>
