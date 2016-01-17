@@ -4,10 +4,6 @@ session_start();
 $CompanyID = $_SESSION['CompanyID'];
 ?>
 <!doctype html>
-<!--[if IE 8 ]>
-<html class="ie ie8" lang="en"> <![endif]-->
-<!--[if (gte IE 9)|!(IE)]>
-<html lang="en" class="no-js"> <![endif]-->
 <html lang="en">
 
 <head>
@@ -227,8 +223,8 @@ $CompanyID = $_SESSION['CompanyID'];
 
             </tr>
             <tr>
-                <th width='20%' class='tabletitle'>Position</th>
                 <th width='20%' class='tabletitle'>Applicant Name</th>
+                <th width='20%' class='tabletitle'>Position</th>
                 <th width='15%' class='tabletitle'>Course</th>
                 <th width='20%' class='tabletitle'>Location</th>
                 <th width='15%' class='tabletitle'>Email</th>
@@ -236,107 +232,69 @@ $CompanyID = $_SESSION['CompanyID'];
             <tr>
             </thead>
             <?php
-            $qry1 = "SELECT * FROM requesttocompanytbl WHERE CompanyID = '$CompanyID' AND Status = 'Pending'";
-            $result1 = mysql_query($qry1);
-            while ($qry1 = mysql_fetch_array($result1)) {
-                $RID = $qry1['RID'];
-                $StudentID = $qry1['StudentID'];
-                $PositionID = $qry1['PositionID'];
+            $requesttocompany_tbl =
+                GSecureSQL::query(
+                    "SELECT
+                          requesttocompanytbl.RID,
+                          requesttocompanytbl.StudentID,
+                          requesttocompanytbl.PositionID,
+                          requesttocompanytbl.Status,
+                          studentinfotbl.StudentID,
+                          studentinfotbl.FirstName,
+                          studentinfotbl.LastName,
+                          studentinfotbl.MajorCourse,
+                          studcontactstbl.StudentID,
+                          studcontactstbl.City,
+                          studcontactstbl.Email,
+                          comppositiontbl.PositionID,
+                          comppositiontbl.PositionLevel
+                          FROM
+                          requesttocompanytbl
+                          INNER JOIN comppositiontbl ON requesttocompanytbl.PositionID = comppositiontbl.PositionID
+                          INNER JOIN studentinfotbl ON requesttocompanytbl.StudentID = studentinfotbl.StudentID
+                          INNER JOIN studcontactstbl ON studentinfotbl.StudentID = studcontactstbl.StudentID
+                          WHERE requesttocompanytbl.Status = 'Pending'
+                          ",
+                    TRUE
+                );
+            foreach ($requesttocompany_tbl as $value) {
+                $RID = $value[0];
+                $PositionLevel = $value[12];
+                $FirstName = $value[5];
+                $LastName = $value[6];
+                $MajorCourse = $value[7];
+                $Location = $value[9];
+                $Email = $value[10];
 
-                $qry2 = "SELECT * FROM studentinfotbl WHERE StudentID = '$StudentID'";
-                $result2 = mysql_query($qry2);
-                while ($qry2 = mysql_fetch_array($result2)) {
-                    $FirstName = $qry2['FirstName'];
-                    $LastName = $qry2['LastName'];
-                    $Course = $qry2['MajorCourse'];
-                    $FullName = $LastName . ", " . $FirstName;
-
-                    $qry3 = "SELECT * FROM studcontactstbl WHERE StudentID = '$StudentID'";
-                    $result3 = mysql_query($qry3);
-                    while ($qry3 = mysql_fetch_array($result3)) {
-                        $Location = $qry3['City'];
-                        $Email = $qry3['Email'];
-
-                        $qry4 = "SELECT * FROM  comppositiontbl WHERE PositionID = '$PositionID'";
-                        $result4 = mysql_query($qry4);
-                        while ($qry4 = mysql_fetch_array($result4)) {
-                            $PositionLevel = $qry4['PositionLevel'];
-                            ?>
-                            <tbody>
-                            <tr>
-                                <td width=20% class=tabletitle><?php echo $PositionLevel; ?> </td>
-                                <td width=20% class=tabletitle><a href=''><?php echo $FullName; ?> </a></td>
-                                <td width=15% class=tabletitle><?php echo $Course; ?></td>
-                                <td width=15% class=tabletitle><?php echo $Location; ?></td>
-                                <td width=15% class=tabletitle><?php echo $Email; ?></td>
-                                <td width='10%'>
-                                    <button class='btn btn-default' data-toggle='modal'
-                                            data-target='#AcceptRequest<?php echo $RID; ?>'><i
-                                            class='fa fa-check-circle'></i></button>
-                                    <button class='btn btn-danger' data-toggle='modal'
-                                            data-target='#DeclineRequest<?php echo $RID; ?>'><i
-                                            class='fa fa-trash fa-1x'></i></button>
-                                </td>
-                            <tr>
-                            </tbody>
-                            <!-- Modal -->
-                            <div class='modal fade' id='AcceptRequest<?php echo $RID; ?>' role='dialog'>
-                                <div class='modal-dialog' style='padding:100px'>
-                                    <!-- Modal content-->
-                                    <div class='modal-content'>
-                                        <div class='modal-header'>
-                                            <button type='button' class='close' data-dismiss='modal'>&times;</button>
-                                            <h4 class='modal-title'>Accept Resume?</h4>
-                                        </div>
-                                        <div class='modal-body'>
-                                            <div class='col-md-15 fieldcol'>
-                                                <label = 'usr' class = 'control-label'>Do you want to accept this
-                                                Applicant?</label>
-                                                <div class='form-group'>
-                                                </div>
-                                            </div>
-                                            <div class='modal-footer'>
-                                                <a href='add-company.php?id=1&rid=<?php echo $RID; ?>'
-                                                   class='btn btn-danger'>Accept</a>
-                                                <button type='button' class='btn btn-default' data-dismiss='modal'>
-                                                    Cancel
-                                                </button>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class='modal fade' id='DeclineRequest<?php echo $RID; ?>' role='dialog'>
-                                <div class='modal-dialog' style='padding:100px'>
-                                    <!-- Modal content-->
-                                    <div class='modal-content'>
-                                        <div class='modal-header'>
-                                            <button type='button' class='close' data-dismiss='modal'>&times;</button>
-                                            <h4 class='modal-title'>Reject Resume?</h4>
-                                        </div>
-                                        <div class='modal-body'>
-                                            <div class='col-md-15 fieldcol'>
-                                                <label = 'usr' class = 'control-label'>Do you want to Decline this
-                                                applicant?</label>
-                                                <div class='form-group'>
-                                                </div>
-                                            </div>
-                                            <div class='modal-footer'>
-                                                <a href='add-company.php?id=2&rid=<?php echo $RID; ?>'
-                                                   class='btn btn-danger'>Delete</a>
-                                                <button type='button' class='btn btn-default' data-dismiss='modal'>
-                                                    Cancel
-                                                </button>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <?php
-                        }
-                    }
+                $coursetbl =
+                    GSecureSQL::query(
+                        "SELECT CourseTitle FROM coursetbl WHERE CourseCode = ?",
+                        TRUE,
+                        "s",
+                        $MajorCourse
+                    );
+                foreach ($coursetbl as $value1) {
+                    $MajorCourse = $value1[0];
                 }
+                ?>
+                <tbody>
+                <tr>
+                    <td width=20% class=tabletitle><a href=''><?php echo $LastName . ", " . $FirstName; ?></td>
+                    <td width=20% class=tabletitle><?php echo $PositionLevel; ?></a></td>
+                    <td width=15% class=tabletitle><?php echo $MajorCourse; ?></td>
+                    <td width=15% class=tabletitle><?php echo $Location; ?></td>
+                    <td width=15% class=tabletitle><?php echo $Email; ?></td>
+                    <td width='10%'>
+                        <button class='btn btn-default' data-toggle='modal'
+                                data-target='#AcceptRequest<?php echo $RID; ?>'><i
+                                class='fa fa-check-circle'></i></button>
+                        <button class='btn btn-danger' data-toggle='modal'
+                                data-target='#DeclineRequest<?php echo $RID; ?>'><i
+                                class='fa fa-trash fa-1x'></i></button>
+                    </td>
+                <tr>
+                </tbody>
+                <?php
             }
             ?>
         </table>

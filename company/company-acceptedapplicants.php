@@ -231,8 +231,8 @@ $CompanyID = $_SESSION['CompanyID'];
 
             </tr>
             <tr>
-                <th width='20%' class='tabletitle'>Position</th>
                 <th width='20%' class='tabletitle'>Applicant Name</th>
+                <th width='20%' class='tabletitle'>Position</th>
                 <th width='15%' class='tabletitle'>Course</th>
                 <th width='20%' class='tabletitle'>Location</th>
                 <th width='15%' class='tabletitle'>Email</th>
@@ -286,8 +286,8 @@ $CompanyID = $_SESSION['CompanyID'];
                 ?>
                 <tbody>
                 <tr>
-                    <td width=20% class=tabletitle><?php echo $PositionLevel; ?></td>
-                    <td width=20% class=tabletitle><a href=''><?php echo $LastName . ", " . $FirstName; ?></a></td>
+                    <td width=20% class=tabletitle><a href=''><?php echo $LastName . ", " . $FirstName; ?></td>
+                    <td width=20% class=tabletitle><?php echo $PositionLevel;  ?></a></td>
                     <td width=15% class=tabletitle><?php echo $MajorCourse; ?></td>
                     <td width=15% class=tabletitle><?php echo $Location; ?></td>
                     <td width=15% class=tabletitle><?php echo $Email; ?></td>
