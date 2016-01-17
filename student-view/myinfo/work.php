@@ -21,8 +21,18 @@ $StudentID = $_SESSION['StudentID'];
     <meta name="description" content="Margo - Responsive HTML5 Template">
     <meta name="author" content="iThemesLab">
 
-    <!-- Bootstrap CSS  -->
-    <link rel="stylesheet" href="../../css/bootstrap.min.css" type="text/css" media="screen">
+    <!-- Bootstrap CSS -->
+    <link href="../../css/bootstrap.min.css" rel="stylesheet"/>
+
+    <!-- BootstrapValidator CSS -->
+    <link href="../../css/bootstrapValidator.min.css" rel="stylesheet"/>
+
+    <!-- jQuery and Bootstrap JS -->
+    <script type="text/javascript" src="../../js/jquery.min.js"></script>
+    <script type="text/javascript" src="../../js/bootstrap.min.js" ></script>
+
+    <!-- BootstrapValidator -->
+    <script src="../../js/bootstrapValidator.min.js" type="text/javascript"></script>
 
     <!-- Font Awesome CSS -->
     <link rel="stylesheet" href="../../css/font-awesome.min.css" type="text/css" media="screen">
@@ -48,28 +58,24 @@ $StudentID = $_SESSION['StudentID'];
     <!-- Color CSS Styles  -->
     <link rel="stylesheet" type="text/css" href="../../css/colors/yellow.css" title="yellow" media="screen"/>
 
+    <!-- Star Rate -->
+    <link rel="stylesheet" type="text/css" href="../../css/star-rate.css" media="screen" />
+    
     <!-- JS  -->
-    <script type="text/javascript" src="../../js/jquery.min.js"></script>
-    <script type="text/javascript" src="../../js/modernizrr.js"></script>
-    <script type="text/javascript" src="../../js/jquery.appear.js"></script>
-    <script type="text/javascript" src="../../js/count-to.js"></script>
-    <script type="text/javascript" src="../../js/jquery.nicescroll.min.js"></script>
-    <script type="text/javascript" src="../../js/jquery.slicknav.js"></script>
-
     <script type="text/javascript" src="../../js/jquery.migrate.js"></script>
-    <script type="text/javascript" src="../../js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../../js/modernizrr.js"></script>
     <script type="text/javascript" src="../../js/jquery.fitvids.js"></script>
     <script type="text/javascript" src="../../js/owl.carousel.min.js"></script>
     <script type="text/javascript" src="../../js/nivo-lightbox.min.js"></script>
-    <script type="text/javascript" src="../../js/jquery.textillate.js"></script>
-
-    <script type="text/javascript" src="../../js/nivo-lightbox.min.js"></script>
     <script type="text/javascript" src="../../js/jquery.isotope.min.js"></script>
+    <script type="text/javascript" src="../../js/jquery.appear.js"></script>
+    <script type="text/javascript" src="../../js/count-to.js"></script>
     <script type="text/javascript" src="../../js/jquery.textillate.js"></script>
     <script type="text/javascript" src="../../js/jquery.lettering.js"></script>
     <script type="text/javascript" src="../../js/jquery.easypiechart.min.js"></script>
+    <script type="text/javascript" src="../../js/jquery.nicescroll.min.js"></script>
     <script type="text/javascript" src="../../js/jquery.parallax.js"></script>
-    <script type="text/javascript" src="../../js/mediaelement-and-player.js"></script>
+    <script type="text/javascript" src="../../js/jquery.slicknav.js"></script>
 </head>
 
 <body>
@@ -92,9 +98,23 @@ $StudentID = $_SESSION['StudentID'];
                     <div class="col-md-5">
                         <!-- Start Social Links -->
                         <ul class="social-list">
-                            <li class="profile-name">
-                                <a class="bell itl-tooltip" data-placement="bottom" title="" href="#"
-                                   data-original-title="Notification"><i class="fa fa-bell"></i></a>
+                            <li id="notification_li">
+                                <span id="notification_count">3</span>
+                                <a class="bell itl-tooltip" data-placement="bottom" title="" id="notificationLink"><i class="fa fa-bell"></i></a>
+                                <div id="notificationContainer">
+                                    <div id="notificationTitle">Notifications</div>
+                                    <div id="notificationsBody" class="notifications">
+                                        <div class="hr1" style="margin-top:40px;"></div>
+
+                                        <label><a href="">The admin granted your request.</a></label>
+                                        <div class="hr2" style="margin-top:1px; margin-bottom:1px;"></div>
+                                        <label><a href="">The admin granted your request.</a></label>
+                                        <div class="hr2" style="margin-top:1px; margin-bottom:1px;"></div>
+                                        <label><a href="">The admin granted your request.</a></label>
+                                        <div class="hr2" style="margin-top:1px; margin-bottom:1px;"></div>
+                                    </div>
+                                    <div id="notificationFooter"><a href="../notification/notification.php">See All</a></div>
+                                </div>
                             </li>
                             <li class="profile-name">
                                 &nbsp;

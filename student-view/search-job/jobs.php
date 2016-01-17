@@ -91,6 +91,7 @@ if (isset($_SESSION['StudentID'])) {
     <script type="text/javascript" src="../../js/jquery.parallax.js"></script>
     <script type="text/javascript" src="../../js/jquery.slicknav.js"></script>
 
+    <!-- Notification -->
     <link rel="stylesheet" href="../../css/notif.css"/>
 
     <script type="text/javascript" >
