@@ -803,7 +803,7 @@
             </div>
 
             
-            <div id="join" class="parallax" style="background-image:url(img/login-bg.jpg);">
+            <div id="join" class="parallax" style="background-image:url(img/join-us.jpg);">
                 <div class="overlay">
                     <div class="parallax-text-container-1">
                         <div class="parallax-text-item">
@@ -818,7 +818,7 @@
                                     <div class="col-md-4 col-sm-6 service-box service-center">
                                         <div class="service-boxed">
                                             <div class="service-icon" style="margin-top:-25px;">
-                                                <a href="login-student.php"><i class="fa fa-users icon-medium-effect icon-effect-1"></i></a>
+                                                <a href="login-student.php"><i class="fa fa-users icon-medium-effect icon-effect-2"></i></a>
                                             </div>
                                             <div class="service-content">
                                                 <h4 class="wite-text">Student</h4>
@@ -846,7 +846,7 @@
                                     <div class="col-md-4 col-sm-6 service-box service-center">
                                         <div class="service-boxed">
                                             <div class="service-icon" style="margin-top:-25px;">
-                                                <a href="login-company.php"><i class="fa fa-building icon-medium-effect icon-effect-1"></i></a>
+                                                <a href="login-company.php"><i class="fa fa-building icon-medium-effect icon-effect-2"></i></a>
                                             </div>
                                             <div class="service-content">
                                                 <h4 class="wite-text">Company</h4>

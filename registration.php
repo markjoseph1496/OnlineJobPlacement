@@ -319,16 +319,18 @@ include('connection.php');
                     <label style="float:right;"><span>(*)</span> <em> - Required Fields</em></label>
                 </div>
                 <div class="hr5" style="margin-top:40px;margin-bottom:40px;"></div>
-                <div class
-                "row">
-                <div class="col-md-6">
-                    <label><b>By clicking the "Sign Up" button below, I certify that I have read and agree to the <a
-                                href="" target="_blank">Terms of Use</a>.</b></label>
+                <div class"row">
+                    <div class="col-md-6">
+                        <label><b>By clicking the "Sign Up" button below, I certify that I have read and agree to the <a
+                                    href="" target="_blank">Terms of Use</a>.</b></label>
+                    </div>
+                    <div class="col-md-6">
+                        &nbsp;
+                    </div>
                 </div>
-                <div class="col-md-6">
-                    <button type="submit" name="btnSave" class="btn-system btn-large border-btn"
-                            style="float:right;">Submit
-                    </button>
+                
+                <div class="row">
+                    <button type="submit" name="btnSave" class="btn-system btn-large border-btn" style="float:right;">Sign Up</button>
                 </div>
             </div>
         </div>
