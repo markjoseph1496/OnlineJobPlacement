@@ -11,14 +11,14 @@ $admin_tbl =
         $AdminID
     );
 
-    $Email = $admin_tbl[0][1];
-    $FirstName = $admin_tbl[0][4];
-    $MiddleName = $admin_tbl[0][5];
-    $LastName = $admin_tbl[0][6];
-    $Position = $admin_tbl[0][7];
-    $Department = $admin_tbl[0][8];
-    $Address = $admin_tbl[0][9];
-    $ContactNumber = $admin_tbl[0][10];
+$Email = $admin_tbl[0][1];
+$FirstName = $admin_tbl[0][4];
+$MiddleName = $admin_tbl[0][5];
+$LastName = $admin_tbl[0][6];
+$Position = $admin_tbl[0][7];
+$Department = $admin_tbl[0][8];
+$Address = $admin_tbl[0][9];
+$ContactNumber = $admin_tbl[0][10];
 
 ?>
 <!doctype html>
@@ -146,10 +146,12 @@ $admin_tbl =
                     </div>
                     <div class="modal-body">
                         <div class="col-md-15 fieldcol">
-                            <div id="message"></div><br>
+                            <div id="message"></div>
+                            <br>
                             <label = "usr" class = "control-label"> Old Password: </label>
                             <div class="form-group">
-                                <input type="password" name="ModalOldPassword" id="ModalOldPassword" class="form-control">
+                                <input type="password" name="ModalOldPassword" id="ModalOldPassword"
+                                       class="form-control">
                             </div>
                         </div>
 
@@ -157,7 +159,8 @@ $admin_tbl =
                         <div class="col-md-15 fieldcol">
                             <label = "usr" class = "control-label"> New Password: </label>
                             <div class="form-group">
-                                <input type="password" name="ModalNewPassword" id="ModalNewPassword" class="form-control">
+                                <input type="password" name="ModalNewPassword" id="ModalNewPassword"
+                                       class="form-control">
                             </div>
                         </div>
 
@@ -165,12 +168,13 @@ $admin_tbl =
                         <div class="col-md-15 fieldcol">
                             <label = "usr" class = "control-label"> Confirm Password: </label>
                             <div class="form-group">
-                                <input type="password" name="ModalConfirmPassword" id="ModalConfirmPassword" class="form-control">
+                                <input type="password" name="ModalConfirmPassword" id="ModalConfirmPassword"
+                                       class="form-control">
                             </div>
                         </div>
                     </div>
                     <div class="modal-footer">
-                        <button type="submit" id="submitPassword"class="btn btn-primary">Change Password</button>
+                        <button type="submit" id="submitPassword" class="btn btn-primary">Change Password</button>
                         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
                     </div>
                 </div>
@@ -187,32 +191,33 @@ $admin_tbl =
     <div class="hidden-header"></div>
     <header class="clearfix">
 
-                <!-- Start Top Bar -->
+        <!-- Start Top Bar -->
         <div class="top-bar">
             <div class="container">
                 <div class="row">
                     <div class="col-md-6">
                         <!-- Start Contact Info -->
-                            <ul class="contact-details">
-                                <li class="profile-name"><i class="fa fa-hashtag"></i> <b>008-2012-0805</b></li>
-                            </ul>
+                        <ul class="contact-details">
+                            <li class="profile-name"><i class="fa fa-hashtag"></i> <b>008-2012-0805</b></li>
+                        </ul>
                         <!-- End Contact Info -->
                     </div>
                     <!-- .col-md-6 -->
                     <div class="col-md-6">
                         <!-- Start Social Links -->
-                            <ul class="social-list">
-                                <li class="profile-name">
-                                    <a class="bell itl-tooltip" data-placement="bottom" title="" href="#" data-original-title="Notification"><i class="fa fa-bell"></i></a>
-                                </li>
-                                <li class="profile-name">
-                                    &nbsp;
-                                </li>
-                                <li class="profile-name">
-                                    <i class="fa fa-user"></i> Hello, <b>Aira Jane Cruz</b>                               
-                                </li>
-                            </ul>
-                            <!-- End Social Links -->
+                        <ul class="social-list">
+                            <li class="profile-name">
+                                <a class="bell itl-tooltip" data-placement="bottom" title="" href="#"
+                                   data-original-title="Notification"><i class="fa fa-bell"></i></a>
+                            </li>
+                            <li class="profile-name">
+                                &nbsp;
+                            </li>
+                            <li class="profile-name">
+                                <i class="fa fa-user"></i> Hello, <b>Aira Jane Cruz</b>
+                            </li>
+                        </ul>
+                        <!-- End Social Links -->
                     </div>
                     <!-- .col-md-6 -->
                 </div>
@@ -233,14 +238,14 @@ $admin_tbl =
                         <i class="fa fa-bars"></i>
                     </button>
                     <!-- End Toggle Nav Link For Mobiles -->
-                     <a class="navbar-brand" href="">
+                    <a class="navbar-brand" href="">
                         <img src="../images/ojpms.png">
                     </a>
                 </div>
                 <div class="navbar-collapse collapse">
-                     <!-- Sign-out -->
+                    <!-- Sign-out -->
                     <div class="signout-side">
-                    <a href="../login-admin.php?id=1" class="show-signout"><i class="fa fa-sign-out"></i></a>
+                        <a href="../login-admin.php?id=1" class="show-signout"><i class="fa fa-sign-out"></i></a>
                     </div>
                     <!-- End Sign-out -->
                     <!-- Start Navigation List -->
@@ -259,19 +264,19 @@ $admin_tbl =
                         </li>
                         <li>
                             <a>Company List</a>
-                        <ul class="dropdown">
-                            <li><a href="admin-companylist.php">Active</a></li>
-                            <li><a href="admin-company_pending.php">Pending</a></li>
-                        </ul>
+                            <ul class="dropdown">
+                                <li><a href="admin-companylist.php">Active</a></li>
+                                <li><a href="admin-company_pending.php">Pending</a></li>
+                            </ul>
                         </li>
                         <li><a href="admin-adviser.php">Adviser List</a>
                         </li>
                         <li>
-                    <a> Maintenance</a>
-                    <ul class="dropdown">
-                        <li><a href="admin-maintenance.php">Courses</a></li>
-                    </ul>
-                </li>
+                            <a> Maintenance</a>
+                            <ul class="dropdown">
+                                <li><a href="admin-maintenance.php">Courses</a></li>
+                            </ul>
+                        </li>
                     </ul>
                     <!-- End Navigation List -->
                 </div>
@@ -292,7 +297,7 @@ $admin_tbl =
                         <a href="admin-requested.php">Requested</a>
                     </li>
                     <li>
-                       <a>Company List</a>
+                        <a>Company List</a>
                         <ul class="dropdown">
                             <li><a href="admin-companylist.php">Active</a></li>
                             <li><a href="admin-company_pending.php">Pending</a></li>
@@ -301,11 +306,11 @@ $admin_tbl =
                     <li><a href="admin-adviser.php">Adviser List</a>
                     </li>
                     <li>
-                    <a> Maintenance</a>
-                    <ul class="dropdown">
-                        <li><a href="admin-maintenance.php">Courses</a></li>
-                    </ul>
-                </li>
+                        <a> Maintenance</a>
+                        <ul class="dropdown">
+                            <li><a href="admin-maintenance.php">Courses</a></li>
+                        </ul>
+                    </li>
                 </ul>
             </ul>
     </header>
@@ -335,155 +340,164 @@ $admin_tbl =
 <br><br><br>
 
 <div class="container">
-    <form name="UpdateAdmin" id ="UpdateAdmin" autocomplete="off" action="functions.php" method="POST">
-    <div class="col-md-12">
-        <div class="row field">
-            <?php
+    <form name="UpdateAdmin" id="UpdateAdmin" autocomplete="off" action="functions.php" method="POST">
+        <div class="col-md-12">
+            <div class="row field">
+                <?php
 
-            if(isset($_GET['id'])){
-                $id = $_GET['id'];
-                if($id == 1){
-                    echo'
+                if (isset($_GET['id'])) {
+                    $id = $_GET['id'];
+                    if ($id == 1) {
+                        echo '
                     <div class="alert alert-success">
                         <span class="glyphicon glyphicon-info-sign"></span> 
                         Email successfully changed.
                     </div>
                     ';
-                }
-                elseif($id == 2){
-                    echo'
+                    } elseif ($id == 2) {
+                        echo '
                     <div class="alert alert-success">
                         <span class="glyphicon glyphicon-info-sign"></span> 
                         Password successfully changed.
                     </div>
                     ';
-                }
-                elseif($id == 3){
-                    echo'
+                    } elseif ($id == 3) {
+                        echo '
                     <div class="alert alert-success">
                         <span class="glyphicon glyphicon-info-sign"></span> 
                         Personal info successfully updated.
                     </div>
                     ';
+                    }
+
                 }
 
-            }
-            
 
-            ?>
-            <div class="col-md-2 fieldcol">
-                <label = "usr" class = "control-label"> Username: </label>
-            </div>
-            <div class="col-md-4 fieldcol">
-                <div class="form-group">
-                    <label = "usr" class = "control-label"><?php echo $Email; ?></label>
+                ?>
+                <div class="col-md-2 fieldcol">
+                    <label = "usr" class = "control-label"> Username: </label>
+                </div>
+                <div class="col-md-4 fieldcol">
+                    <div class="form-group">
+                        <label = "usr" class = "control-label"><?php echo $Email; ?></label>
+                    </div>
+                </div>
+                <div class="col-md-3 fieldcol">
+                    <div class="form-group">
+                        <div class="box">
+                            <button class="btn btn-default" data-toggle="modal" data-target="#ChangeEmail">Change
+                                email
+                            </button>
+                        </div>
+                    </div>
                 </div>
             </div>
-            <div class="col-md-3 fieldcol">
-                <div class="form-group">
-                    <div class="box">
-                        <button class="btn btn-default" data-toggle="modal" data-target="#ChangeEmail">Change email</button>
+            <div class="row field">
+                <div class="col-md-2 fieldcol">
+                    <label = "usr" class = "control-label"> Password: </label>
+                </div>
+                <div class="col-md-4 fieldcol">
+                    <div class="form-group">
+                        <label = "usr" class = "control-label">**********</label>
+                    </div>
+                </div>
+                <div class="col-md-3 fieldcol">
+                    <div class="form-group">
+                        <div class="box">
+                            <button class="btn btn-default" data-toggle="modal" data-target="#ChangePassword">
+                                ChangePassword
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row field">
+                <div class="col-md-2 fieldcol">
+                    <label>First Name <span>(*)</span></label>
+                </div>
+                <div class="col-md-4 fieldcol">
+                    <div class="form-group">
+                        <input type="text" name="FirstName" id="FirstName" class="form-control"
+                               value="<?php echo $FirstName; ?>">
+                    </div>
+                </div>
+            </div>
+            <div class="row field">
+                <div class="col-md-2 fieldcol">
+                    <label>Middle Name <span>(*)</span></label>
+                </div>
+                <div class="col-md-4 fieldcol">
+                    <div class="form-group">
+                        <input type="text" name="MiddleName" id="MiddleName" class="form-control"
+                               value="<?php echo $MiddleName; ?>">
+                    </div>
+                </div>
+            </div>
+            <div class="row field">
+                <div class="col-md-2 fieldcol">
+                    <label>Last Name <span>(*)</span></label>
+                </div>
+                <div class="col-md-4 fieldcol">
+                    <div class="form-group">
+                        <input type="text" name="LastName" id="LastName" class="form-control"
+                               value="<?php echo $LastName; ?>">
+                    </div>
+                </div>
+            </div>
+            <div class="row field">
+                <div class="col-md-2 fieldcol">
+                    <label>Position <span>(*)</span></label>
+                </div>
+                <div class="col-md-4 fieldcol">
+                    <div class="form-group">
+                        <input type="text" name="Position" id="Position" class="form-control"
+                               value="<?php echo $Position; ?>">
+                    </div>
+                </div>
+            </div>
+            <div class="row field">
+                <div class="col-md-2 fieldcol">
+                    <label>Department<span>(*)</span></label>
+                </div>
+                <div class="col-md-4 fieldcol">
+                    <div class="form-group">
+                        <input type="text" name="Department" id="Department" class="form-control"
+                               value="<?php echo $Department; ?>">
+                    </div>
+                </div>
+            </div>
+            <div class="row field">
+
+                <div class="col-md-2 fieldcol">
+                    <label>Address <span>(*)</span></label>
+                </div>
+                <div class="col-md-4 fieldcol">
+                    <div class="form-group">
+                        <input type="text" name="Address" id="Address" class="form-control"
+                               value="<?php echo $Address; ?>">
+                    </div>
+                </div>
+            </div>
+            <div class="row field">
+                <div class="col-md-2 fieldcol">
+                    <label>Contact Number <span>(*)</span></label>
+                </div>
+                <div class="col-md-4 fieldcol">
+                    <div class="form-group">
+                        <input type="text" name="ContactNumber" id="ContactNumber" class="form-control"
+                               value="<?php echo $ContactNumber ?>">
                     </div>
                 </div>
             </div>
         </div>
-        <div class="row field">
-            <div class="col-md-2 fieldcol">
-                <label = "usr" class = "control-label"> Password: </label>
-            </div>
-            <div class="col-md-4 fieldcol">
-                <div class="form-group">
-                    <label = "usr" class = "control-label">**********</label>
-                </div>
-            </div>
-            <div class="col-md-3 fieldcol">
-                <div class="form-group">
-                    <div class="box">
-                        <button class="btn btn-default" data-toggle="modal" data-target="#ChangePassword">ChangePassword</button>
-                    </div>
-                </div>
+        &nbsp;
+        <div class="hr5" style="margin-top:35px;margin-bottom:40px;"></div>
+        <div class="field">
+            <div class="text-center">
+                <button type="submit" class="btn-system btn-large">Save</button>
+                <button type="submit" class="btn-system btn-large">Cancel</button>
             </div>
         </div>
-        <div class="row field">
-            <div class="col-md-2 fieldcol">
-                <label>First Name <span>(*)</span></label>
-            </div>
-            <div class="col-md-4 fieldcol">
-                <div class="form-group">
-                    <input type="text" name="FirstName" id="FirstName" class="form-control" value="<?php echo $FirstName; ?>">
-                </div>
-            </div>
-        </div>
-        <div class="row field">
-            <div class="col-md-2 fieldcol">
-                <label>Middle Name <span>(*)</span></label>
-            </div>
-            <div class="col-md-4 fieldcol">
-                <div class="form-group">
-                    <input type="text" name="MiddleName" id="MiddleName" class="form-control" value="<?php echo $MiddleName; ?>">
-                </div>
-            </div>
-        </div>
-        <div class="row field">
-            <div class="col-md-2 fieldcol">
-                <label>Last Name <span>(*)</span></label>
-            </div>
-            <div class="col-md-4 fieldcol">
-                <div class="form-group">
-                    <input type="text" name="LastName" id="LastName" class="form-control" value="<?php echo $LastName; ?>">
-                </div>
-            </div>
-        </div>
-        <div class="row field">
-            <div class="col-md-2 fieldcol">
-                <label>Position <span>(*)</span></label>
-            </div>
-            <div class="col-md-4 fieldcol">
-                <div class="form-group">
-                    <input type="text" name="Position" id="Position" class="form-control" value="<?php echo $Position; ?>">
-                </div>
-            </div>
-        </div>
-        <div class="row field">
-            <div class="col-md-2 fieldcol">
-                <label>Department<span>(*)</span></label>
-            </div>
-            <div class="col-md-4 fieldcol">
-                <div class="form-group">
-                    <input type="text" name="Department" id="Department" class="form-control" value="<?php echo $Department; ?>">
-                </div>
-            </div>
-        </div>
-        <div class="row field">
-
-            <div class="col-md-2 fieldcol">
-                <label>Address <span>(*)</span></label>
-            </div>
-            <div class="col-md-4 fieldcol">
-                <div class="form-group">
-                    <input type="text" name="Address" id="Address" class="form-control" value="<?php echo $Address; ?>">
-                </div>
-            </div>
-        </div>
-        <div class="row field">
-            <div class="col-md-2 fieldcol">
-                <label>Contact Number <span>(*)</span></label>
-            </div>
-            <div class="col-md-4 fieldcol">
-                <div class="form-group">
-                    <input type="text" name="ContactNumber" id="ContactNumber" class="form-control" value="<?php echo $ContactNumber ?>">
-                </div>
-            </div>
-        </div>
-    </div>
-    &nbsp;
-    <div class="hr5" style="margin-top:35px;margin-bottom:40px;"></div>
-    <div class="field">
-                    <div class="text-center">
-                        <button type="submit" class="btn-system btn-large">Save</button>
-                        <button type="submit" class="btn-system btn-large">Cancel</button>
-                    </div>           
-     </div>
     </form>
 </div>
 </body>
@@ -572,16 +586,16 @@ $admin_tbl =
                             message: "This field is required."
                         },
                         regexp: {
-                                regexp: /^[a-z\s]+$/i,
-                                message: "First Name can consist of alphabetical characters and spaces only"
+                            regexp: /^[a-z\s]+$/i,
+                            message: "First Name can consist of alphabetical characters and spaces only"
                         }
                     }
                 },
                 MiddleName: {
                     validators: {
                         regexp: {
-                                regexp: /^[a-z\s]+$/i,
-                                message: "Middle Name can consist of alphabetical characters and spaces only"
+                            regexp: /^[a-z\s]+$/i,
+                            message: "Middle Name can consist of alphabetical characters and spaces only"
                         }
                     }
                 },
@@ -591,8 +605,8 @@ $admin_tbl =
                             message: "This field is required."
                         },
                         regexp: {
-                                regexp: /^[a-z\s]+$/i,
-                                message: "Last Name Name can consist of alphabetical characters and spaces only"
+                            regexp: /^[a-z\s]+$/i,
+                            message: "Last Name Name can consist of alphabetical characters and spaces only"
                         }
                     }
                 },
@@ -623,8 +637,8 @@ $admin_tbl =
                             message: "This field is required."
                         },
                         regexp: {
-                                regexp: /^[0-9]+$/i,
-                                message: "Contact Number can consist of numeric characters only"
+                            regexp: /^[0-9]+$/i,
+                            message: "Contact Number can consist of numeric characters only"
                         }
                     }
                 }
@@ -633,15 +647,15 @@ $admin_tbl =
     });
 
 
-    $("button#submitPassword").click( function() {
-        $.post( $("#change-password-form").attr("action"),
-                $("#change-password-form :input").serializeArray(),
-                function(data) {
-                  $("div#message").html(data);
-                });
-     
-        $("#change-password-form").submit( function() {
-           return false;    
+    $("button#submitPassword").click(function () {
+        $.post($("#change-password-form").attr("action"),
+            $("#change-password-form :input").serializeArray(),
+            function (data) {
+                $("div#message").html(data);
+            });
+
+        $("#change-password-form").submit(function () {
+            return false;
         });
     });
 </script>

@@ -4,8 +4,6 @@ session_start();
 $CompanyID = $_SESSION['CompanyID'];
 ?>
 <!doctype html>
-<!--[if IE 8 ]><html class="ie ie8" lang="en"> <![endif]-->
-<!--[if (gte IE 9)|!(IE)]><html lang="en" class="no-js"> <![endif]-->
 <html lang="en">
 
 <head>
@@ -51,7 +49,7 @@ $CompanyID = $_SESSION['CompanyID'];
     <!-- Margo CSS Styles  -->
     <link rel="stylesheet" type="text/css" href="../css/style.css" media="screen">
 
-      <!-- OJPMS CSS  -->
+    <!-- OJPMS CSS  -->
     <link rel="stylesheet" type="text/css" href="../css/ojpms-style.css" media="screen">
 
     <!-- Responsive CSS Styles  -->
@@ -80,46 +78,44 @@ $CompanyID = $_SESSION['CompanyID'];
     <script type="text/javascript" src="../js/jquery.slicknav.js"></script>
     <script type="text/javascript" src="../js/script.js"></script>
 
-  <!--[if IE 8]><script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
-  <!--[if lt IE 9]><script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
-
 </head>
 <body>
 
-  <!-- Full Body Container -->
-  <div id="container">
+<!-- Full Body Container -->
+<div id="container">
 
 
     <!-- Start Header Section -->
     <div class="hidden-header"></div>
     <header class="clearfix">
 
-      <!-- Start Top Bar -->
+        <!-- Start Top Bar -->
         <div class="top-bar">
             <div class="container">
                 <div class="row">
                     <div class="col-md-6">
                         <!-- Start Contact Info -->
-                            <ul class="contact-details">
-                                <li class="profile-name"><i class="fa fa-hashtag"></i> <b>008-2012-0805</b></li>
-                            </ul>
+                        <ul class="contact-details">
+                            <li class="profile-name"><i class="fa fa-hashtag"></i> <b>008-2012-0805</b></li>
+                        </ul>
                         <!-- End Contact Info -->
                     </div>
                     <!-- .col-md-6 -->
                     <div class="col-md-6">
                         <!-- Start Social Links -->
-                            <ul class="social-list">
-                                <li class="profile-name">
-                                    <a class="bell itl-tooltip" data-placement="bottom" title="" href="#" data-original-title="Notification"><i class="fa fa-bell"></i></a>
-                                </li>
-                                <li class="profile-name">
-                                    &nbsp;
-                                </li>
-                                <li class="profile-name">
-                                    <i class="fa fa-user"></i> Hello, <b>Aira Jane Cruz</b>                               
-                                </li>
-                            </ul>
-                            <!-- End Social Links -->
+                        <ul class="social-list">
+                            <li class="profile-name">
+                                <a class="bell itl-tooltip" data-placement="bottom" title="" href="#"
+                                   data-original-title="Notification"><i class="fa fa-bell"></i></a>
+                            </li>
+                            <li class="profile-name">
+                                &nbsp;
+                            </li>
+                            <li class="profile-name">
+                                <i class="fa fa-user"></i> Hello, <b>Aira Jane Cruz</b>
+                            </li>
+                        </ul>
+                        <!-- End Social Links -->
                     </div>
                     <!-- .col-md-6 -->
                 </div>
@@ -131,29 +127,57 @@ $CompanyID = $_SESSION['CompanyID'];
         <!-- End Top Bar -->
 
 
-      <!-- Start  Logo & Naviagtion  -->
-      <div class="navbar navbar-default navbar-top">
-        <div class="container">
-          <div class="navbar-header">
-            <!-- Stat Toggle Nav Link For Mobiles -->
-            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-              <i class="fa fa-bars"></i>
-            </button>
-            <!-- End Toggle Nav Link For Mobiles -->
-            <a class="navbar-brand" href="index.html">
-             <img src="../images/ojpms.png">
-            </a>
-          </div>
-             <div class="navbar-collapse collapse">
-            <!-- Sign-out -->
-            <div class="signout-side">
-              <a class="show-signout" href="../login-company.php?id=1"><i class="fa fa-sign-out"></i></a>
+        <!-- Start  Logo & Naviagtion  -->
+        <div class="navbar navbar-default navbar-top">
+            <div class="container">
+                <div class="navbar-header">
+                    <!-- Stat Toggle Nav Link For Mobiles -->
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <i class="fa fa-bars"></i>
+                    </button>
+                    <!-- End Toggle Nav Link For Mobiles -->
+                    <a class="navbar-brand" href="index.html">
+                        <img src="../images/ojpms.png">
+                    </a>
+                </div>
+                <div class="navbar-collapse collapse">
+                    <!-- Sign-out -->
+                    <div class="signout-side">
+                        <a class="show-signout" href="../login-company.php?id=1"><i class="fa fa-sign-out"></i></a>
+                    </div>
+                    <!-- End Sign-out -->
+                    <!-- Start Navigation List -->
+                    <ul class="nav navbar-nav navbar-right">
+                        <li>
+                            <a href="company.php">Home</a>
+                        </li>
+                        <li>
+                            <a>Position</a>
+                            <ul class="dropdown">
+                                <li><a href="company-positionlist.php">Position List</a></li>
+                                <li><a href="company-createposition.php">Create Position</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a class="active" href="company-calendar.php">Calendar</a>
+                        </li>
+                        <li><a href="company-settings.php">Settings</a>
+                        </li>
+                        <li>
+                            <a href="company-applicants.php">Applicant List</a>
+                            <ul class="dropdown">
+                                <li><a href="company-pendingapplicants.php">Pending</a></li>
+                                <li><a href="company-acceptedapplicants.php">Accepted</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <!-- End Navigation List -->
+                </div>
             </div>
-            <!-- End Sign-out -->
-             <!-- Start Navigation List -->
-            <ul class="nav navbar-nav navbar-right">
+            <!-- Mobile Menu Start -->
+            <ul class="wpb-mobile-menu">
                 <li>
-                    <a  href="company.php">Home</a>
+                    <a href="company.php">Home</a>
                 </li>
                 <li>
                     <a>Position</a>
@@ -167,7 +191,7 @@ $CompanyID = $_SESSION['CompanyID'];
                 </li>
                 <li><a href="company-settings.php">Settings</a>
                 </li>
-               <li>
+                <li>
                     <a href="company-applicants.php">Applicant List</a>
                     <ul class="dropdown">
                         <li><a href="company-pendingapplicants.php">Pending</a></li>
@@ -175,189 +199,163 @@ $CompanyID = $_SESSION['CompanyID'];
                     </ul>
                 </li>
             </ul>
-            <!-- End Navigation List -->
-        </div>
-    </div>
-        <!-- Mobile Menu Start -->
-    <ul class="wpb-mobile-menu">
-              <li>
-                    <a  href="company.php">Home</a>
-                </li>
-                <li>
-                    <a>Position</a>
-                    <ul class="dropdown">
-                        <li><a href="company-positionlist.php">Position List</a></li>
-                        <li><a href="company-createposition.php">Create Position</a></li>
-                    </ul>
-                </li>
-                <li>
-                    <a class = "active" href="company-calendar.php">Calendar</a>
-                </li>
-                <li><a href="company-settings.php">Settings</a>
-                </li>
-                <li>
-                    <a  href="company-applicants.php">Applicant List</a>
-                    <ul class="dropdown">
-                        <li><a href="company-pendingapplicants.php">Pending</a></li>
-                        <li><a href="company-acceptedapplicants.php">Accepted</a></li>
-                    </ul>
-                </li>
-    </ul>
     </header>
     <!-- Mobile Menu End -->
 
-      </div>
-      <!-- End Header Logo & Naviagtion -->
+</div>
+<!-- End Header Logo & Naviagtion -->
 
-    </header>
-    <!-- End Header Section -->
+</header>
+<!-- End Header Section -->
 
- <!-- Start Page Banner -->
-    <div class="page-banner" style="padding:40px 0; center #f9f9f9;">
-      <div class="container">
+<!-- Start Page Banner -->
+<div class="page-banner" style="padding:40px 0; center #f9f9f9;">
+    <div class="container">
         <div class="row">
-          <div class="col-md-6">
-            <h2>Create an Event</h2>
-          </div>
+            <div class="col-md-6">
+                <h2>Create an Event</h2>
+            </div>
         </div>
-      </div>
     </div>
-    <!-- End Page Banner -->
+</div>
+<!-- End Page Banner -->
 
 <!--Content-->
-  <br><br><br>
-  <form action="add-company.php" name="addcalendar" id="addcalendar" autocomplete="off">
-    <div class =  "container">
-      <div class = "col-md-12">
-        <div class = "row">
+<br><br><br>
+<form action="add-company.php" name="addcalendar" id="addcalendar" autocomplete="off">
+    <div class="container">
+        <div class="col-md-12">
+            <div class="row">
                 <div class="row field">
-                    <div class = "col-md-3 fieldcol">
-                         <label = "usr" class = "control-label">Event from: </label>
+                    <div class="col-md-3 fieldcol">
+                        <label = "usr" class = "control-label">Event from: </label>
                     </div>
-                    <div class = "col-md-8 fieldcol">
+                    <div class="col-md-8 fieldcol">
                         <div class="form-group">
-                            <div class = "date">
-                               <input type = "date" name = "datefrom" id = "date_from" class = "form-control">
-                                <div class = "date_to">
+                            <div class="date">
+                                <input type="date" name="datefrom" id="date_from" class="form-control">
+                                <div class="date_to">
                                     <label = "usr" class = "control-label" id = "label">to: </label>
-                                    <input type = "date" name = "dateto" id = "date_to" class = "form-control">
+                                    <input type="date" name="dateto" id="date_to" class="form-control">
                                 </div>
-                            </div> 
-                        </div>
-                    </div>
-                </div> 
-                <div class="row field">
-                    <div class = "col-md-3 fieldcol">
-                         <label = "usr" class = "control-label"> Event Title: </label>
-                    </div>
-                    <div class = "col-md-8 fieldcol">
-                        <div class="form-group">
-                              <input type = "text" name = "eventtitle" id = "eventtitle" class = "form-control" >
-                        </div>
-                    </div>
-                </div>  
-                <div class="row field">
-                    <div class = "col-md-3 fieldcol">
-                          <label = "usr" class = "control-label"> Location: </label>
-                    </div>
-                    <div class = "col-md-8 fieldcol">
-                        <div class="form-group">
-                              <input type = "text" name = "location" id = "location" class = "form-control" >
-                        </div>
-                    </div>
-                </div>  
-                <div class="row field">
-                    <div class = "col-md-3 fieldcol">
-                         <label = "usr" class = "control-label"> Description: </label>
-                    </div>
-                    <div class = "col-md-8 fieldcol">
-                        <div class="form-group">
-                              <input type = "text" class = "form-control" id = "descrip" name = "descrip"  >
+                            </div>
                         </div>
                     </div>
                 </div>
-                 &nbsp;
+                <div class="row field">
+                    <div class="col-md-3 fieldcol">
+                        <label = "usr" class = "control-label"> Event Title: </label>
+                    </div>
+                    <div class="col-md-8 fieldcol">
+                        <div class="form-group">
+                            <input type="text" name="eventtitle" id="eventtitle" class="form-control">
+                        </div>
+                    </div>
+                </div>
+                <div class="row field">
+                    <div class="col-md-3 fieldcol">
+                        <label = "usr" class = "control-label"> Location: </label>
+                    </div>
+                    <div class="col-md-8 fieldcol">
+                        <div class="form-group">
+                            <input type="text" name="location" id="location" class="form-control">
+                        </div>
+                    </div>
+                </div>
+                <div class="row field">
+                    <div class="col-md-3 fieldcol">
+                        <label = "usr" class = "control-label"> Description: </label>
+                    </div>
+                    <div class="col-md-8 fieldcol">
+                        <div class="form-group">
+                            <input type="text" class="form-control" id="descrip" name="descrip">
+                        </div>
+                    </div>
+                </div>
+                &nbsp;
                 <div class="hr5" style="margin-top:35px;margin-bottom:40px;"></div>
                 <div class="field">
                     <div class="text-center">
-                        <button type="submit" class="btn-system btn-large" id = "BtnCalendarsave" name = "BtnCalendarsave" >Save</button>
+                        <button type="submit" class="btn-system btn-large" id="BtnCalendarsave" name="BtnCalendarsave">
+                            Save
+                        </button>
                         <button type="submit" class="btn-system btn-large" id="cancel">Cancel</button>
-                    </div>           
+                    </div>
                 </div>
+            </div>
         </div>
-      </div>
     </div>
-  </form>        
+</form>
 </body>
 <script type="text/javascript">
-        $(document).ready(function (){
-            var validator = $("#addcalendar").bootstrapValidator({
-                feedbackIcons: {
-                    valid: "glyphicon glyphicon-ok",
-                    invalid: "glyphicon glyphicon-remove",
-                    validating: "glyphicon glyphicon-refresh"
+    $(document).ready(function () {
+        var validator = $("#addcalendar").bootstrapValidator({
+            feedbackIcons: {
+                valid: "glyphicon glyphicon-ok",
+                invalid: "glyphicon glyphicon-remove",
+                validating: "glyphicon glyphicon-refresh"
+            },
+            fields: {
+                datefrom: {
+                    validators: {
+                        notEmpty: {
+                            message: "Date From is required."
+                        }
+                    }
                 },
-                fields:{
-                  datefrom: {
-                        validators: {
-                            notEmpty: {
-                                message: "Date From is required."
-                            }
+                dateto: {
+                    validators: {
+                        notEmpty: {
+                            message: "Date To is required."
                         }
-                    },
-                    dateto: {
-                        validators: {
-                            notEmpty: {
-                                message: "Date To is required."
-                            }
+                    }
+                },
+                eventtitle: {
+                    validators: {
+                        notEmpty: {
+                            message: "Event Title is required."
+                        },
+                        stringLength: {
+                            min: 5,
+                            max: 25,
+                            message: "Event Title must be 5-25 characters long."
                         }
-                    },
-                    eventtitle: {
-                        validators: {
-                            notEmpty: {
-                                message: "Event Title is required."
-                            },
-                            stringLength: {
-                                min: 5,
-                                max: 25,
-                                message: "Event Title must be 5-25 characters long."
-                            }
+                    }
+                },
+                location: {
+                    validators: {
+                        notEmpty: {
+                            message: "Location is required."
+                        },
+                        stringLength: {
+                            min: 3,
+                            max: 15,
+                            message: "Location must be 3-15 characters long."
+                        },
+                        regexp: {
+                            regexp: /^[a-z\s]+$/i,
+                            message: "Location can consist of alphabetical characters and spaces only"
                         }
-                    },
-                    location: {
-                        validators: {
-                            notEmpty: {
-                                message: "Location is required."
-                            },
-                            stringLength: {
-                                min: 3,
-                                max: 15,
-                                message: "Location must be 3-15 characters long."
-                            },
-                            regexp: {
-                                regexp: /^[a-z\s]+$/i,
-                                message: "Location can consist of alphabetical characters and spaces only"
-                            }
+                    }
+                },
+                descrip: {
+                    validators: {
+                        notEmpty: {
+                            message: "Description is required."
+                        },
+                        stringLength: {
+                            min: 5,
+                            max: 25,
+                            message: "Description must be 5-25 characters long."
+                        },
+                        regexp: {
+                            regexp: /^[a-z\s]+$/i,
+                            message: "Description can consist of alphabetical characters and spaces only"
                         }
-                    },
-                    descrip: {
-                        validators: {
-                            notEmpty: {
-                                message: "Description is required."
-                            },
-                            stringLength: {
-                                min: 5,
-                                max: 25,
-                                message: "Description must be 5-25 characters long."
-                            },
-                            regexp: {
-                                regexp: /^[a-z\s]+$/i,
-                                message: "Description can consist of alphabetical characters and spaces only"
-                            }
-                        }
-                    },
-                }
-            });
+                    }
+                },
+            }
         });
-    </script>
+    });
+</script>
 </html>

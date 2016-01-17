@@ -228,7 +228,7 @@ $CompanyID = $_SESSION['CompanyID'];
                 <th width='15%' class='tabletitle'>Course</th>
                 <th width='20%' class='tabletitle'>Location</th>
                 <th width='15%' class='tabletitle'>Email</th>
-                <th width='15%' class='tabletitle'></th>
+                <th width='10%' class='tabletitle'>Action</th>
             <tr>
             </thead>
             <?php
@@ -294,6 +294,77 @@ $CompanyID = $_SESSION['CompanyID'];
                     </td>
                 <tr>
                 </tbody>
+                <!-- Modal -->
+                <div class="modal fade" id="AcceptRequest<?php echo $RID; ?>"
+                     role="dialog">
+                    <div class="modal-dialog" style="padding:100px">
+                        <!-- Modal content-->
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                <h4 class="modal-title">Accept Applicant?</h4>
+                            </div>
+                            <div class="modal-body">
+                                <div class="col-md-15 fieldcol">
+                                    <label = "usr" class = "control-label">Do you want to accept this applicant?</label>
+                                    <div class="form-group">
+                                    </div>
+                                </div>
+                                <div class="col-md-15 fieldcol">
+                                    <label = "usr" class = "control-label">Message to applicant.
+                                    <span>(*)</span> </label>
+                                    <div class="form-group">
+                                        <textarea type="text" name="AcceptMsg" id="AcceptMsg"
+                                                  class="form-control"> </textarea>
+                                    </div>
+                                </div>
+                                <div class="modal-footer">
+                                    <a href="add-company.php?id=1&rid=<?php echo $RID; ?>"
+                                       class="btn btn-primary">Accept</a>
+                                    <button type="button" class="btn btn-default" data-dismiss="modal">
+                                        Cancel
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="modal fade" id="DeclineRequest<?php echo $RID; ?>"
+                     role="dialog">
+                    <div class="modal-dialog" style="padding:100px">
+                        <!-- Modal content-->
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                <h4 class="modal-title">Reject Applicant?</h4>
+                            </div>
+                            <div class="modal-body">
+                                <div class="col-md-15 fieldcol">
+                                    <label = "usr" class = "control-label">Do you want to reject this applicant? This
+                                    cannot be undone.</label>
+                                    <div class="form-group">
+                                    </div>
+                                </div>
+                                <div class="col-md-15 fieldcol">
+                                    <label = "usr" class = "control-label">Message to applicant.
+                                    <span>(*)</span> </label>
+                                    <div class="form-group">
+                                        <textarea type="text" name="RejectMsg" id="RejectMsg"
+                                                  class="form-control"> </textarea>
+                                    </div>
+                                </div>
+                                <div class="modal-footer">
+                                    <a href="add-company.php?id=2&rid=<?php echo $RID; ?>"
+                                       class="btn btn-danger">Reject</a>
+                                    <button type="button" class="btn btn-default" data-dismiss="modal">
+                                        Cancel
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
                 <?php
             }
             ?>
