@@ -58,6 +58,7 @@ else{
 
     <!-- Color CSS Styles  -->
     <link rel="stylesheet" type="text/css" href="../../css/colors/yellow.css" title="yellow" media="screen" />
+    <link rel="stylesheet" type="text/css" href="star-rate.css" media="screen" />
 
     <!-- JS  -->
     <script type="text/javascript" src="../../js/jquery.min.js"></script>
@@ -320,7 +321,7 @@ else{
                                     <tr class="table-color">
                                         <th>Specialization</th>
                                         <th>Year of Experience</th>
-                                        <th class="text-center">Proficiency</th>
+                                        <th>Proficiency</th>
                                         <th width="15%">&nbsp;</th>
                                     </tr>
                                 </thead>
@@ -354,12 +355,19 @@ else{
                                     <tr>
                                         <td><?php echo $Specialization; ?></td>
                                         <td><?php echo $YearOfExperience; ?></td>
-                                        <td class="rating text-center">
-                                            <span class="star"></span>
-                                            <span class="star"></span>
-                                            <span class="star"></span>
-                                            <span class="star"></span>
-                                            <span class="star"></span>
+                                        <td class="text-center">
+                                            <fieldset class="rating">
+                                                <input type="radio" id="star5" name="rating" value="5" /><label class = "full" for="star5" title="Awesome - 5 stars"></label>
+                                                <input type="radio" id="star4half" name="rating" value="4 and a half" /><label class="half" for="star4half" title="Pretty good - 4.5 stars"></label>
+                                                <input type="radio" id="star4" name="rating" value="4" /><label class = "full" for="star4" title="Pretty good - 4 stars"></label>
+                                                <input type="radio" id="star3half" name="rating" value="3 and a half" /><label class="half" for="star3half" title="Meh - 3.5 stars"></label>
+                                                <input type="radio" id="star3" name="rating" value="3" /><label class = "full" for="star3" title="Meh - 3 stars"></label>
+                                                <input type="radio" id="star2half" name="rating" value="2 and a half" /><label class="half" for="star2half" title="Kinda bad - 2.5 stars"></label>
+                                                <input type="radio" id="star2" name="rating" value="2" /><label class = "full" for="star2" title="Kinda bad - 2 stars"></label>
+                                                <input type="radio" id="star1half" name="rating" value="1 and a half" /><label class="half" for="star1half" title="Meh - 1.5 stars"></label>
+                                                <input type="radio" id="star1" name="rating" value="1" /><label class = "full" for="star1" title="Sucks big time - 1 star"></label>
+                                                <input type="radio" id="starhalf" name="rating" value="half" /><label class="half" for="starhalf" title="Sucks big time - 0.5 stars"></label>
+                                            </fieldset>
                                         </td>
                                         <td>
                                             <button class="btn btn-danger" data-toggle="modal" data-target="#DeleteSpecialization<?php echo $SID; ?>">
@@ -414,8 +422,8 @@ else{
                                 <thead>
                                     <tr class="table-color">
                                         <th>Language</th>
-                                        <th class="text-center">Written Proficiency</th>
-                                        <th class="text-center">Spoken Proficiency</th>
+                                        <th>Written Proficiency</th>
+                                        <th>Spoken Proficiency</th>
                                         <th width="15%">&nbsp;</th>
                                     </tr>
                                 </thead>
@@ -437,19 +445,33 @@ else{
                                     ?>
                                     <tr>
                                         <td><?php echo $Language; ?></td>
-                                        <td class="rating text-center">
-                                            <span class="star"></span>
-                                            <span class="star"></span>
-                                            <span class="star"></span>
-                                            <span class="star"></span>
-                                            <span class="star"></span>
+                                        <td class="text-center">
+                                            <fieldset class="rating">
+                                                <input type="radio" id="star5" name="rating" value="5" /><label class = "full" for="star5" title="Awesome - 5 stars"></label>
+                                                <input type="radio" id="star4half" name="rating" value="4 and a half" /><label class="half" for="star4half" title="Pretty good - 4.5 stars"></label>
+                                                <input type="radio" id="star4" name="rating" value="4" /><label class = "full" for="star4" title="Pretty good - 4 stars"></label>
+                                                <input type="radio" id="star3half" name="rating" value="3 and a half" /><label class="half" for="star3half" title="Meh - 3.5 stars"></label>
+                                                <input type="radio" id="star3" name="rating" value="3" /><label class = "full" for="star3" title="Meh - 3 stars"></label>
+                                                <input type="radio" id="star2half" name="rating" value="2 and a half" /><label class="half" for="star2half" title="Kinda bad - 2.5 stars"></label>
+                                                <input type="radio" id="star2" name="rating" value="2" /><label class = "full" for="star2" title="Kinda bad - 2 stars"></label>
+                                                <input type="radio" id="star1half" name="rating" value="1 and a half" /><label class="half" for="star1half" title="Meh - 1.5 stars"></label>
+                                                <input type="radio" id="star1" name="rating" value="1" /><label class = "full" for="star1" title="Sucks big time - 1 star"></label>
+                                                <input type="radio" id="starhalf" name="rating" value="half" /><label class="half" for="starhalf" title="Sucks big time - 0.5 stars"></label>
+                                            </fieldset>
                                         </td>
-                                        <td class="rating text-center">
-                                            <span class="star" selected></span>
-                                            <span class="star"></span>
-                                            <span class="star"></span>
-                                            <span class="star"></span>
-                                            <span class="star"></span>
+                                        <td class="text-center">
+                                            <fieldset class="rating">
+                                                <input type="radio" id="star5" name="rating" value="5" /><label class = "full" for="star5" title="Awesome - 5 stars"></label>
+                                                <input type="radio" id="star4half" name="rating" value="4 and a half" /><label class="half" for="star4half" title="Pretty good - 4.5 stars"></label>
+                                                <input type="radio" id="star4" name="rating" value="4" /><label class = "full" for="star4" title="Pretty good - 4 stars"></label>
+                                                <input type="radio" id="star3half" name="rating" value="3 and a half" /><label class="half" for="star3half" title="Meh - 3.5 stars"></label>
+                                                <input type="radio" id="star3" name="rating" value="3" /><label class = "full" for="star3" title="Meh - 3 stars"></label>
+                                                <input type="radio" id="star2half" name="rating" value="2 and a half" /><label class="half" for="star2half" title="Kinda bad - 2.5 stars"></label>
+                                                <input type="radio" id="star2" name="rating" value="2" /><label class = "full" for="star2" title="Kinda bad - 2 stars"></label>
+                                                <input type="radio" id="star1half" name="rating" value="1 and a half" /><label class="half" for="star1half" title="Meh - 1.5 stars"></label>
+                                                <input type="radio" id="star1" name="rating" value="1" /><label class = "full" for="star1" title="Sucks big time - 1 star"></label>
+                                                <input type="radio" id="starhalf" name="rating" value="half" /><label class="half" for="starhalf" title="Sucks big time - 0.5 stars"></label>
+                                            </fieldset>
                                         </td>
                                         <td>
                                             <button class="btn btn-danger" data-toggle="modal" data-target="#DeleteLanguage">
