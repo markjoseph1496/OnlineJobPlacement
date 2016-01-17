@@ -25,16 +25,16 @@ $companyinfo_tbl =
         $CompanyID
     );
 
-    $CompanyName = $companyinfo_tbl[0][0];
-    $Description = $companyinfo_tbl[0][1];
-    $Industry = $companyinfo_tbl[0][2];
-    $Classification = $companyinfo_tbl[0][3];
-    $Address = $companyinfo_tbl[0][4];
-    $City = $companyinfo_tbl[0][5];
-    $PostalCode = $companyinfo_tbl[0][6];
-    $PhoneNum = $companyinfo_tbl[0][7];
-    $MobileNumber = $companyinfo_tbl[0][8];
-    $Fax = $companyinfo_tbl[0][9];
+$CompanyName = $companyinfo_tbl[0][0];
+$Description = $companyinfo_tbl[0][1];
+$Industry = $companyinfo_tbl[0][2];
+$Classification = $companyinfo_tbl[0][3];
+$Address = $companyinfo_tbl[0][4];
+$City = $companyinfo_tbl[0][5];
+$PostalCode = $companyinfo_tbl[0][6];
+$PhoneNum = $companyinfo_tbl[0][7];
+$MobileNumber = $companyinfo_tbl[0][8];
+$Fax = $companyinfo_tbl[0][9];
 
 ?>
 <!doctype html>
@@ -102,7 +102,7 @@ $companyinfo_tbl =
     <script type="text/javascript" src="../js/jquery.slicknav.js"></script>
 
     <!-- fileupload -->
-    <link href="../css/fileinput.min.css" media="all" rel="stylesheet" type="text/css" />
+    <link href="../css/fileinput.min.css" media="all" rel="stylesheet" type="text/css"/>
     <script src="../js/fileinput.min.js" type="text/javascript"></script>
 
 </head>
@@ -123,26 +123,27 @@ $companyinfo_tbl =
                 <div class="row">
                     <div class="col-md-6">
                         <!-- Start Contact Info -->
-                            <ul class="contact-details">
-                                <li class="profile-name"><i class="fa fa-hashtag"></i> <b>008-2012-0805</b></li>
-                            </ul>
+                        <ul class="contact-details">
+                            <li class="profile-name"><i class="fa fa-hashtag"></i> <b>008-2012-0805</b></li>
+                        </ul>
                         <!-- End Contact Info -->
                     </div>
                     <!-- .col-md-6 -->
                     <div class="col-md-6">
                         <!-- Start Social Links -->
-                            <ul class="social-list">
-                                <li class="profile-name">
-                                    <a class="bell itl-tooltip" data-placement="bottom" title="" href="#" data-original-title="Notification"><i class="fa fa-bell"></i></a>
-                                </li>
-                                <li class="profile-name">
-                                    &nbsp;
-                                </li>
-                                <li class="profile-name">
-                                    <i class="fa fa-user"></i> Hello, <b>Aira Jane Cruz</b>                               
-                                </li>
-                            </ul>
-                            <!-- End Social Links -->
+                        <ul class="social-list">
+                            <li class="profile-name">
+                                <a class="bell itl-tooltip" data-placement="bottom" title="" href="#"
+                                   data-original-title="Notification"><i class="fa fa-bell"></i></a>
+                            </li>
+                            <li class="profile-name">
+                                &nbsp;
+                            </li>
+                            <li class="profile-name">
+                                <i class="fa fa-user"></i> Hello, <b>Aira Jane Cruz</b>
+                            </li>
+                        </ul>
+                        <!-- End Social Links -->
                     </div>
                     <!-- .col-md-6 -->
                 </div>
@@ -253,10 +254,10 @@ $companyinfo_tbl =
 <br><br><br>
 <div class="container">
     <div class="col-md-12 fieldcol">
-                    <a href="company-settingsaccount.php" class="btnforadding" style="float:right;">
-                        <span class="fa fa-user"> My Account </span>
-                    </a>
-   </div>
+        <a href="company-settingsaccount.php" class="btnforadding" style="float:right;">
+            <span class="fa fa-user"> My Account </span>
+        </a>
+    </div>
     <div class="col-md-6">
         <form method="POST" name="CompanySetting" id="CompanySetting" autocomplete="off" action="company-setting.php">
             <?php
@@ -297,7 +298,8 @@ $companyinfo_tbl =
                 </div>
                 <div class="col-md-7 fieldcol">
                     <div class="form-group">
-                        <textarea type="text" name="description" id="usr" class="form-control" style="width: 300px;"><?php echo $Description; ?></textarea>
+                        <textarea type="text" name="description" id="usr" class="form-control"
+                                  style="width: 300px;"><?php echo $Description; ?></textarea>
                     </div>
                 </div>
             </div>
@@ -316,11 +318,11 @@ $companyinfo_tbl =
                                 "SELECT Industry FROM listofindustrytbl",
                                 TRUE
                             );
-                        foreach($industrytbl as $value){
+                        foreach ($industrytbl as $value) {
                             $Industry = $value[0];
                             ?>
                             <option value="<?php echo $Industry; ?>"><?php echo $Industry; ?></option>
-                        <?php
+                            <?php
                         }
                         ?>
                     </select>
@@ -458,15 +460,15 @@ $companyinfo_tbl =
                        value="<?php echo $Fax; ?>">
             </div>
         </div>
-    </div> 
+    </div>
     &nbsp;
     <div class="hr5" style="margin-top:35px;margin-bottom:40px;"></div>
     <div class="field">
-                    <div class="text-center">
-                        <button type="submit" class="btn-system btn-large" name="btnSave" id="save">Save</button>
-                        <button type="submit" class="btn-system btn-large">Cancel</button>
-    </div>        
-     </div>
+        <div class="text-center">
+            <button type="submit" class="btn-system btn-large" name="btnSave" id="save">Save</button>
+            <button type="submit" class="btn-system btn-large">Cancel</button>
+        </div>
+    </div>
     </form>
 </div>
 
@@ -474,7 +476,8 @@ $companyinfo_tbl =
     <!-- Single Testimonial -->
     <div class="classic-testimonials">
         <label class="control-label">Select Image</label>
-        <input id="ProfilePicture" name="ProfilePicture" multiple type="file" class="file file-loading" data-allowed-file-extensions='["png", "jpg", "bmp", "gif"]'>
+        <input id="ProfilePicture" name="ProfilePicture" multiple type="file" class="file file-loading"
+               data-allowed-file-extensions='["png", "jpg", "bmp", "gif"]'>
         <br>
         <button id="" class="btn-system btn-mini border-btn" name="btnDelete">Delete Image</button>
     </div>
