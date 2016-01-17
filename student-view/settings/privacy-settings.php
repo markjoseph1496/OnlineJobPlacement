@@ -27,8 +27,18 @@ if(is_null($_SESSION['StudentID'])){
     <meta name="description" content="Margo - Responsive HTML5 Template">
     <meta name="author" content="iThemesLab">
 
-    <!-- Bootstrap CSS  -->
-    <link rel="stylesheet" href="../../css/bootstrap.min.css" type="text/css" media="screen">
+    <!-- Bootstrap CSS -->
+    <link href="../../css/bootstrap.min.css" rel="stylesheet"/>
+
+    <!-- BootstrapValidator CSS -->
+    <link href="../../css/bootstrapValidator.min.css" rel="stylesheet"/>
+
+    <!-- jQuery and Bootstrap JS -->
+    <script type="text/javascript" src="../../js/jquery.min.js"></script>
+    <script src="../../js/bootstrap.min.js" type="text/javascript"></script>
+
+    <!-- BootstrapValidator -->
+    <script src="../../js/bootstrapValidator.min.js" type="text/javascript"></script>
 
     <!-- Font Awesome CSS -->
     <link rel="stylesheet" href="../../css/font-awesome.min.css" type="text/css" media="screen">
@@ -42,7 +52,7 @@ if(is_null($_SESSION['StudentID'])){
     <!-- Slicknav -->
     <link rel="stylesheet" type="text/css" href="../../css/slicknav.css" media="screen">
 
-    <!-- CSS Styles  -->
+    <!-- Margo CSS Styles  -->
     <link rel="stylesheet" type="text/css" href="../../css/style.css" media="screen">
 
     <!-- Responsive CSS Styles  -->
@@ -52,30 +62,23 @@ if(is_null($_SESSION['StudentID'])){
     <link rel="stylesheet" type="text/css" href="../../css/animate.css" media="screen">
 
     <!-- Color CSS Styles  -->
-    <link rel="stylesheet" type="text/css" href="../../css/colors/yellow.css" title="yellow" media="screen" />
+    <link rel="stylesheet" type="text/css" href="../../css/colors/yellow.css" title="yellow" media="screen"/>
 
     <!-- JS  -->
-    <script type="text/javascript" src="../../js/jquery.min.js"></script>
-    <script type="text/javascript" src="../../js/modernizrr.js"></script>
-    <script type="text/javascript" src="../../js/jquery.appear.js"></script>
-    <script type="text/javascript" src="../../js/count-to.js"></script>
-    <script type="text/javascript" src="../../js/jquery.nicescroll.min.js"></script>
-    <script type="text/javascript" src="../../js/jquery.slicknav.js"></script>
-
     <script type="text/javascript" src="../../js/jquery.migrate.js"></script>
-    <script type="text/javascript" src="../../js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../../js/modernizrr.js"></script>
     <script type="text/javascript" src="../../js/jquery.fitvids.js"></script>
     <script type="text/javascript" src="../../js/owl.carousel.min.js"></script>
     <script type="text/javascript" src="../../js/nivo-lightbox.min.js"></script>
-    <script type="text/javascript" src="../../js/jquery.textillate.js"></script>
-
-    <script type="text/javascript" src="../../js/nivo-lightbox.min.js"></script>
     <script type="text/javascript" src="../../js/jquery.isotope.min.js"></script>
+    <script type="text/javascript" src="../../js/jquery.appear.js"></script>
+    <script type="text/javascript" src="../../js/count-to.js"></script>
     <script type="text/javascript" src="../../js/jquery.textillate.js"></script>
     <script type="text/javascript" src="../../js/jquery.lettering.js"></script>
     <script type="text/javascript" src="../../js/jquery.easypiechart.min.js"></script>
+    <script type="text/javascript" src="../../js/jquery.nicescroll.min.js"></script>
     <script type="text/javascript" src="../../js/jquery.parallax.js"></script>
-    <script type="text/javascript" src="../../js/mediaelement-and-player.js"></script>
+    <script type="text/javascript" src="../../js/jquery.slicknav.js"></script>
 </head>
 
 <body>
@@ -101,9 +104,16 @@ if(is_null($_SESSION['StudentID'])){
                         </div>
                         <!-- .col-md-6 -->
                         <div class="col-md-5">
-                        <!-- Start Social Links -->
+                            <!-- Start Social Links -->
                             <ul class="social-list">
-                               <li class="profile-name">
+                                <li class="profile-name">
+                                    <a class="bell itl-tooltip" data-placement="bottom" title="" href="#"
+                                       data-original-title="Notification"><i class="fa fa-bell"></i></a>
+                                </li>
+                                <li class="profile-name">
+                                    &nbsp;
+                                </li>
+                                <li class="profile-name">
                                     <i class="fa fa-user"></i> Hello, <b>Aira Jane Cruz</b>
                                 </li>
                             </ul>
@@ -127,7 +137,9 @@ if(is_null($_SESSION['StudentID'])){
                             <i class="fa fa-bars"></i>
                         </button>
                         <!-- End Toggle Nav Link For Mobiles -->
-                        <a class="navbar-brand" href="">Online JPMS</a>
+                        <a class="navbar-brand" href="">
+                            <img src="../../images/ojpms.png">
+                        </a>
                     </div>
                     <div class="navbar-collapse collapse">
                     <!-- Sign-out -->

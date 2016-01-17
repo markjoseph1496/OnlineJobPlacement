@@ -270,22 +270,24 @@
 
                                 <!-- Tab Content 3 -->
                                 <div class="tab-pane fade" id="tab3">
-                                    BICOL REGION (25)
-                                    C.A.R (22)
-                                    CAGAYAN VALLEY (13)
-                                    CARAGA (5)
-                                    CENTRAL LUZON (159)
-                                    CENTRAL MINDANAO (5)
-                                    CENTRAL VISAYAS (109)
-                                    EASTERN VISAYAS (10)
-                                    ILOCOS REGION (34)
-                                    NCR (3737)
-                                    NORTHERN MINDANAO (23)
-                                    SOUTHERN MINDANAO (92)
-                                    SOUTHERN TAGALOG (230)
-                                    WESTERN MINDANAO (5)
-                                    WESTERN VISAYAS (47)
-                                    Others (82)
+                                    <ul>
+                                        <li>BICOL REGION <a href="">(25)</a></li>
+                                        <li>C.A.R <a href="">(22)</a></li>
+                                        <li>CAGAYAN VALLEY <a href="">(13)</a></li>
+                                        <li>CARAGA <a href="">(5)</a></li>
+                                        <li>CENTRAL LUZON <a href="">(159)</a></li>
+                                        <li>CENTRAL MINDANAO <a href="">(5)</a></li>
+                                        <li>CENTRAL VISAYAS <a href="">(109)</a></li>
+                                        <li>EASTERN VISAYAS <a href="">(10)</a></li>
+                                        <li>ILOCOS REGION <a href="">(34)</a></li>
+                                        <li>NCR <a href="">(3737)</a></li>
+                                        <li>NORTHERN MINDANAO <a href="">(23)</a></li>
+                                        <li>SOUTHERN MINDANAO <a href="">(92)</a></li>
+                                        <li>SOUTHERN TAGALOG <a href="">(230)</a></li>
+                                        <li>WESTERN MINDANAO <a href="">(5)</a></li>
+                                        <li>WESTERN VISAYAS <a href="">(47)</a></li>
+                                        <li>Others <a href="">(82)</a></li>
+                                    </ul>
                                 </div>
                             </div>
                         </div>
@@ -343,9 +345,9 @@
                                     </div>
                                     <div class="portfolio-details">
                                         <a href="#">
-                                            <h4>Lorem Ipsum Dolor</h4>
-                                            <span>Website</span>
-                                            <span>Drawing</span>
+                                            <h4>STI</h4>
+                                            <span>Events</span>
+                                            <span>Events</span>
                                         </a>
                                     </div>
                                 </div>
@@ -362,9 +364,9 @@
                                     </div>
                                     <div class="portfolio-details">
                                         <a href="#">
-                                            <h4>Lorem Ipsum Dolor</h4>
-                                            <span>Logo</span>
-                                            <span>Animation</span>
+                                            <h4>STI</h4>
+                                            <span>Events</span>
+                                            <span>Events</span>
                                         </a>
                                     </div>
                                 </div>
@@ -380,8 +382,9 @@
                                     </div>
                                     <div class="portfolio-details">
                                         <a href="#">
-                                            <h4>Lorem Ipsum Dolor</h4>
-                                            <span>Drawing</span>
+                                            <h4>STI</h4>
+                                            <span>Events</span>
+                                            <span>Events</span>
                                         </a>
                                     </div>
                                 </div>
@@ -397,9 +400,9 @@
                                     </div>
                                     <div class="portfolio-details">
                                         <a href="#">
-                                            <h4>Lorem Ipsum Dolor</h4>
-                                            <span>Website</span>
-                                            <span>Ilustration</span>
+                                            <h4>STI</h4>
+                                            <span>Events</span>
+                                            <span>Events</span>
                                         </a>
                                     </div>
                                 </div>
@@ -416,9 +419,9 @@
                                     </div>
                                     <div class="portfolio-details">
                                         <a href="#">
-                                            <h4>Lorem Ipsum Dolor</h4>
-                                            <span>Logo</span>
-                                            <span>Drawing</span>
+                                            <h4>STI</h4>
+                                            <span>Events</span>
+                                            <span>Events</span>
                                         </a>
                                     </div>
                                 </div>
@@ -434,8 +437,9 @@
                                     </div>
                                     <div class="portfolio-details">
                                         <a href="#">
-                                            <h4>Lorem Ipsum Dolor</h4>
-                                            <span>Animation</span>
+                                            <h4>STI</h4>
+                                            <span>Events</span>
+                                            <span>Events</span>
                                         </a>
                                     </div>
                                 </div>
@@ -452,8 +456,9 @@
                                     </div>
                                     <div class="portfolio-details">
                                         <a href="#">
-                                            <h4>Lorem Ipsum Dolor</h4>
-                                            <span>Website</span>
+                                            <h4>STI</h4>
+                                            <span>Events</span>
+                                            <span>Events</span>
                                         </a>
                                     </div>
                                 </div>
@@ -469,9 +474,9 @@
                                     </div>
                                     <div class="portfolio-details">
                                         <a href="#">
-                                            <h4>Lorem Ipsum Dolor</h4>
-                                            <span>Ilustration</span>
-                                            <span>Animation</span>
+                                            <h4>STI</h4>
+                                            <span>Events</span>
+                                            <span>Events</span>
                                         </a>
                                     </div>
                                 </div>
@@ -487,9 +492,9 @@
                                     </div>
                                     <div class="portfolio-details">
                                         <a href="#">
-                                            <h4>Lorem Ipsum Dolor</h4>
-                                            <span>Ilustration</span>
-                                            <span>Animation</span>
+                                            <h4>STI</h4>
+                                            <span>Events</span>
+                                            <span>Events</span>
                                         </a>
                                     </div>
                                 </div>
@@ -505,9 +510,9 @@
                                     </div>
                                     <div class="portfolio-details">
                                         <a href="#">
-                                            <h4>Lorem Ipsum Dolor</h4>
-                                            <span>Ilustration</span>
-                                            <span>Animation</span>
+                                            <h4>STI</h4>
+                                            <span>Events</span>
+                                            <span>Events</span>
                                         </a>
                                     </div>
                                 </div>
@@ -523,9 +528,9 @@
                                     </div>
                                     <div class="portfolio-details">
                                         <a href="#">
-                                            <h4>Lorem Ipsum Dolor</h4>
-                                            <span>Ilustration</span>
-                                            <span>Animation</span>
+                                            <h4>STI</h4>
+                                            <span>Events</span>
+                                            <span>Events</span>
                                         </a>
                                     </div>
                                 </div>
@@ -541,9 +546,9 @@
                                     </div>
                                     <div class="portfolio-details">
                                         <a href="#">
-                                            <h4>Lorem Ipsum Dolor</h4>
-                                            <span>Ilustration</span>
-                                            <span>Animation</span>
+                                            <h4>STI</h4>
+                                            <span>Events</span>
+                                            <span>Events</span>
                                         </a>
                                     </div>
                                 </div>
@@ -569,7 +574,7 @@
                                             </div>
                                             <div class="post-type"><i class="fa fa-picture-o"></i></div>
                                         </div>
-                                        <h3 class="post-title"><a href="#">Standard Post With Image</a></h3>
+                                        <h3 class="post-title"><a href="#">Article</a></h3>
                                         <div class="post-content">
                                             <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore
                                                 eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident,
@@ -671,27 +676,21 @@
                                 <!-- Testimonial 1 -->
                                 <div class="classic-testimonials item">
                                     <div class="testimonial-content">
-                                        <p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia
-                                            deserunt mollit anim laborum. Lorem ipsum dolor sit amet, consectetur
-                                            adipisicing elit.</p>
+                                        <p>Online Job Placement Management is ready to serve you!</p>
                                     </div>
                                     <div class="testimonial-author"><span>Lorem</span> - Lorem</div>
                                 </div>
                                 <!-- Testimonial 2 -->
                                 <div class="classic-testimonials item">
                                     <div class="testimonial-content">
-                                        <p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia
-                                            deserunt mollit anim laborum. Lorem ipsum dolor sit amet, consectetur
-                                            adipisicing elit.</p>
+                                        <p>Online Job Placement Management is ready to serve you!</p>
                                     </div>
                                     <div class="testimonial-author"><span>Lorem</span> - Lorem</div>
                                 </div>
                                 <!-- Testimonial 2 -->
                                 <div class="classic-testimonials item">
                                     <div class="testimonial-content">
-                                        <p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia
-                                            deserunt mollit anim laborum. Lorem ipsum dolor sit amet, consectetur
-                                            adipisicing elit.</p>
+                                        <p>Online Job Placement Management is ready to serve you!</p>
                                     </div>
                                     <div class="testimonial-author"><span>Lorem</span> - Lorem</div>
                                 </div>
@@ -837,7 +836,7 @@
                                             </div>
                                             <div class="service-content">
                                                 <h4 class="wite-text">Admin</h4>
-                                                <p class="accent-color"></p>
+                                                <p class="accent-color">This section is strictly for STI administrator only.</p>
                                             </div>
                                         </div>
                                     </div>
@@ -851,7 +850,7 @@
                                             </div>
                                             <div class="service-content">
                                                 <h4 class="wite-text">Company</h4>
-                                                <p class="accent-color"></p>
+                                                <p class="accent-color">This section is for STI partner companies.</p>
                                             </div>
                                         </div>
                                     </div>

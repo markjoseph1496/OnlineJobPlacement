@@ -317,7 +317,7 @@ if (isset($_SESSION['StudentID'])) {
                                             </div>
                                         </div>
                                         <div class="col-md-6">
-                                            <p><B>Description: </B><?php echo $PositionDescription; ?></p>
+                                            <p><B class="accent-color">Description: </B><?php echo $PositionDescription; ?></p>
                                         </div>
                                     </div>
                                 </div>
