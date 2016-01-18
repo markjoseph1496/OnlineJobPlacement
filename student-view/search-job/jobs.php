@@ -119,6 +119,11 @@ if (isset($_SESSION['StudentID'])) {
     </script>
 </head>
 
+<script type="text/javascript">
+    $('#myAlert').on('closed.bs.alert', function () {
+    // do something…
+})
+</script>
 <body>
 <div id="container">
     <!-- Start Header Section -->
@@ -239,6 +244,10 @@ if (isset($_SESSION['StudentID'])) {
     <!-- Start Content -->
     <div id="content">
         <div class="container">
+            <div class="alert alert-warning alert-dismissible fade in" role="alert"> 
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span></button>
+                <strong>Welcome, Aira Jane!</strong> Start to fill out your information.
+            </div>
             <div class="row blog-page">
                 <!--Sidebar-->
                 <div class="col-md-3 sidebar left-sidebar">
