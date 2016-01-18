@@ -1,4 +1,3 @@
-<!DOCTYPE html>
 <?php
 include('../../connection.php');
 session_start();
@@ -16,7 +15,7 @@ $FirstName = $infoquery[0][0];
 $LastName = $infoquery[0][1];
 $StudentName = $FirstName . " " . $LastName;
 ?>
-
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
