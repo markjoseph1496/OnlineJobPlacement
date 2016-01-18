@@ -1,29 +1,21 @@
-<!DOCTYPE html>
-<?php 
+<?php
 include('../../connection.php');
 session_start();
+$StudentID = $_SESSION['StudentID'];
 
-if(isset($_SESSION['StudentID'])){
-    $StudentID = $_SESSION['StudentID'];
-}
-else{
-    $StudentID = '';
-    echo "
-        <script type='text/javascript'>
-        location.href='../../../login-student.php?id=2';
-        </script>
-        ";
-}
+$infoquery =
+    GSecureSQL::query(
+        "SELECT FirstName, LastName FROM studentinfotbl WHERE StudentID = ?",
+        TRUE,
+        "s",
+        $StudentID
+    );
 
-
-$URLID = 'URLID';
-$URL = 'URL';
-$Caption = 'Caption';
-
-$qry = "SELECT * FROM urltbl WHERE StudentID ='$StudentID'";
-$result = mysql_query($qry);
+$FirstName = $infoquery[0][0];
+$LastName = $infoquery[0][1];
+$StudentName = $FirstName . " " . $LastName;
 ?>
-
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -95,278 +87,275 @@ $result = mysql_query($qry);
 </head>
 
 <body>
-    <div id="container">
-        <!-- Start Header Section -->
-        <div class="hidden-header"></div>
-        <header class="clearfix">
+<div id="container">
+    <!-- Start Header Section -->
+    <div class="hidden-header"></div>
+    <header class="clearfix">
         <!-- Start Top Bar -->
-            <div class="top-bar">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-md-7">
-                            <!-- Start Contact Info -->
-                            <ul class="profile-name">
-                                <li><i class="fa fa-hashtag"></i> <b>008-2012-0805</b></li>
-                            </ul>
-                            <!-- End Contact Info -->
-                        </div>
-                        <!-- .col-md-6 -->
-                        <div class="col-md-5">
-                            <!-- Start Social Links -->
-                            <ul class="social-list">
-                                <li class="profile-name">
-                                    <a class="bell itl-tooltip" data-placement="bottom" title="" href="#"
-                                       data-original-title="Notification"><i class="fa fa-bell"></i></a>
-                                </li>
-                                <li class="profile-name">
-                                    &nbsp;
-                                </li>
-                                <li class="profile-name">
-                                    <i class="fa fa-user"></i> Hello, <b>Aira Jane Cruz</b>
-                                </li>
-                            </ul>
-                            <!-- End Social Links -->
-                        </div>
-                        <!-- .col-md-6 -->
-                    </div>
-                    <!-- .row -->
-                </div>
-                <!-- .container -->
-            </div>
-            <!-- .top-bar -->
-            <!-- End Top Bar -->
-
-            <!-- Start  Logo & Naviagtion  -->
-            <div class="navbar navbar-default navbar-top">
-                <div class="container">
-                    <div class="navbar-header">
-                    <!-- Stat Toggle Nav Link For Mobiles -->
-                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                            <i class="fa fa-bars"></i>
-                        </button>
-                        <!-- End Toggle Nav Link For Mobiles -->
-                        <a class="navbar-brand" href="">
-                            <img src="../../images/ojpms.png">
-                        </a>
-                    </div>
-                    <div class="navbar-collapse collapse">
-                        <!-- Sign-out -->
-                        <div class="signout-side">
-                               <a href="../../login-student.php?id=1" class="show-signout"><i class="fa fa-sign-out"></i></a>
-                        </div>
-                        <!-- End Sign-out -->
-                        <!-- Start Navigation List -->
-                        <ul class="nav navbar-nav navbar-right">
-                            <li>
-                                <a class="active" href="personal-info.php">My Info</a>
-                                <ul class="dropdown">
-                                    <li><a href="personal-info.php">Personal Info</a></li>
-                                    <li><a href="contacts-info.php">Contacts Info</a></li>
-                                    <li><a href="work.php">Work</a></li>
-                                    <li><a href="education.php">Education</a></li>
-                                    <li><a href="certifications.php">Certifications</a></li>
-                                    <li><a href="achievements.php">Achievements</a></li>
-                                    <li><a href="specialization-and-languages.php">Specialization & Languages</a></li>
-                                    <li><a href="references.php">References</a></li>
-                                    <li><a class="active" href="portfolio.php">Portfolio</a></li>
-                                </ul>
-                            </li>
-                            <li>
-                                <a href="../resumelink/resume-link.php">Resume Link</a>
-                                <ul class="dropdown">
-                                    <li><a href="../resumelink/resume-link.php">Resume Link</a></li>
-                                    <li><a href="../resumelink/background.php">Background</a></li>
-                                    <li><a href="../resumelink/print-share.php">Print/Share</a></li>
-                                </ul>
-                            </li>
-                            <li>
-                                <a href="../applications/applications.php">Applications</a>
-                            </li>
-                            <li>
-                                <a href="../search-job/jobs.php">Jobs</a>
-                            </li>
-                            <li>
-                                <a href="../settings/privacy-settings.php">Settings</a>
-                                <ul class="dropdown">
-                                    <li><a href="../settings/privacy-settings.php">Privacy Settings</a></li>
-                                    <li><a href="../settings/pass-settings.php">Password Settings</a></li>
-                                </ul>
-                            </li>
-                        </ul>
-                        <!-- End Navigation List -->
-                    </div>
-                </div>
-                <!-- Mobile Menu Start -->
-                <ul class="wpb-mobile-menu">
-                    <li>
-                        <a class="active" href="personal-info.php">My Info</a>
-                        <ul class="dropdown">
-                            <li><a class="active" href="personal-info.php">Personal Info</a></li>
-                            <li><a href="contacts-info.php">Contacts Info</a></li>
-                            <li><a href="work.php">Work</a></li>
-                            <li><a href="education.php">Education</a></li>
-                            <li><a href="certifications.php">Certifications</a></li>
-                            <li><a href="achievements.php">Achievements</a></li>
-                            <li><a href="specialization-and-languages.php">Specialization & Languages</a></li>
-                            <li><a href="references.php">References</a></li>
-                            <li><a class="active" href="portfolio.php">Portfolio</a></li>
-                        </ul>
-                    </li>
-                    <li>
-                        <a href="../resumelink/resume-link.php">Resume Link</a>
-                        <ul class="dropdown">
-                            <li><a href="../resumelink/resume-link.php">Resume Link</a></li>
-                            <li><a href="../resumelink/background.php">Background</a></li>
-                            <li><a href="../resumelink/print-share.php">Print/Share</a></li>
-                        </ul>
-                    </li>
-                    <li>
-                        <a href="../applications/applications.php">Applications</a>
-                    </li>
-                    <li>
-                        <a href="../search-job/jobs.php">Jobs</a>
-                    </li>
-                    <li>
-                        <a href="../settings/privacy-settings.php">Settings</a>
-                        <ul class="dropdown">
-                            <li><a href="../settings/privacy-settings.php">Privacy Settings</a></li>
-                            <li><a href="../settings/pass-settings.php">Password Settings</a></li>
-                        </ul>
-                    </li>
-                    <li>
-                        <a href="../../login-student.php?id=1"><i class="fa fa-sign-out"></i> Sign Out</a>
-                    </li>
-                </ul>
-                <!-- Mobile Menu End -->
-            </div>
-        </header>
-
-        <div class="page-banner no-subtitle">
+        <div class="top-bar">
             <div class="container">
                 <div class="row">
-                    <div class="col-md-6">
-                        <h2>Portfolio</h2>
+                    <div class="col-md-7">
+                        <!-- Start Contact Info -->
+                        <ul class="profile-name">
+                            <li>Student No.: </i> <b><?php echo $StudentID; ?></b></li>
+                        </ul>
+                        <!-- End Contact Info -->
                     </div>
+                    <!-- .col-md-6 -->
+                    <div class="col-md-5">
+                        <!-- Start Social Links -->
+                        <ul class="social-list">
+                            <li class="profile-name">
+                                <a class="bell itl-tooltip" data-placement="bottom" title="" href="#"
+                                   data-original-title="Notification"><i class="fa fa-bell"></i></a>
+                            </li>
+                            <li class="profile-name">
+                                &nbsp;
+                            </li>
+                            <li class="profile-name">
+                                <i class="fa fa-user"></i> Hello, <b><?php echo $StudentName; ?></b>
+                            </li>
+                        </ul>
+                        <!-- End Social Links -->
+                    </div>
+                    <!-- .col-md-6 -->
+                </div>
+                <!-- .row -->
+            </div>
+            <!-- .container -->
+        </div>
+        <!-- .top-bar -->
+        <!-- End Top Bar -->
+
+        <!-- Start  Logo & Naviagtion  -->
+        <div class="navbar navbar-default navbar-top">
+            <div class="container">
+                <div class="navbar-header">
+                    <!-- Stat Toggle Nav Link For Mobiles -->
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <i class="fa fa-bars"></i>
+                    </button>
+                    <!-- End Toggle Nav Link For Mobiles -->
+                    <a class="navbar-brand" href="">
+                        <img src="../../images/ojpms.png">
+                    </a>
+                </div>
+                <div class="navbar-collapse collapse">
+                    <!-- Sign-out -->
+                    <div class="signout-side">
+                        <a href="../../login-student.php?id=1" class="show-signout"><i class="fa fa-sign-out"></i></a>
+                    </div>
+                    <!-- End Sign-out -->
+                    <!-- Start Navigation List -->
+                    <ul class="nav navbar-nav navbar-right">
+                        <li>
+                            <a class="active" href="personal-info.php">My Info</a>
+                            <ul class="dropdown">
+                                <li><a href="personal-info.php">Personal Info</a></li>
+                                <li><a href="contacts-info.php">Contacts Info</a></li>
+                                <li><a href="work.php">Work</a></li>
+                                <li><a href="education.php">Education</a></li>
+                                <li><a href="certifications.php">Certifications</a></li>
+                                <li><a href="achievements.php">Achievements</a></li>
+                                <li><a href="specialization-and-languages.php">Specialization & Languages</a></li>
+                                <li><a href="references.php">References</a></li>
+                                <li><a class="active" href="portfolio.php">Portfolio</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="../resumelink/resume-link.php">Resume Link</a>
+                            <ul class="dropdown">
+                                <li><a href="../resumelink/resume-link.php">Resume Link</a></li>
+                                <li><a href="../resumelink/background.php">Background</a></li>
+                                <li><a href="../resumelink/print-share.php">Print/Share</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="../applications/applications.php">Applications</a>
+                        </li>
+                        <li>
+                            <a href="../search-job/jobs.php">Jobs</a>
+                        </li>
+                        <li>
+                            <a href="../settings/privacy-settings.php">Settings</a>
+                            <ul class="dropdown">
+                                <li><a href="../settings/privacy-settings.php">Privacy Settings</a></li>
+                                <li><a href="../settings/pass-settings.php">Password Settings</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <!-- End Navigation List -->
                 </div>
             </div>
+            <!-- Mobile Menu Start -->
+            <ul class="wpb-mobile-menu">
+                <li>
+                    <a class="active" href="personal-info.php">My Info</a>
+                    <ul class="dropdown">
+                        <li><a class="active" href="personal-info.php">Personal Info</a></li>
+                        <li><a href="contacts-info.php">Contacts Info</a></li>
+                        <li><a href="work.php">Work</a></li>
+                        <li><a href="education.php">Education</a></li>
+                        <li><a href="certifications.php">Certifications</a></li>
+                        <li><a href="achievements.php">Achievements</a></li>
+                        <li><a href="specialization-and-languages.php">Specialization & Languages</a></li>
+                        <li><a href="references.php">References</a></li>
+                        <li><a class="active" href="portfolio.php">Portfolio</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="../resumelink/resume-link.php">Resume Link</a>
+                    <ul class="dropdown">
+                        <li><a href="../resumelink/resume-link.php">Resume Link</a></li>
+                        <li><a href="../resumelink/background.php">Background</a></li>
+                        <li><a href="../resumelink/print-share.php">Print/Share</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="../applications/applications.php">Applications</a>
+                </li>
+                <li>
+                    <a href="../search-job/jobs.php">Jobs</a>
+                </li>
+                <li>
+                    <a href="../settings/privacy-settings.php">Settings</a>
+                    <ul class="dropdown">
+                        <li><a href="../settings/privacy-settings.php">Privacy Settings</a></li>
+                        <li><a href="../settings/pass-settings.php">Password Settings</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="../../login-student.php?id=1"><i class="fa fa-sign-out"></i> Sign Out</a>
+                </li>
+            </ul>
+            <!-- Mobile Menu End -->
         </div>
-        <!-- End Page Banner -->
+    </header>
 
-        <!-- Start Content -->
-        <div id="content">
-            <div class="container">
-                <div class="row sidebar-page">
-                    <!-- Page Content -->
-                    <div class="col-md-9 page-content">
-                        
-                        <div class="classic-testimonials">
-                            <!-- Single Testimonial -->
-                            <div class="row field">
-                                <div class="col-md-6 fieldcol">
-                                    <h4>Documents<span="head-line"></span="head-line"></h4>
-                                </div>
-                                <div class="col-md-6 fieldcol">
-                                    <a href="add/add-document.php" class="btnforadding" style="float:right;">
-                                        <span class="fa fa-plus-square"> Add Document</span>
-                                    </a>
-                                </div>
-                            </div>
-
-                            <table class="table segment table-hover">
-                                <thead>
-                                    <tr class="table-color">
-                                        <th>File</th>
-                                        <th width="15%">&nbsp;</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                        <td>sdfdsfs</td>
-                                        <form method = "POST">
-                                        <input type="hidden" name="delete_DocumentID" value="" />
-                                        <td>
-                                            <button name ="btnDelete" href="" class="btn btn-danger btnformaintenance">
-                                                <i class="fa fa-trash fa-1x"></i>
-                                            </button>
-                                            <button name ="btnEdit" href="" class="btn btn-default btnformaintenance">
-                                                <i class="fa fa-pencil-square-o fa-1x"></i>
-                                            </button>
-                                        </td>
-                                        </form>
-                                    </tr>
-                                </tbody>
-                            </table>
-
-                            <div class="hr5" style="margin-top:35px;margin-bottom:40px;"></div>
-                            <div class="row field">
-                                <div class="col-md-6 fieldcol">
-                                    <h4>Links<span="head-line"></span="head-line"></h4>
-                                </div>
-                                <div class="col-md-6 fieldcol">
-                                    <a href="add/add-link.php" class="btnforadding" style="float:right;">
-                                        <span class="fa fa-plus-square"> Add Links</h6></span>
-                                    </a>
-                                </div>
-                            </div>
-
-                            <table class="table segment table-hover">
-                                <thead>
-                                    <tr class="table-color">
-                                        <th>URL</th>
-                                        <th>Caption</th>
-                                        <th width="15%">&nbsp;</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <?php
-                                        while($rows = mysql_fetch_array($result)){
-                                    ?>
-                                    <tr>
-                                        <td><?php echo $rows[$URL]; ?></td>
-                                        <td><?php echo $rows[$Caption]; ?></td>
-
-                                        <form method = "POST">
-                                        <input type="hidden" name="delete_URLID" value="<?php echo $rows['URLID']; ?>" />
-                                        <td>
-                                            <a href=# class="btn btn-danger btnformaintenance  deleteURL">
-                                                <i class="fa fa-trash fa-1x"></i>
-                                            </a>
-                                            <a data-bb="confirmDeleteURL" class="bb-alert alert alert-info" style="display: none;" href="delete.php?delete_URLID=<?php echo $rows['URLID'];?>"> </a>
-                                            <a href="edit/edit-link.php?EditURLID=<?php echo $rows['URLID']; ?>" class="btn btn-default btnformaintenance">
-                                                <i class="fa fa-pencil-square-o fa-1x"></i>
-                                            </a>
-                                        </td>
-                                        </form>
-                                    </tr>
-                                    <?php
-                                        }
-                                    ?>
-                                </tbody>
-                            </table>
-                        </div>
-                    </div>
-                    <!-- End Page Content -->
-
-                    <!--Sidebar-->
-                    <div class="col-md-3 sidebar right-sidebar">
-                        <!-- Search Widget -->
-                        <div class="call-action call-action-boxed call-action-style2 clearfix">
-                            (*) Note: Required fields.
-                        </div>
-                    </div>
-                    <!--End sidebar-->
+    <div class="page-banner no-subtitle">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <h2>Portfolio</h2>
                 </div>
             </div>
         </div>
     </div>
-    <!-- End Content -->
-    <script type="text/javascript" src="../../js/script.js"></script>
+    <!-- End Page Banner -->
+
+    <!-- Start Content -->
+    <div id="content">
+        <div class="container">
+            <div class="row sidebar-page">
+                <!-- Page Content -->
+                <div class="col-md-9 page-content">
+
+                    <div class="classic-testimonials">
+                        <!-- Single Testimonial -->
+                        <div class="row field">
+                            <div class="col-md-6 fieldcol">
+                                <h4>Documents<span="head-line"></span="head-line"></h4>
+                            </div>
+                            <div class="col-md-6 fieldcol">
+                                <a href="add/add-document.php" class="btnforadding" style="float:right;">
+                                    <span class="fa fa-plus-square"> Add Document</span>
+                                </a>
+                            </div>
+                        </div>
+
+                        <table class="table segment table-hover">
+                            <thead>
+                            <tr class="table-color">
+                                <th>File</th>
+                                <th width="15%">&nbsp;</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr>
+                                <td>sdfdsfs</td>
+                                <form method="POST">
+                                    <input type="hidden" name="delete_DocumentID" value=""/>
+                                    <td>
+                                        <button name="btnDelete" href="" class="btn btn-danger btnformaintenance">
+                                            <i class="fa fa-trash fa-1x"></i>
+                                        </button>
+                                        <button name="btnEdit" href="" class="btn btn-default btnformaintenance">
+                                            <i class="fa fa-pencil-square-o fa-1x"></i>
+                                        </button>
+                                    </td>
+                                </form>
+                            </tr>
+                            </tbody>
+                        </table>
+
+                        <div class="hr5" style="margin-top:35px;margin-bottom:40px;"></div>
+                        <div class="row field">
+                            <div class="col-md-6 fieldcol">
+                                <h4>Links<span="head-line"></span="head-line"></h4>
+                            </div>
+                            <div class="col-md-6 fieldcol">
+                                <a href="add/add-link.php" class="btnforadding" style="float:right;">
+                                    <span class="fa fa-plus-square"> Add Links</h6></span>
+                                </a>
+                            </div>
+                        </div>
+
+                        <table class="table segment table-hover">
+                            <thead>
+                            <tr class="table-color">
+                                <th>URL</th>
+                                <th>Caption</th>
+                                <th width="15%">&nbsp;</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr>
+                                <td></td>
+                                <td></td>
+
+                                <form method="POST">
+                                    <input type="hidden" name="delete_URLID" value=""/>
+                                    <td>
+                                        <a href=# class="btn btn-danger btnformaintenance  deleteURL">
+                                            <i class="fa fa-trash fa-1x"></i>
+                                        </a>
+                                        <a data-bb="confirmDeleteURL" class="bb-alert alert alert-info"
+                                           style="display: none;"
+                                           href="delete.php?delete_URLID="> </a>
+                                        <a href="edit/edit-link.php?EditURLID="
+                                           class="btn btn-default btnformaintenance">
+                                            <i class="fa fa-pencil-square-o fa-1x"></i>
+                                        </a>
+                                    </td>
+                                </form>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <!-- End Page Content -->
+
+                <!--Sidebar-->
+                <div class="col-md-3 sidebar right-sidebar">
+                    <!-- Search Widget -->
+                    <div class="call-action call-action-boxed call-action-style2 clearfix">
+                        (*) Note: Required fields.
+                    </div>
+                </div>
+                <!--End sidebar-->
+            </div>
+        </div>
+    </div>
+</div>
+<!-- End Content -->
+<script type="text/javascript" src="../../js/script.js"></script>
 </body>
 
 <?php
 include('../../connection.php');
 
-if(isset($_POST['btnDeleteSkill'])){
+if (isset($_POST['btnDeleteSkill'])) {
 
     $Z = $_POST['delete_SkillID'];
 
@@ -378,9 +367,9 @@ if(isset($_POST['btnDeleteSkill'])){
             location.href='Specialization_languages.php';
             </script>
             ";
-} 
+}
 
-if(isset($_POST['btnEditSkill'])){
+if (isset($_POST['btnEditSkill'])) {
     $Z = $_POST['delete_SkillID'];
     $_SESSION['delete_SkillID'] = $Z;
     echo "
@@ -388,9 +377,9 @@ if(isset($_POST['btnEditSkill'])){
             location.href='Edit/edit-skill.php';
             </script>
             ";
-} 
+}
 
-if(isset($_POST['btnDeleteLang'])){
+if (isset($_POST['btnDeleteLang'])) {
 
     $Z = $_POST['delete_LangID'];
 
@@ -402,9 +391,9 @@ if(isset($_POST['btnDeleteLang'])){
             location.href='Specialization_languages.php';
             </script>
             ";
-} 
+}
 
-if(isset($_POST['btnEditLang'])){
+if (isset($_POST['btnEditLang'])) {
     $Z = $_POST['delete_LangID'];
     $_SESSION['delete_LangID'] = $Z;
     echo "
@@ -412,7 +401,7 @@ if(isset($_POST['btnEditLang'])){
             location.href='Edit/edit-language.php';
             </script>
             ";
-} 
+}
 
 ?>
 

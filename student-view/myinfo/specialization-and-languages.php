@@ -1,18 +1,19 @@
-<?php 
+<?php
 include('../../connection.php');
 session_start();
+$StudentID = $_SESSION['StudentID'];
 
-if(isset($_SESSION['StudentID'])){
-    $StudentID = $_SESSION['StudentID'];
-}
-else{
-    $StudentID = '';
-    echo "
-        <script type='text/javascript'>
-        location.href='../../../login-student.php?id=2';
-        </script>
-        ";
-}
+$infoquery =
+    GSecureSQL::query(
+        "SELECT FirstName, LastName FROM studentinfotbl WHERE StudentID = ?",
+        TRUE,
+        "s",
+        $StudentID
+    );
+
+$FirstName = $infoquery[0][0];
+$LastName = $infoquery[0][1];
+$StudentName = $FirstName . " " . $LastName;
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -40,7 +41,7 @@ else{
 
     <!-- jQuery and Bootstrap JS -->
     <script type="text/javascript" src="../../js/jquery.min.js"></script>
-    <script type="text/javascript" src="../../js/bootstrap.min.js" ></script>
+    <script type="text/javascript" src="../../js/bootstrap.min.js"></script>
 
     <!-- BootstrapValidator -->
     <script src="../../js/bootstrapValidator.min.js" type="text/javascript"></script>
@@ -70,8 +71,8 @@ else{
     <link rel="stylesheet" type="text/css" href="../../css/colors/yellow.css" title="yellow" media="screen"/>
 
     <!-- Star Rate -->
-    <link rel="stylesheet" type="text/css" href="../../css/star-rate.css" media="screen" />
-    
+    <link rel="stylesheet" type="text/css" href="../../css/star-rate.css" media="screen"/>
+
     <!-- JS  -->
     <script type="text/javascript" src="../../js/jquery.migrate.js"></script>
     <script type="text/javascript" src="../../js/modernizrr.js"></script>
@@ -90,448 +91,516 @@ else{
 </head>
 
 <body>
-    <div id="container">
-        <!-- Start Header Section -->
-        <div class="hidden-header"></div>
-        <header class="clearfix">
+<div id="container">
+    <!-- Start Header Section -->
+    <div class="hidden-header"></div>
+    <header class="clearfix">
         <!-- Start Top Bar -->
-            <div class="top-bar">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-md-7">
-                            <!-- Start Contact Info -->
-                            <ul class="profile-name">
-                                <li><i class="fa fa-hashtag"></i> <b>008-2012-0805</b></li>
-                            </ul>
-                            <!-- End Contact Info -->
-                        </div>
-                        <!-- .col-md-6 -->
-                        <div class="col-md-5">
-                            <!-- Start Social Links -->
-                            <ul class="social-list">
-                                <li class="profile-name">
-                                    <a class="bell itl-tooltip" data-placement="bottom" title="" href="#"
-                                       data-original-title="Notification"><i class="fa fa-bell"></i></a>
-                                </li>
-                                <li class="profile-name">
-                                    &nbsp;
-                                </li>
-                                <li class="profile-name">
-                                    <i class="fa fa-user"></i> Hello, <b>Aira Jane Cruz</b>
-                                </li>
-                            </ul>
-                            <!-- End Social Links -->
-                        </div>
-                        <!-- .col-md-6 -->
-                    </div>
-                    <!-- .row -->
-                </div>
-                <!-- .container -->
-            </div>
-            <!-- .top-bar -->
-            <!-- End Top Bar -->
-
-            <!-- Start  Logo & Naviagtion  -->
-            <div class="navbar navbar-default navbar-top">
-                <div class="container">
-                    <div class="navbar-header">
-                    <!-- Stat Toggle Nav Link For Mobiles -->
-                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                            <i class="fa fa-bars"></i>
-                        </button>
-                        <!-- End Toggle Nav Link For Mobiles -->
-                        <a class="navbar-brand" href="">
-                            <img src="../../images/ojpms.png">
-                        </a>
-                    </div>
-                    <div class="navbar-collapse collapse">
-                    <!-- Sign-out -->
-                        <div class="signout-side">
-                               <a href="../../login-student.php?id=1" class="show-signout"><i class="fa fa-sign-out"></i></a>
-                        </div>
-                     <!-- End Sign-out -->
-                        <!-- Start Navigation List -->
-                        <ul class="nav navbar-nav navbar-right">
-                            <li>
-                                <a class="active" href="personal-info.php">My Info</a>
-                                <ul class="dropdown">
-                                    <li><a href="personal-info.php">Personal Info</a></li>
-                                    <li><a href="contacts-info.php">Contacts Info</a></li>
-                                    <li><a href="work.php">Work</a></li>
-                                    <li><a href="education.php">Education</a></li>
-                                    <li><a href="certifications.php">Certifications</a></li>
-                                    <li><a href="achievements.php">Achievements</a></li>
-                                    <li><a class="active" href="specialization-and-languages.php">Specialization & Languages</a></li>
-                                    <li><a href="references.php">References</a></li>
-                                    <li><a href="portfolio.php">Portfolio</a></li>
-                                </ul>
-                            </li>
-                            <li>
-                                <a href="../resumelink/resume-link.php">Resume Link</a>
-                                <ul class="dropdown">
-                                    <li><a href="../resumelink/resume-link.php">Resume Link</a></li>
-                                    <li><a href="../resumelink/background.php">Background</a></li>
-                                    <li><a href="../resumelink/print-share.php">Print/Share</a></li>
-                                </ul>
-                            </li>
-                            <li>
-                                <a href="../applications/applications.php">Applications</a>
-                            </li>
-                            <li>
-                                <a href="../search-job/jobs.php">Jobs</a>
-                            </li>
-                            <li>
-                                <a href="../settings/privacy-settings.php">Settings</a>
-                                <ul class="dropdown">
-                                    <li><a href="../settings/privacy-settings.php">Privacy Settings</a></li>
-                                    <li><a href="../settings/pass-settings.php">Password Settings</a></li>
-                                </ul>
-                            </li>
-                        </ul>
-                        <!-- End Navigation List -->
-                    </div>
-                </div>
-                <!-- Mobile Menu Start -->
-                <ul class="wpb-mobile-menu">
-                    <li>
-                        <a class="active" href="personal-info.php">My Info</a>
-                        <ul class="dropdown">
-                            <li><a href="personal-info.php">Personal Info</a></li>
-                            <li><a href="contacts-info.php">Contacts Info</a></li>
-                            <li><a href="work.php">Work</a></li>
-                            <li><a href="education.php">Education</a></li>
-                            <li><a href="certifications.php">Certifications</a></li>
-                            <li><a href="achievements.php">Achievements</a></li>
-                            <li><a class="active" href="specialization-and-languages.php">Specialization & Languages</a></li>
-                            <li><a href="references.php">References</a></li>
-                            <li><a href="portfolio.php">Portfolio</a></li>
-                        </ul>
-                    </li>
-                    <li>
-                        <a href="../resumelink/resume-link.php">Resume Link</a>
-                        <ul class="dropdown">
-                            <li><a href="../resumelink/resume-link.php">Resume Link</a></li>
-                            <li><a href="../resumelink/background.php">Background</a></li>
-                            <li><a href="../resumelink/print-share.php">Print/Share</a></li>
-                        </ul>
-                    </li>
-                    <li>
-                        <a href="../applications/applications.php">Applications</a>
-                    </li>
-                    <li>
-                        <a href="../search-job/jobs.php">Jobs</a>
-                    </li>
-                    <li>
-                        <a href="../settings/privacy-settings.php">Settings</a>
-                        <ul class="dropdown">
-                            <li><a href="../settings/privacy-settings.php">Privacy Settings</a></li>
-                            <li><a href="../settings/pass-settings.php">Password Settings</a></li>
-                        </ul>
-                    </li>
-                    <li>
-                        <a href="../../login-student.php?id=1"><i class="fa fa-sign-out"></i> Sign Out</a>
-                    </li>
-                </ul>
-                <!-- Mobile Menu End -->
-            </div>
-        </header>
-
-        <div class="page-banner no-subtitle">
+        <div class="top-bar">
             <div class="container">
                 <div class="row">
-                    <div class="col-md-6">
-                        <h2>Specialization & Languages</h2>
+                    <div class="col-md-7">
+                        <!-- Start Contact Info -->
+                        <ul class="profile-name">
+                            <li>Student No.: </i> <b><?php echo $StudentID; ?></b></li>
+                        </ul>
+                        <!-- End Contact Info -->
                     </div>
+                    <!-- .col-md-6 -->
+                    <div class="col-md-5">
+                        <!-- Start Social Links -->
+                        <ul class="social-list">
+                            <li class="profile-name">
+                                <a class="bell itl-tooltip" data-placement="bottom" title="" href="#"
+                                   data-original-title="Notification"><i class="fa fa-bell"></i></a>
+                            </li>
+                            <li class="profile-name">
+                                &nbsp;
+                            </li>
+                            <li class="profile-name">
+                                <i class="fa fa-user"></i> Hello, <b><?php echo $StudentName; ?></b>
+                            </li>
+                        </ul>
+                        <!-- End Social Links -->
+                    </div>
+                    <!-- .col-md-6 -->
+                </div>
+                <!-- .row -->
+            </div>
+            <!-- .container -->
+        </div>
+        <!-- .top-bar -->
+        <!-- End Top Bar -->
+
+        <!-- Start  Logo & Naviagtion  -->
+        <div class="navbar navbar-default navbar-top">
+            <div class="container">
+                <div class="navbar-header">
+                    <!-- Stat Toggle Nav Link For Mobiles -->
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <i class="fa fa-bars"></i>
+                    </button>
+                    <!-- End Toggle Nav Link For Mobiles -->
+                    <a class="navbar-brand" href="">
+                        <img src="../../images/ojpms.png">
+                    </a>
+                </div>
+                <div class="navbar-collapse collapse">
+                    <!-- Sign-out -->
+                    <div class="signout-side">
+                        <a href="../../login-student.php?id=1" class="show-signout"><i class="fa fa-sign-out"></i></a>
+                    </div>
+                    <!-- End Sign-out -->
+                    <!-- Start Navigation List -->
+                    <ul class="nav navbar-nav navbar-right">
+                        <li>
+                            <a class="active" href="personal-info.php">My Info</a>
+                            <ul class="dropdown">
+                                <li><a href="personal-info.php">Personal Info</a></li>
+                                <li><a href="contacts-info.php">Contacts Info</a></li>
+                                <li><a href="work.php">Work</a></li>
+                                <li><a href="education.php">Education</a></li>
+                                <li><a href="certifications.php">Certifications</a></li>
+                                <li><a href="achievements.php">Achievements</a></li>
+                                <li><a class="active" href="specialization-and-languages.php">Specialization &
+                                        Languages</a></li>
+                                <li><a href="references.php">References</a></li>
+                                <li><a href="portfolio.php">Portfolio</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="../resumelink/resume-link.php">Resume Link</a>
+                            <ul class="dropdown">
+                                <li><a href="../resumelink/resume-link.php">Resume Link</a></li>
+                                <li><a href="../resumelink/background.php">Background</a></li>
+                                <li><a href="../resumelink/print-share.php">Print/Share</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="../applications/applications.php">Applications</a>
+                        </li>
+                        <li>
+                            <a href="../search-job/jobs.php">Jobs</a>
+                        </li>
+                        <li>
+                            <a href="../settings/privacy-settings.php">Settings</a>
+                            <ul class="dropdown">
+                                <li><a href="../settings/privacy-settings.php">Privacy Settings</a></li>
+                                <li><a href="../settings/pass-settings.php">Password Settings</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <!-- End Navigation List -->
+                </div>
+            </div>
+            <!-- Mobile Menu Start -->
+            <ul class="wpb-mobile-menu">
+                <li>
+                    <a class="active" href="personal-info.php">My Info</a>
+                    <ul class="dropdown">
+                        <li><a href="personal-info.php">Personal Info</a></li>
+                        <li><a href="contacts-info.php">Contacts Info</a></li>
+                        <li><a href="work.php">Work</a></li>
+                        <li><a href="education.php">Education</a></li>
+                        <li><a href="certifications.php">Certifications</a></li>
+                        <li><a href="achievements.php">Achievements</a></li>
+                        <li><a class="active" href="specialization-and-languages.php">Specialization & Languages</a>
+                        </li>
+                        <li><a href="references.php">References</a></li>
+                        <li><a href="portfolio.php">Portfolio</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="../resumelink/resume-link.php">Resume Link</a>
+                    <ul class="dropdown">
+                        <li><a href="../resumelink/resume-link.php">Resume Link</a></li>
+                        <li><a href="../resumelink/background.php">Background</a></li>
+                        <li><a href="../resumelink/print-share.php">Print/Share</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="../applications/applications.php">Applications</a>
+                </li>
+                <li>
+                    <a href="../search-job/jobs.php">Jobs</a>
+                </li>
+                <li>
+                    <a href="../settings/privacy-settings.php">Settings</a>
+                    <ul class="dropdown">
+                        <li><a href="../settings/privacy-settings.php">Privacy Settings</a></li>
+                        <li><a href="../settings/pass-settings.php">Password Settings</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="../../login-student.php?id=1"><i class="fa fa-sign-out"></i> Sign Out</a>
+                </li>
+            </ul>
+            <!-- Mobile Menu End -->
+        </div>
+    </header>
+
+    <div class="page-banner no-subtitle">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <h2>Specialization & Languages</h2>
                 </div>
             </div>
         </div>
-        <!-- End Page Banner -->
+    </div>
+    <!-- End Page Banner -->
 
-        <!-- Start Content -->
-        <div id="content">
-            <div class="container">
-                <?php
-                if(isset($_GET['id'])){
-                    $id=$_GET['id'];
+    <!-- Start Content -->
+    <div id="content">
+        <div class="container">
+            <?php
+            if (isset($_GET['id'])) {
+                $id = $_GET['id'];
 
-                    if($id==1){
-                        echo'
+                if ($id == 1) {
+                    echo '
                             <div class="alert alert-success">
                                 <span class="glyphicon glyphicon-info-sign"></span> 
                                 Specialization successfully updated.
                             </div>
                             ';
-                    }
-                    elseif($id==2){
-                        echo'
+                } elseif ($id == 2) {
+                    echo '
                             <div class="alert alert-success">
                                 <span class="glyphicon glyphicon-info-sign"></span> 
                                 Specialization successfully added.
                             </div>
                             ';
-                    }
-                    elseif($id==3){
-                        echo'
+                } elseif ($id == 3) {
+                    echo '
                             <div class="alert alert-success">
                                 <span class="glyphicon glyphicon-info-sign"></span> 
                                 Specialization successfully deleted.
                             </div>
                             ';
-                    }
-                    elseif($id==4){
-                        echo'
+                } elseif ($id == 4) {
+                    echo '
                             <div class="alert alert-success">
                                 <span class="glyphicon glyphicon-info-sign"></span> 
                                 Languages successfully updated.
                             </div>
                             ';
-                    }
-                    elseif($id==5){
-                        echo'
+                } elseif ($id == 5) {
+                    echo '
                             <div class="alert alert-success">
                                 <span class="glyphicon glyphicon-info-sign"></span> 
                                 Languages successfully added.
                             </div>
                             ';
-                    }
-                    elseif($id==6){
-                        echo'
+                } elseif ($id == 6) {
+                    echo '
                             <div class="alert alert-success">
                                 <span class="glyphicon glyphicon-info-sign"></span> 
                                 Language successfully deleted.
                             </div>
                             ';
-                    }
-
                 }
-                ?>
-                <div class="row sidebar-page">
-                    <!-- Page Content -->
-                    <div class="col-md-9 page-content">
-                        <div class="classic-testimonials">
-                            <!-- Single Testimonial -->
-                            <div class="row field">
-                                <div class="col-md-6 fieldcol">
-                                    <h4>Specialization<span="head-line"></span></h4>
-                                </div>
-                                <div class="col-md-6 fieldcol">
-                                    <a href="add/add-specialization.php" class="btnforadding" style="float:right;">
-                                        <span class="fa fa-plus-square"> Add Specialization</span>
-                                    </a>
-                                </div>
+
+            }
+            ?>
+            <div class="row sidebar-page">
+                <!-- Page Content -->
+                <div class="col-md-9 page-content">
+                    <div class="classic-testimonials">
+                        <!-- Single Testimonial -->
+                        <div class="row field">
+                            <div class="col-md-6 fieldcol">
+                                <h4>Specialization<span="head-line"></span></h4>
                             </div>
+                            <div class="col-md-6 fieldcol">
+                                <a href="add/add-specialization.php" class="btnforadding" style="float:right;">
+                                    <span class="fa fa-plus-square"> Add Specialization</span>
+                                </a>
+                            </div>
+                        </div>
 
-                            <table class="table segment table-hover">
-                                <thead>
-                                    <tr class="table-color">
-                                        <th>Specialization</th>
-                                        <th>Year of Experience</th>
-                                        <th>Proficiency</th>
-                                        <th width="15%">&nbsp;</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <?php
+                        <table class="table segment table-hover">
+                            <thead>
+                            <tr class="table-color">
+                                <th>Specialization</th>
+                                <th>Year of Experience</th>
+                                <th>Proficiency</th>
+                                <th width="15%">&nbsp;</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <?php
 
-                                    $specialization_tbl =
-                                        GSecureSQL::query(
-                                            "SELECT * FROM specializationtbl WHERE StudentID = ?",
-                                            TRUE,
-                                            "s",
-                                            $StudentID
-                                        );
-                                        foreach($specialization_tbl as $value){
-                                            $SID = $value[0];
-                                            $Specialization = $value[2];
-                                            $YearOfExperience = $value[3];
-                                            $Proficiency = $value[4];
+                            $specialization_tbl =
+                                GSecureSQL::query(
+                                    "SELECT * FROM specializationtbl WHERE StudentID = ?",
+                                    TRUE,
+                                    "s",
+                                    $StudentID
+                                );
+                            foreach ($specialization_tbl as $value) {
+                                $SID = $value[0];
+                                $Specialization = $value[2];
+                                $YearOfExperience = $value[3];
+                                $Proficiency = $value[4];
 
-                                            $listofspecialization_tbl =
-                                                GSecureSQL::query(
-                                                    "SELECT * FROM listofspecializationtbl WHERE id = ?",
-                                                    TRUE,
-                                                    "s",
-                                                    $Specialization
-                                                );
-                                            foreach($listofspecialization_tbl as $value1){
-                                                $Specialization = $value1[1];
-                                            }
-                                    ?>
-                                    <tr>
-                                        <td><?php echo $Specialization; ?></td>
-                                        <td><?php echo $YearOfExperience; ?></td>
-                                        <td class="text-center">
-                                            <fieldset class="rating">
-                                                <input type="radio" id="star5" name="rating" value="5" /><label class = "full" for="star5" title="Awesome - 5 stars"></label>
-                                                <input type="radio" id="star4half" name="rating" value="4 and a half" /><label class="half" for="star4half" title="Pretty good - 4.5 stars"></label>
-                                                <input type="radio" id="star4" name="rating" value="4" /><label class = "full" for="star4" title="Pretty good - 4 stars"></label>
-                                                <input type="radio" id="star3half" name="rating" value="3 and a half" /><label class="half" for="star3half" title="Meh - 3.5 stars"></label>
-                                                <input type="radio" id="star3" name="rating" value="3" /><label class = "full" for="star3" title="Meh - 3 stars"></label>
-                                                <input type="radio" id="star2half" name="rating" value="2 and a half" /><label class="half" for="star2half" title="Kinda bad - 2.5 stars"></label>
-                                                <input type="radio" id="star2" name="rating" value="2" /><label class = "full" for="star2" title="Kinda bad - 2 stars"></label>
-                                                <input type="radio" id="star1half" name="rating" value="1 and a half" /><label class="half" for="star1half" title="Meh - 1.5 stars"></label>
-                                                <input type="radio" id="star1" name="rating" value="1" /><label class = "full" for="star1" title="Sucks big time - 1 star"></label>
-                                                <input type="radio" id="starhalf" name="rating" value="half" /><label class="half" for="starhalf" title="Sucks big time - 0.5 stars"></label>
-                                            </fieldset>
-                                        </td>
-                                        <td>
-                                            <button class="btn btn-danger" data-toggle="modal" data-target="#DeleteSpecialization<?php echo $SID; ?>">
-                                                <i class="fa fa-trash fa-1x"></i>
-                                            </button>
-                                            <a href="edit/edit-specialization.php?id=<?php echo $SID; ?>" class="btn btn-default">
-                                                <i class="fa fa-pencil-square-o fa-1x"></i>
-                                            </a>
-                                        </td>
-                                     </tr>
-                                     <!-- Modal -->
-                                        <div class="modal fade" id="DeleteSpecialization<?php echo $SID; ?>" role="dialog">
-                                            <div class="modal-dialog" style="padding:100px">
-                                                <!-- Modal content-->
-                                                <div class="modal-content">
-                                                    <div class="modal-header">
-                                                        <button type="button" class="close" data-dismiss="modal">&times;</button>
-                                                        <h4 class="modal-title">Delete Specialization?</h4>
+                                $listofspecialization_tbl =
+                                    GSecureSQL::query(
+                                        "SELECT * FROM listofspecializationtbl WHERE id = ?",
+                                        TRUE,
+                                        "s",
+                                        $Specialization
+                                    );
+                                foreach ($listofspecialization_tbl as $value1) {
+                                    $Specialization = $value1[1];
+                                }
+                                ?>
+                                <tr>
+                                    <td><?php echo $Specialization; ?></td>
+                                    <td><?php echo $YearOfExperience; ?></td>
+                                    <td class="text-center">
+                                        <fieldset class="rating">
+                                            <input type="radio" id="star5" name="rating" value="5"/><label class="full"
+                                                                                                           for="star5"
+                                                                                                           title="Awesome - 5 stars"></label>
+                                            <input type="radio" id="star4half" name="rating"
+                                                   value="4 and a half"/><label class="half" for="star4half"
+                                                                                title="Pretty good - 4.5 stars"></label>
+                                            <input type="radio" id="star4" name="rating" value="4"/><label class="full"
+                                                                                                           for="star4"
+                                                                                                           title="Pretty good - 4 stars"></label>
+                                            <input type="radio" id="star3half" name="rating"
+                                                   value="3 and a half"/><label class="half" for="star3half"
+                                                                                title="Meh - 3.5 stars"></label>
+                                            <input type="radio" id="star3" name="rating" value="3"/><label class="full"
+                                                                                                           for="star3"
+                                                                                                           title="Meh - 3 stars"></label>
+                                            <input type="radio" id="star2half" name="rating"
+                                                   value="2 and a half"/><label class="half" for="star2half"
+                                                                                title="Kinda bad - 2.5 stars"></label>
+                                            <input type="radio" id="star2" name="rating" value="2"/><label class="full"
+                                                                                                           for="star2"
+                                                                                                           title="Kinda bad - 2 stars"></label>
+                                            <input type="radio" id="star1half" name="rating"
+                                                   value="1 and a half"/><label class="half" for="star1half"
+                                                                                title="Meh - 1.5 stars"></label>
+                                            <input type="radio" id="star1" name="rating" value="1"/><label class="full"
+                                                                                                           for="star1"
+                                                                                                           title="Sucks big time - 1 star"></label>
+                                            <input type="radio" id="starhalf" name="rating" value="half"/><label
+                                                class="half" for="starhalf" title="Sucks big time - 0.5 stars"></label>
+                                        </fieldset>
+                                    </td>
+                                    <td>
+                                        <button class="btn btn-danger" data-toggle="modal"
+                                                data-target="#DeleteSpecialization<?php echo $SID; ?>">
+                                            <i class="fa fa-trash fa-1x"></i>
+                                        </button>
+                                        <a href="edit/edit-specialization.php?id=<?php echo $SID; ?>"
+                                           class="btn btn-default">
+                                            <i class="fa fa-pencil-square-o fa-1x"></i>
+                                        </a>
+                                    </td>
+                                </tr>
+                                <!-- Modal -->
+                                <div class="modal fade" id="DeleteSpecialization<?php echo $SID; ?>" role="dialog">
+                                    <div class="modal-dialog" style="padding:100px">
+                                        <!-- Modal content-->
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <button type="button" class="close"
+                                                        data-dismiss="modal">&times;</button>
+                                                <h4 class="modal-title">Delete Specialization?</h4>
+                                            </div>
+                                            <div class="modal-body">
+                                                <div class="col-md-15 fieldcol">
+                                                    <label = "usr" class = "control-label">Do you want to delete this
+                                                    information? This cannot be undone.</label>
+                                                    <div class="form-group">
                                                     </div>
-                                                    <div class="modal-body">
-                                                        <div class="col-md-15 fieldcol">
-                                                            <label = "usr" class = "control-label">Do you want to delete this information? This cannot be undone.</label>
-                                                            <div class="form-group">
-                                                            </div>
-                                                    </div>
-                                                    <div class="modal-footer">
-                                                        <a href="delete.php?delete_SID=<?php echo $SID; ?>" class="btn btn-danger">Delete</a>
-                                                        <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
-                                                    </div>
-                                                    </div>
+                                                </div>
+                                                <div class="modal-footer">
+                                                    <a href="delete.php?delete_SID=<?php echo $SID; ?>"
+                                                       class="btn btn-danger">Delete</a>
+                                                    <button type="button" class="btn btn-default" data-dismiss="modal">
+                                                        Cancel
+                                                    </button>
                                                 </div>
                                             </div>
                                         </div>
-                                    <?php
-                                        }
-                                    ?>
-                                </tbody>
-                            </table>
-                            <div class="hr5" style="margin-top:35px;margin-bottom:40px;"></div>
-                            <div class="row field">
-                                <div class="col-md-6 fieldcol">
-                                    <h4>Languages<span="head-line"></span></h4>
+                                    </div>
                                 </div>
-                                <div class="col-md-6 fieldcol">
-                                    <a href="add/add-language.php" class="btnforadding" style="float:right;">
-                                        <span class="fa fa-plus-square"> Add Language</span>
-                                    </a>
-                                </div>
+                                <?php
+                            }
+                            ?>
+                            </tbody>
+                        </table>
+                        <div class="hr5" style="margin-top:35px;margin-bottom:40px;"></div>
+                        <div class="row field">
+                            <div class="col-md-6 fieldcol">
+                                <h4>Languages<span="head-line"></span></h4>
                             </div>
+                            <div class="col-md-6 fieldcol">
+                                <a href="add/add-language.php" class="btnforadding" style="float:right;">
+                                    <span class="fa fa-plus-square"> Add Language</span>
+                                </a>
+                            </div>
+                        </div>
 
-                            <table class="table segment table-hover">
-                                <thead>
-                                    <tr class="table-color">
-                                        <th>Language</th>
-                                        <th>Written Proficiency</th>
-                                        <th>Spoken Proficiency</th>
-                                        <th width="15%">&nbsp;</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <?php
+                        <table class="table segment table-hover">
+                            <thead>
+                            <tr class="table-color">
+                                <th>Language</th>
+                                <th>Written Proficiency</th>
+                                <th>Spoken Proficiency</th>
+                                <th width="15%">&nbsp;</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <?php
 
-                                        $language_tbl =
-                                            GSecureSQL::query(
-                                                "SELECT * FROM languagetbl WHERE StudentID = ?",
-                                                TRUE,
-                                                "s",
-                                                $StudentID
-                                            );
-                                        foreach ($language_tbl as $value2) {
-                                            $LangID = $value2[0];
-                                            $Language = $value2[2];
-                                            $WrittenProf = $value2[3];
-                                            $SpokenProf = $value2[4];
-                                    ?>
-                                    <tr>
-                                        <td><?php echo $Language; ?></td>
-                                        <td class="text-center">
-                                            <fieldset class="rating">
-                                                <input type="radio" id="star5" name="rating" value="5" /><label class = "full" for="star5" title="Awesome - 5 stars"></label>
-                                                <input type="radio" id="star4half" name="rating" value="4 and a half" /><label class="half" for="star4half" title="Pretty good - 4.5 stars"></label>
-                                                <input type="radio" id="star4" name="rating" value="4" /><label class = "full" for="star4" title="Pretty good - 4 stars"></label>
-                                                <input type="radio" id="star3half" name="rating" value="3 and a half" /><label class="half" for="star3half" title="Meh - 3.5 stars"></label>
-                                                <input type="radio" id="star3" name="rating" value="3" /><label class = "full" for="star3" title="Meh - 3 stars"></label>
-                                                <input type="radio" id="star2half" name="rating" value="2 and a half" /><label class="half" for="star2half" title="Kinda bad - 2.5 stars"></label>
-                                                <input type="radio" id="star2" name="rating" value="2" /><label class = "full" for="star2" title="Kinda bad - 2 stars"></label>
-                                                <input type="radio" id="star1half" name="rating" value="1 and a half" /><label class="half" for="star1half" title="Meh - 1.5 stars"></label>
-                                                <input type="radio" id="star1" name="rating" value="1" /><label class = "full" for="star1" title="Sucks big time - 1 star"></label>
-                                                <input type="radio" id="starhalf" name="rating" value="half" /><label class="half" for="starhalf" title="Sucks big time - 0.5 stars"></label>
-                                            </fieldset>
-                                        </td>
-                                        <td class="text-center">
-                                            <fieldset class="rating">
-                                                <input type="radio" id="star5" name="rating" value="5" /><label class = "full" for="star5" title="Awesome - 5 stars"></label>
-                                                <input type="radio" id="star4half" name="rating" value="4 and a half" /><label class="half" for="star4half" title="Pretty good - 4.5 stars"></label>
-                                                <input type="radio" id="star4" name="rating" value="4" /><label class = "full" for="star4" title="Pretty good - 4 stars"></label>
-                                                <input type="radio" id="star3half" name="rating" value="3 and a half" /><label class="half" for="star3half" title="Meh - 3.5 stars"></label>
-                                                <input type="radio" id="star3" name="rating" value="3" /><label class = "full" for="star3" title="Meh - 3 stars"></label>
-                                                <input type="radio" id="star2half" name="rating" value="2 and a half" /><label class="half" for="star2half" title="Kinda bad - 2.5 stars"></label>
-                                                <input type="radio" id="star2" name="rating" value="2" /><label class = "full" for="star2" title="Kinda bad - 2 stars"></label>
-                                                <input type="radio" id="star1half" name="rating" value="1 and a half" /><label class="half" for="star1half" title="Meh - 1.5 stars"></label>
-                                                <input type="radio" id="star1" name="rating" value="1" /><label class = "full" for="star1" title="Sucks big time - 1 star"></label>
-                                                <input type="radio" id="starhalf" name="rating" value="half" /><label class="half" for="starhalf" title="Sucks big time - 0.5 stars"></label>
-                                            </fieldset>
-                                        </td>
-                                        <td>
-                                            <button class="btn btn-danger" data-toggle="modal" data-target="#DeleteLanguage">
-                                                <i class="fa fa-trash fa-1x"></i>
-                                            </button>
-                                            <a href="edit/edit-language.php?id=<?php echo $LangID; ?>" class="btn btn-default">
-                                                <i class="fa fa-pencil-square-o fa-1x"></i>
-                                            </a>
-                                        </td>
-                                    </tr>
-                                     <!-- Modal -->
-                                        <div class="modal fade" id="DeleteLanguage" role="dialog">
-                                            <div class="modal-dialog" style="padding:100px">
-                                                <!-- Modal content-->
-                                                <div class="modal-content">
-                                                    <div class="modal-header">
-                                                        <button type="button" class="close" data-dismiss="modal">&times;</button>
-                                                        <h4 class="modal-title">Delete Language?</h4>
+                            $language_tbl =
+                                GSecureSQL::query(
+                                    "SELECT * FROM languagetbl WHERE StudentID = ?",
+                                    TRUE,
+                                    "s",
+                                    $StudentID
+                                );
+                            foreach ($language_tbl as $value2) {
+                                $LangID = $value2[0];
+                                $Language = $value2[2];
+                                $WrittenProf = $value2[3];
+                                $SpokenProf = $value2[4];
+                                ?>
+                                <tr>
+                                    <td><?php echo $Language; ?></td>
+                                    <td class="text-center">
+                                        <fieldset class="rating">
+                                            <input type="radio" id="star5" name="rating" value="5"/><label class="full"
+                                                                                                           for="star5"
+                                                                                                           title="Awesome - 5 stars"></label>
+                                            <input type="radio" id="star4half" name="rating"
+                                                   value="4 and a half"/><label class="half" for="star4half"
+                                                                                title="Pretty good - 4.5 stars"></label>
+                                            <input type="radio" id="star4" name="rating" value="4"/><label class="full"
+                                                                                                           for="star4"
+                                                                                                           title="Pretty good - 4 stars"></label>
+                                            <input type="radio" id="star3half" name="rating"
+                                                   value="3 and a half"/><label class="half" for="star3half"
+                                                                                title="Meh - 3.5 stars"></label>
+                                            <input type="radio" id="star3" name="rating" value="3"/><label class="full"
+                                                                                                           for="star3"
+                                                                                                           title="Meh - 3 stars"></label>
+                                            <input type="radio" id="star2half" name="rating"
+                                                   value="2 and a half"/><label class="half" for="star2half"
+                                                                                title="Kinda bad - 2.5 stars"></label>
+                                            <input type="radio" id="star2" name="rating" value="2"/><label class="full"
+                                                                                                           for="star2"
+                                                                                                           title="Kinda bad - 2 stars"></label>
+                                            <input type="radio" id="star1half" name="rating"
+                                                   value="1 and a half"/><label class="half" for="star1half"
+                                                                                title="Meh - 1.5 stars"></label>
+                                            <input type="radio" id="star1" name="rating" value="1"/><label class="full"
+                                                                                                           for="star1"
+                                                                                                           title="Sucks big time - 1 star"></label>
+                                            <input type="radio" id="starhalf" name="rating" value="half"/><label
+                                                class="half" for="starhalf" title="Sucks big time - 0.5 stars"></label>
+                                        </fieldset>
+                                    </td>
+                                    <td class="text-center">
+                                        <fieldset class="rating">
+                                            <input type="radio" id="star5" name="rating" value="5"/><label class="full"
+                                                                                                           for="star5"
+                                                                                                           title="Awesome - 5 stars"></label>
+                                            <input type="radio" id="star4half" name="rating"
+                                                   value="4 and a half"/><label class="half" for="star4half"
+                                                                                title="Pretty good - 4.5 stars"></label>
+                                            <input type="radio" id="star4" name="rating" value="4"/><label class="full"
+                                                                                                           for="star4"
+                                                                                                           title="Pretty good - 4 stars"></label>
+                                            <input type="radio" id="star3half" name="rating"
+                                                   value="3 and a half"/><label class="half" for="star3half"
+                                                                                title="Meh - 3.5 stars"></label>
+                                            <input type="radio" id="star3" name="rating" value="3"/><label class="full"
+                                                                                                           for="star3"
+                                                                                                           title="Meh - 3 stars"></label>
+                                            <input type="radio" id="star2half" name="rating"
+                                                   value="2 and a half"/><label class="half" for="star2half"
+                                                                                title="Kinda bad - 2.5 stars"></label>
+                                            <input type="radio" id="star2" name="rating" value="2"/><label class="full"
+                                                                                                           for="star2"
+                                                                                                           title="Kinda bad - 2 stars"></label>
+                                            <input type="radio" id="star1half" name="rating"
+                                                   value="1 and a half"/><label class="half" for="star1half"
+                                                                                title="Meh - 1.5 stars"></label>
+                                            <input type="radio" id="star1" name="rating" value="1"/><label class="full"
+                                                                                                           for="star1"
+                                                                                                           title="Sucks big time - 1 star"></label>
+                                            <input type="radio" id="starhalf" name="rating" value="half"/><label
+                                                class="half" for="starhalf" title="Sucks big time - 0.5 stars"></label>
+                                        </fieldset>
+                                    </td>
+                                    <td>
+                                        <button class="btn btn-danger" data-toggle="modal"
+                                                data-target="#DeleteLanguage">
+                                            <i class="fa fa-trash fa-1x"></i>
+                                        </button>
+                                        <a href="edit/edit-language.php?id=<?php echo $LangID; ?>"
+                                           class="btn btn-default">
+                                            <i class="fa fa-pencil-square-o fa-1x"></i>
+                                        </a>
+                                    </td>
+                                </tr>
+                                <!-- Modal -->
+                                <div class="modal fade" id="DeleteLanguage" role="dialog">
+                                    <div class="modal-dialog" style="padding:100px">
+                                        <!-- Modal content-->
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <button type="button" class="close"
+                                                        data-dismiss="modal">&times;</button>
+                                                <h4 class="modal-title">Delete Language?</h4>
+                                            </div>
+                                            <div class="modal-body">
+                                                <div class="col-md-15 fieldcol">
+                                                    <label = "usr" class = "control-label">Do you want to delete this
+                                                    information? This cannot be undone.</label>
+                                                    <div class="form-group">
                                                     </div>
-                                                    <div class="modal-body">
-                                                        <div class="col-md-15 fieldcol">
-                                                            <label = "usr" class = "control-label">Do you want to delete this information? This cannot be undone.</label>
-                                                            <div class="form-group">
-                                                            </div>
-                                                    </div>
-                                                    <div class="modal-footer">
-                                                        <a href="delete.php?delete_LangID=<?php echo $LangID; ?>" class="btn btn-danger">Delete</a>
-                                                        <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
-                                                    </div>
-                                                    </div>
+                                                </div>
+                                                <div class="modal-footer">
+                                                    <a href="delete.php?delete_LangID=<?php echo $LangID; ?>"
+                                                       class="btn btn-danger">Delete</a>
+                                                    <button type="button" class="btn btn-default" data-dismiss="modal">
+                                                        Cancel
+                                                    </button>
                                                 </div>
                                             </div>
                                         </div>
-                                    <?php
-                                        }
-                                    ?>
-                                </tbody>
-                            </table>
-                        </div>
+                                    </div>
+                                </div>
+                                <?php
+                            }
+                            ?>
+                            </tbody>
+                        </table>
                     </div>
-                    <!-- End Page Content -->
-
-                    <!--Sidebar-->
-                    <div class="col-md-3 sidebar right-sidebar">
-                        <!-- Search Widget -->
-                        <div class="call-action call-action-boxed call-action-style2 clearfix">
-                            (*) Note: Required fields.
-                        </div>
-                    </div>
-                    <!--End sidebar-->
                 </div>
+                <!-- End Page Content -->
+
+                <!--Sidebar-->
+                <div class="col-md-3 sidebar right-sidebar">
+                    <!-- Search Widget -->
+                    <div class="call-action call-action-boxed call-action-style2 clearfix">
+                        (*) Note: Required fields.
+                    </div>
+                </div>
+                <!--End sidebar-->
             </div>
         </div>
     </div>
-    <!-- End Content -->
-    <script type="text/javascript" src="../../js/script.js"></script>
+</div>
+<!-- End Content -->
+<script type="text/javascript" src="../../js/script.js"></script>
 </body>
 </html>

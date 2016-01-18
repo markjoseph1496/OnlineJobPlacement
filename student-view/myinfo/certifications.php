@@ -1,17 +1,19 @@
 <?php
 include('../../connection.php');
 session_start();
+$StudentID = $_SESSION['StudentID'];
 
-if (isset($_SESSION['StudentID'])) {
-    $StudentID = $_SESSION['StudentID'];
-} else {
-    $StudentID = '';
-    echo "
-        <script type='text/javascript'>
-        location.href='../../../login-student.php?id=2';
-        </script>
-        ";
-}
+$infoquery =
+    GSecureSQL::query(
+        "SELECT FirstName, LastName FROM studentinfotbl WHERE StudentID = ?",
+        TRUE,
+        "s",
+        $StudentID
+    );
+
+$FirstName = $infoquery[0][0];
+$LastName = $infoquery[0][1];
+$StudentName = $FirstName . " " . $LastName;
 ?>
 <!doctype html>
 <html lang="en">
@@ -97,7 +99,7 @@ if (isset($_SESSION['StudentID'])) {
                     <div class="col-md-7">
                         <!-- Start Contact Info-->
                         <ul class="profile-name">
-                            <li><i class="fa fa-hashtag"></i><b> 008-2012-0805</b></li>
+                            <li>Student No.: </i><b><?php echo $StudentID; ?></b></li>
                         </ul>
                         <!-- End Contact Info -->
                     </div>
@@ -106,13 +108,14 @@ if (isset($_SESSION['StudentID'])) {
                         <!-- Start Social Links -->
                         <ul class="social-list">
                             <li class="profile-name">
-                                <a class="bell itl-tooltip" data-placement="bottom" title="" href="#" data-original-title="Notification"><i class="fa fa-bell"></i></a>                            
+                                <a class="bell itl-tooltip" data-placement="bottom" title="" href="#"
+                                   data-original-title="Notification"><i class="fa fa-bell"></i></a>
                             </li>
                             <li class="profile-name">
                                 &nbsp;
                             </li>
                             <li class="profile-name">
-                                <i class="fa fa-user"></i> Hello, <b>Aira Jane Cruz</b>
+                                <i class="fa fa-user"></i> Hello, <b><?php echo $StudentName; ?></b>
                             </li>
                         </ul>
                         <!-- End Social Links -->
@@ -309,52 +312,53 @@ if (isset($_SESSION['StudentID'])) {
                                 );
                             foreach ($certification_tbl as $value) {
                                 $CertificationID = $value[0];
-                                $Certification =  $value[2];
-                                $YearTaken =  $value[3];
-                            ?>
-                            <tr class="certification">
-                                <td><?php echo $Certification; ?></td>
-                                <td><?php echo $YearTaken; ?></td>
-                                <td>
-                                    <button class="btn btn-danger" data-toggle="modal"
-                                            data-target="#DeleteCertification<?php echo $CertificationID; ?>">
-                                        <i class="fa fa-trash fa-1x"></i>
-                                    </button>
-                                    <a href="edit/edit-certification.php?id=<?php echo $CertificationID; ?>"
-                                       class="btn btn-default">
-                                        <i class="fa fa-pencil-square-o fa-1x"></i>
-                                    </a>
-                                </td>
-                            </tr>
-                            <!-- Modal -->
-                            <div class="modal fade" id="DeleteCertification<?php echo $CertificationID; ?>"
-                                 role="dialog">
-                                <div class="modal-dialog" style="padding:100px">
-                                    <!-- Modal content-->
-                                    <div class="modal-content">
-                                        <div class="modal-header">
-                                            <button type="button" class="close" data-dismiss="modal">&times;</button>
-                                            <h4 class="modal-title">Delete Certification?</h4>
-                                        </div>
-                                        <div class="modal-body">
-                                            <div class="col-md-15 fieldcol">
-                                                <label = "usr" class = "control-label">Do you want to delete this
-                                                information? This cannot be undone.</label>
-                                                <div class="form-group">
-                                                </div>
+                                $Certification = $value[2];
+                                $YearTaken = $value[3];
+                                ?>
+                                <tr class="certification">
+                                    <td><?php echo $Certification; ?></td>
+                                    <td><?php echo $YearTaken; ?></td>
+                                    <td>
+                                        <button class="btn btn-danger" data-toggle="modal"
+                                                data-target="#DeleteCertification<?php echo $CertificationID; ?>">
+                                            <i class="fa fa-trash fa-1x"></i>
+                                        </button>
+                                        <a href="edit/edit-certification.php?id=<?php echo $CertificationID; ?>"
+                                           class="btn btn-default">
+                                            <i class="fa fa-pencil-square-o fa-1x"></i>
+                                        </a>
+                                    </td>
+                                </tr>
+                                <!-- Modal -->
+                                <div class="modal fade" id="DeleteCertification<?php echo $CertificationID; ?>"
+                                     role="dialog">
+                                    <div class="modal-dialog" style="padding:100px">
+                                        <!-- Modal content-->
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <button type="button" class="close"
+                                                        data-dismiss="modal">&times;</button>
+                                                <h4 class="modal-title">Delete Certification?</h4>
                                             </div>
-                                            <div class="modal-footer">
-                                                <a href="delete.php?delete_CertificationID=<?php echo $CertificationID; ?>"
-                                                   class="btn btn-danger">Delete</a>
-                                                <button type="button" class="btn btn-default" data-dismiss="modal">
-                                                    Cancel
-                                                </button>
+                                            <div class="modal-body">
+                                                <div class="col-md-15 fieldcol">
+                                                    <label = "usr" class = "control-label">Do you want to delete this
+                                                    information? This cannot be undone.</label>
+                                                    <div class="form-group">
+                                                    </div>
+                                                </div>
+                                                <div class="modal-footer">
+                                                    <a href="delete.php?delete_CertificationID=<?php echo $CertificationID; ?>"
+                                                       class="btn btn-danger">Delete</a>
+                                                    <button type="button" class="btn btn-default" data-dismiss="modal">
+                                                        Cancel
+                                                    </button>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
-                            </div>
-                            <?php
+                                <?php
                             }
                             ?>
                             </tbody>

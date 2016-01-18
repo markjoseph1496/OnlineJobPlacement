@@ -279,7 +279,23 @@ $CompanyDescription = $companyinfo_tbl[0][2];
                                 <div class="classic-testimonials">
                                     <label><u>Good candidate must have the following qualifications:</u></label>
                                 </div>
-                                <li>Must be a CPA</li>
+                                <?php
+                                $requirement_tbl =
+                                    GSecureSQL::query(
+                                        "SELECT Knowledge FROM comprequirementtbl WHERE CompanyID = ? AND PositionID = ?",
+                                        TRUE,
+                                        "ss",
+                                        $CompanyID,
+                                        $PositionID
+                                    );
+                                foreach($requirement_tbl as $value){
+                                    $Knowledge = $value[0];
+                                    ?>
+                                    <li><?php echo $Knowledge; ?></li>
+                                <?php
+                                }
+                                ?>
+
                             </div>
                         </div>
                         <div class="hr5" style="margin-top:35px;margin-bottom:40px;"></div>

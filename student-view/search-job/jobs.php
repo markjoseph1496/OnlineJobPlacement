@@ -2,17 +2,19 @@
 <?php
 include('../../connection.php');
 session_start();
+$StudentID = $_SESSION['StudentID'];
 
-if (isset($_SESSION['StudentID'])) {
-    $StudentID = $_SESSION['StudentID'];
-} else {
-    $StudentID = '';
-    echo "
-        <script type='text/javascript'>
-        location.href='../../login-student.php?id=2';
-        </script>
-        ";
-}
+$infoquery =
+    GSecureSQL::query(
+        "SELECT FirstName, LastName FROM studentinfotbl WHERE StudentID = ?",
+        TRUE,
+        "s",
+        $StudentID
+    );
+
+$FirstName = $infoquery[0][0];
+$LastName = $infoquery[0][1];
+$StudentName = $FirstName . " " . $LastName;
 ?>
 
 <html lang="en">
@@ -94,26 +96,22 @@ if (isset($_SESSION['StudentID'])) {
     <!-- Notification -->
     <link rel="stylesheet" href="../../css/notif.css"/>
 
-    <script type="text/javascript" >
-        $(document).ready(function()
-        {
-        $("#notificationLink").click(function()
-        {
-        $("#notificationContainer").fadeToggle(300);
-        $("#notification_count").fadeOut("slow");
-        return false;
-        });
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $("#notificationLink").click(function () {
+                $("#notificationContainer").fadeToggle(300);
+                $("#notification_count").fadeOut("slow");
+                return false;
+            });
 
-        //Document Click
-        $(document).click(function()
-        {
-        $("#notificationContainer").hide();
-        });
-        //Popup Click
-        $("#notificationContainer").click(function()
-        {
-        return false
-        });
+            //Document Click
+            $(document).click(function () {
+                $("#notificationContainer").hide();
+            });
+            //Popup Click
+            $("#notificationContainer").click(function () {
+                return false
+            });
 
         });
     </script>
@@ -131,7 +129,7 @@ if (isset($_SESSION['StudentID'])) {
                     <div class="col-md-7">
                         <!-- Start Contact Info -->
                         <ul class="profile-name">
-                            <li><i class="fa fa-hashtag"></i> <b>008-2012-0805</b></li>
+                            <li>Student No.: <b><?php echo $StudentID; ?></b></li>
                         </ul>
                         <!-- End Contact Info -->
                     </div>
@@ -141,7 +139,8 @@ if (isset($_SESSION['StudentID'])) {
                         <ul class="social-list">
                             <li id="notification_li">
                                 <span id="notification_count">3</span>
-                                <a class="bell itl-tooltip" data-placement="bottom" title="" id="notificationLink"><i class="fa fa-bell"></i></a>
+                                <a class="bell itl-tooltip" data-placement="bottom" title="" id="notificationLink"><i
+                                        class="fa fa-bell"></i></a>
                                 <div id="notificationContainer">
                                     <div id="notificationTitle">Notifications</div>
                                     <div id="notificationsBody" class="notifications">
@@ -154,14 +153,15 @@ if (isset($_SESSION['StudentID'])) {
                                         <label><a href="">The admin granted your request.</a></label>
                                         <div class="hr2" style="margin-top:1px; margin-bottom:1px;"></div>
                                     </div>
-                                    <div id="notificationFooter"><a href="../notification/notification.php">See All</a></div>
+                                    <div id="notificationFooter"><a href="../notification/notification.php">See All</a>
+                                    </div>
                                 </div>
                             </li>
                             <li class="profile-name">
                                 &nbsp;
                             </li>
                             <li class="profile-name">
-                                <i class="fa fa-user"></i> Hello, <b>Aira Jane Cruz</b>
+                                <i class="fa fa-user"></i> Hello, <b><?php echo $StudentName; ?></b>
                             </li>
                         </ul>
                         <!-- End Social Links -->
@@ -357,7 +357,9 @@ if (isset($_SESSION['StudentID'])) {
                                             </div>
                                         </div>
                                         <div class="col-md-6">
-                                            <p><B class="accent-color">Description: </B><?php echo $PositionDescription; ?></p>
+                                            <p>
+                                                <B class="accent-color">Description: </B><?php echo $PositionDescription; ?>
+                                            </p>
                                         </div>
                                     </div>
                                 </div>

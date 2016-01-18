@@ -23,6 +23,7 @@ $StudentID = $_SESSION['StudentID'];
     $TwitterLink = $student_tbl[0][13];
     $FBLink = substr($FBLink, 24);
 
+$StudentName = $FirstName . " " . $LastName;
 ?>
 
 <!doctype html>
@@ -113,7 +114,7 @@ $StudentID = $_SESSION['StudentID'];
                         <div class="col-md-7">
                             <!-- Start Contact Info -->
                             <ul class="profile-name">
-                                <li><i class="fa fa-hashtag"></i> <b>008-2012-0805</b></li>
+                                <li>Student No.: <b><?php echo $StudentID; ?></b></li>
                             </ul>
                             <!-- End Contact Info -->
                         </div>
@@ -129,7 +130,7 @@ $StudentID = $_SESSION['StudentID'];
                                     &nbsp;
                                 </li>
                                 <li class="profile-name">
-                                    <i class="fa fa-user"></i> Hello, <b>Aira Jane Cruz</b>
+                                    <i class="fa fa-user"></i> Hello, <b><?php echo $StudentName; ?></b>
                                 </li>
                             </ul>
                             <!-- End Social Links -->

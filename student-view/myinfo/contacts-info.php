@@ -4,17 +4,8 @@
 include('../../connection.php');
 session_start();
 
-if(isset($_SESSION['StudentID'])){
     $StudentID = $_SESSION['StudentID'];
-}
-else{
-    $StudentID = '';
-    echo "
-        <script type='text/javascript'>
-        location.href='../../../login-student.php?id=2';
-        </script>
-        ";
-}
+
     $student_tbl =
     GSecureSQL::query(
         "SELECT * FROM studcontactstbl WHERE StudentID = ?",
@@ -22,7 +13,6 @@ else{
         "s",
         $StudentID
     );
-
         $Email = $student_tbl[0][2];
         $Address = $student_tbl[0][3];
         $MobileNumber = $student_tbl[0][4];
@@ -31,6 +21,18 @@ else{
         $PostalCode = $student_tbl[0][7];
         $WorkNumber = $student_tbl[0][8];
         $City = $student_tbl[0][9];
+
+    $infoquery =
+        GSecureSQL::query(
+            "SELECT FirstName, LastName FROM studentinfotbl WHERE StudentID = ?",
+            TRUE,
+            "s",
+            $StudentID
+        );
+
+        $FirstName = $infoquery[0][0];
+        $LastName = $infoquery[0][1];
+        $StudentName = $FirstName . " " . $LastName;
 ?>
 <html lang="en">
 
@@ -116,7 +118,7 @@ else{
                         <div class="col-md-7">
                             <!-- Start Contact Info -->
                             <ul class="profile-name">
-                                <li><i class="fa fa-hashtag"></i> <b>008-2012-0805</b></li>
+                                <li>Student No.: </i> <b><?php echo $StudentID; ?></b></li>
                             </ul>
                             <!-- End Contact Info -->
                         </div>
@@ -132,7 +134,7 @@ else{
                                     &nbsp;
                                 </li>
                                 <li class="profile-name">
-                                    <i class="fa fa-user"></i> Hello, <b>Aira Jane Cruz</b>
+                                    <i class="fa fa-user"></i> Hello, <b><?php echo $StudentName; ?></b>
                                 </li>
                             </ul>
                             <!-- End Social Links -->
