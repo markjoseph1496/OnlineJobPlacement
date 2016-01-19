@@ -40,7 +40,7 @@ if (isset($_POST['StudentID'])) {
                 `CompanyID`,
                 `Password`,
                 `SaltedPassword`
-            FROM `companyinfotbl` WHERE `Email` = ?",
+            FROM `companyinfotbl` WHERE `Email` = ? AND Status = 'Active'",
             TRUE,
             "s",
             $CompanyEmail

@@ -5,7 +5,7 @@ $StudentID = $_SESSION['StudentID'];
 
 $infoquery =
     GSecureSQL::query(
-        "SELECT FirstName, LastName FROM studentinfotbl WHERE StudentID = ?",
+        "SELECT FirstName, LastName, MajorCourse FROM studentinfotbl WHERE StudentID = ?",
         TRUE,
         "s",
         $StudentID
@@ -13,7 +13,17 @@ $infoquery =
 
 $FirstName = $infoquery[0][0];
 $LastName = $infoquery[0][1];
+$MajorCourse = $infoquery[0][2];
 $StudentName = $FirstName . " " . $LastName;
+
+$coursetbl =
+    GSecureSQL::query(
+        "SELECT CourseTitle FROM coursetbl WHERE CourseCode = ?",
+        TRUE,
+        "s",
+        $MajorCourse
+    );
+$MajorCourse = $coursetbl[0][0];
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -132,7 +142,7 @@ $StudentName = $FirstName . " " . $LastName;
                     <div class="col-md-7">
                         <!-- Start Contact Info -->
                         <ul class="profile-name">
-                            <li><i class="fa fa-hashtag"></i> <b>008-2012-0805</b></li>
+                            <li><b><?php echo $MajorCourse; ?></b></li>
                         </ul>
                         <!-- End Contact Info -->
                     </div>
@@ -162,7 +172,7 @@ $StudentName = $FirstName . " " . $LastName;
                                 &nbsp;
                             </li>
                             <li class="profile-name">
-                                <i class="fa fa-user"></i> Hello, <b>Aira Jane Cruz</b>
+                                <i class="fa fa-user"></i> Hello, <b><?php echo $StudentName; ?></b>
                             </li>
                         </ul>
                         <!-- End Social Links -->

@@ -3,10 +3,6 @@ include('../connection.php');
 session_start();
 ?>
 <!doctype html>
-<!--[if IE 8 ]>
-<html class="ie ie8" lang="en"> <![endif]-->
-<!--[if (gte IE 9)|!(IE)]>
-<html lang="en" class="no-js"> <![endif]-->
 <html lang="en">
 
 <head>
@@ -191,10 +187,10 @@ session_start();
                 </li>
                 <li>
                     <a class="active">Company List</a>
-                        <ul class="dropdown">
-                            <li><a href="admin-companylist.php">Active</a></li>
-                            <li><a class="active" href="admin-company_pending.php">Pending</a></li>
-                        </ul>
+                    <ul class="dropdown">
+                        <li><a href="admin-companylist.php">Active</a></li>
+                        <li><a class="active" href="admin-company_pending.php">Pending</a></li>
+                    </ul>
                 </li>
                 <li><a href="admin-adviser.php">Adviser List</a>
                 </li>
@@ -241,17 +237,17 @@ session_start();
                     <th width='15%' class='tabletitle'>Company Name</th>
                     <th width='10%' class='tabletitle'>Location</th>
                     <th width='15%' class='tabletitle'>Industry</th>
-                    <th width='10%' class='tabletitle'>Contact Number</th>
+                    <th width='15%' class='tabletitle'>Contact Number</th>
                     <th width='15%' class='tabletitle'>Email Address</th>
                     <th width='15%' class='tabletitle'>Website</th>
-                    <th width='10%' class='tabletitle'></th>
+                    <th width='10%' class='tabletitle'>Action</th>
                 <tr>
                 </thead>
                 <tbody>
                 <?php
                 $companyinfo_tbl =
                     GSecureSQL::query(
-                        "SELECT * FROM companyinfotbl",
+                        "SELECT * FROM companyinfotbl WHERE Status = 'Inactive'",
                         TRUE
                     );
                 foreach ($companyinfo_tbl as $value) {
@@ -262,26 +258,94 @@ session_start();
                 $PhoneNo = $value[7];
                 $MobileNo = $value[8];
                 $Email = $value[15];
+                $Website = $value[20];
+                if (empty($PhoneNo)) {
+                    $ContactNo = $MobileNo;
+                } elseif (empty($MobileNo)) {
+                    $ContactNo = $PhoneNo;
+                } else {
+                    $ContactNo = $PhoneNo . ", " . $MobileNo;
+                }
                 ?>
                 <tr>
                     <td width=15% class=tabletitle>
-                        <a href='#'><?php echo $CompanyName; ?></a>
+                        <a target="_blank"
+                           href='../companyprofile.php?id=<?php echo $CompanyID; ?>'><?php echo $CompanyName; ?></a>
                     </td>
                     <td width=10% class=tabletitle><?php echo $City; ?></td>
                     <td width='15%' class='tabletitle'><?php echo $Industry; ?></td>
-                    <td width='10%' class='tabletitle'><?php echo $PhoneNo; ?></td>
-                    <td width='15%' class='tabletitle'>WEBSITE</td>
+                    <td width='15%' class='tabletitle'><?php echo $ContactNo; ?></td>
                     <td width='15%' class='tabletitle'><?php echo $Email; ?></td>
+                    <td width='15%' class='tabletitle'>
+                        <a target="_blank" href='<?php echo $Website; ?>'><?php echo $Website; ?></a></td>
 
-                    <td class=tabletitle>
-                        <button id='Edit' name='btnedit' href='' class='btn btn-default'>
-                            <i class='fa fa-check-square-o'></i>
+                    <td width='10%' class=tabletitle>
+                        <button class='btn btn-default' data-toggle='modal'
+                                data-target='#Accept<?php echo $CompanyID; ?>'>
+                            <i class='fa fa-check-circle'></i>
                         </button>
-                        <button name='btndelete' href='' class='btn btn-danger'>
+                        <button class='btn btn-danger' data-toggle='modal'
+                                data-target='#Reject<?php echo $CompanyID; ?>'>
                             <i class='fa fa-trash fa-1x'></i>
                         </button>
                     </td>
                 <tr>
+                    <!-- Modal -->
+                    <div class="modal fade" id="Accept<?php echo $CompanyID; ?>"
+                         role="dialog">
+                        <div class="modal-dialog" style="padding:100px">
+                            <!-- Modal content-->
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                    <h4 class="modal-title">Accept Company?</h4>
+                                </div>
+                                <div class="modal-body">
+                                    <div class="col-md-15 fieldcol">
+                                        <label = "usr" class = "control-label">Do you want to accept this
+                                        Company?</label>
+                                        <div class="form-group">
+                                        </div>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <a href="functions.php?id=1&cid=<?php echo $CompanyID; ?>"
+                                           class="btn btn-primary">Accept</a>
+                                        <button type="button" class="btn btn-default" data-dismiss="modal">
+                                            Cancel
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="modal fade" id="Reject<?php echo $CompanyID; ?>"
+                         role="dialog">
+                        <div class="modal-dialog" style="padding:100px">
+                            <!-- Modal content-->
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                    <h4 class="modal-title">Reject Company?</h4>
+                                </div>
+                                <div class="modal-body">
+                                    <div class="col-md-15 fieldcol">
+                                        <label = "usr" class = "control-label">Do you want to Reject this
+                                        Company? This cannot be undone.</label>
+                                        <div class="form-group">
+                                        </div>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <a href="functions.php?id=2&cid=<?php echo $CompanyID; ?>"
+                                           class="btn btn-danger">Accept</a>
+                                        <button type="button" class="btn btn-default" data-dismiss="modal">
+                                            Cancel
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                     <?php
                     }
                     ?>
