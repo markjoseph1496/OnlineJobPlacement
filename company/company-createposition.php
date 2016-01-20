@@ -253,22 +253,9 @@ $CompanyID = $_SESSION['CompanyID'];
                     </div>
                     <div class="col-md-4 fieldcol">
                         <div class="form-group">
-                            <select id="PLevel" name="PLevel" class="position" style=" width: 100%; height:30px;">
-                                <option value="" selected="selected"> Select Position</option>
-                                <?php
-                                $position_tbl =
-                                    GSecureSQL::query(
-                                        "SELECT * FROM listofpositiontbl",
-                                        TRUE
-                                    );
-                                foreach($position_tbl as $value){
-                                    $Position = $value[1];
-                                    ?>
-                                    <option value="<?php echo $Position; ?>"><?php echo $Position; ?></option>
-                                <?php
-                                }
-                                ?>
-                            </select>
+                            <div class="form-group">
+                            <input type="text" id="PLevel" name="PLevel" class="form-control" style=" width: 100%; height:30px;">
+                            </div>
                         </div>
                     </div>
                 </div>

@@ -1,12 +1,9 @@
 <?php
 include('../connection.php');
 session_start();
+$AdminID = $_SESSION['AdminID'];
 ?>
 <!doctype html>
-<!--[if IE 8 ]>
-<html class="ie ie8" lang="en"> <![endif]-->
-<!--[if (gte IE 9)|!(IE)]>
-<html lang="en" class="no-js"> <![endif]-->
 <html lang="en">
 
 <head>
@@ -162,7 +159,7 @@ session_start();
                             <li><a href="admin-company_pending.php">Pending</a></li>
                         </ul>
                     </li>
-                    <li><a href="admin-adviser.php" admin-maintenance.php"">Adviser List</a>
+                    <li><a href="admin-adviser.php">Adviser List</a>
                     </li>
                     <li>
                         <a> Maintenance</a>
@@ -191,10 +188,10 @@ session_start();
                 </li>
                 <li>
                     <a class="active">Company List</a>
-                        <ul class="dropdown">
-                            <li><a class="active" href="admin-companylist.php">Active</a></li>
-                            <li><a href="admin-company_pending.php">Pending</a></li>
-                        </ul>
+                    <ul class="dropdown">
+                        <li><a class="active" href="admin-companylist.php">Active</a></li>
+                        <li><a href="admin-company_pending.php">Pending</a></li>
+                    </ul>
                 </li>
                 <li><a href="admin-adviser.php">Adviser List</a>
                 </li>
@@ -241,17 +238,17 @@ session_start();
                     <th width='15%' class='tabletitle'>Company Name</th>
                     <th width='10%' class='tabletitle'>Location</th>
                     <th width='15%' class='tabletitle'>Industry</th>
-                    <th width='10%' class='tabletitle'>Contact Number</th>
+                    <th width='15%' class='tabletitle'>Contact Number</th>
                     <th width='15%' class='tabletitle'>Email Address</th>
                     <th width='15%' class='tabletitle'>Website</th>
-                    <th width='10%' class='tabletitle'></th>
+                    <th width='5%' class='tabletitle'>Action</th>
                 <tr>
                 </thead>
                 <tbody>
                 <?php
                 $companyinfo_tbl =
                     GSecureSQL::query(
-                        "SELECT * FROM companyinfotbl",
+                        "SELECT * FROM companyinfotbl WHERE Status = 'Active'",
                         TRUE
                     );
                 foreach ($companyinfo_tbl as $value) {
@@ -262,24 +259,31 @@ session_start();
                 $PhoneNo = $value[7];
                 $MobileNo = $value[8];
                 $Email = $value[15];
+                $Website = $value[20];
+                if (empty($PhoneNo)) {
+                    $ContactNo = $MobileNo;
+                } elseif (empty($MobileNo)) {
+                    $ContactNo = $PhoneNo;
+                } else {
+                    $ContactNo = $PhoneNo . ", " . $MobileNo;
+                }
                 ?>
                 <tr>
                     <td width=15% class=tabletitle>
-                        <a href='#'><?php echo $CompanyName; ?></a>
+                        <a target="_blank"
+                           href='../companyprofile.php?id=<?php echo $CompanyID; ?>'><?php echo $CompanyName; ?></a>
                     </td>
                     <td width=10% class=tabletitle><?php echo $City; ?></td>
                     <td width='15%' class='tabletitle'><?php echo $Industry; ?></td>
-                    <td width='10%' class='tabletitle'><?php echo $PhoneNo; ?></td>
-                    <td width='15%' class='tabletitle'>WEBSITE</td>
+                    <td width='15%' class='tabletitle'><?php echo $ContactNo; ?></td>
                     <td width='15%' class='tabletitle'><?php echo $Email; ?></td>
+                    <td width='15%' class='tabletitle'>
+                        <a target="_blank" href='<?php echo $Website; ?>'><?php echo $Website; ?></a></td>
 
-                    <td class=tabletitle>
-                        <button id='Edit' name='btnedit' href='' class='btn btn-default'>
+                    <td width='5%' class=tabletitle>
+                        <a class='btn btn-default'>
                             <i class='fa fa-pencil-square-o fa-1x'></i>
-                        </button>
-                        <button name='btndelete' href='' class='btn btn-danger'>
-                            <i class='fa fa-trash fa-1x'></i>
-                        </button>
+                        </a>
                     </td>
                 <tr>
                     <?php

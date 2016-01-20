@@ -1,17 +1,18 @@
 <?php
 include('../../connection.php');
 session_start();
+$StudentID = $_SESSION['StudentID'];
+$infoquery =
+    GSecureSQL::query(
+        "SELECT FirstName, LastName FROM studentinfotbl WHERE StudentID = ?",
+        TRUE,
+        "s",
+        $StudentID
+    );
 
-if (isset($_SESSION['StudentID'])) {
-    $StudentID = $_SESSION['StudentID'];
-} else {
-    $StudentID = '';
-    echo "
-        <script type='text/javascript'>
-        location.href='../../../login-student.php?id=2';
-        </script>
-        ";
-}
+$FirstName = $infoquery[0][0];
+$LastName = $infoquery[0][1];
+$StudentName = $FirstName . " " . $LastName;
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -97,7 +98,7 @@ if (isset($_SESSION['StudentID'])) {
                     <div class="col-md-7">
                         <!-- Start Contact Info -->
                         <ul class="profile-name">
-                            <li><i class="fa fa-hashtag"></i> <b>008-2012-0805</b></li>
+                            <li>Student No.: </i> <b><?php echo $StudentID; ?></b></li>
                         </ul>
                         <!-- End Contact Info -->
                     </div>
@@ -113,7 +114,7 @@ if (isset($_SESSION['StudentID'])) {
                                 &nbsp;
                             </li>
                             <li class="profile-name">
-                                <i class="fa fa-user"></i> Hello, <b>Aira Jane Cruz</b>
+                                <i class="fa fa-user"></i> Hello, <b><?php echo $StudentName; ?></b>
                             </li>
                         </ul>
                         <!-- End Social Links -->

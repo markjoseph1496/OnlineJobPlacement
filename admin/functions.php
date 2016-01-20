@@ -137,7 +137,7 @@ if (isset($_POST['FirstName'])) {
         </script>";
 }
 
-if (isset($_GET['id'])) {
+if (isset($_GET['id']) && isset($_GET['rid'])) {
     $fn = $_GET['id'];
     $RequestID = $_GET['rid'];
 
@@ -183,4 +183,32 @@ if (isset($_GET['DeleteID'])) {
             location.href='admin-maintenance.php?id=3';
             </script>";
 }
-?>
+
+if(isset($_GET['id']) && isset($_GET['cid'])){
+    $id = $_GET['id'];
+    $cid = $_GET['cid'];
+
+    if($id == 1){
+        GSecureSQL::query(
+            "UPDATE companyinfotbl SET Status = 'Active' WHERE CompanyID = ?",
+            FALSE,
+            "i",
+            $cid
+        );
+        echo "
+            <script type='text/javascript'>
+            location.href='admin-company_pending.php?id=1';
+            </script>";
+    }elseif($id == 2){
+        GSecureSQL::query(
+            "DELETE FROM companyinfotbl WHERE CompanyID = ?",
+            FALSE,
+            "i",
+            $cid
+        );
+        echo "
+            <script type='text/javascript'>
+            location.href='admin-company_pending.php?id=2';
+            </script>";
+    }
+}
