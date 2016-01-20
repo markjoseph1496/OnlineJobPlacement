@@ -133,89 +133,15 @@ session_start();
                         </a>
                     </div>
                     <div class="navbar-collapse collapse">
-                        <!-- Sign-out -->
-                        <div class="signout-side">
-                            <a href="../../../login-student.php?id=1" class="show-signout"><i class="fa fa-sign-out"></i></a>
-                        </div>
-                        <!-- End Sign-out -->
                         <!-- Start Navigation List -->
-                        <ul class="nav navbar-nav navbar-right">
-                            <li>
-                                <a class="active" href="../personal-info.php">My Info</a>
-                                <ul class="dropdown">
-                                    <li><a href="../personal-info.php">Personal Info</a></li>
-                                    <li><a href="../contacts-info.php">Contacts Info</a></li>
-                                    <li><a class="active" href="../work.php">Work</a></li>
-                                    <li><a href="../education.php">Education</a></li>
-                                    <li><a href="../certifications.php">Certifications</a></li>
-                                    <li><a href="../achievements.php">Achievements</a></li>
-                                    <li><a href="../specialization-and-languages.php">Specialization & Languages</a></li>
-                                    <li><a href="../references.php">References</a></li>
-                                    <li><a href="../portfolio.php">Portfolio</a></li>
-                                </ul>
-                            </li>
-                            <li>
-                                <a href="../../resumelink/resume-link.php">Resume Link</a>
-                                <ul class="dropdown">
-                                    <li><a href="../../resumelink/resume-link.php">Resume Link</a></li>
-                                    <li><a href="../../resumelink/background.php">Background</a></li>
-                                    <li><a href="../../resumelink/print-share.php">Print/Share</a></li>
-                                </ul>
-                            </li>
-                            <li>
-                                <a href="../../applications/applications.php">Applications</a>
-                            </li>
-                            <li>
-                                <a href="../../search-job/jobs.php">Jobs</a>
-                            </li>
-                            <li>
-                                <a href="../../settings/privacy-settings.php">Settings</a>
-                                <ul class="dropdown">
-                                    <li><a href="../../settings/privacy-settings.php">Privacy Settings</a></li>
-                                    <li><a href="../../settings/pass-settings.php">Password Settings</a></li>
-                                </ul>
-                            </li>
+                        <ul class="nav navbar-nav navbar-right">                            
+                            <a href="../../../login-student.php?id=1" class="line-height"><i class="fa fa-sign-out"></i></a>                           
                         </ul>
                         <!-- End Navigation List -->
                     </div>
                 </div>
                 <!-- Mobile Menu Start -->
                 <ul class="wpb-mobile-menu">
-                    <li>
-                        <a class="active" href="personal-info.php">My Info</a>
-                        <ul class="dropdown">
-                            <li><a href="personal-info.php">Personal Info</a></li>
-                            <li><a href="contacts-info.php">Contacts Info</a></li>
-                            <li><a class="active" href="work.php">Work</a></li>
-                            <li><a href="education.php">Education</a></li>
-                            <li><a href="certifications.php">Certifications</a></li>
-                            <li><a href="achievements.php">Achievements</a></li>
-                            <li><a href="specialization-and-languages.php">Specialization & Languages</a></li>
-                            <li><a href="references.php">References</a></li>
-                            <li><a href="portfolio.php">Portfolio</a></li>
-                        </ul>
-                    </li>
-                    <li>
-                        <a href="../../resumelink/resume-link.php">Resume Link</a>
-                        <ul class="dropdown">
-                            <li><a href="../../resumelink/resume-link.php">Resume Link</a></li>
-                            <li><a href="../../resumelink/background.php">Background</a></li>
-                            <li><a href="../../resumelink/print-share.php">Print/Share</a></li>
-                        </ul>
-                    </li>
-                    <li>
-                        <a href="../../applications/applications.php">Applications</a>
-                    </li>
-                    <li>
-                        <a href="../../search-job/jobs.php">Jobs</a>
-                    </li>
-                    <li>
-                        <a href="../../settings/privacy-settings.php">Settings</a>
-                        <ul class="dropdown">
-                            <li><a href="../../settings/privacy-settings.php">Privacy Settings</a></li>
-                            <li><a href="../../settings/pass-settings.php">Password Settings</a></li>
-                        </ul>
-                    </li>
                     <li>
                         <a href="../../../login-student.php?id=1"><i class="fa fa-sign-out"></i> Sign Out</a>
                     </li>
@@ -471,6 +397,7 @@ session_start();
                 <div class="field">
                     <div class="text-center">
                         <button type="submit" class="btn-system btn-large border-btn">Add</button>
+                        <button type="cancel" class="btn-system btn-large btn-black">Cancel</button>
                     </div>
                 </div>
             </div>

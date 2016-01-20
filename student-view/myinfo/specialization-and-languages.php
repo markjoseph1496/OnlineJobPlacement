@@ -305,18 +305,29 @@ else{
 
                 }
                 ?>
+
+                <div class="skill-shortcode">
+                    <div class="skill">
+                        <div class="progress">
+                            <div class="progress-bar" role="progressbar" data-percentage="70" style="width: 70%;">
+                                <span class="progress-bar-span">70%</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
                 <div class="row sidebar-page">
                     <!-- Page Content -->
                     <div class="col-md-9 page-content">
                         <div class="classic-testimonials">
                             <!-- Single Testimonial -->
                             <div class="row field">
-                                <div class="col-md-6 fieldcol">
+                                <div class="col-md-6">
                                     <h4>Specialization<span="head-line"></span></h4>
                                 </div>
-                                <div class="col-md-6 fieldcol">
-                                    <a href="add/add-specialization.php" class="btnforadding" style="float:right;">
-                                        <span class="fa fa-plus-square"> Add Specialization</span>
+                                <div class="col-md-6">
+                                    <a href="add/add-specialization.php" class="main-button" style="float:right;">
+                                        <span class="fa fa-plus"> Add Specialization</span>
                                     </a>
                                 </div>
                             </div>
@@ -393,7 +404,7 @@ else{
                                                         <h4 class="modal-title">Delete Specialization?</h4>
                                                     </div>
                                                     <div class="modal-body">
-                                                        <div class="col-md-15 fieldcol">
+                                                        <div class="col-md-15">
                                                             <label = "usr" class = "control-label">Do you want to delete this information? This cannot be undone.</label>
                                                             <div class="form-group">
                                                             </div>
@@ -413,10 +424,10 @@ else{
                             </table>
                             <div class="hr5" style="margin-top:35px;margin-bottom:40px;"></div>
                             <div class="row field">
-                                <div class="col-md-6 fieldcol">
+                                <div class="col-md-6">
                                     <h4>Languages<span="head-line"></span></h4>
                                 </div>
-                                <div class="col-md-6 fieldcol">
+                                <div class="col-md-6">
                                     <a href="add/add-language.php" class="btnforadding" style="float:right;">
                                         <span class="fa fa-plus-square"> Add Language</span>
                                     </a>
@@ -497,7 +508,7 @@ else{
                                                         <h4 class="modal-title">Delete Language?</h4>
                                                     </div>
                                                     <div class="modal-body">
-                                                        <div class="col-md-15 fieldcol">
+                                                        <div class="col-md-15">
                                                             <label = "usr" class = "control-label">Do you want to delete this information? This cannot be undone.</label>
                                                             <div class="form-group">
                                                             </div>

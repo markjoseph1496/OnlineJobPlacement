@@ -274,18 +274,29 @@ if (isset($_SESSION['StudentID'])) {
 
             }
             ?>
+
+            <div class="skill-shortcode">
+                <div class="skill">
+                    <div class="progress">
+                        <div class="progress-bar" role="progressbar" data-percentage="50" style="width: 50%;">
+                            <span class="progress-bar-span">50%</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
             <div class="row sidebar-page">
                 <!-- Page Content -->
                 <div class="col-md-9 page-content">
                     <div class="classic-testimonials">
                         <!-- Single Testimonial -->
                         <div class="row field">
-                            <div class="col-md-6 fieldcol">
+                            <div class="col-md-6">
                                 <h4>Certifications <span class="head-line"></span></h4>
                             </div>
-                            <div class="col-md-6 fieldcol">
-                                <a href="add/add-certification.php" class="btnforadding" style="float:right;">
-                                    <span class="fa fa-plus-square"> Add Certification</span>
+                            <div class="col-md-6">
+                                <a href="add/add-certification.php" class="main-button" style="float:right;">
+                                    <span class="fa fa-plus"> Add Certification</span>
                                 </a>
                             </div>
                         </div>
@@ -337,7 +348,7 @@ if (isset($_SESSION['StudentID'])) {
                                             <h4 class="modal-title">Delete Certification?</h4>
                                         </div>
                                         <div class="modal-body">
-                                            <div class="col-md-15 fieldcol">
+                                            <div class="col-md-15">
                                                 <label = "usr" class = "control-label">Do you want to delete this
                                                 information? This cannot be undone.</label>
                                                 <div class="form-group">

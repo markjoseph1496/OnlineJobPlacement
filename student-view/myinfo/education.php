@@ -295,18 +295,29 @@ if (isset($_SESSION['StudentID'])) {
 
             }
             ?>
+
+            <div class="skill-shortcode">
+                <div class="skill">
+                    <div class="progress">
+                        <div class="progress-bar" role="progressbar" data-percentage="40" style="width: 40%;">
+                            <span class="progress-bar-span">40%</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
             <div class="row sidebar-page">
                 <!-- Page Content -->
                 <div class="col-md-9 page-content">
                     <div class="classic-testimonials">
                         <!-- Single Testimonial -->
                         <div class="row field">
-                            <div class="col-md-6 fieldcol">
+                            <div class="col-md-6">
                                 <h4>Schools<span class="head-line"></span></h4>
                             </div>
-                            <div class="col-md-6 fieldcol">
-                                <a href="add/add-school.php" class="btnforadding" style="float:right;">
-                                    <span class="fa fa-plus-square"> Add School</span>
+                            <div class="col-md-6">
+                                <a href="add/add-school.php" class="main-button" style="float:right;">
+                                    <span class="fa fa-plus"> Add School</span>
                                 </a>
                             </div>
                         </div>
@@ -488,7 +499,7 @@ if (isset($_SESSION['StudentID'])) {
                                                 <h4 class="modal-title">Delete School information?</h4>
                                             </div>
                                             <div class="modal-body">
-                                                <div class="col-md-15 fieldcol">
+                                                <div class="col-md-15">
                                                     <label = "usr" class = "control-label">Do you want to delete this
                                                     information? This cannot be undone.</label>
                                                     <div class="form-group">
@@ -514,10 +525,10 @@ if (isset($_SESSION['StudentID'])) {
 
                         <div class="hr4" style="margin-top:40px;margin-bottom:40px;"></div>
                         <div class="row field">
-                            <div class="col-md-6 fieldcol">
+                            <div class="col-md-6">
                                 <h4>Seminars<span class="head-line"></span></h4>
                             </div>
-                            <div class="col-md-6 fieldcol">
+                            <div class="col-md-6">
                                 <a href="add/add-seminar.php" class="btnforadding" style="float:right;">
                                     <span class="fa fa-plus-square"> Add Seminar</span>
                                 </a>
@@ -571,7 +582,7 @@ if (isset($_SESSION['StudentID'])) {
                                                 <h4 class="modal-title">Delete Seminar?</h4>
                                             </div>
                                             <div class="modal-body">
-                                                <div class="col-md-15 fieldcol">
+                                                <div class="col-md-15">
                                                     <label = "usr" class = "control-label">Do you want to delete this
                                                     information? This cannot be undone.</label>
                                                     <div class="form-group">

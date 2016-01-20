@@ -249,8 +249,7 @@ if(is_null($_SESSION['StudentID'])){
             <div class="container">
                 <div class="row sidebar-page">
                     <!-- Page Content -->
-                    <div class="col-md-9 page-content">
-                        <!-- Single Testimonial -->
+                    <div class="col-md-12 page-content">
                         <p><b>Resumé Link URL:</b><a href="../../../resumelinkprofile.php" target="_blank">
                             http://markjoseph1496.ojpms.com <i class="fa fa-external-link-square"></i></a>
                         </p><br>
@@ -258,13 +257,12 @@ if(is_null($_SESSION['StudentID'])){
                             <div class="project-content col-md-6">
                                 <h4><span>Enable Public Resumelink</span></h4>
                                 <div>
-                                    <input type="checkbox"/><b><em> Please note that your name is always displayed.</em></b>
+                                    <input type="checkbox" checked="checked"/><b><em> Please note that your name is always displayed.</em></b>
                                 </div>
                             </div>
                         </div>
-                        <!-- End Single Testimonial -->
 
-                        <div class="hr5" style="margin-top:35px;margin-bottom:40px;"></div>
+                        <div class="hr4" style="margin-top:35px;margin-bottom:40px;"></div>
                         <div class="row">
                             <div class="project-content col-md-3">
                                 <h4><span>Personal Info</span></h4>
@@ -321,7 +319,7 @@ if(is_null($_SESSION['StudentID'])){
                             </div>
                         </div>
 
-                        <div class="hr5" style="margin-top:35px;margin-bottom:40px;"></div>
+                        <div class="hr4" style="margin-top:35px;margin-bottom:40px;"></div>
                         <div class="row">
                             <div class="project-content col-md-3">
                                 <h4><span>Education</span></h4>
@@ -364,17 +362,8 @@ if(is_null($_SESSION['StudentID'])){
                         </div>
                     </div>
                     <!-- End Page Content -->
-
-                    <!--Sidebar-->
-                    <div class="col-md-3 sidebar right-sidebar">
-                        <!-- Search Widget -->
-                        <div class="call-action call-action-boxed call-action-style2 clearfix">
-                            (*) Note: Required fields.
-                        </div>
-                    </div>
-                    <!--End sidebar-->
                 </div>
-                <div class="hr5" style="margin-top:35px;margin-bottom:40px;"></div>
+                <div class="hr4" style="margin-top:35px;margin-bottom:40px;"></div>
                 <div class="field">
                     <div class="text-center">
                         <button type="submit" id="submit" class="btn-system btn-large"name ="btnSave">Save</button>

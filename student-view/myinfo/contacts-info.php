@@ -265,8 +265,8 @@ else{
         <!-- Start Content -->
         <div id="content">
             <div class="container">
-                <div class="row sidebar-page">
-                    <?php
+
+                <?php
                     if(isset($_GET['id'])){
                         $id=$_GET['id'];
 
@@ -279,7 +279,19 @@ else{
                                 ';
                         }
                     }
-                    ?>
+                ?>
+
+                <div class="skill-shortcode">
+                    <div class="skill">
+                        <div class="progress">
+                            <div class="progress-bar" role="progressbar" data-percentage="20" style="width: 20%;">
+                                <span class="progress-bar-span">20%</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row sidebar-page">
                     <!-- Page Content -->
                     <div class="col-md-9 page-content">
                         <div class="row">

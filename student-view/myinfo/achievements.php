@@ -274,6 +274,17 @@ if (isset($_SESSION['StudentID'])) {
                 }
             }
             ?>
+
+            <div class="skill-shortcode">
+                <div class="skill">
+                    <div class="progress">
+                        <div class="progress-bar" role="progressbar" data-percentage="60" style="width: 60%;">
+                            <span class="progress-bar-span">60%</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
             <div class="row sidebar-page">
                 <!-- Page Content -->
                 <div class="col-md-9 page-content">

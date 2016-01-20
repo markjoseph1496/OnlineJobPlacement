@@ -98,7 +98,7 @@ $StudentID = $_SESSION['StudentID'];
                     <div class="col-md-5">
                         <!-- Start Social Links -->
                         <ul class="social-list">
-                            <li id="notification_li">
+                            <!--<li id="notification_li">
                                 <span id="notification_count">3</span>
                                 <a class="bell itl-tooltip" data-placement="bottom" title="" id="notificationLink"><i class="fa fa-bell"></i></a>
                                 <div id="notificationContainer">
@@ -115,7 +115,7 @@ $StudentID = $_SESSION['StudentID'];
                                     </div>
                                     <div id="notificationFooter"><a href="../notification/notification.php">See All</a></div>
                                 </div>
-                            </li>
+                            </li>-->
                             <li class="profile-name">
                                 &nbsp;
                             </li>
@@ -253,6 +253,15 @@ $StudentID = $_SESSION['StudentID'];
     <!-- Start Content -->
     <div id="content">
         <div class="container">
+            <div class="skill-shortcode">
+                <div class="skill">
+                    <div class="progress">
+                        <div class="progress-bar" role="progressbar" data-percentage="30" style="width: 30%;">
+                            <span class="progress-bar-span">30%</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
             <div class="row sidebar-page">
                 <!-- Page Content -->
                 <div class="col-md-9 page-content">
@@ -307,12 +316,12 @@ $StudentID = $_SESSION['StudentID'];
             </div>
             <div class="hr5" style="margin-top:35px;margin-bottom:40px;"></div>
             <div class="row">
-                <div class="col-md-6 fieldcol">
+                <div class="col-md-6">
                     <h4>Work Experiences<span class="head-line"></span></h4>
                 </div>
-                <div class="col-md-6 fieldcol">
-                    <a href="add/add-workexperience.php" class="btnforadding" style="float:right;">
-                        <span class="fa fa-plus-square"> Add Work Experience</span>
+                <div class="col-md-6">
+                    <a href="add/add-workexperience.php" class="main-button" style="float:right;">
+                        <span class="fa fa-plus"> Add Work Experience</span>
                     </a>
                 </div>
             </div>

@@ -255,6 +255,15 @@ $result = mysql_query($qry);
         <!-- Start Content -->
         <div id="content">
             <div class="container">
+                <div class="skill-shortcode">
+                    <div class="skill">
+                        <div class="progress">
+                            <div class="progress-bar" role="progressbar" data-percentage="100" style="width: 100%;">
+                                <span class="progress-bar-span">100%</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
                 <div class="row sidebar-page">
                     <!-- Page Content -->
                     <div class="col-md-9 page-content">
@@ -262,12 +271,12 @@ $result = mysql_query($qry);
                         <div class="classic-testimonials">
                             <!-- Single Testimonial -->
                             <div class="row field">
-                                <div class="col-md-6 fieldcol">
+                                <div class="col-md-6">
                                     <h4>Documents<span="head-line"></span="head-line"></h4>
                                 </div>
-                                <div class="col-md-6 fieldcol">
-                                    <a href="add/add-document.php" class="btnforadding" style="float:right;">
-                                        <span class="fa fa-plus-square"> Add Document</span>
+                                <div class="col-md-6">
+                                    <a href="add/add-document.php" class="main-button" style="float:right;">
+                                        <span class="fa fa-plus"> Add Document</span>
                                     </a>
                                 </div>
                             </div>
@@ -299,10 +308,10 @@ $result = mysql_query($qry);
 
                             <div class="hr5" style="margin-top:35px;margin-bottom:40px;"></div>
                             <div class="row field">
-                                <div class="col-md-6 fieldcol">
+                                <div class="col-md-6">
                                     <h4>Links<span="head-line"></span="head-line"></h4>
                                 </div>
-                                <div class="col-md-6 fieldcol">
+                                <div class="col-md-6">
                                     <a href="add/add-link.php" class="btnforadding" style="float:right;">
                                         <span class="fa fa-plus-square"> Add Links</h6></span>
                                     </a>
