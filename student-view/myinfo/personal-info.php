@@ -100,6 +100,32 @@ $StudentName = $FirstName . " " . $LastName;
     <link href="../../css/fileinput.min.css" media="all" rel="stylesheet" type="text/css" />
     <script src="../../js/fileinput.min.js" type="text/javascript"></script>
 
+    <!-- Notification -->
+    <link rel="stylesheet" href="../../css/notif.css"/>
+
+    <script type="text/javascript" >
+        $(document).ready(function()
+        {
+        $("#notificationLink").click(function()
+        {
+        $("#notificationContainer").fadeToggle(300);
+        $("#notification_count").fadeOut("slow");
+        return false;
+        });
+
+        //Document Click
+        $(document).click(function()
+        {
+        $("#notificationContainer").hide();
+        });
+        //Popup Click
+        $("#notificationContainer").click(function()
+        {
+        return false
+        });
+
+        });
+    </script>
 </head>
 
 <body>
@@ -122,9 +148,23 @@ $StudentName = $FirstName . " " . $LastName;
                         <div class="col-md-5">
                             <!-- Start Social Links -->
                             <ul class="social-list">
-                                <li class="profile-name">
-                                    <a class="bell itl-tooltip" data-placement="bottom" title="" href="#"
-                                       data-original-title="Notification"><i class="fa fa-bell"></i></a>
+                                <li id="notification_li">
+                                    <span id="notification_count">3</span>
+                                    <a class="bell itl-tooltip" data-placement="bottom" title="" id="notificationLink"><i class="fa fa-bell"></i></a>
+                                    <div id="notificationContainer">
+                                        <div id="notificationTitle">Notifications</div>
+                                        <div id="notificationsBody" class="notifications">
+                                            <div class="hr1" style="margin-top:40px;"></div>
+
+                                            <label><a href="">The admin granted your request.</a></label>
+                                            <div class="hr2" style="margin-top:1px; margin-bottom:1px;"></div>
+                                            <label><a href="">The admin granted your request.</a></label>
+                                            <div class="hr2" style="margin-top:1px; margin-bottom:1px;"></div>
+                                            <label><a href="">The admin granted your request.</a></label>
+                                            <div class="hr2" style="margin-top:1px; margin-bottom:1px;"></div>
+                                        </div>
+                                        <div id="notificationFooter"><a href="../notification/notification.php">See All</a></div>
+                                    </div>
                                 </li>
                                 <li class="profile-name">
                                     &nbsp;
@@ -295,77 +335,76 @@ $StudentName = $FirstName . " " . $LastName;
                             <div class="row">
                                 <div class="col-md-7">
                                     <!-- Single Testimonial -->
-                                    <div class="classic-testimonials">
-                                        <div class="testimonial-content">
+                                    <div class="call-action call-action-boxed call-action-style1 clearfix">
+                                        <div class="form-group">
+                                            <label>First Name <span>(*)</span></label>
+                                            <input type="text" class="form-control" id="FirstName" name="FirstName" value="<?php echo $FirstName; ?>">
+                                        </div>
+                                        <div class="form-group">
+                                            <label>Middle Name</label>
+                                            <input type="text" class="form-control" id="MiddleName" name="MiddleName" value="<?php echo $MiddleName; ?>">
+                                        </div>
+                                        <div class="form-group">
+                                            <label>Last Name <span>(*)</span></label>
+                                            <input type="text" class="form-control" id="LastName" name="LastName" value="<?php echo $LastName; ?>">
+                                        </div>
+                                        <div class="form-group">
+                                            <label>Gender <span>(*)</span></label>
+                                            <select id="Gender" name="Gender" class="form-control" style="width:100%; height:34px;">
+                                                <option value="" <?php if($Gender=="") echo 'selected="selected"'; ?>>- Please Select Gender -</option>
+                                                <option value="Female" <?php if($Gender=="Female") echo 'selected="selected"'; ?>>Female</option>
+                                                <option value="Male" <?php if($Gender=="Male") echo 'selected="selected"'; ?>>Male</option>
+                                            </select>
+                                        </div>
+                                        <div class="form-group">
+                                            <label>Birthdate <span>(*)</span></label><br>
+                                            <input type="date" class="form-control" name="Birthdate" id="Birthdate" value="<?php echo $Birthdate ;?>">
+                                        </div>
+                                        <div class="form-group">
+                                            <label>Nationality <span>(*)</span></label>
+                                            <select id="Nationality" name="Nationality" class="form-control" style="width:100%; height:34px;">
+                                                <option value="" <?php if($Nationality=="") echo 'selected="selected"'; ?>>- Please select one -</option>
+                                                <option value="American" <?php if($Nationality=="American") echo 'selected="selected"'; ?>>American</option>
+                                                <option value="Filipino" <?php if($Nationality=="Filipino") echo 'selected="selected"'; ?>>Filipino</option>
+                                            </select>
+                                        </div>
+                                        <div class="form-group">
+                                            <label>Civil Status <span>(*)</span></label>
+                                            <select id="CivilStatus" name="CivilStatus" class="form-control" style="width:100%; height:34px;">
+                                                <option value ="" <?php if($CivilStatus=="") echo 'selected="selected"'; ?>>- Please select one -</option>
+                                                <option value="Single" <?php if($CivilStatus=="Single") echo 'selected="selected"'; ?>>Single</option>
+                                                <option value="Married" <?php if($CivilStatus=="Married") echo 'selected="selected"'; ?>>Married</option>
+                                            </select>
+                                        </div>
+                                        <div class="hr5" style="margin-top:35px;margin-bottom:40px;"></div>
+                                        <label class="control-label">Facebook <span>(*)</span></label>
+                                        <div class="input-group">
+                                            <span class="input-group-addon">http://www.facebook.com/</span>
                                             <div class="form-group">
-                                                <label>First Name <span>(*)</span></label>
-                                                <input type="text" class="form-control" id="FirstName" name="FirstName" value="<?php echo $FirstName; ?>">
+                                                <input name="FBLink" id="FBLink" type="text" maxlength="20" class="form-control" value="<?php echo $FBLink; ?>">
                                             </div>
+                                        </div>
+                                        <div class="hr1" style="margin-bottom:12px;"></div>
+                                        <label class="control-label">Twitter</label>
+                                        <div class="input-group">
+                                            <span class="input-group-addon">@</span>
                                             <div class="form-group">
-                                                <label>Middle Name</label>
-                                                <input type="text" class="form-control" id="MiddleName" name="MiddleName" value="<?php echo $MiddleName; ?>">
-                                            </div>
-                                            <div class="form-group">
-                                                <label>Last Name <span>(*)</span></label>
-                                                <input type="text" class="form-control" id="LastName" name="LastName" value="<?php echo $LastName; ?>">
-                                            </div>
-                                            <div class="form-group">
-                                                <label>Gender <span>(*)</span></label>
-                                                <select id="Gender" name="Gender" class="form-control" style="width:100%; height:34px;">
-                                                    <option value="" <?php if($Gender=="") echo 'selected="selected"'; ?>>- Please Select Gender -</option>
-                                                    <option value="Female" <?php if($Gender=="Female") echo 'selected="selected"'; ?>>Female</option>
-                                                    <option value="Male" <?php if($Gender=="Male") echo 'selected="selected"'; ?>>Male</option>
-                                                </select>
-                                            </div>
-                                            <div class="form-group">
-                                                <label>Birthdate <span>(*)</span></label><br>
-                                                <input type="date" class="form-control" name="Birthdate" id="Birthdate" value="<?php echo $Birthdate ;?>">
-                                            </div>
-                                            <div class="form-group">
-                                                <label>Nationality <span>(*)</span></label>
-                                                <select id="Nationality" name="Nationality" class="form-control" style="width:100%; height:34px;">
-                                                    <option value="" <?php if($Nationality=="") echo 'selected="selected"'; ?>>- Please select one -</option>
-                                                    <option value="American" <?php if($Nationality=="American") echo 'selected="selected"'; ?>>American</option>
-                                                    <option value="Filipino" <?php if($Nationality=="Filipino") echo 'selected="selected"'; ?>>Filipino</option>
-                                                </select>
-                                            </div>
-                                            <div class="form-group">
-                                                <label>Civil Status <span>(*)</span></label>
-                                                <select id="CivilStatus" name="CivilStatus" class="form-control" style="width:100%; height:34px;">
-                                                    <option value ="" <?php if($CivilStatus=="") echo 'selected="selected"'; ?>>- Please select one -</option>
-                                                    <option value="Single" <?php if($CivilStatus=="Single") echo 'selected="selected"'; ?>>Single</option>
-                                                    <option value="Married" <?php if($CivilStatus=="Married") echo 'selected="selected"'; ?>>Married</option>
-                                                </select>
-                                            </div>
-                                            <div class="hr5" style="margin-top:35px;margin-bottom:40px;"></div>
-                                            <label class="control-label">Facebook <span>(*)</span></label>
-                                            <div class="input-group">
-                                                <span class="input-group-addon">http://www.facebook.com/</span>
-                                                <div class="form-group">
-                                                    <input name="FBLink" id="FBLink" type="text" maxlength="20" class="form-control" value="<?php echo $FBLink; ?>">
-                                                </div>
-                                            </div>
-                                            <div class="hr1" style="margin-bottom:12px;"></div>
-                                            <label class="control-label">Twitter</label>
-                                            <div class="input-group">
-                                                <span class="input-group-addon">@</span>
-                                                <div class="form-group">
-                                                    <input name="TwitterLink" id="TwitterLink" type="text" pattern="^[_A-z0-9.]{1,}$" maxlength="20" class="form-control" value="<?php echo $TwitterLink; ?>">
-                                                </div>
+                                                <input name="TwitterLink" id="TwitterLink" type="text" pattern="^[_A-z0-9.]{1,}$" maxlength="20" class="form-control" value="<?php echo $TwitterLink; ?>">
                                             </div>
                                         </div>
                                     </div>
                                     <!-- End Single Testimonial -->
                                 </div>
                                 <div class="col-md-5">
-                                    <!-- Single Testimonial -->
-                                    <div class="classic-testimonials">
-                                        <label class="control-label">Select Image</label>
-                                        <input id="ProfilePicture" name="ProfilePicture" multiple type="file" class="file file-loading" data-allowed-file-extensions='["png", "jpg", "bmp", "gif"]'>
-                                        <br>
-                                        <button id="" class="btn-system btn-mini border-btn" name="btnDelete">Delete Image</button>
+                                    <div class="image-border">
+                                        <img src="">
                                     </div>
-                                    <!-- End Single Testimonial -->
+                                    <br><br>
+                                    
+                                    <label class="control-label">Select Image</label>
+                                    <input id="ProfilePicture" name="ProfilePicture" multiple type="file" class="file file-loading" data-allowed-file-extensions='["png", "jpg", "bmp", "gif"]'>
+                                    <br>
+                                    <button id="" class="btn-system btn-mini border-btn" name="btnDelete">Delete Image</button>
                                 </div>
                             </div>
                         </div>

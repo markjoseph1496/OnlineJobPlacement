@@ -338,9 +338,10 @@ $StudentName = $FirstName . " " . $LastName;
                 </div>
             </div>
 
+            <div class="hr2" style="margin-top:35px;"></div>
             <table class="table segment table-hover">
                 <thead>
-                <tr class="table-color">
+                <tr>
                     <th>Company</th>
                     <th>Position</th>
                     <th>Industry</th>
@@ -490,7 +491,7 @@ $StudentName = $FirstName . " " . $LastName;
                         <td><?php echo $Industry; ?></td>
                         <td><?php echo $WorkSpecialization; ?></td>
                         <td><?php echo $Duration; ?></td>
-                        <td>
+                        <td  class="text-center">
                             <button href='' class='btn btn-danger'>
                                 <i class='fa fa-trash fa-1x'></i>
                             </button>
@@ -504,6 +505,7 @@ $StudentName = $FirstName . " " . $LastName;
                 }
                 ?>
             </table>
+            <div class="hr2"></div>
         </div>
     </div>
 </div>
