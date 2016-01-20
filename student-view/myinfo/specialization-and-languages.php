@@ -332,9 +332,10 @@ else{
                                 </div>
                             </div>
 
+                            <div class="hr2" style="margin-top:35px;"></div>
                             <table class="table segment table-hover">
                                 <thead>
-                                    <tr class="table-color">
+                                    <tr>
                                         <th>Specialization</th>
                                         <th>Year of Experience</th>
                                         <th>Proficiency</th>
@@ -385,7 +386,7 @@ else{
                                                 <input type="radio" id="starhalf" name="rating" value="half" /><label class="half" for="starhalf" title="Sucks big time - 0.5 stars"></label>
                                             </fieldset>
                                         </td>
-                                        <td>
+                                        <td class="text-center">
                                             <button class="btn btn-danger" data-toggle="modal" data-target="#DeleteSpecialization<?php echo $SID; ?>">
                                                 <i class="fa fa-trash fa-1x"></i>
                                             </button>
@@ -422,21 +423,24 @@ else{
                                     ?>
                                 </tbody>
                             </table>
-                            <div class="hr5" style="margin-top:35px;margin-bottom:40px;"></div>
+                            <div class="hr2"></div>
+
+                            <div class="hr4" style="margin-top:40px;margin-bottom:40px;"></div>
                             <div class="row field">
                                 <div class="col-md-6">
                                     <h4>Languages<span="head-line"></span></h4>
                                 </div>
                                 <div class="col-md-6">
-                                    <a href="add/add-language.php" class="btnforadding" style="float:right;">
-                                        <span class="fa fa-plus-square"> Add Language</span>
+                                    <a href="add/add-language.php" class="main-button" style="float:right;">
+                                        <span class="fa fa-plus"> Add Language</span>
                                     </a>
                                 </div>
                             </div>
 
+                            <div class="hr2" style="margin-top:35px;"></div>
                             <table class="table segment table-hover">
                                 <thead>
-                                    <tr class="table-color">
+                                    <tr>
                                         <th>Language</th>
                                         <th>Written Proficiency</th>
                                         <th>Spoken Proficiency</th>
@@ -489,7 +493,7 @@ else{
                                                 <input type="radio" id="starhalf" name="rating" value="half" /><label class="half" for="starhalf" title="Sucks big time - 0.5 stars"></label>
                                             </fieldset>
                                         </td>
-                                        <td>
+                                        <td class="text-center">
                                             <button class="btn btn-danger" data-toggle="modal" data-target="#DeleteLanguage">
                                                 <i class="fa fa-trash fa-1x"></i>
                                             </button>
@@ -526,6 +530,7 @@ else{
                                     ?>
                                 </tbody>
                             </table>
+                            <div class="hr2"></div>
                         </div>
                     </div>
                     <!-- End Page Content -->

@@ -291,7 +291,7 @@ $StudentName = $FirstName . " " . $LastName;
 
                     <div class="classic-testimonials">
                         <!-- Single Testimonial -->
-                        <div class="row field">
+                        <div class="row">
                             <div class="col-md-6">
                                 <h4>References<span class="head-line"></span></h4>
                             </div>
@@ -302,9 +302,10 @@ $StudentName = $FirstName . " " . $LastName;
                             </div>
                         </div>
 
+                        <div class="hr2" style="margin-top:35px;"></div>
                         <table class="table segment table-hover">
                             <thead>
-                            <tr class="table-color">
+                            <tr>
                                 <th>Name</th>
                                 <th>Relationship</th>
                                 <th>Company</th>
@@ -339,8 +340,8 @@ $StudentName = $FirstName . " " . $LastName;
                                     <td><?php echo $Position; ?></td>
                                     <td><?php echo $Phone; ?></td>
                                     <td><?php echo $Email; ?></td>
-                                    <td>
-                                        <button href=# class="btn btn-danger" data-toggle="modal"
+                                    <td class="text-center">
+                                        <button href="" class="btn btn-danger" data-toggle="modal"
                                                 data-target="#DeleteReference<?php echo $ReferenceID; ?>">
                                             <i class="fa fa-trash fa-1x"></i>
                                         </button>
@@ -383,6 +384,7 @@ $StudentName = $FirstName . " " . $LastName;
                             ?>
                             </tbody>
                         </table>
+                        <div class="hr2"></div>
                     </div>
                 </div>
                 <!-- End Page Content -->

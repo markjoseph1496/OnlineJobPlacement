@@ -290,7 +290,7 @@ if (isset($_SESSION['StudentID'])) {
                 <div class="col-md-9 page-content">
                     <div class="classic-testimonials">
                         <!-- Single Testimonial -->
-                        <div class="row field">
+                        <div class="row">
                             <div class="col-md-6">
                                 <h4>Certifications <span class="head-line"></span></h4>
                             </div>
@@ -301,9 +301,10 @@ if (isset($_SESSION['StudentID'])) {
                             </div>
                         </div>
 
+                        <div class="hr2" style="margin-top:35px;"></div>
                         <table class="table segment table-hover">
                             <thead>
-                            <tr class="table-color">
+                            <tr>
                                 <th>Certification</th>
                                 <th>Year Taken</th>
                                 <th width="15%">&nbsp;</th>
@@ -326,7 +327,7 @@ if (isset($_SESSION['StudentID'])) {
                             <tr class="certification">
                                 <td><?php echo $Certification; ?></td>
                                 <td><?php echo $YearTaken; ?></td>
-                                <td>
+                                <td class="text-center">
                                     <button class="btn btn-danger" data-toggle="modal"
                                             data-target="#DeleteCertification<?php echo $CertificationID; ?>">
                                         <i class="fa fa-trash fa-1x"></i>
@@ -370,6 +371,7 @@ if (isset($_SESSION['StudentID'])) {
                             ?>
                             </tbody>
                         </table>
+                        <div class="hr2"></div>
                     </div>
                 </div>
                 <!-- End Page Content -->

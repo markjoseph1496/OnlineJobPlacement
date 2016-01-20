@@ -299,63 +299,59 @@ session_start();
                         <div class="row">
                             <div class="col-md-6">
                                 <!-- Single Testimonial -->
-                                <div class="classic-testimonials">
-                                    <div class="testimonial-content">
-                                        <div class="form-group">
-                                            <label>Email <span>(*)</span></label>
-                                            <input type="email" class="form-control" id="Email" name="Email" value="<?php echo $Email; ?>" maxlength="30">
-                                        </div>
-                                        <div class="form-group">
-                                            <label>Mobile Number <span>(*)</span></label>
-                                            <input type="text" class="form-control" id="MobileNumber" name="MobileNumber" value="<?php echo $MobileNumber; ?>" maxlength="11">
-                                        </div>
-                                        <div class="form-group">
-                                            <label>Home Number</label>
-                                            <input type="text" class="form-control" id="HomeNumber" name="HomeNumber" value="<?php echo $HomeNumber; ?>" maxlength="11">
-                                        </div>
-                                        <div class="form-group">
-                                            <label>Work Number</label>
-                                            <input type="text" class="form-control" id="WorkNumber" name="WorkNumber" value="<?php echo $WorkNumber; ?>" maxlength="11">
-                                        </div>
+                                <div class="call-action call-action-boxed call-action-style1 clearfix">
+                                    <div class="form-group">
+                                        <label>Email <span>(*)</span></label>
+                                        <input type="email" class="form-control" id="Email" name="Email" value="<?php echo $Email; ?>" maxlength="30">
+                                    </div>
+                                    <div class="form-group">
+                                        <label>Mobile Number <span>(*)</span></label>
+                                        <input type="text" class="form-control" id="MobileNumber" name="MobileNumber" value="<?php echo $MobileNumber; ?>" maxlength="11">
+                                    </div>
+                                    <div class="form-group">
+                                        <label>Home Number</label>
+                                        <input type="text" class="form-control" id="HomeNumber" name="HomeNumber" value="<?php echo $HomeNumber; ?>" maxlength="11">
+                                    </div>
+                                    <div class="form-group">
+                                        <label>Work Number</label>
+                                        <input type="text" class="form-control" id="WorkNumber" name="WorkNumber" value="<?php echo $WorkNumber; ?>" maxlength="11">
                                     </div>
                                 </div>
                                 <!-- End Single Testimonial -->
                             </div>
                             <div class="col-md-6">
                                 <!-- Single Testimonial -->
-                                <div class="classic-testimonials">
-                                    <div class="testimonial-content">
-                                        <div class="form-group">
-                                            <label>Address <span>(*)</span></label>
-                                            <input type="text" class="form-control" id="Address" name="Address" value="<?php echo $Address; ?>" maxlength="60">
-                                        </div>
-                                        <div class="form-group">
-                                            <label>City <span>(*)</span></label>
-                                            <select id="City" name="City" class="form-control" style="width:100%; height:34px;">
-                                                <option value="" <?php if($City=="") echo 'selected="selected"'; ?>>- Please select one -</option>
-                                                <option value="Caloocan City" <?php if($City=="Caloocan City") echo 'selected="selected"'; ?>>Caloocan City</option>
-                                                <option value="Las Piñas City" <?php if($City=="Las Piñas City") echo 'selected="selected"'; ?>>Las Piñas City</option>
-                                                <option value="Makati City" <?php if($City=="Makati City") echo 'selected="selected"'; ?>>Makati City</option>
-                                                <option value="Malabon City" <?php if($City=="Malabon City") echo 'selected="selected"'; ?>>Malabon City</option>
-                                                <option value="Mandaluyong City" <?php if($City=="Mandaluyong City") echo 'selected="selected"'; ?>>Mandaluyong City</option>
-                                                <option value="Manila" <?php if($City=="Manila") echo 'selected="selected"'; ?>>Manila</option>
-                                                <option value="Marikina City" <?php if($City=="Marikina City") echo 'selected="selected"'; ?>>Marikina City</option>
-                                                <option value="Muntinlupa City" <?php if($City=="Muntinlupa City") echo 'selected="selected"'; ?>>Muntinlupa City</option>
-                                                <option value="Navotas City" <?php if($City=="Navotas City") echo 'selected="selected"'; ?>>Navotas City</option>
-                                                <option value="Parañaque City" <?php if($City=="Parañaque City") echo 'selected="selected"'; ?>>Parañaque City</option>
-                                                <option value="Pasay City" <?php if($City=="Pasay City") echo 'selected="selected"'; ?>>Pasay City</option>
-                                                <option value="Pasig City" <?php if($City=="Pasig City") echo 'selected="selected"'; ?>>Pasig City</option>
-                                                <option value="Pateros" <?php if($City=="Pateros") echo 'selected="selected"'; ?>>Pateros</option>
-                                                <option value="Quezon City" <?php if($City=="Quezon City") echo 'selected="selected"'; ?>>Quezon City</option>
-                                                <option value="San Juan City" <?php if($City=="San Juan City") echo 'selected="selected"'; ?>>San Juan City</option>
-                                                <option value="Taguig City" <?php if($City=="Taguig City") echo 'selected="selected"'; ?>>Taguig City</option>
-                                                <option value="Valenzuela City" <?php if($City=="Valenzuela City") echo 'selected="selected"'; ?>>Valenzuela City</option>
-                                            </select>
-                                        </div>
-                                        <div class="form-group">
-                                            <label>Postal Code</label>
-                                            <input type="text" class="form-control" id="PostalCode" name="PostalCode" value="<?php echo $PostalCode; ?>" maxlength="11">
-                                        </div>
+                                <div class="call-action call-action-boxed call-action-style1 clearfix">
+                                    <div class="form-group">
+                                        <label>Address <span>(*)</span></label>
+                                        <input type="text" class="form-control" id="Address" name="Address" value="<?php echo $Address; ?>" maxlength="60">
+                                    </div>
+                                    <div class="form-group">
+                                        <label>City <span>(*)</span></label>
+                                        <select id="City" name="City" class="form-control" style="width:100%; height:34px;">
+                                            <option value="" <?php if($City=="") echo 'selected="selected"'; ?>>- Please select one -</option>
+                                            <option value="Caloocan City" <?php if($City=="Caloocan City") echo 'selected="selected"'; ?>>Caloocan City</option>
+                                            <option value="Las Piñas City" <?php if($City=="Las Piñas City") echo 'selected="selected"'; ?>>Las Piñas City</option>
+                                            <option value="Makati City" <?php if($City=="Makati City") echo 'selected="selected"'; ?>>Makati City</option>
+                                            <option value="Malabon City" <?php if($City=="Malabon City") echo 'selected="selected"'; ?>>Malabon City</option>
+                                            <option value="Mandaluyong City" <?php if($City=="Mandaluyong City") echo 'selected="selected"'; ?>>Mandaluyong City</option>
+                                            <option value="Manila" <?php if($City=="Manila") echo 'selected="selected"'; ?>>Manila</option>
+                                            <option value="Marikina City" <?php if($City=="Marikina City") echo 'selected="selected"'; ?>>Marikina City</option>
+                                            <option value="Muntinlupa City" <?php if($City=="Muntinlupa City") echo 'selected="selected"'; ?>>Muntinlupa City</option>
+                                            <option value="Navotas City" <?php if($City=="Navotas City") echo 'selected="selected"'; ?>>Navotas City</option>
+                                            <option value="Parañaque City" <?php if($City=="Parañaque City") echo 'selected="selected"'; ?>>Parañaque City</option>
+                                            <option value="Pasay City" <?php if($City=="Pasay City") echo 'selected="selected"'; ?>>Pasay City</option>
+                                            <option value="Pasig City" <?php if($City=="Pasig City") echo 'selected="selected"'; ?>>Pasig City</option>
+                                            <option value="Pateros" <?php if($City=="Pateros") echo 'selected="selected"'; ?>>Pateros</option>
+                                            <option value="Quezon City" <?php if($City=="Quezon City") echo 'selected="selected"'; ?>>Quezon City</option>
+                                            <option value="San Juan City" <?php if($City=="San Juan City") echo 'selected="selected"'; ?>>San Juan City</option>
+                                            <option value="Taguig City" <?php if($City=="Taguig City") echo 'selected="selected"'; ?>>Taguig City</option>
+                                            <option value="Valenzuela City" <?php if($City=="Valenzuela City") echo 'selected="selected"'; ?>>Valenzuela City</option>
+                                        </select>
+                                    </div>
+                                    <div class="form-group">
+                                        <label>Postal Code</label>
+                                        <input type="text" class="form-control" id="PostalCode" name="PostalCode" value="<?php echo $PostalCode; ?>" maxlength="11">
                                     </div>
                                 </div>
                                 <!-- End Single Testimonial -->

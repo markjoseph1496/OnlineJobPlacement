@@ -314,7 +314,7 @@ $StudentName = $FirstName . " " . $LastName;
                 <div class="col-md-9 page-content">
                     <div class="classic-testimonials">
                         <!-- Single Testimonial -->
-                        <div class="row field">
+                        <div class="row">
                             <div class="col-md-6">
                                 <h4>Schools<span class="head-line"></span></h4>
                             </div>
@@ -328,7 +328,7 @@ $StudentName = $FirstName . " " . $LastName;
                         <div class="hr2" style="margin-top:35px;"></div>
                         <table class="table segment table-hover">
                             <thead>
-                            <tr class="table-color">
+                            <tr>
                                 <th>School</th>
                                 <th>Attainment</th>
                                 <th>Course</th>
@@ -404,7 +404,7 @@ $StudentName = $FirstName . " " . $LastName;
                                     <td><?php echo $Attainment; ?></td>
                                     <td><?php echo $Course; ?></td>
                                     <td><?php echo $Graduated; ?></td>
-                                    <td>
+                                    <td class="text-center">
                                         <a href="edit/edit-school.php?id=<?php echo $SchoolID; ?>"
                                            class="btn btn-default btnformaintenance">
                                             <i class="fa fa-pencil-square-o fa-1x"></i>
@@ -481,7 +481,7 @@ $StudentName = $FirstName . " " . $LastName;
                                     <td><?php echo $_Attainment; ?></td>
                                     <td><?php echo $_Course; ?></td>
                                     <td><?php echo $_Graduated; ?></td>
-                                    <td>
+                                    <td class="text-center">
                                         <a href="edit/edit-school.php?id=<?php echo $_SchoolID; ?>"
                                            class="btn btn-default btnformaintenance">
                                             <i class="fa fa-pencil-square-o fa-1x"></i>
@@ -528,13 +528,13 @@ $StudentName = $FirstName . " " . $LastName;
                         <div class="hr2"></div>
 
                         <div class="hr4" style="margin-top:40px;margin-bottom:40px;"></div>
-                        <div class="row field">
+                        <div class="row">
                             <div class="col-md-6">
                                 <h4>Seminars<span class="head-line"></span></h4>
                             </div>
                             <div class="col-md-6">
-                                <a href="add/add-seminar.php" class="btnforadding" style="float:right;">
-                                    <span class="fa fa-plus-square"> Add Seminar</span>
+                                <a href="add/add-seminar.php" class="main-button" style="float:right;">
+                                    <span class="fa fa-plus"> Add Seminar</span>
                                 </a>
                             </div>
                         </div>
@@ -542,7 +542,7 @@ $StudentName = $FirstName . " " . $LastName;
                         <div class="hr2" style="margin-top:35px;"></div>
                         <table class="table segment table-hover">
                             <thead>
-                            <tr class="table-color">
+                            <tr>
                                 <th>Seminar</th>
                                 <th>Year Attended</th>
                                 <th width="15%">&nbsp;</th>

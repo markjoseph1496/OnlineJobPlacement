@@ -291,20 +291,21 @@ $StudentName = $FirstName . " " . $LastName;
                 <div class="col-md-9 page-content">
                     <div class="classic-testimonials">
                         <!-- Single Testimonial -->
-                        <div class="row field">
-                            <div class="col-md-6 fieldcol">
+                        <div class="row ">
+                            <div class="col-md-6">
                                 <h4>Achievements <span class="head-line"></span></h4>
                             </div>
-                            <div class="col-md-6 fieldcol">
-                                <a href="add/add-achievement.php" class="btnforadding" style="float:right;">
-                                    <span class="fa fa-plus-square"> Add Achievement</span>
+                            <div class="col-md-6">
+                                <a href="add/add-achievement.php" class="main-button" style="float:right;">
+                                    <span class="fa fa-plus"> Add Achievement</span>
                                 </a>
                             </div>
                         </div>
 
+                        <div class="hr2" style="margin-top:35px;"></div>
                         <table class="table segment table-hover">
                             <thead>
-                            <tr class="table-color">
+                            <tr>
                                 <th>Achievement</th>
                                 <th width="15%">&nbsp;</th>
                             </tr>
@@ -324,8 +325,8 @@ $StudentName = $FirstName . " " . $LastName;
                             ?>
                             <tr>
                                 <td><?php echo $Achievements; ?></td>
-                                <td>
-                                    <button href=# class="btn btn-danger" data-toggle="modal"
+                                <td class="text-center">
+                                    <button href="" class="btn btn-danger" data-toggle="modal"
                                             data-target="#DeleteAchievement<?php echo $AchievementID; ?>">
                                         <i class="fa fa-trash fa-1x"></i>
                                     </button>
@@ -365,6 +366,7 @@ $StudentName = $FirstName . " " . $LastName;
                                     ?>
                             </tbody>
                         </table>
+                        <div class="hr2"></div>
                     </div>
                 </div>
                 <!-- End Page Content -->

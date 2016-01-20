@@ -270,7 +270,7 @@ $result = mysql_query($qry);
                         
                         <div class="classic-testimonials">
                             <!-- Single Testimonial -->
-                            <div class="row field">
+                            <div class="row">
                                 <div class="col-md-6">
                                     <h4>Documents<span="head-line"></span="head-line"></h4>
                                 </div>
@@ -281,9 +281,10 @@ $result = mysql_query($qry);
                                 </div>
                             </div>
 
+                            <div class="hr2" style="margin-top:35px;"></div>
                             <table class="table segment table-hover">
                                 <thead>
-                                    <tr class="table-color">
+                                    <tr>
                                         <th>File</th>
                                         <th width="15%">&nbsp;</th>
                                     </tr>
@@ -293,7 +294,7 @@ $result = mysql_query($qry);
                                         <td>sdfdsfs</td>
                                         <form method = "POST">
                                         <input type="hidden" name="delete_DocumentID" value="" />
-                                        <td>
+                                        <td class="text-center">
                                             <button name ="btnDelete" href="" class="btn btn-danger btnformaintenance">
                                                 <i class="fa fa-trash fa-1x"></i>
                                             </button>
@@ -305,22 +306,24 @@ $result = mysql_query($qry);
                                     </tr>
                                 </tbody>
                             </table>
+                            <div class="hr2"></div>
 
-                            <div class="hr5" style="margin-top:35px;margin-bottom:40px;"></div>
-                            <div class="row field">
+                            <div class="hr4" style="margin-top:40px;margin-bottom:40px;"></div>
+                            <div class="row">
                                 <div class="col-md-6">
                                     <h4>Links<span="head-line"></span="head-line"></h4>
                                 </div>
                                 <div class="col-md-6">
-                                    <a href="add/add-link.php" class="btnforadding" style="float:right;">
-                                        <span class="fa fa-plus-square"> Add Links</h6></span>
+                                    <a href="add/add-link.php" class="main-button" style="float:right;">
+                                        <span class="fa fa-plus"> Add Links</h6></span>
                                     </a>
                                 </div>
                             </div>
 
+                            <div class="hr2" style="margin-top:35px;"></div>
                             <table class="table segment table-hover">
                                 <thead>
-                                    <tr class="table-color">
+                                    <tr>
                                         <th>URL</th>
                                         <th>Caption</th>
                                         <th width="15%">&nbsp;</th>
@@ -336,8 +339,8 @@ $result = mysql_query($qry);
 
                                         <form method = "POST">
                                         <input type="hidden" name="delete_URLID" value="<?php echo $rows['URLID']; ?>" />
-                                        <td>
-                                            <a href=# class="btn btn-danger btnformaintenance  deleteURL">
+                                        <td  class="text-center">
+                                            <a href="" class="btn btn-danger btnformaintenance  deleteURL">
                                                 <i class="fa fa-trash fa-1x"></i>
                                             </a>
                                             <a data-bb="confirmDeleteURL" class="bb-alert alert alert-info" style="display: none;" href="delete.php?delete_URLID=<?php echo $rows['URLID'];?>"> </a>
@@ -352,6 +355,7 @@ $result = mysql_query($qry);
                                     ?>
                                 </tbody>
                             </table>
+                            <div class="hr2"></div>
                         </div>
                     </div>
                     <!-- End Page Content -->
