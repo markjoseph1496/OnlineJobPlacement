@@ -105,26 +105,22 @@ $MajorCourse = $coursetbl[0][0];
     <!-- Notification -->
     <link rel="stylesheet" href="../../css/notif.css"/>
 
-    <script type="text/javascript" >
-        $(document).ready(function()
-        {
-        $("#notificationLink").click(function()
-        {
-        $("#notificationContainer").fadeToggle(300);
-        $("#notification_count").fadeOut("slow");
-        return false;
-        });
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $("#notificationLink").click(function () {
+                $("#notificationContainer").fadeToggle(300);
+                $("#notification_count").fadeOut("slow");
+                return false;
+            });
 
-        //Document Click
-        $(document).click(function()
-        {
-        $("#notificationContainer").hide();
-        });
-        //Popup Click
-        $("#notificationContainer").click(function()
-        {
-        return false
-        });
+            //Document Click
+            $(document).click(function () {
+                $("#notificationContainer").hide();
+            });
+            //Popup Click
+            $("#notificationContainer").click(function () {
+                return false
+            });
 
         });
     </script>
@@ -152,7 +148,8 @@ $MajorCourse = $coursetbl[0][0];
                         <ul class="social-list">
                             <li id="notification_li">
                                 <span id="notification_count">3</span>
-                                <a class="bell itl-tooltip" data-placement="bottom" title="" id="notificationLink"><i class="fa fa-bell"></i></a>
+                                <a class="bell itl-tooltip" data-placement="bottom" title="" id="notificationLink"><i
+                                        class="fa fa-bell"></i></a>
                                 <div id="notificationContainer">
                                     <div id="notificationTitle">Notifications</div>
                                     <div id="notificationsBody" class="notifications">
@@ -165,7 +162,8 @@ $MajorCourse = $coursetbl[0][0];
                                         <label><a href="">The admin granted your request.</a></label>
                                         <div class="hr2" style="margin-top:1px; margin-bottom:1px;"></div>
                                     </div>
-                                    <div id="notificationFooter"><a href="../notification/notification.php">See All</a></div>
+                                    <div id="notificationFooter"><a href="../notification/notification.php">See All</a>
+                                    </div>
                                 </div>
                             </li>
                             <li class="profile-name">
@@ -368,7 +366,9 @@ $MajorCourse = $coursetbl[0][0];
                                             </div>
                                         </div>
                                         <div class="col-md-6">
-                                            <p><B class="accent-color">Description: </B><?php echo $PositionDescription; ?></p>
+                                            <p>
+                                                <B class="accent-color">Description: </B><?php echo $PositionDescription; ?>
+                                            </p>
                                         </div>
                                     </div>
                                 </div>

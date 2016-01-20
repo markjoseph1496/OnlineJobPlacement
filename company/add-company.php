@@ -140,3 +140,21 @@ if(isset($_GET['id'])){
     }
     
 }
+if(isset($_POST['CourseCheckbox'])){
+    $Course = $_POST['CourseCheckbox'];
+    $Course = implode(",",$Course);
+
+    echo $Course;
+    GSecureSQL::query(
+        "INSERT INTO logrequesttbl (CompanyID,Course) values (?,?)",
+        FALSE,
+        "ss",
+        $CompanyID,
+        $Course
+    );
+    echo "
+          <script type='text/javascript'>
+          location.href='company.php?id=2'
+          </script>
+        ";
+}

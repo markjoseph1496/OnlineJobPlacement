@@ -411,7 +411,7 @@ session_start();
 </html>
 
 <script type="text/javascript">
-    $('#Duration').click(function () {
+    $('#Duration').(function () {
         if ($(this).is(':checked')) {
             $('#ToDuration').hide();
         } else {
