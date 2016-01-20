@@ -397,7 +397,7 @@ $StudentName = $FirstName . " " . $LastName;
                                 </div>
                                 <div class="col-md-5">
                                     <div class="image-border">
-                                        <img src="">
+                                        <img src="../../img/man-icon.png">
                                     </div>
                                     <br><br>
                                     
