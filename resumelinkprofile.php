@@ -1,116 +1,73 @@
-<?php 
-include('connection.php');
-session_start();
-
-$x = $_SESSION['StudentID'];
-
-$qry = "SELECT * FROM studentinfotbl WHERE StudentID ='$x'";
-$result = mysql_query($qry);
-        while($qry = mysql_fetch_Array($result))
-        {       
-        		$FirstName = $qry['FirstName'];
-        		$MiddleName = $qry['MiddleName'];
-        		$LastName = $qry['LastName'];
-                $Birthdate = $qry['Birthdate'];
-                $CivilStatus = $qry['CivilStatus'];
-                $Address = $qry['Address'];
-                $StateRegion = $qry['StateRegion'];
-                $PostalCode = $qry['PostalCode'];
-                $Nationality = $qry['Nationality'];
-                $MobileNumber = $qry['MobileNumber'];
-                $Email = $qry['Email'];
-        }
-?>
 
 <html>
 <head>
+    <!-- Basic -->
+    <title>Online JPMS</title>
 
+    <!-- Define Charset -->
+    <meta charset="utf-8">
 
-<meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="">
+    <!-- Responsive Metatag -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    <!-- Page Description and Author -->
+    <meta name="description" content="Responsive HTML5 Template">
     <meta name="author" content="">
 
-    <title>Online Job Placement Managements</title>
+    <!-- Bootstrap CSS  -->
+    <link rel="stylesheet" href="asset/css/bootstrap.min.css" type="text/css" media="screen">
+    <link rel="stylesheet" href="css/about-style.css" type="text/css" media="screen">
 
-    <!-- Bootstrap Core CSS -->
-    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome CSS -->
+    <link rel="stylesheet" href="css/font-awesome.min.css" type="text/css" media="screen">
 
-    <!-- CSS -->
-    <link href="css/agency.css" rel="stylesheet">
-	<link href="css/stylemain.css" rel = "stylesheet">
-	<link href = "css/style.css" rel = "stylesheet">
-	
-	<!--Javascript-->
-	<script src="./js/jquery.min.js"></script>
-	<script src="js/jquery.js"></script>
+    <!-- Fonts -->
+    <link href="fonts/ffonts/montserrat.css" rel="stylesheet" type="text/css">
+    <link href="fonts/ffonts/kaushan.css" rel="stylesheet" type="text/css">
+    <link href="fonts/ffonts/droid.css" rel="stylesheet" type="text/css">
+    <link href="fonts/ffonts/roboto.css" rel="stylesheet" type="text/css">
 
-    <!-- Bootstrap Core JavaScript -->
-    <script src="js/bootstrap.min.js"></script>
+    <!-- Slicknav -->
+    <link rel="stylesheet" type="text/css" href="css/slicknav.css" media="screen">
 
-    <!-- Plugin JavaScript -->
-    <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
-    <script src="js/classie.js"></script>
-    <script src="js/cbpAnimatedHeader.js"></script>
+    <!-- CSS Styles  -->
+    <link rel="stylesheet" type="text/css" href="css/style.css" media="screen">
 
-    <!-- Contact Form JavaScript -->
-    <script src="js/jqBootstrapValidation.js"></script>
-    <script src="js/contact_me.js"></script>
+    <!-- Responsive CSS Styles  -->
+    <link rel="stylesheet" type="text/css" href="css/responsive.css" media="screen">
 
-    <!-- Custom Theme JavaScript -->
-    <script src="js/agency.js"></script>
+    <!-- Css3 Transitions Styles  -->
+    <link rel="stylesheet" type="text/css" href="css/animate.css" media="screen">
 
-	
-	<!--Fonts-->
-	<link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
-    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
-    <link href='https://fonts.googleapis.com/css?family=Kaushan+Script' rel='stylesheet' type='text/css'>
-    <link href='https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
-    <link href='https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700' rel='stylesheet' type='text/css'>
+    <!-- Color CSS Styles  -->
+    <link rel="stylesheet" type="text/css" href="css/colors/yellow.css" title="yellow" media="screen"/>
 
-<script>
-$(function() {
-  $('a[href*=#]:not([href=#])').click(function() {
-    if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
-      var target = $(this.hash);
-      target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
-      if (target.length) {
-        $('html,body').animate({
-          scrollTop: target.offset().top
-        }, 1000);
-        return false;
-      }
-    }
-  });
-});
 
-$(document).ready(function() {
-	var stickyNavTop = $('.coverinfo').offset().top;
-	
-	var stickyNav = function(){
-		var scrollTop = $(window).scrollTop();
-			
-		if (scrollTop > stickyNavTop) { 
-			$('.coverinfo').addClass('sticky');
-		} else {
-			$('.coverinfo').removeClass('sticky'); 
-		}
-	};
-	
-	stickyNav();
-	 
-	$(window).scroll(function() {
-		stickyNav();
-	});
-});
+    <!-- JS  -->
+    <script type="text/javascript" src="js/jquery.min.js"></script>
+    <script type="text/javascript" src="js/jquery.migrate.js"></script>
+    <script type="text/javascript" src="js/modernizrr.js"></script>
+    <script type="text/javascript" src="asset/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="js/jquery.fitvids.js"></script>
+    <script type="text/javascript" src="js/owl.carousel.min.js"></script>
+    <script type="text/javascript" src="js/nivo-lightbox.min.js"></script>
+    <script type="text/javascript" src="js/jquery.isotope.min.js"></script>
+    <script type="text/javascript" src="js/jquery.appear.js"></script>
+    <script type="text/javascript" src="js/count-to.js"></script>
+    <script type="text/javascript" src="js/jquery.textillate.js"></script>
+    <script type="text/javascript" src="js/jquery.lettering.js"></script>
+    <script type="text/javascript" src="js/jquery.easypiechart.min.js"></script>
+    <script type="text/javascript" src="js/jquery.nicescroll.min.js"></script>
+    <script type="text/javascript" src="js/jquery.parallax.js"></script>
+    <script type="text/javascript" src="js/mediaelement-and-player.js"></script>
+    <script type="text/javascript" src="js/jquery.slicknav.js"></script>
+</head>
 
-</script>	
 	
 	
 </meta>
 
-<style>
+<style = "text/css">
 
 .sticky {
     position: fixed;
@@ -219,24 +176,7 @@ z-index: 99999;
         </div>
     </header>
 
-<div class="resumehead" name="topinfo">
-<div class = "coverinfo">
-<div class = "container">
-	<div class = "row">
 
-	<div class="imgcover" style="background-image: url(./img/a.jpg)"></div>
-	<ul>
-	<h1 class = "name"><?php echo $FirstName . " " . $LastName; ?></h1>
-	
-	<p class = "name1">http://markjoseph1496.jobs180.com </p>
-	
-	</ul>
-	
-	</div> 
-</div>
- </div>
- </div>
- 
 <br>
 
 <!-- PERSONAL INFO -->
@@ -252,78 +192,25 @@ z-index: 99999;
 				<tr>
 				<td> Date of Birth </td>
 				<td> 
-					<?php 
-						$month = substr($Birthdate, 0,2);
-						$day = substr($Birthdate, 3,2);
-						$year = substr($Birthdate, 6,4);
-						if($month == 01){
-							echo "January" . " " . $day . ", " . $year;
-						}
-						elseif ($month == 02) {
-							echo "February" . " " . $day . ", " . $year;
-						}
-						elseif ($month == 03) {
-							echo "March" . " " . $day . ", " . $year;
-						}
-						elseif ($month == 04) {
-							echo "April" . " " . $day . ", " . $year;
-						}
-						elseif ($month == 05) {
-							echo "May" . " " . $day . ", " . $year;
-						}
-						elseif ($month == 06) {
-							echo "June" . " " . $day . ", " . $year;
-						}
-						elseif ($month == 07) {
-							echo "July" . " " . $day . ", " . $year;
-						}
-						elseif ($month == 08) {
-							echo "August" . " " . $day . ", " . $year;
-						}
-						elseif ($month == 09) {
-							echo "September" . " " . $day . ", " . $year;
-						}
-						elseif ($month == 10) {
-							echo "October" . " " . $day . ", " . $year;
-						}
-						elseif ($month == 11) {
-							echo "November" . " " . $day . ", " . $year;
-						}
-						elseif ($month == 12) {
-							echo "December" . " " . $day . ", " . $year;
-						}
-					?> 
+					
 				</td>
 				</tr>
 				
 				<tr>
 				<td> Status </td>
-				<td> <?php echo $CivilStatus; ?> </td>
+				<td> </td>
 				</tr>
 				
 				<tr>
 				<td> Address </td>
 				<td>
-					<?php
-						if(!empty($StateRegion) && $PostalCode == "" && !empty($Address)){
-							echo $Address . " ,  " . $StateRegion;
-						}
-						elseif(!empty($PostalCode) && !empty($StateRegion) && !empty($Address)){
-							echo $Address . " ,  " . $StateRegion . ", " . $PostalCode;
-						}
-						elseif($Address == ""){
-							echo "Not available.";
-						}
-						else{
-							echo $Address;
-						}
-					?>
+					
 				</td>
 				</tr>
 				
 				<tr>
 				<td> Nationality </td>
-				<td> <?php echo $Nationality; ?> </td>
+				<td>  </td>
 				</tr>
 				
 				<tr>
@@ -350,12 +237,12 @@ z-index: 99999;
 				<tbody>
 				<tr>
 				<td> Mobile </td>
-				<td> <?php echo $MobileNumber; ?> </td>
+				<td>  </td>
 				</tr>
 				
 				<tr>
 				<td> Email </td>
-				<td> <?php echo $Email; ?> </td>
+				<td>  </td>
 				</tr>
 				
 				</tbody>
@@ -550,5 +437,7 @@ z-index: 99999;
 <br><br>
 
 </body>
-
+ <!-- important-->
+    <script type="text/javascript" src="js/script.js"></script>
+	<script type="text/javascript" src="js/smoothscroll.js"></script>
 </html>
