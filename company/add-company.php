@@ -142,11 +142,10 @@ if(isset($_GET['id'])){
 }
 if(isset($_POST['CourseCheckbox'])){
     $Course = $_POST['CourseCheckbox'];
-    $Course = implode(",",$Course);
+    $Course = implode(", ",$Course);
 
-    echo $Course;
     GSecureSQL::query(
-        "INSERT INTO logrequesttbl (CompanyID,Course) values (?,?)",
+        "INSERT INTO logrequesttbl (CompanyID,Course,Status) values (?,?,'Pending')",
         FALSE,
         "ss",
         $CompanyID,

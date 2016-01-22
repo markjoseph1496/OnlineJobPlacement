@@ -12,16 +12,42 @@ if (isset($_POST['btnView'])) {
 
 $LOGquery =
     GSecureSQL::query(
-        "SELECT * FROM logrequesttbl WHERE CompanyID = ?",
+        "SELECT * FROM logrequesttbl WHERE CompanyID = ? AND STATUS = 'Accepted'",
         TRUE,
         "s",
         $CompanyID
     );
 if (count($LOGquery) > 0) {
-    $RequestedCourses = $LOGquery[0][2];
-    $RequestedCourses = explode(",", $RequestedCourses);
-    $RequestedCourses = implode("', '", $RequestedCourses);
-    $ContentCount = 1;
+
+    $DateFrom = $LOGquery[0][3];
+    $DateTo = $LOGquery[0][4];
+
+    $diff_from = date_diff(new DateTime(), new DateTime($DateFrom));
+    $diff_to = date_diff(new DateTime(), new DateTime($DateTo));
+
+    if ($diff_to->d == 0) {
+        $diff_to->invert = 0;
+    }
+
+    $a = $diff_from->y >= 0 &&
+        $diff_from->m >= 0 &&
+        $diff_from->d >= 0 &&
+        $diff_from->invert == 1;
+
+    $b = $diff_to->y >= 0 &&
+        $diff_to->m >= 0 &&
+        $diff_to->d >= 0 &&
+        $diff_to->invert == 0;
+
+    if ($a && $b) {
+        $RequestedCourses = $LOGquery[0][2];
+        $RequestedCourses = explode(", ", $RequestedCourses);
+        $RequestedCourses = implode("', '", $RequestedCourses);
+        $ContentCount = 1;
+    } else {
+        $ContentCount = 0;
+    }
+
 } else {
     $ContentCount = 0;
 }
@@ -241,57 +267,65 @@ if (count($LOGquery) > 0) {
     <button name="RequestLists" data-toggle='modal'
             data-target='#Request'>Request List of Graduates.
     </button>
-</div>
-<!-- Modal -->
-<div class="modal fade" id="Request"
-     role="dialog">
-    <div class="modal-dialog" style="padding:100px">
-        <!-- Modal content-->
-        <form autocomplete="off" method="POST" action="add-company.php">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal">&times;</button>
-                    <h4 class="modal-title">Do you want to request the List of Graduates?</h4>
-                </div>
-                <div class="modal-body">
-                    <div class="col-md-15 fieldcol">
-                        <label = "usr" class = "control-label">Select the course(s) you want to request.</label>
-                        <div class="form-group">
-                        </div>
+    <!-- Modal -->
+    <div class="modal fade" id="Request"
+         role="dialog">
+        <div class="modal-dialog" style="padding:100px">
+            <!-- Modal content-->
+            <form autocomplete="off" method="POST" action="add-company.php">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        <h4 class="modal-title">Do you want to request the List of Graduates?</h4>
                     </div>
-                    <div class="col-md-15 fieldcol">
-                        <div class="container">
+                    <div class="modal-body">
+                        <div class="col-md-15 fieldcol">
+                            <label = "usr" class = "control-label">Select the course(s) you want to request.</label>
                             <div class="form-group">
-                                <?php
-                                $coursequery =
-                                    GSecureSQL::query(
-                                        "SELECT CourseCode FROM coursetbl ORDER BY CourseCode",
-                                        TRUE
-                                    );
-                                foreach ($coursequery as $value) {
-                                    $Courses = $value[0];
-                                    ?>
-                                    <ul>
-                                        <li><input type="checkbox" name="CourseCheckbox[]"
-                                                   value="<?php echo $Courses; ?>">
-                                            <label><?php echo $Courses; ?></label></li>
-                                    </ul>
-                                    <?php
-                                }
-                                ?>
                             </div>
                         </div>
-                    </div>
-                    <div class="modal-footer">
-                        <button class="btn btn-primary">Request</button>
-                        <button type="button" class="btn btn-default" data-dismiss="modal">
-                            Cancel
-                        </button>
+                        <div class="col-md-15 fieldcol">
+                            <div class="container">
+                                <div class="form-group">
+                                    <ul>
+                                        <li><input type="checkbox" name="select-all" id="select-all"/> <label> Select
+                                                All </label></li>
+                                    </ul>
+                                    <?php
+                                    $coursequery =
+                                        GSecureSQL::query(
+                                            "SELECT CourseCode FROM coursetbl ORDER BY CourseCode",
+                                            TRUE
+                                        );
+                                    foreach ($coursequery as $value) {
+                                        $Courses = $value[0];
+                                        ?>
+                                        <ul>
+                                            <li><input type="checkbox" name="CourseCheckbox[]"
+                                                       value="<?php echo $Courses; ?>">
+                                                <label><?php echo $Courses; ?></label></li>
+                                        </ul>
+                                        <?php
+                                    }
+                                    ?>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button class="btn btn-primary">Request</button>
+                            <button type="button" class="btn btn-default" data-dismiss="modal">
+                                Cancel
+                            </button>
+                        </div>
                     </div>
                 </div>
-            </div>
-        </form>
+            </form>
+        </div>
     </div>
+</div>
+
+<div id="Requested" class="container">
+    <label = "usr" class = "control-label">You have already requested the list of graduates. Please wait for the admin to approve your request.</label>
 </div>
 
 <div id="Content" class="container">
@@ -553,4 +587,17 @@ if (count($LOGquery) > 0) {
         $('#RequestLOG').show();
         $('#Content').hide();
     }
+
+    $('#select-all').click(function (event) {
+        if (this.checked) {
+            // Iterate each checkbox
+            $(':checkbox').each(function () {
+                this.checked = true;
+            });
+        } else {
+            $(':checkbox').each(function () {
+                this.checked = false;
+            });
+        }
+    });
 </script>

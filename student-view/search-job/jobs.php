@@ -310,6 +310,10 @@ $MajorCourse = $coursetbl[0][0];
                             $diff_from = date_diff(new DateTime(), new DateTime($PostingDateFrom));
                             $diff_to = date_diff(new DateTime(), new DateTime($PostingDateTo));
 
+                            if($diff_to->d == 0){
+                                $diff_to->invert = 0;
+                            }
+
                             $a = $diff_from->y >= 0 &&
                                 $diff_from->m >= 0 &&
                                 $diff_from->d >= 0 &&
