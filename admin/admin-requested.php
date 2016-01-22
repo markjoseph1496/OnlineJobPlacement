@@ -1,7 +1,6 @@
 <?php
 include('../connection.php');
 ?>
-
 <!doctype html>
 <html lang="en">
 
@@ -186,10 +185,10 @@ include('../connection.php');
                 </li>
                 <li>
                     <a>Company List</a>
-                        <ul class="dropdown">
-                            <li><a href="admin-companylist.php">Active</a></li>
-                            <li><a href="admin-company_pending.php">Pending</a></li>
-                        </ul>
+                    <ul class="dropdown">
+                        <li><a href="admin-companylist.php">Active</a></li>
+                        <li><a href="admin-company_pending.php">Pending</a></li>
+                    </ul>
                 </li>
                 <li><a href="admin-adviser.php" admin-maintenance.php"">Adviser List</a>
                 </li>
@@ -259,111 +258,72 @@ include('../connection.php');
                     <th width='10%' class='tabletitle'></th>
                 <tr>
                 </thead>
-                <?php
-                $resumerequest_tbl =
-                    GSecureSQL::query(
-                        "SELECT * FROM resumerequesttbl WHERE Status = 'Pending'",
-                        TRUE
-                    );
-                foreach ($resumerequest_tbl as $value) {
-                    $RequestID = $value[0];
-                    $CompanyID = $value[1];
-                    $StudentID = $value[2];
-                    $Status = $value[3];
-
-                    $companyinfo_tbl =
-                        GSecureSQL::query(
-                            "SELECT CompanyName FROM companyinfotbl WHERE CompanyID = ?",
-                            TRUE,
-                            "s",
-                            $CompanyID
-                        );
-                    foreach ($companyinfo_tbl as $value1) {
-                        $CompanyName = $value1[0];
-                    }
-
-                    $studentinfo_tbl =
-                        GSecureSQL::query(
-                            "SELECT FirstName,LastName FROM studentinfotbl WHERE StudentID = ?",
-                            TRUE,
-                            "s",
-                            $StudentID
-                        );
-                    foreach ($studentinfo_tbl as $value2) {
-                        $FirstName = $value2[0];
-                        $LastName = $value2[1];
-                        $FullName = $LastName . ", " . $FirstName;
-                    }
-                    ?>
-                    <tbody>
-                    <tr>
-                        <td width=25% class=tabletitle><a href='#'></a><?php echo $CompanyName; ?></td>
-                        <td width=25% class=tabletitle><?php echo $StudentID; ?></td>
-                        <td width=25% class=tabletitle><?php echo $FullName; ?></td>
-                        <td width=15% class=tabletitle><?php echo $Status; ?></td>
-                        <td class=tabletitle>
-                            <button class='btn btn-default' data-toggle='modal'
-                                    data-target='#AcceptRequest<?php echo $RequestID; ?>'><i
-                                    class='fa fa-check-circle'></i></button>
-                            <button class='btn btn-danger' data-toggle='modal'
-                                    data-target='#DeclineRequest<?php echo $RequestID; ?>'><i
-                                    class='fa fa-trash fa-1x'></i></button>
-                        </td>
-                    <tr>
-                    </tbody>
-                    <!-- Modal -->
-                    <div class='modal fade' id='AcceptRequest<?php echo $RequestID; ?>' role='dialog'>
-                        <div class='modal-dialog' style='padding:100px'>
-                            <!-- Modal content-->
-                            <div class='modal-content'>
-                                <div class='modal-header'>
-                                    <button type='button' class='close' data-dismiss='modal'>&times;</button>
-                                    <h4 class='modal-title'>Accept Resume?</h4>
+                <tbody>
+                <tr>
+                    <td width=25% class=tabletitle><a href='#'></a></td>
+                    <td width=25% class=tabletitle></td>
+                    <td width=25% class=tabletitle></td>
+                    <td width=15% class=tabletitle></td>
+                    <td class=tabletitle>
+                        <button class='btn btn-default' data-toggle='modal'
+                                data-target='#AcceptRequest'><i
+                                class='fa fa-check-circle'></i></button>
+                        <button class='btn btn-danger' data-toggle='modal'
+                                data-target='#DeclineRequest'><i
+                                class='fa fa-trash fa-1x'></i></button>
+                    </td>
+                <tr>
+                </tbody>
+                <!-- Modal -->
+                <div class='modal fade' id='AcceptRequest' role='dialog'>
+                    <div class='modal-dialog' style='padding:100px'>
+                        <!-- Modal content-->
+                        <div class='modal-content'>
+                            <div class='modal-header'>
+                                <button type='button' class='close' data-dismiss='modal'>&times;</button>
+                                <h4 class='modal-title'>Accept Resume?</h4>
+                            </div>
+                            <div class='modal-body'>
+                                <div class='col-md-15 fieldcol'>
+                                    <label = 'usr' class = 'control-label'>Do you want to accept this resume
+                                    request?</label>
+                                    <div class='form-group'>
+                                    </div>
                                 </div>
-                                <div class='modal-body'>
-                                    <div class='col-md-15 fieldcol'>
-                                        <label = 'usr' class = 'control-label'>Do you want to accept this resume
-                                        request?</label>
-                                        <div class='form-group'>
-                                        </div>
-                                    </div>
-                                    <div class='modal-footer'>
-                                        <a href='functions.php?id=1&rid=$RequestID' class='btn btn-danger'>Accept</a>
-                                        <button type='button' class='btn btn-default' data-dismiss='modal'>Cancel
-                                        </button>
-                                    </div>
+                                <div class='modal-footer'>
+                                    <a href='functions.php?id=1&rid=$RequestID' class='btn btn-danger'>Accept</a>
+                                    <button type='button' class='btn btn-default' data-dismiss='modal'>Cancel
+                                    </button>
                                 </div>
                             </div>
                         </div>
                     </div>
+                </div>
 
-                    <div class='modal fade' id='DeclineRequest<?php echo $RequestID; ?>' role='dialog'>
-                        <div class='modal-dialog' style='padding:100px'>
-                            <!-- Modal content-->
-                            <div class='modal-content'>
-                                <div class='modal-header'>
-                                    <button type='button' class='close' data-dismiss='modal'>&times;</button>
-                                    <h4 class='modal-title'>Reject Resume?</h4>
+                <div class='modal fade' id='DeclineRequest' role='dialog'>
+                    <div class='modal-dialog' style='padding:100px'>
+                        <!-- Modal content-->
+                        <div class='modal-content'>
+                            <div class='modal-header'>
+                                <button type='button' class='close' data-dismiss='modal'>&times;</button>
+                                <h4 class='modal-title'>Reject Resume?</h4>
+                            </div>
+                            <div class='modal-body'>
+                                <div class='col-md-15 fieldcol'>
+                                    <label = 'usr' class = 'control-label'>Do you want to reject this resume
+                                    request?</label>
+                                    <div class='form-group'>
+                                    </div>
                                 </div>
-                                <div class='modal-body'>
-                                    <div class='col-md-15 fieldcol'>
-                                        <label = 'usr' class = 'control-label'>Do you want to reject this resume
-                                        request?</label>
-                                        <div class='form-group'>
-                                        </div>
-                                    </div>
-                                    <div class='modal-footer'>
-                                        <a href='functions.php?id=2&rid=$RequestID' class='btn btn-danger'>Delete</a>
-                                        <button type='button' class='btn btn-default' data-dismiss='modal'>Cancel
-                                        </button>
-                                    </div>
+                                <div class='modal-footer'>
+                                    <a href='functions.php?id=2&rid=$RequestID' class='btn btn-danger'>Delete</a>
+                                    <button type='button' class='btn btn-default' data-dismiss='modal'>Cancel
+                                    </button>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <?php
-                }
-                ?>
+                </div>
             </table>
         </div>
     </div>

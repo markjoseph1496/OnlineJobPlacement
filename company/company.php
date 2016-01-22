@@ -17,14 +17,13 @@ $LOGquery =
         "s",
         $CompanyID
     );
-$RequestedCourses = $LOGquery[0][2];
-$RequestedCourses = explode(",",$RequestedCourses);
-$RequestedCourses = implode("', '",$RequestedCourses);
-print_r($RequestedCourses);
-if (count($LOGquery) == 0) {
-    $ContentCount = 0;
-} else {
+if (count($LOGquery) > 0) {
+    $RequestedCourses = $LOGquery[0][2];
+    $RequestedCourses = explode(",", $RequestedCourses);
+    $RequestedCourses = implode("', '", $RequestedCourses);
     $ContentCount = 1;
+} else {
+    $ContentCount = 0;
 }
 ?>
 <!doctype html>
@@ -284,9 +283,7 @@ if (count($LOGquery) == 0) {
                         </div>
                     </div>
                     <div class="modal-footer">
-                        <button
-                        "
-                        class="btn btn-primary">Request</button>
+                        <button class="btn btn-primary">Request</button>
                         <button type="button" class="btn btn-default" data-dismiss="modal">
                             Cancel
                         </button>
@@ -336,24 +333,78 @@ if (count($LOGquery) == 0) {
                             </label></center>
                             <select id="Location" name="Location" class="form-control" style="width:420px;">
                                 <option value="" selected="selected">- Please select one -</option>
-                                <option value="Bulacan City" <?php if ($Location_Default == "Bulacan City") {echo "selected='selected'";} ?>>Bulacan City</option>
-                                <option value="Caloocan City"<?php if ($Location_Default == "Caloocan City") {echo "selected='selected'";} ?>>Caloocan City</option>
-                                <option value="Las Pińas City"<?php if ($Location_Default == "Las Pińas City") {echo "selected='selected'";} ?>>Las Pińas City</option>
-                                <option value="Makati City"<?php if ($Location_Default == "Makati City") {echo "selected='selected'";} ?>>Makati City</option>
-                                <option value="Malabon City"<?php if ($Location_Default == "Malabon City") {echo "selected='selected'";} ?>>Malabon City</option>
-                                <option value="Mandaluyong City"<?php if ($Location_Default == "Mandaluyong City") {echo "selected='selected'";} ?>>Mandaluyong City</option>
-                                <option value="Manila"<?php if ($Location_Default == "Manila") {echo "selected='selected'";} ?>>Manila</option>
-                                <option value="Marikina City"<?php if ($Location_Default == "Marikina City") {echo "selected='selected'";} ?>>Marikina City</option>
-                                <option value="Muntinlupa City"<?php if ($Location_Default == "Muntinlupa City") {echo "selected='selected'";} ?>>Muntinlupa City</option>
-                                <option value="Navotas City"<?php if ($Location_Default == "Navotas City") {echo "selected='selected'";} ?>>Navotas City</option>
-                                <option value="Parańaque City"<?php if ($Location_Default == "Parańaque City") {echo "selected='selected'";} ?>>Parańaque City</option>
-                                <option value="Pasay City"<?php if ($Location_Default == "Pasay City") {echo "selected='selected'";} ?>>Pasay City</option>
-                                <option value="Pasig City"<?php if ($Location_Default == "Pasig City") {echo "selected='selected'";} ?>>Pasig City</option>
-                                <option value="Pateros City"<?php if ($Location_Default == "Pateros City") {echo "selected='selected'";} ?>>Pateros City</option>
-                                <option value="Quezon City"<?php if ($Location_Default == "Quezon City") {echo "selected='selected'";} ?>>Quezon City</option>
-                                <option value="San Juan City"<?php if ($Location_Default == "San Juan City") {echo "selected='selected'";} ?>>San Juan City</option>
-                                <option value="Taguig City"<?php if ($Location_Default == "Taguig City") {echo "selected='selected'";} ?>>Taguig City</option>
-                                <option value="Valenzuela City"<?php if ($Location_Default == "Valenzuela City") {echo "selected='selected'";} ?>>Valenzuela City</option>
+                                <option value="Bulacan City" <?php if ($Location_Default == "Bulacan City") {
+                                    echo "selected='selected'";
+                                } ?>>Bulacan City
+                                </option>
+                                <option value="Caloocan City"<?php if ($Location_Default == "Caloocan City") {
+                                    echo "selected='selected'";
+                                } ?>>Caloocan City
+                                </option>
+                                <option value="Las Pińas City"<?php if ($Location_Default == "Las Pińas City") {
+                                    echo "selected='selected'";
+                                } ?>>Las Pińas City
+                                </option>
+                                <option value="Makati City"<?php if ($Location_Default == "Makati City") {
+                                    echo "selected='selected'";
+                                } ?>>Makati City
+                                </option>
+                                <option value="Malabon City"<?php if ($Location_Default == "Malabon City") {
+                                    echo "selected='selected'";
+                                } ?>>Malabon City
+                                </option>
+                                <option value="Mandaluyong City"<?php if ($Location_Default == "Mandaluyong City") {
+                                    echo "selected='selected'";
+                                } ?>>Mandaluyong City
+                                </option>
+                                <option value="Manila"<?php if ($Location_Default == "Manila") {
+                                    echo "selected='selected'";
+                                } ?>>Manila
+                                </option>
+                                <option value="Marikina City"<?php if ($Location_Default == "Marikina City") {
+                                    echo "selected='selected'";
+                                } ?>>Marikina City
+                                </option>
+                                <option value="Muntinlupa City"<?php if ($Location_Default == "Muntinlupa City") {
+                                    echo "selected='selected'";
+                                } ?>>Muntinlupa City
+                                </option>
+                                <option value="Navotas City"<?php if ($Location_Default == "Navotas City") {
+                                    echo "selected='selected'";
+                                } ?>>Navotas City
+                                </option>
+                                <option value="Parańaque City"<?php if ($Location_Default == "Parańaque City") {
+                                    echo "selected='selected'";
+                                } ?>>Parańaque City
+                                </option>
+                                <option value="Pasay City"<?php if ($Location_Default == "Pasay City") {
+                                    echo "selected='selected'";
+                                } ?>>Pasay City
+                                </option>
+                                <option value="Pasig City"<?php if ($Location_Default == "Pasig City") {
+                                    echo "selected='selected'";
+                                } ?>>Pasig City
+                                </option>
+                                <option value="Pateros City"<?php if ($Location_Default == "Pateros City") {
+                                    echo "selected='selected'";
+                                } ?>>Pateros City
+                                </option>
+                                <option value="Quezon City"<?php if ($Location_Default == "Quezon City") {
+                                    echo "selected='selected'";
+                                } ?>>Quezon City
+                                </option>
+                                <option value="San Juan City"<?php if ($Location_Default == "San Juan City") {
+                                    echo "selected='selected'";
+                                } ?>>San Juan City
+                                </option>
+                                <option value="Taguig City"<?php if ($Location_Default == "Taguig City") {
+                                    echo "selected='selected'";
+                                } ?>>Taguig City
+                                </option>
+                                <option value="Valenzuela City"<?php if ($Location_Default == "Valenzuela City") {
+                                    echo "selected='selected'";
+                                } ?>>Valenzuela City
+                                </option>
                             </select>
                         </div>
                     </div>
@@ -399,7 +450,7 @@ if (count($LOGquery) == 0) {
                             studcontactstbl.City
                             FROM
                             studcontactstbl
-                            INNER JOIN `studentinfotbl` ON `studcontactstbl`.`StudentID` = `studentinfotbl`.`StudentID` WHERE studcontactstbl.City = ?",
+                            INNER JOIN `studentinfotbl` ON `studcontactstbl`.`StudentID` = `studentinfotbl`.`StudentID` WHERE studcontactstbl.City = ? AND studentinfotbl.MajorCourse IN ('$RequestedCourses')",
                             TRUE,
                             "s",
                             $Location
