@@ -12,7 +12,7 @@ if (isset($_POST['btnView'])) {
 
 $LOGquery =
     GSecureSQL::query(
-        "SELECT * FROM logrequesttbl WHERE CompanyID = ? AND STATUS = 'Accepted'",
+        "SELECT * FROM logrequesttbl WHERE CompanyID = ? AND Status = 'Accepted'",
         TRUE,
         "s",
         $CompanyID
@@ -50,6 +50,17 @@ if (count($LOGquery) > 0) {
 
 } else {
     $ContentCount = 0;
+}
+
+$LOGquery1 =
+    GSecureSQL::query(
+        "SELECT * FROM logrequesttbl WHERE CompanyID = ? AND Status = 'Pending'",
+        TRUE,
+        "s",
+        $CompanyID
+    );
+if(count($LOGquery1) > 0){
+    $ContentCount = 2;
 }
 ?>
 <!doctype html>
@@ -581,9 +592,15 @@ if (count($LOGquery) > 0) {
 <script type="text/javascript">
     var ContentValue = "<?php echo $ContentCount; ?>";
     if (ContentValue == "1") {
+        $('#Requested').hide();
         $('#RequestLOG').hide();
         $('#Content').show();
+    } else if(ContentValue == "2") {
+        $('#Requested').show();
+        $('#RequestLOG').hide();
+        $('#Content').hide();
     } else {
+        $('#Requested').hide();
         $('#RequestLOG').show();
         $('#Content').hide();
     }
