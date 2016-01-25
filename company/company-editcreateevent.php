@@ -2,6 +2,17 @@
 include('../connection.php');
 session_start();
 $CompanyID = $_SESSION['CompanyID'];
+$companyinfo_tbl =
+    GSecureSQL::query(
+        "SELECT CompanyName, FirstName, LastName FROM companyinfotbl WHERE CompanyID = ?",
+        TRUE,
+        "s",
+        $CompanyID
+    );
+$CompanyName = $companyinfo_tbl[0][0];
+$cFirstName = $companyinfo_tbl[0][1];
+$cLastName = $companyinfo_tbl[0][2];
+
 ?>
 <!doctype html>
 <!--[if IE 8 ]><html class="ie ie8" lang="en"> <![endif]-->

@@ -15,7 +15,9 @@ $companyinfo_tbl =
             PostalCode,
             PhoneNum,
             MobileNum,
-            Fax
+            Fax,
+            FirstName,
+            LastName
         FROM
             companyinfotbl
         WHERE
@@ -35,6 +37,8 @@ $PostalCode = $companyinfo_tbl[0][6];
 $PhoneNum = $companyinfo_tbl[0][7];
 $MobileNumber = $companyinfo_tbl[0][8];
 $Fax = $companyinfo_tbl[0][9];
+$cFirstName = $companyinfo_tbl[0][10];
+$cLastName= $companyinfo_tbl[0][11];
 
 ?>
 <!doctype html>
@@ -124,7 +128,7 @@ $Fax = $companyinfo_tbl[0][9];
                     <div class="col-md-6">
                         <!-- Start Contact Info -->
                         <ul class="contact-details">
-                            <li class="profile-name"><i class="fa fa-hashtag"></i> <b>008-2012-0805</b></li>
+                            <li class="profile-name"><b><?php echo $CompanyName; ?></b></li>
                         </ul>
                         <!-- End Contact Info -->
                     </div>
@@ -140,7 +144,7 @@ $Fax = $companyinfo_tbl[0][9];
                                 &nbsp;
                             </li>
                             <li class="profile-name">
-                                <i class="fa fa-user"></i> Hello, <b>Aira Jane Cruz</b>
+                                <i class="fa fa-user"></i> Hello, <b><?php echo $cFirstName . " " . $cLastName; ?></b>
                             </li>
                         </ul>
                         <!-- End Social Links -->

@@ -2,6 +2,18 @@
 include('../connection.php');
 session_start();
 $CompanyID = $_SESSION['CompanyID'];
+
+$companyinfo_tbl =
+    GSecureSQL::query(
+        "SELECT CompanyName, FirstName, LastName FROM companyinfotbl WHERE CompanyID = ?",
+        TRUE,
+        "s",
+        $CompanyID
+    );
+$CompanyName = $companyinfo_tbl[0][0];
+$cFirstName = $companyinfo_tbl[0][1];
+$cLastName = $companyinfo_tbl[0][2];
+
 ?>
 <!doctype html>
 <!--[if IE 8 ]>
@@ -96,7 +108,7 @@ $CompanyID = $_SESSION['CompanyID'];
                     <div class="col-md-6">
                         <!-- Start Contact Info -->
                         <ul class="contact-details">
-                            <li class="profile-name"><i class="fa fa-hashtag"></i> <b>008-2012-0805</b></li>
+                            <li class="profile-name"><b><?php echo $CompanyName; ?></b></li>
                         </ul>
                         <!-- End Contact Info -->
                     </div>
@@ -112,7 +124,7 @@ $CompanyID = $_SESSION['CompanyID'];
                                 &nbsp;
                             </li>
                             <li class="profile-name">
-                                <i class="fa fa-user"></i> Hello, <b>Aira Jane Cruz</b>
+                                <i class="fa fa-user"></i> Hello, <b><?php echo $cFirstName . " " . $cLastName; ?></b>
                             </li>
                         </ul>
                         <!-- End Social Links -->
