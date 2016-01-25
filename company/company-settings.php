@@ -15,7 +15,9 @@ $companyinfo_tbl =
             PostalCode,
             PhoneNum,
             MobileNum,
-            Fax
+            Fax,
+            FirstName,
+            LastName
         FROM
             companyinfotbl
         WHERE
@@ -35,6 +37,8 @@ $PostalCode = $companyinfo_tbl[0][6];
 $PhoneNum = $companyinfo_tbl[0][7];
 $MobileNumber = $companyinfo_tbl[0][8];
 $Fax = $companyinfo_tbl[0][9];
+$cFirstName = $companyinfo_tbl[0][10];
+$cLastName= $companyinfo_tbl[0][11];
 
 ?>
 <!doctype html>
@@ -124,7 +128,7 @@ $Fax = $companyinfo_tbl[0][9];
                     <div class="col-md-6">
                         <!-- Start Contact Info -->
                         <ul class="contact-details">
-                            <li class="profile-name"><i class="fa fa-hashtag"></i> <b>008-2012-0805</b></li>
+                            <li class="profile-name"><b><?php echo $CompanyName; ?></b></li>
                         </ul>
                         <!-- End Contact Info -->
                     </div>
@@ -140,7 +144,7 @@ $Fax = $companyinfo_tbl[0][9];
                                 &nbsp;
                             </li>
                             <li class="profile-name">
-                                <i class="fa fa-user"></i> Hello, <b>Aira Jane Cruz</b>
+                                <i class="fa fa-user"></i> Hello, <b><?php echo $cFirstName . " " . $cLastName; ?></b>
                             </li>
                         </ul>
                         <!-- End Social Links -->
@@ -171,7 +175,34 @@ $Fax = $companyinfo_tbl[0][9];
                 <div class="navbar-collapse collapse">
                     <!-- Sign-out -->
                     <div class="signout-side">
-                        <a class="show-signout" href="../login-company.php?id=1"><i class="fa fa-sign-out"></i></a>
+                        <a class="show-signout" data-toggle='modal' data-target='#Logout'><i class="fa fa-sign-out"></i></a>
+                    </div>
+                    <!-- Modal -->
+                    <div class="modal fade" id="Logout"
+                         role="dialog">
+                        <div class="modal-dialog" style="padding:100px">
+                            <!-- Modal content-->
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                    <h4 class="modal-title">Log out?</h4>
+                                </div>
+                                <div class="modal-body">
+                                    <div class="col-md-15 fieldcol">
+                                        <label = "usr" class = "control-label">Do you want to log out?</label>
+                                        <div class="form-group">
+                                        </div>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <a href="../logout.php"
+                                           class="btn btn-primary">Log out</a>
+                                        <button type="button" class="btn btn-default" data-dismiss="modal">
+                                            Cancel
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                     <!-- End Sign-out -->
                     <!-- Start Navigation List -->
