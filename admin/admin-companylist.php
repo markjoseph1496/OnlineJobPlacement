@@ -153,7 +153,7 @@ $AdminID = $_SESSION['AdminID'];
                         <a href="admin-requested.php">Requested</a>
                     </li>
                     <li>
-                        <a class="active">Company List</a>
+                        <a>Company List</a>
                         <ul class="dropdown">
                             <li><a class="active" href="admin-companylist.php">Active</a></li>
                             <li><a href="admin-company_pending.php">Pending</a></li>
@@ -164,7 +164,8 @@ $AdminID = $_SESSION['AdminID'];
                     <li>
                         <a> Maintenance</a>
                         <ul class="dropdown">
-                            <li><a href="admin-maintenance.php">Courses</a></li>
+                            <li><a class="active" href="admin-maintenance.php">Courses</a></li>
+                            <li><a href="admin-users.php">Users</a></li>
                         </ul>
                     </li>
                 </ul>

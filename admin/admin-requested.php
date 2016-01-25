@@ -153,7 +153,7 @@ include('../connection.php');
                     <li>
                         <a>Company List</a>
                         <ul class="dropdown">
-                            <li><a href="admin-companylist.php">Active</a></li>
+                            <li><a href="admin-companylist.php" class = "active">Active</a></li>
                             <li><a href="admin-company_pending.php">Pending</a></li>
                         </ul>
                     </li>
@@ -162,7 +162,8 @@ include('../connection.php');
                     <li>
                         <a> Maintenance</a>
                         <ul class="dropdown">
-                            <li><a href="admin-maintenance.php">Courses</a></li>
+                            <li><a class="active" href="admin-maintenance.php">Courses</a></li>
+                            <li><a href="admin-users.php">Users</a></li>
                         </ul>
                     </li>
                 </ul>
@@ -187,17 +188,18 @@ include('../connection.php');
                 <li>
                     <a>Company List</a>
                         <ul class="dropdown">
-                            <li><a href="admin-companylist.php">Active</a></li>
+                            <li><a href="admin-companylist.php" class = "active">Active</a></li>
                             <li><a href="admin-company_pending.php">Pending</a></li>
                         </ul>
                 </li>
                 <li><a href="admin-adviser.php" admin-maintenance.php"">Adviser List</a>
                 </li>
                 <li>
-                    <a> Maintenance</a>
-                    <ul class="dropdown">
-                        <li><a href="admin-maintenance.php">Courses</a></li>
-                    </ul>
+                        <a> Maintenance</a>
+                        <ul class="dropdown">
+                            <li><a class="active" href="admin-maintenance.php">Courses</a></li>
+                            <li><a href="admin-users.php">Users</a></li>
+                        </ul>
                 </li>
             </ul>
         </ul>
