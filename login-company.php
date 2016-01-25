@@ -45,7 +45,7 @@
             <div class="space"></div>
             <label class="register-terms">Connect with your friends -- and other fascinating people. Get in-the-moment
                 updates on the things that interest you. And watch events unfold, in real time, from every angle. <a
-                    href="registration.php" target="_blank"><b>Sign Up.</b></a></label>
+                    href="registration-company.php" target="_blank"><b>Sign Up.</b></a></label>
         </div>
     </div>
 </div>
