@@ -70,8 +70,8 @@ $StudentName = $FirstName . " " . $LastName;
     <!-- Color CSS Styles  -->
     <link rel="stylesheet" type="text/css" href="../../css/colors/yellow.css" title="yellow" media="screen"/>
 
-    <!-- Star Rate -->
-    <link rel="stylesheet" type="text/css" href="../../css/star-rate.css" media="screen" />
+    <!-- Checkbox -->
+    <link rel="stylesheet" type="text/css" href="../../css/checkbox.css" media="screen" />
     
     <!-- JS  -->
     <script type="text/javascript" src="../../js/jquery.migrate.js"></script>
@@ -309,17 +309,29 @@ $StudentName = $FirstName . " " . $LastName;
                             <!-- Single Testimonial -->
                             <div class="classic-testimonials">
                                 <label>Work Options</label>
-                                <div>
-                                    <input type="checkbox"/><b> Willing to work night shifts</b>
+                                <div class="checkbox checkbox-success">
+                                    <input id="checkbox3" class="styled" type="checkbox">
+                                    <label for="checkbox3">
+                                        <b>Willing to work night shifts</b>
+                                    </label>
                                 </div>
-                                <div>
-                                    <input type="checkbox"/><b> Willing to relocate</b>
+                                <div class="checkbox checkbox-success">
+                                    <input id="checkbox3" class="styled" type="checkbox">
+                                    <label for="checkbox3">
+                                        <b>Willing to relocate</b>
+                                    </label>
                                 </div>
-                                <div>
-                                    <input type="checkbox"/><b> Looking for OJT position</b>
+                                <div class="checkbox checkbox-success">
+                                    <input id="checkbox3" class="styled" type="checkbox">
+                                    <label for="checkbox3">
+                                        <b>Looking for OJT position</b>
+                                    </label>
                                 </div>
-                                <div>
-                                    <input type="checkbox"/><b> Willing to work overseas</b>
+                                <div class="checkbox checkbox-success">
+                                    <input id="checkbox3" class="styled" type="checkbox">
+                                    <label for="checkbox3">
+                                        <b>Willing to work overseas</b>
+                                    </label>
                                 </div>
                             </div>
                             <!-- End Single Testimonial -->

@@ -133,7 +133,7 @@ $StudentName = $FirstName . " " . $LastName;
         <!-- Start Header Section -->
         <div class="hidden-header"></div>
         <header class="clearfix">
-        <!-- Start Top Bar -->
+            <!-- Start Top Bar -->
             <div class="top-bar">
                 <div class="container">
                     <div class="row">
@@ -188,7 +188,7 @@ $StudentName = $FirstName . " " . $LastName;
             <div class="navbar navbar-default navbar-top">
                 <div class="container">
                     <div class="navbar-header">
-                    <!-- Stat Toggle Nav Link For Mobiles -->
+                        <!-- Stat Toggle Nav Link For Mobiles -->
                         <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
                             <i class="fa fa-bars"></i>
                         </button>
