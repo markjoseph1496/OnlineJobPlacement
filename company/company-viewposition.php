@@ -1,7 +1,25 @@
 <?php
 include('../connection.php');
 session_start();
-$CompanyID = $_SESSION['CompanyID'];
+
+if(isset($_SESSION['CompanyID'])){
+    $CompanyID = $_SESSION['CompanyID'];
+}
+else{
+    header("location: ../login-company.php");
+}
+
+$companyinfo_tbl =
+    GSecureSQL::query(
+        "SELECT CompanyName, FirstName, LastName FROM companyinfotbl WHERE CompanyID = ?",
+        TRUE,
+        "s",
+        $CompanyID
+    );
+$CompanyName = $companyinfo_tbl[0][0];
+$cFirstName = $companyinfo_tbl[0][1];
+$cLastName = $companyinfo_tbl[0][2];
+
 ?>
 <!doctype html>
 <html lang="en">
@@ -92,7 +110,7 @@ $CompanyID = $_SESSION['CompanyID'];
                     <div class="col-md-6">
                         <!-- Start Contact Info -->
                         <ul class="contact-details">
-                            <li class="profile-name"><i class="fa fa-hashtag"></i> <b>008-2012-0805</b></li>
+                            <li class="profile-name"><b><?php echo $CompanyName; ?></b></li>
                         </ul>
                         <!-- End Contact Info -->
                     </div>
@@ -108,7 +126,7 @@ $CompanyID = $_SESSION['CompanyID'];
                                 &nbsp;
                             </li>
                             <li class="profile-name">
-                                <i class="fa fa-user"></i> Hello, <b>Aira Jane Cruz</b>
+                                <i class="fa fa-user"></i> Hello, <b><?php echo $cFirstName . " " . $cLastName; ?></b>
                             </li>
                         </ul>
                         <!-- End Social Links -->
@@ -121,7 +139,6 @@ $CompanyID = $_SESSION['CompanyID'];
         </div>
         <!-- .top-bar -->
         <!-- End Top Bar -->
-
 
         <!-- Start  Logo & Naviagtion  -->
         <div class="navbar navbar-default navbar-top">
@@ -139,7 +156,34 @@ $CompanyID = $_SESSION['CompanyID'];
                 <div class="navbar-collapse collapse">
                     <!-- Sign-out -->
                     <div class="signout-side">
-                        <a class="show-signout"><i class="fa fa-sign-out"></i></a>
+                        <a class="show-signout" data-toggle='modal' data-target='#Logout'><i class="fa fa-sign-out"></i></a>
+                    </div>
+                    <!-- Modal -->
+                    <div class="modal fade" id="Logout"
+                         role="dialog">
+                        <div class="modal-dialog" style="padding:100px">
+                            <!-- Modal content-->
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                    <h4 class="modal-title">Log out?</h4>
+                                </div>
+                                <div class="modal-body">
+                                    <div class="col-md-15 fieldcol">
+                                        <label = "usr" class = "control-label">Do you want to log out?</label>
+                                        <div class="form-group">
+                                        </div>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <a href="../logout.php"
+                                           class="btn btn-primary">Log out</a>
+                                        <button type="button" class="btn btn-default" data-dismiss="modal">
+                                            Cancel
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                     <!-- End Sign-out -->
                     <!-- Start Navigation List -->
@@ -217,10 +261,6 @@ $CompanyID = $_SESSION['CompanyID'];
     </div>
 </div>
 <!-- End Page Banner -->
-<?php
-while ($row = mysql_fetch_array($Result)) {
-
-    ?>
     <!-- Start Content -->
     <br><br><br>
     <form action="company-positionlist.php" name="AddPosition" id="AddPosition" autocomplete="off">
@@ -234,13 +274,13 @@ while ($row = mysql_fetch_array($Result)) {
                             <label = "usr" class = "control-label"> Posting Date </label>
                         </div>
                         <div class="col-md-2 fieldcol">
-                            <label = "usr" class = "control-label"><?php echo $row['PostingDateFrom']; ?></label>
+                            <label = "usr" class = "control-label"></label>
                         </div>
                         <div class="col-md-1 fieldcol">
                             <label = "usr" class = "control-label"> to </label>
                         </div>
                         <div class="col-md-2 fieldcol">
-                            <label = "usr" class = "control-label"><?php echo $row['PostingDateTo']; ?></label>
+                            <label = "usr" class = "control-label"></label>
                         </div>
 
                     </div>
@@ -253,7 +293,7 @@ while ($row = mysql_fetch_array($Result)) {
                         </div>
                         <div class="col-md-8 fieldcol">
                             <div class="form-group">
-                                <label = "usr" class = "control-label"s><?php echo $row['PositionLevel']; ?></label>
+                                <label = "usr" class = "control-label"s></label>
                             </div>
                         </div>
                     </div>
@@ -263,7 +303,7 @@ while ($row = mysql_fetch_array($Result)) {
                         </div>
                         <div class="col-md-8 fieldcol">
                             <div class="form-group">
-                                <label = "usr" class = "control-label"><?php echo $row['JobDescription']; ?></label>
+                                <label = "usr" class = "control-label"></label>
                             </div>
                         </div>
                     </div>
@@ -273,7 +313,7 @@ while ($row = mysql_fetch_array($Result)) {
                         </div>
                         <div class="col-md-8 fieldcol">
                             <div class="form-group">
-                                <label = "usr" class = "control-label"><?php echo $row['JSpecialization']; ?></label>
+                                <label = "usr" class = "control-label"></label>
                             </div>
                         </div>
                     </div>
@@ -283,7 +323,7 @@ while ($row = mysql_fetch_array($Result)) {
                         </div>
                         <div class="col-md-8 fieldcol">
                             <div class="form-group">
-                                <label = "usr" class = "control-label"><?php echo $row['EType']; ?></label>
+                                <label = "usr" class = "control-label"></label>
                             </div>
                         </div>
                     </div>
@@ -293,7 +333,7 @@ while ($row = mysql_fetch_array($Result)) {
                         </div>
                         <div class="col-md-8 fieldcol">
                             <div class="form-group">
-                                <label = "usr" class = "control-label"><?php echo $row['AvPosition']; ?></label>
+                                <label = "usr" class = "control-label"></label>
                             </div>
                         </div>
                     </div>
@@ -305,7 +345,7 @@ while ($row = mysql_fetch_array($Result)) {
                         </div>
                         <div class="col-md-8 fieldcol">
                             <div class="form-group">
-                                <label = "usr" class = "control-label"><?php echo $row['MonthlySalary']; ?></label>
+                                <label = "usr" class = "control-label"></label>
                             </div>
                         </div>
                     </div>
@@ -316,7 +356,7 @@ while ($row = mysql_fetch_array($Result)) {
                             <label = "usr" class = "control-label"> Years of Experience: </label>
                         </div>
                         <div class="col-md-8 fieldcol">
-                            <label = "usr" class = "control-label"><?php echo $row['YExperience']; ?></label>
+                            <label = "usr" class = "control-label"></label>
                         </div>
                     </div>
                     <div class="row field">
@@ -349,9 +389,6 @@ while ($row = mysql_fetch_array($Result)) {
             </div>
         </div>
     </form>
-    <?php
-}
-?>
 <!--End of Content-->
 <script type="text/javascript" src="../js/script.js"></script>
 </body>

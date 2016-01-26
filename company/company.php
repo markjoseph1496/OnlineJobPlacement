@@ -2,11 +2,83 @@
 include('../connection.php');
 session_start();
 
+if(isset($_SESSION['CompanyID'])){
+    $CompanyID = $_SESSION['CompanyID'];
+}
+else{
+    header("location: ../login-company.php");
+}
+
+
+$companyinfo_tbl =
+    GSecureSQL::query(
+        "SELECT CompanyName, FirstName, LastName FROM companyinfotbl WHERE CompanyID = ?",
+        TRUE,
+        "s",
+        $CompanyID
+    );
+$CompanyName = $companyinfo_tbl[0][0];
+$cFirstName = $companyinfo_tbl[0][1];
+$cLastName = $companyinfo_tbl[0][2];
+
 $b = 0;
 $Course_Default = isset($_POST['Course']) ? $_POST['Course'] : '';
-$Specialization_Default = isset($_POST['Specialization']) ? $_POST['Specialization'] : '';
+$Location_Default = isset($_POST['Location']) ? $_POST['Location'] : '';
 if (isset($_POST['btnView'])) {
     $b = 1;
+}
+
+$LOGquery =
+    GSecureSQL::query(
+        "SELECT * FROM logrequesttbl WHERE CompanyID = ? AND Status = 'Accepted'",
+        TRUE,
+        "s",
+        $CompanyID
+    );
+if (count($LOGquery) > 0) {
+
+    $DateFrom = $LOGquery[0][3];
+    $DateTo = $LOGquery[0][4];
+
+    $diff_from = date_diff(new DateTime(), new DateTime($DateFrom));
+    $diff_to = date_diff(new DateTime(), new DateTime($DateTo));
+
+    if ($diff_to->d == 0) {
+        $diff_to->invert = 0;
+    }
+
+    $a = $diff_from->y >= 0 &&
+        $diff_from->m >= 0 &&
+        $diff_from->d >= 0 &&
+        $diff_from->invert == 1;
+
+    $b = $diff_to->y >= 0 &&
+        $diff_to->m >= 0 &&
+        $diff_to->d >= 0 &&
+        $diff_to->invert == 0;
+
+    if ($a && $b) {
+        $RequestedCourses = $LOGquery[0][2];
+        $RequestedCourses = explode(", ", $RequestedCourses);
+        $RequestedCourses = implode("', '", $RequestedCourses);
+        $ContentCount = 1;
+    } else {
+        $ContentCount = 0;
+    }
+
+} else {
+    $ContentCount = 0;
+}
+
+$LOGquery1 =
+    GSecureSQL::query(
+        "SELECT * FROM logrequesttbl WHERE CompanyID = ? AND Status = 'Pending'",
+        TRUE,
+        "s",
+        $CompanyID
+    );
+if(count($LOGquery1) > 0){
+    $ContentCount = 2;
 }
 ?>
 <!doctype html>
@@ -80,13 +152,10 @@ if (isset($_POST['btnView'])) {
     <script type="text/javascript" src="../js/jquery.parallax.js"></script>
     <script type="text/javascript" src="../js/jquery.slicknav.js"></script>
 </head>
-
 <body>
 
 <!-- Full Body Container -->
 <div id="container">
-
-
     <!-- Start Header Section -->
     <div class="hidden-header"></div>
     <header class="clearfix">
@@ -98,7 +167,7 @@ if (isset($_POST['btnView'])) {
                     <div class="col-md-6">
                         <!-- Start Contact Info -->
                         <ul class="contact-details">
-                            <li class="profile-name"><i class="fa fa-hashtag"></i> <b>008-2012-0805</b></li>
+                            <li class="profile-name"><b><?php echo $CompanyName; ?></b></li>
                         </ul>
                         <!-- End Contact Info -->
                     </div>
@@ -114,7 +183,7 @@ if (isset($_POST['btnView'])) {
                                 &nbsp;
                             </li>
                             <li class="profile-name">
-                                <i class="fa fa-user"></i> Hello, <b>Aira Jane Cruz</b>
+                                <i class="fa fa-user"></i> Hello, <b><?php echo $cFirstName . " " . $cLastName;?></b>
                             </li>
                         </ul>
                         <!-- End Social Links -->
@@ -145,7 +214,34 @@ if (isset($_POST['btnView'])) {
                 <div class="navbar-collapse collapse">
                     <!-- Sign-out -->
                     <div class="signout-side">
-                        <a class="show-signout" href="../login-company.php?id=1"><i class="fa fa-sign-out"></i></a>
+                        <a class="show-signout" data-toggle='modal' data-target='#Logout'><i class="fa fa-sign-out"></i></a>
+                    </div>
+                    <!-- Modal -->
+                    <div class="modal fade" id="Logout"
+                         role="dialog">
+                        <div class="modal-dialog" style="padding:100px">
+                            <!-- Modal content-->
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                    <h4 class="modal-title">Log out?</h4>
+                                </div>
+                                <div class="modal-body">
+                                    <div class="col-md-15 fieldcol">
+                                        <label = "usr" class = "control-label">Do you want to log out?</label>
+                                        <div class="form-group">
+                                        </div>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <a href="../logout.php"
+                                           class="btn btn-primary">Log out</a>
+                                        <button type="button" class="btn btn-default" data-dismiss="modal">
+                                            Cancel
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                     <!-- End Sign-out -->
                     <!-- Start Navigation List -->
@@ -223,9 +319,73 @@ if (isset($_POST['btnView'])) {
 <!-- End Page Banner -->
 <!--Content-->
 <br><br><br>
-<div class="container">
-    <form method="POST">
+<div id="RequestLOG" class="container">
+    <button name="RequestLists" data-toggle='modal'
+            data-target='#Request'>Request List of Graduates.
+    </button>
+    <!-- Modal -->
+    <div class="modal fade" id="Request"
+         role="dialog">
+        <div class="modal-dialog" style="padding:100px">
+            <!-- Modal content-->
+            <form autocomplete="off" method="POST" action="add-company.php">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        <h4 class="modal-title">Do you want to request the List of Graduates?</h4>
+                    </div>
+                    <div class="modal-body">
+                        <div class="col-md-15 fieldcol">
+                            <label = "usr" class = "control-label">Select the course(s) you want to request.</label>
+                            <div class="form-group">
+                            </div>
+                        </div>
+                        <div class="col-md-15 fieldcol">
+                            <div class="container">
+                                <div class="form-group">
+                                    <ul>
+                                        <li><input type="checkbox" name="select-all" id="select-all"/> <label> Select
+                                                All </label></li>
+                                    </ul>
+                                    <?php
+                                    $coursequery =
+                                        GSecureSQL::query(
+                                            "SELECT CourseCode FROM coursetbl ORDER BY CourseCode",
+                                            TRUE
+                                        );
+                                    foreach ($coursequery as $value) {
+                                        $Courses = $value[0];
+                                        ?>
+                                        <ul>
+                                            <li><input type="checkbox" name="CourseCheckbox[]"
+                                                       value="<?php echo $Courses; ?>">
+                                                <label><?php echo $Courses; ?></label></li>
+                                        </ul>
+                                        <?php
+                                    }
+                                    ?>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button class="btn btn-primary">Request</button>
+                            <button type="button" class="btn btn-default" data-dismiss="modal">
+                                Cancel
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
 
+<div id="Requested" class="container">
+    <label = "usr" class = "control-label">You have already requested the list of graduates. Please wait for the admin to approve your request.</label>
+</div>
+
+<div id="Content" class="container">
+    <form method="POST">
         <div class="header2_advertising">
             <div class="container">
                 <div class="row field">
@@ -239,7 +399,7 @@ if (isset($_POST['btnView'])) {
                                 <?php
                                 $course_tbl =
                                     GSecureSQL::query(
-                                        "SELECT CourseTitle, CourseCode FROM coursetbl ORDER BY CourseTitle ASC",
+                                        "SELECT CourseTitle, CourseCode FROM coursetbl WHERE CourseCode IN ('$RequestedCourses') ORDER BY CourseTitle ASC",
                                         TRUE
                                     );
                                 foreach ($course_tbl as $value) {
@@ -259,25 +419,82 @@ if (isset($_POST['btnView'])) {
                     <div class="col-sm-5">
                         <div class="form-group text-center">
                             <label>
-                                <center><b>Field of Specialization</b>
+                                <center><b>Location</b>
                             </label></center>
-                            <select id="Specialization" name="Specialization" class="form-control" style="width:420px;">
+                            <select id="Location" name="Location" class="form-control" style="width:420px;">
                                 <option value="" selected="selected">- Please select one -</option>
-                                <?php
-                                $specialization_tbl =
-                                    GSecureSQL::query(
-                                        "SELECT Specialization FROM listofspecializationtbl ORDER BY Specialization ASC",
-                                        TRUE
-                                    );
-                                foreach ($specialization_tbl as $value) {
-                                $Specialization = $value[0];
-                                ?>
-                                <option
-                                    value="<?php echo $Specialization; ?>" <?php if ($Specialization_Default == $Specialization) {
-                                echo "selected='selected'"; }?>><?php echo $Specialization; ?></option>
-                            <?php
-                            }
-                            ?>
+                                <option value="Bulacan City" <?php if ($Location_Default == "Bulacan City") {
+                                    echo "selected='selected'";
+                                } ?>>Bulacan City
+                                </option>
+                                <option value="Caloocan City"<?php if ($Location_Default == "Caloocan City") {
+                                    echo "selected='selected'";
+                                } ?>>Caloocan City
+                                </option>
+                                <option value="Las Pińas City"<?php if ($Location_Default == "Las Pińas City") {
+                                    echo "selected='selected'";
+                                } ?>>Las Pińas City
+                                </option>
+                                <option value="Makati City"<?php if ($Location_Default == "Makati City") {
+                                    echo "selected='selected'";
+                                } ?>>Makati City
+                                </option>
+                                <option value="Malabon City"<?php if ($Location_Default == "Malabon City") {
+                                    echo "selected='selected'";
+                                } ?>>Malabon City
+                                </option>
+                                <option value="Mandaluyong City"<?php if ($Location_Default == "Mandaluyong City") {
+                                    echo "selected='selected'";
+                                } ?>>Mandaluyong City
+                                </option>
+                                <option value="Manila"<?php if ($Location_Default == "Manila") {
+                                    echo "selected='selected'";
+                                } ?>>Manila
+                                </option>
+                                <option value="Marikina City"<?php if ($Location_Default == "Marikina City") {
+                                    echo "selected='selected'";
+                                } ?>>Marikina City
+                                </option>
+                                <option value="Muntinlupa City"<?php if ($Location_Default == "Muntinlupa City") {
+                                    echo "selected='selected'";
+                                } ?>>Muntinlupa City
+                                </option>
+                                <option value="Navotas City"<?php if ($Location_Default == "Navotas City") {
+                                    echo "selected='selected'";
+                                } ?>>Navotas City
+                                </option>
+                                <option value="Parańaque City"<?php if ($Location_Default == "Parańaque City") {
+                                    echo "selected='selected'";
+                                } ?>>Parańaque City
+                                </option>
+                                <option value="Pasay City"<?php if ($Location_Default == "Pasay City") {
+                                    echo "selected='selected'";
+                                } ?>>Pasay City
+                                </option>
+                                <option value="Pasig City"<?php if ($Location_Default == "Pasig City") {
+                                    echo "selected='selected'";
+                                } ?>>Pasig City
+                                </option>
+                                <option value="Pateros City"<?php if ($Location_Default == "Pateros City") {
+                                    echo "selected='selected'";
+                                } ?>>Pateros City
+                                </option>
+                                <option value="Quezon City"<?php if ($Location_Default == "Quezon City") {
+                                    echo "selected='selected'";
+                                } ?>>Quezon City
+                                </option>
+                                <option value="San Juan City"<?php if ($Location_Default == "San Juan City") {
+                                    echo "selected='selected'";
+                                } ?>>San Juan City
+                                </option>
+                                <option value="Taguig City"<?php if ($Location_Default == "Taguig City") {
+                                    echo "selected='selected'";
+                                } ?>>Taguig City
+                                </option>
+                                <option value="Valenzuela City"<?php if ($Location_Default == "Valenzuela City") {
+                                    echo "selected='selected'";
+                                } ?>>Valenzuela City
+                                </option>
                             </select>
                         </div>
                     </div>
@@ -295,21 +512,20 @@ if (isset($_POST['btnView'])) {
             <tr>
             </tr>
             <tr>
-                <th width="3%" class='tabletitle'><input type="checkbox" id="select"/></th>
-                <th width='20%' class='tabletitle'> Student Name</th>
-                <th width='25%' class='tabletitle'>Course</th>
-                <th width='25%' class='tabletitle'> Field of Specialization</th>
-                <th width="5%" class='tabletitle'>Years of experience</th>
-                <th width='3%' class='tabletitle'></th>
+                <th width='20%' class='tabletitle'>Student Name</th>
+                <th width='10%' class='tabletitle'>Course</th>
+                <th width='20%' class='tabletitle'>Contact No.</th>
+                <th width='25%' class='tabletitle'>Email</th>
+                <th width='20%' class='tabletitle'>Location</th>
             <tr>
             </thead>
             <?php
             if (isset($_POST['btnView'])) {
                 $isEmpty = 0;
                 $Course = $_POST['Course'];
-                $Specialization = $_POST['Specialization'];
+                $Location = $_POST['Location'];
 
-                if (empty($Course) && empty($Specialization)) {
+                if (empty($Course) && empty($Location)) {
                     $isEmpty = 1;
                 } elseif (empty($Course)) {
                     $listofgraduates_tbl =
@@ -319,18 +535,20 @@ if (isset($_POST['btnView'])) {
                             studentinfotbl.FirstName,
                             studentinfotbl.LastName,
                             studentinfotbl.MajorCourse,
-                            specializationtbl.Specialization
+                            studcontactstbl.Email,
+                            studcontactstbl.MobileNumber,
+                            studcontactstbl.City
                             FROM
-                            `specializationtbl`
-                            INNER JOIN `studentinfotbl` ON `specializationtbl`.`StudentID` = `studentinfotbl`.`StudentID` WHERE specializationtbl.Specialization = ?",
+                            studcontactstbl
+                            INNER JOIN `studentinfotbl` ON `studcontactstbl`.`StudentID` = `studentinfotbl`.`StudentID` WHERE studcontactstbl.City = ? AND studentinfotbl.MajorCourse IN ('$RequestedCourses')",
                             TRUE,
                             "s",
-                            $Specialization
+                            $Location
                         );
                     if (empty($listofgraduates_tbl)) {
                         $isEmpty = 1;
                     }
-                } elseif (empty($Specialization)) {
+                } elseif (empty($Location)) {
                     $listofgraduates_tbl =
                         GSecureSQL::query(
                             "SELECT
@@ -338,10 +556,12 @@ if (isset($_POST['btnView'])) {
                             studentinfotbl.FirstName,
                             studentinfotbl.LastName,
                             studentinfotbl.MajorCourse,
-                            specializationtbl.Specialization
+                            studcontactstbl.Email,
+                            studcontactstbl.MobileNumber,
+                            studcontactstbl.City
                             FROM
-                            `specializationtbl`
-                            INNER JOIN `studentinfotbl` ON `specializationtbl`.`StudentID` = `studentinfotbl`.`StudentID` WHERE studentinfotbl.MajorCourse = ?",
+                            studcontactstbl
+                            INNER JOIN `studentinfotbl` ON `studcontactstbl`.`StudentID` = `studentinfotbl`.`StudentID` WHERE studentinfotbl.MajorCourse = ?",
                             TRUE,
                             "s",
                             $Course
@@ -357,14 +577,16 @@ if (isset($_POST['btnView'])) {
                             studentinfotbl.FirstName,
                             studentinfotbl.LastName,
                             studentinfotbl.MajorCourse,
-                            specializationtbl.Specialization
+                            studcontactstbl.Email,
+                            studcontactstbl.MobileNumber,
+                            studcontactstbl.City
                             FROM
-                            `specializationtbl`
-                            INNER JOIN `studentinfotbl` ON `specializationtbl`.`StudentID` = `studentinfotbl`.`StudentID` WHERE studentinfotbl.MajorCourse = ? AND specializationtbl.Specialization = ?",
+                            studcontactstbl
+                            INNER JOIN `studentinfotbl` ON `studcontactstbl`.`StudentID` = `studentinfotbl`.`StudentID` WHERE studentinfotbl.MajorCourse = ? AND studcontactstbl.City = ?",
                             TRUE,
                             "ss",
                             $Course,
-                            $Specialization
+                            $Location
                         );
                     if (empty($listofgraduates_tbl)) {
                         $isEmpty = 1;
@@ -374,12 +596,11 @@ if (isset($_POST['btnView'])) {
                     echo '
                     <tbody>
                         <tr>
-                            <td width="3%"></td>
-                            <td width="20%">No results found.</td>
-                            <td width="25%"></td>
-                            <td width="25%"></td>
-                            <td width="5%"></td>
-                            <td width="3%"></td>
+                            <td width="20%" class="tabletitle">No results found.</td>
+                            <td width="10%" class="tabletitle"></td>
+                            <td width="20%" class="tabletitle"></td>
+                            <td width="25%" class="tabletitle"></td>
+                            <td width="20%" class="tabletitle"></td>
                         </tr>
                     </tbody>
                         ';
@@ -389,31 +610,56 @@ if (isset($_POST['btnView'])) {
                         $FirstName = $value[1];
                         $LastName = $value[2];
                         $_Course = $value[3];
-                        $_Specialization = $value[4];
+                        $Email = $value[4];
+                        $MobileNumber = $value[5];
+                        $_Location = $value[6];
                         ?>
                         <tbody>
                         <tr>
-                            <td width="3%"><input type="checkbox" id="select"/></td>
-                            <td width="20%"><?php echo $LastName . ", " . $FirstName; ?></td>
-                            <td width="25%"><?php echo $_Course; ?></td>
-                            <td width="25%"> <?php echo $_Specialization; ?></td>
-                            <td width="5%"> 1</td>
-                            <td width="3%">
-                                <input type="hidden" name="company_id" value="$company_id"/>
-                                <input type="hidden" name="studentid" value=" $studentid"/>
-                                <button id="Edit" name="requestresume" class="btn btn-default"><i
-                                        class="fa fa-arrow-circle-right"></i></button>
-                            </td>
+                            <td width='20%' class='tabletitle'><?php echo $LastName . ", " . $FirstName; ?></td>
+                            <td width='10%' class='tabletitle'><?php echo $_Course; ?></td>
+                            <td width='20%' class='tabletitle'><?php echo $MobileNumber; ?></td>
+                            <td width='25%' class='tabletitle'><?php echo $Email; ?></td>
+                            <td width='20%' class='tabletitle'><?php echo $_Location; ?></td>
                         </tr>
                         </tbody>
                         <?php
                     }
                 }
-
             }
             ?>
         </table>
+    </form>
 </div>
 </body>
 <script type="text/javascript" src="../js/script.js"></script>
 </html>
+<script type="text/javascript">
+    var ContentValue = "<?php echo $ContentCount; ?>";
+    if (ContentValue == "1") {
+        $('#Requested').hide();
+        $('#RequestLOG').hide();
+        $('#Content').show();
+    } else if(ContentValue == "2") {
+        $('#Requested').show();
+        $('#RequestLOG').hide();
+        $('#Content').hide();
+    } else {
+        $('#Requested').hide();
+        $('#RequestLOG').show();
+        $('#Content').hide();
+    }
+
+    $('#select-all').click(function (event) {
+        if (this.checked) {
+            // Iterate each checkbox
+            $(':checkbox').each(function () {
+                this.checked = true;
+            });
+        } else {
+            $(':checkbox').each(function () {
+                this.checked = false;
+            });
+        }
+    });
+</script>

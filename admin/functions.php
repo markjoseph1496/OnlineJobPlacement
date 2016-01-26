@@ -137,38 +137,6 @@ if (isset($_POST['FirstName'])) {
         </script>";
 }
 
-if (isset($_GET['id']) && isset($_GET['rid'])) {
-    $fn = $_GET['id'];
-    $RequestID = $_GET['rid'];
-
-    if ($fn == "2") {
-
-        GSecureSQL::query(
-            "UPDATE resumerequesttbl SET Status = 'Rejected' WHERE RequestID=?",
-            FALSE,
-            "s",
-            $RequestID
-        );
-
-        echo "
-            <script type='text/javascript'>
-            location.href='admin-requested.php?id=2';
-            </script>";
-    } elseif ($fn == "1") {
-        GSecureSQL::query(
-            "UPDATE resumerequesttbl SET Status = 'Accept' WHERE RequestID=?",
-            FALSE,
-            "s",
-            $RequestID
-        );
-
-        echo "
-            <script type='text/javascript'>
-            location.href='admin-requested.php?id=1';
-            </script>";
-    }
-}
-
 if (isset($_GET['DeleteID'])) {
     $DeleteID = $_GET['DeleteID'];
 
@@ -211,4 +179,22 @@ if(isset($_GET['id']) && isset($_GET['cid'])){
             location.href='admin-company_pending.php?id=2';
             </script>";
     }
+}
+if(isset($_POST['lid'])){
+    $LID = $_POST['lid'];
+    $DateFrom = date("Y-m-d");
+    $DateTo = $_POST['DateTo'];
+
+    GSecureSQL::query(
+        "UPDATE logrequesttbl SET DateFrom = ?, DateTo = ?, Status = 'Accepted' WHERE LID = ?",
+        FALSE,
+        "sss",
+        $DateFrom,
+        $DateTo,
+        $LID
+    );
+    echo "
+            <script type='text/javascript'>
+            location.href='admin-requested.php?id=1';
+            </script>";
 }

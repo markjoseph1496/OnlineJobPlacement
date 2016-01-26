@@ -82,28 +82,10 @@
             <div class="top-bar">
                 <div class="container">
                     <div class="row">
-                        <div class="col-md-7">
-                            <!-- Start Contact Info -->
-                            <ul class="profile-name">
-                                <li><i class="fa fa-hashtag"></i> <b>008-2012-0805</b></li>
-                            </ul>
-                            <!-- End Contact Info -->
-                        </div>
+                        
                         <!-- .col-md-6 -->
                         <div class="col-md-5">
-                        <!-- Start Social Links -->
-                            <ul class="social-list">
-                                <li class="profile-name">
-                                    <a class="bell itl-tooltip" data-placement="bottom" title="" href="#" data-original-title="Notification"><i class="fa fa-bell"></i></a>
-                                </li>
-                                <li class="profile-name">
-                                    &nbsp;
-                                </li>
-                                <li class="profile-name">
-                                    <i class="fa fa-user"></i> Hello, <b>Aira Jane Cruz</b>                               
-                                </li>
-                            </ul>
-                            <!-- End Social Links -->
+                       
                         </div>
                         <!-- .col-md-6 -->
                     </div>
@@ -127,124 +109,70 @@
                             <img src="images/ojpms.png">
                         </a>
                     </div>
-                    <div class="navbar-collapse collapse">
-                        <!-- Sign-out -->
-                        
-                        <!-- End Sign-out -->
-                    </div>
                 </div>
-                <!-- Mobile Menu Start -->
-                <ul class="wpb-mobile-menu">
-                    <li>
-                        <a href="#">Apply Now</a>
-                    </li>
-                    <li>
-                        <a href="../login-student.php?id=1"><i class="fa fa-sign-out"></i> Sign Out</a>
-                    </li>
-                </ul>
-                <!-- Mobile Menu End -->
+               
             </div>
-        </header>
-
-        <div class="middle-bar">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-5">
-                        <ul class="mid-list">
-                            &nbsp;
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-        
+        </header>     
         <!-- Start Content -->
         <div id="content">
-           <div class = "content">
-    <div class = "container1">
-        <div class = "row">
-            <div class = "col-md-4  ">
-            <h3> <img src = "./img/icons/profile.png" width = "60px;" height = "60px;"> Personal Information </h3>
-            </div>
-            <div class="col-md-8 col-sm-8">
-                <table class = "infotable">
-                <tbody>
-                <tr>
-                <td> Date of Birth </td>
-                <td> 
-                    
-                </td>
-                </tr>
-                
-                <tr>
-                <td> Status </td>
-                <td> </td>
-                </tr>
-                
-                <tr>
-                <td> Address </td>
-                <td>
-                    
-                </td>
-                </tr>
-                
-                <tr>
-                <td> Nationality </td>
-                <td>  </td>
-                </tr>
-                
-                <tr>
-                <td> Objective </td>
-                <td> Wala pa dito eh ///</td>
-                </tr>
-                </tbody>
-                </table>    
-            </div>
-        </div>
-    </div>
-</div>
-<!-- PERSONAL INFO -->
+            <!--header image-->
+            <div id="join" class="parallax" style="background-image:url(img/join-us.jpg); height: 400px;">
+                <div class="overlay" style=" height: 400px;">
+                    <div class="parallax-text-container-1">
+                        <div class="parallax-text-item">
+                            <div class="container">
+                                <div class="row">
 
-<!-- CONTACT INFO -->
-<div class = "content1">
-    <div class = "container1">
-        <div class = "row">
-            <div class = "col-md-4 col-sm-4">
-            <h3> <img src = "./img/icons/contact.png" width = "60px;" height = "60px;"> Contact Information </h3>
-            </div>
-            <div class="col-md-8 col-sm-8">
-                <table class = "infotable">
-                <tbody>
-                <tr>
-                <td> Mobile </td>
-                <td>  </td>
-                </tr>
-                
-                <tr>
-                <td> Email </td>
-                <td>  </td>
-                </tr>
-                
-                </tbody>
-                </table>    
-            </div>
-        </div>
-    </div>
-</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>  
+            <!--end-->
+            <!--info-->
+            
+                    <br>
+                    <div class="parallax-text-item">
+                        <div class="container">
+                            <div class = "row">
+                                <div class="col-md-4">
+                                    <div class="image-border">
+                                        <img src="img/man-icon.png">
+                                    </div>    
+                                </div>
+                                <div class="col-md-4">
+                                    <br>
+                                    <h1>Cherry Ramirez </h1> <BR>
+                                   <label> Studied Bachelor of Science in Computer Science </label> <br>
+                                   <label> Lives in Malabon </label> <br>
+                                   <label>April 30, 1996 </label> <br>
+                                   <label>0923456789 </label> <br>
+                                   <label>ramirezchai@gmail.com </label> <br>
+                                   <label> To be able to find a job that will suit to my skills </label> <br>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                     <div class="hr5" style="margin-top:35px;margin-bottom:40px;"></div>
 
-<!-- CONTACT INFO -->
-
-<!-- EDUCATION -->
-<div class = "content3">
-    <div class = "container1">
-        <div class = "row">
-            <div class = "col-md-4">
-            <h3> <img src = "./img/icons/education.png" height = "60px" width = "60px"> Education </h3>
-            </div>
-            <div class="col-md-8">
-            <h3 class="unit">Bachelor's/College Degree</h3>
-            <div class="ui clearing divider"></div>
-                <table class = "infotable">
+                    <div class="parallax-text-item">
+                        <div class="container">
+                            <div class = "row">
+                                <div class = "col-md-1">
+                                <i class="fa fa-users icon-medium-effect icon-effect-2"></i> 
+                                </div>
+                                <div class = "col-md-4">
+                                    <br>
+                                <h1> Education </h1>
+                                </div>
+                                <div class = "col-md-7">
+                                    <br>
+                                <h1> Bachelor's/College Degree </h1>
+                                </div>
+                            </div>
+                            <BR>
+                            <table class = "infotable">
                 <tbody>
                 <tr>
                 <td> School </td>
@@ -253,7 +181,7 @@
                 
                 <tr>
                 <td> Graduated </td>
-                <td> May 2015 </td>
+                <td> May 2015 </td> 
                 </tr>
                 
                 <tr>
@@ -268,153 +196,12 @@
                 
                 
                 </tbody>
-                </table>    
-            </div>
-        </div>
-    </div>
-</div>  
-
-<!-- EDUCATION -->
-
-<!-- LANGUAGES-->
-<div class = "content1">
-    <div class = "container1">
-        <div class = "row">
-            <div class = "col-md-4 col-sm-4">
-            <h3> <img src = "./img/icons/language.png" width = "60px;" height = "60px;"> Languages </h3>
-            </div>
-            <div class="col-md-8 col-sm-8">
-                <table class = "infotable">
-                <tbody>
-                <tr>
-                <td><b> Filipino</b> </td>
-                <td> 
-                    <div class="progress">
-                    <div class="progress-bar progress-bar-info" role="progressbar" aria-valuenow="50"
-                            aria-valuemin="0" aria-valuemax="100" style="width:50%">
-                         10% 
+                </table>
+                        </div>
                     </div>
-                    </div>
-                </td>
-                </tr>
-                
-                <tr>
-                <td><b> Nihonggo </b> </td>
-                <td> 
-                    <div class="progress">
-                    <div class="progress-bar progress-bar-info" role="progressbar" aria-valuenow="90"
-                            aria-valuemin="0" aria-valuemax="100" style="width:90%">
-                         90% 
-                    </div>
-                    </div>
-                </td>
-                </tr>
-
-                <tr>
-                <td><b> Mandarin </b></td>
-                <td> 
-                    <div class="progress">
-                    <div class="progress-bar progress-bar-info" role="progressbar" aria-valuenow="75"
-                            aria-valuemin="0" aria-valuemax="100" style="width:75%">
-                         75% 
-                    </div>
-                    </div>
-                </td>
-                </tr>
-                
-                </tbody>
-                </table>    
             </div>
-        </div>
-    </div>
-</div>
-<!-- lANGUAGES -->
-
-<!-- SKILLS-->
-<div class = "content3">
-    <div class = "container1">
-        <div class = "row">
-            <div class = "col-md-4">
-            <h3> <img src = "./img/icons/skills.png" height = "60px" width = "60px"> Skills</h3>
-            </div>
-            <div class="col-md-8 col-sm-8">
-                <table class = "infotable">
-                <tbody>
-                <tr>
-                <td> Magaling maguhgas ng pinggan  </td>
-                <td> 
-                    <div class="progress">
-                    <div class="progress-bar progress-bar-info" role="progressbar" aria-valuenow="60"
-                            aria-valuemin="0" aria-valuemax="100" style="width:60%">
-                         60% 
-                    </div>
-                    </div>
-                </td>
-                </tr>
-                
-                
-                </tbody>
-                </table>    
-            </div>
-        </div>
-    </div>
-</div>  
-<!-- SKILLS -->
-
-<!-- ACHIEVEMENTS -->
-<div class = "content1">
-    <div class = "container1">
-        <div class = "row">
-            <div class = "col-md-4 col-sm-4">
-            <h3> <img src = "./img/icons/achievements.png" width = "60px;" height = "60px;"> ACHIEVEMENTS </h3>
-            </div>
-            <div class="col-md-8 col-sm-8">
-                <table class = "infotable">
-                <tbody>
-                <tr><br>    
-                <td> Top 1 in Math Class </td>
-                </tr>
-                </tbody>
-                </table>    
-            </div>
-        </div>
-    </div>
-</div>
-
-<!-- ACHIEVEMENTS -->
-
-<!-- REFERRENCE -->
-<div class = "content3">
-    <div class = "container1">
-        <div class = "row">
-            <div class = "col-md-4">
-            <h3> <img src = "./img/icons/referrence.png" height = "60px" width = "60px"> Referrence </h3>
-            </div>
-            <div class="col-md-8">
-            <h3 class="unit">ASDASDASD</h3>
-            <div class="ui clearing divider"></div>
-                <table class = "infotable">
-                <tbody>
-                <tr>
-                <td> Company </td>
-                <td> STI College Caloocan </td>
-                </tr>
-                
-                <tr>
-                <td> Relationship </td>
-                <td> Forever </td>
-                </tr>
-                
-                
-                </tbody>
-                </table>    
-            </div>
-        </div>
-    </div>
-</div>  
-
-<!-- REFERRENCE-->
-        </div>  
+            <!--info-->
+          </div>   
         <!-- End Content -->
         <script type="text/javascript" src="js/script.js"></script>
 
