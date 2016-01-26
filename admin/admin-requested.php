@@ -148,7 +148,7 @@ include('../connection.php');
                     <li>
                         <a>Company List</a>
                         <ul class="dropdown">
-                            <li><a href="admin-companylist.php" class = "active">Active</a></li>
+                            <li><a href="admin-companylist.php" class="active">Active</a></li>
                             <li><a href="admin-company_pending.php">Pending</a></li>
                         </ul>
                     </li>
@@ -183,18 +183,18 @@ include('../connection.php');
                 <li>
                     <a>Company List</a>
                     <ul class="dropdown">
-                        <li><a href="admin-companylist.php" class = "active">Active</a></li>
+                        <li><a href="admin-companylist.php" class="active">Active</a></li>
                         <li><a href="admin-company_pending.php">Pending</a></li>
                     </ul>
                 </li>
                 <li><a href="admin-adviser.php" admin-maintenance.php"">Adviser List</a>
                 </li>
                 <li>
-                        <a> Maintenance</a>
-                        <ul class="dropdown">
-                            <li><a class="active" href="admin-maintenance.php">Courses</a></li>
-                            <li><a href="admin-users.php">Users</a></li>
-                        </ul>
+                    <a> Maintenance</a>
+                    <ul class="dropdown">
+                        <li><a class="active" href="admin-maintenance.php">Courses</a></li>
+                        <li><a href="admin-users.php">Users</a></li>
+                    </ul>
                 </li>
             </ul>
         </ul>
@@ -248,7 +248,8 @@ include('../connection.php');
                 <tr>
                     <th width='25%' class='tabletitle'>Company Name</th>
                     <th width='25%' class='tabletitle'>Courses</th>
-                    <th width='25%' class='tabletitle'>Location</th>
+                    <th width='20%' class='tabletitle'>Location</th>
+                    <th width='15%' class='tabletitle'>Date Requested</th>
                     <th width='15%' class='tabletitle'>Status</th>
                     <th width='3%' class='tabletitle'></th>
                 <tr>
@@ -262,11 +263,12 @@ include('../connection.php');
                                 logrequesttbl.CompanyID,
                                 logrequesttbl.Course,
                                 logrequesttbl.Status,
+                                logrequesttbl.DateRequested,
                                 companyinfotbl.CompanyName,
                                 companyinfotbl.City
                             FROM
                                 companyinfotbl
-                            INNER JOIN logrequesttbl ON companyinfotbl.CompanyID = logrequesttbl.CompanyID WHERE logrequesttbl.Status = 'Pending'",
+                            INNER JOIN logrequesttbl ON companyinfotbl.CompanyID = logrequesttbl.CompanyID WHERE logrequesttbl.Status = 'Pending' ORDER BY logrequesttbl.DateRequested ASC",
                         TRUE
                     );
                 foreach ($requestlog_tbl as $value) {
@@ -274,13 +276,15 @@ include('../connection.php');
                 $CompanyID = $value[1];
                 $Course = $value[2];
                 $Status = $value[3];
-                $CompanyName = $value[4];
-                $Location = $value[5];
+                $DateRequested = $value[4];
+                $CompanyName = $value[5];
+                $Location = $value[6];
                 ?>
                 <tr>
                     <td width=25% class=tabletitle><a href='#'><?php echo $CompanyName; ?></a></td>
                     <td width=25% class=tabletitle><?php echo $Course; ?></td>
-                    <td width=25% class=tabletitle><?php echo $Location; ?></td>
+                    <td width=20% class=tabletitle><?php echo $Location; ?></td>
+                    <td width=15% class=tabletitle><?php echo $DateRequested; ?></td>
                     <td width=15% class=tabletitle><?php echo $Status; ?></td>
                     <td width="3%" class=tabletitle>
                         <button class='btn btn-default' data-toggle='modal'
@@ -318,14 +322,15 @@ include('../connection.php');
                                         </div>
                                         <label = "usr" class = "control-label" id = "label">Duration</label>
                                         <div class="form-group">
-                                            <label = "usr" class = "control-label" id = "label">From: <?php echo date("Y/m/d"); ?> </label>
+                                            <label = "usr" class = "control-label" id = "label">
+                                            From: <?php echo date("Y/m/d"); ?> </label>
                                             <div class="date_to">
                                                 <label = "usr" class = "control-label" id = "label">to: </label>
                                                 <input type="date" name="DateTo" id="date_to" class="form-control">
                                             </div>
                                         </div>
                                     </div>
-                                    <input type="hidden" name="lid"value="<?php echo $LID; ?>"/>
+                                    <input type="hidden" name="lid" value="<?php echo $LID; ?>"/>
                                     <div class='modal-footer'>
                                         <button type="submit"
                                                 class='btn btn-primary'>Accept

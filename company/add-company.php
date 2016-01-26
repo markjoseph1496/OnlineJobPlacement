@@ -129,13 +129,15 @@ if(isset($_GET['id'])){
 if(isset($_POST['CourseCheckbox'])){
     $Course = $_POST['CourseCheckbox'];
     $Course = implode(", ",$Course);
+    $DateRequested = date("Y-m-d");
 
     GSecureSQL::query(
-        "INSERT INTO logrequesttbl (CompanyID,Course,Status) values (?,?,'Pending')",
+        "INSERT INTO logrequesttbl (CompanyID,Course,Status,DateRequested) values (?,?,'Pending',?)",
         FALSE,
-        "ss",
+        "sss",
         $CompanyID,
-        $Course
+        $Course,
+        $DateRequested
     );
     header("location: company.php?id=2");
 
