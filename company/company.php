@@ -151,7 +151,13 @@ if(count($LOGquery1) > 0){
     <script type="text/javascript" src="../js/jquery.nicescroll.min.js"></script>
     <script type="text/javascript" src="../js/jquery.parallax.js"></script>
     <script type="text/javascript" src="../js/jquery.slicknav.js"></script>
-</head>
+
+    <link rel="stylesheet" href="../css/simplemodal.css" type="text/css" media="screen" title="no title" charset="utf-8">
+    <script src="../js/mootools-core-1.3.1.js" type="text/javascript" charset="utf-8"></script>
+    <script src="../js/mootools-more-1.3.1.1.js" type="text/javascript" charset="utf-8"></script>
+    <script src="../js/simple-modal.js" type="text/javascript" charset="utf-8"></script>
+
+    </head>
 <body>
 
 <!-- Full Body Container -->
@@ -499,7 +505,7 @@ if(count($LOGquery1) > 0){
                         </div>
                     </div>
                     <div class="col-sm-2">
-                        <button type="submit" class="btn-system btn-large border-btn" name="btnView"
+                        <button type="submit" class="btn-system btn-large border-btn" id="btnView" name="btnView"
                                 style="margin-top: 20px;">View
                         </button>
                     </div>
@@ -661,5 +667,14 @@ if(count($LOGquery1) > 0){
                 this.checked = false;
             });
         }
+    });
+</script>
+<script type="text/javascript">
+    $("btnView").addEvent("click", function(){
+        var SM = new SimpleModal({"btnView":"Close"});
+        SM.show({
+            "title":"Logout",
+            "contents":"You must login first."
+        });
     });
 </script>
