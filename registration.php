@@ -382,7 +382,7 @@ include('connection.php');
                 validating: "glyphicon glyphicon-refresh"
             },
             fields: {
-                /*)                StudentID: {
+                /*               StudentID: {
                     validators: {
                         notEmpty: {
                             message: "Student ID is required."

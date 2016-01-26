@@ -69,4 +69,3 @@ if (isset($_GET['btnSaveContactInfo'])) {
 		</script>
 		";
 }
-?>

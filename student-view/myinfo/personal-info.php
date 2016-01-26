@@ -21,6 +21,7 @@ $Nationality = $student_tbl[0][10];
 $CivilStatus = $student_tbl[0][9];
 $FBLink = $student_tbl[0][12];
 $TwitterLink = $student_tbl[0][13];
+$ProfileImage = $student_tbl[0][14];
 $FBLink = substr($FBLink, 24);
 
 $StudentName = $FirstName . " " . $LastName;
@@ -429,84 +430,47 @@ $StudentName = $FirstName . " " . $LastName;
                                 </div>
                                 <!-- End Single Testimonial -->
                             </div>
-                            <div class="col-md-5">
-                                <div class="image-border">
-                                    <img src="../../img/man-icon.png">
-                                </div>
-                                <br><br>
-
-                                <label class="control-label">Select Image</label>
-                                <input id="ProfilePicture" name="ProfilePicture" multiple type="file"
-                                       class="file file-loading"
-                                       data-allowed-file-extensions='["png", "jpg", "bmp", "gif"]'>
-                                <br>
-                                <button id="" class="btn-system btn-mini border-btn" name="btnDelete">Delete Image
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- End Page Content -->
-
-                    <!--Sidebar-->
-                    <div class="col-md-3 sidebar right-sidebar">
-                        <!-- Search Widget -->
-                        <div class="call-action call-action-boxed call-action-style2 clearfix">
-                            <label><span>(*)</span> Note: Required fields.</label>
-                        </div>
-                    </div>
-                    <!--End sidebar-->
-                </div>
-                <div class="hr5" style="margin-top:35px;margin-bottom:40px;"></div>
-                <div class="field">
-                    <div class="text-center">
-                        <button type="submit" class="btn-system btn-large" name="btnSaveInfo">Save</button>
-                    </div>
-                </div>
+    </form>
+    <form id="UploadPicture" name="UploadPicture" method="POST" action="upload.php" enctype="multipart/form-data">
+        <div class="col-md-5">
+            <div class="image-border">
+                <img src="<?php echo $ProfileImage; ?>">
             </div>
+            <br><br>
+            <label class="control-label">Select Image</label>
+            <input id="ProfilePicture" name="ProfilePicture" type="file"
+                   class="file file-loading"
+                   data-allowed-file-extensions='["png", "jpg", "bmp", "gif"]'>
+            <br>
+            <button id="" class="btn-system btn-mini border-btn" name="btnDelete">Delete Image
+            </button>
         </div>
     </form>
+</div>
+</div>
+<!-- End Page Content -->
+
+<!--Sidebar-->
+<div class="col-md-3 sidebar right-sidebar">
+    <!-- Search Widget -->
+    <div class="call-action call-action-boxed call-action-style2 clearfix">
+        <label><span>(*)</span> Note: Required fields.</label>
+    </div>
+</div>
+<!--End sidebar-->
+</div>
+<div class="hr5" style="margin-top:35px;margin-bottom:40px;"></div>
+<div class="field">
+    <div class="text-center">
+        <button type="submit" class="btn-system btn-large" name="btnSaveInfo">Save</button>
+    </div>
+</div>
+</div>
+</div>
 </div>
 <!-- End Content -->
 <script type="text/javascript" src="../../js/script.js"></script>
 </body>
-
-<?php
-/*
-if(isset($_POST['btnSave'])){
-
-    $fileToUpload = basename($_FILES["fileToUpload"]["name"]);
-    $target_dir = "ProfileImages/";   //eto yung folder or directory kung saan mo ma-sasave yung picture mo
-    $target_file = $target_dir . $StudentID.".jpg";
-    $uploadOk = 1;
-    $imageFileType = pathinfo($target_file,PATHINFO_EXTENSION);
-
-    //eto chcheck nya yung format ng file kung GIF ba sya or JPEG or PNG in short Check ng FILE TYPE
-    if($imageFileType != "jpg" && $imageFileType != "png" && $imageFileType != "jpeg") {
-        echo "Sorry, only JPG, JPEG, PNG files are allowed.";
-        $uploadOk = 0;
-    }
-    // Check if $uploadOk is set to 0 by an error
-    if ($uploadOk == 0) {
-        echo "Sorry, your file was not uploaded.";
-
-    } 
-    else {
-        if (move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_file)){
-
-        $query = "UPDATE studentinfotbl SET ProfileImage = '$target_file' WHERE StudentID = '$StudentID'";
-        $Result = mysql_query($query);
-        echo "
-         <script type='text/javascript'>
-         </script>
-         ";
-        } 
-        else {
-            echo "Sorry, there was an error uploading your file.";
-        }
-    }
-}
-*/
-?>
 </html>
 <script type="text/javascript">
     $(document).ready(function () {

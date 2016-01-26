@@ -4,14 +4,18 @@ include('connection.php');
 if (isset($_POST['type'])) {
     $isAvailable = true;
     $StudentID = $_POST['StudentID'];
-    $query = "SELECT StudentID FROM studentinfotbl WHERE StudentID = '$StudentID'";
-    $Result = mysql_query($query);
-    if ($Result) {
-        if (mysql_num_rows($Result) == 0) {
-            $isAvailable = true;
-        } else {
-            $isAvailable = false;
-        }
+    $Result =
+        GSecureSQL::query(
+            "SELECT StudentID FROM studentinfotbl WHERE StudentID = ?",
+            TRUE,
+            "s",
+            $StudentID
+        );
+
+    if (count($Result) == 0) {
+        $isAvailable = true;
+    } else {
+        $isAvailable = false;
     }
     echo json_encode(array(
         'valid' => $isAvailable,
@@ -43,7 +47,7 @@ if (isset($_POST['resumelink'])) {
     $yeargraduated = $GraduatedMonth . " " . $GraduatedYear;
     $EducAttain = mysql_real_escape_string($EducAttain);
 
-    $query = "INSERT INTO studentinfotbl (FirstName,LastName,Birthdate,Password,SaltedPassword,EmploymentStatus,MajorCourse) values  ('$FirstName','$LastName','$Birthday','$Password','$salt','Unemployed','$Course')";
+    $query = "INSERT INTO studentinfotbl (FirstName,LastName,Birthdate,Password,SaltedPassword,EmploymentStatus,MajorCourse,ProfileImage) values  ('$FirstName','$LastName','$Birthday','$Password','$salt','Unemployed','$Course','../../img/man-icon.png')";
     $getstudid =
         GSecureSQL::query(
             "SELECT StudentID FROM studentinfotbl ORDER BY StudentID DESC LIMIT 1",
