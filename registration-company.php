@@ -27,7 +27,7 @@ include('connection.php');
 
     <!-- jQuery and Bootstrap JS -->
     <script type="text/javascript" src="js/jquery.min.js"></script>
-    <script type="text/javascript" src="js/bootstrap.min.js" ></script>
+    <script type="text/javascript" src="js/bootstrap.min.js"></script>
 
     <!-- BootstrapValidator -->
     <script src="js/bootstrapValidator.min.js" type="text/javascript"></script>
@@ -77,11 +77,11 @@ include('connection.php');
 </head>
 
 <body>
-<form name="companyregistration" id="companyregistration" action="addcompany.php"  autocomplete="off" >
+<form name="companyregistration" id="companyregistration" action="addcompany.php" autocomplete="off">
     <!-- Container -->
     <div id="container">
         <div class="hidden-header"></div>
- 
+
         <!-- Start Page Banner -->
         <div class="page-banner no-subtitle">
             <div class="container">
@@ -100,7 +100,6 @@ include('connection.php');
         </div>
         <!-- End Page Banner -->
 
-
         <!-- Start Content -->
         <div id="content">
 
@@ -108,337 +107,342 @@ include('connection.php');
                 <div class="big-title text-center">
                     <h1><strong>Registration</strong></h1>
                 </div>
-                <div class = "col-md-6">
-                                    <div class="ribbon"><h4>Company Information:</h4></div><br><br>
-                                        <div class="row field">
-                                            <div class="form-group">
-                                                <label>Company Name <span>(*)</span></label>
-                                                <input type="text" class="form-control" id="CompanyName" name="CompanyName">
-                                            </div>
-                                        </div>
-                                         <div class="row field">
-                                            
-                                                <label>Career Site Url <span>(*)</span></label>
-                                                <input type="text" class="form-control" id="lname" name="lname">
-                                            
-                                        </div>
-                                        <div class = "row field">
-                                            <div class="form-group">
-                                                <label>Industry <span>(*)</span></label><br>
-                                                <select id="Industry" name="Industry" class="industry" style="width:100%; height:34px;">
-                                                    <option value>Select Industry</option>
-                                                    <?php
-                                                        $listofindustrytbl =
-                                                        GSecureSQL::query(
-                                                            "SELECT * FROM listofindustrytbl",
-                                                            TRUE
-                                                            );
-                                                        foreach ($listofindustrytbl as $value) {
-                                                            $Industry = $value[1];
-                                                            ?>
-                                                            <option value="<?php echo $Industry; ?>"><?php echo $Industry; ?></option>
-                                                            <?php
-                                                        }
-                                                    ?>
-                                                </select>
-                                            </div>
-                                        </div>
-                                        <div class="row field">
-                                            <div class="form-group">
-                                            <label>City<span>(*)</span></label><br>
-                                            <select id="City" name="City" class="city_id" style="width:100%; height:34px;">
-                                                    <option value="">- Please select one -</option>
-                                                    <option value="Caloocan City">Caloocan City</option>
-                                                    <option value="Las Pińas City">Las Pińas City</option>
-                                                    <option value="Makati City">Makati City</option>
-                                                    <option value="Malabon City">Malabon City</option>
-                                                    <option value="Mandaluyong City">Mandaluyong City</option>
-                                                    <option value="Manila">Manila</option>
-                                                    <option value="Marikina City">Marikina City</option>
-                                                    <option value="Muntinlupa City">Muntinlupa City</option>
-                                                    <option value="Navotas City">Navotas City</option>
-                                                    <option value="Parańaque City">Parańaque City</option>
-                                                    <option value="Pasay City">Pasay City</option>
-                                                    <option value="Pasig City">Pasig City</option>
-                                                    <option value="Pateros City">Pateros City</option>
-                                                    <option value="Quezon City">Quezon City</option>
-                                                    <option value="San Juan City">San Juan City</option>
-                                                    <option value="Taguig City">Taguig City</option>
-                                                    <option value="Valenzuela City">Valenzuela City</option>
-                                            </select>
-                                            </div>
-                                        </div>
-                                        <div class="row field">
-                                            <div class="form-group">
-                                                <label>Email </label>
-                                                <input type="email" class="form-control" id="Email" name="Email">
-                                            </div>
-                                        </div> 
-                                        <div class="row field">
-                                            <div class="form-group">
-                                                <label>Password </label>
-                                                <input type="text" class="form-control" id="sPassword" name="sPassword">
-                                            </div>
-                                        </div> 
-                                        <div class="row field">
-                                            <div class="form-group">
-                                                <label>Confirm Password </label>
-                                                <input type="text" class="form-control" id="ConfirmPassword" name="ConfirmPassword">
-                                            </div>
-                                        </div> 
+                <div class="col-md-6">
+                    <div class="ribbon"><h4>Company Information:</h4></div>
+                    <br><br>
+                    <div class="row field">
+                        <div class="form-group">
+                            <label>Company Name <span>(*)</span></label>
+                            <input type="text" class="form-control" id="CompanyName" name="CompanyName">
+                        </div>
                     </div>
-                
+                    <div class="row field">
+
+                        <label>Career Site Url <span>(*)</span></label>
+                        <input type="text" class="form-control" id="lname" name="lname">
+
+                    </div>
+                    <div class="row field">
+                        <div class="form-group">
+                            <label>Industry <span>(*)</span></label><br>
+                            <select id="Industry" name="Industry" class="industry" style="width:100%; height:34px;">
+                                <option value>Select Industry</option>
+                                <?php
+                                $listofindustrytbl =
+                                    GSecureSQL::query(
+                                        "SELECT * FROM listofindustrytbl",
+                                        TRUE
+                                    );
+                                foreach ($listofindustrytbl as $value) {
+                                    $Industry = $value[1];
+                                    ?>
+                                    <option value="<?php echo $Industry; ?>"><?php echo $Industry; ?></option>
+                                    <?php
+                                }
+                                ?>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="row field">
+                        <div class="form-group">
+                            <label>City<span>(*)</span></label><br>
+                            <select id="City" name="City" class="city_id" style="width:100%; height:34px;">
+                                <option value="">- Please select one -</option>
+                                <option value="Caloocan City">Caloocan City</option>
+                                <option value="Las Pińas City">Las Pińas City</option>
+                                <option value="Makati City">Makati City</option>
+                                <option value="Malabon City">Malabon City</option>
+                                <option value="Mandaluyong City">Mandaluyong City</option>
+                                <option value="Manila">Manila</option>
+                                <option value="Marikina City">Marikina City</option>
+                                <option value="Muntinlupa City">Muntinlupa City</option>
+                                <option value="Navotas City">Navotas City</option>
+                                <option value="Parańaque City">Parańaque City</option>
+                                <option value="Pasay City">Pasay City</option>
+                                <option value="Pasig City">Pasig City</option>
+                                <option value="Pateros City">Pateros City</option>
+                                <option value="Quezon City">Quezon City</option>
+                                <option value="San Juan City">San Juan City</option>
+                                <option value="Taguig City">Taguig City</option>
+                                <option value="Valenzuela City">Valenzuela City</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="row field">
+                        <div class="form-group">
+                            <label>Email </label>
+                            <input type="email" class="form-control" id="Email" name="Email">
+                        </div>
+                    </div>
+                    <div class="row field">
+                        <div class="form-group">
+                            <label>Password </label>
+                            <input type="text" class="form-control" id="sPassword" name="sPassword">
+                        </div>
+                    </div>
+                    <div class="row field">
+                        <div class="form-group">
+                            <label>Confirm Password </label>
+                            <input type="text" class="form-control" id="ConfirmPassword" name="ConfirmPassword">
+                        </div>
+                    </div>
+                </div>
+
                 <h3><strong>Primary User Information:</strong></h3><br>
                 <div class="row">
                     &nbsp;
                     <div class="col-md-6">
                         <div class="form-group">
-                                                <label>First Name <span>(*)</span></label>
-                                                <input type="text" class="form-control" id="FirstName" name="FirstName">
-                         </div>
-                    </div>
-                    <div class="col-md-6">
-                        <div class="form-group">
-                                                <label>Middle Name <span>(*)</span></label>
-                                                <input type="text" class="form-control" id="MiddleName" name="MiddleName">
+                            <label>First Name <span>(*)</span></label>
+                            <input type="text" class="form-control" id="FirstName" name="FirstName">
                         </div>
                     </div>
                     <div class="col-md-6">
                         <div class="form-group">
-                                                <label>Last Name <span>(*)</span></label>
-                                                <input type="text" class="form-control" id="LastName" name="LastName">
-                        </div>
-                    </div>
-                     <div class="col-md-6">
-                        <div class="form-group">
-                                                <label>Position <span>(*)</span></label>
-                                                <input type="text" class="form-control" id="Position" name="Position">
+                            <label>Middle Name <span>(*)</span></label>
+                            <input type="text" class="form-control" id="MiddleName" name="MiddleName">
                         </div>
                     </div>
                     <div class="col-md-6">
                         <div class="form-group">
-                                                <label>Department <span>(*)</span></label>
-                                                <input type="text" class="form-control" id="Department" name="Department">
+                            <label>Last Name <span>(*)</span></label>
+                            <input type="text" class="form-control" id="LastName" name="LastName">
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label>Position <span>(*)</span></label>
+                            <input type="text" class="form-control" id="Position" name="Position">
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label>Department <span>(*)</span></label>
+                            <input type="text" class="form-control" id="Department" name="Department">
                         </div>
                     </div>
                 </div>
                 <div class="row">
-                    
+
                     <br><br>
                     <label style="float:right;"><span>(*)</span> <em> - Required Fields</em></label>
                 </div>
                 <div class="hr5" style="margin-top:40px;margin-bottom:40px;"></div>
-                <div class"row">
-                    <div class="col-md-6">
-                        <label><b>By clicking the "Sign Up" button below, I certify that I have read and agree to the <a href="" target="_blank">Terms of Use</a>.</b></label>
-                    </div>
-                    <div class="col-md-6">
-                        <button type="submit" name="btnsave" id="btnsave" class="btn-system btn-large border-btn" style="float:right;">Submit</button>
-                    </div>
+                <div class
+                "row">
+                <div class="col-md-6">
+                    <label><b>By clicking the "Sign Up" button below, I certify that I have read and agree to the <a
+                                href="" target="_blank">Terms of Use</a>.</b></label>
+                </div>
+                <div class="col-md-6">
+                    <button type="submit" name="btnsave" id="btnsave" class="btn-system btn-large border-btn"
+                            style="float:right;">Submit
+                    </button>
                 </div>
             </div>
         </div>
-        <!-- End content -->
-
-        <!-- Start Footer Section -->
-        <footer>
-            <div class="container">
-                <!-- Start Copyright -->
-                <div class="copyright-section">
-                    <div class="row">
-                        <div class="col-md-6">
-                            <p>&copy; 2015 OJPMS - All Rights Reserved</p>
-                        </div>
-                        <!-- .col-md-6 -->
-                        <div class="col-md-6">
-                            <ul class="footer-nav">
-                                <li><a href="#">Sitemap</a>
-                                </li>
-                                <li><a href="#">Privacy Policy</a>
-                                </li>
-                                <li><a href="#">Contact</a>
-                                </li>
-                            </ul>
-                        </div>
-                        <!-- .col-md-6 -->
-                    </div>
-                    <!-- .row -->
-                </div>
-                <!-- End Copyright -->
-            </div>
-        </footer>
-        <!-- End Footer Section -->
-
-        <!-- Go To Top Link -->
-        <a href="#" class="back-to-top"><i class="fa fa-angle-up"></i></a>
     </div>
-    </form>
-    <script type="text/javascript" src="js/script.js"></script>
+    <!-- End content -->
 
-    <script type="text/javascript">
-        $(document).ready(function (){
-            var validator = $("#companyregistration").bootstrapValidator({
-                feedbackIcons: {
-                    valid: "glyphicon glyphicon-ok",
-                    invalid: "glyphicon glyphicon-remove",
-                    validating: "glyphicon glyphicon-refresh"
+    <!-- Start Footer Section -->
+    <footer>
+        <div class="container">
+            <!-- Start Copyright -->
+            <div class="copyright-section">
+                <div class="row">
+                    <div class="col-md-6">
+                        <p>&copy; 2015 OJPMS - All Rights Reserved</p>
+                    </div>
+                    <!-- .col-md-6 -->
+                    <div class="col-md-6">
+                        <ul class="footer-nav">
+                            <li><a href="#">Sitemap</a>
+                            </li>
+                            <li><a href="#">Privacy Policy</a>
+                            </li>
+                            <li><a href="#">Contact</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <!-- .col-md-6 -->
+                </div>
+                <!-- .row -->
+            </div>
+            <!-- End Copyright -->
+        </div>
+    </footer>
+    <!-- End Footer Section -->
+
+    <!-- Go To Top Link -->
+    <a href="#" class="back-to-top"><i class="fa fa-angle-up"></i></a>
+    </div>
+</form>
+<script type="text/javascript" src="js/script.js"></script>
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        var validator = $("#companyregistration").bootstrapValidator({
+            feedbackIcons: {
+                valid: "glyphicon glyphicon-ok",
+                invalid: "glyphicon glyphicon-remove",
+                validating: "glyphicon glyphicon-refresh"
+            },
+            fields: {
+                CompanyName: {
+                    validators: {
+                        notEmpty: {
+                            message: "Compamy Name is required."
+                        },
+                        stringLength: {
+                            min: 5,
+                            max: 15,
+                            message: "Company Name is invalid."
+                        },
+                        regexp: {
+                            regexp: /^[a-z\s]+$/i,
+                            message: "Company Name can consist of alphabetical characters and spaces only"
+                        },
+                        remote: {
+                            message: 'The Company Name already exists',
+                            url: 'addcompany.php',
+                            data: {
+                                type: 'CompanyName'
+                            },
+                            type: 'POST'
+                        }
+                    }
                 },
-                fields:{
-                    CompanyName: {
-                        validators: {
-                            notEmpty: {
-                                message: "Compamy Name is required."
-                            },
-                            stringLength: {
-                                min: 5,
-                                max: 15,
-                                message: "Company Name is invalid."
-                            },
-                            regexp: {
-                                regexp: /^[a-z\s]+$/i,
-                                message: "Company Name can consist of alphabetical characters and spaces only"
-                            },
-                            remote: {
-                                message: 'The Company Name already exists',
-                                url: 'addcompany.php',
-                                data: {
-                                    type: 'CompanyName'
-                                },
-                                type: 'POST'
-                                }
-                            }
-                    },
-                    Industry: {
-                        validators: {
-                            notEmpty: {
-                                message: "Industry is required."
-                            }
-                        }
-                    },
-                    City: {
-                        validators: {
-                            notEmpty: {
-                                message: "City is required."
-                            }
-                        }
-                    },
-                    FirstName: {
-                        validators: {
-                            notEmpty: {
-                                message: "First name is required."
-                            },
-                            stringLength: {
-                                min: 3,
-                                max: 15,
-                                message: "First name must be 3-15 characters long."
-                            },
-                            regexp: {
-                                regexp: /^[a-z\s]+$/i,
-                                message: "First Name can consist of alphabetical characters and spaces only"
-                            }
-                        }
-                    },
-                    MiddleName: {
-                        validators: {
-                            stringLength: {
-                                min: 3,
-                                max: 15,
-                                message: "Middle name must be 3-15 characters long."
-                            },
-                            regexp: {
-                                regexp: /^[a-z\s]+$/i,
-                                message: "Middle Name can consist of alphabetical characters and spaces only"
-                            }
-                        }
-                    },
-                    LastName: {
-                        validators: {
-                            notEmpty: {
-                                message: "Last name is required."
-                            },
-                            stringLength: {
-                                min: 3,
-                                max: 15,
-                                message: "Last name must be 3-15 characters long."
-                            },
-                            regexp: {
-                                regexp: /^[a-z\s]+$/i,
-                                message: "Last Name can consist of alphabetical characters and spaces only"
-                            }
-                        }
-                    },
-                    Position: {
-                       validators: {
-                            notEmpty: {
-                                message: "Position is required."
-                            },
-                            stringLength: {
-                                min: 3,
-                                max: 15,
-                                message: "Position must be 3-15 characters long."
-                            },
-                            regexp: {
-                                regexp: /^[a-z\s]+$/i,
-                                message: "Position can consist of alphabetical characters and spaces only"
-                            }
-                        }
-                    },
-                    Department: {
-                        validators: {
-                            notEmpty: {
-                                message: "Department is required."
-                            },
-                            stringLength: {
-                                min: 3,
-                                max: 15,
-                                message: "Department must be 3-15 characters long."
-                            },
-                            regexp: {
-                                regexp: /^[a-z\s]+$/i,
-                                message: "Department can consist of alphabetical characters and spaces only"
-                            }
-                        }
-                    },
-                    Email: {
-                        validators: {
-                            notEmpty: {
-                                message: "Email address is required."
-                            },
-                            stringLength: {
-                                min: 6,
-                                max: 35,
-                                message: "Email address must be 6-35 characters long."
-                            }
+                Industry: {
+                    validators: {
+                        notEmpty: {
+                            message: "Industry is required."
                         }
                     }
-                    /*
-                    sPassword: {
-                        validators: {
-                            notEmpty: {
-                                message: "Password is required."
-                            },
-                            stringLength: {
-                                min: 8,
-                                max: 16,
-                                message: "Password must be 8-16 characters long."
-                            }
-                        }
-                    },
-                    ConfirmPassword: {
-                        validators: {
-                            notEmpty: {
-                                message: "Confirm password is required."
-                            },
-                            identical: {
-                                field: "sPassword",
-                                message: "Password and confirm password mismatched."
-                            }
+                },
+                City: {
+                    validators: {
+                        notEmpty: {
+                            message: "City is required."
                         }
                     }
-                     */
+                },
+                FirstName: {
+                    validators: {
+                        notEmpty: {
+                            message: "First name is required."
+                        },
+                        stringLength: {
+                            min: 3,
+                            max: 15,
+                            message: "First name must be 3-15 characters long."
+                        },
+                        regexp: {
+                            regexp: /^[a-z\s]+$/i,
+                            message: "First Name can consist of alphabetical characters and spaces only"
+                        }
+                    }
+                },
+                MiddleName: {
+                    validators: {
+                        stringLength: {
+                            min: 3,
+                            max: 15,
+                            message: "Middle name must be 3-15 characters long."
+                        },
+                        regexp: {
+                            regexp: /^[a-z\s]+$/i,
+                            message: "Middle Name can consist of alphabetical characters and spaces only"
+                        }
+                    }
+                },
+                LastName: {
+                    validators: {
+                        notEmpty: {
+                            message: "Last name is required."
+                        },
+                        stringLength: {
+                            min: 3,
+                            max: 15,
+                            message: "Last name must be 3-15 characters long."
+                        },
+                        regexp: {
+                            regexp: /^[a-z\s]+$/i,
+                            message: "Last Name can consist of alphabetical characters and spaces only"
+                        }
+                    }
+                },
+                Position: {
+                    validators: {
+                        notEmpty: {
+                            message: "Position is required."
+                        },
+                        stringLength: {
+                            min: 3,
+                            max: 15,
+                            message: "Position must be 3-15 characters long."
+                        },
+                        regexp: {
+                            regexp: /^[a-z\s]+$/i,
+                            message: "Position can consist of alphabetical characters and spaces only"
+                        }
+                    }
+                },
+                Department: {
+                    validators: {
+                        notEmpty: {
+                            message: "Department is required."
+                        },
+                        stringLength: {
+                            min: 3,
+                            max: 15,
+                            message: "Department must be 3-15 characters long."
+                        },
+                        regexp: {
+                            regexp: /^[a-z\s]+$/i,
+                            message: "Department can consist of alphabetical characters and spaces only"
+                        }
+                    }
+                },
+                Email: {
+                    validators: {
+                        notEmpty: {
+                            message: "Email address is required."
+                        },
+                        stringLength: {
+                            min: 6,
+                            max: 35,
+                            message: "Email address must be 6-35 characters long."
+                        }
+                    }
                 }
-            });
+                /*
+                 sPassword: {
+                 validators: {
+                 notEmpty: {
+                 message: "Password is required."
+                 },
+                 stringLength: {
+                 min: 8,
+                 max: 16,
+                 message: "Password must be 8-16 characters long."
+                 }
+                 }
+                 },
+                 ConfirmPassword: {
+                 validators: {
+                 notEmpty: {
+                 message: "Confirm password is required."
+                 },
+                 identical: {
+                 field: "sPassword",
+                 message: "Password and confirm password mismatched."
+                 }
+                 }
+                 }
+                 */
+            }
         });
-    </script>
+    });
+</script>
 </body>
 </html>

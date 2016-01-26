@@ -25,11 +25,8 @@ if (isset($_GET['School'])) {
         $SchoolID,
         $StudentID
     );
-    echo "
-         <script type='text/javascript'>
-         location.href='../education.php?id=1';
-         </script>
-         ";
+    header("location: ../education.php?id=1");
+
 }
 
 if (isset($_GET['Seminar'])) {
@@ -46,11 +43,8 @@ if (isset($_GET['Seminar'])) {
         $Seminar,
         $StudentID
     );
-    echo "
-         <script type='text/javascript'>
-         location.href='../education.php?id=2';
-         </script>
-         ";
+    header("location: ../education.php?id=2");
+
 }
 
 if (isset($_GET['Certification'])) {
@@ -67,11 +61,8 @@ if (isset($_GET['Certification'])) {
         $CertificationID,
         $StudentID
     );
-    echo "
-        <script type='text/javascript'>
-        location.href='../certifications.php?id=1';
-        </script>
-        ";
+    header("location: ../certifications.php?id=1");
+
 }
 
 if (isset($_GET['Achievement'])) {
@@ -86,11 +77,8 @@ if (isset($_GET['Achievement'])) {
         $AchievementID,
         $StudentID
     );
-    echo "
-        <script type='text/javascript'>
-        location.href='../achievements.php?id=1';
-        </script>
-        ";
+    header("location: ../achievements.php?id=1");
+
 }
 
 if (isset($_GET['ReferenceID'])) {
@@ -115,11 +103,8 @@ if (isset($_GET['ReferenceID'])) {
         $ReferenceID,
         $StudentID
     );
-    echo "
-        <script type='text/javascript'>
-        location.href='../references.php?id=1';
-        </script>
-        ";
+    header("location: ../references.php?id=1");
+
 }
 
 if (isset($_POST['Specialization'])) {
@@ -136,11 +121,8 @@ if (isset($_POST['Specialization'])) {
         $SID,
         $StudentID
     );
-    echo "
-            <script type='text/javascript'>
-            location.href='../specialization-and-languages.php?id=1';
-            </script>
-            ";
+    header("location: ../specialization-and-languages.php?id=1");
+
 }
 
 if (isset($_POST['Language'])) {
@@ -155,11 +137,6 @@ if (isset($_POST['Language'])) {
         $LangID,
         $StudentID
     );
-    echo "
-            <script type='text/javascript'>
-            location.href='../specialization-and-languages.php?id=4';
-            </script>
-            ";
+    header("location: ../specialization-and-languages.php?id=4");
 
 }
-?>
