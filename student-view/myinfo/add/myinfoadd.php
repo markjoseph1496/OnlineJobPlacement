@@ -23,11 +23,8 @@ if (isset($_GET['School'])) {
         $Graduation,
         '0'
     );
-    echo "
-         <script type='text/javascript'>
-         location.href='../education.php?id=4';
-         </script>
-         ";
+    header("location: ../education.php?id=4");
+
 }
 
 if (isset($_GET['Seminar'])) {
@@ -43,12 +40,8 @@ if (isset($_GET['Seminar'])) {
         $Seminar,
         $YearAttended
     );
+    header("location: ../education.php?id=5");
 
-    echo "
-        <script type='text/javascript'>
-        location.href='../education.php?id=5';
-        </script>
-        ";
 }
 
 
@@ -63,12 +56,8 @@ if (isset($_GET['Certification'])) {
         $Certification,
         $YearTaken
     );
+    header("location: ../certifications.php?id=2");
 
-    echo "
-             <script type='text/javascript'>
-             location.href = '../certifications.php?id=2';
-             </script>
-             ";
 }
 
 
@@ -82,12 +71,8 @@ if (isset($_GET['Achievement'])) {
         $StudentID,
         $Achievement
     );
+    header("location: ../achievements.php?id=2");
 
-    echo "
-             <script type='text/javascript'>
-             location.href='../achievements.php?id=2';
-             </script>
-             ";
 }
 if (isset($_GET['Name'])) {
     $Name = $_GET['Name'];
@@ -109,11 +94,8 @@ if (isset($_GET['Name'])) {
         $Phone,
         $Email
     );
-    echo "
-             <script type='text/javascript'>
-             location.href='../references.php?id=2';
-             </script>
-             ";
+    header("location: ../references.php?id=2");
+
 }
 if (isset($_POST['Specialization'])) {
     $Specialization = $_POST['Specialization'];
@@ -127,11 +109,8 @@ if (isset($_POST['Specialization'])) {
         $Specialization,
         $YearsOfExperience
     );
-    echo "
-             <script type='text/javascript'>
-             location.href='../specialization-and-languages.php?id=2';
-             </script>
-             ";
+    header("location: ../specialization-and-languages.php?id=2");
+
 }
 
 if (isset($_POST['Language'])) {
@@ -144,11 +123,8 @@ if (isset($_POST['Language'])) {
         $StudentID,
         $Language
     );
-    echo "
-             <script type='text/javascript'>
-             location.href='../specialization-and-languages.php?id=5';
-             </script>
-             ";
+    header("location: ../specialization-and-languages.php?id=5");
+
 }
 if (isset($_POST['CompanyName'])) {
     $CompanyName = $_POST['CompanyName'];
@@ -186,10 +162,6 @@ if (isset($_POST['CompanyName'])) {
         $MonthlySalary,
         $NatureOfWork
     );
-    echo "
-             <script type='text/javascript'>
-             location.href='../work.php?id=1';
-             </script>
-             ";
+    header("location: ../work.php?id=1");
+
 }
-?>
