@@ -159,7 +159,7 @@
                         <div class="container">
                             <div class = "row">
                                 <div class = "col-md-1">
-                                <i class="fa fa-users icon-medium-effect icon-effect-2"></i> 
+                                <i class="fa fa-book icon-medium-effect icon-effect-2"></i> 
                                 </div>
                                 <div class = "col-md-4">
                                     <br>
@@ -218,7 +218,7 @@
                         <div class="container">
                             <div class = "row">
                                 <div class = "col-md-1">
-                                <i class="fa fa-users icon-medium-effect icon-effect-2"></i> 
+                                <i class="fa fa-language icon-medium-effect icon-effect-2"></i> 
                                 </div>
                                 <div class = "col-md-4">
                                     <br>
@@ -261,7 +261,7 @@
                         <div class="container">
                             <div class = "row">
                                 <div class = "col-md-1">
-                                <i class="fa fa-users icon-medium-effect icon-effect-2"></i> 
+                                <i class="fa fa-star icon-medium-effect icon-effect-2"></i> 
                                 </div>
                                 <div class = "col-md-4">
                                     <br>
@@ -304,7 +304,7 @@
                         <div class="container">
                             <div class = "row">
                                 <div class = "col-md-1">
-                                <i class="fa fa-users icon-medium-effect icon-effect-2"></i> 
+                                <i class="fa fa-trophy icon-medium-effect icon-effect-2"></i> 
                                 </div>
                                 <div class = "col-md-4">
                                     <br>
