@@ -2,10 +2,9 @@
 include('../connection.php');
 session_start();
 
-if(isset($_SESSION['CompanyID'])){
+if (isset($_SESSION['CompanyID'])) {
     $CompanyID = $_SESSION['CompanyID'];
-}
-else{
+} else {
     header("location: ../login-company.php");
 }
 
@@ -77,7 +76,7 @@ $LOGquery1 =
         "s",
         $CompanyID
     );
-if(count($LOGquery1) > 0){
+if (count($LOGquery1) > 0) {
     $ContentCount = 2;
 }
 ?>
@@ -183,7 +182,7 @@ if(count($LOGquery1) > 0){
                                 &nbsp;
                             </li>
                             <li class="profile-name">
-                                <i class="fa fa-user"></i> Hello, <b><?php echo $cFirstName . " " . $cLastName;?></b>
+                                <i class="fa fa-user"></i> Hello, <b><?php echo $cFirstName . " " . $cLastName; ?></b>
                             </li>
                         </ul>
                         <!-- End Social Links -->
@@ -381,7 +380,8 @@ if(count($LOGquery1) > 0){
 </div>
 
 <div id="Requested" class="container">
-    <label = "usr" class = "control-label">You have already requested the list of graduates. Please wait for the admin to approve your request.</label>
+    <label = "usr" class = "control-label">You have already requested the list of graduates. Please wait for the admin
+    to approve your request.</label>
 </div>
 
 <div id="Content" class="container">
@@ -389,6 +389,14 @@ if(count($LOGquery1) > 0){
         <div class="header2_advertising">
             <div class="container">
                 <div class="row field">
+                    <div>
+                        <b>Available Courses:</b>
+                        <?php
+                        $AvailableCourses = $LOGquery[0][2];
+                        echo $AvailableCourses;
+                        ?>
+                    </div>
+                    <div><b>Valid until:</b> <?php echo $DateTo; ?></div>
                     <div class="col-sm-5">
                         <div class="form-group text-center">
                             <label>
@@ -640,7 +648,7 @@ if(count($LOGquery1) > 0){
         $('#Requested').hide();
         $('#RequestLOG').hide();
         $('#Content').show();
-    } else if(ContentValue == "2") {
+    } else if (ContentValue == "2") {
         $('#Requested').show();
         $('#RequestLOG').hide();
         $('#Content').hide();
