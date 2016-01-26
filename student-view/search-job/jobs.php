@@ -167,11 +167,9 @@ $MajorCourse = $coursetbl[0][0];
                                 </div>
                             </li>
                             <li class="profile-name">
-                                &nbsp;
-                            </li>
-                            <li class="profile-name">
                                 <i class="fa fa-user"></i> Hello, <b><?php echo $StudentName; ?></b>
                             </li>
+
                         </ul>
                         <!-- End Social Links -->
                     </div>
