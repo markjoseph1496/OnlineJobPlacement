@@ -41,7 +41,7 @@ $StudentName = $FirstName . " " . $LastName;
 
     <!-- jQuery and Bootstrap JS -->
     <script type="text/javascript" src="../../js/jquery.min.js"></script>
-    <script type="text/javascript" src="../../js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../../js/bootstrap.min.js" ></script>
 
     <!-- BootstrapValidator -->
     <script src="../../js/bootstrapValidator.min.js" type="text/javascript"></script>
@@ -70,9 +70,9 @@ $StudentName = $FirstName . " " . $LastName;
     <!-- Color CSS Styles  -->
     <link rel="stylesheet" type="text/css" href="../../css/colors/yellow.css" title="yellow" media="screen"/>
 
-    <!-- Star Rate -->
-    <link rel="stylesheet" type="text/css" href="../../css/star-rate.css" media="screen"/>
-
+    <!-- Checkbox -->
+    <link rel="stylesheet" type="text/css" href="../../css/checkbox.css" media="screen" />
+    
     <!-- JS  -->
     <script type="text/javascript" src="../../js/jquery.migrate.js"></script>
     <script type="text/javascript" src="../../js/modernizrr.js"></script>
@@ -92,22 +92,26 @@ $StudentName = $FirstName . " " . $LastName;
     <!-- Notification -->
     <link rel="stylesheet" href="../../css/notif.css"/>
 
-    <script type="text/javascript">
-        $(document).ready(function () {
-            $("#notificationLink").click(function () {
-                $("#notificationContainer").fadeToggle(300);
-                $("#notification_count").fadeOut("slow");
-                return false;
-            });
+    <script type="text/javascript" >
+        $(document).ready(function()
+        {
+        $("#notificationLink").click(function()
+        {
+        $("#notificationContainer").fadeToggle(300);
+        $("#notification_count").fadeOut("slow");
+        return false;
+        });
 
-            //Document Click
-            $(document).click(function () {
-                $("#notificationContainer").hide();
-            });
-            //Popup Click
-            $("#notificationContainer").click(function () {
-                return false
-            });
+        //Document Click
+        $(document).click(function()
+        {
+        $("#notificationContainer").hide();
+        });
+        //Popup Click
+        $("#notificationContainer").click(function()
+        {
+        return false
+        });
 
         });
     </script>
@@ -135,8 +139,7 @@ $StudentName = $FirstName . " " . $LastName;
                         <ul class="social-list">
                             <li id="notification_li">
                                 <span id="notification_count">3</span>
-                                <a class="bell itl-tooltip" data-placement="bottom" title="" id="notificationLink"><i
-                                        class="fa fa-bell"></i></a>
+                                <a class="bell itl-tooltip" data-placement="bottom" title="" id="notificationLink"><i class="fa fa-bell"></i></a>
                                 <div id="notificationContainer">
                                     <div id="notificationTitle">Notifications</div>
                                     <div id="notificationsBody" class="notifications">
@@ -149,8 +152,7 @@ $StudentName = $FirstName . " " . $LastName;
                                         <label><a href="">The admin granted your request.</a></label>
                                         <div class="hr2" style="margin-top:1px; margin-bottom:1px;"></div>
                                     </div>
-                                    <div id="notificationFooter"><a href="../notification/notification.php">See All</a>
-                                    </div>
+                                    <div id="notificationFooter"><a href="../notification/notification.php">See All</a></div>
                                 </div>
                             </li>
                             <li class="profile-name">
@@ -307,17 +309,29 @@ $StudentName = $FirstName . " " . $LastName;
                             <!-- Single Testimonial -->
                             <div class="classic-testimonials">
                                 <label>Work Options</label>
-                                <div>
-                                    <input type="checkbox"/><b> Willing to work night shifts</b>
+                                <div class="checkbox checkbox-success">
+                                    <input id="checkbox3" class="styled" type="checkbox">
+                                    <label for="checkbox3">
+                                        <b>Willing to work night shifts</b>
+                                    </label>
                                 </div>
-                                <div>
-                                    <input type="checkbox"/><b> Willing to relocate</b>
+                                <div class="checkbox checkbox-success">
+                                    <input id="checkbox3" class="styled" type="checkbox">
+                                    <label for="checkbox3">
+                                        <b>Willing to relocate</b>
+                                    </label>
                                 </div>
-                                <div>
-                                    <input type="checkbox"/><b> Looking for OJT position</b>
+                                <div class="checkbox checkbox-success">
+                                    <input id="checkbox3" class="styled" type="checkbox">
+                                    <label for="checkbox3">
+                                        <b>Looking for OJT position</b>
+                                    </label>
                                 </div>
-                                <div>
-                                    <input type="checkbox"/><b> Willing to work overseas</b>
+                                <div class="checkbox checkbox-success">
+                                    <input id="checkbox3" class="styled" type="checkbox">
+                                    <label for="checkbox3">
+                                        <b>Willing to work overseas</b>
+                                    </label>
                                 </div>
                             </div>
                             <!-- End Single Testimonial -->
@@ -507,7 +521,7 @@ $StudentName = $FirstName . " " . $LastName;
                     if ($DateToMonth == 12) {
                         $DateToMonth = 'December';
                     }
-                    $Duration = $DateFromMonth . " " . $DateFromYear . " - " . $DateToMonth . " " . $DateToYear;
+                    $Duration = $DateFromMonth . " " .$DateFromYear . " - " . $DateToMonth . " " . $DateToYear;
                     ?>
                     <tbody>
                     <tr>
@@ -516,7 +530,7 @@ $StudentName = $FirstName . " " . $LastName;
                         <td><?php echo $Industry; ?></td>
                         <td><?php echo $WorkSpecialization; ?></td>
                         <td><?php echo $Duration; ?></td>
-                        <td class="text-center">
+                        <td  class="text-center">
                             <button href='' class='btn btn-danger'>
                                 <i class='fa fa-trash fa-1x'></i>
                             </button>

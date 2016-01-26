@@ -9,7 +9,7 @@
 	overflow: visible;
 	position: absolute;
 	top: 111px;
-	margin-left: -170px;
+	margin-left: -182px;
 	width: 400px;
 	z-index: -1;
 	display: none; // Enable this after jquery implementation 

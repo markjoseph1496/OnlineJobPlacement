@@ -155,12 +155,11 @@
                         </div>
                     </div>
                      <div class="hr5" style="margin-top:35px;margin-bottom:40px;"></div>
-
                     <div class="parallax-text-item">
                         <div class="container">
                             <div class = "row">
                                 <div class = "col-md-1">
-                                <i class="fa fa-users icon-medium-effect icon-effect-2"></i> 
+                                <i class="fa fa-book icon-medium-effect icon-effect-2"></i> 
                                 </div>
                                 <div class = "col-md-4">
                                     <br>
@@ -172,31 +171,188 @@
                                 </div>
                             </div>
                             <BR>
-                            <table class = "infotable">
-                <tbody>
-                <tr>
-                <td> School </td>
-                <td> STI College Caloocan </td>
-                </tr>
-                
-                <tr>
-                <td> Graduated </td>
-                <td> May 2015 </td> 
-                </tr>
-                
-                <tr>
-                <td> Major </td>
-                <td> Bachelor of Science in Computer Science </td>
-                </tr>
-                
-                <tr>
-                <td> Field of Study </td>
-                <td> Computer Science/Information Technology </td>
-                </tr>
-                
-                
-                </tbody>
-                </table>
+                            <div class="row field">
+                                <div class="col-md-4 fieldcol">
+                                    <label style = "text-indent: 270px;">School</label>
+                                </div>
+                                <div class="col-md-8 fieldcol">
+                                    <div class="form-group">
+                                        <p style = "text-indent: 100px;">STI College Caloocan</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row field">
+                                <div class="col-md-4 fieldcol">
+                                    <label style = "text-indent: 270px;">Graduated</label>
+                                </div>
+                                <div class="col-md-8 fieldcol">
+                                    <div class="form-group">
+                                        <p style = "text-indent: 100px;">May 2015</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row field">
+                                <div class="col-md-4 fieldcol">
+                                    <label style = "text-indent: 270px;">Major</label>
+                                </div>
+                                <div class="col-md-8 fieldcol">
+                                    <div class="form-group">
+                                        <p style = "text-indent: 100px;">Bachelor of Science in Computer Science</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row field">
+                                <div class="col-md-4 fieldcol">
+                                    <label style = "text-indent: 270px;">Field of Study</label>
+                                </div>
+                                <div class="col-md-8 fieldcol">
+                                    <div class="form-group">
+                                        <p style = "text-indent: 100px;">Computer Science/Information Technology</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="hr5" style="margin-top:35px;margin-bottom:40px;"></div>
+                    <div class="parallax-text-item">
+                        <div class="container">
+                            <div class = "row">
+                                <div class = "col-md-1">
+                                <i class="fa fa-language icon-medium-effect icon-effect-2"></i> 
+                                </div>
+                                <div class = "col-md-4">
+                                    <br>
+                                <h1> Languages </h1>
+                                </div>
+                            </div>
+                            <BR>
+                            <div class="row field">
+                                <div class="col-md-5 fieldcol">
+                                    <label style = "text-indent: 270px;">Filipino</label>
+                                </div>
+                                <div class="col-md-7 fieldcol">
+                                    <div class="form-group">
+                                        <div class="progress">
+                                            <div class="progress-bar-info progress-bar-striped" role="progressbar" 
+                                                aria-valuenow="70"  aria-valuemin="0" aria-valuemax="100" style="width:70%">
+                                                    <font style="color:white;" ><center>70%
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-5 fieldcol">
+                                    <label style = "text-indent: 270px;">Nihonggo</label>
+                                </div>
+                                <div class="col-md-7 fieldcol">
+                                    <div class="form-group">
+                                        <div class="progress">
+                                            <div class="progress-bar-info progress-bar-striped" role="progressbar" 
+                                                aria-valuenow="30"  aria-valuemin="0" aria-valuemax="100" style="width:30%">
+                                                    <font style="color:white;" ><center>30%
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="hr5" style="margin-top:35px;margin-bottom:40px;"></div>
+                    <div class="parallax-text-item">
+                        <div class="container">
+                            <div class = "row">
+                                <div class = "col-md-1">
+                                <i class="fa fa-star icon-medium-effect icon-effect-2"></i> 
+                                </div>
+                                <div class = "col-md-4">
+                                    <br>
+                                <h1> Skills </h1>
+                                </div>
+                            </div>
+                            <BR>
+                            <div class="row field">
+                                <div class="col-md-5 fieldcol">
+                                    <label style = "text-indent: 270px;">Web Design</label>
+                                </div>
+                                <div class="col-md-7 fieldcol">
+                                    <div class="form-group">
+                                        <div class="progress">
+                                            <div class="progress-bar-warning progress-bar-striped" role="progressbar" 
+                                                aria-valuenow="50"  aria-valuemin="0" aria-valuemax="100" style="width:50%">
+                                                    <font style="color:white;" ><center>50%
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-5 fieldcol">
+                                    <label style = "text-indent: 270px;">Web Programming</label>
+                                </div>
+                                <div class="col-md-7 fieldcol">
+                                    <div class="form-group">
+                                        <div class="progress">
+                                            <div class="progress-bar-warning progress-bar-striped" role="progressbar" 
+                                                aria-valuenow="50"  aria-valuemin="0" aria-valuemax="100" style="width:50%">
+                                                    <font style="color:white;" ><center>50%
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="hr5" style="margin-top:35px;margin-bottom:40px;"></div>
+                    <div class="parallax-text-item">
+                        <div class="container">
+                            <div class = "row">
+                                <div class = "col-md-1">
+                                <i class="fa fa-trophy icon-medium-effect icon-effect-2"></i> 
+                                </div>
+                                <div class = "col-md-4">
+                                    <br>
+                                <h1> Achievements & Certificates </h1>
+                                </div>
+                            </div>
+                            <BR>
+                            <div class="row field">
+                                <div class="col-md-12 fieldcol">
+                                    <label style = "text-indent: 500px;" >Top 1 in Math Class</label>
+                                </div>
+                                <div class="col-md-12 fieldcol">
+                                    <label style = "text-indent: 500px;" >Self Development Seminar</label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="hr5" style="margin-top:35px;margin-bottom:40px;"></div>
+                    <div class="parallax-text-item">
+                        <div class="container">
+                            <div class = "row">
+                                <div class = "col-md-1">
+                                <i class="fa fa-users icon-medium-effect icon-effect-2"></i> 
+                                </div>
+                                <div class = "col-md-4">
+                                    <br>
+                                <h1> References </h1>
+                                </div>
+                            </div>
+                            <BR>
+                            <div class="row field">
+                                <div class="col-md-4 fieldcol">
+                                    <label style = "text-indent: 270px;">Company</label>
+                                </div>
+                                <div class="col-md-8 fieldcol">
+                                    <div class="form-group">
+                                        <p style = "text-indent: 100px;">Computer Science/Information Technology</p>
+                                    </div>
+                                </div>
+                                <div class="col-md-4 fieldcol">
+                                    <label style = "text-indent: 270px;">Relationship</label>
+                                </div>
+                                <div class="col-md-8 fieldcol">
+                                    <div class="form-group">
+                                        <p style = "text-indent: 100px;">Forever</p>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
             </div>
