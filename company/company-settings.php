@@ -1,7 +1,14 @@
 <?php
 include('../connection.php');
 session_start();
-$CompanyID = $_SESSION['CompanyID'];
+
+
+if(isset($_SESSION['CompanyID'])){
+    $CompanyID = $_SESSION['CompanyID'];
+}
+else{
+    header("location: ../login-company.php");
+}
 
 $companyinfo_tbl =
     GSecureSQL::query(

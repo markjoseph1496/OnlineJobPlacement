@@ -1,3 +1,6 @@
+<?php
+session_start();
+?>
 
 <html>
 <head>
@@ -61,13 +64,48 @@
     <script type="text/javascript" src="js/jquery.parallax.js"></script>
     <script type="text/javascript" src="js/mediaelement-and-player.js"></script>
     <script type="text/javascript" src="js/jquery.slicknav.js"></script>
-</head>
 
+<script>
+$(function() {
+  $('a[href*=#]:not([href=#])').click(function() {
+    if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
+      var target = $(this.hash);
+      target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
+      if (target.length) {
+        $('html,body').animate({
+          scrollTop: target.offset().top
+        }, 1000);
+        return false;
+      }
+    }
+  });
+});
+
+$(document).ready(function() {
+	var stickyNavTop = $('.coverinfo').offset().top;
+	
+	var stickyNav = function(){
+		var scrollTop = $(window).scrollTop();
+			
+		if (scrollTop > stickyNavTop) { 
+			$('.coverinfo').addClass('sticky');
+		} else {
+			$('.coverinfo').removeClass('sticky'); 
+		}
+	};
+	
+	stickyNav();
+	 
+	$(window).scroll(function() {
+		stickyNav();
+	});
+});
+
+</script>	
 	
 	
-</meta>
 
-<style = "text/css">
+<style>
 
 .sticky {
     position: fixed;
@@ -176,7 +214,24 @@ z-index: 99999;
         </div>
     </header>
 
+<div class="resumehead" name="topinfo">
+<div class = "coverinfo">
+<div class = "container">
+	<div class = "row">
 
+	<div class="imgcover" style="background-image: url(./img/a.jpg)"></div>
+	<ul>
+	<h1 class = "name"></h1>
+	
+	<p class = "name1">http://markjoseph1496.jobs180.com </p>
+	
+	</ul>
+	
+	</div> 
+</div>
+ </div>
+ </div>
+ 
 <br>
 
 <!-- PERSONAL INFO -->
@@ -192,7 +247,7 @@ z-index: 99999;
 				<tr>
 				<td> Date of Birth </td>
 				<td> 
-					
+
 				</td>
 				</tr>
 				
@@ -204,13 +259,13 @@ z-index: 99999;
 				<tr>
 				<td> Address </td>
 				<td>
-					
+
 				</td>
 				</tr>
 				
 				<tr>
 				<td> Nationality </td>
-				<td>  </td>
+				<td> </td>
 				</tr>
 				
 				<tr>
@@ -437,7 +492,7 @@ z-index: 99999;
 <br><br>
 
 </body>
- <!-- important-->
+    <!-- important-->
     <script type="text/javascript" src="js/script.js"></script>
 	<script type="text/javascript" src="js/smoothscroll.js"></script>
 </html>

@@ -23,12 +23,8 @@ if (isset($_GET['BtnCalendarsave'])) {
         $location,
         $descrip
     );
+    header("location: company-calendar.php?id=EventAdd");
 
-    echo "
-        <script type='text/javascript'>
-        location.href='company-calendar.php?id=EventAdd'
-        </script>
-        ";
 }
 // End of Calendar Event
 
@@ -101,11 +97,8 @@ if (isset($_GET['btnsave'])) {
         );
     }
 
-    echo "
-          <script type='text/javascript'>
-          location.href='company-positionlist.php?id=1'
-          </script>
-        ";
+    header("location: company-positionlist.php?id=1");
+
 }
 // End of Create Position
 if(isset($_GET['id'])){
@@ -119,11 +112,8 @@ if(isset($_GET['id'])){
         "s",
         $RID
         );
-        echo "
-          <script type='text/javascript'>
-          location.href='company-pendingapplicants.php?id=1'
-          </script>
-        ";
+        header("location: company-pendingapplicants.php?id=1");
+
     }
     elseif($id == 2){
         GSecureSQL::query(
@@ -132,13 +122,9 @@ if(isset($_GET['id'])){
         "s",
         $RID
         );
-        echo "
-          <script type='text/javascript'>
-          location.href='company-pendingapplicants.php?id=2'
-          </script>
-        ";
+        header("location: company-pendingapplicants.php?id=2");
     }
-    
+
 }
 if(isset($_POST['CourseCheckbox'])){
     $Course = $_POST['CourseCheckbox'];
@@ -151,9 +137,6 @@ if(isset($_POST['CourseCheckbox'])){
         $CompanyID,
         $Course
     );
-    echo "
-          <script type='text/javascript'>
-          location.href='company.php?id=2'
-          </script>
-        ";
+    header("location: company.php?id=2");
+
 }

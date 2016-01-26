@@ -11,11 +11,8 @@ if (isset($_GET['delete_URLID'])) {
         "s",
         $Z
     );
+    header("location: portfolio.php?id=URLDeleted");
 
-    echo "
-            <script type='text/javascript'>
-            location.href='portfolio.php?id=URLDeleted';
-            </script>";
 }
 
 if (isset($_GET['delete_SchoolID'])) {
@@ -27,12 +24,8 @@ if (isset($_GET['delete_SchoolID'])) {
         "s",
         $Z
     );
+    header("location: education.php?id=3");
 
-    echo "
-            <script type='text/javascript'>
-            location.href='education.php?id=3';
-            </script>
-            ";
 }
 
 if (isset($_GET['delete_SeminarID'])) {
@@ -45,13 +38,8 @@ if (isset($_GET['delete_SeminarID'])) {
         "s",
         $Z
     );
+    header("location: education.php?id=6");
 
-    echo "
-            <script type='text/javascript'>
-            location.href='education.php?id=6';
-            </script>
-       
-            ";
 }
 if (isset($_GET['delete_CertificationID'])) {
     $Z = $_GET['delete_CertificationID'];
@@ -62,12 +50,7 @@ if (isset($_GET['delete_CertificationID'])) {
         "s",
         $Z
     );
-
-    echo "
-                <script type='text/javascript'>
-                location.href='certifications.php?id=3';
-                </script>
-                ";
+    header("location: certifications.php?id=3");
 
 }
 
@@ -80,12 +63,8 @@ if (isset($_GET['delete_AchievementID'])) {
         "s",
         $Z
     );
+    header("location: achievements.php?id=3");
 
-    echo "
-            <script type='text/javascript'>
-            location.href='achievements.php?id=3';
-            </script>
-            ";
 }
 
 if (isset($_GET['delete_ReferenceID'])) {
@@ -97,12 +76,8 @@ if (isset($_GET['delete_ReferenceID'])) {
         "s",
         $Z
     );
+    header("location: references.php?id=3");
 
-    echo "
-            <script type='text/javascript'>
-            location.href='references.php?id=3';
-            </script>
-            ";
 }
 
 if (isset($_GET['delete_SID'])) {
@@ -114,12 +89,8 @@ if (isset($_GET['delete_SID'])) {
         "s",
         $id
     );
+    header("location: specialization-and-languages.php?id=3");
 
-    echo "
-            <script type='text/javascript'>
-            location.href='specialization-and-languages.php?id=3';
-            </script>
-            ";
 }
 
 if (isset($_GET['delete_LangID'])) {
@@ -131,11 +102,6 @@ if (isset($_GET['delete_LangID'])) {
         "s",
         $id
     );
+    header("location: specialization-and-languages.php?id=6");
 
-    echo "
-            <script type='text/javascript'>
-            location.href='specialization-and-languages.php?id=6';
-            </script>
-            ";
 }
-?>

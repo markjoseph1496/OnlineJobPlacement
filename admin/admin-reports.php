@@ -166,7 +166,7 @@ $Total = $TotalStudents[0][0];
                     <li>
                        <a>Company List</a>
                         <ul class="dropdown">
-                            <li><a href="admin-companylist.php">Active</a></li>
+                            <li><a href="admin-companylist.php" class = "active">Active</a></li>
                             <li><a href="admin-company_pending.php">Pending</a></li>
                         </ul>
                     </li>
@@ -175,7 +175,8 @@ $Total = $TotalStudents[0][0];
                     <li>
                         <a> Maintenance</a>
                         <ul class="dropdown">
-                            <li><a href="admin-maintenance.php">Courses</a></li>
+                            <li><a class="active" href="admin-maintenance.php">Courses</a></li>
+                            <li><a href="admin-users.php">Users</a></li>
                         </ul>
                     </li>
                 </ul>
@@ -197,10 +198,10 @@ $Total = $TotalStudents[0][0];
                 <li>
                     <a href="admin-requested.php">Requested</a>
                 </li>
-                <li>
+               <li>
                    <a>Company List</a>
                         <ul class="dropdown">
-                            <li><a href="admin-companylist.php">Active</a></li>
+                            <li><a href="admin-companylist.php" class = "active">Active</a></li>
                             <li><a href="admin-company_pending.php">Pending</a></li>
                         </ul>
                 </li>
@@ -208,8 +209,9 @@ $Total = $TotalStudents[0][0];
                 </li>
                 <li>
                     <a> Maintenance</a>
-                    <ul class="dropdown">
-                        <li><a href="admin-maintenance.php">Courses</a></li>
+                   <ul class="dropdown">
+                            <li><a class="active" href="admin-maintenance.php">Courses</a></li>
+                            <li><a href="admin-users.php">Users</a></li>
                     </ul>
                 </li>
             </ul>

@@ -1,7 +1,14 @@
 <?php
 include('../connection.php');
 session_start();
-$CompanyID = $_SESSION['CompanyID'];
+
+if(isset($_SESSION['CompanyID'])){
+    $CompanyID = $_SESSION['CompanyID'];
+}
+else{
+    header("location: ../login-company.php");
+}
+
 $companyinfo_tbl =
     GSecureSQL::query(
         "SELECT CompanyName, FirstName, LastName FROM companyinfotbl WHERE CompanyID = ?",
@@ -133,7 +140,6 @@ $cLastName = $companyinfo_tbl[0][2];
         <!-- .top-bar -->
         <!-- End Top Bar -->
 
-
         <!-- Start  Logo & Naviagtion  -->
         <div class="navbar navbar-default navbar-top">
             <div class="container">
@@ -255,10 +261,6 @@ $cLastName = $companyinfo_tbl[0][2];
     </div>
 </div>
 <!-- End Page Banner -->
-<?php
-while ($row = mysql_fetch_array($Result)) {
-
-    ?>
     <!-- Start Content -->
     <br><br><br>
     <form action="company-positionlist.php" name="AddPosition" id="AddPosition" autocomplete="off">
@@ -272,13 +274,13 @@ while ($row = mysql_fetch_array($Result)) {
                             <label = "usr" class = "control-label"> Posting Date </label>
                         </div>
                         <div class="col-md-2 fieldcol">
-                            <label = "usr" class = "control-label"><?php echo $row['PostingDateFrom']; ?></label>
+                            <label = "usr" class = "control-label"></label>
                         </div>
                         <div class="col-md-1 fieldcol">
                             <label = "usr" class = "control-label"> to </label>
                         </div>
                         <div class="col-md-2 fieldcol">
-                            <label = "usr" class = "control-label"><?php echo $row['PostingDateTo']; ?></label>
+                            <label = "usr" class = "control-label"></label>
                         </div>
 
                     </div>
@@ -291,7 +293,7 @@ while ($row = mysql_fetch_array($Result)) {
                         </div>
                         <div class="col-md-8 fieldcol">
                             <div class="form-group">
-                                <label = "usr" class = "control-label"s><?php echo $row['PositionLevel']; ?></label>
+                                <label = "usr" class = "control-label"s></label>
                             </div>
                         </div>
                     </div>
@@ -301,7 +303,7 @@ while ($row = mysql_fetch_array($Result)) {
                         </div>
                         <div class="col-md-8 fieldcol">
                             <div class="form-group">
-                                <label = "usr" class = "control-label"><?php echo $row['JobDescription']; ?></label>
+                                <label = "usr" class = "control-label"></label>
                             </div>
                         </div>
                     </div>
@@ -311,7 +313,7 @@ while ($row = mysql_fetch_array($Result)) {
                         </div>
                         <div class="col-md-8 fieldcol">
                             <div class="form-group">
-                                <label = "usr" class = "control-label"><?php echo $row['JSpecialization']; ?></label>
+                                <label = "usr" class = "control-label"></label>
                             </div>
                         </div>
                     </div>
@@ -321,7 +323,7 @@ while ($row = mysql_fetch_array($Result)) {
                         </div>
                         <div class="col-md-8 fieldcol">
                             <div class="form-group">
-                                <label = "usr" class = "control-label"><?php echo $row['EType']; ?></label>
+                                <label = "usr" class = "control-label"></label>
                             </div>
                         </div>
                     </div>
@@ -331,7 +333,7 @@ while ($row = mysql_fetch_array($Result)) {
                         </div>
                         <div class="col-md-8 fieldcol">
                             <div class="form-group">
-                                <label = "usr" class = "control-label"><?php echo $row['AvPosition']; ?></label>
+                                <label = "usr" class = "control-label"></label>
                             </div>
                         </div>
                     </div>
@@ -343,7 +345,7 @@ while ($row = mysql_fetch_array($Result)) {
                         </div>
                         <div class="col-md-8 fieldcol">
                             <div class="form-group">
-                                <label = "usr" class = "control-label"><?php echo $row['MonthlySalary']; ?></label>
+                                <label = "usr" class = "control-label"></label>
                             </div>
                         </div>
                     </div>
@@ -354,7 +356,7 @@ while ($row = mysql_fetch_array($Result)) {
                             <label = "usr" class = "control-label"> Years of Experience: </label>
                         </div>
                         <div class="col-md-8 fieldcol">
-                            <label = "usr" class = "control-label"><?php echo $row['YExperience']; ?></label>
+                            <label = "usr" class = "control-label"></label>
                         </div>
                     </div>
                     <div class="row field">
@@ -387,9 +389,6 @@ while ($row = mysql_fetch_array($Result)) {
             </div>
         </div>
     </form>
-    <?php
-}
-?>
 <!--End of Content-->
 <script type="text/javascript" src="../js/script.js"></script>
 </body>
