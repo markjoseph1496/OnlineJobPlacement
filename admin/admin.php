@@ -1,7 +1,12 @@
 <?php
 include('../connection.php');
 session_start();
-$AdminID = $_SESSION['AdminID'];
+
+if(isset($_SESSION['AdminID'])){
+    $AdminID = $_SESSION['AdminID'];
+}else{
+    header("location: ../login-admin.php");
+}
 
 $TotalStudents =
     GSecureSQL::query(
@@ -145,7 +150,34 @@ $Total = $TotalStudents[0][0];
                 <div class="navbar-collapse collapse">
                     <!-- Sign-out -->
                     <div class="signout-side">
-                        <a href="../login-admin.php?id=1" class="show-signout"><i class="fa fa-sign-out"></i></a>
+                        <a class="show-signout" data-toggle='modal' data-target='#Logout'><i class="fa fa-sign-out"></i></a>
+                    </div>
+                    <!-- Modal -->
+                    <div class="modal fade" id="Logout"
+                         role="dialog">
+                        <div class="modal-dialog" style="padding:100px">
+                            <!-- Modal content-->
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <button style = type="button" class="close" data-dismiss="modal">&times;</button>
+                                    <h4 class="modal-title">Log out?</h4>
+                                </div>
+                                <div class="modal-body">
+                                    <div class="col-md-15 fieldcol">
+                                        <label = "usr" class = "control-label">Do you want to log out?</label>
+                                        <div class="form-group">
+                                        </div>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <a href="logout.php"
+                                           class="btn btn-primary">Log out</a>
+                                        <button type="button" class="btn btn-default" data-dismiss="modal">
+                                            Cancel
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                     <!-- End Sign-out -->
                     <!-- Start Navigation List -->
@@ -154,7 +186,11 @@ $Total = $TotalStudents[0][0];
                             <a class="active" href="admin.php">Home</a>
                         </li>
                         <li>
-                            <a href="admin-reports.php">Reports</a>
+                            <a>Reports</a>
+                            <ul class="dropdown">
+                                <li><a href="admin-reports.php" class = "active">Alumni Reports</a></li>
+                                <li><a href="admin-ojtreports.php">OJT Reports</a></li>
+                            </ul>
                         </li>
                         <li>
                             <a href="admin-account.php">Account</a>
@@ -188,9 +224,13 @@ $Total = $TotalStudents[0][0];
                     <li>
                         <a class="active" href="admin.php">Home</a>
                     </li>
-                    <li>
-                        <a href="admin-reports.php">Reports</a>
-                    </li>
+                   <li>
+                            <a>Reports</a>
+                            <ul class="dropdown">
+                                <li><a href="admin-reports.php" class = "active">Alumni Reports</a></li>
+                                <li><a href="admin-ojtreports.php">OJT Reports</a></li>
+                            </ul>
+                        </li>
                     <li>
                         <a href="admin-account.php">Account</a>
                     </li>
@@ -247,7 +287,7 @@ $Total = $TotalStudents[0][0];
             </tr>
             <tr>
                 <th width='70%' class='tabletitle'>Course</th>
-                <th width='30%' class='tabletitle'>Number of Students</th>
+                <th width='30%' class='tabletitle' style = "text-align: center;">Number of Students</th>
             <tr>
             </thead>
             <tbody>
@@ -277,7 +317,7 @@ $Total = $TotalStudents[0][0];
                 <td width=70% class=tabletitle>
                     <a href='admin-field.php?id=<?php echo $CourseID; ?>'><?php echo $CourseTitle; ?></a>
                 </td>
-                <td width=30% class='tabletitle'><?php echo $TotalStudentByCourse; ?></td>
+                <td width=30% class='tabletitle' style = "text-align: center;"><?php echo $TotalStudentByCourse; ?></td>
             <tr>
                 <?php
                 }
@@ -290,7 +330,7 @@ $Total = $TotalStudents[0][0];
             </tr>
             <tr>
                 <th width='70%' class='tabletitle'></th>
-                <th width='30%' class='tabletitle'>Total Number of Students: <?php echo $Total; ?> </th>
+                <th width='30%' class='tabletitle' style = "text-align: center;">Total Number of Students: <?php echo $Total; ?> </th>
             <tr>
             </thead>
             </tfoot>

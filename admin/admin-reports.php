@@ -1,7 +1,12 @@
 <?php
 include('../connection.php');
 session_start();
-$AdminID = $_SESSION['AdminID'];
+
+if(isset($_SESSION['AdminID'])){
+    $AdminID = $_SESSION['AdminID'];
+}else{
+    header("location: ../login-admin.php");
+}
 
 $TotalStudents =
     GSecureSQL::query(
@@ -11,10 +16,6 @@ $TotalStudents =
 $Total = $TotalStudents[0][0];
 ?>
 <!doctype html>
-<!--[if IE 8 ]>
-<html class="ie ie8" lang="en"> <![endif]-->
-<!--[if (gte IE 9)|!(IE)]>
-<html lang="en" class="no-js"> <![endif]-->
 <html lang="en">
 
 <head>
@@ -146,7 +147,34 @@ $Total = $TotalStudents[0][0];
             <div class="navbar-collapse collapse">
                 <!-- Sign-out -->
                 <div class="signout-side">
-                    <a href="../login-admin.php?id=1" class="show-signout"><i class="fa fa-sign-out"></i></a>
+                    <a class="show-signout" data-toggle='modal' data-target='#Logout'><i class="fa fa-sign-out"></i></a>
+                </div>
+                <!-- Modal -->
+                <div class="modal fade" id="Logout"
+                     role="dialog">
+                    <div class="modal-dialog" style="padding:100px">
+                        <!-- Modal content-->
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <button style = type="button" class="close" data-dismiss="modal">&times;</button>
+                                <h4 class="modal-title">Log out?</h4>
+                            </div>
+                            <div class="modal-body">
+                                <div class="col-md-15 fieldcol">
+                                    <label = "usr" class = "control-label">Do you want to log out?</label>
+                                    <div class="form-group">
+                                    </div>
+                                </div>
+                                <div class="modal-footer">
+                                    <a href="logout.php"
+                                       class="btn btn-primary">Log out</a>
+                                    <button type="button" class="btn btn-default" data-dismiss="modal">
+                                        Cancel
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
                 <!-- End Sign-out -->
                 <!-- Start Navigation List -->
@@ -154,9 +182,13 @@ $Total = $TotalStudents[0][0];
                     <li>
                         <a href="admin.php">Home</a>
                     </li>
-                    <li>
-                        <a class="active" href="admin-reports.php">Reports</a>
-                    </li>
+                   <li>
+                   <a>Reports</a>
+                     <ul class="dropdown">
+                        <li><a href="admin-reports.php" class = "active">Alumni Reports</a></li>
+                        <li><a href="admin-ojtreports.php">OJT Reports</a></li>
+                    </ul>
+                </li>
                     <li>
                         <a href="admin-account.php">Account</a>
                     </li>
@@ -190,7 +222,11 @@ $Total = $TotalStudents[0][0];
                     <a href="admin.php">Home</a>
                 </li>
                 <li>
-                    <a class="active" href="admin-reports.php">Reports</a>
+                   <a>Reports</a>
+                     <ul class="dropdown">
+                        <li><a href="admin-reports.php" class = "active">Alumni Reports</a></li>
+                        <li><a href="admin-ojtreports.php">OJT Reports</a></li>
+                    </ul>
                 </li>
                 <li>
                     <a href="admin-account.php">Account</a>
@@ -241,72 +277,18 @@ $Total = $TotalStudents[0][0];
     <br><br><br>
 
     <div class="container">
-
-        <div class="header2_advertising">
-            <div class="container">
-                <div class="col-md-12">
-                    <a class="btn-system btn-mini border-btn" href="admin-ojtreports.php" style="float:right;">OJT
-                        REPORTS</a>
-                </div>
                 <div class="col-sm-4">
-                    <label><b>TOTAL NUMBER OF STUDENTS: <?php echo $Total; ?></b></label>
+                    <h4><b>TOTAL NUMBER OF STUDENTS: <?php echo $Total; ?></b></h4>
                 </div>
-                <div class="col-sm-4">
-                    <div class="form-group text-center">
-                        <label>
-                            <center><b>Month</b>
-                        </label></center>
-                        <select id="grad_month" name="grad_month" class="form-control" style="width:250px;">
-                            <option value="00">- Please select Month</option>
-                            <option value="01">January</option>
-                            <option value="02">February</option>
-                            <option value="03">March</option>
-                            <option value="04">April</option>
-                            <option value="05">May</option>
-                            <option value="06">June</option>
-                            <option value="07">July</option>
-                            <option value="08">August</option>
-                            <option value="09">September</option>
-                            <option value="10">October</option>
-                            <option value="11">November</option>
-                            <option value="12">December</option>
-                        </select>
-                    </div>
-                </div>
-                <div class="col-sm-4">
-                    <label>
-                        <center><b>Year Graduated</b>
-                    </label></center>
-                    <select id="grad_year" name="grad_year" class="form-control" style="width:250px;">
-                        <option value="00">- Please select Year Graduated</option>
-                        <option value="2015">2015</option>
-                        <option value="2014">2014</option>
-                        <option value="2013">2013</option>
-                        <option value="2012">2012</option>
-                        <option value="2011">2011</option>
-                        <option value="2010">2010</option>
-                        <option value="2009">2009</option>
-                        <option value="2008">2008</option>
-                        <option value="2007">2007</option>
-                        <option value="2006">2006</option>
-                        <option value="2005">2005</option>
-                        <option value="2004">2004</option>
-                        <option value="2003">2003</option>
-                        <option value="2002">2002</option>
-                        <option value="2001">2001</option>
-                        <option value="2000">2000</option>
-                    </select>
-                </div>
-            </div>
-        </div>
+              <BR><BR><BR>
         <table class="table segment table-hover">
             <thead>
             <tr></tr>
             <tr>
                 <th width='40%' class='tabletitle'>Course</th>
-                <th width='20%' class='tabletitle'>Number of Students</th>
-                <th width='20%' class='tabletitle'> Number of Employed</th>
-                <th width='20%' class='tabletitle'>Number of Unemployed</th>
+                <th width='20%' class='tabletitle' style = "text-align: center;">Number of Students</th>
+                <th width='20%' class='tabletitle' style = "text-align: center;"> Number of Employed</th>
+                <th width='20%' class='tabletitle' style = "text-align: center;">Number of Unemployed</th>
             <tr>
             </thead>
             <?php
@@ -359,9 +341,9 @@ $Total = $TotalStudents[0][0];
                     <td class=tabletitle>
                         <a href='admin-field.php?id=<?php echo $CourseID; ?>'><?php echo $CourseTitle; ?></a>
                     </td>
-                    <td class='tabletitle'><?php echo $TotalStudents; ?></td>
-                    <td class='tabletitle'><?php echo $TotalEmployed; ?></td>
-                    <td class='tabletitle'><?php echo $TotalUnemployed; ?></td>
+                    <td class='tabletitle'style = "text-align: center;" ><?php echo $TotalStudents; ?></td>
+                    <td class='tabletitle' style = "text-align: center;"><?php echo $TotalEmployed; ?></td>
+                    <td class='tabletitle' style = "text-align: center;"><?php echo $TotalUnemployed; ?></td>
                 <tr>
                 </tbody>
                 <?php

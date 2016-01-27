@@ -1,3 +1,14 @@
+<?php
+include('../connection.php');
+session_start();
+
+if (isset($_SESSION['AdminID'])) {
+    $AdminID = $_SESSION['AdminID'];
+} else {
+    header("location: ../login-admin.php");
+}
+
+?>
 <!doctype html>
 <html lang="en">
 
@@ -72,74 +83,145 @@
 
 <body>
 
-  <!-- Full Body Container -->
-  <div id="container">
+<!-- Full Body Container -->
+<div id="container">
 
 
-            <!-- Start Top Bar -->
-        <div class="top-bar">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-6">
-                        <!-- Start Contact Info -->
-                            <ul class="contact-details">
-                                <li class="profile-name"><i class="fa fa-hashtag"></i> <b>008-2012-0805</b></li>
-                            </ul>
-                        <!-- End Contact Info -->
-                    </div>
-                    <!-- .col-md-6 -->
-                    <div class="col-md-6">
-                        <!-- Start Social Links -->
-                            <ul class="social-list">
-                                <li class="profile-name">
-                                    <a class="bell itl-tooltip" data-placement="bottom" title="" href="#" data-original-title="Notification"><i class="fa fa-bell"></i></a>
-                                </li>
-                                <li class="profile-name">
-                                    &nbsp;
-                                </li>
-                                <li class="profile-name">
-                                    <i class="fa fa-user"></i> Hello, <b>Aira Jane Cruz</b>                               
-                                </li>
-                            </ul>
-                            <!-- End Social Links -->
-                    </div>
-                    <!-- .col-md-6 -->
+    <!-- Start Top Bar -->
+    <div class="top-bar">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <!-- Start Contact Info -->
+                    <ul class="contact-details">
+                        <li class="profile-name"><i class="fa fa-hashtag"></i> <b>008-2012-0805</b></li>
+                    </ul>
+                    <!-- End Contact Info -->
                 </div>
-                <!-- .row -->
+                <!-- .col-md-6 -->
+                <div class="col-md-6">
+                    <!-- Start Social Links -->
+                    <ul class="social-list">
+                        <li class="profile-name">
+                            <a class="bell itl-tooltip" data-placement="bottom" title="" href="#"
+                               data-original-title="Notification"><i class="fa fa-bell"></i></a>
+                        </li>
+                        <li class="profile-name">
+                            &nbsp;
+                        </li>
+                        <li class="profile-name">
+                            <i class="fa fa-user"></i> Hello, <b>Aira Jane Cruz</b>
+                        </li>
+                    </ul>
+                    <!-- End Social Links -->
+                </div>
+                <!-- .col-md-6 -->
             </div>
-            <!-- .container -->
+            <!-- .row -->
         </div>
-        <!-- .top-bar -->
-        <!-- End Top Bar -->
+        <!-- .container -->
+    </div>
+    <!-- .top-bar -->
+    <!-- End Top Bar -->
 
 
-        <!-- Start  Logo & Naviagtion  -->
-        <div class="navbar navbar-default navbar-top">
-            <div class="container">
-                <div class="navbar-header">
-                    <!-- Stat Toggle Nav Link For Mobiles -->
-                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                        <i class="fa fa-bars"></i>
-                    </button>
-                    <!-- End Toggle Nav Link For Mobiles -->
-                     <a class="navbar-brand" href="">
-                        <img src="../images/ojpms.png">
-                    </a>
-                </div>
-          <div class="navbar-collapse collapse">
-             <!-- Sign-out -->
-            <div class="signout-side">
-              <a href="../login-admin.php?id=1" class="show-signout"><i class="fa fa-sign-out"></i></a>
+    <!-- Start  Logo & Naviagtion  -->
+    <div class="navbar navbar-default navbar-top">
+        <div class="container">
+            <div class="navbar-header">
+                <!-- Stat Toggle Nav Link For Mobiles -->
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <i class="fa fa-bars"></i>
+                </button>
+                <!-- End Toggle Nav Link For Mobiles -->
+                <a class="navbar-brand" href="">
+                    <img src="../images/ojpms.png">
+                </a>
             </div>
-            <!-- End Sign-out -->
-             <!-- Start Navigation List -->
+            <div class="navbar-collapse collapse">
+                <!-- Sign-out -->
+                <div class="signout-side">
+                    <a class="show-signout" data-toggle='modal' data-target='#Logout'><i class="fa fa-sign-out"></i></a>
+                </div>
+                <!-- Modal -->
+                <div class="modal fade" id="Logout"
+                     role="dialog">
+                    <div class="modal-dialog" style="padding:100px">
+                        <!-- Modal content-->
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <button style = type="button" class="close" data-dismiss="modal">&times;</button>
+                                <h4 class="modal-title">Log out?</h4>
+                            </div>
+                            <div class="modal-body">
+                                <div class="col-md-15 fieldcol">
+                                    <label = "usr" class = "control-label">Do you want to log out?</label>
+                                    <div class="form-group">
+                                    </div>
+                                </div>
+                                <div class="modal-footer">
+                                    <a href="logout.php"
+                                       class="btn btn-primary">Log out</a>
+                                    <button type="button" class="btn btn-default" data-dismiss="modal">
+                                        Cancel
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- End Sign-out -->
+                <!-- Start Navigation List -->
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a href="admin.php">Home</a>
+                    </li>
+                    <li>
+                    <a>Reports</a>
+                        <ul class="dropdown">
+                            <li><a href="admin-reports.php" class = "active">Alumni Reports</a></li>
+                            <li><a href="admin-ojtreports.php">OJT Reports</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="admin-account.php">Account</a>
+                    </li>
+                    <li>
+                        <a href="admin-requested.php">Requested</a>
+                    </li>
+                    <li>
+                        <a>Company List</a>
+                        <ul class="dropdown">
+                            <li><a href="admin-companylist.php" class="active">Active</a></li>
+                            <li><a href="admin-company_pending.php">Pending</a></li>
+                        </ul>
+                    </li>
+                    <li><a class="active" href="admin-adviser.php">Adviser List</a>
+                    </li>
+                    <li>
+                        <a> Maintenance</a>
+                        <ul class="dropdown">
+                            <li><a class="active" href="admin-maintenance.php">Courses</a></li>
+                            <li><a href="admin-users.php">Users</a></li>
+                        </ul>
+                    </li>
+                </ul>
+                <!-- End Navigation List -->
+            </div>
+        </div>
+        <!-- Mobile Menu Start -->
+        <ul class="wpb-mobile-menu">
             <ul class="nav navbar-nav navbar-right">
                 <li>
-                    <a  href="admin.php">Home</a>
+                    <a href="admin.php">Home</a>
                 </li>
                 <li>
-                    <a  href="admin-reports.php">Reports</a>
-                </li>
+                    <a>Reports</a>
+                        <ul class="dropdown">
+                            <li><a href="admin-reports.php" class = "active">Alumni Reports</a></li>
+                            <li><a href="admin-ojtreports.php">OJT Reports</a></li>
+                        </ul>
+                    </li>
                 <li>
                     <a href="admin-account.php">Account</a>
                 </li>
@@ -147,102 +229,67 @@
                     <a href="admin-requested.php">Requested</a>
                 </li>
                 <li>
-                   <a>Company List</a>
-                        <ul class="dropdown">
-                            <li><a href="admin-companylist.php" class = "active">Active</a></li>
-                            <li><a href="admin-company_pending.php">Pending</a></li>
-                        </ul>
+                    <a>Company List</a>
+                    <ul class="dropdown">
+                        <li><a href="admin-companylist.php">Active</a></li>
+                        <li><a href="admin-company_pending.php">Pending</a></li>
+                    </ul>
                 </li>
-                 <li><a class="active" href="admin-adviser.php">Adviser List</a>
-                </li>  
-                <li>
-                        <a> Maintenance</a>
-                        <ul class="dropdown">
-                            <li><a class="active" href="admin-maintenance.php">Courses</a></li>
-                            <li><a href="admin-users.php">Users</a></li>
-                        </ul>
-                </li>
-            </ul>
-            <!-- End Navigation List -->
-        </div>
-    </div>
-        <!-- Mobile Menu Start -->
-    <ul class="wpb-mobile-menu">
-            <ul class="nav navbar-nav navbar-right">
-                <li>
-                    <a href="admin.php">Home</a>
+                <li><a class="active" href="admin-adviser.php">Adviser List</a>
                 </li>
                 <li>
-                    <a class="admin-reports.php" href="">Reports</a>
-                </li>
-                <li>
-                    <a href="admin-account.php">Account</a>
-                </li>
-                <li>
-                    <a  href="admin-requested.php">Requested</a>
-                </li>
-                <li>
-                   <a>Company List</a>
-                        <ul class="dropdown">
-                            <li><a href="admin-companylist.php">Active</a></li>
-                            <li><a href="admin-company_pending.php">Pending</a></li>
-                        </ul>
-                </li>
-                 <li><a class="active" href="admin-adviser.php">Adviser List</a>
-                </li>  
-               <li>
                     <a> Maintenance</a>
                     <ul class="dropdown">
                         <li><a href="admin-maintenance.php">Courses</a></li>
                     </ul>
                 </li>
             </ul>
-    </ul>
-    </header>
-    <!-- Mobile Menu End -->
+        </ul>
+        </header>
+        <!-- Mobile Menu End -->
 
-      </div>
-      <!-- End Header Logo & Naviagtion -->
+    </div>
+    <!-- End Header Logo & Naviagtion -->
 
     </header>
     <!-- End Header Section -->
 
-<!-- Start Page Banner -->
+    <!-- Start Page Banner -->
     <div class="page-banner" style="padding:40px 0; center #f9f9f9;">
-      <div class="container">
-        <div class="row">
-          <div class="col-md-6">
-            <h2>Adviser's List</h2>
-          </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <h2>Adviser's List</h2>
+                </div>
+            </div>
         </div>
-      </div>
     </div>
     <!-- End Page Banner -->
 
-<!--Content-->
-  <br><br><br>
-    
-     <div class = "container">
-          <div class="col-md-12 fieldcol">
-                    <a href="admin-addadviser.php" class="btnforadding" style="float:right;">
-                        <span class="fa fa-plus-square"> Add Adviser </span>
-                    </a>
-          </div>
-          &nbsp;
-          <div class = "col-md-12">
-             <table class="table segment table-hover">
+    <!--Content-->
+    <br><br><br>
+
+    <div class="container">
+        <div class="col-md-12 fieldcol">
+            <a href="admin-addadviser.php" class="btnforadding" style="float:right;">
+                <span class="fa fa-plus-square"> Add Adviser </span>
+            </a>
+        </div>
+        &nbsp;
+        <div class="col-md-12">
+            <table class="table segment table-hover">
                 <thead>
-            <tr>
-            </tr>    
                 <tr>
-                    <th width= '70%' class = 'tabletitle'>Username</th>
-                    <th width = '30%' class = 'tabletitle'>Name </th>
+                </tr>
+                <tr>
+                    <th width='70%' class='tabletitle'>Username</th>
+                    <th width='30%' class='tabletitle'>Name</th>
                 <tr>
                 </thead>
                 </tbody>
-                </table>
-          </div> 
-      </div>
+            </table>
+        </div>
+    </div>
 </body>
 <script type="text/javascript" src="../js/script.js"></script>
 </html>
