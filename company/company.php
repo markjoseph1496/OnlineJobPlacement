@@ -150,6 +150,30 @@ if (count($LOGquery1) > 0) {
     <script type="text/javascript" src="../js/jquery.nicescroll.min.js"></script>
     <script type="text/javascript" src="../js/jquery.parallax.js"></script>
     <script type="text/javascript" src="../js/jquery.slicknav.js"></script>
+
+    <!-- Notification -->
+    <link rel="stylesheet" href="../css/notif.css"/>
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $("#notificationLink").click(function () {
+                $("#notificationContainer").fadeToggle(300);
+                $("#notification_count").fadeOut("slow");
+                return false;
+            });
+
+            //Document Click
+            $(document).click(function () {
+                $("#notificationContainer").hide();
+            });
+            //Popup Click
+            $("#notificationContainer").click(function () {
+                return false
+            });
+
+        });
+    </script>
+
  <style type="text/css">
  .wrap {
     margin: 20px auto;
@@ -224,9 +248,25 @@ if (count($LOGquery1) > 0) {
                     <div class="col-md-6">
                         <!-- Start Social Links -->
                         <ul class="social-list">
-                            <li class="profile-name">
-                                <a class="bell itl-tooltip" data-placement="bottom" title="" href="#"
-                                   data-original-title="Notification"><i class="fa fa-bell"></i></a>
+                            <li id="notification_li">
+                                <span id="notification_count">3</span>
+                                <a class="bell itl-tooltip" data-placement="bottom" title="" id="notificationLink"><i
+                                        class="fa fa-bell"></i></a>
+                                <div id="notificationContainer">
+                                    <div id="notificationTitle">Notifications</div>
+                                    <div id="notificationsBody" class="notifications">
+                                        <div class="hr1" style="margin-top:40px;"></div>
+
+                                        <label><a href="">The admin granted your request.</a></label>
+                                        <div class="hr2" style="margin-top:1px; margin-bottom:1px;"></div>
+                                        <label><a href="">The admin granted your request.</a></label>
+                                        <div class="hr2" style="margin-top:1px; margin-bottom:1px;"></div>
+                                        <label><a href="">The admin granted your request.</a></label>
+                                        <div class="hr2" style="margin-top:1px; margin-bottom:1px;"></div>
+                                    </div>
+                                    <div id="notificationFooter"><a href="../notification/notification.php">See All</a>
+                                    </div>
+                                </div>
                             </li>
                             <li class="profile-name">
                                 &nbsp;

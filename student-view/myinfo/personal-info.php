@@ -151,8 +151,7 @@ $StudentName = $FirstName . " " . $LastName;
                         <ul class="social-list">
                             <li id="notification_li">
                                 <span id="notification_count">3</span>
-                                <a class="bell itl-tooltip" data-placement="bottom" title="" id="notificationLink"><i
-                                        class="fa fa-bell"></i></a>
+                                <a class="bell itl-tooltip" data-placement="bottom" title="" id="notificationLink"><i class="fa fa-bell"></i></a>
                                 <div id="notificationContainer">
                                     <div id="notificationTitle">Notifications</div>
                                     <div id="notificationsBody" class="notifications">
