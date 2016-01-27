@@ -275,48 +275,36 @@ if (isset($_SESSION['AdminID'])) {
                 <tr>
                 </tr>
                 <tr>
+                    <th width='10%' class='tabletitle'>Username</th>
                     <th width='15%' class='tabletitle'>Name</th>
                     <th width='15%' class='tabletitle'>Position</th>
-                    <th width='20%' class='tabletitle'>Department</th>
                     <th width='15%' class='tabletitle'>Address</th>
-                    <th width='10%' class='tabletitle'>Email</th>
                     <th width='15%' class='tabletitle'>Contact Number</th>
-                    <th width='10%' class='tabletitle'></th>
+                    <th width='5%' class='tabletitle'>Action</th>
                 <tr>
                 </thead>
+                <tbody>
                 <?php
-
-                $ListCourseQuery =
-                    GSecureSQL::query(
-                        "SELECT * FROM coursetbl",
-                        TRUE
-                    );
-                foreach ($ListCourseQuery as $value) {
-                    $CourseID = $value[0];
-                    $CourseTitle = $value[1];
-                    $CourseCode = $value[2];
-                    $CourseDesc = $value[3];
-                    ?>
-                    <tbody>
-                    <tr>
-                        <td width=15% class=tabletitle></td>
-                        <td width=15% class=tabletitle></td>
-                        <td width=20% class=tabletitle></td>
-                        <td width=15% class=tabletitle></td>
-                        <td width=10% class=tabletitle></td>
-                        <td width=15% class=tabletitle></td>
-                        <td width=10% class=tabletitle>
-                            <a href="admin-editcourse.php?id=<?php echo $CourseID; ?>" class='btn btn-default'> <i
-                                    class='fa fa-pencil-square-o fa-1x'></i> </a>
-                            <button class='btn btn-danger' data-toggle='modal'
-                                    data-target='#DeleteCourse<?php echo $CourseID; ?>'><i
-                                    class='fa fa-trash fa-1x'></i></button>
-                        </td>
-                    </tr>
-                    </tbody>
-                    <?php
-                }
+                    $admin_tbl =
+                        GSecureSQL::query(
+                            "SELECT Username, FirstName, LastName, Position, Department"
+                        );
                 ?>
+                <tr>
+                    <td width=10% class=tabletitle></td>
+                    <td width=15% class=tabletitle></td>
+                    <td width=15% class=tabletitle></td>
+                    <td width=15% class=tabletitle></td>
+                    <td width=15% class=tabletitle></td>
+                    <td width=5% class=tabletitle>
+                        <a href="admin-editcourse.php?id=" class='btn btn-default'> <i
+                                class='fa fa-pencil-square-o fa-1x'></i> </a>
+                        <button class='btn btn-danger' data-toggle='modal'
+                                data-target='#DeleteCourse'><i
+                                class='fa fa-trash fa-1x'></i></button>
+                    </td>
+                </tr>
+                </tbody>
             </table>
         </div>
     </div>
