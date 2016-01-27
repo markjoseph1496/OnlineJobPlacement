@@ -8,6 +8,19 @@ if(isset($_SESSION['StudentID'])){
     header("location: ../../../login-student.php");
 }
 
+$CertificationID = $_GET['id'];
+
+$certification_tbl =
+    GSecureSQL::query(
+        "SELECT * FROM certificationtbl WHERE CertificationID = ?",
+        TRUE,
+        "s",
+        $CertificationID
+    );
+
+$Certification = $certification_tbl[0][2];
+$YearTaken = $certification_tbl[0][3];
+
 ?>
 <!doctype html>
 <html lang="en">

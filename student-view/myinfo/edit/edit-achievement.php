@@ -8,6 +8,17 @@ if(isset($_SESSION['StudentID'])){
     header("location: ../../../login-student.php");
 }
 
+$AchievementID = $_GET['id'];
+$achievements_tbl =
+    GSecureSQL::query(
+        "SELECT * FROM achievementstbl WHERE AchievementID = ?",
+        TRUE,
+        "s",
+        $AchievementID
+    );
+
+$Achievements = $achievements_tbl[0][2];
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
