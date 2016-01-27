@@ -70,7 +70,7 @@ if (isset($_POST['StudentID'])) {
                 `AdminID`,
                 `Password`,
                 `SaltedPassword`
-            FROM `admintbl` WHERE `Email` = ?",
+            FROM `admintbl` WHERE `Username` = ?",
             TRUE,
             "s",
             $AdminEmail

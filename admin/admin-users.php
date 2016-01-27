@@ -288,30 +288,41 @@ if (isset($_SESSION['AdminID'])) {
                     <th width='15%' class='tabletitle'>Position</th>
                     <th width='15%' class='tabletitle'>Address</th>
                     <th width='15%' class='tabletitle'>Contact Number</th>
-                    <th width='5%' class='tabletitle'>Action</th>
+                    <th width='7%' class='tabletitle'>Action</th>
                 <tr>
                 </thead>
                 <tbody>
                 <?php
                     $admin_tbl =
                         GSecureSQL::query(
-                            "SELECT Username, FirstName, LastName, Position, Department"
+                            "SELECT Username, FirstName, LastName, Position, Address, ContactNumber FROM admintbl WHERE MainAdmin = 0",
+                            TRUE
                         );
+                foreach($admin_tbl as $value){
+                    $Username = $value[0];
+                    $FirstName = $value[1];
+                    $LastName = $value[2];
+                    $Position = $value[3];
+                    $Address = $value[4];
+                    $ContactNumber = $value[5];
+                    ?>
+                    <tr>
+                        <td width=10% class=tabletitle><?php echo $Username; ?></td>
+                        <td width=15% class=tabletitle><?php echo $FirstName . " " . $LastName; ?></td>
+                        <td width=15% class=tabletitle><?php echo $Position; ?></td>
+                        <td width=15% class=tabletitle><?php echo $Address; ?></td>
+                        <td width=15% class=tabletitle><?php echo $ContactNumber; ?></td>
+                        <td width=7% class=tabletitle>
+                            <a href="admin-editcourse.php?id=" class='btn btn-default'> <i
+                                    class='fa fa-pencil-square-o fa-1x'></i> </a>
+                            <button class='btn btn-danger' data-toggle='modal'
+                                    data-target='#DeleteCourse'><i
+                                    class='fa fa-trash fa-1x'></i></button>
+                        </td>
+                    </tr>
+                <?php
+                }
                 ?>
-                <tr>
-                    <td width=10% class=tabletitle></td>
-                    <td width=15% class=tabletitle></td>
-                    <td width=15% class=tabletitle></td>
-                    <td width=15% class=tabletitle></td>
-                    <td width=15% class=tabletitle></td>
-                    <td width=5% class=tabletitle>
-                        <a href="admin-editcourse.php?id=" class='btn btn-default'> <i
-                                class='fa fa-pencil-square-o fa-1x'></i> </a>
-                        <button class='btn btn-danger' data-toggle='modal'
-                                data-target='#DeleteCourse'><i
-                                class='fa fa-trash fa-1x'></i></button>
-                    </td>
-                </tr>
                 </tbody>
             </table>
         </div>
