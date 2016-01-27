@@ -279,7 +279,7 @@ $Total = $TotalStudents[0][0];
             </tr>
             <tr>
                 <th width='70%' class='tabletitle'>Course</th>
-                <th width='30%' class='tabletitle'>Number of Students</th>
+                <th width='30%' class='tabletitle' style = "text-align: center;">Number of Students</th>
             <tr>
             </thead>
             <tbody>
@@ -309,7 +309,7 @@ $Total = $TotalStudents[0][0];
                 <td width=70% class=tabletitle>
                     <a href='admin-field.php?id=<?php echo $CourseID; ?>'><?php echo $CourseTitle; ?></a>
                 </td>
-                <td width=30% class='tabletitle'><?php echo $TotalStudentByCourse; ?></td>
+                <td width=30% class='tabletitle' style = "text-align: center;"><?php echo $TotalStudentByCourse; ?></td>
             <tr>
                 <?php
                 }
@@ -322,7 +322,7 @@ $Total = $TotalStudents[0][0];
             </tr>
             <tr>
                 <th width='70%' class='tabletitle'></th>
-                <th width='30%' class='tabletitle'>Total Number of Students: <?php echo $Total; ?> </th>
+                <th width='30%' class='tabletitle' style = "text-align: center;">Total Number of Students: <?php echo $Total; ?> </th>
             <tr>
             </thead>
             </tfoot>
