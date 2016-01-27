@@ -195,8 +195,12 @@ $Total = $studentinfo_tbl[0][0];
                             <a href="admin.php">Home</a>
                         </li>
                         <li>
-                            <a class="active" href="admin-reports.php">Reports</a>
-                        </li>
+                            <a>Reports</a>
+                        <ul class="dropdown">
+                            <li><a href="admin-reports.php" class = "active">Alumni Reports</a></li>
+                            <li><a href="admin-ojtreports.php">OJT Reports</a></li>
+                        </ul>
+                         </li>
                         <li>
                             <a href="admin-account.php">Account</a>
                         </li>
@@ -230,7 +234,11 @@ $Total = $studentinfo_tbl[0][0];
                         <a href="admin.php">Home</a>
                     </li>
                     <li>
-                        <a class="active" href="admin-reports.php">Reports</a>
+                    <a>Reports</a>
+                        <ul class="dropdown">
+                            <li><a href="admin-reports.php" class = "active">Alumni Reports</a></li>
+                            <li><a href="admin-ojtreports.php">OJT Reports</a></li>
+                        </ul>
                     </li>
                     <li>
                         <a href="admin-account.php">Account</a>

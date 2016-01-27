@@ -186,7 +186,11 @@ $Total = $TotalStudents[0][0];
                             <a class="active" href="admin.php">Home</a>
                         </li>
                         <li>
-                            <a href="admin-reports.php">Reports</a>
+                            <a>Reports</a>
+                            <ul class="dropdown">
+                                <li><a href="admin-reports.php" class = "active">Alumni Reports</a></li>
+                                <li><a href="admin-ojtreports.php">OJT Reports</a></li>
+                            </ul>
                         </li>
                         <li>
                             <a href="admin-account.php">Account</a>
@@ -220,9 +224,13 @@ $Total = $TotalStudents[0][0];
                     <li>
                         <a class="active" href="admin.php">Home</a>
                     </li>
-                    <li>
-                        <a href="admin-reports.php">Reports</a>
-                    </li>
+                   <li>
+                            <a>Reports</a>
+                            <ul class="dropdown">
+                                <li><a href="admin-reports.php" class = "active">Alumni Reports</a></li>
+                                <li><a href="admin-ojtreports.php">OJT Reports</a></li>
+                            </ul>
+                        </li>
                     <li>
                         <a href="admin-account.php">Account</a>
                     </li>

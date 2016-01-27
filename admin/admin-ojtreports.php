@@ -271,14 +271,18 @@ if (isset($_SESSION['AdminID'])) {
     <div class="container">
         <div class="header2_advertising">
             <div class="container">
-
                 <div class="col-sm-4">
                     <h4 style = "margin-top:20px;">TOTAL NUMBER OF STUDENTS: </b></h4>
                 </div>
                 <div class="col-sm-3">
-                    <div class="form-group text-center">
-                        <input type="text" placeholder = "Enter Student ID" class="form-control" style = "width: 200px; margin-top:20px;">
-                    </div>
+                    <label>
+                        <center><b>Filter by: </b>
+                    </label></center>
+                    <select class="form-control" style="width:250px;">
+                        <option value="00">- Status</option>
+                        <option value="asd">Active</option>
+                        <option value="ada">Inactive</option>
+                    </select>
                 </div>
                 <div class="col-sm-3">
                     <label>
@@ -297,7 +301,7 @@ if (isset($_SESSION['AdminID'])) {
                 </div>
             </div>
         </div>
-
+        <br><br>
         <table class="Applicants table" width="100%" cellpadding="0">
             <thead>
             <tr></tr>

@@ -286,7 +286,11 @@ $ContactNumber = $admin_tbl[0][10];
                             <a href="admin.php">Home</a>
                         </li>
                         <li>
-                            <a href="admin-reports.php">Reports</a>
+                        <a>Reports</a>
+                        <ul class="dropdown">
+                            <li><a href="admin-reports.php" class = "active">Alumni Reports</a></li>
+                            <li><a href="admin-ojtreports.php">OJT Reports</a></li>
+                        </ul>
                         </li>
                         <li>
                             <a class="active" href="admin-account.php">Account</a>
@@ -321,7 +325,11 @@ $ContactNumber = $admin_tbl[0][10];
                         <a href="admin.php">Home</a>
                     </li>
                     <li>
-                        <a href="admin-reports.php">Reports</a>
+                    <a>Reports</a>
+                        <ul class="dropdown">
+                            <li><a href="admin-reports.php" class = "active">Alumni Reports</a></li>
+                            <li><a href="admin-ojtreports.php">OJT Reports</a></li>
+                        </ul>
                     </li>
                     <li>
                         <a class="active" href="admin-account.php">Account</a>
