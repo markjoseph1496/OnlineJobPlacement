@@ -1,6 +1,13 @@
 <?php
 include('../connection.php');
 session_start();
+
+if (isset($_SESSION['AdminID'])) {
+    $AdminID = $_SESSION['AdminID'];
+} else {
+    header("location: ../login-admin.php");
+}
+
 ?>
 <!doctype html>
 <html lang="en">
@@ -134,7 +141,34 @@ session_start();
             <div class="navbar-collapse collapse">
                 <!-- Sign-out -->
                 <div class="signout-side">
-                    <a href="../login-admin.php?id=1" class="show-signout"><i class="fa fa-sign-out"></i></a>
+                    <a class="show-signout" data-toggle='modal' data-target='#Logout'><i class="fa fa-sign-out"></i></a>
+                </div>
+                <!-- Modal -->
+                <div class="modal fade" id="Logout"
+                     role="dialog">
+                    <div class="modal-dialog" style="padding:100px">
+                        <!-- Modal content-->
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <button style=type="button" class="close" data-dismiss="modal">&times;</button>
+                                <h4 class="modal-title">Log out?</h4>
+                            </div>
+                            <div class="modal-body">
+                                <div class="col-md-15 fieldcol">
+                                    <label = "usr" class = "control-label">Do you want to log out?</label>
+                                    <div class="form-group">
+                                    </div>
+                                </div>
+                                <div class="modal-footer">
+                                    <a href="logout.php"
+                                       class="btn btn-primary">Log out</a>
+                                    <button type="button" class="btn btn-default" data-dismiss="modal">
+                                        Cancel
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
                 <!-- End Sign-out -->
                 <!-- Start Navigation List -->
@@ -154,13 +188,13 @@ session_start();
                     <li>
                         <a>Company List</a>
                         <ul class="dropdown">
-                            <li><a href="admin-companylist.php" class = "active">Active</a></li>
+                            <li><a href="admin-companylist.php" class="active">Active</a></li>
                             <li><a href="admin-company_pending.php">Pending</a></li>
                         </ul>
                     </li>
                     <li><a href="admin-adviser.php">Adviser List</a>
                     </li>
-                     <li>
+                    <li>
                         <a> Maintenance</a>
                         <ul class="dropdown">
                             <li><a class="active" href="admin-maintenance.php">Courses</a></li>
@@ -187,19 +221,19 @@ session_start();
                     <a href="admin-requested.php">Requested</a>
                 </li>
                 <li>
-                   <a>Company List</a>
-                        <ul class="dropdown">
-                            <li><a href="admin-companylist.php">Active</a></li>
-                            <li><a href="admin-company_pending.php">Pending</a></li>
-                        </ul>
+                    <a>Company List</a>
+                    <ul class="dropdown">
+                        <li><a href="admin-companylist.php">Active</a></li>
+                        <li><a href="admin-company_pending.php">Pending</a></li>
+                    </ul>
                 </li>
                 <li><a href="admin-adviser.php">Adviser List</a>
                 </li>
                 <li>
                     <a> Maintenance</a>
                     <ul class="dropdown">
-                       <ul class="dropdown">
-                            <li><a  href="admin-maintenance.php">Courses</a></li>
+                        <ul class="dropdown">
+                            <li><a href="admin-maintenance.php">Courses</a></li>
                             <li><a class="active" href="admin-users.php">Users</a></li>
                         </ul>
                     </ul>
@@ -232,106 +266,106 @@ session_start();
 
     <div class="container">
         <div class="col-md-12">
-        <div class="row field">
-            <div class="col-md-2 fieldcol">
-                <label>Username:</label>
-            </div>
-            <div class="col-md-4 fieldcol">
-                <div class="form-group">
-                    <input type="text" name="Email" id="Email" class="form-control" >
+            <div class="row field">
+                <div class="col-md-2 fieldcol">
+                    <label>Username:</label>
+                </div>
+                <div class="col-md-4 fieldcol">
+                    <div class="form-group">
+                        <input type="text" name="Email" id="Email" class="form-control">
+                    </div>
                 </div>
             </div>
-        </div>
-        <div class="row field">
-            <div class="col-md-2 fieldcol">
-                <label>Password:</label>
-            </div>
-            <div class="col-md-4 fieldcol">
-                <div class="form-group">
-                    <input type="password" name="Password" id="Password" class="form-control" >
+            <div class="row field">
+                <div class="col-md-2 fieldcol">
+                    <label>Password:</label>
+                </div>
+                <div class="col-md-4 fieldcol">
+                    <div class="form-group">
+                        <input type="password" name="Password" id="Password" class="form-control">
+                    </div>
                 </div>
             </div>
-        </div>
-        <div class="row field">
-            <div class="col-md-2 fieldcol">
-                <label>First Name:</label>
-            </div>
-            <div class="col-md-4 fieldcol">
-                <div class="form-group">
-                   <input type="text" name="FirstName" id="FirstName" class="form-control">
+            <div class="row field">
+                <div class="col-md-2 fieldcol">
+                    <label>First Name:</label>
+                </div>
+                <div class="col-md-4 fieldcol">
+                    <div class="form-group">
+                        <input type="text" name="FirstName" id="FirstName" class="form-control">
+                    </div>
                 </div>
             </div>
-        </div>
-        <div class="row field">
-            <div class="col-md-2 fieldcol">
-                <label>MiddleName:</label>
-            </div>
-            <div class="col-md-4 fieldcol">
-                <div class="form-group">
-                    <input type="text" name="MiddleName" id="MiddleName" class="form-control">
+            <div class="row field">
+                <div class="col-md-2 fieldcol">
+                    <label>MiddleName:</label>
+                </div>
+                <div class="col-md-4 fieldcol">
+                    <div class="form-group">
+                        <input type="text" name="MiddleName" id="MiddleName" class="form-control">
+                    </div>
                 </div>
             </div>
-        </div>
-         <div class="row field">
-            <div class="col-md-2 fieldcol">
-                <label>Last Name: </label>
-            </div>
-            <div class="col-md-4 fieldcol">
-                <div class="form-group">
-                    <input type="text" name="LastName" id="LastName" class="form-control">
+            <div class="row field">
+                <div class="col-md-2 fieldcol">
+                    <label>Last Name: </label>
+                </div>
+                <div class="col-md-4 fieldcol">
+                    <div class="form-group">
+                        <input type="text" name="LastName" id="LastName" class="form-control">
+                    </div>
                 </div>
             </div>
-        </div>
-        <div class="row field">
-            <div class="col-md-2 fieldcol">
-                <label>Position:</label>
-            </div>
-            <div class="col-md-4 fieldcol">
-                <div class="form-group">
-                    <input type="text" name="Position" id="Position" class="form-control">
+            <div class="row field">
+                <div class="col-md-2 fieldcol">
+                    <label>Position:</label>
+                </div>
+                <div class="col-md-4 fieldcol">
+                    <div class="form-group">
+                        <input type="text" name="Position" id="Position" class="form-control">
+                    </div>
                 </div>
             </div>
-        </div>
-        <div class="row field">
-            <div class="col-md-2 fieldcol">
-                <label>Department:</label>
-            </div>
-            <div class="col-md-4 fieldcol">
-                <div class="form-group">
-                    <input type="text" name="Department" id="Department" class="form-control">
+            <div class="row field">
+                <div class="col-md-2 fieldcol">
+                    <label>Department:</label>
+                </div>
+                <div class="col-md-4 fieldcol">
+                    <div class="form-group">
+                        <input type="text" name="Department" id="Department" class="form-control">
+                    </div>
                 </div>
             </div>
-        </div>
-        <div class="row field">
+            <div class="row field">
 
-            <div class="col-md-2 fieldcol">
-                <label>Address:</label>
-            </div>
-            <div class="col-md-4 fieldcol">
-                <div class="form-group">
-                    <input type="text" name="Address" id="Address" class="form-control">
+                <div class="col-md-2 fieldcol">
+                    <label>Address:</label>
+                </div>
+                <div class="col-md-4 fieldcol">
+                    <div class="form-group">
+                        <input type="text" name="Address" id="Address" class="form-control">
+                    </div>
                 </div>
             </div>
-        </div>
-        <div class="row field">
-            <div class="col-md-2 fieldcol">
-                <label>Contact Number:</label>
-            </div>
-            <div class="col-md-4 fieldcol">
-                <div class="form-group">
-                    <input type="text" name="ContactNumber" id="ContactNumber" class="form-control">
+            <div class="row field">
+                <div class="col-md-2 fieldcol">
+                    <label>Contact Number:</label>
+                </div>
+                <div class="col-md-4 fieldcol">
+                    <div class="form-group">
+                        <input type="text" name="ContactNumber" id="ContactNumber" class="form-control">
+                    </div>
                 </div>
             </div>
-        </div>
         </div>
         &nbsp;
-    <div class="hr5" style="margin-top:35px;margin-bottom:40px;"></div>
-    <div class="field">
-                    <div class="text-center">
-                        <button type="submit" class="btn-system btn-large">Save</button>
-                        <button type="submit" class="btn-system btn-large">Cancel</button>
-                    </div>           
-     </div>
+        <div class="hr5" style="margin-top:35px;margin-bottom:40px;"></div>
+        <div class="field">
+            <div class="text-center">
+                <button type="submit" class="btn-system btn-large">Save</button>
+                <button type="submit" class="btn-system btn-large">Cancel</button>
+            </div>
+        </div>
     </div>
 </body>
 <script type="text/javascript" src="../js/script.js"></script>
