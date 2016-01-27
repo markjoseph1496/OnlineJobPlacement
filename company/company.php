@@ -150,6 +150,56 @@ if (count($LOGquery1) > 0) {
     <script type="text/javascript" src="../js/jquery.nicescroll.min.js"></script>
     <script type="text/javascript" src="../js/jquery.parallax.js"></script>
     <script type="text/javascript" src="../js/jquery.slicknav.js"></script>
+ <style type="text/css">
+ .wrap {
+    margin: 20px auto;
+    display: block;
+    width: 350px;
+    height: 310px;
+    padding:30px;
+    
+    /* general */
+    border: 1px solid;
+
+    
+    /* curved corners */
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    border-radius: 5px; /* standard version at last */
+    
+    /* drop shadows. */
+    -moz-box-shadow: 0px 0px 5px rgba(0,0,0,0.45), 0px 1px 2px rgba(0,0,0,0.2);
+    -webkit-box-shadow: 0px 0px 5px rgba(0,0,0,0.45), 0px 1px 2px rgba(0,0,0,0.2);
+    box-shadow: 0px 0px 5px rgba(0,0,0,0.45), 0px 1px 2px rgba(0,0,0,0.2); /* standard version at last */
+}
+
+/* ----------------------------------------------
+-- YELLOW BORDER
+---------------------------------------------- */
+
+.yellow {
+    /* general */
+    border-color: #fed136;
+    
+    /* background color (for non css3 browsers) and gradient */
+    background-color: #fed136;
+    background: -moz-linear-gradient(top,
+        #fff,
+        #fff 50%,
+        #fff
+    );
+    background: -webkit-gradient(linear, left top, left bottom,
+        from(#fff),
+        color-stop(0.5, #fff),
+        to(#fff)
+    );
+    
+    /* linear gradient for IE 5.5+ */
+    filter: progid:DXImageTransform.Microsoft.gradient(StartColorStr='#FFFFFF', EndColorStr='#fff');
+
+}
+
+ </style>   
 </head>
 <body>
 
@@ -222,7 +272,7 @@ if (count($LOGquery1) > 0) {
                             <!-- Modal content-->
                             <div class="modal-content">
                                 <div class="modal-header">
-                                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                    <button style = type="button" class="close" data-dismiss="modal">&times;</button>
                                     <h4 class="modal-title">Log out?</h4>
                                 </div>
                                 <div class="modal-body">
@@ -319,9 +369,16 @@ if (count($LOGquery1) > 0) {
 <!--Content-->
 <br><br><br>
 <div id="RequestLOG" class="container">
-    <button name="RequestLists" data-toggle='modal'
+    
+    <div class="wrap yellow ">
+        <BR>
+        <h4 style = "text-align:center;"> You are not able to access the list of graduates. You may request it to the administrator.  </h4> <br>
+        <button style="width: 290px;" class="btn-system btn-large border-btn" name="RequestLists" data-toggle='modal'
             data-target='#Request'>Request List of Graduates.
     </button>
+      
+    </div>
+
     <!-- Modal -->
     <div class="modal fade" id="Request"
          role="dialog">
