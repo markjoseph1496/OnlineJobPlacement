@@ -465,7 +465,7 @@ $StudentName = $FirstName . " " . $LastName;
     <form id="UploadPicture" name="UploadPicture" method="POST" action="upload.php" enctype="multipart/form-data">
         <div class="col-md-5">
             <div class="image-border">
-                <img src="<?php echo $ProfileImage; ?>">
+                <img src="<?php echo $ProfileImage; ?>" class="img-responsive" style="width:100%; height:100%;">
             </div>
             <br><br>
             <label class="control-label">Select Image</label>
