@@ -229,7 +229,7 @@ $cLastName = $companyinfo_tbl[0][2];
                 <li>
                     <a>Position</a>
                     <ul class="dropdown">
-                        <li><a href="company-positionlist.php">Position List</a></li>
+                        <li><a href="company-positionlist.php" class = "active">Position List</a></li>
                         <li><a href="company-createposition.php">Create Position</a></li>
                     </ul>
                 </li>
@@ -239,9 +239,9 @@ $cLastName = $companyinfo_tbl[0][2];
                 <li><a href="company-settings.php">Settings</a>
                 </li>
                <li>
-                    <a href="company-applicants.php">Applicant List</a>
+                    <a>Applicant List</a>
                     <ul class="dropdown">
-                        <li><a href="company-pendingapplicants.php">Pending</a></li>
+                        <li><a href="company-pendingapplicants.php" class = "active">Pending</a></li>
                         <li><a href="company-acceptedapplicants.php">Accepted</a></li>
                     </ul>
                 </li>
@@ -257,7 +257,7 @@ $cLastName = $companyinfo_tbl[0][2];
                 <li>
                     <a>Position</a>
                     <ul class="dropdown">
-                        <li><a href="company-positionlist.php">Position List</a></li>
+                        <li><a href="company-positionlist.php" class = "active">Position List</a></li>
                         <li><a href="company-createposition.php">Create Position</a></li>
                     </ul>
                 </li>
@@ -267,9 +267,9 @@ $cLastName = $companyinfo_tbl[0][2];
                 <li><a href="company-settings.php">Settings</a>
                 </li>
                 <li>
-                    <a  href="company-applicants.php">Applicant List</a>
+                    <a >Applicant List</a>
                     <ul class="dropdown">
-                        <li><a href="company-pendingapplicants.php">Pending</a></li>
+                        <li><a href="company-pendingapplicants.php" class = "active">Pending</a></li>
                         <li><a href="company-acceptedapplicants.php">Accepted</a></li>
                     </ul>
                 </li>
