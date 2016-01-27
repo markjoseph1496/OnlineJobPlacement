@@ -301,7 +301,7 @@ if (count($LOGquery1) > 0) {
                         <li>
                             <a>Position</a>
                             <ul class="dropdown">
-                                <li><a href="company-positionlist.php">Position List</a></li>
+                                <li><a href="company-positionlist.php" class = "active">Position List</a></li>
                                 <li><a href="company-createposition.php">Create Position</a></li>
                             </ul>
                         </li>
@@ -311,9 +311,9 @@ if (count($LOGquery1) > 0) {
                         <li><a href="company-settings.php">Settings</a>
                         </li>
                         <li>
-                            <a href="company-applicants.php">Applicant List</a>
+                            <a>Applicant List</a>
                             <ul class="dropdown">
-                                <li><a href="company-pendingapplicants.php">Pending</a></li>
+                                <li><a href="company-pendingapplicants.php" class = "active">Pending</a></li>
                                 <li><a href="company-acceptedapplicants.php">Accepted</a></li>
                             </ul>
                         </li>
@@ -329,7 +329,7 @@ if (count($LOGquery1) > 0) {
                 <li>
                     <a>Position</a>
                     <ul class="dropdown">
-                        <li><a href="company-positionlist.php">Position List</a></li>
+                        <li><a href="company-positionlist.php" class = "active">Position List</a></li>
                         <li><a href="company-createposition.php">Create Position</a></li>
                     </ul>
                 </li>
@@ -339,9 +339,9 @@ if (count($LOGquery1) > 0) {
                 <li><a href="company-settings.php">Settings</a>
                 </li>
                 <li>
-                    <a href="company-applicants.php">Applicant List</a>
+                    <a >Applicant List</a>
                     <ul class="dropdown">
-                        <li><a href="company-pendingapplicants.php">Pending</a></li>
+                        <li><a href="company-pendingapplicants.php" class = "active">Pending</a></li>
                         <li><a href="company-acceptedapplicants.php">Accepted</a></li>
                     </ul>
                 </li>
@@ -436,9 +436,9 @@ if (count($LOGquery1) > 0) {
     </div>
 </div>
 
-<div id="Requested" class="container">
-    <label = "usr" class = "control-label">You have already requested the list of graduates. Please wait for the admin
-    to approve your request.</label>
+<div id="Requested" class="wrap yellow ">
+    <h4 = "usr" class = "control-label">You have already requested the list of graduates. Please wait for the admin
+    to approve your request.</h4>
 </div>
 
 <div id="Content" class="container">
