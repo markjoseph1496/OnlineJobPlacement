@@ -2,7 +2,11 @@
 include('../../connection.php');
 session_start();
 
-$StudentID = $_SESSION['StudentID'];
+if(isset($_SESSION['StudentID'])){
+    $StudentID = $_SESSION['StudentID'];
+}else{
+    header("location: ../../login-student.php");
+}
 
 if (isset($_GET['btnSaveInfo'])) {
     $FirstName = $_GET['FirstName'];

@@ -2,19 +2,13 @@
 include('../../../connection.php');
 session_start();
 
-$EditSchoolID="";
-
-if(is_null($_SESSION['StudentID'])){
-    echo "
-        <script type='text/javascript'>
-        location.href='../../../../login-student.php';
-        </script>
-        ";
-}
-else{
-    $EditSchoolID = $_GET['id'];
+if(isset($_SESSION['StudentID'])){
+    $StudentID = $_SESSION['StudentID'];
+}else{
+    header("location: ../../../login-student.php");
 }
 
+$EditSchoolID = $_GET['id'];
 $school_tbl =
     GSecureSQL::query(
         "SELECT * FROM schooltbl WHERE SchoolID = ?",
@@ -306,7 +300,7 @@ $school_tbl =
                 <div class="field">
                     <div class="text-center">
                         <button type="submit" class="btn-system btn-large" name="btnSave">Save</button>
-                        <button type="cancel" class="btn-system btn-large btn-black">Cancel</button>
+                        <a href="../education.php" class="btn-system btn-large btn-black">Cancel</a>
                     </div>
                 </div>
             </div>

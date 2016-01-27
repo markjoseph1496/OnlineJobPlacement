@@ -2,13 +2,12 @@
 include('../../../connection.php');
 session_start();
 
-if(is_null($_SESSION['StudentID'])){
-    echo "
-        <script type='text/javascript'>
-        location.href='../../../../login-student.php';
-        </script>
-        ";
+if(isset($_SESSION['StudentID'])){
+    $StudentID = $_SESSION['StudentID'];
+}else{
+    header("location: ../../../login-student.php");
 }
+
 ?>
 <!DOCTYPE html>
 
@@ -220,7 +219,7 @@ if(is_null($_SESSION['StudentID'])){
                 <div class="hr5" style="margin-top:35px;margin-bottom:40px;"></div>
                 <div class="text-center">
                     <button type="submit" class="btn-system btn-large border-btn">Add</button>
-                    <button type="cancel" class="btn-system btn-large btn-black">Cancel</button>
+                    <a href="../certifications.php" class="btn-system btn-large btn-black">Cancel</a>
                 </div>
             </div>
         </div>

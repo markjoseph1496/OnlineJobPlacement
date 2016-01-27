@@ -1,22 +1,14 @@
-<?php 
+<?php
 include('../../../connection.php');
 session_start();
 
-$CertificationID = $_GET['id'];
-
-$certification_tbl =
-    GSecureSQL::query(
-        "SELECT * FROM certificationtbl WHERE CertificationID = ?",
-        TRUE,
-        "s",
-        $CertificationID
-    );
-
-    $Certification = $certification_tbl[0][2];
-    $YearTaken = $certification_tbl[0][3];
+if(isset($_SESSION['StudentID'])){
+    $StudentID = $_SESSION['StudentID'];
+}else{
+    header("location: ../../../login-student.php");
+}
 
 ?>
-
 <!doctype html>
 <html lang="en">
 
@@ -235,7 +227,7 @@ $certification_tbl =
                 <div class="field">
                     <div class="text-center">
                         <button type="submit" class="btn-system btn-large" name="btnSave">Save</button>
-                        <button type="cancel" class="btn-system btn-large btn-black">Cancel</button>
+                        <a href="../certifications.php" class="btn-system btn-large btn-black">Cancel</a>
                     </div>
                 </div>
             </div>

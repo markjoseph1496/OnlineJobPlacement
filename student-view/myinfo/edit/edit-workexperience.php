@@ -1,3 +1,13 @@
+<?php
+include("../../../connection.php");
+session_start();
+
+if (isset($_SESSION['StudentID'])) {
+    $StudentID = $_SESSION['StudentID'];
+} else {
+    header("location: ../../../login-student.php");
+}
+?>
 <!doctype html>
 <html lang="en">
 
@@ -17,17 +27,17 @@
     <meta name="author" content="iThemesLab">
 
     <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="../../../css/bootstrap.min.css" />
+    <link rel="stylesheet" href="../../../css/bootstrap.min.css"/>
 
     <!-- BootstrapValidator CSS -->
-    <link rel="stylesheet" href="../../../css/bootstrapValidator.min.css" />
+    <link rel="stylesheet" href="../../../css/bootstrapValidator.min.css"/>
 
     <!-- jQuery and Bootstrap JS -->
     <script type="text/javascript" src="../../../js/jquery.min.js"></script>
-    <script type="text/javascript" src="../../../js/bootstrap.min.js" ></script>
+    <script type="text/javascript" src="../../../js/bootstrap.min.js"></script>
 
     <!-- BootstrapValidator -->
-    <script type="text/javascript" src="../../../js/bootstrapValidator.min.js" ></script>
+    <script type="text/javascript" src="../../../js/bootstrapValidator.min.js"></script>
 
     <!-- Font Awesome CSS -->
     <link rel="stylesheet" type="text/css" href="../../../css/font-awesome.min.css" media="screen">
@@ -74,249 +84,249 @@
 </head>
 
 <body>
-    <div id="container">
-        <!-- Start Header Section -->
-        <div class="hidden-header"></div>
-        <header class="clearfix">
+<div id="container">
+    <!-- Start Header Section -->
+    <div class="hidden-header"></div>
+    <header class="clearfix">
         <!-- Start Top Bar -->
-            <div class="top-bar">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-md-7">
-                            <!-- Start Contact Info -->
-                            <ul class="profile-name">
-                                <li><i class="fa fa-hashtag"></i> <b>008-2012-0805</b></li>
-                            </ul>
-                            <!-- End Contact Info -->
-                        </div>
-                        <!-- .col-md-6 -->
-                        <div class="col-md-5">
-                            <!-- Start Social Links -->
-                            <ul class="social-list">
-                                <li class="profile-name">
-                                    <a class="bell itl-tooltip" data-placement="bottom" title="" href="#"
-                                       data-original-title="Notification"><i class="fa fa-bell"></i></a>
-                                </li>
-                                <li class="profile-name">
-                                    &nbsp;
-                                </li>
-                                <li class="profile-name">
-                                    <i class="fa fa-user"></i> Hello, <b>Aira Jane Cruz</b>
-                                </li>
-                            </ul>
-                            <!-- End Social Links -->
-                        </div>
-                        <!-- .col-md-6 -->
-                    </div>
-                    <!-- .row -->
-                </div>
-                <!-- .container -->
-            </div>
-            <!-- .top-bar -->
-            <!-- End Top Bar -->
-
-            <!-- Start  Logo & Naviagtion  -->
-            <div class="navbar navbar-default navbar-top">
-                <div class="container">
-                    <div class="navbar-header">
-                        <!-- Stat Toggle Nav Link For Mobiles -->
-                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                            <i class="fa fa-bars"></i>
-                        </button>
-                        <!-- End Toggle Nav Link For Mobiles -->
-                        <a class="navbar-brand" href="">
-                            <img src="../../../images/ojpms.png">
-                        </a>
-                    </div>
-                    <div class="navbar-collapse collapse">
-                        <!-- Start Navigation List -->
-                        <ul class="nav navbar-nav navbar-right">                            
-                            <a href="../../../login-student.php?id=1" class="line-height"><i class="fa fa-sign-out"></i></a>                           
-                        </ul>
-                        <!-- End Navigation List -->
-                    </div>
-                </div>
-                <!-- Mobile Menu Start -->
-                <ul class="wpb-mobile-menu">
-                    <li>
-                        <a href="../../../login-student.php?id=1"><i class="fa fa-sign-out"></i> Sign Out</a>
-                    </li>
-                </ul>
-                <!-- Mobile Menu End -->
-            </div>
-        </header>
-
-        <div class="page-banner no-subtitle">
+        <div class="top-bar">
             <div class="container">
                 <div class="row">
-                    <div class="col-md-6">
-                        <h2>Work Experience</h2>
-                    </div>
-                    <div class="col-md-6">
-                        <ul class="breadcrumbs">
-                            <li><a href="#"></a></li>
-                            <li>Edit Work Experience</li>
+                    <div class="col-md-7">
+                        <!-- Start Contact Info -->
+                        <ul class="profile-name">
+                            <li><i class="fa fa-hashtag"></i> <b>008-2012-0805</b></li>
                         </ul>
+                        <!-- End Contact Info -->
                     </div>
+                    <!-- .col-md-6 -->
+                    <div class="col-md-5">
+                        <!-- Start Social Links -->
+                        <ul class="social-list">
+                            <li class="profile-name">
+                                <a class="bell itl-tooltip" data-placement="bottom" title="" href="#"
+                                   data-original-title="Notification"><i class="fa fa-bell"></i></a>
+                            </li>
+                            <li class="profile-name">
+                                &nbsp;
+                            </li>
+                            <li class="profile-name">
+                                <i class="fa fa-user"></i> Hello, <b>Aira Jane Cruz</b>
+                            </li>
+                        </ul>
+                        <!-- End Social Links -->
+                    </div>
+                    <!-- .col-md-6 -->
+                </div>
+                <!-- .row -->
+            </div>
+            <!-- .container -->
+        </div>
+        <!-- .top-bar -->
+        <!-- End Top Bar -->
+
+        <!-- Start  Logo & Naviagtion  -->
+        <div class="navbar navbar-default navbar-top">
+            <div class="container">
+                <div class="navbar-header">
+                    <!-- Stat Toggle Nav Link For Mobiles -->
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <i class="fa fa-bars"></i>
+                    </button>
+                    <!-- End Toggle Nav Link For Mobiles -->
+                    <a class="navbar-brand" href="">
+                        <img src="../../../images/ojpms.png">
+                    </a>
+                </div>
+                <div class="navbar-collapse collapse">
+                    <!-- Start Navigation List -->
+                    <ul class="nav navbar-nav navbar-right">
+                        <a href="../../../login-student.php?id=1" class="line-height"><i class="fa fa-sign-out"></i></a>
+                    </ul>
+                    <!-- End Navigation List -->
                 </div>
             </div>
+            <!-- Mobile Menu Start -->
+            <ul class="wpb-mobile-menu">
+                <li>
+                    <a href="../../../login-student.php?id=1"><i class="fa fa-sign-out"></i> Sign Out</a>
+                </li>
+            </ul>
+            <!-- Mobile Menu End -->
         </div>
-        <!-- End Page Banner -->
+    </header>
 
-        <!-- Start Content -->
-        <div id="content">
-            <div class="container">
-                <div class="row sidebar-page">
-                    <!-- Page Content -->
-                    <div class="col-md-9 page-content">
-                        <div class="row">
-                            <div class="col-md-6">
-                                <div class="form-group">
-                                    <label>Company Name <span>(*)</span></label>
-                                    <input type="text" class="form-control" id="" name="">
-                                </div>
-                            </div>
-                            <div class="col-md-6">
-                                <div class="form-group">
-                                    <label>Company Website</label>
-                                    <input type="text" class="form-control" id="" name="">
-                                </div>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-md-6">
-                                <div class="form-group">
-                                    <label>Industry <span>(*)</span></label>
-                                    <select id="" name="" class="form-control" style="width:100%; height:34px;">
-                                        <option value></option>
-                                        <option value=""></option>
-                                        <option value=""></option>
-                                    </select>
-                                </div>
-                            </div>
-                            <div class="col-md-6">
-                                <div class="form-group">
-                                    <label>Duration</label><br>
-                                    <label><input type="checkbox" name="" value=""> Currently Work Here</label>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-md-3">
-                                <div class="form-group">
-                                    <label>From <span>(*)</span></label>
-                                    <select id="" name="" class="form-control" style="width:100%; height:34px;">
-                                        <option value></option>
-                                        <option value=""></option>
-                                        <option value=""></option>
-                                    </select>
-                                </div>
-                            </div>
-                            <div class="col-md-3">
-                                <div class="form-group">
-                                    <label>&nbsp;</label>
-                                    <select id="" name="" class="form-control" style="width:100%; height:34px;">
-                                        <option value></option>
-                                        <option value=""></option>
-                                        <option value=""></option>
-                                    </select>
-                                </div>
-                            </div>
-                            <div class="col-md-3">
-                                <div class="form-group">
-                                    <label>To <span>(*)</span></label>
-                                    <select id="" name="" class="form-control" style="width:100%; height:34px;">
-                                        <option value></option>
-                                        <option value=""></option>
-                                        <option value=""></option>
-                                    </select>
-                                </div>
-                            </div>
-                            <div class="col-md-3 fieldcol">
-                                <div class="form-group">
-                                    <label>&nbsp;</label>
-                                    <select id="" name="" class="form-control" style="width:100%; height:34px;">
-                                        <option value></option>
-                                        <option value=""></option>
-                                        <option value=""></option>
-                                    </select>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-md-6">
-                                <div class="form-group">
-                                    <label>Position Title <span>(*)</span></label>
-                                    <select id="" name="" class="form-control" style="width:100%; height:34px;">
-                                        <option value></option>
-                                        <option value=""></option>
-                                        <option value=""></option>
-                                    </select>
-                                </div>
-                            </div>
-                            <div class="col-md-6">
-                                <div class="form-group">
-                                    <label>Position Level <span>(*)</span></label>
-                                    <input type="text" class="form-control" id="" name="">
-                                </div>
-                            </div>
-                        </div>
-                        <div class="row field">
-                            <div class="col-md-6 fieldcol">
-                                <div class="form-group">
-                                    <label>Specialization <span>(*)</span></label>
-                                    <input type="text" class="form-control" id="" name="">
-                                </div>
-                            </div>
-                            <div class="col-md-3 fieldcol">
-                                <div class="form-group">
-                                    <label>Monthly Salary</label><br>
-                                    <select id="" name="" class="form-control" style="width:100%; height:34px;">
-                                        <option value></option>
-                                        <option value=""></option>
-                                        <option value=""></option>
-                                    </select>
-                                </div>
-                            </div>
-                            <div class="col-md-3 fieldcol">
-                                <div class="form-group">
-                                    <label>&nbsp;</label>
-                                    <input type="text" class="form-control" id="" name="">
-                                </div>
-                            </div>
-                        </div>
-                        <div class="row field">
-                            <div class="col-md-12 fieldcol">
-                                <div class="form-group">
-                                    <label>Nature of Work</label><br>
-                                    <textarea class="form-control" id="" name="" rows="5"></textarea>
-                                    <span class="counter">150 characters remaining.</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- End Page Content -->
-
-                    <!--Sidebar-->
-                    <div class="col-md-3 sidebar left-sidebar">
-                        <!-- Search Widget -->
-                        <div class="call-action call-action-boxed call-action-style2 clearfix">
-                            (*) Note: Required fields.
-                        </div>
-                    </div>
-                    <!--End sidebar-->
+    <div class="page-banner no-subtitle">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <h2>Work Experience</h2>
                 </div>
-                <div class="hr5" style="margin-top:35px;margin-bottom:40px;"></div>
-                <div class="field">
-                    <div class="text-center">
-                        <button type="submit" class="btn-system btn-large" name="btnSave">Save</button>
-                        <button type="cancel" class="btn-system btn-large btn-black">Cancel</button>
-                    </div>
+                <div class="col-md-6">
+                    <ul class="breadcrumbs">
+                        <li><a href="#"></a></li>
+                        <li>Edit Work Experience</li>
+                    </ul>
                 </div>
             </div>
         </div>
     </div>
-    <!-- End Content -->
-    <script type="text/javascript" src="../../../js/script.js"></script>
+    <!-- End Page Banner -->
+
+    <!-- Start Content -->
+    <div id="content">
+        <div class="container">
+            <div class="row sidebar-page">
+                <!-- Page Content -->
+                <div class="col-md-9 page-content">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label>Company Name <span>(*)</span></label>
+                                <input type="text" class="form-control" id="" name="">
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label>Company Website</label>
+                                <input type="text" class="form-control" id="" name="">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label>Industry <span>(*)</span></label>
+                                <select id="" name="" class="form-control" style="width:100%; height:34px;">
+                                    <option value></option>
+                                    <option value=""></option>
+                                    <option value=""></option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label>Duration</label><br>
+                                <label><input type="checkbox" name="" value=""> Currently Work Here</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-3">
+                            <div class="form-group">
+                                <label>From <span>(*)</span></label>
+                                <select id="" name="" class="form-control" style="width:100%; height:34px;">
+                                    <option value></option>
+                                    <option value=""></option>
+                                    <option value=""></option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="form-group">
+                                <label>&nbsp;</label>
+                                <select id="" name="" class="form-control" style="width:100%; height:34px;">
+                                    <option value></option>
+                                    <option value=""></option>
+                                    <option value=""></option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="form-group">
+                                <label>To <span>(*)</span></label>
+                                <select id="" name="" class="form-control" style="width:100%; height:34px;">
+                                    <option value></option>
+                                    <option value=""></option>
+                                    <option value=""></option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-md-3 fieldcol">
+                            <div class="form-group">
+                                <label>&nbsp;</label>
+                                <select id="" name="" class="form-control" style="width:100%; height:34px;">
+                                    <option value></option>
+                                    <option value=""></option>
+                                    <option value=""></option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label>Position Title <span>(*)</span></label>
+                                <select id="" name="" class="form-control" style="width:100%; height:34px;">
+                                    <option value></option>
+                                    <option value=""></option>
+                                    <option value=""></option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label>Position Level <span>(*)</span></label>
+                                <input type="text" class="form-control" id="" name="">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row field">
+                        <div class="col-md-6 fieldcol">
+                            <div class="form-group">
+                                <label>Specialization <span>(*)</span></label>
+                                <input type="text" class="form-control" id="" name="">
+                            </div>
+                        </div>
+                        <div class="col-md-3 fieldcol">
+                            <div class="form-group">
+                                <label>Monthly Salary</label><br>
+                                <select id="" name="" class="form-control" style="width:100%; height:34px;">
+                                    <option value></option>
+                                    <option value=""></option>
+                                    <option value=""></option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-md-3 fieldcol">
+                            <div class="form-group">
+                                <label>&nbsp;</label>
+                                <input type="text" class="form-control" id="" name="">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row field">
+                        <div class="col-md-12 fieldcol">
+                            <div class="form-group">
+                                <label>Nature of Work</label><br>
+                                <textarea class="form-control" id="" name="" rows="5"></textarea>
+                                <span class="counter">150 characters remaining.</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- End Page Content -->
+
+                <!--Sidebar-->
+                <div class="col-md-3 sidebar left-sidebar">
+                    <!-- Search Widget -->
+                    <div class="call-action call-action-boxed call-action-style2 clearfix">
+                        (*) Note: Required fields.
+                    </div>
+                </div>
+                <!--End sidebar-->
+            </div>
+            <div class="hr5" style="margin-top:35px;margin-bottom:40px;"></div>
+            <div class="field">
+                <div class="text-center">
+                    <button type="submit" class="btn-system btn-large" name="btnSave">Save</button>
+                    <a href="../work.php" class="btn-system btn-large btn-black">Cancel</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- End Content -->
+<script type="text/javascript" src="../../../js/script.js"></script>
 </body>
 </html>

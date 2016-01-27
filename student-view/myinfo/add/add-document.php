@@ -1,6 +1,12 @@
+<?php
+if(isset($_SESSION['StudentID'])){
+    $StudentID = $_SESSION['StudentID'];
+}else{
+    header("location: ../../../login-student.php");
+}
+?>
 <!doctype html>
 <html lang="en">
-
 <head>
 
     <!-- Basic -->
@@ -191,7 +197,7 @@
                 <div class="hr5" style="margin-top:35px;margin-bottom:40px;"></div>
                 <div class="text-center">
                     <button type="submit" class="btn-system btn-large border-btn">Add</button>
-                    <button type="cancel" class="btn-system btn-large btn-black">Cancel</button>
+                    <a href="../portfolio.php" class="btn-system btn-large btn-black">Cancel</a>
                 </div>
             </div>
         </div>

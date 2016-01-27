@@ -2,6 +2,12 @@
 include('../../../connection.php');
 session_start();
 
+if(isset($_SESSION['StudentID'])){
+    $StudentID = $_SESSION['StudentID'];
+}else{
+    header("location: ../../../login-student.php");
+}
+
 $ReferenceID = $_GET['id'];
 
 $reference_tbl =
@@ -259,7 +265,7 @@ $reference_tbl =
                 <div class="field">
                     <div class="text-center">
                         <button type="submit" class="btn-system btn-large" name="btnSave">Save</button>
-                        <button type="cancel" class="btn-system btn-large btn-black">Cancel</button>
+                        <a href="../references.php" class="btn-system btn-large btn-black">Cancel</a>
                     </div>
                 </div>
             </div>

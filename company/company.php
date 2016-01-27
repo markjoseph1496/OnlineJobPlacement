@@ -232,7 +232,7 @@ if (count($LOGquery1) > 0) {
                                         </div>
                                     </div>
                                     <div class="modal-footer">
-                                        <a href="../logout.php"
+                                        <a href="logout.php"
                                            class="btn btn-primary">Log out</a>
                                         <button type="button" class="btn btn-default" data-dismiss="modal">
                                             Cancel

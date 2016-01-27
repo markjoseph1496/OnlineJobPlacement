@@ -1,21 +1,14 @@
-<?php 
+<?php
 include('../../../connection.php');
 session_start();
 
+if(isset($_SESSION['StudentID'])){
+    $StudentID = $_SESSION['StudentID'];
+}else{
+    header("location: ../../../login-student.php");
+}
 
-$AchievementID = $_GET['id'];
-
-$achievements_tbl =
-    GSecureSQL::query(
-        "SELECT * FROM achievementstbl WHERE AchievementID = ?",
-        TRUE,
-        "s",
-        $AchievementID
-    );
-
-    $Achievements = $achievements_tbl[0][2];
 ?>
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -213,7 +206,7 @@ $achievements_tbl =
                 <div class="field">
                     <div class="text-center">
                         <button type="submit" class="btn-system btn-large" name="btnSave">Save</button>
-                        <button type="cancel" class="btn-system btn-large btn-black">Cancel</button>
+                        <a href="../achievements.php" class="btn-system btn-large btn-black">Cancel</a>
                     </div>
                 </div>
             </div>

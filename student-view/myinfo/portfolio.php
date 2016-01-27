@@ -5,16 +5,9 @@ session_start();
 
 if(isset($_SESSION['StudentID'])){
     $StudentID = $_SESSION['StudentID'];
+}else{
+    header("location: ../../login-student.php");
 }
-else{
-    $StudentID = '';
-    echo "
-        <script type='text/javascript'>
-        location.href='../../../login-student.php?id=2';
-        </script>
-        ";
-}
-
 
 $URLID = 'URLID';
 $URL = 'URL';
@@ -193,7 +186,34 @@ $result = mysql_query($qry);
                     <div class="navbar-collapse collapse">
                         <!-- Sign-out -->
                         <div class="signout-side">
-                               <a href="../../login-student.php?id=1" class="show-signout"><i class="fa fa-sign-out"></i></a>
+                            <a class="show-signout" data-toggle='modal' data-target='#Logout'><i class="fa fa-sign-out"></i></a>
+                        </div>
+                        <!-- Modal -->
+                        <div class="modal fade" id="Logout"
+                             role="dialog">
+                            <div class="modal-dialog" style="padding:100px">
+                                <!-- Modal content-->
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                        <h4 class="modal-title">Log out?</h4>
+                                    </div>
+                                    <div class="modal-body">
+                                        <div class="col-md-15 fieldcol">
+                                            <label = "usr" class = "control-label">Do you want to log out?</label>
+                                            <div class="form-group">
+                                            </div>
+                                        </div>
+                                        <div class="modal-footer">
+                                            <a href="../logout.php"
+                                               class="btn btn-primary">Log out</a>
+                                            <button type="button" class="btn btn-default" data-dismiss="modal">
+                                                Cancel
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                         <!-- End Sign-out -->
                         <!-- Start Navigation List -->
