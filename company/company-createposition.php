@@ -388,7 +388,9 @@ $cLastName = $companyinfo_tbl[0][2];
                                     $CourseTitle = $value[1];
                                     ?>
                                     <li><input type="checkbox" name="RelatedCourses[]" id="RelatedCourses"
-                                               value="<?php echo $CourseCode; ?>"> <?php echo $CourseTitle; ?> (<?php echo $CourseCode; ?>)</li>
+                                               value="<?php echo $CourseCode; ?>"> <?php echo $CourseTitle; ?>
+                                        (<?php echo $CourseCode; ?>)
+                                    </li>
                                     <?php
                                 }
                                 ?>
@@ -460,73 +462,20 @@ $cLastName = $companyinfo_tbl[0][2];
                         </div>
                     </div>
                 </div>
-                <div class="row field" style="margin-bottom: 15px">
-                    <div id="training-template" class="hidden">
-                        <span>dito_yung_text</span>
-                        <a href="javascript:void(0)">[remove]</a>
-                        <input type="hidden"/>
-                    </div>
-                    <div id="training-list" class="col-md-offset-3 col-md-8 fieldcol"
-                         style="width: 300px; word-wrap: break-word">
-
-                    </div>
-                </div>
                 <div class="row field">
                     <div class="col-md-3 fieldcol">
-                        <label = "usr" class = "control-label"> Knowledge In: </label>
+                        <label = "usr" class = "control-label"> Required Skills: </label>
                     </div>
                     <div class="col-md-4 fieldcol">
                         <div class="form-group">
                             <div class="input-group" style="width: 300px; margin-bottom: 15px">
                                 <input type="text" class="form-control" id="txt-knowledge" name="Knowledge">
-                                <script>
-                                    var kl_index = -1;
-                                    function delete_knowledge(index) {
-                                        $('#kl-span-' + index).remove();
-                                        $('#kl-a-' + index).remove();
-                                        $('#kl-input-' + index).remove();
-                                    }
-                                </script>
-                          <span class="input-group-btn">
-                            <a class="btn btn-primary" onclick="(function(){
-                              kl_index++;
-                              var kk = $('#knowledge-template');
-                              var kk_span = kk.find('span');
-                              var kk_a = kk.find('a');
-                              var kk_input = kk.find('input');
-
-                              kk_span.text($('#txt-knowledge').val());
-                              kk_span.attr('id', 'kl-span-' + kl_index);
-                              kk_a.attr('id', 'kl-a-' + kl_index);
-                              kk_a.attr('onclick', 'delete_knowledge(' + kl_index + ')');
-                              kk_input.attr('id', 'kl-input-' + kl_index);
-                              kk_input.attr('name', 'knowledge[' + kl_index +']');
-                              kk_input.val(kk_span.text());
-                              $('#knowledge-list').append($('#knowledge-template').html());
-
-                              //disposal of used resource in #knowledge-template
-                              kk_span.removeAttr('id');
-                              kk_a.removeAttr('id');
-                              kk_a.removeAttr('onclick');
-                              kk_input.removeAttr('id');
-                              kk_input.removeAttr('name');
-                              kk_input.removeAttr('value');
-                            })()">Add</a>
-                          </span>
                             </div>
                         </div>
                     </div>
-                </div>
-                <div class="row field" style="margin-bottom: 15px">
-                    <div id="knowledge-template" class="hidden">
-                        <span>dito_yung_text</span>
-                        <a href="javascript:void(0)">[remove]</a>
-                        <input type="hidden"/>
-                    </div>
-                    <div id="knowledge-list" class="col-md-offset-3 col-md-4 fieldcol"
-                         style="width: 300px; word-wrap: break-word">
+                    <a class="btn btn-primary" name="addRequiredSkills" id="addRequiredSkills">add</a>
 
-                    </div>
+
                 </div>
                 <h3> Optional Requirements </h3>
                 &nbsp;
@@ -548,6 +497,10 @@ $cLastName = $companyinfo_tbl[0][2];
                                 </script>
                           <span class="input-group-btn">
                             <a class="btn btn-primary" onclick="(function(){
+                              var _languages = $('#txt-language').val();
+                              if(_languages==''){
+                                alert('This field cannot be empty');
+                              }else{
                               lll_index++;
                               var ll = $('#language-template');
                               var ll_span = ll.find('span');
@@ -562,6 +515,7 @@ $cLastName = $companyinfo_tbl[0][2];
                               ll_input.attr('name', 'language[' + lll_index +']');
                               ll_input.val(ll_span.text());
                               $('#language-list').append($('#language-template').html());
+                              $('#txt-language').val('');
 
                               //disposal of used resource in #language-template
                               ll_span.removeAttr('id');
@@ -570,6 +524,7 @@ $cLastName = $companyinfo_tbl[0][2];
                               ll_input.removeAttr('id');
                               ll_input.removeAttr('name');
                               ll_input.removeAttr('value');
+                              }
                             })()">Add</a>
                           </span>
                             </div>
@@ -578,8 +533,8 @@ $cLastName = $companyinfo_tbl[0][2];
                 </div>
                 <div class="row field" style="margin-bottom: 15px">
                     <div id="language-template" class="hidden">
-                        <span>dito_yung_text</span>
-                        <a href="javascript:void(0)">[remove]</a>
+                        <b><span>dito_yung_text</span></b>
+                        <a href="javascript:void(0)">[remove]<br></a>
                         <input type="hidden"/>
                     </div>
                     <div id="language-list" class="col-md-offset-3 col-md-8 fieldcol"
