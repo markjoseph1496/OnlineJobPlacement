@@ -5402,15 +5402,21 @@ ul.footer-nav li a:hover {
 
 
 
-
-
-
-
-
-
-
-
-
+@media (min-width: 768px)
+.navbar-navs>li>a {
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+.navbar-navs>li>a {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    line-height: 20px;
+}
+.navs>li>a {
+    position: relative;
+    /* display: block; */
+    padding: 10px 15px;
+}
 
 
 
@@ -5712,7 +5718,7 @@ label span {
 	color: #d95c5c;
 }
 .profile-name {
-	line-height: 32px;
+	line-height: 50px;
 }
 
 .line-height {

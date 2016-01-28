@@ -156,30 +156,26 @@ if(isset($_SESSION['StudentID'])){
                         <!-- .col-md-6 -->
                         <div class="col-md-5">
                             <!-- Start Social Links -->
-                            <ul class="social-list">
-                                <li id="notification_li">
+                            <ul class="nav navbar-nav navbar-right">
+                                <li class="dropdown icon-border" id="notificationLink">
                                     <span id="notification_count">3</span>
-                                    <a class="bell itl-tooltip" data-placement="bottom" title="" id="notificationLink"><i class="fa fa-bell"></i></a>
-                                    <div id="notificationContainer">
-                                        <div id="notificationTitle">Notifications</div>
-                                        <div id="notificationsBody" class="notifications">
-                                            <div class="hr1" style="margin-top:40px;"></div>
-
-                                            <label><a href="">The admin granted your request.</a></label>
-                                            <div class="hr2" style="margin-top:1px; margin-bottom:1px;"></div>
-                                            <label><a href="">The admin granted your request.</a></label>
-                                            <div class="hr2" style="margin-top:1px; margin-bottom:1px;"></div>
-                                            <label><a href="">The admin granted your request.</a></label>
-                                            <div class="hr2" style="margin-top:1px; margin-bottom:1px;"></div>
-                                        </div>
-                                        <div id="notificationFooter"><a href="../notification/notification.php">See All</a></div>
-                                    </div>
+                                    <a href="#" class="bell itl-tooltip" data-placement="bottom" data-toggle="dropdown"><i class="fa fa-bell"></i></a>
+                                    <ul id="notificationContainer" class="dropdown-menu dropdown-menu-inverse">
+                                        <li class="dropdown-header"><label>Notification</label></li>
+                                        <li class="disabled"><a href="#" tabindex="-1">No new notification.</a></li>
+                                        <li><a href="#" tabindex="-1">The administrator accepted your request.</a></li>
+                                        <li class="divider"></li>
+                                        <li><a href="../notification/notification.php" tabindex="-1">See All</a></li>
+                                    </ul>
                                 </li>
-                                <li class="profile-name">
-                                    &nbsp;
-                                </li>
-                                <li class="profile-name">
-                                    <i class="fa fa-user"></i> Hello, <b><?php echo $StudentName; ?></b>
+                                <li class="dropdown">
+                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown"><b class="fa fa-user"></b> Welcome, <b><?php echo $StudentName; ?> </b><b class="caret"></b></a>
+                                    <ul class="dropdown-menu">
+                                        <li><a href="#">Profile <b class="fa fa-user" style="float:right;"></b></a></li>
+                                        <li><a href="../settings/privacy-settings.php">Settings <b class="fa fa-cog" style="float:right;"></b></a></li>
+                                        <li class="divider"></li>
+                                        <li><a data-target='#Logout' data-toggle='modal'>Sign Out <b class="fa fa-sign-out" style="float:right;"></b></a></li>
+                                    </ul>
                                 </li>
                             </ul>
                             <!-- End Social Links -->
@@ -192,6 +188,33 @@ if(isset($_SESSION['StudentID'])){
             </div>
             <!-- .top-bar -->
             <!-- End Top Bar -->
+
+            <!-- Modal -->
+            <div class="modal fade" id="Logout" role="dialog">
+                <div class="modal-dialog" style="padding:100px">
+                    <!-- Modal content-->
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                            <h4 class="modal-title">Sign Out?</h4>
+                        </div>
+                        <div class="modal-body">
+                            <div class="col-md-15 fieldcol">
+                                <label = "usr" class = "control-label">Do you want to sign out?</label>
+                                <div class="form-group">
+                                </div>
+                            </div>
+                            <div class="modal-footer">
+                                <a href="../logout.php"
+                                   class="btn btn-primary">Sign out</a>
+                                <button type="button" class="btn btn-default" data-dismiss="modal">
+                                    Cancel
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
 
             <!-- Start  Logo & Naviagtion  -->
             <div class="navbar navbar-default navbar-top">
@@ -210,33 +233,6 @@ if(isset($_SESSION['StudentID'])){
                         <!-- Sign-out -->
                         <div class="signout-side">
                             <a class="show-signout" data-toggle='modal' data-target='#Logout'><i class="fa fa-sign-out"></i></a>
-                        </div>
-                        <!-- Modal -->
-                        <div class="modal fade" id="Logout"
-                             role="dialog">
-                            <div class="modal-dialog" style="padding:100px">
-                                <!-- Modal content-->
-                                <div class="modal-content">
-                                    <div class="modal-header">
-                                        <button type="button" class="close" data-dismiss="modal">&times;</button>
-                                        <h4 class="modal-title">Log out?</h4>
-                                    </div>
-                                    <div class="modal-body">
-                                        <div class="col-md-15 fieldcol">
-                                            <label = "usr" class = "control-label">Do you want to log out?</label>
-                                            <div class="form-group">
-                                            </div>
-                                        </div>
-                                        <div class="modal-footer">
-                                            <a href="../logout.php"
-                                               class="btn btn-primary">Log out</a>
-                                            <button type="button" class="btn btn-default" data-dismiss="modal">
-                                                Cancel
-                                            </button>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
                         </div>
                         <!-- End Sign-out -->
                         <!-- Start Navigation List -->

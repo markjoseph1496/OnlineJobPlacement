@@ -131,14 +131,13 @@ $MajorCourse = $coursetbl[0][0];
     <!-- Start Header Section -->
     <div class="hidden-header"></div>
     <header class="clearfix">
-        <!-- Start Top Bar -->
         <div class="top-bar">
             <div class="container">
                 <div class="row">
                     <div class="col-md-7">
                         <!-- Start Contact Info -->
                         <ul class="profile-name">
-                            <li><b><?php echo $MajorCourse; ?></b></li>
+                            <li>Student No.: <b><?php echo $StudentID; ?></b></li>
                         </ul>
                         <!-- End Contact Info -->
                     </div>
@@ -148,8 +147,7 @@ $MajorCourse = $coursetbl[0][0];
                         <ul class="social-list">
                             <li id="notification_li">
                                 <span id="notification_count">3</span>
-                                <a class="bell itl-tooltip" data-placement="bottom" title="" id="notificationLink"><i
-                                        class="fa fa-bell"></i></a>
+                                <a class="bell itl-tooltip" data-placement="bottom" title="" id="notificationLink"><i class="fa fa-bell"></i></a>
                                 <div id="notificationContainer">
                                     <div id="notificationTitle">Notifications</div>
                                     <div id="notificationsBody" class="notifications">
@@ -167,9 +165,11 @@ $MajorCourse = $coursetbl[0][0];
                                 </div>
                             </li>
                             <li class="profile-name">
+                                &nbsp;
+                            </li>
+                            <li class="profile-name">
                                 <i class="fa fa-user"></i> Hello, <b><?php echo $StudentName; ?></b>
                             </li>
-
                         </ul>
                         <!-- End Social Links -->
                     </div>

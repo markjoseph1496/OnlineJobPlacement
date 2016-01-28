@@ -4351,7 +4351,7 @@ tbody.collapse.in {
     font-size: 12px;
     line-height: 1.42857143;
     color: #777;
-    white-space: nowrap
+    white-space: nowrap;
 }
 
 .dropdown-backdrop {
@@ -4807,7 +4807,7 @@ textarea.input-group-sm>.input-group-btn>.btn {
 .nav>li>a:focus,
 .nav>li>a:hover {
     text-decoration: none;
-    background-color: #eee
+    background-color: #337ab7;
 }
 
 .nav>li.disabled>a {
@@ -4825,8 +4825,9 @@ textarea.input-group-sm>.input-group-btn>.btn {
 .nav .open>a,
 .nav .open>a:focus,
 .nav .open>a:hover {
-    background-color: #eee;
-    border-color: #337ab7
+    background-color: #337ab7;
+    border-color: #337ab7;
+    color: #f8ba01;
 }
 
 .nav .nav-divider {
