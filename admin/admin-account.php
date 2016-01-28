@@ -16,14 +16,13 @@ $admin_tbl =
         $AdminID
     );
 
-$Email = $admin_tbl[0][1];
+$Username = $admin_tbl[0][1];
 $FirstName = $admin_tbl[0][4];
 $MiddleName = $admin_tbl[0][5];
 $LastName = $admin_tbl[0][6];
 $Position = $admin_tbl[0][7];
-$Department = $admin_tbl[0][8];
-$Address = $admin_tbl[0][9];
-$ContactNumber = $admin_tbl[0][10];
+$Address = $admin_tbl[0][8];
+$ContactNumber = $admin_tbl[0][9];
 
 ?>
 <!doctype html>
@@ -101,36 +100,34 @@ $ContactNumber = $admin_tbl[0][10];
 <body>
 <div class="container">
     <!-- Modal -->
-    <div class="modal fade" id="ChangeEmail" role="dialog">
+    <div class="modal fade" id="ChangeUsername" role="dialog">
         <div class="modal-dialog" style="padding:100px">
 
             <!-- Modal content-->
-            <form id="change-email-form" autocomplete="off" method="POST" action="functions.php">
+            <form id="change-Username-form" autocomplete="off" method="POST" action="functions.php">
                 <div class="modal-content">
                     <div class="modal-header">
                         <button type="button" class="close" data-dismiss="modal">&times;</button>
-                        <h4 class="modal-title">Change Email</h4>
+                        <h4 class="modal-title">Change Username</h4>
                     </div>
                     <div class="modal-body">
                         <div class="col-md-15 fieldcol">
-                            <label = "usr" class = "control-label"> New email: </label>
+                            <label = "usr" class = "control-label"> New Username: </label>
                             <div class="form-group">
-                                <input type="email" name="ModalNewEmail" id="ModalNewEmail" class="form-control">
+                                <input type="text" name="ModalNewUsername" id="ModalNewUsername" class="form-control">
                             </div>
                         </div>
-
 
                         <div class="col-md-15 fieldcol">
-                            <label = "usr" class = "control-label"> Confirm Email: </label>
+                            <label = "usr" class = "control-label"> Confirm Username: </label>
                             <div class="form-group">
-                                <input type="text" name="ModalConfirmEmail" id="ModalConfirmEmail" class="form-control">
+                                <input type="text" name="ModalConfirmUsername" id="ModalConfirmUsername" class="form-control">
                             </div>
                         </div>
-
 
                     </div>
                     <div class="modal-footer">
-                        <button type="submit" class="btn btn-primary" name="btnChangeEmail">Change Email</button>
+                        <button type="submit" class="btn btn-primary" name="btnChangeUsername">Change Username</button>
                         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
                     </div>
                 </div>
@@ -392,7 +389,7 @@ $ContactNumber = $admin_tbl[0][10];
                         echo '
                     <div class="alert alert-success">
                         <span class="glyphicon glyphicon-info-sign"></span> 
-                        Email successfully changed.
+                        Username successfully changed.
                     </div>
                     ';
                     } elseif ($id == 2) {
@@ -412,22 +409,20 @@ $ContactNumber = $admin_tbl[0][10];
                     }
 
                 }
-
-
                 ?>
                 <div class="col-md-2 fieldcol">
                     <label = "usr" class = "control-label"> Username: </label>
                 </div>
                 <div class="col-md-4 fieldcol">
                     <div class="form-group">
-                        <label = "usr" class = "control-label"><?php echo $Email; ?></label>
+                        <label = "usr" class = "control-label"><?php echo $Username; ?></label>
                     </div>
                 </div>
                 <div class="col-md-3 fieldcol">
                     <div class="form-group">
                         <div class="box">
-                            <button class="btn btn-default" data-toggle="modal" data-target="#ChangeEmail">Change
-                                email
+                            <button class="btn btn-default" data-toggle="modal" data-target="#ChangeUsername">Change
+                                Username
                             </button>
                         </div>
                     </div>
@@ -498,18 +493,6 @@ $ContactNumber = $admin_tbl[0][10];
             </div>
             <div class="row field">
                 <div class="col-md-2 fieldcol">
-                    <label>Department<span>(*)</span></label>
-                </div>
-                <div class="col-md-4 fieldcol">
-                    <div class="form-group">
-                        <input type="text" name="Department" id="Department" class="form-control"
-                               value="<?php echo $Department; ?>">
-                    </div>
-                </div>
-            </div>
-            <div class="row field">
-
-                <div class="col-md-2 fieldcol">
                     <label>Address <span>(*)</span></label>
                 </div>
                 <div class="col-md-4 fieldcol">
@@ -547,32 +530,32 @@ $ContactNumber = $admin_tbl[0][10];
 
 <script type="text/javascript">
     $(document).ready(function () {
-        $("#change-email-form").bootstrapValidator({
+        $("#change-Username-form").bootstrapValidator({
             feedbackIcons: {
                 valid: "glyphicon glyphicon-ok",
                 invalid: "glyphicon glyphicon-remove",
                 validating: "glyphicon glyphicon-refresh"
             },
             fields: {
-                ModalNewEmail: {
+                ModalNewUsername: {
                     validators: {
                         notEmpty: {
-                            message: "Email is required."
+                            message: "Username is required."
                         },
                         identical: {
-                            field: "ModalConfirmEmail",
-                            message: "Email and Confirm email mismatched."
+                            field: "ModalConfirmUsername",
+                            message: "Username and Confirm Username mismatched."
                         }
                     }
                 },
-                ModalConfirmEmail: {
+                ModalConfirmUsername: {
                     validators: {
                         notEmpty: {
-                            message: "Email is required."
+                            message: "Username is required."
                         },
                         identical: {
-                            field: "ModalNewEmail",
-                            message: "Email and Confirm email mismatched."
+                            field: "ModalNewUsername",
+                            message: "Username and Confirm Username mismatched."
                         }
                     }
                 }

@@ -2,10 +2,9 @@
 include('../connection.php');
 session_start();
 
-if(isset($_SESSION['CompanyID'])){
+if (isset($_SESSION['CompanyID'])) {
     $CompanyID = $_SESSION['CompanyID'];
-}
-else{
+} else {
     header("location: ../login-company.php");
 }
 
@@ -112,26 +111,27 @@ $cLastName = $companyinfo_tbl[0][2];
                 <div class="row">
                     <div class="col-md-6">
                         <!-- Start Contact Info -->
-                            <ul class="contact-details">
-                                <li class="profile-name"><b><?php echo $CompanyName; ?></b></li>
-                            </ul>
+                        <ul class="contact-details">
+                            <li class="profile-name"><b><?php echo $CompanyName; ?></b></li>
+                        </ul>
                         <!-- End Contact Info -->
                     </div>
                     <!-- .col-md-6 -->
                     <div class="col-md-6">
                         <!-- Start Social Links -->
-                            <ul class="social-list">
-                                <li class="profile-name">
-                                    <a class="bell itl-tooltip" data-placement="bottom" title="" href="#" data-original-title="Notification"><i class="fa fa-bell"></i></a>
-                                </li>
-                                <li class="profile-name">
-                                    &nbsp;
-                                </li>
-                                <li class="profile-name">
-                                    <i class="fa fa-user"></i> Hello, <b><?php echo $cFirstName . " " . $cLastName; ?></b>
-                                </li>
-                            </ul>
-                            <!-- End Social Links -->
+                        <ul class="social-list">
+                            <li class="profile-name">
+                                <a class="bell itl-tooltip" data-placement="bottom" title="" href="#"
+                                   data-original-title="Notification"><i class="fa fa-bell"></i></a>
+                            </li>
+                            <li class="profile-name">
+                                &nbsp;
+                            </li>
+                            <li class="profile-name">
+                                <i class="fa fa-user"></i> Hello, <b><?php echo $cFirstName . " " . $cLastName; ?></b>
+                            </li>
+                        </ul>
+                        <!-- End Social Links -->
                     </div>
                     <!-- .col-md-6 -->
                 </div>
@@ -152,7 +152,7 @@ $cLastName = $companyinfo_tbl[0][2];
                         <i class="fa fa-bars"></i>
                     </button>
                     <!-- End Toggle Nav Link For Mobiles -->
-                     <a class="navbar-brand" href="">
+                    <a class="navbar-brand" href="">
                         <img src="../images/ojpms.png">
                     </a>
                 </div>
@@ -198,7 +198,8 @@ $cLastName = $companyinfo_tbl[0][2];
                             <a>Position</a>
                             <ul class="dropdown">
                                 <li><a href="company-positionlist.php">Position List</a></li>
-                                <li><a class="active" href="company-createposition.php" class = "active">Create Position</a></li>
+                                <li><a class="active" href="company-createposition.php" class="active">Create
+                                        Position</a></li>
                             </ul>
                         </li>
                         <li>
@@ -210,7 +211,7 @@ $cLastName = $companyinfo_tbl[0][2];
                         <li>
                             <a>Applicant List</a>
                             <ul class="dropdown">
-                                <li><a href="company-pendingapplicants.php" class = "active">Pending</a></li>
+                                <li><a href="company-pendingapplicants.php" class="active">Pending</a></li>
                                 <li><a href="company-acceptedapplicants.php">Accepted</a></li>
                             </ul>
                         </li>
@@ -227,7 +228,7 @@ $cLastName = $companyinfo_tbl[0][2];
                     <a>Position</a>
                     <ul class="dropdown">
                         <li><a href="company-positionlist.php">Position List</a></li>
-                        <li><a href="company-createposition.php" class = "active">Create Position</a></li>
+                        <li><a href="company-createposition.php" class="active">Create Position</a></li>
                     </ul>
                 </li>
                 <li>
@@ -239,7 +240,7 @@ $cLastName = $companyinfo_tbl[0][2];
                 <li>
                     <a>Applicant List</a>
                     <ul class="dropdown">
-                        <li><a href="company-pendingapplicants.php" class = "active">Pending</a></li>
+                        <li><a href="company-pendingapplicants.php" class="active">Pending</a></li>
                         <li><a href="company-acceptedapplicants.php">Accepted</a></li>
                     </ul>
                 </li>
@@ -280,7 +281,7 @@ $cLastName = $companyinfo_tbl[0][2];
                     </div>
                     <div class="col-md-3 fieldcol">
                         <div class="form-group">
-                            <div class= "row field">
+                            <div class="row field">
                                 <input type="date" name="DateFrom" id="date_from" class="form-control">
                                 <div class="date_to">
                                     <label = "usr" class = "control-label" id = "label">to: </label>
@@ -299,7 +300,8 @@ $cLastName = $companyinfo_tbl[0][2];
                     <div class="col-md-4 fieldcol">
                         <div class="form-group">
                             <div class="form-group">
-                            <input type="text" id="PLevel" name="PLevel" class="form-control" style=" width: 100%; height:30px;">
+                                <input type="text" id="PLevel" name="PLevel" class="form-control"
+                                       style=" width: 100%; height:30px;">
                             </div>
                         </div>
                     </div>
@@ -322,7 +324,7 @@ $cLastName = $companyinfo_tbl[0][2];
                         <div class="form-group">
                             <select id="Specialization" name="Specialization" class="specialization"
                                     style="width: 100%; height:30px;">
-                                <option value="" selected="selected"> Select Specialization</option>
+                                <option value="" selected="selected">- Select Specialization -</option>
                                 <?php
                                 $specialization_tbl =
                                     GSecureSQL::query(
@@ -332,7 +334,8 @@ $cLastName = $companyinfo_tbl[0][2];
                                 foreach ($specialization_tbl as $value) {
                                     $Specialization = $value[1];
                                     ?>
-                                    <option value="<?php echo $Specialization; ?>"><?php echo $Specialization; ?></option>
+                                    <option
+                                        value="<?php echo $Specialization; ?>"><?php echo $Specialization; ?></option>
                                     <?php
                                 }
                                 ?>
@@ -347,7 +350,7 @@ $cLastName = $companyinfo_tbl[0][2];
                     <div class="col-md-4 fieldcol">
                         <div class="form-group">
                             <select id="EType" name="EType" class="state" style="width: 100%; height:30px;">
-                                <option value="">Please select One</option>
+                                <option value="">- Please select One -</option>
                                 <option value="full">Full Time</option>
                                 <option value="parttime">Part Time</option>
                                 <option value="contract">Contract</option>
@@ -367,6 +370,34 @@ $cLastName = $companyinfo_tbl[0][2];
                         </div>
                     </div>
                 </div>
+                <div class="row field">
+                    <div class="col-md-3 fieldcol">
+                        <label = "usr" class = "control-label"> Related Courses: </label>
+                    </div>
+                    <div class="col-md-4 fieldcol">
+                        <div class="form-group">
+                            <ul>
+                                <?php
+                                $course_tbl =
+                                    GSecureSQL::query(
+                                        "SELECT CourseCode,CourseTitle FROM coursetbl",
+                                        TRUE
+                                    );
+                                foreach ($course_tbl as $value) {
+                                    $CourseCode = $value[0];
+                                    $CourseTitle = $value[1];
+                                    ?>
+                                    <li><input type="checkbox" name="RelatedCourses[]" id="RelatedCourses"
+                                               value="<?php echo $CourseCode; ?>"> <?php echo $CourseTitle; ?>
+                                        (<?php echo $CourseCode; ?>)
+                                    </li>
+                                    <?php
+                                }
+                                ?>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
                 <h3> Salary Range </h3>
                 &nbsp;
                 <div class="row field">
@@ -376,7 +407,7 @@ $cLastName = $companyinfo_tbl[0][2];
                     <div class="col-md-4 fieldcol">
                         <div class="form-group">
                             <select id="Salary" name="Salary" class="salaryrange" style="width: 100%; height:30px;">
-                                <option value="" selected="selected"> Select Salary Range</option>
+                                <option value="" selected="selected">- Select Salary Range -</option>
                                 <?php
                                 $salaryrange_tbl =
                                     GSecureSQL::query(
@@ -387,7 +418,7 @@ $cLastName = $companyinfo_tbl[0][2];
                                     $SalaryRange = $value[1];
                                     ?>
                                     <option value="<?php echo $SalaryRange; ?>"><?php echo $SalaryRange; ?></option>
-                                <?php
+                                    <?php
                                 }
                                 ?>
                             </select>
@@ -402,124 +433,49 @@ $cLastName = $companyinfo_tbl[0][2];
                     </div>
                     <div class="col-md-4 fieldcol">
                         <div class="form-group">
-                            <input type="number" name="YExperience" id="YExperience" class="form-control"
-                                   style="width: 100%;">
+                            <select id="Salary" name="Salary" class="salaryrange" style="width: 100%; height:30px;">
+                                <option value="" selected="selected">- Select Year of experience -</option>
+                                <?php
+                                for ($count = 1; $count <= 20; $count++) {
+                                    ?>
+                                    <option value="<?php echo $count; ?>"><?php echo $count; ?></option>
+                                    <?php
+                                }
+                                ?>
+                            </select>
                         </div>
                     </div>
                 </div>
                 <div class="row field">
                     <div class="col-md-3 fieldcol">
-                        <label = "usr" class = "control-label"> Training: </label>
+                        <label = "usr" class = "control-label"> Degree Level: </label>
                     </div>
                     <div class="col-md-4 fieldcol">
                         <div class="form-group">
                             <div class="input-group" style="width: 100%; margin-bottom: 15px">
-                                <input type="text" class="form-control" id="txt-training" name="Training">
-                                <script>
-                                    var tl_index = -1;
-                                    function delete_training(index) {
-                                        $('#tl-span-' + index).remove();
-                                        $('#tl-a-' + index).remove();
-                                        $('#tl-input-' + index).remove();
-                                    }
-                                </script>
-                          <span class="input-group-btn">
-                            <a class="btn btn-primary" onclick="(function(){
-                              tl_index++;
-                              var tt = $('#training-template');
-                              var tt_span = tt.find('span');
-                              var tt_a = tt.find('a');
-                              var tt_input = tt.find('input');
-
-                              tt_span.text($('#txt-training').val());
-                              tt_span.attr('id', 'tl-span-' + tl_index);
-                              tt_a.attr('id', 'tl-a-' + tl_index);
-                              tt_a.attr('onclick', 'delete_training(' + tl_index + ')');
-                              tt_input.attr('id', 'tl-input-' + tl_index);
-                              tt_input.attr('name', 'training[' + tl_index +']');
-                              tt_input.val(tt_span.text());
-                              $('#training-list').append($('#training-template').html());
-
-                              //disposal of used resource in #training-template
-                              tt_span.removeAttr('id');
-                              tt_a.removeAttr('id');
-                              tt_a.removeAttr('onclick');
-                              tt_input.removeAttr('id');
-                              tt_input.removeAttr('name');
-                              tt_input.removeAttr('value');
-                            })()">Add</a>
-                          </span>
+                                <ul>
+                                    <li><input type="checkbox" name="DegreeLevel[]"> Bachelor Degree</li>
+                                    <li><input type="checkbox" name="DegreeLevel[]"> Masteral Degree</li>
+                                    <li><input type="checkbox" name="DegreeLevel[]"> Doctorate Degree</li>
+                                </ul>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="row field" style="margin-bottom: 15px">
-                    <div id="training-template" class="hidden">
-                        <span>dito_yung_text</span>
-                        <a href="javascript:void(0)">[remove]</a>
-                        <input type="hidden"/>
-                    </div>
-                    <div id="training-list" class="col-md-offset-3 col-md-8 fieldcol"
-                         style="width: 300px; word-wrap: break-word">
-
-                    </div>
-                </div>
                 <div class="row field">
                     <div class="col-md-3 fieldcol">
-                        <label = "usr" class = "control-label"> Knowledge In: </label>
+                        <label = "usr" class = "control-label"> Required Skills: </label>
                     </div>
                     <div class="col-md-4 fieldcol">
                         <div class="form-group">
                             <div class="input-group" style="width: 300px; margin-bottom: 15px">
                                 <input type="text" class="form-control" id="txt-knowledge" name="Knowledge">
-                                <script>
-                                    var kl_index = -1;
-                                    function delete_knowledge(index) {
-                                        $('#kl-span-' + index).remove();
-                                        $('#kl-a-' + index).remove();
-                                        $('#kl-input-' + index).remove();
-                                    }
-                                </script>
-                          <span class="input-group-btn">
-                            <a class="btn btn-primary" onclick="(function(){
-                              kl_index++;
-                              var kk = $('#knowledge-template');
-                              var kk_span = kk.find('span');
-                              var kk_a = kk.find('a');
-                              var kk_input = kk.find('input');
-
-                              kk_span.text($('#txt-knowledge').val());
-                              kk_span.attr('id', 'kl-span-' + kl_index);
-                              kk_a.attr('id', 'kl-a-' + kl_index);
-                              kk_a.attr('onclick', 'delete_knowledge(' + kl_index + ')');
-                              kk_input.attr('id', 'kl-input-' + kl_index);
-                              kk_input.attr('name', 'knowledge[' + kl_index +']');
-                              kk_input.val(kk_span.text());
-                              $('#knowledge-list').append($('#knowledge-template').html());
-
-                              //disposal of used resource in #knowledge-template
-                              kk_span.removeAttr('id');
-                              kk_a.removeAttr('id');
-                              kk_a.removeAttr('onclick');
-                              kk_input.removeAttr('id');
-                              kk_input.removeAttr('name');
-                              kk_input.removeAttr('value');
-                            })()">Add</a>
-                          </span>
                             </div>
                         </div>
                     </div>
-                </div>
-                <div class="row field" style="margin-bottom: 15px">
-                    <div id="knowledge-template" class="hidden">
-                        <span>dito_yung_text</span>
-                        <a href="javascript:void(0)">[remove]</a>
-                        <input type="hidden"/>
-                    </div>
-                    <div id="knowledge-list" class="col-md-offset-3 col-md-4 fieldcol"
-                         style="width: 300px; word-wrap: break-word">
+                    <a class="btn btn-primary" name="addRequiredSkills" id="addRequiredSkills">add</a>
 
-                    </div>
+
                 </div>
                 <h3> Optional Requirements </h3>
                 &nbsp;
@@ -541,6 +497,10 @@ $cLastName = $companyinfo_tbl[0][2];
                                 </script>
                           <span class="input-group-btn">
                             <a class="btn btn-primary" onclick="(function(){
+                              var _languages = $('#txt-language').val();
+                              if(_languages==''){
+                                alert('This field cannot be empty');
+                              }else{
                               lll_index++;
                               var ll = $('#language-template');
                               var ll_span = ll.find('span');
@@ -555,6 +515,7 @@ $cLastName = $companyinfo_tbl[0][2];
                               ll_input.attr('name', 'language[' + lll_index +']');
                               ll_input.val(ll_span.text());
                               $('#language-list').append($('#language-template').html());
+                              $('#txt-language').val('');
 
                               //disposal of used resource in #language-template
                               ll_span.removeAttr('id');
@@ -563,6 +524,7 @@ $cLastName = $companyinfo_tbl[0][2];
                               ll_input.removeAttr('id');
                               ll_input.removeAttr('name');
                               ll_input.removeAttr('value');
+                              }
                             })()">Add</a>
                           </span>
                             </div>
@@ -571,8 +533,8 @@ $cLastName = $companyinfo_tbl[0][2];
                 </div>
                 <div class="row field" style="margin-bottom: 15px">
                     <div id="language-template" class="hidden">
-                        <span>dito_yung_text</span>
-                        <a href="javascript:void(0)">[remove]</a>
+                        <b><span>dito_yung_text</span></b>
+                        <a href="javascript:void(0)">[remove]<br></a>
                         <input type="hidden"/>
                     </div>
                     <div id="language-list" class="col-md-offset-3 col-md-8 fieldcol"
@@ -586,7 +548,7 @@ $cLastName = $companyinfo_tbl[0][2];
                     <div class="text-center">
                         <button type="submit" class="btn-system btn-large" id="btnsave" name="btnsave">Save</button>
                         <button type="submit" class="btn-system btn-large" id="cancel">Cancel</button>
-                    </div>           
+                    </div>
                 </div>
             </div>
         </div>
