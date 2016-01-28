@@ -150,7 +150,7 @@ $StudentName = $FirstName . " " . $LastName;
                         <!-- Start Social Links -->
                         <ul class="nav navbar-nav navbar-right">
                             <li class="dropdown icon-border" id="notificationLink">
-                                <span id="notification_count">3</span>
+                                <span id="notification_count">5</span>
                                 <a href="#" class="bell itl-tooltip" data-placement="bottom" data-toggle="dropdown"><i class="fa fa-bell"></i></a>
                                 <ul id="notificationContainer" class="dropdown-menu dropdown-menu-inverse">
                                     <li class="dropdown-header"><label>Notification</label></li>

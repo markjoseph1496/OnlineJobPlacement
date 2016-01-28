@@ -433,7 +433,7 @@ $cLastName = $companyinfo_tbl[0][2];
                     </div>
                     <div class="col-md-4 fieldcol">
                         <div class="form-group">
-                            <select id="Salary" name="Salary" class="salaryrange" style="width: 100%; height:30px;">
+                            <select id="Salary" name="YExperience" style="width: 100%; height:30px;">
                                 <option value="" selected="selected">- Select Year of experience -</option>
                                 <?php
                                 for ($count = 1; $count <= 20; $count++) {
@@ -454,9 +454,9 @@ $cLastName = $companyinfo_tbl[0][2];
                         <div class="form-group">
                             <div class="input-group" style="width: 100%; margin-bottom: 15px">
                                 <ul>
-                                    <li><input type="checkbox" name="DegreeLevel[]"> Bachelor Degree</li>
-                                    <li><input type="checkbox" name="DegreeLevel[]"> Masteral Degree</li>
-                                    <li><input type="checkbox" name="DegreeLevel[]"> Doctorate Degree</li>
+                                    <li><input type="checkbox" name="DegreeLevel[]" value="Bachelor Degree"> Bachelor Degree</li>
+                                    <li><input type="checkbox" name="DegreeLevel[]" value="Masteral Degree"> Masteral Degree</li>
+                                    <li><input type="checkbox" name="DegreeLevel[]" value="Doctorate Degree"> Doctorate Degree</li>
                                 </ul>
                             </div>
                         </div>
@@ -470,12 +470,60 @@ $cLastName = $companyinfo_tbl[0][2];
                         <div class="form-group">
                             <div class="input-group" style="width: 300px; margin-bottom: 15px">
                                 <input type="text" class="form-control" id="txt-knowledge" name="Knowledge">
+                                <script>
+                                    var kl_index = -1;
+                                    function delete_knowledge(index) {
+                                        $('#kl-span-' + index).remove();
+                                        $('#kl-a-' + index).remove();
+                                        $('#kl-input-' + index).remove();
+                                    }
+                                </script>
+                          <span class="input-group-btn">
+                            <a class="btn btn-primary" onclick="(function(){
+                              var _requirements = $('#txt-knowledge').val();
+                              if(_requirements==''){
+                                  alert('Cannot add empty value.');
+                              }
+                              else{
+                                  kl_index++;
+                                  var kk = $('#knowledge-template');
+                                  var kk_span = kk.find('span');
+                                  var kk_a = kk.find('a');
+                                  var kk_input = kk.find('input');
+
+                                  kk_span.text($('#txt-knowledge').val());
+                                  kk_span.attr('id', 'kl-span-' + kl_index);
+                                  kk_a.attr('id', 'kl-a-' + kl_index);
+                                  kk_a.attr('onclick', 'delete_knowledge(' + kl_index + ')');
+                                  kk_input.attr('id', 'kl-input-' + kl_index);
+                                  kk_input.attr('name', 'knowledge[' + kl_index +']');
+                                  kk_input.val(kk_span.text());
+                                  $('#knowledge-list').append($('#knowledge-template').html());
+                                  $('#txt-knowledge').val('');
+
+                                  //disposal of used resource in #knowledge-template
+                                  kk_span.removeAttr('id');
+                                  kk_a.removeAttr('id');
+                                  kk_a.removeAttr('onclick');
+                                  kk_input.removeAttr('id');
+                                  kk_input.removeAttr('name');
+                                  kk_input.removeAttr('value');
+                              }
+                            })()">Add</a>
+                          </span>
                             </div>
                         </div>
                     </div>
-                    <a class="btn btn-primary" name="addRequiredSkills" id="addRequiredSkills">add</a>
-
-
+                </div>
+                <div class="row field" style="margin-bottom: 15px">
+                    <div id="knowledge-template" class="hidden">
+                        <b><span>dito_yung_text</span></b>
+                        <a href="javascript:void(0)">[remove]<br></a>
+                        <input type="hidden"/>
+                    </div>
+                    <div id="knowledge-list" class="col-md-offset-3 col-md-4 fieldcol"
+                         style="width: 300px; word-wrap: break-word">
+                    </div>
                 </div>
                 <h3> Optional Requirements </h3>
                 &nbsp;
@@ -499,7 +547,7 @@ $cLastName = $companyinfo_tbl[0][2];
                             <a class="btn btn-primary" onclick="(function(){
                               var _languages = $('#txt-language').val();
                               if(_languages==''){
-                                alert('This field cannot be empty');
+                                alert('Cannot add empty value.');
                               }else{
                               lll_index++;
                               var ll = $('#language-template');
@@ -652,54 +700,23 @@ $cLastName = $companyinfo_tbl[0][2];
                         }
                     }
                 },
-                Training: {
+                'DegreeLevel[]': {
                     validators: {
-                        notEmpty: {
-                            message: "Trainings is required."
-                        },
-                        stringLength: {
-                            min: 5,
-                            max: 50,
-                            message: "Trainings must be 5-50 characters long."
-                        },
-                        regexp: {
-                            regexp: /^[a-z\s]+$/i,
-                            message: "Trainings can consist of alphabetical characters and spaces only"
+                        choice: {
+                            min: 1,
+                            message: "Please check atleast one."
                         }
                     }
                 },
-                Knowledge: {
+                'RelatedCourses[]': {
                     validators: {
-                        notEmpty: {
-                            message: "Knowledge is required."
-                        },
-                        stringLength: {
-                            min: 5,
-                            max: 50,
-                            message: "Knowledge must be 5-50 characters long."
-                        },
-                        regexp: {
-                            regexp: /^[a-z\s]+$/i,
-                            message: "Knowledge can consist of alphabetical characters and spaces only"
+                        choice: {
+                            min: 1,
+                            message: "Please check atleast one."
                         }
                     }
-                },
-                Language: {
-                    validators: {
-                        notEmpty: {
-                            message: "Language is required."
-                        },
-                        stringLength: {
-                            min: 5,
-                            max: 50,
-                            message: "Language must be 5-50 characters long."
-                        },
-                        regexp: {
-                            regexp: /^[a-z\s]+$/i,
-                            message: "Language can consist of alphabetical characters and spaces only"
-                        }
-                    }
-                },
+                }
+
             }
         });
     });

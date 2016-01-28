@@ -40,11 +40,20 @@ if (isset($_GET['btnsave'])) {
     $AvPosition = $_GET['AvPosition'];
     $Salary = $_GET['Salary'];
     $YExperience = $_GET['YExperience'];
+    $RelatedCourses = $_GET['RelatedCourses'];
+    $DegreeLevel = $_GET['DegreeLevel'];
+    $RequiredSkills = $_GET['knowledge'];
+    $Language = $_GET['language'];
+
+    $RelatedCourses = implode(", ",$RelatedCourses);
+    $DegreeLevel = implode(", ", $DegreeLevel);
+    $RequiredSkills = implode(", ", $RequiredSkills);
+    $Language = implode(", ", $Language);
 
     GSecureSQL::query(
-        "INSERT INTO comppositiontbl (CompanyID,PostingDateFrom,PostingDateTo,PositionLevel,JobDescription,JSpecialization,EType,AvPosition,MonthlySalary,YExperience) VALUES (?,?,?,?,?,?,?,?,?,?)",
+        "INSERT INTO comppositiontbl (CompanyID,PostingDateFrom,PostingDateTo,PositionLevel,JobDescription,JSpecialization,EType,AvPosition,MonthlySalary,YExperience,RelatedCourses,Degreelevel,Reqskills,Languages) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?)",
         FALSE,
-        "ssssssssss",
+        "ssssssssssssss",
         $CompanyID,
         $DateFrom,
         $DateTo,
@@ -54,48 +63,12 @@ if (isset($_GET['btnsave'])) {
         $EType,
         $AvPosition,
         $Salary,
-        $YExperience
+        $YExperience,
+        $RelatedCourses,
+        $DegreeLevel,
+        $RequiredSkills,
+        $Language
     );
-
-    $position_tbl =
-        GSecureSQL::query(
-            "SELECT MAX(PositionID) AS `index` FROM comppositiontbl",
-            TRUE
-        );
-    $PositionID = $position_tbl[0][0];
-
-    foreach ($_GET['training'] as $training) {
-
-        GSecureSQL::query(
-            "INSERT INTO comptrainingtbl (CompanyID,PositionID,Training) VALUES (?,?,?)",
-            FALSE,
-            "sss",
-            $CompanyID,
-            $PositionID,
-            $training
-        );
-    }
-    foreach ($_GET['knowledge'] as $knowledge) {
-
-        GSecureSQL::query(
-            "INSERT INTO comprequirementtbl (CompanyID,PositionID,Knowledge) VALUES (?,?,?)",
-            FALSE,
-            "sss",
-            $CompanyID,
-            $PositionID,
-            $knowledge
-        );
-    }
-    foreach ($_GET['language'] as $language) {
-
-        GSecureSQL::query(
-            "INSERT INTO complanguagetbl (PositionID,Language) VALUES (?,?)",
-            FALSE,
-            "ss",
-            $PositionID,
-            $language
-        );
-    }
 
     header("location: company-positionlist.php?id=1");
 
