@@ -85,6 +85,32 @@ else{
     <script type="text/javascript" src="../../js/jquery.nicescroll.min.js"></script>
     <script type="text/javascript" src="../../js/jquery.parallax.js"></script>
     <script type="text/javascript" src="../../js/jquery.slicknav.js"></script>
+
+    <!-- Checkbox -->
+    <link rel="stylesheet" type="text/css" href="../../css/checkbox.css" media="screen" />
+
+    <!-- Notification -->
+    <link rel="stylesheet" href="../../css/notif.css"/>
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $("#notificationLink").click(function () {
+                $("#notificationContainer").fadeToggle(300);
+                $("#notification_count").fadeOut("slow");
+                return false;
+            });
+
+            //Document Click
+            $(document).click(function () {
+                $("#notificationContainer").hide();
+            });
+            //Popup Click
+            $("#notificationContainer").click(function () {
+                return false
+            });
+
+        });
+    </script>
 </head>
 
 <body>
@@ -105,16 +131,26 @@ else{
                     <!-- .col-md-6 -->
                     <div class="col-md-5">
                         <!-- Start Social Links -->
-                        <ul class="social-list">
-                            <li class="profile-name">
-                                <a class="bell itl-tooltip" data-placement="bottom" title="" href="#"
-                                   data-original-title="Notification"><i class="fa fa-bell"></i></a>
+                        <ul class="nav navbar-nav navbar-right">
+                            <li class="dropdown icon-border" id="notificationLink">
+                                <span id="notification_count">3</span>
+                                <a href="#" class="bell itl-tooltip" data-placement="bottom" data-toggle="dropdown"><i class="fa fa-bell"></i></a>
+                                <ul id="notificationContainer" class="dropdown-menu dropdown-menu-inverse">
+                                    <li class="dropdown-header"><label>Notification</label></li>
+                                    <li class="disabled"><a href="#" tabindex="-1">No new notification.</a></li>
+                                    <li><a href="#" tabindex="-1">The administrator accepted your request.</a></li>
+                                    <li class="divider"></li>
+                                    <li><a href="../notification/notification.php" tabindex="-1">See All</a></li>
+                                </ul>
                             </li>
-                            <li class="profile-name">
-                                &nbsp;
-                            </li>
-                            <li class="profile-name">
-                                <i class="fa fa-user"></i> Hello, <b>Aira Jane Cruz</b>
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown"><b class="fa fa-user"></b> Welcome, <b><?php echo $StudentName; ?> </b><b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    <li><a href="#">Profile <b class="fa fa-user" style="float:right;"></b></a></li>
+                                    <li><a href="../settings/privacy-settings.php">Settings <b class="fa fa-cog" style="float:right;"></b></a></li>
+                                    <li class="divider"></li>
+                                    <li><a href="#" data-target='#Logout' data-toggle='modal'>Sign Out <b class="fa fa-sign-out" style="float:right;"></b></a></li>
+                                </ul>
                             </li>
                         </ul>
                         <!-- End Social Links -->
@@ -127,6 +163,33 @@ else{
         </div>
         <!-- .top-bar -->
         <!-- End Top Bar -->
+
+        <!-- Modal -->
+        <div class="modal fade" id="Logout" role="dialog">
+            <div class="modal-dialog" style="padding:100px">
+                <!-- Modal content-->
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        <h4 class="modal-title">Sign Out?</h4>
+                    </div>
+                    <div class="modal-body">
+                        <div class="col-md-15 fieldcol">
+                            <label = "usr" class = "control-label">Do you want to sign out?</label>
+                            <div class="form-group">
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <a href="../logout.php"
+                               class="btn btn-primary">Sign out</a>
+                            <button type="button" class="btn btn-default" data-dismiss="modal">
+                                Cancel
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
 
         <!-- Start  Logo & Naviagtion  -->
         <div class="navbar navbar-default navbar-top">
@@ -237,7 +300,7 @@ else{
         <div class="container">
             <div class="row">
                 <div class="col-md-6">
-                    <h2>Change Password</h2>
+                    <h2>Settings</h2>
                 </div>
             </div>
         </div>
@@ -249,34 +312,196 @@ else{
         <div class="container">
             <!-- Page Content -->
             <div class="col-md-12 page-content">
-                <div class="row">
-                    <div class="classic-testimonials">
-                        <div class="row">
-                            <div class="col-md-6">
-                                <div class="form-group">
-                                    <label>Current Password <span>(*)</span></label>
-                                    <input type="password" class="form-control" id="txtCurrentPassword" name="txtCurrentPassword">
+                
+
+                <div class="tabs-section">
+
+                    <!-- Nav Tabs -->
+                    <ul class="nav nav-tabs">
+                        <li class="active"><a href="#tab-1" data-toggle="tab"><i class="fa fa-key"></i>Password Settings</a></li>
+                        <li><a href="#tab-2" data-toggle="tab"><i class="fa fa-check"></i>Privacy Settings</a></li>
+                    </ul>
+
+                    <!-- Tab panels -->
+                    <div class="tab-content">
+                        <!-- Tab Content 1 -->
+                        <div class="tab-pane fade in active" id="tab-1">
+                            <div class="call-action call-action-boxed call-action-style2 clearfix">         
+                                <h2 class="primary"><strong>Change Password</strong></h2>
+                            </div>
+                            <div class="hr4" style="margin-top:15px;margin-bottom:25px;"></div>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label>Current Password <span>(*)</span></label>
+                                        <input type="password" class="form-control" id="txtCurrentPassword" name="txtCurrentPassword">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6 col-sm-6">
+                                    <div class="form-group">
+                                        <label>New Password <span>(*)</span></label>
+                                        <input type="password" class="form-control" id="txtNewPassword" name="txtNewPassword">
+                                    </div>
+                                </div>
+                                <div class="col-md-6 col-sm-6">
+                                    <div class="form-group">
+                                        <label>Confirm New Password <span>(*)</span></label>
+                                        <input type="password" class="form-control" id="txtConfPassword" name="txtConfPassword">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    &nbsp;
+                                </div>
+                                <div class="col-md-6">
+                                    <button type="submit" class="btn-system btn-large" style="float:right;" name="btnChangePass">Change Password</button>
                                 </div>
                             </div>
                         </div>
-                        <div class="row">
-                            <div class="col-md-6 col-sm-6">
-                                <div class="form-group">
-                                    <label>New Password <span>(*)</span></label>
-                                    <input type="password" class="form-control" id="txtNewPassword" name="txtNewPassword">
+                        <!-- Tab Content 2 -->
+                        <div class="tab-pane fade" id="tab-2">
+                            <div class="call-action call-action-boxed call-action-style2 clearfix">         
+                                <h2 class="primary"><strong>Privacy Settings</strong></h2>
+                            </div>
+                            <div class="hr4" style="margin-top:15px;margin-bottom:25px;"></div>
+                            <p><b>Resumé Link URL:</b><a href="../../../resumelinkprofile.php" target="_blank">
+                                http://markjoseph1496.ojpms.com <i class="fa fa-external-link-square"></i></a>
+                            </p><br>
+                            <div class="row">
+                                <div class="project-content col-md-6">
+                                    <h4><span>Enable Public Resumelink</span></h4>
+                                    <div class="checkbox checkbox-success">
+                                        <input id="checkbox3" class="styled" type="checkbox" checked="checked">
+                                        <label for="checkbox3"><b><em> Please note that your name is always displayed.</em></b></label>
+                                    </div>
                                 </div>
                             </div>
-                            <div class="col-md-6 col-sm-6">
-                                <div class="form-group">
-                                    <label>Confirm New Password <span>(*)</span></label>
-                                    <input type="password" class="form-control" id="txtConfPassword" name="txtConfPassword">
+
+                            <div class="hr4" style="margin-top:35px;margin-bottom:40px;"></div>
+                            <div class="row">
+                                <div class="project-content col-md-3">
+                                    <h4><span>Personal Info</span></h4>
+                                    <div class="checkbox checkbox-success">
+                                        <input id="checkbox3" class="styled" type="checkbox">
+                                        <label for="checkbox3"><b>Photo</b></label>
+                                    </div>
+                                    <div class="checkbox checkbox-success">
+                                        <input id="checkbox3" class="styled" type="checkbox">
+                                        <label for="checkbox3"><b>Birthdate</b></label>
+                                    </div>
+                                    <div class="checkbox checkbox-success">
+                                        <input id="checkbox3" class="styled" type="checkbox">
+                                        <label for="checkbox3"><b>Nationality</b></label>
+                                    </div>
+                                    <div class="checkbox checkbox-success">
+                                        <input id="checkbox3" class="styled" type="checkbox">
+                                        <label for="checkbox3"><b>Gender</b></label>
+                                    </div>
+                                    <div class="checkbox checkbox-success">
+                                        <input id="checkbox3" class="styled" type="checkbox">
+                                        <label for="checkbox3"><b>Civil Status</b></label>
+                                    </div>
+                                    <div class="checkbox checkbox-success">
+                                        <input id="checkbox3" class="styled" type="checkbox">
+                                        <label for="checkbox3"><b>Social Networking</b></label>
+                                    </div>
+                                </div>
+                    
+                               <div class="project-content col-md-3">
+                                    <h4><span>Contact Info</span></h4>
+                                    <div class="checkbox checkbox-success">
+                                        <input id="checkbox3" class="styled" type="checkbox">
+                                        <label for="checkbox3"><b>Email</b></label>
+                                    </div>
+                                    <div class="checkbox checkbox-success">
+                                        <input id="checkbox3" class="styled" type="checkbox">
+                                        <label for="checkbox3"><b>Mobile</b></label>
+                                    </div>
+                                    <div class="checkbox checkbox-success">
+                                        <input id="checkbox3" class="styled" type="checkbox">
+                                        <label for="checkbox3"><b>Home Number</b></label>
+                                    </div>
+                                    <div class="checkbox checkbox-success">
+                                        <input id="checkbox3" class="styled" type="checkbox">
+                                        <label for="checkbox3"><b>Work Number</b></label>
+                                    </div>
+                                    <div class="checkbox checkbox-success">
+                                        <input id="checkbox3" class="styled" type="checkbox">
+                                        <label for="checkbox3"><b>Address</b></label>
+                                    </div>
+                                </div>
+
+                                <div class="project-content col-md-3">
+                                    <h4><span>Work</span></h4>
+                                    <div class="checkbox checkbox-success">
+                                        <input id="checkbox3" class="styled" type="checkbox">
+                                        <label for="checkbox3"><b>Work Options</b></label>
+                                    </div>
+                                    <div class="checkbox checkbox-success">
+                                        <input id="checkbox3" class="styled" type="checkbox">
+                                        <label for="checkbox3"><b>Objectives</b></label>
+                                    </div>
+                                    <div class="checkbox checkbox-success">
+                                        <input id="checkbox3" class="styled" type="checkbox">
+                                        <label for="checkbox3"><b>Work Experience</b></label>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="hr4" style="margin-top:35px;margin-bottom:40px;"></div>
+                            <div class="row">
+                                <div class="project-content col-md-3">
+                                    <h4><span>Education</span></h4>
+                                    <div class="checkbox checkbox-success">
+                                        <input id="checkbox3" class="styled" type="checkbox">
+                                        <label for="checkbox3"><b>Schools</b></label>
+                                    </div>
+                                    <div class="checkbox checkbox-success">
+                                        <input id="checkbox3" class="styled" type="checkbox">
+                                        <label for="checkbox3"><b>Seminars</b></label>
+                                    </div>
+                                    <div class="checkbox checkbox-success">
+                                        <input id="checkbox3" class="styled" type="checkbox">
+                                        <label for="checkbox3"><b>References</b></label>
+                                    </div>
+                                    <div class="checkbox checkbox-success">
+                                        <input id="checkbox3" class="styled" type="checkbox">
+                                        <label for="checkbox3"><b>Portfolio</b></label>
+                                    </div>
+                                </div>
+                    
+                               <div class="project-content col-md-3">
+                                    <br><br>
+                                    <div class="checkbox checkbox-success">
+                                        <input id="checkbox3" class="styled" type="checkbox">
+                                        <label for="checkbox3"><b>Certifications</b></label>
+                                    </div>
+                                    <div class="checkbox checkbox-success">
+                                        <input id="checkbox3" class="styled" type="checkbox">
+                                        <label for="checkbox3"><b>Achievements</b></label>
+                                    </div>
+                                </div>
+
+                                <div class="project-content col-md-5">
+                                    <h4><span>Specialization & Languages</span></h4>
+                                    <div class="checkbox checkbox-success">
+                                        <input id="checkbox3" class="styled" type="checkbox">
+                                        <label for="checkbox3"><b>Specialization</b></label>
+                                    </div>
+                                    <div class="checkbox checkbox-success">
+                                        <input id="checkbox3" class="styled" type="checkbox">
+                                        <label for="checkbox3"><b>Languages</b></label>
+                                    </div>
                                 </div>
                             </div>
                         </div>
+                        <!-- Tab Content 3 -->
                     </div>
+                    <!-- End Tab Panels -->
                 </div>
-                <div class="hr5" style="margin-top:35px;margin-bottom:40px;"></div>
-                <button type="submit" class="btn-system btn-large" style="float:right;" name="btnChangePass">Change Password</button>
             </div>
             <!-- End Page Content -->
         </div>
