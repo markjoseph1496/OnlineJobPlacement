@@ -93,6 +93,9 @@ $cLastName = $companyinfo_tbl[0][2];
     <script type="text/javascript" src="../js/jquery.nicescroll.min.js"></script>
     <script type="text/javascript" src="../js/jquery.parallax.js"></script>
     <script type="text/javascript" src="../js/jquery.slicknav.js"></script>
+
+    <!-- Checkbox -->
+    <link rel="stylesheet" type="text/css" href="../css/checkbox.css" media="screen" />
 </head>
 
 <body>
@@ -172,7 +175,7 @@ $cLastName = $companyinfo_tbl[0][2];
                                     <h4 class="modal-title">Log out?</h4>
                                 </div>
                                 <div class="modal-body">
-                                    <div class="col-md-15 fieldcol">
+                                    <div class="col-md-15">
                                         <label = "usr" class = "control-label">Do you want to log out?</label>
                                         <div class="form-group">
                                         </div>
@@ -275,13 +278,13 @@ $cLastName = $companyinfo_tbl[0][2];
             <div class="row">
                 <h3>Post Position </h3>
                 &nbsp;
-                <div class="row field">
-                    <div class="col-md-3 fieldcol">
+                <div class="row">
+                    <div class="col-md-3">
                         <label = "usr" class = "control-label"> Posting Date: </label>
                     </div>
-                    <div class="col-md-3 fieldcol">
+                    <div class="col-md-3">
                         <div class="form-group">
-                            <div class="row field">
+                            <div class="row">
                                 <input type="date" name="DateFrom" id="date_from" class="form-control">
                                 <div class="date_to">
                                     <label = "usr" class = "control-label" id = "label">to: </label>
@@ -293,11 +296,11 @@ $cLastName = $companyinfo_tbl[0][2];
                 </div>
                 <h3> Position Information </h3>
                 &nbsp;
-                <div class="row field">
-                    <div class="col-md-3 fieldcol">
+                <div class="row">
+                    <div class="col-md-3">
                         <label = "usr" class = "control-label"> Position Level: </label>
                     </div>
-                    <div class="col-md-4 fieldcol">
+                    <div class="col-md-4">
                         <div class="form-group">
                             <div class="form-group">
                                 <input type="text" id="PLevel" name="PLevel" class="form-control"
@@ -306,21 +309,21 @@ $cLastName = $companyinfo_tbl[0][2];
                         </div>
                     </div>
                 </div>
-                <div class="row field">
-                    <div class="col-md-3 fieldcol">
+                <div class="row">
+                    <div class="col-md-3">
                         <label = "usr" class = "control-label"> Job Description: </label>
                     </div>
-                    <div class="col-md-4 fieldcol">
+                    <div class="col-md-4">
                         <div class="form-group">
                             <input type="text" name="JobDesc" id="JobDesc" class="form-control" style="width: 100%;">
                         </div>
                     </div>
                 </div>
-                <div class="row field">
-                    <div class="col-md-3 fieldcol">
+                <div class="row">
+                    <div class="col-md-3">
                         <label = "usr" class = "control-label"> Job Specialization: </label>
                     </div>
-                    <div class="col-md-4 fieldcol">
+                    <div class="col-md-4">
                         <div class="form-group">
                             <select id="Specialization" name="Specialization" class="specialization"
                                     style="width: 100%; height:30px;">
@@ -343,11 +346,11 @@ $cLastName = $companyinfo_tbl[0][2];
                         </div>
                     </div>
                 </div>
-                <div class="row field">
-                    <div class="col-md-3 fieldcol">
+                <div class="row">
+                    <div class="col-md-3">
                         <label = "usr" class = "control-label"> Employment Type: </label>
                     </div>
-                    <div class="col-md-4 fieldcol">
+                    <div class="col-md-4">
                         <div class="form-group">
                             <select id="EType" name="EType" class="state" style="width: 100%; height:30px;">
                                 <option value="">- Please select One -</option>
@@ -359,22 +362,22 @@ $cLastName = $companyinfo_tbl[0][2];
                         </div>
                     </div>
                 </div>
-                <div class="row field">
-                    <div class="col-md-3 fieldcol">
+                <div class="row">
+                    <div class="col-md-3">
                         <label = "usr" class = "control-label"> Available Position: </label>
                     </div>
-                    <div class="col-md-4 fieldcol">
+                    <div class="col-md-4">
                         <div class="form-group">
                             <input type="number" name="AvPosition" id="AvPosition" class="form-control"
                                    style="width: 100%;">
                         </div>
                     </div>
                 </div>
-                <div class="row field">
-                    <div class="col-md-3 fieldcol">
+                <div class="row">
+                    <div class="col-md-3">
                         <label = "usr" class = "control-label"> Related Courses: </label>
                     </div>
-                    <div class="col-md-4 fieldcol">
+                    <div class="col-md-9">
                         <div class="form-group">
                             <ul>
                                 <?php
@@ -387,9 +390,11 @@ $cLastName = $companyinfo_tbl[0][2];
                                     $CourseCode = $value[0];
                                     $CourseTitle = $value[1];
                                     ?>
-                                    <li><input type="checkbox" name="RelatedCourses[]" id="RelatedCourses"
-                                               value="<?php echo $CourseCode; ?>"> <?php echo $CourseTitle; ?>
-                                        (<?php echo $CourseCode; ?>)
+                                    <li>
+                                        <div class="checkbox checkbox-success">
+                                            <input id="checkbox3" class="styled" type="checkbox" name="RelatedCourses[]" id="RelatedCourses" value="<?php echo $CourseCode; ?>">
+                                            <label for="checkbox3"><b><?php echo $CourseTitle; ?> (<?php echo $CourseCode; ?>) </b></label>
+                                        </div>
                                     </li>
                                     <?php
                                 }
@@ -400,11 +405,11 @@ $cLastName = $companyinfo_tbl[0][2];
                 </div>
                 <h3> Salary Range </h3>
                 &nbsp;
-                <div class="row field">
-                    <div class="col-md-3 fieldcol">
+                <div class="row">
+                    <div class="col-md-3">
                         <label = "usr" class = "control-label"> Range of Salary: </label>
                     </div>
-                    <div class="col-md-4 fieldcol">
+                    <div class="col-md-4">
                         <div class="form-group">
                             <select id="Salary" name="Salary" class="salaryrange" style="width: 100%; height:30px;">
                                 <option value="" selected="selected">- Select Salary Range -</option>
@@ -427,11 +432,11 @@ $cLastName = $companyinfo_tbl[0][2];
                 </div>
                 <h3> General Requirements </h3>
                 &nbsp;
-                <div class="row field">
-                    <div class="col-md-3 fieldcol">
+                <div class="row">
+                    <div class="col-md-3">
                         <label = "usr" class = "control-label"> Years of Experience: </label>
                     </div>
-                    <div class="col-md-4 fieldcol">
+                    <div class="col-md-4">
                         <div class="form-group">
                             <select id="Salary" name="YExperience" style="width: 100%; height:30px;">
                                 <option value="" selected="selected">- Select Year of experience -</option>
@@ -446,27 +451,39 @@ $cLastName = $companyinfo_tbl[0][2];
                         </div>
                     </div>
                 </div>
-                <div class="row field">
-                    <div class="col-md-3 fieldcol">
+                <div class="row">
+                    <div class="col-md-3">
                         <label = "usr" class = "control-label"> Degree Level: </label>
                     </div>
-                    <div class="col-md-4 fieldcol">
+                    <div class="col-md-4">
                         <div class="form-group">
                             <div class="input-group" style="width: 100%; margin-bottom: 15px">
                                 <ul>
-                                    <li><input type="checkbox" name="DegreeLevel[]" value="Bachelor Degree"> Bachelor Degree</li>
-                                    <li><input type="checkbox" name="DegreeLevel[]" value="Masteral Degree"> Masteral Degree</li>
-                                    <li><input type="checkbox" name="DegreeLevel[]" value="Doctorate Degree"> Doctorate Degree</li>
+                                    <li>
+                                        <div class="checkbox checkbox-success">
+                                        <input id="checkbox3" class="styled" type="checkbox" name="DegreeLevel[]" value="Bachelor Degree">
+                                        <label for="checkbox3"><b>Bachelor Degree</b></label>
+                                    </li>
+                                    <li>
+                                        <div class="checkbox checkbox-success">
+                                        <input id="checkbox3" class="styled" type="checkbox" name="DegreeLevel[]" value="Masteral Degree">
+                                        <label for="checkbox3"><b>Masteral Degree</b></label>
+                                    </li>
+                                    <li>
+                                        <div class="checkbox checkbox-success">
+                                        <input id="checkbox3" class="styled" type="checkbox" name="DegreeLevel[]" value="Doctorate Degree">
+                                        <label for="checkbox3"><b>Doctorate Degree</b></label>
+                                    </li>
                                 </ul>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="row field">
-                    <div class="col-md-3 fieldcol">
+                <div class="row">
+                    <div class="col-md-3">
                         <label = "usr" class = "control-label"> Required Skills: </label>
                     </div>
-                    <div class="col-md-4 fieldcol">
+                    <div class="col-md-4">
                         <div class="form-group">
                             <div class="input-group" style="width: 300px; margin-bottom: 15px">
                                 <input type="text" class="form-control" id="txt-knowledge" name="Knowledge">
@@ -515,23 +532,23 @@ $cLastName = $companyinfo_tbl[0][2];
                         </div>
                     </div>
                 </div>
-                <div class="row field" style="margin-bottom: 15px">
+                <div class="row" style="margin-bottom: 15px">
                     <div id="knowledge-template" class="hidden">
                         <b><span>dito_yung_text</span></b>
                         <a href="javascript:void(0)">[remove]<br></a>
                         <input type="hidden"/>
                     </div>
-                    <div id="knowledge-list" class="col-md-offset-3 col-md-4 fieldcol"
+                    <div id="knowledge-list" class="col-md-offset-3 col-md-4"
                          style="width: 300px; word-wrap: break-word">
                     </div>
                 </div>
                 <h3> Optional Requirements </h3>
                 &nbsp;
-                <div class="row field">
-                    <div class="col-md-3 fieldcol">
+                <div class="row">
+                    <div class="col-md-3">
                         <label = "usr" class = "control-label"> Language: </label>
                     </div>
-                    <div class="col-md-4 fieldcol">
+                    <div class="col-md-4">
                         <div class="form-group">
                             <div class="input-group" style="width: 100%; margin-bottom: 15px">
                                 <input type="text" class="form-control" id="txt-language" name="Language">
@@ -579,13 +596,13 @@ $cLastName = $companyinfo_tbl[0][2];
                         </div>
                     </div>
                 </div>
-                <div class="row field" style="margin-bottom: 15px">
+                <div class="row" style="margin-bottom: 15px">
                     <div id="language-template" class="hidden">
                         <b><span>dito_yung_text</span></b>
                         <a href="javascript:void(0)">[remove]<br></a>
                         <input type="hidden"/>
                     </div>
-                    <div id="language-list" class="col-md-offset-3 col-md-8 fieldcol"
+                    <div id="language-list" class="col-md-offset-3 col-md-8"
                          style="width: 300px; word-wrap: break-word">
 
                     </div>
@@ -613,7 +630,7 @@ $cLastName = $companyinfo_tbl[0][2];
                 invalid: "glyphicon glyphicon-remove",
                 validating: "glyphicon glyphicon-refresh"
             },
-            fields: {
+           s: {
                 DateFrom: {
                     validators: {
                         notEmpty: {
