@@ -9,12 +9,27 @@ if(isset($_SESSION['StudentID'])){
     header("location: ../../login-student.php");
 }
 
-$URLID = 'URLID';
-$URL = 'URL';
-$Caption = 'Caption';
+$infoquery =
+    GSecureSQL::query(
+        "SELECT FirstName, LastName, MajorCourse FROM studentinfotbl WHERE StudentID = ?",
+        TRUE,
+        "s",
+        $StudentID
+    );
 
-$qry = "SELECT * FROM urltbl WHERE StudentID ='$StudentID'";
-$result = mysql_query($qry);
+$FirstName = $infoquery[0][0];
+$LastName = $infoquery[0][1];
+$MajorCourse =  $infoquery[0][2];
+$StudentName = $FirstName . " " . $LastName;
+
+$course_qry =
+    GSecureSQL::query(
+        "SELECT CourseTitle FROM coursetbl WHERE CourseCode = ?",
+        TRUE,
+        "s",
+        $MajorCourse
+    );
+$MajorCourse = $course_qry[0][0];
 ?>
 
 <html lang="en">
@@ -126,7 +141,7 @@ $result = mysql_query($qry);
                         <div class="col-md-7">
                             <!-- Start Contact Info -->
                             <ul class="profile-name">
-                                <li><i class="fa fa-hashtag"></i> <b>008-2012-0805</b></li>
+                                <li>Course: <b><?php echo $MajorCourse; ?></b></li>
                             </ul>
                             <!-- End Contact Info -->
                         </div>

@@ -26,8 +26,17 @@ $CivilStatus = $student_tbl[0][9];
 $FBLink = $student_tbl[0][12];
 $TwitterLink = $student_tbl[0][13];
 $ProfileImage = $student_tbl[0][14];
+$MajorCourse = $student_tbl[0][15];
 $FBLink = substr($FBLink, 24);
 
+$course_qry =
+    GSecureSQL::query(
+        "SELECT CourseTitle FROM coursetbl WHERE CourseCode = ?",
+        TRUE,
+        "s",
+        $MajorCourse
+    );
+$MajorCourse = $course_qry[0][0];
 $StudentName = $FirstName . " " . $LastName;
 ?>
 
@@ -141,7 +150,7 @@ $StudentName = $FirstName . " " . $LastName;
                     <div class="col-md-7">
                         <!-- Start Contact Info -->
                         <ul class="profile-name">
-                            <li>Student No.: <b><?php echo $StudentID; ?></b></li>
+                            <li>Course: <b><?php echo $MajorCourse; ?></b></li>
                         </ul>
                         <!-- End Contact Info -->
                     </div>
