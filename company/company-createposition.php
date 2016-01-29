@@ -197,8 +197,7 @@ $cLastName = $companyinfo_tbl[0][2];
                                 <a>Position</a>
                                 <ul class="dropdown">
                                     <li><a href="company-positionlist.php">Position List</a></li>
-                                    <li><a class="active" href="company-createposition.php" class="active">Create
-                                            Position</a></li>
+                                    <li><a class="active" href="company-createposition.php" class="active">Create Position</a></li>
                                 </ul>
                             </li>
                             <li>
