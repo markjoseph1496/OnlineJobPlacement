@@ -7,6 +7,28 @@ if (isset($_SESSION['StudentID'])) {
 } else {
     header("location: ../../../login-student.php");
 }
+
+$infoquery =
+    GSecureSQL::query(
+        "SELECT FirstName, LastName, MajorCourse FROM studentinfotbl WHERE StudentID = ?",
+        TRUE,
+        "s",
+        $StudentID
+    );
+
+$FirstName = $infoquery[0][0];
+$LastName = $infoquery[0][1];
+$MajorCourse =  $infoquery[0][2];
+$StudentName = $FirstName . " " . $LastName;
+
+$course_qry =
+    GSecureSQL::query(
+        "SELECT CourseTitle FROM coursetbl WHERE CourseCode = ?",
+        TRUE,
+        "s",
+        $MajorCourse
+    );
+$MajorCourse = $course_qry[0][0];
 ?>
 <!doctype html>
 <html lang="en">
@@ -95,7 +117,7 @@ if (isset($_SESSION['StudentID'])) {
                     <div class="col-md-7">
                         <!-- Start Contact Info -->
                         <ul class="profile-name">
-                            <li><i class="fa fa-hashtag"></i> <b>008-2012-0805</b></li>
+                            <li>Course: <b><?php echo $MajorCourse; ?></b></li>
                         </ul>
                         <!-- End Contact Info -->
                     </div>
@@ -111,7 +133,7 @@ if (isset($_SESSION['StudentID'])) {
                                 &nbsp;
                             </li>
                             <li class="profile-name">
-                                <i class="fa fa-user"></i> Hello, <b>Aira Jane Cruz</b>
+                                <i class="fa fa-user"></i> Hello, <b><?php echo $StudentName; ?></b>
                             </li>
                         </ul>
                         <!-- End Social Links -->
