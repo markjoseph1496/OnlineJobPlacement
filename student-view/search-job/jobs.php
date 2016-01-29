@@ -299,30 +299,22 @@ $MajorCourse = $coursetbl[0][0];
                         <label><i class="fa fa-bookmark"></i> Bookmarked Jobs: <a href="bookmarked-jobs.php">(0)</a>&nbsp;</label>
                     </div>
 
-                    <div class="row">
-                        <div class="col-md-5">
-                            <label><i class="fa fa-sort"></i> Sort by:</label>
-                        </div>
-                        <div class="col-md-7">
-                            <select id="" name="" class="form-control">
-                                <option value="">- Select one -</option>
-                                <option value="">Location</option>
-                                <option value="">Years of Experience</option>
-                            </select>
-                        </div>
-                    </div>
+                    <div>
+                        <label><i class="fa fa-sort"></i> Sort by:</label>
+                        <select id="" name="" class="form-control">
+                            <option value="">- Select one -</option>
+                            <option value="">Location</option>
+                            <option value="">Years of Experience</option>
+                        </select>
+                    </div>    
                     
-                    <div class="row">
-                        <div class="col-md-5">
-                            <label><i class="fa fa-filter"></i> Filter by:</label>
-                        </div>
-                        <div class="col-md-7">
-                            <select id="FilterBy" name="FilterBy" class="form-control">
-                                <option value="">- Select one -</option>
-                                <option value="<?php echo $CourseCode; ?>">Your Course</option>
-                                <option value="Specialization">Your Specialization</option>
-                            </select>
-                        </div>
+                    <div>
+                        <label><i class="fa fa-filter"></i> Filter by:</label>
+                        <select id="FilterBy" name="FilterBy" class="form-control">
+                            <option value="">- Select one -</option>
+                            <option value="<?php echo $CourseCode; ?>">Your Course</option>
+                            <option value="Specialization">Your Specialization</option>
+                        </select>
                     </div>
 
                     <div class="hr4" style="margin-top:40px;margin-bottom:40px;"></div>
