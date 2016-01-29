@@ -266,13 +266,6 @@ $StudentName = $FirstName . " " . $LastName;
                         <li>
                             <a href="../search-job/jobs.php">Jobs</a>
                         </li>
-                        <li>
-                            <a href="../settings/privacy-settings.php">Settings</a>
-                            <ul class="dropdown">
-                                <li><a href="../settings/privacy-settings.php">Privacy Settings</a></li>
-                                <li><a href="../settings/pass-settings.php">Password Settings</a></li>
-                            </ul>
-                        </li>
                     </ul>
                     <!-- End Navigation List -->
                 </div>
@@ -306,16 +299,6 @@ $StudentName = $FirstName . " " . $LastName;
                 </li>
                 <li>
                     <a href="../search-job/jobs.php">Jobs</a>
-                </li>
-                <li>
-                    <a href="../settings/privacy-settings.php">Settings</a>
-                    <ul class="dropdown">
-                        <li><a href="../settings/privacy-settings.php">Privacy Settings</a></li>
-                        <li><a href="../settings/pass-settings.php">Password Settings</a></li>
-                    </ul>
-                </li>
-                <li>
-                    <a href="../login-student.php?id=1"><i class="fa fa-sign-out"></i> Sign Out</a>
                 </li>
             </ul>
             <!-- Mobile Menu End -->

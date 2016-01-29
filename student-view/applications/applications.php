@@ -265,13 +265,6 @@ if (is_null($_SESSION['StudentID'])) {
                         <li>
                             <a href="../search-job/jobs.php">Jobs</a>
                         </li>
-                        <li>
-                            <a href="../settings/privacy-settings.php">Settings</a>
-                            <ul class="dropdown">
-                                <li><a href="../settings/privacy-settings.php">Privacy Settings</a></li>
-                                <li><a href="../settings/pass-settings.php">Password Settings</a></li>
-                            </ul>
-                        </li>
                     </ul>
                     <!-- End Navigation List -->
                 </div>
@@ -305,16 +298,6 @@ if (is_null($_SESSION['StudentID'])) {
                 </li>
                 <li>
                     <a href="../search-job/jobs.php">Jobs</a>
-                </li>
-                <li>
-                    <a href="../settings/privacy-settings.php">Settings</a>
-                    <ul class="dropdown">
-                        <li><a href="../settings/privacy-settings.php">Privacy Settings</a></li>
-                        <li><a href="../settings/pass-settings.php">Password Settings</a></li>
-                    </ul>
-                </li>
-                <li>
-                    <a href=d><i class="fa fa-sign-out"></i> Sign Out</a>
                 </li>
             </ul>
             <!-- Mobile Menu End -->
