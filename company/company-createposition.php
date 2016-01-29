@@ -284,13 +284,12 @@ $cLastName = $companyinfo_tbl[0][2];
                     </div>
                     <div class="col-md-3">
                         <div class="form-group">
-                            <div class="row">
-                                <input type="date" name="DateFrom" id="date_from" class="form-control">
-                                <div class="date_to">
-                                    <label = "usr" class = "control-label" id = "label">to: </label>
-                                    <input type="date" name="DateTo" id="date_to" class="form-control">
-                                </div>
-                            </div>
+                            <label>From:</label><input type="date" name="DateFrom" id="date_from" class="form-control">
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="form-group">
+                            <label>To:</label><input type="date" name="DateTo" id="date_to" class="form-control">
                         </div>
                     </div>
                 </div>
@@ -302,10 +301,7 @@ $cLastName = $companyinfo_tbl[0][2];
                     </div>
                     <div class="col-md-4">
                         <div class="form-group">
-                            <div class="form-group">
-                                <input type="text" id="PLevel" name="PLevel" class="form-control"
-                                       style=" width: 100%; height:30px;">
-                            </div>
+                            <input type="text" id="PLevel" name="PLevel" class="form-control" style=" width: 100%; height:30px;">
                         </div>
                     </div>
                 </div>
@@ -377,7 +373,7 @@ $cLastName = $companyinfo_tbl[0][2];
                     <div class="col-md-3">
                         <label = "usr" class = "control-label"> Related Courses: </label>
                     </div>
-                    <div class="col-md-9">
+                    <div class="col-md-6">
                         <div class="form-group">
                             <ul>
                                 <?php
@@ -455,9 +451,9 @@ $cLastName = $companyinfo_tbl[0][2];
                     <div class="col-md-3">
                         <label = "usr" class = "control-label"> Degree Level: </label>
                     </div>
-                    <div class="col-md-4">
+                    <div class="col-md-3">
                         <div class="form-group">
-                            <div class="input-group" style="width: 100%; margin-bottom: 15px">
+                            <div class="input-group" style="margin-bottom: 5px">
                                 <ul>
                                     <li>
                                         <div class="checkbox checkbox-success">
@@ -495,39 +491,39 @@ $cLastName = $companyinfo_tbl[0][2];
                                         $('#kl-input-' + index).remove();
                                     }
                                 </script>
-                          <span class="input-group-btn">
-                            <a class="btn btn-primary" onclick="(function(){
-                              var _requirements = $('#txt-knowledge').val();
-                              if(_requirements==''){
-                                  alert('Cannot add empty value.');
-                              }
-                              else{
-                                  kl_index++;
-                                  var kk = $('#knowledge-template');
-                                  var kk_span = kk.find('span');
-                                  var kk_a = kk.find('a');
-                                  var kk_input = kk.find('input');
+                              <span class="input-group-btn">
+                                <a class="btn btn-primary" onclick="(function(){
+                                  var _requirements = $('#txt-knowledge').val();
+                                  if(_requirements==''){
+                                      alert('Cannot add empty value.');
+                                  }
+                                  else{
+                                      kl_index++;
+                                      var kk = $('#knowledge-template');
+                                      var kk_span = kk.find('span');
+                                      var kk_a = kk.find('a');
+                                      var kk_input = kk.find('input');
 
-                                  kk_span.text($('#txt-knowledge').val());
-                                  kk_span.attr('id', 'kl-span-' + kl_index);
-                                  kk_a.attr('id', 'kl-a-' + kl_index);
-                                  kk_a.attr('onclick', 'delete_knowledge(' + kl_index + ')');
-                                  kk_input.attr('id', 'kl-input-' + kl_index);
-                                  kk_input.attr('name', 'knowledge[' + kl_index +']');
-                                  kk_input.val(kk_span.text());
-                                  $('#knowledge-list').append($('#knowledge-template').html());
-                                  $('#txt-knowledge').val('');
+                                      kk_span.text($('#txt-knowledge').val());
+                                      kk_span.attr('id', 'kl-span-' + kl_index);
+                                      kk_a.attr('id', 'kl-a-' + kl_index);
+                                      kk_a.attr('onclick', 'delete_knowledge(' + kl_index + ')');
+                                      kk_input.attr('id', 'kl-input-' + kl_index);
+                                      kk_input.attr('name', 'knowledge[' + kl_index +']');
+                                      kk_input.val(kk_span.text());
+                                      $('#knowledge-list').append($('#knowledge-template').html());
+                                      $('#txt-knowledge').val('');
 
-                                  //disposal of used resource in #knowledge-template
-                                  kk_span.removeAttr('id');
-                                  kk_a.removeAttr('id');
-                                  kk_a.removeAttr('onclick');
-                                  kk_input.removeAttr('id');
-                                  kk_input.removeAttr('name');
-                                  kk_input.removeAttr('value');
-                              }
-                            })()">Add</a>
-                          </span>
+                                      //disposal of used resource in #knowledge-template
+                                      kk_span.removeAttr('id');
+                                      kk_a.removeAttr('id');
+                                      kk_a.removeAttr('onclick');
+                                      kk_input.removeAttr('id');
+                                      kk_input.removeAttr('name');
+                                      kk_input.removeAttr('value');
+                                  }
+                                })()">Add</a>
+                              </span>
                             </div>
                         </div>
                     </div>
@@ -560,38 +556,38 @@ $cLastName = $companyinfo_tbl[0][2];
                                         $('#lll-input-' + index).remove();
                                     }
                                 </script>
-                          <span class="input-group-btn">
-                            <a class="btn btn-primary" onclick="(function(){
-                              var _languages = $('#txt-language').val();
-                              if(_languages==''){
-                                alert('Cannot add empty value.');
-                              }else{
-                              lll_index++;
-                              var ll = $('#language-template');
-                              var ll_span = ll.find('span');
-                              var ll_a = ll.find('a');
-                              var ll_input = ll.find('input');
+                              <span class="input-group-btn">
+                                <a class="btn btn-primary" onclick="(function(){
+                                  var _languages = $('#txt-language').val();
+                                  if(_languages==''){
+                                    alert('Cannot add empty value.');
+                                  }else{
+                                  lll_index++;
+                                  var ll = $('#language-template');
+                                  var ll_span = ll.find('span');
+                                  var ll_a = ll.find('a');
+                                  var ll_input = ll.find('input');
 
-                              ll_span.text($('#txt-language').val());
-                              ll_span.attr('id', 'lll-span-' + lll_index);
-                              ll_a.attr('id', 'lll-a-' + lll_index);
-                              ll_a.attr('onclick', 'delete_language(' + lll_index + ')');
-                              ll_input.attr('id', 'lll-input-' + lll_index);
-                              ll_input.attr('name', 'language[' + lll_index +']');
-                              ll_input.val(ll_span.text());
-                              $('#language-list').append($('#language-template').html());
-                              $('#txt-language').val('');
+                                  ll_span.text($('#txt-language').val());
+                                  ll_span.attr('id', 'lll-span-' + lll_index);
+                                  ll_a.attr('id', 'lll-a-' + lll_index);
+                                  ll_a.attr('onclick', 'delete_language(' + lll_index + ')');
+                                  ll_input.attr('id', 'lll-input-' + lll_index);
+                                  ll_input.attr('name', 'language[' + lll_index +']');
+                                  ll_input.val(ll_span.text());
+                                  $('#language-list').append($('#language-template').html());
+                                  $('#txt-language').val('');
 
-                              //disposal of used resource in #language-template
-                              ll_span.removeAttr('id');
-                              ll_a.removeAttr('id');
-                              ll_a.removeAttr('onclick');
-                              ll_input.removeAttr('id');
-                              ll_input.removeAttr('name');
-                              ll_input.removeAttr('value');
-                              }
-                            })()">Add</a>
-                          </span>
+                                  //disposal of used resource in #language-template
+                                  ll_span.removeAttr('id');
+                                  ll_a.removeAttr('id');
+                                  ll_a.removeAttr('onclick');
+                                  ll_input.removeAttr('id');
+                                  ll_input.removeAttr('name');
+                                  ll_input.removeAttr('value');
+                                  }
+                                })()">Add</a>
+                              </span>
                             </div>
                         </div>
                     </div>
@@ -612,7 +608,7 @@ $cLastName = $companyinfo_tbl[0][2];
                 <div class="field">
                     <div class="text-center">
                         <button type="submit" class="btn-system btn-large" id="btnsave" name="btnsave">Save</button>
-                        <button type="submit" class="btn-system btn-large" id="cancel">Cancel</button>
+                        <button type="submit" class="btn-system btn-large btn-black" id="cancel">Cancel</button>
                     </div>
                 </div>
             </div>
