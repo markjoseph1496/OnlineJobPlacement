@@ -5,39 +5,49 @@ include('../../connection.php');
 session_start();
 
 
-if(isset($_SESSION['StudentID'])){
+if (isset($_SESSION['StudentID'])) {
     $StudentID = $_SESSION['StudentID'];
-}else{
+} else {
     header("location: ../../login-student.php");
 }
 
-    $student_tbl =
+$student_tbl =
     GSecureSQL::query(
         "SELECT * FROM studcontactstbl WHERE StudentID = ?",
         TRUE,
         "s",
         $StudentID
     );
-        $Email = $student_tbl[0][2];
-        $Address = $student_tbl[0][3];
-        $MobileNumber = $student_tbl[0][4];
-        $Region = $student_tbl[0][5];
-        $HomeNumber = $student_tbl[0][6];
-        $PostalCode = $student_tbl[0][7];
-        $WorkNumber = $student_tbl[0][8];
-        $City = $student_tbl[0][9];
+$Email = $student_tbl[0][2];
+$Address = $student_tbl[0][3];
+$MobileNumber = $student_tbl[0][4];
+$Region = $student_tbl[0][5];
+$HomeNumber = $student_tbl[0][6];
+$PostalCode = $student_tbl[0][7];
+$WorkNumber = $student_tbl[0][8];
+$City = $student_tbl[0][9];
 
-    $infoquery =
-        GSecureSQL::query(
-            "SELECT FirstName, LastName FROM studentinfotbl WHERE StudentID = ?",
-            TRUE,
-            "s",
-            $StudentID
-        );
+$infoquery =
+    GSecureSQL::query(
+        "SELECT FirstName, LastName, MajorCourse FROM studentinfotbl WHERE StudentID = ?",
+        TRUE,
+        "s",
+        $StudentID
+    );
 
-        $FirstName = $infoquery[0][0];
-        $LastName = $infoquery[0][1];
-        $StudentName = $FirstName . " " . $LastName;
+$FirstName = $infoquery[0][0];
+$LastName = $infoquery[0][1];
+$MajorCourse = $infoquery[0][2];
+$StudentName = $FirstName . " " . $LastName;
+
+$course_qry =
+    GSecureSQL::query(
+        "SELECT CourseTitle FROM coursetbl WHERE CourseCode = ?",
+        TRUE,
+        "s",
+        $MajorCourse
+    );
+$MajorCourse = $course_qry[0][0];
 ?>
 <html lang="en">
 
@@ -111,45 +121,41 @@ if(isset($_SESSION['StudentID'])){
     <!-- Notification -->
     <link rel="stylesheet" href="../../css/notif.css"/>
 
-    <script type="text/javascript" >
-        $(document).ready(function()
-        {
-        $("#notificationLink").click(function()
-        {
-        $("#notificationContainer").fadeToggle(300);
-        $("#notification_count").fadeOut("slow");
-        return false;
-        });
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $("#notificationLink").click(function () {
+                $("#notificationContainer").fadeToggle(300);
+                $("#notification_count").fadeOut("slow");
+                return false;
+            });
 
-        //Document Click
-        $(document).click(function()
-        {
-        $("#notificationContainer").hide();
-        });
-        //Popup Click
-        $("#notificationContainer").click(function()
-        {
-        return false
-        });
+            //Document Click
+            $(document).click(function () {
+                $("#notificationContainer").hide();
+            });
+            //Popup Click
+            $("#notificationContainer").click(function () {
+                return false
+            });
 
         });
     </script>
 </head>
 
 <body>
-    <form id="Save" name="Save" autocomplete="off" action="addfunction.php">
+<form id="Save" name="Save" autocomplete="off" action="addfunction.php">
     <div id="container">
         <!-- Start Header Section -->
         <div class="hidden-header"></div>
         <header class="clearfix">
-        <!-- Start Top Bar -->
+            <!-- Start Top Bar -->
             <div class="top-bar">
                 <div class="container">
                     <div class="row">
                         <div class="col-md-7">
                             <!-- Start Contact Info -->
                             <ul class="profile-name">
-                                <li>Student No.: </i> <b><?php echo $StudentID; ?></b></li>
+                                <li>Course: </i> <b><?php echo $MajorCourse; ?></b></li>
                             </ul>
                             <!-- End Contact Info -->
                         </div>
@@ -159,7 +165,8 @@ if(isset($_SESSION['StudentID'])){
                             <ul class="nav navbar-nav navbar-right">
                                 <li class="dropdown icon-border" id="notificationLink">
                                     <span id="notification_count">3</span>
-                                    <a href="#" class="bell itl-tooltip" data-placement="bottom" data-toggle="dropdown"><i class="fa fa-bell"></i></a>
+                                    <a href="#" class="bell itl-tooltip" data-placement="bottom" data-toggle="dropdown"><i
+                                            class="fa fa-bell"></i></a>
                                     <ul id="notificationContainer" class="dropdown-menu dropdown-menu-inverse">
                                         <li class="dropdown-header"><label>Notification</label></li>
                                         <li class="disabled"><a href="#" tabindex="-1">No new notification.</a></li>
@@ -169,12 +176,17 @@ if(isset($_SESSION['StudentID'])){
                                     </ul>
                                 </li>
                                 <li class="dropdown">
-                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown"><b class="fa fa-user"></b> Welcome, <b><?php echo $StudentName; ?> </b><b class="caret"></b></a>
+                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown"><b
+                                            class="fa fa-user"></b> Welcome, <b><?php echo $StudentName; ?> </b><b
+                                            class="caret"></b></a>
                                     <ul class="dropdown-menu">
                                         <li><a href="#">Profile <b class="fa fa-user" style="float:right;"></b></a></li>
-                                        <li><a href="../settings/privacy-settings.php">Settings <b class="fa fa-cog" style="float:right;"></b></a></li>
+                                        <li><a href="../settings/privacy-settings.php">Settings <b class="fa fa-cog"
+                                                                                                   style="float:right;"></b></a>
+                                        </li>
                                         <li class="divider"></li>
-                                        <li><a href="#" data-target='#Logout' data-toggle='modal'>Sign Out <b class="fa fa-sign-out" style="float:right;"></b></a></li>
+                                        <li><a href="#" data-target='#Logout' data-toggle='modal'>Sign Out <b
+                                                    class="fa fa-sign-out" style="float:right;"></b></a></li>
                                     </ul>
                                 </li>
                             </ul>
@@ -220,8 +232,9 @@ if(isset($_SESSION['StudentID'])){
             <div class="navbar navbar-default navbar-top">
                 <div class="container">
                     <div class="navbar-header">
-                    <!-- Stat Toggle Nav Link For Mobiles -->
-                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <!-- Stat Toggle Nav Link For Mobiles -->
+                        <button type="button" class="navbar-toggle" data-toggle="collapse"
+                                data-target=".navbar-collapse">
                             <i class="fa fa-bars"></i>
                         </button>
                         <!-- End Toggle Nav Link For Mobiles -->
@@ -232,7 +245,8 @@ if(isset($_SESSION['StudentID'])){
                     <div class="navbar-collapse collapse">
                         <!-- Sign-out -->
                         <div class="signout-side">
-                            <a class="show-signout" data-toggle='modal' data-target='#Logout'><i class="fa fa-sign-out"></i></a>
+                            <a class="show-signout" data-toggle='modal' data-target='#Logout'><i
+                                    class="fa fa-sign-out"></i></a>
                         </div>
                         <!-- End Sign-out -->
                         <!-- Start Navigation List -->
@@ -337,18 +351,18 @@ if(isset($_SESSION['StudentID'])){
             <div class="container">
 
                 <?php
-                    if(isset($_GET['id'])){
-                        $id=$_GET['id'];
+                if (isset($_GET['id'])) {
+                    $id = $_GET['id'];
 
-                        if($id==1){
-                            echo'
+                    if ($id == 1) {
+                        echo '
                                 <div class="alert alert-success">
                                     <span class="glyphicon glyphicon-info-sign"></span> 
                                     Contacts Information successfully updated.
                                 </div>
                                 ';
-                        }
                     }
+                }
                 ?>
 
                 <div class="skill-shortcode">
@@ -370,19 +384,23 @@ if(isset($_SESSION['StudentID'])){
                                 <div class="call-action call-action-boxed call-action-style1 clearfix">
                                     <div class="form-group">
                                         <label>Email <span>(*)</span></label>
-                                        <input type="email" class="form-control" id="Email" name="Email" value="<?php echo $Email; ?>" maxlength="30">
+                                        <input type="email" class="form-control" id="Email" name="Email"
+                                               value="<?php echo $Email; ?>" maxlength="30">
                                     </div>
                                     <div class="form-group">
                                         <label>Mobile Number <span>(*)</span></label>
-                                        <input type="text" class="form-control" id="MobileNumber" name="MobileNumber" value="<?php echo $MobileNumber; ?>" maxlength="11">
+                                        <input type="text" class="form-control" id="MobileNumber" name="MobileNumber"
+                                               value="<?php echo $MobileNumber; ?>" maxlength="11">
                                     </div>
                                     <div class="form-group">
                                         <label>Home Number</label>
-                                        <input type="text" class="form-control" id="HomeNumber" name="HomeNumber" value="<?php echo $HomeNumber; ?>" maxlength="11">
+                                        <input type="text" class="form-control" id="HomeNumber" name="HomeNumber"
+                                               value="<?php echo $HomeNumber; ?>" maxlength="11">
                                     </div>
                                     <div class="form-group">
                                         <label>Work Number</label>
-                                        <input type="text" class="form-control" id="WorkNumber" name="WorkNumber" value="<?php echo $WorkNumber; ?>" maxlength="11">
+                                        <input type="text" class="form-control" id="WorkNumber" name="WorkNumber"
+                                               value="<?php echo $WorkNumber; ?>" maxlength="11">
                                     </div>
                                 </div>
                                 <!-- End Single Testimonial -->
@@ -392,34 +410,90 @@ if(isset($_SESSION['StudentID'])){
                                 <div class="call-action call-action-boxed call-action-style1 clearfix">
                                     <div class="form-group">
                                         <label>Address <span>(*)</span></label>
-                                        <input type="text" class="form-control" id="Address" name="Address" value="<?php echo $Address; ?>" maxlength="60">
+                                        <input type="text" class="form-control" id="Address" name="Address"
+                                               value="<?php echo $Address; ?>" maxlength="60">
                                     </div>
                                     <div class="form-group">
                                         <label>City <span>(*)</span></label>
-                                        <select id="City" name="City" class="form-control" style="width:100%; height:34px;">
-                                            <option value="" <?php if($City=="") echo 'selected="selected"'; ?>>- Please select one -</option>
-                                            <option value="Caloocan City" <?php if($City=="Caloocan City") echo 'selected="selected"'; ?>>Caloocan City</option>
-                                            <option value="Las Piñas City" <?php if($City=="Las Piñas City") echo 'selected="selected"'; ?>>Las Piñas City</option>
-                                            <option value="Makati City" <?php if($City=="Makati City") echo 'selected="selected"'; ?>>Makati City</option>
-                                            <option value="Malabon City" <?php if($City=="Malabon City") echo 'selected="selected"'; ?>>Malabon City</option>
-                                            <option value="Mandaluyong City" <?php if($City=="Mandaluyong City") echo 'selected="selected"'; ?>>Mandaluyong City</option>
-                                            <option value="Manila" <?php if($City=="Manila") echo 'selected="selected"'; ?>>Manila</option>
-                                            <option value="Marikina City" <?php if($City=="Marikina City") echo 'selected="selected"'; ?>>Marikina City</option>
-                                            <option value="Muntinlupa City" <?php if($City=="Muntinlupa City") echo 'selected="selected"'; ?>>Muntinlupa City</option>
-                                            <option value="Navotas City" <?php if($City=="Navotas City") echo 'selected="selected"'; ?>>Navotas City</option>
-                                            <option value="Parañaque City" <?php if($City=="Parañaque City") echo 'selected="selected"'; ?>>Parañaque City</option>
-                                            <option value="Pasay City" <?php if($City=="Pasay City") echo 'selected="selected"'; ?>>Pasay City</option>
-                                            <option value="Pasig City" <?php if($City=="Pasig City") echo 'selected="selected"'; ?>>Pasig City</option>
-                                            <option value="Pateros" <?php if($City=="Pateros") echo 'selected="selected"'; ?>>Pateros</option>
-                                            <option value="Quezon City" <?php if($City=="Quezon City") echo 'selected="selected"'; ?>>Quezon City</option>
-                                            <option value="San Juan City" <?php if($City=="San Juan City") echo 'selected="selected"'; ?>>San Juan City</option>
-                                            <option value="Taguig City" <?php if($City=="Taguig City") echo 'selected="selected"'; ?>>Taguig City</option>
-                                            <option value="Valenzuela City" <?php if($City=="Valenzuela City") echo 'selected="selected"'; ?>>Valenzuela City</option>
+                                        <select id="City" name="City" class="form-control"
+                                                style="width:100%; height:34px;">
+                                            <option value="" <?php if ($City == "") echo 'selected="selected"'; ?>>-
+                                                Please select one -
+                                            </option>
+                                            <option
+                                                value="Caloocan City" <?php if ($City == "Caloocan City") echo 'selected="selected"'; ?>>
+                                                Caloocan City
+                                            </option>
+                                            <option
+                                                value="Las Piñas City" <?php if ($City == "Las Piñas City") echo 'selected="selected"'; ?>>
+                                                Las Piñas City
+                                            </option>
+                                            <option
+                                                value="Makati City" <?php if ($City == "Makati City") echo 'selected="selected"'; ?>>
+                                                Makati City
+                                            </option>
+                                            <option
+                                                value="Malabon City" <?php if ($City == "Malabon City") echo 'selected="selected"'; ?>>
+                                                Malabon City
+                                            </option>
+                                            <option
+                                                value="Mandaluyong City" <?php if ($City == "Mandaluyong City") echo 'selected="selected"'; ?>>
+                                                Mandaluyong City
+                                            </option>
+                                            <option
+                                                value="Manila" <?php if ($City == "Manila") echo 'selected="selected"'; ?>>
+                                                Manila
+                                            </option>
+                                            <option
+                                                value="Marikina City" <?php if ($City == "Marikina City") echo 'selected="selected"'; ?>>
+                                                Marikina City
+                                            </option>
+                                            <option
+                                                value="Muntinlupa City" <?php if ($City == "Muntinlupa City") echo 'selected="selected"'; ?>>
+                                                Muntinlupa City
+                                            </option>
+                                            <option
+                                                value="Navotas City" <?php if ($City == "Navotas City") echo 'selected="selected"'; ?>>
+                                                Navotas City
+                                            </option>
+                                            <option
+                                                value="Parañaque City" <?php if ($City == "Parañaque City") echo 'selected="selected"'; ?>>
+                                                Parañaque City
+                                            </option>
+                                            <option
+                                                value="Pasay City" <?php if ($City == "Pasay City") echo 'selected="selected"'; ?>>
+                                                Pasay City
+                                            </option>
+                                            <option
+                                                value="Pasig City" <?php if ($City == "Pasig City") echo 'selected="selected"'; ?>>
+                                                Pasig City
+                                            </option>
+                                            <option
+                                                value="Pateros" <?php if ($City == "Pateros") echo 'selected="selected"'; ?>>
+                                                Pateros
+                                            </option>
+                                            <option
+                                                value="Quezon City" <?php if ($City == "Quezon City") echo 'selected="selected"'; ?>>
+                                                Quezon City
+                                            </option>
+                                            <option
+                                                value="San Juan City" <?php if ($City == "San Juan City") echo 'selected="selected"'; ?>>
+                                                San Juan City
+                                            </option>
+                                            <option
+                                                value="Taguig City" <?php if ($City == "Taguig City") echo 'selected="selected"'; ?>>
+                                                Taguig City
+                                            </option>
+                                            <option
+                                                value="Valenzuela City" <?php if ($City == "Valenzuela City") echo 'selected="selected"'; ?>>
+                                                Valenzuela City
+                                            </option>
                                         </select>
                                     </div>
                                     <div class="form-group">
                                         <label>Postal Code</label>
-                                        <input type="text" class="form-control" id="PostalCode" name="PostalCode" value="<?php echo $PostalCode; ?>" maxlength="11">
+                                        <input type="text" class="form-control" id="PostalCode" name="PostalCode"
+                                               value="<?php echo $PostalCode; ?>" maxlength="11">
                                     </div>
                                 </div>
                                 <!-- End Single Testimonial -->
@@ -440,15 +514,15 @@ if(isset($_SESSION['StudentID'])){
                 <div class="hr5" style="margin-top:35px;margin-bottom:40px;"></div>
                 <div class="field">
                     <div class="text-center">
-                        <button type="submit" class="btn-system btn-large" name ="btnSaveContactInfo">Save</button>
+                        <button type="submit" class="btn-system btn-large" name="btnSaveContactInfo">Save</button>
                     </div>
                 </div>
             </div>
         </div>
     </div>
 </form>
-    <!-- End Content -->
-    <script type="text/javascript" src="../../js/script.js"></script>
+<!-- End Content -->
+<script type="text/javascript" src="../../js/script.js"></script>
 </body>
 </html>
 <script type="text/javascript">
@@ -469,29 +543,29 @@ if(isset($_SESSION['StudentID'])){
                 },
                 MobileNumber: {
                     validators: {
-                            notEmpty: {
-                                message: "Mobile Number is required."
-                            },
-                            regexp: {
-                                regexp: /^[0-9]+$/i,
-                                message: "Mobile Number can consist of numeric characters only."
-                            }
+                        notEmpty: {
+                            message: "Mobile Number is required."
+                        },
+                        regexp: {
+                            regexp: /^[0-9]+$/i,
+                            message: "Mobile Number can consist of numeric characters only."
+                        }
                     }
                 },
                 HomeNumber: {
                     validators: {
-                            regexp: {
-                                    regexp: /^[0-9]+$/i,
-                                    message: "Home Number can consist of numeric characters only."
-                            }
+                        regexp: {
+                            regexp: /^[0-9]+$/i,
+                            message: "Home Number can consist of numeric characters only."
+                        }
                     }
                 },
                 WorkNumber: {
                     validators: {
-                            regexp: {
-                                    regexp: /^[0-9]+$/i,
-                                    message: "Work Number can consist of numeric characters only."
-                            }
+                        regexp: {
+                            regexp: /^[0-9]+$/i,
+                            message: "Work Number can consist of numeric characters only."
+                        }
                     }
                 },
                 Address: {
@@ -510,10 +584,10 @@ if(isset($_SESSION['StudentID'])){
                 },
                 PostalCode: {
                     validators: {
-                            regexp: {
-                                    regexp: /^[0-9]+$/i,
-                                    message: "Postal Code can consist of numeric characters only."
-                            }
+                        regexp: {
+                            regexp: /^[0-9]+$/i,
+                            message: "Postal Code can consist of numeric characters only."
+                        }
                     }
                 }
             }

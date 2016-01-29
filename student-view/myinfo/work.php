@@ -10,7 +10,7 @@ if(isset($_SESSION['StudentID'])){
 
 $infoquery =
     GSecureSQL::query(
-        "SELECT FirstName, LastName FROM studentinfotbl WHERE StudentID = ?",
+        "SELECT FirstName, LastName, MajorCourse FROM studentinfotbl WHERE StudentID = ?",
         TRUE,
         "s",
         $StudentID
@@ -18,7 +18,17 @@ $infoquery =
 
 $FirstName = $infoquery[0][0];
 $LastName = $infoquery[0][1];
+$MajorCourse =  $infoquery[0][2];
 $StudentName = $FirstName . " " . $LastName;
+
+$course_qry =
+    GSecureSQL::query(
+        "SELECT CourseTitle FROM coursetbl WHERE CourseCode = ?",
+        TRUE,
+        "s",
+        $MajorCourse
+    );
+$MajorCourse = $course_qry[0][0];
 ?>
 <!doctype html>
 <html lang="en">
@@ -134,7 +144,7 @@ $StudentName = $FirstName . " " . $LastName;
                     <div class="col-md-7">
                         <!-- Start Contact Info -->
                         <ul class="profile-name">
-                            <li>Student No.: <b><?php echo $StudentID; ?></b></li>
+                            <li>Course: <b><?php echo $MajorCourse; ?></b></li>
                         </ul>
                         <!-- End Contact Info -->
                     </div>
