@@ -335,8 +335,10 @@ $MajorCourse = $coursetbl[0][0];
                     <?php
                     $compposition_tbl =
                         GSecureSQL::query(
-                            "SELECT * FROM comppositiontbl",
-                            TRUE
+                            "SELECT * FROM comppositiontbl WHERE RelatedCourses = ?",
+                            TRUE,
+                            "s",
+                            $MajorCourse
                         );
                     foreach ($compposition_tbl as $value) {
                         $PositionID = $value[0];
