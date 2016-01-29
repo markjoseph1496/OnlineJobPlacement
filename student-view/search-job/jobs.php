@@ -13,7 +13,7 @@ $infoquery =
 
 $FirstName = $infoquery[0][0];
 $LastName = $infoquery[0][1];
-$MajorCourse = $infoquery[0][2];
+$CourseCode = $infoquery[0][2];
 $StudentName = $FirstName . " " . $LastName;
 
 $coursetbl =
@@ -21,7 +21,7 @@ $coursetbl =
         "SELECT CourseTitle FROM coursetbl WHERE CourseCode = ?",
         TRUE,
         "s",
-        $MajorCourse
+        $CourseCode
     );
 $MajorCourse = $coursetbl[0][0];
 ?>
@@ -137,7 +137,7 @@ $MajorCourse = $coursetbl[0][0];
                     <div class="col-md-7">
                         <!-- Start Contact Info -->
                         <ul class="profile-name">
-                            <li>Student No.: <b><?php echo $StudentID; ?></b></li>
+                            <li>Course: <b><?php echo $MajorCourse; ?></b></li>
                         </ul>
                         <!-- End Contact Info -->
                     </div>
@@ -292,9 +292,10 @@ $MajorCourse = $coursetbl[0][0];
             </select>&nbsp;
 
             <label><i class="fa fa-filter"></i> Filter by:</label>
-            <select id="" name="" class="" style="height:15%; width:15%;">
-                <option value=""></option>
-                <option value=""></option>
+            <select id="FilterBy" name="FilterBy" class="" style="height:15%; width:15%;">
+                <option value="">- Select one -</option>
+                <option value="<?php echo $CourseCode; ?>">Your Course</option>
+                <option value="Specialization">Your Specialization</option>
             </select>
         </div>
     </div>
@@ -337,15 +338,7 @@ $MajorCourse = $coursetbl[0][0];
                 <!-- Start Blog Posts -->
                 <div class="col-md-9 blog-box">
                     <h4 class="classic-title"><span>Jobs</span></h4>
-                    <?php
-                    $course_tbl =
-                        GSecureSQL::query(
-                            "SELECT CourseCode FROM coursetbl WHERE CourseTitle = ?",
-                            TRUE,
-                            "s",
-                            $MajorCourse
-                        );
-                    $mCourse = $course_tbl[0][0];
+                    <?php ;
                     $compposition_tbl =
                         GSecureSQL::query(
                             "SELECT * FROM comppositiontbl WHERE RelatedCourses IS NOT NULL",
@@ -361,9 +354,11 @@ $MajorCourse = $coursetbl[0][0];
                         $YearExperience = $value[11];
                         $RelatedCourses = $value[12];
                         $RelatedCourses = explode(", ", $RelatedCourses);
+                        $RequiredSkills = $value[15];
+                        $RequiredSkills = explode(", ", $RequiredSkills);
                         foreach ($RelatedCourses as $value3) {
                             $rCourse = $value3;
-                            if ($rCourse == "BSCS") {
+                            if ($rCourse == $CourseCode) {
                                 $company_tbl =
                                     GSecureSQL::query(
                                         "SELECT * FROM companyinfotbl WHERE CompanyID = ?",
@@ -406,23 +401,14 @@ $MajorCourse = $coursetbl[0][0];
                                                 <h1><p><?php echo $CompanyName; ?></p></h1>
                                                 <ul class='icons-list'>
                                                     <?php
-                                                    $requirements_tbl =
-                                                        GSecureSQL::query(
-                                                            "SELECT * FROM comprequirementtbl WHERE PositionID = ? AND CompanyID = ?",
-                                                            TRUE,
-                                                            "ss",
-                                                            $PositionID,
-                                                            $CompanyID
-                                                        );
-                                                    $count = 0;
-                                                    foreach ($requirements_tbl as $value2) {
-                                                        $RID = $value2[0];
-                                                        $Requirement = $value2[3];
+                                                    foreach ($RequiredSkills as $value2) {
+                                                        $count = 0;
+                                                        $RequiredSkill = $value2;
                                                         if ($count < 3) {
                                                             $count++;
                                                             ?>
                                                             <li>
-                                                                <i class='fa fa-check-circle'></i> <?php echo $Requirement; ?>
+                                                                <i class='fa fa-check-circle'></i> <?php echo $RequiredSkill; ?>
                                                             </li>
                                                             <?php
                                                         }
