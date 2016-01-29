@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50616
 File Encoding         : 65001
 
-Date: 2016-01-27 11:12:07
+Date: 2016-01-29 12:35:16
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -23,12 +23,13 @@ CREATE TABLE `achievementstbl` (
   `StudentID` varchar(255) NOT NULL,
   `Achievements` varchar(255) NOT NULL,
   PRIMARY KEY (`AchievementID`)
-) ENGINE=MyISAM AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
 
 -- ----------------------------
 -- Records of achievementstbl
 -- ----------------------------
 INSERT INTO achievementstbl VALUES ('1', '00820120004', 'dfsdfs');
+INSERT INTO achievementstbl VALUES ('2', '00820120001', 'asdasdas');
 
 -- ----------------------------
 -- Table structure for `admintbl`
@@ -36,27 +37,27 @@ INSERT INTO achievementstbl VALUES ('1', '00820120004', 'dfsdfs');
 DROP TABLE IF EXISTS `admintbl`;
 CREATE TABLE `admintbl` (
   `AdminID` int(11) NOT NULL AUTO_INCREMENT,
-  `Email` varchar(255) NOT NULL,
+  `Username` varchar(255) NOT NULL,
   `Password` varchar(255) NOT NULL,
   `SaltedPassword` varchar(255) NOT NULL,
   `FirstName` varchar(255) NOT NULL,
   `MiddleName` varchar(255) NOT NULL,
   `LastName` varchar(255) NOT NULL,
   `Position` varchar(255) NOT NULL,
-  `Department` varchar(255) NOT NULL,
   `Address` varchar(255) NOT NULL,
   `ContactNumber` varchar(255) NOT NULL,
+  `MainAdmin` int(1) NOT NULL,
   PRIMARY KEY (`AdminID`)
 ) ENGINE=MyISAM AUTO_INCREMENT=9 DEFAULT CHARSET=latin1;
 
 -- ----------------------------
 -- Records of admintbl
 -- ----------------------------
-INSERT INTO admintbl VALUES ('1', 'markjoseph1496@yahoo.com', '0a7675b497c9e79aa2ddd1dbd39ed429b54bc044f704d85b4427ff23f35df299fcae46a6d86d6e900da432d59fd731ab6a643cea23de2d59ac7274209962b3fd', '59eba39dc8615e72ae9b7a0d76b06fc99aace644b3460c7b0a2b0d8c236663733e2ad0df55ea18a352a3c015355b362655ed563f1164c3682b6742a2fb438b85', 'Mark Joseph', 'Flaviano', 'Cinco', 'Manager Niggaa', 'SM Department Store', 'Dyan lang sa tabi', '0922222222222');
-INSERT INTO admintbl VALUES ('2', 'mark', 'mark', '', 'mark', 'mark', 'mark', 'mark', 'mark', 'asa', '');
-INSERT INTO admintbl VALUES ('3', 'asdasd', 'asdasd', '', 'asdasd', 'asdad', 'asda', 'dada', 'dad', 'adada', 'dad');
-INSERT INTO admintbl VALUES ('4', 'saf', 'fasfasfas', '', 'faf', 'afaf', 'afa', 'tagahugas pinggan', 'sadas', 'dads', 'adadsa');
-INSERT INTO admintbl VALUES ('5', 'asdasda', 'dasda', '', 'dsada', 'sdad', 'adsad', 'ada', 'das', 'adaddasd', 'adsad');
+INSERT INTO admintbl VALUES ('1', '1', '0a7675b497c9e79aa2ddd1dbd39ed429b54bc044f704d85b4427ff23f35df299fcae46a6d86d6e900da432d59fd731ab6a643cea23de2d59ac7274209962b3fd', '59eba39dc8615e72ae9b7a0d76b06fc99aace644b3460c7b0a2b0d8c236663733e2ad0df55ea18a352a3c015355b362655ed563f1164c3682b6742a2fb438b85', 'Mark Joseph', 'Flaviano', 'Cinco', 'Manager Niggaa', 'Dyan lang sa tabi', '0922222222222', '1');
+INSERT INTO admintbl VALUES ('2', 'mark', 'mark', '', 'mark', 'mark', 'mark', 'mark', 'asa', '', '0');
+INSERT INTO admintbl VALUES ('3', 'asdasd', 'asdasd', '', 'asdasd', 'asdad', 'asda', 'dada', 'adada', 'dad', '0');
+INSERT INTO admintbl VALUES ('4', 'saf', 'fasfasfas', '', 'faf', 'afaf', 'afa', 'tagahugas pinggan', 'dads', 'adadsa', '0');
+INSERT INTO admintbl VALUES ('5', 'asdasda', 'dasda', '', 'dsada', 'sdad', 'adsad', 'ada', 'adaddasd', 'adsad', '0');
 
 -- ----------------------------
 -- Table structure for `applicationtbl`
@@ -134,6 +135,24 @@ INSERT INTO companyinfotbl VALUES ('5', 'oneil associate', null, 'Architectural 
 INSERT INTO companyinfotbl VALUES ('6', 'Judee Company', null, 'Computer / Information Technology (Hardware)', null, 'Caloocan City', null, null, null, null, 'Judee', 'Ederon', 'Caballero', 'MAY ARI', 'ICT', 'judeecaballero@gmail.com', 'd0f2386e657a703d25d0f78cb0da7acb253f401dc225f04a71b86441067c7fd122eabe04ac56fbfb6bb32f07e4ec8d5600ddf4e00070a489c75e6e07797757ce', '20e6854801be64fb05eaba64ec585de79627e597e8e058e950930cf75f6c256bf241e1b6b0a35d49fb231a920d50273d34e6f6bc2245e34367f2805d327d22ef', null, 'Active', 'http://www.google.com');
 
 -- ----------------------------
+-- Table structure for `compdegreeleveltbl`
+-- ----------------------------
+DROP TABLE IF EXISTS `compdegreeleveltbl`;
+CREATE TABLE `compdegreeleveltbl` (
+  `DegreeID` int(11) NOT NULL AUTO_INCREMENT,
+  `CompanyID` varchar(255) DEFAULT NULL,
+  `PositionID` varchar(255) DEFAULT NULL,
+  `DegreeLevel` varchar(255) DEFAULT NULL,
+  PRIMARY KEY (`DegreeID`)
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
+
+-- ----------------------------
+-- Records of compdegreeleveltbl
+-- ----------------------------
+INSERT INTO compdegreeleveltbl VALUES ('1', '1', '23', 'Bachelor Degree');
+INSERT INTO compdegreeleveltbl VALUES ('2', '1', '23', 'Masteral Degree');
+
+-- ----------------------------
 -- Table structure for `compeduclvltbl`
 -- ----------------------------
 DROP TABLE IF EXISTS `compeduclvltbl`;
@@ -169,26 +188,6 @@ CREATE TABLE `compeventtbl` (
 -- ----------------------------
 
 -- ----------------------------
--- Table structure for `complanguagetbl`
--- ----------------------------
-DROP TABLE IF EXISTS `complanguagetbl`;
-CREATE TABLE `complanguagetbl` (
-  `LanguageID` int(11) NOT NULL AUTO_INCREMENT,
-  `PositionID` varchar(255) DEFAULT NULL,
-  `Language` varchar(255) DEFAULT NULL,
-  PRIMARY KEY (`LanguageID`)
-) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=latin1;
-
--- ----------------------------
--- Records of complanguagetbl
--- ----------------------------
-INSERT INTO complanguagetbl VALUES ('1', '1', 'Filipino');
-INSERT INTO complanguagetbl VALUES ('2', '1', 'Bisaya');
-INSERT INTO complanguagetbl VALUES ('3', '1', 'Tagalog');
-INSERT INTO complanguagetbl VALUES ('4', '2', 'qwew');
-INSERT INTO complanguagetbl VALUES ('5', '2', 'qwew');
-
--- ----------------------------
 -- Table structure for `comppositiontbl`
 -- ----------------------------
 DROP TABLE IF EXISTS `comppositiontbl`;
@@ -205,28 +204,59 @@ CREATE TABLE `comppositiontbl` (
   `AvPosition` varchar(255) DEFAULT NULL,
   `MonthlySalary` varchar(255) DEFAULT NULL,
   `YExperience` varchar(255) DEFAULT NULL,
-  `MajorCourse` varchar(255) DEFAULT NULL,
+  `RelatedCourses` varchar(255) DEFAULT NULL,
+  `DegreeLevel` varchar(255) DEFAULT NULL,
+  `Languages` varchar(255) DEFAULT NULL,
+  `ReqSkills` varchar(500) DEFAULT NULL,
   PRIMARY KEY (`PositionID`)
-) ENGINE=InnoDB AUTO_INCREMENT=16 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=26 DEFAULT CHARSET=latin1;
 
 -- ----------------------------
 -- Records of comppositiontbl
 -- ----------------------------
-INSERT INTO comppositiontbl VALUES ('1', '2', null, '2016-01-19', '2016-01-30', 'Store Managers', 'Responsible for ensuring the success of store operations in ter', 'Marketing / Brand Management', 'full', '4', '15,000 - 20,000', '2', null);
-INSERT INTO comppositiontbl VALUES ('2', '2', null, '2016-01-19', '2016-01-30', 'Management', 'GOMECO GROUP OF COMPANIES is currently looking for high performing, ', 'Manufacturing/Production Operatio', 'full', '2', '20,000 - 25,000', '3', null);
-INSERT INTO comppositiontbl VALUES ('3', '2', null, '2016-01-19', '2016-01-30', 'Purchasing Assistant', 'Reporting to the Purchasing Manager, this role will be supporting the', 'BPO/Call Center', 'full', '2', '15,000 - 20,000', '1', null);
-INSERT INTO comppositiontbl VALUES ('4', '2', null, '2016-01-19', '2016-01-31', 'Purchasing Officer', 'The Purchasing Officer is responsible for acquiring good and services', 'Purchasing/Inventory/Material and Warehouse Management', 'full', '4', '20,000 - 25,000', '2', null);
-INSERT INTO comppositiontbl VALUES ('5', '2', null, '2016-01-19', '2016-01-31', 'RDU Assistants', 'Checks and ensures area is ready for actual receiving', 'Sales - Corporate / B2B', 'full', '1', '20,000 - 25,000', '1', null);
-INSERT INTO comppositiontbl VALUES ('6', '3', null, '2016-01-19', '2016-01-31', 'Technical Support Representative', ' is one of the leading Call Centers providing superior', 'IT/Computer - Hardware', 'full', '5', '30,000 - 40,000', '2', null);
-INSERT INTO comppositiontbl VALUES ('7', '3', null, '2016-01-19', '2016-01-31', 'Team Leader', 'is one of the leading Call Centers', 'IT/Computer - Software Development', 'full', '2', '25,000 - 30,000', '1', null);
-INSERT INTO comppositiontbl VALUES ('8', '3', null, '2016-01-19', '2016-01-31', 'Operations Supervisor', 'superior technical support to some of the largest Web Hosting', 'IT/Computer - Software Development', 'full', '3', '30,000 - 40,000', '2', null);
-INSERT INTO comppositiontbl VALUES ('9', '3', null, '2016-01-19', '2016-01-31', 'Tech Support for Windows/Linux Based Platform', ' rapidly expanding Technical Support accounts.', 'IT/Computer - Creative Design', 'full', '1', '30,000 - 40,000', '1', null);
-INSERT INTO comppositiontbl VALUES ('10', '3', null, '2016-01-19', '2016-01-30', 'BUSINESS ASSOCIATES ', 'personnel administration, supervision, continuing training ', 'IT/Computer - QA', 'full', '3', '15,000 - 20,000', '2', null);
-INSERT INTO comppositiontbl VALUES ('11', '5', null, '2016-01-19', '2016-01-31', 'Autocad Operator/ Draftsman', 'Autocad Operator/ Draftsman', 'Agriculture/Forestry/Fisheries', 'full', '2', '30,000 - 40,000', '2', null);
-INSERT INTO comppositiontbl VALUES ('12', '4', null, '2016-01-19', '2016-01-31', 'PHP Developer', 'Php Developer (Customer Service Representatives)', 'IT/Computer - Software Development', 'full', '1', '40,000 - 45,000', '4', null);
-INSERT INTO comppositiontbl VALUES ('13', '5', null, '2016-01-19', '2016-01-31', 'ARCHITECTS ', 'ARCHITECTS ', 'Architecture/Interior Design', 'full', '6', '40,000 - 45,000', '2', null);
-INSERT INTO comppositiontbl VALUES ('14', '5', null, '2016-01-19', '2016-01-31', 'CIVIL ENGINEER / PROJECT COORDINATORS for Construction', 'CIVIL ENGINEER / PROJECT COORDINATORS for Construction', 'Architecture/Interior Design', 'full', '5', '40,000 - 45,000', '2', null);
-INSERT INTO comppositiontbl VALUES ('15', '5', null, '2016-01-19', '2016-01-31', 'HEAVY EQUIPMENT / MECHANIC', 'HEAVY EQUIPMENT / MECHANIC', 'Architecture/Interior Design', 'full', '3', '30,000 - 40,000', '3', null);
+INSERT INTO comppositiontbl VALUES ('1', '2', null, '2016-01-19', '2016-01-30', 'Store Managers', 'Responsible for ensuring the success of store operations in ter', 'Marketing / Brand Management', 'full', '4', '15,000 - 20,000', '2', null, null, null, null);
+INSERT INTO comppositiontbl VALUES ('2', '2', null, '2016-01-19', '2016-01-30', 'Management', 'GOMECO GROUP OF COMPANIES is currently looking for high performing, ', 'Manufacturing/Production Operatio', 'full', '2', '20,000 - 25,000', '3', null, null, null, null);
+INSERT INTO comppositiontbl VALUES ('3', '2', null, '2016-01-19', '2016-01-30', 'Purchasing Assistant', 'Reporting to the Purchasing Manager, this role will be supporting the', 'BPO/Call Center', 'full', '2', '15,000 - 20,000', '1', null, null, null, null);
+INSERT INTO comppositiontbl VALUES ('4', '2', null, '2016-01-19', '2016-01-31', 'Purchasing Officer', 'The Purchasing Officer is responsible for acquiring good and services', 'Purchasing/Inventory/Material and Warehouse Management', 'full', '4', '20,000 - 25,000', '2', null, null, null, null);
+INSERT INTO comppositiontbl VALUES ('5', '2', null, '2016-01-19', '2016-01-31', 'RDU Assistants', 'Checks and ensures area is ready for actual receiving', 'Sales - Corporate / B2B', 'full', '1', '20,000 - 25,000', '1', null, null, null, null);
+INSERT INTO comppositiontbl VALUES ('6', '3', null, '2016-01-19', '2016-01-31', 'Technical Support Representative', ' is one of the leading Call Centers providing superior', 'IT/Computer - Hardware', 'full', '5', '30,000 - 40,000', '2', null, null, null, null);
+INSERT INTO comppositiontbl VALUES ('7', '3', null, '2016-01-19', '2016-01-31', 'Team Leader', 'is one of the leading Call Centers', 'IT/Computer - Software Development', 'full', '2', '25,000 - 30,000', '1', null, null, null, null);
+INSERT INTO comppositiontbl VALUES ('8', '3', null, '2016-01-19', '2016-01-31', 'Operations Supervisor', 'superior technical support to some of the largest Web Hosting', 'IT/Computer - Software Development', 'full', '3', '30,000 - 40,000', '2', null, null, null, null);
+INSERT INTO comppositiontbl VALUES ('9', '3', null, '2016-01-19', '2016-01-31', 'Tech Support for Windows/Linux Based Platform', ' rapidly expanding Technical Support accounts.', 'IT/Computer - Creative Design', 'full', '1', '30,000 - 40,000', '1', null, null, null, null);
+INSERT INTO comppositiontbl VALUES ('10', '3', null, '2016-01-19', '2016-01-30', 'BUSINESS ASSOCIATES ', 'personnel administration, supervision, continuing training ', 'IT/Computer - QA', 'full', '3', '15,000 - 20,000', '2', null, null, null, null);
+INSERT INTO comppositiontbl VALUES ('11', '5', null, '2016-01-19', '2016-01-31', 'Autocad Operator/ Draftsman', 'Autocad Operator/ Draftsman', 'Agriculture/Forestry/Fisheries', 'full', '2', '30,000 - 40,000', '2', null, null, null, null);
+INSERT INTO comppositiontbl VALUES ('12', '4', null, '2016-01-19', '2016-01-31', 'PHP Developer', 'Php Developer (Customer Service Representatives)', 'IT/Computer - Software Development', 'full', '1', '40,000 - 45,000', '4', null, null, null, null);
+INSERT INTO comppositiontbl VALUES ('13', '5', null, '2016-01-19', '2016-01-31', 'ARCHITECTS ', 'ARCHITECTS ', 'Architecture/Interior Design', 'full', '6', '40,000 - 45,000', '2', null, null, null, null);
+INSERT INTO comppositiontbl VALUES ('14', '5', null, '2016-01-19', '2016-01-31', 'CIVIL ENGINEER / PROJECT COORDINATORS for Construction', 'CIVIL ENGINEER / PROJECT COORDINATORS for Construction', 'Architecture/Interior Design', 'full', '5', '40,000 - 45,000', '2', null, null, null, null);
+INSERT INTO comppositiontbl VALUES ('15', '5', null, '2016-01-19', '2016-01-31', 'HEAVY EQUIPMENT / MECHANIC', 'HEAVY EQUIPMENT / MECHANIC', 'Architecture/Interior Design', 'full', '3', '30,000 - 40,000', '3', null, null, null, null);
+INSERT INTO comppositiontbl VALUES ('24', '1', null, '2016-01-02', '2016-12-30', 'dsadasda', 'sadas', 'Customer Service', 'full', '3', '25,000 - 30,000', '7', 'ABCOMM, BSITDA, BSHRM, BSCS, BSIT', 'Bachelor Degree, Masteral Degree', 'asd', 'qweqwe, qweqwe');
+INSERT INTO comppositiontbl VALUES ('25', '1', null, '2016-01-12', '2016-01-30', 'eee', 'eeeeee', 'Design and Development', 'full', '23', '15,000 - 20,000', '9', 'BSITDA, BSCPE, BSCS', 'Bachelor Degree', 'qwe, qwewq, qweqwe', 'qwewq, eee, qq');
+
+-- ----------------------------
+-- Table structure for `comprelatedcoursestbl`
+-- ----------------------------
+DROP TABLE IF EXISTS `comprelatedcoursestbl`;
+CREATE TABLE `comprelatedcoursestbl` (
+  `CourseID` int(11) NOT NULL AUTO_INCREMENT,
+  `CompanyID` varchar(255) DEFAULT NULL,
+  `PositionID` varchar(255) DEFAULT NULL,
+  `RelatedCourse` varchar(255) DEFAULT NULL,
+  PRIMARY KEY (`CourseID`)
+) ENGINE=InnoDB AUTO_INCREMENT=18 DEFAULT CHARSET=latin1;
+
+-- ----------------------------
+-- Records of comprelatedcoursestbl
+-- ----------------------------
+INSERT INTO comprelatedcoursestbl VALUES ('8', '1', '22', 'BSBM');
+INSERT INTO comprelatedcoursestbl VALUES ('9', '1', '22', 'ABCOMM');
+INSERT INTO comprelatedcoursestbl VALUES ('10', '1', '22', 'BSITDA');
+INSERT INTO comprelatedcoursestbl VALUES ('11', '1', '22', 'BSHRM');
+INSERT INTO comprelatedcoursestbl VALUES ('12', '1', '22', 'BSCS');
+INSERT INTO comprelatedcoursestbl VALUES ('13', '1', '23', 'BSBM');
+INSERT INTO comprelatedcoursestbl VALUES ('14', '1', '23', 'ABCOMM');
+INSERT INTO comprelatedcoursestbl VALUES ('15', '1', '23', 'BSITDA');
+INSERT INTO comprelatedcoursestbl VALUES ('16', '1', '23', 'BSHRM');
+INSERT INTO comprelatedcoursestbl VALUES ('17', '1', '23', 'BSCS');
 
 -- ----------------------------
 -- Table structure for `comprequirementtbl`
@@ -250,29 +280,6 @@ INSERT INTO comprequirementtbl VALUES ('4', '1', '1', 'Paglinis ng mesa');
 INSERT INTO comprequirementtbl VALUES ('5', '1', '2', '1');
 INSERT INTO comprequirementtbl VALUES ('6', '1', '2', '1');
 INSERT INTO comprequirementtbl VALUES ('7', '1', '2', '1');
-
--- ----------------------------
--- Table structure for `comptrainingtbl`
--- ----------------------------
-DROP TABLE IF EXISTS `comptrainingtbl`;
-CREATE TABLE `comptrainingtbl` (
-  `TrainingID` int(11) NOT NULL AUTO_INCREMENT,
-  `CompanyID` varchar(255) DEFAULT NULL,
-  `PositionID` varchar(255) DEFAULT NULL,
-  `Training` varchar(255) DEFAULT NULL,
-  PRIMARY KEY (`TrainingID`)
-) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=latin1;
-
--- ----------------------------
--- Records of comptrainingtbl
--- ----------------------------
-INSERT INTO comptrainingtbl VALUES ('1', '1', '1', 'Walis');
-INSERT INTO comptrainingtbl VALUES ('2', '1', '1', 'Dustpan');
-INSERT INTO comptrainingtbl VALUES ('3', '1', '1', 'Tsinelas');
-INSERT INTO comptrainingtbl VALUES ('4', '1', '1', 'Tabo');
-INSERT INTO comptrainingtbl VALUES ('5', '1', '2', 'qqq');
-INSERT INTO comptrainingtbl VALUES ('6', '1', '2', 'qqq');
-INSERT INTO comptrainingtbl VALUES ('7', '1', '2', 'qqq');
 
 -- ----------------------------
 -- Table structure for `coursetbl`
@@ -549,12 +556,12 @@ CREATE TABLE `logrequesttbl` (
   `Status` varchar(255) DEFAULT NULL,
   `DateRequested` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`LID`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
 
 -- ----------------------------
 -- Records of logrequesttbl
 -- ----------------------------
-INSERT INTO logrequesttbl VALUES ('1', '1', 'ABCOMM, ASCT, BSAT, BSBM, BSCPE, BSCS, BSHRM, BSIT, BSITDA, BSTM', null, null, 'Pending', '2016-01-27');
+INSERT INTO logrequesttbl VALUES ('2', '1', 'ABCOMM, ASCT, BSAT, BSBM, BSCPE, BSCS, BSHRM, BSIT, BSITDA, BSTM', null, null, 'Pending', '2016-01-27');
 
 -- ----------------------------
 -- Table structure for `referencetbl`
@@ -768,11 +775,12 @@ CREATE TABLE `seminartbl` (
   `Seminar` varchar(255) NOT NULL,
   `YearAttended` varchar(255) NOT NULL,
   PRIMARY KEY (`SeminarID`)
-) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
 
 -- ----------------------------
 -- Records of seminartbl
 -- ----------------------------
+INSERT INTO seminartbl VALUES ('1', '00820120001', 'ssss', '1985');
 
 -- ----------------------------
 -- Table structure for `specializationtbl`
