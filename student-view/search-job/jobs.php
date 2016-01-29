@@ -269,37 +269,17 @@ $MajorCourse = $coursetbl[0][0];
         </div>
     </div>
 
-    <div class="hr1" style="margin-bottom:5px;"></div>
-    <div class="container">
-        <?php
-        if (isset($_GET['id'])) {
-            $id = $_GET['id'];
-            if ($id == 1) {
-                echo '<div class="alert alert-success">
-            <span class="glyphicon glyphicon-info-sign"></span>
-            Resume Submitted.
-        </div>';
-            }
+    <?php
+    if (isset($_GET['id'])) {
+        $id = $_GET['id'];
+        if ($id == 1) {
+            echo '<div class="alert alert-success">
+        <span class="glyphicon glyphicon-info-sign"></span>
+        Resume Submitted.
+    </div>';
         }
-        ?>
-
-        <div>
-            <label><i class="fa fa-bookmark"></i> Bookmarked Jobs <a href="bookmarked-jobs.php">(0)</a>&nbsp;</label>
-            <label><i class="fa fa-sort"></i> Sort by:</label>
-            <select id="" name="" class="" style="height:15%; width:15%;">
-                <option value="">Location</option>
-                <option value="">Years of Experience</option>
-            </select>&nbsp;
-
-            <label><i class="fa fa-filter"></i> Filter by:</label>
-            <select id="FilterBy" name="FilterBy" class="" style="height:15%; width:15%;">
-                <option value="">- Select one -</option>
-                <option value="<?php echo $CourseCode; ?>">Your Course</option>
-                <option value="Specialization">Your Specialization</option>
-            </select>
-        </div>
-    </div>
-    <div class="hr4" style="margin-top:5px;"></div>
+    }
+    ?>
 
     <!-- Start Content -->
     <div id="content">
@@ -315,6 +295,37 @@ $MajorCourse = $coursetbl[0][0];
                         </form>
                     </div>
 
+                    <div>
+                        <label><i class="fa fa-bookmark"></i> Bookmarked Jobs: <a href="bookmarked-jobs.php">(0)</a>&nbsp;</label>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-5">
+                            <label><i class="fa fa-sort"></i> Sort by:</label>
+                        </div>
+                        <div class="col-md-7">
+                            <select id="" name="" class="form-control">
+                                <option value="">- Select one -</option>
+                                <option value="">Location</option>
+                                <option value="">Years of Experience</option>
+                            </select>
+                        </div>
+                    </div>
+                    
+                    <div class="row">
+                        <div class="col-md-5">
+                            <label><i class="fa fa-filter"></i> Filter by:</label>
+                        </div>
+                        <div class="col-md-7">
+                            <select id="FilterBy" name="FilterBy" class="form-control">
+                                <option value="">- Select one -</option>
+                                <option value="<?php echo $CourseCode; ?>">Your Course</option>
+                                <option value="Specialization">Your Specialization</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="hr4" style="margin-top:40px;margin-bottom:40px;"></div>
                     <!-- Popular Posts widget -->
                     <div class="widget widget-popular-posts">
                         <h4>Popular Jobs <span class="head-line"></span></h4>

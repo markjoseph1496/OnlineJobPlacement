@@ -100,7 +100,6 @@ $cLastName = $companyinfo_tbl[0][2];
         <!-- Start Header Section -->
         <div class="hidden-header"></div>
         <header class="clearfix">
-
             <!-- Start Top Bar -->
             <div class="top-bar">
                 <div class="container">
@@ -238,110 +237,104 @@ $cLastName = $companyinfo_tbl[0][2];
                         </ul>
                     </li>
                 </ul>
+                <!-- Mobile Menu End -->
+             </div>
+            <!-- End Header Logo & Naviagtion -->
         </header>
-        <!-- Mobile Menu End -->
+        <!-- End Header Section -->
 
-    </div>
-    <!-- End Header Logo & Naviagtion -->
-
-    </header>
-    <!-- End Header Section -->
-
-    <!-- Start Page Banner -->
-    <div class="page-banner" style="padding:40px 0; center #f9f9f9;">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-6">
-                    <h2>List of Positions</h2>
+        <!-- Start Page Banner -->
+        <div class="page-banner" style="padding:40px 0; center #f9f9f9;">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6">
+                        <h2>List of Positions</h2>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
-    <!-- End Page Banner -->
+        <!-- End Page Banner -->
 
-    <!--Content-->
-    <br><br><br>
-
-    <div class="container">
-        <div class="col-md-12">
-            <?php
-            if (isset($_GET['id'])) {
-                $id = $_GET['id'];
-                if ($id == "2") {
-                    echo '<div class="alert alert-success">
-                            <span class="glyphicon glyphicon-info-sign"></span> 
-                            Achievement successfully updated.
-                            </div>';
-                } elseif ($id == "3") {
-                    echo '<div class="alert alert-success">
-                            <span class="glyphicon glyphicon-info-sign"></span> 
-                            Achievement successfully deleted.
-                            </div>';
-                } elseif ($id == "1") {
-                    echo '<div class="alert alert-success">
-                            <span class="glyphicon glyphicon-info-sign"></span> 
-                            Achievement successfully added.
-                            </div>';
-                }
-            }
-            ?>
-            <table class="table segment table-hover" width="100%" cellpadding="0">
-                <thead>
-                <tr>
-
-                </tr>
-                <tr>
-                    <th width='30%' class='tabletitle'>Positions</th>
-                    <th width='20%' class='tabletitle'>From</th>
-                    <th width='20%' class='tabletitle'>To</th>
-                    <th width='20%' class='tabletitle'>Available Position</th>
-                    <th width='15%' class='tabletitle'>Action</th>
-                <tr>
-                </thead>
+        <!--Content-->
+        <br><br><br>
+        <div class="container">
+            <div class="col-md-12">
                 <?php
-                $compposition_tbl =
-                    GSecureSQL::query(
-                        "SELECT
-                            PositionID,
-                            PositionLevel,
-                            PostingDateFrom,
-                            PostingDateTo,
-                            AvPosition
-                        FROM
-                          comppositiontbl
-                        WHERE CompanyID = ? ORDER BY PostingDateFrom ASC",
-                        TRUE,
-                        "s",
-                        $CompanyID
-                    );
-                foreach ($compposition_tbl as $value) {
-                    $PositionID = $value[0];
-                    $PositionLevel = $value[1];
-                    $PostingDateFrom = $value[2];
-                    $PostingDateTo = $value[3];
-                    $AvPosition = $value[4];
-                    ?>
-                    <tbody>
-                    <tr>
-                        <td width=20% class='tabletitle'><?php echo $PositionLevel; ?></td>
-                        <td width=20% class='tabletitle'><?php echo $PostingDateFrom; ?></td>
-                        <td width=20% class='tabletitle'><?php echo $PostingDateTo; ?></td>
-                        <td width=20% class='tabletitle'><?php echo $AvPosition; ?></td>
-                        <td width=15% class='tabletitle'>
-                            <a id='Edit' name="btnedit" href="company-editposition.php" class='btn btn-default'>
-                                <i class='fa fa-pencil-square-o fa-1x'></i>
-                            </a>
-                            <button name='btndelete' href="" class='btn btn-danger'>
-                                <i class='fa fa-trash fa-1x'></i>
-                            </button>
-                        </td>
-                        </form>
-                    </tr>
-                    </tbody>
-                    <?php
+                if (isset($_GET['id'])) {
+                    $id = $_GET['id'];
+                    if ($id == "2") {
+                        echo '<div class="alert alert-success">
+                                <span class="glyphicon glyphicon-info-sign"></span> 
+                                Achievement successfully updated.
+                                </div>';
+                    } elseif ($id == "3") {
+                        echo '<div class="alert alert-success">
+                                <span class="glyphicon glyphicon-info-sign"></span> 
+                                Achievement successfully deleted.
+                                </div>';
+                    } elseif ($id == "1") {
+                        echo '<div class="alert alert-success">
+                                <span class="glyphicon glyphicon-info-sign"></span> 
+                                Achievement successfully added.
+                                </div>';
+                    }
                 }
                 ?>
-            </table>
+                <table class="table segment table-hover" width="100%" cellpadding="0">
+                    <thead>
+                        <tr>
+                            <th width='30%' class='tabletitle'>Positions</th>
+                            <th width='20%' class='tabletitle'>From</th>
+                            <th width='20%' class='tabletitle'>To</th>
+                            <th width='20%' class='tabletitle'>Available Position</th>
+                            <th width='15%' class='tabletitle'>Action</th>
+                        <tr>
+                    </thead>
+                    <?php
+                        $compposition_tbl =
+                        GSecureSQL::query(
+                            "SELECT
+                                PositionID,
+                                PositionLevel,
+                                PostingDateFrom,
+                                PostingDateTo,
+                                AvPosition
+                            FROM
+                              comppositiontbl
+                            WHERE CompanyID = ? ORDER BY PostingDateFrom ASC",
+                            TRUE,
+                            "s",
+                            $CompanyID
+                        );
+                        foreach ($compposition_tbl as $value) {
+                        $PositionID = $value[0];
+                        $PositionLevel = $value[1];
+                        $PostingDateFrom = $value[2];
+                        $PostingDateTo = $value[3];
+                        $AvPosition = $value[4];
+                    ?>
+                    <tbody>
+                        <tr>
+                            <td width=20% class='tabletitle'><?php echo $PositionLevel; ?></td>
+                            <td width=20% class='tabletitle'><?php echo $PostingDateFrom; ?></td>
+                            <td width=20% class='tabletitle'><?php echo $PostingDateTo; ?></td>
+                            <td width=20% class='tabletitle'><?php echo $AvPosition; ?></td>
+                            <td width=15% class='tabletitle'>
+                                <a id='Edit' name="btnedit" href="company-editposition.php" class='btn btn-default'>
+                                    <i class='fa fa-pencil-square-o fa-1x'></i>
+                                </a>
+                                <button name='btndelete' href="" class='btn btn-danger'>
+                                    <i class='fa fa-trash fa-1x'></i>
+                                </button>
+                            </td>
+                            </form>
+                        </tr>
+                    </tbody>
+                    <?php
+                    }
+                    ?>
+                </table>
+            </div>
         </div>
     </div>
     <script type="text/javascript" src="../js/script.js"></script>

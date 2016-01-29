@@ -166,7 +166,6 @@ $cLastName = $companyinfo_tbl[0][2];
             <!-- .top-bar -->
             <!-- End Top Bar -->
 
-
             <!-- Start  Logo & Naviagtion  -->
             <div class="navbar navbar-default navbar-top">
                 <div class="container">
@@ -263,7 +262,7 @@ $cLastName = $companyinfo_tbl[0][2];
                     <li>
                         <a>Applicant List</a>
                         <ul class="dropdown">
-                            <li><a href="company-pendingapplicants.php" class = "active">Pending</a></li>
+                            <li><a href="company-pendingapplicants.php">Pending</a></li>
                             <li><a href="company-acceptedapplicants.php">Accepted</a></li>
                         </ul>
                     </li>
@@ -315,15 +314,15 @@ $cLastName = $companyinfo_tbl[0][2];
                             <div class="col-md-4">
                                 <div class="form-group">
                                     <select id="position" name="plevel" class="position form-control">
-                                        <option value="" selected="selected"> Select Position</option>
-                                        <option value="top level management"> Top Level Management</option>
-                                        <option value="senior manager"> Senior Manager</option>
-                                        <option value="manager"> Manager</option>
-                                        <option value="supervisor"> Senior Executive/ Supervisor</option>
-                                        <option value="junior executive"> Junior Executive</option>
-                                        <option value="fresh"> Fresh/Entry Level</option>
-                                        <option value="non-executive"> Non-Executive</option>
-                                        <option value="trainee"> Trainee</option>
+                                        <option value="" selected="selected">Select Position</option>
+                                        <option value="top level management">Top Level Management</option>
+                                        <option value="senior manager">Senior Manager</option>
+                                        <option value="manager">Manager</option>
+                                        <option value="supervisor">Senior Executive/ Supervisor</option>
+                                        <option value="junior executive">Junior Executive</option>
+                                        <option value="fresh">Fresh/Entry Level</option>
+                                        <option value="non-executive">Non-Executive</option>
+                                        <option value="trainee">Trainee</option>
                                     </select>
                                 </div>
                             </div>
