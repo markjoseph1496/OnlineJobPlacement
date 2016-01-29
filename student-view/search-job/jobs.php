@@ -317,6 +317,11 @@ $MajorCourse = $coursetbl[0][0];
                         </select>
                     </div>
 
+                    <div class="hr1" style="margin-top:10px;margin-bottom:10px;"></div>
+                    <div class="text-center">
+                        <button type="submit" class="btn-system btn-large btn-black">Button</button>
+                    </div>
+
                     <div class="hr4" style="margin-top:40px;margin-bottom:40px;"></div>
                     <!-- Popular Posts widget -->
                     <div class="widget widget-popular-posts">
