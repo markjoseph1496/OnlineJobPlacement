@@ -174,234 +174,242 @@ if (count($LOGquery1) > 0) {
         });
     </script>
 
- <style type="text/css">
- .wrap {
-    margin: 20px auto;
-    display: block;
-    width: 350px;
-    height: 310px;
-    padding:30px;
-    
-    /* general */
-    border: 1px solid;
+    <style type="text/css">
+        .wrap {
+            margin: 20px auto;
+            display: block;
+            width: 350px;
+            height: 310px;
+            padding: 30px;
 
-    
-    /* curved corners */
-    -moz-border-radius: 5px;
-    -webkit-border-radius: 5px;
-    border-radius: 5px; /* standard version at last */
-    
-    /* drop shadows. */
-    -moz-box-shadow: 0px 0px 5px rgba(0,0,0,0.45), 0px 1px 2px rgba(0,0,0,0.2);
-    -webkit-box-shadow: 0px 0px 5px rgba(0,0,0,0.45), 0px 1px 2px rgba(0,0,0,0.2);
-    box-shadow: 0px 0px 5px rgba(0,0,0,0.45), 0px 1px 2px rgba(0,0,0,0.2); /* standard version at last */
-}
+            /* general */
+            border: 1px solid;
 
-/* ----------------------------------------------
--- YELLOW BORDER
----------------------------------------------- */
+            /* curved corners */
+            -moz-border-radius: 5px;
+            -webkit-border-radius: 5px;
+            border-radius: 5px; /* standard version at last */
 
-.yellow {
-    /* general */
-    border-color: #fed136;
-    
-    /* background color (for non css3 browsers) and gradient */
-    background-color: #fed136;
-    background: -moz-linear-gradient(top,
-        #fff,
-        #fff 50%,
-        #fff
-    );
-    background: -webkit-gradient(linear, left top, left bottom,
-        from(#fff),
-        color-stop(0.5, #fff),
-        to(#fff)
-    );
-    
-    /* linear gradient for IE 5.5+ */
-    filter: progid:DXImageTransform.Microsoft.gradient(StartColorStr='#FFFFFF', EndColorStr='#fff');
+            /* drop shadows. */
+            -moz-box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.45), 0px 1px 2px rgba(0, 0, 0, 0.2);
+            -webkit-box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.45), 0px 1px 2px rgba(0, 0, 0, 0.2);
+            box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.45), 0px 1px 2px rgba(0, 0, 0, 0.2); /* standard version at last */
+        }
 
-}
+        /* ----------------------------------------------
+        -- YELLOW BORDER
+        ---------------------------------------------- */
 
- </style>   
+        .yellow {
+            /* general */
+            border-color: #fed136;
+
+            /* background color (for non css3 browsers) and gradient */
+            background-color: #fed136;
+            background: -moz-linear-gradient(top,
+            #fff,
+            #fff 50%,
+            #fff
+            );
+            background: -webkit-gradient(linear, left top, left bottom,
+            from(#fff),
+            color-stop(0.5, #fff),
+            to(#fff)
+            );
+
+            /* linear gradient for IE 5.5+ */
+            filter: progid:DXImageTransform.Microsoft.gradient(StartColorStr='#FFFFFF', EndColorStr='#fff');
+
+        }
+
+    </style>
 </head>
 <body>
-    <!-- Full Body Container -->
-    <div id="container">
-        <!-- Start Header Section -->
-        <div class="hidden-header"></div>
-        <header class="clearfix">
-            <!-- Start Top Bar -->
-            <div class="top-bar">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-md-7">
-                            <!-- Start Contact Info -->
-                            <ul class="contact-details">
-                                <li class="profile-name"><b><?php echo $CompanyName; ?></b></li>
-                            </ul>
-                            <!-- End Contact Info -->
-                        </div>
-                        <!-- .col-md-6 -->
-                        <div class="col-md-5">
-                            <!-- Start Social Links -->
-                            <ul class="nav navbar-nav navbar-right">
-                                <li class="dropdown icon-border" id="notificationLink">
-                                    <span id="notification_count">3</span>
-                                    <a href="#" class="bell itl-tooltip" data-placement="bottom" data-toggle="dropdown"><i class="fa fa-bell"></i></a>
-                                    <ul id="notificationContainer" class="dropdown-menu dropdown-menu-inverse">
-                                        <li class="dropdown-header"><label>Notification</label></li>
-                                        <li class="disabled"><a href="#" tabindex="-1">No new notification.</a></li>
-                                        <li><a href="#" tabindex="-1">The administrator accepted your request.</a></li>
-                                        <li class="divider"></li>
-                                        <li><a href="../notification/notification.php" tabindex="-1">See All</a></li>
-                                    </ul>
-                                </li>
-                                <li class="dropdown">
-                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown"><b class="fa fa-user"></b> Welcome, <b><?php echo $StudentName; ?> </b><b class="caret"></b></a>
-                                    <ul class="dropdown-menu">
-                                        <li><a href="#">Profile <b class="fa fa-user" style="float:right;"></b></a></li>
-                                        <li><a href="../settings/privacy-settings.php">Settings <b class="fa fa-cog" style="float:right;"></b></a></li>
-                                        <li class="divider"></li>
-                                        <li><a href="#" data-target='#Logout' data-toggle='modal'>Sign Out <b class="fa fa-sign-out" style="float:right;"></b></a></li>
-                                    </ul>
-                                </li>
-                            </ul>
-                            <!-- End Social Links -->
-                        </div>
-                        <!-- .col-md-6 -->
+<!-- Full Body Container -->
+<div id="container">
+    <!-- Start Header Section -->
+    <div class="hidden-header"></div>
+    <header class="clearfix">
+        <!-- Start Top Bar -->
+        <div class="top-bar">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-7">
+                        <!-- Start Contact Info -->
+                        <ul class="contact-details">
+                            <li class="profile-name"><b><?php echo $CompanyName; ?></b></li>
+                        </ul>
+                        <!-- End Contact Info -->
                     </div>
-                    <!-- .row -->
+                    <!-- .col-md-6 -->
+                    <div class="col-md-5">
+                        <!-- Start Social Links -->
+                        <ul class="nav navbar-nav navbar-right">
+                            <li class="dropdown icon-border" id="notificationLink">
+                                <span id="notification_count">3</span>
+                                <a href="#" class="bell itl-tooltip" data-placement="bottom" data-toggle="dropdown"><i
+                                        class="fa fa-bell"></i></a>
+                                <ul id="notificationContainer" class="dropdown-menu dropdown-menu-inverse">
+                                    <li class="dropdown-header"><label>Notification</label></li>
+                                    <li class="disabled"><a href="#" tabindex="-1">No new notification.</a></li>
+                                    <li><a href="#" tabindex="-1">The administrator accepted your request.</a></li>
+                                    <li class="divider"></li>
+                                    <li><a href="../notification/notification.php" tabindex="-1">See All</a></li>
+                                </ul>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown"><b class="fa fa-user"></b>
+                                    Welcome, <b><?php echo $StudentName; ?> </b><b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    <li><a href="#">Profile <b class="fa fa-user" style="float:right;"></b></a></li>
+                                    <li><a href="../settings/privacy-settings.php">Settings <b class="fa fa-cog"
+                                                                                               style="float:right;"></b></a>
+                                    </li>
+                                    <li class="divider"></li>
+                                    <li><a href="#" data-target='#Logout' data-toggle='modal'>Sign Out <b
+                                                class="fa fa-sign-out" style="float:right;"></b></a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                        <!-- End Social Links -->
+                    </div>
+                    <!-- .col-md-6 -->
                 </div>
-                <!-- .container -->
+                <!-- .row -->
             </div>
-            <!-- .top-bar -->
-            <!-- End Top Bar -->
+            <!-- .container -->
+        </div>
+        <!-- .top-bar -->
+        <!-- End Top Bar -->
 
-            <!-- Start  Logo & Naviagtion  -->
-            <div class="navbar navbar-default navbar-top">
-                <div class="container">
-                    <div class="navbar-header">
-                        <!-- Stat Toggle Nav Link For Mobiles -->
-                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                            <i class="fa fa-bars"></i>
-                        </button>
-                        <!-- End Toggle Nav Link For Mobiles -->
-                        <a class="navbar-brand" href="">
-                            <img src="../images/ojpms.png">
-                        </a>
+        <!-- Start  Logo & Naviagtion  -->
+        <div class="navbar navbar-default navbar-top">
+            <div class="container">
+                <div class="navbar-header">
+                    <!-- Stat Toggle Nav Link For Mobiles -->
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <i class="fa fa-bars"></i>
+                    </button>
+                    <!-- End Toggle Nav Link For Mobiles -->
+                    <a class="navbar-brand" href="">
+                        <img src="../images/ojpms.png">
+                    </a>
+                </div>
+                <div class="navbar-collapse collapse">
+                    <!-- Sign-out -->
+                    <div class="signout-side">
+                        <a class="show-signout" data-toggle='modal' data-target='#Logout'><i class="fa fa-sign-out"></i></a>
                     </div>
-                    <div class="navbar-collapse collapse">
-                        <!-- Sign-out -->
-                        <div class="signout-side">
-                            <a class="show-signout" data-toggle='modal' data-target='#Logout'><i class="fa fa-sign-out"></i></a>
-                        </div>
-                        <!-- Modal -->
-                        <div class="modal fade" id="Logout"
-                             role="dialog">
-                            <div class="modal-dialog" style="padding:100px">
-                                <!-- Modal content-->
-                                <div class="modal-content">
-                                    <div class="modal-header">
-                                        <button style = type="button" class="close" data-dismiss="modal">&times;</button>
-                                        <h4 class="modal-title">Log out?</h4>
+                    <!-- Modal -->
+                    <div class="modal fade" id="Logout"
+                         role="dialog">
+                        <div class="modal-dialog" style="padding:100px">
+                            <!-- Modal content-->
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <button style=type="button" class="close" data-dismiss="modal">&times;</button>
+                                    <h4 class="modal-title">Log out?</h4>
+                                </div>
+                                <div class="modal-body">
+                                    <div class="col-md-15 fieldcol">
+                                        <label = "usr" class = "control-label">Do you want to log out?</label>
+                                        <div class="form-group">
+                                        </div>
                                     </div>
-                                    <div class="modal-body">
-                                        <div class="col-md-15 fieldcol">
-                                            <label = "usr" class = "control-label">Do you want to log out?</label>
-                                            <div class="form-group">
-                                            </div>
-                                        </div>
-                                        <div class="modal-footer">
-                                            <a href="logout.php"
-                                               class="btn btn-primary">Log out</a>
-                                            <button type="button" class="btn btn-default" data-dismiss="modal">
-                                                Cancel
-                                            </button>
-                                        </div>
+                                    <div class="modal-footer">
+                                        <a href="logout.php"
+                                           class="btn btn-primary">Log out</a>
+                                        <button type="button" class="btn btn-default" data-dismiss="modal">
+                                            Cancel
+                                        </button>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                        <!-- End Sign-out -->
-                        <!-- Start Navigation List -->
-                        <ul class="nav navbar-nav navbar-right">
-                            <li>
-                                <a class="active" href="company.php">Home</a>
-                            </li>
-                            <li>
-                                <a>Position</a>
-                                <ul class="dropdown">
-                                    <li><a href="company-positionlist.php" class = "active">Position List</a></li>
-                                    <li><a href="company-createposition.php">Create Position</a></li>
-                                </ul>
-                            </li>
-                            <li>
-                                <a href="company-calendar.php">Calendar</a>
-                            </li>
-                            <li><a href="company-settings.php">Settings</a>
-                            </li>
-                            <li>
-                                <a>Applicant List</a>
-                                <ul class="dropdown">
-                                    <li><a href="company-pendingapplicants.php" class = "active">Pending</a></li>
-                                    <li><a href="company-acceptedapplicants.php">Accepted</a></li>
-                                </ul>
-                            </li>
-                        </ul>
-                        <!-- End Navigation List -->
                     </div>
+                    <!-- End Sign-out -->
+                    <!-- Start Navigation List -->
+                    <ul class="nav navbar-nav navbar-right">
+                        <li>
+                            <a class="active" href="company.php">Home</a>
+                        </li>
+                        <li>
+                            <a>Position</a>
+                            <ul class="dropdown">
+                                <li><a href="company-positionlist.php" class="active">Position List</a></li>
+                                <li><a href="company-createposition.php">Create Position</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="company-calendar.php">Calendar</a>
+                        </li>
+                        <li><a href="company-settings.php">Settings</a>
+                        </li>
+                        <li>
+                            <a>Applicant List</a>
+                            <ul class="dropdown">
+                                <li><a href="company-pendingapplicants.php" class="active">Pending</a></li>
+                                <li><a href="company-acceptedapplicants.php">Accepted</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <!-- End Navigation List -->
                 </div>
-                <!-- Mobile Menu Start -->
-                <ul class="wpb-mobile-menu">
-                    <li>
-                        <a class="active" href="company.php">Home</a>
-                    </li>
-                    <li>
-                        <a>Position</a>
-                        <ul class="dropdown">
-                            <li><a href="company-positionlist.php" class = "active">Position List</a></li>
-                            <li><a href="company-createposition.php">Create Position</a></li>
-                        </ul>
-                    </li>
-                    <li>
-                        <a href="company-calendar.php">Calendar</a>
-                    </li>
-                    <li><a href="company-settings.php">Settings</a>
-                    </li>
-                    <li>
-                        <a >Applicant List</a>
-                        <ul class="dropdown">
-                            <li><a href="company-pendingapplicants.php" class = "active">Pending</a></li>
-                            <li><a href="company-acceptedapplicants.php">Accepted</a></li>
-                        </ul>
-                    </li>
-                </ul>
             </div>
-            <!-- End Header Logo & Naviagtion -->
-        </header>
-        <!-- Mobile Menu End -->
+            <!-- Mobile Menu Start -->
+            <ul class="wpb-mobile-menu">
+                <li>
+                    <a class="active" href="company.php">Home</a>
+                </li>
+                <li>
+                    <a>Position</a>
+                    <ul class="dropdown">
+                        <li><a href="company-positionlist.php" class="active">Position List</a></li>
+                        <li><a href="company-createposition.php">Create Position</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="company-calendar.php">Calendar</a>
+                </li>
+                <li><a href="company-settings.php">Settings</a>
+                </li>
+                <li>
+                    <a>Applicant List</a>
+                    <ul class="dropdown">
+                        <li><a href="company-pendingapplicants.php" class="active">Pending</a></li>
+                        <li><a href="company-acceptedapplicants.php">Accepted</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+        <!-- End Header Logo & Naviagtion -->
+    </header>
+    <!-- Mobile Menu End -->
 
-        <!-- Start Page Banner -->
-        <div class="page-banner" style="padding:40px 0; center #f9f9f9;">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-6">
-                        <h2>List of Graduates</h2>
-                    </div>
+    <!-- Start Page Banner -->
+    <div class="page-banner" style="padding:40px 0; center #f9f9f9;">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <h2>List of Graduates</h2>
                 </div>
             </div>
         </div>
-        <!-- End Page Banner -->
-
+    </div>
+    <!-- End Page Banner -->
+    <?php
+    if ($ContentCount == 0) {
+        ?>
         <!--Content-->
         <br><br><br>
         <div id="RequestLOG" class="container">
             <div class="wrap yellow ">
                 <BR>
-                <h4 style = "text-align:center;"> You are not able to access the list of graduates. You may request it to the administrator.  </h4> <br>
-                <button style="width: 290px;" class="btn-system btn-large border-btn" name="RequestLists" data-toggle='modal'
-                    data-target='#Request'>Request List of Graduates.
+                <h4 style="text-align:center;"> You are not able to access the list of graduates. You may request it to
+                    the administrator. </h4> <br>
+                <button style="width: 290px;" class="btn-system btn-large border-btn" name="RequestLists"
+                        data-toggle='modal'
+                        data-target='#Request'>Request List of Graduates.
                 </button>
             </div>
 
@@ -418,7 +426,8 @@ if (count($LOGquery1) > 0) {
                             </div>
                             <div class="modal-body">
                                 <div class="col-md-15 fieldcol">
-                                    <label = "usr" class = "control-label">Select the course(s) you want to request.</label>
+                                    <label = "usr" class = "control-label">Select the course(s) you want to
+                                    request.</label>
                                     <div class="form-group">
                                     </div>
                                 </div>
@@ -426,7 +435,8 @@ if (count($LOGquery1) > 0) {
                                     <div class="container">
                                         <div class="form-group">
                                             <ul>
-                                                <li><input type="checkbox" name="select-all" id="select-all"/> <label> Select
+                                                <li><input type="checkbox" name="select-all" id="select-all"/> <label>
+                                                        Select
                                                         All </label></li>
                                             </ul>
                                             <?php
@@ -461,12 +471,25 @@ if (count($LOGquery1) > 0) {
                 </div>
             </div>
         </div>
+        <?php
+    }
+    ?>
 
+    <?php
+    if ($ContentCount == 2) {
+        ?>
         <div id="Requested" class="wrap yellow ">
-            <h4 = "usr" class = "control-label">You have already requested the list of graduates. Please wait for the admin
+            <h4 = "usr" class = "control-label">You have already requested the list of graduates. Please wait for the
+            admin
             to approve your request.</h4>
         </div>
 
+        <?php
+    }
+    ?>
+    <?php
+    if ($ContentCount == 1) {
+        ?>
         <div id="Content" class="container">
             <form method="POST">
                 <div class="header2_advertising">
@@ -534,7 +557,8 @@ if (count($LOGquery1) > 0) {
                                             echo "selected='selected'";
                                         } ?>>Malabon City
                                         </option>
-                                        <option value="Mandaluyong City"<?php if ($Location_Default == "Mandaluyong City") {
+                                        <option
+                                            value="Mandaluyong City"<?php if ($Location_Default == "Mandaluyong City") {
                                             echo "selected='selected'";
                                         } ?>>Mandaluyong City
                                         </option>
@@ -546,7 +570,8 @@ if (count($LOGquery1) > 0) {
                                             echo "selected='selected'";
                                         } ?>>Marikina City
                                         </option>
-                                        <option value="Muntinlupa City"<?php if ($Location_Default == "Muntinlupa City") {
+                                        <option
+                                            value="Muntinlupa City"<?php if ($Location_Default == "Muntinlupa City") {
                                             echo "selected='selected'";
                                         } ?>>Muntinlupa City
                                         </option>
@@ -582,7 +607,8 @@ if (count($LOGquery1) > 0) {
                                             echo "selected='selected'";
                                         } ?>>Taguig City
                                         </option>
-                                        <option value="Valenzuela City"<?php if ($Location_Default == "Valenzuela City") {
+                                        <option
+                                            value="Valenzuela City"<?php if ($Location_Default == "Valenzuela City") {
                                             echo "selected='selected'";
                                         } ?>>Valenzuela City
                                         </option>
@@ -722,7 +748,10 @@ if (count($LOGquery1) > 0) {
                 </table>
             </form>
         </div>
-    </div>
+        <?php
+    }
+    ?>
+</div>
 </body>
 <script type="text/javascript" src="../js/script.js"></script>
 </html>
