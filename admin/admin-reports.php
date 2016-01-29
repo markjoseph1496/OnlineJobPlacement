@@ -188,7 +188,7 @@ $Total = $TotalStudents[0][0];
                         <li><a href="admin-reports.php" class = "active">Alumni Reports</a></li>
                         <li><a href="admin-ojtreports.php">OJT Reports</a></li>
                     </ul>
-                </li>
+                    </li>
                     <li>
                         <a href="admin-account.php">Account</a>
                     </li>
