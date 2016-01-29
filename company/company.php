@@ -324,6 +324,7 @@ if (count($LOGquery1) > 0) {
                             </div>
                         </div>
                         <!-- End Sign-out -->
+                        
                         <!-- Start Navigation List -->
                         <ul class="nav navbar-nav navbar-right">
                             <li>
@@ -332,7 +333,7 @@ if (count($LOGquery1) > 0) {
                             <li>
                                 <a>Position</a>
                                 <ul class="dropdown">
-                                    <li><a href="company-positionlist.php" class = "active">Position List</a></li>
+                                    <li><a href="company-positionlist.php">Position List</a></li>
                                     <li><a href="company-createposition.php">Create Position</a></li>
                                 </ul>
                             </li>
@@ -344,7 +345,7 @@ if (count($LOGquery1) > 0) {
                             <li>
                                 <a>Applicant List</a>
                                 <ul class="dropdown">
-                                    <li><a href="company-pendingapplicants.php" class = "active">Pending</a></li>
+                                    <li><a href="company-pendingapplicants.php">Pending</a></li>
                                     <li><a href="company-acceptedapplicants.php">Accepted</a></li>
                                 </ul>
                             </li>
@@ -360,7 +361,7 @@ if (count($LOGquery1) > 0) {
                     <li>
                         <a>Position</a>
                         <ul class="dropdown">
-                            <li><a href="company-positionlist.php" class = "active">Position List</a></li>
+                            <li><a href="company-positionlist.php">Position List</a></li>
                             <li><a href="company-createposition.php">Create Position</a></li>
                         </ul>
                     </li>
@@ -372,7 +373,7 @@ if (count($LOGquery1) > 0) {
                     <li>
                         <a >Applicant List</a>
                         <ul class="dropdown">
-                            <li><a href="company-pendingapplicants.php" class = "active">Pending</a></li>
+                            <li><a href="company-pendingapplicants.php">Pending</a></li>
                             <li><a href="company-acceptedapplicants.php">Accepted</a></li>
                         </ul>
                     </li>

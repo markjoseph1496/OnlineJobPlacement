@@ -1,19 +1,4 @@
-<?php
-session_start();
-$StudentID = $_SESSION['StudentID'];
 
-$infoquery =
-    GSecureSQL::query(
-        "SELECT FirstName, LastName FROM studentinfotbl WHERE StudentID = ?",
-        TRUE,
-        "s",
-        $StudentID
-    );
-
-$FirstName = $infoquery[0][0];
-$LastName = $infoquery[0][1];
-$StudentName = $FirstName . " " . $LastName;
-?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -32,60 +17,87 @@ $StudentName = $FirstName . " " . $LastName;
     <meta name="author" content="iThemesLab">
 
     <!-- Bootstrap CSS -->
-    <link href="../../css/bootstrap.min.css" rel="stylesheet"/>
+    <link href="../css/bootstrap.min.css" rel="stylesheet"/>
 
     <!-- BootstrapValidator CSS -->
-    <link href="../../css/bootstrapValidator.min.css" rel="stylesheet"/>
+    <link href="../css/bootstrapValidator.min.css" rel="stylesheet"/>
 
     <!-- jQuery and Bootstrap JS -->
-    <script type="text/javascript" src="../../js/jquery.min.js"></script>
-    <script type="text/javascript" src="../../js/bootstrap.min.js" ></script>
+    <script type="text/javascript" src="../js/jquery.min.js"></script>
+    <script type="text/javascript" src="../js/bootstrap.min.js" ></script>
 
     <!-- BootstrapValidator -->
-    <script src="../../js/bootstrapValidator.min.js" type="text/javascript"></script>
+    <script src="../js/bootstrapValidator.min.js" type="text/javascript"></script>
 
     <!-- Font Awesome CSS -->
-    <link rel="stylesheet" href="../../css/font-awesome.min.css" type="text/css" media="screen">
+    <link rel="stylesheet" href="../css/font-awesome.min.css" type="text/css" media="screen">
 
     <!-- Fonts -->
-    <link href="../../fonts/ffonts/montserrat.css" rel="stylesheet" type="text/css">
-    <link href="../../fonts/ffonts/kaushan.css" rel="stylesheet" type="text/css">
-    <link href="../../fonts/ffonts/droid.css" rel="stylesheet" type="text/css">
-    <link href="../../fonts/ffonts/roboto.css" rel="stylesheet" type="text/css">
+    <link href="../fonts/ffonts/montserrat.css" rel="stylesheet" type="text/css">
+    <link href="../fonts/ffonts/kaushan.css" rel="stylesheet" type="text/css">
+    <link href="../fonts/ffonts/droid.css" rel="stylesheet" type="text/css">
+    <link href="../fonts/ffonts/roboto.css" rel="stylesheet" type="text/css">
 
     <!-- Slicknav -->
-    <link rel="stylesheet" type="text/css" href="../../css/slicknav.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="../css/slicknav.css" media="screen">
 
     <!-- Margo CSS Styles  -->
-    <link rel="stylesheet" type="text/css" href="../../css/style.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="../css/style.css" media="screen">
 
     <!-- Responsive CSS Styles  -->
-    <link rel="stylesheet" type="text/css" href="../../css/responsive.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="../css/responsive.css" media="screen">
 
     <!-- Css3 Transitions Styles  -->
-    <link rel="stylesheet" type="text/css" href="../../css/animate.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="../css/animate.css" media="screen">
 
     <!-- OJPMS CSS  -->
-    <link rel="stylesheet" type="text/css" href="../../css/ojpms-style.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="../css/ojpms-style.css" media="screen">
 
     <!-- Color CSS Styles  -->
-    <link rel="stylesheet" type="text/css" href="../../css/colors/yellow.css" title="yellow" media="screen"/>
+    <link rel="stylesheet" type="text/css" href="../css/colors/yellow.css" title="yellow" media="screen"/>
 
     <!-- JS  -->
-    <script type="text/javascript" src="../../js/jquery.migrate.js"></script>
-    <script type="text/javascript" src="../../js/modernizrr.js"></script>
-    <script type="text/javascript" src="../../js/jquery.fitvids.js"></script>
-    <script type="text/javascript" src="../../js/owl.carousel.min.js"></script>
-    <script type="text/javascript" src="../../js/nivo-lightbox.min.js"></script>
-    <script type="text/javascript" src="../../js/jquery.isotope.min.js"></script>
-    <script type="text/javascript" src="../../js/jquery.appear.js"></script>
-    <script type="text/javascript" src="../../js/count-to.js"></script>
-    <script type="text/javascript" src="../../js/jquery.textillate.js"></script>
-    <script type="text/javascript" src="../../js/jquery.lettering.js"></script>
-    <script type="text/javascript" src="../../js/jquery.easypiechart.min.js"></script>
-    <script type="text/javascript" src="../../js/jquery.nicescroll.min.js"></script>
-    <script type="text/javascript" src="../../js/jquery.parallax.js"></script>
-    <script type="text/javascript" src="../../js/jquery.slicknav.js"></script>
+    <script type="text/javascript" src="../js/jquery.migrate.js"></script>
+    <script type="text/javascript" src="../js/modernizrr.js"></script>
+    <script type="text/javascript" src="../js/jquery.fitvids.js"></script>
+    <script type="text/javascript" src="../js/owl.carousel.min.js"></script>
+    <script type="text/javascript" src="../js/nivo-lightbox.min.js"></script>
+    <script type="text/javascript" src="../js/jquery.isotope.min.js"></script>
+    <script type="text/javascript" src="../js/jquery.appear.js"></script>
+    <script type="text/javascript" src="../js/count-to.js"></script>
+    <script type="text/javascript" src="../js/jquery.textillate.js"></script>
+    <script type="text/javascript" src="../js/jquery.lettering.js"></script>
+    <script type="text/javascript" src="../js/jquery.easypiechart.min.js"></script>
+    <script type="text/javascript" src="../js/jquery.nicescroll.min.js"></script>
+    <script type="text/javascript" src="../js/jquery.parallax.js"></script>
+    <script type="text/javascript" src="../js/jquery.slicknav.js"></script>
+
+    <!-- Notification -->
+    <link rel="stylesheet" href="../css/notif.css"/>
+
+    <script type="text/javascript" >
+        $(document).ready(function()
+        {
+        $("#notificationLink").click(function()
+        {
+        $("#notificationContainer").fadeToggle(300);
+        $("#notification_count").fadeOut("slow");
+        return false;
+        });
+
+        //Document Click
+        $(document).click(function()
+        {
+        $("#notificationContainer").hide();
+        });
+        //Popup Click
+        $("#notificationContainer").click(function()
+        {
+        return false
+        });
+
+        });
+    </script>
 </head>
 
 <body>
@@ -99,23 +111,34 @@ $StudentName = $FirstName . " " . $LastName;
                     <div class="row">
                         <div class="col-md-7">
                             <!-- Start Contact Info -->
-                            <ul class="contact-details">
-                                <li class="profile-name">Student No.: </i> <b><?php echo $StudentID; ?></b></li>
+                            <ul class="profile-name">
+                                <li><i class="fa fa-hashtag"></i> <b>008-2012-0805</b></li>
                             </ul>
                             <!-- End Contact Info -->
                         </div>
                         <!-- .col-md-6 -->
                         <div class="col-md-5">
-                        <!-- Start Social Links -->
-                            <ul class="social-list">
-                                <li class="profile-name">
-                                    <a class="bell itl-tooltip" data-placement="bottom" title="" href="#" data-original-title="Notification"><i class="fa fa-bell"></i></a>
+                            <!-- Start Social Links -->
+                            <ul class="nav navbar-nav navbar-right">
+                                <li class="dropdown icon-border" id="notificationLink">
+                                    <span id="notification_count">3</span>
+                                    <a href="#" class="bell itl-tooltip" data-placement="bottom" data-toggle="dropdown"><i class="fa fa-bell"></i></a>
+                                    <ul id="notificationContainer" class="dropdown-menu dropdown-menu-inverse">
+                                        <li class="dropdown-header"><label>Notification</label></li>
+                                        <li class="disabled"><a href="#" tabindex="-1">No new notification.</a></li>
+                                        <li><a href="#" tabindex="-1">The administrator accepted your request.</a></li>
+                                        <li class="divider"></li>
+                                        <li><a href="../notification/notification.php" tabindex="-1">See All</a></li>
+                                    </ul>
                                 </li>
-                                <li class="profile-name">
-                                    &nbsp;
-                                </li>
-                                <li class="profile-name">
-                                    <i class="fa fa-user"></i> Hello, <b><?php echo $StudentName; ?></b>
+                                <li class="dropdown">
+                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown"><b class="fa fa-user"></b> Welcome, <b><?php echo $StudentName; ?> </b><b class="caret"></b></a>
+                                    <ul class="dropdown-menu">
+                                        <li><a href="#">Profile <b class="fa fa-user" style="float:right;"></b></a></li>
+                                        <li><a href="../settings/privacy-settings.php">Settings <b class="fa fa-cog" style="float:right;"></b></a></li>
+                                        <li class="divider"></li>
+                                        <li><a href="#" data-target='#Logout' data-toggle='modal'>Sign Out <b class="fa fa-sign-out" style="float:right;"></b></a></li>
+                                    </ul>
                                 </li>
                             </ul>
                             <!-- End Social Links -->
@@ -139,7 +162,7 @@ $StudentName = $FirstName . " " . $LastName;
                         </button>
                         <!-- End Toggle Nav Link For Mobiles -->
                         <a class="navbar-brand" href="">
-                            <img src="../../images/ojpms.png">
+                            <img src="../images/ojpms.png">
                         </a>
                     </div>
                     <div class="navbar-collapse collapse">
@@ -219,7 +242,7 @@ $StudentName = $FirstName . " " . $LastName;
         </div>
     </div>
     <!-- End Content -->
-    <script type="text/javascript" src="../../js/script.js"></script>
+    <script type="text/javascript" src="../js/script.js"></script>
 
 
     <!-- Start Footer Section -->

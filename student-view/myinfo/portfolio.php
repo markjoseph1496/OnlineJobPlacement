@@ -119,7 +119,7 @@ $result = mysql_query($qry);
         <!-- Start Header Section -->
         <div class="hidden-header"></div>
         <header class="clearfix">
-        <!-- Start Top Bar -->
+            <!-- Start Top Bar -->
             <div class="top-bar">
                 <div class="container">
                     <div class="row">

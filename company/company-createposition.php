@@ -598,9 +598,9 @@ $cLastName = $companyinfo_tbl[0][2];
                 </div>
             </div>
         </form>
-        <!--End of Content-->
-        <script type="text/javascript" src="../js/script.js"></script>
     </div>
+    <!--End of Content-->
+    <script type="text/javascript" src="../js/script.js"></script>   
 </body>
 
 <script type="text/javascript">

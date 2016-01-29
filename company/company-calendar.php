@@ -93,7 +93,7 @@ $cLastName = $companyinfo_tbl[0][2];
     <script type="text/javascript" src="../js/jquery.slicknav.js"></script>
 
     <!-- Notification -->
-    <link rel="stylesheet" href="../../css/notif.css"/>
+    <link rel="stylesheet" href="../css/notif.css"/>
 
     <script type="text/javascript" >
         $(document).ready(function()
@@ -140,16 +140,26 @@ $cLastName = $companyinfo_tbl[0][2];
                         <!-- .col-md-6 -->
                         <div class="col-md-6">
                             <!-- Start Social Links -->
-                            <ul class="social-list">
-                                <li class="profile-name">
-                                    <a class="bell itl-tooltip" data-placement="bottom" title="" href="#"
-                                       data-original-title="Notification"><i class="fa fa-bell"></i></a>
+                            <ul class="nav navbar-nav navbar-right">
+                                <li class="dropdown icon-border" id="notificationLink">
+                                    <span id="notification_count">3</span>
+                                    <a href="#" class="bell itl-tooltip" data-placement="bottom" data-toggle="dropdown"><i class="fa fa-bell"></i></a>
+                                    <ul id="notificationContainer" class="dropdown-menu dropdown-menu-inverse">
+                                        <li class="dropdown-header"><label>Notification</label></li>
+                                        <li class="disabled"><a href="#" tabindex="-1">No new notification.</a></li>
+                                        <li><a href="#" tabindex="-1">The administrator accepted your request.</a></li>
+                                        <li class="divider"></li>
+                                        <li><a href="../notification/notification.php" tabindex="-1">See All</a></li>
+                                    </ul>
                                 </li>
-                                <li class="profile-name">
-                                    &nbsp;
-                                </li>
-                                <li class="profile-name">
-                                    <i class="fa fa-user"></i> Hello, <b><?php echo $cFirstName . " " . $cLastName; ?></b>
+                                <li class="dropdown">
+                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown"><b class="fa fa-user"></b> Welcome, <b><?php echo $StudentName; ?> </b><b class="caret"></b></a>
+                                    <ul class="dropdown-menu">
+                                        <li><a href="#">Profile <b class="fa fa-user" style="float:right;"></b></a></li>
+                                        <li><a href="../settings/privacy-settings.php">Settings <b class="fa fa-cog" style="float:right;"></b></a></li>
+                                        <li class="divider"></li>
+                                        <li><a href="#" data-target='#Logout' data-toggle='modal'>Sign Out <b class="fa fa-sign-out" style="float:right;"></b></a></li>
+                                    </ul>
                                 </li>
                             </ul>
                             <!-- End Social Links -->
@@ -176,197 +186,195 @@ $cLastName = $companyinfo_tbl[0][2];
                             <img src="../images/ojpms.png">
                         </a>
                     </div>
-              <div class="navbar-collapse collapse">
-                  <!-- Sign-out -->
-                  <div class="signout-side">
-                      <a class="show-signout" data-toggle='modal' data-target='#Logout'><i class="fa fa-sign-out"></i></a>
-                  </div>
-                  <!-- Modal -->
-                  <div class="modal fade" id="Logout"
-                       role="dialog">
-                      <div class="modal-dialog" style="padding:100px">
-                          <!-- Modal content-->
-                          <div class="modal-content">
-                              <div class="modal-header">
-                                  <button type="button" class="close" data-dismiss="modal">&times;</button>
-                                  <h4 class="modal-title">Log out?</h4>
-                              </div>
-                              <div class="modal-body">
-                                  <div class="col-md-15 fieldcol">
-                                      <label = "usr" class = "control-label">Do you want to log out?</label>
-                                      <div class="form-group">
-                                      </div>
-                                  </div>
-                                  <div class="modal-footer">
-                                      <a href="logout.php"
-                                         class="btn btn-primary">Log out</a>
-                                      <button type="button" class="btn btn-default" data-dismiss="modal">
-                                          Cancel
-                                      </button>
-                                  </div>
-                              </div>
-                          </div>
-                      </div>
-                  </div>
-                  <!-- End Sign-out -->
-                 <!-- Start Navigation List -->
-                <ul class="nav navbar-nav navbar-right">
-                    <li>
-                        <a  href="company.php">Home</a>
-                    </li>
-                   <li>
-                        <a>Position</a>
-                        <ul class="dropdown">
-                            <li><a href="company-positionlist.php" class = "active">Position List</a></li>
-                            <li><a href="company-createposition.php">Create Position</a></li>
+                    <div class="navbar-collapse collapse">
+                        <!-- Sign-out -->
+                        <div class="signout-side">
+                            <a class="show-signout" data-toggle='modal' data-target='#Logout'><i class="fa fa-sign-out"></i></a>
+                        </div>
+                        <!-- Modal -->
+                        <div class="modal fade" id="Logout" role="dialog">
+                            <div class="modal-dialog" style="padding:100px">
+                                <!-- Modal content-->
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                        <h4 class="modal-title">Log out?</h4>
+                                    </div>
+                                    <div class="modal-body">
+                                        <div class="col-md-15 fieldcol">
+                                            <label = "usr" class = "control-label">Do you want to log out?</label>
+                                            <div class="form-group"></div>
+                                        </div>
+                                        <div class="modal-footer">
+                                            <a href="logout.php" class="btn btn-primary">Log out</a>
+                                            <button type="button" class="btn btn-default" data-dismiss="modal">
+                                              Cancel
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- End Sign-out -->
+
+                        <!-- Start Navigation List -->
+                        <ul class="nav navbar-nav navbar-right">
+                            <li>
+                                <a href="company.php">Home</a>
+                            </li>
+                            <li>
+                                <a>Position</a>
+                                <ul class="dropdown">
+                                    <li><a href="company-positionlist.php">Position List</a></li>
+                                    <li><a href="company-createposition.php">Create Position</a></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a class="active" href="company-calendar.php">Calendar</a>
+                            </li>
+                            <li>
+                                <a href="company-settings.php">Settings</a>
+                            </li>
+                            <li>
+                                <a>Applicant List</a>
+                                <ul class="dropdown">
+                                    <li><a href="company-pendingapplicants.php">Pending</a></li>
+                                    <li><a href="company-acceptedapplicants.php">Accepted</a></li>
+                                </ul>
+                            </li>
                         </ul>
-                    </li>
+                        <!-- End Navigation List -->
+                    </div>
+                </div>
+                <!-- Mobile Menu Start -->
+                <ul class="wpb-mobile-menu">
                     <li>
-                        <a class="active" href="company-calendar.php">Calendar</a>
-                    </li>
-                    <li><a href="company-settings.php">Settings</a>
-                    </li>
-                    <li>
-                        <a>Applicant List</a>
-                        <ul class="dropdown">
-                            <li><a href="company-pendingapplicants.php" class = "active">Pending</a></li>
-                            <li><a href="company-acceptedapplicants.php">Accepted</a></li>
-                        </ul>
-                    </li>
-                </ul>
-                <!-- End Navigation List -->
-            </div>
-        </div>
-            <!-- Mobile Menu Start -->
-        <ul class="wpb-mobile-menu">
-           <li>
                         <a href="company.php">Home</a>
                     </li>
                     <li>
                         <a>Position</a>
                         <ul class="dropdown">
-                            <li><a href="company-positionlist.php" class = "active">Position List</a></li>
+                            <li><a href="company-positionlist.php">Position List</a></li>
                             <li><a href="company-createposition.php">Create Position</a></li>
                         </ul>
                     </li>
                     <li>
                         <a class="active" href="company-calendar.php">Calendar</a>
                     </li>
-                    <li><a href="company-settings.php">Settings</a>
+                    <li>
+                        <a href="company-settings.php">Settings</a>
                     </li>
-                  <li>
-                        <a > Applicant List</a>
+                    <li>
+                        <a>Applicant List</a>
                         <ul class="dropdown">
-                            <li><a href="company-pendingapplicants.php" class = "active">Pending</a></li>
+                            <li><a href="company-pendingapplicants.php">Pending</a></li>
                             <li><a href="company-acceptedapplicants.php">Accepted</a></li>
                         </ul>
                     </li>
-        </ul>
-        </header>
-        <!-- Mobile Menu End -->
-
-          </div>
-          <!-- End Header Logo & Naviagtion -->
-
+                </ul>
+                <!-- Mobile Menu End -->
+            </div>
+            <!-- End Header Logo & Naviagtion -->
         </header>
         <!-- End Header Section -->
 
-     <!-- Start Page Banner -->
-        <div class="page-banner" style="padding:40px 0; center #f9f9f9;">
-          <div class="container">
-            <div class="row">
-              <div class="col-md-6">
-                <h2>List of Events</h2>
-              </div>
+        <!-- Start Page Banner -->
+        <div class="page-banner">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6">
+                        <h2>List of Events</h2>
+                    </div>
+                </div>
             </div>
-          </div>
         </div>
         <!-- End Page Banner -->
 
-    <!--Content-->
-    <br><br><br>
-    <div class = "container">
-        <div class="row">
-            <div class="col-md-6">
-                &nbsp;
+        <!--Content-->
+        <br><br><br>
+        <div class = "container">
+            <div class="row">
+                <div class="col-md-6">
+                    &nbsp;
+                </div>
+                <div class="col-md-6">
+                    <a href="company-calendarcreateevent.php" class="main-button" style="float:right;">
+                        <span class="fa fa-pencil-square-o fa-1x"></span> Create an Event 
+                    </a>
+                </div>
             </div>
-            <div class="col-md-6">
-                <a href="company-calendarcreateevent.php" class="main-button" style="float:right;">
-                    <span class="fa fa-pencil-square-o fa-1x"></span> Create an Event 
-                </a>
-            </div>
-        </div>
-        &nbsp;
-        <div class = "col-md-12">
-            <?php
-              if(isset($_GET['id'])){
-                    $id=$_GET['id'];
-                    if($id=="EventEdit"){
-                        echo '<div class="alert alert-success">
-                        <span class="glyphicon glyphicon-info-sign"></span> 
-                        Achievement successfully updated.
-                        </div>';
-                    }
-                    elseif($id=="EventDelete"){
-                        echo '<div class="alert alert-success">
-                        <span class="glyphicon glyphicon-info-sign"></span> 
-                        Achievement successfully deleted.
-                        </div>';
-                    }
-                    elseif($id=="EventAdd"){
-                        echo '<div class="alert alert-success">
-                        <span class="glyphicon glyphicon-info-sign"></span> 
-                        Achievement successfully added.
-                        </div>';
-                    }
-                }   
-            ?>
-            <table class="table segment table-hover">
-                <thead>
-                    <?php
-                      $eventtitle = 'EventTitle';
-                      $datefrom = 'EventDatef';
-                      $dateto = 'EventDatet';
-                      $location = 'Location';
+            &nbsp;
+            <div class = "col-md-12">
+                <?php
+                  if(isset($_GET['id'])){
+                        $id=$_GET['id'];
+                        if($id=="EventEdit"){
+                            echo '<div class="alert alert-success">
+                            <span class="glyphicon glyphicon-info-sign"></span> 
+                            Achievement successfully updated.
+                            </div>';
+                        }
+                        elseif($id=="EventDelete"){
+                            echo '<div class="alert alert-success">
+                            <span class="glyphicon glyphicon-info-sign"></span> 
+                            Achievement successfully deleted.
+                            </div>';
+                        }
+                        elseif($id=="EventAdd"){
+                            echo '<div class="alert alert-success">
+                            <span class="glyphicon glyphicon-info-sign"></span> 
+                            Achievement successfully added.
+                            </div>';
+                        }
+                    }   
+                ?>
+                <table class="table segment table-hover">
+                    <thead>
+                        <?php
+                          $eventtitle = 'EventTitle';
+                          $datefrom = 'EventDatef';
+                          $dateto = 'EventDatet';
+                          $location = 'Location';
 
-                      $query = ("SELECT * FROM compeventtbl WHERE CompanyID = '$CompanyID'");
-                      $Result = mysql_query($query);
-                    ?>
-                    <tr>
-                        <th width= "20%" class = "tabletitle">Event</th>
-                        <th width = "20%" class = "tabletitle">From</th>
-                        <th width = "20%" class = "tabletitle">To</th>
-                        <th width = "25%" class = "tabletitle"> Location </th>
-                        <th width = "15%" class = "tabletitle"> </th>
-                    <tr>
-                </thead>
-                <tbody>
-                    <?php
-                    while ($row = mysql_fetch_array($Result)) {
-                      
-                    ?>
-                    <tr>
-                       <td width = 20% class = tabletitle><?php echo $row[$eventtitle];?></td>
-                       <td width = 20% class = tabletitle><?php echo $row[$datefrom]; ?> </td>
-                       <td width = 20% class = tabletitle><?php echo $row[$dateto]; ?> </td>
-                       <td width = 20% class = tabletitle><?php echo $row[$location];?> </td>
-                       <form method="POST">
-                          <input type="hidden" name="delete_id" value="<?php echo $row['EventID']; ?>" />
-                       <td class = tabletitle> 
-                            <button id="Adduser" href="" name="btnedit" class=" btn btn-primary"> 
-                            <i class="fa fa-pencil-square-o fa-1x"></i></button> 
-                            <button id="Adduser" href="#" class=" btn btn-primary"> 
-                            <i class="fa fa-exclamation"></i> </button>
-                            <button id="Adduser" name="btndelete" href="#" class=" btn btn-primary"> 
-                            <i class="fa fa-trash fa-1x"></i> </button> 
-                       </td>
-                       </form>
-                    <tr> 
-                    <?php
-                    }
-                    ?>
-                </tbody>
-            </table>
+                          $query = ("SELECT * FROM compeventtbl WHERE CompanyID = '$CompanyID'");
+                          $Result = mysql_query($query);
+                        ?>
+                        <tr>
+                            <th width= "20%" class = "tabletitle">Event</th>
+                            <th width = "20%" class = "tabletitle">From</th>
+                            <th width = "20%" class = "tabletitle">To</th>
+                            <th width = "25%" class = "tabletitle"> Location </th>
+                            <th width = "15%" class = "tabletitle"> </th>
+                        <tr>
+                    </thead>
+                    <tbody>
+                        <?php
+                        while ($row = mysql_fetch_array($Result)) {
+                          
+                        ?>
+                        <tr>
+                           <td width = 20% class = tabletitle><?php echo $row[$eventtitle];?></td>
+                           <td width = 20% class = tabletitle><?php echo $row[$datefrom]; ?> </td>
+                           <td width = 20% class = tabletitle><?php echo $row[$dateto]; ?> </td>
+                           <td width = 20% class = tabletitle><?php echo $row[$location];?> </td>
+                           <form method="POST">
+                              <input type="hidden" name="delete_id" value="<?php echo $row['EventID']; ?>" />
+                           <td class = tabletitle> 
+                                <button id="Adduser" href="" name="btnedit" class=" btn btn-primary"> 
+                                <i class="fa fa-pencil-square-o fa-1x"></i></button> 
+                                <button id="Adduser" href="#" class=" btn btn-primary"> 
+                                <i class="fa fa-exclamation"></i> </button>
+                                <button id="Adduser" name="btndelete" href="#" class=" btn btn-primary"> 
+                                <i class="fa fa-trash fa-1x"></i> </button> 
+                           </td>
+                           </form>
+                        <tr> 
+                        <?php
+                        }
+                        ?>
+                    </tbody>
+                </table>
+            </div>
         </div>
     </div>
     <script type="text/javascript" src="../js/script.js"></script>

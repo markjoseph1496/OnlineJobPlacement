@@ -115,6 +115,33 @@ $cLastName= $companyinfo_tbl[0][11];
     <!-- fileupload -->
     <link href="../css/fileinput.min.css" media="all" rel="stylesheet" type="text/css"/>
     <script src="../js/fileinput.min.js" type="text/javascript"></script>
+
+    <!-- Notification -->
+    <link rel="stylesheet" href="../css/notif.css"/>
+
+    <script type="text/javascript" >
+        $(document).ready(function()
+        {
+        $("#notificationLink").click(function()
+        {
+        $("#notificationContainer").fadeToggle(300);
+        $("#notification_count").fadeOut("slow");
+        return false;
+        });
+
+        //Document Click
+        $(document).click(function()
+        {
+        $("#notificationContainer").hide();
+        });
+        //Popup Click
+        $("#notificationContainer").click(function()
+        {
+        return false
+        });
+
+        });
+    </script>
 </head>
 
 <body>
@@ -137,16 +164,26 @@ $cLastName= $companyinfo_tbl[0][11];
                         <!-- .col-md-6 -->
                         <div class="col-md-6">
                             <!-- Start Social Links -->
-                            <ul class="social-list">
-                                <li class="profile-name">
-                                    <a class="bell itl-tooltip" data-placement="bottom" title="" href="#"
-                                       data-original-title="Notification"><i class="fa fa-bell"></i></a>
+                            <ul class="nav navbar-nav navbar-right">
+                                <li class="dropdown icon-border" id="notificationLink">
+                                    <span id="notification_count">3</span>
+                                    <a href="#" class="bell itl-tooltip" data-placement="bottom" data-toggle="dropdown"><i class="fa fa-bell"></i></a>
+                                    <ul id="notificationContainer" class="dropdown-menu dropdown-menu-inverse">
+                                        <li class="dropdown-header"><label>Notification</label></li>
+                                        <li class="disabled"><a href="#" tabindex="-1">No new notification.</a></li>
+                                        <li><a href="#" tabindex="-1">The administrator accepted your request.</a></li>
+                                        <li class="divider"></li>
+                                        <li><a href="../notification/notification.php" tabindex="-1">See All</a></li>
+                                    </ul>
                                 </li>
-                                <li class="profile-name">
-                                    &nbsp;
-                                </li>
-                                <li class="profile-name">
-                                    <i class="fa fa-user"></i> Hello, <b><?php echo $cFirstName . " " . $cLastName; ?></b>
+                                <li class="dropdown">
+                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown"><b class="fa fa-user"></b> Welcome, <b><?php echo $StudentName; ?> </b><b class="caret"></b></a>
+                                    <ul class="dropdown-menu">
+                                        <li><a href="#">Profile <b class="fa fa-user" style="float:right;"></b></a></li>
+                                        <li><a href="../settings/privacy-settings.php">Settings <b class="fa fa-cog" style="float:right;"></b></a></li>
+                                        <li class="divider"></li>
+                                        <li><a href="#" data-target='#Logout' data-toggle='modal'>Sign Out <b class="fa fa-sign-out" style="float:right;"></b></a></li>
+                                    </ul>
                                 </li>
                             </ul>
                             <!-- End Social Links -->
@@ -207,6 +244,7 @@ $cLastName= $companyinfo_tbl[0][11];
                             </div>
                         </div>
                         <!-- End Sign-out -->
+
                         <!-- Start Navigation List -->
                         <ul class="nav navbar-nav navbar-right">
                             <li>
@@ -215,7 +253,7 @@ $cLastName= $companyinfo_tbl[0][11];
                             <li>
                                 <a>Position</a>
                                 <ul class="dropdown">
-                                    <li><a href="company-positionlist.php" class = "active">Position List</a></li>
+                                    <li><a href="company-positionlist.php">Position List</a></li>
                                     <li><a href="company-createposition.php">Create Position</a></li>
                                 </ul>
                             </li>
@@ -228,7 +266,7 @@ $cLastName= $companyinfo_tbl[0][11];
                             <li>
                                 <a> Applicant List</a>
                                 <ul class="dropdown">
-                                    <li><a href="company-pendingapplicants.php" class = "active" >Pending</a></li>
+                                    <li><a href="company-pendingapplicants.php">Pending</a></li>
                                     <li><a href="company-acceptedapplicants.php">Accepted</a></li>
                                 </ul>
                             </li>
@@ -239,12 +277,12 @@ $cLastName= $companyinfo_tbl[0][11];
                 <!-- Mobile Menu Start -->
                 <ul class="wpb-mobile-menu">
                     <li>
-                        <a class="active" href="company.php">Home</a>
+                        <a href="company.php">Home</a>
                     </li>
                     <li>
                         <a>Position</a>
                         <ul class="dropdown">
-                            <li><a href="company-positionlist.php" class = "active">Position List</a></li>
+                            <li><a href="company-positionlist.php">Position List</a></li>
                             <li><a href="company-createposition.php">Create Position</a></li>
                         </ul>
                     </li>
@@ -257,11 +295,12 @@ $cLastName= $companyinfo_tbl[0][11];
                     <li>
                         <a>Applicant List</a>
                         <ul class="dropdown">
-                            <li><a href="company-pendingapplicants.php" class = "active" >Pending</a></li>
+                            <li><a href="company-pendingapplicants.php">Pending</a></li>
                             <li><a href="company-acceptedapplicants.php">Accepted</a></li>
                         </ul>
                     </li>
                 </ul>
+            </div>
         </header>
         <!-- End Header Logo & Naviagtion -->
 
@@ -497,15 +536,6 @@ $cLastName= $companyinfo_tbl[0][11];
                                 </div>
                             </div>
                         </div>
-
-                        <div class="hr5" style="margin-top:35px;margin-bottom:40px;"></div>
-
-                        <div class="field">
-                            <div class="text-center">
-                                <button type="submit" class="btn-system btn-large" name="btnSave" id="save">Save</button>
-                                <button type="submit" class="btn-system btn-large btn-black" id="cancel">Cancel</button>
-                            </div>
-                        </div>
                     </form>
                 </div>
                 <div class="col-md-5">
@@ -514,6 +544,11 @@ $cLastName= $companyinfo_tbl[0][11];
                     <br>
                     <button id="" class="btn-system btn-mini border-btn" name="btnDelete">Delete Image</button>
                 </div>
+            </div>
+            <div class="hr5" style="margin-top:35px;margin-bottom:40px;"></div>
+            <div class="text-center">
+                <button type="submit" class="btn-system btn-large" name="btnSave" id="save">Save</button>
+                <button type="submit" class="btn-system btn-large btn-black" id="cancel">Cancel</button>
             </div>
         </div>
     </div>
