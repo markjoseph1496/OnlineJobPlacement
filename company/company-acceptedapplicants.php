@@ -22,12 +22,8 @@ $cLastName = $companyinfo_tbl[0][2];
 
 ?>
 <!doctype html>
-<!--[if IE 8 ]>
-<html class="ie ie8" lang="en"> <![endif]-->
-<!--[if (gte IE 9)|!(IE)]>
-<html lang="en" class="no-js"> <![endif]-->
-<html lang="en">
 
+<html lang="en">
 <head>
 
     <!-- Basic -->
@@ -98,7 +94,6 @@ $cLastName = $companyinfo_tbl[0][2];
 </head>
 
 <body>
-
 <!-- Full Body Container -->
 <div id="container">
 
@@ -199,7 +194,7 @@ $cLastName = $companyinfo_tbl[0][2];
                         <li>
                             <a>Position</a>
                             <ul class="dropdown">
-                                <li><a href="company-positionlist.php" class = "active">Position List</a></li>
+                                <li><a href="company-positionlist.php">Position List</a></li>
                                 <li><a href="company-createposition.php">Create Position</a></li>
                             </ul>
                         </li>
@@ -244,112 +239,105 @@ $cLastName = $companyinfo_tbl[0][2];
                     </ul>
                 </li>
             </ul>
+            <!-- Mobile Menu End -->
+        </div>
+        <!-- End Header Logo & Naviagtion -->
     </header>
-    <!-- Mobile Menu End -->
+    <!-- End Header Section -->
 
-</div>
-<!-- End Header Logo & Naviagtion -->
-
-</header>
-<!-- End Header Section -->
-
-<!-- Start Page Banner -->
-<div class="page-banner" style="padding:40px 0; center #f9f9f9;">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-6">
-                <h2>List of Accepted Applicants</h2>
+    <!-- Start Page Banner -->
+    <div class="page-banner" style="padding:40px 0; center #f9f9f9;">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <h2>List of Accepted Applicants</h2>
+                </div>
             </div>
         </div>
     </div>
-</div>
-<!-- End Page Banner -->
+    <!-- End Page Banner -->
 
-<!--Content-->
-<br><br><br>
-<div class="container">
-    <div class="col-md-12">
-
-        <table class="table segment table-hover">
-            <thead>
-            <tr>
-
-            </tr>
-            <tr>
-                <th width='20%' class='tabletitle'>Applicant Name</th>
-                <th width='20%' class='tabletitle'>Position</th>
-                <th width='15%' class='tabletitle'>Course</th>
-                <th width='20%' class='tabletitle'>Location</th>
-                <th width='15%' class='tabletitle'>Email</th>
-                <th width='5%' class='tabletitle'>Remove</th>
-            <tr>
-            </thead>
-            <?php
-            $requesttocompany_tbl =
-                GSecureSQL::query(
-                    "SELECT
-                          requesttocompanytbl.RID,
-                          requesttocompanytbl.StudentID,
-                          requesttocompanytbl.PositionID,
-                          requesttocompanytbl.Status,
-                          studentinfotbl.StudentID,
-                          studentinfotbl.FirstName,
-                          studentinfotbl.LastName,
-                          studentinfotbl.MajorCourse,
-                          studcontactstbl.StudentID,
-                          studcontactstbl.City,
-                          studcontactstbl.Email,
-                          comppositiontbl.PositionID,
-                          comppositiontbl.PositionLevel
-                          FROM
-                          requesttocompanytbl
-                          INNER JOIN comppositiontbl ON requesttocompanytbl.PositionID = comppositiontbl.PositionID
-                          INNER JOIN studentinfotbl ON requesttocompanytbl.StudentID = studentinfotbl.StudentID
-                          INNER JOIN studcontactstbl ON studentinfotbl.StudentID = studcontactstbl.StudentID
-                          WHERE requesttocompanytbl.Status = 'Accepted'
-                          ",
-                    TRUE
-                );
-            foreach ($requesttocompany_tbl as $value) {
-                $RID = $value[0];
-                $PositionLevel = $value[12];
-                $FirstName = $value[5];
-                $LastName = $value[6];
-                $MajorCourse = $value[7];
-                $Location = $value[9];
-                $Email = $value[10];
-
-                $coursetbl =
+    <!--Content-->
+    <br><br><br>
+    <div class="container">
+        <div class="col-md-12">
+            <table class="table segment table-hover">
+                <thead>
+                    <tr>
+                        <th width='20%' class='tabletitle'>Applicant Name</th>
+                        <th width='20%' class='tabletitle'>Position</th>
+                        <th width='15%' class='tabletitle'>Course</th>
+                        <th width='20%' class='tabletitle'>Location</th>
+                        <th width='15%' class='tabletitle'>Email</th>
+                        <th width='5%' class='tabletitle'>Remove</th>
+                    <tr>
+                </thead>
+                <?php
+                $requesttocompany_tbl =
                     GSecureSQL::query(
-                        "SELECT CourseTitle FROM coursetbl WHERE CourseCode = ?",
-                        TRUE,
-                        "s",
-                        $MajorCourse
+                        "SELECT
+                              requesttocompanytbl.RID,
+                              requesttocompanytbl.StudentID,
+                              requesttocompanytbl.PositionID,
+                              requesttocompanytbl.Status,
+                              studentinfotbl.StudentID,
+                              studentinfotbl.FirstName,
+                              studentinfotbl.LastName,
+                              studentinfotbl.MajorCourse,
+                              studcontactstbl.StudentID,
+                              studcontactstbl.City,
+                              studcontactstbl.Email,
+                              comppositiontbl.PositionID,
+                              comppositiontbl.PositionLevel
+                              FROM
+                              requesttocompanytbl
+                              INNER JOIN comppositiontbl ON requesttocompanytbl.PositionID = comppositiontbl.PositionID
+                              INNER JOIN studentinfotbl ON requesttocompanytbl.StudentID = studentinfotbl.StudentID
+                              INNER JOIN studcontactstbl ON studentinfotbl.StudentID = studcontactstbl.StudentID
+                              WHERE requesttocompanytbl.Status = 'Accepted'
+                              ",
+                        TRUE
                     );
-                foreach ($coursetbl as $value1) {
-                    $MajorCourse = $value1[0];
+                foreach ($requesttocompany_tbl as $value) {
+                    $RID = $value[0];
+                    $PositionLevel = $value[12];
+                    $FirstName = $value[5];
+                    $LastName = $value[6];
+                    $MajorCourse = $value[7];
+                    $Location = $value[9];
+                    $Email = $value[10];
+
+                    $coursetbl =
+                        GSecureSQL::query(
+                            "SELECT CourseTitle FROM coursetbl WHERE CourseCode = ?",
+                            TRUE,
+                            "s",
+                            $MajorCourse
+                        );
+                    foreach ($coursetbl as $value1) {
+                        $MajorCourse = $value1[0];
+                    }
+                    ?>
+                    <tbody>
+                    <tr>
+                        <td width=20% class=tabletitle><a href=''><?php echo $LastName . ", " . $FirstName; ?></td>
+                        <td width=20% class=tabletitle><?php echo $PositionLevel; ?></a></td>
+                        <td width=15% class=tabletitle><?php echo $MajorCourse; ?></td>
+                        <td width=15% class=tabletitle><?php echo $Location; ?></td>
+                        <td width=15% class=tabletitle><?php echo $Email; ?></td>
+                        <td width="5%" class="tabletitle">
+                            <button class='btn btn-danger' data-toggle='modal'
+                                    data-target='#DeclineRequest<?php echo $RID; ?>'><i
+                                    class='fa fa-trash fa-1x'></i></button>
+                        </td>
+                    <tr>
+                    </tbody>
+                    <?php
                 }
                 ?>
-                <tbody>
-                <tr>
-                    <td width=20% class=tabletitle><a href=''><?php echo $LastName . ", " . $FirstName; ?></td>
-                    <td width=20% class=tabletitle><?php echo $PositionLevel; ?></a></td>
-                    <td width=15% class=tabletitle><?php echo $MajorCourse; ?></td>
-                    <td width=15% class=tabletitle><?php echo $Location; ?></td>
-                    <td width=15% class=tabletitle><?php echo $Email; ?></td>
-                    <td width="5%" class="tabletitle">
-                        <button class='btn btn-danger' data-toggle='modal'
-                                data-target='#DeclineRequest<?php echo $RID; ?>'><i
-                                class='fa fa-trash fa-1x'></i></button>
-                    </td>
-                <tr>
-                </tbody>
-                <?php
-            }
-            ?>
-        </table>
+            </table>
+        </div>
     </div>
-</div>
-<script type="text/javascript" src="../js/script.js"></script>
+    <script type="text/javascript" src="../js/script.js"></script>
 </body>
 </html>
