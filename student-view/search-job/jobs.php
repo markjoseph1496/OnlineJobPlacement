@@ -147,7 +147,8 @@ $MajorCourse = $coursetbl[0][0];
                         <ul class="nav navbar-nav navbar-right">
                             <li class="dropdown icon-border" id="notificationLink">
                                 <span id="notification_count">3</span>
-                                <a href="#" class="bell itl-tooltip" data-placement="bottom" data-toggle="dropdown"><i class="fa fa-bell"></i></a>
+                                <a href="#" class="bell itl-tooltip" data-placement="bottom" data-toggle="dropdown"><i
+                                        class="fa fa-bell"></i></a>
                                 <ul id="notificationContainer" class="dropdown-menu dropdown-menu-inverse">
                                     <li class="dropdown-header"><label>Notification</label></li>
                                     <li class="disabled"><a href="#" tabindex="-1">No new notification.</a></li>
@@ -157,12 +158,16 @@ $MajorCourse = $coursetbl[0][0];
                                 </ul>
                             </li>
                             <li class="dropdown">
-                                <a href="#" class="dropdown-toggle" data-toggle="dropdown"><b class="fa fa-user"></b> Welcome, <b><?php echo $StudentName; ?> </b><b class="caret"></b></a>
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown"><b class="fa fa-user"></b>
+                                    Welcome, <b><?php echo $StudentName; ?> </b><b class="caret"></b></a>
                                 <ul class="dropdown-menu">
                                     <li><a href="#">Profile <b class="fa fa-user" style="float:right;"></b></a></li>
-                                    <li><a href="../settings/privacy-settings.php">Settings <b class="fa fa-cog" style="float:right;"></b></a></li>
+                                    <li><a href="../settings/privacy-settings.php">Settings <b class="fa fa-cog"
+                                                                                               style="float:right;"></b></a>
+                                    </li>
                                     <li class="divider"></li>
-                                    <li><a href="#" data-target='#Logout' data-toggle='modal'>Sign Out <b class="fa fa-sign-out" style="float:right;"></b></a></li>
+                                    <li><a href="#" data-target='#Logout' data-toggle='modal'>Sign Out <b
+                                                class="fa fa-sign-out" style="float:right;"></b></a></li>
                                 </ul>
                             </li>
                         </ul>
@@ -219,8 +224,8 @@ $MajorCourse = $coursetbl[0][0];
                 </div>
                 <div class="navbar-collapse collapse">
                     <!-- Start Navigation List -->
-                    <ul class="nav navbar-nav navbar-right">                            
-                        <a href="../../../login-student.php?id=1" class="line-height"><i class="fa fa-sign-out"></i></a>                           
+                    <ul class="nav navbar-nav navbar-right">
+                        <a href="../../../login-student.php?id=1" class="line-height"><i class="fa fa-sign-out"></i></a>
                     </ul>
                     <!-- End Navigation List -->
                 </div>
@@ -333,12 +338,18 @@ $MajorCourse = $coursetbl[0][0];
                 <div class="col-md-9 blog-box">
                     <h4 class="classic-title"><span>Jobs</span></h4>
                     <?php
-                    $compposition_tbl =
+                    $course_tbl =
                         GSecureSQL::query(
-                            "SELECT * FROM comppositiontbl WHERE RelatedCourses = ?",
+                            "SELECT CourseCode FROM coursetbl WHERE CourseTitle = ?",
                             TRUE,
                             "s",
                             $MajorCourse
+                        );
+                    $mCourse = $course_tbl[0][0];
+                    $compposition_tbl =
+                        GSecureSQL::query(
+                            "SELECT * FROM comppositiontbl WHERE RelatedCourses IS NOT NULL",
+                            TRUE
                         );
                     foreach ($compposition_tbl as $value) {
                         $PositionID = $value[0];
@@ -348,35 +359,42 @@ $MajorCourse = $coursetbl[0][0];
                         $Position = $value[5];
                         $PositionDescription = $value[6];
                         $YearExperience = $value[11];
-                        $company_tbl =
-                            GSecureSQL::query(
-                                "SELECT * FROM companyinfotbl WHERE CompanyID = ?",
-                                TRUE,
-                                "s",
-                                $CompanyID
-                            );
-                        foreach ($company_tbl as $value1) {
-                            $CompanyName = $value1[1];
-                            $Location = $value1[5];
+                        $RelatedCourses = $value[12];
+                        $RelatedCourses = explode(", ", $RelatedCourses);
+                        foreach ($RelatedCourses as $value3) {
+                            $rCourse = $value3;
+                            if ($rCourse == "BSCS") {
+                                $company_tbl =
+                                    GSecureSQL::query(
+                                        "SELECT * FROM companyinfotbl WHERE CompanyID = ?",
+                                        TRUE,
+                                        "s",
+                                        $CompanyID
+                                    );
+                                foreach ($company_tbl as $value1) {
+                                    $CompanyName = $value1[1];
+                                    $Location = $value1[5];
 
-                            $diff_from = date_diff(new DateTime(), new DateTime($PostingDateFrom));
-                            $diff_to = date_diff(new DateTime(), new DateTime($PostingDateTo));
+                                    $diff_from = date_diff(new DateTime(), new DateTime($PostingDateFrom));
+                                    $diff_to = date_diff(new DateTime(), new DateTime($PostingDateTo));
 
-                            if($diff_to->d == 0){
-                                $diff_to->invert = 0;
-                            }
+                                    if ($diff_to->d == 0) {
+                                        $diff_to->invert = 0;
+                                    }
 
-                            $a = $diff_from->y >= 0 &&
-                                $diff_from->m >= 0 &&
-                                $diff_from->d >= 0 &&
-                                $diff_from->invert == 1;
+                                    $a = $diff_from->y >= 0 &&
+                                        $diff_from->m >= 0 &&
+                                        $diff_from->d >= 0 &&
+                                        $diff_from->invert == 1;
 
-                            $b = $diff_to->y >= 0 &&
-                                $diff_to->m >= 0 &&
-                                $diff_to->d >= 0 &&
-                                $diff_to->invert == 0;
+                                    $b = $diff_to->y >= 0 &&
+                                        $diff_to->m >= 0 &&
+                                        $diff_to->d >= 0 &&
+                                        $diff_to->invert == 0;
 
-                            if ($a && $b) {
+                                    if ($a && $b) {
+                                    }
+                                }
                                 ?>
                                 <div class='blog-post standard-post'>
                                     <div class="row">

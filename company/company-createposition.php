@@ -392,7 +392,7 @@ $cLastName = $companyinfo_tbl[0][2];
                                     ?>
                                     <li>
                                         <div class="checkbox checkbox-success">
-                                            <input id="checkbox3" class="styled" type="checkbox" name="RelatedCourses[]" id="RelatedCourses" value="<?php echo $CourseCode; ?>">
+                                            <input class="styled" type="checkbox" name="RelatedCourses[]" id="RelatedCourses" value="<?php echo $CourseCode; ?>">
                                             <label for="checkbox3"><b><?php echo $CourseTitle; ?> (<?php echo $CourseCode; ?>) </b></label>
                                         </div>
                                     </li>
@@ -461,17 +461,17 @@ $cLastName = $companyinfo_tbl[0][2];
                                 <ul>
                                     <li>
                                         <div class="checkbox checkbox-success">
-                                        <input id="checkbox3" class="styled" type="checkbox" name="DegreeLevel[]" value="Bachelor Degree">
+                                        <input id="DegreeLevel" class="styled" type="checkbox" name="DegreeLevel[]" value="Bachelor Degree">
                                         <label for="checkbox3"><b>Bachelor Degree</b></label>
                                     </li>
                                     <li>
                                         <div class="checkbox checkbox-success">
-                                        <input id="checkbox3" class="styled" type="checkbox" name="DegreeLevel[]" value="Masteral Degree">
+                                        <input id="DegreeLevel" class="styled" type="checkbox" name="DegreeLevel[]" value="Masteral Degree">
                                         <label for="checkbox3"><b>Masteral Degree</b></label>
                                     </li>
                                     <li>
                                         <div class="checkbox checkbox-success">
-                                        <input id="checkbox3" class="styled" type="checkbox" name="DegreeLevel[]" value="Doctorate Degree">
+                                        <input id="DegreeLevel3" class="styled" type="checkbox" name="DegreeLevel[]" value="Doctorate Degree">
                                         <label for="checkbox3"><b>Doctorate Degree</b></label>
                                     </li>
                                 </ul>
@@ -630,7 +630,7 @@ $cLastName = $companyinfo_tbl[0][2];
                 invalid: "glyphicon glyphicon-remove",
                 validating: "glyphicon glyphicon-refresh"
             },
-           s: {
+           fields: {
                 DateFrom: {
                     validators: {
                         notEmpty: {
