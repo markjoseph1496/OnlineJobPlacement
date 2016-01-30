@@ -3,6 +3,14 @@ include('../../connection.php');
 session_start();
 $StudentID = $_SESSION['StudentID'];
 
+$b = 0;
+$PLevel_Default = isset($_POST['PLevel']) ? $_POST['PLevel'] : '';
+$EType_Default = isset($_POST['EType']) ? $_POST['EType'] : '';
+$Industry_Default = isset($_POST['Industry']) ? $_POST['Industry'] : '';
+if (isset($_POST['btnFilter'])) {
+    $b = 1;
+}
+
 $infoquery =
     GSecureSQL::query(
         "SELECT FirstName, LastName, MajorCourse FROM studentinfotbl WHERE StudentID = ?",
@@ -10,6 +18,17 @@ $infoquery =
         "s",
         $StudentID
     );
+
+$specialization_tbl =
+    GSecureSQL::query(
+        "SELECT Specialization FROM specializationtbl WHERE StudentID = ?",
+        TRUE,
+        "s",
+        $StudentID
+    );
+
+$Specialization = array_reduce($specialization_tbl, 'array_merge', array());
+$Specialization = implode("', '", $Specialization);
 
 $FirstName = $infoquery[0][0];
 $LastName = $infoquery[0][1];
@@ -127,199 +146,228 @@ $MajorCourse = $coursetbl[0][0];
 </head>
 
 <body>
-    <div id="container">
-        <!-- Start Header Section -->
-        <div class="hidden-header"></div>
-        <header class="clearfix">
-            <div class="top-bar">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-md-7">
-                            <!-- Start Contact Info -->
-                            <ul class="profile-name">
-                                <li>Course: <b><?php echo $MajorCourse; ?></b></li>
-                            </ul>
-                            <!-- End Contact Info -->
-                        </div>
-                        <!-- .col-md-6 -->
-                        <div class="col-md-5">
-                            <!-- Start Social Links -->
-                            <ul class="nav navbar-nav navbar-right">
-                                <li class="dropdown icon-border" id="notificationLink">
-                                    <span id="notification_count">3</span>
-                                    <a href="#" class="bell itl-tooltip" data-placement="bottom" data-toggle="dropdown"><i
-                                            class="fa fa-bell"></i></a>
-                                    <ul id="notificationContainer" class="dropdown-menu dropdown-menu-inverse">
-                                        <li class="dropdown-header"><label>Notification</label></li>
-                                        <li class="disabled"><a href="#" tabindex="-1">No new notification.</a></li>
-                                        <li><a href="#" tabindex="-1">The administrator accepted your request.</a></li>
-                                        <li class="divider"></li>
-                                        <li><a href="../notification/notification.php" tabindex="-1">See All</a></li>
-                                    </ul>
-                                </li>
-                                <li class="dropdown">
-                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown"><b class="fa fa-user"></b>
-                                        Welcome, <b><?php echo $StudentName; ?> </b><b class="caret"></b></a>
-                                    <ul class="dropdown-menu">
-                                        <li><a href="#">Profile <b class="fa fa-user" style="float:right;"></b></a></li>
-                                        <li><a href="../settings/privacy-settings.php">Settings <b class="fa fa-cog"
-                                                                                                   style="float:right;"></b></a>
-                                        </li>
-                                        <li class="divider"></li>
-                                        <li><a href="#" data-target='#Logout' data-toggle='modal'>Sign Out <b
-                                                    class="fa fa-sign-out" style="float:right;"></b></a></li>
-                                    </ul>
-                                </li>
-                            </ul>
-                            <!-- End Social Links -->
-                        </div>
-                        <!-- .col-md-6 -->
-                    </div>
-                    <!-- .row -->
-                </div>
-                <!-- .container -->
-            </div>
-            <!-- .top-bar -->
-            <!-- End Top Bar -->
-
-            <!-- Modal -->
-            <div class="modal fade" id="Logout" role="dialog">
-                <div class="modal-dialog" style="padding:100px">
-                    <!-- Modal content-->
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <button type="button" class="close" data-dismiss="modal">&times;</button>
-                            <h4 class="modal-title">Sign Out?</h4>
-                        </div>
-                        <div class="modal-body">
-                            <div class="col-md-15 fieldcol">
-                                <label = "usr" class = "control-label">Do you want to sign out?</label>
-                                <div class="form-group">
-                                </div>
-                            </div>
-                            <div class="modal-footer">
-                                <a href="../logout.php"
-                                   class="btn btn-primary">Sign out</a>
-                                <button type="button" class="btn btn-default" data-dismiss="modal">
-                                    Cancel
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Start  Logo & Naviagtion  -->
-            <div class="navbar navbar-default navbar-top">
-                <div class="container">
-                    <div class="navbar-header">
-                        <!-- Stat Toggle Nav Link For Mobiles -->
-                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                            <i class="fa fa-bars"></i>
-                        </button>
-                        <!-- End Toggle Nav Link For Mobiles -->
-                        <a class="navbar-brand" href="">
-                            <img src="../../images/ojpms.png">
-                        </a>
-                    </div>
-                    <div class="navbar-collapse collapse">
-                        <!-- Start Navigation List -->
-                        <ul class="nav navbar-nav navbar-right">
-                            <a href="../../../login-student.php?id=1" class="line-height"><i class="fa fa-sign-out"></i></a>
-                        </ul>
-                        <!-- End Navigation List -->
-                    </div>
-                </div>
-                <!-- Mobile Menu Start -->
-                <ul class="wpb-mobile-menu">
-                    <li>
-                        <a href="../../../login-student.php?id=1"><i class="fa fa-sign-out"></i> Sign Out</a>
-                    </li>
-                </ul>
-                <!-- Mobile Menu End -->
-            </div>
-        </header>
-
-        <div class="page-banner no-subtitle">
+<div id="container">
+    <!-- Start Header Section -->
+    <div class="hidden-header"></div>
+    <header class="clearfix">
+        <div class="top-bar">
             <div class="container">
                 <div class="row">
-                    <div class="col-md-6">
-                        <h2>Find the job that suits your passion</h2>
-                    </div>
-                    <div class="col-md-6">
-                        <ul class="breadcrumbs">
-                            <li><a href="../myinfo/personal-info.php">Fill out your information</a></li>
-                            <li></li>
+                    <div class="col-md-7">
+                        <!-- Start Contact Info -->
+                        <ul class="profile-name">
+                            <li>Course: <b><?php echo $MajorCourse; ?></b></li>
                         </ul>
+                        <!-- End Contact Info -->
                     </div>
-                </div>
-            </div>
-        </div>
-        <!-- End Page Banner -->
-
-        <div class="middle-bar">
-            <div class="container">
-                <div class="row">
+                    <!-- .col-md-6 -->
                     <div class="col-md-5">
-                        <ul class="mid-list">
-                            &nbsp;
+                        <!-- Start Social Links -->
+                        <ul class="nav navbar-nav navbar-right">
+                            <li class="dropdown icon-border" id="notificationLink">
+                                <span id="notification_count">3</span>
+                                <a href="#" class="bell itl-tooltip" data-placement="bottom" data-toggle="dropdown"><i
+                                        class="fa fa-bell"></i></a>
+                                <ul id="notificationContainer" class="dropdown-menu dropdown-menu-inverse">
+                                    <li class="dropdown-header"><label>Notification</label></li>
+                                    <li class="disabled"><a href="#" tabindex="-1">No new notification.</a></li>
+                                    <li><a href="#" tabindex="-1">The administrator accepted your request.</a></li>
+                                    <li class="divider"></li>
+                                    <li><a href="../notification/notification.php" tabindex="-1">See All</a></li>
+                                </ul>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown"><b class="fa fa-user"></b>
+                                    Welcome, <b><?php echo $StudentName; ?> </b><b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    <li><a href="#">Profile <b class="fa fa-user" style="float:right;"></b></a></li>
+                                    <li><a href="../settings/privacy-settings.php">Settings <b class="fa fa-cog"
+                                                                                               style="float:right;"></b></a>
+                                    </li>
+                                    <li class="divider"></li>
+                                    <li><a href="#" data-target='#Logout' data-toggle='modal'>Sign Out <b
+                                                class="fa fa-sign-out" style="float:right;"></b></a></li>
+                                </ul>
+                            </li>
                         </ul>
+                        <!-- End Social Links -->
+                    </div>
+                    <!-- .col-md-6 -->
+                </div>
+                <!-- .row -->
+            </div>
+            <!-- .container -->
+        </div>
+        <!-- .top-bar -->
+        <!-- End Top Bar -->
+
+        <!-- Modal -->
+        <div class="modal fade" id="Logout" role="dialog">
+            <div class="modal-dialog" style="padding:100px">
+                <!-- Modal content-->
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        <h4 class="modal-title">Sign Out?</h4>
+                    </div>
+                    <div class="modal-body">
+                        <div class="col-md-15 fieldcol">
+                            <label = "usr" class = "control-label">Do you want to sign out?</label>
+                            <div class="form-group">
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <a href="../logout.php"
+                               class="btn btn-primary">Sign out</a>
+                            <button type="button" class="btn btn-default" data-dismiss="modal">
+                                Cancel
+                            </button>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
 
-        <?php
-        if (isset($_GET['id'])) {
-            $id = $_GET['id'];
-            if ($id == 1) {
-                echo '<div class="alert alert-success">
+        <!-- Start  Logo & Naviagtion  -->
+        <div class="navbar navbar-default navbar-top">
+            <div class="container">
+                <div class="navbar-header">
+                    <!-- Stat Toggle Nav Link For Mobiles -->
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <i class="fa fa-bars"></i>
+                    </button>
+                    <!-- End Toggle Nav Link For Mobiles -->
+                    <a class="navbar-brand" href="">
+                        <img src="../../images/ojpms.png">
+                    </a>
+                </div>
+                <div class="navbar-collapse collapse">
+                    <!-- Start Navigation List -->
+                    <ul class="nav navbar-nav navbar-right">
+                        <a href="../../../login-student.php?id=1" class="line-height"><i class="fa fa-sign-out"></i></a>
+                    </ul>
+                    <!-- End Navigation List -->
+                </div>
+            </div>
+            <!-- Mobile Menu Start -->
+            <ul class="wpb-mobile-menu">
+                <li>
+                    <a href="../../../login-student.php?id=1"><i class="fa fa-sign-out"></i> Sign Out</a>
+                </li>
+            </ul>
+            <!-- Mobile Menu End -->
+        </div>
+    </header>
+
+    <div class="page-banner no-subtitle">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <h2>Find the job that suits your passion</h2>
+                </div>
+                <div class="col-md-6">
+                    <ul class="breadcrumbs">
+                        <li><a href="../myinfo/personal-info.php">Fill out your information</a></li>
+                        <li></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End Page Banner -->
+
+    <div class="middle-bar">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-5">
+                    <ul class="mid-list">
+                        &nbsp;
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <?php
+    if (isset($_GET['id'])) {
+        $id = $_GET['id'];
+        if ($id == 1) {
+            echo '<div class="alert alert-success">
             <span class="glyphicon glyphicon-info-sign"></span>
             Resume Submitted.
         </div>';
-            }
         }
-        ?>
+    }
+    ?>
 
-        <!-- Start Content -->
+    <!-- Start Content -->
+    <form method="GET">
         <div id="content">
             <div class="container">
                 <div class="row blog-page">
                     <!--Sidebar-->
                     <div class="col-md-3 sidebar left-sidebar">
-                        <!-- Search Widget -->
-                        <div class="widget widget-search">
-                            <form action="#">
-                                <input type="search" placeholder="Search..."/>
-                                <button class="search-btn" type="submit"><i class="fa fa-search"></i></button>
-                            </form>
+
+                        <div>
+                            <label><i class="fa fa-bookmark"></i> Bookmarked Jobs: <a href="bookmarked-jobs.php">(0)</a>&nbsp;
+                            </label>
                         </div>
 
                         <div>
-                            <label><i class="fa fa-bookmark"></i> Bookmarked Jobs: <a href="bookmarked-jobs.php">(0)</a>&nbsp;</label>
-                        </div>
-
-                        <div>
-                            <label><i class="fa fa-sort"></i> Sort by:</label>
-                            <select id="" name="" class="form-control">
+                            <label>Position Level</label>
+                            <select id="PLevel" name="PLevel" class="form-control">
                                 <option value="">- Select one -</option>
-                                <option value="">Location</option>
-                                <option value="">Years of Experience</option>
+                                <?php
+                                $listofposition_tbl =
+                                    GSecureSQL::query(
+                                        "SELECT Position FROM listofpositiontbl",
+                                        TRUE
+                                    );
+                                foreach ($listofposition_tbl as $value) {
+                                    $cPosition = $value[0];
+                                    ?>
+                                    <option value="<?php echo $cPosition; ?>"><?php echo $cPosition; ?></option>
+                                    <?php
+                                }
+                                ?>
+
                             </select>
-                        </div>    
-                        
+                        </div>
+
                         <div>
-                            <label><i class="fa fa-filter"></i> Filter by:</label>
-                            <select id="FilterBy" name="FilterBy" class="form-control">
+                            <label>Employment Type:</label>
+                            <select id="EType" name="EType" class="form-control">
                                 <option value="">- Select one -</option>
-                                <option value="<?php echo $CourseCode; ?>">Your Course</option>
-                                <option value="Specialization">Your Specialization</option>
+                                <option value="Full Time">Full Time</option>
+                                <option value="Part Time">Part Time</option>
+                                <option value="Contract">Contract</option>
+                                <option value="Temporary">Temporary</option>
+                            </select>
+                        </div>
+
+                        <div>
+                            <label>Industry:</label>
+                            <select id="Industry" name="Industry" class="form-control">
+                                <option value="">- Select one -</option>
+                                <?php
+                                $industry_tbl =
+                                    GSecureSQL::query(
+                                        "SELECT Industry FROM listofindustrytbl",
+                                        TRUE
+                                    );
+                                foreach ($industry_tbl as $value) {
+                                    $Industry = $value[0];
+                                    ?>
+                                    <option value="<?php echo $Industry; ?>"><?php echo $Industry; ?></option>
+                                    <?php
+                                }
+                                ?>
                             </select>
                         </div>
 
                         <div class="hr1" style="margin-top:10px;margin-bottom:10px;"></div>
                         <div class="text-center">
-                            <button type="submit" class="btn-system btn-large btn-black">Button</button>
+                            <button type="submit" name="btnFilter" class="btn-system btn-large btn-black">Filter</button>
                         </div>
 
                         <div class="hr4" style="margin-top:40px;margin-bottom:40px;"></div>
@@ -346,10 +394,12 @@ $MajorCourse = $coursetbl[0][0];
                     <!-- Start Blog Posts -->
                     <div class="col-md-9 blog-box">
                         <h4 class="classic-title"><span>Jobs</span></h4>
-                        <?php ;
+                        <?php
+
+
                         $compposition_tbl =
                             GSecureSQL::query(
-                                "SELECT * FROM comppositiontbl WHERE RelatedCourses IS NOT NULL",
+                                "SELECT * FROM comppositiontbl WHERE JSpecialization IN ('$Specialization') ORDER BY PositionTitle ASC",
                                 TRUE
                             );
                         foreach ($compposition_tbl as $value) {
@@ -357,12 +407,12 @@ $MajorCourse = $coursetbl[0][0];
                             $CompanyID = $value[1];
                             $PostingDateFrom = $value[3];
                             $PostingDateTo = $value[4];
-                            $Position = $value[5];
-                            $PositionDescription = $value[6];
-                            $YearExperience = $value[11];
-                            $RelatedCourses = $value[12];
+                            $PositionTitle = $value[5];
+                            $PositionDescription = $value[7];
+                            $YearExperience = $value[12];
+                            $RelatedCourses = $value[13];
                             $RelatedCourses = explode(", ", $RelatedCourses);
-                            $RequiredSkills = $value[15];
+                            $RequiredSkills = $value[16];
                             $RequiredSkills = explode(", ", $RequiredSkills);
                             foreach ($RelatedCourses as $value3) {
                                 $rCourse = $value3;
@@ -405,7 +455,7 @@ $MajorCourse = $coursetbl[0][0];
                                                 <!-- Post Content -->
                                                 <div class='post-content'>
                                                     <div class='post-type'><i class='fa fa-picture-o'></i></div>
-                                                    <h2><a href='#'><?php echo $Position; ?></a></h2>
+                                                    <h2><a href='#'><?php echo $PositionTitle; ?></a></h2>
                                                     <h1><p><?php echo $CompanyName; ?></p></h1>
                                                     <ul class='icons-list'>
                                                         <?php
@@ -449,48 +499,49 @@ $MajorCourse = $coursetbl[0][0];
                 </div>
             </div>
         </div>
-    </div>
-    <!-- End Content -->
-    <script type="text/javascript" src="../../js/script.js"></script>
+    </form>
+</div>
+<!-- End Content -->
+<script type="text/javascript" src="../../js/script.js"></script>
 
 
-    <!-- Start Footer Section -->
-    <footer>
-        <div class="container">
-            <!-- Start Copyright -->
-            <div class="copyright-section">
-                <div class="row">
-                    <div class="col-md-6">
-                        <p>&copy; 2015 OJPMS - All Rights Reserved</p>
-                    </div>
-                    <!-- .col-md-6 -->
-                    <div class="col-md-6">
-                        <ul class="footer-nav">
-                            <li><a href="#">Sitemap</a>
-                            </li>
-                            <li><a href="#">Privacy Policy</a>
-                            </li>
-                            <li><a href="#">Contact</a>
-                            </li>
-                        </ul>
-                    </div>
-                    <!-- .col-md-6 -->
+<!-- Start Footer Section -->
+<footer>
+    <div class="container">
+        <!-- Start Copyright -->
+        <div class="copyright-section">
+            <div class="row">
+                <div class="col-md-6">
+                    <p>&copy; 2015 OJPMS - All Rights Reserved</p>
                 </div>
-                <!-- .row -->
+                <!-- .col-md-6 -->
+                <div class="col-md-6">
+                    <ul class="footer-nav">
+                        <li><a href="#">Sitemap</a>
+                        </li>
+                        <li><a href="#">Privacy Policy</a>
+                        </li>
+                        <li><a href="#">Contact</a>
+                        </li>
+                    </ul>
+                </div>
+                <!-- .col-md-6 -->
             </div>
-            <!-- End Copyright -->
+            <!-- .row -->
         </div>
-    </footer>
-    <!-- End Footer Section -->
-
-    <!-- Go To Top Link -->
-    <a href="#" class="back-to-top"><i class="fa fa-angle-up"></i></a>
-
-    <div id="loader">
-        <div class="spinner">
-            <div class="dot1"></div>
-            <div class="dot2"></div>
-        </div>
+        <!-- End Copyright -->
     </div>
+</footer>
+<!-- End Footer Section -->
+
+<!-- Go To Top Link -->
+<a href="#" class="back-to-top"><i class="fa fa-angle-up"></i></a>
+
+<div id="loader">
+    <div class="spinner">
+        <div class="dot1"></div>
+        <div class="dot2"></div>
+    </div>
+</div>
 </body>
 </html>

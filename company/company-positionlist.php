@@ -295,7 +295,7 @@ $cLastName = $companyinfo_tbl[0][2];
                         GSecureSQL::query(
                             "SELECT
                                 PositionID,
-                                PositionLevel,
+                                PositionTitle,
                                 PostingDateFrom,
                                 PostingDateTo,
                                 AvPosition
@@ -308,14 +308,14 @@ $cLastName = $companyinfo_tbl[0][2];
                         );
                         foreach ($compposition_tbl as $value) {
                         $PositionID = $value[0];
-                        $PositionLevel = $value[1];
+                        $PositionTitle = $value[1];
                         $PostingDateFrom = $value[2];
                         $PostingDateTo = $value[3];
                         $AvPosition = $value[4];
                     ?>
                     <tbody>
                         <tr>
-                            <td width=20% class='tabletitle'><?php echo $PositionLevel; ?></td>
+                            <td width=20% class='tabletitle'><?php echo $PositionTitle; ?></td>
                             <td width=20% class='tabletitle'><?php echo $PostingDateFrom; ?></td>
                             <td width=20% class='tabletitle'><?php echo $PostingDateTo; ?></td>
                             <td width=20% class='tabletitle'><?php echo $AvPosition; ?></td>

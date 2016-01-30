@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50616
 File Encoding         : 65001
 
-Date: 2016-01-29 12:35:16
+Date: 2016-01-30 14:46:34
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -135,24 +135,6 @@ INSERT INTO companyinfotbl VALUES ('5', 'oneil associate', null, 'Architectural 
 INSERT INTO companyinfotbl VALUES ('6', 'Judee Company', null, 'Computer / Information Technology (Hardware)', null, 'Caloocan City', null, null, null, null, 'Judee', 'Ederon', 'Caballero', 'MAY ARI', 'ICT', 'judeecaballero@gmail.com', 'd0f2386e657a703d25d0f78cb0da7acb253f401dc225f04a71b86441067c7fd122eabe04ac56fbfb6bb32f07e4ec8d5600ddf4e00070a489c75e6e07797757ce', '20e6854801be64fb05eaba64ec585de79627e597e8e058e950930cf75f6c256bf241e1b6b0a35d49fb231a920d50273d34e6f6bc2245e34367f2805d327d22ef', null, 'Active', 'http://www.google.com');
 
 -- ----------------------------
--- Table structure for `compdegreeleveltbl`
--- ----------------------------
-DROP TABLE IF EXISTS `compdegreeleveltbl`;
-CREATE TABLE `compdegreeleveltbl` (
-  `DegreeID` int(11) NOT NULL AUTO_INCREMENT,
-  `CompanyID` varchar(255) DEFAULT NULL,
-  `PositionID` varchar(255) DEFAULT NULL,
-  `DegreeLevel` varchar(255) DEFAULT NULL,
-  PRIMARY KEY (`DegreeID`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
-
--- ----------------------------
--- Records of compdegreeleveltbl
--- ----------------------------
-INSERT INTO compdegreeleveltbl VALUES ('1', '1', '23', 'Bachelor Degree');
-INSERT INTO compdegreeleveltbl VALUES ('2', '1', '23', 'Masteral Degree');
-
--- ----------------------------
 -- Table structure for `compeduclvltbl`
 -- ----------------------------
 DROP TABLE IF EXISTS `compeduclvltbl`;
@@ -214,72 +196,23 @@ CREATE TABLE `comppositiontbl` (
 -- ----------------------------
 -- Records of comppositiontbl
 -- ----------------------------
-INSERT INTO comppositiontbl VALUES ('1', '2', null, '2016-01-19', '2016-01-30', 'Store Managers', 'Responsible for ensuring the success of store operations in ter', 'Marketing / Brand Management', 'full', '4', '15,000 - 20,000', '2', null, null, null, null);
-INSERT INTO comppositiontbl VALUES ('2', '2', null, '2016-01-19', '2016-01-30', 'Management', 'GOMECO GROUP OF COMPANIES is currently looking for high performing, ', 'Manufacturing/Production Operatio', 'full', '2', '20,000 - 25,000', '3', null, null, null, null);
-INSERT INTO comppositiontbl VALUES ('3', '2', null, '2016-01-19', '2016-01-30', 'Purchasing Assistant', 'Reporting to the Purchasing Manager, this role will be supporting the', 'BPO/Call Center', 'full', '2', '15,000 - 20,000', '1', null, null, null, null);
-INSERT INTO comppositiontbl VALUES ('4', '2', null, '2016-01-19', '2016-01-31', 'Purchasing Officer', 'The Purchasing Officer is responsible for acquiring good and services', 'Purchasing/Inventory/Material and Warehouse Management', 'full', '4', '20,000 - 25,000', '2', null, null, null, null);
-INSERT INTO comppositiontbl VALUES ('5', '2', null, '2016-01-19', '2016-01-31', 'RDU Assistants', 'Checks and ensures area is ready for actual receiving', 'Sales - Corporate / B2B', 'full', '1', '20,000 - 25,000', '1', null, null, null, null);
-INSERT INTO comppositiontbl VALUES ('6', '3', null, '2016-01-19', '2016-01-31', 'Technical Support Representative', ' is one of the leading Call Centers providing superior', 'IT/Computer - Hardware', 'full', '5', '30,000 - 40,000', '2', null, null, null, null);
-INSERT INTO comppositiontbl VALUES ('7', '3', null, '2016-01-19', '2016-01-31', 'Team Leader', 'is one of the leading Call Centers', 'IT/Computer - Software Development', 'full', '2', '25,000 - 30,000', '1', null, null, null, null);
-INSERT INTO comppositiontbl VALUES ('8', '3', null, '2016-01-19', '2016-01-31', 'Operations Supervisor', 'superior technical support to some of the largest Web Hosting', 'IT/Computer - Software Development', 'full', '3', '30,000 - 40,000', '2', null, null, null, null);
-INSERT INTO comppositiontbl VALUES ('9', '3', null, '2016-01-19', '2016-01-31', 'Tech Support for Windows/Linux Based Platform', ' rapidly expanding Technical Support accounts.', 'IT/Computer - Creative Design', 'full', '1', '30,000 - 40,000', '1', null, null, null, null);
-INSERT INTO comppositiontbl VALUES ('10', '3', null, '2016-01-19', '2016-01-30', 'BUSINESS ASSOCIATES ', 'personnel administration, supervision, continuing training ', 'IT/Computer - QA', 'full', '3', '15,000 - 20,000', '2', null, null, null, null);
-INSERT INTO comppositiontbl VALUES ('11', '5', null, '2016-01-19', '2016-01-31', 'Autocad Operator/ Draftsman', 'Autocad Operator/ Draftsman', 'Agriculture/Forestry/Fisheries', 'full', '2', '30,000 - 40,000', '2', null, null, null, null);
-INSERT INTO comppositiontbl VALUES ('12', '4', null, '2016-01-19', '2016-01-31', 'PHP Developer', 'Php Developer (Customer Service Representatives)', 'IT/Computer - Software Development', 'full', '1', '40,000 - 45,000', '4', null, null, null, null);
-INSERT INTO comppositiontbl VALUES ('13', '5', null, '2016-01-19', '2016-01-31', 'ARCHITECTS ', 'ARCHITECTS ', 'Architecture/Interior Design', 'full', '6', '40,000 - 45,000', '2', null, null, null, null);
-INSERT INTO comppositiontbl VALUES ('14', '5', null, '2016-01-19', '2016-01-31', 'CIVIL ENGINEER / PROJECT COORDINATORS for Construction', 'CIVIL ENGINEER / PROJECT COORDINATORS for Construction', 'Architecture/Interior Design', 'full', '5', '40,000 - 45,000', '2', null, null, null, null);
-INSERT INTO comppositiontbl VALUES ('15', '5', null, '2016-01-19', '2016-01-31', 'HEAVY EQUIPMENT / MECHANIC', 'HEAVY EQUIPMENT / MECHANIC', 'Architecture/Interior Design', 'full', '3', '30,000 - 40,000', '3', null, null, null, null);
-INSERT INTO comppositiontbl VALUES ('24', '1', null, '2016-01-02', '2016-12-30', 'dsadasda', 'sadas', 'Customer Service', 'full', '3', '25,000 - 30,000', '7', 'ABCOMM, BSITDA, BSHRM, BSCS, BSIT', 'Bachelor Degree, Masteral Degree', 'asd', 'qweqwe, qweqwe');
+INSERT INTO comppositiontbl VALUES ('1', '2', null, '2016-01-19', '2016-01-30', 'Store Managers', 'Responsible for ensuring the success of store operations in ter', 'Marketing / Brand Management', 'full', '4', '15,000 - 20,000', '2', 'ABCOMM, BSITDA, BSHRM, BSCS, BSIT', null, null, 'Dota 2, LOL, CS GO');
+INSERT INTO comppositiontbl VALUES ('2', '2', null, '2016-01-19', '2016-01-30', 'Management', 'GOMECO GROUP OF COMPANIES is currently looking for high performing, ', 'Manufacturing/Production Operatio', 'full', '2', '20,000 - 25,000', '3', 'ABCOMM, BSITDA, BSCS, BSIT', null, null, 'Autocad. Drafting, Drawing, Desinger');
+INSERT INTO comppositiontbl VALUES ('3', '2', null, '2016-01-19', '2016-01-30', 'Purchasing Assistant', 'Reporting to the Purchasing Manager, this role will be supporting the', 'BPO/Call Center', 'full', '2', '15,000 - 20,000', '1', 'ABCOMM, BSITDA, BSHRM, BSIT', null, null, 'Autocad. Drafting, Drawing, Desinger');
+INSERT INTO comppositiontbl VALUES ('4', '2', null, '2016-01-19', '2016-01-31', 'Purchasing Officer', 'The Purchasing Officer is responsible for acquiring good and services', 'Purchasing/Inventory/Material and Warehouse Management', 'full', '4', '20,000 - 25,000', '2', 'ABCOMM, BSITDA, BSHRM, BSCS, BSIT', null, null, 'Autocad. Drafting, Drawing, Desinger');
+INSERT INTO comppositiontbl VALUES ('5', '2', null, '2016-01-19', '2016-01-31', 'RDU Assistants', 'Checks and ensures area is ready for actual receiving', 'Sales - Corporate / B2B', 'full', '1', '20,000 - 25,000', '1', 'ABCOMM, BSITDA, BSHRM, BSIT', null, null, 'Autocad. Drafting, Drawing, Desinger');
+INSERT INTO comppositiontbl VALUES ('6', '3', null, '2016-01-19', '2016-01-31', 'Technical Support Representative', ' is one of the leading Call Centers providing superior', 'IT/Computer - Hardware', 'full', '5', '30,000 - 40,000', '2', 'ABCOMM, BSITDA, BSHRM, BSCS, BSIT', null, null, 'Autocad. Drafting, Drawing, Desinger');
+INSERT INTO comppositiontbl VALUES ('7', '3', null, '2016-01-19', '2016-01-31', 'Team Leader', 'is one of the leading Call Centers', 'IT/Computer - Software Development', 'full', '2', '25,000 - 30,000', '1', 'ABCOMM, BSITDA, BSHRM, BSIT', null, null, 'Autocad. Drafting, Drawing, Desinger');
+INSERT INTO comppositiontbl VALUES ('8', '3', null, '2016-01-19', '2016-01-31', 'Operations Supervisor', 'superior technical support to some of the largest Web Hosting', 'IT/Computer - Software Development', 'full', '3', '30,000 - 40,000', '2', 'ABCOMM, BSITDA, BSHRM, BSCS, BSIT', null, null, 'Autocad. Drafting, Drawing, Desinger');
+INSERT INTO comppositiontbl VALUES ('9', '3', null, '2016-01-19', '2016-01-31', 'Tech Support for Windows/Linux Based Platform', ' rapidly expanding Technical Support accounts.', 'IT/Computer - Creative Design', 'full', '1', '30,000 - 40,000', '1', 'ABCOMM, BSITDA, BSHRM, BSIT', null, null, 'Autocad. Drafting, Drawing, Desinger');
+INSERT INTO comppositiontbl VALUES ('10', '3', null, '2016-01-19', '2016-01-30', 'BUSINESS ASSOCIATES ', 'personnel administration, supervision, continuing training ', 'IT/Computer - QA', 'full', '3', '15,000 - 20,000', '2', 'ABCOMM, BSITDA, BSHRM, BSCS, BSIT', null, null, 'Autocad. Drafting, Drawing, Desinger');
+INSERT INTO comppositiontbl VALUES ('11', '5', null, '2016-01-19', '2016-01-31', 'Autocad Operator/ Draftsman', 'Autocad Operator/ Draftsman', 'Agriculture/Forestry/Fisheries', 'full', '2', '30,000 - 40,000', '2', 'ABCOMM, BSITDA, BSHRM, BSCS, BSIT', null, null, 'Autocad. Drafting, Drawing, Desinger');
+INSERT INTO comppositiontbl VALUES ('12', '4', null, '2016-01-19', '2016-01-31', 'PHP Developer', 'Php Developer (Customer Service Representatives)', 'IT/Computer - Software Development', 'full', '1', '40,000 - 45,000', '4', 'ABCOMM, BSITDA, BSHRM, BSIT', null, null, 'Autocad. Drafting, Drawing, Desinger');
+INSERT INTO comppositiontbl VALUES ('13', '5', null, '2016-01-19', '2016-01-31', 'ARCHITECTS ', 'ARCHITECTS ', 'Architecture/Interior Design', 'full', '6', '40,000 - 45,000', '2', 'ABCOMM, BSITDA, BSHRM, BSCS, BSIT', null, null, 'Autocad. Drafting, Drawing, Desinger');
+INSERT INTO comppositiontbl VALUES ('14', '5', null, '2016-01-19', '2016-01-31', 'CIVIL ENGINEER / PROJECT COORDINATORS for Construction', 'CIVIL ENGINEER / PROJECT COORDINATORS for Construction', 'Architecture/Interior Design', 'full', '5', '40,000 - 45,000', '2', 'ABCOMM, BSITDA, BSHRM, BSIT', null, null, 'Autocad. Drafting, Drawing, Desinger');
+INSERT INTO comppositiontbl VALUES ('15', '5', null, '2016-01-19', '2016-01-31', 'HEAVY EQUIPMENT / MECHANIC', 'HEAVY EQUIPMENT / MECHANIC', 'Architecture/Interior Design', 'full', '3', '30,000 - 40,000', '3', 'ABCOMM, BSITDA, BSHRM, BSCS, BSIT', null, null, 'Autocad. Drafting, Drawing, Desinger');
+INSERT INTO comppositiontbl VALUES ('24', '1', null, '2016-01-02', '2016-12-30', 'dsadasda', 'sadas', 'Customer Service', 'full', '3', '25,000 - 30,000', '7', 'ABCOMM, BSITDA, BSHRM, BSIT', 'Bachelor Degree, Masteral Degree', 'asd', 'qweqwe, qweqwe');
 INSERT INTO comppositiontbl VALUES ('25', '1', null, '2016-01-12', '2016-01-30', 'eee', 'eeeeee', 'Design and Development', 'full', '23', '15,000 - 20,000', '9', 'BSITDA, BSCPE, BSCS', 'Bachelor Degree', 'qwe, qwewq, qweqwe', 'qwewq, eee, qq');
-
--- ----------------------------
--- Table structure for `comprelatedcoursestbl`
--- ----------------------------
-DROP TABLE IF EXISTS `comprelatedcoursestbl`;
-CREATE TABLE `comprelatedcoursestbl` (
-  `CourseID` int(11) NOT NULL AUTO_INCREMENT,
-  `CompanyID` varchar(255) DEFAULT NULL,
-  `PositionID` varchar(255) DEFAULT NULL,
-  `RelatedCourse` varchar(255) DEFAULT NULL,
-  PRIMARY KEY (`CourseID`)
-) ENGINE=InnoDB AUTO_INCREMENT=18 DEFAULT CHARSET=latin1;
-
--- ----------------------------
--- Records of comprelatedcoursestbl
--- ----------------------------
-INSERT INTO comprelatedcoursestbl VALUES ('8', '1', '22', 'BSBM');
-INSERT INTO comprelatedcoursestbl VALUES ('9', '1', '22', 'ABCOMM');
-INSERT INTO comprelatedcoursestbl VALUES ('10', '1', '22', 'BSITDA');
-INSERT INTO comprelatedcoursestbl VALUES ('11', '1', '22', 'BSHRM');
-INSERT INTO comprelatedcoursestbl VALUES ('12', '1', '22', 'BSCS');
-INSERT INTO comprelatedcoursestbl VALUES ('13', '1', '23', 'BSBM');
-INSERT INTO comprelatedcoursestbl VALUES ('14', '1', '23', 'ABCOMM');
-INSERT INTO comprelatedcoursestbl VALUES ('15', '1', '23', 'BSITDA');
-INSERT INTO comprelatedcoursestbl VALUES ('16', '1', '23', 'BSHRM');
-INSERT INTO comprelatedcoursestbl VALUES ('17', '1', '23', 'BSCS');
-
--- ----------------------------
--- Table structure for `comprequirementtbl`
--- ----------------------------
-DROP TABLE IF EXISTS `comprequirementtbl`;
-CREATE TABLE `comprequirementtbl` (
-  `RequirementID` int(11) NOT NULL AUTO_INCREMENT,
-  `CompanyID` varchar(255) DEFAULT NULL,
-  `PositionID` varchar(255) DEFAULT NULL,
-  `Knowledge` varchar(255) DEFAULT NULL,
-  PRIMARY KEY (`RequirementID`)
-) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=latin1;
-
--- ----------------------------
--- Records of comprequirementtbl
--- ----------------------------
-INSERT INTO comprequirementtbl VALUES ('1', '1', '1', 'Paglilinis ng kama');
-INSERT INTO comprequirementtbl VALUES ('2', '1', '1', 'Pagligpit ng pinagkainan');
-INSERT INTO comprequirementtbl VALUES ('3', '1', '1', 'Paglinis ng bahay');
-INSERT INTO comprequirementtbl VALUES ('4', '1', '1', 'Paglinis ng mesa');
-INSERT INTO comprequirementtbl VALUES ('5', '1', '2', '1');
-INSERT INTO comprequirementtbl VALUES ('6', '1', '2', '1');
-INSERT INTO comprequirementtbl VALUES ('7', '1', '2', '1');
 
 -- ----------------------------
 -- Table structure for `coursetbl`
@@ -556,12 +489,11 @@ CREATE TABLE `logrequesttbl` (
   `Status` varchar(255) DEFAULT NULL,
   `DateRequested` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`LID`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- ----------------------------
 -- Records of logrequesttbl
 -- ----------------------------
-INSERT INTO logrequesttbl VALUES ('2', '1', 'ABCOMM, ASCT, BSAT, BSBM, BSCPE, BSCS, BSHRM, BSIT, BSITDA, BSTM', null, null, 'Pending', '2016-01-27');
 
 -- ----------------------------
 -- Table structure for `referencetbl`
@@ -600,7 +532,7 @@ CREATE TABLE `requesttocompanytbl` (
 -- ----------------------------
 -- Records of requesttocompanytbl
 -- ----------------------------
-INSERT INTO requesttocompanytbl VALUES ('1', '1', '00820120001', '1', 'Pending');
+INSERT INTO requesttocompanytbl VALUES ('1', '1', '00820120001', '1', 'Accepted');
 
 -- ----------------------------
 -- Table structure for `schooltbl`
@@ -798,13 +730,13 @@ CREATE TABLE `specializationtbl` (
 -- ----------------------------
 -- Records of specializationtbl
 -- ----------------------------
-INSERT INTO specializationtbl VALUES ('1', '00820120004', 'Biotechnology', '1', '');
-INSERT INTO specializationtbl VALUES ('2', '00820120006', 'Biotechnology', '3', '');
-INSERT INTO specializationtbl VALUES ('3', '00820120005', 'Agriculture/Forestry/Fisheries', '2', '');
+INSERT INTO specializationtbl VALUES ('1', '00820120001', 'Biotechnology', '1', '');
+INSERT INTO specializationtbl VALUES ('2', '00820120001', 'Biotechnology', '3', '');
+INSERT INTO specializationtbl VALUES ('3', '00820120002', 'Agriculture/Forestry/Fisheries', '2', '');
 INSERT INTO specializationtbl VALUES ('4', '00820120006', 'Chemistry', '1', '');
 INSERT INTO specializationtbl VALUES ('5', '00820120007', 'Clerical/Administrative Support', '3', '');
 INSERT INTO specializationtbl VALUES ('6', '00820120008', 'Biotechnology', '1', '');
-INSERT INTO specializationtbl VALUES ('7', '00820120009', 'Customer Service (Technical)', '4', '');
+INSERT INTO specializationtbl VALUES ('7', '00820120008', 'Customer Service (Technical)', '4', '');
 INSERT INTO specializationtbl VALUES ('8', '00820120010', 'Actuarial Science/Statistics', '5', '');
 INSERT INTO specializationtbl VALUES ('9', '00820120011', 'Customer Service (Technical)', '10', '');
 INSERT INTO specializationtbl VALUES ('10', '00820120012', 'BPO/Call Center', '1', '');
@@ -1064,7 +996,7 @@ CREATE TABLE `studentinfotbl` (
 -- Records of studentinfotbl
 -- ----------------------------
 INSERT INTO studentinfotbl VALUES ('820120001', 'b6454095efa3f85096ece699c0d9052c572ef11ff92058af5982cd57f3ae399ea7ee458a09433d7982e8979d336c54e5893459851dc5b6179c81fe065fedc674', '808a73c9742958c6714fe7fd11f2d4d244f358ced430174b01c2bc5627af40021889f813b93f8b1b76044aa54caa78a8eff95f7357891d37f451c08f7155e235', 'Mark Joseph', 'Flaviano', 'Cinco', 'Male', '1996-03-14', '', 'Single', 'Filipino', 'Unemployed', 'http://www.facebook.com/akodawsimacoy', '', 'ProfileImages/00820120001.jpg', 'BSCS');
-INSERT INTO studentinfotbl VALUES ('820120002', '8f62544cea6add24e380014ded7ee73e93c9349152d8bb037f4434eb7b09a9fd5334c84a8502c090acadace0839c838c51358473234262600cd0f45270ca9a3f', '9c9f1cc4ea01cc8b4796896f2e016079f810dc30074b467aa5a2b77187080863bc480dcb597551d53cb7a83c3d585bf4d8b07fb7f2d6f3e689a04cfabb93b2d5', 'Wtf', '', 'Wtf', '', '0199-03-14', '', '', '', 'Unemployed', '', '', '../../img/man-icon.png', 'BSCS');
+INSERT INTO studentinfotbl VALUES ('820120002', '8f62544cea6add24e380014ded7ee73e93c9349152d8bb037f4434eb7b09a9fd5334c84a8502c090acadace0839c838c51358473234262600cd0f45270ca9a3f', '9c9f1cc4ea01cc8b4796896f2e016079f810dc30074b467aa5a2b77187080863bc480dcb597551d53cb7a83c3d585bf4d8b07fb7f2d6f3e689a04cfabb93b2d5', 'Wtf', '', 'Wtf', '', '0199-03-14', '', '', '', 'Unemployed', '', '', 'ProfileImages/00820120002.jpg', 'BSCS');
 INSERT INTO studentinfotbl VALUES ('820120003', 'daa84497905fe6e26a872cfd699b36b3af689335652d5413e1005bebd6e867f23dad79318efe22dce702c5de70abc1f07f00968001a8ea9664f54fb038140850', '20d7c6e44a2467e1609014c24a31faae35a31aa413338b14f48225141e1aa5679ab2573c5be38b84122913dc6657ebb62d3974a44a7a21f62b7892d1d5e45b12', 'Testing', '', 'Testing', '', '0123-01-01', '', '', '', 'Unemployed', '', '', '', 'BSAT');
 INSERT INTO studentinfotbl VALUES ('820120004', '3d8fd53015c9929dd24e29958d0a939ba5dff8d18f6335138f48d74312df1ac316173f11585b72295067ca57c58d9aa412b6a95c4a09fde4466dc4c2b2caf24e', 'fc914918a09a5e3fb1948c2c677854a3c01e35cc9f29728b4ba9833f0e16c0617a9025d9ee089216c644ab72a52d9000f0a4208fac8777a69e226fb4d7881d8a', 'Tristan', 'adasd', 'Abad', 'Male', '1996-10-31', '', 'Single', 'Filipino', 'Unemployed', 'http://www.facebook.com/adsadsf', 'sfsdfs', '', 'ASCT');
 INSERT INTO studentinfotbl VALUES ('820120005', 'c2a4eff2f75be4b01d85d3efffaa9c5334a70744f7670c10b6daf3d672cfc7dfaaf1c9e40b6e33b593195017f7d8e714959ad60f18ab77ad7a600c8b2fb002eb', 'da85b1e23a09aad2b4d21695773a6eca951913f20b0288e1b8086c6fc49b31aa77e3bf7fccb25fb6438ae6088ec930e1eb805923fb07f28ef28e7825891b8c4b', 'Mark Anthony', '', 'Abenoja', '', '1988-06-27', '', '', '', 'Unemployed', '', '', '', 'ASCT');
