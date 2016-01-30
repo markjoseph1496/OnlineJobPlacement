@@ -271,7 +271,7 @@ if (isset($_SESSION['AdminID'])) {
 
     <!--Content-->
     <br><br><br>
-
+    <form method="POST" action="functions.php" name="AddUser" id="AddUser" autocomplete="off">
     <div class="container">
         <div class="col-md-12">
             <div class="row field">
@@ -280,7 +280,7 @@ if (isset($_SESSION['AdminID'])) {
                 </div>
                 <div class="col-md-4 fieldcol">
                     <div class="form-group">
-                        <input type="text" name="Email" id="Email" class="form-control">
+                        <input type="text" name="aUsername" id="aUsername" class="form-control">
                     </div>
                 </div>
             </div>
@@ -290,7 +290,7 @@ if (isset($_SESSION['AdminID'])) {
                 </div>
                 <div class="col-md-4 fieldcol">
                     <div class="form-group">
-                        <input type="password" name="Password" id="Password" class="form-control">
+                        <input type="password" name="aPassword" id="aPassword" class="form-control">
                     </div>
                 </div>
             </div>
@@ -300,7 +300,7 @@ if (isset($_SESSION['AdminID'])) {
                 </div>
                 <div class="col-md-4 fieldcol">
                     <div class="form-group">
-                        <input type="text" name="FirstName" id="FirstName" class="form-control">
+                        <input type="text" name="aFirstName" id="aFirstName" class="form-control">
                     </div>
                 </div>
             </div>
@@ -310,7 +310,7 @@ if (isset($_SESSION['AdminID'])) {
                 </div>
                 <div class="col-md-4 fieldcol">
                     <div class="form-group">
-                        <input type="text" name="MiddleName" id="MiddleName" class="form-control">
+                        <input type="text" name="aMiddleName" id="aMiddleName" class="form-control">
                     </div>
                 </div>
             </div>
@@ -320,7 +320,7 @@ if (isset($_SESSION['AdminID'])) {
                 </div>
                 <div class="col-md-4 fieldcol">
                     <div class="form-group">
-                        <input type="text" name="LastName" id="LastName" class="form-control">
+                        <input type="text" name="aLastName" id="aLastName" class="form-control">
                     </div>
                 </div>
             </div>
@@ -330,17 +330,7 @@ if (isset($_SESSION['AdminID'])) {
                 </div>
                 <div class="col-md-4 fieldcol">
                     <div class="form-group">
-                        <input type="text" name="Position" id="Position" class="form-control">
-                    </div>
-                </div>
-            </div>
-            <div class="row field">
-                <div class="col-md-2 fieldcol">
-                    <label>Department:</label>
-                </div>
-                <div class="col-md-4 fieldcol">
-                    <div class="form-group">
-                        <input type="text" name="Department" id="Department" class="form-control">
+                        <input type="text" name="aPosition" id="aPosition" class="form-control">
                     </div>
                 </div>
             </div>
@@ -351,7 +341,7 @@ if (isset($_SESSION['AdminID'])) {
                 </div>
                 <div class="col-md-4 fieldcol">
                     <div class="form-group">
-                        <input type="text" name="Address" id="Address" class="form-control">
+                        <input type="text" name="aAddress" id="aAddress" class="form-control">
                     </div>
                 </div>
             </div>
@@ -361,7 +351,7 @@ if (isset($_SESSION['AdminID'])) {
                 </div>
                 <div class="col-md-4 fieldcol">
                     <div class="form-group">
-                        <input type="text" name="ContactNumber" id="ContactNumber" class="form-control">
+                        <input type="text" name="aContactNumber" id="aContactNumber" class="form-control">
                     </div>
                 </div>
             </div>
@@ -375,6 +365,99 @@ if (isset($_SESSION['AdminID'])) {
             </div>
         </div>
     </div>
+    </form>
 </body>
 <script type="text/javascript" src="../js/script.js"></script>
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        var validator = $("#AddUser").bootstrapValidator({
+            feedbackIcons: {
+                valid: "glyphicon glyphicon-ok",
+                invalid: "glyphicon glyphicon-remove",
+                validating: "glyphicon glyphicon-refresh"
+            },
+           fields: {
+                aUsername: {
+                    validators: {
+                        notEmpty: {
+                            message: "Username is required."
+                        }
+                    }
+                },
+                aPassword: {
+                    validators: {
+                        notEmpty: {
+                            message: "Password To is required."
+                        }
+                    }
+                },
+                aFirstName: {
+                    validators: {
+                        notEmpty: {
+                            message: "First Name Level is required."
+                        },
+                        stringLength: {
+                            min: 3,
+                            max: 20,
+                            message: "First Name must be 3-20 digit long."
+                        }
+                    }
+                },
+                aLastName: {
+                    validators: {
+                        notEmpty: {
+                            message: "Last Name is required."
+                        },
+                        stringLength: {
+                            min: 3,
+                            max: 20,
+                            message: "Last Name must be 3-20 digit long."
+                        }
+                    }
+                },
+                aPosition: {
+                    validators: {
+                        notEmpty: {
+                            message: "Position is required."
+                        },
+                        stringLength: {
+                            min: 3,
+                            max: 20,
+                            message: "Position must be 3-20 digit long."
+                        }
+                    }
+                },
+                aAddress: {
+                    validators: {
+                        notEmpty: {
+                            message: "Address Position is required."
+                        },
+                        stringLength: {
+                            min: 5,
+                            max: 30,
+                            message: "Address must be 5-30 digit long."
+                        }
+                    }
+                },
+                aContactNumber: {
+                    validators: {
+                        notEmpty: {
+                            message: "Contact Number is required."
+                        },
+                        stringLength: {
+                            min: 3,
+                            max: 11,
+                            message: "Contact Number must be 11 digit long."
+                        },
+                        regexp: {
+                            regexp: /^[0-9\s]+$/i,
+                            message: "Contact Number can consist of Positive Numbers only"
+                        }
+                    }
+                }
+            }
+        });
+    });
+</script>
 </html>

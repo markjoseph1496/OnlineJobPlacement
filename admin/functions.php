@@ -166,6 +166,7 @@ if(isset($_GET['id']) && isset($_GET['cid'])){
 
     }
 }
+
 if(isset($_POST['lid'])){
     $LID = $_POST['lid'];
     $DateFrom = date("Y-m-d");
@@ -183,3 +184,33 @@ if(isset($_POST['lid'])){
     header("location: admin-requested.php?id=1");
 
 }
+
+if (isset($_POST['aFirstName'])) {
+    $aUsername = $_POST['aUsername'];
+    $aPassword = $_POST['aPassword'];
+    $aFirstName = $_POST['aFirstName'];
+    $aMiddleName = $_POST['aMiddleName'];
+    $aLastName = $_POST['aLastName'];
+    $aPosition = $_POST['aPosition'];
+    $aAddress = $_POST['aAddress'];
+    $aContactNumber = $_POST['aContactNumber'];
+
+
+    GSecureSQL::query(
+        "INSERT INTO admintbl (Username,Password,FirstName,MiddleName,LastName,Position,Address,ContactNumber) values (?,?,?,?,?,?,?,?)",
+        FALSE,
+        "ssssssss",
+        $aUsername,
+        $aPassword,
+        $aFirstName,
+        $aMiddleName,
+        $aLastName,
+        $aPosition,
+        $aAddress,
+        $aContactNumber
+
+    );
+
+    header("location: admin-users.php?id=1");
+
+    }
