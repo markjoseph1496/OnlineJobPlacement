@@ -327,8 +327,8 @@ $StudentName = $FirstName . " " . $LastName;
                     if ($id == 1) {
                         echo '
                                 <div class="alert alert-success">
-                                    <span class="glyphicon glyphicon-info-sign"></span> 
-                                    Personal Information successfully updated.
+                                    <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                                    <strong><span class="fa fa-info-circle"></span> Personal Information successfully updated.</strong> 
                                 </div>
                                 ';
                     }

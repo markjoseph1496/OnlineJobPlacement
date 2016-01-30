@@ -86,6 +86,7 @@ $MajorCourse = $course_qry[0][0];
     <link href="../../fonts/ffonts/kaushan.css" rel="stylesheet" type="text/css">
     <link href="../../fonts/ffonts/droid.css" rel="stylesheet" type="text/css">
     <link href="../../fonts/ffonts/roboto.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" type="text/css" href="../../fonts/ffonts/lato.css">
 
     <!-- Slicknav -->
     <link rel="stylesheet" type="text/css" href="../../css/slicknav.css" media="screen">
@@ -140,6 +141,19 @@ $MajorCourse = $course_qry[0][0];
 
         });
     </script>
+
+    <script type="text/javascript">
+            $(document).ready (function(){
+            $("#success-alert").hide();
+            $("#btnsave").click(function showAlert() {
+                $("#success-alert").alert();
+                $("#success-alert").fadeTo(2000, 500).slideUp(500, function(){
+               $("#success-alert").alert('close');
+                    });   
+                });
+            });
+        </script>
+
 </head>
 
 <body>
@@ -329,6 +343,7 @@ $MajorCourse = $course_qry[0][0];
         </div>
         <!-- End Page Banner -->
 
+
         <!-- Start Content -->
         <div id="content">
             <div class="container">
@@ -339,9 +354,9 @@ $MajorCourse = $course_qry[0][0];
 
                     if ($id == 1) {
                         echo '
-                                <div class="alert alert-success">
-                                    <span class="glyphicon glyphicon-info-sign"></span> 
-                                    Contacts Information successfully updated.
+                                <div class="alert alert-success" id="success-alert">
+                                    <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                                    <strong><span class="fa fa-info-circle"></span> Contacts Information successfully updated.</strong>
                                 </div>
                                 ';
                     }
@@ -497,7 +512,7 @@ $MajorCourse = $course_qry[0][0];
                 <div class="hr5" style="margin-top:35px;margin-bottom:40px;"></div>
                 <div class="field">
                     <div class="text-center">
-                        <button type="submit" class="btn-system btn-large" name="btnSaveContactInfo">Save</button>
+                        <button type="submit" class="btn-system btn-large" name="btnSaveContactInfo" id="btnsave">Save</button>
                     </div>
                 </div>
             </div>

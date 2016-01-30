@@ -325,15 +325,15 @@ $MajorCourse = $course_qry[0][0];
                 } elseif ($id == 2) {
                     echo '
                             <div class="alert alert-success">
-                                <span class="glyphicon glyphicon-info-sign"></span> 
-                                Achievement successfully added.
+                                <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                                <strong><span class="fa fa-info-circle"></span> Achievement successfully added.</strong>
                             </div>
                             ';
                 } elseif ($id == 3) {
                     echo '
                             <div class="alert alert-success">
-                                <span class="glyphicon glyphicon-info-sign"></span> 
-                                Achievement successfully deleted.
+                                <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                                <strong><span class="fa fa-info-circle"></span> Achievement successfully deleted.</strong>
                             </div>
                             ';
                 }

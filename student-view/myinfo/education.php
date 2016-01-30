@@ -316,43 +316,43 @@ $MajorCourse = $course_qry[0][0];
                 if ($id == 1) {
                     echo '
                             <div class="alert alert-success">
-                                <span class="glyphicon glyphicon-info-sign"></span> 
-                                School information successfully updated.
+                                <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                                <strong><span class="fa fa-info-circle"></span> School information successfully updated.</strong> 
                             </div>
                             ';
                 } elseif ($id == 2) {
                     echo '
                             <div class="alert alert-success">
-                                <span class="glyphicon glyphicon-info-sign"></span> 
-                                Seminar information successfully updated.
+                                <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                                <strong><span class="fa fa-info-circle"></span> Seminar information successfully updated.</strong>
                             </div>
                             ';
                 } elseif ($id == 3) {
                     echo '
                             <div class="alert alert-success">
-                                <span class="glyphicon glyphicon-info-sign"></span> 
-                                School information successfully deleted.
+                                <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                                <strong><span class="fa fa-info-circle"></span> School information successfully deleted.</strong>
                             </div>
                             ';
                 } elseif ($id == 4) {
                     echo '
                             <div class="alert alert-success">
-                                <span class="glyphicon glyphicon-info-sign"></span> 
-                                School information successfully added.
+                                <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                                <strong><span class="fa fa-info-circle"></span> School information successfully added.</strong>
                             </div>
                             ';
                 } elseif ($id == 5) {
                     echo '
                             <div class="alert alert-success">
-                                <span class="glyphicon glyphicon-info-sign"></span> 
-                                Seminar successfully added.
+                                <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                                <strong><span class="fa fa-info-circle"></span> Seminar successfully added.</strong>
                             </div>
                             ';
                 } elseif ($id == 6) {
                     echo '
                             <div class="alert alert-success">
-                                <span class="glyphicon glyphicon-info-sign"></span> 
-                                Seminar successfully deleted.
+                                <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                                <strong><span class="fa fa-info-circle"></span> Seminar successfully deleted.</strong>
                             </div>
                             ';
                 }

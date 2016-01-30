@@ -322,48 +322,48 @@ $MajorCourse = $course_qry[0][0];
                     if($id==1){
                         echo'
                             <div class="alert alert-success">
-                                <span class="glyphicon glyphicon-info-sign"></span> 
-                                Specialization successfully updated.
+                                <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                                <strong><span class="fa fa-info-circle"></span> Specialization successfully updated.</strong> 
                             </div>
                             ';
                     }
                     elseif($id==2){
                         echo'
                             <div class="alert alert-success">
-                                <span class="glyphicon glyphicon-info-sign"></span> 
-                                Specialization successfully added.
+                                <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                                <strong><span class="fa fa-info-circle"></span> Specialization successfully added.</strong> 
                             </div>
                             ';
                     }
                     elseif($id==3){
                         echo'
                             <div class="alert alert-success">
-                                <span class="glyphicon glyphicon-info-sign"></span> 
-                                Specialization successfully deleted.
+                                <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                                <strong><span class="fa fa-info-circle"></span> Specialization successfully deleted.</strong> 
                             </div>
                             ';
                     }
                     elseif($id==4){
                         echo'
                             <div class="alert alert-success">
-                                <span class="glyphicon glyphicon-info-sign"></span> 
-                                Languages successfully updated.
+                                <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                                <strong><span class="fa fa-info-circle"></span> Languages successfully updated.</strong> 
                             </div>
                             ';
                     }
                     elseif($id==5){
                         echo'
                             <div class="alert alert-success">
-                                <span class="glyphicon glyphicon-info-sign"></span> 
-                                Languages successfully added.
+                                <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                                <strong><span class="fa fa-info-circle"></span> Languages successfully added.</strong> 
                             </div>
                             ';
                     }
                     elseif($id==6){
                         echo'
                             <div class="alert alert-success">
-                                <span class="glyphicon glyphicon-info-sign"></span> 
-                                Language successfully deleted.
+                                <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                                <strong><span class="fa fa-info-circle"></span> Language successfully deleted.</strong> 
                             </div>
                             ';
                     }
