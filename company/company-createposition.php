@@ -286,11 +286,36 @@ $cLastName = $companyinfo_tbl[0][2];
                         &nbsp;
                         <div class="row">
                             <div class="col-md-3">
+                                <label> Position Title: </label>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    <input type="text" id="PTitle" name="PTitle" class="form-control" style=" width: 100%; height:30px;">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-3">
                                 <label> Position Level: </label>
                             </div>
                             <div class="col-md-4">
                                 <div class="form-group">
-                                    <input type="text" id="PLevel" name="PLevel" class="form-control" style=" width: 100%; height:30px;">
+                                    <select id="PLevel" name="PLevel" class="specialization form-control">
+                                        <option value="" selected="selected">- Select Position level -</option>
+                                        <?php
+                                        $position_tbl =
+                                            GSecureSQL::query(
+                                                "SELECT Position FROM listofpositiontbl",
+                                                TRUE
+                                            );
+                                        foreach ($position_tbl as $value) {
+                                            $Position = $value[0];
+                                            ?>
+                                            <option value="<?php echo $Position; ?>"><?php echo $Position; ?></option>
+                                            <?php
+                                        }
+                                        ?>
+                                    </select>
                                 </div>
                             </div>
                         </div>
@@ -626,6 +651,13 @@ $cLastName = $companyinfo_tbl[0][2];
                         }
                     }
                 },
+               PTitle: {
+                   validators: {
+                       notEmpty: {
+                           message: "Position Title is required."
+                       }
+                   }
+               },
                 PLevel: {
                     validators: {
                         notEmpty: {

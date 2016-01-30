@@ -33,6 +33,7 @@ if (isset($_GET['BtnCalendarsave'])) {
 if (isset($_GET['btnsave'])) {
     $DateFrom = $_GET['DateFrom'];
     $DateTo = $_GET['DateTo'];
+    $PTitle = $_GET['PTitle'];
     $PLevel = $_GET['PLevel'];
     $JobDesc = $_GET['JobDesc'];
     $Specialization = $_GET['Specialization'];
@@ -51,12 +52,13 @@ if (isset($_GET['btnsave'])) {
     $Language = implode(", ", $Language);
 
     GSecureSQL::query(
-        "INSERT INTO comppositiontbl (CompanyID,PostingDateFrom,PostingDateTo,PositionLevel,JobDescription,JSpecialization,EType,AvPosition,MonthlySalary,YExperience,RelatedCourses,DegreeLevel,Reqskills,Languages) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?)",
+        "INSERT INTO comppositiontbl (CompanyID,PostingDateFrom,PostingDateTo,PositionTitle,PositionLevel,JobDescription,JSpecialization,EType,AvPosition,MonthlySalary,YExperience,RelatedCourses,DegreeLevel,Reqskills,Languages) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)",
         FALSE,
         "ssssssssssssss",
         $CompanyID,
         $DateFrom,
         $DateTo,
+        $PTitle,
         $PLevel,
         $JobDesc,
         $Specialization,
@@ -69,38 +71,7 @@ if (isset($_GET['btnsave'])) {
         $RequiredSkills,
         $Language
     );
-/*
-    $position_tbl =
-        GSecureSQL::query(
-            "SELECT MAX(PositionID) AS `index` FROM comppositiontbl",
-            TRUE
-        );
-    $PositionID = $position_tbl[0][0];
 
-    foreach ($_GET['RelatedCourses'] as $RelatedCourses) {
-
-        GSecureSQL::query(
-            "INSERT INTO comprelatedcoursestbl (CompanyID,PositionID,RelatedCourse) VALUES (?,?,?)",
-            FALSE,
-            "sss",
-            $CompanyID,
-            $PositionID,
-            $RelatedCourses
-        );
-    }
-
-    foreach ($_GET['DegreeLevel'] as $DegreeLevel) {
-
-        GSecureSQL::query(
-            "INSERT INTO compdegreeleveltbl (CompanyID,PositionID,DegreeLevel) VALUES (?,?,?)",
-            FALSE,
-            "sss",
-            $CompanyID,
-            $PositionID,
-            $DegreeLevel
-        );
-    }
-*/
     header("location: company-positionlist.php?id=1");
 
 }
