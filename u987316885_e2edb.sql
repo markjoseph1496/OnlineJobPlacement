@@ -1,16 +1,16 @@
 /*
 Navicat MySQL Data Transfer
 
-Source Server         : localhost
-Source Server Version : 50616
-Source Host           : localhost:3306
+Source Server         : Hostinger
+Source Server Version : 50505
+Source Host           : 31.220.110.88:3306
 Source Database       : u987316885_e2edb
 
 Target Server Type    : MYSQL
-Target Server Version : 50616
+Target Server Version : 50505
 File Encoding         : 65001
 
-Date: 2016-01-30 14:46:34
+Date: 2016-01-30 22:38:06
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -179,6 +179,7 @@ CREATE TABLE `comppositiontbl` (
   `Email` varchar(255) DEFAULT NULL,
   `PostingDateFrom` varchar(255) DEFAULT NULL,
   `PostingDateTo` varchar(255) DEFAULT NULL,
+  `PositionTitle` varchar(255) DEFAULT NULL,
   `PositionLevel` varchar(255) DEFAULT NULL,
   `JobDescription` varchar(255) DEFAULT NULL,
   `JSpecialization` varchar(255) DEFAULT NULL,
@@ -191,28 +192,48 @@ CREATE TABLE `comppositiontbl` (
   `Languages` varchar(255) DEFAULT NULL,
   `ReqSkills` varchar(500) DEFAULT NULL,
   PRIMARY KEY (`PositionID`)
-) ENGINE=InnoDB AUTO_INCREMENT=26 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=46 DEFAULT CHARSET=latin1;
 
 -- ----------------------------
 -- Records of comppositiontbl
 -- ----------------------------
-INSERT INTO comppositiontbl VALUES ('1', '2', null, '2016-01-19', '2016-01-30', 'Store Managers', 'Responsible for ensuring the success of store operations in ter', 'Marketing / Brand Management', 'full', '4', '15,000 - 20,000', '2', 'ABCOMM, BSITDA, BSHRM, BSCS, BSIT', null, null, 'Dota 2, LOL, CS GO');
-INSERT INTO comppositiontbl VALUES ('2', '2', null, '2016-01-19', '2016-01-30', 'Management', 'GOMECO GROUP OF COMPANIES is currently looking for high performing, ', 'Manufacturing/Production Operatio', 'full', '2', '20,000 - 25,000', '3', 'ABCOMM, BSITDA, BSCS, BSIT', null, null, 'Autocad. Drafting, Drawing, Desinger');
-INSERT INTO comppositiontbl VALUES ('3', '2', null, '2016-01-19', '2016-01-30', 'Purchasing Assistant', 'Reporting to the Purchasing Manager, this role will be supporting the', 'BPO/Call Center', 'full', '2', '15,000 - 20,000', '1', 'ABCOMM, BSITDA, BSHRM, BSIT', null, null, 'Autocad. Drafting, Drawing, Desinger');
-INSERT INTO comppositiontbl VALUES ('4', '2', null, '2016-01-19', '2016-01-31', 'Purchasing Officer', 'The Purchasing Officer is responsible for acquiring good and services', 'Purchasing/Inventory/Material and Warehouse Management', 'full', '4', '20,000 - 25,000', '2', 'ABCOMM, BSITDA, BSHRM, BSCS, BSIT', null, null, 'Autocad. Drafting, Drawing, Desinger');
-INSERT INTO comppositiontbl VALUES ('5', '2', null, '2016-01-19', '2016-01-31', 'RDU Assistants', 'Checks and ensures area is ready for actual receiving', 'Sales - Corporate / B2B', 'full', '1', '20,000 - 25,000', '1', 'ABCOMM, BSITDA, BSHRM, BSIT', null, null, 'Autocad. Drafting, Drawing, Desinger');
-INSERT INTO comppositiontbl VALUES ('6', '3', null, '2016-01-19', '2016-01-31', 'Technical Support Representative', ' is one of the leading Call Centers providing superior', 'IT/Computer - Hardware', 'full', '5', '30,000 - 40,000', '2', 'ABCOMM, BSITDA, BSHRM, BSCS, BSIT', null, null, 'Autocad. Drafting, Drawing, Desinger');
-INSERT INTO comppositiontbl VALUES ('7', '3', null, '2016-01-19', '2016-01-31', 'Team Leader', 'is one of the leading Call Centers', 'IT/Computer - Software Development', 'full', '2', '25,000 - 30,000', '1', 'ABCOMM, BSITDA, BSHRM, BSIT', null, null, 'Autocad. Drafting, Drawing, Desinger');
-INSERT INTO comppositiontbl VALUES ('8', '3', null, '2016-01-19', '2016-01-31', 'Operations Supervisor', 'superior technical support to some of the largest Web Hosting', 'IT/Computer - Software Development', 'full', '3', '30,000 - 40,000', '2', 'ABCOMM, BSITDA, BSHRM, BSCS, BSIT', null, null, 'Autocad. Drafting, Drawing, Desinger');
-INSERT INTO comppositiontbl VALUES ('9', '3', null, '2016-01-19', '2016-01-31', 'Tech Support for Windows/Linux Based Platform', ' rapidly expanding Technical Support accounts.', 'IT/Computer - Creative Design', 'full', '1', '30,000 - 40,000', '1', 'ABCOMM, BSITDA, BSHRM, BSIT', null, null, 'Autocad. Drafting, Drawing, Desinger');
-INSERT INTO comppositiontbl VALUES ('10', '3', null, '2016-01-19', '2016-01-30', 'BUSINESS ASSOCIATES ', 'personnel administration, supervision, continuing training ', 'IT/Computer - QA', 'full', '3', '15,000 - 20,000', '2', 'ABCOMM, BSITDA, BSHRM, BSCS, BSIT', null, null, 'Autocad. Drafting, Drawing, Desinger');
-INSERT INTO comppositiontbl VALUES ('11', '5', null, '2016-01-19', '2016-01-31', 'Autocad Operator/ Draftsman', 'Autocad Operator/ Draftsman', 'Agriculture/Forestry/Fisheries', 'full', '2', '30,000 - 40,000', '2', 'ABCOMM, BSITDA, BSHRM, BSCS, BSIT', null, null, 'Autocad. Drafting, Drawing, Desinger');
-INSERT INTO comppositiontbl VALUES ('12', '4', null, '2016-01-19', '2016-01-31', 'PHP Developer', 'Php Developer (Customer Service Representatives)', 'IT/Computer - Software Development', 'full', '1', '40,000 - 45,000', '4', 'ABCOMM, BSITDA, BSHRM, BSIT', null, null, 'Autocad. Drafting, Drawing, Desinger');
-INSERT INTO comppositiontbl VALUES ('13', '5', null, '2016-01-19', '2016-01-31', 'ARCHITECTS ', 'ARCHITECTS ', 'Architecture/Interior Design', 'full', '6', '40,000 - 45,000', '2', 'ABCOMM, BSITDA, BSHRM, BSCS, BSIT', null, null, 'Autocad. Drafting, Drawing, Desinger');
-INSERT INTO comppositiontbl VALUES ('14', '5', null, '2016-01-19', '2016-01-31', 'CIVIL ENGINEER / PROJECT COORDINATORS for Construction', 'CIVIL ENGINEER / PROJECT COORDINATORS for Construction', 'Architecture/Interior Design', 'full', '5', '40,000 - 45,000', '2', 'ABCOMM, BSITDA, BSHRM, BSIT', null, null, 'Autocad. Drafting, Drawing, Desinger');
-INSERT INTO comppositiontbl VALUES ('15', '5', null, '2016-01-19', '2016-01-31', 'HEAVY EQUIPMENT / MECHANIC', 'HEAVY EQUIPMENT / MECHANIC', 'Architecture/Interior Design', 'full', '3', '30,000 - 40,000', '3', 'ABCOMM, BSITDA, BSHRM, BSCS, BSIT', null, null, 'Autocad. Drafting, Drawing, Desinger');
-INSERT INTO comppositiontbl VALUES ('24', '1', null, '2016-01-02', '2016-12-30', 'dsadasda', 'sadas', 'Customer Service', 'full', '3', '25,000 - 30,000', '7', 'ABCOMM, BSITDA, BSHRM, BSIT', 'Bachelor Degree, Masteral Degree', 'asd', 'qweqwe, qweqwe');
-INSERT INTO comppositiontbl VALUES ('25', '1', null, '2016-01-12', '2016-01-30', 'eee', 'eeeeee', 'Design and Development', 'full', '23', '15,000 - 20,000', '9', 'BSITDA, BSCPE, BSCS', 'Bachelor Degree', 'qwe, qwewq, qweqwe', 'qwewq, eee, qq');
+INSERT INTO comppositiontbl VALUES ('1', '2', null, '2016-01-19', '2016-01-30', 'Store Managers', '', 'Responsible for ensuring the success of store operations in ter', 'Marketing / Brand Management', 'full', '4', '15,000 - 20,000', '2', 'ABCOMM, BSITDA, BSHRM, BSCS, BSIT', null, null, 'Dota 2, LOL, CS GO');
+INSERT INTO comppositiontbl VALUES ('2', '2', null, '2016-01-19', '2016-01-30', 'Management', '', 'GOMECO GROUP OF COMPANIES is currently looking for high performing, ', 'Manufacturing/Production Operatio', 'full', '2', '20,000 - 25,000', '3', 'ABCOMM, BSITDA, BSCS, BSIT', null, null, 'Autocad. Drafting, Drawing, Desinger');
+INSERT INTO comppositiontbl VALUES ('3', '2', null, '2016-01-19', '2016-01-30', 'Purchasing Assistant', '', 'Reporting to the Purchasing Manager, this role will be supporting the', 'BPO/Call Center', 'full', '2', '15,000 - 20,000', '1', 'ABCOMM, BSITDA, BSHRM, BSIT', null, null, 'Autocad. Drafting, Drawing, Desinger');
+INSERT INTO comppositiontbl VALUES ('4', '2', null, '2016-01-19', '2016-01-31', 'Purchasing Officer', '', 'The Purchasing Officer is responsible for acquiring good and services', 'Purchasing/Inventory/Material and Warehouse Management', 'full', '4', '20,000 - 25,000', '2', 'ABCOMM, BSITDA, BSHRM, BSCS, BSIT', null, null, 'Autocad. Drafting, Drawing, Desinger');
+INSERT INTO comppositiontbl VALUES ('5', '2', null, '2016-01-19', '2016-01-31', 'RDU Assistants', '', 'Checks and ensures area is ready for actual receiving', 'Sales - Corporate / B2B', 'full', '1', '20,000 - 25,000', '1', 'ABCOMM, BSITDA, BSHRM, BSIT', null, null, 'Autocad. Drafting, Drawing, Desinger');
+INSERT INTO comppositiontbl VALUES ('6', '3', null, '2016-01-19', '2016-01-31', 'Technical Support Representative', '', ' is one of the leading Call Centers providing superior', 'IT/Computer - Hardware', 'full', '5', '30,000 - 40,000', '2', 'ABCOMM, BSITDA, BSHRM, BSCS, BSIT', null, null, 'Autocad. Drafting, Drawing, Desinger');
+INSERT INTO comppositiontbl VALUES ('7', '3', null, '2016-01-19', '2016-01-31', 'Team Leader', '', 'is one of the leading Call Centers', 'IT/Computer - Software Development', 'full', '2', '25,000 - 30,000', '1', 'ABCOMM, BSITDA, BSHRM, BSIT', null, null, 'Autocad. Drafting, Drawing, Desinger');
+INSERT INTO comppositiontbl VALUES ('8', '3', null, '2016-01-19', '2016-01-31', 'Operations Supervisor', '', 'superior technical support to some of the largest Web Hosting', 'IT/Computer - Software Development', 'full', '3', '30,000 - 40,000', '2', 'ABCOMM, BSITDA, BSHRM, BSCS, BSIT', null, null, 'Autocad. Drafting, Drawing, Desinger');
+INSERT INTO comppositiontbl VALUES ('9', '3', null, '2016-01-19', '2016-01-31', 'Tech Support for Windows/Linux Based Platform', '', ' rapidly expanding Technical Support accounts.', 'IT/Computer - Creative Design', 'full', '1', '30,000 - 40,000', '1', 'ABCOMM, BSITDA, BSHRM, BSIT', null, null, 'Autocad. Drafting, Drawing, Desinger');
+INSERT INTO comppositiontbl VALUES ('10', '3', null, '2016-01-19', '2016-01-30', 'BUSINESS ASSOCIATES ', '', 'personnel administration, supervision, continuing training ', 'IT/Computer - QA', 'full', '3', '15,000 - 20,000', '2', 'ABCOMM, BSITDA, BSHRM, BSCS, BSIT', null, null, 'Autocad. Drafting, Drawing, Desinger');
+INSERT INTO comppositiontbl VALUES ('11', '5', null, '2016-01-19', '2016-01-31', 'Autocad Operator/ Draftsman', '', 'Autocad Operator/ Draftsman', 'Agriculture/Forestry/Fisheries', 'full', '2', '30,000 - 40,000', '2', 'ABCOMM, BSITDA, BSHRM, BSCS, BSIT', null, null, 'Autocad. Drafting, Drawing, Desinger');
+INSERT INTO comppositiontbl VALUES ('12', '4', null, '2016-01-19', '2016-01-31', 'PHP Developer', '', 'Php Developer (Customer Service Representatives)', 'IT/Computer - Software Development', 'full', '1', '40,000 - 45,000', '4', 'ABCOMM, BSITDA, BSHRM, BSIT', null, null, 'Autocad. Drafting, Drawing, Desinger');
+INSERT INTO comppositiontbl VALUES ('13', '5', null, '2016-01-19', '2016-01-31', 'ARCHITECTS ', '', 'ARCHITECTS ', 'Architecture/Interior Design', 'full', '6', '40,000 - 45,000', '2', 'ABCOMM, BSITDA, BSHRM, BSCS, BSIT', null, null, 'Autocad. Drafting, Drawing, Desinger');
+INSERT INTO comppositiontbl VALUES ('14', '5', null, '2016-01-19', '2016-01-31', 'CIVIL ENGINEER / PROJECT COORDINATORS for Construction', '', 'CIVIL ENGINEER / PROJECT COORDINATORS for Construction', 'Architecture/Interior Design', 'full', '5', '40,000 - 45,000', '2', 'ABCOMM, BSITDA, BSHRM, BSIT', null, null, 'Autocad. Drafting, Drawing, Desinger');
+INSERT INTO comppositiontbl VALUES ('15', '5', null, '2016-01-19', '2016-01-31', 'HEAVY EQUIPMENT / MECHANIC', '', 'HEAVY EQUIPMENT / MECHANIC', 'Architecture/Interior Design', 'full', '3', '30,000 - 40,000', '3', 'ABCOMM, BSITDA, BSHRM, BSCS, BSIT', null, null, 'Autocad. Drafting, Drawing, Desinger');
+INSERT INTO comppositiontbl VALUES ('24', '1', null, '2016-01-02', '2016-12-30', 'dsadasda', '', 'sadas', 'Customer Service', 'full', '3', '25,000 - 30,000', '7', 'ABCOMM, BSITDA, BSHRM, BSIT', 'Bachelor Degree, Masteral Degree', 'asd', 'qweqwe, qweqwe');
+INSERT INTO comppositiontbl VALUES ('25', '1', null, '2016-01-12', '2016-01-30', 'eee', '', 'eeeeee', 'Design and Development', 'full', '23', '15,000 - 20,000', '9', 'BSITDA, BSCPE, BSCS', 'Bachelor Degree', 'qwe, qwewq, qweqwe', 'qwewq, eee, qq');
+INSERT INTO comppositiontbl VALUES ('26', '1', null, '2016-01-30', '2016-02-06', 'Accounting Supervisor', 'Top Level Management', 'We are a leading manufacturer an', 'Banking/Financial Services', 'full', '2', '20,000 - 25,000', '2', 'BSAT', 'Bachelor Degree', 'english', 'Accountancy/Management , Preferably Supervisor ');
+INSERT INTO comppositiontbl VALUES ('27', '1', null, '2016-01-30', '2016-02-06', 'AUDIT ASSISTANT', 'Senior Manager', 'We are a leading manufa', 'Actuarial Science/Statistics', 'full', '3', '10,000 - 15,000', '2', 'BSBM', 'Bachelor Degree', 'english', 'Sales, Financial/Inventory');
+INSERT INTO comppositiontbl VALUES ('28', '1', null, '2016-01-30', '2016-02-06', 'Accounting Clerk', 'Manager', 'We are a leading ma', 'Aviation/Aircraft Maintenance', 'full', '2', '40,000 - 45,000', '3', 'ABCOMM', 'Bachelor Degree', 'english', '	Accounting , General Accounting');
+INSERT INTO comppositiontbl VALUES ('29', '1', null, '2016-01-30', '2016-02-06', 'AUDIT STAFF', 'Sernior Executive / Supervisor', 'asfgagagfasdfasfasfas', 'Arts and Design', 'full', '4', '10,000 - 15,000', '18', 'BSHRM', 'Bachelor Degree', 'english', '	Accounting	, Financial Controller');
+INSERT INTO comppositiontbl VALUES ('30', '2', null, '2016-01-30', '2016-02-06', 'MARKETING OFFICER', 'Top Level Management', '*Only shortlisted candidates will be notified.', 'Corporate Strategy/Top Management', 'full', '2', '15,000 - 20,000', '15', 'BSAT', 'Bachelor Degree', 'english', 'Excellent communication ,  interpersonal skills');
+INSERT INTO comppositiontbl VALUES ('31', '2', null, '2016-01-30', '2016-02-06', 'Marketing Assistant', 'Sernior Executive / Supervisor', 's who will join our dynamic winning team.', 'Arts and Design', 'contract', '2', '30,000 - 40,000', '17', 'BSITDA', 'Bachelor Degree', 'english', 'Conduct Market Research, eep abreast of mar');
+INSERT INTO comppositiontbl VALUES ('32', '2', null, '2016-01-30', '2016-02-06', 'CAMPAIGN PLANNING ASSISTANTS', 'Sernior Executive / Supervisor', 'CAMPAIGN PLANNING ASSISTANTS', 'Architecture/Interior Design', 'full', '2', '20,000 - 25,000', '3', 'BSBM', 'Masteral Degree', 'english', 'Exposure to the field of fashion , Must be creative, resourceful');
+INSERT INTO comppositiontbl VALUES ('33', '3', null, '2016-01-30', '2016-02-06', 'IT Administrator', 'Top Level Management', 'IT Administrator', 'IT/Computer - Project Management', 'full', '2', '45,000 - 50,000', '4', 'BSCS', 'Masteral Degree', 'english', 'Mastery of Networking topic,, Cisco configurations');
+INSERT INTO comppositiontbl VALUES ('34', '3', null, '2016-01-30', '2016-02-06', 'Junior System Administrators', 'Junior Executive', 'Junior System Administrators', 'IT/Computer - QA', 'full', '1', '30,000 - 40,000', '13', 'BSIT', 'Bachelor Degree', 'english', 'Basic Linux Server , Basic Firewall understanding');
+INSERT INTO comppositiontbl VALUES ('35', '3', null, '2016-01-30', '2016-02-06', 'Customer Service Representatives', 'Senior Manager', 'Customer Service Representatives', 'IT/Computer - Software Development', 'full', '2', '30,000 - 40,000', '4', 'BSCS', 'Bachelor Degree', 'Excellent verbal and written English', 'Technical experience, BIG Sales Commissions');
+INSERT INTO comppositiontbl VALUES ('36', '4', null, '2016-01-30', '2016-02-06', 'Call Center Agents', 'Top Level Management', 'Call Center Agents', 'Costing Management', 'parttime', '1', '25,000 - 30,000', '5', 'BSIT', 'Bachelor Degree', 'Excellent verbal and written English.', '	Admin & HR, Information Technology (IT, General Sales, CS & Business Devpt');
+INSERT INTO comppositiontbl VALUES ('37', '4', null, '2016-01-30', '2016-02-06', 'Technical Support Associate', 'Sernior Executive / Supervisor', 'Technical Support Associate', 'Engineering - Oil/Gas', 'full', '2', '30,000 - 40,000', '3', 'BSCS', 'Bachelor Degree', 'english', '	Sales, CS & Business Devpt,  Telecommunications Technical support');
+INSERT INTO comppositiontbl VALUES ('38', '4', null, '2016-01-30', '2016-02-06', 'Tech Support for Windows/Linux Based Platform', 'Senior Manager', 'Tech Support for Windows/Linux Based Platform', 'IT/Computer - Software Development', 'full', '2', '30,000 - 40,000', '5', 'BSCS, BSIT, BSCPE', 'Bachelor Degree', 'english', '	Information Technology, Programming,  Application / Software');
+INSERT INTO comppositiontbl VALUES ('39', '5', null, '2016-01-30', '2016-02-06', 'ELECTRICAL ENGINEER', 'Top Level Management', 'ELECTRICAL ENGINEER', 'Engineering - Civil/Construction/Structural', 'full', '2', '40,000 - 45,000', '1', 'BSCPE', 'Bachelor Degree', 'english', '	Manpower, Personnel Recruitment');
+INSERT INTO comppositiontbl VALUES ('40', '5', null, '2016-01-30', '2016-02-06', 'CIVIL ENGINEER', 'Manager', 'CIVIL ENGINEER', 'Engineering - Civil/Construction/Structural', 'full', '2', '30,000 - 40,000', '7', 'BSCPE', 'Bachelor Degree', 'english', 'Civil / Structural / Industrial, Personnel Recruitment');
+INSERT INTO comppositiontbl VALUES ('41', '5', null, '2016-01-30', '2016-02-06', 'Quality Management Supervisor', 'Sernior Executive / Supervisor', 'Quality Management Supervisor', 'Engineering - Chemical', 'full', '3', '40,000 - 45,000', '2', 'BSITDA', 'Bachelor Degree', 'english', 'Proficient with MS Office programs, Mechanical,');
+INSERT INTO comppositiontbl VALUES ('42', '6', null, '2016-01-30', '2016-02-06', 'GRAPHIC ASSISTANT', 'Top Level Management', 'GRAPHIC ASSISTANT', 'Arts and Design', 'full', '2', '30,000 - 40,000', '3', 'ABCOMM, BSITDA', 'Bachelor Degree', 'english', 'will provide assistance with basic design work, brochures');
+INSERT INTO comppositiontbl VALUES ('43', '6', null, '2016-01-30', '2016-02-06', 'ARCHITECT', 'Top Level Management', 'ARCHITECT', 'Arts/Creative/Graphics Design', 'full', '2', '20,000 - 25,000', '4', 'ABCOMM', 'Bachelor Degree', 'english', 'Must be a Licensed Architect, 	Manpower , Architectural Services Design');
+INSERT INTO comppositiontbl VALUES ('44', '6', null, '2016-01-30', '2016-02-06', 'Graphic Artist', 'Fresh / Entry Level', 'Graphic Artist', 'Arts/Creative/Graphics Design', 'full', '2', '25,000 - 30,000', '4', 'BSITDA', 'Bachelor Degree', 'english', ' Knowledgeable in Adobe Photo Shop, With experience as Graphic Artist');
+INSERT INTO comppositiontbl VALUES ('45', '6', null, '2016-01-30', '2016-02-06', 'CREATIVE ARTIST', 'Manager', 'CREATIVE ARTIST', 'Arts and Design', 'full', '2', '25,000 - 30,000', '6', 'ABCOMM, BSITDA', 'Bachelor Degree', 'english', 'graduate of  Fine Arts/ Industrial Design/Advertising, familiar w/ Auto cad, 	Media & Advertising ');
 
 -- ----------------------------
 -- Table structure for `coursetbl`
@@ -345,20 +366,19 @@ CREATE TABLE `listofpositiontbl` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `Position` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=latin1;
 
 -- ----------------------------
 -- Records of listofpositiontbl
 -- ----------------------------
-INSERT INTO listofpositiontbl VALUES ('1', 'Actuarial Science/ Statistics');
-INSERT INTO listofpositiontbl VALUES ('2', 'Advertising/ Media Planning');
-INSERT INTO listofpositiontbl VALUES ('3', 'Architecture/ Interior Design');
-INSERT INTO listofpositiontbl VALUES ('4', 'Arts and Design');
-INSERT INTO listofpositiontbl VALUES ('5', 'Arts/ Creative/ Graphics Design');
-INSERT INTO listofpositiontbl VALUES ('6', 'Aviation/ Aircraft Maintenance');
-INSERT INTO listofpositiontbl VALUES ('7', 'Banking/ Financial Services');
-INSERT INTO listofpositiontbl VALUES ('8', 'Biotechnology');
-INSERT INTO listofpositiontbl VALUES ('9', 'Call Center Agent');
+INSERT INTO listofpositiontbl VALUES ('1', 'Top Level Management');
+INSERT INTO listofpositiontbl VALUES ('2', 'Senior Manager');
+INSERT INTO listofpositiontbl VALUES ('3', 'Manager');
+INSERT INTO listofpositiontbl VALUES ('4', 'Sernior Executive / Supervisor');
+INSERT INTO listofpositiontbl VALUES ('5', 'Junior Executive');
+INSERT INTO listofpositiontbl VALUES ('6', 'Fresh / Entry Level');
+INSERT INTO listofpositiontbl VALUES ('7', 'Non-Executive');
+INSERT INTO listofpositiontbl VALUES ('8', 'Trainee');
 
 -- ----------------------------
 -- Table structure for `listofsalaryrangetbl`
@@ -489,11 +509,12 @@ CREATE TABLE `logrequesttbl` (
   `Status` varchar(255) DEFAULT NULL,
   `DateRequested` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`LID`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
 
 -- ----------------------------
 -- Records of logrequesttbl
 -- ----------------------------
+INSERT INTO logrequesttbl VALUES ('1', '1', 'ASCT, BSAT, BSCS', '2016-01-30', '2016-01-31', 'Accepted', '2016-01-30');
 
 -- ----------------------------
 -- Table structure for `referencetbl`
@@ -730,8 +751,8 @@ CREATE TABLE `specializationtbl` (
 -- ----------------------------
 -- Records of specializationtbl
 -- ----------------------------
-INSERT INTO specializationtbl VALUES ('1', '00820120001', 'Biotechnology', '1', '');
-INSERT INTO specializationtbl VALUES ('2', '00820120001', 'Biotechnology', '3', '');
+INSERT INTO specializationtbl VALUES ('1', '00820120001', 'Design and Development', '1', '');
+INSERT INTO specializationtbl VALUES ('2', '00820120001', 'Architecture/Interior Design', '3', '');
 INSERT INTO specializationtbl VALUES ('3', '00820120002', 'Agriculture/Forestry/Fisheries', '2', '');
 INSERT INTO specializationtbl VALUES ('4', '00820120006', 'Chemistry', '1', '');
 INSERT INTO specializationtbl VALUES ('5', '00820120007', 'Clerical/Administrative Support', '3', '');

@@ -19,12 +19,10 @@ $CompanyName = $companyinfo_tbl[0][0];
 $cFirstName = $companyinfo_tbl[0][1];
 $cLastName = $companyinfo_tbl[0][2];
 
-$b = 0;
+
 $Course_Default = isset($_POST['Course']) ? $_POST['Course'] : '';
 $Location_Default = isset($_POST['Location']) ? $_POST['Location'] : '';
-if (isset($_POST['btnView'])) {
-    $b = 1;
-}
+
 
 $LOGquery =
     GSecureSQL::query(

@@ -363,10 +363,10 @@ $cLastName = $companyinfo_tbl[0][2];
                                 <div class="form-group">
                                     <select id="EType" name="EType" class="state form-control">
                                         <option value="">- Please select One -</option>
-                                        <option value="full">Full Time</option>
-                                        <option value="parttime">Part Time</option>
-                                        <option value="contract">Contract</option>
-                                        <option value="temporary">Temporary</option>
+                                        <option value="Full Time">Full Time</option>
+                                        <option value="Part Time">Part Time</option>
+                                        <option value="Contract">Contract</option>
+                                        <option value="Temporary">Temporary</option>
                                     </select>
                                 </div>
                             </div>
