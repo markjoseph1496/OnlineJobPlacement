@@ -3,8 +3,6 @@ include('../../connection.php');
 session_start();
 $StudentID = $_SESSION['StudentID'];
 
-
-echo "sdasds";
 $fileToUpload = basename($_FILES["ProfilePicture"]["name"]);
 $target_dir = "ProfileImages/";
 $target_file = $target_dir . $StudentID . ".jpg";
