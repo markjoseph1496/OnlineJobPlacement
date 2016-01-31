@@ -20,7 +20,7 @@ if (isset($_SESSION['StudentID'])) {
 <head>
 
     <!-- Basic -->
-    <title>OJPMS</title>
+    <title>OJPMS | Bookmarked Jobs</title>
 
     <!-- Define Charset -->
     <meta charset="utf-8">
@@ -49,10 +49,8 @@ if (isset($_SESSION['StudentID'])) {
     <link rel="stylesheet" href="../../css/font-awesome.min.css" type="text/css" media="screen">
 
     <!-- Fonts -->
-    <link href="../../fonts/ffonts/montserrat.css" rel="stylesheet" type="text/css">
-    <link href="../../fonts/ffonts/kaushan.css" rel="stylesheet" type="text/css">
-    <link href="../../fonts/ffonts/droid.css" rel="stylesheet" type="text/css">
-    <link href="../../fonts/ffonts/roboto.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" type="text/css" href="../../fonts/ffonts/montserrat.css">
+    <link rel="stylesheet" type="text/css" href="../../fonts/ffonts/open-sans.css">
 
     <!-- Slicknav -->
     <link rel="stylesheet" type="text/css" href="../../css/slicknav.css" media="screen">

@@ -50,7 +50,7 @@ $MajorCourse = $coursetbl[0][0];
 <head>
 
     <!-- Basic -->
-    <title>OJPMS</title>
+    <title>OJPMS | Jobs</title>
 
     <!-- Define Charset -->
     <meta charset="utf-8">
@@ -79,10 +79,8 @@ $MajorCourse = $coursetbl[0][0];
     <link rel="stylesheet" href="../../css/font-awesome.min.css" type="text/css" media="screen">
 
     <!-- Fonts -->
-    <link href="../../fonts/ffonts/montserrat.css" rel="stylesheet" type="text/css">
-    <link href="../../fonts/ffonts/kaushan.css" rel="stylesheet" type="text/css">
-    <link href="../../fonts/ffonts/droid.css" rel="stylesheet" type="text/css">
-    <link href="../../fonts/ffonts/roboto.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" type="text/css" href="../../fonts/ffonts/montserrat.css">
+    <link rel="stylesheet" type="text/css" href="../../fonts/ffonts/open-sans.css">
 
     <!-- Slicknav -->
     <link rel="stylesheet" type="text/css" href="../../css/slicknav.css" media="screen">
@@ -177,16 +175,12 @@ $MajorCourse = $coursetbl[0][0];
                                 </ul>
                             </li>
                             <li class="dropdown">
-                                <a href="#" class="dropdown-toggle" data-toggle="dropdown"><b class="fa fa-user"></b>
-                                    Welcome, <b><?php echo $StudentName; ?> </b><b class="caret"></b></a>
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown"><b class="fa fa-user"></b> Welcome, <b><?php echo $StudentName; ?> </b><b class="caret"></b></a>
                                 <ul class="dropdown-menu">
                                     <li><a href="#">Profile <b class="fa fa-user" style="float:right;"></b></a></li>
-                                    <li><a href="../settings/privacy-settings.php">Settings <b class="fa fa-cog"
-                                                                                               style="float:right;"></b></a>
-                                    </li>
+                                    <li><a href="../settings/settings.php">Settings <b class="fa fa-cog" style="float:right;"></b></a></li>
                                     <li class="divider"></li>
-                                    <li><a href="#" data-target='#Logout' data-toggle='modal'>Sign Out <b
-                                                class="fa fa-sign-out" style="float:right;"></b></a></li>
+                                    <li><a href="#" data-target='#Logout' data-toggle='modal'>Sign Out <b class="fa fa-sign-out" style="float:right;"></b></a></li>
                                 </ul>
                             </li>
                         </ul>
@@ -241,21 +235,7 @@ $MajorCourse = $coursetbl[0][0];
                         <img src="../../images/ojpms.png">
                     </a>
                 </div>
-                <div class="navbar-collapse collapse">
-                    <!-- Start Navigation List -->
-                    <ul class="nav navbar-nav navbar-right">
-                        <a href="../../../login-student.php?id=1" class="line-height"><i class="fa fa-sign-out"></i></a>
-                    </ul>
-                    <!-- End Navigation List -->
-                </div>
             </div>
-            <!-- Mobile Menu Start -->
-            <ul class="wpb-mobile-menu">
-                <li>
-                    <a href="../../../login-student.php?id=1"><i class="fa fa-sign-out"></i> Sign Out</a>
-                </li>
-            </ul>
-            <!-- Mobile Menu End -->
         </div>
     </header>
 

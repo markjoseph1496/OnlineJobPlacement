@@ -27,7 +27,7 @@ $cLastName = $companyinfo_tbl[0][2];
 <head>
 
     <!-- Basic -->
-    <title>OJPMS</title>
+    <title>OJPMS | Position List</title>
 
     <!-- Define Charset -->
     <meta charset="utf-8">

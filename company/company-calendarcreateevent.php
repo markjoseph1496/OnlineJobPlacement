@@ -25,9 +25,8 @@ $cLastName = $companyinfo_tbl[0][2];
 <html lang="en">
 
 <head>
-
     <!-- Basic -->
-    <title>OJPMS</title>
+    <title>OJPMS | Create an Event</title>
 
     <!-- Define Charset -->
     <meta charset="utf-8">
@@ -159,10 +158,6 @@ $cLastName = $companyinfo_tbl[0][2];
                     </a>
                 </div>
                 <div class="navbar-collapse collapse">
-                    <!-- Sign-out -->
-                    <div class="signout-side">
-                        <a class="show-signout" data-toggle='modal' data-target='#Logout'><i class="fa fa-sign-out"></i></a>
-                    </div>
                     <!-- Modal -->
                     <div class="modal fade" id="Logout"
                          role="dialog">
