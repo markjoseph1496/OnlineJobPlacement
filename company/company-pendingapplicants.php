@@ -28,7 +28,7 @@ $cLastName = $companyinfo_tbl[0][2];
 <head>
 
     <!-- Basic -->
-    <title>OJPMS</title>
+    <title>OJPMS | Pending Applicants</title>
 
     <!-- Define Charset -->
     <meta charset="utf-8">
@@ -88,14 +88,38 @@ $cLastName = $companyinfo_tbl[0][2];
     <script type="text/javascript" src="../js/jquery.nicescroll.min.js"></script>
     <script type="text/javascript" src="../js/jquery.parallax.js"></script>
     <script type="text/javascript" src="../js/jquery.slicknav.js"></script>
+
+    <!-- Notification -->
+    <link rel="stylesheet" href="../css/notif.css"/>
+
+    <script type="text/javascript" >
+        $(document).ready(function()
+        {
+        $("#notificationLink").click(function()
+        {
+        $("#notificationContainer").fadeToggle(300);
+        $("#notification_count").fadeOut("slow");
+        return false;
+        });
+
+        //Document Click
+        $(document).click(function()
+        {
+        $("#notificationContainer").hide();
+        });
+        //Popup Click
+        $("#notificationContainer").click(function()
+        {
+        return false
+        });
+
+        });
+    </script>
 </head>
 
 <body>
-
 <!-- Full Body Container -->
 <div id="container">
-
-
     <!-- Start Header Section -->
     <div class="hidden-header"></div>
     <header class="clearfix">
@@ -104,26 +128,36 @@ $cLastName = $companyinfo_tbl[0][2];
         <div class="top-bar">
             <div class="container">
                 <div class="row">
-                    <div class="col-md-6">
+                    <div class="col-md-7">
                         <!-- Start Contact Info -->
                         <ul class="contact-details">
-                            <li class="profile-name"><i class="fa fa-hashtag"></i> <b>008-2012-0805</b></li>
+                            <li class="profile-name"><b><?php echo $CompanyName; ?></b></li>
                         </ul>
                         <!-- End Contact Info -->
                     </div>
                     <!-- .col-md-6 -->
-                    <div class="col-md-6">
+                    <div class="col-md-5">
                         <!-- Start Social Links -->
-                        <ul class="social-list">
-                            <li class="profile-name">
-                                <a class="bell itl-tooltip" data-placement="bottom" title="" href="#"
-                                   data-original-title="Notification"><i class="fa fa-bell"></i></a>
+                        <ul class="nav navbar-nav navbar-right">
+                            <li class="dropdown icon-border" id="notificationLink">
+                                <span id="notification_count">3</span>
+                                <a href="#" class="bell itl-tooltip" data-placement="bottom" data-toggle="dropdown"><i class="fa fa-bell"></i></a>
+                                <ul id="notificationContainer" class="dropdown-menu dropdown-menu-inverse">
+                                    <li class="dropdown-header"><label>Notification</label></li>
+                                    <li class="disabled"><a href="#" tabindex="-1">No new notification.</a></li>
+                                    <li><a href="#" tabindex="-1">The administrator accepted your request.</a></li>
+                                    <li class="divider"></li>
+                                    <li><a href="../notification/notification.php" tabindex="-1">See All</a></li>
+                                </ul>
                             </li>
-                            <li class="profile-name">
-                                &nbsp;
-                            </li>
-                            <li class="profile-name">
-                                <i class="fa fa-user"></i> Hello, <b><?php echo $cFirstName . " " . $cLastName; ?></b>
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown"><b class="fa fa-user"></b> Welcome, <b><?php echo $StudentName; ?> </b><b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    <li><a href="#">Profile <b class="fa fa-user" style="float:right;"></b></a></li>
+                                    <li><a href="../settings/privacy-settings.php">Settings <b class="fa fa-cog" style="float:right;"></b></a></li>
+                                    <li class="divider"></li>
+                                    <li><a href="#" data-target='#Logout' data-toggle='modal'>Sign Out <b class="fa fa-sign-out" style="float:right;"></b></a></li>
+                                </ul>
                             </li>
                         </ul>
                         <!-- End Social Links -->
@@ -152,10 +186,6 @@ $cLastName = $companyinfo_tbl[0][2];
                     </a>
                 </div>
                 <div class="navbar-collapse collapse">
-                    <!-- Sign-out -->
-                    <div class="signout-side">
-                        <a class="show-signout" data-toggle='modal' data-target='#Logout'><i class="fa fa-sign-out"></i></a>
-                    </div>
                     <!-- Modal -->
                     <div class="modal fade" id="Logout"
                          role="dialog">
@@ -237,108 +267,101 @@ $cLastName = $companyinfo_tbl[0][2];
                     </ul>
                 </li>
             </ul>
+        </div>
+        <!-- End Header Logo & Naviagtion -->
     </header>
     <!-- Mobile Menu End -->
 
-</div>
-<!-- End Header Logo & Naviagtion -->
 
-</header>
-<!-- End Header Section -->
-
-<!-- Start Page Banner -->
-<div class="page-banner" style="padding:40px 0; center #f9f9f9;">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-6">
-                <h2>List of Pending Applicants</h2>
+    <!-- Start Page Banner -->
+    <div class="page-banner" style="padding:40px 0; center #f9f9f9;">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <h2>List of Pending Applicants</h2>
+                </div>
             </div>
         </div>
     </div>
-</div>
-<!-- End Page Banner -->
+    <!-- End Page Banner -->
 
-<!--Content-->
-<br><br><br>
-<div class="container">
-    <div class="col-md-12">
-
-        <table class="table segment table-hover">
-            <thead>
-            <tr>
-
-            </tr>
-            <tr>
-                <th width='20%' class='tabletitle'>Applicant Name</th>
-                <th width='20%' class='tabletitle'>Position</th>
-                <th width='15%' class='tabletitle'>Course</th>
-                <th width='20%' class='tabletitle'>Location</th>
-                <th width='15%' class='tabletitle'>Email</th>
-                <th width='10%' class='tabletitle'>Action</th>
-            <tr>
-            </thead>
-            <?php
-            $requesttocompany_tbl =
-                GSecureSQL::query(
-                    "SELECT
-                          requesttocompanytbl.RID,
-                          requesttocompanytbl.StudentID,
-                          requesttocompanytbl.PositionID,
-                          requesttocompanytbl.Status,
-                          studentinfotbl.StudentID,
-                          studentinfotbl.FirstName,
-                          studentinfotbl.LastName,
-                          studentinfotbl.MajorCourse,
-                          studcontactstbl.StudentID,
-                          studcontactstbl.City,
-                          studcontactstbl.Email,
-                          comppositiontbl.PositionID,
-                          comppositiontbl.PositionLevel
-                          FROM
-                          requesttocompanytbl
-                          INNER JOIN comppositiontbl ON requesttocompanytbl.PositionID = comppositiontbl.PositionID
-                          INNER JOIN studentinfotbl ON requesttocompanytbl.StudentID = studentinfotbl.StudentID
-                          INNER JOIN studcontactstbl ON studentinfotbl.StudentID = studcontactstbl.StudentID
-                          WHERE requesttocompanytbl.Status = 'Pending'
-                          ",
-                    TRUE
-                );
-            foreach ($requesttocompany_tbl as $value) {
-                $RID = $value[0];
-                $PositionLevel = $value[12];
-                $FirstName = $value[5];
-                $LastName = $value[6];
-                $MajorCourse = $value[7];
-                $Location = $value[9];
-                $Email = $value[10];
-
-                $coursetbl =
+    <!--Content-->
+    <br><br><br>
+    <div class="container">
+        <div class="col-md-12">
+            <table class="table segment table-hover">
+                <thead>
+                    <tr>
+                        <th width='20%' class='tabletitle'>Applicant Name</th>
+                        <th width='20%' class='tabletitle'>Position</th>
+                        <th width='15%' class='tabletitle'>Course</th>
+                        <th width='20%' class='tabletitle'>Location</th>
+                        <th width='15%' class='tabletitle'>Email</th>
+                        <th width='10%' class='tabletitle'>Action</th>
+                    <tr>
+                </thead>
+                <?php
+                $requesttocompany_tbl =
                     GSecureSQL::query(
-                        "SELECT CourseTitle FROM coursetbl WHERE CourseCode = ?",
-                        TRUE,
-                        "s",
-                        $MajorCourse
+                        "SELECT
+                              requesttocompanytbl.RID,
+                              requesttocompanytbl.StudentID,
+                              requesttocompanytbl.PositionID,
+                              requesttocompanytbl.Status,
+                              studentinfotbl.StudentID,
+                              studentinfotbl.FirstName,
+                              studentinfotbl.LastName,
+                              studentinfotbl.MajorCourse,
+                              studcontactstbl.StudentID,
+                              studcontactstbl.City,
+                              studcontactstbl.Email,
+                              comppositiontbl.PositionID,
+                              comppositiontbl.PositionLevel
+                              FROM
+                              requesttocompanytbl
+                              INNER JOIN comppositiontbl ON requesttocompanytbl.PositionID = comppositiontbl.PositionID
+                              INNER JOIN studentinfotbl ON requesttocompanytbl.StudentID = studentinfotbl.StudentID
+                              INNER JOIN studcontactstbl ON studentinfotbl.StudentID = studcontactstbl.StudentID
+                              WHERE requesttocompanytbl.Status = 'Pending'
+                              ",
+                        TRUE
                     );
-                foreach ($coursetbl as $value1) {
-                    $MajorCourse = $value1[0];
-                }
-                ?>
+                foreach ($requesttocompany_tbl as $value) {
+                    $RID = $value[0];
+                    $PositionLevel = $value[12];
+                    $FirstName = $value[5];
+                    $LastName = $value[6];
+                    $MajorCourse = $value[7];
+                    $Location = $value[9];
+                    $Email = $value[10];
+
+                    $coursetbl =
+                        GSecureSQL::query(
+                            "SELECT CourseTitle FROM coursetbl WHERE CourseCode = ?",
+                            TRUE,
+                            "s",
+                            $MajorCourse
+                        );
+                    foreach ($coursetbl as $value1) {
+                        $MajorCourse = $value1[0];
+                    }
+                    ?>
                 <tbody>
-                <tr>
-                    <td width=20% class=tabletitle><a href=''><?php echo $LastName . ", " . $FirstName; ?></td>
-                    <td width=20% class=tabletitle><?php echo $PositionLevel; ?></a></td>
-                    <td width=15% class=tabletitle><?php echo $MajorCourse; ?></td>
-                    <td width=15% class=tabletitle><?php echo $Location; ?></td>
-                    <td width=15% class=tabletitle><?php echo $Email; ?></td>
-                    <td width='10%'>
-                        <button class='btn btn-default' data-toggle='modal'
-                                data-target='#AcceptRequest<?php echo $RID; ?>'><i
-                                class='fa fa-check-circle'></i></button>
-                        <button class='btn btn-danger' data-toggle='modal'
-                                data-target='#DeclineRequest<?php echo $RID; ?>'><i
-                                class='fa fa-trash fa-1x'></i></button>
-                    </td>
-                <tr>
+                    <tr>
+                        <td class=tabletitle><a href=''><?php echo $LastName . ", " . $FirstName; ?></td>
+                        <td class=tabletitle><?php echo $PositionLevel; ?></a></td>
+                        <td class=tabletitle><?php echo $MajorCourse; ?></td>
+                        <td  class=tabletitle><?php echo $Location; ?></td>
+                        <td  class=tabletitle><?php echo $Email; ?></td>
+                        <td >
+                            <button class='btn btn-default' data-toggle='modal'
+                                    data-target='#AcceptRequest<?php echo $RID; ?>'><i
+                                    class='fa fa-check-circle'></i></button>
+                            <button class='btn btn-danger' data-toggle='modal'
+                                    data-target='#DeclineRequest<?php echo $RID; ?>'><i
+                                    class='fa fa-trash fa-1x'></i></button>
+                        </td>
+                    <tr>
                 </tbody>
                 <!-- Modal -->
                 <div class="modal fade" id="AcceptRequest<?php echo $RID; ?>"
@@ -361,7 +384,7 @@ $cLastName = $companyinfo_tbl[0][2];
                                     <span>(*)</span> </label>
                                     <div class="form-group">
                                         <textarea type="text" name="AcceptMsg" id="AcceptMsg"
-                                                  class="form-control"> </textarea>
+                                                  class="form-control"></textarea>
                                     </div>
                                 </div>
                                 <div class="modal-footer">
@@ -396,8 +419,7 @@ $cLastName = $companyinfo_tbl[0][2];
                                     <label = "usr" class = "control-label">Message to applicant.
                                     <span>(*)</span> </label>
                                     <div class="form-group">
-                                        <textarea type="text" name="RejectMsg" id="RejectMsg"
-                                                  class="form-control"> </textarea>
+                                        <textarea type="text" name="RejectMsg" id="RejectMsg" class="form-control"> </textarea>
                                     </div>
                                 </div>
                                 <div class="modal-footer">
@@ -414,9 +436,9 @@ $cLastName = $companyinfo_tbl[0][2];
                 <?php
             }
             ?>
-        </table>
+            </table>
+        </div>
     </div>
-</div>
 <script type="text/javascript" src="../js/script.js"></script>
 </body>
 </html>

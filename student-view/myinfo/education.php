@@ -36,7 +36,7 @@ $MajorCourse = $course_qry[0][0];
 <head>
 
     <!-- Basic -->
-    <title>OJPMS</title>
+    <title>OJPMS | Education</title>
 
     <!-- Define Charset -->
     <meta charset="utf-8">
@@ -64,10 +64,8 @@ $MajorCourse = $course_qry[0][0];
     <link rel="stylesheet" href="../../css/font-awesome.min.css" type="text/css" media="screen">
 
     <!-- Fonts -->
-    <link href="../../fonts/ffonts/montserrat.css" rel="stylesheet" type="text/css">
-    <link href="../../fonts/ffonts/kaushan.css" rel="stylesheet" type="text/css">
-    <link href="../../fonts/ffonts/droid.css" rel="stylesheet" type="text/css">
-    <link href="../../fonts/ffonts/roboto.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" type="text/css" href="../../fonts/ffonts/montserrat.css">
+    <link rel="stylesheet" type="text/css" href="../../fonts/ffonts/open-sans.css">
 
     <!-- Slicknav -->
     <link rel="stylesheet" type="text/css" href="../../css/slicknav.css" media="screen">
@@ -126,6 +124,19 @@ $MajorCourse = $course_qry[0][0];
 
         });
     </script>
+
+    <!-- Alert -->
+    <script type="text/javascript">
+        $(document).ready (function(){
+        $("#success-alert").hide();
+        $("#btnsave").click(function showAlert() {
+            $("#success-alert").alert();
+            $("#success-alert").fadeTo(2000, 500).slideUp(500, function(){
+           $("#success-alert").alert('close');
+                });   
+            });
+        });
+    </script>
 </head>
 
 <body>
@@ -163,7 +174,7 @@ $MajorCourse = $course_qry[0][0];
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown"><b class="fa fa-user"></b> Welcome, <b><?php echo $StudentName; ?> </b><b class="caret"></b></a>
                                 <ul class="dropdown-menu">
                                     <li><a href="#">Profile <b class="fa fa-user" style="float:right;"></b></a></li>
-                                    <li><a href="../settings/privacy-settings.php">Settings <b class="fa fa-cog" style="float:right;"></b></a></li>
+                                    <li><a href="../settings/settings.php">Settings <b class="fa fa-cog" style="float:right;"></b></a></li>
                                     <li class="divider"></li>
                                     <li><a href="#" data-target='#Logout' data-toggle='modal'>Sign Out <b class="fa fa-sign-out" style="float:right;"></b></a></li>
                                 </ul>
@@ -216,16 +227,11 @@ $MajorCourse = $course_qry[0][0];
                         <i class="fa fa-bars"></i>
                     </button>
                     <!-- End Toggle Nav Link For Mobiles -->
-                    <a class="navbar-brand" href="">
+                    <a class="navbar-brand">
                         <img src="../../images/ojpms.png">
                     </a>
                 </div>
                 <div class="navbar-collapse collapse">
-                    <!-- Sign-out -->
-                    <div class="signout-side">
-                        <a class="show-signout" data-toggle='modal' data-target='#Logout'><i class="fa fa-sign-out"></i></a>
-                    </div>
-                    <!-- End Sign-out -->
                     <!-- Start Navigation List -->
                     <ul class="nav navbar-nav navbar-right">
                         <li>
@@ -315,42 +321,42 @@ $MajorCourse = $course_qry[0][0];
 
                 if ($id == 1) {
                     echo '
-                            <div class="alert alert-success">
+                            <div class="alert alert-success" id="success-alert">
                                 <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
                                 <strong><span class="fa fa-info-circle"></span> School information successfully updated.</strong> 
                             </div>
                             ';
                 } elseif ($id == 2) {
                     echo '
-                            <div class="alert alert-success">
+                            <div class="alert alert-success" id="success-alert">
                                 <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
                                 <strong><span class="fa fa-info-circle"></span> Seminar information successfully updated.</strong>
                             </div>
                             ';
                 } elseif ($id == 3) {
                     echo '
-                            <div class="alert alert-success">
+                            <div class="alert alert-success" id="success-alert">
                                 <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
                                 <strong><span class="fa fa-info-circle"></span> School information successfully deleted.</strong>
                             </div>
                             ';
                 } elseif ($id == 4) {
                     echo '
-                            <div class="alert alert-success">
+                            <div class="alert alert-success" id="success-alert">
                                 <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
                                 <strong><span class="fa fa-info-circle"></span> School information successfully added.</strong>
                             </div>
                             ';
                 } elseif ($id == 5) {
                     echo '
-                            <div class="alert alert-success">
+                            <div class="alert alert-success" id="success-alert">
                                 <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
                                 <strong><span class="fa fa-info-circle"></span> Seminar successfully added.</strong>
                             </div>
                             ';
                 } elseif ($id == 6) {
                     echo '
-                            <div class="alert alert-success">
+                            <div class="alert alert-success" id="success-alert">
                                 <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
                                 <strong><span class="fa fa-info-circle"></span> Seminar successfully deleted.</strong>
                             </div>

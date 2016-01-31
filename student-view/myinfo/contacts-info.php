@@ -54,7 +54,7 @@ $MajorCourse = $course_qry[0][0];
 <head>
 
     <!-- Basic -->
-    <title>OJPMS</title>
+    <title>OJPMS | Contacts Info</title>
 
     <!-- Define Charset -->
     <meta charset="utf-8">
@@ -82,11 +82,8 @@ $MajorCourse = $course_qry[0][0];
     <link rel="stylesheet" href="../../css/font-awesome.min.css" type="text/css" media="screen">
 
     <!-- Fonts -->
-    <link href="../../fonts/ffonts/montserrat.css" rel="stylesheet" type="text/css">
-    <link href="../../fonts/ffonts/kaushan.css" rel="stylesheet" type="text/css">
-    <link href="../../fonts/ffonts/droid.css" rel="stylesheet" type="text/css">
-    <link href="../../fonts/ffonts/roboto.css" rel="stylesheet" type="text/css">
-    <link rel="stylesheet" type="text/css" href="../../fonts/ffonts/lato.css">
+    <link rel="stylesheet" type="text/css" href="../../fonts/ffonts/montserrat.css">
+    <link rel="stylesheet" type="text/css" href="../../fonts/ffonts/open-sans.css">
 
     <!-- Slicknav -->
     <link rel="stylesheet" type="text/css" href="../../css/slicknav.css" media="screen">
@@ -142,18 +139,18 @@ $MajorCourse = $course_qry[0][0];
         });
     </script>
 
+    <!-- Alert -->
     <script type="text/javascript">
-            $(document).ready (function(){
-            $("#success-alert").hide();
-            $("#btnsave").click(function showAlert() {
-                $("#success-alert").alert();
-                $("#success-alert").fadeTo(2000, 500).slideUp(500, function(){
-               $("#success-alert").alert('close');
-                    });   
-                });
+        $(document).ready (function(){
+        $("#success-alert").hide();
+        $("#btnsave").click(function showAlert() {
+            $("#success-alert").alert();
+            $("#success-alert").fadeTo(2000, 500).slideUp(500, function(){
+           $("#success-alert").alert('close');
+                });   
             });
-        </script>
-
+        });
+    </script>
 </head>
 
 <body>
@@ -195,7 +192,7 @@ $MajorCourse = $course_qry[0][0];
                                             class="caret"></b></a>
                                     <ul class="dropdown-menu">
                                         <li><a href="#">Profile <b class="fa fa-user" style="float:right;"></b></a></li>
-                                        <li><a href="../settings/privacy-settings.php">Settings <b class="fa fa-cog"
+                                        <li><a href="../settings/settings.php">Settings <b class="fa fa-cog"
                                                                                                    style="float:right;"></b></a>
                                         </li>
                                         <li class="divider"></li>
@@ -252,17 +249,11 @@ $MajorCourse = $course_qry[0][0];
                             <i class="fa fa-bars"></i>
                         </button>
                         <!-- End Toggle Nav Link For Mobiles -->
-                        <a class="navbar-brand" href="">
+                        <a class="navbar-brand">
                             <img src="../../images/ojpms.png">
                         </a>
                     </div>
                     <div class="navbar-collapse collapse">
-                        <!-- Sign-out -->
-                        <div class="signout-side">
-                            <a class="show-signout" data-toggle='modal' data-target='#Logout'><i
-                                    class="fa fa-sign-out"></i></a>
-                        </div>
-                        <!-- End Sign-out -->
                         <!-- Start Navigation List -->
                         <ul class="nav navbar-nav navbar-right">
                             <li>

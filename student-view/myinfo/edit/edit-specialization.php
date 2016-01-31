@@ -77,10 +77,8 @@ $MajorCourse = $course_qry[0][0];
     <link rel="stylesheet" type="text/css" href="../../../css/font-awesome.min.css" media="screen">
 
     <!-- Fonts -->
-    <link href="../../../fonts/ffonts/montserrat.css" rel="stylesheet" type="text/css">
-    <link href="../../../fonts/ffonts/kaushan.css" rel="stylesheet" type="text/css">
-    <link href="../../../fonts/ffonts/droid.css" rel="stylesheet" type="text/css">
-    <link href="../../../fonts/ffonts/roboto.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" type="text/css" href="../../../fonts/ffonts/montserrat.css">
+    <link rel="stylesheet" type="text/css" href="../../../fonts/ffonts/open-sans.css">
 
     <!-- Slicknav -->
     <link rel="stylesheet" type="text/css" href="../../../css/slicknav.css" media="screen">
@@ -118,6 +116,29 @@ $MajorCourse = $course_qry[0][0];
     <script type="text/javascript" src="../../../js/jquery.nicescroll.min.js"></script>
     <script type="text/javascript" src="../../../js/jquery.parallax.js"></script>
     <script type="text/javascript" src="../../../js/jquery.slicknav.js"></script>
+
+    <!-- Notification -->
+    <link rel="stylesheet" href="../../../css/notif.css"/>
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $("#notificationLink").click(function () {
+                $("#notificationContainer").fadeToggle(300);
+                $("#notification_count").fadeOut("slow");
+                return false;
+            });
+
+            //Document Click
+            $(document).click(function () {
+                $("#notificationContainer").hide();
+            });
+            //Popup Click
+            $("#notificationContainer").click(function () {
+                return false
+            });
+
+        });
+    </script>
 </head>
 
 <body>
@@ -140,16 +161,26 @@ $MajorCourse = $course_qry[0][0];
                         <!-- .col-md-6 -->
                         <div class="col-md-5">
                             <!-- Start Social Links -->
-                            <ul class="social-list">
-                                <li class="profile-name">
-                                    <a class="bell itl-tooltip" data-placement="bottom" title="" href="#"
-                                       data-original-title="Notification"><i class="fa fa-bell"></i></a>
+                            <ul class="nav navbar-nav navbar-right">
+                                <li class="dropdown icon-border" id="notificationLink">
+                                    <span id="notification_count">5</span>
+                                    <a href="#" class="bell itl-tooltip" data-placement="bottom" data-toggle="dropdown"><i class="fa fa-bell"></i></a>
+                                    <ul id="notificationContainer" class="dropdown-menu dropdown-menu-inverse">
+                                        <li class="dropdown-header"><label>Notification</label></li>
+                                        <li class="disabled"><a href="#" tabindex="-1">No new notification.</a></li>
+                                        <li><a href="#" tabindex="-1">The administrator accepted your request.</a></li>
+                                        <li class="divider"></li>
+                                        <li><a href="../notification/notification.php" tabindex="-1">See All</a></li>
+                                    </ul>
                                 </li>
-                                <li class="profile-name">
-                                    &nbsp;
-                                </li>
-                                <li class="profile-name">
-                                    <i class="fa fa-user"></i> Hello, <b><?php echo $StudentName; ?></b>
+                                <li class="dropdown">
+                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown"><b class="fa fa-user"></b> Welcome, <b><?php echo $StudentName; ?> </b><b class="caret"></b></a>
+                                    <ul class="dropdown-menu">
+                                        <li><a href="#">Profile <b class="fa fa-user" style="float:right;"></b></a></li>
+                                        <li><a href="../../settings/settings.php">Settings <b class="fa fa-cog" style="float:right;"></b></a></li>
+                                        <li class="divider"></li>
+                                        <li><a href="#" data-target='#Logout' data-toggle='modal'>Sign Out <b class="fa fa-sign-out" style="float:right;"></b></a></li>
+                                    </ul>
                                 </li>
                             </ul>
                             <!-- End Social Links -->
@@ -172,25 +203,11 @@ $MajorCourse = $course_qry[0][0];
                             <i class="fa fa-bars"></i>
                         </button>
                         <!-- End Toggle Nav Link For Mobiles -->
-                        <a class="navbar-brand" href="">
+                        <a class="navbar-brand">
                             <img src="../../../images/ojpms.png">
                         </a>
                     </div>
-                    <div class="navbar-collapse collapse">
-                        <!-- Start Navigation List -->
-                        <ul class="nav navbar-nav navbar-right">                            
-                            <a href="../../../login-student.php?id=1" class="line-height"><i class="fa fa-sign-out"></i></a>                           
-                        </ul>
-                        <!-- End Navigation List -->
-                    </div>
                 </div>
-                <!-- Mobile Menu Start -->
-                <ul class="wpb-mobile-menu">
-                    <li>
-                        <a href="../../../login-student.php?id=1"><i class="fa fa-sign-out"></i> Sign Out</a>
-                    </li>
-                </ul>
-                <!-- Mobile Menu End -->
             </div>
         </header>
 
@@ -219,10 +236,10 @@ $MajorCourse = $course_qry[0][0];
                     <!-- Page Content -->
                     <div class="col-md-9 page-content">
                         <div class="row">
-                            <div class="col-md-6">
+                            <div class="col-md-8">
                                 <div class="form-group">
                                     <label>Specialization <span>(*)</span></label>
-                                    <select id="" name="Specialization" class="form-control" style = "width:420px;">
+                                    <select id="" name="Specialization" class="form-control">
                                         <option value="" selected="selected">- Please select one -</option>
                                         <?php
 
@@ -242,7 +259,7 @@ $MajorCourse = $course_qry[0][0];
                                     </select>
                                 </div>
                             </div>
-                            <div class="col-md-6">
+                            <div class="col-md-4">
                                 <div class="form-group">
                                     <label>Proficiency <span>(*)</span></label>
                                     <div class="text-center">

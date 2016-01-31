@@ -54,7 +54,7 @@ $cLastName= $companyinfo_tbl[0][11];
 <head>
 
     <!-- Basic -->
-    <title>OJPMS</title>
+    <title>OJPMS | Company Details</title>
 
     <!-- Bootstrap CSS -->
     <link href="../css/bootstrap.min.css" rel="stylesheet"/>
@@ -154,7 +154,7 @@ $cLastName= $companyinfo_tbl[0][11];
             <div class="top-bar">
                 <div class="container">
                     <div class="row">
-                        <div class="col-md-6">
+                        <div class="col-md-7">
                             <!-- Start Contact Info -->
                             <ul class="contact-details">
                                 <li class="profile-name"><b><?php echo $CompanyName; ?></b></li>
@@ -162,7 +162,7 @@ $cLastName= $companyinfo_tbl[0][11];
                             <!-- End Contact Info -->
                         </div>
                         <!-- .col-md-6 -->
-                        <div class="col-md-6">
+                        <div class="col-md-5">
                             <!-- Start Social Links -->
                             <ul class="nav navbar-nav navbar-right">
                                 <li class="dropdown icon-border" id="notificationLink">

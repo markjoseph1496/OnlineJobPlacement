@@ -34,9 +34,8 @@ $MajorCourse = $course_qry[0][0];
 <html lang="en">
 
 <head>
-
     <!-- Basic -->
-    <title>OJPMS</title>
+    <title>OJPMS | Settings</title>
 
     <!-- Define Charset -->
     <meta charset="utf-8">
@@ -162,7 +161,7 @@ $MajorCourse = $course_qry[0][0];
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown"><b class="fa fa-user"></b> Welcome, <b><?php echo $StudentName; ?> </b><b class="caret"></b></a>
                                 <ul class="dropdown-menu">
                                     <li><a href="#">Profile <b class="fa fa-user" style="float:right;"></b></a></li>
-                                    <li><a href="../settings/privacy-settings.php">Settings <b class="fa fa-cog" style="float:right;"></b></a></li>
+                                    <li><a href="../settings/settings.php">Settings <b class="fa fa-cog" style="float:right;"></b></a></li>
                                     <li class="divider"></li>
                                     <li><a href="#" data-target='#Logout' data-toggle='modal'>Sign Out <b class="fa fa-sign-out" style="float:right;"></b></a></li>
                                 </ul>
@@ -219,52 +218,13 @@ $MajorCourse = $course_qry[0][0];
                         <img src="../../images/ojpms.png">
                     </a>
                 </div>
-                <div class="navbar-collapse collapse">
-                    <!-- Sign-out -->
-                    <div class="signout-side">
-                        <a class="show-signout"><i class="fa fa-sign-out"></i></a>
-                    </div>
-                    <!-- End Sign-out -->
-                    <!-- Start Navigation List -->
-                    <ul class="nav navbar-nav navbar-right">
-                        <li>
-                            <a class="active" href="personal-info.php">My Info</a>
-                            <ul class="dropdown">
-                                <li><a href="personal-info.php">Personal Info</a></li>
-                                <li><a href="contacts-info.php">Contacts Info</a></li>
-                                <li><a href="work.php">Work</a></li>
-                                <li><a href="education.php">Education</a></li>
-                                <li><a href="certifications.php">Certifications</a></li>
-                                <li><a class="active" href="achievements.php">Achievements</a></li>
-                                <li><a href="specialization-and-languages.php">Specialization & Languages</a></li>
-                                <li><a href="references.php">References</a></li>
-                                <li><a href="portfolio.php">Portfolio</a></li>
-                            </ul>
-                        </li>
-                        <li>
-                            <a href="../resumelink/resume-link.php">Resume Link</a>
-                            <ul class="dropdown">
-                                <li><a href="../resumelink/resume-link.php">Resume Link</a></li>
-                                <li><a href="../resumelink/background.php">Background</a></li>
-                                <li><a href="../resumelink/print-share.php">Print/Share</a></li>
-                            </ul>
-                        </li>
-                        <li>
-                            <a href="../applications/applications.php">Applications</a>
-                        </li>
-                        <li>
-                            <a href="../search-job/jobs.php">Jobs</a>
-                        </li>
-                    </ul>
-                    <!-- End Navigation List -->
-                </div>
             </div>
             <!-- Mobile Menu Start -->
             <ul class="wpb-mobile-menu">
                 <li>
                     <a href="personal-info.php">My Info</a>
                     <ul class="dropdown">
-                        <li><a class="active" href="personal-info.php">Personal Info</a></li>
+                        <li><a href="personal-info.php">Personal Info</a></li>
                         <li><a href="contacts-info.php">Contacts Info</a></li>
                         <li><a href="work.php">Work</a></li>
                         <li><a href="education.php">Education</a></li>

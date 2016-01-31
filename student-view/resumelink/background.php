@@ -19,7 +19,7 @@ if (isset($_SESSION['StudentID'])) {
 <head>
 
     <!-- Basic -->
-    <title>OJPMS</title>
+    <title>OJPMS | Background</title>
 
     <!-- Define Charset -->
     <meta charset="utf-8">
@@ -49,10 +49,8 @@ if (isset($_SESSION['StudentID'])) {
     <link rel="stylesheet" href="../../css/font-awesome.min.css" type="text/css" media="screen">
 
     <!-- Fonts -->
-    <link href="../../fonts/ffonts/montserrat.css" rel="stylesheet" type="text/css">
-    <link href="../../fonts/ffonts/kaushan.css" rel="stylesheet" type="text/css">
-    <link href="../../fonts/ffonts/droid.css" rel="stylesheet" type="text/css">
-    <link href="../../fonts/ffonts/roboto.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" type="text/css" href="../../../fonts/ffonts/montserrat.css">
+    <link rel="stylesheet" type="text/css" href="../../../fonts/ffonts/open-sans.css">
 
     <!-- Slicknav -->
     <link rel="stylesheet" type="text/css" href="../../css/slicknav.css" media="screen">
@@ -135,7 +133,7 @@ if (isset($_SESSION['StudentID'])) {
                     <div class="col-md-7">
                         <!-- Start Contact Info -->
                         <ul class="profile-name">
-                            <li><i class="fa fa-hashtag"></i><b> 008-2012-0805</b></li>
+                            <li>Course: </i> <b><?php echo $MajorCourse; ?></b></li>
                         </ul>
                         <!-- End Contact Info -->
                     </div>
@@ -158,7 +156,7 @@ if (isset($_SESSION['StudentID'])) {
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown"><b class="fa fa-user"></b> Welcome, <b><?php echo $StudentName; ?> </b><b class="caret"></b></a>
                                 <ul class="dropdown-menu">
                                     <li><a href="#">Profile <b class="fa fa-user" style="float:right;"></b></a></li>
-                                    <li><a href="../settings/privacy-settings.php">Settings <b class="fa fa-cog" style="float:right;"></b></a></li>
+                                    <li><a href="../../settings/settings.php">Settings <b class="fa fa-cog" style="float:right;"></b></a></li>
                                     <li class="divider"></li>
                                     <li><a href="#" data-target='#Logout' data-toggle='modal'>Sign Out <b class="fa fa-sign-out" style="float:right;"></b></a></li>
                                 </ul>
@@ -184,16 +182,11 @@ if (isset($_SESSION['StudentID'])) {
                         <i class="fa fa-bars"></i>
                     </button>
                     <!-- End Toggle Nav Link For Mobiles -->
-                    <a class="navbar-brand" href="">
+                    <a class="navbar-brand">
                         <img src="../../images/ojpms.png">
                     </a>
                 </div>
                 <div class="navbar-collapse collapse">
-                    <!-- Sign-out -->
-                    <div class="signout-side">
-                        <a class="show-signout"><i class="fa fa-sign-out"></i></a>
-                    </div>
-                    <!-- End Sign-out -->
                     <!-- Start Navigation List -->
                     <ul class="nav navbar-nav navbar-right">
                         <li>

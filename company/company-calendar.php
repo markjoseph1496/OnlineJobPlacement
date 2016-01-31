@@ -27,7 +27,7 @@ $cLastName = $companyinfo_tbl[0][2];
 <head>
 
     <!-- Basic -->
-    <title>OJPMS</title>
+    <title>OJPMS | List of Events</title>
 
     <!-- Define Charset -->
     <meta charset="utf-8">
@@ -130,7 +130,7 @@ $cLastName = $companyinfo_tbl[0][2];
             <div class="top-bar">
                 <div class="container">
                     <div class="row">
-                        <div class="col-md-6">
+                        <div class="col-md-7">
                             <!-- Start Contact Info -->
                             <ul class="contact-details">
                                 <li class="profile-name"><b><?php echo $CompanyName; ?></b></li>
@@ -138,7 +138,7 @@ $cLastName = $companyinfo_tbl[0][2];
                             <!-- End Contact Info -->
                         </div>
                         <!-- .col-md-6 -->
-                        <div class="col-md-6">
+                        <div class="col-md-5">
                             <!-- Start Social Links -->
                             <ul class="nav navbar-nav navbar-right">
                                 <li class="dropdown icon-border" id="notificationLink">
@@ -187,10 +187,6 @@ $cLastName = $companyinfo_tbl[0][2];
                         </a>
                     </div>
                     <div class="navbar-collapse collapse">
-                        <!-- Sign-out -->
-                        <div class="signout-side">
-                            <a class="show-signout" data-toggle='modal' data-target='#Logout'><i class="fa fa-sign-out"></i></a>
-                        </div>
                         <!-- Modal -->
                         <div class="modal fade" id="Logout" role="dialog">
                             <div class="modal-dialog" style="padding:100px">
