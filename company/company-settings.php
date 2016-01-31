@@ -177,7 +177,7 @@ $cLastName= $companyinfo_tbl[0][11];
                                     </ul>
                                 </li>
                                 <li class="dropdown">
-                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown"><b class="fa fa-user"></b> Welcome, <b><?php echo $StudentName; ?> </b><b class="caret"></b></a>
+                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown"><b class="fa fa-user"></b> Welcome, <b><?php echo $cFirstName . " " . $cLastName; ?> </b><b class="caret"></b></a>
                                     <ul class="dropdown-menu">
                                         <li><a href="#">Profile <b class="fa fa-user" style="float:right;"></b></a></li>
                                         <li><a href="../settings/privacy-settings.php">Settings <b class="fa fa-cog" style="float:right;"></b></a></li>
@@ -555,30 +555,6 @@ $cLastName= $companyinfo_tbl[0][11];
     <!-- End Page Content -->
     <script type="text/javascript" src="../js/script.js"></script>
 </body>
-<?php
-if (isset($_POST['btnSave'])) {
-
-    $cname = $_POST['cname'];
-    $description = $_POST['description'];
-    $industry = $_POST['industry'];
-    $classification = $_POST['classification'];
-    $address = $_POST['address'];
-    $city = $_POST['City'];
-    $postal = $_POST['postal'];
-    $telnum = $_POST['telnum'];
-    $mobilenum = $_POST['mobilenum'];
-    $fax = $_POST['fax'];
-
-
-    $query = "UPDATE companyinfotbl SET CompanyName = '$cname', Description = '$description', Industry = '$industry', Classification = '$classification', Address = '$address', City = '$city', PostalCode = '$postal', PhoneNum = '$telnum', MobileNum = '$mobilenum', Fax = '$fax' WHERE CompanyID = '$CompanyID'";
-    $Result = mysql_query($query);
-    echo "
-            <script type='text/javascript'>
-            location.href = 'company-settings.php?id=SettingEdit';
-            </script>
-             ";
-}
-?>
 <script type="text/javascript">
     $(document).ready(function () {
         var validator = $("#CompanySetting").bootstrapValidator({

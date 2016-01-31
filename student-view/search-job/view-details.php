@@ -1,6 +1,7 @@
 <?php
 include('../../connection.php');
 session_start();
+$StudentID = $_SESSION['StudentID'];
 
 $PositionID = $_GET['id'];
 
@@ -32,6 +33,28 @@ $companyinfo_tbl =
 $CompanyName = $companyinfo_tbl[0][1];
 $CompanyDescription = $companyinfo_tbl[0][2];
 
+
+$infoquery =
+    GSecureSQL::query(
+        "SELECT FirstName, LastName, MajorCourse FROM studentinfotbl WHERE StudentID = ?",
+        TRUE,
+        "s",
+        $StudentID
+    );
+
+$FirstName = $infoquery[0][0];
+$LastName = $infoquery[0][1];
+$CourseCode = $infoquery[0][2];
+$StudentName = $FirstName . " " . $LastName;
+
+$coursetbl =
+    GSecureSQL::query(
+        "SELECT CourseTitle FROM coursetbl WHERE CourseCode = ?",
+        TRUE,
+        "s",
+        $CourseCode
+    );
+$MajorCourse = $coursetbl[0][0];
 ?>
 
 <!doctype html>
