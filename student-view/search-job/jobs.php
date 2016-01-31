@@ -432,9 +432,6 @@ $MajorCourse = $coursetbl[0][0];
                                         FROM comppositiontbl WHERE JSpecialization IN ('$Specialization') ORDER BY PositionTitle ASC",
                                         TRUE
                                     );
-                                if (empty($compposition_tbl)) {
-                                    $isEmpty = 1;
-                                }
                             } elseif (empty($EType) && empty($Industry)) {
                                 $compposition_tbl =
                                     GSecureSQL::query(
@@ -453,9 +450,6 @@ $MajorCourse = $coursetbl[0][0];
                                         "s",
                                         $PLevel
                                     );
-                                if (empty($compposition_tbl)) {
-                                    $isEmpty = 1;
-                                }
                             } elseif (empty($PLevel) && empty($EType)) {
                                 $compposition_tbl =
                                     GSecureSQL::query(
@@ -477,9 +471,6 @@ $MajorCourse = $coursetbl[0][0];
                                         "s",
                                         $Industry
                                     );
-                                if (empty($compposition_tbl)) {
-                                    $isEmpty = 1;
-                                }
                             } elseif (empty($PLevel) && empty($Industry)) {
                                 $compposition_tbl =
                                     GSecureSQL::query(
@@ -498,9 +489,6 @@ $MajorCourse = $coursetbl[0][0];
                                         "s",
                                         $EType
                                     );
-                                if (empty($compposition_tbl)) {
-                                    $isEmpty = 1;
-                                }
                             } elseif (empty($Industry)) {
                                 $compposition_tbl =
                                     GSecureSQL::query(
@@ -520,9 +508,6 @@ $MajorCourse = $coursetbl[0][0];
                                         $PLevel,
                                         $EType
                                     );
-                                if (empty($compposition_tbl)) {
-                                    $isEmpty = 1;
-                                }
                             } elseif (empty($PLevel)) {
                                 $compposition_tbl =
                                     GSecureSQL::query(
@@ -545,9 +530,6 @@ $MajorCourse = $coursetbl[0][0];
                                         $Industry,
                                         $EType
                                     );
-                                if (empty($compposition_tbl)) {
-                                    $isEmpty = 1;
-                                }
                             } elseif (empty($EType)) {
                                 $compposition_tbl =
                                     GSecureSQL::query(
@@ -570,9 +552,6 @@ $MajorCourse = $coursetbl[0][0];
                                         $Industry,
                                         $PLevel
                                     );
-                                if (empty($compposition_tbl)) {
-                                    $isEmpty = 1;
-                                }
                             } else {
                                 $compposition_tbl =
                                     GSecureSQL::query(
@@ -596,119 +575,107 @@ $MajorCourse = $coursetbl[0][0];
                                         $EType,
                                         $PLevel
                                     );
-                                if (empty($compposition_tbl)) {
-                                    $isEmpty = 1;
-                                }
                             }
-                            if ($isEmpty == 1) {
-                                echo
-                                "
-                                    <div class='blog-post standard-post'>
-                                            <div class='row'>
-                                                <div class='col-md-6'>
-                                                    <label>No results found.</label>
-                                                </div>
-                                            </div>
-                                    </div>
-                                ";
-                            } else {
-                                $count = 0;
-                                foreach ($compposition_tbl as $value) {
-                                    $PositionID = $value[0];
-                                    $CompanyID = $value[1];
-                                    $PostingDateFrom = $value[2];
-                                    $PostingDateTo = $value[3];
-                                    $PositionTitle = $value[4];
-                                    $PositionDescription = $value[5];
-                                    $YearExperience = $value[6];
-                                    $RelatedCourses = $value[7];
-                                    $RelatedCourses = explode(", ", $RelatedCourses);
-                                    $RequiredSkills = $value[8];
-                                    $RequiredSkills = explode(", ", $RequiredSkills);
-                                    foreach ($RelatedCourses as $value3) {
-                                        $rCourse = $value3;
-                                        if ($rCourse == $CourseCode) {
-                                            $company_tbl =
-                                                GSecureSQL::query(
-                                                    "SELECT * FROM companyinfotbl WHERE CompanyID = ?",
-                                                    TRUE,
-                                                    "s",
-                                                    $CompanyID
-                                                );
-                                            foreach ($company_tbl as $value1) {
-                                                $CompanyName = $value1[1];
-                                                $Location = $value1[5];
+                            $aCount = 0;
+                            foreach ($compposition_tbl as $value) {
+                                $PositionID = $value[0];
+                                $CompanyID = $value[1];
+                                $PostingDateFrom = $value[2];
+                                $PostingDateTo = $value[3];
+                                $PositionTitle = $value[4];
+                                $PositionDescription = $value[5];
+                                $YearExperience = $value[6];
+                                $RelatedCourses = $value[7];
+                                $RelatedCourses = explode(", ", $RelatedCourses);
+                                $RequiredSkills = $value[8];
+                                $RequiredSkills = explode(", ", $RequiredSkills);
+                                foreach ($RelatedCourses as $value3) {
+                                    $rCourse = $value3;
+                                    if ($rCourse == $CourseCode) {
+                                        $company_tbl =
+                                            GSecureSQL::query(
+                                                "SELECT * FROM companyinfotbl WHERE CompanyID = ?",
+                                                TRUE,
+                                                "s",
+                                                $CompanyID
+                                            );
+                                        foreach ($company_tbl as $value1) {
+                                            $CompanyName = $value1[1];
+                                            $Location = $value1[5];
 
-                                                $diff_from = date_diff(new DateTime(), new DateTime($PostingDateFrom));
-                                                $diff_to = date_diff(new DateTime(), new DateTime($PostingDateTo));
+                                            $diff_from = date_diff(new DateTime(), new DateTime($PostingDateFrom));
+                                            $diff_to = date_diff(new DateTime(), new DateTime($PostingDateTo));
 
-                                                if ($diff_to->d == 0) {
-                                                    $diff_to->invert = 0;
-                                                }
-
-                                                $a = $diff_from->y >= 0 &&
-                                                    $diff_from->m >= 0 &&
-                                                    $diff_from->d >= 0 &&
-                                                    $diff_from->invert == 1;
-
-                                                $b = $diff_to->y >= 0 &&
-                                                    $diff_to->m >= 0 &&
-                                                    $diff_to->d >= 0 &&
-                                                    $diff_to->invert == 0;
-
-                                                if ($a && $b) {
-                                                    $count++;
-                                                }
+                                            if ($diff_to->d == 0) {
+                                                $diff_to->invert = 0;
                                             }
-                                            ?>
-                                            <div class='blog-post standard-post'>
-                                                <div class="row">
-                                                    <div class="col-md-6">
-                                                        <!-- Post Content -->
-                                                        <div class='post-content'>
-                                                            <div class='post-type'><i class='fa fa-picture-o'></i></div>
-                                                            <h2><a href='#'><?php echo $PositionTitle; ?></a></h2>
-                                                            <h1><p><?php echo $CompanyName; ?></p></h1>
-                                                            <ul class='icons-list'>
-                                                                <?php
-                                                                foreach ($RequiredSkills as $value2) {
-                                                                    $count = 0;
-                                                                    $RequiredSkill = $value2;
-                                                                    if ($count < 3) {
-                                                                        $count++;
-                                                                        ?>
-                                                                        <li>
-                                                                            <i class='fa fa-check-circle'></i> <?php echo $RequiredSkill; ?>
-                                                                        </li>
-                                                                        <?php
+
+                                            $a = $diff_from->y >= 0 &&
+                                                $diff_from->m >= 0 &&
+                                                $diff_from->d >= 0 &&
+                                                $diff_from->invert == 1;
+
+                                            $b = $diff_to->y >= 0 &&
+                                                $diff_to->m >= 0 &&
+                                                $diff_to->d >= 0 &&
+                                                $diff_to->invert == 0;
+
+                                            if ($a && $b) {
+                                                $aCount++;
+                                                ?>
+                                                <div class='blog-post standard-post'>
+                                                    <div class="row">
+                                                        <div class="col-md-6">
+                                                            <!-- Post Content -->
+                                                            <div class='post-content'>
+                                                                <div class='post-type'><i class='fa fa-picture-o'></i>
+                                                                </div>
+                                                                <h2><a href='#'><?php echo $PositionTitle; ?></a></h2>
+                                                                <h1><p><?php echo $CompanyName; ?></p></h1>
+                                                                <ul class='icons-list'>
+                                                                    <?php
+                                                                    foreach ($RequiredSkills as $value2) {
+                                                                        $count = 0;
+                                                                        $RequiredSkill = $value2;
+                                                                        if ($count < 3) {
+                                                                            $count++;
+                                                                            ?>
+                                                                            <li>
+                                                                                <i class='fa fa-check-circle'></i> <?php echo $RequiredSkill; ?>
+                                                                            </li>
+                                                                            <?php
+                                                                        }
                                                                     }
-                                                                }
-                                                                ?>
-                                                            </ul>
-                                                            <div class='hr1' style='margin-bottom:14px;'></div>
-                                                            <ul class='post-meta'>
-                                                                <li><?php echo $YearExperience; ?> year(s) experience
-                                                                </li>
-                                                                <li><?php echo $Location; ?></li>
-                                                            </ul>
-                                                            <a class='main-button' target="_blank"
-                                                               href='view-details.php?id=<?php echo $PositionID; ?>'>View
-                                                                Details <i class='fa fa-angle-right'></i></a>
+                                                                    ?>
+                                                                </ul>
+                                                                <div class='hr1' style='margin-bottom:14px;'></div>
+                                                                <ul class='post-meta'>
+                                                                    <li><?php echo $YearExperience; ?> year(s)
+                                                                        experience
+                                                                    </li>
+                                                                    <li><?php echo $Location; ?></li>
+                                                                </ul>
+                                                                <a class='main-button' target="_blank"
+                                                                   href='view-details.php?id=<?php echo $PositionID; ?>'>View
+                                                                    Details <i class='fa fa-angle-right'></i></a>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-md-6">
+                                                            <p>
+                                                                <B class="accent-color">Description: </B><?php echo $PositionDescription; ?>
+                                                            </p>
                                                         </div>
                                                     </div>
-                                                    <div class="col-md-6">
-                                                        <p>
-                                                            <B class="accent-color">Description: </B><?php echo $PositionDescription; ?>
-                                                        </p>
-                                                    </div>
                                                 </div>
-                                            </div>
-                                            <?php
+                                                <?php
+                                            }
                                         }
                                     }
-                                    if($count == 0){
-                                        echo
-                                        "
+                                }
+                            }
+                            if ($aCount == 0) {
+                                echo
+                                "
                                         <div class='blog-post standard-post'>
                                             <div class='row'>
                                                 <div class='col-md-6'>
@@ -717,8 +684,6 @@ $MajorCourse = $coursetbl[0][0];
                                             </div>
                                         </div>
                                         ";
-                                    }
-                                }
                             }
                         } else {
                             $isEmpty = 0;
@@ -727,122 +692,108 @@ $MajorCourse = $coursetbl[0][0];
                                     "SELECT * FROM comppositiontbl WHERE JSpecialization IN ('$Specialization') ORDER BY PositionTitle ASC",
                                     TRUE
                                 );
-                            if (empty($compposition_tbl)) {
-                                $isEmpty = 1;
-                            }
-                            if ($isEmpty == 1) {
-                                echo
-                                "
-                                    <div class='blog-post standard-post'>
-                                            <div class='row'>
-                                                <div class='col-md-6'>
-                                                    <label>No results found.</label>
-                                                </div>
-                                            </div>
-                                    </div>
-                                ";
-                            } else {
-                                $count = 0;
-                                foreach ($compposition_tbl as $value) {
-                                    $PositionID = $value[0];
-                                    $CompanyID = $value[1];
-                                    $PostingDateFrom = $value[3];
-                                    $PostingDateTo = $value[4];
-                                    $PositionTitle = $value[5];
-                                    $PositionDescription = $value[7];
-                                    $YearExperience = $value[12];
-                                    $RelatedCourses = $value[13];
-                                    $RelatedCourses = explode(", ", $RelatedCourses);
-                                    $RequiredSkills = $value[16];
-                                    $RequiredSkills = explode(", ", $RequiredSkills);
-                                    foreach ($RelatedCourses as $value3) {
-                                        $rCourse = $value3;
-                                        if ($rCourse == $CourseCode) {
-                                            $company_tbl =
-                                                GSecureSQL::query(
-                                                    "SELECT * FROM companyinfotbl WHERE CompanyID = ?",
-                                                    TRUE,
-                                                    "s",
-                                                    $CompanyID
-                                                );
-                                            foreach ($company_tbl as $value1) {
-                                                $CompanyName = $value1[1];
-                                                $Location = $value1[5];
+                            $sCount = 0;
+                            foreach ($compposition_tbl as $value) {
+                                $PositionID = $value[0];
+                                $CompanyID = $value[1];
+                                $PostingDateFrom = $value[3];
+                                $PostingDateTo = $value[4];
+                                $PositionTitle = $value[5];
+                                $PositionDescription = $value[7];
+                                $YearExperience = $value[12];
+                                $RelatedCourses = $value[13];
+                                $RelatedCourses = explode(", ", $RelatedCourses);
+                                $RequiredSkills = $value[16];
+                                $RequiredSkills = explode(", ", $RequiredSkills);
+                                foreach ($RelatedCourses as $value3) {
+                                    $rCourse = $value3;
+                                    if ($rCourse == $CourseCode) {
+                                        $company_tbl =
+                                            GSecureSQL::query(
+                                                "SELECT * FROM companyinfotbl WHERE CompanyID = ?",
+                                                TRUE,
+                                                "s",
+                                                $CompanyID
+                                            );
+                                        foreach ($company_tbl as $value1) {
+                                            $CompanyName = $value1[1];
+                                            $Location = $value1[5];
 
-                                                $diff_from = date_diff(new DateTime(), new DateTime($PostingDateFrom));
-                                                $diff_to = date_diff(new DateTime(), new DateTime($PostingDateTo));
+                                            $diff_from = date_diff(new DateTime(), new DateTime($PostingDateFrom));
+                                            $diff_to = date_diff(new DateTime(), new DateTime($PostingDateTo));
 
-                                                if ($diff_to->d == 0) {
-                                                    $diff_to->invert = 0;
-                                                }
+                                            if ($diff_to->d == 0) {
+                                                $diff_to->invert = 0;
+                                            }
 
-                                                $a = $diff_from->y >= 0 &&
-                                                    $diff_from->m >= 0 &&
-                                                    $diff_from->d >= 0 &&
-                                                    $diff_from->invert == 1;
+                                            $a = $diff_from->y >= 0 &&
+                                                $diff_from->m >= 0 &&
+                                                $diff_from->d >= 0 &&
+                                                $diff_from->invert == 1;
 
-                                                $b = $diff_to->y >= 0 &&
-                                                    $diff_to->m >= 0 &&
-                                                    $diff_to->d >= 0 &&
-                                                    $diff_to->invert == 0;
+                                            $b = $diff_to->y >= 0 &&
+                                                $diff_to->m >= 0 &&
+                                                $diff_to->d >= 0 &&
+                                                $diff_to->invert == 0;
 
-                                                if ($a && $b) {
-                                                    $count++;
-                                                    ?>
-                                                    <div class='blog-post standard-post'>
-                                                        <div class="row">
-                                                            <div class="col-md-6">
-                                                                <!-- Post Content -->
-                                                                <div class='post-content'>
-                                                                    <div class='post-type'><i
-                                                                            class='fa fa-picture-o'></i>
-                                                                    </div>
-                                                                    <h2><a href='#'><?php echo $PositionTitle; ?></a>
-                                                                    </h2>
-                                                                    <h1><p><?php echo $CompanyName; ?></p></h1>
-                                                                    <ul class='icons-list'>
-                                                                        <?php
-                                                                        foreach ($RequiredSkills as $value2) {
-                                                                            $count = 0;
-                                                                            $RequiredSkill = $value2;
-                                                                            if ($count < 3) {
-                                                                                $count++;
-                                                                                ?>
-                                                                                <li>
-                                                                                    <i class='fa fa-check-circle'></i> <?php echo $RequiredSkill; ?>
-                                                                                </li>
-                                                                                <?php
-                                                                            }
-                                                                        }
-                                                                        ?>
-                                                                    </ul>
-                                                                    <div class='hr1' style='margin-bottom:14px;'></div>
-                                                                    <ul class='post-meta'>
-                                                                        <li><?php echo $YearExperience; ?> year(s)
-                                                                            experience
-                                                                        </li>
-                                                                        <li><?php echo $Location; ?></li>
-                                                                    </ul>
-                                                                    <a class='main-button' target="_blank"
-                                                                       href='view-details.php?id=<?php echo $PositionID; ?>'>View
-                                                                        Details <i class='fa fa-angle-right'></i></a>
+                                            if ($a && $b) {
+                                                $sCount++;
+                                                ?>
+                                                <div class='blog-post standard-post'>
+                                                    <div class="row">
+                                                        <div class="col-md-6">
+                                                            <!-- Post Content -->
+                                                            <div class='post-content'>
+                                                                <div class='post-type'><i
+                                                                        class='fa fa-picture-o'></i>
                                                                 </div>
-                                                            </div>
-                                                            <div class="col-md-6">
-                                                                <p>
-                                                                    <B class="accent-color">Description: </B><?php echo $PositionDescription; ?>
-                                                                </p>
+                                                                <h2><a href='#'><?php echo $PositionTitle; ?></a>
+                                                                </h2>
+                                                                <h1><p><?php echo $CompanyName; ?></p></h1>
+                                                                <ul class='icons-list'>
+                                                                    <?php
+                                                                    foreach ($RequiredSkills as $value2) {
+                                                                        $count = 0;
+                                                                        $RequiredSkill = $value2;
+                                                                        if ($count < 3) {
+                                                                            $count++;
+                                                                            ?>
+                                                                            <li>
+                                                                                <i class='fa fa-check-circle'></i> <?php echo $RequiredSkill; ?>
+                                                                            </li>
+                                                                            <?php
+                                                                        }
+                                                                    }
+                                                                    ?>
+                                                                </ul>
+                                                                <div class='hr1' style='margin-bottom:14px;'></div>
+                                                                <ul class='post-meta'>
+                                                                    <li><?php echo $YearExperience; ?> year(s)
+                                                                        experience
+                                                                    </li>
+                                                                    <li><?php echo $Location; ?></li>
+                                                                </ul>
+                                                                <a class='main-button' target="_blank"
+                                                                   href='view-details.php?id=<?php echo $PositionID; ?>'>View
+                                                                    Details <i class='fa fa-angle-right'></i></a>
                                                             </div>
                                                         </div>
+                                                        <div class="col-md-6">
+                                                            <p>
+                                                                <B class="accent-color">Description: </B><?php echo $PositionDescription; ?>
+                                                            </p>
+                                                        </div>
                                                     </div>
-                                                    <?php
-                                                }
+                                                </div>
+                                                <?php
                                             }
                                         }
                                     }
-                                    if($count == 0){
-                                        echo
-                                        "
+                                }
+                            }
+                            if ($sCount == 0) {
+                                echo
+                                "
                                             <div class='blog-post standard-post'>
                                                 <div class='row'>
                                                     <div class='col-md-6'>
@@ -851,8 +802,6 @@ $MajorCourse = $coursetbl[0][0];
                                                 </div>
                                             </div>
                                         ";
-                                    }
-                                }
                             }
                         }
                         ?>
