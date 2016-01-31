@@ -348,12 +348,12 @@ $cLastName = $companyinfo_tbl[0][2];
                     ?>
                 <tbody>
                     <tr>
-                        <td width=20% class=tabletitle><a href=''><?php echo $LastName . ", " . $FirstName; ?></td>
-                        <td width=20% class=tabletitle><?php echo $PositionLevel; ?></a></td>
-                        <td width=15% class=tabletitle><?php echo $MajorCourse; ?></td>
-                        <td width=15% class=tabletitle><?php echo $Location; ?></td>
-                        <td width=15% class=tabletitle><?php echo $Email; ?></td>
-                        <td width='10%'>
+                        <td class=tabletitle><a href=''><?php echo $LastName . ", " . $FirstName; ?></td>
+                        <td class=tabletitle><?php echo $PositionLevel; ?></a></td>
+                        <td class=tabletitle><?php echo $MajorCourse; ?></td>
+                        <td  class=tabletitle><?php echo $Location; ?></td>
+                        <td  class=tabletitle><?php echo $Email; ?></td>
+                        <td >
                             <button class='btn btn-default' data-toggle='modal'
                                     data-target='#AcceptRequest<?php echo $RID; ?>'><i
                                     class='fa fa-check-circle'></i></button>
@@ -384,7 +384,7 @@ $cLastName = $companyinfo_tbl[0][2];
                                     <span>(*)</span> </label>
                                     <div class="form-group">
                                         <textarea type="text" name="AcceptMsg" id="AcceptMsg"
-                                                  class="form-control"> </textarea>
+                                                  class="form-control"></textarea>
                                     </div>
                                 </div>
                                 <div class="modal-footer">
@@ -419,8 +419,7 @@ $cLastName = $companyinfo_tbl[0][2];
                                     <label = "usr" class = "control-label">Message to applicant.
                                     <span>(*)</span> </label>
                                     <div class="form-group">
-                                        <textarea type="text" name="RejectMsg" id="RejectMsg"
-                                                  class="form-control"> </textarea>
+                                        <textarea type="text" name="RejectMsg" id="RejectMsg" class="form-control"> </textarea>
                                     </div>
                                 </div>
                                 <div class="modal-footer">
