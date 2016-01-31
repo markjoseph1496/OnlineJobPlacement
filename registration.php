@@ -421,9 +421,9 @@ include('connection.php');
                             message: "Last name is required."
                         },
                         stringLength: {
-                            min: 3,
+                            min: 1,
                             max: 15,
-                            message: "Last name must be 3-15 characters long."
+                            message: "Last name must be 15 characters long."
                         }
                     }
                 },
