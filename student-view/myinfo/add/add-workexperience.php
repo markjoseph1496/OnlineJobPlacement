@@ -460,7 +460,7 @@ $MajorCourse = $course_qry[0][0];
 </html>
 
 <script type="text/javascript">
-    $('#Duration').(function () {
+    $('#Duration').click(function () {
         if ($(this).is(':checked')) {
             $('#ToDuration').hide();
         } else {
