@@ -207,8 +207,6 @@ $course_tbl =
                             <li><a href="admin-company_pending.php">Pending</a></li>
                         </ul>
                         </li>
-                        <li><a href="admin-adviser.php">Adviser List</a>
-                        </li>
                        <li>
                         <a> Maintenance</a>
                         <ul class="dropdown">
@@ -245,8 +243,6 @@ $course_tbl =
                             <li><a href="admin-companylist.php">Active</a></li>
                             <li><a href="admin-company_pending.php">Pending</a></li>
                         </ul>
-                    </li>
-                    <li><a href="admin-adviser.php">Adviser List</a>
                     </li>
                     <li>
                         <a> Maintenance</a>

@@ -205,8 +205,7 @@ $Total = $TotalStudents[0][0];
                             <li><a href="admin-company_pending.php">Pending</a></li>
                         </ul>
                         </li>
-                        <li><a href="admin-advisert.php">Adviser List</a>
-                        </li>
+                        
                         <li>
                         <a> Maintenance</a>
                         <ul class="dropdown">
@@ -244,8 +243,7 @@ $Total = $TotalStudents[0][0];
                             <li><a href="admin-company_pending.php">Pending</a></li>
                         </ul>
                     </li>
-                    <li><a href="admin-adviser.php">Adviser List</a>
-                    </li>
+                    
                     <li>
                       <a> Maintenance</a>
                         <ul class="dropdown">
