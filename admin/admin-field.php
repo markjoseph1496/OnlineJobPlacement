@@ -214,8 +214,6 @@ $Total = $studentinfo_tbl[0][0];
                             <li><a href="admin-company_pending.php">Pending</a></li>
                         </ul>
                         </li>
-                        <li><a href="admin-adviser.php">Adviser List</a>
-                        </li>
                         <li>
                         <a> Maintenance</a>
                         <ul class="dropdown">
@@ -252,8 +250,6 @@ $Total = $studentinfo_tbl[0][0];
                             <li><a href="admin-companylist.php" class = "active">Active</a></li>
                             <li><a href="admin-company_pending.php">Pending</a></li>
                         </ul>
-                    </li>
-                    <li><a href="admin-adviser.php">Adviser List</a>
                     </li>
                     <li>
                        <a> Maintenance</a>

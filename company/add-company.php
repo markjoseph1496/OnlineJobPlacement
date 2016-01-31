@@ -54,7 +54,7 @@ if (isset($_GET['btnsave'])) {
     GSecureSQL::query(
         "INSERT INTO comppositiontbl (CompanyID,PostingDateFrom,PostingDateTo,PositionTitle,PositionLevel,JobDescription,JSpecialization,EType,AvPosition,MonthlySalary,YExperience,RelatedCourses,DegreeLevel,Reqskills,Languages) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)",
         FALSE,
-        "ssssssssssssss",
+        "sssssssssssssss",
         $CompanyID,
         $DateFrom,
         $DateTo,

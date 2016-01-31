@@ -185,6 +185,28 @@ if(isset($_POST['lid'])){
 
 }
 
+// Add User
+if (isset($_POST['type'])) {
+    $isAvailable = true;
+    $aUsername = $_POST['aUsername'];
+    $Result =
+        GSecureSQL::query(
+            "SELECT Username FROM admintbl WHERE Username = ?",
+            TRUE,
+            "s",
+            $aUsername
+        );
+
+    if (count($Result) == 0) {
+        $isAvailable = true;
+    } else {
+        $isAvailable = false;
+    }
+    echo json_encode(array(
+        'valid' => $isAvailable,
+    ));
+}
+
 if (isset($_POST['aFirstName'])) {
     $aUsername = $_POST['aUsername'];
     $aPassword = $_POST['aPassword'];
@@ -214,3 +236,4 @@ if (isset($_POST['aFirstName'])) {
     header("location: admin-users.php?id=1");
 
     }
+// End of Add User

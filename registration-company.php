@@ -177,7 +177,7 @@ include('connection.php');
                     <div class="row field">
                         <div class="form-group">
                             <label>Password </label>
-                            <input type="text" class="form-control" id="sPassword" name="sPassword">
+                            <input type="text" class="form-control" id="cPassword" name="cPassword">
                         </div>
                     </div>
                     <div class="row field">
@@ -207,6 +207,12 @@ include('connection.php');
                         <div class="form-group">
                             <label>Last Name <span>(*)</span></label>
                             <input type="text" class="form-control" id="LastName" name="LastName">
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label>Contact Number<span>(*)</span></label>
+                            <input type="text" class="form-control" id="Contact" name="Contact">
                         </div>
                     </div>
                     <div class="col-md-6">
@@ -294,7 +300,7 @@ include('connection.php');
                             message: "Compamy Name is required."
                         },
                         stringLength: {
-                            min: 5,
+                            min: 1,
                             max: 15,
                             message: "Company Name is invalid."
                         },
@@ -311,7 +317,7 @@ include('connection.php');
                             type: 'POST'
                         }
                     }
-                },
+                }, 
                 Industry: {
                     validators: {
                         notEmpty: {
@@ -339,19 +345,6 @@ include('connection.php');
                         regexp: {
                             regexp: /^[a-z\s]+$/i,
                             message: "First Name can consist of alphabetical characters and spaces only"
-                        }
-                    }
-                },
-                MiddleName: {
-                    validators: {
-                        stringLength: {
-                            min: 3,
-                            max: 15,
-                            message: "Middle name must be 3-15 characters long."
-                        },
-                        regexp: {
-                            regexp: /^[a-z\s]+$/i,
-                            message: "Middle Name can consist of alphabetical characters and spaces only"
                         }
                     }
                 },

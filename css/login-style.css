@@ -3183,6 +3183,12 @@ html.flexbox .testimonial-company--coinbase {
     height: 100%;
 }
 
+.ojt-login {
+    background: url(../img/ojt.jpg) no-repeat center center fixed;
+    background-size: cover;
+    width: 100%;
+    height: 100%;
+}
 .login-block {
     width: 320px;
     padding: 20px;

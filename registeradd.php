@@ -23,7 +23,7 @@ if (isset($_POST['type'])) {
 }
 
 if (isset($_POST['resumelink'])) {
-    /*$StudentID = $_POST['StudentID'];*/
+    $StudentID = $_POST['StudentID'];
     $FirstName = $_POST['FirstName'];
     $LastName = $_POST['LastName'];
     $Birthday = $_POST['Birthday'];
@@ -36,8 +36,6 @@ if (isset($_POST['resumelink'])) {
     $GraduatedMonth = $_POST['GraduatedMonth'];
     $GraduatedYear = $_POST['GraduatedYear'];
 
-    $Password = "1";
-
     $FirstName = ucwords(strtolower($FirstName));
     $LastName = ucwords(strtolower($LastName));
 
@@ -45,27 +43,41 @@ if (isset($_POST['resumelink'])) {
     $Password = hash('sha512', $Password . $salt);
 
     $yeargraduated = $GraduatedMonth . " " . $GraduatedYear;
-    $EducAttain = mysql_real_escape_string($EducAttain);
 
-    $query = "INSERT INTO studentinfotbl (FirstName,LastName,Birthdate,Password,SaltedPassword,EmploymentStatus,MajorCourse,ProfileImage) values  ('$FirstName','$LastName','$Birthday','$Password','$salt','Unemployed','$Course','../../img/man-icon.png')";
-    $getstudid =
-        GSecureSQL::query(
-            "SELECT StudentID FROM studentinfotbl ORDER BY StudentID DESC LIMIT 1",
-            TRUE
+    GSecureSQL::query(
+        "INSERT INTO studentinfotbl (StudentID,FirstName,LastName,Birthdate,Password,SaltedPassword,MajorCourse) values (?,?,?,?,?,?,?)",
+        FALSE,
+        "sssssss",
+        $StudentID,
+        $FirstName,
+        $LastName,
+        $Birthday,
+        $Password,
+        $salt,
+        $Course
         );
-    $StudentID = $getstudid[0][0] + 1;
 
-    $query1 = "INSERT INTO schooltbl (StudentID,School,Attainment,Course,Graduated) values  ('$StudentID','STI College Caloocan','$EducAttain','$Course','$yeargraduated')";
-    $query2 = "INSERT INTO studcontactstbl (StudentID,Email,MobileNumber,City) values  ('$StudentID','$Email','$MobileNumber','$City')";
+    GSecureSQL::query(
+        "INSERT INTO schooltbl (StudentID,School,Attainment,Course,Graduated) values (?,'STI College Caloocan',?,?,?)",
+        FALSE,
+        "ssss",
+        $StudentID,
+        $EducAttain,
+        $Course,
+        $yeargraduated
+        );
 
-    $Result = mysql_query($query);
-    $Result1 = mysql_query($query1);
-    $Result2 = mysql_query($query2);
-    echo "
-            <script type='text/javascript'>
-            alert('You have successfully Registered.');
-            location.href='./registration.php';
-            </script>
-            ";
-}
+    GSecureSQL::query(
+        "INSERT INTO studcontactstbl (StudentID,Email,MobileNumber,City) values (?,?,?,?)",
+        FALSE,
+        "ssss",
+        $StudentID,
+        $Email,
+        $MobileNumber,
+        $City
+        );
+
+    header("location: registration.php");
+
+    }
 ?>

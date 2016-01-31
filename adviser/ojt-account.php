@@ -124,7 +124,6 @@ if (isset($_SESSION['AdminID'])) {
     <!-- .top-bar -->
     <!-- End Top Bar -->
 
-
     <!-- Start  Logo & Naviagtion  -->
     <div class="navbar navbar-default navbar-top">
         <div class="container">
@@ -150,7 +149,7 @@ if (isset($_SESSION['AdminID'])) {
                         <!-- Modal content-->
                         <div class="modal-content">
                             <div class="modal-header">
-                                <button style=type="button" class="close" data-dismiss="modal">&times;</button>
+                                <button style = type="button" class="close" data-dismiss="modal">&times;</button>
                                 <h4 class="modal-title">Log out?</h4>
                             </div>
                             <div class="modal-body">
@@ -172,81 +171,27 @@ if (isset($_SESSION['AdminID'])) {
                 </div>
                 <!-- End Sign-out -->
                 <!-- Start Navigation List -->
-                <ul class="nav navbar-nav navbar-right">
-                    <li>
-                        <a href="admin.php">Home</a>
-                    </li>
-                    <li>
-                    <a>Reports</a>
-                        <ul class="dropdown">
-                            <li><a href="admin-reports.php" class = "active">Alumni Reports</a></li>
-                            <li><a href="admin-ojtreports.php">OJT Reports</a></li>
-                        </ul>
-                    </li>
-                    <li>
-                        <a href="admin-account.php">Account</a>
-                    </li>
-                    <li>
-                        <a href="admin-requested.php">Requested</a>
-                    </li>
-                    <li>
-                        <a>Company List</a>
-                        <ul class="dropdown">
-                            <li><a href="admin-companylist.php" class="active">Active</a></li>
-                            <li><a href="admin-company_pending.php">Pending</a></li>
-                        </ul>
-                    </li>
-                    <li><a href="admin-adviser.php">Adviser List</a>
-                    </li>
-                    <li>
-                        <a> Maintenance</a>
-                        <ul class="dropdown">
-                            <li><a class="active" href="admin-maintenance.php">Courses</a></li>
-                            <li><a href="admin-users.php">Users</a></li>
-                        </ul>
-                    </li>
+              <ul class="nav navbar-nav navbar-right">
+                <li>
+                    <a href="ojt-adviser.php">Home</a>
+                </li>
+                <li>
+                    <a href="ojt-account.php">Account</a>
+                </li>
                 </ul>
                 <!-- End Navigation List -->
             </div>
         </div>
         <!-- Mobile Menu Start -->
         <ul class="wpb-mobile-menu">
-            <ul class="nav navbar-nav navbar-right">
+           <ul class="nav navbar-nav navbar-right">
                 <li>
-                    <a href="admin.php">Home</a>
+                    <a href="ojt-adviser.php">Home</a>
                 </li>
                 <li>
-                    <a>Reports</a>
-                        <ul class="dropdown">
-                            <li><a href="admin-reports.php" class = "active">Alumni Reports</a></li>
-                            <li><a href="admin-ojtreports.php">OJT Reports</a></li>
-                        </ul>
-                    </li>
-                <li>
-                    <a href="admin-account.php">Account</a>
+                    <a href="ojt-account.php">Account</a>
                 </li>
-                <li>
-                    <a href="admin-requested.php">Requested</a>
-                </li>
-                <li>
-                    <a>Company List</a>
-                    <ul class="dropdown">
-                        <li><a href="admin-companylist.php">Active</a></li>
-                        <li><a href="admin-company_pending.php">Pending</a></li>
-                    </ul>
-                </li>
-                <li><a href="admin-adviser.php">Adviser List</a>
-                </li>
-                <li>
-                    <a> Maintenance</a>
-                    <ul class="dropdown">
-                        <ul class="dropdown">
-                            <li><a href="admin-maintenance.php">Courses</a></li>
-                            <li><a class="active" href="admin-users.php">Users</a></li>
-                        </ul>
-                    </ul>
-                </li>
-            </ul>
+                </ul>
         </ul>
         </header>
         <!-- Mobile Menu End -->
@@ -262,7 +207,7 @@ if (isset($_SESSION['AdminID'])) {
         <div class="container">
             <div class="row">
                 <div class="col-md-6">
-                    <h2>Add User</h2>
+                    <h2>Reports</h2>
                 </div>
             </div>
         </div>
@@ -271,87 +216,140 @@ if (isset($_SESSION['AdminID'])) {
 
     <!--Content-->
     <br><br><br>
-    <form method="POST" action="functions.php" name="AddUser" id="AddUser" autocomplete="off">
-    <div class="container">
+
+   <div class="container">
+    <form name="UpdateAdmin" id="UpdateAdmin" autocomplete="off" action="functions.php" method="POST">
         <div class="col-md-12">
             <div class="row field">
-                <div class="col-md-2 fieldcol">
-                    <label>Username:</label>
-                </div>
-                <div class="col-md-4 fieldcol">
-                    <div class="form-group">
-                        <input type="text" class="form-control" name="aUsername" id="aUsername">
-                    </div>
-                </div>
-            </div>
-            <div class="row field">
-                <div class="col-md-2 fieldcol">
-                    <label>Password:</label>
-                </div>
-                <div class="col-md-4 fieldcol">
-                    <div class="form-group">
-                        <input type="password" name="aPassword" id="aPassword" class="form-control">
-                    </div>
-                </div>
-            </div>
-            <div class="row field">
-                <div class="col-md-2 fieldcol">
-                    <label>First Name:</label>
-                </div>
-                <div class="col-md-4 fieldcol">
-                    <div class="form-group">
-                        <input type="text" name="aFirstName" id="aFirstName" class="form-control">
-                    </div>
-                </div>
-            </div>
-            <div class="row field">
-                <div class="col-md-2 fieldcol">
-                    <label>MiddleName:</label>
-                </div>
-                <div class="col-md-4 fieldcol">
-                    <div class="form-group">
-                        <input type="text" name="aMiddleName" id="aMiddleName" class="form-control">
-                    </div>
-                </div>
-            </div>
-            <div class="row field">
-                <div class="col-md-2 fieldcol">
-                    <label>Last Name: </label>
-                </div>
-                <div class="col-md-4 fieldcol">
-                    <div class="form-group">
-                        <input type="text" name="aLastName" id="aLastName" class="form-control">
-                    </div>
-                </div>
-            </div>
-            <div class="row field">
-                <div class="col-md-2 fieldcol">
-                    <label>Position:</label>
-                </div>
-                <div class="col-md-4 fieldcol">
-                    <div class="form-group">
-                        <input type="text" name="aPosition" id="aPosition" class="form-control">
-                    </div>
-                </div>
-            </div>
-            <div class="row field">
+                <?php
 
+                if (isset($_GET['id'])) {
+                    $id = $_GET['id'];
+                    if ($id == 1) {
+                        echo '
+                    <div class="alert alert-success">
+                        <span class="glyphicon glyphicon-info-sign"></span> 
+                        Username successfully changed.
+                    </div>
+                    ';
+                    } elseif ($id == 2) {
+                        echo '
+                    <div class="alert alert-success">
+                        <span class="glyphicon glyphicon-info-sign"></span> 
+                        Password successfully changed.
+                    </div>
+                    ';
+                    } elseif ($id == 3) {
+                        echo '
+                    <div class="alert alert-success">
+                        <span class="glyphicon glyphicon-info-sign"></span> 
+                        Personal info successfully updated.
+                    </div>
+                    ';
+                    }
+
+                }
+                ?>
                 <div class="col-md-2 fieldcol">
-                    <label>Address:</label>
+                    <label = "usr" class = "control-label"> Username: </label>
                 </div>
                 <div class="col-md-4 fieldcol">
                     <div class="form-group">
-                        <input type="text" name="aAddress" id="aAddress" class="form-control">
+                        <label = "usr" class = "control-label"><?php echo $Username; ?></label>
+                    </div>
+                </div>
+                <div class="col-md-3 fieldcol">
+                    <div class="form-group">
+                        <div class="box">
+                            <button class="btn btn-default" data-toggle="modal" data-target="#ChangeUsername">Change
+                                Username
+                            </button>
+                        </div>
                     </div>
                 </div>
             </div>
             <div class="row field">
                 <div class="col-md-2 fieldcol">
-                    <label>Contact Number:</label>
+                    <label = "usr" class = "control-label"> Password: </label>
                 </div>
                 <div class="col-md-4 fieldcol">
                     <div class="form-group">
-                        <input type="text" name="aContactNumber" id="aContactNumber" class="form-control">
+                        <label = "usr" class = "control-label">**********</label>
+                    </div>
+                </div>
+                <div class="col-md-3 fieldcol">
+                    <div class="form-group">
+                        <div class="box">
+                            <button class="btn btn-default" data-toggle="modal" data-target="#ChangePassword">
+                                ChangePassword
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row field">
+                <div class="col-md-2 fieldcol">
+                    <label>First Name <span>(*)</span></label>
+                </div>
+                <div class="col-md-4 fieldcol">
+                    <div class="form-group">
+                        <input type="text" name="FirstName" id="FirstName" class="form-control"
+                               value="<?php echo $FirstName; ?>">
+                    </div>
+                </div>
+            </div>
+            <div class="row field">
+                <div class="col-md-2 fieldcol">
+                    <label>Middle Name <span>(*)</span></label>
+                </div>
+                <div class="col-md-4 fieldcol">
+                    <div class="form-group">
+                        <input type="text" name="MiddleName" id="MiddleName" class="form-control"
+                               value="<?php echo $MiddleName; ?>">
+                    </div>
+                </div>
+            </div>
+            <div class="row field">
+                <div class="col-md-2 fieldcol">
+                    <label>Last Name <span>(*)</span></label>
+                </div>
+                <div class="col-md-4 fieldcol">
+                    <div class="form-group">
+                        <input type="text" name="LastName" id="LastName" class="form-control"
+                               value="<?php echo $LastName; ?>">
+                    </div>
+                </div>
+            </div>
+            <div class="row field">
+                <div class="col-md-2 fieldcol">
+                    <label>Position <span>(*)</span></label>
+                </div>
+                <div class="col-md-4 fieldcol">
+                    <div class="form-group">
+                        <input type="text" name="Position" id="Position" class="form-control"
+                               value="<?php echo $Position; ?>">
+                    </div>
+                </div>
+            </div>
+            <div class="row field">
+                <div class="col-md-2 fieldcol">
+                    <label>Address <span>(*)</span></label>
+                </div>
+                <div class="col-md-4 fieldcol">
+                    <div class="form-group">
+                        <input type="text" name="Address" id="Address" class="form-control"
+                               value="<?php echo $Address; ?>">
+                    </div>
+                </div>
+            </div>
+            <div class="row field">
+                <div class="col-md-2 fieldcol">
+                    <label>Contact Number <span>(*)</span></label>
+                </div>
+                <div class="col-md-4 fieldcol">
+                    <div class="form-group">
+                        <input type="text" name="ContactNumber" id="ContactNumber" class="form-control"
+                               value="<?php echo $ContactNumber ?>">
                     </div>
                 </div>
             </div>
@@ -364,129 +362,163 @@ if (isset($_SESSION['AdminID'])) {
                 <button type="submit" class="btn-system btn-large">Cancel</button>
             </div>
         </div>
-    </div>
     </form>
+</div>
 </body>
 <script type="text/javascript" src="../js/script.js"></script>
-
+</html>
 <script type="text/javascript">
     $(document).ready(function () {
-        var validator = $("#AddUser").bootstrapValidator({
+        $("#change-Username-form").bootstrapValidator({
             feedbackIcons: {
                 valid: "glyphicon glyphicon-ok",
                 invalid: "glyphicon glyphicon-remove",
                 validating: "glyphicon glyphicon-refresh"
             },
-           fields: {
-                aUsername: {
+            fields: {
+                ModalNewUsername: {
                     validators: {
                         notEmpty: {
-                            message: "UserName is required."
+                            message: "Username is required."
                         },
-                        stringLength: {
-                            min: 5,
-                            max: 15,
-                            message: "UserName is invalid."
-                        },
-                        regexp: {
-                            regexp: /^[a-z\s]+$/i,
-                            message: "UserName can consist of alphabetical characters and spaces only"
-                        },
-                        remote: {
-                            message: 'The UserName already exists',
-                            url: 'functions.php',
-                            data: {
-                                type: 'aUsername'
-                            },
-                            type: 'POST'
+                        identical: {
+                            field: "ModalConfirmUsername",
+                            message: "Username and Confirm Username mismatched."
                         }
                     }
                 },
-                aPassword: {
+                ModalConfirmUsername: {
                     validators: {
                         notEmpty: {
-                            message: "Password To is required."
+                            message: "Username is required."
+                        },
+                        identical: {
+                            field: "ModalNewUsername",
+                            message: "Username and Confirm Username mismatched."
+                        }
+                    }
+                }
+            }
+        });
+
+        $("#change-password-form").bootstrapValidator({
+            feedbackIcons: {
+                valid: "glyphicon glyphicon-ok",
+                invalid: "glyphicon glyphicon-remove",
+                validating: "glyphicon glyphicon-refresh"
+            },
+            fields: {
+                ModalOldPassword: {
+                    validators: {
+                        notEmpty: {
+                            message: "Old Password is required."
                         }
                     }
                 },
-                aFirstName: {
+                ModalNewPassword: {
                     validators: {
                         notEmpty: {
-                            message: "First Name Level is required."
+                            message: "New Password is required."
+                        }
+                    }
+                },
+                ModalConfirmPassword: {
+                    validators: {
+                        notEmpty: {
+                            message: "Confirm Password is required."
+                        },
+                        identical: {
+                            field: "ModalNewPassword",
+                            message: "Password mismatched."
+                        }
+                    }
+                }
+            }
+        });
+
+        $("#UpdateAdmin").bootstrapValidator({
+            feedbackIcons: {
+                valid: "glyphicon glyphicon-ok",
+                invalid: "glyphicon glyphicon-remove",
+                validating: "glyphicon glyphicon-refresh"
+            },
+            fields: {
+                FirstName: {
+                    validators: {
+                        notEmpty: {
+                            message: "This field is required."
                         },
                         regexp: {
                             regexp: /^[a-z\s]+$/i,
                             message: "First Name can consist of alphabetical characters and spaces only"
-                        },
-                        stringLength: {
-                            min: 3,
-                            max: 20,
-                            message: "First Name must be 3-20 digit only."
                         }
                     }
                 },
-                aLastName: {
+                MiddleName: {
+                    validators: {
+                        regexp: {
+                            regexp: /^[a-z\s]+$/i,
+                            message: "Middle Name can consist of alphabetical characters and spaces only"
+                        }
+                    }
+                },
+                LastName: {
                     validators: {
                         notEmpty: {
-                            message: "Last Name is required."
+                            message: "This field is required."
                         },
                         regexp: {
                             regexp: /^[a-z\s]+$/i,
-                            message: "Last Name can consist of alphabetical characters and spaces only"
-                        },
-                        stringLength: {
-                            min: 3,
-                            max: 20,
-                            message: "Last Name must be 3-20 digit only."
+                            message: "Last Name Name can consist of alphabetical characters and spaces only"
                         }
                     }
                 },
-                aPosition: {
+                Position: {
                     validators: {
                         notEmpty: {
-                            message: "Position is required."
+                            message: "This field is required."
+                        }
+                    }
+                },
+                Department: {
+                    validators: {
+                        notEmpty: {
+                            message: "This field is required."
+                        }
+                    }
+                },
+                Address: {
+                    validators: {
+                        notEmpty: {
+                            message: "This field is required."
+                        }
+                    }
+                },
+                ContactNumber: {
+                    validators: {
+                        notEmpty: {
+                            message: "This field is required."
                         },
                         regexp: {
-                            regexp: /^[a-z\s]+$/i,
-                            message: "Position Name can consist of alphabetical characters and spaces only"
-                        },
-                        stringLength: {
-                            min: 3,
-                            max: 20,
-                            message: "Position must be 3-20 digit only."
-                        }
-                    }
-                },
-                aAddress: {
-                    validators: {
-                        notEmpty: {
-                            message: "Address Position is required."
-                        },
-                        stringLength: {
-                            min: 5,
-                            max: 30,
-                            message: "Address must be 5-30 digit only."
-                        }
-                    }
-                },
-                aContactNumber: {
-                    validators: {
-                        notEmpty: {
-                            message: "Contact Number is required."
-                        },
-                        stringLength: {
-                            min: 3,
-                            max: 11,
-                            message: "Contact Number must be 11 digit only."
-                        },
-                        regexp: {
-                            regexp: /^[0-9\s]+$/i,
-                            message: "Contact Number can consist of Positive Numbers only"
+                            regexp: /^[0-9]+$/i,
+                            message: "Contact Number can consist of numeric characters only"
                         }
                     }
                 }
             }
         });
     });
+
+
+    $("button#submitPassword").click(function () {
+        $.post($("#change-password-form").attr("action"),
+            $("#change-password-form :input").serializeArray(),
+            function (data) {
+                $("div#message").html(data);
+            });
+
+        $("#change-password-form").submit(function () {
+            return false;
+        });
+    });
 </script>
-</html>
