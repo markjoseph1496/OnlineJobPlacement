@@ -211,6 +211,12 @@ include('connection.php');
                     </div>
                     <div class="col-md-6">
                         <div class="form-group">
+                            <label>Contact Number<span>(*)</span></label>
+                            <input type="text" class="form-control" id="Contact" name="Contact">
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
                             <label>Position <span>(*)</span></label>
                             <input type="text" class="form-control" id="Position" name="Position">
                         </div>
@@ -294,7 +300,7 @@ include('connection.php');
                             message: "Compamy Name is required."
                         },
                         stringLength: {
-                            min: 5,
+                            min: 1,
                             max: 15,
                             message: "Company Name is invalid."
                         },

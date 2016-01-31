@@ -32,6 +32,7 @@ if(isset($_GET['FirstName'])){
    $FirstName = $_GET['FirstName'];
    $MiddleName = $_GET['MiddleName'];
    $LastName = $_GET['LastName'];
+   $ContactNum - $_GET['Contact'];
    $Position = $_GET['Position'];
    $Department = $_GET['Department'];
 
@@ -44,9 +45,9 @@ if(isset($_GET['FirstName'])){
     $Password = hash('sha512', $Password . $salt);
 
     GSecureSQL::query(
-        "INSERT INTO companyinfotbl (CompanyName,Industry,City,Email,Password,SaltedPassword,FirstName,MiddleName,LastName,Position,Department) values (?,?,?,?,?,?,?,?,?,?,?)",
+        "INSERT INTO companyinfotbl (CompanyName,Industry,City,Email,Password,SaltedPassword,FirstName,MiddleName,LastName,ContactNumber,Position,Department) values (?,?,?,?,?,?,?,?,?,?,?,?)",
         FALSE,
-        "sssssssssss",
+        "ssssssssssss",
         $CompanyName,
         $Industry,
         $City,
@@ -56,6 +57,7 @@ if(isset($_GET['FirstName'])){
         $FirstName,
         $MiddleName,
         $LastName,
+        $ContactNum,
         $Position,
         $Department
 
