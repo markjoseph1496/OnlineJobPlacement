@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50616
 File Encoding         : 65001
 
-Date: 2016-01-31 01:24:58
+Date: 2016-01-31 18:12:36
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -568,7 +568,7 @@ CREATE TABLE `schooltbl` (
   `Graduated` varchar(255) NOT NULL,
   `_Default` varchar(10) NOT NULL,
   PRIMARY KEY (`SchoolID`)
-) ENGINE=MyISAM AUTO_INCREMENT=145 DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM AUTO_INCREMENT=146 DEFAULT CHARSET=latin1;
 
 -- ----------------------------
 -- Records of schooltbl
@@ -717,6 +717,7 @@ INSERT INTO schooltbl VALUES ('141', '820120140', 'STI College Caloocan', 'Bache
 INSERT INTO schooltbl VALUES ('142', '820120141', 'STI College Caloocan', 'Bachelor\'s/College Degree', 'BSHRM', '05 2015', '');
 INSERT INTO schooltbl VALUES ('143', '00820120001', 'Malinta national highschool', 'High School Diploma', 'BSCS', '03 2015', '0');
 INSERT INTO schooltbl VALUES ('144', '820120164', 'STI College Caloocan', 'Bachelor\'s/College Degree', 'BSCS', '05 2015', '');
+INSERT INTO schooltbl VALUES ('145', '12321312', 'STI College Caloocan', 'Bachelor\'s/College Degree', 'ABCOMM', '05 2015', '');
 
 -- ----------------------------
 -- Table structure for `seminartbl`
@@ -820,7 +821,7 @@ CREATE TABLE `studcontactstbl` (
   `WorkNumber` varchar(255) NOT NULL,
   `City` varchar(255) NOT NULL,
   PRIMARY KEY (`ContactsID`)
-) ENGINE=MyISAM AUTO_INCREMENT=165 DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM AUTO_INCREMENT=166 DEFAULT CHARSET=latin1;
 
 -- ----------------------------
 -- Records of studcontactstbl
@@ -989,13 +990,14 @@ INSERT INTO studcontactstbl VALUES ('161', '00820120161', 'ennaesor.zurc24@gmail
 INSERT INTO studcontactstbl VALUES ('162', '00820120162', 'markguilercuevas@yahoo.com', '', '09328470260', '', '', '', '', 'Navotas City');
 INSERT INTO studcontactstbl VALUES ('163', '00820120163', 'philipperaymart@gmail.com', '', '09163515230', '', '', '', '', 'Quezon City');
 INSERT INTO studcontactstbl VALUES ('164', '00820120164', 'berdensen@gmail.com', '', '09213412641', '', '', '', '', 'Pasig City');
+INSERT INTO studcontactstbl VALUES ('165', '12321312', 'aaaa@cc.cc', '', '12312312312', '', '', '', '', 'San Juan City');
 
 -- ----------------------------
 -- Table structure for `studentinfotbl`
 -- ----------------------------
 DROP TABLE IF EXISTS `studentinfotbl`;
 CREATE TABLE `studentinfotbl` (
-  `StudentID` int(255) NOT NULL AUTO_INCREMENT,
+  `StudentID` varchar(255) NOT NULL,
   `Password` varchar(255) NOT NULL,
   `SaltedPassword` varchar(255) NOT NULL,
   `FirstName` varchar(255) NOT NULL,
