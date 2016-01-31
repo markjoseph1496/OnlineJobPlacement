@@ -3,7 +3,7 @@
 
 <head>
     <!-- Basic -->
-    <title>Online JPMS</title>
+    <title>OJPMS</title>
 
     <!-- Define Charset -->
     <meta charset="utf-8">

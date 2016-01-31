@@ -2,7 +2,7 @@
 <html>
 <head>
 
-    <title>Online JPMS</title>
+    <title>OJPMS | Login Company</title>
 
 
     <!-- Bootstrap CSS -->

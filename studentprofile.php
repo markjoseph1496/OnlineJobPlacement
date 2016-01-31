@@ -4,7 +4,7 @@
 <head>
 
     <!-- Basic -->
-    <title>OJPMS</title>
+    <title>OJPMS | Resumé Link</title>
 
     <!-- Define Charset -->
     <meta charset="utf-8">
