@@ -47,7 +47,19 @@ if (isset($_POST['resumelink'])) {
     $yeargraduated = $GraduatedMonth . " " . $GraduatedYear;
     $EducAttain = mysql_real_escape_string($EducAttain);
 
-    $query = "INSERT INTO studentinfotbl (FirstName,LastName,Birthdate,Password,SaltedPassword,EmploymentStatus,MajorCourse,ProfileImage) values  ('$FirstName','$LastName','$Birthday','$Password','$salt','Unemployed','$Course','../../img/man-icon.png')";
+    GSecureSQL::query(
+        "INSERT INTO studentinfotbl (FirstName,LastName,Birthday,Password,SaltedPassword,MajorCourse) values (?,?,?,?,?,?)",
+        FALSE,
+        "ssssss",
+        $FirstName,
+        $LastName,
+        $Birthday,
+        $Password,
+        $salt,
+        $Course
+
+        );
+
     $getstudid =
         GSecureSQL::query(
             "SELECT StudentID FROM studentinfotbl ORDER BY StudentID DESC LIMIT 1",
@@ -55,17 +67,30 @@ if (isset($_POST['resumelink'])) {
         );
     $StudentID = $getstudid[0][0] + 1;
 
-    $query1 = "INSERT INTO schooltbl (StudentID,School,Attainment,Course,Graduated) values  ('$StudentID','STI College Caloocan','$EducAttain','$Course','$yeargraduated')";
-    $query2 = "INSERT INTO studcontactstbl (StudentID,Email,MobileNumber,City) values  ('$StudentID','$Email','$MobileNumber','$City')";
+    GSecureSQL::query(
+        "INSERT INTO schooltbl (StudentID,School,Attainment,Course,Graduated) values (?,?,?,?,?)",
+        FALSE,
+        "sssss",
+        $StudentID,
+        $School,
+        $Attainment,
+        $Course,
+        $Graduated
 
-    $Result = mysql_query($query);
-    $Result1 = mysql_query($query1);
-    $Result2 = mysql_query($query2);
-    echo "
-            <script type='text/javascript'>
-            alert('You have successfully Registered.');
-            location.href='./registration.php';
-            </script>
-            ";
-}
+        );
+
+    GSecureSQL::query(
+        "INSERT INTO studcontactstbl (StudentID,Email,MobileNumber,City) values (?,?,?,?)",
+        FALSE,
+        "ssss",
+        $StudentID,
+        $Email,
+        $MobileNumber,
+        $City
+
+        );
+
+    header("location: registration.php");
+
+    }
 ?>

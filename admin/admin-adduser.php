@@ -280,7 +280,7 @@ if (isset($_SESSION['AdminID'])) {
                 </div>
                 <div class="col-md-4 fieldcol">
                     <div class="form-group">
-                        <input type="text" name="aUsername" id="aUsername" class="form-control">
+                        <input type="text" class="form-control" name="aUsername" id="aUsername">
                     </div>
                 </div>
             </div>
@@ -381,7 +381,24 @@ if (isset($_SESSION['AdminID'])) {
                 aUsername: {
                     validators: {
                         notEmpty: {
-                            message: "Username is required."
+                            message: "UserName is required."
+                        },
+                        stringLength: {
+                            min: 5,
+                            max: 15,
+                            message: "UserName is invalid."
+                        },
+                        regexp: {
+                            regexp: /^[a-z\s]+$/i,
+                            message: "UserName can consist of alphabetical characters and spaces only"
+                        },
+                        remote: {
+                            message: 'The UserName already exists',
+                            url: 'functions.php',
+                            data: {
+                                type: 'aUsername'
+                            },
+                            type: 'POST'
                         }
                     }
                 },
@@ -397,10 +414,14 @@ if (isset($_SESSION['AdminID'])) {
                         notEmpty: {
                             message: "First Name Level is required."
                         },
+                        regexp: {
+                            regexp: /^[a-z\s]+$/i,
+                            message: "First Name can consist of alphabetical characters and spaces only"
+                        },
                         stringLength: {
                             min: 3,
                             max: 20,
-                            message: "First Name must be 3-20 digit long."
+                            message: "First Name must be 3-20 digit only."
                         }
                     }
                 },
@@ -409,10 +430,14 @@ if (isset($_SESSION['AdminID'])) {
                         notEmpty: {
                             message: "Last Name is required."
                         },
+                        regexp: {
+                            regexp: /^[a-z\s]+$/i,
+                            message: "Last Name can consist of alphabetical characters and spaces only"
+                        },
                         stringLength: {
                             min: 3,
                             max: 20,
-                            message: "Last Name must be 3-20 digit long."
+                            message: "Last Name must be 3-20 digit only."
                         }
                     }
                 },
@@ -421,10 +446,14 @@ if (isset($_SESSION['AdminID'])) {
                         notEmpty: {
                             message: "Position is required."
                         },
+                        regexp: {
+                            regexp: /^[a-z\s]+$/i,
+                            message: "Position Name can consist of alphabetical characters and spaces only"
+                        },
                         stringLength: {
                             min: 3,
                             max: 20,
-                            message: "Position must be 3-20 digit long."
+                            message: "Position must be 3-20 digit only."
                         }
                     }
                 },
@@ -436,7 +465,7 @@ if (isset($_SESSION['AdminID'])) {
                         stringLength: {
                             min: 5,
                             max: 30,
-                            message: "Address must be 5-30 digit long."
+                            message: "Address must be 5-30 digit only."
                         }
                     }
                 },
@@ -448,7 +477,7 @@ if (isset($_SESSION['AdminID'])) {
                         stringLength: {
                             min: 3,
                             max: 11,
-                            message: "Contact Number must be 11 digit long."
+                            message: "Contact Number must be 11 digit only."
                         },
                         regexp: {
                             regexp: /^[0-9\s]+$/i,
