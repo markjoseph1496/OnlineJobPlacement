@@ -23,7 +23,7 @@ if (isset($_POST['type'])) {
 }
 
 if (isset($_POST['resumelink'])) {
-    /*$StudentID = $_POST['StudentID'];*/
+    $StudentID = $_POST['StudentID'];
     $FirstName = $_POST['FirstName'];
     $LastName = $_POST['LastName'];
     $Birthday = $_POST['Birthday'];
@@ -36,8 +36,6 @@ if (isset($_POST['resumelink'])) {
     $GraduatedMonth = $_POST['GraduatedMonth'];
     $GraduatedYear = $_POST['GraduatedYear'];
 
-    $Password = "1";
-
     $FirstName = ucwords(strtolower($FirstName));
     $LastName = ucwords(strtolower($LastName));
 
@@ -45,38 +43,28 @@ if (isset($_POST['resumelink'])) {
     $Password = hash('sha512', $Password . $salt);
 
     $yeargraduated = $GraduatedMonth . " " . $GraduatedYear;
-    $EducAttain = mysql_real_escape_string($EducAttain);
 
     GSecureSQL::query(
-        "INSERT INTO studentinfotbl (FirstName,LastName,Birthday,Password,SaltedPassword,MajorCourse) values (?,?,?,?,?,?)",
+        "INSERT INTO studentinfotbl (StudentID,FirstName,LastName,Birthdate,Password,SaltedPassword,MajorCourse) values (?,?,?,?,?,?,?)",
         FALSE,
-        "ssssss",
+        "sssssss",
+        $StudentID,
         $FirstName,
         $LastName,
         $Birthday,
         $Password,
         $salt,
         $Course
-
         );
-
-    $getstudid =
-        GSecureSQL::query(
-            "SELECT StudentID FROM studentinfotbl ORDER BY StudentID DESC LIMIT 1",
-            TRUE
-        );
-    $StudentID = $getstudid[0][0] + 1;
 
     GSecureSQL::query(
-        "INSERT INTO schooltbl (StudentID,School,Attainment,Course,Graduated) values (?,?,?,?,?)",
+        "INSERT INTO schooltbl (StudentID,School,Attainment,Course,Graduated) values (?,'STI College Caloocan',?,?,?)",
         FALSE,
-        "sssss",
+        "ssss",
         $StudentID,
-        $School,
-        $Attainment,
+        $EducAttain,
         $Course,
-        $Graduated
-
+        $yeargraduated
         );
 
     GSecureSQL::query(
@@ -87,7 +75,6 @@ if (isset($_POST['resumelink'])) {
         $Email,
         $MobileNumber,
         $City
-
         );
 
     header("location: registration.php");
