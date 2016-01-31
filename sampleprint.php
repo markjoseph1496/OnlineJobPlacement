@@ -79,7 +79,7 @@
             <button onclick="myFunction()" class="btn-system btn-mini border-btn fa fa-print" style = "width:100px; margin-left:40px;">
              Print this page </button>
                  <BR><BR>
-                   
+                   <div class = "col-md-6">
                    <h1><u>Stephanie Lewis</u></h1>
 <h2><u>Resume</u></h2>
 <h3><u>Education</u></h3>
@@ -127,6 +127,8 @@
             <li>Assisted in set-up and helped patrons find parking for annual auction</li>
         </ul>
     </ul>
+    </div>
+    <div class = "col-md-6">
 <h3><u>Skills</u></h3>
     <p></p>
     <ul>
@@ -139,7 +141,7 @@
     </ul>  
 
 <span class="contact">Stephanie Lewis | 4405 South 730 East Salt Lake City, UT 84107 | s.lew@aggiemail.usu.edu | 801-859-8839</span>    
-                     
+         </div>            
                    
                   
         <!-- End Content -->
