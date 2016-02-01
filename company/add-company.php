@@ -78,34 +78,33 @@ if (isset($_GET['btnsave'])) {
 // End of Create Position
 
 
-if(isset($_GET['id'])){
+if (isset($_GET['id'])) {
     $id = $_GET['id'];
     $RID = $_GET['rid'];
 
-    if($id == 1){
+    if ($id == 1) {
         GSecureSQL::query(
-        "UPDATE requesttocompanytbl SET Status = 'Accepted' WHERE RID = ?",
-        FALSE,
-        "s",
-        $RID
+            "UPDATE requesttocompanytbl SET Status = 'Accepted' WHERE RID = ?",
+            FALSE,
+            "s",
+            $RID
         );
         header("location: company-pendingapplicants.php?id=1");
 
-    }
-    elseif($id == 2){
+    } elseif ($id == 2) {
         GSecureSQL::query(
-        "UPDATE requesttocompanytbl SET Status = 'Rejected' WHERE RID = ?",
-        FALSE,
-        "s",
-        $RID
+            "UPDATE requesttocompanytbl SET Status = 'Rejected' WHERE RID = ?",
+            FALSE,
+            "s",
+            $RID
         );
         header("location: company-pendingapplicants.php?id=2");
     }
 
 }
-if(isset($_POST['CourseCheckbox'])){
+if (isset($_POST['CourseCheckbox'])) {
     $Course = $_POST['CourseCheckbox'];
-    $Course = implode(", ",$Course);
+    $Course = implode(", ", $Course);
     $DateRequested = date("Y-m-d");
 
     GSecureSQL::query(
@@ -130,7 +129,7 @@ if (isset($_GET['btnSaveSetting'])) {
     $PostalCode = $_GET['PostalCode'];
     $MobileNum = $_GET['MobileNum'];
     $PhoneNum = $_GET['PhoneNum'];
-    $Fax = $_GET['Fax']
+    $Fax = $_GET['Fax'];
 
 
     GSecureSQL::query(
@@ -148,9 +147,5 @@ if (isset($_GET['btnSaveSetting'])) {
         $PhoneNum,
         $CompanyID
     );
-    echo "
-        <script type='text/javascript'>
-        location.href='company-settings.php?id=1';
-        </script>
-        ";
+    header("location: company-settings.php?id=1");
 }
