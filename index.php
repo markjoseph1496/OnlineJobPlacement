@@ -121,7 +121,7 @@
                 <!-- Carousel inner -->
                 <div class="carousel-inner">
                     <div class="item active">
-                        <img class="img-responsive" src="img/slider/8.jpg" alt="slider">
+                        <img class="img-responsive" src="img/slider/8.png" alt="slider">
                         <div class="slider-content">
                             <div class="col-md-12 text-center">
                                 <h2 class="animated2">
@@ -809,10 +809,9 @@
                                     <div class="big-title text-center animated fadeInDown delay-01" data-animation="fadeInDown" data-animation-delay="01">
                                         <h1 class="wite-text">Be Part of Us</h1>
                                     </div>
-                                    <p class="text-center wite-text">Choose between <b>Student</b> and <b>Company</b>.</p>
                                         
                                     <!-- Start Service Icon 1 -->
-                                    <div class="col-md-4 col-sm-6 service-box service-center">
+                                    <div class="col-md-6 col-sm-6 service-box service-center">
                                         <div class="service-boxed">
                                             <div class="service-icon" style="margin-top:-25px;">
                                                 <a href="login-student.php"><i class="fa fa-users icon-medium-effect icon-effect-2"></i></a>
@@ -826,21 +825,7 @@
                                     <!-- End Service Icon 1 -->
 
                                     <!-- Start Service Icon 2 -->
-                                    <div class="col-md-4 col-sm-6 service-box service-center">
-                                        <div class="service-boxed">
-                                            <div class="service-icon" style="margin-top:-25px;">
-                                                <a href="login-admin.php"><i class="fa fa-user icon-medium-effect icon-effect-2"></i></a>
-                                            </div>
-                                            <div class="service-content">
-                                                <h4 class="wite-text">Admin</h4>
-                                                <p class="accent-color">This section is strictly for STI administrator only.</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <!-- End Service Icon 2 -->
-                                    
-                                    <!-- Start Service Icon 3 -->
-                                    <div class="col-md-4 col-sm-6 service-box service-center">
+                                    <div class="col-md-6 col-sm-6 service-box service-center">
                                         <div class="service-boxed">
                                             <div class="service-icon" style="margin-top:-25px;">
                                                 <a href="login-company.php"><i class="fa fa-building icon-medium-effect icon-effect-2"></i></a>
@@ -851,7 +836,7 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <!-- End Service Icon 3 -->
+                                    <!-- End Service Icon 2 -->
                                 </div>
                             </div>
                         </div>
