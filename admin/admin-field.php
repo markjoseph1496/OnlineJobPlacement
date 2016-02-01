@@ -399,7 +399,14 @@ $Total = $studentinfo_tbl[0][0];
         <?php
         $studentinfocourse_tbl =
             GSecureSQL::query(
-                "SELECT `StudentID`,`FirstName`,`LastName`,`EmploymentStatus`  FROM studentinfotbl WHERE MajorCourse = ?",
+                "SELECT
+                StudentID,
+                FirstName,
+                LastName,
+                EmploymentStatus
+                FROM studentinfotbl
+                WHERE MajorCourse = ?
+                ORDER BY LastName ASC",
                 TRUE,
                 "s",
                 $CourseCode
@@ -411,15 +418,44 @@ $Total = $studentinfo_tbl[0][0];
             $FullName = $LastName . ", " . $FirstName;
             $EmploymentStatus = $value[3];
 
+            $positionlevel_tbl =
+                GSecureSQL::query(
+                    "SELECT PositionLevel FROM workexperiencetbl WHERE StudentID = ? LIMIT 3",
+                    TRUE,
+                    "s",
+                    $StudentID
+                );
+            $specialization_tbl =
+                GSecureSQL::query(
+                    "SELECT Specialization FROM workexperiencetbl WHERE StudentID = ? LIMIT 3",
+                    TRUE,
+                    "s",
+                    $StudentID
+                );
+            $industry_tbl =
+                GSecureSQL::query(
+                    "SELECT Industry FROM workexperiencetbl WHERE StudentID = ? LIMIT 3",
+                    TRUE,
+                    "s",
+                    $StudentID
+                );
+
+            $positionlevel_tbl = array_reduce($positionlevel_tbl, 'array_merge', array());
+            $specialization_tbl = array_reduce($specialization_tbl, 'array_merge', array());
+            $industry_tbl = array_reduce($industry_tbl, 'array_merge', array());
+
+            $PositionLevel = implode(", ", $positionlevel_tbl);
+            $Specialization = implode(", ", $specialization_tbl);
+            $Industry = implode(", ", $industry_tbl);
             ?>
             <tbody>
             <tr>
                 <td>
                     <a href = 'resumelink.php'><?php echo $FullName; ?></a>
                 </td>
-                <td class = 'tcenter'></td>
-                <td class = 'tcenter'></td>
-                <td class = 'tcenter'></td>
+                <td class = 'tcenter'><?php echo $PositionLevel; ?></td>
+                <td class = 'tcenter'><?php echo $Specialization; ?></td>
+                <td class = 'tcenter'><?php echo $Industry; ?></td>
                 <td class = 'tcenter'><?php echo $EmploymentStatus; ?></td>
                 <td>
                     <a id='Edit' href='admin-editstudent.php' class='btn btn-default'>

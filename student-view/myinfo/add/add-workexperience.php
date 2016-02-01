@@ -233,7 +233,7 @@ $MajorCourse = $course_qry[0][0];
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <label>Company Website</label>
-                                    <input type="url" class="form-control" id="CompanyWebsite" name="CompanyWebsite">
+                                    <input type="url" class="form-control" id="CompanyWebsite" name="CompanyWebsite" value="http://">
                                 </div>
                             </div>
                         </div>
@@ -254,7 +254,7 @@ $MajorCourse = $course_qry[0][0];
                                             $IndustryID = $value[0];
                                             $Industry = $value[1];
                                             ?>
-                                            <option value="<?php echo $IndustryID; ?>"><?php echo $Industry; ?></option>
+                                            <option value="<?php echo $Industry; ?>"><?php echo $Industry; ?></option>
                                             <?php
                                         }
                                         ?>
@@ -361,7 +361,7 @@ $MajorCourse = $course_qry[0][0];
                                             $PositionID = $value[0];
                                             $Position = $value[1];
                                             ?>
-                                            <option value="<?php echo $PositionID; ?>"><?php echo $Position; ?></option>
+                                            <option value="<?php echo $Position; ?>"><?php echo $Position; ?></option>
                                             <?php
                                         }
                                         ?>
@@ -389,7 +389,7 @@ $MajorCourse = $course_qry[0][0];
                                             $count++;
                                             ?>
                                             <option
-                                                value="<?php echo $SpecializationID; ?>"><?php echo $Specialization; ?></option>
+                                                value="<?php echo $Specialization; ?>"><?php echo $Specialization; ?></option>
                                             <?php
                                         }
                                         ?>
@@ -535,6 +535,10 @@ $MajorCourse = $course_qry[0][0];
                     validators: {
                         notEmpty: {
                             message: "This field is required."
+                        },
+                        greaterThan: {
+                            value: "FromYear",
+                            message: "Invalid date."
                         }
                     }
                 },
