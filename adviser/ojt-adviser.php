@@ -1,14 +1,3 @@
-<?php
-include('../connection.php');
-session_start();
-
-if (isset($_SESSION['AdminID'])) {
-    $AdminID = $_SESSION['AdminID'];
-} else {
-    header("location: ../login-admin.php");
-}
-
-?>
 <!doctype html>
 <html lang="en">
 
