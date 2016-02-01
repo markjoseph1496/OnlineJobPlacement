@@ -130,7 +130,6 @@ $Total = $TotalStudents[0][0];
     <!-- .top-bar -->
     <!-- End Top Bar -->
 
-
     <!-- Start  Logo & Naviagtion  -->
     <div class="navbar navbar-default navbar-top">
         <div class="container">

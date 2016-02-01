@@ -488,7 +488,7 @@ if (count($LOGquery1) > 0) {
                         <div class="row field">
                             <br><br>
                             <div>
-                                <b>Available Courses:</b>
+                                <b>Available Course(s):</b>
                                 <?php
                                 $AvailableCourses = $LOGquery[0][2];
                                 echo $AvailableCourses;
@@ -636,7 +636,24 @@ if (count($LOGquery1) > 0) {
                         $Location = $_POST['Location'];
 
                         if (empty($Course) && empty($Location)) {
-                            $isEmpty = 1;
+                            $listofgraduates_tbl =
+                                GSecureSQL::query(
+                                    "SELECT
+                                    studentinfotbl.StudentID,
+                                    studentinfotbl.FirstName,
+                                    studentinfotbl.LastName,
+                                    studentinfotbl.MajorCourse,
+                                    studcontactstbl.Email,
+                                    studcontactstbl.MobileNumber,
+                                    studcontactstbl.City
+                                    FROM
+                                    studcontactstbl
+                                    INNER JOIN `studentinfotbl` ON `studcontactstbl`.`StudentID` = `studentinfotbl`.`StudentID` WHERE studentinfotbl.MajorCourse IN ('$RequestedCourses') ORDER BY studentinfotbl.LastName",
+                                    TRUE
+                                );
+                            if (empty($listofgraduates_tbl)) {
+                                $isEmpty = 1;
+                            }
                         } elseif (empty($Course)) {
                             $listofgraduates_tbl =
                                 GSecureSQL::query(
@@ -714,6 +731,60 @@ if (count($LOGquery1) > 0) {
                                 </tr>
                             </tbody>
                                 ';
+                        } else {
+                            foreach ($listofgraduates_tbl as $value) {
+                                $StudentID = $value[0];
+                                $FirstName = $value[1];
+                                $LastName = $value[2];
+                                $_Course = $value[3];
+                                $Email = $value[4];
+                                $MobileNumber = $value[5];
+                                $_Location = $value[6];
+                                ?>
+                                <tbody>
+                                <tr>
+                                    <td width='20%' class='tabletitle'><?php echo $LastName . ", " . $FirstName; ?></td>
+                                    <td width='10%' class='tabletitle'><?php echo $_Course; ?></td>
+                                    <td width='20%' class='tabletitle'><?php echo $MobileNumber; ?></td>
+                                    <td width='25%' class='tabletitle'><?php echo $Email; ?></td>
+                                    <td width='20%' class='tabletitle'><?php echo $_Location; ?></td>
+                                </tr>
+                                </tbody>
+                                <?php
+                            }
+                        }
+                    } else {
+                        $isEmpty = 0;
+                        $listofgraduates_tbl =
+                            GSecureSQL::query(
+                                "SELECT
+                                    studentinfotbl.StudentID,
+                                    studentinfotbl.FirstName,
+                                    studentinfotbl.LastName,
+                                    studentinfotbl.MajorCourse,
+                                    studcontactstbl.Email,
+                                    studcontactstbl.MobileNumber,
+                                    studcontactstbl.City
+                                    FROM
+                                    studcontactstbl
+                                    INNER JOIN `studentinfotbl` ON `studcontactstbl`.`StudentID` = `studentinfotbl`.`StudentID` WHERE studentinfotbl.MajorCourse IN ('$RequestedCourses') ORDER BY studentinfotbl.LastName",
+                                TRUE
+                            );
+                        if (empty($listofgraduates_tbl)) {
+                            $isEmpty = 1;
+                        }
+                        if ($isEmpty == 1) {
+                            echo '
+                                <tbody>
+                                    <tr>
+                                        <td width="20%" class="tabletitle">No results found.</td>
+                                        <td width="10%" class="tabletitle"></td>
+                                        <td width="20%" class="tabletitle"></td>
+                                        <td width="25%" class="tabletitle"></td>
+                                        <td width="20%" class="tabletitle"></td>
+                                    </tr>
+                                </tbody>
+                                    ';
                         } else {
                             foreach ($listofgraduates_tbl as $value) {
                                 $StudentID = $value[0];

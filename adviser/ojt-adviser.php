@@ -148,7 +148,7 @@ session_start();
                         <!-- Modal content-->
                         <div class="modal-content">
                             <div class="modal-header">
-                                <button style = type="button" class="close" data-dismiss="modal">&times;</button>
+                                <button style=type="button" class="close" data-dismiss="modal">&times;</button>
                                 <h4 class="modal-title">Log out?</h4>
                             </div>
                             <div class="modal-body">
@@ -171,26 +171,26 @@ session_start();
                 <!-- End Sign-out -->
                 <!-- Start Navigation List -->
                 <ul class="nav navbar-nav navbar-right">
-                <li>
-                    <a href="../adviser/ojt-adviser.php">Home</a>
-                </li>
-                <li>
-                    <a href="../adviser/ojt-account.php">Account</a>
-                </li>
+                    <li>
+                        <a href="../adviser/ojt-adviser.php">Home</a>
+                    </li>
+                    <li>
+                        <a href="../adviser/ojt-account.php">Account</a>
+                    </li>
                 </ul>
                 <!-- End Navigation List -->
             </div>
         </div>
         <!-- Mobile Menu Start -->
         <ul class="wpb-mobile-menu">
-           <ul class="nav navbar-nav navbar-right">
+            <ul class="nav navbar-nav navbar-right">
                 <li>
                     <a href="../adviser/ojt-adviser.php">Home</a>
                 </li>
                 <li>
                     <a href="../adviser/ojt-account.php">Account</a>
                 </li>
-                </ul>
+            </ul>
         </ul>
         </header>
         <!-- Mobile Menu End -->
@@ -220,7 +220,7 @@ session_start();
         <div class="header2_advertising">
             <div class="container">
                 <div class="col-sm-4">
-                    <h4 style = "margin-top:20px;">TOTAL NUMBER OF STUDENTS: </b></h4>
+                    <h4 style="margin-top:20px;">TOTAL NUMBER OF STUDENTS: </b></h4>
                 </div>
                 <div class="col-sm-3">
                     <label>
@@ -244,7 +244,7 @@ session_start();
                 </div>
                 <div class="col-sm-2">
                     <button type="submit" class="btn-system btn-large border-btn"
-                                style="margin-top: 20px;">Search
+                            style="margin-top: 20px;">Search
                     </button>
                 </div>
             </div>
@@ -265,36 +265,41 @@ session_start();
             </thead>
             <tbody>
             <?php
-            $ojt_tbl = 
+            $ojt_tbl =
                 GSecureSQL::query(
-                    "SELECT studentinfotbl.`StudentID`, studentinfotbl.`FirstName`, studentinfotbl.`LastName`,
-                     ojttbl.`CompanyName`, ojttbl.`CompanyAddress`, ojttbl.`Status`
-                     FROM studentinfotbl
-                     INNER JOIN ojttbl
-                     ON studentinfotbl.`StudentID`=ojttbl.`StudentID`
-                     WHERE studentinfotbl.`Status` = 'OJT'
-                     ORDER BY studentinfotbl.`StudentID`;",
+                    "SELECT
+                    studentinfotbl.StudentID,
+                    studentinfotbl.FirstName,
+                    studentinfotbl.LastName,
+                    ojttbl.CompanyName,
+                    ojttbl.CompanyAddress,
+                    ojttbl.Status
+                    FROM studentinfotbl
+                    INNER JOIN ojttbl
+                    ON studentinfotbl.StudentID=ojttbl.StudentID
+                    WHERE studentinfotbl.Status = 'OJT'
+                    ORDER BY studentinfotbl.StudentID;",
                     TRUE
-
                 );
-                foreach ($ojt_tbl as $value) {
-                    $StudentID = $value[0];
-                    $FirstName = $value[3];
-                    $LastName = $value[4];
-                    $Status = $value[8];
+            foreach ($ojt_tbl as $value) {
+                $StudentID = $value[0];
+                $FirstName = $value[3];
+                $LastName = $value[4];
+                $Status = $value[8];
 
-            ?>
-            <tr>
-                <td><?php echo $StudentID; ?></td>
-                <td><a href=".php"><?php echo $FirstName; echo $LastName; ?></td>
-                <td>008-2012-0805</td>
-                <td>008-2012-0805</td>
-                <td>008-2012-0805</td>
-                <td>008-2012-0805</td>
-                <td>008-2012-0805</td>
-            </tr>
-            <?php
-                }
+                ?>
+                <tr>
+                    <td><?php echo $StudentID; ?></td>
+                    <td><a href=".php"><?php echo $FirstName;
+                        echo $LastName; ?></td>
+                    <td>008-2012-0805</td>
+                    <td>008-2012-0805</td>
+                    <td>008-2012-0805</td>
+                    <td>008-2012-0805</td>
+                    <td>008-2012-0805</td>
+                </tr>
+                <?php
+            }
             ?>
             </tbody>
         </table>
