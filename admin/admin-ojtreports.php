@@ -195,8 +195,6 @@ if (isset($_SESSION['AdminID'])) {
                             <li><a href="admin-company_pending.php">Pending</a></li>
                         </ul>
                     </li>
-                    <li><a href="admin-adviser.php">Adviser List</a>
-                    </li>
                     <li>
                         <a> Maintenance</a>
                         <ul class="dropdown">
@@ -233,8 +231,6 @@ if (isset($_SESSION['AdminID'])) {
                         <li><a href="admin-companylist.php">Active</a></li>
                         <li><a href="admin-company_pending.php">Pending</a></li>
                     </ul>
-                </li>
-                <li><a href="admin-adviser.php">Adviser List</a>
                 </li>
                 <li>
                     <a> Maintenance</a>
