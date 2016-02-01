@@ -333,7 +333,7 @@ $cLastName= $companyinfo_tbl[0][11];
 
             <div class="row">
                 <div class="col-md-7">
-                    <form method="POST" name="CompanySetting" id="CompanySetting" autocomplete="off" action="company-setting.php">
+                    <form method="POST" name="CompanySetting" id="CompanySetting" autocomplete="off" action="add-company.php">
                         <?php
                         if (isset($_GET['id'])) {
                             $id = $_GET['id'];
@@ -547,8 +547,7 @@ $cLastName= $companyinfo_tbl[0][11];
             </div>
             <div class="hr5" style="margin-top:35px;margin-bottom:40px;"></div>
             <div class="text-center">
-                <button type="submit" class="btn-system btn-large" name="btnSave" id="save">Save</button>
-                <button type="submit" class="btn-system btn-large btn-black" id="cancel">Cancel</button>
+                <button type="submit" class="btn-system btn-large" name="btnSaveSetting" id="save">Save</button>
             </div>
         </div>
     </div>

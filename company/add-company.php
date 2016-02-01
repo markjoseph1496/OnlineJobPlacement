@@ -76,6 +76,8 @@ if (isset($_GET['btnsave'])) {
 
 }
 // End of Create Position
+
+
 if(isset($_GET['id'])){
     $id = $_GET['id'];
     $RID = $_GET['rid'];
@@ -116,4 +118,39 @@ if(isset($_POST['CourseCheckbox'])){
     );
     header("location: company.php?id=2");
 
+}
+
+if (isset($_GET['btnSaveSetting'])) {
+    $CompanyName = $_GET['CompanyName'];
+    $CompanyDesc = $_GET['CompanyDesc'];
+    $Industry = $_GET['Industry'];
+    $Classification = $_GET['Classification'];
+    $Address = $_GET['Address'];
+    $City = $_GET['City'];
+    $PostalCode = $_GET['PostalCode'];
+    $MobileNum = $_GET['MobileNum'];
+    $PhoneNum = $_GET['PhoneNum'];
+    $Fax = $_GET['Fax']
+
+
+    GSecureSQL::query(
+        "UPDATE studentinfotbl SET CompanyName = ?, CompanyDesc = ?, Industry = ?, Classification = ?, Address = ?, City = ?, PostalCode = ?, MobileNum = ?, PhoneNum = ?, Fax = ? WHERE CompanyID = ?",
+        FALSE,
+        "sssssssssss",
+        $CompanyName,
+        $CompanyDesc,
+        $Industry,
+        $Classification,
+        $Address,
+        $City,
+        $PostalCode,
+        $MobileNum,
+        $PhoneNum,
+        $CompanyID
+    );
+    echo "
+        <script type='text/javascript'>
+        location.href='company-settings.php?id=1';
+        </script>
+        ";
 }

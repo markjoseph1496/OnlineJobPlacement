@@ -356,9 +356,9 @@ $cLastName = $companyinfo_tbl[0][2];
                             message: "Event Title is required."
                         },
                         stringLength: {
-                            min: 5,
+                            min: 1,
                             max: 25,
-                            message: "Event Title must be 5-25 characters long."
+                            message: "Event Title is 25 characters only."
                         }
                     }
                 },
@@ -368,9 +368,9 @@ $cLastName = $companyinfo_tbl[0][2];
                             message: "Location is required."
                         },
                         stringLength: {
-                            min: 3,
+                            min: 1,
                             max: 15,
-                            message: "Location must be 3-15 characters long."
+                            message: "Location is 15 characters only."
                         },
                         regexp: {
                             regexp: /^[a-z\s]+$/i,
@@ -384,9 +384,9 @@ $cLastName = $companyinfo_tbl[0][2];
                             message: "Description is required."
                         },
                         stringLength: {
-                            min: 5,
+                            min: 1,
                             max: 25,
-                            message: "Description must be 5-25 characters long."
+                            message: "Description is 25 characters only."
                         },
                         regexp: {
                             regexp: /^[a-z\s]+$/i,
