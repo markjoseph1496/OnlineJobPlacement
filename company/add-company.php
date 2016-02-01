@@ -134,7 +134,7 @@ if (isset($_GET['btnSaveSetting'])) {
 
 
     GSecureSQL::query(
-        "UPDATE studentinfotbl SET CompanyName = ?, CompanyDesc = ?, Industry = ?, Classification = ?, Address = ?, City = ?, PostalCode = ?, MobileNum = ?, PhoneNum = ?, Fax = ? WHERE CompanyID = ?",
+        "UPDATE companyinfotbl SET CompanyName = ?, CompanyDesc = ?, Industry = ?, Classification = ?, Address = ?, City = ?, PostalCode = ?, MobileNum = ?, PhoneNum = ?, Fax = ? WHERE CompanyID = ?",
         FALSE,
         "sssssssssss",
         $CompanyName,
