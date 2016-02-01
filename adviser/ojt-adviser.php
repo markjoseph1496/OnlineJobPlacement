@@ -267,31 +267,42 @@ session_start();
             <?php
             $ojt_tbl = 
                 GSecureSQL::query(
-                    "SELECT studentinfotbl.`StudentID`, studentinfotbl.`FirstName`, studentinfotbl.`LastName`,
-                     ojttbl.`CompanyName`, ojttbl.`CompanyAddress`, ojttbl.`Status`
-                     FROM studentinfotbl
-                     INNER JOIN ojttbl
-                     ON studentinfotbl.`StudentID`=ojttbl.`StudentID`
-                     WHERE studentinfotbl.`Status` = 'OJT'
-                     ORDER BY studentinfotbl.`StudentID`;",
+                    "SELECT 
+                    studentinfotbl.`StudentID`, 
+                    studentinfotbl.`FirstName`, 
+                    studentinfotbl.`LastName`,
+                    ojttbl.`CompanyName`, 
+                    ojttbl.`CompanyAddress`,
+                    ojttbl.`ContactNumber`,
+                    ojttbl.`Supervisor`, 
+                    ojttbl.`aStatus`
+                    FROM studentinfotbl
+                    INNER JOIN ojttbl
+                    ON studentinfotbl.`StudentID`=ojttbl.`StudentID`
+                    WHERE studentinfotbl.`Status` = 'OJT'
+                    ORDER BY studentinfotbl.`StudentID`;",
                     TRUE
 
                 );
                 foreach ($ojt_tbl as $value) {
                     $StudentID = $value[0];
-                    $FirstName = $value[3];
-                    $LastName = $value[4];
-                    $Status = $value[8];
+                    $FirstName = $value[1];
+                    $LastName = $value[2];
+                    $CompanyName = $value[3];
+                    $CompanyAddress = $value[4];
+                    $Contact = $value[5];
+                    $Supervisor = $value[6];
+                    $Status = $value[7];
 
             ?>
             <tr>
                 <td><?php echo $StudentID; ?></td>
                 <td><a href=".php"><?php echo $FirstName; echo $LastName; ?></td>
-                <td>008-2012-0805</td>
-                <td>008-2012-0805</td>
-                <td>008-2012-0805</td>
-                <td>008-2012-0805</td>
-                <td>008-2012-0805</td>
+                <td><?php echo $CompanyName; ?></td>
+                <td><?php echo $CompanyAddress; ?></td>
+                <td><?php echo $Contact; ?></td>
+                <td><?php echo $Supervisor; ?></td>
+                <td><?php echo $Status; ?></td>
             </tr>
             <?php
                 }
