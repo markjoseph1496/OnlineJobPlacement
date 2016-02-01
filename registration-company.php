@@ -211,7 +211,7 @@ include('connection.php');
                     </div>
                     <div class="col-md-6">
                         <div class="form-group">
-                            <label>Contact Number<span>(*)</span></label>
+                            <label>Telephone no.<span>(*)</span></label>
                             <input type="text" class="form-control" id="Contact" name="Contact">
                         </div>
                     </div>
@@ -400,11 +400,6 @@ include('connection.php');
                     validators: {
                         notEmpty: {
                             message: "Email address is required."
-                        },
-                        stringLength: {
-                            min: 6,
-                            max: 35,
-                            message: "Email address must be 6-35 characters long."
                         }
                     }
                 }

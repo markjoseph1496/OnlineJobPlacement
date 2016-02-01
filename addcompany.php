@@ -32,7 +32,7 @@ if(isset($_GET['FirstName'])){
    $FirstName = $_GET['FirstName'];
    $MiddleName = $_GET['MiddleName'];
    $LastName = $_GET['LastName'];
-   $ContactNum - $_GET['Contact'];
+   $ContactNum = $_GET['Contact'];
    $Position = $_GET['Position'];
    $Department = $_GET['Department'];
 
@@ -41,11 +41,12 @@ if(isset($_GET['FirstName'])){
     $MiddleName = ucwords(strtolower($MiddleName));
     $LastName = ucwords(strtolower($LastName));
 
+    $Password = "1";
     $salt = hash('sha512', mt_rand(0, PHP_INT_MAX) . mt_rand(0, PHP_INT_MAX) . mt_rand(0, PHP_INT_MAX));
     $Password = hash('sha512', $Password . $salt);
 
     GSecureSQL::query(
-        "INSERT INTO companyinfotbl (CompanyName,Industry,City,Email,Password,SaltedPassword,FirstName,MiddleName,LastName,ContactNumber,Position,Department) values (?,?,?,?,?,?,?,?,?,?,?,?)",
+        "INSERT INTO companyinfotbl (CompanyName,Industry,City,Email,Password,SaltedPassword,FirstName,MiddleName,LastName,PhoneNum,Position,Department,Status) values (?,?,?,?,?,?,?,?,?,?,?,?,'Pending')",
         FALSE,
         "ssssssssssss",
         $CompanyName,
@@ -63,6 +64,6 @@ if(isset($_GET['FirstName'])){
 
     );
    
-   header("location: registration-company.php?id=1");
+   header("location: registration-company.php");
 }
 ?>
