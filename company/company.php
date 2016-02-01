@@ -480,167 +480,184 @@ if (count($LOGquery1) > 0) {
     ?>
     <?php
     if ($ContentCount == 1) {
-        ?>
-        <div id="Content" class="container">
-            <form method="POST">
-                <div class="header2_advertising">
-                    <div class="container">
-                        <div class="row field">
-                            <br><br>
-                            <div>
-                                <b>Available Courses:</b>
-                                <?php
-                                $AvailableCourses = $LOGquery[0][2];
-                                echo $AvailableCourses;
-                                ?>
-                            </div>
-                            <div><b>Valid until:</b> <?php echo $DateTo; ?></div>
-                            <br><br>
-                            <div class="col-sm-5">
-                                <div class="form-group text-center">
-                                    <label>
-                                        <center><b>Course</b>
-                                    </label></center>
-                                    <select id="Course" name="Course" class="form-control" style="width:400x;">
-                                        <option value="" selected="selected">- Please select one -</option>
-                                        <?php
-                                        $course_tbl =
-                                            GSecureSQL::query(
-                                                "SELECT CourseTitle, CourseCode FROM coursetbl WHERE CourseCode IN ('$RequestedCourses') ORDER BY CourseTitle ASC",
-                                                TRUE
-                                            );
-                                        foreach ($course_tbl as $value) {
-                                            $CourseTitle = $value[0];
-                                            $CourseCode = $value[1];
-                                            ?>
-                                            <option
-                                                value="<?php echo $CourseCode; ?>" <?php if ($Course_Default == $CourseCode) {
-                                                echo "selected='selected'";
-                                            } ?>><?php echo $CourseTitle; ?></option>
-                                            <?php
-                                        }
+    ?>
+    <div id="Content" class="container">
+        <form method="POST">
+            <div class="header2_advertising">
+                <div class="container">
+                    <div class="row field">
+                        <br><br>
+                        <div>
+                            <b>Available Courses:</b>
+                            <?php
+                            $AvailableCourses = $LOGquery[0][2];
+                            echo $AvailableCourses;
+                            ?>
+                        </div>
+                        <div><b>Valid until:</b> <?php echo $DateTo; ?></div>
+                        <br><br>
+                        <div class="col-sm-5">
+                            <div class="form-group text-center">
+                                <label>
+                                    <center><b>Course</b>
+                                </label></center>
+                                <select id="Course" name="Course" class="form-control" style="width:400x;">
+                                    <option value="" selected="selected">- Please select one -</option>
+                                    <?php
+                                    $course_tbl =
+                                        GSecureSQL::query(
+                                            "SELECT CourseTitle, CourseCode FROM coursetbl WHERE CourseCode IN ('$RequestedCourses') ORDER BY CourseTitle ASC",
+                                            TRUE
+                                        );
+                                    foreach ($course_tbl as $value) {
+                                        $CourseTitle = $value[0];
+                                        $CourseCode = $value[1];
                                         ?>
-                                    </select>
-                                </div>
-                            </div> <!--col-sm-5-->
-                            <div class="col-sm-5">
-                                <div class="form-group text-center">
-                                    <label>
-                                        <center><b>Location</b>
-                                    </label></center>
-                                    <select id="Location" name="Location" class="form-control" style="width:420px;">
-                                        <option value="" selected="selected">- Please select one -</option>
-                                        <option value="Bulacan City" <?php if ($Location_Default == "Bulacan City") {
-                                            echo "selected='selected'";
-                                        } ?>>Bulacan City
-                                        </option>
-                                        <option value="Caloocan City"<?php if ($Location_Default == "Caloocan City") {
-                                            echo "selected='selected'";
-                                        } ?>>Caloocan City
-                                        </option>
-                                        <option value="Las Pińas City"<?php if ($Location_Default == "Las Pińas City") {
-                                            echo "selected='selected'";
-                                        } ?>>Las Pińas City
-                                        </option>
-                                        <option value="Makati City"<?php if ($Location_Default == "Makati City") {
-                                            echo "selected='selected'";
-                                        } ?>>Makati City
-                                        </option>
-                                        <option value="Malabon City"<?php if ($Location_Default == "Malabon City") {
-                                            echo "selected='selected'";
-                                        } ?>>Malabon City
-                                        </option>
                                         <option
-                                            value="Mandaluyong City"<?php if ($Location_Default == "Mandaluyong City") {
+                                            value="<?php echo $CourseCode; ?>" <?php if ($Course_Default == $CourseCode) {
                                             echo "selected='selected'";
-                                        } ?>>Mandaluyong City
-                                        </option>
-                                        <option value="Manila"<?php if ($Location_Default == "Manila") {
-                                            echo "selected='selected'";
-                                        } ?>>Manila
-                                        </option>
-                                        <option value="Marikina City"<?php if ($Location_Default == "Marikina City") {
-                                            echo "selected='selected'";
-                                        } ?>>Marikina City
-                                        </option>
-                                        <option
-                                            value="Muntinlupa City"<?php if ($Location_Default == "Muntinlupa City") {
-                                            echo "selected='selected'";
-                                        } ?>>Muntinlupa City
-                                        </option>
-                                        <option value="Navotas City"<?php if ($Location_Default == "Navotas City") {
-                                            echo "selected='selected'";
-                                        } ?>>Navotas City
-                                        </option>
-                                        <option value="Parańaque City"<?php if ($Location_Default == "Parańaque City") {
-                                            echo "selected='selected'";
-                                        } ?>>Parańaque City
-                                        </option>
-                                        <option value="Pasay City"<?php if ($Location_Default == "Pasay City") {
-                                            echo "selected='selected'";
-                                        } ?>>Pasay City
-                                        </option>
-                                        <option value="Pasig City"<?php if ($Location_Default == "Pasig City") {
-                                            echo "selected='selected'";
-                                        } ?>>Pasig City
-                                        </option>
-                                        <option value="Pateros City"<?php if ($Location_Default == "Pateros City") {
-                                            echo "selected='selected'";
-                                        } ?>>Pateros City
-                                        </option>
-                                        <option value="Quezon City"<?php if ($Location_Default == "Quezon City") {
-                                            echo "selected='selected'";
-                                        } ?>>Quezon City
-                                        </option>
-                                        <option value="San Juan City"<?php if ($Location_Default == "San Juan City") {
-                                            echo "selected='selected'";
-                                        } ?>>San Juan City
-                                        </option>
-                                        <option value="Taguig City"<?php if ($Location_Default == "Taguig City") {
-                                            echo "selected='selected'";
-                                        } ?>>Taguig City
-                                        </option>
-                                        <option
-                                            value="Valenzuela City"<?php if ($Location_Default == "Valenzuela City") {
-                                            echo "selected='selected'";
-                                        } ?>>Valenzuela City
-                                        </option>
-                                    </select>
-                                </div>
+                                        } ?>><?php echo $CourseTitle; ?></option>
+                                        <?php
+                                    }
+                                    ?>
+                                </select>
                             </div>
-                            <div class="col-sm-2">
-                                <button type="submit" class="btn-system btn-large border-btn" name="btnView"
-                                        style="margin-top: 20px;">View
-                                </button>
+                        </div> <!--col-sm-5-->
+                        <div class="col-sm-5">
+                            <div class="form-group text-center">
+                                <label>
+                                    <center><b>Location</b>
+                                </label></center>
+                                <select id="Location" name="Location" class="form-control" style="width:420px;">
+                                    <option value="" selected="selected">- Please select one -</option>
+                                    <option value="Bulacan City" <?php if ($Location_Default == "Bulacan City") {
+                                        echo "selected='selected'";
+                                    } ?>>Bulacan City
+                                    </option>
+                                    <option value="Caloocan City"<?php if ($Location_Default == "Caloocan City") {
+                                        echo "selected='selected'";
+                                    } ?>>Caloocan City
+                                    </option>
+                                    <option value="Las Pińas City"<?php if ($Location_Default == "Las Pińas City") {
+                                        echo "selected='selected'";
+                                    } ?>>Las Pińas City
+                                    </option>
+                                    <option value="Makati City"<?php if ($Location_Default == "Makati City") {
+                                        echo "selected='selected'";
+                                    } ?>>Makati City
+                                    </option>
+                                    <option value="Malabon City"<?php if ($Location_Default == "Malabon City") {
+                                        echo "selected='selected'";
+                                    } ?>>Malabon City
+                                    </option>
+                                    <option
+                                        value="Mandaluyong City"<?php if ($Location_Default == "Mandaluyong City") {
+                                        echo "selected='selected'";
+                                    } ?>>Mandaluyong City
+                                    </option>
+                                    <option value="Manila"<?php if ($Location_Default == "Manila") {
+                                        echo "selected='selected'";
+                                    } ?>>Manila
+                                    </option>
+                                    <option value="Marikina City"<?php if ($Location_Default == "Marikina City") {
+                                        echo "selected='selected'";
+                                    } ?>>Marikina City
+                                    </option>
+                                    <option
+                                        value="Muntinlupa City"<?php if ($Location_Default == "Muntinlupa City") {
+                                        echo "selected='selected'";
+                                    } ?>>Muntinlupa City
+                                    </option>
+                                    <option value="Navotas City"<?php if ($Location_Default == "Navotas City") {
+                                        echo "selected='selected'";
+                                    } ?>>Navotas City
+                                    </option>
+                                    <option value="Parańaque City"<?php if ($Location_Default == "Parańaque City") {
+                                        echo "selected='selected'";
+                                    } ?>>Parańaque City
+                                    </option>
+                                    <option value="Pasay City"<?php if ($Location_Default == "Pasay City") {
+                                        echo "selected='selected'";
+                                    } ?>>Pasay City
+                                    </option>
+                                    <option value="Pasig City"<?php if ($Location_Default == "Pasig City") {
+                                        echo "selected='selected'";
+                                    } ?>>Pasig City
+                                    </option>
+                                    <option value="Pateros City"<?php if ($Location_Default == "Pateros City") {
+                                        echo "selected='selected'";
+                                    } ?>>Pateros City
+                                    </option>
+                                    <option value="Quezon City"<?php if ($Location_Default == "Quezon City") {
+                                        echo "selected='selected'";
+                                    } ?>>Quezon City
+                                    </option>
+                                    <option value="San Juan City"<?php if ($Location_Default == "San Juan City") {
+                                        echo "selected='selected'";
+                                    } ?>>San Juan City
+                                    </option>
+                                    <option value="Taguig City"<?php if ($Location_Default == "Taguig City") {
+                                        echo "selected='selected'";
+                                    } ?>>Taguig City
+                                    </option>
+                                    <option
+                                        value="Valenzuela City"<?php if ($Location_Default == "Valenzuela City") {
+                                        echo "selected='selected'";
+                                    } ?>>Valenzuela City
+                                    </option>
+                                </select>
                             </div>
+                        </div>
+                        <div class="col-sm-2">
+                            <button type="submit" class="btn-system btn-large border-btn" name="btnView"
+                                    style="margin-top: 20px;">View
+                            </button>
                         </div>
                     </div>
                 </div>
-                <!--table-->
-                <table class="table segment table-hover">
-                    <thead>
-                    <tr>
-                    </tr>
-                    <tr>
-                        <th width='20%' class='tabletitle'>Student Name</th>
-                        <th width='10%' class='tabletitle'>Course</th>
-                        <th width='20%' class='tabletitle'>Contact No.</th>
-                        <th width='25%' class='tabletitle'>Email</th>
-                        <th width='20%' class='tabletitle'>Location</th>
-                    <tr>
-                    </thead>
-                    <?php
-                    if (isset($_POST['btnView'])) {
-                        $isEmpty = 0;
-                        $Course = $_POST['Course'];
-                        $Location = $_POST['Location'];
+            </div>
+            <!--table-->
+            <table class="table segment table-hover">
+                <thead>
+                <tr>
+                </tr>
+                <tr>
+                    <th width='20%' class='tabletitle'>Student Name</th>
+                    <th width='10%' class='tabletitle'>Course</th>
+                    <th width='20%' class='tabletitle'>Contact No.</th>
+                    <th width='25%' class='tabletitle'>Email</th>
+                    <th width='20%' class='tabletitle'>Location</th>
+                <tr>
+                </thead>
+                <?php
+                if (isset($_POST['btnView'])) {
+                    $isEmpty = 0;
+                    $Course = $_POST['Course'];
+                    $Location = $_POST['Location'];
 
-                        if (empty($Course) && empty($Location)) {
+                    if (empty($Course) && empty($Location)) {
+                        $listofgraduates_tbl =
+                            GSecureSQL::query(
+                                "SELECT
+                                    studentinfotbl.StudentID,
+                                    studentinfotbl.FirstName,
+                                    studentinfotbl.LastName,
+                                    studentinfotbl.MajorCourse,
+                                    studcontactstbl.Email,
+                                    studcontactstbl.MobileNumber,
+                                    studcontactstbl.City
+                                    FROM
+                                    studcontactstbl
+                                    INNER JOIN `studentinfotbl` ON `studcontactstbl`.`StudentID` = `studentinfotbl`.`StudentID` WHERE studentinfotbl.MajorCourse IN ('$RequestedCourses')",
+                                TRUE
+                            );
+                        if (empty($listofgraduates_tbl)) {
                             $isEmpty = 1;
-                        } elseif (empty($Course)) {
-                            $listofgraduates_tbl =
-                                GSecureSQL::query(
-                                    "SELECT
+                        }
+                    } elseif (empty($Course)) {
+                        $listofgraduates_tbl =
+                            GSecureSQL::query(
+                                "SELECT
                                     studentinfotbl.StudentID,
                                     studentinfotbl.FirstName,
                                     studentinfotbl.LastName,
@@ -651,17 +668,17 @@ if (count($LOGquery1) > 0) {
                                     FROM
                                     studcontactstbl
                                     INNER JOIN `studentinfotbl` ON `studcontactstbl`.`StudentID` = `studentinfotbl`.`StudentID` WHERE studcontactstbl.City = ? AND studentinfotbl.MajorCourse IN ('$RequestedCourses')",
-                                    TRUE,
-                                    "s",
-                                    $Location
-                                );
-                            if (empty($listofgraduates_tbl)) {
-                                $isEmpty = 1;
-                            }
-                        } elseif (empty($Location)) {
-                            $listofgraduates_tbl =
-                                GSecureSQL::query(
-                                    "SELECT
+                                TRUE,
+                                "s",
+                                $Location
+                            );
+                        if (empty($listofgraduates_tbl)) {
+                            $isEmpty = 1;
+                        }
+                    } elseif (empty($Location)) {
+                        $listofgraduates_tbl =
+                            GSecureSQL::query(
+                                "SELECT
                                     studentinfotbl.StudentID,
                                     studentinfotbl.FirstName,
                                     studentinfotbl.LastName,
@@ -672,17 +689,17 @@ if (count($LOGquery1) > 0) {
                                     FROM
                                     studcontactstbl
                                     INNER JOIN `studentinfotbl` ON `studcontactstbl`.`StudentID` = `studentinfotbl`.`StudentID` WHERE studentinfotbl.MajorCourse = ?",
-                                    TRUE,
-                                    "s",
-                                    $Course
-                                );
-                            if (empty($listofgraduates_tbl)) {
-                                $isEmpty = 1;
-                            }
-                        } else {
-                            $listofgraduates_tbl =
-                                GSecureSQL::query(
-                                    "SELECT
+                                TRUE,
+                                "s",
+                                $Course
+                            );
+                        if (empty($listofgraduates_tbl)) {
+                            $isEmpty = 1;
+                        }
+                    } else {
+                        $listofgraduates_tbl =
+                            GSecureSQL::query(
+                                "SELECT
                                     studentinfotbl.StudentID,
                                     studentinfotbl.FirstName,
                                     studentinfotbl.LastName,
@@ -693,17 +710,17 @@ if (count($LOGquery1) > 0) {
                                     FROM
                                     studcontactstbl
                                     INNER JOIN `studentinfotbl` ON `studcontactstbl`.`StudentID` = `studentinfotbl`.`StudentID` WHERE studentinfotbl.MajorCourse = ? AND studcontactstbl.City = ?",
-                                    TRUE,
-                                    "ss",
-                                    $Course,
-                                    $Location
-                                );
-                            if (empty($listofgraduates_tbl)) {
-                                $isEmpty = 1;
-                            }
+                                TRUE,
+                                "ss",
+                                $Course,
+                                $Location
+                            );
+                        if (empty($listofgraduates_tbl)) {
+                            $isEmpty = 1;
                         }
-                        if ($isEmpty == 1) {
-                            echo '
+                    }
+                    if ($isEmpty == 1) {
+                        echo '
                             <tbody>
                                 <tr>
                                     <td width="20%" class="tabletitle">No results found.</td>
@@ -714,36 +731,90 @@ if (count($LOGquery1) > 0) {
                                 </tr>
                             </tbody>
                                 ';
-                        } else {
-                            foreach ($listofgraduates_tbl as $value) {
-                                $StudentID = $value[0];
-                                $FirstName = $value[1];
-                                $LastName = $value[2];
-                                $_Course = $value[3];
-                                $Email = $value[4];
-                                $MobileNumber = $value[5];
-                                $_Location = $value[6];
-                                ?>
-                                <tbody>
-                                <tr>
-                                    <td width='20%' class='tabletitle'><?php echo $LastName . ", " . $FirstName; ?></td>
-                                    <td width='10%' class='tabletitle'><?php echo $_Course; ?></td>
-                                    <td width='20%' class='tabletitle'><?php echo $MobileNumber; ?></td>
-                                    <td width='25%' class='tabletitle'><?php echo $Email; ?></td>
-                                    <td width='20%' class='tabletitle'><?php echo $_Location; ?></td>
-                                </tr>
-                                </tbody>
-                                <?php
-                            }
+                    } else {
+                        foreach ($listofgraduates_tbl as $value) {
+                            $StudentID = $value[0];
+                            $FirstName = $value[1];
+                            $LastName = $value[2];
+                            $_Course = $value[3];
+                            $Email = $value[4];
+                            $MobileNumber = $value[5];
+                            $_Location = $value[6];
+                            ?>
+                            <tbody>
+                            <tr>
+                                <td width='20%' class='tabletitle'><?php echo $LastName . ", " . $FirstName; ?></td>
+                                <td width='10%' class='tabletitle'><?php echo $_Course; ?></td>
+                                <td width='20%' class='tabletitle'><?php echo $MobileNumber; ?></td>
+                                <td width='25%' class='tabletitle'><?php echo $Email; ?></td>
+                                <td width='20%' class='tabletitle'><?php echo $_Location; ?></td>
+                            </tr>
+                            </tbody>
+                            <?php
                         }
                     }
-                    ?>
-                </table>
-            </form>
-        </div>
-        <?php
-    }
-    ?>
+                } else {
+                    $isEmpty = 0;
+                    $listofgraduates_tbl =
+                        GSecureSQL::query(
+                            "SELECT
+                                    studentinfotbl.StudentID,
+                                    studentinfotbl.FirstName,
+                                    studentinfotbl.LastName,
+                                    studentinfotbl.MajorCourse,
+                                    studcontactstbl.Email,
+                                    studcontactstbl.MobileNumber,
+                                    studcontactstbl.City
+                                    FROM
+                                    studcontactstbl
+                                    INNER JOIN `studentinfotbl` ON `studcontactstbl`.`StudentID` = `studentinfotbl`.`StudentID` WHERE studentinfotbl.MajorCourse IN ('$RequestedCourses')",
+                            TRUE
+                        );
+                    if (empty($listofgraduates_tbl)) {
+                        $isEmpty = 1;
+                    }
+                    if ($isEmpty == 1) {
+                        echo '
+                            <tbody>
+                                <tr>
+                                    <td width="20%" class="tabletitle">No results found.</td>
+                                    <td width="10%" class="tabletitle"></td>
+                                    <td width="20%" class="tabletitle"></td>
+                                    <td width="25%" class="tabletitle"></td>
+                                    <td width="20%" class="tabletitle"></td>
+                                </tr>
+                            </tbody>
+                                ';
+                    } else {
+                        foreach ($listofgraduates_tbl as $value) {
+                            $StudentID = $value[0];
+                            $FirstName = $value[1];
+                            $LastName = $value[2];
+                            $_Course = $value[3];
+                            $Email = $value[4];
+                            $MobileNumber = $value[5];
+                            $_Location = $value[6];
+                            ?>
+                            <tbody>
+                            <tr>
+                                <td width='20%' class='tabletitle'><?php echo $LastName . ", " . $FirstName; ?></td>
+                                <td width='10%' class='tabletitle'><?php echo $_Course; ?></td>
+                                <td width='20%' class='tabletitle'><?php echo $MobileNumber; ?></td>
+                                <td width='25%' class='tabletitle'><?php echo $Email; ?></td>
+                                <td width='20%' class='tabletitle'><?php echo $_Location; ?></td>
+                            </tr>
+                            </tbody>
+                            <?php
+                        }
+                    }
+                }
+                ?>
+            </table>
+        </form>
+    </div>
+<?php
+}
+?>
 </div>
 </body>
 <script type="text/javascript" src="../js/script.js"></script>
