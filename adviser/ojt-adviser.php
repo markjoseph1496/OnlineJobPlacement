@@ -1,4 +1,14 @@
 <!doctype html>
+<?php
+include('../connection.php');
+session_start();
+
+/*if(isset($_SESSION['AdminID'])){
+    $AdminID = $_SESSION['AdminID'];
+}else{
+    header("location: ../login-adviser.php");
+}*/
+?>
 <html lang="en">
 
 <head>
@@ -254,15 +264,38 @@
             </tr>
             </thead>
             <tbody>
+            <?php
+            $ojt_tbl = 
+                GSecureSQL::query(
+                    "SELECT studentinfotbl.`StudentID`, studentinfotbl.`FirstName`, studentinfotbl.`LastName`,
+                     ojttbl.`CompanyName`, ojttbl.`CompanyAddress`, ojttbl.`Status`
+                     FROM studentinfotbl
+                     INNER JOIN ojttbl
+                     ON studentinfotbl.`StudentID`=ojttbl.`StudentID`
+                     WHERE studentinfotbl.`Status` = 'OJT'
+                     ORDER BY studentinfotbl.`StudentID`;",
+                    TRUE
+
+                );
+                foreach ($ojt_tbl as $value) {
+                    $StudentID = $value[0];
+                    $FirstName = $value[3];
+                    $LastName = $value[4];
+                    $Status = $value[8];
+
+            ?>
             <tr>
-                <td>008-2012-0805</td>
-                <td><a href=".php">008-2012-0805</td>
+                <td><?php echo $StudentID; ?></td>
+                <td><a href=".php"><?php echo $FirstName; echo $LastName; ?></td>
                 <td>008-2012-0805</td>
                 <td>008-2012-0805</td>
                 <td>008-2012-0805</td>
                 <td>008-2012-0805</td>
                 <td>008-2012-0805</td>
             </tr>
+            <?php
+                }
+            ?>
             </tbody>
         </table>
     </div>
