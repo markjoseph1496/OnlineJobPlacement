@@ -112,8 +112,8 @@ if (count($LOGquery1) > 0) {
     <link rel="stylesheet" href="../css/font-awesome.min.css" type="text/css" media="screen">
 
     <!-- Fonts -->
-    <link rel="stylesheet" type="text/css" href="../../../fonts/ffonts/montserrat.css">
-    <link rel="stylesheet" type="text/css" href="../../../fonts/ffonts/open-sans.css">
+    <link rel="stylesheet" type="text/css" href="../fonts/ffonts/montserrat.css">
+    <link rel="stylesheet" type="text/css" href="../fonts/ffonts/open-sans.css">
 
     <!-- Slicknav -->
     <link rel="stylesheet" type="text/css" href="../css/slicknav.css" media="screen">
