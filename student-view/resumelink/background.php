@@ -1,19 +1,36 @@
-<!DOCTYPE html>
 <?php
+include('../../connection.php');
 session_start();
 
-if (isset($_SESSION['StudentID'])) {
+if(isset($_SESSION['StudentID'])){
     $StudentID = $_SESSION['StudentID'];
-} else {
-    $StudentID = '';
-    echo "
-        <script type='text/javascript'>
-        location.href='../../../login-student.php?id=2';
-        </script>
-        ";
+}else{
+    header("location: ../../login-student.php");
 }
-?>
 
+$infoquery =
+    GSecureSQL::query(
+        "SELECT FirstName, LastName, MajorCourse FROM studentinfotbl WHERE StudentID = ?",
+        TRUE,
+        "s",
+        $StudentID
+    );
+
+$FirstName = $infoquery[0][0];
+$LastName = $infoquery[0][1];
+$MajorCourse =  $infoquery[0][2];
+$StudentName = $FirstName . " " . $LastName;
+
+$course_qry =
+    GSecureSQL::query(
+        "SELECT CourseTitle FROM coursetbl WHERE CourseCode = ?",
+        TRUE,
+        "s",
+        $MajorCourse
+    );
+$MajorCourse = $course_qry[0][0];
+?>
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
