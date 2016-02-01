@@ -302,8 +302,6 @@ $ContactNumber = $admin_tbl[0][9];
                             <li><a href="admin-company_pending.php">Pending</a></li>
                              </ul>
                         </li>
-                        <li><a href="admin-adviser.php">Adviser List</a>
-                        </li>
                         <li>
                         <a> Maintenance</a>
                         <ul class="dropdown">
@@ -340,8 +338,6 @@ $ContactNumber = $admin_tbl[0][9];
                             <li><a href="admin-companylist.php">Active</a></li>
                             <li><a href="admin-company_pending.php">Pending</a></li>
                         </ul>
-                    </li>
-                    <li><a href="admin-adviser.php">Adviser List</a>
                     </li>
                     <li>
                         <a> Maintenance</a>

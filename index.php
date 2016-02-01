@@ -23,10 +23,8 @@
     <link rel="stylesheet" href="css/font-awesome.min.css" type="text/css" media="screen">
 
     <!-- Fonts -->
-    <link href="fonts/ffonts/montserrat.css" rel="stylesheet" type="text/css">
-    <link href="fonts/ffonts/kaushan.css" rel="stylesheet" type="text/css">
-    <link href="fonts/ffonts/droid.css" rel="stylesheet" type="text/css">
-    <link href="fonts/ffonts/roboto.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" type="text/css" href="fonts/ffonts/montserrat.css">
+    <link rel="stylesheet" type="text/css" href="fonts/ffonts/open-sans.css">
 
     <!-- Slicknav -->
     <link rel="stylesheet" type="text/css" href="css/slicknav.css" media="screen">
@@ -42,7 +40,6 @@
 
     <!-- Color CSS Styles  -->
     <link rel="stylesheet" type="text/css" href="css/colors/yellow.css" title="yellow" media="screen"/>
-
 
     <!-- JS  -->
     <script type="text/javascript" src="js/jquery.min.js"></script>
@@ -124,7 +121,7 @@
                 <!-- Carousel inner -->
                 <div class="carousel-inner">
                     <div class="item active">
-                        <img class="img-responsive" src="img/slider/1.jpg" alt="slider">
+                        <img class="img-responsive" src="img/slider/8.jpg" alt="slider">
                         <div class="slider-content">
                             <div class="col-md-12 text-center">
                                 <h2 class="animated2">
