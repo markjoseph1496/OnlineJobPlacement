@@ -201,6 +201,7 @@ if (isset($_SESSION['AdminID'])) {
                         <ul class="dropdown">
                             <li><a class="active" href="admin-maintenance.php">Courses</a></li>
                             <li><a href="admin-users.php">Users</a></li>
+                            <li><a href="admin-calendar.php">Calendar Events</a></li>
                         </ul>
                     </li>
                 </ul>
@@ -237,6 +238,8 @@ if (isset($_SESSION['AdminID'])) {
                     <a> Maintenance</a>
                     <ul class="dropdown">
                         <li><a class="active" href="admin-maintenance.php">Courses</a></li>
+                        <li><a href="admin-users.php">Users</a></li>
+                        <li><a href="admin-calendar.php">Calendar Events</a></li>
                     </ul>
                 </li>
             </ul>
@@ -267,8 +270,8 @@ if (isset($_SESSION['AdminID'])) {
 
     <div class="container">
         <div class="col-md-12 fieldcol">
-            <a href="admin-addcourse.php" class="btnforadding" style="float:right;">
-                <span class="fa fa-plus-square"> Add Course </span>
+            <a href="admin-addcourse.php" class="main-button" style="float:right;">
+                        <span class="fa fa-plus-square"></span> Add Course 
             </a>
         </div>
         <div class="col-md-12">

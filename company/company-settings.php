@@ -258,17 +258,14 @@ $ProfileImage= $companyinfo_tbl[0][11];
                                 </ul>
                             </li>
                             <li>
-                                <a href="company-calendar.php">Calendar</a>
-                            </li>
-                            <li>
-                                <a class="active" href="company-settings.php">Settings</a>
-                            </li>
-                            <li>
                                 <a> Applicant List</a>
                                 <ul class="dropdown">
                                     <li><a href="company-pendingapplicants.php">Pending</a></li>
                                     <li><a href="company-acceptedapplicants.php">Accepted</a></li>
                                 </ul>
+                            </li>
+                            <li>
+                                <a class="active" href="company-settings.php">Settings</a>
                             </li>
                         </ul>
                         <!-- End Navigation List -->
@@ -287,17 +284,14 @@ $ProfileImage= $companyinfo_tbl[0][11];
                         </ul>
                     </li>
                     <li>
-                        <a href="company-calendar.php">Calendar</a>
-                    </li>
-                    <li>
-                        <a class="active" href="company-settings.php">Settings</a>
-                    </li>
-                    <li>
                         <a>Applicant List</a>
                         <ul class="dropdown">
                             <li><a href="company-pendingapplicants.php">Pending</a></li>
                             <li><a href="company-acceptedapplicants.php">Accepted</a></li>
                         </ul>
+                    </li>
+                     <li>
+                        <a class="active" href="company-settings.php">Settings</a>
                     </li>
                 </ul>
             </div>

@@ -479,7 +479,7 @@ $ContactNumber = $admin_tbl[0][9];
             <div class="row field">
                 <div class="col-md-2 fieldcol">
                     <label>Position <span>(*)</span></label>
-                </div>
+                </div>,
                 <div class="col-md-4 fieldcol">
                     <div class="form-group">
                         <input type="text" name="Position" id="Position" class="form-control"

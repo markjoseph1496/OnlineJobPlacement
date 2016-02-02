@@ -188,16 +188,14 @@ $Address = $companyuser_tbl[0][7];
                     </ul>
                 </li>
                 <li>
-                    <a href="company-calendar.php">Calendar</a>
-                </li>
-                <li><a class = "active" href="company-settings.php">Settings</a>
-                </li>
-                <li>
                     <a href="company-applicants.php">Applicant List</a>
                     <ul class="dropdown">
                         <li><a href="company-pendingapplicants.php">Pending</a></li>
                         <li><a href="company-acceptedapplicants.php">Accepted</a></li>
                     </ul>
+                </li>
+                 <li>
+                    <a class = "active" href="company-settings.php">Settings</a>
                 </li>
             </ul>
             <!-- End Navigation List -->
@@ -215,18 +213,15 @@ $Address = $companyuser_tbl[0][7];
                         <li><a href="company-createposition.php">Create Position</a></li>
                     </ul>
                 </li>
-                <li>
-                    <a href="company-calendar.php">Calendar</a>
-                </li>
-                <li>
-                    <a class = "active" href="company-settings.php">Settings</a>
-                </li>
                <li>
                     <a href="company-applicants.php">Applicant List</a>
                     <ul class="dropdown">
                         <li><a href="company-pendingapplicants.php">Pending</a></li>
                         <li><a href="company-acceptedapplicants.php">Accepted</a></li>
                     </ul>
+                </li>
+                 <li>
+                    <a class = "active" href="company-settings.php">Settings</a>
                 </li>
     </ul>
     </header>

@@ -195,16 +195,14 @@ $cLastName = $companyinfo_tbl[0][2];
                             </ul>
                         </li>
                         <li>
-                            <a href="company-calendar.php">Calendar</a>
-                        </li>
-                        <li><a href="company-settings.php">Settings</a>
-                        </li>
-                        <li>
                             <a>Applicant List</a>
                             <ul class="dropdown">
                                 <li><a href="company-pendingapplicants.php">Pending</a></li>
                                 <li><a href="company-acceptedapplicants.php" class="active">Accepted</a></li>
                             </ul>
+                        </li>
+                        <li>
+                            <a href="company-settings.php">Settings</a>
                         </li>
                     </ul>
                     <!-- End Navigation List -->
@@ -223,16 +221,14 @@ $cLastName = $companyinfo_tbl[0][2];
                     </ul>
                 </li>
                 <li>
-                    <a href="company-calendar.php">Calendar</a>
-                </li>
-                <li><a href="company-settings.php">Settings</a>
-                </li>
-                <li>
                     <a class="active" href="company-applicants.php">Applicant List</a>
                     <ul class="dropdown">
                         <li><a href="company-pendingapplicants.php">Pending</a></li>
                         <li><a href="company-acceptedapplicants.php" class="active">Accepted</a></li>
                     </ul>
+                </li>
+                <li>
+                    <a href="company-settings.php">Settings</a>
                 </li>
             </ul>
             <!-- Mobile Menu End -->

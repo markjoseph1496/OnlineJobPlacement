@@ -203,6 +203,7 @@ if(isset($_SESSION['AdminID'])){
                         <ul class="dropdown">
                             <li><a class="active" href="admin-maintenance.php">Courses</a></li>
                             <li><a href="admin-users.php">Users</a></li>
+                            <li><a href="admin-calendar.php">Calendar Events</a></li>
                         </ul>
                     </li>
             </ul>
@@ -239,6 +240,8 @@ if(isset($_SESSION['AdminID'])){
                     <a> Maintenance</a>
                     <ul class="dropdown">
                         <li><a href="admin-maintenance.php">Courses</a></li>
+                        <li><a href="admin-users.php">Users</a></li>
+                        <li><a href="admin-calendar.php">Calendar Events</a></li>
                     </ul>
                 </li>
             </ul>

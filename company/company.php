@@ -332,16 +332,13 @@ if (count($LOGquery1) > 0) {
                             </ul>
                         </li>
                         <li>
-                            <a href="company-calendar.php">Calendar</a>
-                        </li>
-                        <li><a href="company-settings.php">Settings</a>
-                        </li>
-                        <li>
                             <a>Applicant List</a>
                             <ul class="dropdown">
                                 <li><a href="company-pendingapplicants.php">Pending</a></li>
                                 <li><a href="company-acceptedapplicants.php">Accepted</a></li>
                             </ul>
+                        </li>
+                        <li><a href="company-settings.php">Settings</a>
                         </li>
                     </ul>
                     <!-- End Navigation List -->
@@ -360,16 +357,13 @@ if (count($LOGquery1) > 0) {
                     </ul>
                 </li>
                 <li>
-                    <a href="company-calendar.php">Calendar</a>
-                </li>
-                <li><a href="company-settings.php">Settings</a>
-                </li>
-                <li>
                     <a>Applicant List</a>
                     <ul class="dropdown">
-                        <li><a href="company-pendingapplicants.php" class="active">Pending</a></li>
-                        <li><a href="company-acceptedapplicants.php">Accepted</a></li>
+                                <li><a href="company-pendingapplicants.php">Pending</a></li>
+                                <li><a href="company-acceptedapplicants.php">Accepted</a></li>
                     </ul>
+                </li>
+                    <a href="company-settings.php">Settings</a>
                 </li>
             </ul>
         </div>
