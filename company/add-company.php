@@ -119,6 +119,7 @@ if (isset($_POST['CourseCheckbox'])) {
 
 }
 
+// Update ng Info ng Company
 if (isset($_GET['btnSaveSetting'])) {
     $CompanyName = $_GET['CompanyName'];
     $Description = $_GET['Description'];
@@ -145,4 +146,26 @@ if (isset($_GET['btnSaveSetting'])) {
         $CompanyID
     );
     header("location: company-settings.php?id=1");
+}
+
+//Update ng info ng User ni Company
+if (isset($_GET['btnsaveuser'])) {
+    $FirstName = $_GET['FirstName'];
+    $MiddleName = $_GET['MiddleName'];
+    $LastName = $_GET['LastName'];
+    $Position = $_GET['Position'];
+    $Department = $_GET['Department'];
+
+    GSecureSQL::query(
+        "UPDATE companyinfotbl SET FirstName = ?, MiddleName = ?, LastName = ?, Position = ?, Department = ? WHERE CompanyID = ?",
+        FALSE,
+        "ssssss",
+        $FirstName,
+        $MiddleName,
+        $LastName,
+        $Position,
+        $Department,
+        $CompanyID
+        );
+        header("location: company-settingsaccount.php?id=AccountEdit");
 }
