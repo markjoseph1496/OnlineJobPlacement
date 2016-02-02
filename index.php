@@ -342,14 +342,13 @@
                             <div class="portfolio-item item">
                                 <div class="portfolio-border">
                                     <div class="portfolio-thumb">
-                                        <a class="lightbox" title="This is an image title"
-                                           href="images/portfolio-big-01.jpg">
+                                        <a class="lightbox" title="This is an image title" href="images/portfolio-big-01.jpg">
                                             <div class="thumb-overlay"><i class="fa fa-arrows-alt"></i></div>
                                             <img alt="" src="images/portfolio-big-01.jpg"/>
                                         </a>
                                     </div>
                                     <div class="portfolio-details">
-                                        <a href="#">
+                                        <a href="view-event.php">
                                             <h4>STI</h4>
                                             <span>Events</span>
                                             <span>Events</span>
