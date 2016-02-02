@@ -120,6 +120,8 @@ if (isset($_POST['CourseCheckbox'])) {
 }
 
 if (isset($_GET['btnSaveSetting'])) {
+    echo "sdada";
+    die();
     $CompanyName = $_GET['CompanyName'];
     $CompanyDesc = $_GET['CompanyDesc'];
     $Industry = $_GET['Industry'];

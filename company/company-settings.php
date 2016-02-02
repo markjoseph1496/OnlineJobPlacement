@@ -36,7 +36,7 @@ $companyinfo_tbl =
 
 $CompanyName = $companyinfo_tbl[0][0];
 $Description = $companyinfo_tbl[0][1];
-$Industry = $companyinfo_tbl[0][2];
+$cIndustry = $companyinfo_tbl[0][2];
 $Classification = $companyinfo_tbl[0][3];
 $Address = $companyinfo_tbl[0][4];
 $City = $companyinfo_tbl[0][5];
@@ -319,6 +319,7 @@ $cLastName= $companyinfo_tbl[0][11];
         <!-- Start Content -->
         <br><br><br>
         <div class="container">
+        <form  name="CompanySetting" id="CompanySetting" autocomplete="off" action="add-company.php">
             <div class="row">
                 <div class="col-md-6">
                     &nbsp;
@@ -330,10 +331,8 @@ $cLastName= $companyinfo_tbl[0][11];
                 </div>
             </div>
             <div class="hr4" style="margin-top:10px;margin-bottom:35px;"></div>
-
             <div class="row">
-                <div class="col-md-7">
-                    <form method="POST" name="CompanySetting" id="CompanySetting" autocomplete="off" action="add-company.php">
+                    <div class="col-md-7">
                         <?php
                         if (isset($_GET['id'])) {
                             $id = $_GET['id'];
@@ -351,7 +350,7 @@ $cLastName= $companyinfo_tbl[0][11];
                             </div>
                             <div class="col-md-8">
                                 <div class="form-group">
-                                    <input type="text" name="cname" id="cname" class="form-control" value="<?php echo $CompanyName; ?>">
+                                    <input type="text" name="CompanyName" id="CompanyName" class="form-control" value="<?php echo $CompanyName; ?>">
                                 </div>
                             </div>
                         </div>
@@ -373,7 +372,7 @@ $cLastName= $companyinfo_tbl[0][11];
                             </div>
                             <div class="col-md-8">
                                 <div class="form-group">
-                                    <textarea type="text" name="description" id="usr" class="form-control"><?php echo $Description; ?></textarea>
+                                    <textarea type="text" name="Description" id="usr" class="form-control"><?php echo $Description; ?></textarea>
                                 </div>
                             </div>
                         </div>
@@ -395,7 +394,7 @@ $cLastName= $companyinfo_tbl[0][11];
                                         foreach ($industrytbl as $value) {
                                             $Industry = $value[0];
                                             ?>
-                                            <option value="<?php echo $Industry; ?>"><?php echo $Industry; ?></option>
+                                            <option value="<?php echo $Industry; ?>" <?php if($cIndustry == $Industry){ echo "selected='selected'"; } ?> ><?php echo $Industry; ?></option>
                                             <?php
                                         }
                                         ?>
@@ -403,27 +402,13 @@ $cLastName= $companyinfo_tbl[0][11];
                                 </div>
                             </div>
                         </div>
-
-                        <div class="row">
-                            <div class="col-md-4">
-                                <label>Classification <span>(*)</span>:</label>
-                            </div>
-                            <div class="col-md-8">
-                                <div class="form-group">
-                                    <select id="classification" name="classification" class="classification form-control" ?>">
-                                        <option value=""></option>
-                                    </select>
-                                </div>
-                            </div>
-                        </div>
-
                         <div class="row">
                             <div class="col-md-4">
                                 <label>Address <span>(*)</span>:</label>
                             </div>
                             <div class="col-md-8">
                                 <div class="form-group">
-                                    <input type="text" name="address" id="address" class="form-control" value="<?php echo $Address; ?>">
+                                    <input type="text" name="Address" id="Address" class="form-control" value="<?php echo $Address; ?>">
                                 </div>
                             </div>
                         </div>
@@ -499,7 +484,7 @@ $cLastName= $companyinfo_tbl[0][11];
                             </div>
                             <div class="col-md-8">
                                 <div class="form-group">
-                                    <input type="text" name="postal" id="postal" class="form-control" value="<?php echo $PostalCode; ?>">
+                                    <input type="text" name="Postal" id="Postal" class="form-control" value="<?php echo $PostalCode; ?>">
                                 </div>
                             </div>
                         </div>
@@ -510,7 +495,7 @@ $cLastName= $companyinfo_tbl[0][11];
                             </div>
                             <div class="col-md-8">
                                 <div class="form-group">
-                                    <input type="text" name="mobilenum" id="usr" class="form-control" value="<?php echo $PhoneNum; ?>">
+                                    <input type="text" name="MobileNum" id="usr" class="form-control" value="<?php echo $MobileNumber; ?>">
                                 </div>
                             </div>
                         </div>
@@ -521,7 +506,7 @@ $cLastName= $companyinfo_tbl[0][11];
                             </div> 
                             <div class="col-md-8">
                                 <div class="form-group">
-                                    <input type="text" name="telnum" id="usr" class="form-control" value="<?php echo $MobileNumber; ?>">
+                                    <input type="text" name="TelNum" id="usr" class="form-control" value="<?php echo $PhoneNum; ?>">
                                 </div>
                             </div>
                         </div>
@@ -532,19 +517,27 @@ $cLastName= $companyinfo_tbl[0][11];
                             </div>
                             <div class="col-md-8">
                                 <div class="form-group">
-                                    <input type="text" name="fax" id="usr" class="form-control" value="<?php echo $Fax; ?>">
+                                    <input type="text" name="Fax" id="usr" class="form-control" value="<?php echo $Fax; ?>">
                                 </div>
                             </div>
                         </div>
-                    </form>
-                </div>
-                <div class="col-md-5">
-                    <label class="control-label">Select Image</label>
-                    <input id="ProfilePicture" name="ProfilePicture" multiple type="file" class="file file-loading" data-allowed-file-extensions='["png", "jpg", "bmp", "gif"]'>
-                    <br>
-                    <button id="" class="btn-system btn-mini border-btn" name="btnDelete">Delete Image</button>
-                </div>
-            </div>
+                    </div>
+            </form>
+                <form id="UploadPicture" name="UploadPicture" method="POST" action="upload.php" enctype="multipart/form-data">
+                    <div class="col-md-5">
+                        <div class="image-border">
+                            <img src="<?php echo $ProfileImage; ?>" class="img-responsive" style="width:100%; height:100%;">
+                        </div>
+                        <br><br>
+                        <label class="control-label">Select Image</label>
+                        <input id="ProfilePicture" name="ProfilePicture" type="file"
+                               class="file file-loading"
+                               data-allowed-file-extensions='["png", "jpg", "bmp", "gif"]'>
+                        <br>
+                        <button id="" class="btn-system btn-mini border-btn" name="btnDelete">Delete Image</button>
+                    </div>
+                </form>
+        </div>
             <div class="hr5" style="margin-top:35px;margin-bottom:40px;"></div>
             <div class="text-center">
                 <button type="submit" class="btn-system btn-large" name="btnSaveSetting" id="save">Save</button>
@@ -563,7 +556,7 @@ $cLastName= $companyinfo_tbl[0][11];
                 validating: "glyphicon glyphicon-refresh"
             },
            s: {
-                cname: {
+                CompanyName: {
                     validators: {
                         notEmpty: {
                             message: "Compamy Name is required."
@@ -581,13 +574,13 @@ $cLastName= $companyinfo_tbl[0][11];
                             message: 'The Company Name already exists',
                             url: 'company-settings.php',
                             data: {
-                                type: 'cname'
+                                type: 'CompanyName'
                             },
                             type: 'POST'
                         }
                     }
                 },
-                description: {
+                Description: {
                     validators: {
                         notEmpty: {
                             message: "Company Description is required."
@@ -617,7 +610,7 @@ $cLastName= $companyinfo_tbl[0][11];
                         }
                     }
                 },
-                address: {
+                Address: {
                     validators: {
                         notEmpty: {
                             message: "Address is required."
@@ -636,7 +629,7 @@ $cLastName= $companyinfo_tbl[0][11];
                         }
                     }
                 },
-                postal: {
+                Postal: {
                     validators: {
                         notEmpty: {
                             message: "Postal Code is required."
@@ -652,7 +645,7 @@ $cLastName= $companyinfo_tbl[0][11];
                         }
                     }
                 },
-                mobilenum: {
+                MobileNum: {
                     validators: {
                         notEmpty: {
                             message: "Mobile Number is required."
@@ -668,7 +661,7 @@ $cLastName= $companyinfo_tbl[0][11];
                         }
                     }
                 },
-                telnum: {
+                TelNum: {
                     validators: {
                         notEmpty: {
                             message: "TelPhone Number is required."
@@ -684,7 +677,7 @@ $cLastName= $companyinfo_tbl[0][11];
                         }
                     }
                 },
-                fax: {
+                Fax: {
                     validators: {
                         notEmpty: {
                             message: "Fax Number is required."
