@@ -120,6 +120,27 @@ if (isset($_POST['CourseCheckbox'])) {
 }
 
 // Update ng Info ng Company
+if (isset($_POST['type'])) {
+    $isAvailable = true;
+    $aCompanyName = $_POST['CompanyName'];
+    $Result =
+        GSecureSQL::query(
+            "SELECT CompanyName FROM companyinfotbl WHERE CompanyName = ?",
+            TRUE,
+            "s",
+            $aCompanyName
+        );
+
+    if (count($Result) == 0) {
+        $isAvailable = true;
+    } else {
+        $isAvailable = false;
+    }
+    echo json_encode(array(
+        'valid' => $isAvailable,
+    ));
+}
+
 if (isset($_GET['btnSaveSetting'])) {
     $CompanyName = $_GET['CompanyName'];
     $Description = $_GET['Description'];
@@ -128,11 +149,11 @@ if (isset($_GET['btnSaveSetting'])) {
     $City = $_GET['City'];
     $Postal = $_GET['Postal'];
     $MobileNum = $_GET['MobileNum'];
-    $PhoneNum = $_GET['PhoneNum'];
+    $PhoneNum = $_GET['TelNum'];
     $Fax = $_GET['Fax'];
 
     GSecureSQL::query(
-        "UPDATE companyinfotbl SET CompanyName = ?, Description = ?, Industry = ?, Address = ?, City = ?, Postal = ?, MobileNum = ?, PhoneNum = ?, Fax = ? WHERE CompanyID = ?",
+        "UPDATE companyinfotbl SET CompanyName = ?, Description = ?, Industry = ?, Address = ?, City = ?, PostalCode = ?, MobileNum = ?, PhoneNum = ?, Fax = ? WHERE CompanyID = ?",
         FALSE,
         "ssssssssss",
         $CompanyName,
@@ -143,9 +164,10 @@ if (isset($_GET['btnSaveSetting'])) {
         $Postal,
         $MobileNum,
         $PhoneNum,
+        $Fax,
         $CompanyID
     );
-    header("location: company-settings.php?id=1");
+    header("location: company-settings.php?id=SettingEdit");
 }
 
 //Update ng info ng User ni Company
