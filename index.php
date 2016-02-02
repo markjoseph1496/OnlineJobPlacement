@@ -121,7 +121,7 @@
                 <!-- Carousel inner -->
                 <div class="carousel-inner">
                     <div class="item active">
-                        <img class="img-responsive" src="img/slider/1.jpg" alt="slider">
+                        <img class="img-responsive" src="img/slider/1.png" alt="slider">
                         <div class="slider-content">
                             <div class="col-md-12 text-center">
                                 <h2 class="animated2">
@@ -136,23 +136,12 @@
                     </div>
                     <!--/ Carousel item end -->
                     <div class="item">
-                        <img class="img-responsive" src="img/slider/2.jpg" alt="slider">
-                        <div class="slider-content">
-                            <div class="col-md-12 text-center">
-                                <h2 class="animated4">
-                                    <span><strong>OJPMS</strong> for the highest</span>
-                                </h2>
-                                <h3 class="animated5">
-                                    <span>The Key of your Success</span>
-                                </h3>
-                                <p class="animated6"><a href="#" class="slider btn btn-system btn-large">Buy Now</a></p>
-                            </div>
-                        </div>
+                        <img class="img-responsive" src="img/slider/2.png" alt="slider">
                     </div>
                     <!--/ Carousel item end -->
                     <div class="item">
                         <img class="img-responsive" src="img/slider/3.jpg" alt="slider">
-                        <div class="slider-content">
+                        <!--<div class="slider-content">
                             <div class="col-md-12 text-center">
                                 <h2 class="animated7 white">
                                     <span>The way of <strong>Success</strong></span>
@@ -161,11 +150,11 @@
                                     <span>Why you are waiting</span>
                                 </h3>
                                 <div class="">
-                                    <a class="animated4 slider btn btn-system btn-large btn-min-block" href="#">Get
-                                        Now</a><a class="animated4 slider btn btn-default btn-min-block" href="#">Click</a>
+                                    <a class="animated4 slider btn btn-system btn-large btn-min-block" href="#">Get Now</a>
+                                    <a class="animated4 slider btn btn-default btn-min-block" href="#">Click</a>
                                 </div>
                             </div>
-                        </div>
+                        </div>-->
                     </div>
                     <!--/ Carousel item end -->
                 </div>
@@ -218,14 +207,14 @@
                                                 <li><a href="">Finance - General / Cost Accounting </a></li>
                                                 <li><a href="">Healthcare - Nurse / Medical Support and Assistant</a></li>
                                                 <li><a href="">IT / Computer - Network / System / Database Admin</a></li>
-                                                <li><a href="">Sales - Retail / General</a></li>                                        
+                                                <li><a href="">Sales - Retail / General</a></li>
+                                                <li><a href="">IT / Computer - Software Development</a></li>
+                                                <li><a href="">Engineering - Civil / Construction / Structural</a></li>
+                                                <li><a href="">Finance - Audit/Taxation</a></li>                                        
                                             </ul>
                                         </div>
                                         <div class="col-md-6">
                                             <ul class="icons-list">
-                                                <li><a href="">IT / Computer - Software Development</a></li>
-                                                <li><a href="">Engineering - Civil / Construction / Structural</a></li>
-                                                <li><a href="">Finance - Audit/Taxation</a></li>
                                                 <li><a href="">Purchasing / Inventory/ Material and Warehouse Management</a></li>
                                                 <li><a href="">Sales - Corporate / B2B</a></li>
                                                 <li><a href="">Engineering - Electronics / Communication</a></li>
@@ -248,14 +237,14 @@
                                                 <li><a href="">Education</a></li>
                                                 <li><a href="">Food and Beverage</a></li>
                                                 <li><a href="">Grooming / Beauty / Fitness</a></li>
-                                            </ul>
-                                        </div>
-                                        <div class="col-md-6">
-                                            <ul class="icons-list">
                                                 <li><a href="">Healthcare / Medical</a></li>
                                                 <li><a href="">Hotel / Hospitality</a></li>
                                                 <li><a href="">Human Resources Management / Consulting</a></li>
                                                 <li><a href="">Online / E-commerce Business</a></li>
+                                            </ul>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <ul class="icons-list">
                                                 <li><a href="">Outsourcing (Call Center / BPO)</a></li>
                                                 <li><a href="">Retail / Merchandising</a></li>
                                                 <li><a href="">Utilities / Power</a></li>
@@ -335,7 +324,7 @@
                             <div class="portfolio-item item">
                                 <div class="portfolio-border">
                                     <div class="portfolio-thumb">
-                                        <a class="lightbox" data-lightbox-type="ajax" href="https://vimeo.com/78468485">
+                                        <a class="lightbox" data-lightbox-type="ajax" href="https://www.youtube.com/watch?v=Bjryfs_JwLU">
                                             <div class="thumb-overlay"><i class="fa fa-play"></i></div>
                                             <img alt="" src="images/portfolio-1/1.png"/>
                                         </a>
