@@ -320,7 +320,7 @@ $cLastName = $companyinfo_tbl[0][2];
                             echo '<div class="alert alert-success">
                             <span class="glyphicon glyphicon-info-sign"></span> 
                             Achievement successfully added.
-                            </div>';
+                            </div>';    
                         }
                     }   
                 ?>
