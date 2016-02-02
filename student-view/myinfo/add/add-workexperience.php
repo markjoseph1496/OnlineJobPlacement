@@ -236,6 +236,12 @@ $MajorCourse = $course_qry[0][0];
                                     <input type="url" class="form-control" id="CompanyWebsite" name="CompanyWebsite" value="http://">
                                 </div>
                             </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label>Address</label>
+                                    <input type="text" class="form-control" id="CompanyAddress" name="CompanyAddress" value="http://">
+                                </div>
+                            </div>
                         </div>
                         <div class="row">
                             <div class="col-md-6">
@@ -461,6 +467,8 @@ $MajorCourse = $course_qry[0][0];
 
 <script type="text/javascript">
     $('#Duration').click(function () {
+        $("#ToMonth").val("");
+        $("#ToYear").val("");
         if ($(this).is(':checked')) {
             $('#ToDuration').hide();
         } else {
