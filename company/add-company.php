@@ -131,7 +131,6 @@ if (isset($_GET['btnSaveSetting'])) {
     $PhoneNum = $_GET['PhoneNum'];
     $Fax = $_GET['Fax'];
 
-
     GSecureSQL::query(
         "UPDATE companyinfotbl SET CompanyName = ?, CompanyDesc = ?, Industry = ?, Classification = ?, Address = ?, City = ?, PostalCode = ?, MobileNum = ?, PhoneNum = ?, Fax = ? WHERE CompanyID = ?",
         FALSE,
