@@ -74,88 +74,99 @@
 </head>
 
 <body>
+
     <div class ="container">
+        <input name="b_print" type="button" class="btn-system btn-large"  onClick="printdiv('div_print');" value=" Print "> 
+    <div id="div_print">
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-8">
+                    <BR><BR><BR>
+                    <label> Name: </label><BR>
+                     <label> Address: </label><BR>
+                     <label> Contact No. </label><BR>
+                    <label>Email Address </label><BR>
+                </div>
+                <div class="col-xs-4">
+                <div class="image-border" style = "width:192px; height: 192px;">
+                    <img src="img/man-icon.png">
+                 </div> 
+                 </div>
+            </div>
+        </div>
+         <div class="hr5" style="margin-top:35px;margin-bottom:40px;"></div>
+        <div class = "col-xs-12">
+                <label>Objective:</label>
+                <p>One to two sentences long that describes the type of job you want, the type of organization you prefer and how you can contribute to the position/organization.<p>
+        </div>
+        <BR> <BR> 
+        <div class = "col-xs-12">
+                <label>Education:</label>
+        </div>      
+         <div class="container">
+            <div class="row">
+                <div class="col-xs-4">
+                    <label style = "text-indent:100px;"> (Year Covered) </label>
+                     <p style = "text-indent:100px;"> 20__ - 20__ </p><BR>
+                     <p style = "text-indent:100px;"> 20__ - 20__ </p><BR>
+                    
+                </div>
+                <div class="col-xs-8">
+                     <label> STI College – (Campus) (for College) / STI (Campus) (for EC) </label>
+                     <p> Degree / Diploma</p><BR>
+                     <p> __________High School </p>
+                    <p>High School Diploma </p>
+                 </div>
+            </div>
+        </div>
+        &nbsp;  
+        <div class = "col-xs-12">
+                <label>Work Experience (if applicable):</label>
+                <ul style="list-style-type:disc">
+                    <li>AASDSJFBJDFJ</li>
+                    <li>JSDGFHJDGFJ</li>
+                    <li>JSGFHJSDGFHJ</li>
+                </ul> 
+         <BR>
+                <label>Skills:</label>
+                <ul style="list-style-type:disc">
+                    <li>AASDSJFBJDFJ</li>
+                    <li>JSDGFHJDGFJ</li>
+                    <li>JSGFHJSDGFHJ</li>
+                </ul> 
+         <BR>
+                <label>Extra Curricular Activities</label>
+                <ul style="list-style-type:disc">
+                    <li>AASDSJFBJDFJ</li>
+                    <li>JSDGFHJDGFJ</li>
+                    <li>JSGFHJSDGFHJ</li>
+                </ul> 
+        <BR>
+                <label>References:</label>
+                <p>STI College – Caloocan </p>
+        </div> 
 
-            <button onclick="myFunction()" class="btn-system btn-mini border-btn fa fa-print" style = "width:100px; margin-left:40px;">
-             Print this page </button>
-                 <BR><BR>
-                   <div class = "col-md-6">
-                   <h1><u>Stephanie Lewis</u></h1>
-<h2><u>Resume</u></h2>
-<h3><u>Education</u></h3>
-<p>
-    <ul>
-    <li><a href="http://www.usu.edu">Utah State University</a> (BS) Logan, UT</li>
-        <ul>
-        <li> Public Relations</li>
-        <li> Law and Constituional Studies</li>
-        </ul>
-</p>
-<p>
-    <li><a href="http://www.judgememorial.com">Judge Memorial Catholic High School</a> (Diploma)</li>
-    <ul>
-    <li> Salt Lake City, UT</li>
-    <li> August 2005 - May 2009</li>
-    </ul>
-    </ul>
-  </p>  
-<h3><u>Experience</u></h3>
- <p>
-    <ul>
-    <li>USU Newman Club Communications Officer (November 2010--Present)</li>
-        <p></p>
-        <ul>
-              <li>Created and maintained Twitter and Facebook accounts</li>
-              <li>Created and ran events such as bowling and movie night</li>
-        </ul>
-</p>
-<p></p>
-    <ul>
-    <li>Lihong Teng -- Private Tutor, Logan, UT (January 2010--Present)</li>   
-        <p></p>
-        <ul>
-               <li> High school and middle school level debate</li>
-               <li>Coached for Lincoln-Douglas and Policy</li>
-        </ul>
-</p>
-<p></p>
-    <li>BadDog Rediscovers America -- Volunteer (Spring 2008)</li>
-        <p></p>
-        <ul>
-            <li>Created "art cards" out of the children's work</li>
-            <li>Sorted materials to be used in art classes</li>
-            <li>Assisted in set-up and helped patrons find parking for annual auction</li>
-        </ul>
-    </ul>
+
+    </div>      
     </div>
-    <div class = "col-md-6">
-<h3><u>Skills</u></h3>
-    <p></p>
-    <ul>
-        <li>Effective communication skills</li>
-        <li>Comfortable speaking in front of large groups</li>
-        <li>Clear and effective writing abilities</li>
-        <li>Comfortable thinking critically and quickly</li>
-        <li>Familiarity with Microsoft Word, Excel, PowerPoint, and Photoshop</li>
-        <li>Ability to perform basic html coding</li>
-    </ul>  
-
-<span class="contact">Stephanie Lewis | 4405 South 730 East Salt Lake City, UT 84107 | s.lew@aggiemail.usu.edu | 801-859-8839</span>    
-         </div>            
-                   
-                  
-        <!-- End Content -->
-        <script type="text/javascript" src="js/script.js"></script>
-
-
-<script>
-function myFunction() {
-    window.print();
+    <!-- End Content -->
+<script type="text/javascript" src="js/script.js"></script>
+<script language="javascript">
+function printdiv(printpage)
+{
+var headstr = "<html><head><title></title></head><body>";
+var footstr = "</body>";
+var newstr = document.all.item(printpage).innerHTML;
+var oldstr = document.body.innerHTML;
+document.body.innerHTML = headstr+newstr+footstr;
+window.print();
+document.body.innerHTML = oldstr;
+return false;
 }
 </script>
 
        
- </div>
+
 
 </body>
 </html>
