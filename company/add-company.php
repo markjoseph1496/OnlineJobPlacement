@@ -120,30 +120,26 @@ if (isset($_POST['CourseCheckbox'])) {
 }
 
 if (isset($_GET['btnSaveSetting'])) {
-    echo "sdada";
-    die();
     $CompanyName = $_GET['CompanyName'];
-    $CompanyDesc = $_GET['CompanyDesc'];
-    $Industry = $_GET['Industry'];
-    $Classification = $_GET['Classification'];
+    $Description = $_GET['Description'];
+    $Industry = $_GET['industry'];
     $Address = $_GET['Address'];
     $City = $_GET['City'];
-    $PostalCode = $_GET['PostalCode'];
+    $Postal = $_GET['Postal'];
     $MobileNum = $_GET['MobileNum'];
     $PhoneNum = $_GET['PhoneNum'];
     $Fax = $_GET['Fax'];
 
     GSecureSQL::query(
-        "UPDATE companyinfotbl SET CompanyName = ?, CompanyDesc = ?, Industry = ?, Classification = ?, Address = ?, City = ?, PostalCode = ?, MobileNum = ?, PhoneNum = ?, Fax = ? WHERE CompanyID = ?",
+        "UPDATE companyinfotbl SET CompanyName = ?, Description = ?, Industry = ?, Address = ?, City = ?, Postal = ?, MobileNum = ?, PhoneNum = ?, Fax = ? WHERE CompanyID = ?",
         FALSE,
-        "sssssssssss",
+        "ssssssssss",
         $CompanyName,
-        $CompanyDesc,
+        $Description,
         $Industry,
-        $Classification,
         $Address,
         $City,
-        $PostalCode,
+        $Postal,
         $MobileNum,
         $PhoneNum,
         $CompanyID

@@ -16,7 +16,6 @@ $companyinfo_tbl =
             CompanyName,
             Description,
             Industry,
-            Classification,
             Address,
             City,
             PostalCode,
@@ -37,15 +36,14 @@ $companyinfo_tbl =
 $CompanyName = $companyinfo_tbl[0][0];
 $Description = $companyinfo_tbl[0][1];
 $cIndustry = $companyinfo_tbl[0][2];
-$Classification = $companyinfo_tbl[0][3];
-$Address = $companyinfo_tbl[0][4];
-$City = $companyinfo_tbl[0][5];
-$PostalCode = $companyinfo_tbl[0][6];
-$PhoneNum = $companyinfo_tbl[0][7];
-$MobileNumber = $companyinfo_tbl[0][8];
-$Fax = $companyinfo_tbl[0][9];
-$cFirstName = $companyinfo_tbl[0][10];
-$cLastName= $companyinfo_tbl[0][11];
+$Address = $companyinfo_tbl[0][3];
+$City = $companyinfo_tbl[0][4];
+$PostalCode = $companyinfo_tbl[0][5];
+$PhoneNum = $companyinfo_tbl[0][6];
+$MobileNumber = $companyinfo_tbl[0][7];
+$Fax = $companyinfo_tbl[0][8];
+$cFirstName = $companyinfo_tbl[0][9];
+$cLastName= $companyinfo_tbl[0][10];
 
 ?>
 <!doctype html>
@@ -318,8 +316,8 @@ $cLastName= $companyinfo_tbl[0][11];
 
         <!-- Start Content -->
         <br><br><br>
-        <div class="container">
         <form  name="CompanySetting" id="CompanySetting" autocomplete="off" action="add-company.php">
+        <div class="container">
             <div class="row">
                 <div class="col-md-6">
                     &nbsp;
