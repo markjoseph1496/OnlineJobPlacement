@@ -187,60 +187,80 @@ $cLastName = $companyinfo_tbl[0][2];
                     </div>
                     <!-- End Sign-out -->
                     <!-- Start Navigation List -->
-                    <ul class="nav navbar-nav navbar-right">
-                        <li>
-                            <a href="company.php">Home</a>
-                        </li>
-                        <li>
-                            <a>Position</a>
-                            <ul class="dropdown">
-                                <li><a href="company-positionlist.php" class = "active">Position List</a></li>
-                                <li><a href="company-createposition.php">Create Position</a></li>
-                            </ul>
-                        </li>
-                        <li>
-                            <a class="active" href="company-calendar.php">Calendar</a>
-                        </li>
-                        <li><a href="company-settings.php">Settings</a>
-                        </li>
-                        <li>
-                            <a>Applicant List</a>
-                            <ul class="dropdown">
-                                <li><a href="company-pendingapplicants.php" class = "active">Pending</a></li>
-                                <li><a href="company-acceptedapplicants.php">Accepted</a></li>
-                            </ul>
-                        </li>
-                    </ul>
-                    <!-- End Navigation List -->
-                </div>
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a href="admin.php">Home</a>
+                    </li>
+                    <li>
+                    <a>Reports</a>
+                        <ul class="dropdown">
+                            <li><a href="admin-reports.php" class = "active">Alumni Reports</a></li>
+                            <li><a href="admin-ojtreports.php">OJT Reports</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="admin-account.php">Account</a>
+                    </li>
+                    <li>
+                        <a href="admin-requested.php">Requested</a>
+                    </li>
+                    <li>
+                        <a>Company List</a>
+                        <ul class="dropdown">
+                            <li><a href="admin-companylist.php" class="active">Active</a></li>
+                            <li><a href="admin-company_pending.php">Pending</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a> Maintenance</a>
+                        <ul class="dropdown">
+                            <li><a href="admin-maintenance.php">Courses</a></li>
+                            <li><a href="admin-users.php">Users</a></li>
+                            <li><a class="active" href="admin-calendar.php">Calendar Events</a></li>
+                        </ul>
+                    </li>
+                </ul>
+                <!-- End Navigation List -->
             </div>
-            <!-- Mobile Menu Start -->
-            <ul class="wpb-mobile-menu">
+        </div>
+        <!-- Mobile Menu Start -->
+        <ul class="wpb-mobile-menu">
+            <ul class="nav navbar-nav navbar-right">
                 <li>
-                    <a href="company.php">Home</a>
+                    <a href="admin.php">Home</a>
                 </li>
                 <li>
-                    <a>Position</a>
+                    <a>Reports</a>
+                        <ul class="dropdown">
+                            <li><a href="admin-reports.php" class = "active">Alumni Reports</a></li>
+                            <li><a href="admin-ojtreports.php">OJT Reports</a></li>
+                        </ul>
+                    </li>
+                <li>
+                    <a href="admin-account.php">Account</a>
+                </li>
+                <li>
+                    <a href="admin-requested.php">Requested</a>
+                </li>
+                <li>
+                    <a>Company List</a>
                     <ul class="dropdown">
-                        <li><a href="company-positionlist.php" class = "active">Position List</a></li>
-                        <li><a href="company-createposition.php">Create Position</a></li>
+                        <li><a href="admin-companylist.php">Active</a></li>
+                        <li><a href="admin-company_pending.php">Pending</a></li>
                     </ul>
                 </li>
                 <li>
-                    <a class="active" href="company-calendar.php">Calendar</a>
-                </li>
-                <li><a href="company-settings.php">Settings</a>
-                </li>
-                <li>
-                    <a>Applicant List</a>
+                    <a> Maintenance</a>
                     <ul class="dropdown">
-                        <li><a href="company-pendingapplicants.php" class = "active">Pending</a></li>
-                        <li><a href="company-acceptedapplicants.php">Accepted</a></li>
+                        <li><a class="active" href="admin-maintenance.php">Courses</a></li>
+                        <li><a href="admin-users.php">Users</a></li>
+                        <li><a href="admin-calendar.php">Calendar Events</a></li>
                     </ul>
                 </li>
             </ul>
-    </header>
-    <!-- Mobile Menu End -->
+        </ul>
+        </header>
+        <!-- Mobile Menu End -->
 
 </div>
 <!-- End Header Logo & Naviagtion -->
@@ -270,17 +290,21 @@ $cLastName = $companyinfo_tbl[0][2];
                     <div class="col-md-3 fieldcol">
                         <label = "usr" class = "control-label">Event from: </label>
                     </div>
-                    <div class="col-md-8 fieldcol">
-                        <div class="form-group">
-                            <div class="date">
-                                <input type="date" name="datefrom" id="date_from" class="form-control">
-                                <div class="date_to">
-                                    <label = "usr" class = "control-label" id = "label">to: </label>
-                                    <input type="date" name="dateto" id="date_to" class="form-control">
-                                </div>
-                            </div>
+                    <div class="col-md-3 fieldcol">
+                        <div class = "form-group">
+                            <input type="date" name="datefrom" id="date_from" class="form-control">
                         </div>
                     </div>
+                    <div class="col-md-1 fieldcol">
+                        <label = "usr" class = "control-label" style = "text-indent:20px;">to: </label>
+                    </div>
+                    <div class="col-md-3 fieldcol">
+                        <div class = "form-group">
+                            <input type="date" name="dateto" id="date_to" class="form-control">
+                        </div>
+                    </div>
+
+                    
                 </div>
                 <div class="row field">
                     <div class="col-md-3 fieldcol">

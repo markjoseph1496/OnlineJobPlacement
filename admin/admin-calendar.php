@@ -214,61 +214,80 @@ $cLastName = $companyinfo_tbl[0][2];
                         <!-- End Sign-out -->
 
                         <!-- Start Navigation List -->
-                        <ul class="nav navbar-nav navbar-right">
-                            <li>
-                                <a href="company.php">Home</a>
-                            </li>
-                            <li>
-                                <a>Position</a>
-                                <ul class="dropdown">
-                                    <li><a href="company-positionlist.php">Position List</a></li>
-                                    <li><a href="company-createposition.php">Create Position</a></li>
-                                </ul>
-                            </li>
-                            <li>
-                                <a class="active" href="company-calendar.php">Calendar</a>
-                            </li>
-                            <li>
-                                <a href="company-settings.php">Settings</a>
-                            </li>
-                            <li>
-                                <a>Applicant List</a>
-                                <ul class="dropdown">
-                                    <li><a href="company-pendingapplicants.php">Pending</a></li>
-                                    <li><a href="company-acceptedapplicants.php">Accepted</a></li>
-                                </ul>
-                            </li>
-                        </ul>
-                        <!-- End Navigation List -->
-                    </div>
-                </div>
-                <!-- Mobile Menu Start -->
-                <ul class="wpb-mobile-menu">
+                <ul class="nav navbar-nav navbar-right">
                     <li>
-                        <a href="company.php">Home</a>
+                        <a href="admin.php">Home</a>
                     </li>
                     <li>
-                        <a>Position</a>
+                    <a>Reports</a>
                         <ul class="dropdown">
-                            <li><a href="company-positionlist.php">Position List</a></li>
-                            <li><a href="company-createposition.php">Create Position</a></li>
+                            <li><a href="admin-reports.php" class = "active">Alumni Reports</a></li>
+                            <li><a href="admin-ojtreports.php">OJT Reports</a></li>
                         </ul>
                     </li>
                     <li>
-                        <a class="active" href="company-calendar.php">Calendar</a>
+                        <a href="admin-account.php">Account</a>
                     </li>
                     <li>
-                        <a href="company-settings.php">Settings</a>
+                        <a href="admin-requested.php">Requested</a>
                     </li>
                     <li>
-                        <a>Applicant List</a>
+                        <a>Company List</a>
                         <ul class="dropdown">
-                            <li><a href="company-pendingapplicants.php">Pending</a></li>
-                            <li><a href="company-acceptedapplicants.php">Accepted</a></li>
+                            <li><a href="admin-companylist.php" class="active">Active</a></li>
+                            <li><a href="admin-company_pending.php">Pending</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a> Maintenance</a>
+                        <ul class="dropdown">
+                            <li><a href="admin-maintenance.php">Courses</a></li>
+                            <li><a href="admin-users.php">Users</a></li>
+                            <li><a class="active" href="admin-calendar.php">Calendar Events</a></li>
                         </ul>
                     </li>
                 </ul>
-                <!-- Mobile Menu End -->
+                <!-- End Navigation List -->
+            </div>
+        </div>
+        <!-- Mobile Menu Start -->
+        <ul class="wpb-mobile-menu">
+            <ul class="nav navbar-nav navbar-right">
+                <li>
+                    <a href="admin.php">Home</a>
+                </li>
+                <li>
+                    <a>Reports</a>
+                        <ul class="dropdown">
+                            <li><a href="admin-reports.php" class = "active">Alumni Reports</a></li>
+                            <li><a href="admin-ojtreports.php">OJT Reports</a></li>
+                        </ul>
+                    </li>
+                <li>
+                    <a href="admin-account.php">Account</a>
+                </li>
+                <li>
+                    <a href="admin-requested.php">Requested</a>
+                </li>
+                <li>
+                    <a>Company List</a>
+                    <ul class="dropdown">
+                        <li><a href="admin-companylist.php">Active</a></li>
+                        <li><a href="admin-company_pending.php">Pending</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a> Maintenance</a>
+                    <ul class="dropdown">
+                        <li><a class="active" href="admin-maintenance.php">Courses</a></li>
+                        <li><a href="admin-users.php">Users</a></li>
+                        <li><a href="admin-calendar.php">Calendar Events</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </ul>
+        </header>
+        <!-- Mobile Menu End -->
             </div>
             <!-- End Header Logo & Naviagtion -->
         </header>
@@ -294,7 +313,7 @@ $cLastName = $companyinfo_tbl[0][2];
                     &nbsp;
                 </div>
                 <div class="col-md-6">
-                    <a href="company-calendarcreateevent.php" class="main-button" style="float:right;">
+                    <a href="admin-calendarcreateevent.php" class="main-button" style="float:right;">
                         <span class="fa fa-pencil-square-o fa-1x"></span> Create an Event 
                     </a>
                 </div>

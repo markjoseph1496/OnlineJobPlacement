@@ -23,7 +23,8 @@ $companyinfo_tbl =
             MobileNum,
             Fax,
             FirstName,
-            LastName
+            LastName,
+            ProfileImage
         FROM
             companyinfotbl
         WHERE
@@ -44,6 +45,7 @@ $MobileNumber = $companyinfo_tbl[0][7];
 $Fax = $companyinfo_tbl[0][8];
 $cFirstName = $companyinfo_tbl[0][9];
 $cLastName= $companyinfo_tbl[0][10];
+$ProfileImage= $companyinfo_tbl[0][11];
 
 ?>
 <!doctype html>
@@ -256,17 +258,14 @@ $cLastName= $companyinfo_tbl[0][10];
                                 </ul>
                             </li>
                             <li>
-                                <a href="company-calendar.php">Calendar</a>
-                            </li>
-                            <li>
-                                <a class="active" href="company-settings.php">Settings</a>
-                            </li>
-                            <li>
                                 <a> Applicant List</a>
                                 <ul class="dropdown">
                                     <li><a href="company-pendingapplicants.php">Pending</a></li>
                                     <li><a href="company-acceptedapplicants.php">Accepted</a></li>
                                 </ul>
+                            </li>
+                            <li>
+                                <a class="active" href="company-settings.php">Settings</a>
                             </li>
                         </ul>
                         <!-- End Navigation List -->
@@ -285,17 +284,14 @@ $cLastName= $companyinfo_tbl[0][10];
                         </ul>
                     </li>
                     <li>
-                        <a href="company-calendar.php">Calendar</a>
-                    </li>
-                    <li>
-                        <a class="active" href="company-settings.php">Settings</a>
-                    </li>
-                    <li>
                         <a>Applicant List</a>
                         <ul class="dropdown">
                             <li><a href="company-pendingapplicants.php">Pending</a></li>
                             <li><a href="company-acceptedapplicants.php">Accepted</a></li>
                         </ul>
+                    </li>
+                     <li>
+                        <a class="active" href="company-settings.php">Settings</a>
                     </li>
                 </ul>
             </div>
@@ -521,7 +517,7 @@ $cLastName= $companyinfo_tbl[0][10];
                         </div>
                     </div>
             </form>
-                <form id="UploadPicture" name="UploadPicture" method="POST" action="upload.php" enctype="multipart/form-data">
+                <form id="UploadPicture" name="UploadPicture" method="POST" action="uploadpic.php" enctype="multipart/form-data">
                     <div class="col-md-5">
                         <div class="image-border">
                             <img src="<?php echo $ProfileImage; ?>" class="img-responsive" style="width:100%; height:100%;">
@@ -546,14 +542,14 @@ $cLastName= $companyinfo_tbl[0][10];
     <script type="text/javascript" src="../js/script.js"></script>
 </body>
 <script type="text/javascript">
-    $(document).ready(function () {
-        var validator = $("#CompanySetting").bootstrapValidator({
+   $(document).ready(function () {
+        $("#CompanySetting").bootstrapValidator({
             feedbackIcons: {
                 valid: "glyphicon glyphicon-ok",
                 invalid: "glyphicon glyphicon-remove",
                 validating: "glyphicon glyphicon-refresh"
             },
-           s: {
+            fields: {
                 CompanyName: {
                     validators: {
                         notEmpty: {
@@ -584,9 +580,9 @@ $cLastName= $companyinfo_tbl[0][10];
                             message: "Company Description is required."
                         },
                         stringLength: {
-                            min: 5,
+                            min: 1,
                             max: 70,
-                            message: "Company Description must be 5-70 characters long."
+                            message: "Company Description is 70 characters only."
                         },
                         regexp: {
                             regexp: /^[a-z\s]+$/i,
@@ -601,22 +597,15 @@ $cLastName= $companyinfo_tbl[0][10];
                         }
                     }
                 },
-                classification: {
-                    validators: {
-                        notEmpty: {
-                            message: "Classification is required."
-                        }
-                    }
-                },
                 Address: {
                     validators: {
                         notEmpty: {
                             message: "Address is required."
                         },
                         stringLength: {
-                            min: 5,
+                            min: 1,
                             max: 50,
-                            message: "Address must be 5-50 characters long."
+                            message: "Address is 50 characters only."
                         }
                     }
                 },
@@ -649,9 +638,9 @@ $cLastName= $companyinfo_tbl[0][10];
                             message: "Mobile Number is required."
                         },
                         stringLength: {
-                            min: 3,
+                            min: 1,
                             max: 13,
-                            message: "Mobile Number must be 13 Number long."
+                            message: "Mobile Number is 13 Number only."
                         },
                         regexp: {
                             regexp: /^[0-9\s]+$/i,
@@ -665,7 +654,7 @@ $cLastName= $companyinfo_tbl[0][10];
                             message: "TelPhone Number is required."
                         },
                         stringLength: {
-                            min: 3,
+                            min: 1,
                             max: 8,
                             message: "TelPhone Number must be 8 Number long."
                         },
@@ -681,7 +670,7 @@ $cLastName= $companyinfo_tbl[0][10];
                             message: "Fax Number is required."
                         },
                         stringLength: {
-                            min: 3,
+                            min: 1,
                             max: 12,
                             message: "Fax Number must be 12 Number long."
                         },
