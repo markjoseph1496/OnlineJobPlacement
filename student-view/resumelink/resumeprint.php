@@ -158,14 +158,13 @@ if(empty($HomeNumber)){
                     </div>
                 </div>
             </div>
-            <div class="hr5" style="margin-top:35px;margin-bottom:40px;"></div>
             <div class="col-xs-12">
                 <label>Objective:</label>
                 <p>One to two sentences long that describes the type of job you want, the type of organization you
                     prefer and how you can contribute to the position/organization.
                 <p>
             </div>
-            <BR><BR><BR>
+            <BR>
             <div class="col-xs-12">
                 <label>Education:</label>
             </div>
@@ -203,7 +202,7 @@ if(empty($HomeNumber)){
                                 FROM workexperiencetbl
                                 WHERE StudentID = ?
                                 ORDER BY DateToYear DESC
-                                LIMIT 3",
+                                LIMIT 2",
                                 TRUE,
                                 "s",
                                 $StudentID
@@ -294,27 +293,38 @@ if(empty($HomeNumber)){
                         $Date = $DateFromMonth . " " . $DateFromYear . " - " . $DateToMonth . " " . $DateToYear;
 
                         ?>
-                            <li>fasdasds</li>
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-xs-3">
+                                    <label><?php echo $Date; ?></label>
+                                </div>
+                                <div class="col-xs-2">
+                                    <label><?php echo $PositionTitle; ?></label>
+                                </div>
+                                <div class="col-xs-2">
+                                    <label><?php echo $CompanyName; ?></label>
+                                </div>
+                                <div class="col-xs-5">
+                                    <label><?php echo $CompanyAddress; ?></label>
+                                </div>
+                            </div>
+                        </div>
                         <?php
-
                     }
                     ?>
                 </ul>
-                <BR>
                 <label>Skills:</label>
                 <ul style="list-style-type:disc">
                     <li>AASDSJFBJDFJ</li>
                     <li>JSDGFHJDGFJ</li>
                     <li>JSGFHJSDGFHJ</li>
                 </ul>
-                <BR>
                 <label>Extra Curricular Activities</label>
                 <ul style="list-style-type:disc">
                     <li>AASDSJFBJDFJ</li>
                     <li>JSDGFHJDGFJ</li>
                     <li>JSGFHJSDGFHJ</li>
                 </ul>
-                <BR>
                 <label>References:</label>
                 <p>STI College – Caloocan </p>
             </div>
@@ -335,7 +345,5 @@ if(empty($HomeNumber)){
             return false;
         }
     </script>
-
-
 </body>
 </html>
