@@ -301,87 +301,41 @@ $Total = $studentinfo_tbl[0][0];
     </div>
     <div class="header2_advertising">
         <div class="container">
-
+            <div class = "row-field">
             <div class="col-sm-4">
                 <label><b>TOTAL NUMBER OF STUDENTS: <?php echo $Total; ?></b></label>
             </div>
-
             <div class="col-sm-4">
-                <div class="form-group text-center">
-                    <label>
-                        <center><b>Select an Industry</b>
-                    </label></center>
-                    <select id="industry" name="industry" class="form-control" style="width:280px;">
-                        <option value="ind"> Select one</option>
-                        <option value="acc"> Accounting / Audit</option>
-                        <option value="amp">Advertising / Marketing Promotion</option>
-                        <option value="aaa">Aerospace/Aviation/Airline</option>
-                        <option value="appf">Agricultural/Plantation/Poultry/Fisheries</option>
-                        <option value="af">Apparel/Fashion</option>
-                        <option value="ad">Arts/Design</option>
-                        <option value="aav"> Automobile/Automotive Ancillary/Vehicle</option>
-                    </select>
-                    <label>
-                        <center><b>Select Position</b>
-                    </label></center>
-                    <select id="position" name="position" class="form-control" style="width:280px;">
-                        <option value="pos"> Select one</option>
-                        <option value="tlp"> Top Level Management</option>
-                        <option value="sm"> Senior Manager</option>
-                        <option value="man"> Manager</option>
-                        <option value="ses"> Senior Executive/ Supervisor</option>
-                        <option value="je"> Junior Executive</option>
-                        <option value="fel"> Fresh/Entry Level</option>
-                        <option value="nex"> Non-Executive</option>
-                        <option value="train"> Trainee</option>
-                    </select>
-                    <label>
-                        <center><b>Select Position</b>
-                    </label></center>
-                    <select id="position" name="position" class="form-control" style="width:280px;">
-                        <option value="pos"> Select one</option>
-                        <option value="tlp"> Top Level Management</option>
-                        <option value="sm"> Senior Manager</option>
-                        <option value="man"> Manager</option>
-                        <option value="ses"> Senior Executive/ Supervisor</option>
-                        <option value="je"> Junior Executive</option>
-                        <option value="fel"> Fresh/Entry Level</option>
-                        <option value="nex"> Non-Executive</option>
-                        <option value="train"> Trainee</option>
-                    </select>
+                <div class="form-group">
+                        <input type="text" name= id= "" class="form-control"
+                               value="" placeholder = "Enter Student Name">
                 </div>
             </div>
-
             <div class="col-sm-4">
-                <div class="form-group text-center">
-                    <label>
-                        <center><b>Select Specialization</b>
-                    </label></center>
-                    <select id="specialization" name="specialization" class="form-control" style="width:280px;">
-                        <option value="spe"> Select One</option>
-                        <option value="ass"> Actuarial Science/ Statistics</option>
-                        <option value="amp"> Advertising/ Media Planning</option>
-                        <option value="aid"> Architecture/ Interior Design</option>
-                        <option value="aad">Arts and Design</option>
-                        <option value="acgd"> Arts/ Creative/ Graphics Design</option>
-                        <option value="aam"> Aviation/ Aircraft Maintenance</option>
-                        <option value="bfs"> Banking/ Financial Services</option>
-                        <option value="bio"> Biotechnology</option>
-                        <option value="ccca"> Call Center Agent</option>
-                    </select>
+                 <button type="submit" class="btn-system btn-large border-btn" href="#" style = "width:100px;" >Search</button>
+            </div>
+            </div>
+            <div class = "row-field">
+            <div class = "col-md-4" style = "margin-left:380px;" >
                     <label>
                         <center><b>Select Employment Status </b>
                     </label></center>
-                    <select id="status" name="status" class="form-control" style="width:280px;">
+                    <select id="status" name="status" class="form-control" style="width:350px;">
                         <option value="pos"> Select One</option>
                         <option value="emp">Employed</option>
                         <option value="unemp">Unemployed</option>
                     </select><br>
-                        <button type="submit" class="btn-system btn-large border-btn" href="#">Filter</button>
-                </div>
+            </div>
+            <div class="col-md-3" style = "margin-top:15px;" >
+                 <button type="submit" class="btn-system btn-large border-btn" href="#" style = "width:100px;">Filter</button>
+            </div>
+            </div>
+                       
+              
             </div>
         </div>
     </div>
+  <div class = "container">  
     <table class="table segment table-hover">
         <thead>
         <tr>
@@ -468,6 +422,7 @@ $Total = $studentinfo_tbl[0][0];
         }
         ?>
     </table>
+</div>
 </div>
 <br><br>
 </body>

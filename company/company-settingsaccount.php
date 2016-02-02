@@ -1,23 +1,43 @@
 <?php
 include('../connection.php');
 session_start();
-$CompanyID = $_SESSION['CompanyID'];
 
-  $qry = "SELECT * FROM companyinfotbl WHERE CompanyID ='$CompanyID'";
-  $Result = mysql_query($qry);
+if(isset($_SESSION['CompanyID'])){
+    $CompanyID = $_SESSION['CompanyID'];
+}
+else{
+    header("location: ../login-company.php");
+}
 
-      while ($qry = mysql_fetch_Array($Result)) {
+  $companyuser_tbl =
+    GSecureSQL::query(
+        "SELECT
+            Email,
+            Password,
+            FirstName,
+            MiddleName,
+            LastName,
+            Position,
+            Department,
+            Address
+        FROM
+            companyinfotbl
+        WHERE
+            CompanyID = ?",
+        TRUE,
+        "s",
+        $CompanyID
+    );
 
-          $Email = $qry['Email'];
-          $Password = $qry['Password'];
-          $FName = $qry['FirstName'];
-          $MName = $qry['MiddleName'];
-          $LName = $qry['LastName'];
-          $Positions = $qry['Position'];
-          $Department = $qry['Department'];
-          $Address = $qry['Address'];
-          $PhoneNum = $qry['PhoneNum'];
-      }
+$Email = $companyuser_tbl[0][0];
+$Password = $companyuser_tbl[0][1];
+$FirstName = $companyuser_tbl[0][2];
+$MiddleName = $companyuser_tbl[0][3];
+$LastName = $companyuser_tbl[0][4];
+$Position = $companyuser_tbl[0][5];
+$Department = $companyuser_tbl[0][6];
+$Address = $companyuser_tbl[0][7];
+
 ?>
 <!doctype html>
 <!--[if IE 8 ]><html class="ie ie8" lang="en"> <![endif]-->
@@ -233,8 +253,93 @@ $CompanyID = $_SESSION['CompanyID'];
  <!-- Start Content -->
 <br><br><br>
     <div class = "container">
+    <!-- Modal for Username -->
+    <div class="modal fade" id="ChangeUsername" role="dialog">
+        <div class="modal-dialog" style="padding:100px">
+
+            <!-- Modal content-->
+            <form id="change-Username-form" autocomplete="off" method="POST" action="functions.php">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        <h4 class="modal-title">Change Username</h4>
+                    </div>
+                    <div class="modal-body">
+                        <div class="col-md-15 fieldcol">
+                            <label = "usr" class = "control-label"> New Username: </label>
+                            <div class="form-group">
+                                <input type="text" name="ModalNewUsername" id="ModalNewUsername" class="form-control">
+                            </div>
+                        </div>
+
+                        <div class="col-md-15 fieldcol">
+                            <label = "usr" class = "control-label"> Confirm Username: </label>
+                            <div class="form-group">
+                                <input type="text" name="ModalConfirmUsername" id="ModalConfirmUsername" class="form-control">
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="modal-footer">
+                        <button type="submit" class="btn btn-primary" name="btnChangeUsername">Change Username</button>
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+
+<!-- Modal ng Change Password -->
+    <div class="modal fade" id="ChangePassword" role="dialog">
+        <div class="modal-dialog" style="padding:100px">
+
+            <!-- Modal content-->
+            <form id="change-password-form" autocomplete="off" method="POST" action="functions.php">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        <h4 class="modal-title">Change Password</h4>
+                    </div>
+                    <div class="modal-body">
+                        <div class="col-md-15 fieldcol">
+                            <div id="message"></div>
+                            <br>
+                            <label = "usr" class = "control-label"> Old Password: </label>
+                            <div class="form-group">
+                                <input type="password" name="ModalOldPassword" id="ModalOldPassword"
+                                       class="form-control">
+                            </div>
+                        </div>
+
+
+                        <div class="col-md-15 fieldcol">
+                            <label = "usr" class = "control-label"> New Password: </label>
+                            <div class="form-group">
+                                <input type="password" name="ModalNewPassword" id="ModalNewPassword"
+                                       class="form-control">
+                            </div>
+                        </div>
+
+
+                        <div class="col-md-15 fieldcol">
+                            <label = "usr" class = "control-label"> Confirm Password: </label>
+                            <div class="form-group">
+                                <input type="password" name="ModalConfirmPassword" id="ModalConfirmPassword"
+                                       class="form-control">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="submit" id="submitPassword" class="btn btn-primary">Change Password</button>
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+<!-- End Modal ng Change Password -->    
       <div class = "col-md-12">
-      <form method="POST">
+      <form action="add-company.php" name="companyuser" id="companyuser" autocomplete="off">
             <?php
               if(isset($_GET['id'])){
                     $id=$_GET['id'];
@@ -252,14 +357,16 @@ $CompanyID = $_SESSION['CompanyID'];
                                         </div>
                                         <div class = "col-md-4 fieldcol">
                                             <div class="form-group">
-                                                  <input type = "text" name = "email" class = "form-control" style ="width: 300px;">
+                                                  <label = "usr" class = "control-label"><?php echo $Email; ?></label>
                                             </div>
                                         </div>
-                                        <div class = "col-md-3 fieldcol">
+                                        <div class="col-md-3 fieldcol">
                                             <div class="form-group">
-                                                  <div class="box">
-                                                    <a class="btn btn-default" href="#popup1" >Change email</a>
-                                                  </div>
+                                                <div class="box">
+                                                    <button class="btn btn-default" data-toggle="modal" data-target="#ChangeUsername">Change
+                                                        Username
+                                                    </button>
+                                                </div>
                                             </div>
                                         </div>
                     </div> 
@@ -269,14 +376,16 @@ $CompanyID = $_SESSION['CompanyID'];
                                         </div>
                                         <div class = "col-md-4 fieldcol">
                                             <div class="form-group">
-                                                  <input type = "password" name = "password" class = "form-control" style ="width: 300px;">
+                                                  <label = "usr" class = "control-label">*****</label>
                                             </div>
                                         </div>
-                                        <div class = "col-md-3 fieldcol">
+                                        <div class="col-md-3 fieldcol">
                                             <div class="form-group">
-                                                  <div class="box">
-                                                    <a class="btn btn-default" href="#popup1" >Change Password</a>
-                                                  </div>
+                                                <div class="box">
+                                                    <button class="btn btn-default" data-toggle="modal" data-target="#ChangePassword">
+                                                        ChangePassword
+                                                    </button>
+                                                </div>
                                             </div>
                                         </div>
                     </div> 
@@ -286,7 +395,7 @@ $CompanyID = $_SESSION['CompanyID'];
                                         </div>
                                         <div class = "col-md-4 fieldcol">
                                             <div class="form-group">
-                                                  <input type = "text" name = "fname" id = "usr" class = "form-control" style ="width: 550px;" value = "<?php echo $FName; ?>">
+                                                  <input type = "text" name = "FirstName" id = "usr" class = "form-control" style ="width: 550px;" value = "<?php echo $FirstName; ?>">
                                             </div>
                                         </div>
                     </div> 
@@ -296,7 +405,7 @@ $CompanyID = $_SESSION['CompanyID'];
                                         </div>
                                         <div class = "col-md-4 fieldcol">
                                             <div class="form-group">
-                                                 <input type = "text" name = "mname" id = "usr" class = "form-control" style ="width: 550px;" value = "<?php echo $MName; ?>">
+                                                 <input type = "text" name = "MiddleName" id = "usr" class = "form-control" style ="width: 550px;" value = "<?php echo $MiddleName; ?>">
                                             </div>
                                         </div>
                     </div> 
@@ -306,7 +415,7 @@ $CompanyID = $_SESSION['CompanyID'];
                                         </div>
                                         <div class = "col-md-4 fieldcol">
                                             <div class="form-group">
-                                                <input type = "text" name = "lname" id = "usr" class = "form-control" style ="width: 550px;" value = "<?php echo $LName; ?>">
+                                                <input type = "text" name = "LastName" id = "usr" class = "form-control" style ="width: 550px;" value = "<?php echo $LastName; ?>">
                                             </div>
                                         </div>
                     </div> 
@@ -316,7 +425,7 @@ $CompanyID = $_SESSION['CompanyID'];
                                         </div>
                                         <div class = "col-md-4 fieldcol">
                                             <div class="form-group">
-                                                 <input type = "text" name = "position" id = "usr" class = "form-control" style ="width: 550px;" value = "<?php echo $Positions; ?>">
+                                                 <input type = "text" name = "Position" id = "usr" class = "form-control" style ="width: 550px;" value = "<?php echo $Position; ?>">
                                             </div>
                                         </div>
                     </div> 
@@ -326,37 +435,16 @@ $CompanyID = $_SESSION['CompanyID'];
                                         </div>
                                         <div class = "col-md-4 fieldcol">
                                             <div class="form-group">
-                                                 <input type = "text" name = "dept" id = "usr" class = "form-control" style ="width: 550px;" value = "<?php echo $Department; ?>">
+                                                 <input type = "text" name = "Department" id = "usr" class = "form-control" style ="width: 550px;" value = "<?php echo $Department; ?>">
                                             </div>
                                         </div>
-                    </div> 
-                    <div class="row field">
-                                        <div class = "col-md-2 fieldcol">
-                                           <label>Address <span>(*)</span></label>
-                                        </div>
-                                        <div class = "col-md-4 fieldcol">
-                                            <div class="form-group">
-                                                <input type = "text" name = "address" id = "usr" class = "form-control" style ="width: 550px;" value = "<?php echo $Address; ?>">
-                                            </div>
-                                        </div>
-                    </div> 
-                     <div class="row field">
-                                        <div class = "col-md-2 fieldcol">
-                                           <label>Contact Number <span>(*)</span></label>
-                                        </div>
-                                        <div class = "col-md-4 fieldcol">
-                                            <div class="form-group">
-                                                <input type = "text" name = "contact" id = "usr" class = "form-control" style ="width: 550px;" value = "<?php echo $PhoneNum ?>">
-                                            </div>
-                                        </div>
-                    </div> 
+                    </div>
       </div>
                      &nbsp;
                 <div class="hr5" style="margin-top:35px;margin-bottom:40px;"></div>
                 <div class="field">
                     <div class="text-center">
-                        <button type="submit" class="btn-system btn-large" id="btnsave" name="btnsave">Save</button>
-                        <button type="submit" class="btn-system btn-large" id="cancel">Cancel</button>
+                        <button type="submit" class="btn-system btn-large" id="btnsave" name="btnsaveuser">Save</button>
                     </div>           
                 </div>
       </form>
@@ -364,29 +452,130 @@ $CompanyID = $_SESSION['CompanyID'];
     
 <!-- End Page Content -->
 <script type="text/javascript" src="../js/script.js"></script>
+<script type="text/javascript">
+    $(document).ready(function () {
+        $("#change-Username-form").bootstrapValidator({
+            feedbackIcons: {
+                valid: "glyphicon glyphicon-ok",
+                invalid: "glyphicon glyphicon-remove",
+                validating: "glyphicon glyphicon-refresh"
+            },
+            fields: {
+                ModalNewUsername: {
+                    validators: {
+                        notEmpty: {
+                            message: "Username is required."
+                        },
+                        identical: {
+                            field: "ModalConfirmUsername",
+                            message: "Username and Confirm Username mismatched."
+                        }
+                    }
+                },
+                ModalConfirmUsername: {
+                    validators: {
+                        notEmpty: {
+                            message: "Username is required."
+                        },
+                        identical: {
+                            field: "ModalNewUsername",
+                            message: "Username and Confirm Username mismatched."
+                        }
+                    }
+                }
+            }
+        });
+
+        $("#change-password-form").bootstrapValidator({
+            feedbackIcons: {
+                valid: "glyphicon glyphicon-ok",
+                invalid: "glyphicon glyphicon-remove",
+                validating: "glyphicon glyphicon-refresh"
+            },
+            fields: {
+                ModalOldPassword: {
+                    validators: {
+                        notEmpty: {
+                            message: "Old Password is required."
+                        }
+                    }
+                },
+                ModalNewPassword: {
+                    validators: {
+                        notEmpty: {
+                            message: "New Password is required."
+                        }
+                    }
+                },
+                ModalConfirmPassword: {
+                    validators: {
+                        notEmpty: {
+                            message: "Confirm Password is required."
+                        },
+                        identical: {
+                            field: "ModalNewPassword",
+                            message: "Password mismatched."
+                        }
+                    }
+                }
+            }
+        });
+
+        $("#companyuser").bootstrapValidator({
+            feedbackIcons: {
+                valid: "glyphicon glyphicon-ok",
+                invalid: "glyphicon glyphicon-remove",
+                validating: "glyphicon glyphicon-refresh"
+            },
+            fields: {
+                FirstName: {
+                    validators: {
+                        notEmpty: {
+                            message: "This field is required."
+                        },
+                        regexp: {
+                            regexp: /^[a-z\s]+$/i,
+                            message: "First Name can consist of alphabetical characters and spaces only"
+                        }
+                    }
+                },
+                MiddleName: {
+                    validators: {
+                        regexp: {
+                            regexp: /^[a-z\s]+$/i,
+                            message: "Middle Name can consist of alphabetical characters and spaces only"
+                        }
+                    }
+                },
+                LastName: {
+                    validators: {
+                        notEmpty: {
+                            message: "This field is required."
+                        },
+                        regexp: {
+                            regexp: /^[a-z\s]+$/i,
+                            message: "Last Name Name can consist of alphabetical characters and spaces only"
+                        }
+                    }
+                },
+                Position: {
+                    validators: {
+                        notEmpty: {
+                            message: "This field is required."
+                        }
+                    }
+                },
+                Department: {
+                    validators: {
+                        notEmpty: {
+                            message: "This field is required."
+                        }
+                    }
+                },
+            }
+        });
+    });
+</script>
 
 </body>
-<?php
-  if(isset($_POST['btnSave'])){
-
-   $fname = $_POST['fname'];
-   $mname = $_POST['mname'];
-   $lname = $_POST['lname'];
-   $position = $_POST['position'];
-   $dept = $_POST['dept'];
-   $address = $_POST['address'];
-   $contact = $_POST['contact'];
-
-
-
-    $query = "UPDATE companyinfotbl SET FirstName = '$fname', MiddleName = '$mname', LastName = '$lname', Position = '$position', Department = '$dept', Address = '$address', PhoneNum = '$contact' WHERE CompanyID = '$CompanyID'";
-    $Result = mysql_query($query);
-    echo "
-         <script type='text/javascript'>
-         location.href='company-settingsaccount.php?id=AccountEdit';
-         </script>
-         ";
-}
-?>
-
 </html>
