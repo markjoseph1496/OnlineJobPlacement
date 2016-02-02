@@ -72,13 +72,28 @@
     <script type="text/javascript" src="js/jquery.parallax.js"></script>
     <script type="text/javascript" src="js/jquery.slicknav.js"></script>
 </head>
+<style = "text/css">
+.padding {
+    border: 1px solid black;
+    background-color: fff;
+    padding-top: 50px;
+    padding-right: 30px;
+    padding-bottom: 600px;
+    padding-left: 80px;
+}
+</style>
 
 <body>
 
     <div class ="container">
-        <input name="b_print" type="button" class="btn-system btn-large"  onClick="printdiv('div_print');" value=" Print "> 
-    <div id="div_print">
-        <div class="container">
+        <br> <br>
+      <button name="b_print" type="button" class="fa fa-print btn-system btn-mini border-btn"  onClick="printdiv('div_print');" value=" Print " style = "height:50px; margin-left:430px;"> 
+        Print this Resume
+      </button>
+       <br> <br>
+      <div class = "padding">
+      <div id="div_print">
+       <div class="container">
             <div class="row">
                 <div class="col-xs-8">
                     <BR><BR><BR>
@@ -94,16 +109,16 @@
                  </div>
             </div>
         </div>
-         <div class="hr5" style="margin-top:35px;margin-bottom:40px;"></div>
+        <div class="hr5" style="margin-top:35px;margin-bottom:40px;"></div>
         <div class = "col-xs-12">
                 <label>Objective:</label>
                 <p>One to two sentences long that describes the type of job you want, the type of organization you prefer and how you can contribute to the position/organization.<p>
         </div>
-        <BR> <BR> 
+        <BR><BR><BR>
         <div class = "col-xs-12">
                 <label>Education:</label>
-        </div>      
-         <div class="container">
+        </div> 
+        <div class="container">
             <div class="row">
                 <div class="col-xs-4">
                     <label style = "text-indent:100px;"> (Year Covered) </label>
@@ -144,11 +159,10 @@
         <BR>
                 <label>References:</label>
                 <p>STI College – Caloocan </p>
-        </div> 
-
-
-    </div>      
+        </div>
+              
     </div>
+    </div>  
     <!-- End Content -->
 <script type="text/javascript" src="js/script.js"></script>
 <script language="javascript">
