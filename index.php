@@ -121,7 +121,7 @@
                 <!-- Carousel inner -->
                 <div class="carousel-inner">
                     <div class="item active">
-                        <img class="img-responsive" src="img/slider/8.jpg" alt="slider">
+                        <img class="img-responsive" src="img/slider/1.jpg" alt="slider">
                         <div class="slider-content">
                             <div class="col-md-12 text-center">
                                 <h2 class="animated2">
