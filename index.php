@@ -725,8 +725,8 @@
                                             <h4 class="subheading">A Great Help is Born</h4>
                                         </div>
                                         <div class="timeline-body">
-                                            <p>STI conceived the first and only Enrollment to
-                                                Employment or E2E System.
+                                            <p class="">STI conceived the first and only Enrollment to
+                                                Employment (E2E) System.
                                             </p>
                                         </div>
                                     </div>
@@ -737,14 +737,13 @@
                                     </div>
                                     <div class="timeline-panel">
                                         <div class="timeline-heading">
-                                            <h4>March 2011</h4>
-                                            <h4 class="subheading">An Agency is Born</h4>
+                                            <h4>Purpose</h4>
+                                            <h4 class="subheading">Enlightenment</h4>
                                         </div>
                                         <div class="timeline-body">
-                                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing
-                                                elit. Sunt ut voluptatum eius sapiente, totam reiciendis temporibus qui
-                                                quibusdam, recusandae sit vero unde, sed, incidunt et ea quo dolore
-                                                laudantium consectetur!
+                                            <p>The E2E System is a complete approach to human resource development, 
+                                                which aims to develop ICT-enabled professionals through innovative 
+                                                learning and career planning methodologies.
                                             </p>
                                         </div>
                                     </div>
@@ -755,14 +754,13 @@
                                     </div>
                                     <div class="timeline-panel">
                                         <div class="timeline-heading">
-                                            <h4>December 2012</h4>
+                                            <h4>Vision</h4>
                                             <h4 class="subheading">Transition to Full Service</h4>
                                         </div>
                                         <div class="timeline-body">
-                                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing
-                                                elit. Sunt ut voluptatum eius sapiente, totam reiciendis temporibus qui
-                                                quibusdam, recusandae sit vero unde, sed, incidunt et ea quo dolore
-                                                laudantium consectetur!
+                                            <p>To institutionalize the Enrollment to Employment System (E2E) of STI College 
+                                                Caloocan to be able to cater to its studentry and make it the best placement tool 
+                                                use in an educational institution.
                                             </p>
                                         </div>
                                     </div>
@@ -777,10 +775,7 @@
                                             <h4 class="subheading">Phase Two Expansion</h4>
                                         </div>
                                         <div class="timeline-body">
-                                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing
-                                                elit. Sunt ut voluptatum eius sapiente, totam reiciendis temporibus qui
-                                                quibusdam, recusandae sit vero unde, sed, incidunt et ea quo dolore
-                                                laudantium consectetur!
+                                            <p>
                                             </p>
                                         </div>
                                     </div>
@@ -812,10 +807,10 @@
                                     <p class="text-center wite-text">Choose between <b>Student</b> and <b>Company</b>.</p>
                                         
                                     <!-- Start Service Icon 1 -->
-                                    <div class="col-md-4 col-sm-6 service-box service-center">
+                                    <div class="col-md-6 col-sm-6 service-box service-center">
                                         <div class="service-boxed">
                                             <div class="service-icon" style="margin-top:-25px;">
-                                                <a href="login-student.php"><i class="fa fa-users icon-medium-effect icon-effect-2"></i></a>
+                                                <a href="login-student.php"><i class="fa fa-users icon-large-effect icon-effect-2"></i></a>
                                             </div>
                                             <div class="service-content">
                                                 <h4 class="wite-text">Student</h4>
@@ -826,32 +821,18 @@
                                     <!-- End Service Icon 1 -->
 
                                     <!-- Start Service Icon 2 -->
-                                    <div class="col-md-4 col-sm-6 service-box service-center">
+                                    <div class="col-md-6 col-sm-6 service-box service-center">
                                         <div class="service-boxed">
                                             <div class="service-icon" style="margin-top:-25px;">
-                                                <a href="login-admin.php"><i class="fa fa-user icon-medium-effect icon-effect-2"></i></a>
+                                                <a href="login-company.php"><i class="fa fa-building icon-large-effect icon-effect-2"></i></a>
                                             </div>
                                             <div class="service-content">
-                                                <h4 class="wite-text">Admin</h4>
-                                                <p class="accent-color">This section is strictly for STI administrator only.</p>
+                                                <h4 class="wite-text">Company</h4>
+                                                <p class="accent-color">This section is designed for STI partner companies.</p>
                                             </div>
                                         </div>
                                     </div>
                                     <!-- End Service Icon 2 -->
-                                    
-                                    <!-- Start Service Icon 3 -->
-                                    <div class="col-md-4 col-sm-6 service-box service-center">
-                                        <div class="service-boxed">
-                                            <div class="service-icon" style="margin-top:-25px;">
-                                                <a href="login-company.php"><i class="fa fa-building icon-medium-effect icon-effect-2"></i></a>
-                                            </div>
-                                            <div class="service-content">
-                                                <h4 class="wite-text">Company</h4>
-                                                <p class="accent-color">This section is for STI partner companies.</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <!-- End Service Icon 3 -->
                                 </div>
                             </div>
                         </div>
@@ -949,7 +930,8 @@
                         <div class="footer-widget twitter-widget">
                             <h4>Contact Us<span class="head-line"></span></h4>
                             <b>Tel. no. (+632) 294-4001 / 361-6070</b>
-                            <label>109 Samson Road corner Caimito Street, Caloocan City 1400</label>
+                            <label>109 Samson Road corner Caimito Street Caloocan City, Philippines 1400</label>
+                            
                         </div>
                     </div>
                     <!-- .col-md-3 -->
@@ -1006,6 +988,13 @@
 
     <!-- Go To Top Link -->
     <a href="#" class="back-to-top"><i class="fa fa-angle-up"></i></a>
+
+    <div id="loader">
+        <div class="spinner">
+            <div class="dot1"></div>
+            <div class="dot2"></div>
+        </div>
+    </div>
 
     <!-- important-->
     <script type="text/javascript" src="js/script.js"></script>

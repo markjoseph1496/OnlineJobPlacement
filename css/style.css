@@ -122,6 +122,7 @@ p {
     font-family: 'Open Sans','Helvetica Neue',Arial,sans-serif;
     line-height: 22px;
     margin: 0;
+    font-weight: 500;
 }
 
 p strong {

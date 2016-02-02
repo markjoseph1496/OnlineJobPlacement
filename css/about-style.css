@@ -99,16 +99,22 @@
 
 .timeline .timeline-heading h4 {
     margin-top: 0;
-    color: inherit;
+    color: #337ab7;
 }
 
 .timeline .timeline-heading h4.subheading {
     text-transform: none;
+    color: #f8ba01;
 }
 
 .timeline .timeline-body>p,
 .timeline .timeline-body>ul {
     margin-bottom: 0;
+}
+
+.timeline-body p {
+    color: #444;
+    font-weight: 600;
 }
 
 @media(min-width:768px) {
@@ -167,6 +173,7 @@
         margin-top: 30px;
         font-size: 18px;
         line-height: 26px;
+        color: #fff;
     }
 
     .timeline>li.timeline-inverted>.timeline-panel {
