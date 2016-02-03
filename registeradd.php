@@ -58,7 +58,7 @@ if (isset($_POST['resumelink'])) {
         );
 
     GSecureSQL::query(
-        "INSERT INTO schooltbl (StudentID,School,Attainment,Course,Graduated) values (?,'STI College Caloocan',?,?,?)",
+        "INSERT INTO schooltbl (StudentID,School,Attainment,Course,Graduated,_Default) values (?,'STI College Caloocan',?,?,?,'1')",
         FALSE,
         "ssss",
         $StudentID,

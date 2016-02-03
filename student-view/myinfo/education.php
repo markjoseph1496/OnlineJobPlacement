@@ -3,9 +3,9 @@
 include('../../connection.php');
 session_start();
 
-if(isset($_SESSION['StudentID'])){
+if (isset($_SESSION['StudentID'])) {
     $StudentID = $_SESSION['StudentID'];
-}else{
+} else {
     header("location: ../../login-student.php");
 }
 
@@ -19,7 +19,7 @@ $infoquery =
 
 $FirstName = $infoquery[0][0];
 $LastName = $infoquery[0][1];
-$MajorCourse =  $infoquery[0][2];
+$MajorCourse = $infoquery[0][2];
 $StudentName = $FirstName . " " . $LastName;
 
 $course_qry =
@@ -101,39 +101,35 @@ $MajorCourse = $course_qry[0][0];
     <!-- Notification -->
     <link rel="stylesheet" href="../../css/notif.css"/>
 
-    <script type="text/javascript" >
-        $(document).ready(function()
-        {
-        $("#notificationLink").click(function()
-        {
-        $("#notificationContainer").fadeToggle(300);
-        $("#notification_count").fadeOut("slow");
-        return false;
-        });
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $("#notificationLink").click(function () {
+                $("#notificationContainer").fadeToggle(300);
+                $("#notification_count").fadeOut("slow");
+                return false;
+            });
 
-        //Document Click
-        $(document).click(function()
-        {
-        $("#notificationContainer").hide();
-        });
-        //Popup Click
-        $("#notificationContainer").click(function()
-        {
-        return false
-        });
+            //Document Click
+            $(document).click(function () {
+                $("#notificationContainer").hide();
+            });
+            //Popup Click
+            $("#notificationContainer").click(function () {
+                return false
+            });
 
         });
     </script>
 
     <!-- Alert -->
     <script type="text/javascript">
-        $(document).ready (function(){
-        $("#success-alert").hide();
-        $("#btnsave").click(function showAlert() {
-            $("#success-alert").alert();
-            $("#success-alert").fadeTo(2000, 500).slideUp(500, function(){
-           $("#success-alert").alert('close');
-                });   
+        $(document).ready(function () {
+            $("#success-alert").hide();
+            $("#btnsave").click(function showAlert() {
+                $("#success-alert").alert();
+                $("#success-alert").fadeTo(2000, 500).slideUp(500, function () {
+                    $("#success-alert").alert('close');
+                });
             });
         });
     </script>
@@ -161,7 +157,8 @@ $MajorCourse = $course_qry[0][0];
                         <ul class="nav navbar-nav navbar-right">
                             <li class="dropdown icon-border" id="notificationLink">
                                 <span id="notification_count">3</span>
-                                <a href="#" class="bell itl-tooltip" data-placement="bottom" data-toggle="dropdown"><i class="fa fa-bell"></i></a>
+                                <a href="#" class="bell itl-tooltip" data-placement="bottom" data-toggle="dropdown"><i
+                                        class="fa fa-bell"></i></a>
                                 <ul id="notificationContainer" class="dropdown-menu dropdown-menu-inverse">
                                     <li class="dropdown-header"><label>Notification</label></li>
                                     <li class="disabled"><a href="#" tabindex="-1">No new notification.</a></li>
@@ -171,12 +168,16 @@ $MajorCourse = $course_qry[0][0];
                                 </ul>
                             </li>
                             <li class="dropdown">
-                                <a href="#" class="dropdown-toggle" data-toggle="dropdown"><b class="fa fa-user"></b> Welcome, <b><?php echo $StudentName; ?> </b><b class="caret"></b></a>
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown"><b class="fa fa-user"></b>
+                                    Welcome, <b><?php echo $StudentName; ?> </b><b class="caret"></b></a>
                                 <ul class="dropdown-menu">
                                     <li><a href="#">Profile <b class="fa fa-user" style="float:right;"></b></a></li>
-                                    <li><a href="../settings/settings.php">Settings <b class="fa fa-cog" style="float:right;"></b></a></li>
+                                    <li><a href="../settings/settings.php">Settings <b class="fa fa-cog"
+                                                                                       style="float:right;"></b></a>
+                                    </li>
                                     <li class="divider"></li>
-                                    <li><a href="#" data-target='#Logout' data-toggle='modal'>Sign Out <b class="fa fa-sign-out" style="float:right;"></b></a></li>
+                                    <li><a href="#" data-target='#Logout' data-toggle='modal'>Sign Out <b
+                                                class="fa fa-sign-out" style="float:right;"></b></a></li>
                                 </ul>
                             </li>
                         </ul>

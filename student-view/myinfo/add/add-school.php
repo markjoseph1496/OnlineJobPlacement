@@ -274,26 +274,23 @@ $MajorCourse = $course_qry[0][0];
                             <div class="col-md-3">
                                 <div class="form-group">
                                     <label>Graduation Date <span>(*)</span></label>
+                                    <label>From <span>(*)</span></label>
                                     <select id="GraduatedMonth" name="GraduatedMonth" class="form-control" style="width:100%; height:34px;">
-                                        <option value="">- Month -</option>
-                                        <option value="01">January</option>
-                                        <option value="02">February</option> 
-                                        <option value="03">March</option> 
-                                        <option value="04">April</option> 
-                                        <option value="05">May</option> 
-                                        <option value="06">June</option> 
-                                        <option value="07">July</option> 
-                                        <option value="08">August</option>
-                                        <option value="09">September</option>
-                                        <option value="10">October</option>
-                                        <option value="11">November</option>
-                                        <option value="12">December</option>
+                                        <option value="">-Year-</option>
+                                        <?php
+                                        $date = Date("Y") + 4;
+                                        while($date != 1935){
+                                            $date--;
+                                            echo "<option value='$date'> $date</option>";
+                                        }
+                                        ?>
                                     </select>
                                 </div>
                             </div>
                             <div class="col-md-3">
                                 <div class="form-group">
                                     <label>&nbsp;</label>
+                                    <label>To <span>(*)</span></label>
                                     <select id="GraduatedYear" name="GraduatedYear" class="form-control" style="width:100%; height:34px;">
                                         <option value="">-Year-</option>
                                         <?php 
