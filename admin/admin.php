@@ -30,7 +30,7 @@ $Total = $TotalStudents[0][0];
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
     <!-- Page Description and Author -->
-    <meta name="description" content="Margo - Responsive HTML5 Template">
+    <meta name="description" content=" - Responsive HTML5 Template">
     <meta name="author" content="iThemesLab">
 
     <!-- Bootstrap CSS -->
@@ -58,7 +58,7 @@ $Total = $TotalStudents[0][0];
     <!-- Slicknav -->
     <link rel="stylesheet" type="text/css" href="../css/slicknav.css" media="screen">
 
-    <!-- Margo CSS Styles  -->
+    <!--  CSS Styles  -->
     <link rel="stylesheet" type="text/css" href="../css/style.css" media="screen">
 
     <!-- Responsive CSS Styles  -->
@@ -188,7 +188,7 @@ $Total = $TotalStudents[0][0];
                         <li>
                             <a>Reports</a>
                             <ul class="dropdown">
-                                <li><a href="admin-reports.php" class = "active">Alumni Reports</a></li>
+                                <li><a href="admin-reports.php">Alumni Reports</a></li>
                                 <li><a href="admin-ojtreports.php">OJT Reports</a></li>
                             </ul>
                         </li>
@@ -201,7 +201,7 @@ $Total = $TotalStudents[0][0];
                         <li>
                            <a>Company List</a>
                         <ul class="dropdown">
-                            <li><a href="admin-companylist.php" class = "active">Active</a></li>
+                            <li><a href="admin-companylist.php">Active</a></li>
                             <li><a href="admin-company_pending.php">Pending</a></li>
                         </ul>
                         </li>
@@ -209,7 +209,7 @@ $Total = $TotalStudents[0][0];
                         <li>
                         <a> Maintenance</a>
                         <ul class="dropdown">
-                            <li><a class="active" href="admin-maintenance.php">Courses</a></li>
+                            <li><a href="admin-maintenance.php">Courses</a></li>
                             <li><a href="admin-users.php">Users</a></li>
                         </ul>
                     </li>

@@ -179,7 +179,7 @@ if(isset($_SESSION['AdminID'])){
                    <li>
                     <a>Reports</a>
                         <ul class="dropdown">
-                            <li><a href="admin-reports.php" class = "active">Alumni Reports</a></li>
+                            <li><a href="admin-reports.php">Alumni Reports</a></li>
                             <li><a href="admin-ojtreports.php">OJT Reports</a></li>
                         </ul>
                     </li>
@@ -190,16 +190,16 @@ if(isset($_SESSION['AdminID'])){
                         <a href="admin-requested.php">Requested</a>
                     </li>
                     <li>
-                        <a>Company List</a>
+                        <a class = "active">Company List</a>
                         <ul class="dropdown">
-                            <li><a href="admin-companylist.php" >Active</a></li>
+                            <li><a href="admin-companylist.php">Active</a></li>
                             <li><a class="active" href="admin-company_pending.php">Pending</a></li>
                         </ul>
                     </li>
                    <li>
-                        <a> Maintenance</a>
+                        <a>Maintenance</a>
                         <ul class="dropdown">
-                            <li><a class="active" href="admin-maintenance.php">Courses</a></li>
+                            <li><a href="admin-maintenance.php">Courses</a></li>
                             <li><a href="admin-users.php">Users</a></li>
                         </ul>
                     </li>

@@ -285,7 +285,7 @@ $ContactNumber = $admin_tbl[0][9];
                         <li>
                         <a>Reports</a>
                         <ul class="dropdown">
-                            <li><a href="admin-reports.php" class = "active">Alumni Reports</a></li>
+                            <li><a href="admin-reports.php">Alumni Reports</a></li>
                             <li><a href="admin-ojtreports.php">OJT Reports</a></li>
                         </ul>
                         </li>
@@ -298,14 +298,14 @@ $ContactNumber = $admin_tbl[0][9];
                         <li>
                             <a>Company List</a>
                              <ul class="dropdown">
-                            <li><a href="admin-companylist.php" class = "active">Active</a></li>
+                            <li><a href="admin-companylist.php">Active</a></li>
                             <li><a href="admin-company_pending.php">Pending</a></li>
                              </ul>
                         </li>
                         <li>
                         <a> Maintenance</a>
                         <ul class="dropdown">
-                            <li><a class="active" href="admin-maintenance.php">Courses</a></li>
+                            <li><a href="admin-maintenance.php">Courses</a></li>
                             <li><a href="admin-users.php">Users</a></li>
                         </ul>
                     </li>
@@ -515,7 +515,7 @@ $ContactNumber = $admin_tbl[0][9];
         <div class="field">
             <div class="text-center">
                 <button type="submit" class="btn-system btn-large">Save</button>
-                <button type="submit" class="btn-system btn-large">Cancel</button>
+                <button type="submit" class="btn-system btn-large btn-black">Cancel</button>
             </div>
         </div>
     </form>
