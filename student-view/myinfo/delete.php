@@ -105,3 +105,13 @@ if (isset($_GET['delete_LangID'])) {
     header("location: specialization-and-languages.php?id=6");
 
 }
+if (isset($_GET['Delete_DocID'])){
+    $id = $_GET['Delete_DocID'];
+
+    GSecureSQL::query(
+        "DELETE FROM documentstbl WHERE id = ?",
+        FALSE,
+        "s",
+        $id
+    );
+}

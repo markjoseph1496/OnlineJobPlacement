@@ -99,6 +99,10 @@ $MajorCourse = $course_qry[0][0];
     <script type="text/javascript" src="../../../js/jquery.parallax.js"></script>
     <script type="text/javascript" src="../../../js/jquery.slicknav.js"></script>
 
+    <!-- fileupload -->
+    <link href="../../../css/fileinput.min.css" media="all" rel="stylesheet" type="text/css"/>
+    <script src="../../../js/fileinput.min.js" type="text/javascript"></script>
+
     <!-- Notification -->
     <link rel="stylesheet" href="../../../css/notif.css"/>
 
@@ -221,10 +225,15 @@ $MajorCourse = $course_qry[0][0];
                     <div class="col-md-9 page-content">
                         <div class="row">
                             <div class="col-md-12 fieldcol">
-                                <div class="form-group">
-                                    <label>Document</label>
-                                    <input type="file" id="file" name="file">
-                                </div>
+                                <form id="UploadDocument" name="UploadDocument" method="POST" action="upload.php" enctype="multipart/form-data">
+                                    <div class="col-md-5">
+                                        <br><br>
+                                        <input id="DocumentFile" name="DocumentFile" type="file"
+                                               class="file file-loading"
+                                               data-allowed-file-extensions='["png", "jpg", "bmp", "gif"]'>
+                                        <br>
+                                    </div>
+                                </form>
                             </div>
                         </div>
                     </div>
@@ -241,7 +250,6 @@ $MajorCourse = $course_qry[0][0];
                 </div>
                 <div class="hr5" style="margin-top:35px;margin-bottom:40px;"></div>
                 <div class="text-center">
-                    <button type="submit" class="btn-system btn-large border-btn">Add</button>
                     <a href="../portfolio.php" class="btn-system btn-large btn-black">Cancel</a>
                 </div>
             </div>

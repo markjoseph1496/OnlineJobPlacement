@@ -249,6 +249,27 @@ session_start();
                 </div>
             </div>
         </div>
+        <div class="span6" id="form-login">
+                <form class="form-horizontal well" action="import.php" method="post" name="upload_excel" enctype="multipart/form-data">
+                    <fieldset>
+                        <legend>Import CSV/Excel file</legend>
+                        <div class="control-group">
+                            <div class="control-label">
+                                <label>CSV/Excel File:</label>
+                            </div>
+                            <div class="controls">
+                                <input type="file" name="file" id="file" class="input-large">
+                            </div>
+                        </div>
+                        
+                        <div class="control-group">
+                            <div class="controls">
+                            <button type="submit" id="submit" name="Import" class="btn btn-primary button-loading" data-loading-text="Loading...">Upload</button>
+                            </div>
+                        </div>
+                    </fieldset>
+                </form>
+            </div>
         <br><br>
         <table class="Applicants table" width="100%" cellpadding="0">
             <thead>
