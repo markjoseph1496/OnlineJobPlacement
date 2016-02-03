@@ -36,11 +36,9 @@ if (isset($_GET['btnSaveInfo'])) {
         $TwitterLink,
         $StudentID
     );
-    echo "
-        <script type='text/javascript'>
-        location.href='personal-info.php?id=1';
-        </script>
-        ";
+
+    header("location: personal-info.php?id=1");
+
 }
 
 if (isset($_GET['btnSaveContactInfo'])) {
@@ -67,9 +65,19 @@ if (isset($_GET['btnSaveContactInfo'])) {
 
     );
 
-    echo "
-		<script type='text/javascript'>
-		location.href='contacts-info.php?id=1';
-		</script>
-		";
+    header("location: contacts-info.php?id=1");
+
+}
+if(isset($_POST['Objective'])){
+    $Objective = $_POST['Objective'];
+
+    GSecureSQL::query(
+        "UPDATE studentinfotbl SET Objectives = ? WHERE StudentID = ?",
+        FALSE,
+        "ss",
+        $Objective,
+        $StudentID
+    );
+
+    header("location: work.php");
 }

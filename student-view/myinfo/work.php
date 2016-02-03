@@ -10,7 +10,7 @@ if (isset($_SESSION['StudentID'])) {
 
 $infoquery =
     GSecureSQL::query(
-        "SELECT FirstName, LastName, MajorCourse FROM studentinfotbl WHERE StudentID = ?",
+        "SELECT FirstName, LastName, MajorCourse, Objectives FROM studentinfotbl WHERE StudentID = ?",
         TRUE,
         "s",
         $StudentID
@@ -20,6 +20,7 @@ $FirstName = $infoquery[0][0];
 $LastName = $infoquery[0][1];
 $MajorCourse = $infoquery[0][2];
 $StudentName = $FirstName . " " . $LastName;
+$Objectives = $infoquery[0][3];
 
 $course_qry =
     GSecureSQL::query(
@@ -129,7 +130,7 @@ $MajorCourse = $course_qry[0][0];
     <script type="text/javascript">
         $(document).ready(function () {
             $("#success-alert").hide();
-            $("#btnsave").click(function showAlert() {
+            $("#btnSave").click(function showAlert() {
                 $("#success-alert").alert();
                 $("#success-alert").fadeTo(2000, 500).slideUp(500, function () {
                     $("#success-alert").alert('close');
@@ -141,170 +142,173 @@ $MajorCourse = $course_qry[0][0];
 
 <body>
 <div id="container">
-    <!-- Start Header Section -->
-    <div class="hidden-header"></div>
-    <header class="clearfix">
-        <!-- Start Top Bar -->
-        <div class="top-bar">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-7">
-                        <!-- Start Contact Info -->
-                        <ul class="profile-name">
-                            <li>Course: <b><?php echo $MajorCourse; ?></b></li>
-                        </ul>
-                        <!-- End Contact Info -->
+    <form method="POST" action="addfunction.php" autocomplete="off">
+        <!-- Start Header Section -->
+        <div class="hidden-header"></div>
+        <header class="clearfix">
+            <!-- Start Top Bar -->
+            <div class="top-bar">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-7">
+                            <!-- Start Contact Info -->
+                            <ul class="profile-name">
+                                <li>Course: <b><?php echo $MajorCourse; ?></b></li>
+                            </ul>
+                            <!-- End Contact Info -->
+                        </div>
+                        <!-- .col-md-6 -->
+                        <div class="col-md-5">
+                            <!-- Start Social Links -->
+                            <ul class="nav navbar-nav navbar-right">
+                                <li class="dropdown icon-border" id="notificationLink">
+                                    <span id="notification_count">3</span>
+                                    <a href="#" class="bell itl-tooltip" data-placement="bottom" data-toggle="dropdown"><i
+                                            class="fa fa-bell"></i></a>
+                                    <ul id="notificationContainer" class="dropdown-menu dropdown-menu-inverse">
+                                        <li class="dropdown-header"><label>Notification</label></li>
+                                        <li class="disabled"><a href="#" tabindex="-1">No new notification.</a></li>
+                                        <li><a href="#" tabindex="-1">The administrator accepted your request.</a></li>
+                                        <li class="divider"></li>
+                                        <li><a href="../notification/notification.php" tabindex="-1">See All</a></li>
+                                    </ul>
+                                </li>
+                                <li class="dropdown">
+                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown"><b
+                                            class="fa fa-user"></b>
+                                        Welcome, <b><?php echo $StudentName; ?> </b><b class="caret"></b></a>
+                                    <ul class="dropdown-menu">
+                                        <li><a href="#">Profile <b class="fa fa-user" style="float:right;"></b></a></li>
+                                        <li><a href="../settings/settings.php">Settings <b class="fa fa-cog"
+                                                                                           style="float:right;"></b></a>
+                                        </li>
+                                        <li class="divider"></li>
+                                        <li><a href="#" data-target='#Logout' data-toggle='modal'>Sign Out <b
+                                                    class="fa fa-sign-out" style="float:right;"></b></a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                            <!-- End Social Links -->
+                        </div>
+                        <!-- .col-md-6 -->
                     </div>
-                    <!-- .col-md-6 -->
-                    <div class="col-md-5">
-                        <!-- Start Social Links -->
-                        <ul class="nav navbar-nav navbar-right">
-                            <li class="dropdown icon-border" id="notificationLink">
-                                <span id="notification_count">3</span>
-                                <a href="#" class="bell itl-tooltip" data-placement="bottom" data-toggle="dropdown"><i
-                                        class="fa fa-bell"></i></a>
-                                <ul id="notificationContainer" class="dropdown-menu dropdown-menu-inverse">
-                                    <li class="dropdown-header"><label>Notification</label></li>
-                                    <li class="disabled"><a href="#" tabindex="-1">No new notification.</a></li>
-                                    <li><a href="#" tabindex="-1">The administrator accepted your request.</a></li>
-                                    <li class="divider"></li>
-                                    <li><a href="../notification/notification.php" tabindex="-1">See All</a></li>
-                                </ul>
-                            </li>
-                            <li class="dropdown">
-                                <a href="#" class="dropdown-toggle" data-toggle="dropdown"><b class="fa fa-user"></b>
-                                    Welcome, <b><?php echo $StudentName; ?> </b><b class="caret"></b></a>
-                                <ul class="dropdown-menu">
-                                    <li><a href="#">Profile <b class="fa fa-user" style="float:right;"></b></a></li>
-                                    <li><a href="../settings/settings.php">Settings <b class="fa fa-cog"
-                                                                                       style="float:right;"></b></a>
-                                    </li>
-                                    <li class="divider"></li>
-                                    <li><a href="#" data-target='#Logout' data-toggle='modal'>Sign Out <b
-                                                class="fa fa-sign-out" style="float:right;"></b></a></li>
-                                </ul>
-                            </li>
-                        </ul>
-                        <!-- End Social Links -->
-                    </div>
-                    <!-- .col-md-6 -->
+                    <!-- .row -->
                 </div>
-                <!-- .row -->
+                <!-- .container -->
             </div>
-            <!-- .container -->
-        </div>
-        <!-- .top-bar -->
-        <!-- End Top Bar -->
+            <!-- .top-bar -->
+            <!-- End Top Bar -->
 
-        <!-- Modal -->
-        <div class="modal fade" id="Logout" role="dialog">
-            <div class="modal-dialog" style="padding:100px">
-                <!-- Modal content-->
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <button type="button" class="close" data-dismiss="modal">&times;</button>
-                        <h4 class="modal-title">Sign Out?</h4>
-                    </div>
-                    <div class="modal-body">
-                        <div class="col-md-15 fieldcol">
-                            <label = "usr" class = "control-label">Do you want to sign out?</label>
-                            <div class="form-group">
+            <!-- Modal -->
+            <div class="modal fade" id="Logout" role="dialog">
+                <div class="modal-dialog" style="padding:100px">
+                    <!-- Modal content-->
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                            <h4 class="modal-title">Sign Out?</h4>
+                        </div>
+                        <div class="modal-body">
+                            <div class="col-md-15 fieldcol">
+                                <label = "usr" class = "control-label">Do you want to sign out?</label>
+                                <div class="form-group">
+                                </div>
+                            </div>
+                            <div class="modal-footer">
+                                <a href="../logout.php"
+                                   class="btn btn-primary">Sign out</a>
+                                <button type="button" class="btn btn-default" data-dismiss="modal">
+                                    Cancel
+                                </button>
                             </div>
                         </div>
-                        <div class="modal-footer">
-                            <a href="../logout.php"
-                               class="btn btn-primary">Sign out</a>
-                            <button type="button" class="btn btn-default" data-dismiss="modal">
-                                Cancel
-                            </button>
-                        </div>
                     </div>
                 </div>
             </div>
-        </div>
 
-        <!-- Start  Logo & Naviagtion  -->
-        <div class="navbar navbar-default navbar-top">
-            <div class="container">
-                <div class="navbar-header">
-                    <!-- Stat Toggle Nav Link For Mobiles -->
-                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                        <i class="fa fa-bars"></i>
-                    </button>
-                    <!-- End Toggle Nav Link For Mobiles -->
-                    <a class="navbar-brand">
-                        <img src="../../images/ojpms.png">
-                    </a>
+            <!-- Start  Logo & Naviagtion  -->
+            <div class="navbar navbar-default navbar-top">
+                <div class="container">
+                    <div class="navbar-header">
+                        <!-- Stat Toggle Nav Link For Mobiles -->
+                        <button type="button" class="navbar-toggle" data-toggle="collapse"
+                                data-target=".navbar-collapse">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        <!-- End Toggle Nav Link For Mobiles -->
+                        <a class="navbar-brand">
+                            <img src="../../images/ojpms.png">
+                        </a>
+                    </div>
+                    <div class="navbar-collapse collapse">
+                        <!-- Start Navigation List -->
+                        <ul class="nav navbar-nav navbar-right">
+                            <li>
+                                <a class="active" href="personal-info.php">My Info</a>
+                                <ul class="dropdown">
+                                    <li><a href="personal-info.php">Personal Info</a></li>
+                                    <li><a href="contacts-info.php">Contacts Info</a></li>
+                                    <li><a class="active" href="work.php">Work</a></li>
+                                    <li><a href="education.php">Education</a></li>
+                                    <li><a href="certifications.php">Certifications</a></li>
+                                    <li><a href="achievements.php">Achievements</a></li>
+                                    <li><a href="specialization-and-languages.php">Specialization & Languages</a></li>
+                                    <li><a href="references.php">References</a></li>
+                                    <li><a href="portfolio.php">Portfolio</a></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="../resumelink/resume-link.php">Resume Link</a>
+                                <ul class="dropdown">
+                                    <li><a href="../resumelink/resume-link.php">Resume Link</a></li>
+                                    <li><a href="../resumelink/background.php">Background</a></li>
+                                    <li><a href="../resumelink/print-share.php">Print/Share</a></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="../applications/applications.php">Applications</a>
+                            </li>
+                            <li>
+                                <a href="../search-job/jobs.php">Jobs</a>
+                            </li>
+                        </ul>
+                        <!-- End Navigation List -->
+                    </div>
                 </div>
-                <div class="navbar-collapse collapse">
-                    <!-- Start Navigation List -->
-                    <ul class="nav navbar-nav navbar-right">
-                        <li>
-                            <a class="active" href="personal-info.php">My Info</a>
-                            <ul class="dropdown">
-                                <li><a href="personal-info.php">Personal Info</a></li>
-                                <li><a href="contacts-info.php">Contacts Info</a></li>
-                                <li><a class="active" href="work.php">Work</a></li>
-                                <li><a href="education.php">Education</a></li>
-                                <li><a href="certifications.php">Certifications</a></li>
-                                <li><a href="achievements.php">Achievements</a></li>
-                                <li><a href="specialization-and-languages.php">Specialization & Languages</a></li>
-                                <li><a href="references.php">References</a></li>
-                                <li><a href="portfolio.php">Portfolio</a></li>
-                            </ul>
-                        </li>
-                        <li>
-                            <a href="../resumelink/resume-link.php">Resume Link</a>
-                            <ul class="dropdown">
-                                <li><a href="../resumelink/resume-link.php">Resume Link</a></li>
-                                <li><a href="../resumelink/background.php">Background</a></li>
-                                <li><a href="../resumelink/print-share.php">Print/Share</a></li>
-                            </ul>
-                        </li>
-                        <li>
-                            <a href="../applications/applications.php">Applications</a>
-                        </li>
-                        <li>
-                            <a href="../search-job/jobs.php">Jobs</a>
-                        </li>
-                    </ul>
-                    <!-- End Navigation List -->
-                </div>
+                <!-- Mobile Menu Start -->
+                <ul class="wpb-mobile-menu">
+                    <li>
+                        <a class="active" href="personal-info.php">My Info</a>
+                        <ul class="dropdown">
+                            <li><a href="personal-info.php">Personal Info</a></li>
+                            <li><a href="contacts-info.php">Contacts Info</a></li>
+                            <li><a class="active" href="work.php">Work</a></li>
+                            <li><a href="education.php">Education</a></li>
+                            <li><a href="certifications.php">Certifications</a></li>
+                            <li><a href="achievements.php">Achievements</a></li>
+                            <li><a href="specialization-and-languages.php">Specialization & Languages</a></li>
+                            <li><a href="references.php">References</a></li>
+                            <li><a href="portfolio.php">Portfolio</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="../resumelink/resume-link.php">Resume Link</a>
+                        <ul class="dropdown">
+                            <li><a href="../resumelink/resume-link.php">Resume Link</a></li>
+                            <li><a href="../resumelink/background.php">Background</a></li>
+                            <li><a href="../resumelink/print-share.php">Print/Share</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="../applications/applications.php">Applications</a>
+                    </li>
+                    <li>
+                        <a href="../search-job/jobs.php">Jobs</a>
+                    </li>
+                </ul>
+                <!-- Mobile Menu End -->
             </div>
-            <!-- Mobile Menu Start -->
-            <ul class="wpb-mobile-menu">
-                <li>
-                    <a class="active" href="personal-info.php">My Info</a>
-                    <ul class="dropdown">
-                        <li><a href="personal-info.php">Personal Info</a></li>
-                        <li><a href="contacts-info.php">Contacts Info</a></li>
-                        <li><a class="active" href="work.php">Work</a></li>
-                        <li><a href="education.php">Education</a></li>
-                        <li><a href="certifications.php">Certifications</a></li>
-                        <li><a href="achievements.php">Achievements</a></li>
-                        <li><a href="specialization-and-languages.php">Specialization & Languages</a></li>
-                        <li><a href="references.php">References</a></li>
-                        <li><a href="portfolio.php">Portfolio</a></li>
-                    </ul>
-                </li>
-                <li>
-                    <a href="../resumelink/resume-link.php">Resume Link</a>
-                    <ul class="dropdown">
-                        <li><a href="../resumelink/resume-link.php">Resume Link</a></li>
-                        <li><a href="../resumelink/background.php">Background</a></li>
-                        <li><a href="../resumelink/print-share.php">Print/Share</a></li>
-                    </ul>
-                </li>
-                <li>
-                    <a href="../applications/applications.php">Applications</a>
-                </li>
-                <li>
-                    <a href="../search-job/jobs.php">Jobs</a>
-                </li>
-            </ul>
-            <!-- Mobile Menu End -->
-        </div>
-    </header>
+        </header>
 
     <div class="page-banner no-subtitle">
         <div class="container">
@@ -333,47 +337,17 @@ $MajorCourse = $course_qry[0][0];
                 <!-- Page Content -->
                 <div class="col-md-9 page-content">
                     <div class="row">
-                        <div class="col-md-4">
-                            <!-- Single Testimonial -->
-                            <div class="classic-testimonials">
-                                <label>Work Options</label>
-                                <div class="checkbox checkbox-success">
-                                    <input id="checkbox3" class="styled" type="checkbox">
-                                    <label for="checkbox3">
-                                        <b>Willing to work night shifts</b>
-                                    </label>
-                                </div>
-                                <div class="checkbox checkbox-success">
-                                    <input id="checkbox3" class="styled" type="checkbox">
-                                    <label for="checkbox3">
-                                        <b>Willing to relocate</b>
-                                    </label>
-                                </div>
-                                <div class="checkbox checkbox-success">
-                                    <input id="checkbox3" class="styled" type="checkbox">
-                                    <label for="checkbox3">
-                                        <b>Looking for OJT position</b>
-                                    </label>
-                                </div>
-                                <div class="checkbox checkbox-success">
-                                    <input id="checkbox3" class="styled" type="checkbox">
-                                    <label for="checkbox3">
-                                        <b>Willing to work overseas</b>
-                                    </label>
-                                </div>
-                            </div>
-                            <!-- End Single Testimonial -->
-                        </div>
                         <div class="col-md-8">
                             <!-- Single Testimonial -->
                             <div class="classic-testimonials">
                                 <div class="testimonial-content">
                                     <label>Objectives</label>
-                                    <textarea class="form-control" id="" name="" rows="7"></textarea>
-                                    <span class="counter">120 characters remaining.</span>
+                                    <textarea class="form-control" id="Objective" name="Objective" rows="7"
+                                              maxlength="120"><?php echo $Objectives; ?></textarea>
+                                    <div id="textarea_feedback"></div>
                                 </div>
                                 <div class="testimonial-author">
-                                    <button type="submit" id="" class="btn-system btn-large" name=""
+                                    <button type="submit" class="btn-system btn-large" name="btnSave"
                                             style="float:right;">Save
                                     </button>
                                 </div>
@@ -440,7 +414,7 @@ $MajorCourse = $course_qry[0][0];
                     $MonthlySalary = $value[12];
                     $NatureOfWork = $value[10];
 
-                    if($DateToYear == "Current"){
+                    if ($DateToYear == "Current") {
                         $count++;
                     }
 
@@ -546,14 +520,14 @@ $MajorCourse = $course_qry[0][0];
                     </tbody>
                     <?php
                 }
-                if($count == 0){
+                if ($count == 0) {
                     GSecureSQL::query(
                         "UPDATE studentinfotbl SET EmploymentStatus = 'Unemployed' WHERE StudentID = ?",
                         FALSE,
                         "s",
                         $StudentID
                     );
-                } else{
+                } else {
                     GSecureSQL::query(
                         "UPDATE studentinfotbl SET EmploymentStatus = 'Employed' WHERE StudentID = ?",
                         FALSE,
@@ -567,7 +541,21 @@ $MajorCourse = $course_qry[0][0];
         </div>
     </div>
 </div>
+</form>
 <!-- End Content -->
 <script type="text/javascript" src="../../js/script.js"></script>
 </body>
 </html>
+<script>
+    $(document).ready(function () {
+        var text_max = 120;
+        $('#textarea_feedback').html(text_max + ' characters remaining');
+
+        $('#Objective').keyup(function () {
+            var text_length = $('#Objective').val().length;
+            var text_remaining = text_max - text_length;
+
+            $('#textarea_feedback').html(text_remaining + ' characters remaining');
+        });
+    });
+</script>

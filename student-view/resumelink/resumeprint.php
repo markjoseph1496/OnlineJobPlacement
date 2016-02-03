@@ -14,7 +14,8 @@ $studentinfo_tbl =
         FirstName,
         MiddleName,
         LastName,
-        ProfileImage
+        ProfileImage,
+        Objectives
         FROM studentinfotbl WHERE StudentID = ?",
         TRUE,
         "s",
@@ -24,6 +25,7 @@ $FirstName = $studentinfo_tbl[0][0];
 $MiddleName = $studentinfo_tbl[0][1];
 $LastName = $studentinfo_tbl[0][2];
 $ProfileImage = $studentinfo_tbl[0][3];
+$Objectives = $studentinfo_tbl[0][4];
 
 $studcontacts_tbl =
     GSecureSQL::query(
@@ -37,14 +39,36 @@ $MobileNumber = $studcontacts_tbl[0][1];
 $HomeNumber = $studcontacts_tbl[0][2];
 $Email = $studcontacts_tbl[0][3];
 
-if(empty($HomeNumber)){
+if (empty($HomeNumber)) {
     $ContactNumber = $MobileNumber;
-}elseif(empty($MobileNumber)){
+} elseif (empty($MobileNumber)) {
     $ContactNumber = $HomeNumber;
-}else{
+} else {
     $ContactNumber = $MobileNumber . ", " . $HomeNumber;
 }
 
+
+$school_tbl =
+    GSecureSQL::query(
+        "SELECT School, Attainment, Graduated FROM schooltbl WHERE StudentID = ? AND _DEFAULT = 1",
+        TRUE,
+        "s",
+        $StudentID
+    );
+$hsschool_tbl =
+    GSecureSQL::query(
+        "SELECT School, Attainment, Graduated FROM schooltbl WHERE StudentID = ? AND Attainment = 'High School Diploma'",
+        TRUE,
+        "s",
+        $StudentID
+    );
+$School = $school_tbl[0][0];
+$Attainment = $school_tbl[0][1];
+$Graduated = $school_tbl[0][2];
+
+$hSchool = $hsschool_tbl[0][0];
+$hAttainment = $hsschool_tbl[0][1];
+$hGraduated = $hsschool_tbl[0][2];
 ?>
 <!doctype html>
 <html lang="en">
@@ -117,7 +141,8 @@ if(empty($HomeNumber)){
     <script type="text/javascript" src="../../js/jquery.parallax.js"></script>
     <script type="text/javascript" src="../../js/jquery.slicknav.js"></script>
 </head>
-<style = "text/css">
+<style
+= "text/css">
 .padding {
     border: 1px solid black;
     background-color: #fff;
@@ -128,69 +153,74 @@ if(empty($HomeNumber)){
 </style>
 
 <body>
-    <div class="container">
-        <div class="hr4" style="margin-top:20px;margin-bottom:30px;"></div>
-        <div class="text-center">
-            <button name="b_print" type="button" class="fa fa-print btn-system btn-mini border-btn" onClick="printdiv('div_print');" value=" Print " style="height:50px;"> Print this Resume</button>
-        </div>
-        <div class="hr1" style="margin-top:20px;margin-bottom:20px;"></div>
-        
-        <div class="padding">
-            <div id="div_print">
-                <div class="hr1" style="margin-top:30px;margin-bottom:30px;"></div>
-                <div class="resume-container">
-                    <div class="row">
-                        <div class="col-xs-6">
-                            <p><label>Name:</label> <?php echo $FirstName . " " . $LastName; ?></p>
-                            <p><label>Address:</label> <?php echo $Address; ?></p>
-                            <p><label>Contact No:</label> <?php echo $ContactNumber; ?></p>
-                            <p><label>Email Address:</label> <?php echo $Email; ?></p>
+<div class="container">
+    <div class="hr4" style="margin-top:20px;margin-bottom:30px;"></div>
+    <div class="text-center">
+        <button name="b_print" type="button" class="fa fa-print btn-system btn-mini border-btn"
+                onClick="printdiv('div_print');" value=" Print " style="height:50px;"> Print this Resume
+        </button>
+    </div>
+    <div class="hr1" style="margin-top:20px;margin-bottom:20px;"></div>
+
+    <div class="padding">
+        <div id="div_print">
+            <div class="hr1" style="margin-top:30px;margin-bottom:30px;"></div>
+            <div class="resume-container">
+                <div class="row">
+                    <div class="col-xs-6">
+                        <p><label>Name:</label> <?php echo $FirstName . " " . $LastName; ?></p>
+                        <p><label>Address:</label> <?php echo $Address; ?></p>
+                        <p><label>Contact No:</label> <?php echo $ContactNumber; ?></p>
+                        <p><label>Email Address:</label> <?php echo $Email; ?></p>
+                    </div>
+                    <div class="col-xs-6">
+                        <div class="image-border" style="float:right;">
+                            <img src="../myinfo/<?php echo $ProfileImage; ?>" class="img-responsive"
+                                 style="width:200px; height:200px;">
                         </div>
-                        <div class="col-xs-6">
-                            <div class="image-border" style="float:right;">
-                                <img src="../myinfo/<?php echo $ProfileImage; ?>" class="img-responsive" style="width:200px; height:200px;">
+                    </div>
+                </div>
+                <div class="hr1" style="margin-top:20px;margin-bottom:30px;"></div>
+                <div class="row">
+                    <div class="col-xs-12">
+                        <label>Objective:</label>
+                        <p style="text-indent:50px;"><?php echo $Objectives; ?><p>
+                    </div>
+                </div>
+
+                <div class="hr1" style="margin-top:10px;margin-bottom:10px;"></div>
+
+                <div class="row">
+                    <div class="col-xs-12">
+                        <label>Education:</label>
+                        <div class="row">
+                            <div class="col-xs-4">
+                                <p><?php echo $Graduated; ?></p>
+                                <p><?php echo $hGraduated; ?></p>
+                            </div>
+                            <div class="col-xs-4">
+                                <p><label><?php echo $School; ?></label></p>
+                                <p><label><?php echo $hSchool; ?></label></p>
+
+                            </div>
+                            <div class="col-xs-4">
+                                <p><label><?php echo $Attainment; ?></label></p>
+                                <p><label><?php echo $hAttainment; ?></label></p>
+
                             </div>
                         </div>
                     </div>
-                    <div class="hr1" style="margin-top:20px;margin-bottom:30px;"></div>
-                    <div class="row">
-                        <div class="col-xs-12">
-                            <label>Objective:</label>
-                            <p style="text-indent:50px;">One to two sentences long that describes the type of job you want, the type of organization you
-                                prefer and how you can contribute to the position/organization.
-                            <p>
-                        </div>
-                    </div>
+                </div>
 
-                    <div class="hr1" style="margin-top:10px;margin-bottom:10px;"></div>
+                <div class="hr1" style="margin-top:10px;margin-bottom:10px;"></div>
 
-                    <div class="row">
-                        <div class="col-xs-12">
-                            <label>Education:</label>
-                            <div class="row">
-                                <div class="col-xs-4">
-                                    <p>2012 - 2012</p>
-                                    <p>2012 - 2012</p>
-                                    <p>2012 - 2012</p>
-                                </div>
-                                <div class="col-xs-8">
-                                    <p><label> STI College – (Campus) (for College) / STI (Campus) (for EC) </label></p>
-                                    <p><label> STI College – (Campus) (for College) / STI (Campus) (for EC) </label></p>
-                                    <p><label> STI College – (Campus) (for College) / STI (Campus) (for EC) </label></p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="hr1" style="margin-top:10px;margin-bottom:10px;"></div>
-
-                    <div class="row">
-                        <div class="col-xs-12">
-                            <label>Work Experience:</label>
-                            <?php
-                                $workexperience_tbl =
-                                    GSecureSQL::query(
-                                        "SELECT
+                <div class="row">
+                    <div class="col-xs-12">
+                        <label>Work Experience:</label>
+                        <?php
+                        $workexperience_tbl =
+                            GSecureSQL::query(
+                                "SELECT
                                         CompanyName,
                                         DateFromMonth,
                                         DateFromYear,
@@ -202,95 +232,95 @@ if(empty($HomeNumber)){
                                         WHERE StudentID = ?
                                         ORDER BY DateToYear DESC
                                         LIMIT 2",
-                                        TRUE,
-                                        "s",
-                                        $StudentID
-                                    );
+                                TRUE,
+                                "s",
+                                $StudentID
+                            );
 
-                            foreach($workexperience_tbl as $value){
-                                $CompanyName = $value[0];
-                                $DateFromMonth = $value[1];
-                                $DateFromYear = $value[2];
-                                $DateToMonth = $value[3];
-                                $DateToYear = $value[4];
-                                $PositionTitle = $value[5];
-                                $CompanyAddress = $value[6];
+                        foreach ($workexperience_tbl as $value) {
+                            $CompanyName = $value[0];
+                            $DateFromMonth = $value[1];
+                            $DateFromYear = $value[2];
+                            $DateToMonth = $value[3];
+                            $DateToYear = $value[4];
+                            $PositionTitle = $value[5];
+                            $CompanyAddress = $value[6];
 
-                                if ($DateFromMonth == 1) {
-                                    $DateFromMonth = 'January';
-                                }
-                                if ($DateFromMonth == 2) {
-                                    $DateFromMonth = 'February';
-                                }
-                                if ($DateFromMonth == 3) {
-                                    $DateFromMonth = 'March';
-                                }
-                                if ($DateFromMonth == 4) {
-                                    $DateFromMonth = 'April';
-                                }
-                                if ($DateFromMonth == 5) {
-                                    $DateFromMonth = 'May';
-                                }
-                                if ($DateFromMonth == 6) {
-                                    $DateFromMonth = 'June';
-                                }
-                                if ($DateFromMonth == 7) {
-                                    $DateFromMonth = 'July';
-                                }
-                                if ($DateFromMonth == 8) {
-                                    $DateFromMonth = 'August';
-                                }
-                                if ($DateFromMonth == 9) {
-                                    $DateFromMonth = 'September';
-                                }
-                                if ($DateFromMonth == 10) {
-                                    $DateFromMonth = 'October';
-                                }
-                                if ($DateFromMonth == 11) {
-                                    $DateFromMonth = 'November';
-                                }
-                                if ($DateFromMonth == 12) {
-                                    $DateFromMonth = 'December';
-                                }
+                            if ($DateFromMonth == 1) {
+                                $DateFromMonth = 'January';
+                            }
+                            if ($DateFromMonth == 2) {
+                                $DateFromMonth = 'February';
+                            }
+                            if ($DateFromMonth == 3) {
+                                $DateFromMonth = 'March';
+                            }
+                            if ($DateFromMonth == 4) {
+                                $DateFromMonth = 'April';
+                            }
+                            if ($DateFromMonth == 5) {
+                                $DateFromMonth = 'May';
+                            }
+                            if ($DateFromMonth == 6) {
+                                $DateFromMonth = 'June';
+                            }
+                            if ($DateFromMonth == 7) {
+                                $DateFromMonth = 'July';
+                            }
+                            if ($DateFromMonth == 8) {
+                                $DateFromMonth = 'August';
+                            }
+                            if ($DateFromMonth == 9) {
+                                $DateFromMonth = 'September';
+                            }
+                            if ($DateFromMonth == 10) {
+                                $DateFromMonth = 'October';
+                            }
+                            if ($DateFromMonth == 11) {
+                                $DateFromMonth = 'November';
+                            }
+                            if ($DateFromMonth == 12) {
+                                $DateFromMonth = 'December';
+                            }
 
-                                /* Year */
-                                if ($DateToMonth == 1) {
-                                    $DateToMonth = 'January';
-                                }
-                                if ($DateToMonth == 2) {
-                                    $DateToMonth = 'February';
-                                }
-                                if ($DateToMonth == 3) {
-                                    $DateToMonth = 'March';
-                                }
-                                if ($DateToMonth == 4) {
-                                    $DateToMonth = 'April';
-                                }
-                                if ($DateToMonth == 5) {
-                                    $DateToMonth = 'May';
-                                }
-                                if ($DateToMonth == 6) {
-                                    $DateToMonth = 'June';
-                                }
-                                if ($DateToMonth == 7) {
-                                    $DateToMonth = 'July';
-                                }
-                                if ($DateToMonth == 8) {
-                                    $DateToMonth = 'August';
-                                }
-                                if ($DateToMonth == 9) {
-                                    $DateToMonth = 'September';
-                                }
-                                if ($DateToMonth == 10) {
-                                    $DateToMonth = 'October';
-                                }
-                                if ($DateToMonth == 11) {
-                                    $DateToMonth = 'November';
-                                }
-                                if ($DateToMonth == 12) {
-                                    $DateToMonth = 'December';
-                                }
-                                $Date = $DateFromMonth . " " . $DateFromYear . " - " . $DateToMonth . " " . $DateToYear;
+                            /* Year */
+                            if ($DateToMonth == 1) {
+                                $DateToMonth = 'January';
+                            }
+                            if ($DateToMonth == 2) {
+                                $DateToMonth = 'February';
+                            }
+                            if ($DateToMonth == 3) {
+                                $DateToMonth = 'March';
+                            }
+                            if ($DateToMonth == 4) {
+                                $DateToMonth = 'April';
+                            }
+                            if ($DateToMonth == 5) {
+                                $DateToMonth = 'May';
+                            }
+                            if ($DateToMonth == 6) {
+                                $DateToMonth = 'June';
+                            }
+                            if ($DateToMonth == 7) {
+                                $DateToMonth = 'July';
+                            }
+                            if ($DateToMonth == 8) {
+                                $DateToMonth = 'August';
+                            }
+                            if ($DateToMonth == 9) {
+                                $DateToMonth = 'September';
+                            }
+                            if ($DateToMonth == 10) {
+                                $DateToMonth = 'October';
+                            }
+                            if ($DateToMonth == 11) {
+                                $DateToMonth = 'November';
+                            }
+                            if ($DateToMonth == 12) {
+                                $DateToMonth = 'December';
+                            }
+                            $Date = $DateFromMonth . " " . $DateFromYear . " - " . $DateToMonth . " " . $DateToYear;
                             ?>
 
                             <div class="row">
@@ -308,90 +338,123 @@ if(empty($HomeNumber)){
                                 </div>
                             </div>
                             <?php
-                            }
-                            ?>
-                        </div>
+                        }
+                        ?>
                     </div>
+                </div>
 
-                    <div class="hr1" style="margin-top:10px;margin-bottom:10px;"></div>
+                <div class="hr1" style="margin-top:10px;margin-bottom:10px;"></div>
 
-                    <div class="row">
-                        <div class="col-xs-12">
-                            <label>Skills:</label>
-                            <div class="row">
-                                <div class="col-xs-12">
-                                    <ul>
-                                        <li>Many to mention</li>
-                                        <li>Many to mention</li>
-                                        <li>Many to mention</li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="hr1" style="margin-top:10px;margin-bottom:10px;"></div>
-
-                    <div class="row">
-                        <div class="col-xs-12">
-                            <label>Extra Curricular Activities:</label>
-                            <div class="row">
-                                <div class="col-xs-12">
-                                    <ul>
-                                        <li>Many to mention</li>
-                                        <li>Many to mention</li>
-                                        <li>Many to mention</li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="hr1" style="margin-top:10px;margin-bottom:10px;"></div>
-
-                    <div class="row">
-                        <div class="col-xs-12">
-                            <label>References:</label>
-                            <div class="row text-center">
-                                <div class="col-xs-4">
-                                    <p>Aira Jane Cruz</p>
-                                    <p>09267694941</p>
-                                    <p></p>
-                                </div>
-                                <div class="col-xs-4">
-                                    <p>Mark Joseph Cinco</p>
-                                    <p>09267694941</p>
-                                    <p></p>
-                                </div>
-                                <div class="col-xs-4">
-                                    <p>Cherry Ramirez</p>
-                                    <p>09267694941</p>
-                                    <p></p>
-                                </div>
+                <div class="row">
+                    <div class="col-xs-12">
+                        <label>Skills:</label>
+                        <div class="row">
+                            <div class="col-xs-12">
+                                <ul>
+                                    <?php
+                                    $skill_tbl =
+                                        GSecureSQL::query(
+                                            "SELECT Skills FROM specializationtbl WHERE StudentID = ? LIMIT 3",
+                                            TRUE,
+                                            "s",
+                                            $StudentID
+                                        );
+                                    foreach ($skill_tbl as $value1) {
+                                        $Skill = $value1[0];
+                                        ?>
+                                        <li><?php echo $Skill; ?></li>
+                                        <?php
+                                    }
+                                    ?>
+                                </ul>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="hr1" style="margin-top:30px;margin-bottom:30px;"></div>
-            </div>
-            <!-- End of Print -->
-        </div>
 
-        <div class="hr4" style="margin-top:20px;margin-bottom:30px;"></div>
+                <div class="hr1" style="margin-top:10px;margin-bottom:10px;"></div>
+
+                <div class="row">
+                    <div class="col-xs-12">
+                        <label>Extra Curricular Activities:</label>
+                        <div class="row">
+                            <div class="col-xs-12">
+                                <ul>
+                                    <?php
+                                    $seminar_tbl =
+                                        GSecureSQL::query(
+                                            "SELECT Seminar, YearAttended FROM seminartbl WHERE StudentID = ? LIMIT 3",
+                                            TRUE,
+                                            "s",
+                                            $StudentID
+                                        );
+                                    foreach ($seminar_tbl as $value) {
+                                        $Seminar = $value[0];
+                                        $YearAttended = $value[1];
+                                        ?>
+                                        <li><?php echo $Seminar . " (" . $YearAttended . ") "; ?></li>
+                                        <?php
+                                    }
+                                    ?>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="hr1" style="margin-top:10px;margin-bottom:10px;"></div>
+
+                <div class="row">
+                    <div class="col-xs-12">
+                        <label>References:</label>
+                        <div class="row text-center">
+                            <?php
+                            $reference_tbl =
+                                GSecureSQL::query(
+                                    "SELECT Name, Phone, Relationship, Email FROM referencetbl WHERE StudentID = ? LIMIT 3",
+                                    TRUE,
+                                    "s",
+                                    $StudentID
+                                );
+                            foreach ($reference_tbl as $value) {
+                                $Name = $value[0];
+                                $PhoneNum = $value[1];
+                                $Relationship = $value[2];
+                                $Email = $value[3];
+                                ?>
+                                <div class="col-xs-4">
+                                    <p><?php echo $Name; ?></p>
+                                    <p><?php echo $Relationship; ?></p>
+                                    <p><?php echo $PhoneNum; ?></p>
+                                    <p><?php echo $Email; ?></p>
+                                </div>
+                                <?php
+                            }
+                            ?>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="hr1" style="margin-top:30px;margin-bottom:30px;"></div>
+        </div>
+        <!-- End of Print -->
     </div>
-    <!-- End Content -->
-    <script type="text/javascript" src="../../js/script.js"></script>
-    <script language="javascript">
-        function printdiv(printpage) {
-            var headstr = "<html><head><title></title></head><body>";
-            var footstr = "</body>";
-            var newstr = document.all.item(printpage).innerHTML;
-            var oldstr = document.body.innerHTML;
-            document.body.innerHTML = headstr + newstr + footstr;
-            window.print();
-            document.body.innerHTML = oldstr;
-            return false;
-        }
-    </script>
+
+    <div class="hr4" style="margin-top:20px;margin-bottom:30px;"></div>
+</div>
+<!-- End Content -->
+<script type="text/javascript" src="../../js/script.js"></script>
+<script language="javascript">
+    function printdiv(printpage) {
+        var headstr = "<html><head><title></title></head><body>";
+        var footstr = "</body>";
+        var newstr = document.all.item(printpage).innerHTML;
+        var oldstr = document.body.innerHTML;
+        document.body.innerHTML = headstr + newstr + footstr;
+        window.print();
+        document.body.innerHTML = oldstr;
+        return false;
+    }
+</script>
 </body>
 </html>

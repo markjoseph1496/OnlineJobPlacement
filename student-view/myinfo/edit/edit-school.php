@@ -1,10 +1,10 @@
-<?php 
+<?php
 include('../../../connection.php');
 session_start();
 
-if(isset($_SESSION['StudentID'])){
+if (isset($_SESSION['StudentID'])) {
     $StudentID = $_SESSION['StudentID'];
-}else{
+} else {
     header("location: ../../../login-student.php");
 }
 
@@ -16,14 +16,14 @@ $school_tbl =
         "s",
         $EditSchoolID
     );
-    $SchoolID = $school_tbl[0][0];
-    $StudentID = $school_tbl[0][1];
-    $School = $school_tbl[0][2];
-    $Attainment = $school_tbl[0][3];
-    $Course = $school_tbl[0][4];
-    $Graduated = $school_tbl[0][5];
-    $GraduatedMonth = substr($Graduated, 0,2);
-    $GraduatedYear = substr($Graduated, 3,6);
+$SchoolID = $school_tbl[0][0];
+$StudentID = $school_tbl[0][1];
+$School = $school_tbl[0][2];
+$Attainment = $school_tbl[0][3];
+$Course = $school_tbl[0][4];
+$Graduated = $school_tbl[0][5];
+$GraduatedMonth = substr($Graduated, 0, 2);
+$GraduatedYear = substr($Graduated, 3, 6);
 
 $infoquery =
     GSecureSQL::query(
@@ -35,7 +35,7 @@ $infoquery =
 
 $FirstName = $infoquery[0][0];
 $LastName = $infoquery[0][1];
-$MajorCourse =  $infoquery[0][2];
+$MajorCourse = $infoquery[0][2];
 $StudentName = $FirstName . " " . $LastName;
 
 $course_qry =
@@ -66,17 +66,17 @@ $MajorCourse = $course_qry[0][0];
     <meta name="author" content="iThemesLab">
 
     <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="../../../css/bootstrap.min.css" />
+    <link rel="stylesheet" href="../../../css/bootstrap.min.css"/>
 
     <!-- BootstrapValidator CSS -->
-    <link rel="stylesheet" href="../../../css/bootstrapValidator.min.css" />
+    <link rel="stylesheet" href="../../../css/bootstrapValidator.min.css"/>
 
     <!-- jQuery and Bootstrap JS -->
     <script type="text/javascript" src="../../../js/jquery.min.js"></script>
-    <script type="text/javascript" src="../../../js/bootstrap.min.js" ></script>
+    <script type="text/javascript" src="../../../js/bootstrap.min.js"></script>
 
     <!-- BootstrapValidator -->
-    <script type="text/javascript" src="../../../js/bootstrapValidator.min.js" ></script>
+    <script type="text/javascript" src="../../../js/bootstrapValidator.min.js"></script>
 
     <!-- Font Awesome CSS -->
     <link rel="stylesheet" type="text/css" href="../../../css/font-awesome.min.css" media="screen">
@@ -144,12 +144,12 @@ $MajorCourse = $course_qry[0][0];
 </head>
 
 <body>
-    <form id="EditSchool" name="EditSchool" autocomplete="off" action="myinfoedit.php">
+<form id="EditSchool" name="EditSchool" autocomplete="off" action="myinfoedit.php">
     <div id="container">
         <!-- Start Header Section -->
         <div class="hidden-header"></div>
         <header class="clearfix">
-        <!-- Start Top Bar -->
+            <!-- Start Top Bar -->
             <div class="top-bar">
                 <div class="container">
                     <div class="row">
@@ -166,7 +166,8 @@ $MajorCourse = $course_qry[0][0];
                             <ul class="nav navbar-nav navbar-right">
                                 <li class="dropdown icon-border" id="notificationLink">
                                     <span id="notification_count">5</span>
-                                    <a href="#" class="bell itl-tooltip" data-placement="bottom" data-toggle="dropdown"><i class="fa fa-bell"></i></a>
+                                    <a href="#" class="bell itl-tooltip" data-placement="bottom" data-toggle="dropdown"><i
+                                            class="fa fa-bell"></i></a>
                                     <ul id="notificationContainer" class="dropdown-menu dropdown-menu-inverse">
                                         <li class="dropdown-header"><label>Notification</label></li>
                                         <li class="disabled"><a href="#" tabindex="-1">No new notification.</a></li>
@@ -176,12 +177,17 @@ $MajorCourse = $course_qry[0][0];
                                     </ul>
                                 </li>
                                 <li class="dropdown">
-                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown"><b class="fa fa-user"></b> Welcome, <b><?php echo $StudentName; ?> </b><b class="caret"></b></a>
+                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown"><b
+                                            class="fa fa-user"></b> Welcome, <b><?php echo $StudentName; ?> </b><b
+                                            class="caret"></b></a>
                                     <ul class="dropdown-menu">
                                         <li><a href="#">Profile <b class="fa fa-user" style="float:right;"></b></a></li>
-                                        <li><a href="../../settings/settings.php">Settings <b class="fa fa-cog" style="float:right;"></b></a></li>
+                                        <li><a href="../../settings/settings.php">Settings <b class="fa fa-cog"
+                                                                                              style="float:right;"></b></a>
+                                        </li>
                                         <li class="divider"></li>
-                                        <li><a href="#" data-target='#Logout' data-toggle='modal'>Sign Out <b class="fa fa-sign-out" style="float:right;"></b></a></li>
+                                        <li><a href="#" data-target='#Logout' data-toggle='modal'>Sign Out <b
+                                                    class="fa fa-sign-out" style="float:right;"></b></a></li>
                                     </ul>
                                 </li>
                             </ul>
@@ -201,7 +207,8 @@ $MajorCourse = $course_qry[0][0];
                 <div class="container">
                     <div class="navbar-header">
                         <!-- Stat Toggle Nav Link For Mobiles -->
-                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <button type="button" class="navbar-toggle" data-toggle="collapse"
+                                data-target=".navbar-collapse">
                             <i class="fa fa-bars"></i>
                         </button>
                         <!-- End Toggle Nav Link For Mobiles -->
@@ -214,7 +221,8 @@ $MajorCourse = $course_qry[0][0];
         </header>
 
         <div class="page-banner no-subtitle">
-            <input type="text" class="form-control" id="SchoolID" name="SchoolID" style="display: none;" value="<?php echo $SchoolID;?>">
+            <input type="text" class="form-control" id="SchoolID" name="SchoolID" style="display: none;"
+                   value="<?php echo $SchoolID; ?>">
             <div class="container">
                 <div class="row">
                     <div class="col-md-6">
@@ -241,7 +249,8 @@ $MajorCourse = $course_qry[0][0];
                             <div class="col-md-12">
                                 <div class="form-group">
                                     <label>School <span>(*)</span></label>
-                                    <input type="text" class="form-control" id="School" name="School" style="height:34px;" value="<?php echo $School; ?>">
+                                    <input type="text" class="form-control" id="School" name="School"
+                                           style="height:34px;" value="<?php echo $School; ?>">
                                 </div>
                             </div>
                         </div>
@@ -249,32 +258,55 @@ $MajorCourse = $course_qry[0][0];
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <label>Educational Attainment <span>(*)</span></label>
-                                    <select id="EducAttainment" name="EducAttainment" class="form-control" style="width:100%; height:34px;">
-                                        <option value="" <?php if($Attainment=="") echo 'selected="selected"'; ?>>- Please select one -</option>
-                                        <option value="High School Diploma" <?php if($Attainment=="High School Diploma") echo 'selected="selected"'; ?>>High School Diploma</option>
-                                        <option value="Technical Vocational/Certificate" <?php if($Attainment=="Technical Vocational/Certificate") echo 'selected="selected"'; ?>>Technical Vocational/Certificate</option>
-                                        <option value="Bachelor's/College Degree" <?php if($Attainment=="Bachelor's/College Degree") echo 'selected="selected"'; ?>>Bachelor's/College Degree</option>
-                                        <option value="Post Graduate Diploma/Master's Degree" <?php if($Attainment=="Post Graduate Diploma/Master's Degree") echo 'selected="selected"'; ?>>Post Graduate Diploma/Master's Degree</option>
-                                        <option value="Professional License (Passed Board/Bar/Professional License Exam)" <?php if($Attainment=="Professional License (Passed Board/Bar/Professional License Exam") echo 'selected="selected"'; ?>>Professional License (Passed Board/Bar/Professional License Exam</option>
-                                        <option value="Doctorate Degree" <?php if($Attainment=="Doctorate Degree") echo 'selected="selected"'; ?>>Doctorate Degree</option>
+                                    <select id="EducAttainment" name="EducAttainment" class="form-control"
+                                            style="width:100%; height:34px;">
+                                        <option value="" <?php if ($Attainment == "") echo 'selected="selected"'; ?>>-
+                                            Please select one -
+                                        </option>
+                                        <option
+                                            value="High School Diploma" <?php if ($Attainment == "High School Diploma") echo 'selected="selected"'; ?>>
+                                            High School Diploma
+                                        </option>
+                                        <option
+                                            value="Technical Vocational/Certificate" <?php if ($Attainment == "Technical Vocational/Certificate") echo 'selected="selected"'; ?>>
+                                            Technical Vocational/Certificate
+                                        </option>
+                                        <option
+                                            value="Bachelor's/College Degree" <?php if ($Attainment == "Bachelor's/College Degree") echo 'selected="selected"'; ?>>
+                                            Bachelor's/College Degree
+                                        </option>
+                                        <option
+                                            value="Post Graduate Diploma/Master's Degree" <?php if ($Attainment == "Post Graduate Diploma/Master's Degree") echo 'selected="selected"'; ?>>
+                                            Post Graduate Diploma/Master's Degree
+                                        </option>
+                                        <option
+                                            value="Professional License (Passed Board/Bar/Professional License Exam)" <?php if ($Attainment == "Professional License (Passed Board/Bar/Professional License Exam") echo 'selected="selected"'; ?>>
+                                            Professional License (Passed Board/Bar/Professional License Exam
+                                        </option>
+                                        <option
+                                            value="Doctorate Degree" <?php if ($Attainment == "Doctorate Degree") echo 'selected="selected"'; ?>>
+                                            Doctorate Degree
+                                        </option>
                                     </select>
                                 </div>
                             </div>
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <label>Course <span>(*)</span></label>
-                                    <select id="Course" name="Course" class="form-control" style="width:100%; height:34px;">
+                                    <select id="Course" name="Course" class="form-control"
+                                            style="width:100%; height:34px;">
                                         <option value="">- Course -</option>
-                                        <?php   
-                                            $query ="SELECT * FROM coursetbl";
-                                            $result = mysql_query($query);
-                                            while($query = mysql_fetch_array($result)){
-                                                $CourseCode = $query['CourseCode'];
-                                                $CourseTitle = $query['CourseTitle'];
-                                        ?>
-                                            <option value="<?php echo $CourseCode;?>" <?php if($CourseCode==$Course) echo 'selected="selected"'; ?>><?php echo $CourseTitle; ?></option>
                                         <?php
-                                            }
+                                        $query = "SELECT * FROM coursetbl";
+                                        $result = mysql_query($query);
+                                        while ($query = mysql_fetch_array($result)) {
+                                            $CourseCode = $query['CourseCode'];
+                                            $CourseTitle = $query['CourseTitle'];
+                                            ?>
+                                            <option
+                                                value="<?php echo $CourseCode; ?>" <?php if ($CourseCode == $Course) echo 'selected="selected"'; ?>><?php echo $CourseTitle; ?></option>
+                                            <?php
+                                        }
                                         ?>
                                     </select>
                                 </div>
@@ -282,7 +314,7 @@ $MajorCourse = $course_qry[0][0];
                         </div>
                         <div class="row">
                             <div class="col-md-6">
-                                <label>Graduation Date <span>(*)</span>:</label>
+                                <label>Year Covered <span>(*)</span>:</label>
                             </div>
                             <div class="col-md-6">&nbsp;</div>
                         </div>
@@ -290,11 +322,12 @@ $MajorCourse = $course_qry[0][0];
                             <div class="col-md-3">
                                 <div class="form-group">
                                     <label>From</label>
-                                    <select id="GraduatedMonth" name="GraduatedMonth" class="form-control" style="width:100%; height:34px;">
+                                    <select id="GraduatedYearTo" name="GraduatedYearTo" class="form-control"
+                                            style="width:100%; height:34px;">
                                         <option value="">- Year -</option>
                                         <?php
-                                        $date = Date("Y") + 4;
-                                        while($date != 1935){
+                                        $date = Date("Y") + 1;
+                                        while ($date != 1935) {
                                             $date--;
                                             echo "<option value='$date'> $date</option>";
                                         }
@@ -305,20 +338,19 @@ $MajorCourse = $course_qry[0][0];
                             <div class="col-md-3">
                                 <div class="form-group">
                                     <label>To</label>
-                                    <select id="GraduatedYear" name="GraduatedYear" class="form-control" style="width:100%; height:34px;">
+                                    <select id="GraduatedYearTo" name="GraduatedYearTo" class="form-control"
+                                            style="width:100%; height:34px;">
                                         <option value="">- Year -</option>
-                                        <?php 
-                                            $date = Date("Y") + 4;
-                                            $choose = $GraduatedYear;
-                                                while($date != 1935){
-                                                    $date--;
-                                                    if($date == $choose){
-                                                        echo "<option selected value='$date'> $date</option>";
-                                                        }
-                                                        else{
-                                                        echo "<option value='$date'> $date</option>";
-                                                        }
-                                                    }
+                                        <?php
+                                        $date = Date("Y") + 1;
+                                        while ($date != 1935) {
+                                            $date--;
+                                            if ($date == $choose) {
+                                                echo "<option selected value='$date'> $date</option>";
+                                            } else {
+                                                echo "<option value='$date'> $date</option>";
+                                            }
+                                        }
                                         ?>
                                     </select>
                                 </div>
@@ -353,54 +385,96 @@ $MajorCourse = $course_qry[0][0];
 </html>
 <script type="text/javascript">
     $(document).ready(function () {
-            var validator = $("#EditSchool").bootstrapValidator({
-                feedbackIcons:{
-                    valid: "glyphicon glyphicon-ok",
-                    invalid: "glyphicon glyphicon-remove",
-                    validating: "glyphicon glyphicon-refresh"
+        $("#EducAttainment").change(function () {
+            $(this).find("option:selected").each(function () {
+                if ($(this).attr("value") == "High School Diploma") {
+                    $("#Course").val("");
+                    $("#Course").hide();
+                    $("#txtCourse").hide();
+                    $("#lblCourse").hide();
+                } else {
+                    $("#Course").show();
+                    $("#lblCourse").show();
+                }
+            });
+        }).change();
+    });
+
+    $(document).ready(function () {
+        $("#Course").change(function () {
+            $(this).find("option:selected").each(function () {
+                if ($(this).attr("value") == "other") {
+                    $("#txtCourse").val("");
+                    $("#txtCourse").show();
+                } else {
+                    $("#txtCourse").hide();
+                }
+            });
+        }).change();
+    });
+
+
+    $(document).ready(function () {
+        var validator = $("#AddSchool").bootstrapValidator({
+            feedbackIcons: {
+                valid: "glyphicon glyphicon-ok",
+                invalid: "glyphicon glyphicon-remove",
+                validating: "glyphicon glyphicon-refresh"
+            },
+            excluded: [':disabled', ':hidden', ':not(:visible)', '#container'],
+            fields: {
+                School: {
+                    validators: {
+                        notEmpty: {
+                            message: "School is required."
+                        },
+                        stringLength: {
+                            min: 3,
+                            max: 30,
+                            message: "School must be 3-30 characters long."
+                        }
+                    }
                 },
-                fields: {
-                    School: {
-                        validators: {
-                            notEmpty: {
-                                message: "School is required."
-                            },
-                            stringLength: {
-                                min: 3,
-                                max: 30,
-                                message: "School must be 3-30 characters long."
-                            }
+                EducAttainment: {
+                    validators: {
+                        notEmpty: {
+                            message: "Educational Attainment is required."
                         }
-                    },
-                    EducAttainment: {
-                        validators: {
-                            notEmpty: {
-                                message: "Educational Attainment is required."
-                            }
+                    }
+                },
+                Course: {
+                    validators: {
+                        notEmpty: {
+                            message: "Course is required."
                         }
-                    },
-                    Course: {
-                        validators: {
-                            notEmpty: {
-                                message: "Course is required."
-                            }
+                    }
+                },
+                txtCourse: {
+                    validators: {
+                        notEmpty: {
+                            message: "Course is required."
                         }
-                    },
-                    GraduatedMonth: {
-                        validators: {
-                            notEmpty: {
-                                message: "Month graduated is required."
-                            }
+                    }
+                },
+                GraduatedYearFrom: {
+                    validators: {
+                        notEmpty: {
+                            message: "Month graduated is required."
                         }
-                    },
-                    GraduatedYear: {
-                        validators: {
-                            notEmpty: {
-                                message: "Year graduated is required."
-                            }
+                    }
+                },
+                GraduatedYearTo: {
+                    validators: {
+                        notEmpty: {
+                            message: "Year graduated is required."
+                        },
+                        greaterThan: {
+                            value: "GraduatedYearFrom",
+                            message: "Invalid date."
                         }
                     }
                 }
-            });
+            }
+        });
     });
 </script>

@@ -236,10 +236,10 @@ $MajorCourse = $course_qry[0][0];
                                     <label>Year Taken <span>(*)</span></label>
                                     <select id="YearTaken" name="YearTaken" class="form-control" style="width:100%; height:34px;">
                                         <option value="">- Year -</option>
-                                        <?php 
-                                            $date = 1934;
-                                            while($date != Date("Y")){
-                                                $date++;
+                                        <?php
+                                        $date = Date("Y") + 1;
+                                        while($date != 1935){
+                                                $date--;
                                                 echo "<option value='$date'> $date</option>";
                                             }
                                         ?>

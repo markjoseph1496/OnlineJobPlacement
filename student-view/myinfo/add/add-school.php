@@ -248,11 +248,10 @@ $MajorCourse = $course_qry[0][0];
                             </div>
                             <div class="col-md-6">
                                 <div class="form-group">
-                                    <label>Course <span>(*)</span></label>
+                                    <label id="lblCourse">Course <span>(*)</span></label>
                                     <select id="Course" name="Course" class="form-control" style="width:100%; height:34px;">
                                         <option value="">- Course -</option>
                                         <?php
-
                                             $course_tbl =
                                                 GSecureSQL::query(
                                                     "SELECT * FROM coursetbl",
@@ -266,13 +265,16 @@ $MajorCourse = $course_qry[0][0];
                                         <?php
                                         }
                                         ?>
+                                        <option value="other">others</option>
                                     </select>
+                                    <br>
+                                    <input type="text" class="form-control" id="txtCourse" name="txtCourse" style="height:34px;">
                                 </div>
                             </div>
                         </div>
                         <div class="row">
                             <div class="col-md-6">
-                                <label>Graduation Date <span>(*)</span>:</label>
+                                <label>Year Covered <span>(*)</span>:</label>
                             </div>
                             <div class="col-md-6">&nbsp;</div>
                         </div>
@@ -280,10 +282,10 @@ $MajorCourse = $course_qry[0][0];
                             <div class="col-md-3">
                                 <div class="form-group">
                                     <label>From</label>
-                                    <select id="GraduatedMonth" name="GraduatedMonth" class="form-control" style="width:100%; height:34px;">
+                                    <select id="GraduatedYearFrom" name="GraduatedYearFrom" class="form-control" style="width:100%; height:34px;">
                                         <option value="">- Year -</option>
                                         <?php
-                                        $date = Date("Y") + 4;
+                                        $date = Date("Y") + 1;
                                         while($date != 1935){
                                             $date--;
                                             echo "<option value='$date'> $date</option>";
@@ -295,10 +297,10 @@ $MajorCourse = $course_qry[0][0];
                             <div class="col-md-3">
                                 <div class="form-group">
                                     <label>To</label>
-                                    <select id="GraduatedYear" name="GraduatedYear" class="form-control" style="width:100%; height:34px;">
+                                    <select id="GraduatedYearTo" name="GraduatedYearTo" class="form-control" style="width:100%; height:34px;">
                                         <option value="">- Year -</option>
-                                        <?php 
-                                            $date = Date("Y") + 4;
+                                        <?php
+                                            $date = Date("Y") + 1;
                                             while($date != 1935){
                                                 $date--;
                                                 echo "<option value='$date'> $date</option>";
@@ -334,6 +336,36 @@ $MajorCourse = $course_qry[0][0];
 </body>
 </html>
 <script type="text/javascript">
+    $(document).ready(function(){
+        $("#EducAttainment").change(function(){
+            $(this).find("option:selected").each(function(){
+                if($(this).attr("value")=="High School Diploma"){
+                    $("#Course").val("");
+                    $("#Course").hide();
+                    $("#txtCourse").hide();
+                    $("#lblCourse").hide();
+                }else{
+                    $("#Course").show();
+                    $("#lblCourse").show();
+                }
+            });
+        }).change();
+    });
+
+    $(document).ready(function(){
+        $("#Course").change(function(){
+            $(this).find("option:selected").each(function(){
+                if($(this).attr("value")=="other"){
+                    $("#txtCourse").val("");
+                    $("#txtCourse").show();
+                }else{
+                    $("#txtCourse").hide();
+                }
+            });
+        }).change();
+    });
+
+
     $(document).ready(function () {
             var validator = $("#AddSchool").bootstrapValidator({
                 feedbackIcons:{
@@ -341,16 +373,12 @@ $MajorCourse = $course_qry[0][0];
                     invalid: "glyphicon glyphicon-remove",
                     validating: "glyphicon glyphicon-refresh"
                 },
+                excluded: [':disabled', ':hidden', ':not(:visible)', '#container'],
                 fields: {
                     School: {
                         validators: {
                             notEmpty: {
                                 message: "School is required."
-                            },
-                            stringLength: {
-                                min: 3,
-                                max: 30,
-                                message: "School must be 3-30 characters long."
                             }
                         }
                     },
@@ -368,17 +396,28 @@ $MajorCourse = $course_qry[0][0];
                             }
                         }
                     },
-                    GraduatedMonth: {
+                    txtCourse: {
+                        validators: {
+                            notEmpty: {
+                                message: "Course is required."
+                            }
+                        }
+                    },
+                    GraduatedYearFrom: {
                         validators: {
                             notEmpty: {
                                 message: "Month graduated is required."
                             }
                         }
                     },
-                    GraduatedYear: {
+                    GraduatedYearTo: {
                         validators: {
                             notEmpty: {
                                 message: "Year graduated is required."
+                            },
+                            greaterThan: {
+                                value: "GraduatedYearFrom",
+                                message: "Invalid date."
                             }
                         }
                     }

@@ -400,7 +400,7 @@ $MajorCourse = $course_qry[0][0];
                                 <th>School</th>
                                 <th>Attainment</th>
                                 <th>Course</th>
-                                <th width="15%">Graduated On</th>
+                                <th width="15%">Year Covered</th>
                                 <th width="15%">&nbsp;</th>
                             </tr>
                             </thead>

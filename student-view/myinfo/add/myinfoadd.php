@@ -8,9 +8,14 @@ if (isset($_GET['School'])) {
     $School = $_GET['School'];
     $Attainment = $_GET['EducAttainment'];
     $Course = $_GET['Course'];
-    $GraduatedMonth = $_GET['GraduatedMonth'];
-    $GraduatedYear = $_GET['GraduatedYear'];
-    $Graduation = $GraduatedMonth . " " . $GraduatedYear;
+    $txtCourse = $_GET['txtCourse'];
+    $GraduatedYearFrom = $_GET['GraduatedYearFrom'];
+    $GraduatedYearTo = $_GET['GraduatedYearTo'];
+    $Graduation = $GraduatedYearFrom . " - " . $GraduatedYearTo;
+
+    if($Course=="other"){
+        $Course = $txtCourse;
+    }
 
     GSecureSQL::query(
         "INSERT INTO schooltbl (StudentID,School,Attainment,Course,Graduated,_Default) values  (?,?,?,?,?,?)",

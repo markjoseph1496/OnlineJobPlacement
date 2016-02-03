@@ -249,9 +249,9 @@ $MajorCourse = $course_qry[0][0];
                                             style="width:100%; height:34px;">
                                         <option value="">- Year -</option>
                                         <?php
-                                        $date = 1934;
-                                        while ($date != Date("Y")) {
-                                            $date++;
+                                        $date = Date("Y") + 1;
+                                        while ($date != 1935) {
+                                            $date--;
                                             if ($date == $YearAttended) {
                                                 echo "<option selected value='$date'> $date</option>";
                                             } else {
