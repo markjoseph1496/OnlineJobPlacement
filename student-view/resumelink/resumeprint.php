@@ -167,20 +167,19 @@ $hGraduated = $hsschool_tbl[0][2];
             <div class="hr1" style="margin-top:30px;margin-bottom:30px;"></div>
             <div class="resume-container">
                 <div class="row">
-                    <div class="col-xs-6">
+                    <div class="col-xs-8">
                         <p><label>Name:</label> <?php echo $FirstName . " " . $LastName; ?></p>
                         <p><label>Address:</label> <?php echo $Address; ?></p>
                         <p><label>Contact No:</label> <?php echo $ContactNumber; ?></p>
                         <p><label>Email Address:</label> <?php echo $Email; ?></p>
                     </div>
-                    <div class="col-xs-6">
+                    <div class="col-xs-4">
                         <div class="image-border" style="float:right;">
                             <img src="../myinfo/<?php echo $ProfileImage; ?>" class="img-responsive"
                                  style="width:200px; height:200px;">
                         </div>
                     </div>
                 </div>
-                <div class="hr1" style="margin-top:20px;margin-bottom:30px;"></div>
                 <div class="row">
                     <div class="col-xs-12">
                         <label>Objective:</label>

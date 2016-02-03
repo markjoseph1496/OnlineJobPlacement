@@ -469,7 +469,7 @@ $cLastName = $companyinfo_tbl[0][2];
                                             </li>
                                             <li>
                                                 <div class="checkbox checkbox-success">
-                                                <input id="DegreeLevel3" class="styled" type="checkbox" name="DegreeLevel[]" value="Doctorate Degree">
+                                                <input id="DegreeLevel" class="styled" type="checkbox" name="DegreeLevel[]" value="Doctorate Degree">
                                                 <label for="checkbox3"><b>Doctorate Degree</b></label>
                                             </li>
                                         </ul>

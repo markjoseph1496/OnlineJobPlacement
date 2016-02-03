@@ -28,6 +28,36 @@ $studentinfo_tbl =
         $CourseCode
     );
 $Total = $studentinfo_tbl[0][0];
+
+$work_tbl =
+    GSecureSQL::query(
+        "SELECT StudentID, DateToYear FROM workexperiencetbl",
+        TRUE
+    );
+$count = 0;
+foreach($work_tbl as $value){
+    $StudentID = $value[0];
+    $DateToYear = $value[1];
+
+    if($DateToYear=="Current"){
+        $count++;
+    }
+    if ($count == 0) {
+        GSecureSQL::query(
+            "UPDATE studentinfotbl SET EmploymentStatus = 'Unemployed' WHERE StudentID = ?",
+            FALSE,
+            "s",
+            $StudentID
+        );
+    } else {
+        GSecureSQL::query(
+            "UPDATE studentinfotbl SET EmploymentStatus = 'Employed' WHERE StudentID = ?",
+            FALSE,
+            "s",
+            $StudentID
+        );
+    }
+}
 ?>
 <!doctype html>
 <html lang="en">
@@ -104,8 +134,6 @@ $Total = $studentinfo_tbl[0][0];
 
 <!-- Full Body Container -->
 <div id="container">
-
-
             <!-- Start Top Bar -->
         <div class="top-bar">
             <div class="container">

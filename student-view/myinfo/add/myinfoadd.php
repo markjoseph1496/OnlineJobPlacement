@@ -38,13 +38,14 @@ if (isset($_GET['Seminar'])) {
     $YearAttended = $_GET['YearAttended'];
 
     GSecureSQL::query(
-        "INSERT INTO seminartbl (StudentID,Seminar,YearAttended) values (?,?,?)",
+        "INSERT INTO seminartbl (StudentID,Seminar,YearAttended,Proficiency,Skills) values (?,?,?)",
         FALSE,
         "sss",
         $StudentID,
         $Seminar,
         $YearAttended
     );
+    die();
     header("location: ../education.php?id=5");
 
 }
@@ -105,15 +106,20 @@ if (isset($_GET['Name'])) {
 if (isset($_POST['Specialization'])) {
     $Specialization = $_POST['Specialization'];
     $YearsOfExperience = $_POST['YearsOfExperience'];
+    $Proficiency = $_POST['rating'];
+    $Skill = $_POST['Skill'];
 
     GSecureSQL::query(
-        "INSERT INTO specializationtbl (StudentID, Specialization, YearOfExperience) values (?,?,?)",
+        "INSERT INTO specializationtbl (StudentID, Specialization, YearOfExperience, Proficiency, Skills) values (?,?,?,?,?)",
         FALSE,
-        "sss",
+        "sssss",
         $StudentID,
         $Specialization,
-        $YearsOfExperience
+        $YearsOfExperience,
+        $Proficiency,
+        $Skill
     );
+
     header("location: ../specialization-and-languages.php?id=2");
 
 }

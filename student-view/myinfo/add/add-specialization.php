@@ -230,7 +230,7 @@ $MajorCourse = $course_qry[0][0];
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <label>Skill <span>(*)</span></label>
-                                    <input type="text" class="form-control" name="" id="">
+                                    <input type="text" class="form-control" name="Skill" id="Skill"">
                                 </div>
                             </div>
                             <div class="col-md-6">
@@ -332,6 +332,13 @@ $MajorCourse = $course_qry[0][0];
                             regexp: {
                                     regexp: /^[0-9]+$/i,
                                     message: "This field can consist of numeric characters only."
+                            }
+                        }
+                    },
+                    Skill: {
+                        validators: {
+                            notEmpty: {
+                                message: "This field is required."
                             }
                         }
                     }
