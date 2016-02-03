@@ -33,10 +33,8 @@
     <link rel="stylesheet" href="css/font-awesome.min.css" type="text/css" media="screen">
 
     <!-- Fonts -->
-    <link href="fonts/ffonts/montserrat.css" rel="stylesheet" type="text/css">
-    <link href="fonts/ffonts/kaushan.css" rel="stylesheet" type="text/css">
-    <link href="fonts/ffonts/droid.css" rel="stylesheet" type="text/css">
-    <link href="fonts/ffonts/roboto.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" type="text/css" href="fonts/ffonts/montserrat.css">
+    <link rel="stylesheet" type="text/css" href="fonts/ffonts/open-sans.css">
 
     <!-- Slicknav -->
     <link rel="stylesheet" type="text/css" href="css/slicknav.css" media="screen">
@@ -78,24 +76,6 @@
         <!-- Start Header Section -->
         <div class="hidden-header"></div>
         <header class="clearfix">
-        <!-- Start Top Bar -->
-            <div class="top-bar">
-                <div class="container">
-                    <div class="row">
-                        
-                        <!-- .col-md-6 -->
-                        <div class="col-md-5">
-                       
-                        </div>
-                        <!-- .col-md-6 -->
-                    </div>
-                    <!-- .row -->
-                </div>
-                <!-- .container -->
-            </div>
-            <!-- .top-bar -->
-            <!-- End Top Bar -->
-
             <!-- Start  Logo & Naviagtion  -->
             <div class="navbar navbar-default navbar-top">
                 <div class="container">
@@ -110,9 +90,9 @@
                         </a>
                     </div>
                 </div>
-               
             </div>
-        </header>     
+        </header>
+
         <!-- Start Content -->
         <div id="content">
             <!--header image-->
