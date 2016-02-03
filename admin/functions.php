@@ -110,7 +110,7 @@ if (isset($_POST['FirstName'])) {
     GSecureSQL::query(
         "UPDATE admintbl SET FirstName = ?, MiddleName = ?, LastName = ?, Position = ?, Address = ?, ContactNumber = ? WHERE AdminID = ?",
         FALSE,
-        "ssssssss",
+        "sssssss",
         $FirstName,
         $MiddleName,
         $LastName,

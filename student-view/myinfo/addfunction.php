@@ -37,6 +37,13 @@ if (isset($_GET['btnSaveInfo'])) {
         $StudentID
     );
 
+    GSecureSQL::query(
+        "UPDATE progresstbl SET Pinfo = 'ok' WHERE StudentID = ?",
+        FALSE,
+        "s",
+        $StudentID
+    );
+
     header("location: personal-info.php?id=1");
 
 }
@@ -65,6 +72,13 @@ if (isset($_GET['btnSaveContactInfo'])) {
 
     );
 
+    GSecureSQL::query(
+        "UPDATE progresstbl SET Cinfo = 'ok' WHERE StudentID = ?",
+        FALSE,
+        "s",
+        $StudentID
+    );
+
     header("location: contacts-info.php?id=1");
 
 }
@@ -76,6 +90,13 @@ if(isset($_POST['Objective'])){
         FALSE,
         "ss",
         $Objective,
+        $StudentID
+    );
+
+    GSecureSQL::query(
+        "UPDATE progresstbl SET Objective = 'ok' WHERE StudentID = ?",
+        FALSE,
+        "s",
         $StudentID
     );
 

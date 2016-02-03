@@ -407,40 +407,16 @@ if (count($LOGquery1) > 0) {
                         <div class="modal-content">
                             <div class="modal-header">
                                 <button type="button" class="close" data-dismiss="modal">&times;</button>
-                                <h4 class="modal-title">Do you want to request the List of Graduates?</h4>
+                                <h4 class="modal-title">Details of job opening</h4>
                             </div>
                             <div class="modal-body">
                                 <div class="col-md-15 fieldcol">
                                     <label = "usr" class = "control-label">Select the course(s) you want to
                                     request.</label>
-                                    <div class="form-group">
-                                    </div>
                                 </div>
                                 <div class="col-md-15 fieldcol">
                                     <div class="container">
                                         <div class="form-group">
-                                            <ul>
-                                                <li><input type="checkbox" name="select-all" id="select-all"/> <label>
-                                                        Select
-                                                        All </label></li>
-                                            </ul>
-                                            <?php
-                                            $coursequery =
-                                                GSecureSQL::query(
-                                                    "SELECT CourseCode FROM coursetbl ORDER BY CourseCode",
-                                                    TRUE
-                                                );
-                                            foreach ($coursequery as $value) {
-                                                $Courses = $value[0];
-                                                ?>
-                                                <ul>
-                                                    <li><input type="checkbox" name="CourseCheckbox[]"
-                                                               value="<?php echo $Courses; ?>">
-                                                        <label><?php echo $Courses; ?></label></li>
-                                                </ul>
-                                                <?php
-                                            }
-                                            ?>
                                         </div>
                                     </div>
                                 </div>

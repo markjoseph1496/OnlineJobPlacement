@@ -28,6 +28,14 @@ if (isset($_GET['School'])) {
         $Graduation,
         '0'
     );
+
+    GSecureSQL::query(
+        "UPDATE progresstbl SET School = 'ok' WHERE StudentID = ?",
+        FALSE,
+        "s",
+        $StudentID
+    );
+
     header("location: ../education.php?id=4");
 
 }
@@ -38,14 +46,21 @@ if (isset($_GET['Seminar'])) {
     $YearAttended = $_GET['YearAttended'];
 
     GSecureSQL::query(
-        "INSERT INTO seminartbl (StudentID,Seminar,YearAttended,Proficiency,Skills) values (?,?,?)",
+        "INSERT INTO seminartbl (StudentID,Seminar,YearAttended) values (?,?,?)",
         FALSE,
         "sss",
         $StudentID,
         $Seminar,
         $YearAttended
     );
-    die();
+
+    GSecureSQL::query(
+        "UPDATE progresstbl SET Seminar = 'ok' WHERE StudentID = ?",
+        FALSE,
+        "s",
+        $StudentID
+    );
+
     header("location: ../education.php?id=5");
 
 }
@@ -62,6 +77,14 @@ if (isset($_GET['Certification'])) {
         $Certification,
         $YearTaken
     );
+
+    GSecureSQL::query(
+        "UPDATE progresstbl SET Certification = 'ok' WHERE StudentID = ?",
+        FALSE,
+        "s",
+        $StudentID
+    );
+
     header("location: ../certifications.php?id=2");
 
 }
@@ -77,6 +100,14 @@ if (isset($_GET['Achievement'])) {
         $StudentID,
         $Achievement
     );
+
+    GSecureSQL::query(
+        "UPDATE progresstbl SET Achievements = 'ok' WHERE StudentID = ?",
+        FALSE,
+        "s",
+        $StudentID
+    );
+
     header("location: ../achievements.php?id=2");
 
 }
@@ -100,6 +131,14 @@ if (isset($_GET['Name'])) {
         $Phone,
         $Email
     );
+
+    GSecureSQL::query(
+        "UPDATE progresstbl SET _References= 'ok' WHERE StudentID = ?",
+        FALSE,
+        "s",
+        $StudentID
+    );
+
     header("location: ../references.php?id=2");
 
 }
@@ -120,6 +159,13 @@ if (isset($_POST['Specialization'])) {
         $Skill
     );
 
+    GSecureSQL::query(
+        "UPDATE progresstbl SET Specialization = 'ok' WHERE StudentID = ?",
+        FALSE,
+        "s",
+        $StudentID
+    );
+
     header("location: ../specialization-and-languages.php?id=2");
 
 }
@@ -134,6 +180,14 @@ if (isset($_POST['Language'])) {
         $StudentID,
         $Language
     );
+
+    GSecureSQL::query(
+        "UPDATE progresstbl SET Languages = 'ok' WHERE StudentID = ?",
+        FALSE,
+        "s",
+        $StudentID
+    );
+
     header("location: ../specialization-and-languages.php?id=5");
 
 }
@@ -173,6 +227,14 @@ if (isset($_POST['CompanyName'])) {
         $MonthlySalary,
         $NatureOfWork
     );
+
+    GSecureSQL::query(
+        "UPDATE progresstbl SET WorkXP = 'ok' WHERE StudentID = ?",
+        FALSE,
+        "s",
+        $StudentID
+    );
+
     header("location: ../work.php?id=1");
 
 }

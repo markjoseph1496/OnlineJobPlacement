@@ -38,8 +38,74 @@ $course_qry =
     );
 $MajorCourse = $course_qry[0][0];
 $StudentName = $FirstName . " " . $LastName;
-?>
 
+$progress_tbl =
+    GSecureSQL::query(
+        "SELECT
+        Pinfo,
+        Cinfo,
+        Objective,
+        WorkXP,
+        School,
+        Seminar,
+        Certification,
+        Achievements,
+        Specialization,
+        Languages,
+        _References
+        FROM Progresstbl
+        WHERE StudentID = ?",
+        TRUE,
+        "s",
+        $StudentID
+    );
+$Progress = 10;
+$Pinfo = $progress_tbl[0][0];
+$Cinfo = $progress_tbl[0][1];
+$Objective = $progress_tbl[0][2];
+$WorkXP = $progress_tbl[0][3];
+$School = $progress_tbl[0][4];
+$Seminar = $progress_tbl[0][5];
+$Certification = $progress_tbl[0][6];
+$Achievements = $progress_tbl[0][7];
+$Specialization = $progress_tbl[0][8];
+$Languages = $progress_tbl[0][9];
+$References = $progress_tbl[0][10];
+
+if($Pinfo == "ok"){
+    $Progress = $Progress + 10;
+}
+if($Cinfo == "ok"){
+    $Progress = $Progress + 10;
+}
+if($Objective == "ok"){
+    $Progress = $Progress + 5;
+}
+if($WorkXP == "ok"){
+    $Progress = $Progress + 10;
+}
+if($School == "ok"){
+    $Progress = $Progress + 5;
+}
+if($Seminar == "ok"){
+    $Progress = $Progress + 5;
+}
+if($Certification == "ok"){
+    $Progress = $Progress + 10;
+}
+if($Achievements == "ok"){
+    $Progress = $Progress + 10;
+}
+if($Specialization == "ok"){
+    $Progress = $Progress + 10;
+}
+if($Languages == "ok"){
+    $Progress = $Progress + 5;
+}
+if($References == "ok"){
+    $Progress = $Progress + 10;
+}
+?>
 <!doctype html>
 <html lang="en">
 <head>
@@ -344,8 +410,8 @@ $StudentName = $FirstName . " " . $LastName;
                 <div class="skill-shortcode">
                     <div class="skill">
                         <div class="progress">
-                            <div class="progress-bar" role="progressbar" data-percentage="10" style="width: 10%;">
-                                <span class="progress-bar-span">10%</span>
+                            <div class="progress-bar" role="progressbar" data-percentage="<?php echo $Progress; ?>" style="width: <?php echo $Progress; ?>%;">
+                                <span class="progress-bar-span"><?php echo $Progress; ?>%</span>
                             </div>
                         </div>
                     </div>

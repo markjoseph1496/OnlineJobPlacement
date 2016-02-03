@@ -450,7 +450,7 @@ $ContactNumber = $admin_tbl[0][9];
                 <div class="col-md-4 fieldcol">
                     <div class="form-group">
                         <input type="text" name="FirstName" id="FirstName" class="form-control"
-                               value="<?php echo $FirstName; ?>">
+                               maxlength="20" value="<?php echo $FirstName; ?>">
                     </div>
                 </div>
             </div>
@@ -461,7 +461,7 @@ $ContactNumber = $admin_tbl[0][9];
                 <div class="col-md-4 fieldcol">
                     <div class="form-group">
                         <input type="text" name="MiddleName" id="MiddleName" class="form-control"
-                               value="<?php echo $MiddleName; ?>">
+                               maxlength="20" value="<?php echo $MiddleName; ?>">
                     </div>
                 </div>
             </div>
@@ -472,7 +472,7 @@ $ContactNumber = $admin_tbl[0][9];
                 <div class="col-md-4 fieldcol">
                     <div class="form-group">
                         <input type="text" name="LastName" id="LastName" class="form-control"
-                               value="<?php echo $LastName; ?>">
+                               maxlength="20" value="<?php echo $LastName; ?>">
                     </div>
                 </div>
             </div>
@@ -483,7 +483,7 @@ $ContactNumber = $admin_tbl[0][9];
                 <div class="col-md-4 fieldcol">
                     <div class="form-group">
                         <input type="text" name="Position" id="Position" class="form-control"
-                               value="<?php echo $Position; ?>">
+                               maxlength="20" value="<?php echo $Position; ?>">
                     </div>
                 </div>
             </div>
@@ -494,7 +494,7 @@ $ContactNumber = $admin_tbl[0][9];
                 <div class="col-md-4 fieldcol">
                     <div class="form-group">
                         <input type="text" name="Address" id="Address" class="form-control"
-                               value="<?php echo $Address; ?>">
+                               maxlength="50" value="<?php echo $Address; ?>">
                     </div>
                 </div>
             </div>
@@ -505,7 +505,7 @@ $ContactNumber = $admin_tbl[0][9];
                 <div class="col-md-4 fieldcol">
                     <div class="form-group">
                         <input type="text" name="ContactNumber" id="ContactNumber" class="form-control"
-                               value="<?php echo $ContactNumber ?>">
+                               maxlength="11" value="<?php echo $ContactNumber ?>">
                     </div>
                 </div>
             </div>
