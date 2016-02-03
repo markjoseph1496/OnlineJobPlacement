@@ -465,8 +465,7 @@ $StudentName = $FirstName . " " . $LastName;
                    class="file file-loading"
                    data-allowed-file-extensions='["png", "jpg", "bmp", "gif"]'>
             <br>
-            <button id="" class="btn-system btn-mini border-btn" name="btnDelete">Delete Image
-            </button>
+            <button id="" class="btn-system btn-mini border-btn" name="btnDelete">Delete Image</button>
         </div>
     </form>
 </div>

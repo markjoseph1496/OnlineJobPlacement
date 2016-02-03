@@ -271,12 +271,17 @@ $MajorCourse = $course_qry[0][0];
                             </div>
                         </div>
                         <div class="row">
+                            <div class="col-md-6">
+                                <label>Graduation Date <span>(*)</span>:</label>
+                            </div>
+                            <div class="col-md-6">&nbsp;</div>
+                        </div>
+                        <div class="row">
                             <div class="col-md-3">
                                 <div class="form-group">
-                                    <label>Graduation Date <span>(*)</span></label>
-                                    <label>From <span>(*)</span></label>
+                                    <label>From</label>
                                     <select id="GraduatedMonth" name="GraduatedMonth" class="form-control" style="width:100%; height:34px;">
-                                        <option value="">-Year-</option>
+                                        <option value="">- Year -</option>
                                         <?php
                                         $date = Date("Y") + 4;
                                         while($date != 1935){
@@ -289,10 +294,9 @@ $MajorCourse = $course_qry[0][0];
                             </div>
                             <div class="col-md-3">
                                 <div class="form-group">
-                                    <label>&nbsp;</label>
-                                    <label>To <span>(*)</span></label>
+                                    <label>To</label>
                                     <select id="GraduatedYear" name="GraduatedYear" class="form-control" style="width:100%; height:34px;">
-                                        <option value="">-Year-</option>
+                                        <option value="">- Year -</option>
                                         <?php 
                                             $date = Date("Y") + 4;
                                             while($date != 1935){
@@ -311,7 +315,7 @@ $MajorCourse = $course_qry[0][0];
                     <div class="col-md-3 sidebar right-sidebar">
                         <!-- Search Widget -->
                         <div class="call-action call-action-boxed call-action-style2 clearfix">
-                            (*) Note: Required fields.
+                            <label><span>(*)</span> Note: Required fields.</label>
                         </div>
                     </div>
                     <!--End sidebar-->
