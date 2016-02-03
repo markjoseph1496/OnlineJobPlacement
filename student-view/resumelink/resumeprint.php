@@ -51,7 +51,7 @@ if(empty($HomeNumber)){
 <head>
 
     <!-- Basic -->
-    <title>OJPMS</title>
+    <title>OJPMS | Print Resume</title>
 
     <!-- Define Charset -->
     <meta charset="utf-8">
@@ -152,7 +152,7 @@ if(empty($HomeNumber)){
                             </div>
                         </div>
                     </div>
-                    <div class="hr4" style="margin-top:20px;margin-bottom:30px;"></div>
+                    <div class="hr1" style="margin-top:20px;margin-bottom:30px;"></div>
                     <div class="row">
                         <div class="col-xs-12">
                             <label>Objective:</label>
@@ -352,7 +352,7 @@ if(empty($HomeNumber)){
                     <div class="row">
                         <div class="col-xs-12">
                             <label>References:</label>
-                            <div class="row">
+                            <div class="row text-center">
                                 <div class="col-xs-4">
                                     <p>Aira Jane Cruz</p>
                                     <p>09267694941</p>
