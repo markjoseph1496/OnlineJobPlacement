@@ -85,110 +85,174 @@ $Total = $TotalStudents[0][0];
     <script type="text/javascript" src="../js/jquery.nicescroll.min.js"></script>
     <script type="text/javascript" src="../js/jquery.parallax.js"></script>
     <script type="text/javascript" src="../js/jquery.slicknav.js"></script>
+
+    <!-- Notification -->
+    <link rel="stylesheet" href="../css/notif.css"/>
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $("#notificationLink").click(function () {
+                $("#notificationContainer").fadeToggle(300);
+                $("#notification_count").fadeOut("slow");
+                return false;
+            });
+
+            //Document Click
+            $(document).click(function () {
+                $("#notificationContainer").hide();
+            });
+            //Popup Click
+            $("#notificationContainer").click(function () {
+                return false
+            });
+
+        });
+    </script>
 </head>
 
 <body>
-
-<!-- Full Body Container -->
-<div id="container">
-
-
-    <!-- Start Header Section -->
-    <div class="hidden-header"></div>
-    <header class="clearfix">
-
-        <!-- Start Top Bar -->
-        <div class="top-bar">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-6">
-                        <!-- Start Contact Info -->
-                            <ul class="contact-details">
-                                <li class="profile-name"><i class="fa fa-hashtag"></i> <b>008-2012-0805</b></li>
+    <!-- Full Body Container -->
+    <div id="container">
+        <!-- Start Header Section -->
+        <div class="hidden-header"></div>
+        <header class="clearfix">
+            <!-- Start Top Bar -->
+            <div class="top-bar">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-7">
+                            <!-- Start Contact Info -->
+                            <ul class="profile-name">
+                                <li></li>
                             </ul>
-                        <!-- End Contact Info -->
-                    </div>
-                    <!-- .col-md-6 -->
-                    <div class="col-md-6">
-                        <!-- Start Social Links -->
-                            <ul class="social-list">
-                                <li class="profile-name">
-                                    <a class="bell itl-tooltip" data-placement="bottom" title="" href="#" data-original-title="Notification"><i class="fa fa-bell"></i></a>
+                            <!-- End Contact Info -->
+                        </div>
+                        <!-- .col-md-6 -->
+                        <div class="col-md-5">
+                            <!-- Start Social Links -->
+                            <ul class="nav navbar-nav navbar-right">
+                                <li class="dropdown icon-border" id="notificationLink">
+                                    <span id="notification_count">3</span>
+                                    <a href="#" class="bell itl-tooltip" data-placement="bottom" data-toggle="dropdown"><i
+                                            class="fa fa-bell"></i></a>
+                                    <ul id="notificationContainer" class="dropdown-menu dropdown-menu-inverse">
+                                        <li class="dropdown-header"><label>Notification</label></li>
+                                        <li class="disabled"><a href="#" tabindex="-1">No new notification.</a></li>
+                                        <li><a href="#" tabindex="-1">This is a notification.</a></li>
+                                        <li class="divider"></li>
+                                        <li><a href="../notification/notification.php" tabindex="-1">See All</a></li>
+                                    </ul>
                                 </li>
-                                <li class="profile-name">
-                                    &nbsp;
-                                </li>
-                                <li class="profile-name">
-                                    <i class="fa fa-user"></i> Hello, <b>Aira Jane Cruz</b>                               
+                                <li class="dropdown">
+                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown"><b class="fa fa-user"></b> Welcome, <b>Admin Tim </b><b class="caret"></b></a>
+                                    <ul class="dropdown-menu">
+                                        <li><a href="#">Profile <b class="fa fa-user" style="float:right;"></b></a></li>
+                                        <li><a href="../settings/settings.php">Settings <b class="fa fa-cog" style="float:right;"></b></a></li>
+                                        <li class="divider"></li>
+                                        <li><a href="#" data-target='#Logout' data-toggle='modal'>Sign Out <b class="fa fa-sign-out" style="float:right;"></b></a></li>
+                                    </ul>
                                 </li>
                             </ul>
                             <!-- End Social Links -->
+                        </div>
+                        <!-- .col-md-6 -->
                     </div>
-                    <!-- .col-md-6 -->
+                    <!-- .row -->
                 </div>
-                <!-- .row -->
+                <!-- .container -->
             </div>
-            <!-- .container -->
-        </div>
-        <!-- .top-bar -->
-        <!-- End Top Bar -->
+            <!-- .top-bar -->
+            <!-- End Top Bar -->
 
-
-        <!-- Start  Logo & Naviagtion  -->
-        <div class="navbar navbar-default navbar-top">
-            <div class="container">
-                <div class="navbar-header">
-                    <!-- Stat Toggle Nav Link For Mobiles -->
-                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                        <i class="fa fa-bars"></i>
-                    </button>
-                    <!-- End Toggle Nav Link For Mobiles -->
-                     <a class="navbar-brand" href="">
-                        <img src="../images/ojpms.png">
-                    </a>
-                </div>
-                <div class="navbar-collapse collapse">
-                    <!-- Sign-out -->
-                    <div class="signout-side">
-                        <a class="show-signout" data-toggle='modal' data-target='#Logout'><i class="fa fa-sign-out"></i></a>
+            <!-- Start  Logo & Naviagtion  -->
+            <div class="navbar navbar-default navbar-top">
+                <div class="container">
+                    <div class="navbar-header">
+                        <!-- Stat Toggle Nav Link For Mobiles -->
+                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        <!-- End Toggle Nav Link For Mobiles -->
+                         <a class="navbar-brand" href="">
+                            <img src="../images/ojpms.png">
+                        </a>
                     </div>
-                    <!-- Modal -->
-                    <div class="modal fade" id="Logout"
-                         role="dialog">
-                        <div class="modal-dialog" style="padding:100px">
-                            <!-- Modal content-->
-                            <div class="modal-content">
-                                <div class="modal-header">
-                                    <button style = type="button" class="close" data-dismiss="modal">&times;</button>
-                                    <h4 class="modal-title">Log out?</h4>
-                                </div>
-                                <div class="modal-body">
-                                    <div class="col-md-15 fieldcol">
-                                        <label = "usr" class = "control-label">Do you want to log out?</label>
-                                        <div class="form-group">
-                                        </div>
+                    <div class="navbar-collapse collapse">
+                        <!-- Modal -->
+                        <div class="modal fade" id="Logout"
+                             role="dialog">
+                            <div class="modal-dialog" style="padding:100px">
+                                <!-- Modal content-->
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <button style = type="button" class="close" data-dismiss="modal">&times;</button>
+                                        <h4 class="modal-title">Log out?</h4>
                                     </div>
-                                    <div class="modal-footer">
-                                        <a href="logout.php"
-                                           class="btn btn-primary">Log out</a>
-                                        <button type="button" class="btn btn-default" data-dismiss="modal">
-                                            Cancel
-                                        </button>
+                                    <div class="modal-body">
+                                        <div class="col-md-15 fieldcol">
+                                            <label = "usr" class = "control-label">Do you want to log out?</label>
+                                            <div class="form-group">
+                                            </div>
+                                        </div>
+                                        <div class="modal-footer">
+                                            <a href="logout.php"
+                                               class="btn btn-primary">Log out</a>
+                                            <button type="button" class="btn btn-default" data-dismiss="modal">
+                                                Cancel
+                                            </button>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
+                        <!-- End Sign-out -->
+                        <!-- Start Navigation List -->
+                        <ul class="nav navbar-nav navbar-right">
+                            <li>
+                                <a class="active" href="admin.php">Home</a>
+                            </li>
+                            <li>
+                                <a>Reports</a>
+                                <ul class="dropdown">
+                                    <li><a href="admin-reports.php">Alumni Reports</a></li>
+                                    <li><a href="admin-ojtreports.php">OJT Reports</a></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="admin-account.php">Account</a>
+                            </li>
+                            <li>
+                                <a href="admin-requested.php">Requested</a>
+                            </li>
+                            <li>
+                               <a>Company List</a>
+                            <ul class="dropdown">
+                                <li><a href="admin-companylist.php">Active</a></li>
+                                <li><a href="admin-company_pending.php">Pending</a></li>
+                            </ul>
+                            </li>
+                            
+                            <li>
+                            <a> Maintenance</a>
+                            <ul class="dropdown">
+                                <li><a href="admin-maintenance.php">Courses</a></li>
+                                <li><a href="admin-users.php">Users</a></li>
+                            </ul>
+                        </li>
+                        </ul>
+                        <!-- End Navigation List -->
                     </div>
-                    <!-- End Sign-out -->
-                    <!-- Start Navigation List -->
+                </div>
+                <!-- Mobile Menu Start -->
+                <ul class="wpb-mobile-menu">
                     <ul class="nav navbar-nav navbar-right">
                         <li>
                             <a class="active" href="admin.php">Home</a>
                         </li>
-                        <li>
+                       <li>
                             <a>Reports</a>
                             <ul class="dropdown">
-                                <li><a href="admin-reports.php">Alumni Reports</a></li>
+                                <li><a href="admin-reports.php" class = "active">Alumni Reports</a></li>
                                 <li><a href="admin-ojtreports.php">OJT Reports</a></li>
                             </ul>
                         </li>
@@ -199,144 +263,98 @@ $Total = $TotalStudents[0][0];
                             <a href="admin-requested.php">Requested</a>
                         </li>
                         <li>
-                           <a>Company List</a>
-                        <ul class="dropdown">
-                            <li><a href="admin-companylist.php">Active</a></li>
-                            <li><a href="admin-company_pending.php">Pending</a></li>
-                        </ul>
+                          <a>Company List</a>
+                            <ul class="dropdown">
+                                <li><a href="admin-companylist.php">Active</a></li>
+                                <li><a href="admin-company_pending.php">Pending</a></li>
+                            </ul>
                         </li>
                         
                         <li>
-                        <a> Maintenance</a>
-                        <ul class="dropdown">
-                            <li><a href="admin-maintenance.php">Courses</a></li>
-                            <li><a href="admin-users.php">Users</a></li>
-                        </ul>
-                    </li>
+                          <a> Maintenance</a>
+                            <ul class="dropdown">
+                                <li><a class="active" href="admin-maintenance.php">Courses</a></li>
+                                <li><a href="admin-users.php">Users</a></li>
+                            </ul>
+                        </li>
                     </ul>
-                    <!-- End Navigation List -->
+                </ul>
+            </div>
+        </header>
+        <!-- End Header Section -->
+
+        <!-- Start Page Banner -->
+        <div class="page-banner" style="padding:40px 0; center #f9f9f9;">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6">
+                        <h2>List of Courses</h2>
+                    </div>
                 </div>
             </div>
-            <!-- Mobile Menu Start -->
-            <ul class="wpb-mobile-menu">
-                <ul class="nav navbar-nav navbar-right">
-                    <li>
-                        <a class="active" href="admin.php">Home</a>
-                    </li>
-                   <li>
-                            <a>Reports</a>
-                            <ul class="dropdown">
-                                <li><a href="admin-reports.php" class = "active">Alumni Reports</a></li>
-                                <li><a href="admin-ojtreports.php">OJT Reports</a></li>
-                            </ul>
-                    </li>
-                    <li>
-                        <a href="admin-account.php">Account</a>
-                    </li>
-                    <li>
-                        <a href="admin-requested.php">Requested</a>
-                    </li>
-                    <li>
-                      <a>Company List</a>
-                        <ul class="dropdown">
-                            <li><a href="admin-companylist.php">Active</a></li>
-                            <li><a href="admin-company_pending.php">Pending</a></li>
-                        </ul>
-                    </li>
-                    
-                    <li>
-                      <a> Maintenance</a>
-                        <ul class="dropdown">
-                            <li><a class="active" href="admin-maintenance.php">Courses</a></li>
-                            <li><a href="admin-users.php">Users</a></li>
-                        </ul>
-                    </li>
-                </ul>
-            </ul>
-    </header>
-    <!-- Mobile Menu End -->
+        </div>
+        <!-- End Page Banner -->
 
-</div>
-<!-- End Header Logo & Naviagtion -->
+        <!--Content-->
+        <br><br><br>
 
-</header>
-<!-- End Header Section -->
+        <div class="container">
+            <div class="col-md-12">
+                <div class="hr2"></div>
+                <table class="table segment table-hover">
+                    <thead>
+                    <tr>
+                        <th width='70%' class='tabletitle'>Course</th>
+                        <th width='30%' class='tabletitle' style = "text-align: center;">Number of Students</th>
+                    <tr>
+                    </thead>
+                    <tbody>
+                    <!--Fields-->
+                    <?php
+                    $course_tbl =
+                        GSecureSQL::query(
+                            "SELECT * FROM coursetbl",
+                            TRUE
+                        );
+                    foreach ($course_tbl as $value) {
+                    $CourseID = $value[0];
+                    $CourseTitle = $value[1];
+                    $CourseCode = $value[2];
 
-<!-- Start Page Banner -->
-<div class="page-banner" style="padding:40px 0; center #f9f9f9;">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-6">
-                <h2>List of Courses</h2>
+                    $countstudentbycourse_tbl =
+                        GSecureSQL::query(
+                            "SELECT COUNT(*) FROM studentinfotbl WHERE MajorCourse = ?",
+                            TRUE,
+                            "s",
+                            $CourseCode
+                        );
+                    foreach ($countstudentbycourse_tbl as $value1) {
+                    $TotalStudentByCourse = $value1[0];
+                    ?>
+                    <tr>
+                        <td width=70% class=tabletitle>
+                            <a href='admin-field.php?id=<?php echo $CourseID; ?>'><?php echo $CourseTitle; ?></a>
+                        </td>
+                        <td width=30% class='tabletitle' style = "text-align: center;"><?php echo $TotalStudentByCourse; ?></td>
+                    <tr>
+                        <?php
+                        }
+                        }
+                        ?>
+                    </tbody>
+                    <tfoot>
+                        <thead>
+                            <div class="hr2"></div>
+                            <tr>
+                                <th width='70%' class='tabletitle'></th>
+                                <th width='30%' class='tabletitle' style = "text-align: center;">Total Number of Students: <?php echo $Total; ?></th>
+                            </tr>
+                        </thead>
+                    </tfoot>
+                </table>
             </div>
         </div>
     </div>
-</div>
-<!-- End Page Banner -->
-
-<!--Content-->
-<br><br><br>
-
-<div class="container">
-    <div class="col-md-12">
-        <table class="table segment table-hover">
-            <thead>
-            <tr>
-            </tr>
-            <tr>
-                <th width='70%' class='tabletitle'>Course</th>
-                <th width='30%' class='tabletitle' style = "text-align: center;">Number of Students</th>
-            <tr>
-            </thead>
-            <tbody>
-            <!--Fields-->
-            <?php
-            $course_tbl =
-                GSecureSQL::query(
-                    "SELECT * FROM coursetbl",
-                    TRUE
-                );
-            foreach ($course_tbl as $value) {
-            $CourseID = $value[0];
-            $CourseTitle = $value[1];
-            $CourseCode = $value[2];
-
-            $countstudentbycourse_tbl =
-                GSecureSQL::query(
-                    "SELECT COUNT(*) FROM studentinfotbl WHERE MajorCourse = ?",
-                    TRUE,
-                    "s",
-                    $CourseCode
-                );
-            foreach ($countstudentbycourse_tbl as $value1) {
-            $TotalStudentByCourse = $value1[0];
-            ?>
-            <tr>
-                <td width=70% class=tabletitle>
-                    <a href='admin-field.php?id=<?php echo $CourseID; ?>'><?php echo $CourseTitle; ?></a>
-                </td>
-                <td width=30% class='tabletitle' style = "text-align: center;"><?php echo $TotalStudentByCourse; ?></td>
-            <tr>
-                <?php
-                }
-                }
-                ?>
-            </tbody>
-            <tfoot>
-            <thead>
-            <tr>
-            </tr>
-            <tr>
-                <th width='70%' class='tabletitle'></th>
-                <th width='30%' class='tabletitle' style = "text-align: center;">Total Number of Students: <?php echo $Total; ?> </th>
-            <tr>
-            </thead>
-            </tfoot>
-        </table>
-
-        <br>
-    </div>
-</div>
 </body>
 <script type="text/javascript" src="../js/script.js"></script>
 </html>
