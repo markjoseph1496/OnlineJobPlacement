@@ -406,6 +406,7 @@ $MajorCourse = $course_qry[0][0];
                             <table class="table segment table-hover">
                                 <thead>
                                     <tr>
+                                        <th>Skill</th>
                                         <th>Specialization</th>
                                         <th>Year of Experience</th>
                                         <th>Proficiency</th>
@@ -440,8 +441,9 @@ $MajorCourse = $course_qry[0][0];
                                             }
                                     ?>
                                     <tr>
+                                        <td></td>
                                         <td><?php echo $Specialization; ?></td>
-                                        <td><?php echo $YearOfExperience; ?></td>
+                                        <td class="text-center"><?php echo $YearOfExperience; ?></td>
                                         <td class="text-center">
                                             <fieldset class="rating">
                                                 <input type="radio" id="star5" name="rating" value="5" /><label class = "full" for="star5" title="Awesome - 5 stars"></label>
@@ -609,7 +611,7 @@ $MajorCourse = $course_qry[0][0];
                     <div class="col-md-3 sidebar right-sidebar">
                         <!-- Search Widget -->
                         <div class="call-action call-action-boxed call-action-style2 clearfix">
-                            (*) Note: Required fields.
+                            <label><span>(*)</span> Note: Required fields.</label>
                         </div>
                     </div>
                     <!--End sidebar-->

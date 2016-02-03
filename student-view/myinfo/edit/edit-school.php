@@ -264,6 +264,7 @@ $MajorCourse = $course_qry[0][0];
                                 <div class="form-group">
                                     <label>Course <span>(*)</span></label>
                                     <select id="Course" name="Course" class="form-control" style="width:100%; height:34px;">
+                                        <option value="">- Course -</option>
                                         <?php   
                                             $query ="SELECT * FROM coursetbl";
                                             $result = mysql_query($query);
@@ -280,31 +281,32 @@ $MajorCourse = $course_qry[0][0];
                             </div>
                         </div>
                         <div class="row">
+                            <div class="col-md-6">
+                                <label>Graduation Date <span>(*)</span>:</label>
+                            </div>
+                            <div class="col-md-6">&nbsp;</div>
+                        </div>
+                        <div class="row">
                             <div class="col-md-3">
                                 <div class="form-group">
-                                    <label>Graduation Date <span>(*)</span></label>
+                                    <label>From</label>
                                     <select id="GraduatedMonth" name="GraduatedMonth" class="form-control" style="width:100%; height:34px;">
-                                        <option value="" <?php if($GraduatedMonth=="") echo 'selected="selected"'; ?>>- Month -</option>
-                                        <option value="01" <?php if($GraduatedMonth=="01") echo 'selected="selected"'; ?>>January</option>
-                                        <option value="02" <?php if($GraduatedMonth=="02") echo 'selected="selected"'; ?>>February</option> 
-                                        <option value="03" <?php if($GraduatedMonth=="03") echo 'selected="selected"'; ?>>March</option> 
-                                        <option value="04" <?php if($GraduatedMonth=="04") echo 'selected="selected"'; ?>>April</option> 
-                                        <option value="05" <?php if($GraduatedMonth=="05") echo 'selected="selected"'; ?>>May</option> 
-                                        <option value="06" <?php if($GraduatedMonth=="06") echo 'selected="selected"'; ?>>June</option> 
-                                        <option value="07" <?php if($GraduatedMonth=="07") echo 'selected="selected"'; ?>>July</option> 
-                                        <option value="08" <?php if($GraduatedMonth=="08") echo 'selected="selected"'; ?>>August</option>
-                                        <option value="09" <?php if($GraduatedMonth=="09") echo 'selected="selected"'; ?>>September</option>
-                                        <option value="10" <?php if($GraduatedMonth=="10") echo 'selected="selected"'; ?>>October</option>
-                                        <option value="11" <?php if($GraduatedMonth=="11") echo 'selected="selected"'; ?>>November</option>
-                                        <option value="12" <?php if($GraduatedMonth=="12") echo 'selected="selected"'; ?>>December</option>
+                                        <option value="">- Year -</option>
+                                        <?php
+                                        $date = Date("Y") + 4;
+                                        while($date != 1935){
+                                            $date--;
+                                            echo "<option value='$date'> $date</option>";
+                                        }
+                                        ?>
                                     </select>
                                 </div>
                             </div>
                             <div class="col-md-3">
                                 <div class="form-group">
-                                    <label>&nbsp;</label>
+                                    <label>To</label>
                                     <select id="GraduatedYear" name="GraduatedYear" class="form-control" style="width:100%; height:34px;">
-                                        <option value="">-Year-</option>
+                                        <option value="">- Year -</option>
                                         <?php 
                                             $date = Date("Y") + 4;
                                             $choose = $GraduatedYear;
