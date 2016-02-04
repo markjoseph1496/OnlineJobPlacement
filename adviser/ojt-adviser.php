@@ -1,14 +1,14 @@
-<!doctype html>
 <?php
 include('../connection.php');
 session_start();
 
-/*if(isset($_SESSION['AdminID'])){
-    $AdminID = $_SESSION['AdminID'];
+if(isset($_SESSION['AdviserID'])){
+    $AdviserID = $_SESSION['AdviserID'];
 }else{
     header("location: ../login-adviser.php");
-}*/
+}
 ?>
+<!doctype html>
 <html lang="en">
 
 <head>

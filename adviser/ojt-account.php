@@ -1,21 +1,22 @@
 <?php
-include("../Connection.php");
+include('../connection.php');
 session_start();
 
-/*if(isset($_SESSION['AdminID'])){
-    $AdminID = $_SESSION['AdminID'];
+if(isset($_SESSION['AdviserID'])){
+    $AdviserID = $_SESSION['AdviserID'];
 }else{
     header("location: ../login-adviser.php");
-}*/
+}
 
 $adviser_tbl =
     GSecureSQL::query(
-            "SELECT * FROM admintbl WHERE Username = 'saf'",
-            True
-            //"s",
-            //$Username
+            "SELECT * FROM admintbl WHERE AdminID = ?",
+            TRUE,
+            "s",
+            $AdviserID
         );
 
+    $Username = $adviser_tbl[0][1];
     $FirstName = $adviser_tbl[0][4];
     $MiddleName = $adviser_tbl[0][5];
     $LastName = $adviser_tbl[0][6];
