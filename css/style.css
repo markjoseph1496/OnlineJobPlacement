@@ -5726,6 +5726,11 @@ label span {
 	line-height: 78px;
 }
 
+.profile-bar {
+	background-color: #F2F2F2;
+	border-bottom: 1px solid #f2f2f2;
+}
+
 .middle-bar {
 	background-color: #444;
 	border-bottom: 1px solid #f2f2f2;
@@ -5907,7 +5912,14 @@ section {
     display: inline-block;
 }
 
-
+.profile-photo {
+    width: 150px;
+    height: 150px;
+    background-position: center center;
+    background-size: cover;
+    -webkit-box-shadow: 0 0 1px 1px rgba(0, 0, 0, .3);
+    display: inline-block;
+}
 
 .wrap {
     margin: 20px auto;
