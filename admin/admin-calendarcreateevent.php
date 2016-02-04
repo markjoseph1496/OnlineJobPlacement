@@ -350,6 +350,7 @@ if(isset($_SESSION['AdminID'])){
                         </div>
                     </div>
                 </div>
+                </form>
                 &nbsp;
                 <div class="hr5" style="margin-top:35px;margin-bottom:40px;"></div>
                 <div class="field">
@@ -363,7 +364,6 @@ if(isset($_SESSION['AdminID'])){
             </div>
         </div>
     </div>
-</form>
 </body>
 <script type="text/javascript">
     $(document).ready(function () {
