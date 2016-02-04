@@ -30,14 +30,13 @@ $course_qry =
     );
 $MajorCourse = $course_qry[0][0];
 ?>
-?>
 <!doctype html>
 <html lang="en">
 
 <head>
 
     <!-- Basic -->
-    <title>OJPMS</title>
+    <title>OJPMS | Add - Reference</title>
 
     <!-- Define Charset -->
     <meta charset="utf-8">
@@ -166,7 +165,7 @@ $MajorCourse = $course_qry[0][0];
                                 <li class="dropdown">
                                     <a href="#" class="dropdown-toggle" data-toggle="dropdown"><b class="fa fa-user"></b> Welcome, <b><?php echo $StudentName; ?> </b><b class="caret"></b></a>
                                     <ul class="dropdown-menu">
-                                        <li><a href="#">Profile <b class="fa fa-user" style="float:right;"></b></a></li>
+                                        <li><a href="../../../student-profile.php">Profile <b class="fa fa-user" style="float:right;"></b></a></li>
                                         <li><a href="../../settings/settings.php">Settings <b class="fa fa-cog" style="float:right;"></b></a></li>
                                         <li class="divider"></li>
                                         <li><a href="#" data-target='#Logout' data-toggle='modal'>Sign Out <b class="fa fa-sign-out" style="float:right;"></b></a></li>
@@ -183,6 +182,31 @@ $MajorCourse = $course_qry[0][0];
             </div>
             <!-- .top-bar -->
             <!-- End Top Bar -->
+
+            <!-- Modal -->
+            <div class="modal fade" id="Logout" role="dialog">
+                <div class="modal-dialog" style="padding:100px">
+                    <!-- Modal content-->
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                            <h4 class="modal-title">Sign Out</h4>
+                        </div>
+                        <div class="modal-body">
+                            <div class="col-md-15 fieldcol">
+                                <label>Do you want to sign out?</label>
+                            </div>
+                            <div class="modal-footer">
+                                <a href="../../logout.php"
+                                   class="btn btn-primary">Sign Out</a>
+                                <button type="button" class="btn btn-default" data-dismiss="modal">
+                                    Cancel
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
 
             <!-- Start  Logo & Naviagtion  -->
             <div class="navbar navbar-default navbar-top">
@@ -281,7 +305,7 @@ $MajorCourse = $course_qry[0][0];
                     <div class="col-md-3 sidebar right-sidebar">
                         <!-- Search Widget -->
                         <div class="call-action call-action-boxed call-action-style2 clearfix">
-                            (*) Note: Required fields.
+                            <label><span>(*)</span> Note: Required fields.</label>
                         </div>
                     </div>
                     <!--End sidebar-->

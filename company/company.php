@@ -252,7 +252,7 @@ if (count($LOGquery1) > 0) {
                                         <h4 class="modal-title">Log out?</h4>
                                     </div>
                                     <div class="modal-body">
-                                        <div class="col-md-15 fieldcol">
+                                        <div class="col-md-15">
                                             <label = "usr" class = "control-label">Do you want to log out?</label>
                                             <div class="form-group">
                                             </div>
@@ -381,7 +381,7 @@ if (count($LOGquery1) > 0) {
                 <form method="POST">
                     <div class="header2_advertising">
                         <div class="container">
-                            <div class="row field">
+                            <div class="row">
                                 <br><br>
                                 <div>
                                     <b>Available Courses:</b>

@@ -164,17 +164,17 @@ $cLastName = $companyinfo_tbl[0][2];
                                 <div class="modal-content">
                                     <div class="modal-header">
                                         <button type="button" class="close" data-dismiss="modal">&times;</button>
-                                        <h4 class="modal-title">Log out?</h4>
+                                        <h4 class="modal-title">Sign out</h4>
                                     </div>
                                     <div class="modal-body">
                                         <div class="col-md-15">
-                                            <label>Do you want to log out?</label>
+                                            <label>Do you want to sign out?</label>
                                             <div class="form-group">
                                             </div>
                                         </div>
                                         <div class="modal-footer">
                                             <a href="logout.php"
-                                               class="btn btn-primary">Log out</a>
+                                               class="btn btn-primary">Sign out</a>
                                             <button type="button" class="btn btn-default" data-dismiss="modal">
                                                 Cancel
                                             </button>
@@ -190,7 +190,7 @@ $cLastName = $companyinfo_tbl[0][2];
                                 <a href="company.php">Home</a>
                             </li>
                             <li>
-                                <a>Position</a>
+                                <a class="active">Position</a>
                                 <ul class="dropdown">
                                     <li><a href="company-positionlist.php">Position List</a></li>
                                     <li><a class="active" href="company-createposition.php" class="active">Create Position</a></li>
@@ -199,7 +199,7 @@ $cLastName = $companyinfo_tbl[0][2];
                             <li>
                                 <a>Applicant List</a>
                                 <ul class="dropdown">
-                                    <li><a href="company-pendingapplicants.php" class="active">Pending</a></li>
+                                    <li><a href="company-pendingapplicants.php">Pending</a></li>
                                     <li><a href="company-acceptedapplicants.php">Accepted</a></li>
                                 </ul>
                             </li>
@@ -216,7 +216,7 @@ $cLastName = $companyinfo_tbl[0][2];
                         <a href="company.php">Home</a>
                     </li>
                     <li>
-                        <a>Position</a>
+                        <a class="active">Position</a>
                         <ul class="dropdown">
                             <li><a href="company-positionlist.php">Position List</a></li>
                             <li><a href="company-createposition.php" class="active">Create Position</a></li>
@@ -225,7 +225,7 @@ $cLastName = $companyinfo_tbl[0][2];
                     <li>
                         <a>Applicant List</a>
                         <ul class="dropdown">
-                            <li><a href="company-pendingapplicants.php" class="active">Pending</a></li>
+                            <li><a href="company-pendingapplicants.php">Pending</a></li>
                             <li><a href="company-acceptedapplicants.php">Accepted</a></li>
                         </ul>
                     </li>

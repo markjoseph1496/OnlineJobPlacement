@@ -222,12 +222,12 @@ $cLastName = $companyinfo_tbl[0][2];
                         <li>
                             <a>Position</a>
                             <ul class="dropdown">
-                                <li><a href="company-positionlist.php" class = "active">Position List</a></li>
+                                <li><a href="company-positionlist.php">Position List</a></li>
                                 <li><a href="company-createposition.php">Create Position</a></li>
                             </ul>
                         </li>
                         <li>
-                            <a>Applicant List</a>
+                            <a class="active">Applicant List</a>
                             <ul class="dropdown">
                                 <li><a href="company-pendingapplicants.php" class="active">Pending</a></li>
                                 <li><a href="company-acceptedapplicants.php">Accepted</a></li>

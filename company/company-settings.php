@@ -54,7 +54,7 @@ $ProfileImage= $companyinfo_tbl[0][11];
 <head>
 
     <!-- Basic -->
-    <title>OJPMS | Company Details</title>
+    <title>OJPMS | Settings</title>
 
     <!-- Bootstrap CSS -->
     <link href="../css/bootstrap.min.css" rel="stylesheet"/>
@@ -69,10 +69,8 @@ $ProfileImage= $companyinfo_tbl[0][11];
     <script src="../js/bootstrapValidator.min.js" type="text/javascript"></script>
 
     <!-- Fonts -->
-    <link href="../fonts/ffonts/montserrat.css" rel="stylesheet" type="text/css">
-    <link href="../fonts/ffonts/kaushan.css" rel="stylesheet" type="text/css">
-    <link href="../fonts/ffonts/droid.css" rel="stylesheet" type="text/css">
-    <link href="../fonts/ffonts/roboto.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" type="text/css" href="../fonts/ffonts/montserrat.css">
+    <link rel="stylesheet" type="text/css" href="../fonts/ffonts/open-sans.css">
 
     <!-- Font Awesome CSS -->
     <link rel="stylesheet" href="../css/font-awesome.min.css" type="text/css" media="screen">
@@ -212,10 +210,6 @@ $ProfileImage= $companyinfo_tbl[0][11];
                         </a>
                     </div>
                     <div class="navbar-collapse collapse">
-                        <!-- Sign-out -->
-                        <div class="signout-side">
-                            <a class="show-signout" data-toggle='modal' data-target='#Logout'><i class="fa fa-sign-out"></i></a>
-                        </div>
                         <!-- Modal -->
                         <div class="modal fade" id="Logout"
                              role="dialog">
