@@ -408,7 +408,40 @@ session_start();
                                                 <li>
                                                     <div class="form-group">
                                                         Company
-                                                        <input type="text" class="form-control" id="txtCompany" name="txtCompany" value="<?php echo $CompanyName; ?>">
+                                                        <input type="text" class="form-control" id="txtCompany"
+                                                               name="txtCompany" value="<?php echo $CompanyName; ?>">
+                                                    </div>
+                                                </li>
+                                                <li>
+                                                    <div class="form-group">
+                                                        Company Address
+                                                        <input type="text" class="form-control" id="txtCompanyAddress"
+                                                               name="txtCompanyAddress"
+                                                               value="<?php echo $CompanyAddress; ?>">
+                                                    </div>
+                                                </li>
+                                                <li>
+                                                    <div class="form-group">
+                                                        Contact Number
+                                                        <input type="text" class="form-control" id="txtContactNumber"
+                                                               name="txtCompanyAddress"
+                                                               value="<?php echo $Contact; ?>">
+                                                    </div>
+                                                </li>
+                                                <li>
+                                                    <div class="form-group">
+                                                        Supervisor
+                                                        <input type="text" class="form-control" id="txSupervisor"
+                                                               name="txtSupervisor"
+                                                               value="<?php echo $Supervisor; ?>">
+                                                    </div>
+                                                </li>
+                                                <div class="hr2" style="margin-top:10px;margin-bottom:10px;"></div>
+                                                <label>Requirements checklist:</label>
+                                                <li>
+                                                    <div class="checkbox checkbox-success">
+                                                        <input id="" name="" class="styled" type="checkbox">
+                                                        <label for="checkbox3"><b>Photo</b></label>
                                                     </div>
                                                 </li>
                                             </ul>
