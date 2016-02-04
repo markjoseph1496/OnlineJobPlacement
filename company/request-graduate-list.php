@@ -521,6 +521,113 @@ $cLastName = $companyinfo_tbl[0][2];
 </form>
 </body>
 <script type="text/javascript" src="../js/script.js"></script>
+<script type="text/javascript">
+    $(document).ready(function () {
+        var validator = $("#LOGRequest").bootstrapValidator({
+            feedbackIcons: {
+                valid: "glyphicon glyphicon-ok",
+                invalid: "glyphicon glyphicon-remove",
+                validating: "glyphicon glyphicon-refresh"
+            },
+           fields: {
+                rPTitle: {
+                    validators: {
+                        notEmpty: {
+                            message: "Date From is required."
+                        }
+                    }
+                },
+                'rEType[]': {
+                    validators: {
+                        notEmpty: {
+                            message: "Date To is required."
+                        }
+                    }
+                },
+               'rPLevel[]': {
+                   validators: {
+                       notEmpty: {
+                           message: "Position Title is required."
+                       }
+                   }
+               },
+                rDescription: {
+                    validators: {
+                        notEmpty: {
+                            message: "Position Level is required."
+                        }
+                    }
+                },
+                rQualification: {
+                    validators: {
+                        notEmpty: {
+                            message: "Job Description is required."
+                        },
+                        stringLength: {
+                            min: 5,
+                            max: 70,
+                            message: "Job Description must be 5-70 characters long."
+                        }
+                    }
+                },
+                rLocation: {
+                    validators: {
+                        notEmpty: {
+                            message: "Specialization is required."
+                        }
+                    }
+                },
+                rSalaryRange: {
+                    validators: {
+                        notEmpty: {
+                            message: "Employment Type is required."
+                        }
+                    }
+                },
+                rYOE: {
+                    validators: {
+                        notEmpty: {
+                            message: "Available Position is required."
+                        },
+                        stringLength: {
+                            min: 1,
+                            max: 2,
+                            message: "Available Position must be 2 digit long."
+                        },
+                        regexp: {
+                            regexp: /^[0-9\s]+$/i,
+                            message: "Available Position can consist of Positive Numbers only"
+                        }
+                    }
+                },
+                CFG: {
+                    validators: {
+                        notEmpty: {
+                            message: "Salary is required."
+                        }
+                    }
+                },
+                rDOR: {
+                    validators: {
+                        notEmpty: {
+                            message: "Years of Experience is required."
+                        },
+                        stringLength: {
+                            min: 1,
+                            max: 3,
+                            message: "Years of Experience must be 3 digit long."
+                        },
+                        regexp: {
+                            regexp: /^[0-9\s]+$/i,
+                            message: "Location can consist of Positive Numbers only"
+                        }
+                    }
+                }
+
+            }
+        });
+    });
+</script>
 </html>
 <script>
     $('#other').click(function () {
