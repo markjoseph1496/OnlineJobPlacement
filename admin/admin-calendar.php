@@ -2,23 +2,11 @@
 include('../connection.php');
 session_start();
 
-if(isset($_SESSION['CompanyID'])){
-    $CompanyID = $_SESSION['CompanyID'];
+if(isset($_SESSION['AdminID'])){
+    $AdminID = $_SESSION['AdminID'];
+}else{
+    header("location: ../login-admin.php");
 }
-else{
-    header("location: ../login-company.php");
-}
-
-$companyinfo_tbl =
-    GSecureSQL::query(
-        "SELECT CompanyName, FirstName, LastName FROM companyinfotbl WHERE CompanyID = ?",
-        TRUE,
-        "s",
-        $CompanyID
-    );
-$CompanyName = $companyinfo_tbl[0][0];
-$cFirstName = $companyinfo_tbl[0][1];
-$cLastName = $companyinfo_tbl[0][2];
 
 ?>
 <!doctype html>
@@ -133,7 +121,7 @@ $cLastName = $companyinfo_tbl[0][2];
                         <div class="col-md-7">
                             <!-- Start Contact Info -->
                             <ul class="contact-details">
-                                <li class="profile-name"><b><?php echo $CompanyName; ?></b></li>
+                                <li class="profile-name">
                             </ul>
                             <!-- End Contact Info -->
                         </div>
@@ -153,7 +141,7 @@ $cLastName = $companyinfo_tbl[0][2];
                                     </ul>
                                 </li>
                                 <li class="dropdown">
-                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown"><b class="fa fa-user"></b> Welcome, <b><?php echo $cFirstName . " " . $cLastName ; ?> </b><b class="caret"></b></a>
+                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown"><b class="fa fa-user"></b> Welcome, </i> Welcome, <b>Admin Tim</b><b class="caret"></b></a>
                                     <ul class="dropdown-menu">
                                         <li><a href="#">Profile <b class="fa fa-user" style="float:right;"></b></a></li>
                                         <li><a href="../settings/privacy-settings.php">Settings <b class="fa fa-cog" style="float:right;"></b></a></li>
@@ -351,7 +339,7 @@ $cLastName = $companyinfo_tbl[0][2];
                           $dateto = 'EventDatet';
                           $location = 'Location';
 
-                          $query = ("SELECT * FROM compeventtbl WHERE CompanyID = '$CompanyID'");
+                          $query = ("SELECT * FROM admineventtbl WHERE AdminID = '$AdminID'");
                           $Result = mysql_query($query);
                         ?>
                         <tr>

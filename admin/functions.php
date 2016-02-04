@@ -237,3 +237,28 @@ if (isset($_POST['aFirstName'])) {
 
     }
 // End of Add User
+
+//Create Calendar-Event
+if (isset($_GET['BtnCalendarsave'])) {
+
+    $datefrom = $_GET['datefrom'];
+    $dateto = $_GET['dateto'];
+    $eventtitle = $_GET['eventtitle'];
+    $location = $_GET['location'];
+    $descrip = $_GET['descrip'];
+
+    GSecureSQL::query(
+        "INSERT INTO admineventtbl (CompanyID,EventTitle,EventDatef,EventDatet,Location,Description) values (?,?,?,?,?,?)",
+        FALSE,
+        "ssssss",
+        $CompanyID,
+        $eventtitle,
+        $datefrom,
+        $dateto,
+        $location,
+        $descrip
+    );
+    header("location: admin-calendar.php?id=EventAdd");
+
+}
+// End of Create Calendar-Event
