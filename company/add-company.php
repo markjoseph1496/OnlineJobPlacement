@@ -191,3 +191,9 @@ if (isset($_GET['btnsaveuser'])) {
         );
         header("location: company-settingsaccount.php?id=AccountEdit");
 }
+if(isset($_POST['btnRequestLOG'])){
+    echo "Ss";
+    $checkbox = $_POST['rEType'];
+    $checkbox = implode(", ",$checkbox);
+    print_r($checkbox);
+}

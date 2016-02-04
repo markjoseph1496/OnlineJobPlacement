@@ -2,10 +2,9 @@
 include('../connection.php');
 session_start();
 
-if(isset($_SESSION['CompanyID'])){
+if (isset($_SESSION['CompanyID'])) {
     $CompanyID = $_SESSION['CompanyID'];
-}
-else{
+} else {
     header("location: ../login-company.php");
 }
 
@@ -91,7 +90,7 @@ $cLastName = $companyinfo_tbl[0][2];
     <script type="text/javascript" src="../js/jquery.slicknav.js"></script>
 
     <!-- Checkbox -->
-    <link rel="stylesheet" type="text/css" href="../css/checkbox.css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="../css/checkbox.css" media="screen"/>
 
     <!-- Notification -->
     <link rel="stylesheet" href="../css/notif.css"/>
@@ -117,6 +116,7 @@ $cLastName = $companyinfo_tbl[0][2];
     </script>
 </head>
 <body>
+<form method="POST" name="LOGRequest" id="LOGRequest" action="add-company.php" autocomplete="off">
     <!-- Full Body Container -->
     <div id="container">
         <!-- Start Header Section -->
@@ -150,8 +150,10 @@ $cLastName = $companyinfo_tbl[0][2];
                                     </ul>
                                 </li>
                                 <li class="dropdown">
-                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown"><b class="fa fa-user"></b>
-                                        Welcome, <b><?php echo $cFirstName . " " . $cLastName; ?> </b><b class="caret"></b></a>
+                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown"><b
+                                            class="fa fa-user"></b>
+                                        Welcome, <b><?php echo $cFirstName . " " . $cLastName; ?> </b><b
+                                            class="caret"></b></a>
                                     <ul class="dropdown-menu">
                                         <li><a href="#">Profile <b class="fa fa-user" style="float:right;"></b></a></li>
                                         <li><a href="../settings/privacy-settings.php">Settings <b class="fa fa-cog"
@@ -179,7 +181,8 @@ $cLastName = $companyinfo_tbl[0][2];
                 <div class="container">
                     <div class="navbar-header">
                         <!-- Stat Toggle Nav Link For Mobiles -->
-                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <button type="button" class="navbar-toggle" data-toggle="collapse"
+                                data-target=".navbar-collapse">
                             <i class="fa fa-bars"></i>
                         </button>
                         <!-- End Toggle Nav Link For Mobiles -->
@@ -256,11 +259,11 @@ $cLastName = $companyinfo_tbl[0][2];
                     <li>
                         <a>Applicant List</a>
                         <ul class="dropdown">
-                                    <li><a href="company-pendingapplicants.php">Pending</a></li>
-                                    <li><a href="company-acceptedapplicants.php">Accepted</a></li>
+                            <li><a href="company-pendingapplicants.php">Pending</a></li>
+                            <li><a href="company-acceptedapplicants.php">Accepted</a></li>
                         </ul>
                     </li>
-                        <a href="company-settings.php">Settings</a>
+                    <a href="company-settings.php">Settings</a>
                     </li>
                 </ul>
             </div>
@@ -290,40 +293,40 @@ $cLastName = $companyinfo_tbl[0][2];
                                 <div class="call-action call-action-boxed call-action-style1 clearfix">
                                     <div class="form-group">
                                         <label>Position Title</label>
-                                        <input type="text" class="form-control" id="" name="">
+                                        <input type="text" class="form-control" id="rPTitle" name="rPTitle">
                                     </div>
                                     <label>Employee Classification</label>
                                     <br><em>(Please select appropriate box)</em>
                                     <div class="checkbox checkbox-success">
-                                        <input id="" class="styled" type="checkbox">
+                                        <input id="rEType" name="rEType[]" class="styled" type="checkbox" value="Full Time">
                                         <label for="checkbox3"><b>Full Time</b></label>
                                     </div>
                                     <div class="checkbox checkbox-success">
-                                        <input id="" class="styled" type="checkbox">
+                                        <input id="rEType" name="rEType[]" class="styled" type="checkbox" value="Part-Time">
                                         <label for="checkbox3"><b>Part-time</b></label>
                                     </div>
                                     <div class="checkbox checkbox-success">
-                                        <input id="" class="styled" type="checkbox">
+                                        <input id="rEType" name="rEType[]" class="styled" type="checkbox" value="Contractual">
                                         <label for="checkbox3"><b>Contractual</b></label>
                                     </div>
                                     <div class="checkbox checkbox-success">
-                                        <input id="" class="styled" type="checkbox">
+                                        <input id="rEType" name="rEType[]" class="styled" type="checkbox" value="Freelance">
                                         <label for="checkbox3"><b>Freelance</b></label>
                                     </div>
                                     <div class="checkbox checkbox-success">
-                                        <input id="" class="styled" type="checkbox">
+                                        <input id="rEType" name="rEType[]" class="styled" type="checkbox" value="Project-based">
                                         <label for="checkbox3"><b>Project-based</b></label>
                                     </div>
                                     <div class="hr4" style="margin-bottom:10px;"></div>
                                     <div class="row">
                                         <div class="col-md-3">
                                             <div class="checkbox checkbox-success">
-                                                <input id="" class="styled" type="checkbox">
+                                                <input id="other" name="rEType[]" class="styled" type="checkbox" value="other">
                                                 <label for="checkbox3"><b>Other:</b></label>
                                             </div>
                                         </div>
                                         <div class="col-md-9">
-                                            <input type="text" class="form-control" id="" name="">
+                                            <input type="text" class="form-control" id="txtOther" name="txtOther">
                                         </div>
                                     </div>
 
@@ -332,32 +335,32 @@ $cLastName = $companyinfo_tbl[0][2];
                                     <label>Level</label>
                                     <br><em>(Please select appropriate box)</em>
                                     <div class="checkbox checkbox-success">
-                                        <input id="" class="styled" type="checkbox">
+                                        <input id="rPLevel" name="rPLevel[]" class="styled" type="checkbox" value="Entry Level/Gen Staff">
                                         <label for="checkbox3"><b>Entry Level/Gen Staff</b></label>
                                     </div>
                                     <div class="checkbox checkbox-success">
-                                        <input id="" class="styled" type="checkbox">
+                                        <input id="rPLevel" name="rPLevel[]" class="styled" type="checkbox" value="Officer">
                                         <label for="checkbox3"><b>Officer</b></label>
                                     </div>
                                     <div class="checkbox checkbox-success">
-                                        <input id="" class="styled" type="checkbox">
+                                        <input id="rPLeve]" name="rPLevel[]" class="styled" type="checkbox" value="Supervisory">
                                         <label for="checkbox3"><b>Supervisory</b></label>
                                     </div>
                                     <div class="checkbox checkbox-success">
-                                        <input id="" class="styled" type="checkbox">
+                                        <input id="rPLevel" name="rPLevel[]" class="styled" type="checkbox" value="Management">
                                         <label for="checkbox3"><b>Management</b></label>
                                     </div>
-                                    
+
                                     <div class="hr4" style="margin-bottom:10px;"></div>
                                     <div class="row">
                                         <div class="col-md-3">
                                             <div class="checkbox checkbox-success">
-                                                <input id="" class="styled" type="checkbox">
+                                                <input id="pOther" name="pOther" class="styled" type="checkbox">
                                                 <label for="checkbox3"><b>Other:</b></label>
                                             </div>
                                         </div>
                                         <div class="col-md-9">
-                                            <input type="text" class="form-control" id="" name="">
+                                            <input type="text" class="form-control" id="txtPOther" name="txtPOther">
                                         </div>
                                     </div>
 
@@ -365,34 +368,34 @@ $cLastName = $companyinfo_tbl[0][2];
 
                                     <label>Description</label>
                                     <div class="form-group">
-                                        <textarea class="form-control" name="" id="" rows="7" cols="0"></textarea>
+                                        <textarea class="form-control" name="rDescription" id="rDescription" rows="7" cols="0" maxlength="300"></textarea>
                                     </div>
                                     <label>Qualifications</label>
                                     <div class="form-group">
-                                        <textarea class="form-control" name="" id="" rows="7" cols="0"></textarea>
+                                        <textarea class="form-control" name="rQualification" id="rQualification" rows="7" cols="0" maxlength="100"></textarea>
                                     </div>
 
                                     <div class="hr1" style="margin-top:15px;margin-bottom:15px;"></div>
 
                                     <div class="form-group">
                                         <label>Location</label>
-                                        <br><em>(Please select appropriate box)</em>                                    
-                                        <select id="" name="" class="form-control">
+                                        <br><em>(Please select appropriate box)</em>
+                                        <select id="rLocation" name="rLocation" class="form-control">
                                             <option value=""></option>
-                                            <option value="Caloocan City">Caloocan City</option> 
-                                            <option value="Makati City">Makati City</option> 
-                                            <option value="Malabon City">Malabon City</option> 
-                                            <option value="Mandaluyong">Mandaluyong</option> 
-                                            <option value="Manila">Manila</option> 
-                                            <option value="Marikina City">Marikina City</option> 
-                                            <option value="Muntinlupa City">Muntinlupa City</option> 
-                                            <option value="Navotas City">Navotas City</option> 
-                                            <option value="Ortigas">Ortigas</option> 
-                                            <option value="Paranaque">Paranaque</option> 
-                                            <option value="Pasig City">Pasig City</option> 
-                                            <option value="Quezon City">Quezon City</option> 
-                                            <option value="Taguig City">Taguig City</option> 
-                                            <option value="Valenzuela City">Valenzuela City</option> 
+                                            <option value="Caloocan City">Caloocan City</option>
+                                            <option value="Makati City">Makati City</option>
+                                            <option value="Malabon City">Malabon City</option>
+                                            <option value="Mandaluyong">Mandaluyong</option>
+                                            <option value="Manila">Manila</option>
+                                            <option value="Marikina City">Marikina City</option>
+                                            <option value="Muntinlupa City">Muntinlupa City</option>
+                                            <option value="Navotas City">Navotas City</option>
+                                            <option value="Ortigas">Ortigas</option>
+                                            <option value="Paranaque">Paranaque</option>
+                                            <option value="Pasig City">Pasig City</option>
+                                            <option value="Quezon City">Quezon City</option>
+                                            <option value="Taguig City">Taguig City</option>
+                                            <option value="Valenzuela City">Valenzuela City</option>
                                             <option value="Pasay City">Pasay City</option>
                                         </select>
                                     </div>
@@ -402,14 +405,14 @@ $cLastName = $companyinfo_tbl[0][2];
                                     <div class="form-group">
                                         <label>Salary Range</label>
                                         <em>Should not be lower than the Minimum Wage</em>
-                                        <input type="text" class="form-control" id="" name="">
+                                        <input type="text" class="form-control" id="rSalaryRange" name="rSalaryRange">
                                     </div>
 
                                     <div class="hr1" style="margin-top:15px;margin-bottom:15px;"></div>
 
                                     <div class="form-group">
                                         <label>Required years of experience</label>
-                                        <input type="text" class="form-control" id="" name="">
+                                        <input type="text" class="form-control" id="rYOE" name="rYOE">
                                     </div>
 
                                     <div class="hr1" style="margin-top:15px;margin-bottom:15px;"></div>
@@ -418,12 +421,12 @@ $cLastName = $companyinfo_tbl[0][2];
                                     <br><em>Please select appropriate box</em>
                                     <br>
                                     <div class="radio radio-inline">
-                                        <input type="radio" id="Yes" value="Yes" name="selection">
+                                        <input type="radio" id="Yes" value="Yes" name="CFG[]">
                                         <label for="inlineRadio1">Yes</label>
                                     </div>
 
                                     <div class="radio radio-inline">
-                                        <input type="radio" id="No" value="No" name="selection">
+                                        <input type="radio" id="No" value="No" name="CFG[]">
                                         <label for="inlineRadio2">No</label>
                                     </div>
 
@@ -432,43 +435,45 @@ $cLastName = $companyinfo_tbl[0][2];
                                     <label>Duration of Request</label>
                                     <br><em>(Please select appropriate box)</em>
                                     <div class="checkbox checkbox-success">
-                                        <input id="" class="styled" type="checkbox">
+                                        <input id="rDOR" name="rDOR[]" class="styled" type="checkbox">
                                         <label for="checkbox3"><b>15 Days</b></label>
                                     </div>
                                     <div class="checkbox checkbox-success">
-                                        <input id="" class="styled" type="checkbox">
+                                        <input id="rDOR" name="rDOR[]" class="styled" type="checkbox">
                                         <label for="checkbox3"><b>1 month</b></label>
                                     </div>
                                     <div class="checkbox checkbox-success">
-                                        <input id="" class="styled" type="checkbox">
+                                        <input id="rDOR" name="rDOR[]" class="styled" type="checkbox">
                                         <label for="checkbox3"><b>2 months</b></label>
                                     </div>
-                                    
+
                                     <div class="hr4" style="margin-bottom:10px;"></div>
                                     <div class="row">
                                         <div class="col-md-3">
                                             <div class="checkbox checkbox-success">
-                                                <input id="" class="styled" type="checkbox">
+                                                <input id="DORother" class="styled" type="checkbox">
                                                 <label for="checkbox3"><b>Other:</b></label>
                                             </div>
                                         </div>
                                         <div class="col-md-9">
-                                            <input type="text" class="form-control" id="" name="">
+                                            <input type="text" class="form-control" id="txtDORother" name="txtDORother">
                                         </div>
                                     </div>
 
                                     <div class="hr1" style="margin-top:15px;margin-bottom:15px;"></div>
 
                                     <label>Our company would like to send marketing materials for posting.</label>
-                                    <br><em>(Someone from Alumni and Placement Office will contact you to make arrangements for the particulars of the request.)</em>
+                                    <br><em>(Someone from Alumni and Placement Office will contact you to make
+                                        arrangements for the particulars of the request.)</em>
                                     <div class="checkbox checkbox-success">
-                                        <input id="" class="styled" type="checkbox">
+                                        <input id="MarketingMaterials" name="MarketingMaterials" class="styled" type="checkbox" value="Yes">
                                         <label for="checkbox3"><b>Yes</b></label>
                                     </div>
 
                                     <div class="hr1" style="margin-top:15px;margin-bottom:15px;"></div>
 
-                                    <label>In order to complete the process, you are requested to forward the following requirements:</label>
+                                    <label>In order to complete the process, you are requested to forward the following
+                                        requirements:</label>
                                     <br><em>Please email at <a href="mailto:jobplacement@caloocan.sti.edu"><u>jobplacement@caloocan.sti.edu</u></a></em>
                                     <div class="checkbox checkbox-success">
                                         <input id="" class="styled" type="checkbox">
@@ -476,7 +481,9 @@ $cLastName = $companyinfo_tbl[0][2];
                                     </div>
                                     <div class="checkbox checkbox-success">
                                         <input id="" class="styled" type="checkbox">
-                                        <label for="checkbox3"><b>Copy  of Securities and Exchange Commission Certificate of Registration or Copy of Department of Trade and Industry Certificate of Registration</b></label>
+                                        <label for="checkbox3"><b>Copy of Securities and Exchange Commission Certificate
+                                                of Registration or Copy of Department of Trade and Industry Certificate
+                                                of Registration</b></label>
                                     </div>
                                     <div class="checkbox checkbox-success">
                                         <input id="" class="styled" type="checkbox">
@@ -494,19 +501,25 @@ $cLastName = $companyinfo_tbl[0][2];
                                     <div class="hr5" style="margin-top:15px;margin-bottom:15px;"></div>
 
                                     <div class="call-action call-action-boxed call-action-style2 clearfix">
-                                        <label>If you would like more information about the STI Corporate Partnership Program, please contact:</label>
+                                        <label>If you would like more information about the STI Corporate Partnership
+                                            Program, please contact:</label>
                                         <p>MS. ANNABELLE O. VILLEGAS</p>
                                         <p>Alumni and Job Placement Officer II</p>
                                         <p>STI Academic Center Caloocan</p>
                                         <p><label>Contact No.:</label> (02) 294 - 4001 to 02 loc. 110-111</p>
                                         <p><label>Mobile no.:</label> 0917-4638460, 0998-5604415, 0932-8436642</p>
-                                        <p><label>Email adds.:</label> <a href="mailto:jobplacement@caloocan.sti.edu"><u>jobplacement@caloocan.sti.edu</u></a> and <a href="mailto:annabelle.villegas@caloocan.sti.edu"><u>annabelle.villegas@caloocan.sti.edu</u></a></p>
+                                        <p><label>Email adds.:</label> <a
+                                                href="mailto:jobplacement@caloocan.sti.edu"><u>jobplacement@caloocan.sti.edu</u></a>
+                                            and <a href="mailto:annabelle.villegas@caloocan.sti.edu"><u>annabelle.villegas@caloocan.sti.edu</u></a>
+                                        </p>
                                     </div>
 
                                     <div class="hr5" style="margin-top:15px;margin-bottom:15px;"></div>
 
                                     <div class="text-center">
-                                        <button type="submit" class="btn-system btn-large" name="" id="">Submit</button>
+                                        <button type="submit" class="btn-system btn-large" name="btnRequestLOG"
+                                                id="btnRequestLOG">Submit
+                                        </button>
                                     </div>
                                 </div>
                             </div>
@@ -517,6 +530,53 @@ $cLastName = $companyinfo_tbl[0][2];
             </div>
         </div>
     </div>
+</form>
 </body>
 <script type="text/javascript" src="../js/script.js"></script>
 </html>
+<script>
+    $('#other').click(function () {
+        $("#txtOther").val("");
+        if ($(this).is(':checked')) {
+            $('#txtOther').show();
+        } else {
+            $('#txtOther').hide();
+        }
+    });
+
+    if ($('#other').is(':checked')) {
+        $('#txtOther').show();
+    } else {
+        $('#txtOther').hide();
+    }
+
+    $('#pOther').click(function () {
+        $("#txtPOther").val("");
+        if ($(this).is(':checked')) {
+            $('#txtPOther').show();
+        } else {
+            $('#txtPOther').hide();
+        }
+    });
+
+    if ($('#pOther').is(':checked')) {
+        $('#txtPOther').show();
+    } else {
+        $('#txtPOther').hide();
+    }
+
+    $('#DORother').click(function () {
+        $("#txtDORother").val("");
+        if ($(this).is(':checked')) {
+            $('#txtDORother').show();
+        } else {
+            $('#txtDORother').hide();
+        }
+    });
+
+    if ($('#DORother').is(':checked')) {
+        $('#txtDORother').show();
+    } else {
+        $('#txtDORother').hide();
+    }
+</script>
