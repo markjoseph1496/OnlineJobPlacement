@@ -80,6 +80,10 @@ if(isset($_SESSION['AdminID'])){
     <script type="text/javascript" src="../js/jquery.slicknav.js"></script>
     <script type="text/javascript" src="../js/script.js"></script>
 
+    <!-- fileupload -->
+    <link href="../css/fileinput.min.css" media="all" rel="stylesheet" type="text/css"/>
+    <script src="../js/fileinput.min.js" type="text/javascript"></script>
+
     <!-- Notification -->
     <link rel="stylesheet" href="../css/notif.css"/>
 
@@ -298,21 +302,21 @@ if(isset($_SESSION['AdminID'])){
 <br><br><br>
 <form action="functions.php" name="addcalendar" id="addcalendar" autocomplete="off">
     <div class="container">
-        <div class="col-md-12">
+        <div class="col-md-7">
             <div class="row">
                 <div class="row field">
-                    <div class="col-md-3 fieldcol">
+                    <div class="col-md-2 fieldcol">
                         <label = "usr" class = "control-label">Event from: </label>
                     </div>
-                    <div class="col-md-3 fieldcol">
+                    <div class="col-md-4 fieldcol">
                         <div class = "form-group">
                             <input type="date" name="datefrom" id="date_from" class="form-control">
                         </div>
                     </div>
                     <div class="col-md-1 fieldcol">
-                        <label = "usr" class = "control-label" style = "text-indent:20px;">to: </label>
+                        <label = "usr" class = "control-label" >to: </label>
                     </div>
-                    <div class="col-md-3 fieldcol">
+                    <div class="col-md-4 fieldcol">
                         <div class = "form-group">
                             <input type="date" name="dateto" id="date_to" class="form-control">
                         </div>
@@ -321,36 +325,57 @@ if(isset($_SESSION['AdminID'])){
                     
                 </div>
                 <div class="row field">
-                    <div class="col-md-3 fieldcol">
+                    <div class="col-md-2 fieldcol">
                         <label = "usr" class = "control-label"> Event Title: </label>
                     </div>
-                    <div class="col-md-8 fieldcol">
+                    <div class="col-md-9 fieldcol">
                         <div class="form-group">
                             <input type="text" name="eventtitle" id="eventtitle" class="form-control">
                         </div>
                     </div>
                 </div>
                 <div class="row field">
-                    <div class="col-md-3 fieldcol">
+                    <div class="col-md-2 fieldcol">
                         <label = "usr" class = "control-label"> Location: </label>
                     </div>
-                    <div class="col-md-8 fieldcol">
+                    <div class="col-md-9 fieldcol">
                         <div class="form-group">
                             <input type="text" name="location" id="location" class="form-control">
                         </div>
                     </div>
                 </div>
                 <div class="row field">
-                    <div class="col-md-3 fieldcol">
+                    <div class="col-md-2 fieldcol">
                         <label = "usr" class = "control-label"> Caption: </label>
                     </div>
-                    <div class="col-md-8 fieldcol">
+                    <div class="col-md-9 fieldcol">
                         <div class="form-group">
                             <input type="text" class="form-control" id="descrip" name="descrip">
                         </div>
                     </div>
                 </div>
+<<<<<<< HEAD
+            </div>
+        </div>
+        <form id="UploadPicture" name="UploadPicture" method="POST" action="uploadpic.php" enctype="multipart/form-data">
+                    <div class="col-md-5">
+                        <div class="image-border">
+                            <img src="<?php echo $ProfileImage; ?>" class="img-responsive" style="width:100%; height:100%;">
+                        </div>
+                        <br><br>
+                        <label class="control-label">Select Image</label>
+                        <input id="ProfilePicture" name="ProfilePicture" type="file"
+                               class="file file-loading"
+                               data-allowed-file-extensions='["png", "jpg", "bmp", "gif"]'>
+                        <br>
+                        <button id="" class="btn-system btn-mini border-btn" name="btnDelete">Delete Image</button>
+                    </div>
+        </form>
+        &nbsp;
+=======
+                </form>
                 &nbsp;
+>>>>>>> origin/master
                 <div class="hr5" style="margin-top:35px;margin-bottom:40px;"></div>
                 <div class="field">
                     <div class="text-center">
@@ -360,10 +385,7 @@ if(isset($_SESSION['AdminID'])){
                         <a href = "admin-calendarcreateevent.php" class="btn-system btn-large btn-black">Cancel</a>
                     </div>
                 </div>
-            </div>
-        </div>
     </div>
-</form>
 </body>
 <script type="text/javascript">
     $(document).ready(function () {

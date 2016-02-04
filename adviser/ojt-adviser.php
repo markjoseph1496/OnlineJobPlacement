@@ -1,14 +1,14 @@
-<!doctype html>
 <?php
 include('../connection.php');
 session_start();
 
-/*if(isset($_SESSION['AdminID'])){
-    $AdminID = $_SESSION['AdminID'];
+if(isset($_SESSION['AdviserID'])){
+    $AdviserID = $_SESSION['AdviserID'];
 }else{
     header("location: ../login-adviser.php");
-}*/
+}
 ?>
+<!doctype html>
 <html lang="en">
 
 <head>
@@ -78,6 +78,9 @@ session_start();
     <script type="text/javascript" src="../js/jquery.nicescroll.min.js"></script>
     <script type="text/javascript" src="../js/jquery.parallax.js"></script>
     <script type="text/javascript" src="../js/jquery.slicknav.js"></script>
+
+    <!-- Checkbox -->
+    <link rel="stylesheet" type="text/css" href="../css/checkbox.css" media="screen"/>
 
     <script>
         (function (i, s, o, g, r, a, m) {
@@ -320,10 +323,7 @@ session_start();
                         );
                     $c++;
                 }
-
                 echo "You database has imported successfully. You have inserted " . $c . " records";
-
-
             }
             ?>
 
@@ -333,45 +333,190 @@ session_start();
             <thead>
             <tr></tr>
             <tr>
-                <th class="tabletitle">Student ID</th>
-                <th class="tabletitle">Student Name</th>
-                <th class="tabletitle">Company</th>
-                <th class="tabletitle">Company Address</th>
-                <th class="tabletitle">Contact Number</th>
-                <th class="tabletitle">Supervisor</th>
-                <th class="tabletitle">Status</th>
-            </tr>
+                <th width="10%" class="tabletitle">Student ID</th>
+                <th width="15%" class="tabletitle">Student Name</th>
+                <th width="15%" class="tabletitle">Course</th>
+                <th width="15%" class="tabletitle">Company</th>
+                <th width="20%" class="tabletitle">Company Address</th>
+                <th width="15%" class="tabletitle">Contact Number</th>
+                <th width="10%" class="tabletitle">Supervisor</th>
+                <th width="10%" class="tabletitle">Status</th>
+                <th width="5%" class="tabletitle">Edit</th>
+            </tr
             </thead>
             <tbody>
             <?php
             $ojt_tbl =
                 GSecureSQL::query(
-                    "SELECT *
-                    FROM 
-                    ojttbl",
+                    "SELECT * FROM ojttbl",
                     TRUE
-
                 );
             foreach ($ojt_tbl as $value) {
                 $StudentID = $value[1];
                 $FirstName = $value[3];
                 $LastName = $value[2];
+                $Course = $value[5];
                 $CompanyName = $value[6];
                 $CompanyAddress = $value[7];
                 $Contact = $value[10];
                 $Supervisor = $value[8];
                 $Status = $value[12];
+                $DTR = $value[13];
+                $iPaper = $value[14];
+                $PracJournal = $value[15];
+                $TrainingPlan = $value[16];
+                $Resume = $value[17];
+                $MOA = $value[18];
+                $ApplicationLetter = $value[19];
+                $Waiver = $value[20]
 
                 ?>
                 <tr>
-                    <td><?php echo $StudentID; ?></td>
-                    <td><a href=".php"><?php echo $LastName . ", " . $FirstName; ?></td>
-                    <td><?php echo $CompanyName; ?></td>
-                    <td><?php echo $CompanyAddress; ?></td>
-                    <td><?php echo $Contact; ?></td>
-                    <td><?php echo $Supervisor; ?></td>
-                    <td><?php echo $Status; ?></td>
+                    <td width="10%"><?php echo $StudentID; ?></td>
+                    <td width="15%"><a href=".php"><?php echo $LastName . ", " . $FirstName; ?></td>
+                    <td width="15%"><?php echo $Course; ?></td>
+                    <td width="15%"><?php echo $CompanyName; ?></td>
+                    <td width="20%"><?php echo $CompanyAddress; ?></td>
+                    <td width="15%"><?php echo $Contact; ?></td>
+                    <td width="10%"><?php echo $Supervisor; ?></td>
+                    <td width="10%"><?php echo $Status; ?></td>
+                    <td width="10%">
+                        <button class="btn btn-default" data-toggle="modal"
+                                data-target="#Update<?php echo $StudentID; ?>">
+                            <i class="fa fa-edit"></i>
+                        </button>
+                    </td>
                 </tr>
+                <!-- Modal -->
+                <form method="POST" action="functions.php" autocomplete="off">
+                    <div class="modal fade" id="Update<?php echo $StudentID; ?>"
+                         role="dialog">
+                        <div class="modal-dialog" style="padding:100px">
+                            <!-- Modal content-->
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                    <h4 class="modal-title">Update Information</h4>
+                                </div>
+                                <div class="modal-body">
+                                    <div class="col-md-15">
+                                        <input type="hidden" name="StudentID" value="<?php echo $StudentID; ?>">
+                                        <label>Student ID:
+                                            <?php echo $StudentID; ?></label>
+                                        <br>
+                                        <label = "usr" class = "control-label">Student Name:
+                                        <?php echo $LastName . ", " . $FirstName; ?></label>
+                                        <br>
+                                        <label = "usr" class = "control-label">Course:
+                                        <?php echo $Course; ?></label>
+                                        <br>
+                                        <div class="form-group">
+                                            <div class="hr2" style="margin-top:10px;margin-bottom:10px;"></div>
+                                            <label>OJT Student Information:</label>
+                                            <ul>
+                                                <li>
+                                                    <div class="form-group">
+                                                        Company
+                                                        <input type="text" class="form-control" id="txtCompany"
+                                                               name="txtCompany" value="<?php echo $CompanyName; ?>">
+                                                    </div>
+                                                </li>
+                                                <li>
+                                                    <div class="form-group">
+                                                        Company Address
+                                                        <input type="text" class="form-control" id="txtCompanyAddress"
+                                                               name="txtCompanyAddress"
+                                                               value="<?php echo $CompanyAddress; ?>">
+                                                    </div>
+                                                </li>
+                                                <li>
+                                                    <div class="form-group">
+                                                        Contact Number
+                                                        <input type="text" class="form-control" id="txtContactNumber"
+                                                               name="txtContactNumber"
+                                                               value="<?php echo $Contact; ?>">
+                                                    </div>
+                                                </li>
+                                                <li>
+                                                    <div class="form-group">
+                                                        Supervisor
+                                                        <input type="text" class="form-control" id="txtSupervisor"
+                                                               name="txtSupervisor"
+                                                               value="<?php echo $Supervisor; ?>">
+                                                    </div>
+                                                </li>
+                                                <div class="hr2" style="margin-top:10px;margin-bottom:10px;"></div>
+                                                <label>Requirements checklist:</label>
+                                                <li>
+                                                    <div class="checkbox checkbox-success">
+                                                        <input id="DTRhidden" name="DTR" class="styled" type="hidden" value="off">
+                                                        <input id="DTR" name="DTR" class="styled" type="checkbox" value="ok" <?php if($DTR=="ok") echo "checked"; ?>>
+                                                        <label for="checkbox3"><b>Daily Time Record</b></label>
+                                                    </div>
+                                                </li>
+                                                <li>
+                                                    <div class="checkbox checkbox-success">
+                                                        <input id="iPaperhidden" name="iPaper" class="styled" type="hidden" value="off">
+                                                        <input id="iPaper" name="iPaper" class="styled" type="checkbox" value="ok" <?php if($iPaper=="ok") echo "checked"; ?>>
+                                                        <label for="checkbox3"><b>Integration Paper</b></label>
+                                                    </div>
+                                                </li>
+                                                <li>
+                                                    <div class="checkbox checkbox-success">
+                                                        <input id="PracJournalhidden" name="PracJournal" class="styled" type="hidden" value="off">
+                                                        <input id="PracJournal" name="PracJournal" class="styled" type="checkbox" value="ok" <?php if($PracJournal=="ok") echo "checked"; ?>>
+                                                        <label for="checkbox3"><b>OJT Practicum Journal</b></label>
+                                                    </div>
+                                                </li>
+                                                <li>
+                                                    <div class="checkbox checkbox-success">
+                                                        <input id="TrainingPlanhidden" name="TrainingPlan" class="styled" type="hidden" value="off">
+                                                        <input id="TrainingPlan" name="TrainingPlan" class="styled" type="checkbox" value="ok" <?php if($TrainingPlan=="ok") echo "checked"; ?>>
+                                                        <label for="checkbox3"><b>Training Plan</b></label>
+                                                    </div>
+                                                </li>
+                                                <li>
+                                                    <div class="checkbox checkbox-success">
+                                                        <input id="Resumehidden" name="Resume" class="styled" type="hidden" value="off">
+                                                        <input id="Resume" name="Resume" class="styled" type="checkbox" value="ok" <?php if($Resume=="ok") echo "checked"; ?>>
+                                                        <label for="checkbox3"><b>Resume</b></label>
+                                                    </div>
+                                                </li>
+                                                <li>
+                                                    <div class="checkbox checkbox-success">
+                                                        <input id="MOAhidden" name="MOA" class="styled" type="hidden" value="off">
+                                                        <input id="MOA" name="MOA" class="styled" type="checkbox" value="ok" <?php if($MOA=="ok") echo "checked"; ?>>
+                                                        <label for="checkbox3"><b>Memorandum of Agreement</b></label>
+                                                    </div>
+                                                </li>
+                                                <li>
+                                                    <div class="checkbox checkbox-success">
+                                                        <input id="AppLetterhidden" name="AppLetter" class="styled" type="hidden" value="off">
+                                                        <input id="AppLetter" name="AppLetter" class="styled" type="checkbox" value="ok" <?php if($ApplicationLetter=="ok") echo "checked"; ?>>
+                                                        <label for="checkbox3"><b>Application Letter</b></label>
+                                                    </div>
+                                                </li>
+                                                <li>
+                                                    <div class="checkbox checkbox-success">
+                                                        <input id="Waiverhidden" name="Waiver" class="styled" type="hidden" value="off">
+                                                        <input id="Waiver" name="Waiver" class="styled" type="checkbox" value="ok" <?php if($Waiver=="ok") echo "checked"; ?>>
+                                                        <label for="checkbox3"><b>Waiver</b></label>
+                                                    </div>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type=submit class="btn btn-primary">Update</button>
+                                        <button type="button" class="btn btn-default" data-dismiss="modal">
+                                            Cancel
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </form>
                 <?php
             }
             ?>
@@ -381,3 +526,29 @@ session_start();
 </body>
 <script type="text/javascript" src="../js/script.js"></script>
 </html>
+<script type="text/javascript">
+    if(document.getElementById("DTR").checked) {
+        document.getElementById('DTRhidden').disabled = true;
+    }
+    if(document.getElementById("iPaper").checked) {
+        document.getElementById('iPaperhidden').disabled = true;
+    }
+    if(document.getElementById("PracJournal").checked) {
+        document.getElementById('PracJournalhidden').disabled = true;
+    }
+    if(document.getElementById("TrainingPlan").checked) {
+        document.getElementById('TrainingPlanhidden').disabled = true;
+    }
+    if(document.getElementById("Resume").checked) {
+        document.getElementById('Resumehidden').disabled = true;
+    }
+    if(document.getElementById("MOA").checked) {
+        document.getElementById('MOAhidden').disabled = true;
+    }
+    if(document.getElementById("AppLetter").checked) {
+        document.getElementById('AppLetterhidden').disabled = true;
+    }
+    if(document.getElementById("Waiver").checked) {
+        document.getElementById('Waiverhidden').disabled = true;
+    }
+</script>
