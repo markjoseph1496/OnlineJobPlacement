@@ -55,8 +55,8 @@ $cLastName = $companyinfo_tbl[0][2];
     <link rel="stylesheet" href="../css/font-awesome.min.css" type="text/css" media="screen">
 
     <!-- Fonts -->
-    <link rel="stylesheet" type="text/css" href="../../../fonts/ffonts/montserrat.css">
-    <link rel="stylesheet" type="text/css" href="../../../fonts/ffonts/open-sans.css">
+    <link rel="stylesheet" type="text/css" href="../fonts/ffonts/montserrat.css">
+    <link rel="stylesheet" type="text/css" href="../fonts/ffonts/open-sans.css">
 
     <!-- Slicknav -->
     <link rel="stylesheet" type="text/css" href="../css/slicknav.css" media="screen">
@@ -404,7 +404,7 @@ $cLastName = $companyinfo_tbl[0][2];
 
                                     <div class="form-group">
                                         <label>Salary Range</label>
-                                        <em>Should not be lower than the Minimum Wage</em>
+                                        <br><em>(Should not be lower than the Minimum Wage)</em>
                                         <input type="text" class="form-control" id="rSalaryRange" name="rSalaryRange">
                                     </div>
 
@@ -418,7 +418,7 @@ $cLastName = $companyinfo_tbl[0][2];
                                     <div class="hr1" style="margin-top:15px;margin-bottom:15px;"></div>
 
                                     <label>Consider Fresh Graduate</label>
-                                    <br><em>Please select appropriate box</em>
+                                    <br><em>(Please select appropriate box)</em>
                                     <br>
                                     <div class="radio radio-inline">
                                         <input type="radio" id="Yes" value="Yes" name="CFG">
@@ -434,19 +434,22 @@ $cLastName = $companyinfo_tbl[0][2];
 
                                     <label>Duration of Request</label>
                                     <br><em>(Please select appropriate box)</em>
+                                    <br>
                                     <div class="radio radio-inline">
                                         <input id="rDOR" name="rDOR" type="radio" value="15 Days">
                                         <label for="inlineRadio2"><b>15 Days</b></label>
                                     </div>
+                                    <br>
                                     <div class="radio radio-inline">
                                         <input id="rDOR" name="rDOR" type="radio" value="1 Month">
                                         <label for="inlineRadio2"><b>1 month</b></label>
                                     </div>
+                                    <br>
                                     <div class="radio radio-inline">
                                         <input id="rDOR" name="rDOR" type="radio" value="2 Months">
                                         <label for="inlineRadio2"><b>2 months</b></label>
                                     </div>
-
+                                    <br>
                                     <div class="hr4" style="margin-bottom:10px;"></div>
                                     <div class="row">
                                         <div class="col-md-3">
@@ -475,28 +478,13 @@ $cLastName = $companyinfo_tbl[0][2];
                                     <label>In order to complete the process, you are requested to forward the following
                                         requirements:</label>
                                     <br><em>Please email at <a href="mailto:jobplacement@caloocan.sti.edu"><u>jobplacement@caloocan.sti.edu</u></a></em>
-                                    <div class="checkbox checkbox-success">
-                                        <input id="" class="styled" type="checkbox">
-                                        <label for="checkbox3"><b>Company Profile</b></label>
-                                    </div>
-                                    <div class="checkbox checkbox-success">
-                                        <input id="" class="styled" type="checkbox">
-                                        <label for="checkbox3"><b>Copy of Securities and Exchange Commission Certificate
-                                                of Registration or Copy of Department of Trade and Industry Certificate
-                                                of Registration</b></label>
-                                    </div>
-                                    <div class="checkbox checkbox-success">
-                                        <input id="" class="styled" type="checkbox">
-                                        <label for="checkbox3"><b>Copy of Business Permit</b></label>
-                                    </div>
-                                    <div class="checkbox checkbox-success">
-                                        <input id="" class="styled" type="checkbox">
-                                        <label for="checkbox3"><b>POEA License for Overseas Employment Opportunities</b></label>
-                                    </div>
-                                    <div class="checkbox checkbox-success">
-                                        <input id="" class="styled" type="checkbox">
-                                        <label for="checkbox3"><b>List of Job Openings</b></label>
-                                    </div>
+                                    <ul class="icon-list">
+                                        <li><label><i class="fa fa-check-circle"></i> Company Profile</label></li>
+                                        <li><label><i class="fa fa-check-circle"></i> Copy of Securities and Exchange Commission Certificate of Registration or Copy of Department of Trade and Industry Certificate of Registration</label></li>
+                                        <li><label><i class="fa fa-check-circle"></i> Copy of Business Permit</label></li>
+                                        <li><label><i class="fa fa-check-circle"></i> POEA License for Overseas Employment Opportunities</label></li>
+                                        <li><label><i class="fa fa-check-circle"></i> List of Job Openings</label></li>
+                                    </ul>
 
                                     <div class="hr5" style="margin-top:15px;margin-bottom:15px;"></div>
 
@@ -507,8 +495,8 @@ $cLastName = $companyinfo_tbl[0][2];
                                         <p>Alumni and Job Placement Officer II</p>
                                         <p>STI Academic Center Caloocan</p>
                                         <p><label>Contact No.:</label> (02) 294 - 4001 to 02 loc. 110-111</p>
-                                        <p><label>Mobile no.:</label> 0917-4638460, 0998-5604415, 0932-8436642</p>
-                                        <p><label>Email adds.:</label> <a
+                                        <p><label>Mobile No.:</label> 0917-4638460, 0998-5604415, 0932-8436642</p>
+                                        <p><label>Email Adds.:</label> <a
                                                 href="mailto:jobplacement@caloocan.sti.edu"><u>jobplacement@caloocan.sti.edu</u></a>
                                             and <a href="mailto:annabelle.villegas@caloocan.sti.edu"><u>annabelle.villegas@caloocan.sti.edu</u></a>
                                         </p>

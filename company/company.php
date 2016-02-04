@@ -112,8 +112,8 @@ if (count($LOGquery1) > 0) {
     <link rel="stylesheet" href="../css/font-awesome.min.css" type="text/css" media="screen">
 
     <!-- Fonts -->
-    <link rel="stylesheet" type="text/css" href="../../../fonts/ffonts/montserrat.css">
-    <link rel="stylesheet" type="text/css" href="../../../fonts/ffonts/open-sans.css">
+    <link rel="stylesheet" type="text/css" href="../fonts/ffonts/montserrat.css">
+    <link rel="stylesheet" type="text/css" href="../fonts/ffonts/open-sans.css">
 
     <!-- Slicknav -->
     <link rel="stylesheet" type="text/css" href="../css/slicknav.css" media="screen">
@@ -345,7 +345,7 @@ if (count($LOGquery1) > 0) {
                             <br>
                             <h4>You are not able to access the list of graduates.
                                 You may request it to the administrator.</h4><br>
-                            <a href="request-graduate-list.php" class="btn-system btn-large border-btn" name="" target="_blank">Request List of Graduates.</a>
+                            <a href="request-graduate-list.php" class="btn-system btn-large border-btn" name="">Request List of Graduates.</a>
                         </div>
                     </div>
                     <div class="col-md-3">&nbsp;</div>
