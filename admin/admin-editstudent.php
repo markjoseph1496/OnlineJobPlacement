@@ -12,6 +12,8 @@ $TotalStudents = mysql_query("SELECT COUNT(*) FROM studentinfotbl");
 $Q1 = mysql_fetch_array($TotalStudents);
 $Total = $Q1[0];
 
+
+
 ?>
 <!doctype html>
 <html lang="en">
