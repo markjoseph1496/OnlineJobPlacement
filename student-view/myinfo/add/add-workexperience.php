@@ -36,7 +36,7 @@ $MajorCourse = $course_qry[0][0];
 <head>
 
     <!-- Basic -->
-    <title>OJPMS</title>
+    <title>OJPMS | Add - Work Experience</title>
 
     <!-- Define Charset -->
     <meta charset="utf-8">
@@ -45,7 +45,7 @@ $MajorCourse = $course_qry[0][0];
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
     <!-- Page Description and Author -->
-    <meta name="description" content="Margo - Responsive HTML5 Template">
+    <meta name="description" content=" - Responsive HTML5 Template">
     <meta name="author" content="iThemesLab">
 
     <!-- Bootstrap CSS -->
@@ -164,7 +164,7 @@ $MajorCourse = $course_qry[0][0];
                                 <li class="dropdown">
                                     <a href="#" class="dropdown-toggle" data-toggle="dropdown"><b class="fa fa-user"></b> Welcome, <b><?php echo $StudentName; ?> </b><b class="caret"></b></a>
                                     <ul class="dropdown-menu">
-                                        <li><a href="#">Profile <b class="fa fa-user" style="float:right;"></b></a></li>
+                                        <li><a href="../../../student-profile.php">Profile <b class="fa fa-user" style="float:right;"></b></a></li>
                                         <li><a href="../../settings/settings.php">Settings <b class="fa fa-cog" style="float:right;"></b></a></li>
                                         <li class="divider"></li>
                                         <li><a href="#" data-target='#Logout' data-toggle='modal'>Sign Out <b class="fa fa-sign-out" style="float:right;"></b></a></li>
@@ -181,6 +181,31 @@ $MajorCourse = $course_qry[0][0];
             </div>
             <!-- .top-bar -->
             <!-- End Top Bar -->
+
+            <!-- Modal -->
+            <div class="modal fade" id="Logout" role="dialog">
+                <div class="modal-dialog" style="padding:100px">
+                    <!-- Modal content-->
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                            <h4 class="modal-title">Sign Out</h4>
+                        </div>
+                        <div class="modal-body">
+                            <div class="col-md-15 fieldcol">
+                                <label>Do you want to sign out?</label>
+                            </div>
+                            <div class="modal-footer">
+                                <a href="../../logout.php"
+                                   class="btn btn-primary">Sign Out</a>
+                                <button type="button" class="btn btn-default" data-dismiss="modal">
+                                    Cancel
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
 
             <!-- Start  Logo & Naviagtion  -->
             <div class="navbar navbar-default navbar-top">
@@ -239,7 +264,7 @@ $MajorCourse = $course_qry[0][0];
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <label>Address</label>
-                                    <input type="text" class="form-control" id="CompanyAddress" name="CompanyAddress" value="http://">
+                                    <input type="text" class="form-control" id="CompanyAddress" name="CompanyAddress">
                                 </div>
                             </div>
                         </div>
@@ -443,7 +468,7 @@ $MajorCourse = $course_qry[0][0];
                     <div class="col-md-3 sidebar left-sidebar">
                         <!-- Search Widget -->
                         <div class="call-action call-action-boxed call-action-style2 clearfix">
-                            (*) Note: Required fields.
+                            <label><span>(*)</span> Note: Required fields.</label>
                         </div>
                     </div>
                     <!--End sidebar-->
@@ -484,13 +509,13 @@ $MajorCourse = $course_qry[0][0];
 
     $(document).ready(function() {
         var text_max = 150;
-        $('#textarea_feedback').html(text_max + ' characters remaining');
+        $('#textarea_feedback').html(text_max + ' characters remaining.');
 
         $('#NatureOfWork').keyup(function() {
             var text_length = $('#NatureOfWork').val().length;
             var text_remaining = text_max - text_length;
 
-            $('#textarea_feedback').html(text_remaining + ' characters remaining');
+            $('#textarea_feedback').html(text_remaining + ' characters remaining.');
         });
     });
 

@@ -507,7 +507,7 @@ if($References == "ok"){
                             </div>
                             <div class="col-md-6">
                                 <a href="add/add-link.php" class="main-button" style="float:right;">
-                                    <span class="fa fa-plus"> Add Links</h6></span>
+                                    <span class="fa fa-plus"> Add Link</h6></span>
                                 </a>
                             </div>
                         </div>

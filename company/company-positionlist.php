@@ -76,10 +76,8 @@ $companyupdate_tbl =
     <link rel="stylesheet" href="../css/font-awesome.min.css" type="text/css" media="screen">
 
     <!-- Fonts -->
-    <link href="../fonts/ffonts/montserrat.css" rel="stylesheet" type="text/css">
-    <link href="../fonts/ffonts/kaushan.css" rel="stylesheet" type="text/css">
-    <link href="../fonts/ffonts/droid.css" rel="stylesheet" type="text/css">
-    <link href="../fonts/ffonts/roboto.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" type="text/css" href="../fonts/ffonts/montserrat.css">
+    <link rel="stylesheet" type="text/css" href="../fonts/ffonts/open-sans.css">
 
     <!-- Slicknav -->
     <link rel="stylesheet" type="text/css" href="../css/slicknav.css" media="screen">
@@ -172,10 +170,6 @@ $companyupdate_tbl =
                     </a>
                 </div>
                 <div class="navbar-collapse collapse">
-                    <!-- Sign-out -->
-                    <div class="signout-side">
-                        <a class="show-signout" data-toggle='modal' data-target='#Logout'><i class="fa fa-sign-out"></i></a>
-                    </div>
                     <!-- Modal -->
                     <div class="modal fade" id="Logout"
                          role="dialog">
@@ -184,17 +178,17 @@ $companyupdate_tbl =
                             <div class="modal-content">
                                 <div class="modal-header">
                                     <button type="button" class="close" data-dismiss="modal">&times;</button>
-                                    <h4 class="modal-title">Log out?</h4>
+                                    <h4 class="modal-title">Sign Out</h4>
                                 </div>
                                 <div class="modal-body">
                                     <div class="col-md-15 fieldcol">
-                                        <label = "usr" class = "control-label">Do you want to log out?</label>
+                                        <label = "usr" class = "control-label">Do you want to sign out?</label>
                                         <div class="form-group">
                                         </div>
                                     </div>
                                     <div class="modal-footer">
                                         <a href="logout.php"
-                                           class="btn btn-primary">Log out</a>
+                                           class="btn btn-primary">Sign Out</a>
                                         <button type="button" class="btn btn-default" data-dismiss="modal">
                                             Cancel
                                         </button>
@@ -210,7 +204,7 @@ $companyupdate_tbl =
                             <a href="company.php">Home</a>
                         </li>
                         <li>
-                            <a>Position</a>
+                            <a class="active" >Position</a>
                             <ul class="dropdown">
                                 <li><a class="active" href="company-positionlist.php">Position List</a></li>
                                 <li><a href="company-createposition.php">Create Position</a></li>
@@ -219,7 +213,7 @@ $companyupdate_tbl =
                         <li>
                             <a>Applicant List</a>
                             <ul class="dropdown">
-                                <li><a href="company-pendingapplicants.php" class="active">Pending</a></li>
+                                <li><a href="company-pendingapplicants.php">Pending</a></li>
                                 <li><a href="company-acceptedapplicants.php">Accepted</a></li>
                             </ul>
                         </li>
@@ -236,7 +230,7 @@ $companyupdate_tbl =
                     <a href="company.php">Home</a>
                 </li>
                 <li>
-                    <a>Position</a>
+                    <a class="active">Position</a>
                     <ul class="dropdown">
                         <li><a class="active" href="company-positionlist.php">Position List</a></li>
                         <li><a href="company-createposition.php">Create Position</a></li>
@@ -245,7 +239,7 @@ $companyupdate_tbl =
                 <li>
                     <a>Applicant List</a>
                     <ul class="dropdown">
-                        <li><a href="company-pendingapplicants.php" class="active">Pending</a></li>
+                        <li><a href="company-pendingapplicants.php">Pending</a></li>
                         <li><a href="company-acceptedapplicants.php">Accepted</a></li>
                     </ul>
                 </li>
@@ -308,10 +302,10 @@ $companyupdate_tbl =
                 <thead>
                 <tr>
                     <th width='30%' class='tabletitle'>Positions</th>
-                    <th width='20%' class='tabletitle'>From</th>
-                    <th width='20%' class='tabletitle'>To</th>
+                    <th width='15%' class='tabletitle'>From</th>
+                    <th width='15%' class='tabletitle'>To</th>
                     <th width='20%' class='tabletitle'>Available Position</th>
-                    <th width='15%' class='tabletitle'>Action</th>
+                    <th width='20%' class='tabletitle'>Action</th>
                 <tr>
                 </thead>
                 <?php
@@ -339,11 +333,11 @@ $companyupdate_tbl =
                     ?>
                     <tbody>
                     <tr>
-                        <td width=20% class='tabletitle'><?php echo $PositionTitle; ?></td>
-                        <td width=20% class='tabletitle'><?php echo $PostingDateFrom; ?></td>
-                        <td width=20% class='tabletitle'><?php echo $PostingDateTo; ?></td>
+                        <td width=30% class='tabletitle'><?php echo $PositionTitle; ?></td>
+                        <td width=15% class='tabletitle'><?php echo $PostingDateFrom; ?></td>
+                        <td width=15% class='tabletitle'><?php echo $PostingDateTo; ?></td>
                         <td width=20% class='tabletitle'><?php echo $AvPosition; ?></td>
-                        <td width=15% class='tabletitle'>
+                        <td width=20% class='tabletitle'>
                             <button name="btnedit" data-toggle='modal'
                                     data-target='#UpdatePosition<?php echo $PositionID; ?>' class='btn btn-default'>
                                 <i class='fa fa-eye'></i>

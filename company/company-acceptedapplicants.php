@@ -56,10 +56,8 @@ $cLastName = $companyinfo_tbl[0][2];
     <link rel="stylesheet" href="../css/font-awesome.min.css" type="text/css" media="screen">
 
     <!-- Fonts -->
-    <link href="../fonts/ffonts/montserrat.css" rel="stylesheet" type="text/css">
-    <link href="../fonts/ffonts/kaushan.css" rel="stylesheet" type="text/css">
-    <link href="../fonts/ffonts/droid.css" rel="stylesheet" type="text/css">
-    <link href="../fonts/ffonts/roboto.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" type="text/css" href="../fonts/ffonts/montserrat.css">
+    <link rel="stylesheet" type="text/css" href="../fonts/ffonts/open-sans.css">
 
     <!-- Slicknav -->
     <link rel="stylesheet" type="text/css" href="../css/slicknav.css" media="screen">
@@ -195,7 +193,7 @@ $cLastName = $companyinfo_tbl[0][2];
                             </ul>
                         </li>
                         <li>
-                            <a>Applicant List</a>
+                            <a class="active">Applicant List</a>
                             <ul class="dropdown">
                                 <li><a href="company-pendingapplicants.php">Pending</a></li>
                                 <li><a href="company-acceptedapplicants.php" class="active">Accepted</a></li>
@@ -221,7 +219,7 @@ $cLastName = $companyinfo_tbl[0][2];
                     </ul>
                 </li>
                 <li>
-                    <a class="active" href="company-applicants.php">Applicant List</a>
+                    <a class="active">Applicant List</a>
                     <ul class="dropdown">
                         <li><a href="company-pendingapplicants.php">Pending</a></li>
                         <li><a href="company-acceptedapplicants.php" class="active">Accepted</a></li>

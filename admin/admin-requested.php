@@ -327,16 +327,27 @@ if(isset($_SESSION['AdminID'])){
                 $requestlog_tbl =
                     GSecureSQL::query(
                         "SELECT
-                                logrequesttbl.LID,
-                                logrequesttbl.CompanyID,
-                                logrequesttbl.Course,
-                                logrequesttbl.Status,
-                                logrequesttbl.DateRequested,
-                                companyinfotbl.CompanyName,
-                                companyinfotbl.City
-                            FROM
-                                companyinfotbl
-                            INNER JOIN logrequesttbl ON companyinfotbl.CompanyID = logrequesttbl.CompanyID WHERE logrequesttbl.Status = 'Pending' ORDER BY logrequesttbl.DateRequested ASC",
+                            logrequesttbl.LID,
+                            logrequesttbl.CompanyID,
+                            logrequesttbl.Course,
+                            logrequesttbl.Status,
+                            logrequesttbl.DateRequested,
+                            logrequesttbl.PositionTitle,
+                            logrequesttbl.EmployeeClassification,
+                            logrequesttbl.PositionLevel,
+                            logrequesttbl.Description,
+                            logrequesttbl.Qualifications,
+                            logrequesttbl.Location,
+                            logrequesttbl.SalaryRange,
+                            logrequesttbl.RequiredYOE,
+                            logrequesttbl.CFG,
+                            logrequesttbl.DurationOfRequest,
+                            logrequesttbl.MarketingMaterials,
+                            companyinfotbl.CompanyName,
+                            companyinfotbl.City
+                        FROM
+                            companyinfotbl
+                        INNER JOIN logrequesttbl ON companyinfotbl.CompanyID = logrequesttbl.CompanyID WHERE logrequesttbl.Status = 'Pending' ORDER BY logrequesttbl.DateRequested ASC",
                         TRUE
                     );
                 foreach ($requestlog_tbl as $value) {
@@ -345,8 +356,19 @@ if(isset($_SESSION['AdminID'])){
                 $Course = $value[2];
                 $Status = $value[3];
                 $DateRequested = $value[4];
-                $CompanyName = $value[5];
-                $Location = $value[6];
+                $PositionTitle = $value[5];
+                $EmployeeClassification = $value[6];
+                $PositionLevel = $value[7];
+                $Description = $value[8];
+                $Qualifications = $value[9];
+                $Location = $value[10];
+                $SalaryRange = $value[11];
+                $RequiredYOE = $value[12];
+                $CFG = $value[13];
+                $DurationOfRequest = $value[14];
+                $MarketingMaterials = $value[15];
+                $CompanyName = $value[16];
+                $Location = $value[17];
                 ?>
                 <tr>
                     <td width=25% class=tabletitle><a href='#'><?php echo $CompanyName; ?></a></td>
@@ -375,14 +397,130 @@ if(isset($_SESSION['AdminID'])){
                                     <div class='col-md-15 fieldcol'>
                                         <label = 'usr' class = 'control-label'>Do you want to accept this request? <br>
                                         Courses to be approved:</label>
-                                        <?php
-                                        $Course = explode(", ", $Course);
-                                        foreach ($Course as $value1) {
-                                            $Course = $value1;
-                                            ?>
-                                            <ul>
-                                                <li class="fa fa-angle-right"> <?php echo $Course; ?></li>
-                                            </ul>
+                                        <div class="row">
+                                        <div class="col-md-3">
+                                            <label> Position Title: </label>
+                                        </div>
+                                        <div class="col-md-3">
+                                                <div class="form-group">
+                                                    <label><?php echo $PositionTitle; ?></label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        &nbsp;
+                                        <div class="row">
+                                            <div class="col-md-3">
+                                                <label> Employee Classification: </label>
+                                            </div>
+                                            <div class="col-md-4">
+                                                <div class="form-group">
+                                                    <label> <?php echo $EmployeeClassification; ?> </label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-3">
+                                                <label>Level: </label>
+                                            </div>
+                                            <div class="col-md-4">
+                                                <div class="form-group">
+                                                    <label> <?php echo $PositionLevel; ?> </label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-3">
+                                                <label> Description: </label>
+                                            </div>
+                                            <div class="col-md-4">
+                                                <div class="form-group">
+                                                    <label> <?php echo $Description; ?> </label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-3">
+                                                <label>  Qualifications: </label>
+                                            </div>
+                                            <div class="col-md-4">
+                                                <div class="form-group">
+                                                    <label> <?php echo $Qualifications; ?> </label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-3">
+                                                <label> Location: </label>
+                                            </div>
+                                            <div class="col-md-4">
+                                                <div class="form-group">
+                                                    <label> <?php echo $Location; ?> </label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        &nbsp;
+                                        <div class="row">
+                                            <div class="col-md-3">
+                                                <label> Range of Salary: </label>
+                                            </div>
+                                            <div class="col-md-4">
+                                                <div class="form-group">
+                                                    <label> <?php echo $SalaryRange; ?> </label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        &nbsp;
+                                        <div class="row">
+                                            <div class="col-md-3">
+                                                <label> Required years of experience: </label>
+                                            </div>
+                                            <div class="col-md-4">
+                                                <div class="form-group">
+                                                    <label> <?php echo $RequiredYOE; ?> </label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-3">
+                                                <label> Consider Fresh Graduate: </label>
+                                            </div>
+                                            <div class="col-md-4">
+                                                <div class="form-group">
+                                                    <label> <?php echo $CFG; ?> </label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        &nbsp;
+                                        <div class="row">
+                                            <div class="col-md-3">
+                                                <label> Duration of Request: </label>
+                                            </div>
+                                            <div class="col-md-4">
+                                                <div class="form-group">
+                                                    <label> <?php echo $DurationOfRequest; ?> </label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        &nbsp;
+                                        <div class="row">
+                                            <div class="col-md-3">
+                                                <label>Materials for posting.: </label>
+                                            </div>
+                                            <div class="col-md-4">
+                                                <div class="form-group">
+                                                    <label> <?php echo $MarketingMaterials; ?> </label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                            &nbsp;
+                                            <?php
+                                            $Course = explode(", ", $Course);
+                                            foreach ($Course as $value1) {
+                                                $Course = $value1;
+                                                ?>
+                                                <ul>
+                                                    <li class="fa fa-angle-right"> <?php echo $Course; ?></li>
+                                                </ul>
                                             <?php
                                         }
                                         ?>

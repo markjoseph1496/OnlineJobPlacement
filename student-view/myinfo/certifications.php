@@ -492,14 +492,14 @@ if($References == "ok"){
                                     <td><?php echo $Certification; ?></td>
                                     <td><?php echo $YearTaken; ?></td>
                                     <td class="text-center">
-                                        <button class="btn btn-danger" data-toggle="modal"
-                                                data-target="#DeleteCertification<?php echo $CertificationID; ?>">
-                                            <i class="fa fa-trash fa-1x"></i>
-                                        </button>
                                         <a href="edit/edit-certification.php?id=<?php echo $CertificationID; ?>"
                                            class="btn btn-default">
                                             <i class="fa fa-pencil-square-o fa-1x"></i>
                                         </a>
+                                        <button class="btn btn-danger" data-toggle="modal"
+                                                data-target="#DeleteCertification<?php echo $CertificationID; ?>">
+                                            <i class="fa fa-trash fa-1x"></i>
+                                        </button>
                                     </td>
                                 </tr>
                                 <!-- Modal -->

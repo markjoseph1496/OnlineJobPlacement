@@ -1,64 +1,4 @@
-<?php
-include('../connection.php');
-session_start();
 
-if(isset($_SESSION['AdminID'])){
-    $AdminID = $_SESSION['AdminID'];
-}else{
-    header("location: ../login-admin.php");
-}
-
-$CourseID = $_GET['id'];
-
-$course_tbl =
-    GSecureSQL::query(
-        "SELECT * FROM coursetbl WHERE CourseID = ?",
-        TRUE,
-        "s",
-        $CourseID
-    );
-$CourseTitle = $course_tbl[0][1];
-$CourseCode = $course_tbl[0][2];
-
-$studentinfo_tbl =
-    GSecureSQL::query(
-        "SELECT COUNT(*) FROM studentinfotbl WHERE MajorCourse=?",
-        TRUE,
-        "s",
-        $CourseCode
-    );
-$Total = $studentinfo_tbl[0][0];
-
-$work_tbl =
-    GSecureSQL::query(
-        "SELECT StudentID, DateToYear FROM workexperiencetbl",
-        TRUE
-    );
-$count = 0;
-foreach($work_tbl as $value){
-    $StudentID = $value[0];
-    $DateToYear = $value[1];
-
-    if($DateToYear=="Current"){
-        $count++;
-    }
-    if ($count == 0) {
-        GSecureSQL::query(
-            "UPDATE studentinfotbl SET EmploymentStatus = 'Unemployed' WHERE StudentID = ?",
-            FALSE,
-            "s",
-            $StudentID
-        );
-    } else {
-        GSecureSQL::query(
-            "UPDATE studentinfotbl SET EmploymentStatus = 'Employed' WHERE StudentID = ?",
-            FALSE,
-            "s",
-            $StudentID
-        );
-    }
-}
-?>
 <!doctype html>
 <html lang="en">
 <head>
@@ -87,7 +27,7 @@ foreach($work_tbl as $value){
     <script src="../js/bootstrap.min.js" type="text/javascript"></script>
 
     <!-- BootstrapValidator -->
-    <script src="../js/bootstrapValidator.min.js" type="text/javascript"></script>
+   <script src="../js/bootstrapValidator.min.js" type="text/javascript"></script>
 
     <!-- Font Awesome CSS -->
     <link rel="stylesheet" href="../css/font-awesome.min.css" type="text/css" media="screen">
@@ -161,9 +101,7 @@ foreach($work_tbl as $value){
                 <div class="row">
                     <div class="col-md-6">
                         <!-- Start Contact Info -->
-                            <ul class="contact-details">
-                                <li class="profile-name"><i class="fa fa-hashtag"></i> <b>008-2012-0805</b></li>
-                            </ul>
+                            &nbsp;
                         <!-- End Contact Info -->
                     </div>
                     <!-- .col-md-6 -->
@@ -332,7 +270,7 @@ foreach($work_tbl as $value){
     <div class="container">
         <div class="row">
             <div class="col-md-6">
-                <h2>Reports</h2>
+                <h2>View Student</h2>
             </div>
         </div>
     </div>
@@ -343,145 +281,46 @@ foreach($work_tbl as $value){
 <br><br><br>
 
 <div class="container">
-    <div class="header_advertising">
-        <div class="container">
-            <div class="col-md-8">
-                <h5> <?php echo $CourseTitle; ?> <h5>
-            </div>
-            <div class="col-md-4">
-                <div class="form-group text-center">
-                    <a href="admin-addcourse.php" class="main-button" style="float:right;">
-                        <span class="fa fa-download"></span> Export XLS
-                    </a>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="header2_advertising">
-        <div class="container">
-            <div class = "row-field">
-            <div class="col-sm-4">
-                <label><b>TOTAL NUMBER OF STUDENTS: <?php echo $Total; ?></b></label>
-            </div>
-            <div class="col-sm-4">
-                <div class="form-group">
-                        <input type="text" name= id= "" class="form-control"
-                               value="" placeholder = "Enter Student Name">
-                </div>
-            </div>
-            <div class="col-sm-4">
-                 <button type="submit" class="btn-system btn-large border-btn" href="#" style = "width:100px;" >Search</button>
-            </div>
-            </div>
-            <div class = "row-field">
-            <div class = "col-md-4" style = "margin-left:380px;" >
-                    <label>
-                        <center><b>Select Employment Status </b>
-                    </label></center>
-                    <select id="status" name="status" class="form-control" style="width:350px;">
-                        <option value="pos"> Select One</option>
-                        <option value="emp">Employed</option>
-                        <option value="unemp">Unemployed</option>
-                    </select><br>
-            </div>
-            <div class="col-md-3" style = "margin-top:15px;" >
-                 <button type="submit" class="btn-system btn-large border-btn" href="#" style = "width:100px;">Filter</button>
-            </div>
-            </div>
-                       
-              
-            </div>
-        </div>
-    </div>
-  <div class = "container">  
-    <table class="table segment table-hover">
+   <div class = "row-field">
+    <div class = "col-md-8">
+        <h1>Aguinaldo,Nicko</h1>
+     </div>
+     <div class = "col-md-2">
+        <label>Employment Status:</label>
+     </div>
+     <div class = "col-md-2">
+        <p style = "text-indent:-30px; margin-top:2px;">Employed</p>
+     </div>
+    </div> 
+     <BR>&nbsp;<BR>&nbsp;
+     <div class = "col-md-12">
+        <h3>Work History</h3>
+     </div>
+     <BR>
+     <div class = "col-md-12">
+        <table class="table segment table-hover">
         <thead>
         <tr>
 
         </tr>
         <tr>
-            <th width="25%" class="tabletitle"> Student Name</th>
-            <th width="15%" class="tabletitle"> Position Level</th>
-            <th width="20%" class="tabletitle"> Specialization</th>
-            <th width="15%" class="tabletitle"> Industry</th>
-            <th width="20%" class="tabletitle"> Employment Status</th>
-            <th width="5%" class="tabletitle"></th>
+            <th width="30%" class="tabletitle"> Company Name</th>
+            <th width="25%" class="tabletitle"> Position Level</th>
+            <th width="25%" class="tabletitle"> Employment Type</th>
+            <th width="20%" class="tabletitle"> Date</th>
         <tr>
         </thead>
-        <?php
-        $studentinfocourse_tbl =
-            GSecureSQL::query(
-                "SELECT
-                StudentID,
-                FirstName,
-                LastName,
-                EmploymentStatus
-                FROM studentinfotbl
-                WHERE MajorCourse = ?
-                ORDER BY LastName ASC",
-                TRUE,
-                "s",
-                $CourseCode
-            );
-        foreach ($studentinfocourse_tbl as $value) {
-            $StudentID = $value[0];
-            $FirstName = $value[1];
-            $LastName = $value[2];
-            $FullName = $LastName . ", " . $FirstName;
-            $EmploymentStatus = $value[3];
-
-            $positionlevel_tbl =
-                GSecureSQL::query(
-                    "SELECT PositionLevel FROM workexperiencetbl WHERE StudentID = ? LIMIT 3",
-                    TRUE,
-                    "s",
-                    $StudentID
-                );
-            $specialization_tbl =
-                GSecureSQL::query(
-                    "SELECT Specialization FROM workexperiencetbl WHERE StudentID = ? LIMIT 3",
-                    TRUE,
-                    "s",
-                    $StudentID
-                );
-            $industry_tbl =
-                GSecureSQL::query(
-                    "SELECT Industry FROM workexperiencetbl WHERE StudentID = ? LIMIT 3",
-                    TRUE,
-                    "s",
-                    $StudentID
-                );
-
-            $positionlevel_tbl = array_reduce($positionlevel_tbl, 'array_merge', array());
-            $specialization_tbl = array_reduce($specialization_tbl, 'array_merge', array());
-            $industry_tbl = array_reduce($industry_tbl, 'array_merge', array());
-
-            $PositionLevel = implode(", ", $positionlevel_tbl);
-            $Specialization = implode(", ", $specialization_tbl);
-            $Industry = implode(", ", $industry_tbl);
-            ?>
             <tbody>
             <tr>
-                <td>
-                    <a href = 'resumelink.php'><?php echo $FullName; ?></a>
-                </td>
-                <td class = 'tcenter'><?php echo $PositionLevel; ?></td>
-                <td class = 'tcenter'><?php echo $Specialization; ?></td>
-                <td class = 'tcenter'><?php echo $Industry; ?></td>
-                <td class = 'tcenter'><?php echo $EmploymentStatus; ?></td>
-                <td>
-                   <a href = "admin-viewstudent.php" name="btnedit" 
-                                    class='btn btn-default'>
-                                <i class='fa fa-eye'></i>
-                    </a>
-                </td>
+                <td class = 'tcenter'></td>
+                <td class = 'tcenter'></td>
+                <td class = 'tcenter'></td>
+                <td class = 'tcenter'></td>
             </tr>
             </tbody>
-            <?php
-        }
-        ?>
     </table>
-</div>
+     </div>   
+    
 </div>
 <br><br>
 </body>
