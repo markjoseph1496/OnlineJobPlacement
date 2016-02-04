@@ -1,3 +1,26 @@
+<?php
+include('../connection.php');
+session_start();
+
+if(isset($_SESSION['CompanyID'])){
+    $CompanyID = $_SESSION['CompanyID'];
+}
+else{
+    header("location: ../login-company.php");
+}
+
+$companyinfo_tbl =
+    GSecureSQL::query(
+        "SELECT CompanyName, FirstName, LastName FROM companyinfotbl WHERE CompanyID = ?",
+        TRUE,
+        "s",
+        $CompanyID
+    );
+$CompanyName = $companyinfo_tbl[0][0];
+$cFirstName = $companyinfo_tbl[0][1];
+$cLastName = $companyinfo_tbl[0][2];
+
+?>
 <!doctype html>
 <html lang="en">
 
