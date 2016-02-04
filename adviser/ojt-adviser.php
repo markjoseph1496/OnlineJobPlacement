@@ -321,11 +321,8 @@ session_start();
                     $c++;
                 }
 
-                if ($sql) {
-                    echo "You database has imported successfully. You have inserted " . $c . " recoreds";
-                } else {
-                    echo "Sorry! There is some problem.";
-                }
+                echo "You database has imported successfully. You have inserted " . $c . " records";
+
 
             }
             ?>
