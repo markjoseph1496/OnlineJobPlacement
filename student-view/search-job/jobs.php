@@ -389,7 +389,6 @@ $MajorCourse = $coursetbl[0][0];
                     </div>
                     <!--End sidebar-->
 
-
                     <!-- Start Blog Posts -->
                     <div class="col-md-9 blog-box">
                         <h4 class="classic-title"><span>Jobs</span></h4>
