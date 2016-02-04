@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50616
 File Encoding         : 65001
 
-Date: 2016-02-04 02:40:38
+Date: 2016-02-05 01:15:57
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -31,6 +31,27 @@ CREATE TABLE `achievementstbl` (
 INSERT INTO achievementstbl VALUES ('1', '00820120004', 'dfsdfs');
 INSERT INTO achievementstbl VALUES ('2', '00820120001', 'asdasdas');
 INSERT INTO achievementstbl VALUES ('3', '00820120001', 'asdsadsadas');
+
+-- ----------------------------
+-- Table structure for `admineventtbl`
+-- ----------------------------
+DROP TABLE IF EXISTS `admineventtbl`;
+CREATE TABLE `admineventtbl` (
+  `EventID` int(11) NOT NULL AUTO_INCREMENT,
+  `AdminID` varchar(255) DEFAULT NULL,
+  `EventTitle` varchar(255) DEFAULT NULL,
+  `EventDatef` varchar(255) DEFAULT NULL,
+  `EventDatet` varchar(255) DEFAULT NULL,
+  `Location` varchar(255) DEFAULT NULL,
+  `Description` varchar(255) DEFAULT NULL,
+  `Status` varchar(255) DEFAULT NULL,
+  PRIMARY KEY (`EventID`)
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
+
+-- ----------------------------
+-- Records of admineventtbl
+-- ----------------------------
+INSERT INTO admineventtbl VALUES ('1', '1', 'asdasd', '2016-02-04', '2016-02-25', 'asdasd', 'asdasdad', null);
 
 -- ----------------------------
 -- Table structure for `admintbl`
@@ -54,7 +75,7 @@ CREATE TABLE `admintbl` (
 -- ----------------------------
 -- Records of admintbl
 -- ----------------------------
-INSERT INTO admintbl VALUES ('1', '1', '0a7675b497c9e79aa2ddd1dbd39ed429b54bc044f704d85b4427ff23f35df299fcae46a6d86d6e900da432d59fd731ab6a643cea23de2d59ac7274209962b3fd', '59eba39dc8615e72ae9b7a0d76b06fc99aace644b3460c7b0a2b0d8c236663733e2ad0df55ea18a352a3c015355b362655ed563f1164c3682b6742a2fb438b85', 'Mark Joseph', 'Flaviano', 'Cinco', 'Janitor', '2890 A. Pablo St. Karuhatan, Valenzuela City.', '09355585931', '1');
+INSERT INTO admintbl VALUES ('1', 'markjoseph1496', '0a7675b497c9e79aa2ddd1dbd39ed429b54bc044f704d85b4427ff23f35df299fcae46a6d86d6e900da432d59fd731ab6a643cea23de2d59ac7274209962b3fd', '59eba39dc8615e72ae9b7a0d76b06fc99aace644b3460c7b0a2b0d8c236663733e2ad0df55ea18a352a3c015355b362655ed563f1164c3682b6742a2fb438b85', 'Mark Joseph', 'Flaviano', 'Cinco', 'Janitor', '2890 A. Pablo St. Karuhatan, Valenzuela City.', '09355585931', '1');
 INSERT INTO admintbl VALUES ('2', 'mark', 'mark', '', 'mark', 'mark', 'mark', 'mark', 'asa', '', '0');
 INSERT INTO admintbl VALUES ('3', 'asdasd', 'asdasd', '', 'asdasd', 'asdad', 'asda', 'dada', 'adada', 'dad', '0');
 INSERT INTO admintbl VALUES ('4', 'saf', 'fasfasfas', '', 'faf', 'afaf', 'afa', 'tagahugas pinggan', 'dads', 'adadsa', '0');
@@ -132,7 +153,7 @@ CREATE TABLE `companyinfotbl` (
 -- ----------------------------
 INSERT INTO companyinfotbl VALUES ('1', 'Sykes', 'aa', 'Consulting (Business and Management)', null, 'Quezon City', '1', '11', '1a', '1', 'Mark Joseph', 'Flaviano', 'Cinco', 'aa', 'asdsadasas', '1', 'a9920687fd51c8f6ba165bb9fe963ccd0a47f99a88c76b343fe7792477f24a42e17eca217ec72c4e2adfd4b35effc5d0a6481c09280850da0f4349db83b05c26', '0dedd75782209edca197c3d0c6416f10820a50f246ab9c35e6a121fadede01e7794cd8aff26fbfb3c2cf1af60f0b54deac56f5404e875a0e7c9255d76653abfe', 'aadsd', 'Active', 'http://www.google.com', 'ProfileImage/1.jpg');
 INSERT INTO companyinfotbl VALUES ('2', 'PureGold', null, 'Commodities Production / Distribution', null, 'Caloocan City', null, null, null, null, 'Rey', '', 'Tan', 'manager', 'management', 'PureGold@gmail.com', 'c86d5a4a02d240e3344cdedd67e1ff9e17647d3480828665db0e1870522ada6c236fff2edfffaaa2e064cd54da1f9b8c862bbe50dd50c605be9f80d424518d5e', '2f66a73a55daff62097eacd1ad1949a16794be0c18766f5d08bbabb2f3cd4b7c0ab0c1ea8c70a7e3387e9588ed84b6985847e33bed2cf916326702eed998db49', null, 'Active', 'http://www.google.com', null);
-INSERT INTO companyinfotbl VALUES ('3', 'Millennuim', null, 'Computer / Information Technology (Hardware)', null, 'Caloocan City', null, null, null, null, 'Kendi', '', 'Bensurto', 'Manager', 'Management', 'Millennuim@gmail.com', 'eb1e4ac0fb4352ea90ce3b5fcb2f9a8d812b8357994afbcd59e50472df7b5df7580efb57e49f4e216b0b392627ea02cc22c4d778b743fc960917901643b07220', '38e6ae277ba4edf23bcce814288953badde89f8d6a3dbdca204e0bcad35da5a4c2a69a3656983616f529e21c477b4fd888f68d8569897fca45b0ba53917b7722', null, 'Active', 'http://www.google.com', null);
+INSERT INTO companyinfotbl VALUES ('3', 'Millennuim', 'This account development manager sample job description can assist in your creating a job application that will attract job candidates who are qualified for the job. Feel free to revise this job description to meet your specific job duties and job requirements.', 'Computer / Information Technology (Hardware)', null, 'Caloocan City', null, null, null, null, 'Kendi', '', 'Bensurto', 'Manager', 'Management', 'Millennuim@gmail.com', 'eb1e4ac0fb4352ea90ce3b5fcb2f9a8d812b8357994afbcd59e50472df7b5df7580efb57e49f4e216b0b392627ea02cc22c4d778b743fc960917901643b07220', '38e6ae277ba4edf23bcce814288953badde89f8d6a3dbdca204e0bcad35da5a4c2a69a3656983616f529e21c477b4fd888f68d8569897fca45b0ba53917b7722', null, 'Active', 'http://www.google.com', null);
 INSERT INTO companyinfotbl VALUES ('4', 'Concentrix', null, 'Computer / Information Technology (Software)', null, 'Navotas City', null, null, null, null, 'Oscar', 'Talusig', 'Sapinosa', 'manager', 'management', 'oskiyaniih@gmail.com', 'cdad6f9440699a7c99014d355fb29ae1f915f8708a84d1b1e3f765271a1080a51a23156ec34f914bda271e968fafb636db402241f821ba9e3b6ee7330b632a65', 'd98a22c63b2b14113aa65d1e85b7fc6f35ca286ad0d4a83a461fe380fc7b6eb9b4800e6368dd8664c96198eb9b3d8c657ba59e08b167c5ce9ab5e49737503a98', null, 'Active', 'http://www.google.com', null);
 INSERT INTO companyinfotbl VALUES ('5', 'oneil associate', null, 'Architectural Services / Interior Designing', null, 'Makati City', null, null, null, null, 'Oneil', '', 'Shack', 'COE', 'head office', 'oneil@gmail.com', '7db06abb97daeabe2257b85431efd2e51d834afdb2a6f04833ae5c0891f468c1c979db1f686ad3a4a1e95a9cec825aae9132377e9d8f79055470b6349a4dd8dd', '98271546b5f45d15a0944cf82f77659c8b4c596b1f44c9308316653fdcaadfcfce260954e19bd7d1e97efbb551bd0d3afde0ad55cab16456ae04a79f0298ff1c', null, 'Active', 'http://www.google.com', null);
 INSERT INTO companyinfotbl VALUES ('6', 'Judee Company', null, 'Computer / Information Technology (Hardware)', null, 'Caloocan City', null, null, null, null, 'Judee', 'Ederon', 'Caballero', 'MAY ARI', 'ICT', 'judeecaballero@gmail.com', 'd0f2386e657a703d25d0f78cb0da7acb253f401dc225f04a71b86441067c7fd122eabe04ac56fbfb6bb32f07e4ec8d5600ddf4e00070a489c75e6e07797757ce', '20e6854801be64fb05eaba64ec585de79627e597e8e058e950930cf75f6c256bf241e1b6b0a35d49fb231a920d50273d34e6f6bc2245e34367f2805d327d22ef', null, 'Active', 'http://www.google.com', null);
@@ -226,7 +247,7 @@ INSERT INTO comppositiontbl VALUES ('31', '2', null, '2016-01-30', '2016-02-06',
 INSERT INTO comppositiontbl VALUES ('32', '2', null, '2016-01-30', '2016-02-06', 'CAMPAIGN PLANNING ASSISTANTS', 'Sernior Executive / Supervisor', 'CAMPAIGN PLANNING ASSISTANTS', 'Architecture/Interior Design', 'Full Time', '2', '20,000 - 25,000', '3', 'BSBM, BSAT, BSCS, BSIT', 'Masteral Degree', 'english', 'Exposure to the field of fashion , Must be creative, resourceful');
 INSERT INTO comppositiontbl VALUES ('33', '3', null, '2016-01-30', '2016-02-06', 'IT Administrator', 'Top Level Management', 'IT Administrator', 'IT/Computer - Project Management', 'Full Time', '2', '45,000 - 50,000', '4', 'BSCS, BSITDA, BSHRM', 'Masteral Degree', 'english', 'Mastery of Networking topic,, Cisco configurations');
 INSERT INTO comppositiontbl VALUES ('34', '3', null, '2016-01-30', '2016-02-06', 'Junior System Administrators', 'Junior Executive', 'Junior System Administrators', 'IT/Computer - QA', 'Full Time', '1', '30,000 - 40,000', '13', 'BSIT, BSAT, BSHRM', 'Bachelor Degree', 'english', 'Basic Linux Server , Basic Firewall understanding');
-INSERT INTO comppositiontbl VALUES ('35', '3', null, '2016-01-30', '2016-02-06', 'Customer Service Representatives', 'Senior Manager', 'Customer Service Representatives', 'IT/Computer - Software Development', 'Full Time', '2', '30,000 - 40,000', '4', 'BSCS, BSIT, BSCPE, BSBM', 'Bachelor Degree', 'Excellent verbal and written English', 'Technical experience, BIG Sales Commissions');
+INSERT INTO comppositiontbl VALUES ('35', '3', null, '2016-01-30', '2016-02-06', 'Customer Service Representative', 'Senior Manager', 'Customer Service Representative', 'IT/Computer - Software Development', 'Full Time', '2', '30,000 - 40,000', '4', 'BSCS, BSIT, BSCPE, BSBM', 'Bachelor Degree', 'Excellent verbal and written English', 'Technical experience, BIG Sales Commissions');
 INSERT INTO comppositiontbl VALUES ('36', '4', null, '2016-01-30', '2016-02-06', 'Call Center Agents', 'Top Level Management', 'Call Center Agents', 'Costing Management', 'Part Time', '1', '25,000 - 30,000', '5', 'BSIT, BSCS, BSIT, BSAT', 'Bachelor Degree', 'Excellent verbal and written English.', '	Admin & HR, Information Technology (IT, General Sales, CS & Business Devpt');
 INSERT INTO comppositiontbl VALUES ('37', '4', null, '2016-01-30', '2016-02-06', 'Technical Support Associate', 'Sernior Executive / Supervisor', 'Technical Support Associate', 'Engineering - Oil/Gas', 'Full Time', '2', '30,000 - 40,000', '3', 'BSCS, BSAT, BSBM, BSHRM', 'Bachelor Degree', 'english', '	Sales, CS & Business Devpt,  Telecommunications Technical support');
 INSERT INTO comppositiontbl VALUES ('38', '4', null, '2016-01-30', '2016-02-06', 'Tech Support for Windows/Linux Based Platform', 'Senior Manager', 'Tech Support for Windows/Linux Based Platform', 'IT/Computer - Software Development', 'Full Time', '2', '30,000 - 40,000', '5', 'BSCS, BSIT, BSCPE', 'Bachelor Degree', 'english', '	Information Technology, Programming,  Application / Software');
@@ -275,7 +296,7 @@ CREATE TABLE `documentstbl` (
   `DocumentPath` varchar(255) NOT NULL,
   `SaltedName` varchar(255) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- ----------------------------
 -- Records of documentstbl
@@ -292,13 +313,13 @@ CREATE TABLE `languagetbl` (
   `WrittenProf` varchar(255) NOT NULL,
   `SpokenProf` varchar(255) NOT NULL,
   PRIMARY KEY (`LangID`)
-) ENGINE=MyISAM AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
 
 -- ----------------------------
 -- Records of languagetbl
 -- ----------------------------
 INSERT INTO languagetbl VALUES ('1', '00820120004', 'asdsad', '', '');
-INSERT INTO languagetbl VALUES ('2', '00820120001', 'eeddd', '', '');
+INSERT INTO languagetbl VALUES ('3', '00820120001', 'asdsadsa', '', '');
 
 -- ----------------------------
 -- Table structure for `listofindustrytbl`
@@ -408,7 +429,7 @@ CREATE TABLE `listofsalaryrangetbl` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `SalaryRange` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=latin1;
 
 -- ----------------------------
 -- Records of listofsalaryrangetbl
@@ -420,6 +441,7 @@ INSERT INTO listofsalaryrangetbl VALUES ('4', '25,000 - 30,000');
 INSERT INTO listofsalaryrangetbl VALUES ('5', '30,000 - 40,000');
 INSERT INTO listofsalaryrangetbl VALUES ('6', '40,000 - 45,000');
 INSERT INTO listofsalaryrangetbl VALUES ('7', '45,000 - 50,000');
+INSERT INTO listofsalaryrangetbl VALUES ('8', 'Negotiable');
 
 -- ----------------------------
 -- Table structure for `listofspecializationtbl`
@@ -522,19 +544,31 @@ INSERT INTO listofspecializationtbl VALUES ('81', 'Training and Development');
 DROP TABLE IF EXISTS `logrequesttbl`;
 CREATE TABLE `logrequesttbl` (
   `LID` int(11) NOT NULL AUTO_INCREMENT,
-  `CompanyID` varchar(11) DEFAULT NULL,
-  `Course` varchar(255) DEFAULT NULL,
-  `DateFrom` varchar(255) DEFAULT NULL,
-  `DateTo` varchar(255) DEFAULT NULL,
-  `Status` varchar(255) DEFAULT NULL,
-  `DateRequested` varchar(255) DEFAULT NULL,
+  `CompanyID` varchar(11) NOT NULL,
+  `Course` varchar(255) NOT NULL,
+  `DateFrom` varchar(255) NOT NULL,
+  `DateTo` varchar(255) NOT NULL,
+  `Status` varchar(255) NOT NULL,
+  `DateRequested` varchar(255) NOT NULL,
+  `PositionTitle` varchar(255) NOT NULL,
+  `EmployeeClassification` varchar(255) NOT NULL,
+  `PositionLevel` varchar(255) NOT NULL,
+  `Description` varchar(255) NOT NULL,
+  `Qualifications` varchar(255) NOT NULL,
+  `Location` varchar(255) NOT NULL,
+  `SalaryRange` varchar(255) NOT NULL,
+  `RequiredYOE` varchar(255) NOT NULL,
+  `CFG` varchar(255) NOT NULL,
+  `DurationOfRequest` varchar(255) NOT NULL,
+  `MarketingMaterials` varchar(255) NOT NULL,
   PRIMARY KEY (`LID`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=latin1;
 
 -- ----------------------------
 -- Records of logrequesttbl
 -- ----------------------------
-INSERT INTO logrequesttbl VALUES ('3', '1', 'ABCOMM, ASCT, BSAT, BSBM, BSCPE, BSCS, BSHRM, BSIT, BSITDA, BSTM', '2016-02-01', '2016-02-02', 'Accepted', '2016-02-01');
+INSERT INTO logrequesttbl VALUES ('4', '1', '', '', '', 'Pending', '2016-02-04', 'Position lang', 'Full Time, other to ha', 'Supervisory, other ulit to', 'wala lang trip ko lang', 'basta qualified', 'Malabon City', '203030', '1', 'Yes', '15 Days', 'Yes');
+INSERT INTO logrequesttbl VALUES ('5', '1', '', '', '', 'Pending', '2016-02-04', 'asdadsa', 'Full Time, ', 'Officer, asdsada', 'asdad', 'sadsad', 'Pasig City', '20000', '13', 'Yes', '15 Days', 'Yes');
 
 -- ----------------------------
 -- Table structure for `progresstbl`
@@ -561,8 +595,8 @@ CREATE TABLE `progresstbl` (
 -- ----------------------------
 -- Records of progresstbl
 -- ----------------------------
-INSERT INTO progresstbl VALUES ('1', '00820120001', '100', 'ok', 'ok', 'ok', 'ok', 'ok', 'ok', 'ok', 'ok', 'ok', '', '');
-INSERT INTO progresstbl VALUES ('2', '00820120002', '0', '', '', '', '', '', '', '', '', '', '', '');
+INSERT INTO progresstbl VALUES ('1', '00820120001', '100', 'ok', 'ok', 'ok', 'ok', '', '', '', '', 'ok', '', '');
+INSERT INTO progresstbl VALUES ('2', '00820120002', '0', 'ok', 'ok', 'ok', '', '', '', '', '', '', '', '');
 INSERT INTO progresstbl VALUES ('3', '00820120003', '0', '', '', '', '', '', '', '', '', '', '', '');
 INSERT INTO progresstbl VALUES ('4', '00820120004', '0', '', '', '', '', '', '', '', '', '', '', '');
 INSERT INTO progresstbl VALUES ('5', '00820120005', '0', '', '', '', '', '', '', '', '', '', '', '');
@@ -739,7 +773,7 @@ CREATE TABLE `referencetbl` (
   `Phone` varchar(255) NOT NULL,
   `Email` varchar(255) NOT NULL,
   PRIMARY KEY (`ReferenceID`)
-) ENGINE=MyISAM AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM AUTO_INCREMENT=5 DEFAULT CHARSET=latin1;
 
 -- ----------------------------
 -- Records of referencetbl
@@ -747,6 +781,7 @@ CREATE TABLE `referencetbl` (
 INSERT INTO referencetbl VALUES ('1', '00820120004', 'asdsds', 'sdada', 'adasdsf', 'sfsddfsd', '354565867', 'as4weds@yahoo.com');
 INSERT INTO referencetbl VALUES ('2', '00820120001', 'Tim Joseph Rojas', 'Friend', 'Sykes', 'Top Level Management', '092222222', 'tj@yahoo.com');
 INSERT INTO referencetbl VALUES ('3', '00820120001', 'Aira Jane Cruz', 'Friend', 'Sykes', 'Janitor', '09355585931', 'aira@yahoo.com');
+INSERT INTO referencetbl VALUES ('4', '00820120001', 'asdsad', 'sadasdsa', 'dasdas', 'das', '465464', 'asdas@cc.cc');
 
 -- ----------------------------
 -- Table structure for `requesttocompanytbl`
@@ -960,14 +995,11 @@ CREATE TABLE `specializationtbl` (
   `Proficiency` varchar(255) NOT NULL,
   `Skills` varchar(255) NOT NULL,
   PRIMARY KEY (`SID`)
-) ENGINE=MyISAM AUTO_INCREMENT=409 DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM AUTO_INCREMENT=412 DEFAULT CHARSET=latin1;
 
 -- ----------------------------
 -- Records of specializationtbl
 -- ----------------------------
-INSERT INTO specializationtbl VALUES ('1', '00820120001', 'Design and Development', '1', '3.5', 'skill 1');
-INSERT INTO specializationtbl VALUES ('2', '00820120001', 'Architecture/Interior Design', '3', '3.5', 'skill 2');
-INSERT INTO specializationtbl VALUES ('3', '00820120001', 'Agriculture/Forestry/Fisheries', '2', '4.5', 'skill 3');
 INSERT INTO specializationtbl VALUES ('4', '00820120006', 'Chemistry', '1', '', '');
 INSERT INTO specializationtbl VALUES ('5', '00820120007', 'Clerical/Administrative Support', '3', '', '');
 INSERT INTO specializationtbl VALUES ('6', '00820120008', 'Biotechnology', '1', '', '');
@@ -1363,7 +1395,9 @@ INSERT INTO specializationtbl VALUES ('400', '00820120123', 'Arts/Creative/Graph
 INSERT INTO specializationtbl VALUES ('401', '00820120122', 'Arts/Creative/Graphics Design', '1', '', '');
 INSERT INTO specializationtbl VALUES ('402', '00820120122', 'Biotechnology', '2', '', '');
 INSERT INTO specializationtbl VALUES ('403', '00820120122', 'Clerical/Administrative Support', '4', '', '');
-INSERT INTO specializationtbl VALUES ('407', '00820120001', 'Engineering - Chemical', '1', '5', 'asdasdsa');
+INSERT INTO specializationtbl VALUES ('411', '00820120001', 'IT/Computer - QA', '1', '5', 'Microsoft Powerpoint');
+INSERT INTO specializationtbl VALUES ('409', '00820120001', 'IT/Computer - Software Development', '1', '3.5', 'Java Programming');
+INSERT INTO specializationtbl VALUES ('410', '00820120001', 'IT/Computer - Creative Design', '2', '5', 'Microsoft Word');
 
 -- ----------------------------
 -- Table structure for `studcontactstbl`
@@ -1387,7 +1421,7 @@ CREATE TABLE `studcontactstbl` (
 -- Records of studcontactstbl
 -- ----------------------------
 INSERT INTO studcontactstbl VALUES ('1', '00820120001', 'markjoseph1496@yahoo.com', '2890 A. Pablo St. Karuhatan, Valenzuela City', '09355585931', '', '2790201', '', '', 'Valenzuela City');
-INSERT INTO studcontactstbl VALUES ('2', '00820120002', 'aaaaaaa', '', '2132132155', '', '', '', '', 'Valenzuela City');
+INSERT INTO studcontactstbl VALUES ('2', '00820120002', 'aaa@yahoo.com', '2890 A. Pablo St. Karuhatan, Valenzuela', '2132132155', '', '', '', '', 'Valenzuela City');
 INSERT INTO studcontactstbl VALUES ('3', '00820120003', 'aasdsad@cs.cc', '', '09355585931', '', '', '', '', 'Valenzuela City');
 INSERT INTO studcontactstbl VALUES ('4', '00820120004', 'tristanabad55@gmail.com', '', '09239565052', '', '', '', '', 'Malabon City');
 INSERT INTO studcontactstbl VALUES ('5', '00820120005', 'binary.to.hexa@gmail.com', '', '09261788252', '', '', '', '', 'Caloocan City');
@@ -1573,7 +1607,7 @@ CREATE TABLE `studentinfotbl` (
   `TwitterLink` varchar(255) NOT NULL,
   `ProfileImage` varchar(255) NOT NULL,
   `MajorCourse` varchar(255) NOT NULL,
-  `Objectives` varchar(255) NOT NULL,
+  `Objectives` varchar(300) NOT NULL,
   PRIMARY KEY (`StudentID`)
 ) ENGINE=MyISAM AUTO_INCREMENT=820120165 DEFAULT CHARSET=latin1;
 
@@ -1581,7 +1615,7 @@ CREATE TABLE `studentinfotbl` (
 -- Records of studentinfotbl
 -- ----------------------------
 INSERT INTO studentinfotbl VALUES ('00820120001', 'b6454095efa3f85096ece699c0d9052c572ef11ff92058af5982cd57f3ae399ea7ee458a09433d7982e8979d336c54e5893459851dc5b6179c81fe065fedc674', '808a73c9742958c6714fe7fd11f2d4d244f358ced430174b01c2bc5627af40021889f813b93f8b1b76044aa54caa78a8eff95f7357891d37f451c08f7155e235', 'Mark Joseph', 'Flaviano', 'Cinco', 'Male', '1996-03-14', 'OJT', 'Single', 'Filipino', 'Employed', 'http://www.facebook.com/akodawsimacoy', '', 'ProfileImages/00820120001.jpg', 'BSCS', ' I am seeking a position in the travel industry focusing on sales, customer care and office management. Education.');
-INSERT INTO studentinfotbl VALUES ('00820120002', '8f62544cea6add24e380014ded7ee73e93c9349152d8bb037f4434eb7b09a9fd5334c84a8502c090acadace0839c838c51358473234262600cd0f45270ca9a3f', '9c9f1cc4ea01cc8b4796896f2e016079f810dc30074b467aa5a2b77187080863bc480dcb597551d53cb7a83c3d585bf4d8b07fb7f2d6f3e689a04cfabb93b2d5', 'Wtf', '', 'Wtf', '', '0199-03-14', '', '', '', 'Unemployed', '', '', 'ProfileImages/00820120002.jpg', 'BSCS', '');
+INSERT INTO studentinfotbl VALUES ('00820120002', '8f62544cea6add24e380014ded7ee73e93c9349152d8bb037f4434eb7b09a9fd5334c84a8502c090acadace0839c838c51358473234262600cd0f45270ca9a3f', '9c9f1cc4ea01cc8b4796896f2e016079f810dc30074b467aa5a2b77187080863bc480dcb597551d53cb7a83c3d585bf4d8b07fb7f2d6f3e689a04cfabb93b2d5', 'Wtf', '', 'Wtf', 'Male', '1996-03-14', '', 'Single', 'Somali', 'Unemployed', 'http://www.facebook.com/aaaa', '', 'ProfileImages/00820120002.jpg', 'BSCS', '<?php echo $nPinfo; ?> ');
 INSERT INTO studentinfotbl VALUES ('00820120003', 'daa84497905fe6e26a872cfd699b36b3af689335652d5413e1005bebd6e867f23dad79318efe22dce702c5de70abc1f07f00968001a8ea9664f54fb038140850', '20d7c6e44a2467e1609014c24a31faae35a31aa413338b14f48225141e1aa5679ab2573c5be38b84122913dc6657ebb62d3974a44a7a21f62b7892d1d5e45b12', 'Testing', '', 'Testing', '', '0123-01-01', '', '', '', 'Unemployed', '', '', '', 'BSAT', '');
 INSERT INTO studentinfotbl VALUES ('00820120004', '3d8fd53015c9929dd24e29958d0a939ba5dff8d18f6335138f48d74312df1ac316173f11585b72295067ca57c58d9aa412b6a95c4a09fde4466dc4c2b2caf24e', 'fc914918a09a5e3fb1948c2c677854a3c01e35cc9f29728b4ba9833f0e16c0617a9025d9ee089216c644ab72a52d9000f0a4208fac8777a69e226fb4d7881d8a', 'Tristan', 'adasd', 'Abad', 'Male', '1996-10-31', '', 'Single', 'Filipino', 'Employed', 'http://www.facebook.com/adsadsf', 'sfsdfs', '', 'ASCT', '');
 INSERT INTO studentinfotbl VALUES ('00820120005', 'c2a4eff2f75be4b01d85d3efffaa9c5334a70744f7670c10b6daf3d672cfc7dfaaf1c9e40b6e33b593195017f7d8e714959ad60f18ab77ad7a600c8b2fb002eb', 'da85b1e23a09aad2b4d21695773a6eca951913f20b0288e1b8086c6fc49b31aa77e3bf7fccb25fb6438ae6088ec930e1eb805923fb07f28ef28e7825891b8c4b', 'Mark Anthony', '', 'Abenoja', '', '1988-06-27', '', '', '', 'Employed', '', '', '', 'ASCT', '');
