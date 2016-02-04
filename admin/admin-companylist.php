@@ -267,6 +267,20 @@ if(isset($_SESSION['AdminID'])){
 
     <div class="container">
         <div class="col-md-12">
+        <?php
+            if (isset($_GET['id'])) {
+                $id = $_GET['id'];
+
+                if ($id == 'deletecompany') {
+                    echo '
+                            <div class="alert alert-success" id="success-alert">
+                                <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                                <strong><span class="fa fa-info-circle"></span> Company successfully deleted.</strong> 
+                            </div>
+                            ';
+                }
+            }
+            ?>
             <table class="table segment table-hover">
                 <thead>
                 <tr>
@@ -317,13 +331,40 @@ if(isset($_SESSION['AdminID'])){
                     <td width='15%' class='tabletitle'><?php echo $Email; ?></td>
                     <td width='15%' class='tabletitle'>
                         <a target="_blank" href='<?php echo $Website; ?>'><?php echo $Website; ?></a></td>
-
                     <td width='5%' class=tabletitle>
-                        <a class='btn btn-default'>
-                            <i class='fa fa-pencil-square-o fa-1x'></i>
-                        </a>
+                        <button class="btn btn-danger" data-toggle="modal"
+                                data-target="#DeleteCompany<?php echo $CompanyID; ?>">
+                            <i class="fa fa-trash fa-1x"></i>
+                        </button>
                     </td>
                 <tr>
+                    <div class="modal fade" id="DeleteCompany<?php echo $CompanyID; ?>"
+                         role="dialog">
+                        <div class="modal-dialog" style="padding:100px">
+                            <!-- Modal content-->
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                    <h4 class="modal-title">Delete Company?</h4>
+                                </div>
+                                <div class="modal-body">
+                                    <div class="col-md-15">
+                                        <label = "usr" class = "control-label">Do you want to delete
+                                        <?php echo $CompanyName; ?> ? This cannot be undone.</label>
+                                        <div class="form-group">
+                                        </div>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <a href="admin-delete.php?delete_CompanyID=<?php echo $CompanyID; ?>"
+                                           class="btn btn-danger">Delete</a>
+                                        <button type="button" class="btn btn-default" data-dismiss="modal">
+                                            Cancel
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                     <?php
                     }
                     ?>
