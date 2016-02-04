@@ -2,24 +2,11 @@
 include('../connection.php');
 session_start();
 
-if(isset($_SESSION['CompanyID'])){
-    $CompanyID = $_SESSION['CompanyID'];
+if(isset($_SESSION['AdminID'])){
+    $AdminID = $_SESSION['AdminID'];
+}else{
+    header("location: ../login-admin.php");
 }
-else{
-    header("location: ../login-company.php");
-}
-
-$companyinfo_tbl =
-    GSecureSQL::query(
-        "SELECT CompanyName, FirstName, LastName FROM companyinfotbl WHERE CompanyID = ?",
-        TRUE,
-        "s",
-        $CompanyID
-    );
-$CompanyName = $companyinfo_tbl[0][0];
-$cFirstName = $companyinfo_tbl[0][1];
-$cLastName = $companyinfo_tbl[0][2];
-
 ?>
 <!doctype html>
 <html lang="en">
@@ -110,13 +97,6 @@ $cLastName = $companyinfo_tbl[0][2];
         <div class="top-bar">
             <div class="container">
                 <div class="row">
-                    <div class="col-md-6">
-                        <!-- Start Contact Info -->
-                        <ul class="contact-details">
-                            <li class="profile-name"><i class="fa fa-hashtag"></i> <b>008-2012-0805</b></li>
-                        </ul>
-                        <!-- End Contact Info -->
-                    </div>
                     <!-- .col-md-6 -->
                     <div class="col-md-6">
                         <!-- Start Social Links -->
@@ -129,7 +109,7 @@ $cLastName = $companyinfo_tbl[0][2];
                                 &nbsp;
                             </li>
                             <li class="profile-name">
-                                <i class="fa fa-user"></i> Hello, <b>Aira Jane Cruz</b>
+                                <i class="fa fa-user"></i> Welcome, <b>Admin Tim</b>
                             </li>
                         </ul>
                         <!-- End Social Links -->
@@ -282,7 +262,7 @@ $cLastName = $companyinfo_tbl[0][2];
 
 <!--Content-->
 <br><br><br>
-<form action="add-company.php" name="addcalendar" id="addcalendar" autocomplete="off">
+<form action="functions.php" name="addcalendar" id="addcalendar" autocomplete="off">
     <div class="container">
         <div class="col-md-12">
             <div class="row">
@@ -328,7 +308,7 @@ $cLastName = $companyinfo_tbl[0][2];
                 </div>
                 <div class="row field">
                     <div class="col-md-3 fieldcol">
-                        <label = "usr" class = "control-label"> Description: </label>
+                        <label = "usr" class = "control-label"> Caption: </label>
                     </div>
                     <div class="col-md-8 fieldcol">
                         <div class="form-group">

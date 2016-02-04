@@ -638,11 +638,8 @@ $MajorCourse = $coursetbl[0][0];
                                                                     </li>
                                                                     <li><?php echo $Location; ?></li>
                                                                 </ul>
-                                                                <form method="POST" action="view-details.php">
-                                                                    <input type="hidden" name="id" value="<?php echo $PositionID; ?>">
                                                                     <button class='main-button'>View Details <i
                                                                             class='fa fa-angle-right'></i></button>
-                                                                </form>
                                                             </div>
                                                         </div>
                                                         <div class="col-md-6">
