@@ -13,7 +13,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
     <!-- Page Description and Author -->
-    <meta name="description" content="Margo - Responsive HTML5 Template">
+    <meta name="description" content=" - Responsive HTML5 Template">
     <meta name="author" content="iThemesLab">
 
     <!-- Bootstrap CSS -->
@@ -39,7 +39,7 @@
     <!-- Slicknav -->
     <link rel="stylesheet" type="text/css" href="../css/slicknav.css" media="screen">
 
-    <!-- Margo CSS Styles  -->
+    <!--  CSS Styles  -->
     <link rel="stylesheet" type="text/css" href="../css/style.css" media="screen">
 
     <!-- Responsive CSS Styles  -->
@@ -245,7 +245,7 @@
         </header>
 
         <!-- Start Page Banner -->
-        <div class="page-banner" style="padding:40px 0; center #f9f9f9;">
+        <div class="page-banner">
             <div class="container">
                 <div class="row">
                     <div class="col-md-6">
@@ -395,12 +395,12 @@
                                     <br><em>Please select appropriate box</em>
                                     <br>
                                     <div class="radio radio-inline">
-                                        <input type="radio" id="Color" value="Color" name="selection">
+                                        <input type="radio" id="Yes" value="Yes" name="selection">
                                         <label for="inlineRadio1">Yes</label>
                                     </div>
 
                                     <div class="radio radio-inline">
-                                        <input type="radio" id="Image" value="Image" name="selection">
+                                        <input type="radio" id="No" value="No" name="selection">
                                         <label for="inlineRadio2">No</label>
                                     </div>
 
@@ -466,6 +466,24 @@
                                     <div class="checkbox checkbox-success">
                                         <input id="" class="styled" type="checkbox">
                                         <label for="checkbox3"><b>List of Job Openings</b></label>
+                                    </div>
+
+                                    <div class="hr5" style="margin-top:15px;margin-bottom:15px;"></div>
+
+                                    <div class="call-action call-action-boxed call-action-style2 clearfix">
+                                        <label>If you would like more information about the STI Corporate Partnership Program, please contact:</label>
+                                        <p>MS. ANNABELLE O. VILLEGAS</p>
+                                        <p>Alumni and Job Placement Officer II</p>
+                                        <p>STI Academic Center Caloocan</p>
+                                        <p><label>Contact No.:</label> (02) 294 - 4001 to 02 loc. 110-111</p>
+                                        <p><label>Mobile no.:</label> 0917-4638460, 0998-5604415, 0932-8436642</p>
+                                        <p><label>Email adds.:</label> <a href="mailto:jobplacement@caloocan.sti.edu"><u>jobplacement@caloocan.sti.edu</u></a> and <a href="mailto:annabelle.villegas@caloocan.sti.edu"><u>annabelle.villegas@caloocan.sti.edu</u></a></p>
+                                    </div>
+
+                                    <div class="hr5" style="margin-top:15px;margin-bottom:15px;"></div>
+
+                                    <div class="text-center">
+                                        <button type="submit" class="btn-system btn-large" name="" id="">Submit</button>
                                     </div>
                                 </div>
                             </div>
