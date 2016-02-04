@@ -286,5 +286,7 @@ if(isset($_POST['btnRequestLOG'])){
         $DurationOfRequest,
         $MarketingMaterials
     );
-    echo "Sucess ba?";
+
+    header("location: company.php");
+
 }
