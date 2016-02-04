@@ -79,6 +79,9 @@ session_start();
     <script type="text/javascript" src="../js/jquery.parallax.js"></script>
     <script type="text/javascript" src="../js/jquery.slicknav.js"></script>
 
+    <!-- Checkbox -->
+    <link rel="stylesheet" type="text/css" href="../css/checkbox.css" media="screen"/>
+
     <script>
         (function (i, s, o, g, r, a, m) {
             i['GoogleAnalyticsObject'] = r;
@@ -320,10 +323,7 @@ session_start();
                         );
                     $c++;
                 }
-
                 echo "You database has imported successfully. You have inserted " . $c . " records";
-
-
             }
             ?>
 
@@ -333,29 +333,29 @@ session_start();
             <thead>
             <tr></tr>
             <tr>
-                <th class="tabletitle">Student ID</th>
-                <th class="tabletitle">Student Name</th>
-                <th class="tabletitle">Company</th>
-                <th class="tabletitle">Company Address</th>
-                <th class="tabletitle">Contact Number</th>
-                <th class="tabletitle">Supervisor</th>
-                <th class="tabletitle">Status</th>
-            </tr>
+                <th width="10%" class="tabletitle">Student ID</th>
+                <th width="15%" class="tabletitle">Student Name</th>
+                <th width="15%" class="tabletitle">Course</th>
+                <th width="15%" class="tabletitle">Company</th>
+                <th width="20%" class="tabletitle">Company Address</th>
+                <th width="15%" class="tabletitle">Contact Number</th>
+                <th width="10%" class="tabletitle">Supervisor</th>
+                <th width="10%" class="tabletitle">Status</th>
+                <th width="5%" class="tabletitle">Edit</th>
+            </tr
             </thead>
             <tbody>
             <?php
             $ojt_tbl =
                 GSecureSQL::query(
-                    "SELECT *
-                    FROM 
-                    ojttbl",
+                    "SELECT * FROM ojttbl",
                     TRUE
-
                 );
             foreach ($ojt_tbl as $value) {
                 $StudentID = $value[1];
                 $FirstName = $value[3];
                 $LastName = $value[2];
+                $Course = $value[5];
                 $CompanyName = $value[6];
                 $CompanyAddress = $value[7];
                 $Contact = $value[10];
@@ -364,14 +364,67 @@ session_start();
 
                 ?>
                 <tr>
-                    <td><?php echo $StudentID; ?></td>
-                    <td><a href=".php"><?php echo $LastName . ", " . $FirstName; ?></td>
-                    <td><?php echo $CompanyName; ?></td>
-                    <td><?php echo $CompanyAddress; ?></td>
-                    <td><?php echo $Contact; ?></td>
-                    <td><?php echo $Supervisor; ?></td>
-                    <td><?php echo $Status; ?></td>
+                    <td width="10%"><?php echo $StudentID; ?></td>
+                    <td width="15%"><a href=".php"><?php echo $LastName . ", " . $FirstName; ?></td>
+                    <td width="15%"><?php echo $Course; ?></td>
+                    <td width="15%"><?php echo $CompanyName; ?></td>
+                    <td width="20%"><?php echo $CompanyAddress; ?></td>
+                    <td width="15%"><?php echo $Contact; ?></td>
+                    <td width="10%"><?php echo $Supervisor; ?></td>
+                    <td width="10%"><?php echo $Status; ?></td>
+                    <td width="10%">
+                        <button class="btn btn-default" data-toggle="modal"
+                                data-target="#Update<?php echo $StudentID; ?>">
+                            <i class="fa fa-edit"></i>
+                        </button>
+                    </td>
                 </tr>
+                <!-- Modal -->
+                <form method="POST" action="functions.php" autocomplete="off">
+                    <div class="modal fade" id="Update<?php echo $StudentID; ?>"
+                         role="dialog">
+                        <div class="modal-dialog" style="padding:100px">
+                            <!-- Modal content-->
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                    <h4 class="modal-title">Update Information</h4>
+                                </div>
+                                <div class="modal-body">
+                                    <div class="col-md-15">
+                                        <label>Student ID:
+                                            <?php echo $StudentID; ?></label>
+                                        <br>
+                                        <label = "usr" class = "control-label">Student Name:
+                                        <?php echo $LastName . ", " . $FirstName; ?></label>
+                                        <br>
+                                        <label = "usr" class = "control-label">Course:
+                                        <?php echo $Course; ?></label>
+                                        <br>
+                                        <div class="form-group">
+                                            <div class="hr2" style="margin-top:10px;margin-bottom:10px;"></div>
+                                            <label>OJT Student Information:</label>
+                                            <ul>
+                                                <li>
+                                                    <div class="form-group">
+                                                        Company
+                                                        <input type="text" class="form-control" id="txtCompany" name="txtCompany" value="<?php echo $CompanyName; ?>">
+                                                    </div>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type=submit class="btn btn-primary">Update</button>
+                                        <button type="button" class="btn btn-default" data-dismiss="modal">
+                                            Cancel
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </form>
                 <?php
             }
             ?>
