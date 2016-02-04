@@ -139,11 +139,11 @@ if (isset($_GET['DeleteID'])) {
 
 }
 
-if(isset($_GET['id']) && isset($_GET['cid'])){
+if (isset($_GET['id']) && isset($_GET['cid'])) {
     $id = $_GET['id'];
     $cid = $_GET['cid'];
 
-    if($id == 1){
+    if ($id == 1) {
         GSecureSQL::query(
             "UPDATE companyinfotbl SET Status = 'Active' WHERE CompanyID = ?",
             FALSE,
@@ -154,7 +154,7 @@ if(isset($_GET['id']) && isset($_GET['cid'])){
             <script type='text/javascript'>
             location.href='admin-company_pending.php?id=1';
             </script>";
-    }elseif($id == 2){
+    } elseif ($id == 2) {
         GSecureSQL::query(
             "DELETE FROM companyinfotbl WHERE CompanyID = ?",
             FALSE,
@@ -167,7 +167,7 @@ if(isset($_GET['id']) && isset($_GET['cid'])){
     }
 }
 
-if(isset($_POST['lid'])){
+if (isset($_POST['lid'])) {
     $LID = $_POST['lid'];
     $DateFrom = date("Y-m-d");
     $DateTo = $_POST['DateTo'];
@@ -209,33 +209,38 @@ if (isset($_POST['type'])) {
 
 if (isset($_POST['aFirstName'])) {
     $aUsername = $_POST['aUsername'];
-    $aPassword = $_POST['aPassword'];
     $aFirstName = $_POST['aFirstName'];
     $aMiddleName = $_POST['aMiddleName'];
     $aLastName = $_POST['aLastName'];
     $aPosition = $_POST['aPosition'];
     $aAddress = $_POST['aAddress'];
     $aContactNumber = $_POST['aContactNumber'];
+    $Usertype = "Adviser";
 
+    $aPassword = "user";
+    $salt = hash('sha512', mt_rand(0, PHP_INT_MAX) . mt_rand(0, PHP_INT_MAX) . mt_rand(0, PHP_INT_MAX));
+    $aPassword = hash('sha512', $aPassword . $salt);
 
     GSecureSQL::query(
-        "INSERT INTO admintbl (Username,Password,FirstName,MiddleName,LastName,Position,Address,ContactNumber) values (?,?,?,?,?,?,?,?)",
+        "INSERT INTO admintbl (Username,Password,SaltedPassword,FirstName,MiddleName,LastName,Position,Address,ContactNumber,Usertype) values (?,?,?,?,?,?,?,?,?,?)",
         FALSE,
-        "ssssssss",
+        "ssssssssss",
         $aUsername,
         $aPassword,
+        $salt,
         $aFirstName,
         $aMiddleName,
         $aLastName,
         $aPosition,
         $aAddress,
-        $aContactNumber
+        $aContactNumber,
+        $Usertype
 
     );
 
     header("location: admin-users.php?id=1");
 
-    }
+}
 // End of Add User
 
 //Create Calendar-Event

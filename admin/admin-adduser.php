@@ -315,7 +315,7 @@ if (isset($_SESSION['AdminID'])) {
                 </div>
                 <div class="col-md-4 fieldcol">
                     <div class="form-group">
-                        <input type="password" name="aPassword" id="aPassword" class="form-control">
+                        <label><i>Default password is "user".</i></label>
                     </div>
                 </div>
             </div>
@@ -406,31 +406,20 @@ if (isset($_SESSION['AdminID'])) {
                 aUsername: {
                     validators: {
                         notEmpty: {
-                            message: "UserName is required."
+                            message: "Username is required."
                         },
                         stringLength: {
                             min: 5,
                             max: 15,
-                            message: "UserName is invalid."
-                        },
-                        regexp: {
-                            regexp: /^[a-z\s]+$/i,
-                            message: "UserName can consist of alphabetical characters and spaces only"
+                            message: "Username is invalid."
                         },
                         remote: {
-                            message: 'The UserName already exists',
+                            message: 'The Username already exists',
                             url: 'functions.php',
                             data: {
                                 type: 'aUsername'
                             },
                             type: 'POST'
-                        }
-                    }
-                },
-                aPassword: {
-                    validators: {
-                        notEmpty: {
-                            message: "Password To is required."
                         }
                     }
                 },
@@ -470,10 +459,6 @@ if (isset($_SESSION['AdminID'])) {
                     validators: {
                         notEmpty: {
                             message: "Position is required."
-                        },
-                        regexp: {
-                            regexp: /^[a-z\s]+$/i,
-                            message: "Position Name can consist of alphabetical characters and spaces only"
                         },
                         stringLength: {
                             min: 3,

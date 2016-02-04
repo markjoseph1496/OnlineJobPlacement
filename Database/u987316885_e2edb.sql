@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50616
 File Encoding         : 65001
 
-Date: 2016-02-05 01:15:57
+Date: 2016-02-05 02:58:45
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -68,18 +68,15 @@ CREATE TABLE `admintbl` (
   `Position` varchar(255) NOT NULL,
   `Address` varchar(255) NOT NULL,
   `ContactNumber` varchar(255) NOT NULL,
-  `MainAdmin` int(1) NOT NULL,
+  `Usertype` varchar(255) NOT NULL,
   PRIMARY KEY (`AdminID`)
-) ENGINE=MyISAM AUTO_INCREMENT=9 DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM AUTO_INCREMENT=14 DEFAULT CHARSET=latin1;
 
 -- ----------------------------
 -- Records of admintbl
 -- ----------------------------
-INSERT INTO admintbl VALUES ('1', 'markjoseph1496', '0a7675b497c9e79aa2ddd1dbd39ed429b54bc044f704d85b4427ff23f35df299fcae46a6d86d6e900da432d59fd731ab6a643cea23de2d59ac7274209962b3fd', '59eba39dc8615e72ae9b7a0d76b06fc99aace644b3460c7b0a2b0d8c236663733e2ad0df55ea18a352a3c015355b362655ed563f1164c3682b6742a2fb438b85', 'Mark Joseph', 'Flaviano', 'Cinco', 'Janitor', '2890 A. Pablo St. Karuhatan, Valenzuela City.', '09355585931', '1');
-INSERT INTO admintbl VALUES ('2', 'mark', 'mark', '', 'mark', 'mark', 'mark', 'mark', 'asa', '', '0');
-INSERT INTO admintbl VALUES ('3', 'asdasd', 'asdasd', '', 'asdasd', 'asdad', 'asda', 'dada', 'adada', 'dad', '0');
-INSERT INTO admintbl VALUES ('4', 'saf', 'fasfasfas', '', 'faf', 'afaf', 'afa', 'tagahugas pinggan', 'dads', 'adadsa', '0');
-INSERT INTO admintbl VALUES ('5', 'asdasda', 'dasda', '', 'dsada', 'sdad', 'adsad', 'ada', 'adaddasd', 'adsad', '0');
+INSERT INTO admintbl VALUES ('1', 'markjoseph1496', '0a7675b497c9e79aa2ddd1dbd39ed429b54bc044f704d85b4427ff23f35df299fcae46a6d86d6e900da432d59fd731ab6a643cea23de2d59ac7274209962b3fd', '59eba39dc8615e72ae9b7a0d76b06fc99aace644b3460c7b0a2b0d8c236663733e2ad0df55ea18a352a3c015355b362655ed563f1164c3682b6742a2fb438b85', 'Mark Joseph', 'Flaviano', 'Cinco', 'Janitor', '2890 A. Pablo St. Karuhatan, Valenzuela City.', '09355585931', 'Admin');
+INSERT INTO admintbl VALUES ('13', '1', '16d917462347d622d56f4269bf74e305dbdc14294e159efe502679eee9df8f49009ca5897ada300ea757d0e0e561187b1d17713e1a561dd6247829155f6c312c', '4a800106f6fa85d4053db33f3f6dce2439efdb6a13d28caae8c2d9694c70084d36b53fed0240277512430e6cf662cdedf0e5533a9e9703aee3b4207ddfdf1f74', 'adsadsad', 'sadsa', 'dsasad', 'dsad', 'sadsadsa', '123421312', 'Adviser');
 
 -- ----------------------------
 -- Table structure for `applicationtbl`
@@ -569,6 +566,54 @@ CREATE TABLE `logrequesttbl` (
 -- ----------------------------
 INSERT INTO logrequesttbl VALUES ('4', '1', '', '', '', 'Pending', '2016-02-04', 'Position lang', 'Full Time, other to ha', 'Supervisory, other ulit to', 'wala lang trip ko lang', 'basta qualified', 'Malabon City', '203030', '1', 'Yes', '15 Days', 'Yes');
 INSERT INTO logrequesttbl VALUES ('5', '1', '', '', '', 'Pending', '2016-02-04', 'asdadsa', 'Full Time, ', 'Officer, asdsada', 'asdad', 'sadsad', 'Pasig City', '20000', '13', 'Yes', '15 Days', 'Yes');
+
+-- ----------------------------
+-- Table structure for `ojttbl`
+-- ----------------------------
+DROP TABLE IF EXISTS `ojttbl`;
+CREATE TABLE `ojttbl` (
+  `id` int(10) NOT NULL AUTO_INCREMENT,
+  `StudentID` varchar(11) NOT NULL,
+  `LastName` varchar(255) DEFAULT NULL,
+  `FirstName` varchar(255) DEFAULT NULL,
+  `MiddleName` varchar(255) DEFAULT NULL,
+  `Course` varchar(255) DEFAULT NULL,
+  `CompanyName` varchar(255) DEFAULT NULL,
+  `CompanyAddress` varchar(255) DEFAULT NULL,
+  `Supervisor` varchar(255) DEFAULT NULL,
+  `Position` varchar(255) DEFAULT NULL,
+  `ContactNumber` varchar(255) DEFAULT NULL,
+  `Email` varchar(255) DEFAULT NULL,
+  `aStatus` varchar(255) DEFAULT NULL,
+  `DailyTimeRecord` varchar(255) DEFAULT NULL,
+  `IntegrationPaper` varchar(255) DEFAULT NULL,
+  `PracJournal` varchar(255) DEFAULT NULL,
+  `TrainingPlan` varchar(255) DEFAULT NULL,
+  `Resume` varchar(255) DEFAULT NULL,
+  `MOA` varchar(255) DEFAULT NULL,
+  `ApplicationLetter` varchar(255) DEFAULT NULL,
+  `Waiver` varchar(255) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=46 DEFAULT CHARSET=latin1;
+
+-- ----------------------------
+-- Records of ojttbl
+-- ----------------------------
+INSERT INTO ojttbl VALUES ('31', '00820120310', 'AGUSTIN', 'JOHN JOSMIL', 'CANARY', 'BSBM', 'CONVERGYS TELSTRA', 'G/F CYBERPOD 3 ETON CENTRIS QUEZON CITY COR. EDSA', 'MS.KAREN GRACE CRUZ ', 'SOURCING COORDINATOR', '000820120310', null, null, null, null, null, null, null, null, null, null);
+INSERT INTO ojttbl VALUES ('32', '00820130777', 'ALONZO', 'MARIA KATRINA', 'REYES', 'BSBM', 'STI ACADEMIC CENTER CALOOCAN', '109 SAMSON ROAD CORNER CAIMITO ROAD, CALOOCAN CITY', 'MS. DONNA JOY GODIO', 'HEAD CAREER ADVICER', '000820130777', null, null, null, null, null, null, null, null, null, null);
+INSERT INTO ojttbl VALUES ('33', '00820120289', 'ANTIPOLO', 'HAZEL JOY', 'JULVE', 'BSBM', 'ICISIN CORPORATION', '16 ENGINEERING 2 ROAD ARANETA POTRERO MALABON CITY  ', 'MS. SARAH JANE MADRIAGA', 'GENERAL ADMIN', '000820120289', null, null, null, null, null, null, null, null, null, null);
+INSERT INTO ojttbl VALUES ('34', '00820120310', 'AGUSTIN', 'JOHN JOSMIL', 'CANARY', 'BSBM', 'CONVERGYS TELSTRA', 'G/F CYBERPOD 3 ETON CENTRIS QUEZON CITY COR. EDSA', 'MS.KAREN GRACE CRUZ ', 'SOURCING COORDINATOR', '09151344073', null, null, null, null, null, null, null, null, null, null);
+INSERT INTO ojttbl VALUES ('35', '00820130777', 'ALONZO', 'MARIA KATRINA', 'REYES', 'BSBM', 'STI ACADEMIC CENTER CALOOCAN', '109 SAMSON ROAD CORNER CAIMITO ROAD, CALOOCAN CITY', 'MS. DONNA JOY GODIO', 'HEAD CAREER ADVICER', '09328813553', null, null, null, null, null, null, null, null, null, null);
+INSERT INTO ojttbl VALUES ('36', '00820120289', 'ANTIPOLO', 'HAZEL JOY', 'JULVE', 'BSBM', 'ICISIN CORPORATION', '16 ENGINEERING 2 ROAD ARANETA POTRERO MALABON CITY  ', 'MS. SARAH JANE MADRIAGA', 'GENERAL ADMIN', '09432787091', null, null, null, null, null, null, null, null, null, null);
+INSERT INTO ojttbl VALUES ('37', '00820120310', 'AGUSTIN', 'JOHN JOSMIL', 'CANARY', 'BSBM', 'CONVERGYS TELSTRA', 'G/F CYBERPOD 3 ETON CENTRIS QUEZON CITY COR. EDSA', 'MS.KAREN GRACE CRUZ ', 'SOURCING COORDINATOR', '09151344073', null, null, null, null, null, null, null, null, null, null);
+INSERT INTO ojttbl VALUES ('38', '00820130777', 'ALONZO', 'MARIA KATRINA', 'REYES', 'BSBM', 'STI ACADEMIC CENTER CALOOCAN', '109 SAMSON ROAD CORNER CAIMITO ROAD, CALOOCAN CITY', 'MS. DONNA JOY GODIO', 'HEAD CAREER ADVICER', '09328813553', null, null, null, null, null, null, null, null, null, null);
+INSERT INTO ojttbl VALUES ('39', '00820120289', 'ANTIPOLO', 'HAZEL JOY', 'JULVE', 'BSBM', 'ICISIN CORPORATION', '16 ENGINEERING 2 ROAD ARANETA POTRERO MALABON CITY  ', 'MS. SARAH JANE MADRIAGA', 'GENERAL ADMIN', '09432787091', null, null, null, null, null, null, null, null, null, null);
+INSERT INTO ojttbl VALUES ('40', '00820120310', 'AGUSTIN', 'JOHN JOSMIL', 'CANARY', 'BSBM', 'CONVERGYS TELSTRA', 'G/F CYBERPOD 3 ETON CENTRIS QUEZON CITY COR. EDSA', 'MS.KAREN GRACE CRUZ ', 'SOURCING COORDINATOR', '09151344073', null, null, null, null, null, null, null, null, null, null);
+INSERT INTO ojttbl VALUES ('41', '00820130777', 'ALONZO', 'MARIA KATRINA', 'REYES', 'BSBM', 'STI ACADEMIC CENTER CALOOCAN', '109 SAMSON ROAD CORNER CAIMITO ROAD, CALOOCAN CITY', 'MS. DONNA JOY GODIO', 'HEAD CAREER ADVICER', '09328813553', null, null, null, null, null, null, null, null, null, null);
+INSERT INTO ojttbl VALUES ('42', '00820120289', 'ANTIPOLO', 'HAZEL JOY', 'JULVE', 'BSBM', 'ICISIN CORPORATION', '16 ENGINEERING 2 ROAD ARANETA POTRERO MALABON CITY  ', 'MS. SARAH JANE MADRIAGA', 'GENERAL ADMIN', '09432787091', null, null, null, null, null, null, null, null, null, null);
+INSERT INTO ojttbl VALUES ('43', '00820120310', 'AGUSTIN', 'JOHN JOSMIL', 'CANARY', 'BSBM', 'CONVERGYS TELSTRA', 'G/F CYBERPOD 3 ETON CENTRIS QUEZON CITY COR. EDSA', 'MS.KAREN GRACE CRUZ ', 'SOURCING COORDINATOR', '09151344073', null, null, null, null, null, null, null, null, null, null);
+INSERT INTO ojttbl VALUES ('44', '00820130777', 'ALONZO', 'MARIA KATRINA', 'REYES', 'BSBM', 'STI ACADEMIC CENTER CALOOCAN', '109 SAMSON ROAD CORNER CAIMITO ROAD, CALOOCAN CITY', 'MS. DONNA JOY GODIO', 'HEAD CAREER ADVICER', '09328813553', null, null, null, null, null, null, null, null, null, null);
+INSERT INTO ojttbl VALUES ('45', '00820120289', 'ANTIPOLO', 'HAZEL JOY', 'JULVE', 'BSBM', 'ICISIN CORPORATION', '16 ENGINEERING 2 ROAD ARANETA POTRERO MALABON CITY  ', 'MS. SARAH JANE MADRIAGA', 'GENERAL ADMIN', '09432787091', null, null, null, null, null, null, null, null, null, null);
 
 -- ----------------------------
 -- Table structure for `progresstbl`

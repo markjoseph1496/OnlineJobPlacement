@@ -294,3 +294,19 @@ if (isset($_GET['update_PositionID'])) {
     header("location: company.php");
 
 }
+
+//Update Available Position
+if (isset($_POST['uAvPosition'])) {
+    $aPositionID = $_POST['aPositionID'];
+    $uAvPosition = $_POST['uAvPosition'];
+
+    GSecureSQL::query(
+        "UPDATE comppositiontbl SET AvPosition = ? WHERE PositionID = ?",
+        FALSE,
+        "ss",
+        $uAvPosition,
+        $aPositionID
+        );
+
+    header("location: company-positionlist.php?id=2");
+}

@@ -381,6 +381,7 @@ $companyupdate_tbl =
                     <!-- Modal -->
                     <div class="modal fade" id="UpdatePosition<?php echo $PositionID; ?>" role="dialog">
                         <div class="modal-dialog modal-lg" style="padding:100px">
+                        <form id="update-AvPosition" autocomplete="off" method="POST" action="add-company.php">
                             <!-- Modal content-->
                             <div class="modal-content">
                                 <div class="modal-header">
@@ -451,7 +452,8 @@ $companyupdate_tbl =
                                         </div>
                                         <div class="col-md-4">
                                             <div class="form-group">
-                                                <input type="number" name="AvPosition" id="AvPosition" class="form-control" value="<?php echo $AvPosition; ?>">
+                                            <input type="hidden" name="aPositionID" value="<?php echo $PositionID; ?>">
+                                                <input type="number" name="uAvPosition" id="uAvPosition" class="form-control" value="<?php echo $AvPosition; ?>">
                                             </div>
                                         </div>
                                     </div>
@@ -563,14 +565,14 @@ $companyupdate_tbl =
                                         </div>
                                     </div>
                                     <div class="modal-footer">
-                                        <a href="add-company.php?update_PositionId<?php echo $PositionID; ?>"
-                                           class="btn btn-primary">Update</a>
+                                        <button type="submit" class="btn btn-primary">Update</button>
                                         <button type="button" class="btn btn-default" data-dismiss="modal">
                                             Cancel
                                         </button>
                                     </div>
                                 </div>
                             </div>
+                        </form>
                         </div>
                     </div>
                     <?php
@@ -580,6 +582,19 @@ $companyupdate_tbl =
         </div>
     </div>
 </div>
-<script type="text/javascript" src="../js/script.js"></script>
+<script type="text/javascript" src="../js/script.js">
+    
+    $("button#submitPassword").click(function () {
+        $.post($("#update-AvPositio").attr("action"),
+            $("#update-AvPositio :input").serializeArray(),
+            function (data) {
+                $("div#message").html(data);
+            });
+
+        $("#update-AvPositio").submit(function () {
+            return false;
+        });
+    });
+</script>
 </body>
 </html>
