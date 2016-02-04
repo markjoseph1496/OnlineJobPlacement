@@ -85,10 +85,40 @@ if (isset($_POST['StudentID'])) {
 		        location.href='admin/admin.php';
 		        </script>";
         } else {
-            echo "Incorrect email or Password";
+            echo "Incorrect username or Password";
         }
     } else {
-        echo "Incorrect email or Password";
+        echo "Incorrect username or Password";
+    }
+}elseif (isset($_POST['AdviserUsername'])) {
+    $AdviserUsername = $_POST['AdviserUsername'];
+    $_Password = $_POST['_password'];
+
+    $adviser_tbl =
+        GSecureSQL::query(
+            "SELECT
+                AdminID,
+                Password,
+                SaltedPassword
+            FROM admintbl WHERE Username = ?",
+            TRUE,
+            "s",
+            $AdviserUsername
+        );
+
+    if (count($adviser_tbl)) {
+        if (hash('sha512', $_Password . $adviser_tbl[0][2]) == $adviser_tbl[0][1]) {
+            $_SESSION['AdviserID'] = $adviser_tbl[0][0];
+            echo "
+		        <script type='text/javascript'>
+		        alert('You have successfully loggged in.');
+		        location.href='adviser/ojt-adviser.php';
+		        </script>";
+        } else {
+            echo "Incorrect username or Password";
+        }
+    } else {
+        echo "Incorrect username or Password";
     }
 }
 ?>

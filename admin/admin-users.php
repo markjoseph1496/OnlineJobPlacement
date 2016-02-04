@@ -320,7 +320,7 @@ if (isset($_SESSION['AdminID'])) {
                 <?php
                     $admin_tbl =
                         GSecureSQL::query(
-                            "SELECT Username, FirstName, LastName, Position, Address, ContactNumber FROM admintbl WHERE MainAdmin = 0",
+                            "SELECT Username, FirstName, LastName, Position, Address, ContactNumber FROM admintbl WHERE Usertype = 'Adviser'",
                             TRUE
                         );
                 foreach($admin_tbl as $value){

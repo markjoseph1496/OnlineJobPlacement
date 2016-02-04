@@ -80,13 +80,20 @@ session_start();
     <script type="text/javascript" src="../js/jquery.slicknav.js"></script>
 
     <script>
-      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+        (function (i, s, o, g, r, a, m) {
+            i['GoogleAnalyticsObject'] = r;
+            i[r] = i[r] || function () {
+                    (i[r].q = i[r].q || []).push(arguments)
+                }, i[r].l = 1 * new Date();
+            a = s.createElement(o),
+                m = s.getElementsByTagName(o)[0];
+            a.async = 1;
+            a.src = g;
+            m.parentNode.insertBefore(a, m)
+        })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
 
-      ga('create', 'UA-60962033-1', 'auto');
-      ga('send', 'pageview');
+        ga('create', 'UA-60962033-1', 'auto');
+        ga('send', 'pageview');
 
     </script>
 </head>
@@ -159,7 +166,7 @@ session_start();
                         <!-- Modal content-->
                         <div class="modal-content">
                             <div class="modal-header">
-                                <button style = type="button" class="close" data-dismiss="modal">&times;</button>
+                                <button style=type="button" class="close" data-dismiss="modal">&times;</button>
                                 <h4 class="modal-title">Log out?</h4>
                             </div>
                             <div class="modal-body">
@@ -182,26 +189,26 @@ session_start();
                 <!-- End Sign-out -->
                 <!-- Start Navigation List -->
                 <ul class="nav navbar-nav navbar-right">
-                <li>
-                    <a href="../adviser/ojt-adviser.php">Home</a>
-                </li>
-                <li>
-                    <a href="../adviser/ojt-account.php">Account</a>
-                </li>
+                    <li>
+                        <a href="../adviser/ojt-adviser.php">Home</a>
+                    </li>
+                    <li>
+                        <a href="../adviser/ojt-account.php">Account</a>
+                    </li>
                 </ul>
                 <!-- End Navigation List -->
             </div>
         </div>
         <!-- Mobile Menu Start -->
         <ul class="wpb-mobile-menu">
-           <ul class="nav navbar-nav navbar-right">
+            <ul class="nav navbar-nav navbar-right">
                 <li>
                     <a href="../adviser/ojt-adviser.php">Home</a>
                 </li>
                 <li>
                     <a href="../adviser/ojt-account.php">Account</a>
                 </li>
-                </ul>
+            </ul>
         </ul>
         </header>
         <!-- Mobile Menu End -->
@@ -231,7 +238,7 @@ session_start();
         <div class="header2_advertising">
             <div class="container">
                 <div class="col-sm-4">
-                    <h4 style = "margin-top:20px;">TOTAL NUMBER OF STUDENTS: </b></h4>
+                    <h4 style="margin-top:20px;">TOTAL NUMBER OF STUDENTS: </b></h4>
                 </div>
                 <div class="col-sm-3">
                     <label>
@@ -255,74 +262,75 @@ session_start();
                 </div>
                 <div class="col-sm-2">
                     <button type="submit" class="btn-system btn-large border-btn"
-                                style="margin-top: 20px;">Search
+                            style="margin-top: 20px;">Search
                     </button>
                 </div>
             </div>
         </div>
         <div style="border:1px dashed #333333; width:300px; margin:0 auto; padding:10px;">
-    
-    <form name="import" method="post" enctype="multipart/form-data">
-        <input type="file" name="file" /><br />
-        <input type="submit" name="submit" value="Submit" />
-    </form>
-<?php
-    
-    if(isset($_POST["submit"]))
-    {
-        $file = $_FILES['file']['tmp_name'];
-        $handle = fopen($file, "r");
-        $c = 0;
-        while(($filesop = fgetcsv($handle, 1000, ",")) !== false)
-        {
-            $StudentID = $filesop[0];
-            $LastName = $filesop[1];
-            $FirstName = $filesop[2];
-            $MiddleName = $filesop[3];
-            $Course = $filesop[4];
-            $CompanyName = $filesop[5];
-            $CompanyAddress = $filesop[6];
-            $Supervisor = $filesop[7];
-            $Position = $filesop[8];
-            $ContactNumber = $filesop[9];
-            
-            $sql = mysql_query(
-                "INSERT INTO ojttbl (
-                    StudentID, 
-                    LastName,
-                    FirstName, 
-                    MiddleName,
-                    Course, 
-                    CompanyName, 
-                    CompanyAddress, 
-                    Supervisor,
-                    Position, 
-                    ContactNumber) 
-                VALUES (
-                    '$StudentID',
-                    '$LastName',
-                    '$FirstName',
-                    '$MiddleName',
-                    '$Course',
-                    '$CompanyName',
-                    '$CompanyAddress',
-                    '$Supervisor',
-                    '$Position',
-                    '$ContactNumber'
-                    )");
-            $c = $c + 1;
-        }
-        
-            if($sql){
-                echo "You database has imported successfully. You have inserted ". $c ." recoreds";
-            }else{
-                echo "Sorry! There is some problem.";
-            }
 
-    }
-?>
-    
-    </div>
+            <form name="import" method="post" enctype="multipart/form-data">
+                <input type="file" name="file"/><br/>
+                <input type="submit" name="submit" value="Submit"/>
+            </form>
+            <?php
+
+            if (isset($_POST["submit"])) {
+                $file = $_FILES['file']['tmp_name'];
+                $handle = fopen($file, "r");
+                $c = 0;
+                while (($filesop = fgetcsv($handle, 1000, ",")) !== false) {
+                    $StudentID = $filesop[0];
+                    $LastName = $filesop[1];
+                    $FirstName = $filesop[2];
+                    $MiddleName = $filesop[3];
+                    $Course = $filesop[4];
+                    $CompanyName = $filesop[5];
+                    $CompanyAddress = $filesop[6];
+                    $Supervisor = $filesop[7];
+                    $Position = $filesop[8];
+                    $ContactNumber = $filesop[9];
+
+                    $sql =
+                        GSecureSQL::query(
+                            "INSERT INTO ojttbl (
+                            StudentID,
+                            LastName,
+                            FirstName,
+                            MiddleName,
+                            Course,
+                            CompanyName,
+                            CompanyAddress,
+                            Supervisor,
+                            Position,
+                            ContactNumber)
+                            VALUES (?,?,?,?,?,?,?,?,?,?)",
+                            FALSE,
+                            "ssssssssss",
+                            $StudentID,
+                            $LastName,
+                            $FirstName,
+                            $MiddleName,
+                            $Course,
+                            $CompanyName,
+                            $CompanyAddress,
+                            $Supervisor,
+                            $Position,
+                            $ContactNumber
+                        );
+                    $c++;
+                }
+
+                if ($sql) {
+                    echo "You database has imported successfully. You have inserted " . $c . " recoreds";
+                } else {
+                    echo "Sorry! There is some problem.";
+                }
+
+            }
+            ?>
+
+        </div>
         <br><br>
         <table class="Applicants table" width="100%" cellpadding="0">
             <thead>
@@ -339,7 +347,7 @@ session_start();
             </thead>
             <tbody>
             <?php
-            $ojt_tbl = 
+            $ojt_tbl =
                 GSecureSQL::query(
                     "SELECT *
                     FROM 
@@ -347,28 +355,28 @@ session_start();
                     TRUE
 
                 );
-                foreach ($ojt_tbl as $value) {
-                    $StudentID = $value[0];
-                    $FirstName = $value[1];
-                    $LastName = $value[2];
-                    $CompanyName = $value[3];
-                    $CompanyAddress = $value[4];
-                    $Contact = $value[5];
-                    $Supervisor = $value[6];
-                    $Status = $value[7];
+            foreach ($ojt_tbl as $value) {
+                $StudentID = $value[1];
+                $FirstName = $value[3];
+                $LastName = $value[2];
+                $CompanyName = $value[6];
+                $CompanyAddress = $value[7];
+                $Contact = $value[10];
+                $Supervisor = $value[8];
+                $Status = $value[12];
 
-            ?>
-            <tr>
-                <td><?php echo $StudentID; ?></td>
-                <td><a href=".php"><?php echo $FirstName; echo $LastName; ?></td>
-                <td><?php echo $CompanyName; ?></td>
-                <td><?php echo $CompanyAddress; ?></td>
-                <td><?php echo $Contact; ?></td>
-                <td><?php echo $Supervisor; ?></td>
-                <td><?php echo $Status; ?></td>
-            </tr>
-            <?php
-                }
+                ?>
+                <tr>
+                    <td><?php echo $StudentID; ?></td>
+                    <td><a href=".php"><?php echo $LastName . ", " . $FirstName; ?></td>
+                    <td><?php echo $CompanyName; ?></td>
+                    <td><?php echo $CompanyAddress; ?></td>
+                    <td><?php echo $Contact; ?></td>
+                    <td><?php echo $Supervisor; ?></td>
+                    <td><?php echo $Status; ?></td>
+                </tr>
+                <?php
+            }
             ?>
             </tbody>
         </table>

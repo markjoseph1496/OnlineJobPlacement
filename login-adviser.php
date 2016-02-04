@@ -30,8 +30,8 @@
         <form id="myForm" action="login.php" method="POST" autocomplete="off">
             <div class="login-block">
                 <div id="message"></div>
-                <input type="text" value="" placeholder="Username" id="CompanyEmail" name="CompanyEmail"/>
-                <input type="password" value="" placeholder="Password" id="password" name="password"/>
+                <input type="text" value="" placeholder="Username" id="AdviserUsername" name="AdviserUsername"/>
+                <input type="password" value="" placeholder="Password" id="_password" name="_password"/>
                 &nbsp;
                 <button type="submit" id="button">Submit</button>
             </div>
