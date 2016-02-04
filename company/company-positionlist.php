@@ -337,7 +337,7 @@ $companyupdate_tbl =
                         <td width=20% class='tabletitle'><?php echo $AvPosition; ?></td>
                         <td width=15% class='tabletitle'>
                             <button name="btnedit" data-toggle='modal'
-                                    data-target='#AcceptRequest' class='btn btn-default'>
+                                    data-target='#UpdatePosition<?php echo $PositionID; ?>' class='btn btn-default'>
                                 <i class='fa fa-eye'></i>
                             </button>
                             <button name='btndelete' data-toggle='modal'
@@ -349,7 +349,7 @@ $companyupdate_tbl =
                     </tr>
                     </tbody>
                     <!-- Modal -->
-                    <div class="modal fade" id="AcceptRequest" role="dialog">
+                    <div class="modal fade" id="UpdatePosition<?php echo $PositionID; ?>" role="dialog">
                         <div class="modal-dialog modal-lg" style="padding:100px">
                             <!-- Modal content-->
                             <div class="modal-content">
