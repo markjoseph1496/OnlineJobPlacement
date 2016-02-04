@@ -321,7 +321,7 @@ $cLastName = $companyinfo_tbl[0][2];
                                     <div class="row">
                                         <div class="col-md-3">
                                             <div class="checkbox checkbox-success">
-                                                <input id="other" name="rEType[]" class="styled" type="checkbox" value="other">
+                                                <input id="other" name="other" class="styled" type="checkbox">
                                                 <label for="checkbox3"><b>Other:</b></label>
                                             </div>
                                         </div>
@@ -421,12 +421,12 @@ $cLastName = $companyinfo_tbl[0][2];
                                     <br><em>Please select appropriate box</em>
                                     <br>
                                     <div class="radio radio-inline">
-                                        <input type="radio" id="Yes" value="Yes" name="CFG[]">
+                                        <input type="radio" id="Yes" value="Yes" name="CFG">
                                         <label for="inlineRadio1">Yes</label>
                                     </div>
 
                                     <div class="radio radio-inline">
-                                        <input type="radio" id="No" value="No" name="CFG[]">
+                                        <input type="radio" id="No" value="No" name="CFG">
                                         <label for="inlineRadio2">No</label>
                                     </div>
 
@@ -434,25 +434,25 @@ $cLastName = $companyinfo_tbl[0][2];
 
                                     <label>Duration of Request</label>
                                     <br><em>(Please select appropriate box)</em>
-                                    <div class="checkbox checkbox-success">
-                                        <input id="rDOR" name="rDOR[]" class="styled" type="checkbox">
-                                        <label for="checkbox3"><b>15 Days</b></label>
+                                    <div class="radio radio-inline">
+                                        <input id="rDOR" name="rDOR" type="radio" value="15 Days">
+                                        <label for="inlineRadio2"><b>15 Days</b></label>
                                     </div>
-                                    <div class="checkbox checkbox-success">
-                                        <input id="rDOR" name="rDOR[]" class="styled" type="checkbox">
-                                        <label for="checkbox3"><b>1 month</b></label>
+                                    <div class="radio radio-inline">
+                                        <input id="rDOR" name="rDOR" type="radio" value="1 Month">
+                                        <label for="inlineRadio2"><b>1 month</b></label>
                                     </div>
-                                    <div class="checkbox checkbox-success">
-                                        <input id="rDOR" name="rDOR[]" class="styled" type="checkbox">
-                                        <label for="checkbox3"><b>2 months</b></label>
+                                    <div class="radio radio-inline">
+                                        <input id="rDOR" name="rDOR" type="radio" value="2 Months">
+                                        <label for="inlineRadio2"><b>2 months</b></label>
                                     </div>
 
                                     <div class="hr4" style="margin-bottom:10px;"></div>
                                     <div class="row">
                                         <div class="col-md-3">
-                                            <div class="checkbox checkbox-success">
-                                                <input id="DORother" class="styled" type="checkbox">
-                                                <label for="checkbox3"><b>Other:</b></label>
+                                            <div class="radio radio-inline">
+                                                <input id="rDOR" name="rDOR" type="radio" value="other">
+                                                <label for="inlineRadio2"><b>Other:</b></label>
                                             </div>
                                         </div>
                                         <div class="col-md-9">
@@ -565,18 +565,18 @@ $cLastName = $companyinfo_tbl[0][2];
         $('#txtPOther').hide();
     }
 
-    $('#DORother').click(function () {
-        $("#txtDORother").val("");
-        if ($(this).is(':checked')) {
-            $('#txtDORother').show();
+    $(document).ready(function(){
+        $('input[type="radio"]').click(function(){
+            if($(this).attr("value")=="other"){
+                $("#txtDORother").show();
+            }else{
+                $("#txtDORother").hide();
+            }
+        });
+        if ($('#rDOR').is(':checked')) {
+            $("#txtDORother").show();
         } else {
-            $('#txtDORother').hide();
+            $("#txtDORother").hide();
         }
     });
-
-    if ($('#DORother').is(':checked')) {
-        $('#txtDORother').show();
-    } else {
-        $('#txtDORother').hide();
-    }
 </script>

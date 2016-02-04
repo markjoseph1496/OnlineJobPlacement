@@ -2,7 +2,30 @@
 include('../connection.php');
 session_start();
 $CompanyID = $_SESSION['CompanyID'];
+/*
+$companyinfotbl =
+    GSecureSQL::query(
+        "SELECT
+        CompanyName,
+        City,
+        Website,
+        FirstName,
+        LastName,
+        Position,
+        PhoneNum,
+        MobileNum,
+        Fax,
+        Email,
+        Industry
+        FROM companyinfotbl
+        WHERE CompanyID = ?",
+        TRUE,
+        "s",
+        $CompanyID
+    );
 
+$
+*/
 // Create Calendar Event
 if (isset($_GET['BtnCalendarsave'])) {
 
@@ -192,8 +215,76 @@ if (isset($_GET['btnsaveuser'])) {
         header("location: company-settingsaccount.php?id=AccountEdit");
 }
 if(isset($_POST['btnRequestLOG'])){
-    echo "Ss";
-    $checkbox = $_POST['rEType'];
-    $checkbox = implode(", ",$checkbox);
-    print_r($checkbox);
+    $PositionTitle = $_POST['rPTitle'];
+
+    $EmploymentType = $_POST['rEType']; //Checkbox array
+    $EmploymentType = implode(", ",$EmploymentType);
+
+    $OtherEType = $_POST['other']; //checkbox other
+    $txtOtherEType = $_POST['txtOther']; //other field
+
+    $rPLevel = $_POST['rPLevel']; //Checkbox array
+    $rPLevel = implode(", ", $rPLevel);
+
+    $pOther = $_POST['pOther']; //checkbox other
+    $txtPOther = $_POST['txtPOther']; //other field
+
+    $Description = $_POST['rDescription'];
+    $Qualification = $_POST['rQualification'];
+    $Location = $_POST['rLocation'];
+    $SalaryRange = $_POST['rSalaryRange'];
+    $YearOfExperience = $_POST['rYOE'];
+    $CFG = $_POST['CFG'];
+    $DurationOfRequest = $_POST['rDOR']; //Radiobutton
+    $txtDORother = $_POST['txtDORother']; //other field
+    $MarketingMaterials = $_POST['MarketingMaterials'];
+    $DateRequested = date("Y-m-d");
+
+    if($OtherEType == "on"){
+        $EmploymentType = $EmploymentType . ", " . $txtOtherEType;
+    }
+
+    if($pOther == "on"){
+        $rPLevel = $rPLevel . ", " . $txtPOther;
+    }
+
+    if($DurationOfRequest == "other"){
+        $DurationOfRequest = $txtDORother;
+    }
+
+    GSecureSQL::query(
+        "INSERT INTO logrequesttbl
+        (CompanyID,
+        Status,
+        DateRequested,
+        PositionTitle,
+        EmployeeClassification,
+        PositionLevel,
+        Description,
+        Qualifications,
+        Location,
+        SalaryRange,
+        RequiredYOE,
+        CFG,
+        DurationOfRequest,
+        MarketingMaterials)
+        VALUES
+        (?,'Pending',?,?,?,?,?,?,?,?,?,?,?,?)",
+        FALSE,
+        "sssssssssssss",
+        $CompanyID,
+        $DateRequested,
+        $PositionTitle,
+        $EmploymentType,
+        $rPLevel,
+        $Description,
+        $Qualification,
+        $Location,
+        $SalaryRange,
+        $YearOfExperience,
+        $CFG,
+        $DurationOfRequest,
+        $MarketingMaterials
+    );
+    echo "Sucess ba?";
 }
