@@ -397,121 +397,84 @@ if(isset($_SESSION['AdminID'])){
                                     <div class='col-md-15 fieldcol'>
                                         <label = 'usr' class = 'control-label'>Do you want to accept this request? <br>
                                         Courses to be approved:</label>
-                                        <div class="row">
-                                        <div class="col-md-4">
-                                            <label> Position Title: </label>
+                                        <ul>
+                                        <li>
+                                        <div class="form-group">
+                                           <label> Position Title: </label>
+                                                        <input type="text" class="form-control" id="PositionTitle"
+                                                               name="PositionTitle" readonly value="<?php echo $PositionTitle; ?>">
                                         </div>
-                                        <div class="col-md-4">
-                                                <div class="form-group">
-                                                    <label><?php echo $PositionTitle; ?></label>
-                                                </div>
-                                            </div>
+                                        </li>
+                                        <li>
+                                        <div class="form-group">
+                                           <label> Employee Classification: </label>
+                                                        <input type="text" class="form-control" id="EmployeeClassification"
+                                                               name="EmployeeClassification" readonly value="<?php echo $EmployeeClassification; ?>">
                                         </div>
-                                        <div class="row">
-                                            <div class="col-md-4">
-                                                <label> Employee Classification: </label>
-                                            </div>
-                                            <div class="col-md-4">
-                                                <div class="form-group">
-                                                    <label> <?php echo $EmployeeClassification; ?> </label>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="row">
-                                            <div class="col-md-4">
+                                        </li>
+                                        <li>
+                                            <div class = "form-group">
                                                 <label>Level: </label>
+                                                   <input type="text" class="form-control" id="PositionLevel"
+                                                               name="PositionLevel" readonly value="<?php echo $PositionLevel; ?>">     
                                             </div>
-                                            <div class="col-md-4">
-                                                <div class="form-group">
-                                                    <label> <?php echo $PositionLevel; ?> </label>
-                                                </div>
+                                        </li>
+                                        <li>
+                                            <div class = "form-group">
+                                               <label> Description: </label>
+                                                  <input type="text" class="form-control" id="Description"
+                                                               name="Description" readonly value="<?php echo $Description; ?>">       
                                             </div>
-                                        </div>
-                                        <div class="row">
-                                            <div class="col-md-4">
-                                                <label> Description: </label>
+                                        </li>
+                                        <li>
+                                            <div class = "form-group">
+                                               <label>  Qualifications: </label>
+                                                  <input type="text" class="form-control" id="Qualifications"
+                                                               name="Qualifications" readonly value="<?php echo $Qualifications; ?>">       
                                             </div>
-                                            <div class="col-md-4">
-                                                <div class="form-group">
-                                                    <label> <?php echo $Description; ?> </label>
-                                                </div>
+                                        </li>
+                                        <li>
+                                            <div class = "form-group">
+                                               <label> Location: </label>
+                                                  <input type="text" class="form-control" id="Location"
+                                                               name="Location" readonly value="<?php echo $Location; ?>">       
                                             </div>
-                                        </div>
-                                        <div class="row">
-                                            <div class="col-md-4">
-                                                <label>  Qualifications: </label>
+                                        </li>
+                                        <li>
+                                            <div class = "form-group">
+                                               <label> Range of Salary: </label>
+                                                  <input type="text" class="form-control" id="SalaryRange"
+                                                               name="SalaryRange" readonly value="<?php echo $SalaryRange; ?>">       
                                             </div>
-                                            <div class="col-md-4">
-                                                <div class="form-group">
-                                                    <label> <?php echo $Qualifications; ?> </label>
-                                                </div>
+                                        </li>
+                                        <li>
+                                            <div class = "form-group">
+                                               <label> Required years of experience: </label>
+                                                  <input type="text" class="form-control" id="RequiredYOE"
+                                                               name="RequiredYOE" readonly value="<?php echo $RequiredYOE; ?>">       
                                             </div>
-                                        </div>
-                                        <div class="row">
-                                            <div class="col-md-4">
-                                                <label> Location: </label>
+                                        </li>
+                                        <li>
+                                            <div class = "form-group">
+                                               <label> Consider Fresh Graduate: </label>
+                                                  <input type="text" class="form-control" id="CFG"
+                                                               name="CFG" readonly value="<?php echo $CFG; ?>">       
                                             </div>
-                                            <div class="col-md-4">
-                                                <div class="form-group">
-                                                    <label> <?php echo $Location; ?> </label>
-                                                </div>
+                                        </li>
+                                        <li>
+                                            <div class = "form-group">
+                                               <label> Duration of Request: </label>
+                                                  <input type="text" class="form-control" id="DurationOfRequest"
+                                                               name="DurationOfRequest" readonly value="<?php echo $DurationOfRequest; ?>">       
                                             </div>
-                                        </div>
-                                        &nbsp;
-                                        <div class="row">
-                                            <div class="col-md-4">
-                                                <label> Range of Salary: </label>
+                                        </li>
+                                        <li>
+                                            <div class = "form-group">
+                                               <label>Materials for posting.: </label>
+                                                  <input type="text" class="form-control" id="MarketingMaterials"
+                                                               name="MarketingMaterials" readonly value="<?php echo $MarketingMaterials; ?>">       
                                             </div>
-                                            <div class="col-md-4">
-                                                <div class="form-group">
-                                                    <label> <?php echo $SalaryRange; ?> </label>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        &nbsp;
-                                        <div class="row">
-                                            <div class="col-md-4">
-                                                <label> Required years of experience: </label>
-                                            </div>
-                                            <div class="col-md-4">
-                                                <div class="form-group">
-                                                    <label> <?php echo $RequiredYOE; ?> </label>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="row">
-                                            <div class="col-md-4">
-                                                <label> Consider Fresh Graduate: </label>
-                                            </div>
-                                            <div class="col-md-4">
-                                                <div class="form-group">
-                                                    <label> <?php echo $CFG; ?> </label>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        &nbsp;
-                                        <div class="row">
-                                            <div class="col-md-4">
-                                                <label> Duration of Request: </label>
-                                            </div>
-                                            <div class="col-md-4">
-                                                <div class="form-group">
-                                                    <label> <?php echo $DurationOfRequest; ?> </label>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        &nbsp;
-                                        <div class="row">
-                                            <div class="col-md-4">
-                                                <label>Materials for posting.: </label>
-                                            </div>
-                                            <div class="col-md-4">
-                                                <div class="form-group">
-                                                    <label> <?php echo $MarketingMaterials; ?> </label>
-                                                </div>
-                                            </div>
-                                        </div>
-                                            &nbsp;
+                                        </li>
                                             <?php
                                             $Course = explode(", ", $Course);
                                             foreach ($Course as $value1) {
@@ -523,17 +486,15 @@ if(isset($_SESSION['AdminID'])){
                                             <?php
                                         }
                                         ?>
-                                        <div class='form-group'>
-                                        </div>
-                                        <label = "usr" class = "control-label" id = "label">Duration</label>
-                                        <div class="form-group">
-                                            <label = "usr" class = "control-label" id = "label">
-                                            From: <?php echo date("Y/m/d"); ?> </label>
-                                            <div class="date_to">
-                                                <label = "usr" class = "control-label" id = "label">to: </label>
-                                                <input type="date" name="DateTo" id="date_to" class="form-control">
-                                            </div>
-                                        </div>
+                                        <li>
+                                            <label>Duration from: <?php echo date("Y/m/d"); ?> </label>
+                                            <input type="date" name="DateTo" id="date_to" class="form-control">
+                                        </li>
+                                        <li>
+                                            <label>to: </label>
+                                            <input type="date" name="DateTo" id="date_to" class="form-control">
+                                        </li>    
+                                        </ul>
                                     </div>
                                     <input type="hidden" name="lid" value="<?php echo $LID; ?>"/>
                                     <div class='modal-footer'>
