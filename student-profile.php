@@ -81,13 +81,17 @@
                 <div class="container">
                     <div class="navbar-header">
                         <!-- Stat Toggle Nav Link For Mobiles -->
-                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <button type="button" class="navbar-toggle" data-toggle="collapse"
+                                data-target=".navbar-collapse">
                             <i class="fa fa-bars"></i>
                         </button>
                         <!-- End Toggle Nav Link For Mobiles -->
-                        <a class="navbar-brand" href="">
-                            <img src="images/ojpms.png">
+                        <a class="navbar-brand">
+                            <img src="../../images/ojpms.png">
                         </a>
+                    </div>
+                    <div class="navbar-collapse collapse">
+                        
                     </div>
                 </div>
             </div>

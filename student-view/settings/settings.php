@@ -64,10 +64,8 @@ $MajorCourse = $course_qry[0][0];
     <link rel="stylesheet" href="../../css/font-awesome.min.css" type="text/css" media="screen">
 
     <!-- Fonts -->
-    <link href="../../fonts/ffonts/montserrat.css" rel="stylesheet" type="text/css">
-    <link href="../../fonts/ffonts/kaushan.css" rel="stylesheet" type="text/css">
-    <link href="../../fonts/ffonts/droid.css" rel="stylesheet" type="text/css">
-    <link href="../../fonts/ffonts/roboto.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" type="text/css" href="../../fonts/ffonts/montserrat.css">
+    <link rel="stylesheet" type="text/css" href="../../fonts/ffonts/open-sans.css">
 
     <!-- Slicknav -->
     <link rel="stylesheet" type="text/css" href="../../css/slicknav.css" media="screen">
@@ -160,8 +158,7 @@ $MajorCourse = $course_qry[0][0];
                             <li class="dropdown">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown"><b class="fa fa-user"></b> Welcome, <b><?php echo $StudentName; ?> </b><b class="caret"></b></a>
                                 <ul class="dropdown-menu">
-                                    <li><a href="#">Profile <b class="fa fa-user" style="float:right;"></b></a></li>
-                                    <li><a href="../settings/settings.php">Settings <b class="fa fa-cog" style="float:right;"></b></a></li>
+                                    <li><a href="../../student-profile.php">Profile <b class="fa fa-user" style="float:right;"></b></a></li>
                                     <li class="divider"></li>
                                     <li><a href="#" data-target='#Logout' data-toggle='modal'>Sign Out <b class="fa fa-sign-out" style="float:right;"></b></a></li>
                                 </ul>
@@ -219,38 +216,6 @@ $MajorCourse = $course_qry[0][0];
                     </a>
                 </div>
             </div>
-            <!-- Mobile Menu Start -->
-            <ul class="wpb-mobile-menu">
-                <li>
-                    <a href="personal-info.php">My Info</a>
-                    <ul class="dropdown">
-                        <li><a href="personal-info.php">Personal Info</a></li>
-                        <li><a href="contacts-info.php">Contacts Info</a></li>
-                        <li><a href="work.php">Work</a></li>
-                        <li><a href="education.php">Education</a></li>
-                        <li><a href="certifications.php">Certifications</a></li>
-                        <li><a href="achievements.php">Achievements</a></li>
-                        <li><a href="specialization-and-languages.php">Specialization & Languages</a></li>
-                        <li><a href="references.php">References</a></li>
-                        <li><a href="portfolio.php">Portfolio</a></li>
-                    </ul>
-                </li>
-                <li>
-                    <a href="../resumelink/resume-link.php">Resume Link</a>
-                    <ul class="dropdown">
-                        <li><a href="../resumelink/resume-link.php">Resume Link</a></li>
-                        <li><a href="../resumelink/background.php">Background</a></li>
-                        <li><a href="../resumelink/print-share.php">Print/Share</a></li>
-                    </ul>
-                </li>
-                <li>
-                    <a href="../applications/applications.php">Applications</a>
-                </li>
-                <li>
-                    <a href="../search-job/jobs.php">Jobs</a>
-                </li>
-            </ul>
-            <!-- Mobile Menu End -->
         </div>
     </header>
 
@@ -325,9 +290,6 @@ $MajorCourse = $course_qry[0][0];
                                 <h2 class="primary"><strong>Privacy Settings</strong></h2>
                             </div>
                             <div class="hr4" style="margin-top:15px;margin-bottom:25px;"></div>
-                            <p><b>Resumé Link URL:</b><a href="../../../resumelinkprofile.php" target="_blank">
-                                http://markjoseph1496.ojpms.com <i class="fa fa-external-link-square"></i></a>
-                            </p><br>
                             <div class="row">
                                 <div class="project-content col-md-6">
                                     <h4><span>Enable Public Resumelink</span></h4>
