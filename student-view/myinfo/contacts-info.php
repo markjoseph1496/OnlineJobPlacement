@@ -354,14 +354,14 @@ if($References == "ok"){
                             <li>
                                 <a class="active" href="personal-info.php">My Info</a>
                                 <ul class="dropdown">
-                                    <li><a href="personal-info.php">Personal Info</a></li>
-                                    <li><a class="active" href="contacts-info.php">Contacts Info</a></li>
-                                    <li><a href="work.php">Work</a></li>
-                                    <li><a href="education.php">Education</a></li>
-                                    <li><a href="certifications.php">Certifications</a></li>
-                                    <li><a href="achievements.php">Achievements</a></li>
-                                    <li><a href="specialization-and-languages.php">Specialization & Languages</a></li>
-                                    <li><a href="references.php">References</a></li>
+                                    <li><a href="personal-info.php"><?php echo $nPinfo; ?> Personal Info</a></li>
+                                    <li><a class="active" href="contacts-info.php"><?php echo $nCinfo; ?> Contacts Info</a></li>
+                                    <li><a href="work.php"><?php echo $nWorkXP; ?> Work</a></li>
+                                    <li><a href="education.php"><?php echo $nSchool; ?> Education</a></li>
+                                    <li><a href="certifications.php"><?php echo $nCertification; ?> Certifications</a></li>
+                                    <li><a href="achievements.php"><?php echo $nAchievements; ?> Achievements</a></li>
+                                    <li><a href="specialization-and-languages.php"><?php echo $nSpecialization; ?> Specialization & Languages</a></li>
+                                    <li><a href="references.php"><?php echo $nReferences; ?> References</a></li>
                                     <li><a href="portfolio.php">Portfolio</a></li>
                                 </ul>
                             </li>
