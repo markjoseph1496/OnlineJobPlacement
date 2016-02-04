@@ -91,10 +91,10 @@ if (isset($_POST['ModalNewPassword'])) {
             header("location: admin-account.php?id=2");
 
         } else {
-            echo "Username or Password";
+            echo "Wrong password";
         }
     } else {
-        echo "Username ID or Password";
+        echo "Wrong password";
     }
 }
 
