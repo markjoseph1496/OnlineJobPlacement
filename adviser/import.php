@@ -12,7 +12,6 @@ if(isset($_POST["Import"])){
 		  	$file = fopen($filename, "r");
 	         while (($emapData = fgetcsv($file, 10000, ",")) !== FALSE)
 	         {
-	         	$Name = emapData[0];
 	         		    
 	          //It wiil insert a row to our subject table from our csv file`
 	           $sql = "INSERT into ojttbl (`StudentID`,`LastName`,FirstName`,`MiddleName`,`Course`,`CompanyName`,`CompanyAddress`,`Supervisor`,`Position`,`ContactNumber`,`Email`) 
