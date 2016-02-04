@@ -44,15 +44,13 @@ if (isset($_SESSION['AdminID'])) {
     <link rel="stylesheet" href="../css/font-awesome.min.css" type="text/css" media="screen">
 
     <!-- Fonts -->
-    <link href="../fonts/ffonts/montserrat.css" rel="stylesheet" type="text/css">
-    <link href="../fonts/ffonts/kaushan.css" rel="stylesheet" type="text/css">
-    <link href="../fonts/ffonts/droid.css" rel="stylesheet" type="text/css">
-    <link href="../fonts/ffonts/roboto.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" type="text/css" href="../fonts/ffonts/montserrat.css">
+    <link rel="stylesheet" type="text/css" href="../fonts/ffonts/open-sans.css">
 
     <!-- Slicknav -->
     <link rel="stylesheet" type="text/css" href="../css/slicknav.css" media="screen">
 
-    <!-- Margo CSS Styles  -->
+    <!-- CSS Styles  -->
     <link rel="stylesheet" type="text/css" href="../css/style.css" media="screen">
 
     <!-- Responsive CSS Styles  -->
@@ -122,31 +120,30 @@ if (isset($_SESSION['AdminID'])) {
                     </div>
                     <!-- .col-md-6 -->
                     <div class="col-md-5">
-                        <!-- Start Social Links -->
-                        <ul class="nav navbar-nav navbar-right">
-                            <li class="dropdown icon-border" id="notificationLink">
-                                <span id="notification_count">3</span>
-                                <a href="#" class="bell itl-tooltip" data-placement="bottom" data-toggle="dropdown"><i
-                                        class="fa fa-bell"></i></a>
-                                <ul id="notificationContainer" class="dropdown-menu dropdown-menu-inverse">
-                                    <li class="dropdown-header"><label>Notification</label></li>
-                                    <li class="disabled"><a href="#" tabindex="-1">No new notification.</a></li>
-                                    <li><a href="#" tabindex="-1">This is a notification.</a></li>
-                                    <li class="divider"></li>
-                                    <li><a href="../notification/notification.php" tabindex="-1">See All</a></li>
-                                </ul>
-                            </li>
-                            <li class="dropdown">
-                                <a href="#" class="dropdown-toggle" data-toggle="dropdown"><b class="fa fa-user"></b> Welcome, <b>Admin Tim </b><b class="caret"></b></a>
-                                <ul class="dropdown-menu">
-                                    <li><a href="#">Profile <b class="fa fa-user" style="float:right;"></b></a></li>
-                                    <li><a href="../settings/settings.php">Settings <b class="fa fa-cog" style="float:right;"></b></a></li>
-                                    <li class="divider"></li>
-                                    <li><a href="#" data-target='#Logout' data-toggle='modal'>Sign Out <b class="fa fa-sign-out" style="float:right;"></b></a></li>
-                                </ul>
-                            </li>
-                        </ul>
-                        <!-- End Social Links -->
+                        <!-- Notification -->
+                            <ul class="nav navbar-nav navbar-right">
+                                <li class="dropdown icon-border" id="notificationLink">
+                                    <span id="notification_count">3</span>
+                                    <a href="#" class="bell itl-tooltip" data-placement="bottom" data-toggle="dropdown"><i
+                                            class="fa fa-bell"></i></a>
+                                    <ul id="notificationContainer" class="dropdown-menu dropdown-menu-inverse">
+                                        <li class="dropdown-header"><label>Notification</label></li>
+                                        <li class="disabled"><a href="#" tabindex="-1">No new notification.</a></li>
+                                        <li><a href="#" tabindex="-1">This is a notification.</a></li>
+                                        <li class="divider"></li>
+                                        <li><a href="../notification/notification.php" tabindex="-1">See All</a></li>
+                                    </ul>
+                                </li>
+                                <li class="dropdown">
+                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown"><b class="fa fa-user"></b> Welcome, <b>Admin Tim </b><b class="caret"></b></a>
+                                    <ul class="dropdown-menu">
+                                        <li><a href="admin-account.php">Account <b class="fa fa-user" style="float:right;"></b></a></li>
+                                        <li class="divider"></li>
+                                        <li><a href="#" data-target='#Logout' data-toggle='modal'>Sign Out <b class="fa fa-sign-out" style="float:right;"></b></a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        <!-- Notification -->
                     </div>
                     <!-- .col-md-6 -->
                 </div>
@@ -172,31 +169,31 @@ if (isset($_SESSION['AdminID'])) {
                 </div>
                 <div class="navbar-collapse collapse">
                     <!-- Modal -->
-                    <div class="modal fade" id="Logout"
-                         role="dialog">
-                        <div class="modal-dialog" style="padding:100px">
-                            <!-- Modal content-->
-                            <div class="modal-content">
-                                <div class="modal-header">
-                                    <button style = type="button" class="close" data-dismiss="modal">&times;</button>
-                                    <h4 class="modal-title">Log out?</h4>
-                                </div>
-                                <div class="modal-body">
-                                    <div class="col-md-15 fieldcol">
-                                        <label = "usr" class = "control-label">Do you want to log out?</label>
-                                        <div class="form-group">
-                                        </div>
+                     <div class="modal fade" id="Logout"
+                             role="dialog">
+                            <div class="modal-dialog" style="padding:100px">
+                                <!-- Modal content-->
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <button style = type="button" class="close" data-dismiss="modal">&times;</button>
+                                        <h4 class="modal-title">Sign Out</h4>
                                     </div>
-                                    <div class="modal-footer">
-                                        <a href="logout.php"
-                                           class="btn btn-primary">Log out</a>
-                                        <button type="button" class="btn btn-default" data-dismiss="modal">
-                                            Cancel
-                                        </button>
+                                    <div class="modal-body">
+                                        <div class="col-md-15 fieldcol">
+                                            <label = "usr" class = "control-label">Do you want to Sign Out?</label>
+                                            <div class="form-group">
+                                            </div>
+                                        </div>
+                                        <div class="modal-footer">
+                                            <a href="logout.php"
+                                               class="btn btn-primary">Sign out</a>
+                                            <button type="button" class="btn btn-default" data-dismiss="modal">
+                                                Cancel
+                                            </button>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
                     </div>
                     <!-- End Sign-out -->
                     <!-- Start Navigation List -->
@@ -229,6 +226,7 @@ if (isset($_SESSION['AdminID'])) {
                             <ul class="dropdown">
                                 <li><a href="admin-maintenance.php">Courses</a></li>
                                 <li><a href="admin-users.php">Users</a></li>
+                                <li><a href="admin-calendar.php">Calendar Events</a></li>
                             </ul>
                         </li>
                     </ul>
@@ -265,6 +263,8 @@ if (isset($_SESSION['AdminID'])) {
                         <a> Maintenance</a>
                         <ul class="dropdown">
                             <li><a href="admin-maintenance.php">Courses</a></li>
+                            <li><a href="admin-users.php">Users</a></li>
+                            <li><a href="admin-calendar.php">Calendar Events</a></li>
                         </ul>
                     </li>
                 </ul>

@@ -50,15 +50,13 @@ $Total = $TotalStudents[0][0];
     <link rel="stylesheet" href="../css/font-awesome.min.css" type="text/css" media="screen">
 
     <!-- Fonts -->
-    <link href="../fonts/ffonts/montserrat.css" rel="stylesheet" type="text/css">
-    <link href="../fonts/ffonts/kaushan.css" rel="stylesheet" type="text/css">
-    <link href="../fonts/ffonts/droid.css" rel="stylesheet" type="text/css">
-    <link href="../fonts/ffonts/roboto.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" type="text/css" href="../fonts/ffonts/montserrat.css">
+    <link rel="stylesheet" type="text/css" href="../fonts/ffonts/open-sans.css">
 
     <!-- Slicknav -->
     <link rel="stylesheet" type="text/css" href="../css/slicknav.css" media="screen">
 
-    <!-- Margo CSS Styles  -->
+    <!-- CSS Styles  -->
     <link rel="stylesheet" type="text/css" href="../css/style.css" media="screen">
 
     <!-- Responsive CSS Styles  -->
@@ -128,7 +126,7 @@ $Total = $TotalStudents[0][0];
                         </div>
                         <!-- .col-md-6 -->
                         <div class="col-md-5">
-                            <!-- Start Social Links -->
+                            <!-- Notification -->
                             <ul class="nav navbar-nav navbar-right">
                                 <li class="dropdown icon-border" id="notificationLink">
                                     <span id="notification_count">3</span>
@@ -145,14 +143,13 @@ $Total = $TotalStudents[0][0];
                                 <li class="dropdown">
                                     <a href="#" class="dropdown-toggle" data-toggle="dropdown"><b class="fa fa-user"></b> Welcome, <b>Admin Tim </b><b class="caret"></b></a>
                                     <ul class="dropdown-menu">
-                                        <li><a href="#">Profile <b class="fa fa-user" style="float:right;"></b></a></li>
-                                        <li><a href="../settings/settings.php">Settings <b class="fa fa-cog" style="float:right;"></b></a></li>
+                                        <li><a href="admin-account.php">Account <b class="fa fa-user" style="float:right;"></b></a></li>
                                         <li class="divider"></li>
                                         <li><a href="#" data-target='#Logout' data-toggle='modal'>Sign Out <b class="fa fa-sign-out" style="float:right;"></b></a></li>
                                     </ul>
                                 </li>
                             </ul>
-                            <!-- End Social Links -->
+                            <!-- Notification -->
                         </div>
                         <!-- .col-md-6 -->
                     </div>
@@ -186,17 +183,17 @@ $Total = $TotalStudents[0][0];
                                 <div class="modal-content">
                                     <div class="modal-header">
                                         <button style = type="button" class="close" data-dismiss="modal">&times;</button>
-                                        <h4 class="modal-title">Log out?</h4>
+                                        <h4 class="modal-title">Sign Out</h4>
                                     </div>
                                     <div class="modal-body">
                                         <div class="col-md-15 fieldcol">
-                                            <label = "usr" class = "control-label">Do you want to log out?</label>
+                                            <label = "usr" class = "control-label">Do you want to Sign Out?</label>
                                             <div class="form-group">
                                             </div>
                                         </div>
                                         <div class="modal-footer">
                                             <a href="logout.php"
-                                               class="btn btn-primary">Log out</a>
+                                               class="btn btn-primary">Sign out</a>
                                             <button type="button" class="btn btn-default" data-dismiss="modal">
                                                 Cancel
                                             </button>
@@ -236,6 +233,7 @@ $Total = $TotalStudents[0][0];
                                 <ul class="dropdown">
                                     <li><a href="admin-maintenance.php">Courses</a></li>
                                     <li><a href="admin-users.php">Users</a></li>
+                                    <li><a href="admin-calendar.php">Calendar Events</a></li>
                                 </ul>
                             </li>
                         </ul>
@@ -273,6 +271,7 @@ $Total = $TotalStudents[0][0];
                            <ul class="dropdown">
                                     <li><a class="active" href="admin-maintenance.php">Courses</a></li>
                                     <li><a href="admin-users.php">Users</a></li>
+                                    <li><a href="admin-calendar.php">Calendar Events</a></li>
                             </ul>
                         </li>
                     </ul>
