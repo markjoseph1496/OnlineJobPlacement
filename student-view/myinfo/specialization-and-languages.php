@@ -50,6 +50,18 @@ $progress_tbl =
         "s",
         $StudentID
     );
+$nPinfo = "*";
+$nCinfo = "*";
+$nObjective = "*";
+$nWorkXP = "*";
+$nSchool = "*";
+$nSeminar = "*";
+$nCertification = "*";
+$nAchievements = "*";
+$nSpecialization = "*";
+$nLanguages = "*";
+$nReferences = "*";
+
 $Progress = 10;
 $Pinfo = $progress_tbl[0][0];
 $Cinfo = $progress_tbl[0][1];
@@ -65,36 +77,52 @@ $References = $progress_tbl[0][10];
 
 if($Pinfo == "ok"){
     $Progress = $Progress + 10;
+    $nPinfo = "";
 }
 if($Cinfo == "ok"){
     $Progress = $Progress + 10;
+    $nCinfo = "";
 }
 if($Objective == "ok"){
     $Progress = $Progress + 5;
+    $nObjective = "";
 }
 if($WorkXP == "ok"){
     $Progress = $Progress + 10;
+    $nWorkXP = "";
 }
 if($School == "ok"){
     $Progress = $Progress + 5;
+    $nSchool = "";
 }
 if($Seminar == "ok"){
     $Progress = $Progress + 5;
+    $nSeminar = "";
 }
 if($Certification == "ok"){
     $Progress = $Progress + 10;
+    $nCertification = "";
 }
 if($Achievements == "ok"){
     $Progress = $Progress + 10;
+    $nAchievements = "";
 }
 if($Specialization == "ok"){
     $Progress = $Progress + 10;
+    if($Languages == "ok" && $Specialization == "ok"){
+        $nSpecialization = "";
+    }
 }
 if($Languages == "ok"){
     $Progress = $Progress + 5;
+    if($Languages == "ok" && $Specialization == "ok"){
+        $nSpecialization = "";
+    }
+
 }
 if($References == "ok"){
     $Progress = $Progress + 10;
+    $nReferences = "";
 }
 ?>
 <!DOCTYPE html>
@@ -342,14 +370,14 @@ if($References == "ok"){
                     <li>
                         <a class="active" href="personal-info.php">My Info</a>
                         <ul class="dropdown">
-                            <li><a href="personal-info.php">Personal Info</a></li>
-                            <li><a href="contacts-info.php">Contacts Info</a></li>
-                            <li><a href="work.php">Work</a></li>
-                            <li><a href="education.php">Education</a></li>
-                            <li><a href="certifications.php">Certifications</a></li>
-                            <li><a href="achievements.php">Achievements</a></li>
-                            <li><a class="active" href="specialization-and-languages.php">Specialization & Languages</a></li>
-                            <li><a href="references.php">References</a></li>
+                            <li><a href="personal-info.php"><?php echo $nPinfo; ?> Personal Info</a></li>
+                            <li><a href="contacts-info.php"><?php echo $nCinfo; ?> Contacts Info</a></li>
+                            <li><a href="work.php"><?php echo $nWorkXP; ?> Work</a></li>
+                            <li><a href="education.php"><?php echo $nSchool; ?> Education</a></li>
+                            <li><a href="certifications.php"><?php echo $nCertification; ?> Certifications</a></li>
+                            <li><a href="achievements.php"><?php echo $nAchievements; ?> Achievements</a></li>
+                            <li><a class="active" href="specialization-and-languages.php"><?php echo $nSpecialization; ?> Specialization & Languages</a></li>
+                            <li><a href="references.php"><?php echo $nReferences; ?> References</a></li>
                             <li><a href="portfolio.php">Portfolio</a></li>
                         </ul>
                     </li>
