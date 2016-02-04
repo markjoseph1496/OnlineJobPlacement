@@ -140,7 +140,7 @@ if($References == "ok"){
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
     <!-- Page Description and Author -->
-    <meta name="description" content="Margo - Responsive HTML5 Template">
+    <meta name="description" content=" - Responsive HTML5 Template">
     <meta name="author" content="iThemesLab">
 
     <!-- Bootstrap CSS -->
@@ -269,7 +269,7 @@ if($References == "ok"){
                             <li class="dropdown">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown"><b class="fa fa-user"></b> Welcome, <b><?php echo $StudentName; ?> </b><b class="caret"></b></a>
                                 <ul class="dropdown-menu">
-                                    <li><a href="#">Profile <b class="fa fa-user" style="float:right;"></b></a></li>
+                                    <li><a href="../../student-profile.php">Profile <b class="fa fa-user" style="float:right;"></b></a></li>
                                     <li><a href="../settings/settings.php">Settings <b class="fa fa-cog" style="float:right;"></b></a></li>
                                     <li class="divider"></li>
                                     <li><a href="#" data-target='#Logout' data-toggle='modal'>Sign Out <b class="fa fa-sign-out" style="float:right;"></b></a></li>
@@ -294,17 +294,15 @@ if($References == "ok"){
                 <div class="modal-content">
                     <div class="modal-header">
                         <button type="button" class="close" data-dismiss="modal">&times;</button>
-                        <h4 class="modal-title">Sign Out?</h4>
+                        <h4 class="modal-title">Sign Out</h4>
                     </div>
                     <div class="modal-body">
                         <div class="col-md-15 fieldcol">
-                            <label = "usr" class = "control-label">Do you want to sign out?</label>
-                            <div class="form-group">
-                            </div>
+                            <label>Do you want to sign out?</label>
                         </div>
                         <div class="modal-footer">
                             <a href="../logout.php"
-                               class="btn btn-primary">Sign out</a>
+                               class="btn btn-primary">Sign Out</a>
                             <button type="button" class="btn btn-default" data-dismiss="modal">
                                 Cancel
                             </button>
@@ -345,11 +343,11 @@ if($References == "ok"){
                             </ul>
                         </li>
                         <li>
-                            <a href="../resumelink/resume-link.php">Resume Link</a>
+                            <a href="../resume/resume.php">Resumé</a>
                             <ul class="dropdown">
-                                <li><a href="../resumelink/resume-link.php">Resume Link</a></li>
-                                <li><a href="../resumelink/background.php">Background</a></li>
-                                <li><a href="../resumelink/print-share.php">Print/Share</a></li>
+                                <li><a href="../resume/resume.php">Resumé</a></li>
+                                <li><a href="../resume/background.php">Background</a></li>
+                                <li><a href="../resume/print.php">Print</a></li>
                             </ul>
                         </li>
                         <li>
@@ -379,11 +377,11 @@ if($References == "ok"){
                     </ul>
                 </li>
                 <li>
-                    <a href="../resumelink/resume-link.php">Resume Link</a>
+                    <a href="../resume/resume.php">Resumé</a>
                     <ul class="dropdown">
-                        <li><a href="../resumelink/resume-link.php">Resume Link</a></li>
-                        <li><a href="../resumelink/background.php">Background</a></li>
-                        <li><a href="../resumelink/print-share.php">Print/Share</a></li>
+                        <li><a href="../resume/resume.php">Resumé</a></li>
+                        <li><a href="../resume/background.php">Background</a></li>
+                        <li><a href="../resume/print.php">Print</a></li>
                     </ul>
                 </li>
                 <li>
@@ -507,14 +505,14 @@ if($References == "ok"){
                                     <td><?php echo $Phone; ?></td>
                                     <td><?php echo $Email; ?></td>
                                     <td class="text-center">
-                                        <button href="" class="btn btn-danger" data-toggle="modal"
-                                                data-target="#DeleteReference<?php echo $ReferenceID; ?>">
-                                            <i class="fa fa-trash fa-1x"></i>
-                                        </button>
                                         <a href="edit/edit-reference.php?id=<?php echo $ReferenceID; ?>"
                                            class="btn btn-default">
                                             <i class="fa fa-pencil-square-o fa-1x"></i>
                                         </a>
+                                        <button href="" class="btn btn-danger" data-toggle="modal"
+                                                data-target="#DeleteReference<?php echo $ReferenceID; ?>">
+                                            <i class="fa fa-trash fa-1x"></i>
+                                        </button>
                                     </td>
                                 </tr>
                                 <!-- Modal -->

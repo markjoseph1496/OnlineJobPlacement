@@ -272,7 +272,7 @@ if($References == "ok"){
                                 <li class="dropdown">
                                     <a href="#" class="dropdown-toggle" data-toggle="dropdown"><b class="fa fa-user"></b> Welcome, <b><?php echo $StudentName; ?> </b><b class="caret"></b></a>
                                     <ul class="dropdown-menu">
-                                        <li><a href="#">Profile <b class="fa fa-user" style="float:right;"></b></a></li>
+                                        <li><a href="../../student-profile.php">Profile <b class="fa fa-user" style="float:right;"></b></a></li>
                                         <li><a href="../settings/settings.php">Settings <b class="fa fa-cog" style="float:right;"></b></a></li>
                                         <li class="divider"></li>
                                         <li><a href="#" data-target='#Logout' data-toggle='modal'>Sign Out <b class="fa fa-sign-out" style="float:right;"></b></a></li>
@@ -297,17 +297,15 @@ if($References == "ok"){
                     <div class="modal-content">
                         <div class="modal-header">
                             <button type="button" class="close" data-dismiss="modal">&times;</button>
-                            <h4 class="modal-title">Sign Out?</h4>
+                            <h4 class="modal-title">Sign Out</h4>
                         </div>
                         <div class="modal-body">
                             <div class="col-md-15 fieldcol">
-                                <label = "usr" class = "control-label">Do you want to sign out?</label>
-                                <div class="form-group">
-                                </div>
+                                <label>Do you want to sign out?</label>
                             </div>
                             <div class="modal-footer">
                                 <a href="../logout.php"
-                                   class="btn btn-primary">Sign out</a>
+                                   class="btn btn-primary">Sign Out</a>
                                 <button type="button" class="btn btn-default" data-dismiss="modal">
                                     Cancel
                                 </button>
@@ -336,23 +334,23 @@ if($References == "ok"){
                             <li>
                                 <a class="active" href="personal-info.php">My Info</a>
                                 <ul class="dropdown">
-                                    <li><a href="personal-info.php">Personal Info</a></li>
-                                    <li><a href="contacts-info.php">Contacts Info</a></li>
-                                    <li><a href="work.php">Work</a></li>
-                                    <li><a href="education.php">Education</a></li>
-                                    <li><a href="certifications.php">Certifications</a></li>
-                                    <li><a href="achievements.php">Achievements</a></li>
-                                    <li><a class="active" href="specialization-and-languages.php">Specialization & Languages</a></li>
-                                    <li><a href="references.php">References</a></li>
+                                    <li><a href="personal-info.php"><?php echo $nPinfo; ?> Personal Info</a></li>
+                                    <li><a href="contacts-info.php"><?php echo $nCinfo; ?> Contacts Info</a></li>
+                                    <li><a href="work.php"><?php echo $nWorkXP; ?> Work</a></li>
+                                    <li><a href="education.php"><?php echo $nSchool; ?> Education</a></li>
+                                    <li><a href="certifications.php"><?php echo $nCertification; ?> Certifications</a></li>
+                                    <li><a href="achievements.php"><?php echo $nAchievements; ?> Achievements</a></li>
+                                    <li><a class="active" href="specialization-and-languages.php"><?php echo $nSpecialization; ?> Specialization & Languages</a></li>
+                                    <li><a href="references.php"><?php echo $nReferences; ?> References</a></li>
                                     <li><a href="portfolio.php">Portfolio</a></li>
                                 </ul>
                             </li>
                             <li>
-                                <a href="../resumelink/resume-link.php">Resume Link</a>
+                                <a href="../resume/resume.php">Resumé</a>
                                 <ul class="dropdown">
-                                    <li><a href="../resumelink/resume-link.php">Resume Link</a></li>
-                                    <li><a href="../resumelink/background.php">Background</a></li>
-                                    <li><a href="../resumelink/print-share.php">Print/Share</a></li>
+                                    <li><a href="../resume/resume.php">Resumé</a></li>
+                                    <li><a href="../resume/background.php">Background</a></li>
+                                    <li><a href="../resume/print.php">Print</a></li>
                                 </ul>
                             </li>
                             <li>
@@ -370,23 +368,23 @@ if($References == "ok"){
                     <li>
                         <a class="active" href="personal-info.php">My Info</a>
                         <ul class="dropdown">
-                            <li><a href="personal-info.php"><?php echo $nPinfo; ?> Personal Info</a></li>
-                            <li><a href="contacts-info.php"><?php echo $nCinfo; ?> Contacts Info</a></li>
-                            <li><a href="work.php"><?php echo $nWorkXP; ?> Work</a></li>
-                            <li><a href="education.php"><?php echo $nSchool; ?> Education</a></li>
-                            <li><a href="certifications.php"><?php echo $nCertification; ?> Certifications</a></li>
-                            <li><a href="achievements.php"><?php echo $nAchievements; ?> Achievements</a></li>
-                            <li><a class="active" href="specialization-and-languages.php"><?php echo $nSpecialization; ?> Specialization & Languages</a></li>
-                            <li><a href="references.php"><?php echo $nReferences; ?> References</a></li>
+                            <li><a href="personal-info.php">Personal Info</a></li>
+                            <li><a href="contacts-info.php">Contacts Info</a></li>
+                            <li><a href="work.php">Work</a></li>
+                            <li><a href="education.php">Education</a></li>
+                            <li><a href="certifications.php">Certifications</a></li>
+                            <li><a href="achievements.php">Achievements</a></li>
+                            <li><a class="active" href="specialization-and-languages.php">Specialization & Languages</a></li>
+                            <li><a href="references.php">References</a></li>
                             <li><a href="portfolio.php">Portfolio</a></li>
                         </ul>
                     </li>
                     <li>
-                        <a href="../resumelink/resume-link.php">Resume Link</a>
+                        <a href="../resume/resume.php">Resumé</a>
                         <ul class="dropdown">
-                            <li><a href="../resumelink/resume-link.php">Resume Link</a></li>
-                            <li><a href="../resumelink/background.php">Background</a></li>
-                            <li><a href="../resumelink/print-share.php">Print/Share</a></li>
+                            <li><a href="../resume/resume.php">Resumé</a></li>
+                            <li><a href="../resume/background.php">Background</a></li>
+                            <li><a href="../resume/print.php">Print</a></li>
                         </ul>
                     </li>
                     <li>
@@ -543,12 +541,12 @@ if($References == "ok"){
                                             </fieldset>
                                         </td>
                                         <td class="text-center">
-                                            <button class="btn btn-danger" data-toggle="modal" data-target="#DeleteSpecialization<?php echo $SID; ?>">
-                                                <i class="fa fa-trash fa-1x"></i>
-                                            </button>
                                             <a href="edit/edit-specialization.php?id=<?php echo $SID; ?>" class="btn btn-default">
                                                 <i class="fa fa-pencil-square-o fa-1x"></i>
                                             </a>
+                                            <button class="btn btn-danger" data-toggle="modal" data-target="#DeleteSpecialization<?php echo $SID; ?>">
+                                                <i class="fa fa-trash fa-1x"></i>
+                                            </button>
                                         </td>
                                      </tr>
                                      <!-- Modal -->
@@ -650,12 +648,12 @@ if($References == "ok"){
                                             </fieldset>
                                         </td>
                                         <td class="text-center">
-                                            <button class="btn btn-danger" data-toggle="modal" data-target="#DeleteLanguage">
-                                                <i class="fa fa-trash fa-1x"></i>
-                                            </button>
                                             <a href="edit/edit-language.php?id=<?php echo $LangID; ?>" class="btn btn-default">
                                                 <i class="fa fa-pencil-square-o fa-1x"></i>
                                             </a>
+                                            <button class="btn btn-danger" data-toggle="modal" data-target="#DeleteLanguage">
+                                                <i class="fa fa-trash fa-1x"></i>
+                                            </button>
                                         </td>
                                     </tr>
                                      <!-- Modal -->

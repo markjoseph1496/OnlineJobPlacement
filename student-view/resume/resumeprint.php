@@ -75,7 +75,7 @@ $hGraduated = $hsschool_tbl[0][2];
 <head>
 
     <!-- Basic -->
-    <title>OJPMS | Print Resume</title>
+    <title>OJPMS | Print Resumé</title>
 
     <!-- Define Charset -->
     <meta charset="utf-8">

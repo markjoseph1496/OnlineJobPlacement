@@ -140,642 +140,522 @@ $MajorCourse = $coursetbl[0][0];
 </head>
 
 <body>
-<div id="container">
-    <!-- Start Header Section -->
-    <div class="hidden-header"></div>
-    <header class="clearfix">
-        <div class="top-bar">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-7">
-                        <!-- Start Contact Info -->
-                        <ul class="profile-name">
-                            <li>Course: <b><?php echo $MajorCourse; ?></b></li>
-                        </ul>
-                        <!-- End Contact Info -->
-                    </div>
-                    <!-- .col-md-6 -->
-                    <div class="col-md-5">
-                        <!-- Start Social Links -->
-                        <ul class="nav navbar-nav navbar-right">
-                            <li class="dropdown icon-border" id="notificationLink">
-                                <span id="notification_count">3</span>
-                                <a href="#" class="bell itl-tooltip" data-placement="bottom" data-toggle="dropdown"><i
-                                        class="fa fa-bell"></i></a>
-                                <ul id="notificationContainer" class="dropdown-menu dropdown-menu-inverse">
-                                    <li class="dropdown-header"><label>Notification</label></li>
-                                    <li class="disabled"><a href="#" tabindex="-1">No new notification.</a></li>
-                                    <li><a href="#" tabindex="-1">The administrator accepted your request.</a></li>
-                                    <li class="divider"></li>
-                                    <li><a href="../notification/notification.php" tabindex="-1">See All</a></li>
-                                </ul>
-                            </li>
-                            <li class="dropdown">
-                                <a href="#" class="dropdown-toggle" data-toggle="dropdown"><b class="fa fa-user"></b>
-                                    Welcome, <b><?php echo $StudentName; ?> </b><b class="caret"></b></a>
-                                <ul class="dropdown-menu">
-                                    <li><a href="#">Profile <b class="fa fa-user" style="float:right;"></b></a></li>
-                                    <li><a href="../settings/settings.php">Settings <b class="fa fa-cog"
-                                                                                       style="float:right;"></b></a>
-                                    </li>
-                                    <li class="divider"></li>
-                                    <li><a href="#" data-target='#Logout' data-toggle='modal'>Sign Out <b
-                                                class="fa fa-sign-out" style="float:right;"></b></a></li>
-                                </ul>
-                            </li>
-                        </ul>
-                        <!-- End Social Links -->
-                    </div>
-                    <!-- .col-md-6 -->
-                </div>
-                <!-- .row -->
-            </div>
-            <!-- .container -->
-        </div>
-        <!-- .top-bar -->
-        <!-- End Top Bar -->
-
-        <!-- Modal -->
-        <div class="modal fade" id="Logout" role="dialog">
-            <div class="modal-dialog" style="padding:100px">
-                <!-- Modal content-->
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <button type="button" class="close" data-dismiss="modal">&times;</button>
-                        <h4 class="modal-title">Sign Out?</h4>
-                    </div>
-                    <div class="modal-body">
-                        <div class="col-md-15 fieldcol">
-                            <label = "usr" class = "control-label">Do you want to sign out?</label>
-                            <div class="form-group">
-                            </div>
+    <div id="container">
+        <!-- Start Header Section -->
+        <div class="hidden-header"></div>
+        <header class="clearfix">
+            <div class="top-bar">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-7">
+                            <!-- Start Contact Info -->
+                            <ul class="profile-name">
+                                <li>Course: <b><?php echo $MajorCourse; ?></b></li>
+                            </ul>
+                            <!-- End Contact Info -->
                         </div>
-                        <div class="modal-footer">
-                            <a href="../logout.php"
-                               class="btn btn-primary">Sign out</a>
-                            <button type="button" class="btn btn-default" data-dismiss="modal">
-                                Cancel
-                            </button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- Start  Logo & Naviagtion  -->
-        <div class="navbar navbar-default navbar-top">
-            <div class="container">
-                <div class="navbar-header">
-                    <!-- Stat Toggle Nav Link For Mobiles -->
-                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                        <i class="fa fa-bars"></i>
-                    </button>
-                    <!-- End Toggle Nav Link For Mobiles -->
-                    <a class="navbar-brand" href="">
-                        <img src="../../images/ojpms.png">
-                    </a>
-                </div>
-            </div>
-        </div>
-    </header>
-
-    <div class="page-banner no-subtitle">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-6">
-                    <h2>Find the job that suits your passion</h2>
-                </div>
-                <div class="col-md-6">
-                    <ul class="breadcrumbs">
-                        <li><a href="../myinfo/personal-info.php">Fill out your information</a></li>
-                        <li></li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- End Page Banner -->
-
-    <div class="middle-bar">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-5">
-                    <ul class="mid-list">
-                        &nbsp;
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <?php
-    if (isset($_GET['id'])) {
-        $id = $_GET['id'];
-        if ($id == 1) {
-            echo '<div class="alert alert-success">
-            <span class="glyphicon glyphicon-info-sign"></span>
-            Resume Submitted.
-        </div>';
-        }
-    }
-    ?>
-
-    <!-- Start Content -->
-    <form method="POST">
-        <div id="content">
-            <div class="container">
-                <div class="row blog-page">
-                    <!--Sidebar-->
-                    <div class="col-md-3 sidebar left-sidebar">
-
-                        <div>
-                            <label><i class="fa fa-bookmark"></i> Bookmarked Jobs: <a href="bookmarked-jobs.php">(0)</a>&nbsp;
-                            </label>
-                        </div>
-
-                        <div>
-                            <label>Position Level</label>
-                            <select id="PLevel" name="PLevel" class="form-control">
-                                <option value="">- Select one -</option>
-                                <?php
-                                $listofposition_tbl =
-                                    GSecureSQL::query(
-                                        "SELECT Position FROM listofpositiontbl",
-                                        TRUE
-                                    );
-                                foreach ($listofposition_tbl as $value) {
-                                    $cPosition = $value[0];
-                                    ?>
-                                    <option
-                                        value="<?php echo $cPosition; ?>" <?php if ($PLevel_Default == $cPosition) {
-                                        echo "selected='selected'";
-                                    } ?>><?php echo $cPosition; ?></option>
-                                    <?php
-                                }
-                                ?>
-
-                            </select>
-                        </div>
-
-                        <div>
-                            <label>Employment Type:</label>
-                            <select id="EType" name="EType" class="form-control">
-                                <option value="">- Select one -</option>
-                                <option value="Full Time" <?php if ($EType_Default == "Full Time") {
-                                    echo "selected='selected'";
-                                } ?>>Full Time
-                                </option>
-                                <option value="Part Time" <?php if ($EType_Default == "Part Time") {
-                                    echo "selected='selected'";
-                                } ?>>Part Time
-                                </option>
-                                <option value="Contract" <?php if ($EType_Default == "Contract") {
-                                    echo "selected='selected'";
-                                } ?>>Contract
-                                </option>
-                                <option value="Temporary" <?php if ($EType_Default == "Temporary") {
-                                    echo "selected='selected'";
-                                } ?>>Temporary
-                                </option>
-                            </select>
-                        </div>
-
-                        <div>
-                            <label>Industry:</label>
-                            <select id="Industry" name="Industry" class="form-control">
-                                <option value="">- Select one -</option>
-                                <?php
-                                $industry_tbl =
-                                    GSecureSQL::query(
-                                        "SELECT Industry FROM listofindustrytbl",
-                                        TRUE
-                                    );
-                                foreach ($industry_tbl as $value) {
-                                    $Industry = $value[0];
-                                    ?>
-                                    <option
-                                        value="<?php echo $Industry; ?>" <?php if ($Industry_Default == $Industry) {
-                                        echo "selected='selected'";
-                                    } ?>><?php echo $Industry; ?></option>
-                                    <?php
-                                }
-                                ?>
-                            </select>
-                        </div>
-
-                        <div class="hr1" style="margin-top:10px;margin-bottom:10px;"></div>
-                        <div class="text-center">
-                            <button type="submit" name="btnFilter" class="btn-system btn-large btn-black">Filter
-                            </button>
-                        </div>
-
-                        <div class="hr4" style="margin-top:40px;margin-bottom:40px;"></div>
-                        <!-- Popular Posts widget -->
-                        <div class="widget widget-popular-posts">
-                            <h4>Popular Jobs <span class="head-line"></span></h4>
-                            <ul>
-                                <li>
-                                    <div class="widget-thumb">
-                                        <a href="#"><img src="../../images/blog-mini-03.jpg" alt=""/></a>
-                                    </div>
-                                    <div class="widget-content">
-                                        <h5><a href="#">Senior Accountant</a></h5>
-                                        <span>Jul 29 2013</span>
-                                    </div>
-                                    <div class="clearfix"></div>
+                        <!-- .col-md-6 -->
+                        <div class="col-md-5">
+                            <!-- Start Social Links -->
+                            <ul class="nav navbar-nav navbar-right">
+                                <li class="dropdown icon-border" id="notificationLink">
+                                    <span id="notification_count">3</span>
+                                    <a href="#" class="bell itl-tooltip" data-placement="bottom" data-toggle="dropdown"><i
+                                            class="fa fa-bell"></i></a>
+                                    <ul id="notificationContainer" class="dropdown-menu dropdown-menu-inverse">
+                                        <li class="dropdown-header"><label>Notification</label></li>
+                                        <li class="disabled"><a href="#" tabindex="-1">No new notification.</a></li>
+                                        <li><a href="#" tabindex="-1">The administrator accepted your request.</a></li>
+                                        <li class="divider"></li>
+                                        <li><a href="../notification/notification.php" tabindex="-1">See All</a></li>
+                                    </ul>
+                                </li>
+                                <li class="dropdown">
+                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown"><b class="fa fa-user"></b>
+                                        Welcome, <b><?php echo $StudentName; ?> </b><b class="caret"></b></a>
+                                    <ul class="dropdown-menu">
+                                        <li><a href="../../student-profile.php">Profile <b class="fa fa-user" style="float:right;"></b></a></li>
+                                        <li><a href="../settings/settings.php">Settings <b class="fa fa-cog"
+                                                                                           style="float:right;"></b></a>
+                                        </li>
+                                        <li class="divider"></li>
+                                        <li><a href="#" data-target='#Logout' data-toggle='modal'>Sign Out <b
+                                                    class="fa fa-sign-out" style="float:right;"></b></a></li>
+                                    </ul>
                                 </li>
                             </ul>
+                            <!-- End Social Links -->
+                        </div>
+                        <!-- .col-md-6 -->
+                    </div>
+                    <!-- .row -->
+                </div>
+                <!-- .container -->
+            </div>
+            <!-- .top-bar -->
+            <!-- End Top Bar -->
+
+            <!-- Modal -->
+            <div class="modal fade" id="Logout" role="dialog">
+                <div class="modal-dialog" style="padding:100px">
+                    <!-- Modal content-->
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                            <h4 class="modal-title">Sign Out</h4>
+                        </div>
+                        <div class="modal-body">
+                            <div class="col-md-15 fieldcol">
+                                <label>Do you want to sign out?</label>
+                            </div>
+                            <div class="modal-footer">
+                                <a href="../logout.php"
+                                   class="btn btn-primary">Sign out</a>
+                                <button type="button" class="btn btn-default" data-dismiss="modal">
+                                    Cancel
+                                </button>
+                            </div>
                         </div>
                     </div>
-                    <!--End sidebar-->
+                </div>
+            </div>
 
-                    <!-- Start Blog Posts -->
-                    <div class="col-md-9 blog-box">
-                        <h4 class="classic-title"><span>Jobs</span></h4>
-                        <?php
-                        if (isset($_POST['btnFilter'])) {
-                            $isEmpty = 0;
-                            $PLevel = $_POST['PLevel'];
-                            $EType = $_POST['EType'];
-                            $Industry = $_POST['Industry'];
+            <!-- Start  Logo & Naviagtion  -->
+            <div class="navbar navbar-default navbar-top">
+                <div class="container">
+                    <div class="navbar-header">
+                        <!-- Stat Toggle Nav Link For Mobiles -->
+                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        <!-- End Toggle Nav Link For Mobiles -->
+                        <a class="navbar-brand" href="">
+                            <img src="../../images/ojpms.png">
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </header>
 
-                            if (empty($PLevel) && empty($EType) && empty($Industry)) {
-                                $compposition_tbl =
-                                    GSecureSQL::query(
-                                        "SELECT
-                                        PositionID,
-                                        CompanyID,
-                                        PostingDateFrom,
-                                        PostingDateTo,
-                                        PositionTitle,
-                                        JobDescription,
-                                        YExperience,
-                                        RelatedCourses,
-                                        ReqSkills
-                                        FROM comppositiontbl WHERE JSpecialization IN ('$Specialization') ORDER BY PositionTitle ASC",
-                                        TRUE
-                                    );
-                            } elseif (empty($EType) && empty($Industry)) {
-                                $compposition_tbl =
-                                    GSecureSQL::query(
-                                        "SELECT
-                                        PositionID,
-                                        CompanyID,
-                                        PostingDateFrom,
-                                        PostingDateTo,
-                                        PositionTitle,
-                                        JobDescription,
-                                        YExperience,
-                                        RelatedCourses,
-                                        ReqSkills
-                                        FROM comppositiontbl WHERE JSpecialization IN ('$Specialization') AND PositionLevel = ? ORDER BY PositionTitle ASC",
-                                        TRUE,
-                                        "s",
-                                        $PLevel
-                                    );
-                            } elseif (empty($PLevel) && empty($EType)) {
-                                $compposition_tbl =
-                                    GSecureSQL::query(
-                                        "SELECT
-                                        comppositiontbl.PositionID,
-                                        comppositiontbl.CompanyID,
-                                        comppositiontbl.PostingDateFrom,
-                                        comppositiontbl.PostingDateTo,
-                                        comppositiontbl.PositionTitle,
-                                        comppositiontbl.JobDescription,
-                                        comppositiontbl.YExperience,
-                                        comppositiontbl.RelatedCourses,
-                                        comppositiontbl.ReqSkills,
-                                        companyinfotbl.Industry
-                                        FROM companyinfotbl
-                                        INNER JOIN comppositiontbl ON companyinfotbl.CompanyID = comppositiontbl.CompanyID
-                                        WHERE comppositiontbl.JSpecialization IN ('$Specialization') AND companyinfotbl.Industry = ? ORDER BY PositionTitle ASC",
-                                        TRUE,
-                                        "s",
-                                        $Industry
-                                    );
-                            } elseif (empty($PLevel) && empty($Industry)) {
-                                $compposition_tbl =
-                                    GSecureSQL::query(
-                                        "SELECT
-                                        PositionID,
-                                        CompanyID,
-                                        PostingDateFrom,
-                                        PostingDateTo,
-                                        PositionTitle,
-                                        JobDescription,
-                                        YExperience,
-                                        RelatedCourses,
-                                        ReqSkills
-                                        FROM comppositiontbl WHERE JSpecialization IN ('$Specialization') AND EType = ? ORDER BY PositionTitle ASC",
-                                        TRUE,
-                                        "s",
-                                        $EType
-                                    );
-                            } elseif (empty($Industry)) {
-                                $compposition_tbl =
-                                    GSecureSQL::query(
-                                        "SELECT
-                                        PositionID,
-                                        CompanyID,
-                                        PostingDateFrom,
-                                        PostingDateTo,
-                                        PositionTitle,
-                                        JobDescription,
-                                        YExperience,
-                                        RelatedCourses,
-                                        ReqSkills
-                                        FROM comppositiontbl WHERE JSpecialization IN ('$Specialization') AND PositionLevel = ? AND EType = ? ORDER BY PositionTitle ASC",
-                                        TRUE,
-                                        "ss",
-                                        $PLevel,
-                                        $EType
-                                    );
-                            } elseif (empty($PLevel)) {
-                                $compposition_tbl =
-                                    GSecureSQL::query(
-                                        "SELECT
-                                        comppositiontbl.PositionID,
-                                        comppositiontbl.CompanyID,
-                                        comppositiontbl.PostingDateFrom,
-                                        comppositiontbl.PostingDateTo,
-                                        comppositiontbl.PositionTitle,
-                                        comppositiontbl.JobDescription,
-                                        comppositiontbl.YExperience,
-                                        comppositiontbl.RelatedCourses,
-                                        comppositiontbl.ReqSkills,
-                                        companyinfotbl.Industry
-                                        FROM companyinfotbl
-                                        INNER JOIN comppositiontbl ON companyinfotbl.CompanyID = comppositiontbl.CompanyID
-                                        WHERE comppositiontbl.JSpecialization IN ('$Specialization') AND companyinfotbl.Industry = ? AND comppositiontbl.EType = ? ORDER BY PositionTitle ASC",
-                                        TRUE,
-                                        "ss",
-                                        $Industry,
-                                        $EType
-                                    );
-                            } elseif (empty($EType)) {
-                                $compposition_tbl =
-                                    GSecureSQL::query(
-                                        "SELECT
-                                        comppositiontbl.PositionID,
-                                        comppositiontbl.CompanyID,
-                                        comppositiontbl.PostingDateFrom,
-                                        comppositiontbl.PostingDateTo,
-                                        comppositiontbl.PositionTitle,
-                                        comppositiontbl.JobDescription,
-                                        comppositiontbl.YExperience,
-                                        comppositiontbl.RelatedCourses,
-                                        comppositiontbl.ReqSkills,
-                                        companyinfotbl.Industry
-                                        FROM companyinfotbl
-                                        INNER JOIN comppositiontbl ON companyinfotbl.CompanyID = comppositiontbl.CompanyID
-                                        WHERE comppositiontbl.JSpecialization IN ('$Specialization') AND companyinfotbl.Industry = ? AND PositionLevel = ? ORDER BY PositionTitle ASC",
-                                        TRUE,
-                                        "ss",
-                                        $Industry,
-                                        $PLevel
-                                    );
-                            } else {
-                                $compposition_tbl =
-                                    GSecureSQL::query(
-                                        "SELECT
-                                        comppositiontbl.PositionID,
-                                        comppositiontbl.CompanyID,
-                                        comppositiontbl.PostingDateFrom,
-                                        comppositiontbl.PostingDateTo,
-                                        comppositiontbl.PositionTitle,
-                                        comppositiontbl.JobDescription,
-                                        comppositiontbl.YExperience,
-                                        comppositiontbl.RelatedCourses,
-                                        comppositiontbl.ReqSkills,
-                                        companyinfotbl.Industry
-                                        FROM companyinfotbl
-                                        INNER JOIN comppositiontbl ON companyinfotbl.CompanyID = comppositiontbl.CompanyID
-                                        WHERE comppositiontbl.JSpecialization IN ('$Specialization') AND companyinfotbl.Industry = ? AND EType =? AND PositionLevel = ? ORDER BY PositionTitle ASC",
-                                        TRUE,
-                                        "sss",
-                                        $Industry,
-                                        $EType,
-                                        $PLevel
-                                    );
-                            }
-                            $aCount = 0;
-                            foreach ($compposition_tbl as $value) {
-                                $PositionID = $value[0];
-                                $CompanyID = $value[1];
-                                $PostingDateFrom = $value[2];
-                                $PostingDateTo = $value[3];
-                                $PositionTitle = $value[4];
-                                $PositionDescription = $value[5];
-                                $YearExperience = $value[6];
-                                $RelatedCourses = $value[7];
-                                $RelatedCourses = explode(", ", $RelatedCourses);
-                                $RequiredSkills = $value[8];
-                                $RequiredSkills = explode(", ", $RequiredSkills);
-                                foreach ($RelatedCourses as $value3) {
-                                    $rCourse = $value3;
-                                    if ($rCourse == $CourseCode) {
-                                        $company_tbl =
-                                            GSecureSQL::query(
-                                                "SELECT * FROM companyinfotbl WHERE CompanyID = ?",
-                                                TRUE,
-                                                "s",
-                                                $CompanyID
-                                            );
-                                        foreach ($company_tbl as $value1) {
-                                            $CompanyName = $value1[1];
-                                            $Location = $value1[5];
+        <div class="page-banner no-subtitle">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6">
+                        <h2>Find the job that suits your passion</h2>
+                    </div>
+                    <div class="col-md-6">
+                        <ul class="breadcrumbs">
+                            <li><a href="../myinfo/personal-info.php">Fill out your information</a></li>
+                            <li></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- End Page Banner -->
 
-                                            $diff_from = date_diff(new DateTime(), new DateTime($PostingDateFrom));
-                                            $diff_to = date_diff(new DateTime(), new DateTime($PostingDateTo));
+        <div class="middle-bar">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-5">
+                        <ul class="mid-list">
+                            &nbsp;
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
 
-                                            if ($diff_to->d == 0) {
-                                                $diff_to->invert = 0;
-                                            }
+        <?php
+        if (isset($_GET['id'])) {
+            $id = $_GET['id'];
+            if ($id == 1) {
+                echo '<div class="alert alert-success">
+                <span class="glyphicon glyphicon-info-sign"></span>
+                Resume Submitted.
+            </div>';
+            }
+        }
+        ?>
 
-                                            $a = $diff_from->y >= 0 &&
-                                                $diff_from->m >= 0 &&
-                                                $diff_from->d >= 0 &&
-                                                $diff_from->invert == 1;
+        <!-- Start Content -->
+        <form method="POST">
+            <div id="content">
+                <div class="container">
+                    <div class="row blog-page">
+                        <!--Sidebar-->
+                        <div class="col-md-3 sidebar left-sidebar">
 
-                                            $b = $diff_to->y >= 0 &&
-                                                $diff_to->m >= 0 &&
-                                                $diff_to->d >= 0 &&
-                                                $diff_to->invert == 0;
+                            <div>
+                                <label><i class="fa fa-bookmark"></i> Bookmarked Jobs: <a href="bookmarked-jobs.php">(0)</a>&nbsp;
+                                </label>
+                            </div>
 
-                                            if ($a && $b) {
-                                                $aCount++;
-                                                ?>
-                                                <div class='blog-post standard-post'>
-                                                    <div class="row">
-                                                        <div class="col-md-6">
-                                                            <!-- Post Content -->
-                                                            <div class='post-content'>
-                                                                <div class='post-type'><i class='fa fa-picture-o'></i>
-                                                                </div>
-                                                                <h2><a href='#'><?php echo $PositionTitle; ?></a></h2>
-                                                                <h1><p><?php echo $CompanyName; ?></p></h1>
-                                                                <ul class='icons-list'>
-                                                                    <?php
-                                                                    foreach ($RequiredSkills as $value2) {
-                                                                        $count = 0;
-                                                                        $RequiredSkill = $value2;
-                                                                        if ($count < 3) {
-                                                                            $count++;
-                                                                            ?>
-                                                                            <li>
-                                                                                <i class='fa fa-check-circle'></i> <?php echo $RequiredSkill; ?>
-                                                                            </li>
-                                                                            <?php
-                                                                        }
-                                                                    }
-                                                                    ?>
-                                                                </ul>
-                                                                <div class='hr1' style='margin-bottom:14px;'></div>
-                                                                <ul class='post-meta'>
-                                                                    <li><?php echo $YearExperience; ?> year(s)
-                                                                        experience
-                                                                    </li>
-                                                                    <li><?php echo $Location; ?></li>
-                                                                </ul>
-                                                                    <button class='main-button'>View Details <i
-                                                                            class='fa fa-angle-right'></i></button>
-                                                            </div>
-                                                        </div>
-                                                        <div class="col-md-6">
-                                                            <p>
-                                                                <B class="accent-color">Description: </B><?php echo $PositionDescription; ?>
-                                                            </p>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <?php
-                                            }
-                                        }
+                            <div>
+                                <label>Position Level</label>
+                                <select id="PLevel" name="PLevel" class="form-control">
+                                    <option value="">- Select one -</option>
+                                    <?php
+                                    $listofposition_tbl =
+                                        GSecureSQL::query(
+                                            "SELECT Position FROM listofpositiontbl",
+                                            TRUE
+                                        );
+                                    foreach ($listofposition_tbl as $value) {
+                                        $cPosition = $value[0];
+                                        ?>
+                                        <option
+                                            value="<?php echo $cPosition; ?>" <?php if ($PLevel_Default == $cPosition) {
+                                            echo "selected='selected'";
+                                        } ?>><?php echo $cPosition; ?></option>
+                                        <?php
                                     }
-                                }
-                            }
-                            if ($aCount == 0) {
-                                echo
-                                "
-                                        <div class='blog-post standard-post'>
-                                            <div class='row'>
-                                                <div class='col-md-6'>
-                                                    <label>No results found.</label>
-                                                </div>
-                                            </div>
+                                    ?>
+
+                                </select>
+                            </div>
+
+                            <div>
+                                <label>Employment Type:</label>
+                                <select id="EType" name="EType" class="form-control">
+                                    <option value="">- Select one -</option>
+                                    <option value="Full Time" <?php if ($EType_Default == "Full Time") {
+                                        echo "selected='selected'";
+                                    } ?>>Full Time
+                                    </option>
+                                    <option value="Part Time" <?php if ($EType_Default == "Part Time") {
+                                        echo "selected='selected'";
+                                    } ?>>Part Time
+                                    </option>
+                                    <option value="Contract" <?php if ($EType_Default == "Contract") {
+                                        echo "selected='selected'";
+                                    } ?>>Contract
+                                    </option>
+                                    <option value="Temporary" <?php if ($EType_Default == "Temporary") {
+                                        echo "selected='selected'";
+                                    } ?>>Temporary
+                                    </option>
+                                </select>
+                            </div>
+
+                            <div>
+                                <label>Industry:</label>
+                                <select id="Industry" name="Industry" class="form-control">
+                                    <option value="">- Select one -</option>
+                                    <?php
+                                    $industry_tbl =
+                                        GSecureSQL::query(
+                                            "SELECT Industry FROM listofindustrytbl",
+                                            TRUE
+                                        );
+                                    foreach ($industry_tbl as $value) {
+                                        $Industry = $value[0];
+                                        ?>
+                                        <option
+                                            value="<?php echo $Industry; ?>" <?php if ($Industry_Default == $Industry) {
+                                            echo "selected='selected'";
+                                        } ?>><?php echo $Industry; ?></option>
+                                        <?php
+                                    }
+                                    ?>
+                                </select>
+                            </div>
+
+                            <div class="hr1" style="margin-top:10px;margin-bottom:10px;"></div>
+                            <div class="text-center">
+                                <button type="submit" name="btnFilter" class="btn-system btn-large btn-black">Filter
+                                </button>
+                            </div>
+
+                            <div class="hr4" style="margin-top:40px;margin-bottom:40px;"></div>
+                            <!-- Popular Posts widget -->
+                            <div class="widget widget-popular-posts">
+                                <h4>Popular Jobs <span class="head-line"></span></h4>
+                                <ul>
+                                    <li>
+                                        <div class="widget-thumb">
+                                            <a href="#"><img src="../../images/blog-mini-03.jpg" alt=""/></a>
                                         </div>
-                                        ";
-                            }
-                        } else {
-                            $isEmpty = 0;
-                            $compposition_tbl =
-                                GSecureSQL::query(
-                                    "SELECT * FROM comppositiontbl WHERE JSpecialization IN ('$Specialization') ORDER BY PositionTitle ASC",
-                                    TRUE
-                                );
-                            $sCount = 0;
-                            foreach ($compposition_tbl as $value) {
-                                $PositionID = $value[0];
-                                $CompanyID = $value[1];
-                                $PostingDateFrom = $value[3];
-                                $PostingDateTo = $value[4];
-                                $PositionTitle = $value[5];
-                                $PositionDescription = $value[7];
-                                $YearExperience = $value[12];
-                                $RelatedCourses = $value[13];
-                                $RelatedCourses = explode(", ", $RelatedCourses);
-                                $RequiredSkills = $value[16];
-                                $RequiredSkills = explode(", ", $RequiredSkills);
-                                foreach ($RelatedCourses as $value3) {
-                                    $rCourse = $value3;
-                                    if ($rCourse == $CourseCode) {
-                                        $company_tbl =
-                                            GSecureSQL::query(
-                                                "SELECT * FROM companyinfotbl WHERE CompanyID = ?",
-                                                TRUE,
-                                                "s",
-                                                $CompanyID
-                                            );
-                                        foreach ($company_tbl as $value1) {
-                                            $CompanyName = $value1[1];
-                                            $Location = $value1[5];
+                                        <div class="widget-content">
+                                            <h5><a href="#">Senior Accountant</a></h5>
+                                            <span>Jul 29 2013</span>
+                                        </div>
+                                        <div class="clearfix"></div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <!--End sidebar-->
 
-                                            $diff_from = date_diff(new DateTime(), new DateTime($PostingDateFrom));
-                                            $diff_to = date_diff(new DateTime(), new DateTime($PostingDateTo));
+                        <!-- Start Blog Posts -->
+                        <div class="col-md-9 blog-box">
+                            <h4 class="classic-title"><span>Jobs</span></h4>
+                            <?php
+                            if (isset($_POST['btnFilter'])) {
+                                $isEmpty = 0;
+                                $PLevel = $_POST['PLevel'];
+                                $EType = $_POST['EType'];
+                                $Industry = $_POST['Industry'];
 
-                                            if ($diff_to->d == 0) {
-                                                $diff_to->invert = 0;
-                                            }
+                                if (empty($PLevel) && empty($EType) && empty($Industry)) {
+                                    $compposition_tbl =
+                                        GSecureSQL::query(
+                                            "SELECT
+                                            PositionID,
+                                            CompanyID,
+                                            PostingDateFrom,
+                                            PostingDateTo,
+                                            PositionTitle,
+                                            JobDescription,
+                                            YExperience,
+                                            RelatedCourses,
+                                            ReqSkills
+                                            FROM comppositiontbl WHERE JSpecialization IN ('$Specialization') ORDER BY PositionTitle ASC",
+                                            TRUE
+                                        );
+                                } elseif (empty($EType) && empty($Industry)) {
+                                    $compposition_tbl =
+                                        GSecureSQL::query(
+                                            "SELECT
+                                            PositionID,
+                                            CompanyID,
+                                            PostingDateFrom,
+                                            PostingDateTo,
+                                            PositionTitle,
+                                            JobDescription,
+                                            YExperience,
+                                            RelatedCourses,
+                                            ReqSkills
+                                            FROM comppositiontbl WHERE JSpecialization IN ('$Specialization') AND PositionLevel = ? ORDER BY PositionTitle ASC",
+                                            TRUE,
+                                            "s",
+                                            $PLevel
+                                        );
+                                } elseif (empty($PLevel) && empty($EType)) {
+                                    $compposition_tbl =
+                                        GSecureSQL::query(
+                                            "SELECT
+                                            comppositiontbl.PositionID,
+                                            comppositiontbl.CompanyID,
+                                            comppositiontbl.PostingDateFrom,
+                                            comppositiontbl.PostingDateTo,
+                                            comppositiontbl.PositionTitle,
+                                            comppositiontbl.JobDescription,
+                                            comppositiontbl.YExperience,
+                                            comppositiontbl.RelatedCourses,
+                                            comppositiontbl.ReqSkills,
+                                            companyinfotbl.Industry
+                                            FROM companyinfotbl
+                                            INNER JOIN comppositiontbl ON companyinfotbl.CompanyID = comppositiontbl.CompanyID
+                                            WHERE comppositiontbl.JSpecialization IN ('$Specialization') AND companyinfotbl.Industry = ? ORDER BY PositionTitle ASC",
+                                            TRUE,
+                                            "s",
+                                            $Industry
+                                        );
+                                } elseif (empty($PLevel) && empty($Industry)) {
+                                    $compposition_tbl =
+                                        GSecureSQL::query(
+                                            "SELECT
+                                            PositionID,
+                                            CompanyID,
+                                            PostingDateFrom,
+                                            PostingDateTo,
+                                            PositionTitle,
+                                            JobDescription,
+                                            YExperience,
+                                            RelatedCourses,
+                                            ReqSkills
+                                            FROM comppositiontbl WHERE JSpecialization IN ('$Specialization') AND EType = ? ORDER BY PositionTitle ASC",
+                                            TRUE,
+                                            "s",
+                                            $EType
+                                        );
+                                } elseif (empty($Industry)) {
+                                    $compposition_tbl =
+                                        GSecureSQL::query(
+                                            "SELECT
+                                            PositionID,
+                                            CompanyID,
+                                            PostingDateFrom,
+                                            PostingDateTo,
+                                            PositionTitle,
+                                            JobDescription,
+                                            YExperience,
+                                            RelatedCourses,
+                                            ReqSkills
+                                            FROM comppositiontbl WHERE JSpecialization IN ('$Specialization') AND PositionLevel = ? AND EType = ? ORDER BY PositionTitle ASC",
+                                            TRUE,
+                                            "ss",
+                                            $PLevel,
+                                            $EType
+                                        );
+                                } elseif (empty($PLevel)) {
+                                    $compposition_tbl =
+                                        GSecureSQL::query(
+                                            "SELECT
+                                            comppositiontbl.PositionID,
+                                            comppositiontbl.CompanyID,
+                                            comppositiontbl.PostingDateFrom,
+                                            comppositiontbl.PostingDateTo,
+                                            comppositiontbl.PositionTitle,
+                                            comppositiontbl.JobDescription,
+                                            comppositiontbl.YExperience,
+                                            comppositiontbl.RelatedCourses,
+                                            comppositiontbl.ReqSkills,
+                                            companyinfotbl.Industry
+                                            FROM companyinfotbl
+                                            INNER JOIN comppositiontbl ON companyinfotbl.CompanyID = comppositiontbl.CompanyID
+                                            WHERE comppositiontbl.JSpecialization IN ('$Specialization') AND companyinfotbl.Industry = ? AND comppositiontbl.EType = ? ORDER BY PositionTitle ASC",
+                                            TRUE,
+                                            "ss",
+                                            $Industry,
+                                            $EType
+                                        );
+                                } elseif (empty($EType)) {
+                                    $compposition_tbl =
+                                        GSecureSQL::query(
+                                            "SELECT
+                                            comppositiontbl.PositionID,
+                                            comppositiontbl.CompanyID,
+                                            comppositiontbl.PostingDateFrom,
+                                            comppositiontbl.PostingDateTo,
+                                            comppositiontbl.PositionTitle,
+                                            comppositiontbl.JobDescription,
+                                            comppositiontbl.YExperience,
+                                            comppositiontbl.RelatedCourses,
+                                            comppositiontbl.ReqSkills,
+                                            companyinfotbl.Industry
+                                            FROM companyinfotbl
+                                            INNER JOIN comppositiontbl ON companyinfotbl.CompanyID = comppositiontbl.CompanyID
+                                            WHERE comppositiontbl.JSpecialization IN ('$Specialization') AND companyinfotbl.Industry = ? AND PositionLevel = ? ORDER BY PositionTitle ASC",
+                                            TRUE,
+                                            "ss",
+                                            $Industry,
+                                            $PLevel
+                                        );
+                                } else {
+                                    $compposition_tbl =
+                                        GSecureSQL::query(
+                                            "SELECT
+                                            comppositiontbl.PositionID,
+                                            comppositiontbl.CompanyID,
+                                            comppositiontbl.PostingDateFrom,
+                                            comppositiontbl.PostingDateTo,
+                                            comppositiontbl.PositionTitle,
+                                            comppositiontbl.JobDescription,
+                                            comppositiontbl.YExperience,
+                                            comppositiontbl.RelatedCourses,
+                                            comppositiontbl.ReqSkills,
+                                            companyinfotbl.Industry
+                                            FROM companyinfotbl
+                                            INNER JOIN comppositiontbl ON companyinfotbl.CompanyID = comppositiontbl.CompanyID
+                                            WHERE comppositiontbl.JSpecialization IN ('$Specialization') AND companyinfotbl.Industry = ? AND EType =? AND PositionLevel = ? ORDER BY PositionTitle ASC",
+                                            TRUE,
+                                            "sss",
+                                            $Industry,
+                                            $EType,
+                                            $PLevel
+                                        );
+                                }
+                                $aCount = 0;
+                                foreach ($compposition_tbl as $value) {
+                                    $PositionID = $value[0];
+                                    $CompanyID = $value[1];
+                                    $PostingDateFrom = $value[2];
+                                    $PostingDateTo = $value[3];
+                                    $PositionTitle = $value[4];
+                                    $PositionDescription = $value[5];
+                                    $YearExperience = $value[6];
+                                    $RelatedCourses = $value[7];
+                                    $RelatedCourses = explode(", ", $RelatedCourses);
+                                    $RequiredSkills = $value[8];
+                                    $RequiredSkills = explode(", ", $RequiredSkills);
+                                    foreach ($RelatedCourses as $value3) {
+                                        $rCourse = $value3;
+                                        if ($rCourse == $CourseCode) {
+                                            $company_tbl =
+                                                GSecureSQL::query(
+                                                    "SELECT * FROM companyinfotbl WHERE CompanyID = ?",
+                                                    TRUE,
+                                                    "s",
+                                                    $CompanyID
+                                                );
+                                            foreach ($company_tbl as $value1) {
+                                                $CompanyName = $value1[1];
+                                                $Location = $value1[5];
 
-                                            $a = $diff_from->y >= 0 &&
-                                                $diff_from->m >= 0 &&
-                                                $diff_from->d >= 0 &&
-                                                $diff_from->invert == 1;
+                                                $diff_from = date_diff(new DateTime(), new DateTime($PostingDateFrom));
+                                                $diff_to = date_diff(new DateTime(), new DateTime($PostingDateTo));
 
-                                            $b = $diff_to->y >= 0 &&
-                                                $diff_to->m >= 0 &&
-                                                $diff_to->d >= 0 &&
-                                                $diff_to->invert == 0;
+                                                if ($diff_to->d == 0) {
+                                                    $diff_to->invert = 0;
+                                                }
 
-                                            if ($a && $b) {
-                                                $sCount++;
-                                                ?>
-                                                <div class='blog-post standard-post'>
-                                                    <div class="row">
-                                                        <div class="col-md-6">
-                                                            <!-- Post Content -->
-                                                            <div class='post-content'>
-                                                                <div class='post-type'><i
-                                                                        class='fa fa-picture-o'></i>
-                                                                </div>
-                                                                <h2><a href='#'><?php echo $PositionTitle; ?></a>
-                                                                </h2>
-                                                                <h1><p><?php echo $CompanyName; ?></p></h1>
-                                                                <ul class='icons-list'>
-                                                                    <?php
-                                                                    foreach ($RequiredSkills as $value2) {
-                                                                        $count = 0;
-                                                                        $RequiredSkill = $value2;
-                                                                        if ($count < 3) {
-                                                                            $count++;
-                                                                            ?>
-                                                                            <li>
-                                                                                <i class='fa fa-check-circle'></i> <?php echo $RequiredSkill; ?>
-                                                                            </li>
-                                                                            <?php
+                                                $a = $diff_from->y >= 0 &&
+                                                    $diff_from->m >= 0 &&
+                                                    $diff_from->d >= 0 &&
+                                                    $diff_from->invert == 1;
+
+                                                $b = $diff_to->y >= 0 &&
+                                                    $diff_to->m >= 0 &&
+                                                    $diff_to->d >= 0 &&
+                                                    $diff_to->invert == 0;
+
+                                                if ($a && $b) {
+                                                    $aCount++;
+                                                    ?>
+                                                    <div class='blog-post standard-post'>
+                                                        <div class="row">
+                                                            <div class="col-md-6">
+                                                                <!-- Post Content -->
+                                                                <div class='post-content'>
+                                                                    <div class='post-type'><i class='fa fa-picture-o'></i>
+                                                                    </div>
+                                                                    <h2><a href='#'><?php echo $PositionTitle; ?></a></h2>
+                                                                    <h1><p><?php echo $CompanyName; ?></p></h1>
+                                                                    <ul class='icons-list'>
+                                                                        <?php
+                                                                        foreach ($RequiredSkills as $value2) {
+                                                                            $count = 0;
+                                                                            $RequiredSkill = $value2;
+                                                                            if ($count < 3) {
+                                                                                $count++;
+                                                                                ?>
+                                                                                <li>
+                                                                                    <i class='fa fa-check-circle'></i> <?php echo $RequiredSkill; ?>
+                                                                                </li>
+                                                                                <?php
+                                                                            }
                                                                         }
-                                                                    }
-                                                                    ?>
-                                                                </ul>
-                                                                <div class='hr1' style='margin-bottom:14px;'></div>
-                                                                <ul class='post-meta'>
-                                                                    <li><?php echo $YearExperience; ?> year(s)
-                                                                        experience
-                                                                    </li>
-                                                                    <li><?php echo $Location; ?></li>
-                                                                </ul>
-                                                                <a class='main-button' target="_blank"
-                                                                   href='view-details.php?id=<?php echo $PositionID; ?>'>View
-                                                                    Details <i class='fa fa-angle-right'></i></a>
+                                                                        ?>
+                                                                    </ul>
+                                                                    <div class='hr1' style='margin-bottom:14px;'></div>
+                                                                    <ul class='post-meta'>
+                                                                        <li><?php echo $YearExperience; ?> year(s)
+                                                                            experience
+                                                                        </li>
+                                                                        <li><?php echo $Location; ?></li>
+                                                                    </ul>
+                                                                        <button class='main-button'>View Details <i
+                                                                                class='fa fa-angle-right'></i></button>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-md-6">
+                                                                <p>
+                                                                    <B class="accent-color">Description: </B><?php echo $PositionDescription; ?>
+                                                                </p>
                                                             </div>
                                                         </div>
-                                                        <div class="col-md-6">
-                                                            <p>
-                                                                <B class="accent-color">Description: </B><?php echo $PositionDescription; ?>
-                                                            </p>
-                                                        </div>
                                                     </div>
-                                                </div>
-                                                <?php
+                                                    <?php
+                                                }
                                             }
                                         }
                                     }
                                 }
-                            }
-                            if ($sCount == 0) {
-                                echo
-                                "
+                                if ($aCount == 0) {
+                                    echo
+                                    "
                                             <div class='blog-post standard-post'>
                                                 <div class='row'>
                                                     <div class='col-md-6'>
@@ -783,57 +663,175 @@ $MajorCourse = $coursetbl[0][0];
                                                     </div>
                                                 </div>
                                             </div>
-                                        ";
+                                            ";
+                                }
+                            } else {
+                                $isEmpty = 0;
+                                $compposition_tbl =
+                                    GSecureSQL::query(
+                                        "SELECT * FROM comppositiontbl WHERE JSpecialization IN ('$Specialization') ORDER BY PositionTitle ASC",
+                                        TRUE
+                                    );
+                                $sCount = 0;
+                                foreach ($compposition_tbl as $value) {
+                                    $PositionID = $value[0];
+                                    $CompanyID = $value[1];
+                                    $PostingDateFrom = $value[3];
+                                    $PostingDateTo = $value[4];
+                                    $PositionTitle = $value[5];
+                                    $PositionDescription = $value[7];
+                                    $YearExperience = $value[12];
+                                    $RelatedCourses = $value[13];
+                                    $RelatedCourses = explode(", ", $RelatedCourses);
+                                    $RequiredSkills = $value[16];
+                                    $RequiredSkills = explode(", ", $RequiredSkills);
+                                    foreach ($RelatedCourses as $value3) {
+                                        $rCourse = $value3;
+                                        if ($rCourse == $CourseCode) {
+                                            $company_tbl =
+                                                GSecureSQL::query(
+                                                    "SELECT * FROM companyinfotbl WHERE CompanyID = ?",
+                                                    TRUE,
+                                                    "s",
+                                                    $CompanyID
+                                                );
+                                            foreach ($company_tbl as $value1) {
+                                                $CompanyName = $value1[1];
+                                                $Location = $value1[5];
+
+                                                $diff_from = date_diff(new DateTime(), new DateTime($PostingDateFrom));
+                                                $diff_to = date_diff(new DateTime(), new DateTime($PostingDateTo));
+
+                                                if ($diff_to->d == 0) {
+                                                    $diff_to->invert = 0;
+                                                }
+
+                                                $a = $diff_from->y >= 0 &&
+                                                    $diff_from->m >= 0 &&
+                                                    $diff_from->d >= 0 &&
+                                                    $diff_from->invert == 1;
+
+                                                $b = $diff_to->y >= 0 &&
+                                                    $diff_to->m >= 0 &&
+                                                    $diff_to->d >= 0 &&
+                                                    $diff_to->invert == 0;
+
+                                                if ($a && $b) {
+                                                    $sCount++;
+                                                    ?>
+                                                    <div class='blog-post standard-post'>
+                                                        <div class="row">
+                                                            <div class="col-md-6">
+                                                                <!-- Post Content -->
+                                                                <div class='post-content'>
+                                                                    <div class='post-type'><i
+                                                                            class='fa fa-picture-o'></i>
+                                                                    </div>
+                                                                    <h2><a href='#'><?php echo $PositionTitle; ?></a>
+                                                                    </h2>
+                                                                    <h1><p><?php echo $CompanyName; ?></p></h1>
+                                                                    <ul class='icons-list'>
+                                                                        <?php
+                                                                        foreach ($RequiredSkills as $value2) {
+                                                                            $count = 0;
+                                                                            $RequiredSkill = $value2;
+                                                                            if ($count < 3) {
+                                                                                $count++;
+                                                                                ?>
+                                                                                <li>
+                                                                                    <i class='fa fa-check-circle'></i> <?php echo $RequiredSkill; ?>
+                                                                                </li>
+                                                                                <?php
+                                                                            }
+                                                                        }
+                                                                        ?>
+                                                                    </ul>
+                                                                    <div class='hr1' style='margin-bottom:14px;'></div>
+                                                                    <ul class='post-meta'>
+                                                                        <li><?php echo $YearExperience; ?> year(s)
+                                                                            experience
+                                                                        </li>
+                                                                        <li><?php echo $Location; ?></li>
+                                                                    </ul>
+                                                                    <a class='main-button' target="_blank"
+                                                                       href='view-details.php?id=<?php echo $PositionID; ?>'>View
+                                                                        Details <i class='fa fa-angle-right'></i></a>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-md-6">
+                                                                <p>
+                                                                    <B class="accent-color">Description: </B><?php echo $PositionDescription; ?>
+                                                                </p>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <?php
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                                if ($sCount == 0) {
+                                    echo
+                                    "
+                                                <div class='blog-post standard-post'>
+                                                    <div class='row'>
+                                                        <div class='col-md-6'>
+                                                            <label>No results found.</label>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            ";
+                                }
                             }
-                        }
-                        ?>
+                            ?>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </form>
-</div>
-<!-- End Content -->
-<script type="text/javascript" src="../../js/script.js"></script>
+        </form>
+    </div>
+    <!-- End Content -->
+    <script type="text/javascript" src="../../js/script.js"></script>
 
 
-<!-- Start Footer Section -->
-<footer>
-    <div class="container">
-        <!-- Start Copyright -->
-        <div class="copyright-section">
-            <div class="row">
-                <div class="col-md-6">
-                    <p>&copy; 2015 OJPMS - All Rights Reserved</p>
+    <!-- Start Footer Section -->
+    <footer>
+        <div class="container">
+            <!-- Start Copyright -->
+            <div class="copyright-section">
+                <div class="row">
+                    <div class="col-md-6">
+                        <p>&copy; 2015 OJPMS - All Rights Reserved</p>
+                    </div>
+                    <!-- .col-md-6 -->
+                    <div class="col-md-6">
+                        <ul class="footer-nav">
+                            <li><a href="#">Sitemap</a>
+                            </li>
+                            <li><a href="#">Privacy Policy</a>
+                            </li>
+                            <li><a href="#">Contact</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <!-- .col-md-6 -->
                 </div>
-                <!-- .col-md-6 -->
-                <div class="col-md-6">
-                    <ul class="footer-nav">
-                        <li><a href="#">Sitemap</a>
-                        </li>
-                        <li><a href="#">Privacy Policy</a>
-                        </li>
-                        <li><a href="#">Contact</a>
-                        </li>
-                    </ul>
-                </div>
-                <!-- .col-md-6 -->
+                <!-- .row -->
             </div>
-            <!-- .row -->
+            <!-- End Copyright -->
         </div>
-        <!-- End Copyright -->
-    </div>
-</footer>
-<!-- End Footer Section -->
+    </footer>
+    <!-- End Footer Section -->
 
-<!-- Go To Top Link -->
-<a href="#" class="back-to-top"><i class="fa fa-angle-up"></i></a>
+    <!-- Go To Top Link -->
+    <a href="#" class="back-to-top"><i class="fa fa-angle-up"></i></a>
 
-<div id="loader">
-    <div class="spinner">
-        <div class="dot1"></div>
-        <div class="dot2"></div>
+    <div id="loader">
+        <div class="spinner">
+            <div class="dot1"></div>
+            <div class="dot2"></div>
+        </div>
     </div>
-</div>
 </body>
 </html>
