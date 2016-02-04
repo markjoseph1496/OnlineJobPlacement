@@ -392,44 +392,7 @@ if (count($LOGquery1) > 0) {
                 <BR>
                 <h4 style="text-align:center;"> You are not able to access the list of graduates. You may request it to
                     the administrator. </h4> <br>
-                <button style="width: 290px;" class="btn-system btn-large border-btn" name="RequestLists"
-                        data-toggle='modal'
-                        data-target='#Request'>Request List of Graduates.
-                </button>
-            </div>
-
-            <!-- Modal -->
-            <div class="modal fade" id="Request"
-                 role="dialog">
-                <div class="modal-dialog" style="padding:100px">
-                    <!-- Modal content-->
-                    <form autocomplete="off" method="POST" action="add-company.php">
-                        <div class="modal-content">
-                            <div class="modal-header">
-                                <button type="button" class="close" data-dismiss="modal">&times;</button>
-                                <h4 class="modal-title">Details of job opening</h4>
-                            </div>
-                            <div class="modal-body">
-                                <div class="col-md-15 fieldcol">
-                                    <label = "usr" class = "control-label">Select the course(s) you want to
-                                    request.</label>
-                                </div>
-                                <div class="col-md-15 fieldcol">
-                                    <div class="container">
-                                        <div class="form-group">
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="modal-footer">
-                                    <button class="btn btn-primary">Request</button>
-                                    <button type="button" class="btn btn-default" data-dismiss="modal">
-                                        Cancel
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
-                    </form>
-                </div>
+                <a href="request-graduate-list.php" class="btn-system btn-large border-btn" name="" target="_blank">Request List of Graduates.</a>
             </div>
         </div>
         <?php
