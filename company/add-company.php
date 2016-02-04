@@ -214,7 +214,11 @@ if (isset($_GET['btnsaveuser'])) {
         );
         header("location: company-settingsaccount.php?id=AccountEdit");
 }
-if(isset($_POST['btnRequestLOG'])){
+
+// Update ng Available Position
+if (isset($_GET['update_PositionID'])) {
+    # code...
+}if(isset($_POST['btnRequestLOG'])){
     $PositionTitle = $_POST['rPTitle'];
 
     $EmploymentType = $_POST['rEType']; //Checkbox array

@@ -278,22 +278,30 @@ $companyupdate_tbl =
             <?php
             if (isset($_GET['id'])) {
                 $id = $_GET['id'];
-                if ($id == "2") {
-                    echo '<div class="alert alert-success">
-                                <span class="glyphicon glyphicon-info-sign"></span> 
-                                Achievement successfully updated.
-                                </div>';
-                } elseif ($id == "3") {
-                    echo '<div class="alert alert-success">
-                                <span class="glyphicon glyphicon-info-sign"></span> 
-                                Achievement successfully deleted.
-                                </div>';
-                } elseif ($id == "1") {
-                    echo '<div class="alert alert-success">
-                                <span class="glyphicon glyphicon-info-sign"></span> 
-                                Achievement successfully added.
-                                </div>';
+
+                if ($id == 2) {
+                    echo '
+                            <div class="alert alert-success" id="success-alert">
+                                <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                                <strong><span class="fa fa-info-circle"></span> Position successfully updated.</strong> 
+                            </div>
+                            ';
+                } elseif ($id == 1) {
+                    echo '
+                            <div class="alert alert-success" id="success-alert">
+                                <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                                <strong><span class="fa fa-info-circle"></span> Position successfully added.</strong> 
+                            </div>
+                            ';
+                } elseif ($id == 3) {
+                    echo '
+                            <div class="alert alert-success" id="success-alert">
+                                <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                                <strong><span class="fa fa-info-circle"></span> Position successfully deleted.</strong> 
+                            </div>
+                            ';
                 }
+
             }
             ?>
             <table class="table segment table-hover" width="100%" cellpadding="0">
@@ -340,13 +348,41 @@ $companyupdate_tbl =
                                     data-target='#UpdatePosition<?php echo $PositionID; ?>' class='btn btn-default'>
                                 <i class='fa fa-eye'></i>
                             </button>
-                            <button name='btndelete' data-toggle='modal'
-                                    data-target='#DeclineRequet' class='btn btn-danger'>
-                                <i class='fa fa-trash fa-1x'></i>
+                            <button class="btn btn-danger" data-toggle="modal"
+                                data-target="#DeletePosition<?php echo $PositionID; ?>">
+                                <i class="fa fa-trash fa-1x"></i>
                             </button>
                         </td>
                         </form>
                     </tr>
+                    <!-- Midal -->
+                    <div class="modal fade" id="DeletePosition<?php echo $PositionID; ?>"
+                         role="dialog">
+                        <div class="modal-dialog" style="padding:100px">
+                            <!-- Modal content-->
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                    <h4 class="modal-title">Delete Position?</h4>
+                                </div>
+                                <div class="modal-body">
+                                    <div class="col-md-15">
+                                        <label = "usr" class = "control-label">Do you want to delete
+                                        Position ? This cannot be undone.</label>
+                                        <div class="form-group">
+                                        </div>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <a href="company-delete.php?delete_PositionID=<?php echo $PositionID; ?>"
+                                           class="btn btn-danger">Delete</a>
+                                        <button type="button" class="btn btn-default" data-dismiss="modal">
+                                            Cancel
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                     </tbody>
                     <!-- Modal -->
                     <div class="modal fade" id="UpdatePosition<?php echo $PositionID; ?>" role="dialog">
@@ -533,7 +569,7 @@ $companyupdate_tbl =
                                         </div>
                                     </div>
                                     <div class="modal-footer">
-                                        <a href="company-positionlist.php?id=1&rid=<?php echo $RID; ?>"
+                                        <a href="add-company.php?update_PositionId<?php echo $PositionID; ?>"
                                            class="btn btn-primary">Update</a>
                                         <button type="button" class="btn btn-default" data-dismiss="modal">
                                             Cancel
