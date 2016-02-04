@@ -78,6 +78,17 @@ session_start();
     <script type="text/javascript" src="../js/jquery.nicescroll.min.js"></script>
     <script type="text/javascript" src="../js/jquery.parallax.js"></script>
     <script type="text/javascript" src="../js/jquery.slicknav.js"></script>
+
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-60962033-1', 'auto');
+      ga('send', 'pageview');
+
+    </script>
 </head>
 
 <body>
@@ -249,27 +260,69 @@ session_start();
                 </div>
             </div>
         </div>
-        <div class="span6" id="form-login">
-                <form class="form-horizontal well" action="import.php" method="post" name="upload_excel" enctype="multipart/form-data">
-                    <fieldset>
-                        <legend>Import CSV/Excel file</legend>
-                        <div class="control-group">
-                            <div class="control-label">
-                                <label>CSV/Excel File:</label>
-                            </div>
-                            <div class="controls">
-                                <input type="file" name="file" id="file" class="input-large">
-                            </div>
-                        </div>
-                        
-                        <div class="control-group">
-                            <div class="controls">
-                            <button type="submit" id="submit" name="Import" class="btn btn-primary button-loading" data-loading-text="Loading...">Upload</button>
-                            </div>
-                        </div>
-                    </fieldset>
-                </form>
-            </div>
+        <div style="border:1px dashed #333333; width:300px; margin:0 auto; padding:10px;">
+    
+    <form name="import" method="post" enctype="multipart/form-data">
+        <input type="file" name="file" /><br />
+        <input type="submit" name="submit" value="Submit" />
+    </form>
+<?php
+    
+    if(isset($_POST["submit"]))
+    {
+        $file = $_FILES['file']['tmp_name'];
+        $handle = fopen($file, "r");
+        $c = 0;
+        while(($filesop = fgetcsv($handle, 1000, ",")) !== false)
+        {
+            $StudentID = $filesop[0];
+            $LastName = $filesop[1];
+            $FirstName = $filesop[2];
+            $MiddleName = $filesop[3];
+            $Course = $filesop[4];
+            $CompanyName = $filesop[5];
+            $CompanyAddress = $filesop[6];
+            $Supervisor = $filesop[7];
+            $Position = $filesop[8];
+            $ContactNumber = $filesop[9];
+            
+            $sql = mysql_query(
+                "INSERT INTO ojttbl (
+                    StudentID, 
+                    LastName,
+                    FirstName, 
+                    MiddleName,
+                    Course, 
+                    CompanyName, 
+                    CompanyAddress, 
+                    Supervisor,
+                    Position, 
+                    ContactNumber) 
+                VALUES (
+                    '$StudentID',
+                    '$LastName',
+                    '$FirstName',
+                    '$MiddleName',
+                    '$Course',
+                    '$CompanyName',
+                    '$CompanyAddress',
+                    '$Supervisor',
+                    '$Position',
+                    '$ContactNumber'
+                    )");
+            $c = $c + 1;
+        }
+        
+            if($sql){
+                echo "You database has imported successfully. You have inserted ". $c ." recoreds";
+            }else{
+                echo "Sorry! There is some problem.";
+            }
+
+    }
+?>
+    
+    </div>
         <br><br>
         <table class="Applicants table" width="100%" cellpadding="0">
             <thead>
@@ -288,20 +341,9 @@ session_start();
             <?php
             $ojt_tbl = 
                 GSecureSQL::query(
-                    "SELECT 
-                    studentinfotbl.`StudentID`, 
-                    studentinfotbl.`FirstName`, 
-                    studentinfotbl.`LastName`,
-                    ojttbl.`CompanyName`, 
-                    ojttbl.`CompanyAddress`,
-                    ojttbl.`ContactNumber`,
-                    ojttbl.`Supervisor`, 
-                    ojttbl.`aStatus`
-                    FROM studentinfotbl
-                    INNER JOIN ojttbl
-                    ON studentinfotbl.`StudentID`=ojttbl.`StudentID`
-                    WHERE studentinfotbl.`Status` = 'OJT'
-                    ORDER BY studentinfotbl.`StudentID`;",
+                    "SELECT *
+                    FROM 
+                    ojttbl",
                     TRUE
 
                 );
