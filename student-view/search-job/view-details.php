@@ -16,22 +16,32 @@ $CompanyID = $position_tbl[0][1];
 $Email = $position_tbl[0][2];
 $PostingDateFrom = $position_tbl[0][3];
 $PostingDateTo = $position_tbl[0][4];
-$PositionLevel = $position_tbl[0][5];
-$JobDescription = $position_tbl[0][6];
-$EmployementType = $position_tbl[0][7];
-$AvailablePosition = $position_tbl[0][8];
-$MonthlySalary = $position_tbl[0][10];
-$YearExperience = $position_tbl[0][11];
+$PositionTitle = $position_tbl[0][5];
+$PositionLevel = $position_tbl[0][6];
+$JobDescription = $position_tbl[0][7];
+$EmploymentType = $position_tbl[0][9];
+$MonthlySalary = $position_tbl[0][11];
+$YearExperience = $position_tbl[0][12];
+$DegreeLevel = $position_tbl[0][14];
 
 $companyinfo_tbl =
     GSecureSQL::query(
-        "SELECT * FROM companyinfotbl WHERE CompanyID = ?",
+        "SELECT
+        CompanyName,
+        Description,
+        Industry,
+        City,
+        ProfileImage
+        FROM companyinfotbl WHERE CompanyID = ?",
         TRUE,
         "s",
         $CompanyID
     );
-$CompanyName = $companyinfo_tbl[0][1];
-$CompanyDescription = $companyinfo_tbl[0][2];
+$CompanyName = $companyinfo_tbl[0][0];
+$CompanyDescription = $companyinfo_tbl[0][1];
+$cIndustry = $companyinfo_tbl[0][2];
+$cLocation = $companyinfo_tbl[0][3];
+$ProfileImage = $companyinfo_tbl[0][4];
 
 
 $infoquery =
@@ -174,7 +184,8 @@ $MajorCourse = $coursetbl[0][0];
                         <ul class="nav navbar-nav navbar-right">
                             <li class="dropdown icon-border" id="notificationLink">
                                 <span id="notification_count">3</span>
-                                <a href="#" class="bell itl-tooltip" data-placement="bottom" data-toggle="dropdown"><i class="fa fa-bell"></i></a>
+                                <a href="#" class="bell itl-tooltip" data-placement="bottom" data-toggle="dropdown"><i
+                                        class="fa fa-bell"></i></a>
                                 <ul id="notificationContainer" class="dropdown-menu dropdown-menu-inverse">
                                     <li class="dropdown-header"><label>Notification</label></li>
                                     <li class="disabled"><a href="#" tabindex="-1">No new notification.</a></li>
@@ -184,12 +195,16 @@ $MajorCourse = $coursetbl[0][0];
                                 </ul>
                             </li>
                             <li class="dropdown">
-                                <a href="#" class="dropdown-toggle" data-toggle="dropdown"><b class="fa fa-user"></b> Welcome, <b><?php echo $StudentName; ?> </b><b class="caret"></b></a>
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown"><b class="fa fa-user"></b>
+                                    Welcome, <b><?php echo $StudentName; ?> </b><b class="caret"></b></a>
                                 <ul class="dropdown-menu">
                                     <li><a href="#">Profile <b class="fa fa-user" style="float:right;"></b></a></li>
-                                    <li><a href="../settings/settings.php">Settings <b class="fa fa-cog" style="float:right;"></b></a></li>
+                                    <li><a href="../settings/settings.php">Settings <b class="fa fa-cog"
+                                                                                       style="float:right;"></b></a>
+                                    </li>
                                     <li class="divider"></li>
-                                    <li><a href="#" data-target='#Logout' data-toggle='modal'>Sign Out <b class="fa fa-sign-out" style="float:right;"></b></a></li>
+                                    <li><a href="#" data-target='#Logout' data-toggle='modal'>Sign Out <b
+                                                class="fa fa-sign-out" style="float:right;"></b></a></li>
                                 </ul>
                             </li>
                         </ul>
@@ -327,7 +342,7 @@ $MajorCourse = $coursetbl[0][0];
                                 </div>
                                 <label><?php echo nl2br($CompanyDescription); ?></label>
                                 <div class="hr3" style="margin-top:35px;margin-bottom:40px;"></div>
-                                <div class="text-center"><h3><?php echo $PositionLevel; ?></h3></div>
+                                <div class="text-center"><h3><?php echo $PositionTitle; ?></h3></div>
                                 <div class="hr3" style="margin-top:35px;margin-bottom:40px;"></div>
                             </div>
                         </div>
@@ -338,19 +353,23 @@ $MajorCourse = $coursetbl[0][0];
                                     <label><u>Good candidate must have the following qualifications:</u></label>
                                 </div>
                                 <?php
-                                $requirement_tbl =
+                                $reqSkills_tbl =
                                     GSecureSQL::query(
-                                        "SELECT Knowledge FROM comprequirementtbl WHERE CompanyID = ? AND PositionID = ?",
+                                        "SELECT ReqSkills FROM comppositiontbl WHERE CompanyID = ? AND PositionID = ?",
                                         TRUE,
                                         "ss",
                                         $CompanyID,
                                         $PositionID
                                     );
-                                foreach($requirement_tbl as $value){
-                                    $Knowledge = $value[0];
-                                    ?>
-                                    <li><?php echo $Knowledge; ?></li>
-                                <?php
+                                foreach ($reqSkills_tbl as $value) {
+                                    $Skills = $value[0];
+                                    $Skills = explode(", ", $Skills);
+                                    foreach ($Skills as $value2) {
+                                        $Skills = $value2;
+                                        ?>
+                                        <li><?php echo $Skills; ?></li>
+                                        <?php
+                                    }
                                 }
                                 ?>
 
@@ -366,9 +385,9 @@ $MajorCourse = $coursetbl[0][0];
                         </div>
                         <div class="row">
                             <div class="col-md-3">
-                                <label>Qualification</label>
+                                <label>Educational Attainment</label>
                             </div>
-                            <div class="col-md-3">Degree</div>
+                            <div class="col-md-3"><?php echo $DegreeLevel; ?></div>
                         </div>
                         <div class="row">
                             <div class="col-md-3">
@@ -378,7 +397,7 @@ $MajorCourse = $coursetbl[0][0];
                         </div>
                         <div class="row">
                             <div class="col-md-3">
-                                <label>Job Function</label>
+                                <label>Job Description</label>
                             </div>
                             <div class="col-md-4"><?php echo $JobDescription; ?></div>
                         </div>
@@ -386,19 +405,19 @@ $MajorCourse = $coursetbl[0][0];
                             <div class="col-md-3">
                                 <label>Location</label>
                             </div>
-                            <div class="col-md-3"><a href="">Taguig City</a></div>
+                            <div class="col-md-3"><?php echo $cLocation; ?></div>
                         </div>
                         <div class="row">
                             <div class="col-md-3">
                                 <label>Salary</label>
                             </div>
-                            <div class="col-md-3">Salary Negotiable</div>
+                            <div class="col-md-3">PHP <?php echo $MonthlySalary; ?></div>
                         </div>
                         <div class="row">
                             <div class="col-md-3">
                                 <label>Employment Type</label>
                             </div>
-                            <div class="col-md-3">Full time, Permanent</div>
+                            <div class="col-md-3"><?php echo $EmploymentType; ?></div>
                         </div>
                         <div class="row">
                             <div class="col-md-3">

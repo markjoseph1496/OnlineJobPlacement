@@ -171,12 +171,16 @@ $MajorCourse = $coursetbl[0][0];
                                 </ul>
                             </li>
                             <li class="dropdown">
-                                <a href="#" class="dropdown-toggle" data-toggle="dropdown"><b class="fa fa-user"></b> Welcome, <b><?php echo $StudentName; ?> </b><b class="caret"></b></a>
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown"><b class="fa fa-user"></b>
+                                    Welcome, <b><?php echo $StudentName; ?> </b><b class="caret"></b></a>
                                 <ul class="dropdown-menu">
                                     <li><a href="#">Profile <b class="fa fa-user" style="float:right;"></b></a></li>
-                                    <li><a href="../settings/settings.php">Settings <b class="fa fa-cog" style="float:right;"></b></a></li>
+                                    <li><a href="../settings/settings.php">Settings <b class="fa fa-cog"
+                                                                                       style="float:right;"></b></a>
+                                    </li>
                                     <li class="divider"></li>
-                                    <li><a href="#" data-target='#Logout' data-toggle='modal'>Sign Out <b class="fa fa-sign-out" style="float:right;"></b></a></li>
+                                    <li><a href="#" data-target='#Logout' data-toggle='modal'>Sign Out <b
+                                                class="fa fa-sign-out" style="float:right;"></b></a></li>
                                 </ul>
                             </li>
                         </ul>
@@ -635,9 +639,11 @@ $MajorCourse = $coursetbl[0][0];
                                                                     </li>
                                                                     <li><?php echo $Location; ?></li>
                                                                 </ul>
-                                                                <a class='main-button' target="_blank"
-                                                                   href='view-details.php?id=<?php echo $PositionID; ?>'>View
-                                                                    Details <i class='fa fa-angle-right'></i></a>
+                                                                <form method="POST" action="view-details.php">
+                                                                    <input type="hidden" name="id" value="<?php echo $PositionID; ?>">
+                                                                    <button class='main-button'>View Details <i
+                                                                            class='fa fa-angle-right'></i></button>
+                                                                </form>
                                                             </div>
                                                         </div>
                                                         <div class="col-md-6">

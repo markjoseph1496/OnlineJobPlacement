@@ -677,7 +677,7 @@ $cLastName = $companyinfo_tbl[0][2];
                 EType: {
                     validators: {
                         notEmpty: {
-                            message: "EType is required."
+                            message: "Employment Type is required."
                         }
                     }
                 },

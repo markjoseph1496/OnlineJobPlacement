@@ -19,7 +19,6 @@ $companyinfo_tbl =
 $CompanyName = $companyinfo_tbl[0][0];
 $cFirstName = $companyinfo_tbl[0][1];
 $cLastName = $companyinfo_tbl[0][2];
-
 ?>
 <!doctype html>
 <html lang="en">
@@ -442,26 +441,4 @@ $cLastName = $companyinfo_tbl[0][2];
         <script type="text/javascript" src="../js/script.js"></script>
     </div>
 </body>
-<?php
-
-if (isset($_POST['btnsave'])) {
-    $datefrom = $_POST['datefrom'];
-    $dateto = $_POST['dateto'];
-    $plevel = $_POST['plevel'];
-    $specialization = $_POST['specialization'];
-    $etype = $_POST['etype'];
-    $avposition = $_POST['avposition'];
-    $salary = $_POST['salary'];
-    $yexperience = $_POST['yexperience'];
-
-    $query = ("INSERT INTO comppositiontbl (CompanyID,PostingDateFrom,PostingDateTo,PositionLevel,JSpecialization,EType,AvPosition,MonthlySalary,YExperience) VALUES ('$CompanyID','$datefrom','$dateto','$plevel','$specialization','$etype','$avposition','$salary','$yexperience')");
-    $result = mysql_query($query);
-    echo "
-          <script type='text/javascript'>
-          location.href='company-positionlist.php?id=1'
-          </script>
-        ";
-}
-?>
-
 </html>
