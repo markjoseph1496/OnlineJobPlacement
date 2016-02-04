@@ -354,6 +354,7 @@ if(isset($_SESSION['AdminID'])){
                         </div>
                     </div>
                 </div>
+<<<<<<< HEAD
             </div>
         </div>
         <form id="UploadPicture" name="UploadPicture" method="POST" action="uploadpic.php" enctype="multipart/form-data">
@@ -371,6 +372,10 @@ if(isset($_SESSION['AdminID'])){
                     </div>
         </form>
         &nbsp;
+=======
+                </form>
+                &nbsp;
+>>>>>>> origin/master
                 <div class="hr5" style="margin-top:35px;margin-bottom:40px;"></div>
                 <div class="field">
                     <div class="text-center">
@@ -381,7 +386,6 @@ if(isset($_SESSION['AdminID'])){
                     </div>
                 </div>
     </div>
-</form>
 </body>
 <script type="text/javascript">
     $(document).ready(function () {
