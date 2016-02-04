@@ -398,18 +398,17 @@ if(isset($_SESSION['AdminID'])){
                                         <label = 'usr' class = 'control-label'>Do you want to accept this request? <br>
                                         Courses to be approved:</label>
                                         <div class="row">
-                                        <div class="col-md-3">
+                                        <div class="col-md-4">
                                             <label> Position Title: </label>
                                         </div>
-                                        <div class="col-md-3">
+                                        <div class="col-md-4">
                                                 <div class="form-group">
                                                     <label><?php echo $PositionTitle; ?></label>
                                                 </div>
                                             </div>
                                         </div>
-                                        &nbsp;
                                         <div class="row">
-                                            <div class="col-md-3">
+                                            <div class="col-md-4">
                                                 <label> Employee Classification: </label>
                                             </div>
                                             <div class="col-md-4">
@@ -419,7 +418,7 @@ if(isset($_SESSION['AdminID'])){
                                             </div>
                                         </div>
                                         <div class="row">
-                                            <div class="col-md-3">
+                                            <div class="col-md-4">
                                                 <label>Level: </label>
                                             </div>
                                             <div class="col-md-4">
@@ -429,7 +428,7 @@ if(isset($_SESSION['AdminID'])){
                                             </div>
                                         </div>
                                         <div class="row">
-                                            <div class="col-md-3">
+                                            <div class="col-md-4">
                                                 <label> Description: </label>
                                             </div>
                                             <div class="col-md-4">
@@ -439,7 +438,7 @@ if(isset($_SESSION['AdminID'])){
                                             </div>
                                         </div>
                                         <div class="row">
-                                            <div class="col-md-3">
+                                            <div class="col-md-4">
                                                 <label>  Qualifications: </label>
                                             </div>
                                             <div class="col-md-4">
@@ -449,7 +448,7 @@ if(isset($_SESSION['AdminID'])){
                                             </div>
                                         </div>
                                         <div class="row">
-                                            <div class="col-md-3">
+                                            <div class="col-md-4">
                                                 <label> Location: </label>
                                             </div>
                                             <div class="col-md-4">
@@ -460,7 +459,7 @@ if(isset($_SESSION['AdminID'])){
                                         </div>
                                         &nbsp;
                                         <div class="row">
-                                            <div class="col-md-3">
+                                            <div class="col-md-4">
                                                 <label> Range of Salary: </label>
                                             </div>
                                             <div class="col-md-4">
@@ -471,7 +470,7 @@ if(isset($_SESSION['AdminID'])){
                                         </div>
                                         &nbsp;
                                         <div class="row">
-                                            <div class="col-md-3">
+                                            <div class="col-md-4">
                                                 <label> Required years of experience: </label>
                                             </div>
                                             <div class="col-md-4">
@@ -481,7 +480,7 @@ if(isset($_SESSION['AdminID'])){
                                             </div>
                                         </div>
                                         <div class="row">
-                                            <div class="col-md-3">
+                                            <div class="col-md-4">
                                                 <label> Consider Fresh Graduate: </label>
                                             </div>
                                             <div class="col-md-4">
@@ -492,7 +491,7 @@ if(isset($_SESSION['AdminID'])){
                                         </div>
                                         &nbsp;
                                         <div class="row">
-                                            <div class="col-md-3">
+                                            <div class="col-md-4">
                                                 <label> Duration of Request: </label>
                                             </div>
                                             <div class="col-md-4">
@@ -503,7 +502,7 @@ if(isset($_SESSION['AdminID'])){
                                         </div>
                                         &nbsp;
                                         <div class="row">
-                                            <div class="col-md-3">
+                                            <div class="col-md-4">
                                                 <label>Materials for posting.: </label>
                                             </div>
                                             <div class="col-md-4">
