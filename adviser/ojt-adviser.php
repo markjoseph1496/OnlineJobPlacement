@@ -361,6 +361,14 @@ session_start();
                 $Contact = $value[10];
                 $Supervisor = $value[8];
                 $Status = $value[12];
+                $DTR = $value[13];
+                $iPaper = $value[14];
+                $PracJournal = $value[15];
+                $TrainingPlan = $value[16];
+                $Resume = $value[17];
+                $MOA = $value[18];
+                $ApplicationLetter = $value[19];
+                $Waiver = $value[20]
 
                 ?>
                 <tr>
@@ -392,6 +400,7 @@ session_start();
                                 </div>
                                 <div class="modal-body">
                                     <div class="col-md-15">
+                                        <input type="hidden" name="StudentID" value="<?php echo $StudentID; ?>">
                                         <label>Student ID:
                                             <?php echo $StudentID; ?></label>
                                         <br>
@@ -424,14 +433,14 @@ session_start();
                                                     <div class="form-group">
                                                         Contact Number
                                                         <input type="text" class="form-control" id="txtContactNumber"
-                                                               name="txtCompanyAddress"
+                                                               name="txtContactNumber"
                                                                value="<?php echo $Contact; ?>">
                                                     </div>
                                                 </li>
                                                 <li>
                                                     <div class="form-group">
                                                         Supervisor
-                                                        <input type="text" class="form-control" id="txSupervisor"
+                                                        <input type="text" class="form-control" id="txtSupervisor"
                                                                name="txtSupervisor"
                                                                value="<?php echo $Supervisor; ?>">
                                                     </div>
@@ -440,8 +449,58 @@ session_start();
                                                 <label>Requirements checklist:</label>
                                                 <li>
                                                     <div class="checkbox checkbox-success">
-                                                        <input id="" name="" class="styled" type="checkbox">
-                                                        <label for="checkbox3"><b>Photo</b></label>
+                                                        <input id="DTRhidden" name="DTR" class="styled" type="hidden" value="off">
+                                                        <input id="DTR" name="DTR" class="styled" type="checkbox" value="ok" <?php if($DTR=="ok") echo "checked"; ?>>
+                                                        <label for="checkbox3"><b>Daily Time Record</b></label>
+                                                    </div>
+                                                </li>
+                                                <li>
+                                                    <div class="checkbox checkbox-success">
+                                                        <input id="iPaperhidden" name="iPaper" class="styled" type="hidden" value="off">
+                                                        <input id="iPaper" name="iPaper" class="styled" type="checkbox" value="ok" <?php if($iPaper=="ok") echo "checked"; ?>>
+                                                        <label for="checkbox3"><b>Integration Paper</b></label>
+                                                    </div>
+                                                </li>
+                                                <li>
+                                                    <div class="checkbox checkbox-success">
+                                                        <input id="PracJournalhidden" name="PracJournal" class="styled" type="hidden" value="off">
+                                                        <input id="PracJournal" name="PracJournal" class="styled" type="checkbox" value="ok" <?php if($PracJournal=="ok") echo "checked"; ?>>
+                                                        <label for="checkbox3"><b>OJT Practicum Journal</b></label>
+                                                    </div>
+                                                </li>
+                                                <li>
+                                                    <div class="checkbox checkbox-success">
+                                                        <input id="TrainingPlanhidden" name="TrainingPlan" class="styled" type="hidden" value="off">
+                                                        <input id="TrainingPlan" name="TrainingPlan" class="styled" type="checkbox" value="ok" <?php if($TrainingPlan=="ok") echo "checked"; ?>>
+                                                        <label for="checkbox3"><b>Training Plan</b></label>
+                                                    </div>
+                                                </li>
+                                                <li>
+                                                    <div class="checkbox checkbox-success">
+                                                        <input id="Resumehidden" name="Resume" class="styled" type="hidden" value="off">
+                                                        <input id="Resume" name="Resume" class="styled" type="checkbox" value="ok" <?php if($Resume=="ok") echo "checked"; ?>>
+                                                        <label for="checkbox3"><b>Resume</b></label>
+                                                    </div>
+                                                </li>
+                                                <li>
+                                                    <div class="checkbox checkbox-success">
+                                                        <input id="MOAhidden" name="MOA" class="styled" type="hidden" value="off">
+                                                        <input id="MOA" name="MOA" class="styled" type="checkbox" value="ok" <?php if($MOA=="ok") echo "checked"; ?>>
+                                                        <label for="checkbox3"><b>Memorandum of Agreement</b></label>
+                                                    </div>
+                                                </li>
+                                                <li>
+                                                    <div class="checkbox checkbox-success">
+                                                        <input id="AppLetterhidden" name="AppLetter" class="styled" type="hidden" value="off">
+                                                        <input id="AppLetter" name="AppLetter" class="styled" type="checkbox" value="ok" <?php if($ApplicationLetter=="ok") echo "checked"; ?>>
+                                                        <label for="checkbox3"><b>Application Letter</b></label>
+                                                    </div>
+                                                </li>
+                                                <li>
+                                                    <div class="checkbox checkbox-success">
+                                                        <input id="Waiverhidden" name="Waiver" class="styled" type="hidden" value="off">
+                                                        <input id="Waiver" name="Waiver" class="styled" type="checkbox" value="ok" <?php if($Waiver=="ok") echo "checked"; ?>>
+                                                        <label for="checkbox3"><b>Waiver</b></label>
                                                     </div>
                                                 </li>
                                             </ul>
@@ -467,3 +526,29 @@ session_start();
 </body>
 <script type="text/javascript" src="../js/script.js"></script>
 </html>
+<script type="text/javascript">
+    if(document.getElementById("DTR").checked) {
+        document.getElementById('DTRhidden').disabled = true;
+    }
+    if(document.getElementById("iPaper").checked) {
+        document.getElementById('iPaperhidden').disabled = true;
+    }
+    if(document.getElementById("PracJournal").checked) {
+        document.getElementById('PracJournalhidden').disabled = true;
+    }
+    if(document.getElementById("TrainingPlan").checked) {
+        document.getElementById('TrainingPlanhidden').disabled = true;
+    }
+    if(document.getElementById("Resume").checked) {
+        document.getElementById('Resumehidden').disabled = true;
+    }
+    if(document.getElementById("MOA").checked) {
+        document.getElementById('MOAhidden').disabled = true;
+    }
+    if(document.getElementById("AppLetter").checked) {
+        document.getElementById('AppLetterhidden').disabled = true;
+    }
+    if(document.getElementById("Waiver").checked) {
+        document.getElementById('Waiverhidden').disabled = true;
+    }
+</script>
