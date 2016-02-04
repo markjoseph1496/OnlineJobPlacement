@@ -29,6 +29,102 @@ $course_qry =
         $MajorCourse
     );
 $MajorCourse = $course_qry[0][0];
+
+$progress_tbl =
+    GSecureSQL::query(
+        "SELECT
+        Pinfo,
+        Cinfo,
+        Objective,
+        WorkXP,
+        School,
+        Seminar,
+        Certification,
+        Achievements,
+        Specialization,
+        Languages,
+        _References
+        FROM Progresstbl
+        WHERE StudentID = ?",
+        TRUE,
+        "s",
+        $StudentID
+    );
+
+$nPinfo = "*";
+$nCinfo = "*";
+$nObjective = "*";
+$nWorkXP = "*";
+$nSchool = "*";
+$nSeminar = "*";
+$nCertification = "*";
+$nAchievements = "*";
+$nSpecialization = "*";
+$nLanguages = "*";
+$nReferences = "*";
+
+$Progress = 10;
+$Pinfo = $progress_tbl[0][0];
+$Cinfo = $progress_tbl[0][1];
+$Objective = $progress_tbl[0][2];
+$WorkXP = $progress_tbl[0][3];
+$School = $progress_tbl[0][4];
+$Seminar = $progress_tbl[0][5];
+$Certification = $progress_tbl[0][6];
+$Achievements = $progress_tbl[0][7];
+$Specialization = $progress_tbl[0][8];
+$Languages = $progress_tbl[0][9];
+$References = $progress_tbl[0][10];
+
+if($Pinfo == "ok"){
+    $Progress = $Progress + 10;
+    $nPinfo = "";
+}
+if($Cinfo == "ok"){
+    $Progress = $Progress + 10;
+    $nCinfo = "";
+}
+if($Objective == "ok"){
+    $Progress = $Progress + 5;
+    $nObjective = "";
+}
+if($WorkXP == "ok"){
+    $Progress = $Progress + 10;
+    $nWorkXP = "";
+}
+if($School == "ok"){
+    $Progress = $Progress + 5;
+    $nSchool = "";
+}
+if($Seminar == "ok"){
+    $Progress = $Progress + 5;
+    $nSeminar = "";
+}
+if($Certification == "ok"){
+    $Progress = $Progress + 10;
+    $nCertification = "";
+}
+if($Achievements == "ok"){
+    $Progress = $Progress + 10;
+    $nAchievements = "";
+}
+if($Specialization == "ok"){
+    $Progress = $Progress + 10;
+    if($Languages == "ok" && $Specialization == "ok"){
+        $nSpecialization = "";
+    }
+}
+if($Languages == "ok"){
+    $Progress = $Progress + 5;
+    if($Languages == "ok" && $Specialization == "ok"){
+        $nSpecialization = "";
+    }
+
+}
+if($References == "ok"){
+    $Progress = $Progress + 10;
+    $nReferences = "";
+}
 ?>
 <!doctype html>
 <html lang="en">
@@ -65,13 +161,13 @@ $MajorCourse = $course_qry[0][0];
     <link rel="stylesheet" href="../../css/font-awesome.min.css" type="text/css" media="screen">
 
     <!-- Fonts -->
-    <link rel="stylesheet" type="text/css" href="../../../fonts/ffonts/montserrat.css">
-    <link rel="stylesheet" type="text/css" href="../../../fonts/ffonts/open-sans.css">
+    <link rel="stylesheet" type="text/css" href="../../fonts/ffonts/montserrat.css">
+    <link rel="stylesheet" type="text/css" href="../../fonts/ffonts/open-sans.css">
 
     <!-- Slicknav -->
     <link rel="stylesheet" type="text/css" href="../../css/slicknav.css" media="screen">
 
-    <!-- Margo CSS Styles  -->
+    <!-- CSS Styles  -->
     <link rel="stylesheet" type="text/css" href="../../css/style.css" media="screen">
 
     <!-- Responsive CSS Styles  -->
@@ -162,8 +258,8 @@ $MajorCourse = $course_qry[0][0];
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown"><b class="fa fa-user"></b>
                                     Welcome, <b><?php echo $StudentName; ?> </b><b class="caret"></b></a>
                                 <ul class="dropdown-menu">
-                                    <li><a href="#">Profile <b class="fa fa-user" style="float:right;"></b></a></li>
-                                    <li><a href="../../settings/settings.php">Settings <b class="fa fa-cog"
+                                    <li><a href="../../student-profile.php">Profile <b class="fa fa-user" style="float:right;"></b></a></li>
+                                    <li><a href="../settings/settings.php">Settings <b class="fa fa-cog"
                                                                                           style="float:right;"></b></a>
                                     </li>
                                     <li class="divider"></li>
@@ -182,6 +278,31 @@ $MajorCourse = $course_qry[0][0];
         </div>
         <!-- .top-bar -->
         <!-- End Top Bar -->
+
+        <!-- Modal -->
+        <div class="modal fade" id="Logout" role="dialog">
+            <div class="modal-dialog" style="padding:100px">
+                <!-- Modal content-->
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        <h4 class="modal-title">Sign Out</h4>
+                    </div>
+                    <div class="modal-body">
+                        <div class="col-md-15 fieldcol">
+                            <label>Do you want to sign out?</label>
+                        </div>
+                        <div class="modal-footer">
+                            <a href="../logout.php"
+                               class="btn btn-primary">Sign Out</a>
+                            <button type="button" class="btn btn-default" data-dismiss="modal">
+                                Cancel
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
 
         <!-- Start  Logo & Naviagtion  -->
         <div class="navbar navbar-default navbar-top">
@@ -202,24 +323,23 @@ $MajorCourse = $course_qry[0][0];
                         <li>
                             <a href="../myinfo/personal-info.php">My Info</a>
                             <ul class="dropdown">
-                                <li><a href="../myinfo/personal-info.php">Personal Info</a></li>
-                                <li><a href="../myinfo/contacts-info.php">Contacts Info</a></li>
-                                <li><a href="../myinfo/work.php">Work</a></li>
-                                <li><a href="../myinfo/education.php">Education</a></li>
-                                <li><a href="../myinfo/certifications.php">Certifications</a></li>
-                                <li><a href="../myinfo/achievements.php">Achievements</a></li>
-                                <li><a href="../myinfo/specialization-and-languages.php">Specialization & Languages</a>
-                                </li>
-                                <li><a href="../myinfo/references.php">References</a></li>
+                                <li><a href="../myinfo/personal-info.php"><?php echo $nPinfo;?> Personal Info</a></li>
+                                <li><a href="../myinfo/contacts-info.php"><?php echo $nCinfo;?> Contacts Info</a></li>
+                                <li><a href="../myinfo/work.php"><?php echo $nWorkXP;?> Work</a></li>
+                                <li><a href="../myinfo/education.php"><?php echo $nSchool;?> Education</a></li>
+                                <li><a href="../myinfo/certifications.php"><?php echo $nCertification;?> Certifications</a></li>
+                                <li><a href="../myinfo/achievements.php"><?php echo $nAchievements;?> Achievements</a></li>
+                                <li><a href="../myinfo/specialization-and-languages.php"><?php echo $nSpecialization;?> Specialization & Languages</a></li>
+                                <li><a href="../myinfo/references.php"><?php echo $nReferences;?> References</a></li>
                                 <li><a href="../myinfo/portfolio.php">Portfolio</a></li>
                             </ul>
                         </li>
                         <li>
-                            <a class="active" href="resume-link.php">Resume Link</a>
+                            <a class="active" href="resume.php">Resumé</a>
                             <ul class="dropdown">
-                                <li><a href="resume-link.php">Resume Link</a></li>
+                                <li><a href="resume.php">Resumé</a></li>
                                 <li><a href="background.php">Background</a></li>
-                                <li><a class="active" href="print-share.php">Print/Share</a></li>
+                                <li><a class="active" href="print.php">Print</a></li>
                             </ul>
                         </li>
                         <li>
@@ -237,23 +357,23 @@ $MajorCourse = $course_qry[0][0];
                 <li>
                     <a href="../myinfo/personal-info.php">My Info</a>
                     <ul class="dropdown">
-                        <li><a href="../myinfo/personal-info.php">Personal Info</a></li>
-                        <li><a href="../myinfo/contacts-info.php">Contacts Info</a></li>
-                        <li><a href="../myinfo/work.php">Work</a></li>
-                        <li><a href="../myinfo/education.php">Education</a></li>
-                        <li><a href="../myinfo/certifications.php">Certifications</a></li>
-                        <li><a href="../myinfo/achievements.php">Achievements</a></li>
-                        <li><a href="../myinfo/specialization-and-languages.php">Specialization & Languages</a></li>
-                        <li><a href="../myinfo/references.php">References</a></li>
+                        <li><a href="../myinfo/personal-info.php"><?php echo $nPinfo;?> Personal Info</a></li>
+                        <li><a href="../myinfo/contacts-info.php"><?php echo $nCinfo;?> Contacts Info</a></li>
+                        <li><a href="../myinfo/work.php"><?php echo $nWorkXP;?> Work</a></li>
+                        <li><a href="../myinfo/education.php"><?php echo $nSchool;?> Education</a></li>
+                        <li><a href="../myinfo/certifications.php"><?php echo $nCertification;?> Certifications</a></li>
+                        <li><a href="../myinfo/achievements.php"><?php echo $nAchievements;?> Achievements</a></li>
+                        <li><a href="../myinfo/specialization-and-languages.php"><?php echo $nSpecialization;?> Specialization & Languages</a></li>
+                        <li><a href="../myinfo/references.php"><?php echo $nReferences;?> References</a></li>
                         <li><a href="../myinfo/portfolio.php">Portfolio</a></li>
                     </ul>
                 </li>
                 <li>
-                    <a class="active" href="resume-link.php">Resume Link</a>
+                    <a class="active" href="resume.php">Resumé</a>
                     <ul class="dropdown">
-                        <li><a href="resume-link.php">Resume Link</a></li>
+                        <li><a href="resume.php">Resumé</a></li>
                         <li><a href="background.php">Background</a></li>
-                        <li><a class="active" href="print-share.php">Print/Share</a></li>
+                        <li><a class="active" href="print.php">Print</a></li>
                     </ul>
                 </li>
                 <li>
@@ -284,13 +404,6 @@ $MajorCourse = $course_qry[0][0];
             <div class="row sidebar-page">
                 <!-- Page Content -->
                 <div class="col-md-12 page-content">
-                    <div class="row">
-                        <div class="col-md-12">
-                            <p><b>Resumé Link URL:</b><a href="../../../resumelinkprofile.php" target="_blank">
-                                    http://markjoseph1496.ojpms.com <i class="fa fa-external-link-square"></i></a>
-                            </p><br>
-                        </div>
-                    </div>
 
                     <div class="row">
                         <div class="col-md-6">

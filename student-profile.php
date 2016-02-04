@@ -4,7 +4,7 @@
 <head>
 
     <!-- Basic -->
-    <title>OJPMS | Resumé Link</title>
+    <title>OJPMS | Profile</title>
 
     <!-- Define Charset -->
     <meta charset="utf-8">
@@ -124,12 +124,12 @@
                                 <div class="col-md-4">
                                     <br>
                                     <h1>Cherry Ramirez </h1> <BR>
-                                   <label> Studied Bachelor of Science in Computer Science </label> <br>
-                                   <label> Lives in Malabon </label> <br>
-                                   <label>April 30, 1996 </label> <br>
-                                   <label>0923456789 </label> <br>
-                                   <label>ramirezchai@gmail.com </label> <br>
-                                   <label> To be able to find a job that will suit to my skills </label> <br>
+                                    <label> Studied Bachelor of Science in Computer Science </label> <br>
+                                    <label> Lives in Malabon </label> <br>
+                                    <label>April 30, 1996 </label> <br>
+                                    <label>0923456789 </label> <br>
+                                    <label>ramirezchai@gmail.com </label> <br>
+                                    <label> To be able to find a job that will suit to my skills </label> <br>
                                 </div>
                             </div>
                         </div>

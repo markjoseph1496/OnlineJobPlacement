@@ -236,325 +236,323 @@ if($References == "ok"){
 </head>
 
 <body>
-<div id="container">
-    <!-- Start Header Section -->
-    <div class="hidden-header"></div>
-    <header class="clearfix">
-        <!-- Start Top Bar -->
-        <div class="top-bar">
+    <div id="container">
+        <!-- Start Header Section -->
+        <div class="hidden-header"></div>
+        <header class="clearfix">
+            <!-- Start Top Bar -->
+            <div class="top-bar">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-7">
+                            <!-- Start Contact Info-->
+                            <ul class="profile-name">
+                                <li>Course: <b><?php echo $MajorCourse; ?></b></li>
+                            </ul>
+                            <!-- End Contact Info -->
+                        </div>
+                        <!-- .col-md-6 -->
+                        <div class="col-md-5">
+                            <!-- Start Social Links -->
+                            <ul class="nav navbar-nav navbar-right">
+                                <li class="dropdown icon-border" id="notificationLink">
+                                    <span id="notification_count">3</span>
+                                    <a href="#" class="bell itl-tooltip" data-placement="bottom" data-toggle="dropdown"><i class="fa fa-bell"></i></a>
+                                    <ul id="notificationContainer" class="dropdown-menu dropdown-menu-inverse">
+                                        <li class="dropdown-header"><label>Notification</label></li>
+                                        <li class="disabled"><a href="#" tabindex="-1">No new notification.</a></li>
+                                        <li><a href="#" tabindex="-1">The administrator accepted your request.</a></li>
+                                        <li class="divider"></li>
+                                        <li><a href="../notification/notification.php" tabindex="-1">See All</a></li>
+                                    </ul>
+                                </li>
+                                <li class="dropdown">
+                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown"><b class="fa fa-user"></b> Welcome, <b><?php echo $StudentName; ?> </b><b class="caret"></b></a>
+                                    <ul class="dropdown-menu">
+                                        <li><a href="../../student-profile.php">Profile <b class="fa fa-user" style="float:right;"></b></a></li>
+                                        <li><a href="../settings/settings.php">Settings <b class="fa fa-cog" style="float:right;"></b></a></li>
+                                        <li class="divider"></li>
+                                        <li><a href="#" data-target='#Logout' data-toggle='modal'>Sign Out <b class="fa fa-sign-out" style="float:right;"></b></a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                            <!-- End Social Links -->
+                        </div>
+                        <!-- .col-md-6 -->
+                    </div>
+                    <!-- .row -->
+                </div>
+                <!-- .container -->
+            </div>
+            <!-- .top-bar -->
+            <!-- End Top Bar -->
+
+            <!-- Modal -->
+            <div class="modal fade" id="Logout" role="dialog">
+                <div class="modal-dialog" style="padding:100px">
+                    <!-- Modal content-->
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                            <h4 class="modal-title">Sign Out</h4>
+                        </div>
+                        <div class="modal-body">
+                            <div class="col-md-15 fieldcol">
+                                <label>Do you want to sign out?</label>
+                            </div>
+                            <div class="modal-footer">
+                                <a href="../logout.php"
+                                   class="btn btn-primary">Sign Out</a>
+                                <button type="button" class="btn btn-default" data-dismiss="modal">
+                                    Cancel
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Start  Logo & Naviagtion  -->
+            <div class="navbar navbar-default navbar-top">
+                <div class="container">
+                    <div class="navbar-header">
+                        <!-- Stat Toggle Nav Link For Mobiles -->
+                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        <!-- End Toggle Nav Link For Mobiles -->
+                        <a class="navbar-brand">
+                            <img src="../../images/ojpms.png">
+                        </a>
+                    </div>
+                    <div class="navbar-collapse collapse">
+                        <!-- Start Navigation List -->
+                        <ul class="nav navbar-nav navbar-right">
+                            <li>
+                                <a class="active" href="personal-info.php">My Info</a>
+                                <ul class="dropdown">
+                                    <li><a href="personal-info.php"><?php echo $nPinfo; ?> Personal Info</a></li>
+                                    <li><a href="contacts-info.php"><?php echo $nCinfo; ?> Contacts Info</a></li>
+                                    <li><a href="work.php"><?php echo $nWorkXP; ?> Work</a></li>
+                                    <li><a href="education.php"><?php echo $nSchool; ?> Education</a></li>
+                                    <li><a class="active" href="certifications.php"><?php echo $nCertification; ?> Certifications</a></li>
+                                    <li><a href="achievements.php"><?php echo $nAchievements; ?> Achievements</a></li>
+                                    <li><a href="specialization-and-languages.php"><?php echo $nSpecialization; ?> Specialization & Languages</a></li>
+                                    <li><a href="references.php"><?php echo $nReferences; ?> References</a></li>
+                                    <li><a href="portfolio.php">Portfolio</a></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="../resumelink/resume-link.php">Resume Link</a>
+                                <ul class="dropdown">
+                                    <li><a href="../resumelink/resume-link.php">Resume Link</a></li>
+                                    <li><a href="../resumelink/background.php">Background</a></li>
+                                    <li><a href="../resumelink/print-share.php">Print/Share</a></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="../applications/applications.php">Applications</a>
+                            </li>
+                            <li>
+                                <a href="../search-job/jobs.php">Jobs</a>
+                            </li>
+                        </ul>
+                        <!-- End Navigation List -->
+                    </div>
+                </div>
+                <!-- Mobile Menu Start -->
+                <ul class="wpb-mobile-menu">
+                    <li>
+                        <a class="active" href="personal-info.php">My Info</a>
+                        <ul class="dropdown">
+                            <li><a href="personal-info.php">Personal Info</a></li>
+                            <li><a href="contacts-info.php">Contacts Info</a></li>
+                            <li><a href="work.php">Work</a></li>
+                            <li><a href="education.php">Education</a></li>
+                            <li><a class="active" href="certifications.php">Certifications</a></li>
+                            <li><a href="achievements.php">Achievements</a></li>
+                            <li><a href="specialization-and-languages.php">Specialization & Languages</a></li>
+                            <li><a href="references.php">References</a></li>
+                            <li><a href="portfolio.php">Portfolio</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="../resumelink/resume-link.php">Resume Link</a>
+                        <ul class="dropdown">
+                            <li><a href="../resumelink/resume-link.php">Resume Link</a></li>
+                            <li><a href="../resumelink/background.php">Background</a></li>
+                            <li><a href="../resumelink/print-share.php">Print/Share</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="../applications/applications.php">Applications</a>
+                    </li>
+                    <li>
+                        <a href="../search-job/jobs.php">Jobs</a>
+                    </li>
+                </ul>
+                <!-- Mobile Menu End -->
+            </div>
+        </header>
+
+        <div class="page-banner no-subtitle">
             <div class="container">
                 <div class="row">
-                    <div class="col-md-7">
-                        <!-- Start Contact Info-->
-                        <ul class="profile-name">
-                            <li>Course: <b><?php echo $MajorCourse; ?></b></li>
-                        </ul>
-                        <!-- End Contact Info -->
-                    </div>
-                    <!-- .col-md-6 -->
-                    <div class="col-md-5">
-                        <!-- Start Social Links -->
-                        <ul class="nav navbar-nav navbar-right">
-                            <li class="dropdown icon-border" id="notificationLink">
-                                <span id="notification_count">3</span>
-                                <a href="#" class="bell itl-tooltip" data-placement="bottom" data-toggle="dropdown"><i class="fa fa-bell"></i></a>
-                                <ul id="notificationContainer" class="dropdown-menu dropdown-menu-inverse">
-                                    <li class="dropdown-header"><label>Notification</label></li>
-                                    <li class="disabled"><a href="#" tabindex="-1">No new notification.</a></li>
-                                    <li><a href="#" tabindex="-1">The administrator accepted your request.</a></li>
-                                    <li class="divider"></li>
-                                    <li><a href="../notification/notification.php" tabindex="-1">See All</a></li>
-                                </ul>
-                            </li>
-                            <li class="dropdown">
-                                <a href="#" class="dropdown-toggle" data-toggle="dropdown"><b class="fa fa-user"></b> Welcome, <b><?php echo $StudentName; ?> </b><b class="caret"></b></a>
-                                <ul class="dropdown-menu">
-                                    <li><a href="#">Profile <b class="fa fa-user" style="float:right;"></b></a></li>
-                                    <li><a href="../settings/settings.php">Settings <b class="fa fa-cog" style="float:right;"></b></a></li>
-                                    <li class="divider"></li>
-                                    <li><a href="#" data-target='#Logout' data-toggle='modal'>Sign Out <b class="fa fa-sign-out" style="float:right;"></b></a></li>
-                                </ul>
-                            </li>
-                        </ul>
-                        <!-- End Social Links -->
-                    </div>
-                    <!-- .col-md-6 -->
-                </div>
-                <!-- .row -->
-            </div>
-            <!-- .container -->
-        </div>
-        <!-- .top-bar -->
-        <!-- End Top Bar -->
-
-        <!-- Modal -->
-        <div class="modal fade" id="Logout" role="dialog">
-            <div class="modal-dialog" style="padding:100px">
-                <!-- Modal content-->
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <button type="button" class="close" data-dismiss="modal">&times;</button>
-                        <h4 class="modal-title">Sign Out?</h4>
-                    </div>
-                    <div class="modal-body">
-                        <div class="col-md-15 fieldcol">
-                            <label = "usr" class = "control-label">Do you want to sign out?</label>
-                            <div class="form-group">
-                            </div>
-                        </div>
-                        <div class="modal-footer">
-                            <a href="../logout.php"
-                               class="btn btn-primary">Sign out</a>
-                            <button type="button" class="btn btn-default" data-dismiss="modal">
-                                Cancel
-                            </button>
-                        </div>
+                    <div class="col-md-6">
+                        <h2>Certifications</h2>
                     </div>
                 </div>
             </div>
         </div>
+        <!-- End Page Banner -->
 
-        <!-- Start  Logo & Naviagtion  -->
-        <div class="navbar navbar-default navbar-top">
+        <!-- Start Content -->
+        <div id="content">
             <div class="container">
-                <div class="navbar-header">
-                    <!-- Stat Toggle Nav Link For Mobiles -->
-                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                        <i class="fa fa-bars"></i>
-                    </button>
-                    <!-- End Toggle Nav Link For Mobiles -->
-                    <a class="navbar-brand">
-                        <img src="../../images/ojpms.png">
-                    </a>
-                </div>
-                <div class="navbar-collapse collapse">
-                    <!-- Start Navigation List -->
-                    <ul class="nav navbar-nav navbar-right">
-                        <li>
-                            <a class="active" href="personal-info.php">My Info</a>
-                            <ul class="dropdown">
-                                <li><a href="personal-info.php"><?php echo $nPinfo; ?> Personal Info</a></li>
-                                <li><a href="contacts-info.php"><?php echo $nCinfo; ?> Contacts Info</a></li>
-                                <li><a href="work.php"><?php echo $nWorkXP; ?> Work</a></li>
-                                <li><a href="education.php"><?php echo $nSchool; ?> Education</a></li>
-                                <li><a class="active" href="certifications.php"><?php echo $nCertification; ?> Certifications</a></li>
-                                <li><a href="achievements.php"><?php echo $nAchievements; ?> Achievements</a></li>
-                                <li><a href="specialization-and-languages.php"><?php echo $nSpecialization; ?> Specialization & Languages</a></li>
-                                <li><a href="references.php"><?php echo $nReferences; ?> References</a></li>
-                                <li><a href="portfolio.php">Portfolio</a></li>
-                            </ul>
-                        </li>
-                        <li>
-                            <a href="../resumelink/resume-link.php">Resume Link</a>
-                            <ul class="dropdown">
-                                <li><a href="../resumelink/resume-link.php">Resume Link</a></li>
-                                <li><a href="../resumelink/background.php">Background</a></li>
-                                <li><a href="../resumelink/print-share.php">Print/Share</a></li>
-                            </ul>
-                        </li>
-                        <li>
-                            <a href="../applications/applications.php">Applications</a>
-                        </li>
-                        <li>
-                            <a href="../search-job/jobs.php">Jobs</a>
-                        </li>
-                    </ul>
-                    <!-- End Navigation List -->
-                </div>
-            </div>
-            <!-- Mobile Menu Start -->
-            <ul class="wpb-mobile-menu">
-                <li>
-                    <a class="active" href="personal-info.php">My Info</a>
-                    <ul class="dropdown">
-                        <li><a href="personal-info.php">Personal Info</a></li>
-                        <li><a href="contacts-info.php">Contacts Info</a></li>
-                        <li><a href="work.php">Work</a></li>
-                        <li><a href="education.php">Education</a></li>
-                        <li><a class="active" href="certifications.php">Certifications</a></li>
-                        <li><a href="achievements.php">Achievements</a></li>
-                        <li><a href="specialization-and-languages.php">Specialization & Languages</a></li>
-                        <li><a href="references.php">References</a></li>
-                        <li><a href="portfolio.php">Portfolio</a></li>
-                    </ul>
-                </li>
-                <li>
-                    <a href="../resumelink/resume-link.php">Resume Link</a>
-                    <ul class="dropdown">
-                        <li><a href="../resumelink/resume-link.php">Resume Link</a></li>
-                        <li><a href="../resumelink/background.php">Background</a></li>
-                        <li><a href="../resumelink/print-share.php">Print/Share</a></li>
-                    </ul>
-                </li>
-                <li>
-                    <a href="../applications/applications.php">Applications</a>
-                </li>
-                <li>
-                    <a href="../search-job/jobs.php">Jobs</a>
-                </li>
-            </ul>
-            <!-- Mobile Menu End -->
-        </div>
-    </header>
+                <?php
+                if (isset($_GET['id'])) {
+                    $id = $_GET['id'];
 
-    <div class="page-banner no-subtitle">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-6">
-                    <h2>Certifications</h2>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- End Page Banner -->
+                    if ($id == 1) {
+                        echo '
+                                <div class="alert alert-success" id="success-alert">
+                                    <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                                    <strong><span class="fa fa-info-circle"></span> Certification successfully updated.</strong> 
+                                </div>
+                                ';
+                    } elseif ($id == 2) {
+                        echo '
+                                <div class="alert alert-success" id="success-alert">
+                                    <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                                    <strong><span class="fa fa-info-circle"></span> Certification successfully added.</strong> 
+                                </div>
+                                ';
+                    } elseif ($id == 3) {
+                        echo '
+                                <div class="alert alert-success" id="success-alert">
+                                    <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                                    <strong><span class="fa fa-info-circle"></span> Certification successfully deleted.</strong> 
+                                </div>
+                                ';
+                    }
 
-    <!-- Start Content -->
-    <div id="content">
-        <div class="container">
-            <?php
-            if (isset($_GET['id'])) {
-                $id = $_GET['id'];
-
-                if ($id == 1) {
-                    echo '
-                            <div class="alert alert-success" id="success-alert">
-                                <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
-                                <strong><span class="fa fa-info-circle"></span> Certification successfully updated.</strong> 
-                            </div>
-                            ';
-                } elseif ($id == 2) {
-                    echo '
-                            <div class="alert alert-success" id="success-alert">
-                                <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
-                                <strong><span class="fa fa-info-circle"></span> Certification successfully added.</strong> 
-                            </div>
-                            ';
-                } elseif ($id == 3) {
-                    echo '
-                            <div class="alert alert-success" id="success-alert">
-                                <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
-                                <strong><span class="fa fa-info-circle"></span> Certification successfully deleted.</strong> 
-                            </div>
-                            ';
                 }
+                ?>
 
-            }
-            ?>
-
-            <div class="skill-shortcode">
-                <div class="skill">
-                    <div class="progress">
-                        <div class="progress-bar" role="progressbar" data-percentage="<?php echo $Progress; ?>" style="width: <?php echo $Progress; ?>%;">
-                            <span class="progress-bar-span"><?php echo $Progress; ?>%</span>
+                <div class="skill-shortcode">
+                    <div class="skill">
+                        <div class="progress">
+                            <div class="progress-bar" role="progressbar" data-percentage="<?php echo $Progress; ?>" style="width: <?php echo $Progress; ?>%;">
+                                <span class="progress-bar-span"><?php echo $Progress; ?>%</span>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
 
-            <div class="row sidebar-page">
-                <!-- Page Content -->
-                <div class="col-md-9 page-content">
-                    <div class="classic-testimonials">
-                        <!-- Single Testimonial -->
-                        <div class="row">
-                            <div class="col-md-6">
-                                <h4>Certifications <span class="head-line"></span></h4>
-                            </div>
-                            <div class="col-md-6">
-                                <a href="add/add-certification.php" class="main-button" style="float:right;">
-                                    <span class="fa fa-plus"> Add Certification</span>
-                                </a>
-                            </div>
-                        </div>
-
-                        <div class="hr2" style="margin-top:35px;"></div>
-                        <table class="table segment table-hover">
-                            <thead>
-                            <tr>
-                                <th>Certification</th>
-                                <th>Year Taken</th>
-                                <th width="15%">&nbsp;</th>
-                            </tr>
-                            </thead>
-                            <tbody>
-                            <?php
-                            $certification_tbl =
-                                GSecureSQL::query(
-                                    "SELECT * FROM certificationtbl WHERE StudentID = ?",
-                                    TRUE,
-                                    "s",
-                                    $StudentID
-                                );
-                            foreach ($certification_tbl as $value) {
-                                $CertificationID = $value[0];
-                                $Certification =  $value[2];
-                                $YearTaken =  $value[3];
-                            ?>
-                            <tr class="certification">
-                                <td><?php echo $Certification; ?></td>
-                                <td><?php echo $YearTaken; ?></td>
-                                <td class="text-center">
-                                    <button class="btn btn-danger" data-toggle="modal"
-                                            data-target="#DeleteCertification<?php echo $CertificationID; ?>">
-                                        <i class="fa fa-trash fa-1x"></i>
-                                    </button>
-                                    <a href="edit/edit-certification.php?id=<?php echo $CertificationID; ?>"
-                                       class="btn btn-default">
-                                        <i class="fa fa-pencil-square-o fa-1x"></i>
+                <div class="row sidebar-page">
+                    <!-- Page Content -->
+                    <div class="col-md-9 page-content">
+                        <div class="classic-testimonials">
+                            <!-- Single Testimonial -->
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <h4>Certifications <span class="head-line"></span></h4>
+                                </div>
+                                <div class="col-md-6">
+                                    <a href="add/add-certification.php" class="main-button" style="float:right;">
+                                        <span class="fa fa-plus"> Add Certification</span>
                                     </a>
-                                </td>
-                            </tr>
-                            <!-- Modal -->
-                            <div class="modal fade" id="DeleteCertification<?php echo $CertificationID; ?>"
-                                 role="dialog">
-                                <div class="modal-dialog" style="padding:100px">
-                                    <!-- Modal content-->
-                                    <div class="modal-content">
-                                        <div class="modal-header">
-                                            <button type="button" class="close" data-dismiss="modal">&times;</button>
-                                            <h4 class="modal-title">Delete Certification?</h4>
-                                        </div>
-                                        <div class="modal-body">
-                                            <div class="col-md-15">
-                                                <label = "usr" class = "control-label">Do you want to delete this
-                                                information? This cannot be undone.</label>
-                                                <div class="form-group">
-                                                </div>
+                                </div>
+                            </div>
+
+                            <div class="hr2" style="margin-top:35px;"></div>
+                            <table class="table segment table-hover">
+                                <thead>
+                                <tr>
+                                    <th>Certification</th>
+                                    <th>Year Taken</th>
+                                    <th width="15%">&nbsp;</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <?php
+                                $certification_tbl =
+                                    GSecureSQL::query(
+                                        "SELECT * FROM certificationtbl WHERE StudentID = ?",
+                                        TRUE,
+                                        "s",
+                                        $StudentID
+                                    );
+                                foreach ($certification_tbl as $value) {
+                                    $CertificationID = $value[0];
+                                    $Certification =  $value[2];
+                                    $YearTaken =  $value[3];
+                                ?>
+                                <tr class="certification">
+                                    <td><?php echo $Certification; ?></td>
+                                    <td><?php echo $YearTaken; ?></td>
+                                    <td class="text-center">
+                                        <button class="btn btn-danger" data-toggle="modal"
+                                                data-target="#DeleteCertification<?php echo $CertificationID; ?>">
+                                            <i class="fa fa-trash fa-1x"></i>
+                                        </button>
+                                        <a href="edit/edit-certification.php?id=<?php echo $CertificationID; ?>"
+                                           class="btn btn-default">
+                                            <i class="fa fa-pencil-square-o fa-1x"></i>
+                                        </a>
+                                    </td>
+                                </tr>
+                                <!-- Modal -->
+                                <div class="modal fade" id="DeleteCertification<?php echo $CertificationID; ?>"
+                                     role="dialog">
+                                    <div class="modal-dialog" style="padding:100px">
+                                        <!-- Modal content-->
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                                <h4 class="modal-title">Delete Certification?</h4>
                                             </div>
-                                            <div class="modal-footer">
-                                                <a href="delete.php?delete_CertificationID=<?php echo $CertificationID; ?>"
-                                                   class="btn btn-danger">Delete</a>
-                                                <button type="button" class="btn btn-default" data-dismiss="modal">
-                                                    Cancel
-                                                </button>
+                                            <div class="modal-body">
+                                                <div class="col-md-15">
+                                                    <label = "usr" class = "control-label">Do you want to delete this
+                                                    information? This cannot be undone.</label>
+                                                    <div class="form-group">
+                                                    </div>
+                                                </div>
+                                                <div class="modal-footer">
+                                                    <a href="delete.php?delete_CertificationID=<?php echo $CertificationID; ?>"
+                                                       class="btn btn-danger">Delete</a>
+                                                    <button type="button" class="btn btn-default" data-dismiss="modal">
+                                                        Cancel
+                                                    </button>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
-                            </div>
-                            <?php
-                            }
-                            ?>
-                            </tbody>
-                        </table>
-                        <div class="hr2"></div>
+                                <?php
+                                }
+                                ?>
+                                </tbody>
+                            </table>
+                            <div class="hr2"></div>
+                        </div>
                     </div>
-                </div>
-                <!-- End Page Content -->
+                    <!-- End Page Content -->
 
-                <!--Sidebar-->
-                <div class="col-md-3 sidebar right-sidebar">
-                    <!-- Search Widget -->
-                    <div class="call-action call-action-boxed call-action-style2 clearfix">
-                        (*) Note: Required fields.
+                    <!--Sidebar-->
+                    <div class="col-md-3 sidebar right-sidebar">
+                        <!-- Search Widget -->
+                        <div class="call-action call-action-boxed call-action-style2 clearfix">
+                            <label><span>(*)</span> Note: Required fields.</label>
+                        </div>
                     </div>
+                    <!--End sidebar-->
                 </div>
-                <!--End sidebar-->
             </div>
         </div>
     </div>
-</div>
-<!-- End Content -->
-<script type="text/javascript" src="../../js/script.js"></script>
+    <!-- End Content -->
+    <script type="text/javascript" src="../../js/script.js"></script>
 </body>
 </html>

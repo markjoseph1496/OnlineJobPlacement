@@ -1,6 +1,6 @@
 <?php
-session_start();
 include('../../connection.php');
+session_start();
 
 if(isset($_SESSION['StudentID'])){
     $StudentID = $_SESSION['StudentID'];
@@ -128,10 +128,11 @@ if($References == "ok"){
 ?>
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
 
     <!-- Basic -->
-    <title>OJPMS | Applications</title>
+    <title>OJPMS | Background</title>
 
     <!-- Define Charset -->
     <meta charset="utf-8">
@@ -139,8 +140,13 @@ if($References == "ok"){
     <!-- Responsive Metatag -->
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
+    <!-- Page Description and Author -->
+    <meta name="description" content="Margo - Responsive HTML5 Template">
+    <meta name="author" content="iThemesLab">
+
     <!-- Bootstrap CSS -->
     <link href="../../css/bootstrap.min.css" rel="stylesheet"/>
+    <link href="../../css/color-selector.css" rel="stylesheet"/>
 
     <!-- BootstrapValidator CSS -->
     <link href="../../css/bootstrapValidator.min.css" rel="stylesheet"/>
@@ -162,7 +168,7 @@ if($References == "ok"){
     <!-- Slicknav -->
     <link rel="stylesheet" type="text/css" href="../../css/slicknav.css" media="screen">
 
-    <!-- Margo CSS Styles  -->
+    <!-- CSS Styles  -->
     <link rel="stylesheet" type="text/css" href="../../css/style.css" media="screen">
 
     <!-- Responsive CSS Styles  -->
@@ -171,11 +177,11 @@ if($References == "ok"){
     <!-- Css3 Transitions Styles  -->
     <link rel="stylesheet" type="text/css" href="../../css/animate.css" media="screen">
 
-    <!-- OJPMS CSS  -->
-    <link rel="stylesheet" type="text/css" href="../../css/ojpms-style.css" media="screen">
-
     <!-- Color CSS Styles  -->
     <link rel="stylesheet" type="text/css" href="../../css/colors/yellow.css" title="yellow" media="screen"/>
+
+    <!-- Checkbox -->
+    <link rel="stylesheet" type="text/css" href="../../css/checkbox.css" media="screen" />
 
     <!-- JS  -->
     <script type="text/javascript" src="../../js/jquery.migrate.js"></script>
@@ -192,6 +198,13 @@ if($References == "ok"){
     <script type="text/javascript" src="../../js/jquery.nicescroll.min.js"></script>
     <script type="text/javascript" src="../../js/jquery.parallax.js"></script>
     <script type="text/javascript" src="../../js/jquery.slicknav.js"></script>
+
+    <link rel="stylesheet" type="text/css" href="../../css/color-selector/prettify.css"/>
+    <link rel="stylesheet" type="text/css" href="../../css/color-selector/bootstrap-colorselector.css"/>
+
+    <!-- fileupload -->
+    <link href="../../css/fileinput.min.css" media="all" rel="stylesheet" type="text/css"/>
+    <script src="../../js/fileinput.min.js" type="text/javascript"></script>
 
     <!-- Notification -->
     <link rel="stylesheet" href="../../css/notif.css"/>
@@ -223,29 +236,6 @@ if($References == "ok"){
 
 <body>
     <div id="container">
-        <script>
-            $(document).on("click", ".deleteCertification", function (result) {
-                bootbox.confirm({
-                    title: 'Delete',
-                    message: 'Are you sure you want to delete this Information?',
-                    buttons: {
-                        'cancel': {
-                            label: 'Cancel',
-
-                        },
-                        'confirm': {
-                            label: 'Delete',
-                            className: 'btn-danger pull-right'
-                        }
-                    },
-                    callback: function (result) {
-                        if (result) {
-                            window.location = $("a[data-bb='confirmDeleteCertification']").attr('href');
-                        }
-                    }
-                });
-            });
-        </script>
         <!-- Start Header Section -->
         <div class="hidden-header"></div>
         <header class="clearfix">
@@ -256,7 +246,7 @@ if($References == "ok"){
                         <div class="col-md-7">
                             <!-- Start Contact Info -->
                             <ul class="profile-name">
-                                <li>Course: <b><?php echo $MajorCourse; ?></b></li>
+                                <li>Course: </i> <b><?php echo $MajorCourse; ?></b></li>
                             </ul>
                             <!-- End Contact Info -->
                         </div>
@@ -311,7 +301,7 @@ if($References == "ok"){
                             </div>
                             <div class="modal-footer">
                                 <a href="../logout.php"
-                                   class="btn btn-primary">Sign out</a>
+                                   class="btn btn-primary">Sign Out</a>
                                 <button type="button" class="btn btn-default" data-dismiss="modal">
                                     Cancel
                                 </button>
@@ -330,7 +320,7 @@ if($References == "ok"){
                             <i class="fa fa-bars"></i>
                         </button>
                         <!-- End Toggle Nav Link For Mobiles -->
-                        <a class="navbar-brand" href="">
+                        <a class="navbar-brand">
                             <img src="../../images/ojpms.png">
                         </a>
                     </div>
@@ -352,15 +342,15 @@ if($References == "ok"){
                                 </ul>
                             </li>
                             <li>
-                                <a href="../resume/resume.php">Resumé</a>
+                                <a class="active" href="resume.php">Resumé</a>
                                 <ul class="dropdown">
-                                    <li><a href="../resume/resume.php">Resumé</a></li>
-                                    <li><a href="../resume/background.php">Background</a></li>
-                                    <li><a href="../resume/print.php">Print</a></li>
+                                    <li><a href="resume.php">Resumé</a></li>
+                                    <li><a class="active" href="background.php">Background</a></li>
+                                    <li><a href="print.php">Print</a></li>
                                 </ul>
                             </li>
                             <li>
-                                <a class="active" href="applications.php">Applications</a>
+                                <a href="../applications/applications.php">Applications</a>
                             </li>
                             <li>
                                 <a href="../search-job/jobs.php">Jobs</a>
@@ -386,15 +376,15 @@ if($References == "ok"){
                         </ul>
                     </li>
                     <li>
-                        <a href="../resume/resume.php">Resumé</a>
+                        <a class="active" href="resume.php">Resumé</a>
                         <ul class="dropdown">
-                            <li><a href="../resume/resume.php">Resumé</a></li>
-                            <li><a href="../resume/background.php">Background</a></li>
-                            <li><a href="../resume/print.php">Print</a></li>
+                            <li><a href="resume.php">Resumé</a></li>
+                            <li><a class="active" href="background.php">Background</a></li>
+                            <li><a href="print.php">Print</a></li>
                         </ul>
                     </li>
                     <li>
-                        <a class="active" href="applications.php">Applications</a>
+                        <a href="../applications/applications.php">Applications</a>
                     </li>
                     <li>
                         <a href="../search-job/jobs.php">Jobs</a>
@@ -408,7 +398,7 @@ if($References == "ok"){
             <div class="container">
                 <div class="row">
                     <div class="col-md-6">
-                        <h2>Applications</h2>
+                        <h2>Background</h2>
                     </div>
                 </div>
             </div>
@@ -418,32 +408,66 @@ if($References == "ok"){
         <!-- Start Content -->
         <div id="content">
             <div class="container">
-                <div class="row">
+                <div class="row sidebar-page">
                     <!-- Page Content -->
                     <div class="col-md-12 page-content">
+                        <label>Use Background</label><br>
+
+                        <div class="radio radio-inline">
+                            <input type="radio" id="Color" value="Color" name="selection" checked="checked">
+                            <label for="inlineRadio1"> Solid Color </label>
+                        </div>
+
+                        <div class="radio radio-inline">
+                            <input type="radio" id="Image" value="Image" name="selection">
+                            <label for="inlineRadio2"> Uploaded Image </label>
+                        </div>
+                    
                         <div class="row">
-                            <div class="hr2"></div>
-                            <table class="table segment table-hover">
-                                <thead>
-                                <tr class="table-color">
-                                    <th>Position</th>
-                                    <th>Company</th>
-                                    <th>Location</th>
-                                    <th>Applied</th>
-                                </tr>
-                                </thead>
-                                <tbody>
-                                <tr>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                </tr>
-                                </tbody>
-                            </table>
+                            <div class="col-md-6" id="ToColor">
+                                <div id="Colors">
+                                    <label class="accent-color">Solid Color</label><br>
+                                    <select id="colorselector_1" style="display: none;">
+                                        <option value="106" data-color="#A0522D" selected="selected">sienna</option>
+                                        <option value="47" data-color="#CD5C5C">indianred</option>
+                                        <option value="87" data-color="#FF4500">orangered</option>
+                                        <option value="17" data-color="#008B8B">darkcyan</option>
+                                        <option value="18" data-color="#B8860B">darkgoldenrod</option>
+                                        <option value="68" data-color="#32CD32">limegreen</option>
+                                        <option value="42" data-color="#FFD700">gold</option>
+                                        <option value="77" data-color="#48D1CC">mediumturquoise</option>
+                                        <option value="107" data-color="#87CEEB">skyblue</option>
+                                        <option value="46" data-color="#FF69B4">hotpink</option>
+                                        <option value="64" data-color="#87CEFA">lightskyblue</option>
+                                        <option value="13" data-color="#6495ED">cornflowerblue</option>
+                                        <option value="15" data-color="#DC143C">crimson</option>
+                                        <option value="24" data-color="#FF8C00">darkorange</option>
+                                        <option value="78" data-color="#C71585">mediumvioletred</option>
+                                        <option value="123" data-color="#000000">black</option>
+                                    </select>
+                                    <script>
+                                        $('#colorselector_1').colorselector();
+                                    </script>
+                                </div>
+                            </div>
+                            <div class="col-md-6" id="ToImage">
+                                <div id="UploadImages">
+                                    <label class="accent-color">Uploaded Image</label>
+                                    <div class="classic-testimonials">
+                                        <input id="ProfilePicture" name="" multiple type="file" class="file file-loading"
+                                               data-allowed-file-extensions='["png", "jpg", "bmp", "gif"]'>
+                                        <br>
+                                        <button id="" class="btn-system btn-mini border-btn" name="btnDelete">Delete Image</button>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                     <!-- End Page Content -->
+                </div>
+                <div class="hr5" style="margin-top:35px;margin-bottom:40px;"></div>
+                <div class="text-center">
+                    <button type="submit" class="btn-system btn-large" name="btnSave">Save</button>
                 </div>
             </div>
         </div>
@@ -451,4 +475,51 @@ if($References == "ok"){
     <!-- End Content -->
     <script type="text/javascript" src="../../js/script.js"></script>
 </body>
+<script src="../../css/color-selector/jquery-1.10.2.min.js"></script>
+<script src="../../css/color-selector/bootstrap-colorselector.js"></script>
+<script src="../../css/color-selector/prettify.js"></script>
 </html>
+
+<script type="text/javascript">
+    $(document).ready(function(){
+        $('input[type="radio"]').click(function(){
+            if($(this).attr("value")=="Color"){
+                $("#UploadImages").hide();
+                $("#Colors").show();
+            }
+            if($(this).attr("value")=="Image"){
+                $("#Colors").hide();
+                $("#UploadImages").show();
+            }
+        });
+        if ($('#Color').is(':checked')) {
+            $('#UploadImages').hide();
+        } else {
+            $('#Colors').show();
+        }
+    });
+
+
+    $(function () {
+
+        window.prettyPrint && prettyPrint();
+
+        $('#colorselector_1').colorselector();
+        $('#colorselector_2').colorselector({
+            callback: function (value, color, title) {
+                $("#colorValue").val(value);
+                $("#colorColor").val(color);
+                $("#colorTitle").val(title);
+            }
+        });
+
+        $("#setColor").click(function (e) {
+            $("#colorselector_2").colorselector("setColor", "#008B8B");
+        })
+
+        $("#setValue").click(function (e) {
+            $("#colorselector_2").colorselector("setValue", 18);
+        })
+
+    });
+</script>
