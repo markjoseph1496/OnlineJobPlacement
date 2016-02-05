@@ -257,21 +257,21 @@
                                 <!-- Tab Content 3 -->
                                 <div class="tab-pane fade" id="tab3">
                                     <ul>
-                                        <li>BICOL REGION <a href="">(25)</a></li>
-                                        <li>C.A.R <a href="">(22)</a></li>
-                                        <li>CAGAYAN VALLEY <a href="">(13)</a></li>
-                                        <li>CARAGA <a href="">(5)</a></li>
-                                        <li>CENTRAL LUZON <a href="">(159)</a></li>
-                                        <li>CENTRAL MINDANAO <a href="">(5)</a></li>
-                                        <li>CENTRAL VISAYAS <a href="">(109)</a></li>
-                                        <li>EASTERN VISAYAS <a href="">(10)</a></li>
-                                        <li>ILOCOS REGION <a href="">(34)</a></li>
-                                        <li>NCR <a href="">(3737)</a></li>
-                                        <li>NORTHERN MINDANAO <a href="">(23)</a></li>
-                                        <li>SOUTHERN MINDANAO <a href="">(92)</a></li>
-                                        <li>SOUTHERN TAGALOG <a href="">(230)</a></li>
-                                        <li>WESTERN MINDANAO <a href="">(5)</a></li>
-                                        <li>WESTERN VISAYAS <a href="">(47)</a></li>
+                                        <li>Caloocan City <a href="">(25)</a></li>
+                                        <li>Makati City <a href="">(22)</a></li>
+                                        <li>Malabon City <a href="">(13)</a></li>
+                                        <li>Mandaluyong <a href="">(5)</a></li>
+                                        <li>Manila <a href="">(159)</a></li>
+                                        <li>Marikina City <a href="">(5)</a></li>
+                                        <li>Muntinlupa City <a href="">(109)</a></li>
+                                        <li>Navotas City <a href="">(10)</a></li>
+                                        <li>Ortigas <a href="">(34)</a></li>
+                                        <li>Paranaque <a href="">(3737)</a></li>
+                                        <li>Pasig City <a href="">(23)</a></li>
+                                        <li>Quezon City <a href="">(92)</a></li>
+                                        <li>Taguig City <a href="">(230)</a></li>
+                                        <li>Valenzuela City <a href="">(5)</a></li>
+                                        <li>Pasay City <a href="">(47)</a></li>
                                         <li>Others <a href="">(82)</a></li>
                                     </ul>
                                 </div>
@@ -770,7 +770,7 @@
                                 </li>
                                 <li class="timeline-inverted">
                                     <div class="timeline-image">
-                                        <h4>Be Part
+                                        <h4>
                                             <br>Of The
                                             <br>History!
                                         </h4>
@@ -790,9 +790,9 @@
                             <div class="container">
                                 <div class="row">
                                     <div class="big-title text-center animated fadeInDown delay-01" data-animation="fadeInDown" data-animation-delay="01">
-                                        <h1 class="wite-text">Be Part of Us</h1>
+                                        <h1 class="wite-text"> of Us</h1>
                                     </div>
-                                    <p class="text-center wite-text">Choose between <b>Student</b> and <b>Company</b>.</p>
+                                    <!--<p class="text-center wite-text">Choose between <b>Student</b> and <b>Company</b>.</p>-->
                                         
                                     <!-- Start Service Icon 1 -->
                                     <div class="col-md-6 col-sm-6 service-box service-center">

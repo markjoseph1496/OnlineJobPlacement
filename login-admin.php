@@ -14,6 +14,10 @@
     <script type="text/javascript" src="js/jquery.min.js"></script>
     <script type="text/javascript" src="js/bootstrap.min.js"></script>
 
+    <!-- Fonts -->
+    <link rel="stylesheet" type="text/css" href="fonts/ffonts/montserrat.css">
+    <link rel="stylesheet" type="text/css" href="fonts/ffonts/open-sans.css">
+
     <!-- BootstrapValidator -->
     <script type="text/javascript" src="js/bootstrapValidator.min.js"></script>
 
@@ -41,7 +45,7 @@
     </div>
     <div class="register-screenshot not_mobile">
         <div class="browser-chrome">
-            <label class="register-title">&nbsp;<span class="break_on_desktop"></span>Welcome to OJPMS</label>
+            <h1 class="register-title">&nbsp;<span class="break_on_desktop"></span>Welcome to <span class="yellow-title">O</span><span class="blue-title">J</span>PMS</h1>
             <div class="space"></div>
             <label class="register-terms">Connect with your friends -- and other fascinating people. Get in-the-moment
                 updates on the things that interest you. And watch events unfold, in real time, from every angle. <a

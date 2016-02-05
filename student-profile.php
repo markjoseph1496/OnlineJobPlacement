@@ -138,11 +138,10 @@
                         <p><label>April 30, 1996</label></p>
                         <p><label>0923456789</label></p>
                         <p><label>ramirezchai@gmail.com</label></p>
-                        <p><label>To be able to find a job that will suit to my skills</label></p>
                     </div>
                 </div>
 
-                <div class="hr3" style="margin-top:20px;margin-bottom:20px;"></div>
+                <div class="hr3" style="margin-top:30px;margin-bottom:30px;"></div>
 
                 <div class="row">
                     <div class="col-md-4">
@@ -170,71 +169,97 @@
                     </div>
                 </div>
 
-                <div class="hr3" style="margin-top:20px;margin-bottom:20px;"></div>
+                <div class="hr3" style="margin-top:30px;margin-bottom:30px;"></div>
 
                 <div class="row">
                     <div class="col-md-4">
                         <h1><span class="fa-stack fa-lg">
                             <i class="fa fa-circle fa-stack-2x"></i>
-                            <i class="fa fa-book fa-stack-1x fa-inverse"></i></span>
+                            <i class="fa fa-language fa-stack-1x fa-inverse"></i></span>
                             Languages
                         </h1> 
                     </div>
-                    <div class="col-md-4">
+                    <div class="col-md-3">
                         <h1>&nbsp;</h1>
                         <br>
-                        <p><label>School</label></p>
-                        <p><label>Graduated</label></p>
-                        <p><label>Major</label></p>
-                        <p><label>Field of Study</label></p>
+                        <p><label>Filipino</label></p>
+                        <p><label>Nihonggo</label></p>
                     </div>
-                    <div class="col-md-4">
+                    <div class="col-md-5">
                         <h1>&nbsp;</h1>
                         <br>
-                        
+                        <div>
+                            <div class="progress">
+                                <div class="progress-bar-info progress-bar-striped" role="progressbar" 
+                                    aria-valuenow="70"  aria-valuemin="0" aria-valuemax="100" style="width:70%">
+                                        <font style="color:white;" ><center>70%
+                                </div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="progress">
+                                <div class="progress-bar-info progress-bar-striped" role="progressbar" 
+                                    aria-valuenow="70"  aria-valuemin="0" aria-valuemax="100" style="width:100%">
+                                        <font style="color:white;" ><center>100%
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
 
-                <div class="hr3" style="margin-top:20px;margin-bottom:20px;"></div>
+                <div class="hr3" style="margin-top:30px;margin-bottom:30px;"></div>
 
                 <div class="row">
                     <div class="col-md-4">
                         <h1><span class="fa-stack fa-lg">
                             <i class="fa fa-circle fa-stack-2x"></i>
-                            <i class="fa fa-book fa-stack-1x fa-inverse"></i></span>
+                            <i class="fa fa-star fa-stack-1x fa-inverse"></i></span>
                             Skills
                         </h1> 
                     </div>
-                    <div class="col-md-4">
+                    <div class="col-md-3">
                         <h1>&nbsp;</h1>
                         <br>
-                        <p><label>School</label></p>
-                        <p><label>Graduated</label></p>
-                        <p><label>Major</label></p>
-                        <p><label>Field of Study</label></p>
+                        <p><label>Web Design</label></p>
+                        <p><label>Web Programming</label></p>
                     </div>
-                    <div class="col-md-4">
+                    <div class="col-md-5">
                         <h1>&nbsp;</h1>
                         <br>
-                        
+                        <div>
+                            <div class="progress">
+                                <div class="progress-bar-warning progress-bar-striped" role="progressbar" 
+                                    aria-valuenow="50"  aria-valuemin="0" aria-valuemax="100" style="width:80%">
+                                        <font style="color:white;" ><center>80%
+                                </div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="progress">
+                                <div class="progress-bar-warning progress-bar-striped" role="progressbar" 
+                                    aria-valuenow="50"  aria-valuemin="0" aria-valuemax="100" style="width:50%">
+                                        <font style="color:white;" ><center>50%
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
 
-                <div class="hr3" style="margin-top:20px;margin-bottom:20px;"></div>
+                <div class="hr3" style="margin-top:30px;margin-bottom:30px;"></div>
 
                 <div class="row">
                     <div class="col-md-4">
                         <h1><span class="fa-stack fa-lg">
                             <i class="fa fa-circle fa-stack-2x"></i>
-                            <i class="fa fa-book fa-stack-1x fa-inverse"></i></span>
+                            <i class="fa fa-trophy fa-stack-1x fa-inverse"></i></span>
                             Achievements & Certificates
                         </h1> 
                     </div>
                     <div class="col-md-4">
                         <h1>&nbsp;</h1>
                         <br>
-                        <label>Top 1 in Math Class</label>
-                        <label>Self Development Seminar</label>
+                        <p><label>Top 1 in Math Class</label></p>
+                        <p><label>Self Development Seminar</label></p>
                     </div>
                     <div class="col-md-4">
                         <h1>&nbsp;</h1>
@@ -243,13 +268,13 @@
                     </div>
                 </div>
 
-                <div class="hr3" style="margin-top:20px;margin-bottom:20px;"></div>
+                <div class="hr3" style="margin-top:30px;margin-bottom:30px;"></div>
 
                 <div class="row">
                     <div class="col-md-4">
                         <h1><span class="fa-stack fa-lg">
                             <i class="fa fa-circle fa-stack-2x"></i>
-                            <i class="fa fa-book fa-stack-1x fa-inverse"></i></span>
+                            <i class="fa fa-users fa-stack-1x fa-inverse"></i></span>
                             References
                         </h1> 
                     </div>
@@ -270,128 +295,11 @@
                         <p><label>Email</label></p>
                     </div>
                 </div>
-
-
-
-
-            
-                   
-            <div class="hr5" style="margin-top:35px;margin-bottom:40px;"></div>
-            <div class="parallax-text-item">
-                <div class="container">
-                    <div class = "row">
-                        <div class = "col-md-1">
-                        <i class="fa fa-language icon-medium-effect icon-effect-2"></i> 
-                        </div>
-                        <div class = "col-md-4">
-                            <br>
-                        <h1> Languages </h1>
-                        </div>
-                    </div>
-                    <BR>
-                    <div class="row">
-                        <div class="col-md-5 fieldcol">
-                            <label style = "text-indent: 270px;">Filipino</label>
-                        </div>
-                        <div class="col-md-7 fieldcol">
-                            <div class="form-group">
-                                <div class="progress">
-                                    <div class="progress-bar-info progress-bar-striped" role="progressbar" 
-                                        aria-valuenow="70"  aria-valuemin="0" aria-valuemax="100" style="width:70%">
-                                            <font style="color:white;" ><center>70%
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-5 fieldcol">
-                            <label style = "text-indent: 270px;">Nihonggo</label>
-                        </div>
-                        <div class="col-md-7 fieldcol">
-                            <div class="form-group">
-                                <div class="progress">
-                                    <div class="progress-bar-info progress-bar-striped" role="progressbar" 
-                                        aria-valuenow="30"  aria-valuemin="0" aria-valuemax="100" style="width:30%">
-                                            <font style="color:white;" ><center>30%
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
             </div>
-            <div class="hr5" style="margin-top:35px;margin-bottom:40px;"></div>
-            <div class="parallax-text-item">
-                <div class="container">
-                    <div class = "row">
-                        <div class = "col-md-1">
-                        <i class="fa fa-star icon-medium-effect icon-effect-2"></i> 
-                        </div>
-                        <div class = "col-md-4">
-                            <br>
-                        <h1> Skills </h1>
-                        </div>
-                    </div>
-                    <BR>
-                    <div class="row field">
-                        <div class="col-md-5 fieldcol">
-                            <label style = "text-indent: 270px;">Web Design</label>
-                        </div>
-                        <div class="col-md-7 fieldcol">
-                            <div class="form-group">
-                                <div class="progress">
-                                    <div class="progress-bar-warning progress-bar-striped" role="progressbar" 
-                                        aria-valuenow="50"  aria-valuemin="0" aria-valuemax="100" style="width:50%">
-                                            <font style="color:white;" ><center>50%
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-5 fieldcol">
-                            <label style = "text-indent: 270px;">Web Programming</label>
-                        </div>
-                        <div class="col-md-7 fieldcol">
-                            <div class="form-group">
-                                <div class="progress">
-                                    <div class="progress-bar-warning progress-bar-striped" role="progressbar" 
-                                        aria-valuenow="50"  aria-valuemin="0" aria-valuemax="100" style="width:50%">
-                                            <font style="color:white;" ><center>50%
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="hr5" style="margin-top:35px;margin-bottom:40px;"></div>
-            <div class="parallax-text-item">
-                <div class="container">
-                    <div class = "row">
-                        <div class = "col-md-1">
-                        <i class="fa fa-trophy icon-medium-effect icon-effect-2"></i> 
-                        </div>
-                        <div class = "col-md-4">
-                            <br>
-                        <h1> Achievements & Certificates </h1>
-                        </div>
-                    </div>
-                    <BR>
-                    <div class="row field">
-                        <div class="col-md-12 fieldcol">
-                            <label>Top 1 in Math Class</label>
-                        </div>
-                        <div class="col-md-12 fieldcol">
-                            <label>Self Development Seminar</label>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            
-            </div>
-    </div>
-    <!--info-->
-  </div>   
-<!-- End Content -->
-<script type="text/javascript" src="js/script.js"></script>
+        </div>
+    </div>   
+    <!-- End Content -->
+    <script type="text/javascript" src="js/script.js"></script>
 
 
         <!-- Start Footer Section -->
