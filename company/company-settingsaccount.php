@@ -351,9 +351,9 @@ $Address = $companyuser_tbl[0][7];
             </form>
         </div>
     </div>
-<!-- End Modal ng Change Password -->    
+<!-- End Modal ng Change Password --> 
+    <form action="add-company.php" name="companyuser" id="companyuser" autocomplete="off">   
       <div class = "col-md-12">
-      <form action="add-company.php" name="companyuser" id="companyuser" autocomplete="off">
             <?php
               if(isset($_GET['id'])){
                     $id=$_GET['id'];
