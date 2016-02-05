@@ -107,28 +107,8 @@ include('connection.php');
                 <div class="big-title text-center">
                     <h1><strong>Registration</strong></h1>
                 </div>
-                <h3><strong>Student Details:</strong></h3>
-                <div class="row">
-                    <div class="col-md-2">
-                        &nbsp;
-                    </div>
-                    <div class="col-md-8 text-center">
-                        <div class="form-group">
-                            <label><span>(*) </span>Resumé Link: </label><br>
-                            <input type="text" class="form-control" id="resumelink"
-                                   placeholder="http://YourName.sticaloocan.edu" name="resumelink">
-                            <p class="note">ex.http://YourName.sticaloocan.edu</p>
-                        </div>
-                    </div>
-                    <div class="col-md-2">
-                        &nbsp;
-                    </div>
-                </div>
-                <p class="note text-center">You may only use alphanumeric characters, including period (.), dash (-), or
-                    underscore (_). This will be the name that will identify your personalized ResumeLink. This name
-                    will be permanent and no longer be changeable.</p>
+                <h3><strong>Alumni Details:</strong></h3>
                 <br>
-
                 <div class="row">
                     <div class="col-md-3">
                         <label>Student ID <span>(*)</span></label>
