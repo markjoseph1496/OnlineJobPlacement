@@ -12,6 +12,7 @@ else{
   $companyuser_tbl =
     GSecureSQL::query(
         "SELECT
+            CompanyName,
             Email,
             Password,
             FirstName,
@@ -29,14 +30,15 @@ else{
         $CompanyID
     );
 
-$Email = $companyuser_tbl[0][0];
-$Password = $companyuser_tbl[0][1];
-$FirstName = $companyuser_tbl[0][2];
-$MiddleName = $companyuser_tbl[0][3];
-$LastName = $companyuser_tbl[0][4];
-$Position = $companyuser_tbl[0][5];
-$Department = $companyuser_tbl[0][6];
-$Address = $companyuser_tbl[0][7];
+$CompanyName = $companyuser_tbl[0][0];
+$Email = $companyuser_tbl[0][1];
+$Password = $companyuser_tbl[0][2];
+$FirstName = $companyuser_tbl[0][3];
+$MiddleName = $companyuser_tbl[0][4];
+$LastName = $companyuser_tbl[0][5];
+$Position = $companyuser_tbl[0][6];
+$Department = $companyuser_tbl[0][7];
+$Address = $companyuser_tbl[0][8];
 
 ?>
 <!doctype html>
@@ -149,7 +151,7 @@ $Address = $companyuser_tbl[0][7];
                     <div class="col-md-6">
                         <!-- Start Contact Info -->
                             <ul class="contact-details">
-                                <li class="profile-name"><i class="fa fa-hashtag"></i> <b>008-2012-0805</b></li>
+                                <li class="profile-name"></i> <?php echo $CompanyName; ?></li>
                             </ul>
                         <!-- End Contact Info -->
                     </div>
@@ -164,7 +166,7 @@ $Address = $companyuser_tbl[0][7];
                                     &nbsp;
                                 </li>
                                 <li class="profile-name">
-                                    <i class="fa fa-user"></i> Hello, <b>Aira Jane Cruz</b>                               
+                                    <i class="fa fa-user"></i> Hello, <b><?php echo $FirstName . " " . $LastName; ?></b>                               
                                 </li>
                             </ul>
                             <!-- End Social Links -->
