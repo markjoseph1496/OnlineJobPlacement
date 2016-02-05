@@ -344,7 +344,7 @@
                                     <div class="portfolio-thumb">
                                         <a class="lightbox" title="This is an image title" href="images/portfolio-big-01.jpg">
                                             <div class="thumb-overlay"><i class="fa fa-arrows-alt"></i></div>
-                                            <img alt="" src="images/portfolio-big-01.jpg"/>
+                                            <img alt="" src="images/portfolio-1/2.png"/>
                                         </a>
                                     </div>
                                     <div class="portfolio-details">
@@ -743,7 +743,7 @@
                                     <div class="timeline-panel">
                                         <div class="timeline-heading">
                                             <h4>Vision</h4>
-                                            <h4 class="subheading">Transition to Full Service</h4>
+                                            <!--<h4 class="subheading">Transition to Full Service</h4>-->
                                         </div>
                                         <div class="timeline-body">
                                             <p>To institutionalize the Enrollment to Employment System (E2E) of STI College 
@@ -759,18 +759,18 @@
                                     </div>
                                     <div class="timeline-panel">
                                         <div class="timeline-heading">
-                                            <h4>July 2014</h4>
-                                            <h4 class="subheading">Phase Two Expansion</h4>
+                                            <h4>Mission</h4>
+                                            <h4 class="subheading"></h4>
                                         </div>
                                         <div class="timeline-body">
-                                            <p>
+                                            <p>To give better future to our students and alumni through giving worthwhile jobs.
                                             </p>
                                         </div>
                                     </div>
                                 </li>
                                 <li class="timeline-inverted">
                                     <div class="timeline-image">
-                                        <h4>
+                                        <h4>Be Part
                                             <br>Of The
                                             <br>History!
                                         </h4>
@@ -790,7 +790,7 @@
                             <div class="container">
                                 <div class="row">
                                     <div class="big-title text-center animated fadeInDown delay-01" data-animation="fadeInDown" data-animation-delay="01">
-                                        <h1 class="wite-text"> of Us</h1>
+                                        <h1 class="wite-text">Be Part of Us</h1>
                                     </div>
                                     <!--<p class="text-center wite-text">Choose between <b>Student</b> and <b>Company</b>.</p>-->
                                         

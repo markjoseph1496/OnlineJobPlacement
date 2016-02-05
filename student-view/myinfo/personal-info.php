@@ -94,11 +94,7 @@ if($Cinfo == "ok"){
     $nCinfo = "";
 }
 if($Objective == "ok"){
-    $Progress = $Progress + 5;
-    $nObjective = "";
-}
-if($WorkXP == "ok"){
-    $Progress = $Progress + 10;
+    $Progress = $Progress + 15;
     $nWorkXP = "";
 }
 if($School == "ok"){
@@ -702,9 +698,11 @@ if($References == "ok"){
                                                     value="Married" <?php if ($CivilStatus == "Married") echo 'selected="selected"'; ?>>
                                                     Married
                                                 </option>
-                                                <option value="Separated">
+                                                <option value="Separated" <?php if ($CivilStatus == "Separated") echo 'selected="selected"'; ?>>
+                                                    Separated
                                                 </option>
-                                                <option value="Widowed">
+                                                <option value="Widowed" <?php if ($CivilStatus == "Widowed") echo 'selected="selected"'; ?>>
+                                                    Widowed
                                                 </option>
                                             </select>
                                         </div>

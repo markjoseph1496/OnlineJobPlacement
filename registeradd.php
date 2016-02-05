@@ -22,7 +22,7 @@ if (isset($_POST['type'])) {
     ));
 }
 
-if (isset($_POST['resumelink'])) {
+if (isset($_POST['FirstName'])) {
     $StudentID = $_POST['StudentID'];
     $FirstName = $_POST['FirstName'];
     $LastName = $_POST['LastName'];
@@ -77,7 +77,14 @@ if (isset($_POST['resumelink'])) {
         $City
         );
 
-    header("location: registration.php");
+    GSecureSQL::query(
+        "INSERT INTO progresstbl (StudentID) values (?)",
+        FALSE,
+        "s",
+        $StudentID
+    );
+
+    header("location: login-student.php");
 
     }
 ?>

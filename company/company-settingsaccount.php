@@ -12,6 +12,7 @@ else{
   $companyuser_tbl =
     GSecureSQL::query(
         "SELECT
+            CompanyName,
             Email,
             Password,
             FirstName,
@@ -29,14 +30,15 @@ else{
         $CompanyID
     );
 
-$Email = $companyuser_tbl[0][0];
-$Password = $companyuser_tbl[0][1];
-$FirstName = $companyuser_tbl[0][2];
-$MiddleName = $companyuser_tbl[0][3];
-$LastName = $companyuser_tbl[0][4];
-$Position = $companyuser_tbl[0][5];
-$Department = $companyuser_tbl[0][6];
-$Address = $companyuser_tbl[0][7];
+$CompanyName = $companyuser_tbl[0][0];
+$Email = $companyuser_tbl[0][1];
+$Password = $companyuser_tbl[0][2];
+$FirstName = $companyuser_tbl[0][3];
+$MiddleName = $companyuser_tbl[0][4];
+$LastName = $companyuser_tbl[0][5];
+$Position = $companyuser_tbl[0][6];
+$Department = $companyuser_tbl[0][7];
+$Address = $companyuser_tbl[0][8];
 
 ?>
 <!doctype html>
@@ -84,7 +86,7 @@ $Address = $companyuser_tbl[0][7];
     <!-- Slicknav -->
     <link rel="stylesheet" type="text/css" href="../css/slicknav.css" media="screen">
 
-    <!-- Margo CSS Styles  -->
+    <!--CSS Styles  -->
     <link rel="stylesheet" type="text/css" href="../css/style.css" media="screen">
 
     <!-- Responsive CSS Styles  -->
@@ -111,6 +113,29 @@ $Address = $companyuser_tbl[0][7];
     <script type="text/javascript" src="../js/jquery.nicescroll.min.js"></script>
     <script type="text/javascript" src="../js/jquery.parallax.js"></script>
     <script type="text/javascript" src="../js/jquery.slicknav.js"></script>
+
+    <!-- Notification -->
+    <link rel="stylesheet" href="../css/notif.css"/>
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $("#notificationLink").click(function () {
+                $("#notificationContainer").fadeToggle(300);
+                $("#notification_count").fadeOut("slow");
+                return false;
+            });
+
+            //Document Click
+            $(document).click(function () {
+                $("#notificationContainer").hide();
+            });
+            //Popup Click
+            $("#notificationContainer").click(function () {
+                return false
+            });
+
+        });
+    </script>
 </head>
 
 <body>
@@ -126,7 +151,7 @@ $Address = $companyuser_tbl[0][7];
                     <div class="col-md-6">
                         <!-- Start Contact Info -->
                             <ul class="contact-details">
-                                <li class="profile-name"><i class="fa fa-hashtag"></i> <b>008-2012-0805</b></li>
+                                <li class="profile-name"></i> <?php echo $CompanyName; ?></li>
                             </ul>
                         <!-- End Contact Info -->
                     </div>
@@ -141,7 +166,7 @@ $Address = $companyuser_tbl[0][7];
                                     &nbsp;
                                 </li>
                                 <li class="profile-name">
-                                    <i class="fa fa-user"></i> Hello, <b>Aira Jane Cruz</b>                               
+                                    <i class="fa fa-user"></i> Hello, <b><?php echo $FirstName . " " . $LastName; ?></b>                               
                                 </li>
                             </ul>
                             <!-- End Social Links -->
@@ -170,10 +195,6 @@ $Address = $companyuser_tbl[0][7];
             </a>
           </div>
           <div class="navbar-collapse collapse">
-           <!-- Sign-out -->
-            <div class="signout-side">
-              <a class="show-signout" href="../login-company.php?id=1"><i class="fa fa-sign-out"></i></a>
-            </div>
             <!-- End Sign-out -->
              <!-- Start Navigation List -->
             <ul class="nav navbar-nav navbar-right">
@@ -332,9 +353,9 @@ $Address = $companyuser_tbl[0][7];
             </form>
         </div>
     </div>
-<!-- End Modal ng Change Password -->    
+<!-- End Modal ng Change Password --> 
+    <form action="add-company.php" name="companyuser" id="companyuser" autocomplete="off">   
       <div class = "col-md-12">
-      <form action="add-company.php" name="companyuser" id="companyuser" autocomplete="off">
             <?php
               if(isset($_GET['id'])){
                     $id=$_GET['id'];

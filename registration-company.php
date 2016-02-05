@@ -77,7 +77,7 @@ include('connection.php');
 </head>
 
 <body>
-<form name="companyregistration" id="companyregistration" action="addcompany.php" autocomplete="off">
+<form method="POST" name="companyregistration" id="companyregistration" action="addcompany.php" autocomplete="off">
     <!-- Container -->
     <div id="container">
         <div class="hidden-header"></div>
@@ -177,13 +177,13 @@ include('connection.php');
                     <div class="row field">
                         <div class="form-group">
                             <label>Password </label>
-                            <input type="text" class="form-control" id="cPassword" name="cPassword">
+                            <input type="password" class="form-control" id="cPassword" name="cPassword">
                         </div>
                     </div>
                     <div class="row field">
                         <div class="form-group">
                             <label>Confirm Password </label>
-                            <input type="text" class="form-control" id="ConfirmPassword" name="ConfirmPassword">
+                            <input type="password" class="form-control" id="ConfirmPassword" name="ConfirmPassword">
                         </div>
                     </div>
                 </div>
@@ -212,7 +212,7 @@ include('connection.php');
                     <div class="col-md-6">
                         <div class="form-group">
                             <label>Contact Number<span>(*)</span></label>
-                            <input type="text" class="form-control" id="Contact" name="Contact">
+                            <input type="text" class="form-control" id="Contact" name="Contact" maxlength="11">
                         </div>
                     </div>
                     <div class="col-md-6">
@@ -317,7 +317,7 @@ include('connection.php');
                             type: 'POST'
                         }
                     }
-                }, 
+                },
                 Industry: {
                     validators: {
                         notEmpty: {
@@ -373,10 +373,6 @@ include('connection.php');
                             min: 3,
                             max: 15,
                             message: "Position must be 3-15 characters long."
-                        },
-                        regexp: {
-                            regexp: /^[a-z\s]+$/i,
-                            message: "Position can consist of alphabetical characters and spaces only"
                         }
                     }
                 },
@@ -407,32 +403,46 @@ include('connection.php');
                             message: "Email address must be 6-35 characters long."
                         }
                     }
+                },
+                cPassword: {
+                    validators: {
+                        notEmpty: {
+                            message: "Password is required."
+                        },
+                        stringLength: {
+                            min: 8,
+                            max: 16,
+                            message: "Password must be 8-16 characters long."
+                        }
+                    }
+                },
+                ConfirmPassword: {
+                    validators: {
+                        notEmpty: {
+                            message: "Confirm password is required."
+                        },
+                        identical: {
+                            field: "cPassword",
+                            message: "Password and confirm password mismatched."
+                        }
+                    }
+                },
+                Contact: {
+                    validators: {
+                        notEmpty: {
+                            message: "Contact Number is required."
+                        },
+                        stringLength: {
+                            min: 11,
+                            message: "Contact Number must be 11 characters long."
+                        },
+                        regexp: {
+                            regexp: /^[0-9]+$/i,
+                            message: "Contact Number can consist of numeric characters only."
+                        }
+                    }
                 }
-                /*
-                 sPassword: {
-                 validators: {
-                 notEmpty: {
-                 message: "Password is required."
-                 },
-                 stringLength: {
-                 min: 8,
-                 max: 16,
-                 message: "Password must be 8-16 characters long."
-                 }
-                 }
-                 },
-                 ConfirmPassword: {
-                 validators: {
-                 notEmpty: {
-                 message: "Confirm password is required."
-                 },
-                 identical: {
-                 field: "sPassword",
-                 message: "Password and confirm password mismatched."
-                 }
-                 }
-                 }
-                 */
+
             }
         });
     });

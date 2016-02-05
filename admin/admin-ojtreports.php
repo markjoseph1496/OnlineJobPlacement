@@ -121,28 +121,31 @@ if (isset($_SESSION['AdminID'])) {
                     <!-- .col-md-6 -->
                     <div class="col-md-5">
                         <!-- Notification -->
-                            <ul class="nav navbar-nav navbar-right">
-                                <li class="dropdown icon-border" id="notificationLink">
-                                    <span id="notification_count">3</span>
-                                    <a href="#" class="bell itl-tooltip" data-placement="bottom" data-toggle="dropdown"><i
-                                            class="fa fa-bell"></i></a>
-                                    <ul id="notificationContainer" class="dropdown-menu dropdown-menu-inverse">
-                                        <li class="dropdown-header"><label>Notification</label></li>
-                                        <li class="disabled"><a href="#" tabindex="-1">No new notification.</a></li>
-                                        <li><a href="#" tabindex="-1">This is a notification.</a></li>
-                                        <li class="divider"></li>
-                                        <li><a href="../notification/notification.php" tabindex="-1">See All</a></li>
-                                    </ul>
-                                </li>
-                                <li class="dropdown">
-                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown"><b class="fa fa-user"></b> Welcome, <b>Admin Tim </b><b class="caret"></b></a>
-                                    <ul class="dropdown-menu">
-                                        <li><a href="admin-account.php">Account <b class="fa fa-user" style="float:right;"></b></a></li>
-                                        <li class="divider"></li>
-                                        <li><a href="#" data-target='#Logout' data-toggle='modal'>Sign Out <b class="fa fa-sign-out" style="float:right;"></b></a></li>
-                                    </ul>
-                                </li>
-                            </ul>
+                        <ul class="nav navbar-nav navbar-right">
+                            <li class="dropdown icon-border" id="notificationLink">
+                                <span id="notification_count">3</span>
+                                <a href="#" class="bell itl-tooltip" data-placement="bottom" data-toggle="dropdown"><i
+                                        class="fa fa-bell"></i></a>
+                                <ul id="notificationContainer" class="dropdown-menu dropdown-menu-inverse">
+                                    <li class="dropdown-header"><label>Notification</label></li>
+                                    <li class="disabled"><a href="#" tabindex="-1">No new notification.</a></li>
+                                    <li><a href="#" tabindex="-1">This is a notification.</a></li>
+                                    <li class="divider"></li>
+                                    <li><a href="../notification/notification.php" tabindex="-1">See All</a></li>
+                                </ul>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown"><b class="fa fa-user"></b>
+                                    Welcome, <b>Admin Tim </b><b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    <li><a href="admin-account.php">Account <b class="fa fa-user"
+                                                                               style="float:right;"></b></a></li>
+                                    <li class="divider"></li>
+                                    <li><a href="#" data-target='#Logout' data-toggle='modal'>Sign Out <b
+                                                class="fa fa-sign-out" style="float:right;"></b></a></li>
+                                </ul>
+                            </li>
+                        </ul>
                         <!-- Notification -->
                     </div>
                     <!-- .col-md-6 -->
@@ -169,31 +172,31 @@ if (isset($_SESSION['AdminID'])) {
                 </div>
                 <div class="navbar-collapse collapse">
                     <!-- Modal -->
-                     <div class="modal fade" id="Logout"
-                             role="dialog">
-                            <div class="modal-dialog" style="padding:100px">
-                                <!-- Modal content-->
-                                <div class="modal-content">
-                                    <div class="modal-header">
-                                        <button style = type="button" class="close" data-dismiss="modal">&times;</button>
-                                        <h4 class="modal-title">Sign Out</h4>
+                    <div class="modal fade" id="Logout"
+                         role="dialog">
+                        <div class="modal-dialog" style="padding:100px">
+                            <!-- Modal content-->
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <button style=type="button" class="close" data-dismiss="modal">&times;</button>
+                                    <h4 class="modal-title">Sign Out</h4>
+                                </div>
+                                <div class="modal-body">
+                                    <div class="col-md-15 fieldcol">
+                                        <label = "usr" class = "control-label">Do you want to Sign Out?</label>
+                                        <div class="form-group">
+                                        </div>
                                     </div>
-                                    <div class="modal-body">
-                                        <div class="col-md-15 fieldcol">
-                                            <label = "usr" class = "control-label">Do you want to Sign Out?</label>
-                                            <div class="form-group">
-                                            </div>
-                                        </div>
-                                        <div class="modal-footer">
-                                            <a href="logout.php"
-                                               class="btn btn-primary">Sign out</a>
-                                            <button type="button" class="btn btn-default" data-dismiss="modal">
-                                                Cancel
-                                            </button>
-                                        </div>
+                                    <div class="modal-footer">
+                                        <a href="logout.php"
+                                           class="btn btn-primary">Sign out</a>
+                                        <button type="button" class="btn btn-default" data-dismiss="modal">
+                                            Cancel
+                                        </button>
                                     </div>
                                 </div>
                             </div>
+                        </div>
                     </div>
                     <!-- End Sign-out -->
                     <!-- Start Navigation List -->
@@ -202,11 +205,11 @@ if (isset($_SESSION['AdminID'])) {
                             <a href="admin.php">Home</a>
                         </li>
                         <li>
-                           <a class="active" >Reports</a>
-                         <ul class="dropdown">
-                            <li><a href="admin-reports.php">Alumni Reports</a></li>
-                            <li><a href="admin-ojtreports.php" class = "active">OJT Reports</a></li>
-                        </ul>
+                            <a class="active">Reports</a>
+                            <ul class="dropdown">
+                                <li><a href="admin-reports.php">Alumni Reports</a></li>
+                                <li><a href="admin-ojtreports.php" class="active">OJT Reports</a></li>
+                            </ul>
                         </li>
                         <li>
                             <a href="admin-account.php">Account</a>
@@ -241,9 +244,9 @@ if (isset($_SESSION['AdminID'])) {
                     </li>
                     <li>
                         <a>Reports</a>
-                         <ul class="dropdown">
+                        <ul class="dropdown">
                             <li><a href="admin-reports.php">Alumni Reports</a></li>
-                            <li><a href="admin-ojtreports.php" class = "active">OJT Reports</a></li>
+                            <li><a href="admin-ojtreports.php" class="active">OJT Reports</a></li>
                         </ul>
                     </li>
                     <li>
@@ -293,7 +296,7 @@ if (isset($_SESSION['AdminID'])) {
         <div class="header2_advertising">
             <div class="container">
                 <div class="col-sm-4">
-                    <h4 style = "margin-top:20px;">TOTAL NUMBER OF STUDENTS: </b></h4>
+                    <h4 style="margin-top:20px;">TOTAL NUMBER OF STUDENTS: </b></h4>
                 </div>
                 <div class="col-sm-3">
                     <label>
@@ -317,7 +320,7 @@ if (isset($_SESSION['AdminID'])) {
                 </div>
                 <div class="col-sm-2">
                     <button type="submit" class="btn-system btn-large border-btn"
-                                style="margin-top: 20px;">Search
+                            style="margin-top: 20px;">Search
                     </button>
                 </div>
             </div>
@@ -327,25 +330,67 @@ if (isset($_SESSION['AdminID'])) {
         <table class="Applicants table" width="100%" cellpadding="0">
             <thead>
             <tr>
-                <th class="tabletitle">Student ID</th>
-                <th class="tabletitle">Student Name</th>
-                <th class="tabletitle">Company</th>
-                <th class="tabletitle">Company Address</th>
-                <th class="tabletitle">Contact Number</th>
-                <th class="tabletitle">Supervisor</th>
-                <th class="tabletitle">Status</th>
+                <th width="10%" class="tabletitle">Student ID</th>
+                <th width="15%" class="tabletitle">Student Name</th>
+                <th width="10%" class="tabletitle">Course</th>
+                <th width="15%" class="tabletitle">Company</th>
+                <th width="20%" class="tabletitle">Company Address</th>
+                <th width="15%" class="tabletitle">Contact Number</th>
+                <th width="10%" class="tabletitle">Supervisor</th>
+                <th width="10%" class="tabletitle">Adviser</th>
+                <th width="10%" class="tabletitle">Status</th>
+                <th width="5%" class="tabletitle">View</th>
             </tr>
             </thead>
             <tbody>
             <tr>
-                <td>008-2012-0805</td>
-                <td><a href=".php">008-2012-0805</td>
-                <td>008-2012-0805</td>
-                <td>008-2012-0805</td>
-                <td>008-2012-0805</td>
-                <td>008-2012-0805</td>
-                <td>008-2012-0805</td>
+                <?php
+                $ojt_tbl =
+                    GSecureSQL::query(
+                        "SELECT * FROM ojttbl",
+                        TRUE
+                    );
+                foreach ($ojt_tbl as $value){
+                $StudentID = $value[1];
+                $LastName = $value[2];
+                $FirstName = $value[3];
+                $Course = $value[5];
+                $CompanyName = $value[6];
+                $CompanyAddress = $value[7];
+                $Supervisor = $value[8];
+                $Position = $value[9];
+                $ContactNumber = $value[10];
+                $Email = $value[11];
+                $Status = $value[12];
+                $DailyTimeRecord = $value[13];
+                $IntegrationPaper = $value[14];
+                $PracJournal = $value[15];
+                $TrainingPlan = $value[16];
+                $Resume = $value[17];
+                $MOA = $value[18];
+                $ApplicationLetter = $value[19];
+                $Waiver = $value[20];
+                $AdviserID = $value[21];
+                ?>
+                <td width="10%"><?php echo $StudentID; ?></td>
+                <td width="15%"><?php echo $LastName . ", " . $FirstName;  ?></td>
+                <td width="10%"><?php echo $Course; ?></td>
+                <td width="15%"><?php echo $CompanyName; ?></td>
+                <td width="20%"><?php echo $CompanyAddress; ?></td>
+                <td width="15%"><?php echo $ContactNumber; ?></td>
+                <td width="10%"><?php echo $Supervisor; ?></td>
+                <td width="10%">bla bla bla</td>
+                <td width="10%"><?php echo $Status ?></td>
+                <td width="10%">
+                    <button class="btn btn-default" data-toggle="modal"
+                            data-target="#Update">
+                        <i class="fa fa-edit"></i>
+                    </button>
+                </td>
             </tr>
+            <?php
+            }
+            ?>
             </tbody>
         </table>
         <div class="hr2"></div>

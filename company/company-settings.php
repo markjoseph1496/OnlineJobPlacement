@@ -78,7 +78,7 @@ $ProfileImage= $companyinfo_tbl[0][11];
     <!-- Slicknav -->
     <link rel="stylesheet" type="text/css" href="../css/slicknav.css" media="screen">
 
-    <!-- Margo CSS Styles  -->
+    <!-- CSS Styles  -->
     <link rel="stylesheet" type="text/css" href="../css/style.css" media="screen">
 
     <!-- Responsive CSS Styles  -->
@@ -218,17 +218,17 @@ $ProfileImage= $companyinfo_tbl[0][11];
                                 <div class="modal-content">
                                     <div class="modal-header">
                                         <button type="button" class="close" data-dismiss="modal">&times;</button>
-                                        <h4 class="modal-title">Log out?</h4>
+                                        <h4 class="modal-title">Sign out</h4>
                                     </div>
                                     <div class="modal-body">
                                         <div class="col-md-15">
-                                            <label = "usr" class = "control-label">Do you want to log out?</label>
+                                            <label = "usr" class = "control-label">Do you want to Sign Out?</label>
                                             <div class="form-group">
                                             </div>
                                         </div>
                                         <div class="modal-footer">
                                             <a href="logout.php"
-                                               class="btn btn-primary">Log out</a>
+                                               class="btn btn-primary">Sign out</a>
                                             <button type="button" class="btn btn-default" data-dismiss="modal">
                                                 Cancel
                                             </button>

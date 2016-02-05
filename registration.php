@@ -107,28 +107,8 @@ include('connection.php');
                 <div class="big-title text-center">
                     <h1><strong>Registration</strong></h1>
                 </div>
-                <h3><strong>Student Details:</strong></h3>
-                <div class="row">
-                    <div class="col-md-2">
-                        &nbsp;
-                    </div>
-                    <div class="col-md-8 text-center">
-                        <div class="form-group">
-                            <label><span>(*) </span>Resumé Link: </label><br>
-                            <input type="text" class="form-control" id="resumelink"
-                                   placeholder="http://YourName.sticaloocan.edu" name="resumelink">
-                            <p class="note">ex.http://YourName.sticaloocan.edu</p>
-                        </div>
-                    </div>
-                    <div class="col-md-2">
-                        &nbsp;
-                    </div>
-                </div>
-                <p class="note text-center">You may only use alphanumeric characters, including period (.), dash (-), or
-                    underscore (_). This will be the name that will identify your personalized ResumeLink. This name
-                    will be permanent and no longer be changeable.</p>
+                <h3><strong>Alumni Details:</strong></h3>
                 <br>
-
                 <div class="row">
                     <div class="col-md-3">
                         <label>Student ID <span>(*)</span></label>
@@ -166,7 +146,7 @@ include('connection.php');
                         <label>Mobile Number <span>(*)</span></label>
                         <div class="form-group">
                             <div class="controls">
-                                <input type="text" class="form-control" id="MobileNumber" name="MobileNumber">
+                                <input type="text" class="form-control" id="MobileNumber" name="MobileNumber" maxlength="11">
                             </div>
                         </div>
                     </div>
@@ -176,7 +156,7 @@ include('connection.php');
                         <label>Email <span>(*)</span></label>
                         <div class="form-group">
                             <div class="controls">
-                                <input type="text" class="form-control" id="Email" name="Email">
+                                <input type="email" class="form-control" id="Email" name="Email">
                             </div>
                         </div>
                     </div>
@@ -245,8 +225,8 @@ include('connection.php');
                         <div class="form-group">
                             <select id="EducAttain" name="EducAttain" class="form-control"
                                     style="width:100%; height:34px;">
-                                <option value="">- Please select one -</option>
-                                <option value="Bachelor's/College Degree" selected="selected">Bachelor's/College Degree</option>
+                                <option value="" selected="selected">- Please select one -</option>
+                                <option value="Bachelor's/College Degree">Bachelor's/College Degree</option>
                             </select>
                         </div>
                     </div>
@@ -285,7 +265,7 @@ include('connection.php');
                                 <option value="02">February</option>
                                 <option value="03">March</option>
                                 <option value="04">April</option>
-                                <option value="05" selected="selected">May</option>
+                                <option value="05">May</option>
                                 <option value="06">June</option>
                                 <option value="07">July</option>
                                 <option value="08">August</option>
@@ -301,16 +281,14 @@ include('connection.php');
                             <label>&nbsp;</label>
                             <select id="GraduatedYear" name="GraduatedYear" class="form-control"
                                     style="width:100%; height:34px;">
-                                <option value="2015">2015</option>
+                                <option value="">- Select year -</option>
                                 <?php
-                                /*
-                                $date = Date("Y") + 4;
+                                $date = Date("Y") + 1;
                                 while ($date != 1935) {
                                     $date--;
                                     echo "<option value='$date'>$date</option>";
 
                                 }
-                                */
                                 ?>
                             </select>
                         </div>
@@ -382,7 +360,7 @@ include('connection.php');
                 validating: "glyphicon glyphicon-refresh"
             },
             fields: {
-                /*               StudentID: {
+                StudentID: {
                     validators: {
                         notEmpty: {
                             message: "Student ID is required."
@@ -402,7 +380,6 @@ include('connection.php');
                         }
                     }
                 },
-                */
                 FirstName: {
                     validators: {
                         notEmpty: {
@@ -440,9 +417,8 @@ include('connection.php');
                             message: "Mobile number is required."
                         },
                         stringLength: {
-                            min: 7,
-                            max: 11,
-                            message: "Mobile number must be 7-11 characters long."
+                            min: 11,
+                            message: "Mobile number must be 11 characters long."
                         }
                     }
                 },
@@ -457,7 +433,7 @@ include('connection.php');
                             message: "Email address must be 6-35 characters long."
                         }
                     }
-                }, /*
+                },
                 ConfirmEmail: {
                     validators: {
                         notEmpty: {
@@ -473,7 +449,7 @@ include('connection.php');
                     validators: {
                         notEmpty: {
                             message: "Password is required."
-                        }/*,
+                        },
 
                         stringLength: {
                             min: 8,
@@ -493,7 +469,7 @@ include('connection.php');
                             message: "Password and confirm password mismatched."
                         }
                     }
-                }, */
+                },
                 City: {
                     validators: {
                         notEmpty: {

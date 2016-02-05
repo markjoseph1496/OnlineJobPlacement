@@ -51,6 +51,7 @@ $progress_tbl =
         "s",
         $StudentID
     );
+
 $nPinfo = "*";
 $nCinfo = "*";
 $nObjective = "*";
@@ -85,11 +86,7 @@ if($Cinfo == "ok"){
     $nCinfo = "";
 }
 if($Objective == "ok"){
-    $Progress = $Progress + 5;
-    $nObjective = "";
-}
-if($WorkXP == "ok"){
-    $Progress = $Progress + 10;
+    $Progress = $Progress + 15;
     $nWorkXP = "";
 }
 if($School == "ok"){
@@ -435,7 +432,7 @@ if($References == "ok"){
                                     <div class="classic-testimonials">
                                         <div class="testimonial-content">
                                             <label>Objectives</label>
-                                            <textarea class="form-control" id="Objective" name="Objective" rows="7" maxlength="300"><?php echo $Objectives; ?></textarea>
+                                            <textarea class="form-control" id="Objective" name="Objective" rows="7" maxlength="300" required><?php echo $Objectives; ?></textarea>
                                             <div id="textarea_feedback"></div>
                                         </div>
                                         <div class="testimonial-author">

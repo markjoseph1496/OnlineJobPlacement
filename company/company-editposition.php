@@ -131,11 +131,12 @@ $cLastName = $companyinfo_tbl[0][2];
                         </div>
                         <!-- .col-md-6 -->
                         <div class="col-md-5">
-                            <!-- Start Social Links -->
+                            <!-- Notification -->
                             <ul class="nav navbar-nav navbar-right">
                                 <li class="dropdown icon-border" id="notificationLink">
                                     <span id="notification_count">3</span>
-                                    <a href="#" class="bell itl-tooltip" data-placement="bottom" data-toggle="dropdown"><i class="fa fa-bell"></i></a>
+                                    <a href="#" class="bell itl-tooltip" data-placement="bottom" data-toggle="dropdown"><i
+                                            class="fa fa-bell"></i></a>
                                     <ul id="notificationContainer" class="dropdown-menu dropdown-menu-inverse">
                                         <li class="dropdown-header"><label>Notification</label></li>
                                         <li class="disabled"><a href="#" tabindex="-1">No new notification.</a></li>
@@ -145,16 +146,20 @@ $cLastName = $companyinfo_tbl[0][2];
                                     </ul>
                                 </li>
                                 <li class="dropdown">
-                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown"><b class="fa fa-user"></b> Welcome, <b><?php echo $StudentName; ?> </b><b class="caret"></b></a>
+                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown"><b class="fa fa-user"></b>
+                                        Welcome, <b><?php echo $cFirstName . " " . $cLastName; ?> </b><b class="caret"></b></a>
                                     <ul class="dropdown-menu">
                                         <li><a href="#">Profile <b class="fa fa-user" style="float:right;"></b></a></li>
-                                        <li><a href="../settings/privacy-settings.php">Settings <b class="fa fa-cog" style="float:right;"></b></a></li>
+                                        <li><a href="../settings/privacy-settings.php">Settings <b class="fa fa-cog"
+                                                                                                   style="float:right;"></b></a>
+                                        </li>
                                         <li class="divider"></li>
-                                        <li><a href="#" data-target='#Logout' data-toggle='modal'>Sign Out <b class="fa fa-sign-out" style="float:right;"></b></a></li>
+                                        <li><a href="#" data-target='#Logout' data-toggle='modal'>Sign Out <b
+                                                    class="fa fa-sign-out" style="float:right;"></b></a></li>
                                     </ul>
                                 </li>
                             </ul>
-                            <!-- End Social Links -->
+                            <!-- Notification -->
                         </div>
                         <!-- .col-md-6 -->
                     </div>

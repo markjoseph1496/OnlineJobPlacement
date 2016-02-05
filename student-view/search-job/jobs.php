@@ -39,107 +39,117 @@ $coursetbl =
         $CourseCode
     );
 $MajorCourse = $coursetbl[0][0];
+
+$progress_tbl =
+    GSecureSQL::query(
+        "SELECT Progress FROM progresstbl WHERE StudentID = ?",
+        TRUE,
+        "s",
+        $StudentID
+    );
+
+$Progress = $progress_tbl[0][0];
 ?>
-<!DOCTYPE html>
-<html lang="en">
+    <!DOCTYPE html>
+    <html lang="en">
 
-<head>
+    <head>
 
-    <!-- Basic -->
-    <title>OJPMS | Jobs</title>
+        <!-- Basic -->
+        <title>OJPMS | Jobs</title>
 
-    <!-- Define Charset -->
-    <meta charset="utf-8">
+        <!-- Define Charset -->
+        <meta charset="utf-8">
 
-    <!-- Responsive Metatag -->
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+        <!-- Responsive Metatag -->
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
-    <!-- Page Description and Author -->
-    <meta name="description" content="Margo - Responsive HTML5 Template">
-    <meta name="author" content="iThemesLab">
+        <!-- Page Description and Author -->
+        <meta name="description" content="Margo - Responsive HTML5 Template">
+        <meta name="author" content="iThemesLab">
 
-    <!-- Bootstrap CSS -->
-    <link href="../../css/bootstrap.min.css" rel="stylesheet"/>
+        <!-- Bootstrap CSS -->
+        <link href="../../css/bootstrap.min.css" rel="stylesheet"/>
 
-    <!-- BootstrapValidator CSS -->
-    <link href="../../css/bootstrapValidator.min.css" rel="stylesheet"/>
+        <!-- BootstrapValidator CSS -->
+        <link href="../../css/bootstrapValidator.min.css" rel="stylesheet"/>
 
-    <!-- jQuery and Bootstrap JS -->
-    <script type="text/javascript" src="../../js/jquery.min.js"></script>
-    <script type="text/javascript" src="../../js/bootstrap.min.js"></script>
+        <!-- jQuery and Bootstrap JS -->
+        <script type="text/javascript" src="../../js/jquery.min.js"></script>
+        <script type="text/javascript" src="../../js/bootstrap.min.js"></script>
 
-    <!-- BootstrapValidator -->
-    <script src="../../js/bootstrapValidator.min.js" type="text/javascript"></script>
+        <!-- BootstrapValidator -->
+        <script src="../../js/bootstrapValidator.min.js" type="text/javascript"></script>
 
-    <!-- Font Awesome CSS -->
-    <link rel="stylesheet" href="../../css/font-awesome.min.css" type="text/css" media="screen">
+        <!-- Font Awesome CSS -->
+        <link rel="stylesheet" href="../../css/font-awesome.min.css" type="text/css" media="screen">
 
-    <!-- Fonts -->
-    <link rel="stylesheet" type="text/css" href="../../fonts/ffonts/montserrat.css">
-    <link rel="stylesheet" type="text/css" href="../../fonts/ffonts/open-sans.css">
+        <!-- Fonts -->
+        <link rel="stylesheet" type="text/css" href="../../fonts/ffonts/montserrat.css">
+        <link rel="stylesheet" type="text/css" href="../../fonts/ffonts/open-sans.css">
 
-    <!-- Slicknav -->
-    <link rel="stylesheet" type="text/css" href="../../css/slicknav.css" media="screen">
+        <!-- Slicknav -->
+        <link rel="stylesheet" type="text/css" href="../../css/slicknav.css" media="screen">
 
-    <!-- CSS Styles  -->
-    <link rel="stylesheet" type="text/css" href="../../css/style.css" media="screen">
+        <!-- CSS Styles  -->
+        <link rel="stylesheet" type="text/css" href="../../css/style.css" media="screen">
 
-    <!-- Responsive CSS Styles  -->
-    <link rel="stylesheet" type="text/css" href="../../css/responsive.css" media="screen">
+        <!-- Responsive CSS Styles  -->
+        <link rel="stylesheet" type="text/css" href="../../css/responsive.css" media="screen">
 
-    <!-- Css3 Transitions Styles  -->
-    <link rel="stylesheet" type="text/css" href="../../css/animate.css" media="screen">
+        <!-- Css3 Transitions Styles  -->
+        <link rel="stylesheet" type="text/css" href="../../css/animate.css" media="screen">
 
-    <!-- OJPMS CSS  -->
-    <link rel="stylesheet" type="text/css" href="../../css/ojpms-style.css" media="screen">
+        <!-- OJPMS CSS  -->
+        <link rel="stylesheet" type="text/css" href="../../css/ojpms-style.css" media="screen">
 
-    <!-- Color CSS Styles  -->
-    <link rel="stylesheet" type="text/css" href="../../css/colors/yellow.css" title="yellow" media="screen"/>
+        <!-- Color CSS Styles  -->
+        <link rel="stylesheet" type="text/css" href="../../css/colors/yellow.css" title="yellow" media="screen"/>
 
-    <!-- Pagination -->
-    <link rel="stylesheet" href="../../css/simplePagination.css"/>
+        <!-- Pagination -->
+        <link rel="stylesheet" href="../../css/simplePagination.css"/>
 
-    <!-- JS  -->
-    <script type="text/javascript" src="../../js/jquery.migrate.js"></script>
-    <script type="text/javascript" src="../../js/modernizrr.js"></script>
-    <script type="text/javascript" src="../../js/jquery.fitvids.js"></script>
-    <script type="text/javascript" src="../../js/owl.carousel.min.js"></script>
-    <script type="text/javascript" src="../../js/nivo-lightbox.min.js"></script>
-    <script type="text/javascript" src="../../js/jquery.isotope.min.js"></script>
-    <script type="text/javascript" src="../../js/jquery.appear.js"></script>
-    <script type="text/javascript" src="../../js/count-to.js"></script>
-    <script type="text/javascript" src="../../js/jquery.textillate.js"></script>
-    <script type="text/javascript" src="../../js/jquery.lettering.js"></script>
-    <script type="text/javascript" src="../../js/jquery.easypiechart.min.js"></script>
-    <script type="text/javascript" src="../../js/jquery.nicescroll.min.js"></script>
-    <script type="text/javascript" src="../../js/jquery.parallax.js"></script>
-    <script type="text/javascript" src="../../js/jquery.slicknav.js"></script>
+        <!-- JS  -->
+        <script type="text/javascript" src="../../js/jquery.migrate.js"></script>
+        <script type="text/javascript" src="../../js/modernizrr.js"></script>
+        <script type="text/javascript" src="../../js/jquery.fitvids.js"></script>
+        <script type="text/javascript" src="../../js/owl.carousel.min.js"></script>
+        <script type="text/javascript" src="../../js/nivo-lightbox.min.js"></script>
+        <script type="text/javascript" src="../../js/jquery.isotope.min.js"></script>
+        <script type="text/javascript" src="../../js/jquery.appear.js"></script>
+        <script type="text/javascript" src="../../js/count-to.js"></script>
+        <script type="text/javascript" src="../../js/jquery.textillate.js"></script>
+        <script type="text/javascript" src="../../js/jquery.lettering.js"></script>
+        <script type="text/javascript" src="../../js/jquery.easypiechart.min.js"></script>
+        <script type="text/javascript" src="../../js/jquery.nicescroll.min.js"></script>
+        <script type="text/javascript" src="../../js/jquery.parallax.js"></script>
+        <script type="text/javascript" src="../../js/jquery.slicknav.js"></script>
 
-    <!-- Notification -->
-    <link rel="stylesheet" href="../../css/notif.css"/>
+        <!-- Notification -->
+        <link rel="stylesheet" href="../../css/notif.css"/>
 
-    <script type="text/javascript">
-        $(document).ready(function () {
-            $("#notificationLink").click(function () {
-                $("#notificationContainer").fadeToggle(300);
-                $("#notification_count").fadeOut("slow");
-                return false;
+        <script type="text/javascript">
+            $(document).ready(function () {
+                $("#notificationLink").click(function () {
+                    $("#notificationContainer").fadeToggle(300);
+                    $("#notification_count").fadeOut("slow");
+                    return false;
+                });
+
+                //Document Click
+                $(document).click(function () {
+                    $("#notificationContainer").hide();
+                });
+                //Popup Click
+                $("#notificationContainer").click(function () {
+                    return false
+                });
+
             });
+        </script>
+    </head>
 
-            //Document Click
-            $(document).click(function () {
-                $("#notificationContainer").hide();
-            });
-            //Popup Click
-            $("#notificationContainer").click(function () {
-                return false
-            });
-
-        });
-    </script>
-</head>
-
-<body>
+    <body>
     <div id="container">
         <!-- Start Header Section -->
         <div class="hidden-header"></div>
@@ -171,10 +181,13 @@ $MajorCourse = $coursetbl[0][0];
                                     </ul>
                                 </li>
                                 <li class="dropdown">
-                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown"><b class="fa fa-user"></b>
+                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown"><b
+                                            class="fa fa-user"></b>
                                         Welcome, <b><?php echo $StudentName; ?> </b><b class="caret"></b></a>
                                     <ul class="dropdown-menu">
-                                        <li><a href="../../student-profile.php">Profile <b class="fa fa-user" style="float:right;"></b></a></li>
+                                        <li><a href="../../student-profile.php">Profile <b class="fa fa-user"
+                                                                                           style="float:right;"></b></a>
+                                        </li>
                                         <li><a href="../settings/settings.php">Settings <b class="fa fa-cog"
                                                                                            style="float:right;"></b></a>
                                         </li>
@@ -225,7 +238,8 @@ $MajorCourse = $coursetbl[0][0];
                 <div class="container">
                     <div class="navbar-header">
                         <!-- Stat Toggle Nav Link For Mobiles -->
-                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <button type="button" class="navbar-toggle" data-toggle="collapse"
+                                data-target=".navbar-collapse">
                             <i class="fa fa-bars"></i>
                         </button>
                         <!-- End Toggle Nav Link For Mobiles -->
@@ -287,7 +301,8 @@ $MajorCourse = $coursetbl[0][0];
                         <div class="col-md-3 sidebar left-sidebar">
 
                             <div>
-                                <label><i class="fa fa-bookmark"></i> Bookmarked Jobs: <a href="bookmarked-jobs.php">(0)</a>&nbsp;
+                                <label><i class="fa fa-bookmark"></i> Bookmarked Jobs: <a
+                                        href="bookmarked-jobs.php">(0)</a>&nbsp;
                                 </label>
                             </div>
 
@@ -609,9 +624,11 @@ $MajorCourse = $coursetbl[0][0];
                                                             <div class="col-md-6">
                                                                 <!-- Post Content -->
                                                                 <div class='post-content'>
-                                                                    <div class='post-type'><i class='fa fa-picture-o'></i>
+                                                                    <div class='post-type'><i
+                                                                            class='fa fa-picture-o'></i>
                                                                     </div>
-                                                                    <h2><a href='#'><?php echo $PositionTitle; ?></a></h2>
+                                                                    <h2><a href='#'><?php echo $PositionTitle; ?></a>
+                                                                    </h2>
                                                                     <h1><p><?php echo $CompanyName; ?></p></h1>
                                                                     <ul class='icons-list'>
                                                                         <?php
@@ -636,8 +653,8 @@ $MajorCourse = $coursetbl[0][0];
                                                                         </li>
                                                                         <li><?php echo $Location; ?></li>
                                                                     </ul>
-                                                                        <button class='main-button'>View Details <i
-                                                                                class='fa fa-angle-right'></i></button>
+                                                                    <button class='main-button'>View Details <i
+                                                                            class='fa fa-angle-right'></i></button>
                                                                 </div>
                                                             </div>
                                                             <div class="col-md-6">
@@ -833,5 +850,60 @@ $MajorCourse = $coursetbl[0][0];
             <div class="dot2"></div>
         </div>
     </div>
-</body>
-</html>
+    </body>
+    </html>
+<?php
+
+$progress_tbl =
+    GSecureSQL::query(
+        "SELECT
+        Pinfo,
+        Cinfo,
+        Objective,
+        WorkXP,
+        School,
+        Seminar,
+        Certification,
+        Achievements,
+        Specialization,
+        Languages,
+        _References
+        FROM Progresstbl
+        WHERE StudentID = ?",
+        TRUE,
+        "s",
+        $StudentID
+    );
+
+$Progress = 10;
+$Pinfo = $progress_tbl[0][0];
+$Cinfo = $progress_tbl[0][1];
+$Objective = $progress_tbl[0][2];
+$WorkXP = $progress_tbl[0][3];
+$School = $progress_tbl[0][4];
+$Seminar = $progress_tbl[0][5];
+$Certification = $progress_tbl[0][6];
+$Achievements = $progress_tbl[0][7];
+$Specialization = $progress_tbl[0][8];
+$Languages = $progress_tbl[0][9];
+$References = $progress_tbl[0][10];
+
+if ($Pinfo == "ok" &&
+    $Cinfo == "ok" &&
+    $Objective == "ok" &&
+    $School == "ok" &&
+    $Seminar == "ok" &&
+    $Certification == "ok" &&
+    $Achievements == "ok" &&
+    $Specialization == "ok" &&
+    $Languages == "ok" &&
+    $References == "ok"){
+
+}else{
+    echo "
+    <script type='text/javascript'>
+    alert('You must complete your information first.');
+    location.href='../myinfo/personal-info.php';
+    </script>";
+}
+?>

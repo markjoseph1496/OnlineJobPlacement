@@ -96,6 +96,29 @@ $cLastName = $companyinfo_tbl[0][2];
 
     <!-- Checkbox -->
     <link rel="stylesheet" type="text/css" href="../css/checkbox.css" media="screen" />
+
+    <!-- Notification -->
+    <link rel="stylesheet" href="../css/notif.css"/>
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $("#notificationLink").click(function () {
+                $("#notificationContainer").fadeToggle(300);
+                $("#notification_count").fadeOut("slow");
+                return false;
+            });
+
+            //Document Click
+            $(document).click(function () {
+                $("#notificationContainer").hide();
+            });
+            //Popup Click
+            $("#notificationContainer").click(function () {
+                return false
+            });
+
+        });
+    </script>
 </head>
 
 <body>
@@ -117,20 +140,35 @@ $cLastName = $companyinfo_tbl[0][2];
                         </div>
                         <!-- .col-md-6 -->
                         <div class="col-md-6">
-                            <!-- Start Social Links -->
-                            <ul class="social-list">
-                                <li class="profile-name">
-                                    <a class="bell itl-tooltip" data-placement="bottom" title="" href="#"
-                                       data-original-title="Notification"><i class="fa fa-bell"></i></a>
+                            <!-- Notification -->
+                            <ul class="nav navbar-nav navbar-right">
+                                <li class="dropdown icon-border" id="notificationLink">
+                                    <span id="notification_count">3</span>
+                                    <a href="#" class="bell itl-tooltip" data-placement="bottom" data-toggle="dropdown"><i
+                                            class="fa fa-bell"></i></a>
+                                    <ul id="notificationContainer" class="dropdown-menu dropdown-menu-inverse">
+                                        <li class="dropdown-header"><label>Notification</label></li>
+                                        <li class="disabled"><a href="#" tabindex="-1">No new notification.</a></li>
+                                        <li><a href="#" tabindex="-1">The administrator accepted your request.</a></li>
+                                        <li class="divider"></li>
+                                        <li><a href="../notification/notification.php" tabindex="-1">See All</a></li>
+                                    </ul>
                                 </li>
-                                <li class="profile-name">
-                                    &nbsp;
-                                </li>
-                                <li class="profile-name">
-                                    <i class="fa fa-user"></i> Hello, <b><?php echo $cFirstName . " " . $cLastName; ?></b>
+                                <li class="dropdown">
+                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown"><b class="fa fa-user"></b>
+                                        Welcome, <b><?php echo $cFirstName . " " . $cLastName; ?> </b><b class="caret"></b></a>
+                                    <ul class="dropdown-menu">
+                                        <li><a href="#">Profile <b class="fa fa-user" style="float:right;"></b></a></li>
+                                        <li><a href="../settings/privacy-settings.php">Settings <b class="fa fa-cog"
+                                                                                                   style="float:right;"></b></a>
+                                        </li>
+                                        <li class="divider"></li>
+                                        <li><a href="#" data-target='#Logout' data-toggle='modal'>Sign Out <b
+                                                    class="fa fa-sign-out" style="float:right;"></b></a></li>
+                                    </ul>
                                 </li>
                             </ul>
-                            <!-- End Social Links -->
+                            <!-- Notification -->
                         </div>
                         <!-- .col-md-6 -->
                     </div>

@@ -85,11 +85,7 @@ if($Cinfo == "ok"){
     $nCinfo = "";
 }
 if($Objective == "ok"){
-    $Progress = $Progress + 5;
-    $nObjective = "";
-}
-if($WorkXP == "ok"){
-    $Progress = $Progress + 10;
+    $Progress = $Progress + 15;
     $nWorkXP = "";
 }
 if($School == "ok"){
