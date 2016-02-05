@@ -382,7 +382,7 @@ include('connection.php');
                 validating: "glyphicon glyphicon-refresh"
             },
             fields: {
-                /*               StudentID: {
+                StudentID: {
                     validators: {
                         notEmpty: {
                             message: "Student ID is required."
@@ -402,7 +402,6 @@ include('connection.php');
                         }
                     }
                 },
-                */
                 FirstName: {
                     validators: {
                         notEmpty: {
@@ -457,7 +456,7 @@ include('connection.php');
                             message: "Email address must be 6-35 characters long."
                         }
                     }
-                }, /*
+                },
                 ConfirmEmail: {
                     validators: {
                         notEmpty: {
@@ -473,7 +472,7 @@ include('connection.php');
                     validators: {
                         notEmpty: {
                             message: "Password is required."
-                        }/*,
+                        },
 
                         stringLength: {
                             min: 8,
@@ -493,7 +492,7 @@ include('connection.php');
                             message: "Password and confirm password mismatched."
                         }
                     }
-                }, */
+                },
                 City: {
                     validators: {
                         notEmpty: {

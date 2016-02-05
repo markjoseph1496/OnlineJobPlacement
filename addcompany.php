@@ -22,19 +22,19 @@ if (isset($_POST['type'])) {
     ));
 }
 
-if(isset($_GET['FirstName'])){
+if(isset($_POST['FirstName'])){
 
-   $CompanyName = $_GET['CompanyName'];
-   $Industry = $_GET['Industry'];
-   $City = $_GET['City'];
-   $Email = $_GET['Email'];
-   $Password = $_GET['cPassword'];
-   $FirstName = $_GET['FirstName'];
-   $MiddleName = $_GET['MiddleName'];
-   $LastName = $_GET['LastName'];
-   $ContactNum - $_GET['Contact'];
-   $Position = $_GET['Position'];
-   $Department = $_GET['Department'];
+   $CompanyName = $_POST['CompanyName'];
+   $Industry = $_POST['Industry'];
+   $City = $_POST['City'];
+   $Email = $_POST['Email'];
+   $Password = $_POST['cPassword'];
+   $FirstName = $_POST['FirstName'];
+   $MiddleName = $_POST['MiddleName'];
+   $LastName = $_POST['LastName'];
+   $ContactNum = $_POST['Contact'];
+   $Position = $_POST['Position'];
+   $Department = $_POST['Department'];
 
 
     $FirstName = ucwords(strtolower($FirstName));
@@ -45,7 +45,7 @@ if(isset($_GET['FirstName'])){
     $Password = hash('sha512', $Password . $salt);
 
     GSecureSQL::query(
-        "INSERT INTO companyinfotbl (CompanyName,Industry,City,Email,Password,SaltedPassword,FirstName,MiddleName,LastName,ContactNumber,Position,Department) values (?,?,?,?,?,?,?,?,?,?,?,?)",
+        "INSERT INTO companyinfotbl (CompanyName,Industry,City,Email,Password,SaltedPassword,FirstName,MiddleName,LastName,MobileNum,Position,Department,Status) values (?,?,?,?,?,?,?,?,?,?,?,?,'Active')",
         FALSE,
         "ssssssssssss",
         $CompanyName,
