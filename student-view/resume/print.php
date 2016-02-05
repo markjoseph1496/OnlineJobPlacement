@@ -431,3 +431,59 @@ if($References == "ok"){
 <script type="text/javascript" src="../../js/script.js"></script>
 </body>
 </html>
+
+<?php
+
+$progress_tbl =
+    GSecureSQL::query(
+        "SELECT
+        Pinfo,
+        Cinfo,
+        Objective,
+        WorkXP,
+        School,
+        Seminar,
+        Certification,
+        Achievements,
+        Specialization,
+        Languages,
+        _References
+        FROM Progresstbl
+        WHERE StudentID = ?",
+        TRUE,
+        "s",
+        $StudentID
+    );
+
+$Progress = 10;
+$Pinfo = $progress_tbl[0][0];
+$Cinfo = $progress_tbl[0][1];
+$Objective = $progress_tbl[0][2];
+$WorkXP = $progress_tbl[0][3];
+$School = $progress_tbl[0][4];
+$Seminar = $progress_tbl[0][5];
+$Certification = $progress_tbl[0][6];
+$Achievements = $progress_tbl[0][7];
+$Specialization = $progress_tbl[0][8];
+$Languages = $progress_tbl[0][9];
+$References = $progress_tbl[0][10];
+
+if ($Pinfo == "ok" &&
+    $Cinfo == "ok" &&
+    $Objective == "ok" &&
+    $School == "ok" &&
+    $Seminar == "ok" &&
+    $Certification == "ok" &&
+    $Achievements == "ok" &&
+    $Specialization == "ok" &&
+    $Languages == "ok" &&
+    $References == "ok"){
+
+}else{
+    echo "
+    <script type='text/javascript'>
+    alert('You must complete your information first.');
+    location.href='../myinfo/personal-info.php';
+    </script>";
+}
+?>

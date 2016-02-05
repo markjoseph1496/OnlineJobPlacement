@@ -698,9 +698,11 @@ if($References == "ok"){
                                                     value="Married" <?php if ($CivilStatus == "Married") echo 'selected="selected"'; ?>>
                                                     Married
                                                 </option>
-                                                <option value="Separated">
+                                                <option value="Separated" <?php if ($CivilStatus == "Separated") echo 'selected="selected"'; ?>>
+                                                    Separated
                                                 </option>
-                                                <option value="Widowed">
+                                                <option value="Widowed" <?php if ($CivilStatus == "Widowed") echo 'selected="selected"'; ?>>
+                                                    Widowed
                                                 </option>
                                             </select>
                                         </div>

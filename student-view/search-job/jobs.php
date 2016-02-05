@@ -891,7 +891,6 @@ $References = $progress_tbl[0][10];
 if ($Pinfo == "ok" &&
     $Cinfo == "ok" &&
     $Objective == "ok" &&
-    $WorkXP == "ok" &&
     $School == "ok" &&
     $Seminar == "ok" &&
     $Certification == "ok" &&
@@ -899,17 +898,12 @@ if ($Pinfo == "ok" &&
     $Specialization == "ok" &&
     $Languages == "ok" &&
     $References == "ok"){
+
 }else{
     echo "
     <script type='text/javascript'>
     alert('You must complete your information first.');
     location.href='../myinfo/personal-info.php';
     </script>";
-}
-
-
-
-if ($Progress < 100) {
-
 }
 ?>

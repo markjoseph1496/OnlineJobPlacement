@@ -146,7 +146,7 @@ include('connection.php');
                         <label>Mobile Number <span>(*)</span></label>
                         <div class="form-group">
                             <div class="controls">
-                                <input type="text" class="form-control" id="MobileNumber" name="MobileNumber">
+                                <input type="text" class="form-control" id="MobileNumber" name="MobileNumber" maxlength="11">
                             </div>
                         </div>
                     </div>
@@ -156,7 +156,7 @@ include('connection.php');
                         <label>Email <span>(*)</span></label>
                         <div class="form-group">
                             <div class="controls">
-                                <input type="text" class="form-control" id="Email" name="Email">
+                                <input type="email" class="form-control" id="Email" name="Email">
                             </div>
                         </div>
                     </div>
@@ -225,8 +225,8 @@ include('connection.php');
                         <div class="form-group">
                             <select id="EducAttain" name="EducAttain" class="form-control"
                                     style="width:100%; height:34px;">
-                                <option value="">- Please select one -</option>
-                                <option value="Bachelor's/College Degree" selected="selected">Bachelor's/College Degree</option>
+                                <option value="" selected="selected">- Please select one -</option>
+                                <option value="Bachelor's/College Degree">Bachelor's/College Degree</option>
                             </select>
                         </div>
                     </div>
@@ -265,7 +265,7 @@ include('connection.php');
                                 <option value="02">February</option>
                                 <option value="03">March</option>
                                 <option value="04">April</option>
-                                <option value="05" selected="selected">May</option>
+                                <option value="05">May</option>
                                 <option value="06">June</option>
                                 <option value="07">July</option>
                                 <option value="08">August</option>
@@ -281,16 +281,14 @@ include('connection.php');
                             <label>&nbsp;</label>
                             <select id="GraduatedYear" name="GraduatedYear" class="form-control"
                                     style="width:100%; height:34px;">
-                                <option value="2015">2015</option>
+                                <option value="">- Select year -</option>
                                 <?php
-                                /*
-                                $date = Date("Y") + 4;
+                                $date = Date("Y") + 1;
                                 while ($date != 1935) {
                                     $date--;
                                     echo "<option value='$date'>$date</option>";
 
                                 }
-                                */
                                 ?>
                             </select>
                         </div>
@@ -419,9 +417,8 @@ include('connection.php');
                             message: "Mobile number is required."
                         },
                         stringLength: {
-                            min: 7,
-                            max: 11,
-                            message: "Mobile number must be 7-11 characters long."
+                            min: 11,
+                            message: "Mobile number must be 11 characters long."
                         }
                     }
                 },
