@@ -354,12 +354,11 @@ if(isset($_SESSION['AdminID'])){
                         </div>
                     </div>
                 </div>
-<<<<<<< HEAD
             </div>
         </div>
         <form id="UploadPicture" name="UploadPicture" method="POST" action="uploadpic.php" enctype="multipart/form-data">
                     <div class="col-md-5">
-                        <div class="image-border">
+                        <div class="image-border" style = "width: 400px;">
                             <img src="<?php echo $ProfileImage; ?>" class="img-responsive" style="width:100%; height:100%;">
                         </div>
                         <br><br>
@@ -372,10 +371,7 @@ if(isset($_SESSION['AdminID'])){
                     </div>
         </form>
         &nbsp;
-=======
-                </form>
-                &nbsp;
->>>>>>> origin/master
+
                 <div class="hr5" style="margin-top:35px;margin-bottom:40px;"></div>
                 <div class="field">
                     <div class="text-center">

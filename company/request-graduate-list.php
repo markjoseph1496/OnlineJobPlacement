@@ -135,7 +135,7 @@ $cLastName = $companyinfo_tbl[0][2];
                         </div>
                         <!-- .col-md-6 -->
                         <div class="col-md-5">
-                            <!-- Start Social Links -->
+                            <!-- Notification -->
                             <ul class="nav navbar-nav navbar-right">
                                 <li class="dropdown icon-border" id="notificationLink">
                                     <span id="notification_count">3</span>
@@ -150,10 +150,8 @@ $cLastName = $companyinfo_tbl[0][2];
                                     </ul>
                                 </li>
                                 <li class="dropdown">
-                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown"><b
-                                            class="fa fa-user"></b>
-                                        Welcome, <b><?php echo $cFirstName . " " . $cLastName; ?> </b><b
-                                            class="caret"></b></a>
+                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown"><b class="fa fa-user"></b>
+                                        Welcome, <b><?php echo $cFirstName . " " . $cLastName; ?> </b><b class="caret"></b></a>
                                     <ul class="dropdown-menu">
                                         <li><a href="#">Profile <b class="fa fa-user" style="float:right;"></b></a></li>
                                         <li><a href="../settings/privacy-settings.php">Settings <b class="fa fa-cog"
@@ -165,7 +163,7 @@ $cLastName = $companyinfo_tbl[0][2];
                                     </ul>
                                 </li>
                             </ul>
-                            <!-- End Social Links -->
+                            <!-- Notification -->
                         </div>
                         <!-- .col-md-6 -->
                     </div>
@@ -199,17 +197,17 @@ $cLastName = $companyinfo_tbl[0][2];
                                 <div class="modal-content">
                                     <div class="modal-header">
                                         <button style=type="button" class="close" data-dismiss="modal">&times;</button>
-                                        <h4 class="modal-title">Log out?</h4>
+                                        <h4 class="modal-title">Sign Out</h4>
                                     </div>
                                     <div class="modal-body">
                                         <div class="col-md-15 fieldcol">
-                                            <label = "usr" class = "control-label">Do you want to log out?</label>
+                                            <label = "usr" class = "control-label">Do you want to Sign Out?</label>
                                             <div class="form-group">
                                             </div>
                                         </div>
                                         <div class="modal-footer">
                                             <a href="logout.php"
-                                               class="btn btn-primary">Log out</a>
+                                               class="btn btn-primary">Sign out</a>
                                             <button type="button" class="btn btn-default" data-dismiss="modal">
                                                 Cancel
                                             </button>
