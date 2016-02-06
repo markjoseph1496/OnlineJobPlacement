@@ -410,9 +410,41 @@ $cLastName = $companyinfo_tbl[0][2];
 
                                     <div class="hr1" style="margin-top:15px;margin-bottom:15px;"></div>
 
+                                    <div class="row">
+                                        
+                                        <div class="col-md-8">
+                                            <label>Courses Needed: </label>
+                                            <div class="form-group">
+                                                <ul>
+                                                    <?php
+                                                    $course_tbl =
+                                                        GSecureSQL::query(
+                                                            "SELECT CourseCode,CourseTitle FROM coursetbl",
+                                                            TRUE
+                                                        );
+                                                    foreach ($course_tbl as $value) {
+                                                        $CourseCode = $value[0];
+                                                        $CourseTitle = $value[1];
+                                                        ?>
+                                                        <li>
+                                                            <div class="checkbox checkbox-success">
+                                                                <input class="styled" type="checkbox" name="Courses[]" id="Courses" value="<?php echo $CourseCode; ?>">
+                                                                <label for="checkbox3"><b><?php echo $CourseTitle; ?> (<?php echo $CourseCode; ?>) </b></label>
+                                                            </div>
+                                                        </li>
+                                                        <?php
+                                                    }
+                                                    ?>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="hr1" style="margin-top:15px;margin-bottom:15px;"></div>
+
                                     <div class="form-group">
                                         <label>Required years of experience</label>
-                                        <input type="text" class="form-control" id="rYOE" name="rYOE">
+                                        <input type="number" class="form-control" id="rYOE" name="rYOE">
                                     </div>
 
                                     <div class="hr1" style="margin-top:15px;margin-bottom:15px;"></div>
@@ -533,70 +565,72 @@ $cLastName = $companyinfo_tbl[0][2];
                 rPTitle: {
                     validators: {
                         notEmpty: {
-                            message: "Date From is required."
+                            message: "Position Title is required."
                         }
                     }
                 },
                 'rEType[]': {
                     validators: {
-                        notEmpty: {
-                            message: "Date To is required."
+                        choice: {
+                            min: 1,
+                            message: "Please check atleast one."
                         }
                     }
                 },
                'rPLevel[]': {
                    validators: {
-                       notEmpty: {
-                           message: "Position Title is required."
-                       }
+                        choice: {
+                            min: 1,
+                            message: "Please check atleast one."
+                        }
                    }
                },
                 rDescription: {
                     validators: {
                         notEmpty: {
-                            message: "Position Level is required."
+                            message: "Description Level is required."
                         }
                     }
                 },
                 rQualification: {
                     validators: {
                         notEmpty: {
-                            message: "Job Description is required."
+                            message: "Qualifications is required."
                         },
                         stringLength: {
                             min: 5,
                             max: 70,
-                            message: "Job Description must be 5-70 characters long."
+                            message: "Qualifications is 70 characters only."
                         }
                     }
                 },
                 rLocation: {
                     validators: {
                         notEmpty: {
-                            message: "Specialization is required."
+                            message: "Location is required."
                         }
                     }
                 },
                 rSalaryRange: {
                     validators: {
                         notEmpty: {
-                            message: "Employment Type is required."
+                            message: "Salary Range Type is required."
+                        },
+                        regexp: {
+                            regexp: /^[0-9\s-]+$/i,
+                            message: "Salary Range can consist of Positive Numbers only"
                         }
                     }
                 },
                 rYOE: {
                     validators: {
                         notEmpty: {
-                            message: "Available Position is required."
+                            message: "Required Years of Experience is required."
                         },
                         stringLength: {
                             min: 1,
                             max: 2,
-                            message: "Available Position must be 2 digit long."
-                        },
-                        regexp: {
-                            regexp: /^[0-9\s]+$/i,
-                            message: "Available Position can consist of Positive Numbers only"
+                            message: "Required Years of Experience must be 2 digit long."
                         }
                     }
                 },
@@ -610,16 +644,7 @@ $cLastName = $companyinfo_tbl[0][2];
                 rDOR: {
                     validators: {
                         notEmpty: {
-                            message: "Years of Experience is required."
-                        },
-                        stringLength: {
-                            min: 1,
-                            max: 3,
-                            message: "Years of Experience must be 3 digit long."
-                        },
-                        regexp: {
-                            regexp: /^[0-9\s]+$/i,
-                            message: "Location can consist of Positive Numbers only"
+                            message: "Duration of request is required."
                         }
                     }
                 }

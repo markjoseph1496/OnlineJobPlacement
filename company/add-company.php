@@ -237,6 +237,10 @@ if (isset($_GET['update_PositionID'])) {
     $Qualification = $_POST['rQualification'];
     $Location = $_POST['rLocation'];
     $SalaryRange = $_POST['rSalaryRange'];
+
+    $Courses = $_POST['Courses'];
+    $Courses = implode(", ", $Courses);
+
     $YearOfExperience = $_POST['rYOE'];
     $CFG = $_POST['CFG'];
     $DurationOfRequest = $_POST['rDOR']; //Radiobutton
@@ -271,11 +275,12 @@ if (isset($_GET['update_PositionID'])) {
         RequiredYOE,
         CFG,
         DurationOfRequest,
-        MarketingMaterials)
+        MarketingMaterials,
+        Course)
         VALUES
-        (?,'Pending',?,?,?,?,?,?,?,?,?,?,?,?)",
+        (?,'Pending',?,?,?,?,?,?,?,?,?,?,?,?,?)",
         FALSE,
-        "sssssssssssss",
+        "ssssssssssssss",
         $CompanyID,
         $DateRequested,
         $PositionTitle,
@@ -288,7 +293,8 @@ if (isset($_GET['update_PositionID'])) {
         $YearOfExperience,
         $CFG,
         $DurationOfRequest,
-        $MarketingMaterials
+        $MarketingMaterials,
+        $Courses
     );
 
     header("location: company.php");

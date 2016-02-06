@@ -363,7 +363,7 @@ if (count($LOGquery1) > 0) {
                     <div class="col-md-3">&nbsp;</div>
                     <div class="col-md-6">
                         <div class="call-action call-action-boxed call-action-style1 clearfix">
-                            <br>
+                        <br>
                             <h4>You have already requested the list of graduates. Please wait for the admin to approve your request.</h4><br>
                         </div>
                     </div>
