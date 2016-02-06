@@ -409,7 +409,7 @@ $Address = $companyuser_tbl[0][8];
                                         </div>
                                         <div class = "col-md-4 fieldcol">
                                             <div class="form-group">
-                                                  <input type = "text" name = "FirstName" id = "usr" class = "form-control" style ="width: 550px;" value = "<?php echo $FirstName; ?>">
+                                                  <input type = "text" name = "FirstName" id = "usr" class = "form-control" value = "<?php echo $FirstName; ?>">
                                             </div>
                                         </div>
                     </div> 
@@ -419,7 +419,7 @@ $Address = $companyuser_tbl[0][8];
                                         </div>
                                         <div class = "col-md-4 fieldcol">
                                             <div class="form-group">
-                                                 <input type = "text" name = "MiddleName" id = "usr" class = "form-control" style ="width: 550px;" value = "<?php echo $MiddleName; ?>">
+                                                 <input type = "text" name = "MiddleName" id = "usr" class = "form-control" value = "<?php echo $MiddleName; ?>">
                                             </div>
                                         </div>
                     </div> 
@@ -429,7 +429,7 @@ $Address = $companyuser_tbl[0][8];
                                         </div>
                                         <div class = "col-md-4 fieldcol">
                                             <div class="form-group">
-                                                <input type = "text" name = "LastName" id = "usr" class = "form-control" style ="width: 550px;" value = "<?php echo $LastName; ?>">
+                                                <input type = "text" name = "LastName" id = "usr" class = "form-control" value = "<?php echo $LastName; ?>">
                                             </div>
                                         </div>
                     </div> 
@@ -439,7 +439,7 @@ $Address = $companyuser_tbl[0][8];
                                         </div>
                                         <div class = "col-md-4 fieldcol">
                                             <div class="form-group">
-                                                 <input type = "text" name = "Position" id = "usr" class = "form-control" style ="width: 550px;" value = "<?php echo $Position; ?>">
+                                                 <input type = "text" name = "Position" id = "usr" class = "form-control" value = "<?php echo $Position; ?>">
                                             </div>
                                         </div>
                     </div> 
@@ -449,7 +449,7 @@ $Address = $companyuser_tbl[0][8];
                                         </div>
                                         <div class = "col-md-4 fieldcol">
                                             <div class="form-group">
-                                                 <input type = "text" name = "Department" id = "usr" class = "form-control" style ="width: 550px;" value = "<?php echo $Department; ?>">
+                                                 <input type = "text" name = "Department" id = "usr" class = "form-control" value = "<?php echo $Department; ?>">
                                             </div>
                                         </div>
                     </div>

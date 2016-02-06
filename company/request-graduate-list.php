@@ -377,9 +377,9 @@ $cLastName = $companyinfo_tbl[0][2];
 
                                     <div class="hr1" style="margin-top:15px;margin-bottom:15px;"></div>
 
+                                    <label>Location</label>
+                                    <br><em>(Please select appropriate box)</em>
                                     <div class="form-group">
-                                        <label>Location</label>
-                                        <br><em>(Please select appropriate box)</em>
                                         <select id="rLocation" name="rLocation" class="form-control">
                                             <option value=""></option>
                                             <option value="Caloocan City">Caloocan City</option>
@@ -402,9 +402,9 @@ $cLastName = $companyinfo_tbl[0][2];
 
                                     <div class="hr1" style="margin-top:15px;margin-bottom:15px;"></div>
 
+                                     <label>Salary Range</label>
+                                    <br><em>(Should not be lower than the Minimum Wage)</em>
                                     <div class="form-group">
-                                        <label>Salary Range</label>
-                                        <br><em>(Should not be lower than the Minimum Wage)</em>
                                         <input type="text" class="form-control" id="rSalaryRange" name="rSalaryRange">
                                     </div>
 
