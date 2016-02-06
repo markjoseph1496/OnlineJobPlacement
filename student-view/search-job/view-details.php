@@ -235,9 +235,35 @@ $MajorCourse = $coursetbl[0][0];
                 <div class="navbar-collapse collapse">
                     <!-- Sign-out -->
                     <div class="signout-side">
-                        <button class="btn-system btn-mini border-btn" data-toggle="modal"
-                                data-target="#ApplyNow">Submit Resumé
-                        </button>
+                        <?php
+                        $requesttocompany_tbl =
+                            GSecureSQL::query(
+                                "SELECT * FROM requesttocompanytbl WHERE StudentID = ? AND PositionID = ?",
+                                TRUE,
+                                "ss",
+                                $StudentID,
+                                $PositionID
+                            );
+
+                        if (count($requesttocompany_tbl)) {
+                            echo "
+                            <a href='jobs.php' class='btn-system btn-mini border-btn'>Back
+                            </a>
+                            <button class='btn-system btn-mini border-btn' data-toggle='modal'
+                                data-target='#ApplyNow' disabled>Resumé Submitted
+                            </button>
+                            ";
+                        } else{
+                            echo "
+                            <a href='jobs.php' class='btn-system btn-mini border-btn'>Back
+                            </a>
+                            <button class='btn-system btn-mini border-btn' data-toggle='modal'
+                                data-target='#ApplyNow'>Submit Resumé
+                            </button>
+                            ";
+                        }
+                        ?>
+
                     </div>
                     <!-- End Sign-out -->
                     <!-- Modal -->
@@ -330,7 +356,8 @@ $MajorCourse = $coursetbl[0][0];
                                 <div class="hr5" style="margin-top:35px;margin-bottom:40px;"></div>
                                 <div class="text-center">
                                     <div class="company-logo">
-                                        <img src="../../company/<?php echo $ProfileImage; ?>" class="img-responsive" style="width:100%; height:100%;">
+                                        <img src="../../company/<?php echo $ProfileImage; ?>" class="img-responsive"
+                                             style="width:100%; height:100%;">
                                     </div>
                                 </div>
                                 <!-- End Single Testimonial -->
@@ -523,22 +550,3 @@ $MajorCourse = $coursetbl[0][0];
 </div>
 </body>
 </html>
-<?php
-
-$requesttocompany_tbl =
-    GSecureSQL::query(
-        "SELECT * FROM requesttocompanytbl WHERE StudentID = ? AND PositionID = ?",
-        TRUE,
-        "ss",
-        $StudentID,
-        $PositionID
-    );
-
-if (count($requesttocompany_tbl)){
-    echo "
-    <script type='text/javascript'>
-    alert('You already submitted your resume to this company and with this position.');
-    location.href='jobs.php';
-    </script>";
-}
-?>
