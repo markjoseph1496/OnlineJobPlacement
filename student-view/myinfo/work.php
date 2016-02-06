@@ -52,6 +52,27 @@ $progress_tbl =
         $StudentID
     );
 
+$progress_tbl =
+    GSecureSQL::query(
+        "SELECT
+        Pinfo,
+        Cinfo,
+        Objective,
+        WorkXP,
+        School,
+        Seminar,
+        Certification,
+        Achievements,
+        Specialization,
+        Languages,
+        _References
+        FROM progresstbl
+        WHERE StudentID = ?",
+        TRUE,
+        "s",
+        $StudentID
+    );
+
 $nPinfo = "*";
 $nCinfo = "*";
 $nObjective = "*";
