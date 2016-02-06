@@ -236,7 +236,7 @@ $MajorCourse = $coursetbl[0][0];
                     <!-- Sign-out -->
                     <div class="signout-side">
                         <button class="btn-system btn-mini border-btn" data-toggle="modal"
-                                data-target="#ApplyNow">Apply Now
+                                data-target="#ApplyNow">Submit Resumé
                         </button>
                     </div>
                     <!-- End Sign-out -->
@@ -328,8 +328,9 @@ $MajorCourse = $coursetbl[0][0];
                             <div class="col-md-12">
                                 <!-- Single Testimonial -->
                                 <div class="hr5" style="margin-top:35px;margin-bottom:40px;"></div>
-                                <div class="classic-testimonials text-center">
-                                    <img src="../../images/marg.png">
+                                <div class="text-center">
+                                    <div class="company-logo">
+                                    </div>
                                 </div>
                                 <!-- End Single Testimonial -->
                             </div>
@@ -337,7 +338,7 @@ $MajorCourse = $coursetbl[0][0];
 
                         <div class="row">
                             <div class="col-md-12">
-                                <div class="classic-testimonials">
+                                <div class="text-center">
                                     <h4><?php echo $CompanyName; ?></h4>
                                 </div>
                                 <label><?php echo nl2br($CompanyDescription); ?></label>
