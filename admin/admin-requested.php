@@ -78,6 +78,9 @@ if(isset($_SESSION['AdminID'])){
     <script type="text/javascript" src="../js/jquery.parallax.js"></script>
     <script type="text/javascript" src="../js/jquery.slicknav.js"></script>
 
+    <!-- Checkbox -->
+    <link rel="stylesheet" type="text/css" href="../css/checkbox.css" media="screen"/>
+
     <!-- Notification -->
     <link rel="stylesheet" href="../css/notif.css"/>
 
@@ -170,7 +173,7 @@ if(isset($_SESSION['AdminID'])){
                              role="dialog">
                             <div class="modal-dialog" style="padding:100px">
                                 <!-- Modal content-->
-                                <div class="modal-content">
+                                <div class="modal-content" >
                                     <div class="modal-header">
                                         <button style = type="button" class="close" data-dismiss="modal">&times;</button>
                                         <h4 class="modal-title">Sign Out</h4>
@@ -395,8 +398,7 @@ if(isset($_SESSION['AdminID'])){
                                 </div>
                                 <div class='modal-body'>
                                     <div class='col-md-15 fieldcol'>
-                                        <label = 'usr' class = 'control-label'>Do you want to accept this request? <br>
-                                        Courses to be approved:</label>
+                                    <label = 'usr' class = 'control-label'>Do you want to accept this request?</label>
                                         <ul>
                                         <li>
                                         <div class="form-group">
@@ -475,7 +477,45 @@ if(isset($_SESSION['AdminID'])){
                                                                name="MarketingMaterials" readonly value="<?php echo $MarketingMaterials; ?>">       
                                             </div>
                                         </li>
+                                        <label = 'usr' class = 'control-label'>Courses to be approved:</label>
+                                        <div class="row">
+                                        
+                                            <div class="col-md-9">
+                                                <div class="form-group">
+                                                    <ul>
+                                                        <?php
+                                                        $course_tbl =
+                                                            GSecureSQL::query(
+                                                                "SELECT CourseCode,CourseTitle FROM coursetbl",
+                                                                TRUE
+                                                            );
+                                                        $Course = explode(", ", $Course);
+                                                        foreach ($course_tbl as $value) {
+                                                            $CourseCode = $value[0];
+                                                            $CourseTitle = $value[1];
+                                                            $checked = "";
+                                                            foreach ($Course as $value1) {
+                                                                if($CourseCode == $value1){
+                                                                    $checked = "checked";
+                                                                }
+                                                            }
+                                                            ?>
+                                                            <li>
+                                                                <div class="checkbox checkbox-success">
+                                                                    <input class="styled" type="checkbox" name="Courses[]" <?php echo $checked ?> id="Courses" value="<?php echo $CourseCode; ?>">
+                                                                    <label for="checkbox3"><b><?php echo $CourseTitle; ?> (<?php echo $CourseCode; ?>) </b></label>
+                                                                </div>
+                                                            </li>
+                                                            <?php
+                                                            
+                                                        }
+                                                        ?>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
                                             <?php
+                                            /*
                                             $Course = explode(", ", $Course);
                                             foreach ($Course as $value1) {
                                                 $Course = $value1;
@@ -485,6 +525,7 @@ if(isset($_SESSION['AdminID'])){
                                                 </ul>
                                             <?php
                                         }
+                                        */
                                         ?>
                                         <li>
                                             <label>Duration from: <?php echo date("Y/m/d"); ?> </label>
