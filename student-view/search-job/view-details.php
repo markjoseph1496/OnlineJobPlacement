@@ -247,12 +247,12 @@ $MajorCourse = $coursetbl[0][0];
                             <div class="modal-content">
                                 <div class="modal-header">
                                     <button type="button" class="close" data-dismiss="modal">&times;</button>
-                                    <h4 class="modal-title">Apply Job?</h4>
+                                    <h4 class="modal-title">Submit Resume</h4>
                                 </div>
                                 <div class="modal-body">
                                     <div class="col-md-15 fieldcol">
-                                        <label = "usr" class = "control-label">Do you want to Apply to this position?
-                                        Your resume will be sent to this company.</label>
+                                        <label = "usr" class = "control-label">Do you want to Submit your resume to this
+                                        company?</label>
                                         <div class="form-group">
                                         </div>
                                     </div>
@@ -311,16 +311,16 @@ $MajorCourse = $coursetbl[0][0];
                             <div class="col-md-6">
                                 <!-- Single Testimonial -->
                                 <div class="classic-testimonials">
-                                    Post Date 18-Dec-15
+                                    From: <?php echo $PostingDateFrom . " To: " . $PostingDateTo; ?>
                                 </div>
                                 <!-- End Single Testimonial -->
                             </div>
                             <div class="col-md-6">
-                                <!-- Single Testimonial -->
+                                <!-- Single Testimonial
                                 <div class="classic-testimonials" style="float:right;">
                                     ojpms Ref. JPH500003003534608
                                 </div>
-                                <!-- End Single Testimonial -->
+                               End Single Testimonial -->
                             </div>
                         </div>
 
@@ -330,6 +330,7 @@ $MajorCourse = $coursetbl[0][0];
                                 <div class="hr5" style="margin-top:35px;margin-bottom:40px;"></div>
                                 <div class="text-center">
                                     <div class="company-logo">
+                                        <img src="../../company/<?php echo $ProfileImage; ?>" class="img-responsive" style="width:100%; height:100%;">
                                     </div>
                                 </div>
                                 <!-- End Single Testimonial -->
@@ -522,3 +523,22 @@ $MajorCourse = $coursetbl[0][0];
 </div>
 </body>
 </html>
+<?php
+
+$requesttocompany_tbl =
+    GSecureSQL::query(
+        "SELECT * FROM requesttocompanytbl WHERE StudentID = ? AND PositionID = ?",
+        TRUE,
+        "ss",
+        $StudentID,
+        $PositionID
+    );
+
+if (count($requesttocompany_tbl)){
+    echo "
+    <script type='text/javascript'>
+    alert('You already submitted your resume to this company and with this position.');
+    location.href='jobs.php';
+    </script>";
+}
+?>
