@@ -363,7 +363,7 @@ if (count($LOGquery1) > 0) {
                     <div class="col-md-3">&nbsp;</div>
                     <div class="col-md-6">
                         <div class="call-action call-action-boxed call-action-style1 clearfix">
-                            <br>
+                        <br>
                             <h4>You have already requested the list of graduates. Please wait for the admin to approve your request.</h4><br>
                         </div>
                     </div>
@@ -639,7 +639,7 @@ if (count($LOGquery1) > 0) {
                                     ?>
                                     <tbody>
                                     <tr>
-                                        <td width='20%' class='tabletitle'><?php echo $LastName . ", " . $FirstName; ?></td>
+                                        <td width='20%' class='tabletitle'><a href = "../student-profile.php"><?php echo $LastName . ", " . $FirstName; ?> </a></td>
                                         <td width='10%' class='tabletitle'><?php echo $_Course; ?></td>
                                         <td width='20%' class='tabletitle'><?php echo $MobileNumber; ?></td>
                                         <td width='25%' class='tabletitle'><?php echo $Email; ?></td>
@@ -693,7 +693,7 @@ if (count($LOGquery1) > 0) {
                                     ?>
                                     <tbody>
                                     <tr>
-                                        <td width='20%' class='tabletitle'><?php echo $LastName . ", " . $FirstName; ?></td>
+                                        <td width='20%' class='tabletitle'><a href = "../student-profile.php"><?php echo $LastName . ", " . $FirstName; ?></a></td>
                                         <td width='10%' class='tabletitle'><?php echo $_Course; ?></td>
                                         <td width='20%' class='tabletitle'><?php echo $MobileNumber; ?></td>
                                         <td width='25%' class='tabletitle'><?php echo $Email; ?></td>

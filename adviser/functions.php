@@ -15,6 +15,7 @@ if(isset($_POST['StudentID'])){
     $MOA = $_POST['MOA'];
     $AppLetter = $_POST['AppLetter'];
     $Waiver = $_POST['Waiver'];
+    $Status = $_POST['Status'];
 
     GSecureSQL::query(
         "UPDATE ojttbl
@@ -30,7 +31,8 @@ if(isset($_POST['StudentID'])){
         Resume = ?,
         MOA = ?,
         ApplicationLetter = ?,
-        Waiver = ?
+        Waiver = ?,
+        aStatus = ?
         WHERE
         StudentID = ?",
         FALSE,
@@ -47,6 +49,7 @@ if(isset($_POST['StudentID'])){
         $MOA,
         $AppLetter,
         $Waiver,
+        $Status,
         $StudentID
     );
 

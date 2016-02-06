@@ -770,7 +770,7 @@ $Progress = $progress_tbl[0][0];
                                                                         </li>
                                                                         <li><?php echo $Location; ?></li>
                                                                     </ul>
-                                                                    <a class='main-button' target="_blank"
+                                                                    <a class='main-button'
                                                                        href='view-details.php?id=<?php echo $PositionID; ?>'>View
                                                                         Details <i class='fa fa-angle-right'></i></a>
                                                                 </div>
@@ -897,9 +897,10 @@ if ($Pinfo == "ok" &&
     $Achievements == "ok" &&
     $Specialization == "ok" &&
     $Languages == "ok" &&
-    $References == "ok"){
+    $References == "ok"
+) {
 
-}else{
+} else {
     echo "
     <script type='text/javascript'>
     alert('You must complete your information first.');
