@@ -350,7 +350,7 @@ $MajorCourse = $course_qry[0][0];
                 <div class="col-md-3 sidebar left-sidebar">
                     <!-- Search Widget -->
                     <div class="call-action call-action-boxed call-action-style2 clearfix">
-                        (*) Note: Required fields.
+                        <label><span>(*)</span> Note: Required fields.</label> 
                     </div>
                 </div>
                 <!--End sidebar-->

@@ -89,6 +89,28 @@ if (isset($_SESSION['StudentID'])) {
     <script type="text/javascript" src="../../js/jquery.parallax.js"></script>
     <script type="text/javascript" src="../../js/jquery.slicknav.js"></script>
 
+    <!-- Notification -->
+    <link rel="stylesheet" href="../../css/notif.css"/>
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $("#notificationLink").click(function () {
+                $("#notificationContainer").fadeToggle(300);
+                $("#notification_count").fadeOut("slow");
+                return false;
+            });
+
+            //Document Click
+            $(document).click(function () {
+                $("#notificationContainer").hide();
+            });
+            //Popup Click
+            $("#notificationContainer").click(function () {
+                return false
+            });
+
+        });
+    </script>
 </head>
 
 <body>
@@ -102,24 +124,39 @@ if (isset($_SESSION['StudentID'])) {
                 <div class="row">
                     <div class="col-md-7">
                         <!-- Start Contact Info -->
-                        <ul class="contact-details">
-                            <li><a href="#"><i class="fa fa-hashtag"></i> 008-2012-0805</a></li>
+                        <ul class="profile-name">
+                            <li>Course: <b><?php echo $MajorCourse; ?></b></li>
                         </ul>
                         <!-- End Contact Info -->
                     </div>
                     <!-- .col-md-6 -->
                     <div class="col-md-5">
                         <!-- Start Social Links -->
-                        <ul class="social-list">
-                            <li class="profile-name">
-                                <a class="bell itl-tooltip" data-placement="bottom" title="" href="#"
-                                   data-original-title="Notification"><i class="fa fa-bell"></i></a>
+                        <ul class="nav navbar-nav navbar-right">
+                            <li class="dropdown icon-border" id="notificationLink">
+                                <span id="notification_count">3</span>
+                                <a href="#" class="bell itl-tooltip" data-placement="bottom" data-toggle="dropdown"><i
+                                        class="fa fa-bell"></i></a>
+                                <ul id="notificationContainer" class="dropdown-menu dropdown-menu-inverse">
+                                    <li class="dropdown-header"><label>Notification</label></li>
+                                    <li class="disabled"><a href="#" tabindex="-1">No new notification.</a></li>
+                                    <li><a href="#" tabindex="-1">The administrator accepted your request.</a></li>
+                                    <li class="divider"></li>
+                                    <li><a href="../notification/notification.php" tabindex="-1">See All</a></li>
+                                </ul>
                             </li>
-                            <li class="profile-name">
-                                &nbsp;
-                            </li>
-                            <li class="profile-name">
-                                <i class="fa fa-user"></i> Hello, <b>Aira Jane Cruz</b>
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown"><b class="fa fa-user"></b>
+                                    Welcome, <b><?php echo $StudentName; ?> </b><b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    <li><a href="#">Profile <b class="fa fa-user" style="float:right;"></b></a></li>
+                                    <li><a href="../settings/settings.php">Settings <b class="fa fa-cog"
+                                                                                       style="float:right;"></b></a>
+                                    </li>
+                                    <li class="divider"></li>
+                                    <li><a href="#" data-target='#Logout' data-toggle='modal'>Sign Out <b
+                                                class="fa fa-sign-out" style="float:right;"></b></a></li>
+                                </ul>
                             </li>
                         </ul>
                         <!-- End Social Links -->
@@ -132,6 +169,22 @@ if (isset($_SESSION['StudentID'])) {
         </div>
         <!-- .top-bar -->
         <!-- End Top Bar -->
+
+        <!-- Start  Logo & Naviagtion  -->
+        <div class="navbar navbar-default navbar-top">
+            <div class="container">
+                <div class="navbar-header">
+                    <!-- Stat Toggle Nav Link For Mobiles -->
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <i class="fa fa-bars"></i>
+                    </button>
+                    <!-- End Toggle Nav Link For Mobiles -->
+                    <a class="navbar-brand">
+                        <img src="../../images/ojpms.png">
+                    </a>
+                </div>
+            </div>
+        </div>
     </header>
 
     <div class="page-banner no-subtitle">

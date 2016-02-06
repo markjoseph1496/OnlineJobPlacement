@@ -742,7 +742,7 @@ if($References == "ok"){
         <!-- Search Widget -->
         <div class="call-action call-action-boxed call-action-style2 clearfix">
             <label><span>(*)</span> Note: Required fields.</label>
-            <label><span>Photo:</span> Upload your most decent photo that will best represent you.</label>
+            <label><span>Photo:</span> Upload your most decent photo that will best represent yourself.</label>
         </div>
     </div>
     <!--End sidebar-->

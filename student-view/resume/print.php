@@ -403,7 +403,7 @@ if($References == "ok"){
 
                     <div class="row">
                         <div class="col-md-6">
-                            <label>Download PDF <i class="fa fa-chevron-right"></i> Print</label>
+                            <label>Print</label>
                         </div>
                     </div>
                     <div class
@@ -412,8 +412,8 @@ if($References == "ok"){
                         <div class="column">
                             <div class="myoverlay">
                                 <p>Your Resume</p>
-                                <button href="#" class="btn-system btn-mini border-btn"><i class="fa fa-file-text"></i>
-                                    Download PDF
+                                <button href="#" class="btn-system btn-mini border-btn"><i class="fa fa-print"></i>
+                                    Print
                                 </button>
                             </div>
                             <img src="../../img/one-column.jpg">
