@@ -188,7 +188,7 @@ if (count($LOGquery1) > 0) {
                         </div>
                         <!-- .col-md-6 -->
                         <div class="col-md-5">
-                            <!-- Start Social Links -->
+                            <!-- Notification -->
                             <ul class="nav navbar-nav navbar-right">
                                 <li class="dropdown icon-border" id="notificationLink">
                                     <span id="notification_count">3</span>
@@ -207,7 +207,7 @@ if (count($LOGquery1) > 0) {
                                         Welcome, <b><?php echo $cFirstName . " " . $cLastName; ?> </b><b class="caret"></b></a>
                                     <ul class="dropdown-menu">
                                         <li><a href="#">Profile <b class="fa fa-user" style="float:right;"></b></a></li>
-                                        <li><a href="../settings/privacy-settings.php">Settings <b class="fa fa-cog"
+                                        <li><a href="company-settings.php">Settings <b class="fa fa-cog"
                                                                                                    style="float:right;"></b></a>
                                         </li>
                                         <li class="divider"></li>
@@ -216,7 +216,7 @@ if (count($LOGquery1) > 0) {
                                     </ul>
                                 </li>
                             </ul>
-                            <!-- End Social Links -->
+                            <!-- Notification -->
                         </div>
                         <!-- .col-md-6 -->
                     </div>

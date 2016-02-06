@@ -156,7 +156,7 @@ $cLastName = $companyinfo_tbl[0][2];
                                             class="caret"></b></a>
                                     <ul class="dropdown-menu">
                                         <li><a href="#">Profile <b class="fa fa-user" style="float:right;"></b></a></li>
-                                        <li><a href="../settings/privacy-settings.php">Settings <b class="fa fa-cog"
+                                        <li><a href="company-settings.php">Settings <b class="fa fa-cog"
                                                                                                    style="float:right;"></b></a>
                                         </li>
                                         <li class="divider"></li>
