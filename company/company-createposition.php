@@ -554,7 +554,7 @@ $cLastName = $companyinfo_tbl[0][2];
                             <div class="col-md-4">
                                 <div class="form-group">
                                     <div class="input-group" style="margin-bottom: 15px">
-                                        <input type="text" class="form-control" id="txt-specialize" name="specialize">
+                                        <input type="text" class="form-control" id="txt-specialize" name="Specialize">
                                         <script>
                                             var sss_index = -1;
                                             function delete_specialize(index) {
@@ -686,7 +686,6 @@ $cLastName = $companyinfo_tbl[0][2];
     <!--End of Content-->
     <script type="text/javascript" src="../js/script.js"></script>   
 </body>
-
 <script type="text/javascript">
     $(document).ready(function () {
         var validator = $("#AddPosition").bootstrapValidator({
@@ -810,4 +809,5 @@ $cLastName = $companyinfo_tbl[0][2];
         });
     });
 </script>
+
 </html>
