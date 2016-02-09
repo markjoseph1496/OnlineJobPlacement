@@ -161,7 +161,7 @@ $ProfileImage= $companyinfo_tbl[0][11];
                         </div>
                         <!-- .col-md-6 -->
                         <div class="col-md-5">
-                            <!-- Start Social Links -->
+                            <!-- Notification -->
                             <ul class="nav navbar-nav navbar-right">
                                 <li class="dropdown icon-border" id="notificationLink">
                                     <span id="notification_count">3</span>
@@ -184,7 +184,7 @@ $ProfileImage= $companyinfo_tbl[0][11];
                                     </ul>
                                 </li>
                             </ul>
-                            <!-- End Social Links -->
+                            <!-- Notification -->
                         </div>
                         <!-- .col-md-6 -->
                     </div>
