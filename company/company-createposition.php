@@ -407,36 +407,6 @@ $cLastName = $companyinfo_tbl[0][2];
                                 </div>
                             </div>
                         </div>
-                        <div class="row">
-                            <div class="col-md-3">
-                                <label> Related Courses: </label>
-                            </div>
-                            <div class="col-md-6">
-                                <div class="form-group">
-                                    <ul>
-                                        <?php
-                                        $course_tbl =
-                                            GSecureSQL::query(
-                                                "SELECT CourseCode,CourseTitle FROM coursetbl",
-                                                TRUE
-                                            );
-                                        foreach ($course_tbl as $value) {
-                                            $CourseCode = $value[0];
-                                            $CourseTitle = $value[1];
-                                            ?>
-                                            <li>
-                                                <div class="checkbox checkbox-success">
-                                                    <input class="styled" type="checkbox" name="RelatedCourses[]" id="RelatedCourses" value="<?php echo $CourseCode; ?>">
-                                                    <label for="checkbox3"><b><?php echo $CourseTitle; ?> (<?php echo $CourseCode; ?>) </b></label>
-                                                </div>
-                                            </li>
-                                            <?php
-                                        }
-                                        ?>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
                         <h3> Salary Range </h3>
                         &nbsp;
                         <div class="row">
@@ -576,6 +546,69 @@ $cLastName = $companyinfo_tbl[0][2];
                                  style="width: 300px; word-wrap: break-word">
                             </div>
                         </div>
+                        &nbsp;    
+                        <div class="row">
+                            <div class="col-md-3">
+                                <label> Specialize In: </label>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    <div class="input-group" style="margin-bottom: 15px">
+                                        <input type="text" class="form-control" id="txt-specialize" name="Specialize">
+                                        <script>
+                                            var sss_index = -1;
+                                            function delete_specialize(index) {
+                                                $('#sss-span-' + index).remove();
+                                                $('#sss-a-' + index).remove();
+                                                $('#sss-input-' + index).remove();
+                                            }
+                                        </script>
+                                        <span class="input-group-btn">
+                                            <a class="btn btn-primary" onclick="(function(){
+                                              var _specializes = $('#txt-specialize').val();
+                                              if(_specializes==''){
+                                                alert('Cannot add empty value.');
+                                              }else{
+                                              sss_index++;
+                                              var ss = $('#specialize-template');
+                                              var ss_span = ss.find('span');
+                                              var ss_a = ss.find('a');
+                                              var ss_input = ss.find('input');
+
+                                              ss_span.text($('#txt-specialize').val());
+                                              ss_span.attr('id', 'sss-span-' + sss_index);
+                                              ss_a.attr('id', 'sss-a-' + sss_index);
+                                              ss_a.attr('onclick', 'delete_specialize(' + sss_index + ')');
+                                              ss_input.attr('id', 'sss-input-' + sss_index);
+                                              ss_input.attr('name', 'specialize[' + sss_index +']');
+                                              ss_input.val(ss_span.text());
+                                              $('#specialize-list').append($('#specialize-template').html());
+                                              $('#txt-specialize').val('');
+
+                                              //disposal of used resource in #specialize-template
+                                              ss_span.removeAttr('id');
+                                              ss_a.removeAttr('id');
+                                              ss_a.removeAttr('onclick');
+                                              ss_input.removeAttr('id');
+                                              ss_input.removeAttr('name');
+                                              ss_input.removeAttr('value');
+                                              }
+                                            })()">Add</a>
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row" style="margin-bottom: 15px">
+                            <div id="specialize-template" class="hidden">
+                                <b><span>dito_yung_text</span></b>
+                                <a href="javascript:void(0)">[remove]<br></a>
+                                <input type="hidden"/>
+                            </div>
+                            <div id="specialize-list" class="col-md-offset-3 col-md-8"
+                                 style="width: 300px; word-wrap: break-word">
+                            </div>
+                        </div>
                         <h3> Optional Requirements </h3>
                         &nbsp;
                         <div class="row">
@@ -653,7 +686,6 @@ $cLastName = $companyinfo_tbl[0][2];
     <!--End of Content-->
     <script type="text/javascript" src="../js/script.js"></script>   
 </body>
-
 <script type="text/javascript">
     $(document).ready(function () {
         var validator = $("#AddPosition").bootstrapValidator({
@@ -777,4 +809,5 @@ $cLastName = $companyinfo_tbl[0][2];
         });
     });
 </script>
+
 </html>

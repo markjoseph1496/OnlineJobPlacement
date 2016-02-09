@@ -64,18 +64,19 @@ if (isset($_GET['btnsave'])) {
     $AvPosition = $_GET['AvPosition'];
     $Salary = $_GET['Salary'];
     $YExperience = $_GET['YExperience'];
-    $RelatedCourses = $_GET['RelatedCourses'];
     $DegreeLevel = $_GET['DegreeLevel'];
     $RequiredSkills = $_GET['knowledge'];
     $Language = $_GET['language'];
+    $specialize = $_GET['specialize'];
 
-    $RelatedCourses = implode(", ", $RelatedCourses);
+
+    $specialize = implode(", ", $specialize);
     $DegreeLevel = implode(", ", $DegreeLevel);
     $RequiredSkills = implode(", ", $RequiredSkills);
     $Language = implode(", ", $Language);
 
     GSecureSQL::query(
-        "INSERT INTO comppositiontbl (CompanyID,PostingDateFrom,PostingDateTo,PositionTitle,PositionLevel,JobDescription,JSpecialization,EType,AvPosition,MonthlySalary,YExperience,RelatedCourses,DegreeLevel,Reqskills,Languages) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)",
+        "INSERT INTO comppositiontbl (CompanyID,PostingDateFrom,PostingDateTo,PositionTitle,PositionLevel,JobDescription,JSpecialization,EType,AvPosition,MonthlySalary,YExperience,DegreeLevel,Reqskills,Languages,Tags) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)",
         FALSE,
         "sssssssssssssss",
         $CompanyID,
@@ -89,12 +90,11 @@ if (isset($_GET['btnsave'])) {
         $AvPosition,
         $Salary,
         $YExperience,
-        $RelatedCourses,
         $DegreeLevel,
         $RequiredSkills,
-        $Language
+        $Language,
+        $specialize
     );
-
     header("location: company-positionlist.php?id=1");
 
 }
