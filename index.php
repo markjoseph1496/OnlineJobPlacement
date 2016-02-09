@@ -80,16 +80,19 @@
                         <div class="navbar-brand" ><img alt="" src="images/ojpms.png"></div>
                     </div>
                     <div class="navbar-collapse collapse">
+                        <div class="search-side">
+                            <a href="#join" class="smoothScroll btn-system btn-large border-btn btn-yellow">Login</a>
+                        </div>
                         <!-- Start Navigation List -->
                         <ul class="nav navbar-nav navbar-right">
                         	<li><a href="#home" class="smoothScroll">Home</a></li>
                             <li><a href="#jobs" class="smoothScroll">Jobs</a></li>
                             <li><a href="#events" class="smoothScroll">Events</a></li>
                             <li><a href="#about" class="smoothScroll">E2E</a></li>
-                            <li><a href="#join" class="smoothScroll">Join Us</a></li>
-                            <li><a href="#contact-us" class="smoothScroll">Contact Us</a></li>
+                            <li><a href="#contact" class="smoothScroll">Contact</a></li>
                         </ul>
                         <!-- End Navigation List -->
+                        </div>
                     </div>
                 </div>
 
@@ -99,8 +102,8 @@
                 	<li><a href="#jobs" class="smoothScroll">Jobs</a></li>
                     <li><a href="#events" class="smoothScroll">Events</a></li>
                     <li><a href="#about" class="smoothScroll">E2E</a></li>
-                    <li><a href="#join" class="smoothScroll">Join Us</a></li>
-                    <li><a href="#contact-us" class="smoothScroll">Contact Us</a></li>
+                    <li><a href="#join" class="smoothScroll">Join</a></li>
+                    <li><a href="#contact" class="smoothScroll">Contact</a></li>
                 </ul>
                 <!-- Mobile Menu End -->
             </div>
@@ -809,7 +812,7 @@
         <!-- End content -->
 
         <!-- Start Footer -->
-        <footer id="contact-us">
+        <footer id="contact">
             <div class="container">
                 <div class="row footer-widgets">
 

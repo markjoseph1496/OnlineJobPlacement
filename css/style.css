@@ -1856,6 +1856,12 @@ input[type="submit"] {
 	background-color: #fff;
 }
 
+.btn-system.border-btn.btn-yellow {
+	background-color: transparent;
+	border: 1px solid #f8ba01;
+	color: #999;
+}
+
 .btn-system.border-btn.btn-gray {
 	background-color: transparent;
 	border: 1px solid #444;
