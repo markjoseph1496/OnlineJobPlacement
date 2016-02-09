@@ -157,7 +157,7 @@ $cLastName = $companyinfo_tbl[0][2];
                                     <ul class="dropdown-menu">
                                         <li><a href="#">Profile <b class="fa fa-user" style="float:right;"></b></a></li>
                                         <li><a href="company-settings.php">Settings <b class="fa fa-cog"
-                                                                                                   style="float:right;"></b></a>
+                                                                                       style="float:right;"></b></a>
                                         </li>
                                         <li class="divider"></li>
                                         <li><a href="#" data-target='#Logout' data-toggle='modal'>Sign Out <b
@@ -298,23 +298,28 @@ $cLastName = $companyinfo_tbl[0][2];
                                     <label>Employee Classification</label>
                                     <br><em>(Please select appropriate box)</em>
                                     <div class="checkbox checkbox-success">
-                                        <input id="rEType" name="rEType[]" class="styled" type="checkbox" value="Full Time">
+                                        <input id="rEType" name="rEType[]" class="styled" type="checkbox"
+                                               value="Full Time">
                                         <label for="checkbox3"><b>Full Time</b></label>
                                     </div>
                                     <div class="checkbox checkbox-success">
-                                        <input id="rEType" name="rEType[]" class="styled" type="checkbox" value="Part-Time">
+                                        <input id="rEType" name="rEType[]" class="styled" type="checkbox"
+                                               value="Part-Time">
                                         <label for="checkbox3"><b>Part-time</b></label>
                                     </div>
                                     <div class="checkbox checkbox-success">
-                                        <input id="rEType" name="rEType[]" class="styled" type="checkbox" value="Contractual">
+                                        <input id="rEType" name="rEType[]" class="styled" type="checkbox"
+                                               value="Contractual">
                                         <label for="checkbox3"><b>Contractual</b></label>
                                     </div>
                                     <div class="checkbox checkbox-success">
-                                        <input id="rEType" name="rEType[]" class="styled" type="checkbox" value="Freelance">
+                                        <input id="rEType" name="rEType[]" class="styled" type="checkbox"
+                                               value="Freelance">
                                         <label for="checkbox3"><b>Freelance</b></label>
                                     </div>
                                     <div class="checkbox checkbox-success">
-                                        <input id="rEType" name="rEType[]" class="styled" type="checkbox" value="Project-based">
+                                        <input id="rEType" name="rEType[]" class="styled" type="checkbox"
+                                               value="Project-based">
                                         <label for="checkbox3"><b>Project-based</b></label>
                                     </div>
                                     <div class="hr4" style="margin-bottom:10px;"></div>
@@ -335,19 +340,23 @@ $cLastName = $companyinfo_tbl[0][2];
                                     <label>Level</label>
                                     <br><em>(Please select appropriate box)</em>
                                     <div class="checkbox checkbox-success">
-                                        <input id="rPLevel" name="rPLevel[]" class="styled" type="checkbox" value="Entry Level/Gen Staff">
+                                        <input id="rPLevel" name="rPLevel[]" class="styled" type="checkbox"
+                                               value="Entry Level/Gen Staff">
                                         <label for="checkbox3"><b>Entry Level/Gen Staff</b></label>
                                     </div>
                                     <div class="checkbox checkbox-success">
-                                        <input id="rPLevel" name="rPLevel[]" class="styled" type="checkbox" value="Officer">
+                                        <input id="rPLevel" name="rPLevel[]" class="styled" type="checkbox"
+                                               value="Officer">
                                         <label for="checkbox3"><b>Officer</b></label>
                                     </div>
                                     <div class="checkbox checkbox-success">
-                                        <input id="rPLeve]" name="rPLevel[]" class="styled" type="checkbox" value="Supervisory">
+                                        <input id="rPLeve]" name="rPLevel[]" class="styled" type="checkbox"
+                                               value="Supervisory">
                                         <label for="checkbox3"><b>Supervisory</b></label>
                                     </div>
                                     <div class="checkbox checkbox-success">
-                                        <input id="rPLevel" name="rPLevel[]" class="styled" type="checkbox" value="Management">
+                                        <input id="rPLevel" name="rPLevel[]" class="styled" type="checkbox"
+                                               value="Management">
                                         <label for="checkbox3"><b>Management</b></label>
                                     </div>
 
@@ -368,11 +377,13 @@ $cLastName = $companyinfo_tbl[0][2];
 
                                     <label>Description</label>
                                     <div class="form-group">
-                                        <textarea class="form-control" name="rDescription" id="rDescription" rows="7" cols="0" maxlength="300"></textarea>
+                                        <textarea class="form-control" name="rDescription" id="rDescription" rows="7"
+                                                  cols="0" maxlength="300"></textarea>
                                     </div>
                                     <label>Qualifications</label>
                                     <div class="form-group">
-                                        <textarea class="form-control" name="rQualification" id="rQualification" rows="7" cols="0" maxlength="100"></textarea>
+                                        <textarea class="form-control" name="rQualification" id="rQualification"
+                                                  rows="7" cols="0" maxlength="100"></textarea>
                                     </div>
 
                                     <div class="hr1" style="margin-top:15px;margin-bottom:15px;"></div>
@@ -402,7 +413,7 @@ $cLastName = $companyinfo_tbl[0][2];
 
                                     <div class="hr1" style="margin-top:15px;margin-bottom:15px;"></div>
 
-                                     <label>Salary Range</label>
+                                    <label>Salary Range</label>
                                     <br><em>(Should not be lower than the Minimum Wage)</em>
                                     <div class="form-group">
                                         <input type="text" class="form-control" id="rSalaryRange" name="rSalaryRange">
@@ -410,33 +421,62 @@ $cLastName = $companyinfo_tbl[0][2];
 
                                     <div class="hr1" style="margin-top:15px;margin-bottom:15px;"></div>
 
-                                    <div class="row">
-                                        
-                                        <div class="col-md-8">
-                                            <label>Courses Needed: </label>
-                                            <div class="form-group">
-                                                <ul>
-                                                    <?php
-                                                    $course_tbl =
-                                                        GSecureSQL::query(
-                                                            "SELECT CourseCode,CourseTitle FROM coursetbl",
-                                                            TRUE
-                                                        );
-                                                    foreach ($course_tbl as $value) {
-                                                        $CourseCode = $value[0];
-                                                        $CourseTitle = $value[1];
-                                                        ?>
-                                                        <li>
-                                                            <div class="checkbox checkbox-success">
-                                                                <input class="styled" type="checkbox" name="Courses[]" id="Courses" value="<?php echo $CourseCode; ?>">
-                                                                <label for="checkbox3"><b><?php echo $CourseTitle; ?> (<?php echo $CourseCode; ?>) </b></label>
-                                                            </div>
-                                                        </li>
-                                                        <?php
-                                                    }
-                                                    ?>
-                                                </ul>
-                                            </div>
+                                    <label>Specialized in: </label>
+                                    <div class="form-group">
+                                        <div class="input-group" style="margin-bottom: 15px">
+                                            <input type="text" class="form-control" id="txt-specialized"
+                                                   name="Specialized">
+                                            <script>
+                                                var kl_index = -1;
+                                                function delete_specialized(index) {
+                                                    $('#kl-span-' + index).remove();
+                                                    $('#kl-a-' + index).remove();
+                                                    $('#kl-input-' + index).remove();
+                                                }
+                                            </script>
+                                      <span class="input-group-btn">
+                                        <a class="btn btn-primary" onclick="(function(){
+                                          var _requirements = $('#txt-specialized').val();
+                                          if(_requirements==''){
+                                              alert('Cannot add empty value.');
+                                          }
+                                          else{
+                                              kl_index++;
+                                              var kk = $('#specialized-template');
+                                              var kk_span = kk.find('span');
+                                              var kk_a = kk.find('a');
+                                              var kk_input = kk.find('input');
+
+                                              kk_span.text($('#txt-specialized').val());
+                                              kk_span.attr('id', 'kl-span-' + kl_index);
+                                              kk_a.attr('id', 'kl-a-' + kl_index);
+                                              kk_a.attr('onclick', 'delete_specialized(' + kl_index + ')');
+                                              kk_input.attr('id', 'kl-input-' + kl_index);
+                                              kk_input.attr('name', 'specialized[' + kl_index +']');
+                                              kk_input.val(kk_span.text());
+                                              $('#specialized-list').append($('#specialized-template').html());
+                                              $('#txt-specialized').val('');
+
+                                              //disposal of used resource in #specialized-template
+                                              kk_span.removeAttr('id');
+                                              kk_a.removeAttr('id');
+                                              kk_a.removeAttr('onclick');
+                                              kk_input.removeAttr('id');
+                                              kk_input.removeAttr('name');
+                                              kk_input.removeAttr('value');
+                                          }
+                                        })()">Add</a>
+                                      </span>
+                                        </div>
+                                    </div>
+                                    <div class="row" style="margin-bottom: 15px">
+                                        <div id="specialized-template" class="hidden">
+                                            <b><span>dito_yung_text</span></b>
+                                            <a href="javascript:void(0)">[remove]<br></a>
+                                            <input type="hidden"/>
+                                        </div>
+                                        <div id="specialized-list" class="col-md-4"
+                                             style="width: 300px; word-wrap: break-word">
                                         </div>
                                     </div>
 
@@ -477,7 +517,7 @@ $cLastName = $companyinfo_tbl[0][2];
                                         <label for="inlineRadio2"><b>1 month</b></label>
                                     </div>
                                     <br>
-                                    <div class="radio radio-inline">
+                                    <div class="radio radi          o-inline">
                                         <input id="rDOR" name="rDOR" type="radio" value="2 Months">
                                         <label for="inlineRadio2"><b>2 months</b></label>
                                     </div>
@@ -501,7 +541,8 @@ $cLastName = $companyinfo_tbl[0][2];
                                     <br><em>(Someone from Alumni and Placement Office will contact you to make
                                         arrangements for the particulars of the request.)</em>
                                     <div class="checkbox checkbox-success">
-                                        <input id="MarketingMaterials" name="MarketingMaterials" class="styled" type="checkbox" value="Yes">
+                                        <input id="MarketingMaterials" name="MarketingMaterials" class="styled"
+                                               type="checkbox" value="Yes">
                                         <label for="checkbox3"><b>Yes</b></label>
                                     </div>
 
@@ -512,9 +553,13 @@ $cLastName = $companyinfo_tbl[0][2];
                                     <br><em>Please email at <a href="mailto:jobplacement@caloocan.sti.edu"><u>jobplacement@caloocan.sti.edu</u></a></em>
                                     <ul class="icon-list">
                                         <li><label><i class="fa fa-check-circle"></i> Company Profile</label></li>
-                                        <li><label><i class="fa fa-check-circle"></i> Copy of Securities and Exchange Commission Certificate of Registration or Copy of Department of Trade and Industry Certificate of Registration</label></li>
-                                        <li><label><i class="fa fa-check-circle"></i> Copy of Business Permit</label></li>
-                                        <li><label><i class="fa fa-check-circle"></i> POEA License for Overseas Employment Opportunities</label></li>
+                                        <li><label><i class="fa fa-check-circle"></i> Copy of Securities and Exchange
+                                                Commission Certificate of Registration or Copy of Department of Trade
+                                                and Industry Certificate of Registration</label></li>
+                                        <li><label><i class="fa fa-check-circle"></i> Copy of Business Permit</label>
+                                        </li>
+                                        <li><label><i class="fa fa-check-circle"></i> POEA License for Overseas
+                                                Employment Opportunities</label></li>
                                         <li><label><i class="fa fa-check-circle"></i> List of Job Openings</label></li>
                                     </ul>
 
@@ -561,7 +606,7 @@ $cLastName = $companyinfo_tbl[0][2];
                 invalid: "glyphicon glyphicon-remove",
                 validating: "glyphicon glyphicon-refresh"
             },
-           fields: {
+            fields: {
                 rPTitle: {
                     validators: {
                         notEmpty: {
@@ -577,14 +622,14 @@ $cLastName = $companyinfo_tbl[0][2];
                         }
                     }
                 },
-               'rPLevel[]': {
-                   validators: {
+                'rPLevel[]': {
+                    validators: {
                         choice: {
                             min: 1,
                             message: "Please check atleast one."
                         }
-                   }
-               },
+                    }
+                },
                 rDescription: {
                     validators: {
                         notEmpty: {
@@ -685,11 +730,11 @@ $cLastName = $companyinfo_tbl[0][2];
         $('#txtPOther').hide();
     }
 
-    $(document).ready(function(){
-        $('input[type="radio"]').click(function(){
-            if($(this).attr("value")=="other"){
+    $(document).ready(function () {
+        $('input[type="radio"]').click(function () {
+            if ($(this).attr("value") == "other") {
                 $("#txtDORother").show();
-            }else{
+            } else {
                 $("#txtDORother").hide();
             }
         });
