@@ -80,15 +80,19 @@
                         <div class="navbar-brand" ><img alt="" src="images/ojpms.png"></div>
                     </div>
                     <div class="navbar-collapse collapse">
+                        <div class="search-side">
+                            <a href="#join" class="smoothScroll btn-system btn-large border-btn btn-yellow">Login</a>
+                        </div>
                         <!-- Start Navigation List -->
                         <ul class="nav navbar-nav navbar-right">
                         	<li><a href="#home" class="smoothScroll">Home</a></li>
                             <li><a href="#jobs" class="smoothScroll">Jobs</a></li>
                             <li><a href="#events" class="smoothScroll">Events</a></li>
-                            <li><a href="#about" class="smoothScroll">About</a></li>
-                            <li><a href="#join" class="smoothScroll">Join Us</a></li>
+                            <li><a href="#about" class="smoothScroll">E2E</a></li>
+                            <li><a href="#contact" class="smoothScroll">Contact</a></li>
                         </ul>
                         <!-- End Navigation List -->
+                        </div>
                     </div>
                 </div>
 
@@ -97,8 +101,9 @@
                 	<li><a href="#home" class="smoothScroll">Home</a></li>
                 	<li><a href="#jobs" class="smoothScroll">Jobs</a></li>
                     <li><a href="#events" class="smoothScroll">Events</a></li>
-                    <li><a href="#about" class="smoothScroll">About</a></li>
-                    <li><a href="#join" class="smoothScroll">Join Us</a></li>
+                    <li><a href="#about" class="smoothScroll">E2E</a></li>
+                    <li><a href="#join" class="smoothScroll">Join</a></li>
+                    <li><a href="#contact" class="smoothScroll">Contact</a></li>
                 </ul>
                 <!-- Mobile Menu End -->
             </div>
@@ -315,10 +320,10 @@
 
             
             <!-- Start Recent Projects Carousel -->
-            <div id="events" class="section" style="background-color:#f8ba01;">
+            <div id="events" class="section" style="background-color:#00599D;">
                 <div class="container">
                     <div class="recent-projects">
-                        <h4 class="title">Events</h4>
+                        <h4 class="title wite-text">Events</h4>
                         <div class="projects-carousel touch-carousel">
 
                             <div class="portfolio-item item">
@@ -546,10 +551,10 @@
                     <div class="hr1 margin-60"></div>
 
                     <div class="row">
-                        <div class="col-md-8">
+                        <div class="col-md-12">
                             <!-- Start Recent Posts Carousel -->
                             <div class="latest-posts">
-                                <h4 class="classic-title"><strong>Latest News</strong></h4>
+                                <h4 class="classic-title wite-text"><strong>Latest News</strong></h4>
                                 <div class="latest-posts-classic custom-carousel touch-carousel" data-appeared-items="2">
 
                                     <!-- Posts 1 -->
@@ -631,63 +636,16 @@
                                                     More...</a></p>
                                         </div>
                                     </div>
-
-                                    <!-- Posts 6 -->
-                                    <div class="post-row item">
-                                        <div class="left-meta-post">
-                                            <div class="post-date"><span class="day">28</span><span class="month">Dec</span>
-                                            </div>
-                                            <div class="post-type"><i class="fa fa-picture-o"></i></div>
-                                        </div>
-                                        <h3 class="post-title"><a href="#">Standard Post With Image</a></h3>
-                                        <div class="post-content">
-                                            <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore
-                                                eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident,
-                                                sunt in culpa qui officia deserunt mollit. <a class="read-more" href="#">Read
-                                                    More...</a></p>
-                                        </div>
-                                    </div>
                                 </div>
                             </div>
                             <!-- End Recent Posts Carousel -->
-                        </div>
-
-                        <div class="col-md-4">
-                            <!-- Classic Heading -->
-                            <h4 class="classic-title"><strong>Shoutouts</strong></h4>
-
-                            <!-- Start Testimonials Carousel -->
-                            <div class="custom-carousel show-one-slide touch-carousel" data-appeared-items="1">
-                                <!-- Testimonial 1 -->
-                                <div class="classic-testimonials item">
-                                    <div class="testimonial-content">
-                                        <p>Online Job Placement Management is ready to serve you!</p>
-                                    </div>
-                                    <div class="testimonial-author"><span>Lorem</span> - Lorem</div>
-                                </div>
-                                <!-- Testimonial 2 -->
-                                <div class="classic-testimonials item">
-                                    <div class="testimonial-content">
-                                        <p>Online Job Placement Management is ready to serve you!</p>
-                                    </div>
-                                    <div class="testimonial-author"><span>Lorem</span> - Lorem</div>
-                                </div>
-                                <!-- Testimonial 2 -->
-                                <div class="classic-testimonials item">
-                                    <div class="testimonial-content">
-                                        <p>Online Job Placement Management is ready to serve you!</p>
-                                    </div>
-                                    <div class="testimonial-author"><span>Lorem</span> - Lorem</div>
-                                </div>
-                            </div>
-                            <!-- End Testimonials Carousel -->
                         </div>
                     </div>
                 </div>
             </div>
 
-            <!-- Divider -->
-            <div class="hr1 margin-60"></div>
+            <!-- Divider
+            <div class="hr1 margin-60"></div> -->
 
             <!-- ABOUT Section -->
             <div id="about" class="section">
@@ -695,88 +653,50 @@
                     <div class="row">
                         <div class="col-lg-12 text-center">
                             <div class="big-title text-center animated fadeInDown delay-01" data-animation="fadeInDown" data-animation-delay="01">
-                                <h1>About E2E</h1>
-                                <p class="title-desc">The Humble Beginnings</p>
+                                <h1>Enrollment to Employment (E2E) System</h1>
                             </div>
                         </div>
                     </div>
                     <div class="row">
-                        <div class="col-lg-12">
-                            <ul class="timeline">
-                                <li>
-                                    <div class="timeline-image">
-                                        <img class="img-circle img-responsive" src="img/about/1.jpg" alt="">
-                                    </div>
-                                    <div class="timeline-panel">
-                                        <div class="timeline-heading">
-                                            <h4>2004</h4>
-                                            <h4 class="subheading">A Great Help is Born</h4>
-                                        </div>
-                                        <div class="timeline-body">
-                                            <p class="">STI conceived the first and only Enrollment to
-                                                Employment (E2E) System.
-                                            </p>
-                                        </div>
-                                    </div>
-                                </li>
-                                <li class="timeline-inverted">
-                                    <div class="timeline-image">
-                                        <img class="img-circle img-responsive" src="img/about/1.jpg" alt="">
-                                    </div>
-                                    <div class="timeline-panel">
-                                        <div class="timeline-heading">
-                                            <h4>Purpose</h4>
-                                            <h4 class="subheading">Enlightenment</h4>
-                                        </div>
-                                        <div class="timeline-body">
-                                            <p>The E2E System is a complete approach to human resource development, 
-                                                which aims to develop ICT-enabled professionals through innovative 
-                                                learning and career planning methodologies.
-                                            </p>
-                                        </div>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div class="timeline-image">
-                                        <img class="img-circle img-responsive" src="img/about/1.jpg" alt="">
-                                    </div>
-                                    <div class="timeline-panel">
-                                        <div class="timeline-heading">
-                                            <h4>Vision</h4>
-                                            <!--<h4 class="subheading">Transition to Full Service</h4>-->
-                                        </div>
-                                        <div class="timeline-body">
-                                            <p>To institutionalize the Enrollment to Employment System (E2E) of STI College 
-                                                Caloocan to be able to cater to its studentry and make it the best placement tool 
-                                                use in an educational institution.
-                                            </p>
-                                        </div>
-                                    </div>
-                                </li>
-                                <li class="timeline-inverted">
-                                    <div class="timeline-image">
-                                        <img class="img-circle img-responsive" src="img/about/1.jpg" alt="">
-                                    </div>
-                                    <div class="timeline-panel">
-                                        <div class="timeline-heading">
-                                            <h4>Mission</h4>
-                                            <h4 class="subheading"></h4>
-                                        </div>
-                                        <div class="timeline-body">
-                                            <p>To give better future to our students and alumni through giving worthwhile jobs.
-                                            </p>
-                                        </div>
-                                    </div>
-                                </li>
-                                <li class="timeline-inverted">
-                                    <div class="timeline-image">
-                                        <h4>Be Part
-                                            <br>Of The
-                                            <br>History!
-                                        </h4>
-                                    </div>
-                                </li>
-                            </ul>
+                        <!-- Start Service Icon 1 -->
+                        <div class="col-md-2 col-sm-2">
+                            &nbsp;
+                        </div>
+                        <!-- End Service Icon 1 -->
+
+                        <!-- Start Service Icon 1 -->
+                        <div class="col-md-8 col-sm-8 service-box service-center">
+                            <div class="service-boxed">
+                                <div class="service-icon" style="margin-top:-25px;">
+                                    <img src="img/about/e2e-logo.gif">
+                                </div>
+                                <div class="service-content">
+                                    <h4>The E2E System is a complete approach to human resource 
+                                        development, which aims to develop ICT-enabled professionals 
+                                        through innovative learning and career planning methodologies.
+                                    </h4>
+                                    <div class="hr5" style="margin-top:5px;margin-top:5px;"></div>
+                                    <p>Establishing one's career in today's competitive industries has become a 
+                                        challenging pursuit to most job seekers. Employers too are increasingly 
+                                        having difficulty finding the right person for the job. Too often, there 
+                                        remains a huge gap between the skills required by the industry and what a graduate has to offer.
+                                    </p>
+                                    <div class="hr1" style="margin-top:5px;"></div>
+                                    <p>STI steps up to bridge this gap by introducing the Enrollment to Employment 
+                                        or E2E System. The E2E System is a complete approach to human resource development, 
+                                        which aims to develop ICT-enabled professionals through innovative learning and career 
+                                        planning methodologies. Through the E2E System, STI students get applicable education, 
+                                        job market skills, job preparedness, and job placement assistance.
+                                    </p>
+                                    <div class="hr1" style="margin-top:5px;"></div>
+                                    <p>To learn more, <a href="e2e.php"><u>click here</u></a>.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- End Service Icon 1 -->
+
+                        <div class="col-md-2 col-sm-2">
+                            &nbsp;
                         </div>
                     </div>
                 </div>
@@ -892,7 +812,7 @@
         <!-- End content -->
 
         <!-- Start Footer -->
-        <footer>
+        <footer id="contact">
             <div class="container">
                 <div class="row footer-widgets">
 

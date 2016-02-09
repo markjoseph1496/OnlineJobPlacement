@@ -1432,7 +1432,7 @@ input[type="submit"] {
 }
 
 .latest-posts-classic .post-title a {
-	color: #444;
+	color: #fff;
 	transition: all 0.4s ease-in-out;
     -moz-transition: all 0.4s ease-in-out;
     -webkit-transition: all 0.4s ease-in-out;
@@ -1447,7 +1447,7 @@ input[type="submit"] {
 }
 
 .latest-posts-classic .read-more:hover {
-	color: #444;
+	color: #FF0;
 }
 
 
@@ -1854,6 +1854,12 @@ input[type="submit"] {
 
 .btn-system.btn-wite{
 	background-color: #fff;
+}
+
+.btn-system.border-btn.btn-yellow {
+	background-color: transparent;
+	border: 1px solid #f8ba01;
+	color: #999;
 }
 
 .btn-system.border-btn.btn-gray {
@@ -2879,7 +2885,7 @@ ul.icons-list li i {
 .classic-title {
 	margin-bottom: 16px;
 	padding-bottom: 8px;
-	border-bottom: 1px solid #eee;
+	border-bottom: 1px solid #FF0;
     font-weight: 300;
 }
 
@@ -3069,7 +3075,7 @@ ul.icons-list li i {
 }
 
 .portfolio-item .portfolio-details a span {
-	color: #666;
+	color: #fff;
 }
 
 .portfolio-item .portfolio-details span:after {
@@ -3436,7 +3442,7 @@ and (min-width : 551px){
 .recent-projects h4.title {
 	margin-bottom: 16px;
 	padding-bottom: 8px;
-	border-bottom: 1px solid #eee;
+	border-bottom: 1px solid #FF0;
 }
 
 .recent-projects h4.title span {
@@ -3585,6 +3591,10 @@ and (min-width : 551px){
 .blog-post .post-content {
 	padding-left: 54px;
 	position: relative;
+}
+
+.post-content p {
+	color: #fff;
 }
 
 .blog-post .post-type {
