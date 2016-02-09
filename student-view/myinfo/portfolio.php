@@ -417,7 +417,7 @@ if($References == "ok"){
             </div>
             <div class="row sidebar-page">
                 <!-- Page Content -->
-                <div class="col-md-9 page-content">
+                <div class="col-md-12 page-content">
 
                     <div class="classic-testimonials">
                         <!-- Single Testimonial -->
@@ -541,15 +541,6 @@ if($References == "ok"){
                     </div>
                 </div>
                 <!-- End Page Content -->
-
-                <!--Sidebar-->
-                <div class="col-md-3 sidebar right-sidebar">
-                    <!-- Search Widget -->
-                    <div class="call-action call-action-boxed call-action-style2 clearfix">
-                        (*) Note: Required fields.
-                    </div>
-                </div>
-                <!--End sidebar-->
             </div>
         </div>
     </div>

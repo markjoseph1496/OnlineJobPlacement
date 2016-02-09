@@ -320,10 +320,10 @@
 
             
             <!-- Start Recent Projects Carousel -->
-            <div id="events" class="section" style="background-color:#f8ba01;">
+            <div id="events" class="section" style="background-color:#00599D;">
                 <div class="container">
                     <div class="recent-projects">
-                        <h4 class="title">Events</h4>
+                        <h4 class="title wite-text">Events</h4>
                         <div class="projects-carousel touch-carousel">
 
                             <div class="portfolio-item item">
@@ -554,7 +554,7 @@
                         <div class="col-md-12">
                             <!-- Start Recent Posts Carousel -->
                             <div class="latest-posts">
-                                <h4 class="classic-title"><strong>Latest News</strong></h4>
+                                <h4 class="classic-title wite-text"><strong>Latest News</strong></h4>
                                 <div class="latest-posts-classic custom-carousel touch-carousel" data-appeared-items="2">
 
                                     <!-- Posts 1 -->
