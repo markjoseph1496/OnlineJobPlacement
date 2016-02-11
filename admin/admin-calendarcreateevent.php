@@ -7,6 +7,22 @@ if(isset($_SESSION['AdminID'])){
 }else{
     header("location: ../login-admin.php");
 }
+
+$adminpic_tbl = 
+    GSecureSQL::query(
+        "SELECT 
+        ProfileImage
+        FROM
+        admineventtbl
+        WHERE
+        AdminID = ?",
+        True,
+        "s",
+        $AdminID
+        );
+
+    $ProfileImage = $adminpic_tbl[0][0];
+
 ?>
 <!doctype html>
 <html lang="en">
@@ -356,7 +372,8 @@ if(isset($_SESSION['AdminID'])){
                 </div>
             </div>
         </div>
-        <form id="UploadPicture" name="UploadPicture" method="POST" action="uploadpic.php" enctype="multipart/form-data">
+        </form>
+        <form id="UploadPicture" name="UploadPicture" method="POST" action="uploadpicture.php" enctype="multipart/form-data">
                     <div class="col-md-5">
                         <div class="image-border" style = "width: 400px;">
                             <img src="<?php echo $ProfileImage; ?>" class="img-responsive" style="width:100%; height:100%;">
