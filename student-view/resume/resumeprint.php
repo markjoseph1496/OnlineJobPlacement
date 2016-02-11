@@ -170,13 +170,12 @@ $hGraduated = $hsschool_tbl[0][2];
                     <div class="col-xs-8">
                         <p><label>Name:</label> <?php echo $FirstName . " " . $LastName; ?></p>
                         <p><label>Address:</label> <?php echo $Address; ?></p>
-                        <p><label>Contact No:</label> <?php echo $ContactNumber; ?></p>
+                        <p><label>Contact No.:</label> <?php echo $ContactNumber; ?></p>
                         <p><label>Email Address:</label> <?php echo $Email; ?></p>
                     </div>
                     <div class="col-xs-4">
-                        <div class="image-border" style="float:right;">
-                            <img src="../myinfo/<?php echo $ProfileImage; ?>" class="img-responsive"
-                                 style="width:200px; height:200px;">
+                        <div class="resume-image-border" style="float:right;">
+                            <img src="../myinfo/<?php echo $ProfileImage; ?>" class="img-responsive" style="width:200px; height:200px;">
                         </div>
                     </div>
                 </div>
@@ -326,11 +325,11 @@ $hGraduated = $hsschool_tbl[0][2];
                                 <div class="col-xs-3">
                                     <p><?php echo $Date; ?></p>
                                 </div>
-                                <div class="col-xs-3">
-                                    <p><?php echo $PositionTitle; ?></p>
-                                </div>
                                 <div class="col-xs-2">
                                     <p><?php echo $CompanyName; ?></p>
+                                </div>
+                                <div class="col-xs-3">
+                                    <p><?php echo $PositionTitle; ?></p>
                                 </div>
                                 <div class="col-xs-4">
                                     <p><?php echo $CompanyAddress; ?></p>
@@ -406,7 +405,7 @@ $hGraduated = $hsschool_tbl[0][2];
                 <div class="row">
                     <div class="col-xs-12">
                         <label>References:</label>
-                        <div class="row text-center">
+                        <div class="row" style="margin-left:20px; margin-right:20px;">
                             <?php
                             $reference_tbl =
                                 GSecureSQL::query(

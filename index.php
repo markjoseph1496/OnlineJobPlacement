@@ -748,68 +748,75 @@
                 </div>
             </div>
 
-            <!-- Divider -->
-            <div class="hr1 margin-60"></div>
+            <!-- Divider 
+            <div class="hr1 margin-60"></div>-->
 
-            <!-- Start Client/Partner Section -->
-            <div class="container">
-                <!-- Start Big Heading -->
-                <div class="big-title text-center">
-                    <h1>Our Happy <span class="accent-color">Partners</span></h1>
-                    <p class="title-desc">Featured Companies</p>
-                </div>
-                <!-- End Big Heading -->
+            <!-- Start Partner Company -->
+            <div class="section" style="padding-top:35px; padding-bottom:20px; border-top:0; border-bottom:0; background:#fff;">
+                <div class="container">
 
-                <div class="our-clients">
-                    <div class="clients-carousel custom-carousel touch-carousel owl-carousel owl-theme" data-appeared-items="5" data-navigation="false" style="opacity: 1; display: block;">
+                    <!-- Start Big Heading -->
+                    <div class="big-title text-center">
+                        <h1>Our Happy <span class="accent-color">Partners</span></h1>
+                        <p class="title-desc">Featured Companies</p>
+                    </div>
+                    <!-- End Big Heading -->
 
-                        <!-- Client 1 -->
-                        <div class="owl-wrapper-outer"><div class="owl-wrapper" style="width: 3008px; left: 0px; display: block;">
-                            <div class="owl-item" style="width: 188px;">
-                                <div class="client-item item">
-                                    <a href="#"><img src="img/partner-company/accenture.png" alt=""></a>
-                                </div>
+                    <!-- Start Clients Carousel -->
+                    <div class="our-clients">
+                        <div class="clients-carousel custom-carousel touch-carousel" data-appeared-items="5" data-navigation="false">
+
+                            <!-- Company 1 -->
+                            <div class="client-item item">
+                                <a href="#"><img src="images/c1.png" alt="" /></a>
                             </div>
-                            <div class="owl-item" style="width: 188px;">
-                                <div class="client-item item">
-                                    <a href="#"><img src="img/partner-company/accenture.png" alt=""></a>
-                                </div>
+
+                            <!-- Company 2 -->
+                            <div class="client-item item">
+                                <a href="#"><img src="images/c2.png" alt="" /></a>
                             </div>
-                            <div class="owl-item" style="width: 188px;">
-                                <div class="client-item item">
-                                    <a href="#"><img src="img/partner-company/accenture.png" alt=""></a>
-                                </div>
+
+                            <!-- Company 3 -->
+                            <div class="client-item item">
+                                <a href="#"><img src="images/c2.png" alt="" /></a>
                             </div>
-                            <div class="owl-item" style="width: 188px;">
-                                <div class="client-item item">
-                                    <a href="#"><img src="img/partner-company/.png" alt=""></a>
-                                </div>
+
+                            <!-- Company 4 -->
+                            <div class="client-item item">
+                                <a href="#"><img src="images/c2.png" alt="" /></a>
                             </div>
-                            <div class="owl-item" style="width: 188px;">
-                                <div class="client-item item">
-                                    <a href="#"><img src="img/partner-company/.png" alt=""></a>
-                                </div>
+
+                            <!-- Company 5 -->
+                            <div class="client-item item">
+                                <a href="#"><img src="images/c2.png" alt="" /></a>
                             </div>
-                            <div class="owl-item" style="width: 188px;">
-                                <div class="client-item item">
-                                    <a href="#"><img src="img/partner-company/.png" alt=""></a>
-                                </div>
+
+                            <!-- Company 6 -->
+                            <div class="client-item item">
+                                <a href="#"><img src="images/c2.png" alt="" /></a>
                             </div>
-                            <div class="owl-item" style="width: 188px;">
-                                <div class="client-item item">
-                                    <a href="#"><img src="img/partner-company/.png" alt=""></a>
-                                </div>
+
+                            <!-- Company 7 -->
+                            <div class="client-item item">
+                                <a href="#"><img src="images/c2.png" alt="" /></a>
                             </div>
-                            <div class="owl-item" style="width: 188px;">
-                                <div class="client-item item">
-                                    <a href="#"><img src="img/partner-company/.png" alt=""></a>
-                                </div>
+
+                            <!-- Company 8 -->
+                            <div class="client-item item">
+                                <a href="#"><img src="images/c2.png" alt="" /></a>
                             </div>
+                        </div>
+                    </div>
+                    <!-- End Clients Carousel -->
+                    <div class="row">
+                        <div class="col-md-6">&nbsp;</div>
+                        <div class="col-md-6">
+                            <label style="float:right;"><a href="">See Other Companies <i class="fa fa-caret-right"></i></a></label>
                         </div>
                     </div>
                 </div>
             </div>
-            <!-- End Client/Partner Section -->
+            <!-- End Partner Company -->   
         </div>
         <!-- End content -->
 
@@ -841,7 +848,6 @@
                             <h4>Contact Us<span class="head-line"></span></h4>
                             <b>Tel. no. (+632) 294-4001 / 361-6070</b>
                             <label>109 Samson Road corner Caimito Street Caloocan City, Philippines 1400</label>
-                            
                         </div>
                     </div>
                     <!-- .col-md-3 -->
