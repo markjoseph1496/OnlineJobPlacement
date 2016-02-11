@@ -54,9 +54,9 @@ if (count($LOGquery) > 0) {
         $diff_to->invert == 0;
 
     if ($a && $b) {
-        $RequestedCourses = $LOGquery[0][2];
-        $RequestedCourses = explode(", ", $RequestedCourses);
-        $RequestedCourses = implode("', '", $RequestedCourses);
+        $RequestedSpecialization = $LOGquery[0][2];
+        $RequestedSpecialization = explode(", ", $RequestedSpecialization);
+        $RequestedSpecialization = implode("', '", $RequestedSpecialization);
         $ContentCount = 1;
     } else {
         $ContentCount = 0;
@@ -384,7 +384,7 @@ if (count($LOGquery1) > 0) {
                             <div class="row">
                                 <br><br>
                                 <div>
-                                    <b>Available Courses:</b>
+                                    <b>List of graduates specialized by:</b>
                                     <?php
                                     $AvailableCourses = $LOGquery[0][2];
                                     echo $AvailableCourses;
@@ -402,7 +402,7 @@ if (count($LOGquery1) > 0) {
                                             <?php
                                             $course_tbl =
                                                 GSecureSQL::query(
-                                                    "SELECT CourseTitle, CourseCode FROM coursetbl WHERE CourseCode IN ('$RequestedCourses') ORDER BY CourseTitle ASC",
+                                                    "SELECT CourseTitle, CourseCode FROM coursetbl ORDER BY CourseTitle ASC",
                                                     TRUE
                                                 );
                                             foreach ($course_tbl as $value) {
@@ -544,7 +544,9 @@ if (count($LOGquery1) > 0) {
                                         studcontactstbl.City
                                         FROM
                                         studcontactstbl
-                                        INNER JOIN `studentinfotbl` ON `studcontactstbl`.`StudentID` = `studentinfotbl`.`StudentID` WHERE studentinfotbl.MajorCourse IN ('$RequestedCourses')",
+                                        INNER JOIN studentinfotbl ON studcontactstbl.StudentID = studentinfotbl.StudentID
+                                        INNER JOIN specializationtbl ON studentinfotbl.StudentID = specializationtbl.StudentID
+                                        WHERE specializationtbl.Specialization IN ('LIKE%$RequestedSpecialization')",
                                         TRUE
                                     );
                                 if (empty($listofgraduates_tbl)) {
@@ -563,7 +565,7 @@ if (count($LOGquery1) > 0) {
                                         studcontactstbl.City
                                         FROM
                                         studcontactstbl
-                                        INNER JOIN `studentinfotbl` ON `studcontactstbl`.`StudentID` = `studentinfotbl`.`StudentID` WHERE studcontactstbl.City = ? AND studentinfotbl.MajorCourse IN ('$RequestedCourses')",
+                                        INNER JOIN `studentinfotbl` ON `studcontactstbl`.`StudentID` = `studentinfotbl`.`StudentID` WHERE studcontactstbl.City = ? AND studentinfotbl.MajorCourse IN ('$RequestedSpecialization')",
                                         TRUE,
                                         "s",
                                         $Location
@@ -663,7 +665,7 @@ if (count($LOGquery1) > 0) {
                                         studcontactstbl.City
                                         FROM
                                         studcontactstbl
-                                        INNER JOIN `studentinfotbl` ON `studcontactstbl`.`StudentID` = `studentinfotbl`.`StudentID` WHERE studentinfotbl.MajorCourse IN ('$RequestedCourses')",
+                                        INNER JOIN `studentinfotbl` ON `studcontactstbl`.`StudentID` = `studentinfotbl`.`StudentID` WHERE studentinfotbl.MajorCourse IN ('$RequestedSpecialization')",
                                     TRUE
                                 );
                             if (empty($listofgraduates_tbl)) {

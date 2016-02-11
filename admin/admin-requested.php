@@ -2,9 +2,9 @@
 include('../connection.php');
 session_start();
 
-if(isset($_SESSION['AdminID'])){
+if (isset($_SESSION['AdminID'])) {
     $AdminID = $_SESSION['AdminID'];
-}else{
+} else {
     header("location: ../login-admin.php");
 }
 
@@ -121,30 +121,33 @@ if(isset($_SESSION['AdminID'])){
                 </div>
                 <!-- .col-md-6 -->
                 <div class="col-md-6">
-                   <!-- Notification -->
-                            <ul class="nav navbar-nav navbar-right">
-                                <li class="dropdown icon-border" id="notificationLink">
-                                    <span id="notification_count">3</span>
-                                    <a href="#" class="bell itl-tooltip" data-placement="bottom" data-toggle="dropdown"><i
-                                            class="fa fa-bell"></i></a>
-                                    <ul id="notificationContainer" class="dropdown-menu dropdown-menu-inverse">
-                                        <li class="dropdown-header"><label>Notification</label></li>
-                                        <li class="disabled"><a href="#" tabindex="-1">No new notification.</a></li>
-                                        <li><a href="#" tabindex="-1">This is a notification.</a></li>
-                                        <li class="divider"></li>
-                                        <li><a href="../notification/notification.php" tabindex="-1">See All</a></li>
-                                    </ul>
-                                </li>
-                                <li class="dropdown">
-                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown"><b class="fa fa-user"></b> Welcome, <b>Admin Tim </b><b class="caret"></b></a>
-                                    <ul class="dropdown-menu">
-                                        <li><a href="admin-account.php">Account <b class="fa fa-user" style="float:right;"></b></a></li>
-                                        <li class="divider"></li>
-                                        <li><a href="#" data-target='#Logout' data-toggle='modal'>Sign Out <b class="fa fa-sign-out" style="float:right;"></b></a></li>
-                                    </ul>
-                                </li>
+                    <!-- Notification -->
+                    <ul class="nav navbar-nav navbar-right">
+                        <li class="dropdown icon-border" id="notificationLink">
+                            <span id="notification_count">3</span>
+                            <a href="#" class="bell itl-tooltip" data-placement="bottom" data-toggle="dropdown"><i
+                                    class="fa fa-bell"></i></a>
+                            <ul id="notificationContainer" class="dropdown-menu dropdown-menu-inverse">
+                                <li class="dropdown-header"><label>Notification</label></li>
+                                <li class="disabled"><a href="#" tabindex="-1">No new notification.</a></li>
+                                <li><a href="#" tabindex="-1">This is a notification.</a></li>
+                                <li class="divider"></li>
+                                <li><a href="../notification/notification.php" tabindex="-1">See All</a></li>
                             </ul>
-                   <!-- Notification -->
+                        </li>
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown"><b class="fa fa-user"></b>
+                                Welcome, <b>Admin Tim </b><b class="caret"></b></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="admin-account.php">Account <b class="fa fa-user" style="float:right;"></b></a>
+                                </li>
+                                <li class="divider"></li>
+                                <li><a href="#" data-target='#Logout' data-toggle='modal'>Sign Out <b
+                                            class="fa fa-sign-out" style="float:right;"></b></a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <!-- Notification -->
                 </div>
                 <!-- .col-md-6 -->
             </div>
@@ -169,32 +172,32 @@ if(isset($_SESSION['AdminID'])){
             </div>
             <div class="navbar-collapse collapse">
                 <!-- Modal -->
-               <div class="modal fade" id="Logout"
-                             role="dialog">
-                            <div class="modal-dialog" style="padding:100px">
-                                <!-- Modal content-->
-                                <div class="modal-content" >
-                                    <div class="modal-header">
-                                        <button style = type="button" class="close" data-dismiss="modal">&times;</button>
-                                        <h4 class="modal-title">Sign Out</h4>
-                                    </div>
-                                    <div class="modal-body">
-                                        <div class="col-md-15 fieldcol">
-                                            <label = "usr" class = "control-label">Do you want to Sign Out?</label>
-                                            <div class="form-group">
-                                            </div>
-                                        </div>
-                                        <div class="modal-footer">
-                                            <a href="logout.php"
-                                               class="btn btn-primary">Sign out</a>
-                                            <button type="button" class="btn btn-default" data-dismiss="modal">
-                                                Cancel
-                                            </button>
-                                        </div>
+                <div class="modal fade" id="Logout"
+                     role="dialog">
+                    <div class="modal-dialog" style="padding:100px">
+                        <!-- Modal content-->
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <button style=type="button" class="close" data-dismiss="modal">&times;</button>
+                                <h4 class="modal-title">Sign Out</h4>
+                            </div>
+                            <div class="modal-body">
+                                <div class="col-md-15 fieldcol">
+                                    <label = "usr" class = "control-label">Do you want to Sign Out?</label>
+                                    <div class="form-group">
                                     </div>
                                 </div>
+                                <div class="modal-footer">
+                                    <a href="logout.php"
+                                       class="btn btn-primary">Sign out</a>
+                                    <button type="button" class="btn btn-default" data-dismiss="modal">
+                                        Cancel
+                                    </button>
+                                </div>
                             </div>
-                 </div>
+                        </div>
+                    </div>
+                </div>
                 <!-- End Sign-out -->
                 <!-- Start Navigation List -->
                 <ul class="nav navbar-nav navbar-right">
@@ -202,7 +205,7 @@ if(isset($_SESSION['AdminID'])){
                         <a href="admin.php">Home</a>
                     </li>
                     <li>
-                    <a>Reports</a>
+                        <a>Reports</a>
                         <ul class="dropdown">
                             <li><a href="admin-reports.php">Alumni Reports</a></li>
                             <li><a href="admin-ojtreports.php">OJT Reports</a></li>
@@ -224,7 +227,7 @@ if(isset($_SESSION['AdminID'])){
                     <li>
                         <a> Maintenance</a>
                         <ul class="dropdown">
-                            <li><a href="admin-maintenance.php">Courses</a></li>
+                            <li><a href="admin-maintenance.php">Specialization</a></li>
                             <li><a href="admin-users.php">Users</a></li>
                             <li><a href="admin-calendar.php">Calendar Events</a></li>
                         </ul>
@@ -241,10 +244,10 @@ if(isset($_SESSION['AdminID'])){
                 </li>
                 <li>
                     <a>Reports</a>
-                        <ul class="dropdown">
-                            <li><a href="admin-reports.php" class = "active">Alumni Reports</a></li>
-                            <li><a href="admin-ojtreports.php">OJT Reports</a></li>
-                        </ul>
+                    <ul class="dropdown">
+                        <li><a href="admin-reports.php" class="active">Alumni Reports</a></li>
+                        <li><a href="admin-ojtreports.php">OJT Reports</a></li>
+                    </ul>
                 </li>
                 <li>
                     <a href="admin-account.php">Account</a>
@@ -262,7 +265,7 @@ if(isset($_SESSION['AdminID'])){
                 <li>
                     <a> Maintenance</a>
                     <ul class="dropdown">
-                        <li><a class="active" href="admin-maintenance.php">Courses</a></li>
+                        <li><a class="active" href="admin-maintenance.php">Specialization</a></li>
                         <li><a href="admin-users.php">Users</a></li>
                         <li><a href="admin-calendar.php">Calendar Events</a></li>
                     </ul>
@@ -318,7 +321,7 @@ if(isset($_SESSION['AdminID'])){
                 </tr>
                 <tr>
                     <th width='25%' class='tabletitle'>Company Name</th>
-                    <th width='25%' class='tabletitle'>Courses</th>
+                    <th width='25%' class='tabletitle'>Specialization</th>
                     <th width='20%' class='tabletitle'>Location</th>
                     <th width='15%' class='tabletitle'>Date Requested</th>
                     <th width='15%' class='tabletitle'>Status</th>
@@ -332,7 +335,7 @@ if(isset($_SESSION['AdminID'])){
                         "SELECT
                             logrequesttbl.LID,
                             logrequesttbl.CompanyID,
-                            logrequesttbl.Course,
+                            logrequesttbl.Specialization,
                             logrequesttbl.Status,
                             logrequesttbl.DateRequested,
                             logrequesttbl.PositionTitle,
@@ -350,13 +353,14 @@ if(isset($_SESSION['AdminID'])){
                             companyinfotbl.City
                         FROM
                             companyinfotbl
-                        INNER JOIN logrequesttbl ON companyinfotbl.CompanyID = logrequesttbl.CompanyID WHERE logrequesttbl.Status = 'Pending' ORDER BY logrequesttbl.DateRequested ASC",
+                        INNER JOIN logrequesttbl ON companyinfotbl.CompanyID = logrequesttbl.CompanyID
+                        WHERE logrequesttbl.Status = 'Pending' ORDER BY logrequesttbl.DateRequested ASC",
                         TRUE
                     );
                 foreach ($requestlog_tbl as $value) {
                 $LID = $value[0];
                 $CompanyID = $value[1];
-                $Course = $value[2];
+                $Specialization = $value[2];
                 $Status = $value[3];
                 $DateRequested = $value[4];
                 $PositionTitle = $value[5];
@@ -375,7 +379,7 @@ if(isset($_SESSION['AdminID'])){
                 ?>
                 <tr>
                     <td width=25% class=tabletitle><a href='#'><?php echo $CompanyName; ?></a></td>
-                    <td width=25% class=tabletitle><?php echo $Course; ?></td>
+                    <td width=25% class=tabletitle><?php echo $Specialization; ?></td>
                     <td width=20% class=tabletitle><?php echo $Location; ?></td>
                     <td width=15% class=tabletitle><?php echo $DateRequested; ?></td>
                     <td width=15% class=tabletitle><?php echo $Status; ?></td>
@@ -398,143 +402,111 @@ if(isset($_SESSION['AdminID'])){
                                 </div>
                                 <div class='modal-body'>
                                     <div class='col-md-15 fieldcol'>
-                                    <label = 'usr' class = 'control-label'>Do you want to accept this request?</label>
+                                        <label = 'usr' class = 'control-label'>Do you want to accept this
+                                        request?</label>
                                         <ul>
-                                        <li>
-                                        <div class="form-group">
-                                           <label> Position Title: </label>
-                                                        <input type="text" class="form-control" id="PositionTitle"
-                                                               name="PositionTitle" readonly value="<?php echo $PositionTitle; ?>">
-                                        </div>
-                                        </li>
-                                        <li>
-                                        <div class="form-group">
-                                           <label> Employee Classification: </label>
-                                                        <input type="text" class="form-control" id="EmployeeClassification"
-                                                               name="EmployeeClassification" readonly value="<?php echo $EmployeeClassification; ?>">
-                                        </div>
-                                        </li>
-                                        <li>
-                                            <div class = "form-group">
-                                                <label>Level: </label>
-                                                   <input type="text" class="form-control" id="PositionLevel"
-                                                               name="PositionLevel" readonly value="<?php echo $PositionLevel; ?>">     
-                                            </div>
-                                        </li>
-                                        <li>
-                                            <div class = "form-group">
-                                               <label> Description: </label>
-                                                  <input type="text" class="form-control" id="Description"
-                                                               name="Description" readonly value="<?php echo $Description; ?>">       
-                                            </div>
-                                        </li>
-                                        <li>
-                                            <div class = "form-group">
-                                               <label>  Qualifications: </label>
-                                                  <input type="text" class="form-control" id="Qualifications"
-                                                               name="Qualifications" readonly value="<?php echo $Qualifications; ?>">       
-                                            </div>
-                                        </li>
-                                        <li>
-                                            <div class = "form-group">
-                                               <label> Location: </label>
-                                                  <input type="text" class="form-control" id="Location"
-                                                               name="Location" readonly value="<?php echo $Location; ?>">       
-                                            </div>
-                                        </li>
-                                        <li>
-                                            <div class = "form-group">
-                                               <label> Range of Salary: </label>
-                                                  <input type="text" class="form-control" id="SalaryRange"
-                                                               name="SalaryRange" readonly value="<?php echo $SalaryRange; ?>">       
-                                            </div>
-                                        </li>
-                                        <li>
-                                            <div class = "form-group">
-                                               <label> Required years of experience: </label>
-                                                  <input type="text" class="form-control" id="RequiredYOE"
-                                                               name="RequiredYOE" readonly value="<?php echo $RequiredYOE; ?>">       
-                                            </div>
-                                        </li>
-                                        <li>
-                                            <div class = "form-group">
-                                               <label> Consider Fresh Graduate: </label>
-                                                  <input type="text" class="form-control" id="CFG"
-                                                               name="CFG" readonly value="<?php echo $CFG; ?>">       
-                                            </div>
-                                        </li>
-                                        <li>
-                                            <div class = "form-group">
-                                               <label> Duration of Request: </label>
-                                                  <input type="text" class="form-control" id="DurationOfRequest"
-                                                               name="DurationOfRequest" readonly value="<?php echo $DurationOfRequest; ?>">       
-                                            </div>
-                                        </li>
-                                        <li>
-                                            <div class = "form-group">
-                                               <label>Materials for posting.: </label>
-                                                  <input type="text" class="form-control" id="MarketingMaterials"
-                                                               name="MarketingMaterials" readonly value="<?php echo $MarketingMaterials; ?>">       
-                                            </div>
-                                        </li>
-                                        <label = 'usr' class = 'control-label'>Courses to be approved:</label>
-                                        <div class="row">
-                                        
-                                            <div class="col-md-9">
+                                            <li>
                                                 <div class="form-group">
-                                                    <ul>
-                                                        <?php
-                                                        $course_tbl =
-                                                            GSecureSQL::query(
-                                                                "SELECT CourseCode,CourseTitle FROM coursetbl",
-                                                                TRUE
-                                                            );
-                                                        $Course = explode(", ", $Course);
-                                                        foreach ($course_tbl as $value) {
-                                                            $CourseCode = $value[0];
-                                                            $CourseTitle = $value[1];
-                                                            $checked = "";
-                                                            foreach ($Course as $value1) {
-                                                                if($CourseCode == $value1){
-                                                                    $checked = "checked";
-                                                                }
-                                                            }
-                                                            ?>
-                                                            <li>
-                                                                <div class="checkbox checkbox-success">
-                                                                    <input class="styled" type="checkbox" name="Courses[]" <?php echo $checked ?> id="Courses" value="<?php echo $CourseCode; ?>">
-                                                                    <label for="checkbox3"><b><?php echo $CourseTitle; ?> (<?php echo $CourseCode; ?>) </b></label>
-                                                                </div>
-                                                            </li>
-                                                            <?php
-                                                            
-                                                        }
-                                                        ?>
-                                                    </ul>
+                                                    <label> Position Title: </label>
+                                                    <input type="text" class="form-control" id="PositionTitle"
+                                                           name="PositionTitle" readonly
+                                                           value="<?php echo $PositionTitle; ?>">
+                                                </div>
+                                            </li>
+                                            <li>
+                                                <div class="form-group">
+                                                    <label> Employee Classification: </label>
+                                                    <input type="text" class="form-control" id="EmployeeClassification"
+                                                           name="EmployeeClassification" readonly
+                                                           value="<?php echo $EmployeeClassification; ?>">
+                                                </div>
+                                            </li>
+                                            <li>
+                                                <div class="form-group">
+                                                    <label>Level: </label>
+                                                    <input type="text" class="form-control" id="PositionLevel"
+                                                           name="PositionLevel" readonly
+                                                           value="<?php echo $PositionLevel; ?>">
+                                                </div>
+                                            </li>
+                                            <li>
+                                                <div class="form-group">
+                                                    <label> Description: </label>
+                                                    <input type="text" class="form-control" id="Description"
+                                                           name="Description" readonly
+                                                           value="<?php echo $Description; ?>">
+                                                </div>
+                                            </li>
+                                            <li>
+                                                <div class="form-group">
+                                                    <label> Qualifications: </label>
+                                                    <input type="text" class="form-control" id="Qualifications"
+                                                           name="Qualifications" readonly
+                                                           value="<?php echo $Qualifications; ?>">
+                                                </div>
+                                            </li>
+                                            <li>
+                                                <div class="form-group">
+                                                    <label> Location: </label>
+                                                    <input type="text" class="form-control" id="Location"
+                                                           name="Location" readonly value="<?php echo $Location; ?>">
+                                                </div>
+                                            </li>
+                                            <li>
+                                                <div class="form-group">
+                                                    <label> Range of Salary: </label>
+                                                    <input type="text" class="form-control" id="SalaryRange"
+                                                           name="SalaryRange" readonly
+                                                           value="<?php echo $SalaryRange; ?>">
+                                                </div>
+                                            </li>
+                                            <li>
+                                                <div class="form-group">
+                                                    <label> Required years of experience: </label>
+                                                    <input type="text" class="form-control" id="RequiredYOE"
+                                                           name="RequiredYOE" readonly
+                                                           value="<?php echo $RequiredYOE; ?>">
+                                                </div>
+                                            </li>
+                                            <li>
+                                                <div class="form-group">
+                                                    <label> Consider Fresh Graduate: </label>
+                                                    <input type="text" class="form-control" id="CFG"
+                                                           name="CFG" readonly value="<?php echo $CFG; ?>">
+                                                </div>
+                                            </li>
+                                            <li>
+                                                <div class="form-group">
+                                                    <label> Duration of Request: </label>
+                                                    <input type="text" class="form-control" id="DurationOfRequest"
+                                                           name="DurationOfRequest" readonly
+                                                           value="<?php echo $DurationOfRequest; ?>">
+                                                </div>
+                                            </li>
+                                            <li>
+                                                <div class="form-group">
+                                                    <label>Materials for posting.: </label>
+                                                    <input type="text" class="form-control" id="MarketingMaterials"
+                                                           name="MarketingMaterials" readonly
+                                                           value="<?php echo $MarketingMaterials; ?>">
+                                                </div>
+                                            </li>
+                                            <label = 'usr' class = 'control-label'>Specialization to be approved:</label>
+                                            <div class="row">
+
+                                                <div class="col-md-9">
+                                                    <div class="form-group">
+                                                    </div>
                                                 </div>
                                             </div>
-                                        </div>
-                                            <?php
-                                            /*
-                                            $Course = explode(", ", $Course);
-                                            foreach ($Course as $value1) {
-                                                $Course = $value1;
-                                                ?>
-                                                <ul>
-                                                    <li class="fa fa-angle-right"> <?php echo $Course; ?></li>
-                                                </ul>
-                                            <?php
-                                        }
-                                        */
-                                        ?>
-                                        <li>
-                                            <label>Duration from: <?php echo date("Y/m/d"); ?> </label>
-                                            <input type="date" name="DateTo" id="date_to" class="form-control">
-                                        </li>
-                                        <li>
-                                            <label>to: </label>
-                                            <input type="date" name="DateTo" id="date_to" class="form-control">
-                                        </li>    
+                                            <li>
+                                                <label>Duration from: <?php echo date("Y/m/d"); ?> </label>
+                                                <input type="date" name="DateTo" id="date_to" class="form-control">
+                                            </li>
+                                            <li>
+                                                <label>to: </label>
+                                                <input type="date" name="DateTo" id="date_to" class="form-control">
+                                            </li>
                                         </ul>
                                     </div>
                                     <input type="hidden" name="lid" value="<?php echo $LID; ?>"/>

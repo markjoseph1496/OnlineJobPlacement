@@ -172,16 +172,13 @@ if (isset($_POST['lid'])) {
     $DateFrom = date("Y-m-d");
     $DateTo = $_POST['DateTo'];
 
-    $Courses = $_POST['Courses'];
-    $Courses = implode(", ", $Courses);
 
     GSecureSQL::query(
-        "UPDATE logrequesttbl SET DateFrom = ?, DateTo = ?, Course = ?, Status = 'Accepted' WHERE LID = ?",
+        "UPDATE logrequesttbl SET DateFrom = ?, DateTo = ?, Status = 'Accepted' WHERE LID = ?",
         FALSE,
-        "ssss",
+        "sss",
         $DateFrom,
         $DateTo,
-        $Courses,
         $LID
         
     );

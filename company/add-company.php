@@ -211,18 +211,19 @@ if (isset($_GET['btnsaveuser'])) {
         $Position,
         $Department,
         $CompanyID
-        );
-        header("location: company-settingsaccount.php?id=AccountEdit");
+    );
+    header("location: company-settingsaccount.php?id=AccountEdit");
 }
 
 // Update ng Available Position
 if (isset($_GET['update_PositionID'])) {
     # code...
-}if(isset($_POST['btnRequestLOG'])){
+}
+if (isset($_POST['btnRequestLOG'])) {
     $PositionTitle = $_POST['rPTitle'];
 
     $EmploymentType = $_POST['rEType']; //Checkbox array
-    $EmploymentType = implode(", ",$EmploymentType);
+    $EmploymentType = implode(", ", $EmploymentType);
 
     $OtherEType = $_POST['other']; //checkbox other
     $txtOtherEType = $_POST['txtOther']; //other field
@@ -238,8 +239,8 @@ if (isset($_GET['update_PositionID'])) {
     $Location = $_POST['rLocation'];
     $SalaryRange = $_POST['rSalaryRange'];
 
-    $Courses = $_POST['Courses'];
-    $Courses = implode(", ", $Courses);
+    $Specialize = $_POST['specialized'];
+    $Specialize = implode(", ", $Specialize);
 
     $YearOfExperience = $_POST['rYOE'];
     $CFG = $_POST['CFG'];
@@ -248,15 +249,15 @@ if (isset($_GET['update_PositionID'])) {
     $MarketingMaterials = $_POST['MarketingMaterials'];
     $DateRequested = date("Y-m-d");
 
-    if($OtherEType == "on"){
+    if ($OtherEType == "on") {
         $EmploymentType = $EmploymentType . ", " . $txtOtherEType;
     }
 
-    if($pOther == "on"){
+    if ($pOther == "on") {
         $rPLevel = $rPLevel . ", " . $txtPOther;
     }
 
-    if($DurationOfRequest == "other"){
+    if ($DurationOfRequest == "other") {
         $DurationOfRequest = $txtDORother;
     }
 
@@ -276,7 +277,7 @@ if (isset($_GET['update_PositionID'])) {
         CFG,
         DurationOfRequest,
         MarketingMaterials,
-        Course)
+        Specialization)
         VALUES
         (?,'Pending',?,?,?,?,?,?,?,?,?,?,?,?,?)",
         FALSE,
@@ -294,7 +295,7 @@ if (isset($_GET['update_PositionID'])) {
         $CFG,
         $DurationOfRequest,
         $MarketingMaterials,
-        $Courses
+        $Specialize
     );
 
     header("location: company.php");
@@ -312,7 +313,7 @@ if (isset($_POST['uAvPosition'])) {
         "ss",
         $uAvPosition,
         $aPositionID
-        );
+    );
 
     header("location: company-positionlist.php?id=2");
 }
