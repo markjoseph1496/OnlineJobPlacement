@@ -760,52 +760,54 @@
                 </div>
                 <!-- End Big Heading -->
 
-                <!--Start Clients Carousel-->
                 <div class="our-clients">
-                    <div class="clients-carousel custom-carousel touch-carousel navigation-3" data-appeared-items="5" data-navigation="true">
+                    <div class="clients-carousel custom-carousel touch-carousel owl-carousel owl-theme" data-appeared-items="5" data-navigation="false" style="opacity: 1; display: block;">
 
                         <!-- Client 1 -->
-                        <div class="client-item item">
-                          <a href="#"><img src="img/partner-company/ihop.png" alt="" /></a>
-                        </div>
-
-                        <!-- Client 2 -->
-                        <div class="client-item item">
-                          <a href="#"><img src="img/partner-company/suysing.png" alt="" /></a>
-                        </div>
-
-                        <!-- Client 3 -->
-                        <div class="client-item item">
-                          <a href="#"><img src="img/partner-company/pf-chang.png" alt="" /></a>
-                        </div>
-
-                        <!-- Client 4 -->
-                        <div class="client-item item">
-                          <a href="#"><img src="img/partner-company/sykes.jpg" alt="" /></a>
-                        </div>
-
-                        <!-- Client 5 -->
-                        <div class="client-item item">
-                          <a href="#"><img src="img/partner-company/teletech.jpg" alt="" /></a>
-                        </div>
-
-                        <!-- Client 6 -->
-                        <div class="client-item item">
-                          <a href="#"><img src="img/partner-company/redfox.jpg" alt="" /></a>
-                        </div>
-
-                        <!-- Client 7 -->
-                        <div class="client-item item">
-                          <a href="#"><img src="img/partner-company/californiapizza.png" alt="" /></a>
-                        </div>
-
-                        <!-- Client 8 -->
-                        <div class="client-item item">
-                          <a href="#"><img src="img/partner-company/enoz.jpg" alt="" /></a>
+                        <div class="owl-wrapper-outer"><div class="owl-wrapper" style="width: 3008px; left: 0px; display: block;">
+                            <div class="owl-item" style="width: 188px;">
+                                <div class="client-item item">
+                                    <a href="#"><img src="img/partner-company/accenture.png" alt=""></a>
+                                </div>
+                            </div>
+                            <div class="owl-item" style="width: 188px;">
+                                <div class="client-item item">
+                                    <a href="#"><img src="img/partner-company/accenture.png" alt=""></a>
+                                </div>
+                            </div>
+                            <div class="owl-item" style="width: 188px;">
+                                <div class="client-item item">
+                                    <a href="#"><img src="img/partner-company/accenture.png" alt=""></a>
+                                </div>
+                            </div>
+                            <div class="owl-item" style="width: 188px;">
+                                <div class="client-item item">
+                                    <a href="#"><img src="img/partner-company/.png" alt=""></a>
+                                </div>
+                            </div>
+                            <div class="owl-item" style="width: 188px;">
+                                <div class="client-item item">
+                                    <a href="#"><img src="img/partner-company/.png" alt=""></a>
+                                </div>
+                            </div>
+                            <div class="owl-item" style="width: 188px;">
+                                <div class="client-item item">
+                                    <a href="#"><img src="img/partner-company/.png" alt=""></a>
+                                </div>
+                            </div>
+                            <div class="owl-item" style="width: 188px;">
+                                <div class="client-item item">
+                                    <a href="#"><img src="img/partner-company/.png" alt=""></a>
+                                </div>
+                            </div>
+                            <div class="owl-item" style="width: 188px;">
+                                <div class="client-item item">
+                                    <a href="#"><img src="img/partner-company/.png" alt=""></a>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
-                <!-- End Clients Carousel -->
             </div>
             <!-- End Client/Partner Section -->
         </div>
