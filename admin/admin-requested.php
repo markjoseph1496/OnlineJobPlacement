@@ -353,7 +353,8 @@ if (isset($_SESSION['AdminID'])) {
                             companyinfotbl.City
                         FROM
                             companyinfotbl
-                        INNER JOIN logrequesttbl ON companyinfotbl.CompanyID = logrequesttbl.CompanyID WHERE logrequesttbl.Status = 'Pending' ORDER BY logrequesttbl.DateRequested ASC",
+                        INNER JOIN logrequesttbl ON companyinfotbl.CompanyID = logrequesttbl.CompanyID
+                        WHERE logrequesttbl.Status = 'Pending' ORDER BY logrequesttbl.DateRequested ASC",
                         TRUE
                     );
                 foreach ($requestlog_tbl as $value) {

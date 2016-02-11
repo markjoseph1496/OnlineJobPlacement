@@ -543,10 +543,10 @@ if (count($LOGquery1) > 0) {
                                         studcontactstbl.MobileNumber,
                                         studcontactstbl.City
                                         FROM
-                                        specializationtbl
-                                        INNER JOIN `studentinfotbl` ON `studcontactstbl`.`StudentID` = `studentinfotbl`.`StudentID`
-                                        INNER JOIN studcontactstbl ON specializationtbl.StudentID = studcontactstbl.StudentID
-                                        WHERE specializationtbl.Specialization IN ('$RequestedSpecialization')",
+                                        studcontactstbl
+                                        INNER JOIN studentinfotbl ON studcontactstbl.StudentID = studentinfotbl.StudentID
+                                        INNER JOIN specializationtbl ON studentinfotbl.StudentID = specializationtbl.StudentID
+                                        WHERE specializationtbl.Specialization IN ('LIKE%$RequestedSpecialization')",
                                         TRUE
                                     );
                                 if (empty($listofgraduates_tbl)) {
