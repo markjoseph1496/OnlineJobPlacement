@@ -317,3 +317,60 @@ if (isset($_POST['uAvPosition'])) {
 
     header("location: company-positionlist.php?id=2");
 }
+
+//Change Company Username
+if (isset($_POST['ModalNewUsername'])) {
+    $Username = $_POST['ModalNewUsername'];
+
+    GSecureSQL::query(
+        "UPDATE companyinfotbl SET Email = ? WHERE CompanyID = ?",
+        FALSE,
+        "ss",
+        $Username,
+        $CompanyID
+    );
+
+    header("location: company-settingsaccount.php?id=1");
+
+}
+
+//Change Company Password
+if (isset($_POST['ModalNewPassword'])) {
+    $OldPassword = $_POST['ModalOldPassword'];
+    $NewPassword = $_POST['ModalNewPassword'];
+
+    $admin_tbl =
+        GSecureSQL::query(
+            "SELECT
+                `Password`,
+                `SaltedPassword`
+            FROM `companyinfotbl` WHERE `CompanyID` = ?",
+            TRUE,
+            "s",
+            $CompanyID
+        );
+
+    if (count($admin_tbl)) {
+        if (hash('sha512', $OldPassword . $admin_tbl[0][1]) == $admin_tbl[0][0]) {
+
+            $salt = hash('sha512', mt_rand(0, PHP_INT_MAX) . mt_rand(0, PHP_INT_MAX) . mt_rand(0, PHP_INT_MAX));
+            $NewPassword = hash('sha512', $NewPassword . $salt);
+
+            GSecureSQL::query(
+                "UPDATE companyinfotbl SET Password = ? , SaltedPassword = ? WHERE CompanyID = ?",
+                FALSE,
+                "sss",
+                $NewPassword,
+                $salt,
+                $CompanyID
+            );
+
+            header("location: company-settingsaccount.php?id=2");
+
+        } else {
+            echo "Wrong password";
+        }
+    } else {
+        echo "Wrong password";
+    }
+}

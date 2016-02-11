@@ -254,10 +254,10 @@ if (isset($_GET['BtnCalendarsave'])) {
     $descrip = $_GET['descrip'];
 
     GSecureSQL::query(
-        "INSERT INTO admineventtbl (CompanyID,EventTitle,EventDatef,EventDatet,Location,Description) values (?,?,?,?,?,?)",
+        "INSERT INTO admineventtbl (AdminID,EventTitle,EventDatef,EventDatet,Location,Description) values (?,?,?,?,?,?)",
         FALSE,
         "ssssss",
-        $CompanyID,
+        $AdminID,
         $eventtitle,
         $datefrom,
         $dateto,
