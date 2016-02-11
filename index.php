@@ -1,5 +1,5 @@
 <?php
-include("../connection.php");
+include("connection.php");
 
 $adminevent_tbl = 
     GSecureSQL::query(
@@ -784,42 +784,42 @@ $adminevent_tbl =
 
                             <!-- Company 1 -->
                             <div class="client-item item">
-                                <a href="#"><img src="images/c1.png" alt="" /></a>
+                                <a href="#"><img src="images/partner-company/accenture.png" alt="" /></a>
                             </div>
 
                             <!-- Company 2 -->
                             <div class="client-item item">
-                                <a href="#"><img src="images/c2.png" alt="" /></a>
+                                <a href="#"><img src="images/partner-company/sykes.png" alt="" /></a>
                             </div>
 
                             <!-- Company 3 -->
                             <div class="client-item item">
-                                <a href="#"><img src="images/c2.png" alt="" /></a>
+                                <a href="#"><img src="images/partner-company/cicc.png" alt="" /></a>
                             </div>
 
                             <!-- Company 4 -->
                             <div class="client-item item">
-                                <a href="#"><img src="images/c2.png" alt="" /></a>
+                                <a href="#"><img src="images/partner-company/concentrix.png" alt="" /></a>
                             </div>
 
                             <!-- Company 5 -->
                             <div class="client-item item">
-                                <a href="#"><img src="images/c2.png" alt="" /></a>
+                                <a href="#"><img src="images/partner-company/globe.png" alt="" /></a>
                             </div>
 
                             <!-- Company 6 -->
                             <div class="client-item item">
-                                <a href="#"><img src="images/c2.png" alt="" /></a>
+                                <a href="#"><img src="images/partner-company/collabera.png" alt="" /></a>
                             </div>
 
                             <!-- Company 7 -->
                             <div class="client-item item">
-                                <a href="#"><img src="images/c2.png" alt="" /></a>
+                                <a href="#"><img src="images/partner-company/business-tends.png" alt="" /></a>
                             </div>
 
                             <!-- Company 8 -->
                             <div class="client-item item">
-                                <a href="#"><img src="images/c2.png" alt="" /></a>
+                                <a href="#"><img src="images/partner-company/aickman.png" alt="" /></a>
                             </div>
                         </div>
                     </div>
@@ -827,7 +827,7 @@ $adminevent_tbl =
                     <div class="row">
                         <div class="col-md-6">&nbsp;</div>
                         <div class="col-md-6">
-                            <label style="float:right;"><a href="">See Other Companies <i class="fa fa-caret-right"></i></a></label>
+                            <label style="float:right;"><a href="for-index/other-companies.php">See Other Companies <i class="fa fa-caret-right"></i></a></label>
                         </div>
                     </div>
                 </div>
