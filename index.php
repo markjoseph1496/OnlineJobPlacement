@@ -1,3 +1,19 @@
+<?php
+include("../connection.php");
+
+$adminevent_tbl = 
+    GSecureSQL::query(
+        "SELECT 
+        *
+        FROM
+        adminteventtbl"
+        );
+    $EventTitle = $adminevent_tbl[0][0];
+    $EventDateF = $adminevent_tbl[0][1];
+    $EventDateT = $adminevent_tbl[0][2];
+    $Description = $adminevent_tbl[0][3];
+    $ProfileImage = $adminevent_tbl[0][4];
+?>
 <!doctype html>
 <html lang="en">
 
