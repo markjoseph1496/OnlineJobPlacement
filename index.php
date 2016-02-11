@@ -138,7 +138,7 @@ $adminevent_tbl =
                 <!-- Carousel inner -->
                 <div class="carousel-inner">
                     <div class="item active">
-                        <img class="img-responsive" src="img/slider/1.png" alt="slider">
+                        <img class="img-responsive" src="images/slider/1.png" alt="slider">
                         <div class="slider-content">
                             <div class="col-md-12 text-center">
                                 <h2 class="animated2">
@@ -153,11 +153,11 @@ $adminevent_tbl =
                     </div>
                     <!--/ Carousel item end -->
                     <div class="item">
-                        <img class="img-responsive" src="img/slider/2.png" alt="slider">
+                        <img class="img-responsive" src="images/slider/2.png" alt="slider">
                     </div>
                     <!--/ Carousel item end -->
                     <div class="item">
-                        <img class="img-responsive" src="img/slider/3.jpg" alt="slider">
+                        <img class="img-responsive" src="images/slider/3.jpg" alt="slider">
                         <!--<div class="slider-content">
                             <div class="col-md-12 text-center">
                                 <h2 class="animated7 white">
@@ -335,7 +335,7 @@ $adminevent_tbl =
             <div id="events" class="section" style="background-color:#00599D;">
                 <div class="container">
                     <div class="recent-projects">
-                        <h4 class="title wite-text">Events</h4>
+                        <h4 class="title-yellow wite-text">Events</h4>
                         <div class="projects-carousel touch-carousel">
 
                             <div class="portfolio-item item">
@@ -585,7 +585,7 @@ $adminevent_tbl =
                                             <div class="post-type"><i class="fa fa-picture-o"></i></div>
                                         </div>
                                         <h3 class="post-title"><a href="#"><?php echo $EventTitle?></a></h3>
-                                        <div class="post-content">
+                                        <div class="post-contents">
                                             <p>
                                                 <?php echo $Description?>
                                                 <a class="read-more" href="#">Read More...</a>
@@ -755,7 +755,7 @@ $adminevent_tbl =
 
                             <!-- Company 7 -->
                             <div class="client-item item">
-                                <a href="#"><img src="images/partner-company/business-tends.png" alt="" /></a>
+                                <a href="#"><img src="images/partner-company/business-trends.png" alt="" /></a>
                             </div>
 
                             <!-- Company 8 -->

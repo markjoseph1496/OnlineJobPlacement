@@ -497,7 +497,7 @@ ul.social-list li a:hover {
 }
 
 ul.social-list li a.bell:hover {
-	background-color: #337ab7;
+	background-color: #00599D;
 }
 
 ul.social-list li a.facebook:hover {
@@ -1849,7 +1849,7 @@ input[type="submit"] {
 }
 
 .btn-system.btn-black {
-	background-color: #337ab7;
+	background-color: #00599D;
 }
 
 .btn-system.btn-wite{
@@ -2885,10 +2885,9 @@ ul.icons-list li i {
 .classic-title {
 	margin-bottom: 16px;
 	padding-bottom: 8px;
-	border-bottom: 1px solid #FF0;
+	border-bottom: 1px solid #eee;
     font-weight: 300;
 }
-
 
 .classic-title span {
 	padding-bottom: 8px;
@@ -3442,6 +3441,12 @@ and (min-width : 551px){
 .recent-projects h4.title {
 	margin-bottom: 16px;
 	padding-bottom: 8px;
+	border-bottom: 1px solid #eee;
+}
+
+.recent-projects h4.title-yellow {
+	margin-bottom: 16px;
+	padding-bottom: 8px;
 	border-bottom: 1px solid #FF0;
 }
 
@@ -3594,6 +3599,10 @@ and (min-width : 551px){
 }
 
 .post-content p {
+	color: #666;
+}
+
+.post-contents p {
 	color: #fff;
 }
 
@@ -4218,7 +4227,7 @@ footer a:hover {
 }
 
 .social-widget ul.social-icons li a.bell:hover i {
-	background-color: #337ab7;
+	background-color: #00599D;
 }
 
 .social-widget ul.social-icons li a.facebook:hover i {

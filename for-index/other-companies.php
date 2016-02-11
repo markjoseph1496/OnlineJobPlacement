@@ -1,4 +1,6 @@
+<!DOCTYPE html>
 <html lang="en">
+
 <head>
 
     <!-- Basic -->
@@ -19,9 +21,10 @@
 
     <!-- BootstrapValidator CSS -->
     <link href="../css/bootstrapValidator.min.css" rel="stylesheet"/>
+
     <!-- jQuery and Bootstrap JS -->
-    <script src="../js/jquery.min.js" type="text/javascript"></script>
-    <script src="../js/bootstrap.min.js" type="text/javascript"></script>
+    <script type="text/javascript" src="../js/jquery.min.js"></script>
+    <script type="text/javascript" src="../js/bootstrap.min.js"></script>
 
     <!-- BootstrapValidator -->
     <script src="../js/bootstrapValidator.min.js" type="text/javascript"></script>
@@ -45,8 +48,14 @@
     <!-- Css3 Transitions Styles  -->
     <link rel="stylesheet" type="text/css" href="../css/animate.css" media="screen">
 
+    <!-- OJPMS CSS  -->
+    <link rel="stylesheet" type="text/css" href="../css/ojpms-style.css" media="screen">
+
     <!-- Color CSS Styles  -->
     <link rel="stylesheet" type="text/css" href="../css/colors/yellow.css" title="yellow" media="screen"/>
+
+    <!-- Pagination -->
+    <link rel="stylesheet" href="../css/simplePagination.css"/>
 
     <!-- JS  -->
     <script type="text/javascript" src="../js/jquery.migrate.js"></script>
@@ -83,7 +92,21 @@
                             <img src="../images/ojpms.png">
                         </a>
                     </div>
+                    <div class="navbar-collapse collapse">
+                        <!-- Start Navigation List -->
+                        <ul class="nav navbar-nav navbar-right">
+                            
+                        </ul>
+                        <!-- End Navigation List -->
+                    </div>
                 </div>
+                <!-- Mobile Menu Start -->
+                <ul class="wpb-mobile-menu">
+                    <li>
+                        <a href="../search-job/jobs.php">Jobs</a>
+                    </li>
+                </ul>
+                <!-- Mobile Menu End -->
             </div>
         </header>
 
@@ -96,9 +119,6 @@
                 </div>
             </div>
         </div>
-        <!-- End Page Banner -->
-
-        <!-- FEAUTURED HERE -->
 
         <!-- Start Content -->
         <div id="content">
@@ -107,153 +127,190 @@
                     <div class="our-clients">
                         <div class="clients-carousel custom-carousel touch-carousel" data-appeared-items="5" data-navigation="false">
 
-                            <!-- Company 1 -->
-                            <div class="client-item item">
+                            <div class="item">
                                 <a href="#"><img src="../images/partner-company/accenture.png" alt="" /></a>
                             </div>
 
-                            <!-- Company 2 -->
-                            <div class="client-item item">
-                                <a href="#"><img src="images/partner-company/sykes.png" alt="" /></a>
+                            <div class="item">
+                                <a href="#"><img src="../images/partner-company/admerex.bmp" alt="" /></a>
                             </div>
 
-                            <!-- Company 3 -->
-                            <div class="client-item item">
-                                <a href="#"><img src="images/partner-company/cicc.png" alt="" /></a>
+                            <div class="item">
+                                <a href="#"><img src="../images/partner-company/aickman.png" alt="" /></a>
                             </div>
 
-                            <!-- Company 4 -->
-                            <div class="client-item item">
-                                <a href="#"><img src="images/partner-company/concentrix.png" alt="" /></a>
+                            <div class="item">
+                                <a href="#"><img src="../images/partner-company/sykes.png" alt="" /></a>
                             </div>
 
-                            <!-- Company 5 -->
-                            <div class="client-item item">
-                                <a href="#"><img src="images/partner-company/globe.png" alt="" /></a>
-                            </div>
-
-                            <!-- Company 6 -->
-                            <div class="client-item item">
-                                <a href="#"><img src="images/partner-company/collabera.png" alt="" /></a>
-                            </div>
-
-                            <!-- Company 7 -->
-                            <div class="client-item item">
-                                <a href="#"><img src="images/partner-company/business-tends.png" alt="" /></a>
-                            </div>
-
-                            <!-- Company 8 -->
-                            <div class="client-item item">
-                                <a href="#"><img src="images/partner-company/aickman.png" alt="" /></a>
+                            <div class="item">
+                                <a href="#"><img src="../images/partner-company/cicc.png" alt="" /></a>
                             </div>
                         </div>
                     </div>
-                </div>
-                <div class=" portfolio-page portfolio-4column">
-                    <ul id="portfolio-list" data-animated="fadeIn">
-                        <li>
-                            <img src="../images/partner-company/accenture.png" alt="" />
-                            <div class="portfolio-item-content">
-                                <span class="header">Town winter 2013</span>
-                                <p class="body">web develpment, design</p>
+
+                    <div class="our-clients">
+                        <div class="clients-carousel custom-carousel touch-carousel" data-appeared-items="5" data-navigation="false">
+
+                            <div class="item">
+                                <a href="#"><img src="../images/partner-company/concentrix.png" alt="" /></a>
                             </div>
-                            <a href="#"><i class="more">+</i></a>
-                        </li>
-                        <li>
-                            <img src="../images/partner-company/admerex.bmp" alt="" />
-                            <div class="portfolio-item-content">
-                                <span class="header">Quarterly Musashino</span>
-                                <p class="body">web develpment, design</p>
+
+                            <div class="item">
+                                <a href="#"><img src="../images/partner-company/globe.png" alt="" /></a>
                             </div>
-                            <a href="#"><i class="more">+</i></a>
-                        </li>
-                        <li>
-                            <img src="../images/partner-company/aickman.png" alt="" />
-                            <div class="portfolio-item-content">
-                                <span class="header">Mainichi April 2014</span>
-                                <p class="body">web develpment, design</p>
-                          </div>
-                          <a href="#"><i class="more">+</i></a>
-                        </li>
-                        <li>
-                            <img src="../images/partner-company/alorica.jpg" alt="" />
-                            <div class="portfolio-item-content">
-                                <span class="header">Quarterly Musashino</span>
-                                <p class="body">web develpment, design</p>
+
+                            <div class="item">
+                                <a href="#"><img src="../images/partner-company/collabera.png" alt="" /></a>
                             </div>
-                            <a href="#"><i class="more">+</i></a>
-                        </li>
-                        <li>
-                            <img src="../images/partner-company/anr.jpg" alt="" />
-                            <div class="portfolio-item-content">
-                                <span class="header">Majesty express vol. 01</span>
-                                <p class="body">web develpment, design</p>
+
+                            <div class="item">
+                                <a href="#"><img src="../images/partner-company/business-trends.png" alt="" /></a>
                             </div>
-                            <a href="#"><i class="more">+</i></a>
-                        </li>
-                        <li>
-                            <img src="../images/partner-company/benby.jpg" alt="" />
-                            <div class="portfolio-item-content">
-                                <span class="header">Monocle issue 69</span>
-                                <p class="body">web develpment, design</p>
+
+                            <div class="item">
+                                <a href="#"><img src="../images/partner-company/accenture.png" alt="" /></a>
                             </div>
-                            <a href="#"><i class="more">+</i></a>
-                        </li>
-                        <li>
-                            <img src="../images/partner-company/boardwalk.png" alt="" />
-                            <div class="portfolio-item-content">
-                                <span class="header">Monocle issue 69</span>
-                                <p class="body">web develpment, design</p>
+                        </div>
+                    </div>
+
+                    <div class="our-clients">
+                        <div class="clients-carousel custom-carousel touch-carousel" data-appeared-items="5" data-navigation="false">
+
+                            <div class="item">
+                                <a href="#"><img src="../images/partner-company/collabera.png" alt="" /></a>
                             </div>
-                            <a href="#"><i class="more">+</i></a>
-                        </li>
-                        <li>
-                            <img src="../images/partner-company/bpo.jpg" alt="" />
-                            <div class="portfolio-item-content">
-                                <span class="header">Monocle issue 69</span>
-                                <p class="body">web develpment, design</p>
+
+                            <div class="item">
+                                <a href="#"><img src="../images/partner-company/business-trends.png" alt="" /></a>
                             </div>
-                            <a href="#"><i class="more">+</i></a>
-                        </li>
-                        <li>
-                            <img src="../images/partner-company/business-trends.png" alt="" />
-                            <div class="portfolio-item-content">
-                                <span class="header">Monocle issue 69</span>
-                                <p class="body">web develpment, design</p>
+
+                            <div class="item">
+                                <a href="#"><img src="../images/partner-company/accenture.png" alt="" /></a>
                             </div>
-                            <a href="#"><i class="more">+</i></a>
-                        </li>
-                        <li>
-                            <img src="../images/partner-company/cicc.png" alt="" />
-                            <div class="portfolio-item-content">
-                                <span class="header">Monocle issue 69</span>
-                                <p class="body">web develpment, design</p>
+
+                            <div class="item">
+                                <a href="#"><img src="../images/partner-company/admerex.bmp" alt="" /></a>
                             </div>
-                            <a href="#"><i class="more">+</i></a>
-                        </li>
-                        <li>
-                            <img src="../images/partner-company/circuit.png" alt="" />
-                            <div class="portfolio-item-content">
-                                <span class="header">Monocle issue 69</span>
-                                <p class="body">web develpment, design</p>
+
+                            <div class="item">
+                                <a href="#"><img src="../images/partner-company/aickman.png" alt="" /></a>
                             </div>
-                            <a href="#"><i class="more">+</i></a>
-                        </li>
-                        <li>
-                            <img src="../images/partner-company/collabera.png" alt="" />
-                            <div class="portfolio-item-content">
-                                <span class="header">Monocle issue 69</span>
-                                <p class="body">web develpment, design</p>
+                        </div>
+                    </div>
+
+                    <div class="our-clients">
+                        <div class="clients-carousel custom-carousel touch-carousel" data-appeared-items="5" data-navigation="false">
+
+                            <div class="item">
+                                <a href="#"><img src="../images/partner-company/collabera.png" alt="" /></a>
                             </div>
-                            <a href="#"><i class="more">+</i></a>
-                        </li>
-                    </ul>
-                    <!-- End Portfolio Items -->
+
+                            <div class="item">
+                                <a href="#"><img src="../images/partner-company/business-trends.png" alt="" /></a>
+                            </div>
+
+                            <div class="item">
+                                <a href="#"><img src="../images/partner-company/accenture.png" alt="" /></a>
+                            </div>
+
+                            <div class="item">
+                                <a href="#"><img src="../images/partner-company/admerex.bmp" alt="" /></a>
+                            </div>
+
+                            <div class="item">
+                                <a href="#"><img src="../images/partner-company/aickman.png" alt="" /></a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="our-clients">
+                        <div class="clients-carousel custom-carousel touch-carousel" data-appeared-items="5" data-navigation="false">
+
+                            <div class="item">
+                                <a href="#"><img src="../images/partner-company/collabera.png" alt="" /></a>
+                            </div>
+
+                            <div class="item">
+                                <a href="#"><img src="../images/partner-company/business-trends.png" alt="" /></a>
+                            </div>
+
+                            <div class="item">
+                                <a href="#"><img src="../images/partner-company/accenture.png" alt="" /></a>
+                            </div>
+
+                            <div class="item">
+                                <a href="#"><img src="../images/partner-company/admerex.bmp" alt="" /></a>
+                            </div>
+
+                            <div class="item">
+                                <a href="#"><img src="../images/partner-company/aickman.png" alt="" /></a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="our-clients">
+                        <div class="clients-carousel custom-carousel touch-carousel" data-appeared-items="5" data-navigation="false">
+
+                            <div class="item">
+                                <a href="#"><img src="../images/partner-company/collabera.png" alt="" /></a>
+                            </div>
+
+                            <div class="item">
+                                <a href="#"><img src="../images/partner-company/business-trends.png" alt="" /></a>
+                            </div>
+
+                            <div class="item">
+                                <a href="#"><img src="../images/partner-company/accenture.png" alt="" /></a>
+                            </div>
+
+                            <div class="item">
+                                <a href="#"><img src="../images/partner-company/admerex.bmp" alt="" /></a>
+                            </div>
+
+                            <div class="item">
+                                <a href="#"><img src="../images/partner-company/aickman.png" alt="" /></a>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
     <!-- End Content -->
+
     <script type="text/javascript" src="../js/script.js"></script>
+
+    <!-- Start Footer Section -->
+    <footer>
+        <div class="container">
+            <!-- Start Copyright -->
+            <div class="copyright-section">
+                <div class="row">
+                    <div class="col-md-6">
+                        <p>&copy; 2015 OJPMS - All Rights Reserved</p>
+                    </div>
+                    <!-- .col-md-6 -->
+                    <div class="col-md-6">
+                        <ul class="footer-nav">
+                            <li><a href="#">Sitemap</a>
+                            </li>
+                            <li><a href="#">Privacy Policy</a>
+                            </li>
+                            <li><a href="#">Contact</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <!-- .col-md-6 -->
+                </div>
+                <!-- .row -->
+            </div>
+            <!-- End Copyright -->
+        </div>
+    </footer>
+    <!-- End Footer Section -->
+
+    <!-- Go To Top Link -->
+    <a href="#" class="back-to-top"><i class="fa fa-angle-up"></i></a>
 </body>
 </html>

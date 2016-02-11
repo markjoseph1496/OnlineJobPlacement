@@ -632,7 +632,7 @@ $Progress = $progress_tbl[0][0];
                                                                 <!-- Post Content -->
                                                                 <div class='post-content'>
                                                                     <div class='post-type'><i
-                                                                            class='fa fa-picture-o'></i>
+                                                                            class='fa fa-star'></i>
                                                                     </div>
                                                                     <h2><a href='#'><?php echo $PositionTitle; ?></a>
                                                                     </h2>
