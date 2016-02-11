@@ -272,22 +272,22 @@ $Address = $companyuser_tbl[0][8];
         <div class="modal-dialog" style="padding:100px">
 
             <!-- Modal content-->
-            <form id="change-Username-form" autocomplete="off" method="POST" action="functions.php">
+            <form id="change-Username-form" autocomplete="off" method="POST" action="add-company.php">
                 <div class="modal-content">
                     <div class="modal-header">
                         <button type="button" class="close" data-dismiss="modal">&times;</button>
-                        <h4 class="modal-title">Change Username</h4>
+                        <h4 class="modal-title">Change Email</h4>
                     </div>
                     <div class="modal-body">
                         <div class="col-md-15 fieldcol">
-                            <label = "usr" class = "control-label"> New Username: </label>
+                            <label = "usr" class = "control-label"> New Email: </label>
                             <div class="form-group">
                                 <input type="text" name="ModalNewUsername" id="ModalNewUsername" class="form-control">
                             </div>
                         </div>
 
                         <div class="col-md-15 fieldcol">
-                            <label = "usr" class = "control-label"> Confirm Username: </label>
+                            <label = "usr" class = "control-label"> Confirm Email: </label>
                             <div class="form-group">
                                 <input type="text" name="ModalConfirmUsername" id="ModalConfirmUsername" class="form-control">
                             </div>
@@ -295,7 +295,7 @@ $Address = $companyuser_tbl[0][8];
 
                     </div>
                     <div class="modal-footer">
-                        <button type="submit" class="btn btn-primary" name="btnChangeUsername">Change Username</button>
+                        <button type="submit" class="btn btn-primary" name="btnChangeUsername">Change Email</button>
                         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
                     </div>
                 </div>
@@ -308,7 +308,7 @@ $Address = $companyuser_tbl[0][8];
         <div class="modal-dialog" style="padding:100px">
 
             <!-- Modal content-->
-            <form id="change-password-form" autocomplete="off" method="POST" action="functions.php">
+            <form id="change-password-form" autocomplete="off" method="POST" action="add-company.php">
                 <div class="modal-content">
                     <div class="modal-header">
                         <button type="button" class="close" data-dismiss="modal">&times;</button>
@@ -355,16 +355,34 @@ $Address = $companyuser_tbl[0][8];
     <form action="add-company.php" name="companyuser" id="companyuser" autocomplete="off">   
       <div class = "col-md-12">
             <?php
-              if(isset($_GET['id'])){
-                    $id=$_GET['id'];
-                    if($id=="AccountEdit"){
-                        echo '<div class="alert alert-success">
+
+                if (isset($_GET['id'])) {
+                    $id = $_GET['id'];
+                    if ($id == 1) {
+                        echo '
+                    <div class="alert alert-success">
                         <span class="glyphicon glyphicon-info-sign"></span> 
-                        Achievement successfully updated.
-                        </div>';
+                        Email successfully changed.
+                    </div>
+                    ';
+                    } elseif ($id == 2) {
+                        echo '
+                    <div class="alert alert-success">
+                        <span class="glyphicon glyphicon-info-sign"></span> 
+                        Password successfully changed.
+                    </div>
+                    ';
+                    } elseif ($id == 3) {
+                        echo '
+                    <div class="alert alert-success">
+                        <span class="glyphicon glyphicon-info-sign"></span> 
+                        Personal info successfully updated.
+                    </div>
+                    ';
                     }
-                }   
-             ?> 
+
+                }
+                ?>
                    <div class="row field">
                                         <div class = "col-md-2 fieldcol">
                                            <label = "usr" class = "control-label"> Email: </label>
@@ -378,7 +396,7 @@ $Address = $companyuser_tbl[0][8];
                                             <div class="form-group">
                                                 <div class="box">
                                                     <button class="btn btn-default" data-toggle="modal" data-target="#ChangeUsername">Change
-                                                        Username
+                                                        Email
                                                     </button>
                                                 </div>
                                             </div>

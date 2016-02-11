@@ -1,18 +1,14 @@
 <?php
-include("../connection.php");
+include("connection.php");
 
 $adminevent_tbl = 
     GSecureSQL::query(
         "SELECT 
-        *
-        FROM
-        adminteventtbl"
+            *
+        FROM `admineventtbl`
+        LIMIT 6",
+        TRUE
         );
-    $EventTitle = $adminevent_tbl[0][0];
-    $EventDateF = $adminevent_tbl[0][1];
-    $EventDateT = $adminevent_tbl[0][2];
-    $Description = $adminevent_tbl[0][3];
-    $ProfileImage = $adminevent_tbl[0][4];
 ?>
 <!doctype html>
 <html lang="en">
@@ -572,86 +568,31 @@ $adminevent_tbl =
                             <div class="latest-posts">
                                 <h4 class="classic-title wite-text"><strong>Latest News</strong></h4>
                                 <div class="latest-posts-classic custom-carousel touch-carousel" data-appeared-items="2">
+                                    <?php 
+                                        foreach($adminevent_tbl as $adminevent)
+                                        { 
+                                            $EventTitle = $adminevent_tbl[0][2];
+                                            $EventDateF = $adminevent_tbl[0][3];
+                                            $EventDateT = $adminevent_tbl[0][4];
+                                            $Description = $adminevent_tbl[0][6];
+                                            $ProfileImage = $adminevent_tbl[0][8];
+                                    ?>
 
-                                    <!-- Posts 1 -->
-                                    <div class="post-row item">
+                                        <div class="post-row item">
                                         <div class="left-meta-post">
                                             <div class="post-date"><span class="day">28</span><span class="month">Dec</span>
                                             </div>
                                             <div class="post-type"><i class="fa fa-picture-o"></i></div>
                                         </div>
-                                        <h3 class="post-title"><a href="#">Article</a></h3>
+                                        <h3 class="post-title"><a href="#"><?php echo $EventTitle?></a></h3>
                                         <div class="post-content">
-                                            <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore
-                                                eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident,
-                                                sunt in culpa qui officia deserunt mollit. <a class="read-more" href="#">Read
-                                                    More...</a></p>
+                                            <p>
+                                                <?php echo $Description?>
+                                                <a class="read-more" href="#">Read More...</a>
+                                            </p>
                                         </div>
                                     </div>
-
-                                    <!-- Posts 2 -->
-                                    <div class="post-row item">
-                                        <div class="left-meta-post">
-                                            <div class="post-date"><span class="day">28</span><span class="month">Dec</span>
-                                            </div>
-                                            <div class="post-type"><i class="fa fa-picture-o"></i></div>
-                                        </div>
-                                        <h3 class="post-title"><a href="#">Standard Post With Image</a></h3>
-                                        <div class="post-content">
-                                            <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore
-                                                eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident,
-                                                sunt in culpa qui officia deserunt mollit. <a class="read-more" href="#">Read
-                                                    More...</a></p>
-                                        </div>
-                                    </div>
-
-                                    <!-- Posts 3 -->
-                                    <div class="post-row item">
-                                        <div class="left-meta-post">
-                                            <div class="post-date"><span class="day">28</span><span class="month">Dec</span>
-                                            </div>
-                                            <div class="post-type"><i class="fa fa-picture-o"></i></div>
-                                        </div>
-                                        <h3 class="post-title"><a href="#">Standard Post With Image</a></h3>
-                                        <div class="post-content">
-                                            <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore
-                                                eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident,
-                                                sunt in culpa qui officia deserunt mollit. <a class="read-more" href="#">Read
-                                                    More...</a></p>
-                                        </div>
-                                    </div>
-
-                                    <!-- Posts 4 -->
-                                    <div class="post-row item">
-                                        <div class="left-meta-post">
-                                            <div class="post-date"><span class="day">28</span><span class="month">Dec</span>
-                                            </div>
-                                            <div class="post-type"><i class="fa fa-picture-o"></i></div>
-                                        </div>
-                                        <h3 class="post-title"><a href="#">Standard Post With Image</a></h3>
-                                        <div class="post-content">
-                                            <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore
-                                                eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident,
-                                                sunt in culpa qui officia deserunt mollit. <a class="read-more" href="#">Read
-                                                    More...</a></p>
-                                        </div>
-                                    </div>
-
-                                    <!-- Posts 5 -->
-                                    <div class="post-row item">
-                                        <div class="left-meta-post">
-                                            <div class="post-date"><span class="day">28</span><span class="month">Dec</span>
-                                            </div>
-                                            <div class="post-type"><i class="fa fa-picture-o"></i></div>
-                                        </div>
-                                        <h3 class="post-title"><a href="#">Standard Post With Image</a></h3>
-                                        <div class="post-content">
-                                            <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore
-                                                eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident,
-                                                sunt in culpa qui officia deserunt mollit. <a class="read-more" href="#">Read
-                                                    More...</a></p>
-                                        </div>
-                                    </div>
+                                    <?php } ?>
                                 </div>
                             </div>
                             <!-- End Recent Posts Carousel -->
