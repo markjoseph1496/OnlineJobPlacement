@@ -36,7 +36,7 @@ if(isset($_POST['StudentID'])){
         WHERE
         StudentID = ?",
         FALSE,
-        "sssssssssssss",
+        "ssssssssssssss",
         $Company,
         $CompanyAddress,
         $ContactNumber,

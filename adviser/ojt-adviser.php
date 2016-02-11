@@ -447,12 +447,12 @@ if (isset($_SESSION['AdviserID'])) {
                                                 </li>
                                                 <li>
                                                     <div class="form-group">
-                                                       <select class="form-control" name="Status">
-                                                           <option value="">- Status -</option>
-                                                           <option value="On Going">On Going</option>
-                                                           <option value="Incomplete">Incomplete</option>
-                                                           <option value="Finished">Finished</option>
-                                                       </select>
+                                                        <select class="form-control" name="Status">
+                                                            <option value="">- Status -</option>
+                                                            <option value="On Going">On Going</option>
+                                                            <option value="Incomplete">Incomplete</option>
+                                                            <option value="Finished">Finished</option>
+                                                        </select>
                                                     </div>
                                                 </li>
                                                 <div class="hr2" style="margin-top:10px;margin-bottom:10px;"></div>
