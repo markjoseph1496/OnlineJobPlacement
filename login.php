@@ -21,7 +21,7 @@ if (isset($_POST['StudentID'])) {
             $_SESSION['StudentID'] = $StudentID;
             echo "
 		        <script type='text/javascript'>
-		        alert('You have successfully loggged in.');
+		        alert('You have successfully logged in.');
 		        location.href='student-view/search-job/jobs.php';
 		        </script>";
         } else {
@@ -51,7 +51,7 @@ if (isset($_POST['StudentID'])) {
             $_SESSION['CompanyID'] = $companyinfo_tbl[0][0];
             echo "
 		        <script type='text/javascript'>
-		        alert('You have successfully loggged in.');
+		        alert('You have successfully logged in.');
 		        location.href='company/company.php';
 		        </script>";
         } else {
@@ -70,7 +70,7 @@ if (isset($_POST['StudentID'])) {
                 `AdminID`,
                 `Password`,
                 `SaltedPassword`
-            FROM `admintbl` WHERE `Username` = ?",
+            FROM `admintbl` WHERE `Username` = ? AND Usertype = 'Admin'",
             TRUE,
             "s",
             $AdminEmail
@@ -81,7 +81,7 @@ if (isset($_POST['StudentID'])) {
             $_SESSION['AdminID'] = $admin_tbl[0][0];
             echo "
 		        <script type='text/javascript'>
-		        alert('You have successfully loggged in.');
+		        alert('You have successfully logged in.');
 		        location.href='admin/admin.php';
 		        </script>";
         } else {
@@ -100,7 +100,7 @@ if (isset($_POST['StudentID'])) {
                 AdminID,
                 Password,
                 SaltedPassword
-            FROM admintbl WHERE Username = ?",
+            FROM admintbl WHERE Username = ? AND Usertype = 'Adviser'",
             TRUE,
             "s",
             $AdviserUsername
@@ -111,7 +111,7 @@ if (isset($_POST['StudentID'])) {
             $_SESSION['AdviserID'] = $adviser_tbl[0][0];
             echo "
 		        <script type='text/javascript'>
-		        alert('You have successfully loggged in.');
+		        alert('You have successfully logged in.');
 		        location.href='adviser/ojt-adviser.php';
 		        </script>";
         } else {
