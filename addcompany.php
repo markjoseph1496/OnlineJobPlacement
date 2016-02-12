@@ -41,7 +41,7 @@ if (isset($_POST['FirstName'])) {
     $MiddleName = ucwords(strtolower($MiddleName));
     $LastName = ucwords(strtolower($LastName));
 
-    $Password = "1";
+    $Password = "markjoseph123";
     $salt = hash('sha512', mt_rand(0, PHP_INT_MAX) . mt_rand(0, PHP_INT_MAX) . mt_rand(0, PHP_INT_MAX));
     $Password = hash('sha512', $Password . $salt);
 
