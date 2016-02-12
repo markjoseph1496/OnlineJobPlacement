@@ -117,10 +117,8 @@ include('connection.php');
                         </div>
                     </div>
                     <div class="row field">
-
                         <label>Career Site Url <span>(*)</span></label>
-                        <input type="text" class="form-control" id="lname" name="lname">
-
+                        <input type="text" class="form-control" id="Website" name="Website">
                     </div>
                     <div class="row field">
                         <div class="form-group">
@@ -337,11 +335,6 @@ include('connection.php');
                         notEmpty: {
                             message: "First name is required."
                         },
-                        stringLength: {
-                            min: 3,
-                            max: 15,
-                            message: "First name must be 3-15 characters long."
-                        },
                         regexp: {
                             regexp: /^[a-z\s]+$/i,
                             message: "First Name can consist of alphabetical characters and spaces only"
@@ -352,11 +345,6 @@ include('connection.php');
                     validators: {
                         notEmpty: {
                             message: "Last name is required."
-                        },
-                        stringLength: {
-                            min: 3,
-                            max: 15,
-                            message: "Last name must be 3-15 characters long."
                         },
                         regexp: {
                             regexp: /^[a-z\s]+$/i,
@@ -404,6 +392,7 @@ include('connection.php');
                         }
                     }
                 },
+                /*
                 cPassword: {
                     validators: {
                         notEmpty: {
@@ -426,7 +415,7 @@ include('connection.php');
                             message: "Password and confirm password mismatched."
                         }
                     }
-                },
+                },*/
                 Contact: {
                     validators: {
                         notEmpty: {

@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50616
 File Encoding         : 65001
 
-Date: 2016-02-11 11:31:54
+Date: 2016-02-12 22:01:44
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -140,10 +140,10 @@ CREATE TABLE `companyinfotbl` (
   `SaltedPassword` varchar(255) DEFAULT NULL,
   `Address` varchar(255) DEFAULT NULL,
   `Status` varchar(255) DEFAULT NULL,
-  `Wesbite` varchar(255) DEFAULT NULL,
+  `Website` varchar(255) DEFAULT NULL,
   `ProfileImage` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`CompanyID`)
-) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=latin1;
 
 -- ----------------------------
 -- Records of companyinfotbl
@@ -154,6 +154,9 @@ INSERT INTO companyinfotbl VALUES ('3', 'Millennuim', 'This account development 
 INSERT INTO companyinfotbl VALUES ('4', 'Concentrix', null, 'Computer / Information Technology (Software)', null, 'Navotas City', null, null, null, null, 'Oscar', 'Talusig', 'Sapinosa', 'manager', 'management', 'oskiyaniih@gmail.com', 'cdad6f9440699a7c99014d355fb29ae1f915f8708a84d1b1e3f765271a1080a51a23156ec34f914bda271e968fafb636db402241f821ba9e3b6ee7330b632a65', 'd98a22c63b2b14113aa65d1e85b7fc6f35ca286ad0d4a83a461fe380fc7b6eb9b4800e6368dd8664c96198eb9b3d8c657ba59e08b167c5ce9ab5e49737503a98', null, 'Active', 'http://www.google.com', 'ProfileImage/1.jpg');
 INSERT INTO companyinfotbl VALUES ('5', 'oneil associate', null, 'Architectural Services / Interior Designing', null, 'Makati City', null, null, null, null, 'Oneil', '', 'Shack', 'COE', 'head office', 'oneil@gmail.com', '7db06abb97daeabe2257b85431efd2e51d834afdb2a6f04833ae5c0891f468c1c979db1f686ad3a4a1e95a9cec825aae9132377e9d8f79055470b6349a4dd8dd', '98271546b5f45d15a0944cf82f77659c8b4c596b1f44c9308316653fdcaadfcfce260954e19bd7d1e97efbb551bd0d3afde0ad55cab16456ae04a79f0298ff1c', null, 'Active', 'http://www.google.com', 'ProfileImage/1.jpg');
 INSERT INTO companyinfotbl VALUES ('6', 'Judee Company', null, 'Computer / Information Technology (Hardware)', null, 'Caloocan City', null, null, null, null, 'Judee', 'Ederon', 'Caballero', 'MAY ARI', 'ICT', 'judeecaballero@gmail.com', 'd0f2386e657a703d25d0f78cb0da7acb253f401dc225f04a71b86441067c7fd122eabe04ac56fbfb6bb32f07e4ec8d5600ddf4e00070a489c75e6e07797757ce', '20e6854801be64fb05eaba64ec585de79627e597e8e058e950930cf75f6c256bf241e1b6b0a35d49fb231a920d50273d34e6f6bc2245e34367f2805d327d22ef', null, 'Active', 'http://www.google.com', 'ProfileImage/1.jpg');
+INSERT INTO companyinfotbl VALUES ('7', 'sadsadas', null, 'Consulting (Business and Management)', null, 'Quezon City', null, null, '21321321311', null, 'Sasaas', 'Sassadsad', 'Sadsasa', 'asdsadsad', 'sadsadsadas', 'asdsad@acc.cc', '41ee50da2d2383de7f3e9b0b17389d911b8949e1021012aeb614a97e75ea4ac1e1ca111d26552379288efa5ab3425ff51a60b6cb972314852a6afb1891c5e952', 'd564fed4a94cddc9d12288c294320a62e626d766596877f6818cf650fa3e7e124d88c42fa968c688b4666913ca22641b0b410247500767e6fee8ad4e8c972b77', null, 'sadsada', 'Active', null);
+INSERT INTO companyinfotbl VALUES ('8', 'asdsadsad', null, 'Consulting (IT, Science, Engineering and Technical)', null, 'Taguig City', null, null, '23222222222', null, 'Sadas', 'Dasasd', 'Sadasdasd', 'asdsad', 'asdasdasdasdas', 'dsadsads@asd.cc', 'c825b7edc039082d2844830653301e0034c7e3371801111c917c76c300a52449dda236427b931e40728c16d1db7ba42c3b745219bd840c4f089af2e0be4ea024', '670d7cea041130a48867dc93401c82464ef9189259a0b05f578989ef53c6230494429a9fa01e5dc1a0b80f485033c6a9d37cf8a754fc6257546bf7e0f67dd13a', null, 'Active', 'asdas', null);
+INSERT INTO companyinfotbl VALUES ('9', 'sadsad', null, 'Construction / Building / Engineering', null, 'Pasig City', null, null, '21333333333', null, 'Asdasdas', 'Asdasdas', 'Sadsadsa', 'sadasdsa', 'dasdsaas', 'asdsad@cc.cc', '813079c9ba4b2cdf66db5255add25b4b37b1db0a01d3fd73ae17df1899764273cc2928f128bd2633f8b0cfab55f4f5adc3c9c10ab9b7e8795267a57b89bf44e0', '5d2ab3d50bf30eddf5c87abfbc85c53e05b180ab877ab7d5816064a8f09d4abf87ea9c90062f1dac2fd42ee3921580736dd4a103ffefdc30b3a7901e4227c8b2', null, 'Active', 'dasdasd', null);
 
 -- ----------------------------
 -- Table structure for `compeduclvltbl`
@@ -565,12 +568,11 @@ CREATE TABLE `logrequesttbl` (
   `DurationOfRequest` varchar(255) NOT NULL,
   `MarketingMaterials` varchar(255) NOT NULL,
   PRIMARY KEY (`LID`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- ----------------------------
 -- Records of logrequesttbl
 -- ----------------------------
-INSERT INTO logrequesttbl VALUES ('1', '1', 'sadsa, asdas', '2016-02-09', '', 'Accepted', '2016-02-09', 'asda', 'Full Time, Part-Time', 'Officer, Supervisory', 'asdaa', 'sadsa', 'Ortigas', '23123', '2', 'No', '1 Month', 'Yes');
 
 -- ----------------------------
 -- Table structure for `ojttbl`
@@ -605,7 +607,7 @@ CREATE TABLE `ojttbl` (
 -- ----------------------------
 -- Records of ojttbl
 -- ----------------------------
-INSERT INTO ojttbl VALUES ('1', '0082A101278', 'ADRALES', 'ANNA MELISSA ', 'SANTOS', 'BSHRM', 'Malabon Grand Hotel and Casino', '110 Mc Arthur Highway Potrero Malabon City', 'Mr. Miko Orante', 'Senior Hotel Manager', '', null, null, 'ok', 'ok', 'off', 'off', 'off', 'off', 'off', 'off', null);
+INSERT INTO ojttbl VALUES ('1', '0082A101278', 'ADRALES', 'ANNA MELISSA ', 'SANTOS', 'BSHRM', 'Malabon Grand Hotel and Casino', '110 Mc Arthur Highway Potrero Malabon City', 'Mr. Miko Orante', 'Senior Hotel Manager', '', null, 'Incomplete', 'ok', 'ok', 'ok', 'off', 'ok', 'off', 'off', 'off', null);
 INSERT INTO ojttbl VALUES ('2', '820120152', 'ARANAS', 'JAMIL', 'DORADO', 'BSHRM', 'Oasis Paco Park Hotel', '1032-34 Belen St. Paco, Manila City ', 'Mr. Jeffrey Miranda', 'General Manager', '', null, null, null, null, null, null, null, null, null, null, null);
 INSERT INTO ojttbl VALUES ('3', '820120677', 'BAÑAL', 'CRISANTA', 'ABELARDE', 'BSHRM', '', '', '', '', '', null, null, null, null, null, null, null, null, null, null, null);
 INSERT INTO ojttbl VALUES ('4', '820120652', 'CO', 'CARMENZITADEL', 'PADUA', 'BSHRM', 'Oasis Paco Park Hotel', '1032-34 Belen St. Paco, Manila City ', 'Mr. Jeffrey Miranda', 'General Manager', '', null, null, null, null, null, null, null, null, null, null, null);
@@ -1567,7 +1569,6 @@ CREATE TABLE `studcontactstbl` (
 -- Records of studcontactstbl
 -- ----------------------------
 INSERT INTO studcontactstbl VALUES ('1', '00820120001', 'markjoseph1496@yahoo.com', '2890 A. Pablo St. Karuhatan, Valenzuela City', '09355585931', '', '2790201', '', '', 'Valenzuela City');
-INSERT INTO studcontactstbl VALUES ('2', '00820120002', 'aaa@yahoo.com', '2890 A. Pablo St. Karuhatan, Valenzuela', '2132132155', '', '', '', '', 'Valenzuela City');
 INSERT INTO studcontactstbl VALUES ('3', '00820120003', 'aasdsad@cs.cc', '', '09355585931', '', '', '', '', 'Valenzuela City');
 INSERT INTO studcontactstbl VALUES ('4', '00820120004', 'tristanabad55@gmail.com', '', '09239565052', '', '', '', '', 'Malabon City');
 INSERT INTO studcontactstbl VALUES ('5', '00820120005', 'binary.to.hexa@gmail.com', '', '09261788252', '', '', '', '', 'Caloocan City');
@@ -1764,7 +1765,6 @@ CREATE TABLE `studentinfotbl` (
 -- Records of studentinfotbl
 -- ----------------------------
 INSERT INTO studentinfotbl VALUES ('00820120001', 'b6454095efa3f85096ece699c0d9052c572ef11ff92058af5982cd57f3ae399ea7ee458a09433d7982e8979d336c54e5893459851dc5b6179c81fe065fedc674', '808a73c9742958c6714fe7fd11f2d4d244f358ced430174b01c2bc5627af40021889f813b93f8b1b76044aa54caa78a8eff95f7357891d37f451c08f7155e235', 'Mark Joseph', 'Flaviano', 'Cinco', 'Male', '1996-03-14', 'OJT', 'Single', 'Filipino', 'Employed', 'http://www.facebook.com/akodawsimacoy', '', 'ProfileImages/00820120001.jpg', 'BSCS', ' I am seeking a position in the travel industry focusing on sales, customer care and office management. Education.');
-INSERT INTO studentinfotbl VALUES ('00820120002', '8f62544cea6add24e380014ded7ee73e93c9349152d8bb037f4434eb7b09a9fd5334c84a8502c090acadace0839c838c51358473234262600cd0f45270ca9a3f', '9c9f1cc4ea01cc8b4796896f2e016079f810dc30074b467aa5a2b77187080863bc480dcb597551d53cb7a83c3d585bf4d8b07fb7f2d6f3e689a04cfabb93b2d5', 'Wtf', '', 'Wtf', 'Male', '1996-03-14', '', 'Single', 'Somali', 'Unemployed', 'http://www.facebook.com/aaaa', '', 'ProfileImages/00820120002.jpg', 'BSCS', '<?php echo $nPinfo; ?> ');
 INSERT INTO studentinfotbl VALUES ('00820120003', 'daa84497905fe6e26a872cfd699b36b3af689335652d5413e1005bebd6e867f23dad79318efe22dce702c5de70abc1f07f00968001a8ea9664f54fb038140850', '20d7c6e44a2467e1609014c24a31faae35a31aa413338b14f48225141e1aa5679ab2573c5be38b84122913dc6657ebb62d3974a44a7a21f62b7892d1d5e45b12', 'Testing', '', 'Testing', '', '0123-01-01', '', '', '', 'Unemployed', '', '', '', 'BSAT', '');
 INSERT INTO studentinfotbl VALUES ('00820120004', '3d8fd53015c9929dd24e29958d0a939ba5dff8d18f6335138f48d74312df1ac316173f11585b72295067ca57c58d9aa412b6a95c4a09fde4466dc4c2b2caf24e', 'fc914918a09a5e3fb1948c2c677854a3c01e35cc9f29728b4ba9833f0e16c0617a9025d9ee089216c644ab72a52d9000f0a4208fac8777a69e226fb4d7881d8a', 'Tristan', 'adasd', 'Abad', 'Male', '1996-10-31', '', 'Single', 'Filipino', 'Employed', 'http://www.facebook.com/adsadsf', 'sfsdfs', '', 'ASCT', '');
 INSERT INTO studentinfotbl VALUES ('00820120005', 'c2a4eff2f75be4b01d85d3efffaa9c5334a70744f7670c10b6daf3d672cfc7dfaaf1c9e40b6e33b593195017f7d8e714959ad60f18ab77ad7a600c8b2fb002eb', 'da85b1e23a09aad2b4d21695773a6eca951913f20b0288e1b8086c6fc49b31aa77e3bf7fccb25fb6438ae6088ec930e1eb805923fb07f28ef28e7825891b8c4b', 'Mark Anthony', '', 'Abenoja', '', '1988-06-27', '', '', '', 'Employed', '', '', '', 'ASCT', '');

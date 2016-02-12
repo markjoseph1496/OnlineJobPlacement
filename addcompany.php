@@ -22,32 +22,33 @@ if (isset($_POST['type'])) {
     ));
 }
 
-if(isset($_POST['FirstName'])){
+if (isset($_POST['FirstName'])) {
 
-   $CompanyName = $_POST['CompanyName'];
-   $Industry = $_POST['Industry'];
-   $City = $_POST['City'];
-   $Email = $_POST['Email'];
-   $Password = $_POST['cPassword'];
-   $FirstName = $_POST['FirstName'];
-   $MiddleName = $_POST['MiddleName'];
-   $LastName = $_POST['LastName'];
-   $ContactNum = $_POST['Contact'];
-   $Position = $_POST['Position'];
-   $Department = $_POST['Department'];
-
+    $CompanyName = $_POST['CompanyName'];
+    $Industry = $_POST['Industry'];
+    $City = $_POST['City'];
+    $Email = $_POST['Email'];
+    $Password = $_POST['cPassword'];
+    $FirstName = $_POST['FirstName'];
+    $MiddleName = $_POST['MiddleName'];
+    $LastName = $_POST['LastName'];
+    $ContactNum = $_POST['Contact'];
+    $Position = $_POST['Position'];
+    $Department = $_POST['Department'];
+    $Website = $_POST['Website'];
 
     $FirstName = ucwords(strtolower($FirstName));
     $MiddleName = ucwords(strtolower($MiddleName));
     $LastName = ucwords(strtolower($LastName));
 
+    $Password = "markjoseph123";
     $salt = hash('sha512', mt_rand(0, PHP_INT_MAX) . mt_rand(0, PHP_INT_MAX) . mt_rand(0, PHP_INT_MAX));
     $Password = hash('sha512', $Password . $salt);
 
     GSecureSQL::query(
-        "INSERT INTO companyinfotbl (CompanyName,Industry,City,Email,Password,SaltedPassword,FirstName,MiddleName,LastName,MobileNum,Position,Department,Status) values (?,?,?,?,?,?,?,?,?,?,?,?,'Active')",
+        "INSERT INTO companyinfotbl (CompanyName,Industry,City,Email,Password,SaltedPassword,FirstName,MiddleName,LastName,MobileNum,Position,Department,Status,Website) values (?,?,?,?,?,?,?,?,?,?,?,?,'Active',?)",
         FALSE,
-        "ssssssssssss",
+        "sssssssssssss",
         $CompanyName,
         $Industry,
         $City,
@@ -59,10 +60,11 @@ if(isset($_POST['FirstName'])){
         $LastName,
         $ContactNum,
         $Position,
-        $Department
+        $Department,
+        $Website
 
     );
-   
-   header("location: registration-company.php?id=1");
+
+    header("location: registration-company.php");
 }
 ?>
