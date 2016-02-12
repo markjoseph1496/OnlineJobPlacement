@@ -27,29 +27,28 @@
 
 </head>
 <body class="login-background">
-<div class="container">
-    <div class="card">
-        <h1 class="title">OJPMS</h1><br>
-        <form id="myForm" action="login.php" method="POST" autocomplete="off">
-            <div class="login-block">
-                <div id="message"></div>
-                <input type="text" placeholder="StudentID" id="StudentID" name="StudentID"/>
-                <input type="password" placeholder="Password" id="password" name="password"/>
-                &nbsp;
-                <button type="submit" id="button">Submit</button>
-            </div>
-
-            <div class="footer"><a href="#">&nbsp;</a></div>
+    <div class="box effect2">
+        <h2 style="font-size:1.8rem;">Sign In</h2>
+        <form class="" method = "POST" autocomplete="off">
+            <fieldset class="register-fieldset">
+                <div class="form-group">
+                    <input type="text" class="<?php echo $StudentID_class;?> form-control register-input js-password js-input" placeholder="Your Student ID" id="txtStudentID" name="txtStudentID" value="<?php echo htmlspecialchars($server_StudentID)?>">
+                </div>
+            </fieldset>
+            <fieldset class="register-fieldset">
+                <div class="form-group">
+                    <input type="password" class="<?php echo $Password_class;?>  form-control register-input js-password js-input" placeholder="Password" id="txtPassword" name="txtPassword">
+                </div>
+            </fieldset>
         </form>
-    </div>
-    <div class="register-screenshot not_mobile">
-        <div class="browser-chrome">
-            <h1 class="register-title">&nbsp;<span class="break_on_desktop"></span>Welcome to <span class="yellow-title">O</span><span class="blue-title">J</span>PMS</h1>
-            <div class="space"></div>
-            <label class="register-terms">Connect to your future with OJPMS. The best way to start and restart your profession. Are you not a member yet? <a href="registration.php" target="_blank"><b>Sign Up.</b></a></label>
+        <div class="text-center">
+            <p class="register-terms"><a href="" target="_blank">Forgot your password?</a></p>
         </div>
+        
+        <button class="btn btn--green register-submit text-center">Login</button>
+        
+        <p class="register-terms">Don't have an account? Get started <a href="registration.php">here</a>.</p>
     </div>
-</div>
 </body>
 </html>
 <script type="text/javascript">
