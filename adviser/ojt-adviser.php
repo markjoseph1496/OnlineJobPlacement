@@ -82,6 +82,12 @@ if (isset($_SESSION['AdviserID'])) {
     <!-- Checkbox -->
     <link rel="stylesheet" type="text/css" href="../css/checkbox.css" media="screen"/>
 
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+    <meta name="description" content="This tutorial will learn how to import excel sheet data in mysql database using php. Here, first upload an excel sheet into your server and then click to import it into database. All column of excel sheet will store into your corrosponding database table."/>
+    <meta name="keywords" content="import excel file data in mysql, upload ecxel file in mysql, upload data, code to import excel data in mysql database, php, Mysql, Ajax, Jquery, Javascript, download, upload, upload excel file,mysql"/>
+
+
     <script>
         (function (i, s, o, g, r, a, m) {
             i['GoogleAnalyticsObject'] = r;
@@ -278,53 +284,106 @@ if (isset($_SESSION['AdviserID'])) {
             </form>
             <?php
 
-            if (isset($_POST["submit"])) {
-                $file = $_FILES['file']['tmp_name'];
-                $handle = fopen($file, "r");
-                $c = 0;
-                while (($filesop = fgetcsv($handle, 1000, ",")) !== false) {
-                    $StudentID = $filesop[0];
-                    $LastName = $filesop[1];
-                    $FirstName = $filesop[2];
-                    $MiddleName = $filesop[3];
-                    $Course = $filesop[4];
-                    $CompanyName = $filesop[5];
-                    $CompanyAddress = $filesop[6];
-                    $Supervisor = $filesop[7];
-                    $Position = $filesop[8];
-                    $ContactNumber = $filesop[9];
+                if (isset($_POST["submit"])) {
+                
 
-                    $sql =
-                        GSecureSQL::query(
-                            "INSERT INTO ojttbl (
-                            StudentID,
-                            LastName,
-                            FirstName,
-                            MiddleName,
-                            Course,
-                            CompanyName,
-                            CompanyAddress,
-                            Supervisor,
-                            Position,
-                            ContactNumber)
-                            VALUES (?,?,?,?,?,?,?,?,?,?)",
-                            FALSE,
-                            "ssssssssss",
-                            $StudentID,
-                            $LastName,
-                            $FirstName,
-                            $MiddleName,
-                            $Course,
-                            $CompanyName,
-                            $CompanyAddress,
-                            $Supervisor,
-                            $Position,
-                            $ContactNumber
-                        );
-                    $c++;
-                }
-                echo "You database has imported successfully. You have inserted " . $c . " records";
-            }
+                    set_include_path(get_include_path() . PATH_SEPARATOR . 'Classes/');
+                    include 'PHPExcel/IOFactory.php';
+
+                    // This is the file path to be uploaded.
+                    $inputFileName = $_FILES['file']['tmp_name']; 
+
+                    try {
+                        $objPHPExcel = PHPExcel_IOFactory::load($inputFileName);
+                    } catch(Exception $e) {
+                        die('Error loading file "'.pathinfo($inputFileName,PATHINFO_BASENAME).'": '.$e->getMessage());
+                    }
+
+
+                    $allDataInSheet = $objPHPExcel->getActiveSheet()->toArray(null,true,true,true);
+                    $arrayCount = count($allDataInSheet);  // Here get total count of row in that Excel sheet
+
+
+                    for($i=10;$i<=$arrayCount;$i++){
+                    $StudentID = trim($allDataInSheet[$i]["A"]);
+                    $LastName = trim($allDataInSheet[$i]["B"]);
+                    $FirstName = trim($allDataInSheet[$i]["C"]);
+                    $MiddleName = trim($allDataInSheet[$i]["D"]);
+                    $Course = trim($allDataInSheet[$i]["E"]);
+                    $CompanyName = trim($allDataInSheet[$i]["F"]);
+                    $CompanyAddress = trim($allDataInSheet[$i]["G"]);
+                    $Supervisor = trim($allDataInSheet[$i]["H"]);
+                    $Position = trim($allDataInSheet[$i]["I"]);
+                    $ContactNumber = trim($allDataInSheet[$i]["J"]);
+
+
+                    $query = 
+                        "SELECT 
+                            StudentID 
+                        FROM 
+                            ojttbl 
+                        WHERE 
+                            StudentID = '".$StudentID."' 
+                            and 
+                            LastName = '".$LastName."' 
+                            and 
+                            FirstName = '".$FirstName."'
+                            and 
+                            MiddleName = '".$MiddleName."'
+                            and 
+                            Course = '".$Course."'
+                            and 
+                            CompanyName = '".$CompanyName."'
+                            and 
+                            CompanyAddress = '".$CompanyAddress."'
+                            and 
+                            Supervisor = '".$Supervisor."'
+                            and 
+                            Position = '".$Position."'
+                            and 
+                            ContactNumber = '".$ContactNumber."'
+                            ";
+
+
+                    $sql = mysql_query($query);
+                    $recResult = mysql_fetch_array($sql);
+                    $existName = $recResult["StudentID"];
+                    
+                    if($existName=="") {
+                    $insertTable= mysql_query("insert 
+                                                into 
+                                                ojttbl 
+                                                    (StudentID, 
+                                                    LastName, 
+                                                    FirstName,
+                                                    MiddleName,
+                                                    Course,
+                                                    CompanyName,
+                                                    CompanyAddress,
+                                                    Supervisor,
+                                                    Position,
+                                                    ContactNumber) 
+                                                values
+                                                    ('".$StudentID."', 
+                                                    '".$LastName."', 
+                                                    '".$FirstName."',
+                                                    '".$MiddleName."',
+                                                    '".$Course."',
+                                                    '".$CompanyName."',
+                                                    '".$CompanyAddress."',
+                                                    '".$Supervisor."',
+                                                    '".$Position."',
+                                                    '".$ContactNumber."');");
+
+
+                    $msg = 'Record has been added. <div style="Padding:20px 0 0 0;"></div>';
+                    } else {
+                    $msg = 'Record already exist. <div style="Padding:20px 0 0 0;"></div>';
+                    }
+                    }
+                    echo "<div style='font: bold 18px arial,verdana;padding: 45px 0 0 500px;'>".$msg."</div>";
+                } 
+
             ?>
 
         </div>
