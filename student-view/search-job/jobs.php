@@ -588,21 +588,34 @@ $Progress = $progress_tbl[0][0];
                                 $isEmpty = 0;
                                 $compposition_tbl =
                                     GSecureSQL::query(
-                                        "SELECT * FROM comppositiontbl WHERE JSpecialization IN ('$Specialization') ORDER BY PositionTitle ASC",
-                                        TRUE
+                                        "SELECT
+                                            comppositiontbl.PositionID,
+                                            comppositiontbl.CompanyID,
+                                            comppositiontbl.PostingDateFrom,
+                                            comppositiontbl.PostingDateTo,
+                                            comppositiontbl.PositionTitle,
+                                            comppositiontbl.JobDescription,
+                                            comppositiontbl.YExperience,
+                                            listofspecializationtbl.RelatedCourses,
+                                            comppositiontbl.ReqSkills,
+                                            comppositiontbl.JSpecialization
+                                            FROM listofspecializationtbl
+                                            INNER JOIN comppositiontbl ON listofspecializationtbl.Specialization = comppositiontbl.JSpecialization
+                                            ORDER BY PositionTitle ASC",
+                                            TRUE
                                     );
                                 $sCount = 0;
                                 foreach ($compposition_tbl as $value) {
                                     $PositionID = $value[0];
                                     $CompanyID = $value[1];
-                                    $PostingDateFrom = $value[3];
-                                    $PostingDateTo = $value[4];
-                                    $PositionTitle = $value[5];
-                                    $PositionDescription = $value[7];
-                                    $YearExperience = $value[12];
-                                    $RelatedCourses = $value[13];
+                                    $PostingDateFrom = $value[2];
+                                    $PostingDateTo = $value[3];
+                                    $PositionTitle = $value[4];
+                                    $PositionDescription = $value[5];
+                                    $YearExperience = $value[6];
+                                    $RelatedCourses = $value[7];
                                     $RelatedCourses = explode(", ", $RelatedCourses);
-                                    $RequiredSkills = $value[16];
+                                    $RequiredSkills = $value[8];
                                     $RequiredSkills = explode(", ", $RequiredSkills);
                                     foreach ($RelatedCourses as $value3) {
                                         $rCourse = $value3;
@@ -799,8 +812,7 @@ if ($Pinfo == "ok" &&
     $Achievements == "ok" &&
     $Specialization == "ok" &&
     $Languages == "ok" &&
-    $References == "ok"
-) {
+    $References == "ok") {
 
 } else {
     echo "
