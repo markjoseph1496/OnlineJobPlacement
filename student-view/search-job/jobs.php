@@ -706,14 +706,14 @@ $Progress = $progress_tbl[0][0];
                                 if ($sCount == 0) {
                                     echo
                                     "
-                                                <div class='blog-post standard-post'>
-                                                    <div class='row'>
-                                                        <div class='col-md-6'>
-                                                            <label>No results found.</label>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            ";
+                                    <div class='blog-post standard-post'>
+                                        <div class='row'>
+                                            <div class='col-md-6'>
+                                                <label>No results found.</label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    ";
                                 }
                             }
                             ?>
