@@ -334,7 +334,7 @@ if (isset($_POST['ModalNewPassword'])) {
     $OldPassword = $_POST['ModalOldPassword'];
     $NewPassword = $_POST['ModalNewPassword'];
 
-    $admin_tbl =
+    $company_tbl =
         GSecureSQL::query(
             "SELECT
                 `Password`,
@@ -345,8 +345,8 @@ if (isset($_POST['ModalNewPassword'])) {
             $CompanyID
         );
 
-    if (count($admin_tbl)) {
-        if (hash('sha512', $OldPassword . $admin_tbl[0][1]) == $admin_tbl[0][0]) {
+    if (count($company_tbl)) {
+        if (hash('sha512', $OldPassword . $company_tbl[0][1]) == $company_tbl[0][0]) {
 
             $salt = hash('sha512', mt_rand(0, PHP_INT_MAX) . mt_rand(0, PHP_INT_MAX) . mt_rand(0, PHP_INT_MAX));
             $NewPassword = hash('sha512', $NewPassword . $salt);

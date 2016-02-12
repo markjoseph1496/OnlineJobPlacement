@@ -78,41 +78,6 @@
         <!-- Start Header Section -->
         <div class="hidden-header"></div>
         <header class="clearfix">
-        <!-- Start Top Bar -->
-            <div class="top-bar">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-md-7">
-                            <!-- Start Contact Info -->
-                            <ul class="profile-name">
-                                <li><i class="fa fa-hashtag"></i> <b>008-2012-0805</b></li>
-                            </ul>
-                            <!-- End Contact Info -->
-                        </div>
-                        <!-- .col-md-6 -->
-                        <div class="col-md-5">
-                        <!-- Start Social Links -->
-                            <ul class="social-list">
-                                <li class="profile-name">
-                                    <a class="bell itl-tooltip" data-placement="bottom" title="" href="#" data-original-title="Notification"><i class="fa fa-bell"></i></a>
-                                </li>
-                                <li class="profile-name">
-                                    &nbsp;
-                                </li>
-                                <li class="profile-name">
-                                    <i class="fa fa-user"></i> Hello, <b>Aira Jane Cruz</b>                               
-                                </li>
-                            </ul>
-                            <!-- End Social Links -->
-                        </div>
-                        <!-- .col-md-6 -->
-                    </div>
-                    <!-- .row -->
-                </div>
-                <!-- .container -->
-            </div>
-            <!-- .top-bar -->
-            <!-- End Top Bar -->
 
             <!-- Start  Logo & Naviagtion  -->
             <div class="navbar navbar-default navbar-top">
@@ -127,24 +92,7 @@
                             <img src="images/ojpms.png">
                         </a>
                     </div>
-                    <div class="navbar-collapse collapse">
-                        <!-- Sign-out -->
-                        <div class="signout-side">
-                            <a href="#" class="btn-system btn-mini border-btn">Apply Now</a>
-                        </div>
-                        <!-- End Sign-out -->
-                    </div>
                 </div>
-                <!-- Mobile Menu Start -->
-                <ul class="wpb-mobile-menu">
-                    <li>
-                        <a href="#">Apply Now</a>
-                    </li>
-                    <li>
-                        <a href="../login-student.php?id=1"><i class="fa fa-sign-out"></i> Sign Out</a>
-                    </li>
-                </ul>
-                <!-- Mobile Menu End -->
             </div>
         </header>
 
@@ -166,8 +114,10 @@
                 <div class="row">
                     <div class="col-md-12 page-content">
                         <div class="hr4" style="margin-bottom:35px;"></div>
+                        <div class = "service-boxed">
                         <div class="classic-testimonials text-center">
-                            <img src="img/partner-company/sykes-logo.png">
+                            <img src="images/partner-company/sykes.png">
+                        </div>
                         </div>
                         <div class="hr4" style="margin-top:35px;margin-bottom:35px;"></div>  
                     </div>
