@@ -335,11 +335,6 @@ include('connection.php');
                         notEmpty: {
                             message: "First name is required."
                         },
-                        stringLength: {
-                            min: 3,
-                            max: 15,
-                            message: "First name must be 3-15 characters long."
-                        },
                         regexp: {
                             regexp: /^[a-z\s]+$/i,
                             message: "First Name can consist of alphabetical characters and spaces only"
@@ -350,11 +345,6 @@ include('connection.php');
                     validators: {
                         notEmpty: {
                             message: "Last name is required."
-                        },
-                        stringLength: {
-                            min: 3,
-                            max: 15,
-                            message: "Last name must be 3-15 characters long."
                         },
                         regexp: {
                             regexp: /^[a-z\s]+$/i,
@@ -402,6 +392,7 @@ include('connection.php');
                         }
                     }
                 },
+                /*
                 cPassword: {
                     validators: {
                         notEmpty: {
@@ -424,7 +415,7 @@ include('connection.php');
                             message: "Password and confirm password mismatched."
                         }
                     }
-                },
+                },*/
                 Contact: {
                     validators: {
                         notEmpty: {
