@@ -117,10 +117,8 @@ include('connection.php');
                         </div>
                     </div>
                     <div class="row field">
-
                         <label>Career Site Url <span>(*)</span></label>
-                        <input type="text" class="form-control" id="lname" name="lname">
-
+                        <input type="text" class="form-control" id="Website" name="Website">
                     </div>
                     <div class="row field">
                         <div class="form-group">
