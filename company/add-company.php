@@ -67,18 +67,15 @@ if (isset($_GET['btnsave'])) {
     $DegreeLevel = $_GET['DegreeLevel'];
     $RequiredSkills = $_GET['knowledge'];
     $Language = $_GET['language'];
-    $specialize = $_GET['specialize'];
 
-
-    $specialize = implode(", ", $specialize);
     $DegreeLevel = implode(", ", $DegreeLevel);
     $RequiredSkills = implode(", ", $RequiredSkills);
     $Language = implode(", ", $Language);
 
     GSecureSQL::query(
-        "INSERT INTO comppositiontbl (CompanyID,PostingDateFrom,PostingDateTo,PositionTitle,PositionLevel,JobDescription,JSpecialization,EType,AvPosition,MonthlySalary,YExperience,DegreeLevel,Reqskills,Languages,Tags) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)",
+        "INSERT INTO comppositiontbl (CompanyID,PostingDateFrom,PostingDateTo,PositionTitle,PositionLevel,JobDescription,JSpecialization,EType,AvPosition,MonthlySalary,YExperience,DegreeLevel,Reqskills,Languages) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?)",
         FALSE,
-        "sssssssssssssss",
+        "ssssssssssssss",
         $CompanyID,
         $DateFrom,
         $DateTo,
@@ -92,14 +89,12 @@ if (isset($_GET['btnsave'])) {
         $YExperience,
         $DegreeLevel,
         $RequiredSkills,
-        $Language,
-        $specialize
+        $Language
     );
     header("location: company-positionlist.php?id=1");
 
 }
 // End of Create Position
-
 
 if (isset($_GET['id'])) {
     $id = $_GET['id'];

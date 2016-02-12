@@ -19,28 +19,27 @@ $CompanyName = $companyinfo_tbl[0][0];
 $cFirstName = $companyinfo_tbl[0][1];
 $cLastName = $companyinfo_tbl[0][2];
 
-$companyupdate_tbl = 
+$companyupdate_tbl =
     GSecureSQL::query(
         "SELECT * FROM comppositiontbl WHERE CompanyID = ?",
         TRUE,
         "s",
         $CompanyID
-        );
-    $PostingDateFrom = $companyupdate_tbl[0][3];
-    $PostingDateTo = $companyupdate_tbl[0][4];
-    $PositionTitle = $companyupdate_tbl[0][5];
-    $PositionLevel = $companyupdate_tbl[0][6];
-    $JobDescription = $companyupdate_tbl[0][7];
-    $JSpecialization = $companyupdate_tbl[0][8];
-    $EType = $companyupdate_tbl[0][9];
-    $AvPosition = $companyupdate_tbl[0][10];
-    $MonthlySalary = $companyupdate_tbl[0][11];
-    $YExperience = $companyupdate_tbl[0][12];
-    $RelatedCourses= $companyupdate_tbl[0][13];
-    $DegreeLevel= $companyupdate_tbl[0][14];
-    $Language = $companyupdate_tbl[0][15];
-    $ReqSkills = $companyupdate_tbl[0][16];
-    ?>
+    );
+$PostingDateFrom = $companyupdate_tbl[0][3];
+$PostingDateTo = $companyupdate_tbl[0][4];
+$PositionTitle = $companyupdate_tbl[0][5];
+$PositionLevel = $companyupdate_tbl[0][6];
+$JobDescription = $companyupdate_tbl[0][7];
+$JSpecialization = $companyupdate_tbl[0][8];
+$EType = $companyupdate_tbl[0][9];
+$AvPosition = $companyupdate_tbl[0][10];
+$MonthlySalary = $companyupdate_tbl[0][11];
+$YExperience = $companyupdate_tbl[0][12];
+$DegreeLevel = $companyupdate_tbl[0][13];
+$Language = $companyupdate_tbl[0][14];
+$ReqSkills = $companyupdate_tbl[0][15];
+?>
 <!doctype html>
 <html lang="en">
 
@@ -155,33 +154,33 @@ $companyupdate_tbl =
                     <!-- .col-md-6 -->
                     <div class="col-md-6">
                         <!-- Notification -->
-                            <ul class="nav navbar-nav navbar-right">
-                                <li class="dropdown icon-border" id="notificationLink">
-                                    <span id="notification_count">3</span>
-                                    <a href="#" class="bell itl-tooltip" data-placement="bottom" data-toggle="dropdown"><i
-                                            class="fa fa-bell"></i></a>
-                                    <ul id="notificationContainer" class="dropdown-menu dropdown-menu-inverse">
-                                        <li class="dropdown-header"><label>Notification</label></li>
-                                        <li class="disabled"><a href="#" tabindex="-1">No new notification.</a></li>
-                                        <li><a href="#" tabindex="-1">The administrator accepted your request.</a></li>
-                                        <li class="divider"></li>
-                                        <li><a href="../notification/notification.php" tabindex="-1">See All</a></li>
-                                    </ul>
-                                </li>
-                                <li class="dropdown">
-                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown"><b class="fa fa-user"></b>
-                                        Welcome, <b><?php echo $cFirstName . " " . $cLastName; ?> </b><b class="caret"></b></a>
-                                    <ul class="dropdown-menu">
-                                        <li><a href="#">Profile <b class="fa fa-user" style="float:right;"></b></a></li>
-                                        <li><a href="company-settings.php">Settings <b class="fa fa-cog"
-                                                                                                   style="float:right;"></b></a>
-                                        </li>
-                                        <li class="divider"></li>
-                                        <li><a href="#" data-target='#Logout' data-toggle='modal'>Sign Out <b
-                                                    class="fa fa-sign-out" style="float:right;"></b></a></li>
-                                    </ul>
-                                </li>
-                            </ul>
+                        <ul class="nav navbar-nav navbar-right">
+                            <li class="dropdown icon-border" id="notificationLink">
+                                <span id="notification_count">3</span>
+                                <a href="#" class="bell itl-tooltip" data-placement="bottom" data-toggle="dropdown"><i
+                                        class="fa fa-bell"></i></a>
+                                <ul id="notificationContainer" class="dropdown-menu dropdown-menu-inverse">
+                                    <li class="dropdown-header"><label>Notification</label></li>
+                                    <li class="disabled"><a href="#" tabindex="-1">No new notification.</a></li>
+                                    <li><a href="#" tabindex="-1">The administrator accepted your request.</a></li>
+                                    <li class="divider"></li>
+                                    <li><a href="../notification/notification.php" tabindex="-1">See All</a></li>
+                                </ul>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown"><b class="fa fa-user"></b>
+                                    Welcome, <b><?php echo $cFirstName . " " . $cLastName; ?> </b><b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    <li><a href="#">Profile <b class="fa fa-user" style="float:right;"></b></a></li>
+                                    <li><a href="company-settings.php">Settings <b class="fa fa-cog"
+                                                                                   style="float:right;"></b></a>
+                                    </li>
+                                    <li class="divider"></li>
+                                    <li><a href="#" data-target='#Logout' data-toggle='modal'>Sign Out <b
+                                                class="fa fa-sign-out" style="float:right;"></b></a></li>
+                                </ul>
+                            </li>
+                        </ul>
                         <!-- Notification -->
                     </div>
                     <!-- .col-md-6 -->
@@ -242,7 +241,7 @@ $companyupdate_tbl =
                             <a href="company.php">Home</a>
                         </li>
                         <li>
-                            <a class="active" >Position</a>
+                            <a class="active">Position</a>
                             <ul class="dropdown">
                                 <li><a class="active" href="company-positionlist.php">Position List</a></li>
                                 <li><a href="company-createposition.php">Create Position</a></li>
@@ -315,21 +314,21 @@ $companyupdate_tbl =
                     echo '
                             <div class="alert alert-success" id="success-alert">
                                 <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
-                                <strong><span class="fa fa-info-circle"></span> Position successfully updated.</strong> 
+                                <strong><span class="fa fa-info-circle"></span> Position successfully updated.</strong>
                             </div>
                             ';
                 } elseif ($id == 1) {
                     echo '
                             <div class="alert alert-success" id="success-alert">
                                 <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
-                                <strong><span class="fa fa-info-circle"></span> Position successfully added.</strong> 
+                                <strong><span class="fa fa-info-circle"></span> Position successfully added.</strong>
                             </div>
                             ';
                 } elseif ($id == 3) {
                     echo '
                             <div class="alert alert-success" id="success-alert">
                                 <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
-                                <strong><span class="fa fa-info-circle"></span> Position successfully deleted.</strong> 
+                                <strong><span class="fa fa-info-circle"></span> Position successfully deleted.</strong>
                             </div>
                             ';
                 }
@@ -349,15 +348,7 @@ $companyupdate_tbl =
                 <?php
                 $compposition_tbl =
                     GSecureSQL::query(
-                        "SELECT
-                                PositionID,
-                                PositionTitle,
-                                PostingDateFrom,
-                                PostingDateTo,
-                                AvPosition
-                            FROM
-                              comppositiontbl
-                            WHERE CompanyID = ? ORDER BY PostingDateFrom ASC",
+                        "SELECT * FROM comppositiontbl WHERE CompanyID = ? ORDER BY PostingDateFrom ASC",
                         TRUE,
                         "s",
                         $CompanyID
@@ -365,9 +356,19 @@ $companyupdate_tbl =
                 foreach ($compposition_tbl as $value) {
                     $PositionID = $value[0];
                     $PositionTitle = $value[1];
-                    $PostingDateFrom = $value[2];
-                    $PostingDateTo = $value[3];
-                    $AvPosition = $value[4];
+                    $PostingDateFrom = $value[3];
+                    $PostingDateTo = $value[4];
+                    $PositionTitle = $value[5];
+                    $PositionLevel = $value[6];
+                    $JobDescription = $value[7];
+                    $JSpecialization = $value[8];
+                    $EType = $value[9];
+                    $AvPosition = $value[10];
+                    $MonthlySalary = $value[11];
+                    $YExperience = $value[12];
+                    $DegreeLevel = $value[13];
+                    $Language = $value[14];
+                    $ReqSkills = $value[15];
                     ?>
                     <tbody>
                     <tr>
@@ -381,7 +382,7 @@ $companyupdate_tbl =
                                 <i class='fa fa-eye'></i>
                             </button>
                             <button class="btn btn-danger" data-toggle="modal"
-                                data-target="#DeletePosition<?php echo $PositionID; ?>">
+                                    data-target="#DeletePosition<?php echo $PositionID; ?>">
                                 <i class="fa fa-trash fa-1x"></i>
                             </button>
                         </td>
@@ -419,198 +420,180 @@ $companyupdate_tbl =
                     <!-- Modal -->
                     <div class="modal fade" id="UpdatePosition<?php echo $PositionID; ?>" role="dialog">
                         <div class="modal-dialog modal-lg" style="padding:100px">
-                        <form id="update-AvPosition" autocomplete="off" method="POST" action="add-company.php">
-                            <!-- Modal content-->
-                            <div class="modal-content">
-                                <div class="modal-header">
-                                    <button type="button" class="close" data-dismiss="modal">&times;</button>
-                                    <h4 class="modal-title">Update</h4>
-                                </div>
-                                <div class="modal-body">
-                                    <div class="row">
-                                        <div class="col-md-3">
-                                            <label> Posting Date: </label>
-                                        </div>
-                                        <div class="col-md-3">
-                                            <div class="form-group">
-                                                <label>From:</label> <label><?php echo $PostingDateFrom; ?></label>
-                                            </div>
-                                        </div>
-                                        <div class="col-md-3">
-                                            <div class="form-group">
-                                                <label>To:</label> <label><?php echo $PostingDateTo; ?></label>
-                                            </div>
-                                        </div>
+                            <form id="update-AvPosition" autocomplete="off" method="POST" action="add-company.php">
+                                <!-- Modal content-->
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                        <h4 class="modal-title">Update</h4>
                                     </div>
-                                    <h3> Position Information </h3>
-                                    &nbsp;
-                                    <div class="row">
-                                        <div class="col-md-3">
-                                            <label> Position Title: </label>
-                                        </div>
-                                        <div class="col-md-4">
-                                            <div class="form-group">
-                                                <label> <?php echo $PositionTitle; ?> </label>
+                                    <div class="modal-body">
+                                        <div class="row">
+                                            <div class="col-md-3">
+                                                <label> Posting Date: </label>
+                                            </div>
+                                            <div class="col-md-3">
+                                                <div class="form-group">
+                                                    <label>From:</label> <label><?php echo $PostingDateFrom; ?></label>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-3">
+                                                <div class="form-group">
+                                                    <label>To:</label> <label><?php echo $PostingDateTo; ?></label>
+                                                </div>
                                             </div>
                                         </div>
-                                    </div>
-                                    <div class="row">
-                                        <div class="col-md-3">
-                                            <label> Position Level: </label>
-                                        </div>
-                                        <div class="col-md-4">
-                                            <div class="form-group">
-                                                <label> <?php echo $PositionLevel; ?> </label>
+                                        <h3> Position Information </h3>
+                                        &nbsp;
+                                        <div class="row">
+                                            <div class="col-md-3">
+                                                <label> Position Title: </label>
+                                            </div>
+                                            <div class="col-md-4">
+                                                <div class="form-group">
+                                                    <label> <?php echo $PositionTitle; ?> </label>
+                                                </div>
                                             </div>
                                         </div>
-                                    </div>
-                                    <div class="row">
-                                        <div class="col-md-3">
-                                            <label> Job Description: </label>
-                                        </div>
-                                        <div class="col-md-4">
-                                            <div class="form-group">
-                                                <label> <?php echo $JobDescription; ?> </label>
+                                        <div class="row">
+                                            <div class="col-md-3">
+                                                <label> Position Level: </label>
+                                            </div>
+                                            <div class="col-md-4">
+                                                <div class="form-group">
+                                                    <label> <?php echo $PositionLevel; ?> </label>
+                                                </div>
                                             </div>
                                         </div>
-                                    </div>
-                                    <div class="row">
-                                        <div class="col-md-3">
-                                            <label>  Employment Type: </label>
-                                        </div>
-                                        <div class="col-md-4">
-                                            <div class="form-group">
-                                                <label> <?php echo $EType; ?> </label>
+                                        <div class="row">
+                                            <div class="col-md-3">
+                                                <label> Job Description: </label>
+                                            </div>
+                                            <div class="col-md-4">
+                                                <div class="form-group">
+                                                    <label> <?php echo $JobDescription; ?> </label>
+                                                </div>
                                             </div>
                                         </div>
-                                    </div>
-                                    <div class="row">
-                                        <div class="col-md-3">
-                                            <label> Available Position: </label>
-                                        </div>
-                                        <div class="col-md-4">
-                                            <div class="form-group">
-                                            <input type="hidden" name="aPositionID" value="<?php echo $PositionID; ?>">
-                                                <input type="number" name="uAvPosition" id="uAvPosition" class="form-control" value="<?php echo $AvPosition; ?>">
+                                        <div class="row">
+                                            <div class="col-md-3">
+                                                <label> Employment Type: </label>
+                                            </div>
+                                            <div class="col-md-4">
+                                                <div class="form-group">
+                                                    <label> <?php echo $EType; ?> </label>
+                                                </div>
                                             </div>
                                         </div>
-                                    </div>
-                                    <div class="row">
-                                        <div class="col-md-3">
-                                            <label>  Related Courses: </label>
-                                        </div>
-                                        <div class="col-md-4">
-                                            <div class="form-group">
-                                            <ul>
-                                            <?php
-                                             $rCourses = explode(", ", $RelatedCourses);
-                                                foreach ($rCourses as $value) {
-                                                    $rCourses = $value;
-                                                    ?>
-                                                    <li>* <?php echo $rCourses; ?></li>
-                                                    <?php
-                                                }
-                                            ?>
-                                            </ul>
+                                        <div class="row">
+                                            <div class="col-md-3">
+                                                <label> Available Position: </label>
+                                            </div>
+                                            <div class="col-md-4">
+                                                <div class="form-group">
+                                                    <input type="hidden" name="aPositionID"
+                                                           value="<?php echo $PositionID; ?>">
+                                                    <input type="number" name="uAvPosition" id="uAvPosition"
+                                                           class="form-control" value="<?php echo $AvPosition; ?>">
+                                                </div>
                                             </div>
                                         </div>
-                                    </div>
-                                    <h3> Salary Range </h3>
-                                    &nbsp;
-                                    <div class="row">
-                                        <div class="col-md-3">
-                                            <label> Range of Salary: </label>
-                                        </div>
-                                        <div class="col-md-4">
-                                            <div class="form-group">
-                                                <label> <?php echo $MonthlySalary; ?> </label>
+                                        <h3> Salary Range </h3>
+                                        &nbsp;
+                                        <div class="row">
+                                            <div class="col-md-3">
+                                                <label> Range of Salary: </label>
+                                            </div>
+                                            <div class="col-md-4">
+                                                <div class="form-group">
+                                                    <label> <?php echo $MonthlySalary; ?> </label>
+                                                </div>
                                             </div>
                                         </div>
-                                    </div>
-                                    <h3> General Requirements </h3>
-                                    &nbsp;
-                                    <div class="row">
-                                        <div class="col-md-3">
-                                            <label> Year of Experience: </label>
-                                        </div>
-                                        <div class="col-md-4">
-                                            <div class="form-group">
-                                                <label> <?php echo $YExperience; ?> </label>
+                                        <h3> General Requirements </h3>
+                                        &nbsp;
+                                        <div class="row">
+                                            <div class="col-md-3">
+                                                <label> Year of Experience: </label>
+                                            </div>
+                                            <div class="col-md-4">
+                                                <div class="form-group">
+                                                    <label> <?php echo $YExperience; ?> </label>
+                                                </div>
                                             </div>
                                         </div>
-                                    </div>
-                                    <div class="row">
-                                        <div class="col-md-3">
-                                            <label> Educatonal Attainment: </label>
-                                        </div>
-                                        <div class="col-md-4">
-                                            <div class="form-group">
-                                            <ul>
-                                            <?php
-                                             $dLevel = explode(", ", $DegreeLevel);
-                                                foreach ($dLevel as $value) {
-                                                    $dLevel = $value;
-                                                    ?>
-                                                    <li>* <?php echo $dLevel; ?></li>
-                                                    <?php
-                                                }
-                                            ?>
-                                            </ul>
+                                        <div class="row">
+                                            <div class="col-md-3">
+                                                <label> Educatonal Attainment: </label>
+                                            </div>
+                                            <div class="col-md-4">
+                                                <div class="form-group">
+                                                    <ul>
+                                                        <?php
+                                                        $dLevel = explode(", ", $DegreeLevel);
+                                                        foreach ($dLevel as $value1) {
+                                                            $dLevel = $value1;
+                                                            ?>
+                                                            <li>* <?php echo $dLevel; ?></li>
+                                                            <?php
+                                                        }
+                                                        ?>
+                                                    </ul>
+                                                </div>
                                             </div>
                                         </div>
-                                    </div>
-                                    &nbsp;
-                                    <div class="row">
-                                        <div class="col-md-3">
-                                            <label> Required Skills: </label>
-                                        </div>
-                                        <div class="col-md-4">
-                                            <div class="form-group">
-                                            <ul>
-                                            <?php
-                                             $rSkill = explode(", ", $ReqSkills);
-                                                foreach ($rSkill as $value) {
-                                                    $rSkill = $value;
-                                                    ?>
-                                                    <li>* <?php echo $rSkill; ?></li>
-                                                    <?php
-                                                }
-                                            ?>
-                                            </ul>
+                                        &nbsp;
+                                        <div class="row">
+                                            <div class="col-md-3">
+                                                <label> Required Skills: </label>
+                                            </div>
+                                            <div class="col-md-4">
+                                                <div class="form-group">
+                                                    <ul>
+                                                        <?php
+                                                        $rSkill = explode(", ", $ReqSkills);
+                                                        foreach ($rSkill as $value2) {
+                                                            $rSkill = $value2;
+                                                            ?>
+                                                            <li>* <?php echo $rSkill; ?></li>
+                                                            <?php
+                                                        }
+                                                        ?>
+                                                    </ul>
+                                                </div>
                                             </div>
                                         </div>
-                                    </div>
-                                    <h3> Optional Requirements </h3>
-                                    &nbsp;
-                                    <div class="row">
-                                        <div class="col-md-3">
-                                            <label> Language: </label>
-                                        </div>
-                                        <div class="col-md-4">
-                                            <div class="form-group">
-                                            <ul>
-                                            <?php
-                                             $rLanguage = explode(", ", $Language);
-                                                foreach ($rLanguage as $value) {
-                                                    $rLanguage = $value;
-                                                    ?>
-                                                    <li>* <?php echo $rLanguage; ?></li>
-                                                    <?php
-                                                }
-                                            ?>
-                                            </ul>
+                                        <h3> Optional Requirements </h3>
+                                        &nbsp;
+                                        <div class="row">
+                                            <div class="col-md-3">
+                                                <label> Language: </label>
+                                            </div>
+                                            <div class="col-md-4">
+                                                <div class="form-group">
+                                                    <ul>
+                                                        <?php
+                                                        $rLanguage = explode(", ", $Language);
+                                                        foreach ($rLanguage as $value3) {
+                                                            $rLanguage = $value3;
+                                                            ?>
+                                                            <li>* <?php echo $rLanguage; ?></li>
+                                                            <?php
+                                                        }
+                                                        ?>
+                                                    </ul>
+                                                </div>
                                             </div>
                                         </div>
-                                    </div>
-                                    <div class="modal-footer">
-                                        <button type="submit" class="btn btn-primary">Update</button>
-                                        <button type="button" class="btn btn-default" data-dismiss="modal">
-                                            Cancel
-                                        </button>
+                                        <div class="modal-footer">
+                                            <button type="submit" class="btn btn-primary">Update</button>
+                                            <button type="button" class="btn btn-default" data-dismiss="modal">
+                                                Cancel
+                                            </button>
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
-                        </form>
+                            </form>
                         </div>
                     </div>
                     <?php
@@ -621,7 +604,7 @@ $companyupdate_tbl =
     </div>
 </div>
 <script type="text/javascript" src="../js/script.js">
-    
+
     $("button#submitPassword").click(function () {
         $.post($("#update-AvPositio").attr("action"),
             $("#update-AvPositio :input").serializeArray(),
