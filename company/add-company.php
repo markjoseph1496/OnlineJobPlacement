@@ -220,22 +220,30 @@ if (isset($_POST['btnRequestLOG'])) {
     $EmploymentType = $_POST['rEType']; //Checkbox array
     $EmploymentType = implode(", ", $EmploymentType);
 
-    $OtherEType = $_POST['other']; //checkbox other
-    $txtOtherEType = $_POST['txtOther']; //other field
+    if (isset($_POST['other'])) {
+        $OtherEType = $_POST['other']; //checkbox other
+        $txtOtherEType = $_POST['txtOther']; //other field
+    } else {
+        $OtherEType = "off";
+    }
+
+    if (isset($_POST['pOther'])) {
+        $pOther = $_POST['pOther']; //checkbox other
+        $txtPOther = $_POST['txtPOther']; //other field
+    } else {
+        $pOther = "off";
+    }
+
 
     $rPLevel = $_POST['rPLevel']; //Checkbox array
     $rPLevel = implode(", ", $rPLevel);
 
-    $pOther = $_POST['pOther']; //checkbox other
-    $txtPOther = $_POST['txtPOther']; //other field
 
     $Description = $_POST['rDescription'];
     $Qualification = $_POST['rQualification'];
     $Location = $_POST['rLocation'];
     $SalaryRange = $_POST['rSalaryRange'];
 
-    $Specialize = $_POST['specialized'];
-    $Specialize = implode(", ", $Specialize);
 
     $YearOfExperience = $_POST['rYOE'];
     $CFG = $_POST['CFG'];
@@ -292,7 +300,7 @@ if (isset($_POST['btnRequestLOG'])) {
         $MarketingMaterials,
         $Specialize
     );
-
+    die();
     header("location: company.php");
 
 }

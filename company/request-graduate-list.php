@@ -350,7 +350,7 @@ $cLastName = $companyinfo_tbl[0][2];
                                         <label for="checkbox3"><b>Officer</b></label>
                                     </div>
                                     <div class="checkbox checkbox-success">
-                                        <input id="rPLeve]" name="rPLevel[]" class="styled" type="checkbox"
+                                        <input id="rPLevel" name="rPLevel[]" class="styled" type="checkbox"
                                                value="Supervisory">
                                         <label for="checkbox3"><b>Supervisory</b></label>
                                     </div>
@@ -420,65 +420,6 @@ $cLastName = $companyinfo_tbl[0][2];
                                     </div>
 
                                     <div class="hr1" style="margin-top:15px;margin-bottom:15px;"></div>
-
-                                    <label>Specialized in: </label>
-                                    <div class="form-group">
-                                        <div class="input-group" style="margin-bottom: 15px">
-                                            <input type="text" class="form-control" id="txt-specialized"
-                                                   name="Specialized">
-                                            <script>
-                                                var kl_index = -1;
-                                                function delete_specialized(index) {
-                                                    $('#kl-span-' + index).remove();
-                                                    $('#kl-a-' + index).remove();
-                                                    $('#kl-input-' + index).remove();
-                                                }
-                                            </script>
-                                      <span class="input-group-btn">
-                                        <a class="btn btn-primary" onclick="(function(){
-                                          var _requirements = $('#txt-specialized').val();
-                                          if(_requirements==''){
-                                              alert('Cannot add empty value.');
-                                          }
-                                          else{
-                                              kl_index++;
-                                              var kk = $('#specialized-template');
-                                              var kk_span = kk.find('span');
-                                              var kk_a = kk.find('a');
-                                              var kk_input = kk.find('input');
-
-                                              kk_span.text($('#txt-specialized').val());
-                                              kk_span.attr('id', 'kl-span-' + kl_index);
-                                              kk_a.attr('id', 'kl-a-' + kl_index);
-                                              kk_a.attr('onclick', 'delete_specialized(' + kl_index + ')');
-                                              kk_input.attr('id', 'kl-input-' + kl_index);
-                                              kk_input.attr('name', 'specialized[' + kl_index +']');
-                                              kk_input.val(kk_span.text());
-                                              $('#specialized-list').append($('#specialized-template').html());
-                                              $('#txt-specialized').val('');
-
-                                              //disposal of used resource in #specialized-template
-                                              kk_span.removeAttr('id');
-                                              kk_a.removeAttr('id');
-                                              kk_a.removeAttr('onclick');
-                                              kk_input.removeAttr('id');
-                                              kk_input.removeAttr('name');
-                                              kk_input.removeAttr('value');
-                                          }
-                                        })()">Add</a>
-                                      </span>
-                                        </div>
-                                    </div>
-                                    <div class="row" style="margin-bottom: 15px">
-                                        <div id="specialized-template" class="hidden">
-                                            <b><span>dito_yung_text</span></b>
-                                            <a href="javascript:void(0)">[remove]<br></a>
-                                            <input type="hidden"/>
-                                        </div>
-                                        <div id="specialized-list" class="col-md-4"
-                                             style="width: 300px; word-wrap: break-word">
-                                        </div>
-                                    </div>
 
                                     <div class="hr1" style="margin-top:15px;margin-bottom:15px;"></div>
 
