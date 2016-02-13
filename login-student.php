@@ -29,23 +29,20 @@
 <body class="login-background">
     <div class="box effect2">
         <h2 style="font-size:1.8rem;">Sign In</h2>
-        <form class="" method = "POST" autocomplete="off">
+        <form id="myForm" action="login.php" method="POST" autocomplete="off">
             <fieldset class="register-fieldset">
-                <div class="form-group">
-                    <input type="text" class="<?php echo $StudentID_class;?> form-control register-input js-password js-input" placeholder="Your Student ID" id="txtStudentID" name="txtStudentID" value="<?php echo htmlspecialchars($server_StudentID)?>">
-                </div>
+                <div id="message"></div>
+                <input type="text" class="form-control register-input js-password js-input" placeholder="Your Student ID" id="StudentID" name="StudentID">
             </fieldset>
             <fieldset class="register-fieldset">
-                <div class="form-group">
-                    <input type="password" class="<?php echo $Password_class;?>  form-control register-input js-password js-input" placeholder="Password" id="txtPassword" name="txtPassword">
-                </div>
+                <input type="password" class="form-control register-input js-password js-input" placeholder="Password" id="password" name="password">
             </fieldset>
         </form>
         <div class="text-center">
             <p class="register-terms"><a href="" target="_blank">Forgot your password?</a></p>
         </div>
         
-        <button class="btn btn--green register-submit text-center">Login</button>
+        <button type="submit" class="btn btn--green register-submit text-center" id="button">Login</button>
         
         <p class="register-terms">Don't have an account? Get started <a href="registration.php">here</a>.</p>
     </div>
