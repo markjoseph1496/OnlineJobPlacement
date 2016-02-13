@@ -30,8 +30,8 @@
     <div class="box effect2">
         <h2 style="font-size:1.8rem;">Sign In</h2>
         <form id="myForm" action="login.php" method="POST" autocomplete="off">
+            <div id="message"></div>
             <fieldset class="register-fieldset">
-                <div id="message"></div>
                 <input type="text" class="form-control register-input js-password js-input" placeholder="Your Student ID" id="StudentID" name="StudentID">
             </fieldset>
             <fieldset class="register-fieldset">
@@ -42,7 +42,7 @@
             <p class="register-terms"><a href="" target="_blank">Forgot your password?</a></p>
         </div>
         
-        <button type="submit" class="btn btn--green register-submit text-center" id="button">Login</button>
+        <button type="submit" class="btn btn--green register-submit text-center" id="button"><center>Login</center></button>
         
         <p class="register-terms">Don't have an account? Get started <a href="registration.php">here</a>.</p>
     </div>
