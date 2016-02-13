@@ -27,15 +27,15 @@
 
 </head>
 <body class="login-background">
-    <div class="box effect2">
+    <div class="box effect2" style="margin-top:10%;">
         <h2 style="font-size:1.8rem;">Sign In</h2>
         <form id="myForm" action="login.php" method="POST" autocomplete="off">
             <div id="message"></div>
             <fieldset class="register-fieldset">
-                <input type="text" class="form-control register-input js-password js-input" placeholder="Your Student ID" id="StudentID" name="StudentID">
+                <input type="text" class="form-control register-input" placeholder="Your Student ID" id="StudentID" name="StudentID">
             </fieldset>
             <fieldset class="register-fieldset">
-                <input type="password" class="form-control register-input js-password js-input" placeholder="Password" id="password" name="password">
+                <input type="password" class="form-control register-input" placeholder="Password" id="password" name="password">
             </fieldset>
         </form>
         <div class="text-center">

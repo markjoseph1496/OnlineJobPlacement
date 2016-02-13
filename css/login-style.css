@@ -1273,7 +1273,7 @@ strong {
     font-weight: 400;
     font-size: 20px;
     line-height: 24px;
-    color: #FFF;
+    color: #666;
     border: 4px solid #eee;
     padding-left: 20px;
     display: block;
@@ -1288,7 +1288,7 @@ strong {
     font-size: 12px;
     text-transform: uppercase;
     letter-spacing: 1px;
-    color: rgba(255, 255, 255, 0.4)
+    color: #B3BDCD
 }
 
 .register-input:-moz-placeholder {
@@ -1297,7 +1297,7 @@ strong {
     font-size: 12px;
     text-transform: uppercase;
     letter-spacing: 1px;
-    color: rgba(255, 255, 255, 0.4)
+    color: #B3BDCD;
 }
 
 .register-input::-webkit-input-placeholder {
@@ -1306,7 +1306,7 @@ strong {
     font-size: 12px;
     text-transform: uppercase;
     letter-spacing: 1px;
-    color: rgba(255, 255, 255, 0.4)
+    color: #B3BDCD;
 }
 
 @media (min-width: 0px) and (max-width: 766px) {
@@ -1317,8 +1317,8 @@ strong {
 
 .register-input:focus {
     background-color: #FFF;
-    border-color: rgb(235, 192, 0);
-    color: #555
+    border-color: rgba(0, 89, 157, 0.86);
+    color: #666;
 }
 
 .register-input:focus.placeholder {
