@@ -1,6 +1,8 @@
 <?php
 include('../../connection.php');
 session_start();
+include('../../common-functions.php');
+$common_functions->student_login_check();
 
 if (isset($_SESSION['StudentID'])) {
     $StudentID = $_SESSION['StudentID'];

@@ -1,3 +1,8 @@
+<?php
+include('../../common-functions.php');
+$common_functions->student_login_check();
+?>
+
 <html lang="en">
 <head>
 

@@ -1,6 +1,8 @@
 <?php
 include('../../../connection.php');
 session_start();
+include('../../../common-functions.php');
+$common_functions->student_login_check();
 $StudentID = $_SESSION['StudentID'];
 
 $fileToUpload = basename($_FILES["DocumentFile"]["name"]);

@@ -1,12 +1,8 @@
 <?php
 include('../../connection.php');
 session_start();
-
-if (isset($_SESSION['StudentID'])) {
-    $StudentID = $_SESSION['StudentID'];
-} else {
-    header("location: ../../login-student.php");
-}
+include('../../common-functions.php');
+$common_functions->student_login_check();
 
 $infoquery =
     GSecureSQL::query(
