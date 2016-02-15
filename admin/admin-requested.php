@@ -493,15 +493,13 @@ if (isset($_SESSION['AdminID'])) {
                                             </li>
                                             <label = 'usr' class = 'control-label'>Courses to be approved:</label>
                                             <div class="row">
-
                                                 <div class="col-md-9">
                                                     <div class="form-group">
                                                     </div>
                                                 </div>
                                             </div>
                                             <li>
-                                                <label>Duration from: <?php echo date("Y/m/d"); ?> </label>
-                                                <input type="date" name="DateTo" id="date_to" class="form-control">
+                                                <label>Duration <br>from: <?php echo date("Y/m/d"); ?> </label>
                                             </li>
                                             <li>
                                                 <label>to: </label>

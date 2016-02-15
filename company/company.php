@@ -384,7 +384,7 @@ if (count($LOGquery1) > 0) {
                             <div class="row">
                                 <br><br>
                                 <div>
-                                    <b>List of graduates specialized by:</b>
+                                    <b>List of available courses:</b>
                                     <?php
                                     $AvailableCourses = $LOGquery[0][2];
                                     echo $AvailableCourses;
