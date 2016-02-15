@@ -3,7 +3,7 @@ include('../../connection.php');
 session_start();
 include('../../common-functions.php');
 $common_functions->student_login_check();
-$StudentID = $_SESSION['StudentID'];
+$StudentID = $_SESSION['StudentID']; // to conform with your coding style -- ghabx
 
 $PLevel_Default = isset($_POST['PLevel']) ? $_POST['PLevel'] : '';
 $EType_Default = isset($_POST['EType']) ? $_POST['EType'] : '';

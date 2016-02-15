@@ -1,8 +1,9 @@
 <?php
 include('../../../connection.php');
 session_start();
-
-$StudentID = $_SESSION['StudentID'];
+include('../../../common-functions.php');
+$common_functions->student_login_check();
+$StudentID = $_SESSION['StudentID']; // to conform with your coding style -- ghabx
 
 if (isset($_GET['School'])) {
     $SchoolID = $_GET['SchoolID'];

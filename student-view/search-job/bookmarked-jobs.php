@@ -4,6 +4,7 @@ include('../../connection.php');
 session_start();
 include('../../common-functions.php');
 $common_functions->student_login_check();
+$StudentID = $_SESSION['StudentID']; // to conform with your coding style -- ghabx
 ?>
 
 <html lang="en">

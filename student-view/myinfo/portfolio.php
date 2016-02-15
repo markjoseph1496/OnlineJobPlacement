@@ -3,12 +3,7 @@ include('../../connection.php');
 session_start();
 include('../../common-functions.php');
 $common_functions->student_login_check();
-
-if (isset($_SESSION['StudentID'])) {
-    $StudentID = $_SESSION['StudentID'];
-} else {
-    header("location: ../../login-student.php");
-}
+$StudentID = $_SESSION['StudentID']; // to conform with your coding style -- ghabx
 
 $infoquery =
     GSecureSQL::query(
