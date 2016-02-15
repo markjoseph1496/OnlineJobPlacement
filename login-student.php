@@ -26,9 +26,9 @@
     <link href="css/mystyle.css" rel="stylesheet">
 
 </head>
-<body class="login-background">
-    <div class="box effect2" style="margin-top:10%;">
-        <h2 style="font-size:1.8rem;">Sign In</h2>
+<body class="login-student">
+    <div class="box effect3" style="margin-top:5%;">
+        <h2 class="register-title">Sign In</h2>
         <form id="myForm" action="login.php" method="POST" autocomplete="off">
             <div id="message"></div>
             <fieldset class="register-fieldset">
@@ -42,8 +42,7 @@
             <p class="register-terms"><a href="" target="_blank">Forgot your password?</a></p>
         </div>
         
-        <button type="submit" class="btn btn--green register-submit text-center" id="button"><center>Login</center></button>
-        
+        <button type="submit" class="btn btn--green register-submit text-center" id="button"><center>Sign In</center></button>
         <p class="register-terms">Don't have an account? Get started <a href="registration.php">here</a>.</p>
     </div>
 </body>
