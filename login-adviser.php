@@ -1,9 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-
     <title>OJPMS | Login Adviser</title>
-
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="css/bootstrap.min.css"/>
@@ -26,21 +24,20 @@
     <link href="css/login-style.css" rel="stylesheet">
     <link href="css/mystyle.css" rel="stylesheet">
 </head>
-<body class="ojt-login">
-    <div class="container">
-        <div class="card">
-            <h1 class="title">OJPMS</h1><br>
-            <form id="myForm" action="login.php" method="POST" autocomplete="off">
-                <div class="login-block">
-                    <div id="message"></div>
-                    <input type="text" value="" placeholder="Username" id="AdviserUsername" name="AdviserUsername"/>
-                    <input type="password" value="" placeholder="Password" id="password" name="_password"/>
-                    &nbsp;
-                    <button type="submit" id="button">Submit</button>
-                </div>
-
-                <div class="footer"><a href="#">Forgot your password?</a></div>
-            </form>
+<body class="login-adviser">
+    <div class="box effect3" style="margin-top:5%;">
+        <h2 class="register-title">Sign In</h2>
+        <form id="myForm" action="login.php" method="POST" autocomplete="off">
+            <div id="message"></div>
+            <fieldset class="register-fieldset">
+                <input type="text" value="" class="form-control register-input" placeholder="Username" id="AdviserUsername" name="AdviserUsername"/>
+            </fieldset>
+            <fieldset class="register-fieldset">
+                <input type="password" value="" class="form-control register-input" placeholder="Password" id="password" name="_password"/>
+            </fieldset>
+            
+            <button type="submit" class="btn btn--green register-submit text-center" id="button"><center>Sign In</center></button>
+        </form>
         </div>
         <div class="register-screenshot not_mobile">
             <div class="browser-chrome">

@@ -25,36 +25,30 @@
     <!-- CSS-->
     <link href="css/login-style.css" rel="stylesheet">
     <link href="css/mystyle.css" rel="stylesheet">
-
 </head>
-<body class="company-login">
-<div class="container">
-    <div class="card">
-        <h1 class="title">OJPMS</h1><br>
+<body class="login-company">
+    <div class="box effect3" style="margin-top:5%;">
+        <h2 class="register-title">Sign In</h2>
         <form id="myForm" action="login.php" method="POST" autocomplete="off">
-            <div class="login-block">
-                <div id="message"></div>
-                <input type="text" value="" placeholder="Username" id="CompanyEmail" name="CompanyEmail"/>
-                <input type="password" value="" placeholder="Password" id="password" name="password"/>
-                &nbsp;
-                <button type="submit" id="button">Submit</button>
-            </div>
-
-            <div class="footer"><a href="#">Forgot your password?</a></div>
+            <div id="message"></div>
+            <fieldset class="register-fieldset">
+                <input type="text" class="form-control register-input" value="" placeholder="Username" id="CompanyEmail" name="CompanyEmail"/>
+            </fieldset>
+            <fieldset class="register-fieldset">
+                <input type="password" class="form-control register-input" value="" placeholder="Password" id="password" name="password"/>
+            </fieldset>
         </form>
-    </div>
-    <div class="register-screenshot not_mobile">
-        <div class="browser-chrome">
-            <h1 class="register-title">&nbsp;<span class="break_on_desktop"></span>Welcome to <span class="yellow-title">O</span><span class="blue-title">J</span>PMS</h1>
-            <div class="space"></div>
-            <label class="register-terms" style="color:#000;">Connect with your friends -- and other fascinating people. Get in-the-moment
-                updates on the things that interest you. And watch events unfold, in real time, from every angle. Are you not a member yet? <a
-                    href="registration-company.php" target="_blank"><b>Sign Up.</b></a></label>
+        <div class="text-center">
+            <p class="register-terms"><a href="" target="_blank">Forgot your password?</a></p>
         </div>
+
+        <button type="submit" class="btn btn--green register-submit text-center" id="button"><center>Sign In</center></button>
+        
+        <p class="register-terms">Don't have an account? Get started <a href="registration.php">here</a>.</p>
     </div>
-</div>
 </body>
 </html>
+
 <script type="text/javascript">
     $("button#button").click(function () {
 

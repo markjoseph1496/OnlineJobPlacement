@@ -24,36 +24,27 @@
     <!-- CSS-->
     <link href="css/login-style.css" rel="stylesheet">
     <link href="css/mystyle.css" rel="stylesheet">
-
 </head>
+
 <body class="admin-login">
-<div class="container">
-    <div class="card">
-        <h1 class="title">OJPMS</h1><br>
+    <div class="box effect3" style="margin-top:5%;">
+        <h2>Good day, Admin!</h2>
+        <h4>Sign In</h4>
         <form id="myForm" action="login.php" method="POST" autocomplete="off">
-            
-        <div class="login-block">
             <div id="message"></div>
-            <input type="text" placeholder="Username" id="AdminEmail" name="AdminEmail" />
-            <input type="password" placeholder="Password" id="password" name="password"/>
-            &nbsp;
-            <button type="submit" id="button">Submit</button>
-        </div>
-            
-        <div class="footer"><a href="#">Forgot your password?</a></div>
+            <fieldset class="register-fieldset">
+                <input type="text" class="form-control register-input" placeholder="Username" id="AdminEmail" name="AdminEmail" />
+            </fieldset>
+            <fieldset class="register-fieldset">
+                <input type="password" class="form-control register-input" placeholder="Password" id="password" name="password">
+            </fieldset>
+
+            <button type="submit" class="btn btn--green register-submit text-center" id="button"><center>Sign In</center></button>
         </form>
     </div>
-    <div class="register-screenshot not_mobile">
-        <div class="browser-chrome">
-            <h1 class="register-title">&nbsp;<span class="break_on_desktop"></span>Welcome to <span class="yellow-title">O</span><span class="blue-title">J</span>PMS</h1>
-            <div class="space"></div>
-            <label class="register-terms">Connect with your friends -- and other fascinating people. Get in-the-moment
-                updates on the things that interest you. And watch events unfold, in real time, from every angle. </label>
-        </div>
-    </div>
-</div>
 </body>
 </html>
+
 <script type="text/javascript">
     $("button#button").click(function () {
 
