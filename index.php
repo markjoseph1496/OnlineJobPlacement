@@ -101,7 +101,6 @@ $adminevent_tbl =
                             <li><a href="#jobs" class="smoothScroll">Jobs</a></li>
                             <li><a href="#events" class="smoothScroll">Events</a></li>
                             <li><a href="#about" class="smoothScroll">E2E</a></li>
-                            <li><a href="#contact" class="smoothScroll">Contact</a></li>
                         </ul>
                         <!-- End Navigation List -->
                         </div>
@@ -115,7 +114,6 @@ $adminevent_tbl =
                     <li><a href="#events" class="smoothScroll">Events</a></li>
                     <li><a href="#about" class="smoothScroll">E2E</a></li>
                     <li><a href="#join" class="smoothScroll">Join</a></li>
-                    <li><a href="#contact" class="smoothScroll">Contact</a></li>
                 </ul>
                 <!-- Mobile Menu End -->
             </div>
@@ -329,7 +327,6 @@ $adminevent_tbl =
                 </div>
                 <!-- .container -->
             </div>
-
             
             <!-- Start Recent Projects Carousel -->
             <div id="events" class="section" style="background-color:#00599D;">
@@ -341,27 +338,9 @@ $adminevent_tbl =
                             <div class="portfolio-item item">
                                 <div class="portfolio-border">
                                     <div class="portfolio-thumb">
-                                        <a class="lightbox" data-lightbox-type="ajax" href="https://www.youtube.com/watch?v=Bjryfs_JwLU">
-                                            <div class="thumb-overlay"><i class="fa fa-play"></i></div>
-                                            <img alt="" src="images/portfolio-1/1.png"/>
-                                        </a>
-                                    </div>
-                                    <div class="portfolio-details">
-                                        <a href="#">
-                                            <h4>STI</h4>
-                                            <span>Events</span>
-                                            <span>Events</span>
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="portfolio-item item">
-                                <div class="portfolio-border">
-                                    <div class="portfolio-thumb">
                                         <a class="lightbox" title="This is an image title" href="images/portfolio-big-01.jpg">
                                             <div class="thumb-overlay"><i class="fa fa-arrows-alt"></i></div>
-                                            <img alt="" src="images/portfolio-1/2.png"/>
+                                            <img alt="" src="images/event/2.png"/>
                                         </a>
                                     </div>
                                     <div class="portfolio-details">
@@ -379,7 +358,7 @@ $adminevent_tbl =
                                     <div class="portfolio-thumb">
                                         <a href="#">
                                             <div class="thumb-overlay"><i class="fa fa-arrows-alt"></i></div>
-                                            <img alt="" src="images/portfolio-1/3.png"/>
+                                            <img alt="" src="images/event/3.png"/>
                                         </a>
                                     </div>
                                     <div class="portfolio-details">
@@ -397,7 +376,7 @@ $adminevent_tbl =
                                     <div class="portfolio-thumb">
                                         <a href="#">
                                             <div class="thumb-overlay"><i class="fa fa-arrows-alt"></i></div>
-                                            <img alt="" src="images/portfolio-1/4.png"/>
+                                            <img alt="" src="images/event/4.png"/>
                                         </a>
                                     </div>
                                     <div class="portfolio-details">
@@ -416,7 +395,7 @@ $adminevent_tbl =
                                         <a class="lightbox" title="This is an image title"
                                            href="images/portfolio-big-02.jpg">
                                             <div class="thumb-overlay"><i class="fa fa-arrows-alt"></i></div>
-                                            <img alt="" src="images/portfolio-1/5.png"/>
+                                            <img alt="" src="images/event/5.png"/>
                                         </a>
                                     </div>
                                     <div class="portfolio-details">
@@ -434,7 +413,7 @@ $adminevent_tbl =
                                     <div class="portfolio-thumb">
                                         <a href="#">
                                             <div class="thumb-overlay"><i class="fa fa-arrows-alt"></i></div>
-                                            <img alt="" src="images/portfolio-1/6.png"/>
+                                            <img alt="" src="images/event/6.png"/>
                                         </a>
                                     </div>
                                     <div class="portfolio-details">
@@ -453,7 +432,7 @@ $adminevent_tbl =
                                         <a class="lightbox" title="This is an image title"
                                            href="images/portfolio-big-03.jpg">
                                             <div class="thumb-overlay"><i class="fa fa-arrows-alt"></i></div>
-                                            <img alt="" src="images/portfolio-1/7.png"/>
+                                            <img alt="" src="images/event/7.png"/>
                                         </a>
                                     </div>
                                     <div class="portfolio-details">
@@ -471,7 +450,7 @@ $adminevent_tbl =
                                     <div class="portfolio-thumb">
                                         <a href="#">
                                             <div class="thumb-overlay"><i class="fa fa-arrows-alt"></i></div>
-                                            <img alt="" src="images/portfolio-1/8.png"/>
+                                            <img alt="" src="images/event/8.png"/>
                                         </a>
                                     </div>
                                     <div class="portfolio-details">
@@ -489,7 +468,7 @@ $adminevent_tbl =
                                     <div class="portfolio-thumb">
                                         <a href="#">
                                             <div class="thumb-overlay"><i class="fa fa-arrows-alt"></i></div>
-                                            <img alt="" src="images/portfolio-1/9.png"/>
+                                            <img alt="" src="images/event/9.png"/>
                                         </a>
                                     </div>
                                     <div class="portfolio-details">
@@ -507,7 +486,7 @@ $adminevent_tbl =
                                     <div class="portfolio-thumb">
                                         <a href="#">
                                             <div class="thumb-overlay"><i class="fa fa-arrows-alt"></i></div>
-                                            <img alt="" src="images/portfolio-1/10.png"/>
+                                            <img alt="" src="images/event/10.png"/>
                                         </a>
                                     </div>
                                     <div class="portfolio-details">
@@ -525,7 +504,7 @@ $adminevent_tbl =
                                     <div class="portfolio-thumb">
                                         <a href="#">
                                             <div class="thumb-overlay"><i class="fa fa-arrows-alt"></i></div>
-                                            <img alt="" src="images/portfolio-1/11.png"/>
+                                            <img alt="" src="images/event/11.png"/>
                                         </a>
                                     </div>
                                     <div class="portfolio-details">
@@ -543,7 +522,7 @@ $adminevent_tbl =
                                     <div class="portfolio-thumb">
                                         <a href="#">
                                             <div class="thumb-overlay"><i class="fa fa-arrows-alt"></i></div>
-                                            <img alt="" src="images/portfolio-1/12.png"/>
+                                            <img alt="" src="images/event/12.png"/>
                                         </a>
                                     </div>
                                     <div class="portfolio-details">
@@ -669,7 +648,6 @@ $adminevent_tbl =
                                     <div class="big-title text-center animated fadeInDown delay-01" data-animation="fadeInDown" data-animation-delay="01">
                                         <h1 class="wite-text">Be Part of Us</h1>
                                     </div>
-                                    <!--<p class="text-center wite-text">Choose between <b>Student</b> and <b>Company</b>.</p>-->
                                         
                                     <!-- Start Service Icon 1 -->
                                     <div class="col-md-6 col-sm-6 service-box service-center">
