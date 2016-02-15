@@ -13,14 +13,49 @@ if (isset($_GET['btnSaveInfo'])) {
     $Nationality = $_GET['Nationality'];
     $CivilStatus = $_GET['CivilStatus'];
     $FBLink = $_GET['FBLink'];
-    $TwitterLink = $_GET['TwitterLink'];
 
     $FBLink = "http://www.facebook.com/" . $FBLink;
 
+    $validation_config = array(
+        'FirstName' => array(
+            'pattern' => '/^([a-zA-Z]+[ ]*)+$/',
+            'errorMsg' => 'Invalid First name'
+        ),
+        'MiddleName' => array(
+            'pattern' => '/^([a-zA-Z]+[ ]*)*$/',
+            'errorMsg' => 'Invalid Middle name'
+        ),
+        'LastName' => array(
+            'pattern' => '/^([a-zA-Z]+[ ]*)+$/',
+            'errorMsg' => 'Invalid Last name'
+        ),
+        'Gender' => array(
+            'pattern' => '/^(Male|Female)$/',
+            'errorMsg' => 'Invalid Gender'
+        ),
+        'Nationality' => array(
+            'pattern' => $common_functions->get_regex_of_nationalities(),
+            'errorMsg' => 'Invalid Nationality'
+        ),
+        'CivilStatus' => array(
+            'pattern' => '/^(Single|Married|Separated|Widowed)$/',
+            'errorMsg' => 'Invalid Civil Status'
+        )
+    );
+
+    $validation_return = $common_functions->validate($_GET, $validation_config);
+    if($validation_return['hasError']){
+        print_r($validation_return);die();
+    }
+
+    if(!$common_functions->date_validator($_GET['Birthdate'])){
+        die('Birthdate supplied is an invalid date.');
+    }
+
     GSecureSQL::query(
-        "UPDATE studentinfotbl SET FirstName = ?, MiddleName = ?, LastName = ?, Gender = ?, Birthdate = ?, Nationality = ?, CivilStatus = ?, FBLink = ?, TwitterLink = ? WHERE StudentID = ?",
+        "UPDATE studentinfotbl SET FirstName = ?, MiddleName = ?, LastName = ?, Gender = ?, Birthdate = ?, Nationality = ?, CivilStatus = ?, FBLink = ? WHERE StudentID = ?",
         FALSE,
-        "ssssssssss",
+        "sssssssss",
         $FirstName,
         $MiddleName,
         $LastName,
@@ -29,7 +64,6 @@ if (isset($_GET['btnSaveInfo'])) {
         $Nationality,
         $CivilStatus,
         $FBLink,
-        $TwitterLink,
         $StudentID
     );
 
