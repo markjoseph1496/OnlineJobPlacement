@@ -679,6 +679,13 @@ if($References == "ok"){
                                                 <option value="Zambian">Zambian</option>
                                                 <option value="Zimbabwean">Zimbabwean</option>
                                             </select>
+                                            <script>
+                                                // daya pa murrr. Filipino at US lang ang maayos na nationality. XD
+                                                // I have my jquery fix for this thing. :P
+                                                $(document).ready(function(){
+                                                    $("#Nationality").val(<?php echo json_encode($Nationality)?>);
+                                                });
+                                            </script>
                                         </div>
                                         <div class="form-group">
                                             <label>Civil Status <span>(*)</span></label>
