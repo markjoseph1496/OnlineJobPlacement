@@ -279,12 +279,11 @@ if (isset($_POST['btnRequestLOG'])) {
         RequiredYOE,
         CFG,
         DurationOfRequest,
-        MarketingMaterials,
-        Specialization)
+        MarketingMaterials)
         VALUES
-        (?,'Pending',?,?,?,?,?,?,?,?,?,?,?,?,?)",
+        (?,'Pending',?,?,?,?,?,?,?,?,?,?,?,?)",
         FALSE,
-        "ssssssssssssss",
+        "sssssssssssss",
         $CompanyID,
         $DateRequested,
         $PositionTitle,
@@ -297,10 +296,10 @@ if (isset($_POST['btnRequestLOG'])) {
         $YearOfExperience,
         $CFG,
         $DurationOfRequest,
-        $MarketingMaterials,
-        $Specialize
+        $MarketingMaterials
+
     );
-    die();
+
     header("location: company.php");
 
 }

@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50616
 File Encoding         : 65001
 
-Date: 2016-02-13 09:22:41
+Date: 2016-02-15 12:49:03
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -547,7 +547,7 @@ DROP TABLE IF EXISTS `logrequesttbl`;
 CREATE TABLE `logrequesttbl` (
   `LID` int(11) NOT NULL AUTO_INCREMENT,
   `CompanyID` varchar(11) NOT NULL,
-  `Specialization` varchar(255) NOT NULL,
+  `Courses` varchar(255) NOT NULL,
   `DateFrom` varchar(255) NOT NULL,
   `DateTo` varchar(255) NOT NULL,
   `Status` varchar(255) NOT NULL,
@@ -564,11 +564,12 @@ CREATE TABLE `logrequesttbl` (
   `DurationOfRequest` varchar(255) NOT NULL,
   `MarketingMaterials` varchar(255) NOT NULL,
   PRIMARY KEY (`LID`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
 
 -- ----------------------------
 -- Records of logrequesttbl
 -- ----------------------------
+INSERT INTO logrequesttbl VALUES ('1', '1', '', '2016-02-15', '2016-02-29', 'Accepted', '2016-02-15', 'sdadsa', 'Full Time, Part-Time', 'Entry Level/Gen Staff, Officer', 'dddd', 'dddddddddddddddddddd', 'Quezon City', '123123', '11', 'Yes', '15 Days', 'Yes');
 
 -- ----------------------------
 -- Table structure for `ojttbl`
