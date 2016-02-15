@@ -831,8 +831,9 @@ if($References == "ok"){
                 },
                 FBLink: {
                     validators: {
-                        notEmpty: {
-                            message: "FBLink is required."
+                        regexp: {
+                            regexp: /^([a-z0-9]+[.]*)+$/i,
+                            message: "Invalid FB Link."
                         }
                     }
                 },

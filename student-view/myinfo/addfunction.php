@@ -40,6 +40,10 @@ if (isset($_GET['btnSaveInfo'])) {
         'CivilStatus' => array(
             'pattern' => '/^(Single|Married|Separated|Widowed)$/',
             'errorMsg' => 'Invalid Civil Status'
+        ),
+        'FBLink' => array(
+            'pattern' => '/^([a-z0-9]+[.]*)+$/i',
+            'errorMsg' => 'Invalid FB Link'
         )
     );
 
