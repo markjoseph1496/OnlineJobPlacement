@@ -227,7 +227,7 @@ if (isset($_SESSION['AdminID'])) {
                     <li>
                         <a> Maintenance</a>
                         <ul class="dropdown">
-                            <li><a href="admin-maintenance.php">Specialization</a></li>
+                            <li><a href="admin-maintenance.php">Courses</a></li>
                             <li><a href="admin-users.php">Users</a></li>
                             <li><a href="admin-calendar.php">Calendar Events</a></li>
                         </ul>
@@ -265,7 +265,7 @@ if (isset($_SESSION['AdminID'])) {
                 <li>
                     <a> Maintenance</a>
                     <ul class="dropdown">
-                        <li><a class="active" href="admin-maintenance.php">Specialization</a></li>
+                        <li><a class="active" href="admin-maintenance.php">Courses</a></li>
                         <li><a href="admin-users.php">Users</a></li>
                         <li><a href="admin-calendar.php">Calendar Events</a></li>
                     </ul>
@@ -321,7 +321,7 @@ if (isset($_SESSION['AdminID'])) {
                 </tr>
                 <tr>
                     <th width='25%' class='tabletitle'>Company Name</th>
-                    <th width='25%' class='tabletitle'>Specialization</th>
+                    <th width='25%' class='tabletitle'>Courses</th>
                     <th width='20%' class='tabletitle'>Location</th>
                     <th width='15%' class='tabletitle'>Date Requested</th>
                     <th width='15%' class='tabletitle'>Status</th>
@@ -335,7 +335,7 @@ if (isset($_SESSION['AdminID'])) {
                         "SELECT
                             logrequesttbl.LID,
                             logrequesttbl.CompanyID,
-                            logrequesttbl.Specialization,
+                            logrequesttbl.Courses,
                             logrequesttbl.Status,
                             logrequesttbl.DateRequested,
                             logrequesttbl.PositionTitle,
@@ -360,7 +360,7 @@ if (isset($_SESSION['AdminID'])) {
                 foreach ($requestlog_tbl as $value) {
                 $LID = $value[0];
                 $CompanyID = $value[1];
-                $Specialization = $value[2];
+                $Course = $value[2];
                 $Status = $value[3];
                 $DateRequested = $value[4];
                 $PositionTitle = $value[5];
@@ -379,7 +379,7 @@ if (isset($_SESSION['AdminID'])) {
                 ?>
                 <tr>
                     <td width=25% class=tabletitle><a href='#'><?php echo $CompanyName; ?></a></td>
-                    <td width=25% class=tabletitle><?php echo $Specialization; ?></td>
+                    <td width=25% class=tabletitle><?php echo $Course; ?></td>
                     <td width=20% class=tabletitle><?php echo $Location; ?></td>
                     <td width=15% class=tabletitle><?php echo $DateRequested; ?></td>
                     <td width=15% class=tabletitle><?php echo $Status; ?></td>
@@ -398,7 +398,7 @@ if (isset($_SESSION['AdminID'])) {
                             <div class='modal-content'>
                                 <div class='modal-header'>
                                     <button type='button' class='close' data-dismiss='modal'>&times;</button>
-                                    <h4 class='modal-title'>Accept Resume?</h4>
+                                    <h4 class='modal-title'>List of graduates requests</h4>
                                 </div>
                                 <div class='modal-body'>
                                     <div class='col-md-15 fieldcol'>
@@ -491,7 +491,7 @@ if (isset($_SESSION['AdminID'])) {
                                                            value="<?php echo $MarketingMaterials; ?>">
                                                 </div>
                                             </li>
-                                            <label = 'usr' class = 'control-label'>Specialization to be approved:</label>
+                                            <label = 'usr' class = 'control-label'>Courses to be approved:</label>
                                             <div class="row">
 
                                                 <div class="col-md-9">
