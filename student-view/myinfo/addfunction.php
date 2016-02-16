@@ -91,6 +91,17 @@ if (isset($_GET['btnSaveContactInfo'])) {
     $City = $_GET['City'];
     $PostalCode = $_GET['PostalCode'];
 
+    $validation_config = array(
+        'Email' => array(
+            'pattern' => '/^[a-z0-9\.-_]+@[a-z0-9\.-_]+(\.com|\.org|\.net|\.int|\.edu|\.gov|\.mil|\.[a-z]{2})$/i',
+            'errorMsg' => 'Invalid Email'
+        ),
+        'MobileNumber' => array(
+            'pattern' => '/^09(05|06|07|08|09|10|11|12|13|14|15|16|17|18|19|20|21|22|23|24|25|26|27|28|29|30|32|33|34|35|36|37|38|39|42|43|46|47|48|49|75|77|89|94|96|97|98|)[0-9]{7}$/',
+            'errorMsg' => 'Invalid Mobile Number'
+        )
+    );
+
     GSecureSQL::query(
         "UPDATE studcontactstbl SET Email = ?, MobileNumber = ?, HomeNumber = ?, WorkNumber = ?, Address = ?, City = ?, PostalCode = ? WHERE StudentID = ?",
         FALSE,
