@@ -338,9 +338,9 @@ $adminevent_tbl =
                             <div class="portfolio-item item">
                                 <div class="portfolio-border">
                                     <div class="portfolio-thumb">
-                                        <a class="lightbox" title="This is an image title" href="images/portfolio-big-01.jpg">
+                                        <a class="lightbox" title="This is an image title" href="images/event/uplift.jpg">
                                             <div class="thumb-overlay"><i class="fa fa-arrows-alt"></i></div>
-                                            <img alt="" src="images/event/2.png"/>
+                                            <img alt="" src="images/event/uplift.jpg"/>
                                         </a>
                                     </div>
                                     <div class="portfolio-details">
@@ -356,9 +356,9 @@ $adminevent_tbl =
                             <div class="portfolio-item item">
                                 <div class="portfolio-border">
                                     <div class="portfolio-thumb">
-                                        <a href="#">
+                                        <a class="lightbox" title="This is an image title" href="images/event/nyc.jpg">
                                             <div class="thumb-overlay"><i class="fa fa-arrows-alt"></i></div>
-                                            <img alt="" src="images/event/3.png"/>
+                                            <img alt="" src="images/event/nyc.jpg"/>
                                         </a>
                                     </div>
                                     <div class="portfolio-details">

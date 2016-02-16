@@ -337,7 +337,7 @@ if($References == "ok"){
                                 <li><a class="active" href="education.php"><?php echo $nSchool; ?> Education</a></li>
                                 <li><a href="certifications.php"><?php echo $nCertification; ?> Certifications</a></li>
                                 <li><a href="achievements.php"><?php echo $nAchievements; ?> Achievements</a></li>
-                                <li><a href="specialization-and-languages.php"><?php echo $nSpecialization; ?> Specialization & Languages</a></li>
+                                <li><a href="skills-and-languages.php"><?php echo $nSpecialization; ?> Skills & Languages</a></li>
                                 <li><a href="references.php"><?php echo $nReferences; ?> References</a></li>
                                 <li><a href="portfolio.php">Portfolio</a></li>
                             </ul>
@@ -371,7 +371,7 @@ if($References == "ok"){
                         <li><a class="active" href="education.php">Education</a></li>
                         <li><a href="certifications.php">Certifications</a></li>
                         <li><a href="achievements.php">Achievements</a></li>
-                        <li><a href="specialization-and-languages.php">Specialization & Languages</a></li>
+                        <li><a href="skills-and-languages.php">Skills & Languages</a></li>
                         <li><a href="references.php">References</a></li>
                         <li><a href="portfolio.php">Portfolio</a></li>
                     </ul>

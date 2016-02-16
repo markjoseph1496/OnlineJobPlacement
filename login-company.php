@@ -26,6 +26,7 @@
     <link href="css/login-style.css" rel="stylesheet">
     <link href="css/mystyle.css" rel="stylesheet">
 </head>
+
 <body class="login-company">
     <div class="box effect3" style="margin-top:5%;">
         <h2 class="register-title">Sign In</h2>
