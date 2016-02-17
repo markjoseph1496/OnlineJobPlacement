@@ -360,7 +360,7 @@ $ProfileImage= $companyinfo_tbl[0][11];
                             </div>
                             <div class="col-md-8">
                                 <div class="form-group">
-                                    <textarea type="text" name="Description" id="usr" class="form-control"><?php echo $Description; ?></textarea>
+                                    <textarea type="text" name="Description" id="usr" class="form-control" maxlength="1000"><?php echo $Description; ?></textarea>
                                 </div>
                             </div>
                         </div>
@@ -572,12 +572,7 @@ $ProfileImage= $companyinfo_tbl[0][11];
                     validators: {
                         notEmpty: {
                             message: "Company Description is required."
-                        },
-                        stringLength: {
-                            min: 1,
-                            max: 70,
-                            message: "Company Description is 70 characters only."
-                        },
+                        }
                         regexp: {
                             regexp: /^[a-z\s]+$/i,
                             message: "Company Description can consist of alphabetical characters and spaces only"
