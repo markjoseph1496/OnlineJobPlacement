@@ -425,15 +425,15 @@ if (isset($_SESSION['AdviserID'])) {
                 <thead>
                 <tr></tr>
                 <tr>
-                    <th width="10%" class="tabletitle">Student ID</th>
-                    <th width="15%" class="tabletitle">Student Name</th>
-                    <th width="15%" class="tabletitle">Course</th>
+                    <th width="10%" class="tabletitle">Student No.</th>
+                    <th width="15%" class="tabletitle">Name</th>
                     <th width="15%" class="tabletitle">Company</th>
-                    <th width="20%" class="tabletitle">Company Address</th>
-                    <th width="15%" class="tabletitle">Contact Number</th>
-                    <th width="10%" class="tabletitle">Supervisor</th>
-                    <th width="10%" class="tabletitle">Status</th>
-                    <th width="5%" class="tabletitle">Edit</th>
+                    <th width="15%" class="tabletitle">Address</th>
+                    <th width="20%" class="tabletitle">Remark</th>
+                    <th width="15%" class="tabletitle"></th>
+                    <th width="10%" class="tabletitle"></th>
+                    <th width="10%" class="tabletitle"></th>
+                    <th width="5%" class="tabletitle"></th>
                 </tr>
                 </thead>
                 <tbody>
