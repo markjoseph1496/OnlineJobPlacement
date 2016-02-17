@@ -95,291 +95,310 @@ $adviser_tbl =
     <script type="text/javascript" src="../js/jquery.nicescroll.min.js"></script>
     <script type="text/javascript" src="../js/jquery.parallax.js"></script>
     <script type="text/javascript" src="../js/jquery.slicknav.js"></script>
+
+    <!-- Notification -->
+    <link rel="stylesheet" href="../css/notif.css"/>
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $("#notificationLink").click(function () {
+                $("#notificationContainer").fadeToggle(300);
+                $("#notification_count").fadeOut("slow");
+                return false;
+            });
+
+            //Document Click
+            $(document).click(function () {
+                $("#notificationContainer").hide();
+            });
+            //Popup Click
+            $("#notificationContainer").click(function () {
+                return false
+            });
+
+        });
+    </script>
 </head>
 
 <body>
-
-<!-- Full Body Container -->
-<div id="container">
-
-
-    <!-- Start Top Bar -->
-    <div class="top-bar">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-6">
-                    <!-- Start Contact Info -->
-                    <ul class="contact-details">
-                        <li class="profile-name"><i class="fa fa-hashtag"></i> <b>008-2012-0805</b></li>
-                    </ul>
-                    <!-- End Contact Info -->
+    <!-- Full Body Container -->
+    <div id="container">
+        <!-- Start Top Bar -->
+        <div class="top-bar">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-7">&nbsp;</div>
+                    <div class="col-md-5">
+                        <!-- Notification -->
+                        <ul class="nav navbar-nav navbar-right">
+                            <li class="dropdown icon-border" id="notificationLink">
+                                <span id="notification_count">3</span>
+                                <a href="#" class="bell itl-tooltip" data-placement="bottom" data-toggle="dropdown"><i
+                                        class="fa fa-bell"></i></a>
+                                <ul id="notificationContainer" class="dropdown-menu dropdown-menu-inverse">
+                                    <li class="dropdown-header"><label>Notification</label></li>
+                                    <li class="disabled"><a href="#" tabindex="-1">No new notification.</a></li>
+                                    <li><a href="#" tabindex="-1">The administrator accepted your request.</a></li>
+                                    <li class="divider"></li>
+                                    <li><a href="../notification/notification.php" tabindex="-1">See All</a></li>
+                                </ul>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown"><b class="fa fa-user"></b>
+                                    Welcome,  </b><b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    <li><a href="#">Profile <b class="fa fa-user" style="float:right;"></b></a></li>
+                                    <li><a href="company-settings.php">Settings <b class="fa fa-cog"
+                                                                                               style="float:right;"></b></a>
+                                    </li>
+                                    <li class="divider"></li>
+                                    <li><a href="#" data-target='#Logout' data-toggle='modal'>Sign Out <b
+                                                class="fa fa-sign-out" style="float:right;"></b></a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                        <!-- Notification -->
+                    </div>
+                    <!-- .col-md-5 -->
                 </div>
-                <!-- .col-md-6 -->
-                <div class="col-md-6">
-                    <!-- Start Social Links -->
-                    <ul class="social-list">
-                        <li class="profile-name">
-                            <a class="bell itl-tooltip" data-placement="bottom" title="" href="#"
-                               data-original-title="Notification"><i class="fa fa-bell"></i></a>
-                        </li>
-                        <li class="profile-name">
-                            &nbsp;
-                        </li>
-                        <li class="profile-name">
-                            <i class="fa fa-user"></i> Hello, <b>Aira Jane Cruz</b>
-                        </li>
-                    </ul>
-                    <!-- End Social Links -->
-                </div>
-                <!-- .col-md-6 -->
+                <!-- .row -->
             </div>
-            <!-- .row -->
+            <!-- .container -->
         </div>
-        <!-- .container -->
-    </div>
-    <!-- .top-bar -->
-    <!-- End Top Bar -->
+        <!-- .top-bar -->
+        <!-- End Top Bar -->
 
-    <!-- Start  Logo & Naviagtion  -->
-    <div class="navbar navbar-default navbar-top">
-        <div class="container">
-            <div class="navbar-header">
-                <!-- Stat Toggle Nav Link For Mobiles -->
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                    <i class="fa fa-bars"></i>
-                </button>
-                <!-- End Toggle Nav Link For Mobiles -->
-                <a class="navbar-brand" href="">
-                    <img src="../images/ojpms.png">
-                </a>
-            </div>
-            <div class="navbar-collapse collapse">
-                <!-- Sign-out -->
-                <div class="signout-side">
-                    <a class="show-signout" data-toggle='modal' data-target='#Logout'><i class="fa fa-sign-out"></i></a>
-                </div>
-                <!-- Modal -->
-                <div class="modal fade" id="Logout"
-                     role="dialog">
-                    <div class="modal-dialog" style="padding:100px">
-                        <!-- Modal content-->
-                        <div class="modal-content">
-                            <div class="modal-header">
-                                <button style = type="button" class="close" data-dismiss="modal">&times;</button>
-                                <h4 class="modal-title">Log out?</h4>
+        <!-- Modal -->
+        <div class="modal fade" id="Logout"
+             role="dialog">
+            <div class="modal-dialog" style="padding:100px">
+                <!-- Modal content-->
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button style = type="button" class="close" data-dismiss="modal">&times;</button>
+                        <h4 class="modal-title">Log out?</h4>
+                    </div>
+                    <div class="modal-body">
+                        <div class="col-md-15">
+                            <label>Do you want to log out?</label>
+                            <div class="form-group">
                             </div>
-                            <div class="modal-body">
-                                <div class="col-md-15 fieldcol">
-                                    <label = "usr" class = "control-label">Do you want to log out?</label>
-                                    <div class="form-group">
-                                    </div>
-                                </div>
-                                <div class="modal-footer">
-                                    <a href="logout.php"
-                                       class="btn btn-primary">Log out</a>
-                                    <button type="button" class="btn btn-default" data-dismiss="modal">
-                                        Cancel
+                        </div>
+                        <div class="modal-footer">
+                            <a href="logout.php"
+                               class="btn btn-primary">Log out</a>
+                            <button type="button" class="btn btn-default" data-dismiss="modal">
+                                Cancel
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Start  Logo & Naviagtion  -->
+        <div class="navbar navbar-default navbar-top">
+            <div class="container">
+                <div class="navbar-header">
+                    <!-- Stat Toggle Nav Link For Mobiles -->
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <i class="fa fa-bars"></i>
+                    </button>
+                    <!-- End Toggle Nav Link For Mobiles -->
+                    <a class="navbar-brand" href="">
+                        <img src="../images/ojpms.png">
+                    </a>
+                </div>
+                <div class="navbar-collapse collapse">
+                    <!-- Start Navigation List -->
+                    <ul class="nav navbar-nav navbar-right">
+                        <li>
+                            <a href="ojt-adviser.php">Home</a>
+                        </li>
+                        <li>
+                            <a href="ojt-account.php">Account</a>
+                        </li>
+                    </ul>
+                    <!-- End Navigation List -->
+                </div>
+            </div>
+            <!-- Mobile Menu Start -->
+            <ul class="wpb-mobile-menu">
+               <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a href="ojt-adviser.php">Home</a>
+                    </li>
+                    <li>
+                        <a href="ojt-account.php">Account</a>
+                    </li>
+                </ul>
+            </ul>
+        </div>
+        <!-- End Header Logo & Naviagtion -->
+
+        <!-- Start Page Banner -->
+        <div class="page-banner" style="padding:40px 0; center #f9f9f9;">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6">
+                        <h2>Reports</h2>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- End Page Banner -->
+
+        <!--Content-->
+        <br><br><br>
+
+        <div class="container">
+            <form name="UpdateAdmin" id="UpdateAdmin" autocomplete="off" action="functions.php" method="POST">
+                <div class="col-md-12">
+                    <div class="row">
+                        <?php
+
+                        if (isset($_GET['id'])) {
+                            $id = $_GET['id'];
+                            if ($id == 1) {
+                                echo '
+                            <div class="alert alert-success">
+                                <span class="glyphicon glyphicon-info-sign"></span> 
+                                Username successfully changed.
+                            </div>
+                            ';
+                            } elseif ($id == 2) {
+                                echo '
+                            <div class="alert alert-success">
+                                <span class="glyphicon glyphicon-info-sign"></span> 
+                                Password successfully changed.
+                            </div>
+                            ';
+                            } elseif ($id == 3) {
+                                echo '
+                            <div class="alert alert-success">
+                                <span class="glyphicon glyphicon-info-sign"></span> 
+                                Personal info successfully updated.
+                            </div>
+                            ';
+                            }
+
+                        }
+                        ?>
+                        <div class="col-md-2">
+                            <label>Username:</label>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                <label><?php echo $Username; ?></label>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="form-group">
+                                <div class="box">
+                                    <button class="btn btn-default" data-toggle="modal" data-target="#ChangeUsername">Change
+                                        Username
                                     </button>
                                 </div>
                             </div>
                         </div>
                     </div>
-                </div>
-                <!-- End Sign-out -->
-                <!-- Start Navigation List -->
-              <ul class="nav navbar-nav navbar-right">
-                <li>
-                    <a href="ojt-adviser.php">Home</a>
-                </li>
-                <li>
-                    <a href="ojt-account.php">Account</a>
-                </li>
-                </ul>
-                <!-- End Navigation List -->
-            </div>
-        </div>
-        <!-- Mobile Menu Start -->
-        <ul class="wpb-mobile-menu">
-           <ul class="nav navbar-nav navbar-right">
-                <li>
-                    <a href="ojt-adviser.php">Home</a>
-                </li>
-                <li>
-                    <a href="ojt-account.php">Account</a>
-                </li>
-                </ul>
-        </ul>
-        </header>
-        <!-- Mobile Menu End -->
-
-    </div>
-    <!-- End Header Logo & Naviagtion -->
-
-    </header>
-    <!-- End Header Section -->
-
-    <!-- Start Page Banner -->
-    <div class="page-banner" style="padding:40px 0; center #f9f9f9;">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-6">
-                    <h2>Reports</h2>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- End Page Banner -->
-
-    <!--Content-->
-    <br><br><br>
-
-   <div class="container">
-    <form name="UpdateAdmin" id="UpdateAdmin" autocomplete="off" action="functions.php" method="POST">
-        <div class="col-md-12">
-            <div class="row field">
-                <?php
-
-                if (isset($_GET['id'])) {
-                    $id = $_GET['id'];
-                    if ($id == 1) {
-                        echo '
-                    <div class="alert alert-success">
-                        <span class="glyphicon glyphicon-info-sign"></span> 
-                        Username successfully changed.
+                    <div class="row">
+                        <div class="col-md-2">
+                            <label>Password:</label>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                <label>**********</label>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="form-group">
+                                <div class="box">
+                                    <button class="btn btn-default" data-toggle="modal" data-target="#ChangePassword">
+                                        ChangePassword
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                    ';
-                    } elseif ($id == 2) {
-                        echo '
-                    <div class="alert alert-success">
-                        <span class="glyphicon glyphicon-info-sign"></span> 
-                        Password successfully changed.
+                    <div class="row">
+                        <div class="col-md-2">
+                            <label>First Name <span>(*)</span></label>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                <input type="text" name="FirstName" id="FirstName" class="form-control"
+                                       value="<?php echo $FirstName; ?>">
+                            </div>
+                        </div>
                     </div>
-                    ';
-                    } elseif ($id == 3) {
-                        echo '
-                    <div class="alert alert-success">
-                        <span class="glyphicon glyphicon-info-sign"></span> 
-                        Personal info successfully updated.
+                    <div class="row">
+                        <div class="col-md-2">
+                            <label>Middle Name <span>(*)</span></label>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                <input type="text" name="MiddleName" id="MiddleName" class="form-control"
+                                       value="<?php echo $MiddleName; ?>">
+                            </div>
+                        </div>
                     </div>
-                    ';
-                    }
-
-                }
-                ?>
-                <div class="col-md-2 fieldcol">
-                    <label = "usr" class = "control-label"> Username: </label>
-                </div>
-                <div class="col-md-4 fieldcol">
-                    <div class="form-group">
-                        <label = "usr" class = "control-label"><?php echo $Username; ?></label>
+                    <div class="row">
+                        <div class="col-md-2">
+                            <label>Last Name <span>(*)</span></label>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                <input type="text" name="LastName" id="LastName" class="form-control"
+                                       value="<?php echo $LastName; ?>">
+                            </div>
+                        </div>
                     </div>
-                </div>
-                <div class="col-md-3 fieldcol">
-                    <div class="form-group">
-                        <div class="box">
-                            <button class="btn btn-default" data-toggle="modal" data-target="#ChangeUsername">Change
-                                Username
-                            </button>
+                    <div class="row">
+                        <div class="col-md-2">
+                            <label>Position <span>(*)</span></label>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                <input type="text" name="Position" id="Position" class="form-control"
+                                       value="<?php echo $Position; ?>">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-2">
+                            <label>Address <span>(*)</span></label>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                <input type="text" name="Address" id="Address" class="form-control"
+                                       value="<?php echo $Address; ?>">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-2">
+                            <label>Contact Number <span>(*)</span></label>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                <input type="text" name="ContactNumber" id="ContactNumber" class="form-control"
+                                       value="<?php echo $ContactNumber ?>">
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
-            <div class="row field">
-                <div class="col-md-2 fieldcol">
-                    <label = "usr" class = "control-label"> Password: </label>
-                </div>
-                <div class="col-md-4 fieldcol">
-                    <div class="form-group">
-                        <label = "usr" class = "control-label">**********</label>
+                &nbsp;
+                <div class="hr5" style="margin-top:35px;margin-bottom:40px;"></div>
+                <div class="field">
+                    <div class="text-center">
+                        <button type="submit" class="btn-system btn-large">Save</button>
+                        <button type="submit" class="btn-system btn-large btn-black">Cancel</button>
                     </div>
                 </div>
-                <div class="col-md-3 fieldcol">
-                    <div class="form-group">
-                        <div class="box">
-                            <button class="btn btn-default" data-toggle="modal" data-target="#ChangePassword">
-                                ChangePassword
-                            </button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="row field">
-                <div class="col-md-2 fieldcol">
-                    <label>First Name <span>(*)</span></label>
-                </div>
-                <div class="col-md-4 fieldcol">
-                    <div class="form-group">
-                        <input type="text" name="FirstName" id="FirstName" class="form-control"
-                               value="<?php echo $FirstName; ?>">
-                    </div>
-                </div>
-            </div>
-            <div class="row field">
-                <div class="col-md-2 fieldcol">
-                    <label>Middle Name <span>(*)</span></label>
-                </div>
-                <div class="col-md-4 fieldcol">
-                    <div class="form-group">
-                        <input type="text" name="MiddleName" id="MiddleName" class="form-control"
-                               value="<?php echo $MiddleName; ?>">
-                    </div>
-                </div>
-            </div>
-            <div class="row field">
-                <div class="col-md-2 fieldcol">
-                    <label>Last Name <span>(*)</span></label>
-                </div>
-                <div class="col-md-4 fieldcol">
-                    <div class="form-group">
-                        <input type="text" name="LastName" id="LastName" class="form-control"
-                               value="<?php echo $LastName; ?>">
-                    </div>
-                </div>
-            </div>
-            <div class="row field">
-                <div class="col-md-2 fieldcol">
-                    <label>Position <span>(*)</span></label>
-                </div>
-                <div class="col-md-4 fieldcol">
-                    <div class="form-group">
-                        <input type="text" name="Position" id="Position" class="form-control"
-                               value="<?php echo $Position; ?>">
-                    </div>
-                </div>
-            </div>
-            <div class="row field">
-                <div class="col-md-2 fieldcol">
-                    <label>Address <span>(*)</span></label>
-                </div>
-                <div class="col-md-4 fieldcol">
-                    <div class="form-group">
-                        <input type="text" name="Address" id="Address" class="form-control"
-                               value="<?php echo $Address; ?>">
-                    </div>
-                </div>
-            </div>
-            <div class="row field">
-                <div class="col-md-2 fieldcol">
-                    <label>Contact Number <span>(*)</span></label>
-                </div>
-                <div class="col-md-4 fieldcol">
-                    <div class="form-group">
-                        <input type="text" name="ContactNumber" id="ContactNumber" class="form-control"
-                               value="<?php echo $ContactNumber ?>">
-                    </div>
-                </div>
-            </div>
+            </form>
         </div>
-        &nbsp;
-        <div class="hr5" style="margin-top:35px;margin-bottom:40px;"></div>
-        <div class="field">
-            <div class="text-center">
-                <button type="submit" class="btn-system btn-large">Save</button>
-                <button type="submit" class="btn-system btn-large">Cancel</button>
-            </div>
-        </div>
-    </form>
-</div>
+    </div>
 </body>
 <script type="text/javascript" src="../js/script.js"></script>
 </html>
@@ -391,14 +410,14 @@ $adviser_tbl =
                 invalid: "glyphicon glyphicon-remove",
                 validating: "glyphicon glyphicon-refresh"
             },
-            fields: {
+           s: {
                 ModalNewUsername: {
                     validators: {
                         notEmpty: {
                             message: "Username is required."
                         },
                         identical: {
-                            field: "ModalConfirmUsername",
+                           : "ModalConfirmUsername",
                             message: "Username and Confirm Username mismatched."
                         }
                     }
@@ -409,7 +428,7 @@ $adviser_tbl =
                             message: "Username is required."
                         },
                         identical: {
-                            field: "ModalNewUsername",
+                           : "ModalNewUsername",
                             message: "Username and Confirm Username mismatched."
                         }
                     }
@@ -423,7 +442,7 @@ $adviser_tbl =
                 invalid: "glyphicon glyphicon-remove",
                 validating: "glyphicon glyphicon-refresh"
             },
-            fields: {
+           s: {
                 ModalOldPassword: {
                     validators: {
                         notEmpty: {
@@ -444,7 +463,7 @@ $adviser_tbl =
                             message: "Confirm Password is required."
                         },
                         identical: {
-                            field: "ModalNewPassword",
+                           : "ModalNewPassword",
                             message: "Password mismatched."
                         }
                     }
@@ -458,11 +477,11 @@ $adviser_tbl =
                 invalid: "glyphicon glyphicon-remove",
                 validating: "glyphicon glyphicon-refresh"
             },
-            fields: {
+           s: {
                 FirstName: {
                     validators: {
                         notEmpty: {
-                            message: "This field is required."
+                            message: "This is required."
                         },
                         regexp: {
                             regexp: /^[a-z\s]+$/i,
@@ -481,7 +500,7 @@ $adviser_tbl =
                 LastName: {
                     validators: {
                         notEmpty: {
-                            message: "This field is required."
+                            message: "This is required."
                         },
                         regexp: {
                             regexp: /^[a-z\s]+$/i,
@@ -492,28 +511,28 @@ $adviser_tbl =
                 Position: {
                     validators: {
                         notEmpty: {
-                            message: "This field is required."
+                            message: "This is required."
                         }
                     }
                 },
                 Department: {
                     validators: {
                         notEmpty: {
-                            message: "This field is required."
+                            message: "This is required."
                         }
                     }
                 },
                 Address: {
                     validators: {
                         notEmpty: {
-                            message: "This field is required."
+                            message: "This is required."
                         }
                     }
                 },
                 ContactNumber: {
                     validators: {
                         notEmpty: {
-                            message: "This field is required."
+                            message: "This is required."
                         },
                         regexp: {
                             regexp: /^[0-9]+$/i,
