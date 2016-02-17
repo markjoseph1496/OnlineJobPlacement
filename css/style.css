@@ -1,10 +1,11 @@
 /* CSS Document */
 
 /*
-	Theme Name: OJPMS
-	Description: OJPMS
+	Theme Name: Margo
+	Description: Margo - Responsive Template
 	Version: 1.0
-	Author: OJPMS
+	Author: iThemesLab
+	Website: http://ithemeslab.com
 */
 
 /* ------------------------------------------ */
@@ -3534,7 +3535,7 @@ and (min-width : 551px){
 .blog-post {
     margin-bottom: 40px;
 	padding-bottom: 40px;
-	/*border-bottom: 1px solid #eee;*/
+	border-bottom: 1px solid #eee;
 }
 
 .blog-post .post-head {
@@ -3593,7 +3594,7 @@ and (min-width : 551px){
 }
 
 .blog-post .post-content {
-	/*padding-left: 54px;*/
+	padding-left: 54px;
 	position: relative;
 }
 

@@ -93,16 +93,11 @@
                         </a>
                     </div>
                     <div class="navbar-collapse collapse">
-                        <!-- Start Navigation List -->
-                        <ul class="nav navbar-nav navbar-right">
-                            <li>
-                                <button href="" class="btn-system btn-large btn-black">Login</button>
-                            </li>
-                            <li>
-                                <button id="" class="btn-system btn-mini border-btn" name="btnDelete">Sign Up</button>
-                            </li>
-                        </ul>
-                        <!-- End Navigation List -->
+
+                        <div class="signout-side">
+                            <a href='../login-student.php' class='btn-system btn-large btn-black'>Login</a>
+                            <button href="../registration.php" class='btn-system btn-large btn-black'>Sign Up</button>
+                        </div>
                     </div>
                 </div>
                 <!-- Mobile Menu Start -->
