@@ -140,39 +140,39 @@ if (isset($_SESSION['AdviserID'])) {
         <div class="top-bar">
             <div class="container">
                 <div class="row">
-                        <!-- .col-md-5 -->
-                        <div class="col-md-5">
-                            <!-- Notification -->
-                            <ul class="nav navbar-nav navbar-right">
-                                <li class="dropdown icon-border" id="notificationLink">
-                                    <span id="notification_count">3</span>
-                                    <a href="#" class="bell itl-tooltip" data-placement="bottom" data-toggle="dropdown"><i
-                                            class="fa fa-bell"></i></a>
-                                    <ul id="notificationContainer" class="dropdown-menu dropdown-menu-inverse">
-                                        <li class="dropdown-header"><label>Notification</label></li>
-                                        <li class="disabled"><a href="#" tabindex="-1">No new notification.</a></li>
-                                        <li><a href="#" tabindex="-1">The administrator accepted your request.</a></li>
-                                        <li class="divider"></li>
-                                        <li><a href="../notification/notification.php" tabindex="-1">See All</a></li>
-                                    </ul>
-                                </li>
-                                <li class="dropdown">
-                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown"><b class="fa fa-user"></b>
-                                        Welcome,  </b><b class="caret"></b></a>
-                                    <ul class="dropdown-menu">
-                                        <li><a href="#">Profile <b class="fa fa-user" style="float:right;"></b></a></li>
-                                        <li><a href="company-settings.php">Settings <b class="fa fa-cog"
-                                                                                                   style="float:right;"></b></a>
-                                        </li>
-                                        <li class="divider"></li>
-                                        <li><a href="#" data-target='#Logout' data-toggle='modal'>Sign Out <b
-                                                    class="fa fa-sign-out" style="float:right;"></b></a></li>
-                                    </ul>
-                                </li>
-                            </ul>
-                            <!-- Notification -->
-                        </div>
-                        <!-- .col-md-5 -->
+                    <div class="col-md-7">&nbsp;</div>
+                    <div class="col-md-5">
+                        <!-- Notification -->
+                        <ul class="nav navbar-nav navbar-right">
+                            <li class="dropdown icon-border" id="notificationLink">
+                                <span id="notification_count">3</span>
+                                <a href="#" class="bell itl-tooltip" data-placement="bottom" data-toggle="dropdown"><i
+                                        class="fa fa-bell"></i></a>
+                                <ul id="notificationContainer" class="dropdown-menu dropdown-menu-inverse">
+                                    <li class="dropdown-header"><label>Notification</label></li>
+                                    <li class="disabled"><a href="#" tabindex="-1">No new notification.</a></li>
+                                    <li><a href="#" tabindex="-1">The administrator accepted your request.</a></li>
+                                    <li class="divider"></li>
+                                    <li><a href="../notification/notification.php" tabindex="-1">See All</a></li>
+                                </ul>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown"><b class="fa fa-user"></b>
+                                    Welcome,  </b><b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    <li><a href="#">Profile <b class="fa fa-user" style="float:right;"></b></a></li>
+                                    <li><a href="company-settings.php">Settings <b class="fa fa-cog"
+                                                                                               style="float:right;"></b></a>
+                                    </li>
+                                    <li class="divider"></li>
+                                    <li><a href="#" data-target='#Logout' data-toggle='modal'>Sign Out <b
+                                                class="fa fa-sign-out" style="float:right;"></b></a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                        <!-- Notification -->
+                    </div>
+                    <!-- .col-md-5 -->
                 </div>
                 <!-- .row -->
             </div>
@@ -264,7 +264,6 @@ if (isset($_SESSION['AdviserID'])) {
         <!--Content-->
         <br><br><br>
         <div class="container">
-            
             <div class="col-sm-4">
                 <h4 style="margin-top:20px;">TOTAL NUMBER OF STUDENTS: </b></h4>
             </div>
@@ -274,8 +273,8 @@ if (isset($_SESSION['AdviserID'])) {
                 </label>
                 <select class="form-control" style="width:250px;">
                     <option value="00">- Status</option>
-                    <option value="asd">Active</option>
-                    <option value="ada">Inactive</option>
+                    <option value="active">Active</option>
+                    <option value="inactive">Inactive</option>
                 </select>
             </div>
             <div class="col-sm-3">
@@ -407,228 +406,235 @@ if (isset($_SESSION['AdviserID'])) {
             ?>
 
             <br><br>
-            <table class="Applicants table" width="100%" cellpadding="0">
+            <div class="hr3"></div>
+            <table class="dataTable table" width="100%" cellpadding="0">
                 <thead>
-                <tr></tr>
-                <tr>
-                    <th width="10%" class="tabletitle">Student No.</th>
-                    <th width="15%" class="tabletitle">Name</th>
-                    <th width="15%" class="tabletitle">Company</th>
-                    <th width="15%" class="tabletitle">Address</th>
-                    <th width="20%" class="tabletitle">Remark</th>
-                    <th width="15%" class="tabletitle"></th>
-                    <th width="10%" class="tabletitle"></th>
-                    <th width="10%" class="tabletitle"></th>
-                    <th width="5%" class="tabletitle"></th>
-                </tr>
+                    <tr>
+                        <th width="15%">Student No.</th>
+                        <th width="20%">Name</th>
+                        <th width="20%">Company</th>
+                        <th width="20%">Address</th>
+                        <th width="10%">Remark</th>
+                        <th width="1%"class="rotate">Hours</th>
+                        <th width="1%"class="rotate">Endorsement</th>
+                        <th width="1%"class="rotate">DTR</th>
+                        <th width="1%"class="rotate">Waiver</th>
+                        <th width="1%"class="rotate">Training Plan</th>
+                        <th width="1%"class="rotate">MOA</th>
+                        <th width="1%"class="rotate">Journal</th>
+                        <th width="1%"class="rotate">Integration</th>
+                        <th width="1%"class="rotate">PAF</th>
+                        <th width="1%"class="rotate">Certificate</th>
+                    </tr>
                 </thead>
                 <tbody>
-                <?php
-                $ojt_tbl =
-                    GSecureSQL::query(
-                        "SELECT * FROM ojttbl",
-                        TRUE
-                    );
-                foreach ($ojt_tbl as $value) {
-                    $StudentID = $value[1];
-                    $FirstName = $value[3];
-                    $LastName = $value[2];
-                    $Course = $value[5];
-                    $CompanyName = $value[6];
-                    $CompanyAddress = $value[7];
-                    $Contact = $value[10];
-                    $Supervisor = $value[8];
-                    $Status = $value[12];
-                    $DTR = $value[13];
-                    $iPaper = $value[14];
-                    $PracJournal = $value[15];
-                    $TrainingPlan = $value[16];
-                    $Resume = $value[17];
-                    $MOA = $value[18];
-                    $ApplicationLetter = $value[19];
-                    $Waiver = $value[20]
+                    <?php
+                    $ojt_tbl =
+                        GSecureSQL::query(
+                            "SELECT * FROM ojttbl",
+                            TRUE
+                        );
+                    foreach ($ojt_tbl as $value) {
+                        $StudentID = $value[1];
+                        $FirstName = $value[3];
+                        $LastName = $value[2];
+                        $Course = $value[5];
+                        $CompanyName = $value[6];
+                        $CompanyAddress = $value[7];
+                        $Contact = $value[10];
+                        $Supervisor = $value[8];
+                        $Status = $value[12];
+                        $DTR = $value[13];
+                        $iPaper = $value[14];
+                        $PracJournal = $value[15];
+                        $TrainingPlan = $value[16];
+                        $Resume = $value[17];
+                        $MOA = $value[18];
+                        $ApplicationLetter = $value[19];
+                        $Waiver = $value[20]
 
-                    ?>
+                        ?>
                     <tr>
-                        <td width="10%"><?php echo $StudentID; ?></td>
-                        <td width="15%"><a href=".php"><?php echo $LastName . ", " . $FirstName; ?></td>
-                        <td width="15%"><?php echo $Course; ?></td>
-                        <td width="15%"><?php echo $CompanyName; ?></td>
-                        <td width="20%"><?php echo $CompanyAddress; ?></td>
-                        <td width="15%"><?php echo $Contact; ?></td>
-                        <td width="10%"><?php echo $Supervisor; ?></td>
-                        <td width="10%"><?php echo $Status; ?></td>
-                        <td width="10%">
-                            <button class="btn btn-default" data-toggle="modal"
-                                    data-target="#Update<?php echo $StudentID; ?>">
-                                <i class="fa fa-edit"></i>
-                            </button>
-                        </td>
+                        <td width="15%"></td>
+                        <td width="20%"></td>
+                        <td width="20%"></td>
+                        <td width="20%"></td>
+                        <td width="10%"></td>
+                        <td width="1%"></td>
+                        <td width="1%"></td>
+                        <td width="1%"></td>                   
+                        <td width="1%"></td>
+                        <td width="1%"></td>
+                        <td width="1%"></td>
+                        <td width="1%"></td>
+                        <td width="1%"></td>
+                        <td width="1%"></td>
+                        <td width="1%"></td>
                     </tr>
-                    <!-- Modal -->
-                    <form method="POST" action="functions.php" autocomplete="off">
-                        <div class="modal fade" id="Update<?php echo $StudentID; ?>"
-                             role="dialog">
-                            <div class="modal-dialog" style="padding:100px">
-                                <!-- Modal content-->
-                                <div class="modal-content">
-                                    <div class="modal-header">
-                                        <button type="button" class="close" data-dismiss="modal">&times;</button>
-                                        <h4 class="modal-title">Update Information</h4>
+                </tbody>
+            </table>
+            <!-- Modal -->
+            <form method="POST" action="functions.php" autocomplete="off">
+                <div class="modal fade" id="Update<?php echo $StudentID; ?>"
+                     role="dialog">
+                    <div class="modal-dialog" style="padding:100px">
+                        <!-- Modal content-->
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                <h4 class="modal-title">Update Information</h4>
+                            </div>
+                            <div class="modal-body">
+                                <div class="col-md-15">
+                                    <input type="hidden" name="StudentID" value="<?php echo $StudentID; ?>">
+                                    <label>Student ID:
+                                        <?php echo $StudentID; ?></label>
+                                    <br>
+                                    <label = "usr" class = "control-label">Student Name:
+                                    <?php echo $LastName . ", " . $FirstName; ?></label>
+                                    <br>
+                                    <label = "usr" class = "control-label">Course:
+                                    <?php echo $Course; ?></label>
+                                    <br>
+                                    <div class="form-group">
+                                        <div class="hr2" style="margin-top:10px;margin-bottom:10px;"></div>
+                                        <label>OJT Student Information:</label>
+                                        <ul>
+                                            <li>
+                                                <div class="form-group">
+                                                    Company
+                                                    <input type="text" class="form-control" id="txtCompany"
+                                                           name="txtCompany" value="<?php echo $CompanyName; ?>">
+                                                </div>
+                                            </li>
+                                            <li>
+                                                <div class="form-group">
+                                                    Company Address
+                                                    <input type="text" class="form-control" id="txtCompanyAddress"
+                                                           name="txtCompanyAddress"
+                                                           value="<?php echo $CompanyAddress; ?>">
+                                                </div>
+                                            </li>
+                                            <li>
+                                                <div class="form-group">
+                                                    Contact Number
+                                                    <input type="text" class="form-control" id="txtContactNumber"
+                                                           name="txtContactNumber"
+                                                           value="<?php echo $Contact; ?>">
+                                                </div>
+                                            </li>
+                                            <li>
+                                                <div class="form-group">
+                                                    Supervisor
+                                                    <input type="text" class="form-control" id="txtSupervisor"
+                                                           name="txtSupervisor"
+                                                           value="<?php echo $Supervisor; ?>">
+                                                </div>
+                                            </li>
+                                            <li>
+                                                <div class="form-group">
+                                                    <select class="form-control" name="Status">
+                                                        <option value="">- Status -</option>
+                                                        <option value="On Going">On Going</option>
+                                                        <option value="Incomplete">Incomplete</option>
+                                                        <option value="Finished">Finished</option>
+                                                    </select>
+                                                </div>
+                                            </li>
+                                            <div class="hr2" style="margin-top:10px;margin-bottom:10px;"></div>
+                                            <label>Requirements checklist:</label>
+                                            <li>
+                                                <div class="checkbox checkbox-success">
+                                                    <input id="DTRhidden" name="DTR" class="styled" type="hidden"
+                                                           value="off">
+                                                    <input id="DTR" name="DTR" class="styled" type="checkbox"
+                                                           value="ok" <?php if ($DTR == "ok") echo "checked"; ?>>
+                                                    <label for="checkbox3"><b>Daily Time Record</b></label>
+                                                </div>
+                                            </li>
+                                            <li>
+                                                <div class="checkbox checkbox-success">
+                                                    <input id="iPaperhidden" name="iPaper" class="styled"
+                                                           type="hidden" value="off">
+                                                    <input id="iPaper" name="iPaper" class="styled" type="checkbox"
+                                                           value="ok" <?php if ($iPaper == "ok") echo "checked"; ?>>
+                                                    <label for="checkbox3"><b>Integration Paper</b></label>
+                                                </div>
+                                            </li>
+                                            <li>
+                                                <div class="checkbox checkbox-success">
+                                                    <input id="PracJournalhidden" name="PracJournal" class="styled"
+                                                           type="hidden" value="off">
+                                                    <input id="PracJournal" name="PracJournal" class="styled"
+                                                           type="checkbox"
+                                                           value="ok" <?php if ($PracJournal == "ok") echo "checked"; ?>>
+                                                    <label for="checkbox3"><b>OJT Practicum Journal</b></label>
+                                                </div>
+                                            </li>
+                                            <li>
+                                                <div class="checkbox checkbox-success">
+                                                    <input id="TrainingPlanhidden" name="TrainingPlan"
+                                                           class="styled" type="hidden" value="off">
+                                                    <input id="TrainingPlan" name="TrainingPlan" class="styled"
+                                                           type="checkbox"
+                                                           value="ok" <?php if ($TrainingPlan == "ok") echo "checked"; ?>>
+                                                    <label for="checkbox3"><b>Training Plan</b></label>
+                                                </div>
+                                            </li>
+                                            <li>
+                                                <div class="checkbox checkbox-success">
+                                                    <input id="Resumehidden" name="Resume" class="styled"
+                                                           type="hidden" value="off">
+                                                    <input id="Resume" name="Resume" class="styled" type="checkbox"
+                                                           value="ok" <?php if ($Resume == "ok") echo "checked"; ?>>
+                                                    <label for="checkbox3"><b>Resume</b></label>
+                                                </div>
+                                            </li>
+                                            <li>
+                                                <div class="checkbox checkbox-success">
+                                                    <input id="MOAhidden" name="MOA" class="styled" type="hidden"
+                                                           value="off">
+                                                    <input id="MOA" name="MOA" class="styled" type="checkbox"
+                                                           value="ok" <?php if ($MOA == "ok") echo "checked"; ?>>
+                                                    <label for="checkbox3"><b>Memorandum of Agreement</b></label>
+                                                </div>
+                                            </li>
+                                            <li>
+                                                <div class="checkbox checkbox-success">
+                                                    <input id="AppLetterhidden" name="AppLetter" class="styled"
+                                                           type="hidden" value="off">
+                                                    <input id="AppLetter" name="AppLetter" class="styled"
+                                                           type="checkbox"
+                                                           value="ok" <?php if ($ApplicationLetter == "ok") echo "checked"; ?>>
+                                                    <label for="checkbox3"><b>Application Letter</b></label>
+                                                </div>
+                                            </li>
+                                            <li>
+                                                <div class="checkbox checkbox-success">
+                                                    <input id="Waiverhidden" name="Waiver" class="styled"
+                                                           type="hidden" value="off">
+                                                    <input id="Waiver" name="Waiver" class="styled" type="checkbox"
+                                                           value="ok" <?php if ($Waiver == "ok") echo "checked"; ?>>
+                                                    <label for="checkbox3"><b>Waiver</b></label>
+                                                </div>
+                                            </li>
+                                        </ul>
                                     </div>
-                                    <div class="modal-body">
-                                        <div class="col-md-15">
-                                            <input type="hidden" name="StudentID" value="<?php echo $StudentID; ?>">
-                                            <label>Student ID:
-                                                <?php echo $StudentID; ?></label>
-                                            <br>
-                                            <label = "usr" class = "control-label">Student Name:
-                                            <?php echo $LastName . ", " . $FirstName; ?></label>
-                                            <br>
-                                            <label = "usr" class = "control-label">Course:
-                                            <?php echo $Course; ?></label>
-                                            <br>
-                                            <div class="form-group">
-                                                <div class="hr2" style="margin-top:10px;margin-bottom:10px;"></div>
-                                                <label>OJT Student Information:</label>
-                                                <ul>
-                                                    <li>
-                                                        <div class="form-group">
-                                                            Company
-                                                            <input type="text" class="form-control" id="txtCompany"
-                                                                   name="txtCompany" value="<?php echo $CompanyName; ?>">
-                                                        </div>
-                                                    </li>
-                                                    <li>
-                                                        <div class="form-group">
-                                                            Company Address
-                                                            <input type="text" class="form-control" id="txtCompanyAddress"
-                                                                   name="txtCompanyAddress"
-                                                                   value="<?php echo $CompanyAddress; ?>">
-                                                        </div>
-                                                    </li>
-                                                    <li>
-                                                        <div class="form-group">
-                                                            Contact Number
-                                                            <input type="text" class="form-control" id="txtContactNumber"
-                                                                   name="txtContactNumber"
-                                                                   value="<?php echo $Contact; ?>">
-                                                        </div>
-                                                    </li>
-                                                    <li>
-                                                        <div class="form-group">
-                                                            Supervisor
-                                                            <input type="text" class="form-control" id="txtSupervisor"
-                                                                   name="txtSupervisor"
-                                                                   value="<?php echo $Supervisor; ?>">
-                                                        </div>
-                                                    </li>
-                                                    <li>
-                                                        <div class="form-group">
-                                                            <select class="form-control" name="Status">
-                                                                <option value="">- Status -</option>
-                                                                <option value="On Going">On Going</option>
-                                                                <option value="Incomplete">Incomplete</option>
-                                                                <option value="Finished">Finished</option>
-                                                            </select>
-                                                        </div>
-                                                    </li>
-                                                    <div class="hr2" style="margin-top:10px;margin-bottom:10px;"></div>
-                                                    <label>Requirements checklist:</label>
-                                                    <li>
-                                                        <div class="checkbox checkbox-success">
-                                                            <input id="DTRhidden" name="DTR" class="styled" type="hidden"
-                                                                   value="off">
-                                                            <input id="DTR" name="DTR" class="styled" type="checkbox"
-                                                                   value="ok" <?php if ($DTR == "ok") echo "checked"; ?>>
-                                                            <label for="checkbox3"><b>Daily Time Record</b></label>
-                                                        </div>
-                                                    </li>
-                                                    <li>
-                                                        <div class="checkbox checkbox-success">
-                                                            <input id="iPaperhidden" name="iPaper" class="styled"
-                                                                   type="hidden" value="off">
-                                                            <input id="iPaper" name="iPaper" class="styled" type="checkbox"
-                                                                   value="ok" <?php if ($iPaper == "ok") echo "checked"; ?>>
-                                                            <label for="checkbox3"><b>Integration Paper</b></label>
-                                                        </div>
-                                                    </li>
-                                                    <li>
-                                                        <div class="checkbox checkbox-success">
-                                                            <input id="PracJournalhidden" name="PracJournal" class="styled"
-                                                                   type="hidden" value="off">
-                                                            <input id="PracJournal" name="PracJournal" class="styled"
-                                                                   type="checkbox"
-                                                                   value="ok" <?php if ($PracJournal == "ok") echo "checked"; ?>>
-                                                            <label for="checkbox3"><b>OJT Practicum Journal</b></label>
-                                                        </div>
-                                                    </li>
-                                                    <li>
-                                                        <div class="checkbox checkbox-success">
-                                                            <input id="TrainingPlanhidden" name="TrainingPlan"
-                                                                   class="styled" type="hidden" value="off">
-                                                            <input id="TrainingPlan" name="TrainingPlan" class="styled"
-                                                                   type="checkbox"
-                                                                   value="ok" <?php if ($TrainingPlan == "ok") echo "checked"; ?>>
-                                                            <label for="checkbox3"><b>Training Plan</b></label>
-                                                        </div>
-                                                    </li>
-                                                    <li>
-                                                        <div class="checkbox checkbox-success">
-                                                            <input id="Resumehidden" name="Resume" class="styled"
-                                                                   type="hidden" value="off">
-                                                            <input id="Resume" name="Resume" class="styled" type="checkbox"
-                                                                   value="ok" <?php if ($Resume == "ok") echo "checked"; ?>>
-                                                            <label for="checkbox3"><b>Resume</b></label>
-                                                        </div>
-                                                    </li>
-                                                    <li>
-                                                        <div class="checkbox checkbox-success">
-                                                            <input id="MOAhidden" name="MOA" class="styled" type="hidden"
-                                                                   value="off">
-                                                            <input id="MOA" name="MOA" class="styled" type="checkbox"
-                                                                   value="ok" <?php if ($MOA == "ok") echo "checked"; ?>>
-                                                            <label for="checkbox3"><b>Memorandum of Agreement</b></label>
-                                                        </div>
-                                                    </li>
-                                                    <li>
-                                                        <div class="checkbox checkbox-success">
-                                                            <input id="AppLetterhidden" name="AppLetter" class="styled"
-                                                                   type="hidden" value="off">
-                                                            <input id="AppLetter" name="AppLetter" class="styled"
-                                                                   type="checkbox"
-                                                                   value="ok" <?php if ($ApplicationLetter == "ok") echo "checked"; ?>>
-                                                            <label for="checkbox3"><b>Application Letter</b></label>
-                                                        </div>
-                                                    </li>
-                                                    <li>
-                                                        <div class="checkbox checkbox-success">
-                                                            <input id="Waiverhidden" name="Waiver" class="styled"
-                                                                   type="hidden" value="off">
-                                                            <input id="Waiver" name="Waiver" class="styled" type="checkbox"
-                                                                   value="ok" <?php if ($Waiver == "ok") echo "checked"; ?>>
-                                                            <label for="checkbox3"><b>Waiver</b></label>
-                                                        </div>
-                                                    </li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                        <div class="modal-footer">
-                                            <button type=submit class="btn btn-primary">Update</button>
-                                            <button type="button" class="btn btn-default" data-dismiss="modal">
-                                                Cancel
-                                            </button>
-                                        </div>
-                                    </div>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type=submit class="btn btn-primary">Update</button>
+                                    <button type="button" class="btn btn-default" data-dismiss="modal">
+                                        Cancel
+                                    </button>
                                 </div>
                             </div>
                         </div>
-                    </form>
-                    <?php
-                }
-                ?>
-                </tbody>
-            </table>
+                    </div>
+                </div>
+            </form>
+                <?php
+            }
+            ?>  
         </div>
     </div>
 </body>
