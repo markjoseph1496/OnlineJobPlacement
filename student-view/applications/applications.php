@@ -438,7 +438,7 @@ if ($References == "ok") {
                             <?php
                             $application_tbl =
                                 GSecureSQL::query(
-                                    "SELECT * FROM requesttocompanytbl WHERE StudentID = ?",
+                                    "SELECT * FROM requesttocompanytbl WHERE StudentID = ? AND Status = 'Pending' OR Status = 'Accepted' OR Status = 'Rejected'",
                                     TRUE,
                                     "s",
                                     $StudentID
