@@ -212,7 +212,7 @@ if (isset($_SESSION['AdviserID'])) {
                                             </div>
                                         </div>
                                         <div class="modal-footer">
-                                            <a href="logout.php"
+                                            <a href="index.php"
                                                class="btn btn-primary">Sign Out</a>
                                             <button type="button" class="btn btn-default" data-dismiss="modal">
                                                 Cancel
