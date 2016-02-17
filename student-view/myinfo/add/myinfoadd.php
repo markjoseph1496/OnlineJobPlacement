@@ -214,6 +214,39 @@ if (isset($_POST['CompanyName'])) {
             $DateToYear = "Current";
         }
     }
+
+    $validation_config = array(
+        'CompanyName' => array(
+            'pattern' => '/^.+$/',
+            'errorMsg' => 'Company name is required'
+        ),
+        'CompanyWebsite' => array(
+            'pattern' => '/(^$|^(http|https)://.+\..+$)/i',
+            'errorMsg' => 'Company name is required'
+        ),
+        'Industry' => array(
+            'pattern' => $common_functions->get_regex_of_industry(),
+            'errorMsg' => 'Invalid industry'
+        ),
+        'PositionLevel' => array(
+            'pattern' => $common_functions->get_regex_of_position_level(),
+            'errorMsg' => 'Invalid Position Level'
+        ),
+        'WorkSpecialization' => array(
+            'pattern' => $common_functions->get_regex_of_work_specialization(),
+            'errorMsg' => 'Invalid Work Specialization'
+        ),
+        'MonthlySalary' => array(
+            'pattern' => $common_functions->get_regex_of_monthly_salary(),
+            'errorMsg' => 'Invalid Money Salary'
+        )
+    );
+
+    $validation_return = $common_functions->validate($_GET, $validation_config);
+    if($validation_return['hasError']){
+        print_r($validation_return);die();
+    }
+
     GSecureSQL::query(
         "INSERT INTO workexperiencetbl (StudentID, CompanyName, CompanyWebsite, Industry, DateFromMonth, DateFromYear, DateToMonth, DateToYear, PositionLevel, Specialization, MonthlySalary, NatureOfWork) value (?,?,?,?,?,?,?,?,?,?,?,?)",
         FALSE,
