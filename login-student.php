@@ -23,14 +23,14 @@
 
     <!-- CSS-->
     <link href="css/login-style.css" rel="stylesheet">
-    <link href="css/mystyle.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
 
 </head>
 <body class="login-student">
     <div class="box effect3" style="margin-top:5%;">
         <h2 class="register-title">Sign In</h2>
         <form id="myForm" action="login.php" method="POST" autocomplete="off">
-            <div id="message"></div>
+            <div id="message" style="color:#d95c5c;font-weight:600;"></div>
             <fieldset class="register-fieldset">
                 <input type="text" class="form-control register-input" placeholder="Your Student ID" id="StudentID" name="StudentID">
             </fieldset>

@@ -122,7 +122,7 @@ if (isset($_POST['Specialization'])) {
         $SID,
         $StudentID
     );
-    header("location: ../specialization-and-languages.php?id=1");
+    header("location: ../skills-and-languages.php?id=1");
 
 }
 
@@ -138,6 +138,6 @@ if (isset($_POST['Language'])) {
         $LangID,
         $StudentID
     );
-    header("location: ../specialization-and-languages.php?id=4");
+    header("location: ../skills-and-languages.php?id=4");
 
 }
