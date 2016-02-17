@@ -1,6 +1,6 @@
 <?php
 include('connection.php');
-
+session_start();
 $StudentID = $_GET['id'];
 
 $student_id =
@@ -8,10 +8,45 @@ $student_id =
         "SELECT StudentID FROM studentinfotbl",
         TRUE
     );
+foreach($student_id as $value){
+    $db_StudentID = $value[0];
+    $hashStudentID = hash('md4',$db_StudentID);
+    if($hashStudentID == $StudentID){
+        $StudentID = $db_StudentID;
+    }
+}
 
 
+$StudentInfo_tbl =
+    GSecureSQL::query(
+        "SELECT
+        FirstName,
+        MiddleName,
+        LastName,
+        MajorCourse,
+        Birthdate,
+        ProfileImage
+        FROM studentinfotbl
+        WHERE StudentID = ?",
+        TRUE,
+        "s",
+        $StudentID
+    );
 
-die();
+$FirstName = $StudentInfo_tbl[0][0];
+$MiddleName = $StudentInfo_tbl[0][1];
+$LastName = $StudentInfo_tbl[0][2];
+$MajorCourse = $StudentInfo_tbl[0][3];
+$Birthdate = $StudentInfo_tbl[0][4];
+$ProfileImage = $StudentInfo_tbl[0][5];
+
+$monthNum = substr($Birthdate,5, 2);
+$yearNum = substr($Birthdate,0, 4);
+$dayNum = substr($Birthdate,8, 2);
+$dateObj   = DateTime::createFromFormat('!m', $monthNum);
+$monthName = $dateObj->format('F');
+
+$Birthdate = $monthName . " " . $dayNum . ", " . $yearNum;
 
 ?>
 <!doctype html>
@@ -121,11 +156,11 @@ die();
                     <div  class="col-md-2">&nbsp;</div>
                     <div class="col-md-3">
                         <div class="profile-photo">
-                            <img src="img/man-icon.png">
+                            <img src="student-view/myinfo/<?php echo $ProfileImage; ?>">
                         </div> 
                     </div><br>
                     <div class="col-md-7">
-                        <label class="text-center" style="font-size:30px;">Cherry Ramirez</label>
+                        <label class="text-center" style="font-size:30px;"><?php echo $FirstName . " " . $MiddleName . " " . $LastName; ?></label>
                         <div><i class="fa fa-quote-left fa-2x fa-pull-left fa-border"></i>To obtain the position of ONLINE ESL INSTRUCTOR with BabelSpeak.com where I can apply my education, fifteen years of teaching experience and native linguistic skills and provide clients with a high quality language instruction experience.</div>
                     </div>
                     <div  class="col-md-2">&nbsp;</div>
@@ -148,9 +183,9 @@ die();
                     <div class="col-md-4">
                         <h1>&nbsp;</h1>
                         <br>
-                        <p><label>Studied Bachelor of Science in Computer Science </label></p>
+                        <p><label>Studied <?php echo $MajorCourse; ?></label></p>
                         <p><label>Lives in Malabon</label></p>
-                        <p><label>April 30, 1996</label></p>
+                        <p><label><?php echo $Birthdate; ?></label></p>
                         <p><label>0923456789</label></p>
                         <p><label>ramirezchai@gmail.com</label></p>
                     </div>
