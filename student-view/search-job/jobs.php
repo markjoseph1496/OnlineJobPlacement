@@ -8,6 +8,7 @@ $StudentID = $_SESSION['StudentID']; // to conform with your coding style -- gha
 $PLevel_Default = isset($_POST['PLevel']) ? $_POST['PLevel'] : '';
 $EType_Default = isset($_POST['EType']) ? $_POST['EType'] : '';
 
+
 $infoquery =
     GSecureSQL::query(
         "SELECT FirstName, LastName, MajorCourse FROM studentinfotbl WHERE StudentID = ?",

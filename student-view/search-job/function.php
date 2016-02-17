@@ -8,17 +8,17 @@ $StudentID = $_SESSION['StudentID']; // to conform with your coding style -- gha
 if (isset($_GET['id'])) {
     $PositionID = $_GET['id'];
     $CompanyID = $_GET['cid'];
+    $DateSubmitted = date("Y-m-d");
     GSecureSQL::query(
-        "INSERT INTO requesttocompanytbl (CompanyID, StudentID, PositionID, Status) values (?,?,?,'Pending')",
+        "INSERT INTO requesttocompanytbl (CompanyID, StudentID, PositionID, Status, DateSubmitted) values (?,?,?,'Pending',?)",
         FALSE,
-        "sss",
+        "ssss",
         $CompanyID,
         $StudentID,
-        $PositionID
+        $PositionID,
+        $DateSubmitted
     );
-    echo "
-            <script type='text/javascript'>
-            location.href='jobs.php?id=1';
-            </script>";
+
+    header('location: jobs.php?id=1');
 }
 ?>
