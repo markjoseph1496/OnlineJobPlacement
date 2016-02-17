@@ -50,7 +50,7 @@ class CommonFunctions{
         );
         foreach($config_array as $key => $config){
             $ret[$key]['value'] = $array[$key];
-            echo $config['pattern'] . '<br/>';
+        //    echo $config['pattern'] . '<br/>';
             if(preg_match($config['pattern'], $array[$key])){
                 $ret[$key]['hasError'] = false;
             }else{
