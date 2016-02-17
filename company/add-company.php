@@ -214,7 +214,9 @@ if (isset($_GET['btnsaveuser'])) {
 if (isset($_GET['update_PositionID'])) {
     # code...
 }
+
 if (isset($_POST['btnRequestLOG'])) {
+
     $PositionTitle = $_POST['rPTitle'];
 
     $EmploymentType = $_POST['rEType']; //Checkbox array
@@ -244,6 +246,9 @@ if (isset($_POST['btnRequestLOG'])) {
     $Location = $_POST['rLocation'];
     $SalaryRange = $_POST['rSalaryRange'];
 
+    $Courses = $_POST['Course']; //Checkbox array
+    $Courses = implode(", ", $Courses);
+
 
     $YearOfExperience = $_POST['rYOE'];
     $CFG = $_POST['CFG'];
@@ -267,6 +272,7 @@ if (isset($_POST['btnRequestLOG'])) {
     GSecureSQL::query(
         "INSERT INTO logrequesttbl
         (CompanyID,
+        Courses,
         Status,
         DateRequested,
         PositionTitle,
@@ -281,10 +287,11 @@ if (isset($_POST['btnRequestLOG'])) {
         DurationOfRequest,
         MarketingMaterials)
         VALUES
-        (?,'Pending',?,?,?,?,?,?,?,?,?,?,?,?)",
+        (?,?,'Pending',?,?,?,?,?,?,?,?,?,?,?,?)",
         FALSE,
-        "sssssssssssss",
+        "ssssssssssssss",
         $CompanyID,
+        $Courses,
         $DateRequested,
         $PositionTitle,
         $EmploymentType,
@@ -297,7 +304,6 @@ if (isset($_POST['btnRequestLOG'])) {
         $CFG,
         $DurationOfRequest,
         $MarketingMaterials
-
     );
 
     header("location: company.php");

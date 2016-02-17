@@ -458,7 +458,7 @@ $cLastName = $companyinfo_tbl[0][2];
                                         <label for="inlineRadio2"><b>1 month</b></label>
                                     </div>
                                     <br>
-                                    <div class="radio radi          o-inline">
+                                    <div class="radio radio-inline">
                                         <input id="rDOR" name="rDOR" type="radio" value="2 Months">
                                         <label for="inlineRadio2"><b>2 months</b></label>
                                     </div>
@@ -478,24 +478,25 @@ $cLastName = $companyinfo_tbl[0][2];
                                     <br>
                                     <label>Level</label>
                                     <br>
-                                    <div class="checkbox checkbox-success">
-                                        <?php
-                                            $courses_tbl =
-                                                GSecureSQL::query(
-                                                    "SELECT CourseCode, CourseTitle FROM coursetbl",
-                                                    TRUE
-                                                );
-                                        foreach($courses_tbl as $value){
-                                            $CourseCode = $value[0];
-                                            $CourseTitle = $value[1];
-                                            ?>
+
+                                    <?php
+                                    $courses_tbl =
+                                        GSecureSQL::query(
+                                            "SELECT CourseCode, CourseTitle FROM coursetbl",
+                                            TRUE
+                                        );
+                                    foreach ($courses_tbl as $value) {
+                                        $CourseCode = $value[0];
+                                        $CourseTitle = $value[1];
+                                        ?>
+                                        <div class="checkbox checkbox-success">
                                             <input id="Course" name="Course[]" class="styled" type="checkbox"
                                                    value="<?php echo $CourseCode; ?>">
                                             <label for="checkbox3"><b><?php echo $CourseTitle; ?></b></label>
+                                        </div>
                                         <?php
-                                        }
-                                        ?>
-                                    </div>
+                                    }
+                                    ?>
 
                                     <div class="hr1" style="margin-top:15px;margin-bottom:15px;"></div>
 

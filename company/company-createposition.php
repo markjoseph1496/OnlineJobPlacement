@@ -743,14 +743,6 @@ $cLastName = $companyinfo_tbl[0][2];
                             message: "Please check atleast one."
                         }
                     }
-                },
-                'RelatedCourses[]': {
-                    validators: {
-                        choice: {
-                            min: 1,
-                            message: "Please check atleast one."
-                        }
-                    }
                 }
 
             }

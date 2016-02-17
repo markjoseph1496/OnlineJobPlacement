@@ -54,9 +54,9 @@ if (count($LOGquery) > 0) {
         $diff_to->invert == 0;
 
     if ($a && $b) {
-        $RequestedSpecialization = $LOGquery[0][2];
-        $RequestedSpecialization = explode(", ", $RequestedSpecialization);
-        $RequestedSpecialization = implode("', '", $RequestedSpecialization);
+        $RequestedCourses = $LOGquery[0][2];
+        $RequestedCourses = explode(", ", $RequestedCourses);
+        $RequestedCourses = implode("', '", $RequestedCourses);
         $ContentCount = 1;
     } else {
         $ContentCount = 0;
@@ -400,20 +400,37 @@ if (count($LOGquery1) > 0) {
                                         <select id="Course" name="Course" class="form-control" style="width:400x;">
                                             <option value="" selected="selected">- Please select one -</option>
                                             <?php
-                                            $course_tbl =
+
+                                            $logCourse_tbl =
                                                 GSecureSQL::query(
-                                                    "SELECT CourseTitle, CourseCode FROM coursetbl ORDER BY CourseTitle ASC",
-                                                    TRUE
+                                                    "SELECT Courses FROM logrequesttbl WHERE CompanyID = ?",
+                                                    TRUE,
+                                                    "s",
+                                                    $CompanyID
                                                 );
-                                            foreach ($course_tbl as $value) {
-                                                $CourseTitle = $value[0];
-                                                $CourseCode = $value[1];
-                                                ?>
-                                                <option
-                                                    value="<?php echo $CourseCode; ?>" <?php if ($Course_Default == $CourseCode) {
-                                                    echo "selected='selected'";
-                                                } ?>><?php echo $CourseTitle; ?></option>
-                                                <?php
+                                            foreach($logCourse_tbl as $value){
+                                                $CourseCode = $value[0];
+                                                $CourseCode = explode(", ",$CourseCode);
+                                                foreach($CourseCode as $value1){
+                                                    $CourseCode = $value1;
+                                                    $course_tbl =
+                                                        GSecureSQL::query(
+                                                            "SELECT CourseTitle, CourseCode FROM coursetbl WHERE CourseCode = ? ORDER BY CourseTitle ASC",
+                                                            TRUE,
+                                                            "s",
+                                                            $CourseCode
+                                                        );
+                                                    foreach ($course_tbl as $value) {
+                                                        $CourseTitle = $value[0];
+                                                        $CourseCode = $value[1];
+                                                        ?>
+                                                        <option
+                                                            value="<?php echo $CourseCode; ?>" <?php if ($Course_Default == $CourseCode) {
+                                                            echo "selected='selected'";
+                                                        } ?>><?php echo $CourseTitle; ?></option>
+                                                        <?php
+                                                    }
+                                                }
                                             }
                                             ?>
                                         </select>
@@ -545,8 +562,7 @@ if (count($LOGquery1) > 0) {
                                         FROM
                                         studcontactstbl
                                         INNER JOIN studentinfotbl ON studcontactstbl.StudentID = studentinfotbl.StudentID
-                                        INNER JOIN specializationtbl ON studentinfotbl.StudentID = specializationtbl.StudentID
-                                        WHERE specializationtbl.Specialization IN ('LIKE%$RequestedSpecialization')",
+                                        WHERE studentinfotbl.MajorCourse IN ('$RequestedCourses')",
                                         TRUE
                                     );
                                 if (empty($listofgraduates_tbl)) {
@@ -565,7 +581,7 @@ if (count($LOGquery1) > 0) {
                                         studcontactstbl.City
                                         FROM
                                         studcontactstbl
-                                        INNER JOIN `studentinfotbl` ON `studcontactstbl`.`StudentID` = `studentinfotbl`.`StudentID` WHERE studcontactstbl.City = ? AND studentinfotbl.MajorCourse IN ('$RequestedSpecialization')",
+                                        INNER JOIN `studentinfotbl` ON `studcontactstbl`.`StudentID` = `studentinfotbl`.`StudentID` WHERE studcontactstbl.City = ? AND studentinfotbl.MajorCourse IN ('$RequestedCourses')",
                                         TRUE,
                                         "s",
                                         $Location
@@ -665,7 +681,8 @@ if (count($LOGquery1) > 0) {
                                         studcontactstbl.City
                                         FROM
                                         studcontactstbl
-                                        INNER JOIN `studentinfotbl` ON `studcontactstbl`.`StudentID` = `studentinfotbl`.`StudentID` WHERE studentinfotbl.MajorCourse IN ('$RequestedSpecialization')",
+                                        INNER JOIN `studentinfotbl` ON `studcontactstbl`.`StudentID` = `studentinfotbl`.`StudentID`
+                                        WHERE studentinfotbl.MajorCourse IN ('$RequestedCourses')",
                                     TRUE
                                 );
                             if (empty($listofgraduates_tbl)) {
