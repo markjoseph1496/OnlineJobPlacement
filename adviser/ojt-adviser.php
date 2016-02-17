@@ -158,7 +158,7 @@ if (isset($_SESSION['AdviserID'])) {
                                 </li>
                                 <li class="dropdown">
                                     <a href="#" class="dropdown-toggle" data-toggle="dropdown"><b class="fa fa-user"></b>
-                                        Welcome, <b><?php echo $cFirstName . " " . $cLastName; ?> </b><b class="caret"></b></a>
+                                        Welcome,  </b><b class="caret"></b></a>
                                     <ul class="dropdown-menu">
                                         <li><a href="#">Profile <b class="fa fa-user" style="float:right;"></b></a></li>
                                         <li><a href="company-settings.php">Settings <b class="fa fa-cog"
@@ -296,26 +296,12 @@ if (isset($_SESSION['AdviserID'])) {
             &nbsp;
             <div class="hr1" style="margin-bottom:10px;margin-top:10px;"></div>
 
+            
             <form name="import" method="post" enctype="multipart/form-data">
-                <div class = "row">
-                    <div class="col-md-6">
-                        &nbsp;
-                    </div>
-                    <div class="col-md-6">
-                        <div class="row">
-                            <div class="col-md-8">
-                                <input name="file" type="file"
-                                    class="file file-loading"
-                                    data-allowed-file-extensions='["png", "jpg", "bmp", "gif"]'>
-                                <label style="float:right;">* Select File</label>
-                            </div>
-                            <div class="col-md-4">
-                                <input type="submit" name="submit" value="Submit"/>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                <input type="file" name="file" /><br />
+                <input type="submit" name="submit" value="Submit" />
             </form>
+
             <?php
 
                 if (isset($_POST["submit"])) {
