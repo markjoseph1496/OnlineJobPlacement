@@ -239,12 +239,36 @@ if (isset($_POST['CompanyName'])) {
         'MonthlySalary' => array(
             'pattern' => $common_functions->get_regex_of_monthly_salary(),
             'errorMsg' => 'Invalid Money Salary'
+        ),
+        'FromMonth' => array(
+            'pattern' => '/^(0[1-9]|1[0-2])$/',
+            'errorMsg' => 'Invalid Month'
+        ),
+        'FromYear' => array(
+            'pattern' => '/^(19(3[5-9]|[4-9][0-9])|2[0-9][0-9][0-9])$/',
+            'errorMsg' => 'Invalid Year'
+        ),
+        'ToMonth' => array(
+            'pattern' => '/^(0[1-9]|1[0-2])$/',
+            'errorMsg' => 'Invalid Month'
+        ),
+        'ToYear' => array(
+            'pattern' => '/^(19(3[5-9]|[4-9][0-9])|2[0-9][0-9][0-9])$/',
+            'errorMsg' => 'Invalid Year'
         )
     );
 
-    $validation_return = $common_functions->validate($_GET, $validation_config);
+    $validation_return = $common_functions->validate($_POST, $validation_config);
     if($validation_return['hasError']){
         print_r($validation_return);die();
+    }
+
+    if($DateToYear !== 'Current'){
+        if($_POST['ToYear'] === $_POST['FromYear']){
+            if($_POST['FromMonth'] > $_POST['ToMonth']){
+                die('Invalid month.');
+            }
+        }
     }
 
     GSecureSQL::query(
