@@ -535,7 +535,7 @@ $adminevent_tbl =
             </div>
 
             
-            <div id="join" class="parallax" style="background-image:url(img/join-us.jpg);">
+            <div id="join" class="parallax" style="background-image:url(images/sti-bldg.jpg);">
                 <div class="overlay">
                     <div class="parallax-text-container-1">
                         <div class="parallax-text-item">
