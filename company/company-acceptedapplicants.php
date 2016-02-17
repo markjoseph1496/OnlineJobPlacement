@@ -293,10 +293,12 @@ $cLastName = $companyinfo_tbl[0][2];
                 <thead>
                     <tr>
                         <th width='20%' class='tabletitle'>Applicant Name</th>
-                        <th width='20%' class='tabletitle'>Position</th>
-                        <th width='15%' class='tabletitle'>Course</th>
-                        <th width='20%' class='tabletitle'>Location</th>
+                        <th width='17%' class='tabletitle'>Position</th>
+                        <th width='20%' class='tabletitle'>Course</th>
+                        <th width='13%' class='tabletitle'>Location</th>
                         <th width='15%' class='tabletitle'>Email</th>
+                        <th width='15%' class='tabletitle'>Contact Number</th>
+                        <th width='15%' class='tabletitle'>Date Submitted</th>
                         <th width='5%' class='tabletitle'>Remove</th>
                     <tr>
                 </thead>
@@ -316,15 +318,19 @@ $cLastName = $companyinfo_tbl[0][2];
                               studcontactstbl.City,
                               studcontactstbl.Email,
                               comppositiontbl.PositionID,
-                              comppositiontbl.PositionLevel
+                              comppositiontbl.PositionLevel,
+                              requesttocompanytbl.DateSubmitted,
+                              studcontactstbl.MobileNumber
                               FROM
                               requesttocompanytbl
                               INNER JOIN comppositiontbl ON requesttocompanytbl.PositionID = comppositiontbl.PositionID
                               INNER JOIN studentinfotbl ON requesttocompanytbl.StudentID = studentinfotbl.StudentID
                               INNER JOIN studcontactstbl ON studentinfotbl.StudentID = studcontactstbl.StudentID
-                              WHERE requesttocompanytbl.Status = 'Accepted'
+                              WHERE requesttocompanytbl.Status = 'Accepted' AND requesttocompanytbl.CompanyID = ?
                               ",
-                        TRUE
+                        TRUE,
+                        "s",
+                        $CompanyID
                     );
                 foreach ($requesttocompany_tbl as $value) {
                     $RID = $value[0];
@@ -334,6 +340,8 @@ $cLastName = $companyinfo_tbl[0][2];
                     $MajorCourse = $value[7];
                     $Location = $value[9];
                     $Email = $value[10];
+                    $DateSubmitted = $value[13];
+                    $ContactNumber = $value[14];
 
                     $coursetbl =
                         GSecureSQL::query(
@@ -348,18 +356,52 @@ $cLastName = $companyinfo_tbl[0][2];
                     ?>
                     <tbody>
                     <tr>
-                        <td width=20% class=tabletitle><a href=''><?php echo $LastName . ", " . $FirstName; ?></td>
-                        <td width=20% class=tabletitle><?php echo $PositionLevel; ?></a></td>
-                        <td width=15% class=tabletitle><?php echo $MajorCourse; ?></td>
-                        <td width=15% class=tabletitle><?php echo $Location; ?></td>
-                        <td width=15% class=tabletitle><?php echo $Email; ?></td>
+                        <td width='20%' class=tabletitle><a href=''><?php echo $LastName . ", " . $FirstName; ?></a></td>
+                        <td width='17%' class=tabletitle><?php echo $PositionLevel; ?></td>
+                        <td width='20%' class=tabletitle><?php echo $MajorCourse; ?></td>
+                        <td width='12%' class=tabletitle><?php echo $Location; ?></td>
+                        <td width='15%' class=tabletitle><?php echo $Email; ?></td>
+                        <td width='15%' class=tabletitle><?php echo $ContactNumber; ?></td>
+                        <td width='15%' class=tabletitle><?php echo $DateSubmitted; ?></td>
                         <td width="5%" class="tabletitle">
                             <button class='btn btn-danger' data-toggle='modal'
-                                    data-target='#DeclineRequest<?php echo $RID; ?>'><i
+                                    data-target='#Delete<?php echo $RID; ?>'><i
                                     class='fa fa-trash fa-1x'></i></button>
                         </td>
                     <tr>
                     </tbody>
+                    <!-- Modal -->
+                    <form name="form_Delete" id="form_Delete"
+                          action="add-company.php" autocomplete="off" method="POST">
+                        <div class="modal fade" id="Delete<?php echo $RID; ?>"
+                             role="dialog">
+                            <div class="modal-dialog" style="padding:100px">
+                                <!-- Modal content-->
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                        <h4 class="modal-title">Delete</h4>
+                                    </div>
+                                    <div class="modal-body">
+                                        <div class="col-md-15 fieldcol">
+                                            <label = "usr" class = "control-label">Do you want to delete this
+                                            applicant from the list?</label>
+                                            <div class="form-group">
+                                            </div>
+                                        </div>
+                                        <input type="hidden" name="delete_applicant">
+                                        <input type="hidden" name="rid" value="<?php echo $RID; ?>">
+                                        <div class="modal-footer">
+                                            <button type="submit" class="btn btn-primary">Accept</button>
+                                            <button type="button" class="btn btn-default" data-dismiss="modal">
+                                                Cancel
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
                     <?php
                 }
                 ?>

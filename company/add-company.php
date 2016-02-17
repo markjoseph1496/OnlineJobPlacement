@@ -2,30 +2,7 @@
 include('../connection.php');
 session_start();
 $CompanyID = $_SESSION['CompanyID'];
-/*
-$companyinfotbl =
-    GSecureSQL::query(
-        "SELECT
-        CompanyName,
-        City,
-        Website,
-        FirstName,
-        LastName,
-        Position,
-        PhoneNum,
-        MobileNum,
-        Fax,
-        Email,
-        Industry
-        FROM companyinfotbl
-        WHERE CompanyID = ?",
-        TRUE,
-        "s",
-        $CompanyID
-    );
 
-$
-*/
 // Create Calendar Event
 if (isset($_GET['BtnCalendarsave'])) {
 
@@ -96,26 +73,33 @@ if (isset($_GET['btnsave'])) {
 }
 // End of Create Position
 
-if (isset($_GET['id'])) {
-    $id = $_GET['id'];
-    $RID = $_GET['rid'];
+if (isset($_POST['id'])) {
+    $id = $_POST['id'];
+    $RID = $_POST['rid'];
+    $Message = $_POST['AcceptMsg'];
+    $_Date = date("Y-m-d");
 
     if ($id == 1) {
         GSecureSQL::query(
-            "UPDATE requesttocompanytbl SET Status = 'Accepted' WHERE RID = ?",
+            "UPDATE requesttocompanytbl SET Status = 'Accepted', Message = ?, _Date = ?  WHERE RID = ?",
             FALSE,
-            "s",
+            "sss",
+            $Message,
+            $_Date,
             $RID
         );
         header("location: company-pendingapplicants.php?id=1");
 
     } elseif ($id == 2) {
         GSecureSQL::query(
-            "UPDATE requesttocompanytbl SET Status = 'Rejected' WHERE RID = ?",
+            "UPDATE requesttocompanytbl SET Status = 'Rejected', Message = ?, _Date = ? WHERE RID = ?",
             FALSE,
-            "s",
+            "sss",
+            $Message,
+            $_Date,
             $RID
         );
+
         header("location: company-pendingapplicants.php?id=2");
     }
 
@@ -381,4 +365,17 @@ if (isset($_POST['ModalNewPassword'])) {
     } else {
         echo "Wrong password";
     }
+}
+
+if(isset($_POST['delete_applicant'])){
+    $RID = $_POST['rid'];
+
+    GSecureSQL::query(
+        "UPDATE requesttocompanytbl SET Status = 'Deleted' WHERE RID = ?",
+        FALSE,
+        "s",
+        $RID
+    );
+
+    header('location: company-acceptedapplicants.php?id=1');
 }

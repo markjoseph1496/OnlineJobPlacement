@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50616
 File Encoding         : 65001
 
-Date: 2016-02-15 12:49:03
+Date: 2016-02-17 23:06:28
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -569,7 +569,7 @@ CREATE TABLE `logrequesttbl` (
 -- ----------------------------
 -- Records of logrequesttbl
 -- ----------------------------
-INSERT INTO logrequesttbl VALUES ('1', '1', '', '2016-02-15', '2016-02-29', 'Accepted', '2016-02-15', 'sdadsa', 'Full Time, Part-Time', 'Entry Level/Gen Staff, Officer', 'dddd', 'dddddddddddddddddddd', 'Quezon City', '123123', '11', 'Yes', '15 Days', 'Yes');
+INSERT INTO logrequesttbl VALUES ('2', '1', 'BSBM, ABCOMM, BSITDA', '2016-02-17', '2016-02-29', 'Accepted', '2016-02-17', 'asdasdsa', 'Full Time, Part-Time, Contractual', 'Entry Level/Gen Staff, Officer, Supervisory', 'ddddddddddddd', 'dddddddddddd', 'Valenzuela City', '41241', '11', 'Yes', '1 Month', 'Yes');
 
 -- ----------------------------
 -- Table structure for `ojttbl`
@@ -605,7 +605,7 @@ CREATE TABLE `ojttbl` (
 -- Records of ojttbl
 -- ----------------------------
 INSERT INTO ojttbl VALUES ('1', '0082A101278', 'ADRALES', 'ANNA MELISSA ', 'SANTOS', 'BSHRM', 'Malabon Grand Hotel and Casino', '110 Mc Arthur Highway Potrero Malabon City', 'Mr. Miko Orante', 'Senior Hotel Manager', '', null, 'Incomplete', 'ok', 'ok', 'ok', 'off', 'ok', 'off', 'off', 'off', null);
-INSERT INTO ojttbl VALUES ('2', '820120152', 'ARANAS', 'JAMIL', 'DORADO', 'BSHRM', 'Oasis Paco Park Hotel', '1032-34 Belen St. Paco, Manila City ', 'Mr. Jeffrey Miranda', 'General Manager', '', null, null, null, null, null, null, null, null, null, null, null);
+INSERT INTO ojttbl VALUES ('2', '820120152', 'ARANAS', 'JAMIL', 'DORADO', 'BSHRM', 'Oasis Paco Park Hotel', '1032-34 Belen St. Paco, Manila City ', 'Mr. Jeffrey Miranda', 'General Manager', '', null, 'Incomplete', 'off', 'off', 'off', 'off', 'off', 'off', 'off', 'off', null);
 INSERT INTO ojttbl VALUES ('3', '820120677', 'BAÑAL', 'CRISANTA', 'ABELARDE', 'BSHRM', '', '', '', '', '', null, null, null, null, null, null, null, null, null, null, null);
 INSERT INTO ojttbl VALUES ('4', '820120652', 'CO', 'CARMENZITADEL', 'PADUA', 'BSHRM', 'Oasis Paco Park Hotel', '1032-34 Belen St. Paco, Manila City ', 'Mr. Jeffrey Miranda', 'General Manager', '', null, null, null, null, null, null, null, null, null, null, null);
 INSERT INTO ojttbl VALUES ('5', '820120678', 'DIMLA', 'RORIKO ', 'CLEOFAS', 'BSHRM', '', '', '', '', '', null, null, null, null, null, null, null, null, null, null, null);
@@ -935,13 +935,19 @@ CREATE TABLE `requesttocompanytbl` (
   `StudentID` varchar(255) NOT NULL,
   `PositionID` varchar(255) NOT NULL,
   `Status` varchar(10) NOT NULL,
+  `DateSubmitted` varchar(255) NOT NULL,
+  `_Date` varchar(255) NOT NULL,
+  `Message` varchar(255) NOT NULL,
   PRIMARY KEY (`RID`)
-) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=latin1;
 
 -- ----------------------------
 -- Records of requesttocompanytbl
 -- ----------------------------
-INSERT INTO requesttocompanytbl VALUES ('6', '3', '00820120001', '35', 'Pending');
+INSERT INTO requesttocompanytbl VALUES ('9', '3', '00820120001', '8', 'Pending', '2016-02-17', '2016-02-17', 'dddddd');
+INSERT INTO requesttocompanytbl VALUES ('10', '3', '00820120001', '35', 'Pending', '2016-02-17', '2016-02-17', ' ');
+INSERT INTO requesttocompanytbl VALUES ('11', '3', '00820120001', '12', 'Pending', '2016-02-17', '', '');
+INSERT INTO requesttocompanytbl VALUES ('12', '3', '00820120001', '33', 'Pending', '2016-02-17', '', '');
 
 -- ----------------------------
 -- Table structure for `schooltbl`

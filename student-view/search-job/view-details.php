@@ -14,6 +14,10 @@ $position_tbl =
         "s",
         $PositionID
     );
+
+if(empty($position_tbl)){
+    header("location: jobs.php");
+}
 $CompanyID = $position_tbl[0][1];
 $Email = $position_tbl[0][2];
 $PostingDateFrom = $position_tbl[0][3];

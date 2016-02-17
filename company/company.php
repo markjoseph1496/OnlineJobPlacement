@@ -8,6 +8,7 @@ if (isset($_SESSION['CompanyID'])) {
     header("location: ../login-company.php");
 }
 
+
 $companyinfo_tbl =
     GSecureSQL::query(
         "SELECT CompanyName, FirstName, LastName FROM companyinfotbl WHERE CompanyID = ?",

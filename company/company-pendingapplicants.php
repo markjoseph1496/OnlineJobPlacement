@@ -3,10 +3,9 @@ include('../connection.php');
 session_start();
 
 
-if(isset($_SESSION['CompanyID'])){
+if (isset($_SESSION['CompanyID'])) {
     $CompanyID = $_SESSION['CompanyID'];
-}
-else{
+} else {
     header("location: ../login-company.php");
 }
 
@@ -90,26 +89,22 @@ $cLastName = $companyinfo_tbl[0][2];
     <!-- Notification -->
     <link rel="stylesheet" href="../css/notif.css"/>
 
-    <script type="text/javascript" >
-        $(document).ready(function()
-        {
-        $("#notificationLink").click(function()
-        {
-        $("#notificationContainer").fadeToggle(300);
-        $("#notification_count").fadeOut("slow");
-        return false;
-        });
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $("#notificationLink").click(function () {
+                $("#notificationContainer").fadeToggle(300);
+                $("#notification_count").fadeOut("slow");
+                return false;
+            });
 
-        //Document Click
-        $(document).click(function()
-        {
-        $("#notificationContainer").hide();
-        });
-        //Popup Click
-        $("#notificationContainer").click(function()
-        {
-        return false
-        });
+            //Document Click
+            $(document).click(function () {
+                $("#notificationContainer").hide();
+            });
+            //Popup Click
+            $("#notificationContainer").click(function () {
+                return false
+            });
 
         });
     </script>
@@ -139,7 +134,8 @@ $cLastName = $companyinfo_tbl[0][2];
                         <ul class="nav navbar-nav navbar-right">
                             <li class="dropdown icon-border" id="notificationLink">
                                 <span id="notification_count">3</span>
-                                <a href="#" class="bell itl-tooltip" data-placement="bottom" data-toggle="dropdown"><i class="fa fa-bell"></i></a>
+                                <a href="#" class="bell itl-tooltip" data-placement="bottom" data-toggle="dropdown"><i
+                                        class="fa fa-bell"></i></a>
                                 <ul id="notificationContainer" class="dropdown-menu dropdown-menu-inverse">
                                     <li class="dropdown-header"><label>Notification</label></li>
                                     <li class="disabled"><a href="#" tabindex="-1">No new notification.</a></li>
@@ -149,12 +145,15 @@ $cLastName = $companyinfo_tbl[0][2];
                                 </ul>
                             </li>
                             <li class="dropdown">
-                                <a href="#" class="dropdown-toggle" data-toggle="dropdown"><b class="fa fa-user"></b> Welcome, <b><?php echo $cFirstName . " " . $cLastName; ?> </b><b class="caret"></b></a>
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown"><b class="fa fa-user"></b>
+                                    Welcome, <b><?php echo $cFirstName . " " . $cLastName; ?> </b><b class="caret"></b></a>
                                 <ul class="dropdown-menu">
                                     <li><a href="#">Profile <b class="fa fa-user" style="float:right;"></b></a></li>
-                                    <li><a href="company-settings.php">Settings <b class="fa fa-cog" style="float:right;"></b></a></li>
+                                    <li><a href="company-settings.php">Settings <b class="fa fa-cog"
+                                                                                   style="float:right;"></b></a></li>
                                     <li class="divider"></li>
-                                    <li><a href="#" data-target='#Logout' data-toggle='modal'>Sign Out <b class="fa fa-sign-out" style="float:right;"></b></a></li>
+                                    <li><a href="#" data-target='#Logout' data-toggle='modal'>Sign Out <b
+                                                class="fa fa-sign-out" style="float:right;"></b></a></li>
                                 </ul>
                             </li>
                         </ul>
@@ -284,14 +283,16 @@ $cLastName = $companyinfo_tbl[0][2];
         <div class="col-md-12">
             <table class="table segment table-hover">
                 <thead>
-                    <tr>
-                        <th width='20%' class='tabletitle'>Applicant Name</th>
-                        <th width='20%' class='tabletitle'>Position</th>
-                        <th width='15%' class='tabletitle'>Course</th>
-                        <th width='20%' class='tabletitle'>Location</th>
-                        <th width='15%' class='tabletitle'>Email</th>
-                        <th width='10%' class='tabletitle'>Action</th>
-                    <tr>
+                <tr>
+                    <th width='20%' class='tabletitle'>Applicant Name</th>
+                    <th width='17%' class='tabletitle'>Position</th>
+                    <th width='20%' class='tabletitle'>Course</th>
+                    <th width='13%' class='tabletitle'>Location</th>
+                    <th width='15%' class='tabletitle'>Email</th>
+                    <th width='15%' class='tabletitle'>Contact Number</th>
+                    <th width='15%' class='tabletitle'>Date Submitted</th>
+                    <th width='10%' class='tabletitle'>Action</th>
+                <tr>
                 </thead>
                 <?php
                 $requesttocompany_tbl =
@@ -309,15 +310,19 @@ $cLastName = $companyinfo_tbl[0][2];
                               studcontactstbl.City,
                               studcontactstbl.Email,
                               comppositiontbl.PositionID,
-                              comppositiontbl.PositionLevel
+                              comppositiontbl.PositionTitle,
+                              requesttocompanytbl.DateSubmitted,
+                              studcontactstbl.MobileNumber
                               FROM
                               requesttocompanytbl
                               INNER JOIN comppositiontbl ON requesttocompanytbl.PositionID = comppositiontbl.PositionID
                               INNER JOIN studentinfotbl ON requesttocompanytbl.StudentID = studentinfotbl.StudentID
                               INNER JOIN studcontactstbl ON studentinfotbl.StudentID = studcontactstbl.StudentID
-                              WHERE requesttocompanytbl.Status = 'Pending'
+                              WHERE requesttocompanytbl.Status = 'Pending' AND requesttocompanytbl.CompanyID = ?
                               ",
-                        TRUE
+                        TRUE,
+                        "s",
+                        $CompanyID
                     );
                 foreach ($requesttocompany_tbl as $value) {
                     $RID = $value[0];
@@ -327,6 +332,8 @@ $cLastName = $companyinfo_tbl[0][2];
                     $MajorCourse = $value[7];
                     $Location = $value[9];
                     $Email = $value[10];
+                    $DateSubmitted = $value[13];
+                    $ContactNumber = $value[14];
 
                     $coursetbl =
                         GSecureSQL::query(
@@ -339,99 +346,132 @@ $cLastName = $companyinfo_tbl[0][2];
                         $MajorCourse = $value1[0];
                     }
                     ?>
-                <tbody>
+                    <tbody>
                     <tr>
-                        <td class=tabletitle><a href=''><?php echo $LastName . ", " . $FirstName; ?></td>
-                        <td class=tabletitle><?php echo $PositionLevel; ?></a></td>
-                        <td class=tabletitle><?php echo $MajorCourse; ?></td>
-                        <td  class=tabletitle><?php echo $Location; ?></td>
-                        <td  class=tabletitle><?php echo $Email; ?></td>
-                        <td >
+                        <td width='20%' class=tabletitle><a href=''><?php echo $LastName . ", " . $FirstName; ?></a></td>
+                        <td width='17%' class=tabletitle><?php echo $PositionLevel; ?></td>
+                        <td width='20%' class=tabletitle><?php echo $MajorCourse; ?></td>
+                        <td width='12%' class=tabletitle><?php echo $Location; ?></td>
+                        <td width='15%' class=tabletitle><?php echo $Email; ?></td>
+                        <td width='15%' class=tabletitle><?php echo $ContactNumber; ?></td>
+                        <td width='15%' class=tabletitle><?php echo $DateSubmitted; ?></td>
+                        <td>
                             <button class='btn btn-default' data-toggle='modal'
-                                    data-target='#AcceptRequest<?php echo $RID; ?>'><i
-                                    class='fa fa-check-circle'></i></button>
+                                    data-target='#AcceptRequest<?php echo $RID; ?>'>
+                                <i class='fa fa-check-circle'></i></button>
                             <button class='btn btn-danger' data-toggle='modal'
-                                    data-target='#DeclineRequest<?php echo $RID; ?>'><i
-                                    class='fa fa-trash fa-1x'></i></button>
+                                    data-target='#DeclineRequest<?php echo $RID; ?>'>
+                                <i class='fa fa-trash fa-1x'></i></button>
                         </td>
                     <tr>
-                </tbody>
-                <!-- Modal -->
-                <div class="modal fade" id="AcceptRequest<?php echo $RID; ?>"
-                     role="dialog">
-                    <div class="modal-dialog" style="padding:100px">
-                        <!-- Modal content-->
-                        <div class="modal-content">
-                            <div class="modal-header">
-                                <button type="button" class="close" data-dismiss="modal">&times;</button>
-                                <h4 class="modal-title">Accept Applicant?</h4>
-                            </div>
-                            <div class="modal-body">
-                                <div class="col-md-15 fieldcol">
-                                    <label = "usr" class = "control-label">Do you want to accept this applicant?</label>
-                                    <div class="form-group">
+                    </tbody>
+                    <!-- Modal -->
+                    <form name="form_Accept" id="form_Accept"
+                          action="add-company.php" autocomplete="off" method="POST">
+                        <div class="modal fade" id="AcceptRequest<?php echo $RID; ?>"
+                             role="dialog">
+                            <div class="modal-dialog" style="padding:100px">
+                                <!-- Modal content-->
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                        <h4 class="modal-title">Accept Applicant?</h4>
                                     </div>
-                                </div>
-                                <div class="col-md-15 fieldcol">
-                                    <label = "usr" class = "control-label">Message to applicant.
-                                    <span>(*)</span> </label>
-                                    <div class="form-group">
+                                    <div class="modal-body">
+                                        <div class="col-md-15 fieldcol">
+                                            <label = "usr" class = "control-label">Do you want to accept this
+                                            applicant?</label>
+                                            <div class="form-group">
+                                            </div>
+                                        </div>
+                                        <div class="col-md-15 fieldcol">
+                                            <label = "usr" class = "control-label">Message to applicant.
+                                            <span>(*)</span> </label>
+                                            <div class="form-group">
                                         <textarea type="text" name="AcceptMsg" id="AcceptMsg"
                                                   class="form-control"></textarea>
+                                            </div>
+                                        </div>
+                                        <input type="hidden" name="id" value="1">
+                                        <input type="hidden" name="rid" value="<?php echo $RID; ?>">
+                                        <div class="modal-footer">
+                                            <button type="submit" class="btn btn-primary">Accept</button>
+                                            <button type="button" class="btn btn-default" data-dismiss="modal">
+                                                Cancel
+                                            </button>
+                                        </div>
                                     </div>
-                                </div>
-                                <div class="modal-footer">
-                                    <a href="add-company.php?id=1&rid=<?php echo $RID; ?>"
-                                       class="btn btn-primary">Accept</a>
-                                    <button type="button" class="btn btn-default" data-dismiss="modal">
-                                        Cancel
-                                    </button>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                </div>
+                    </form>
 
-                <div class="modal fade" id="DeclineRequest<?php echo $RID; ?>"
-                     role="dialog">
-                    <div class="modal-dialog" style="padding:100px">
-                        <!-- Modal content-->
-                        <div class="modal-content">
-                            <div class="modal-header">
-                                <button type="button" class="close" data-dismiss="modal">&times;</button>
-                                <h4 class="modal-title">Reject Applicant?</h4>
-                            </div>
-                            <div class="modal-body">
-                                <div class="col-md-15 fieldcol">
-                                    <label = "usr" class = "control-label">Do you want to reject this applicant? This
-                                    cannot be undone.</label>
-                                    <div class="form-group">
+                    <form name="form_Decline" id="form_Decline"
+                          action="add-company.php" autocomplete="off" method="POST">
+                        <div class="modal fade" id="DeclineRequest<?php echo $RID; ?>"
+                             role="dialog">
+                            <div class="modal-dialog" style="padding:100px">
+                                <!-- Modal content-->
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                        <h4 class="modal-title">Reject Applicant?</h4>
                                     </div>
-                                </div>
-                                <div class="col-md-15 fieldcol">
-                                    <label = "usr" class = "control-label">Message to applicant.
-                                    <span>(*)</span> </label>
-                                    <div class="form-group">
-                                        <textarea type="text" name="RejectMsg" id="RejectMsg" class="form-control"> </textarea>
+                                    <div class="modal-body">
+                                        <div class="col-md-15 fieldcol">
+                                            <label = "usr" class = "control-label">Do you want to reject this applicant?
+                                            This
+                                            cannot be undone.</label>
+                                            <div class="form-group">
+                                            </div>
+                                        </div>
+                                        <div class="col-md-15 fieldcol">
+                                            <label = "usr" class = "control-label">Message to applicant.
+                                            <span>(*)</span> </label>
+                                            <div class="form-group">
+                                            <textarea type="text" name="AcceptMsg" id="AcceptMsg"
+                                                      class="form-control"> </textarea>
+                                            </div>
+                                        </div>
+                                        <input type="hidden" name="id" value="2">
+                                        <input type="hidden" name="rid" value="<?php echo $RID; ?>">
+                                        <div class="modal-footer">
+                                            <button type="submit" class="btn btn-danger">Reject</button>
+                                            <button type="button" class="btn btn-default" data-dismiss="modal">
+                                                Cancel
+                                            </button>
+                                        </div>
                                     </div>
-                                </div>
-                                <div class="modal-footer">
-                                    <a href="add-company.php?id=2&rid=<?php echo $RID; ?>"
-                                       class="btn btn-danger">Reject</a>
-                                    <button type="button" class="btn btn-default" data-dismiss="modal">
-                                        Cancel
-                                    </button>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                </div>
-                <?php
-            }
-            ?>
+                    </form>
+                    <?php
+                }
+                ?>
             </table>
         </div>
     </div>
-<script type="text/javascript" src="../js/script.js"></script>
+    <script type="text/javascript" src="../js/script.js"></script>
 </body>
 </html>
+<script type="text/javascript">
+    $(document).ready(function () {
+        $("#form_Accept").bootstrapValidator({
+            feedbackIcons: {
+                valid: "glyphicon glyphicon-ok",
+                invalid: "glyphicon glyphicon-remove",
+                validating: "glyphicon glyphicon-refresh"
+            },
+            fields: {
+                AcceptMsg: {
+                    validators: {
+                        notEmpty: {
+                            message: "This field is required."
+                        }
+                    }
+                }
+            }
+        });
+    });
+</script>
