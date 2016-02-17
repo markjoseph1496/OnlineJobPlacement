@@ -320,6 +320,13 @@ if(isset($_SESSION['AdminID'])){
                                         <strong><span class="fa fa-info-circle"></span> Event successfully deleted.</strong> 
                                     </div>
                                     ';
+                        } elseif ($id == 'updateevent') {
+                            echo '
+                            <div class="alert alert-success" id="success-alert">
+                                <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                                <strong><span class="fa fa-info-circle"></span> Event successfully Updated.</strong>
+                            </div>
+                            ';
                         }
                     }
                 ?>
@@ -348,6 +355,7 @@ if(isset($_SESSION['AdminID'])){
                             $datefrom = $value[3];
                             $dateto = $value[4];
                             $location = $value[5];
+                            $description = $value[6];
                             
                         ?>
                         <tr>
@@ -355,16 +363,96 @@ if(isset($_SESSION['AdminID'])){
                            <td width = 20% class = tabletitle><?php echo $datefrom; ?> </td>
                            <td width = 20% class = tabletitle><?php echo $dateto; ?> </td>
                            <td width = 20% class = tabletitle><?php echo $location;?> </td>
-                           <td class = tabletitle> 
-                                <button id="Adduser" href="" name="btnedit" class=" btn btn-primary"> 
-                                <i class="fa fa-pencil-square-o fa-1x"></i></button>
+                           <td class = tabletitle>
+                                <button class="btn btn-primary" data-toggle="modal"
+                                    data-target="#EditEvent<?php echo $EventID; ?>">
+                                    <i class="fa fa-pencil-square-o fa-1x"></i>
+                                </button>
                                 <button class="btn btn-danger" data-toggle="modal"
                                     data-target="#DeleteEvent<?php echo $EventID; ?>">
                                     <i class="fa fa-trash fa-1x"></i>
                                 </button> 
                            </td>
                         <tr>
-                        <!-- Modal-->
+                        <!-- Edit Modal-->
+                        <div class="modal fade" id="EditEvent<?php echo $EventID; ?>"
+                         role="dialog">
+                            <div class="modal-dialog modal-lg" style="padding:100px">
+                                <!-- Modal content-->
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                        <h4 class="modal-title">Edit Event?</h4>
+                                    </div>
+                                    <div class="modal-body">
+                                    <form method="POST" action="functions.php ">
+                                        <div class="col-md-7">
+                                            <div class="row">
+                                                <div class="row field">
+                                                    <div class="col-md-2 fieldcol">
+                                                        <label = "usr" class = "control-label">Event from: </label>
+                                                    </div>
+                                                    <div class="col-md-4 fieldcol">
+                                                        <div class = "form-group">
+                                                            <label = "usr" class = "control-label"><?php echo $datefrom; ?></label>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-1 fieldcol">
+                                                        <label = "usr" class = "control-label" >to: </label>
+                                                    </div>
+                                                    <div class="col-md-4 fieldcol">
+                                                        <div class = "form-group">
+                                                            <label = "usr" class = "control-label"><?php echo $dateto; ?></label>
+                                                        </div>
+                                                    </div>
+
+                                                    
+                                                </div>
+                                                <div class="row field">
+                                                    <div class="col-md-2 fieldcol">
+                                                        <label = "usr" class = "control-label"> Event Title: </label>
+                                                    </div>
+                                                    <div class="col-md-9 fieldcol">
+                                                        <div class="form-group">
+                                                            <input type="text" name="eEventTitle" id="eEventTitle" class="form-control" value="<?php echo $eventtitle; ?>">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="row field">
+                                                    <div class="col-md-2 fieldcol">
+                                                        <label = "usr" class = "control-label"> Location: </label>
+                                                    </div>
+                                                    <div class="col-md-9 fieldcol">
+                                                        <div class="form-group">
+                                                            <input type="text" name="eLocation" id="eLocation" class="form-control" value="<?php echo $location; ?>">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="row field">
+                                                    <div class="col-md-2 fieldcol">
+                                                        <label = "usr" class = "control-label"> Caption: </label>
+                                                    </div>
+                                                    <div class="col-md-9 fieldcol">
+                                                        <div class="form-group">
+                                                            <input type="text" class="form-control" id="eDescription" name="eDescription" value="<?php echo $description; ?>">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="submit" class="btn btn-primary" name="btnUpdateEvent">Update</button>
+                                            <button type="button" class="btn btn-default" data-dismiss="modal">
+                                                Cancel
+                                            </button>
+                                        </div>
+                                    </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- End Modal-->
+                        <!-- Delete Modal-->
                         <div class="modal fade" id="DeleteEvent<?php echo $EventID; ?>"
                          role="dialog">
                             <div class="modal-dialog" style="padding:100px">
