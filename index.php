@@ -534,6 +534,106 @@ $adminevent_tbl =
                 </div>
             </div>
 
+
+
+            <div class="row">
+
+                <!-- Start Memebr 1 -->
+                <div class="col-md-3 col-sm-6 col-xs-12 animated fadeIn delay-03" data-animation="fadeIn" data-animation-delay="03">
+                    <div class="team-member modern">
+                        <!-- Memebr Photo, Name & Position -->
+                        <div class="member-photo">
+                            <img alt="" src="images/team/face_1.png">
+                            <div class="member-name">John Doe <span>Developer</span>
+                        </div>
+                    </div>
+                    <!-- Memebr Words -->
+                    <div class="member-info">
+                        <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore fugiat.</p>
+                    </div>
+                    <!-- Start Progress Bar 1 -->
+                    <div class="progress-label">Photoshop</div>
+                    <div class="progress">
+                        <div class="progress-bar progress-bar-primary" data-progress-animation="96%" data-appear-animation-delay="400">
+                            <span class="percentage">96%</span>
+                        </div>
+                    </div>
+                    <!-- Start Progress Bar 2 -->
+                    <div class="progress-label">Logo Design</div>
+                    <div class="progress">
+                        <div class="progress-bar progress-bar-primary" data-progress-animation="88%" data-appear-animation-delay="800">
+                            <span class="percentage">88%</span>
+                        </div>
+                    </div>
+                    <!-- Start Progress Bar 3 -->
+                    <div class="progress-label">Vectors Design</div>
+                    <div class="progress">
+                        <div class="progress-bar progress-bar-primary" data-progress-animation="100%" data-appear-animation-delay="1200">
+                            <span class="percentage">100%</span>
+                        </div>
+                    </div>
+                    <!-- Memebr Social Links -->
+                    <div class="member-socail">
+                        <a class="twitter" href="#"><i class="fa fa-twitter"></i></a>
+                        <a class="gplus" href="#"><i class="fa fa-google-plus"></i></a>
+                        <a class="linkedin" href="#"><i class="fa fa-linkedin"></i></a>
+                        <a class="flickr" href="#"><i class="fa fa-flickr"></i></a>
+                        <a class="mail" href="#"><i class="fa fa-envelope"></i></a>
+                    </div>
+                </div>
+            </div>
+            <!-- End Memebr 1 -->
+
+          <!-- Start Memebr 2 -->
+          <div class="col-md-3 col-sm-6 col-xs-12 animated fadeIn delay-04" data-animation="fadeIn" data-animation-delay="04">
+            <div class="team-member modern">
+              <!-- Memebr Photo, Name & Position -->
+              <div class="member-photo">
+                <img alt="" src="images/team/face_2.png">
+                <div class="member-name">Silly Sally <span>Developer</span>
+                </div>
+              </div>
+              <!-- Memebr Words -->
+              <div class="member-info">
+                <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore fugiat.</p>
+              </div>
+              <!-- Start Progress Bar 1 -->
+              <div class="progress-label">Photoshop</div>
+              <div class="progress">
+                <div class="progress-bar progress-bar-primary" data-progress-animation="96%" data-appear-animation-delay="400">
+                  <span class="percentage">96%</span>
+                </div>
+              </div>
+              <!-- Start Progress Bar 2 -->
+              <div class="progress-label">Logo Design</div>
+              <div class="progress">
+                <div class="progress-bar progress-bar-primary" data-progress-animation="88%" data-appear-animation-delay="800">
+                  <span class="percentage">88%</span>
+                </div>
+              </div>
+              <!-- Start Progress Bar 3 -->
+              <div class="progress-label">Vectors Design</div>
+              <div class="progress">
+                <div class="progress-bar progress-bar-primary" data-progress-animation="100%" data-appear-animation-delay="1200">
+                  <span class="percentage">100%</span>
+                </div>
+              </div>
+              <!-- Memebr Social Links -->
+              <div class="member-socail">
+                <a class="twitter" href="#"><i class="fa fa-twitter"></i></a>
+                <a class="gplus" href="#"><i class="fa fa-google-plus"></i></a>
+                <a class="linkedin" href="#"><i class="fa fa-linkedin"></i></a>
+                <a class="flickr" href="#"><i class="fa fa-flickr"></i></a>
+                <a class="mail" href="#"><i class="fa fa-envelope"></i></a>
+              </div>
+            </div>
+          </div>
+          <!-- End Memebr 2 -->
+
+          
+
+            </div>
+
             
             <div id="join" class="parallax" style="background-image:url(images/sti-bldg.jpg);">
                 <div class="overlay">
