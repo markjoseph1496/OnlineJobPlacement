@@ -32,6 +32,6 @@ if(isset($_POST['delete_request'])){
         $RID
     );
 
-    header('location: ../applications/applications.php');
+    header('location: ../applications/applications.php?id=1');
 }
 ?>

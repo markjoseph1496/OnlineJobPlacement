@@ -419,6 +419,20 @@ if ($References == "ok") {
     <!-- Start Content -->
     <div id="content">
         <div class="container">
+        <?php
+            if (isset($_GET['id'])) {
+                $id = $_GET['id'];
+
+                if ($id == 1) {
+                    echo '
+                            <div class="alert alert-success" id="success-alert">
+                                <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                                <strong><span class="fa fa-info-circle"></span> Applications successfully deleted.</strong>
+                            </div>
+                            ';
+                } 
+            }
+        ?>
             <div class="row">
                 <!-- Page Content -->
                 <div class="col-md-12 page-content">
