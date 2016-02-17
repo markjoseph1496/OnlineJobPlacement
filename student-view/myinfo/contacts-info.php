@@ -459,7 +459,7 @@ if($References == "ok"){
                                     <div class="form-group">
                                         <label>Email <span>(*)</span></label>
                                         <input type="email" class="form-control" id="Email" name="Email"
-                                               value="<?php echo $Email; ?>" maxlength="30">
+                                               value="<?php echo $Email; ?>" maxlength="50">
                                     </div>
                                     <div class="form-group">
                                         <label>Mobile Number <span>(*)</span></label>
