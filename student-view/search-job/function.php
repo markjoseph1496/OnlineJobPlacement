@@ -21,4 +21,17 @@ if (isset($_GET['id'])) {
 
     header('location: jobs.php?id=1');
 }
+
+if(isset($_POST['delete_request'])){
+    $RID = $_POST['RID'];
+
+    GSecureSQL::query(
+        "DELETE FROM requesttocompanytbl WHERE RID = ?",
+        FALSE,
+        "s",
+        $RID
+    );
+
+    header('location: ../applications/applications.php?id=1');
+}
 ?>

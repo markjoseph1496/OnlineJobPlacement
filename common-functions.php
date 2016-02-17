@@ -280,6 +280,37 @@ class CommonFunctions{
 
         return checkdate($mm, $dd, $yyyy);
     }
+
+    function get_regex_of_cities(){
+        $cities = array(
+            "Caloocan City",
+            "Las Piñas City",
+            "Makati City",
+            "Malabon City",
+            "Mandaluyong City",
+            "Manila",
+            "Marikina City",
+            "Muntinlupa City",
+            "Navotas City",
+            "Parañaque City",
+            "Pasay City",
+            "Pasig City",
+            "Pateros",
+            "Quezon City",
+            "San Juan City",
+            "Taguig City",
+            "Valenzuela City"
+        );
+        $ret = "/^(";
+        foreach($cities as $city){
+            if($city === "Valenzuela City"){
+                $ret = $ret . $city . ')$/';
+            }else{
+                $ret = $ret . $city . '|';
+            }
+        }
+        return $ret;
+    }
 }
 
 
