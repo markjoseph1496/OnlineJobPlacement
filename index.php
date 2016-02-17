@@ -657,7 +657,7 @@ $adminevent_tbl =
                 <div class="row footer-widgets">
 
                     <!-- Start Subscribe & Social Links Widget -->
-                    <div class="col-md-3">
+                    <div class="col-md-9" >
                         <div class="footer-widget social-widget">
                             <h4>Follow Us<span class="head-line"></span></h4>
                             <ul class="social-icons">
@@ -668,41 +668,24 @@ $adminevent_tbl =
                                             class="fa fa-twitter"></i></a></li>
                                 <li><a class="google" href="#"><i class="fa fa-youtube"></i></a></li>
                             </ul>
+                            <h4>Contact Us<span class="head-line"></span></h4>
+                            <div><b>Tel. no. (+632) 294-4001 / 361-6070</b></div>
+                            <label>109 Samson Road corner Caimito Street Caloocan City, Philippines 1400</label>
                         </div>
                     </div>
                     <!-- .col-md-3 -->
                     <!-- End Subscribe & Social Links Widget -->
 
-                    <!-- Start Twitter Widget -->
-                    <div class="col-md-3">
-                        <div class="footer-widget twitter-widget">
-                            <h4>Contact Us<span class="head-line"></span></h4>
-                            <b>Tel. no. (+632) 294-4001 / 361-6070</b>
-                            <label>109 Samson Road corner Caimito Street Caloocan City, Philippines 1400</label>
-                        </div>
-                    </div>
-                    <!-- .col-md-3 -->
-                    <!-- End Twitter Widget -->
-
-
-                    <!-- Start Flickr Widget -->
-                    <div class="col-md-3">
-                        <div class="footer-widget flickr-widget">
-
-                        </div>
-                    </div>
-                    <!-- .col-md-3 -->
-                    <!-- End Flickr Widget -->
 
                     <!-- Start Contact Widget -->
                     <div class="col-md-3">
                         <div class="footer-widget contact-widget">
-                            <h4><img src="images/ojpms.png" class="img-responsive" alt="Footer Logo"/></h4>
+                            <h4><img src="images/footer-ojpms.gif" class="img-responsive" alt="Footer Logo"/></h4>
                             <!--<p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident</p>-->
                             <ul>
-                                <li><span>Phone Number:</span> +01 234 567 890</li>
-                                <li><span>Email:</span> company@company.com</li>
-                                <li><span>Website:</span> www.sticaloocan-jobplacement.com</li>
+                                <li><span>Phone Number:</span> +63 (917) 4638460</li>
+                                <li><span>Email:</span> jobplacement@caloocan.sti.edu</li>
+                                <li><span>Website:</span> www.sti.edu</li>
                             </ul>
                         </div>
                     </div>

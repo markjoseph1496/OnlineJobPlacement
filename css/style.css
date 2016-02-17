@@ -117,7 +117,7 @@ h6 {
 }
 
 p {
-    color: #666;
+    color: #333;
     font-size: 13px;
     font-family: 'Open Sans','Helvetica Neue',Arial,sans-serif;
     line-height: 22px;
@@ -3071,6 +3071,7 @@ ul.icons-list li i {
     -moz-transition: all 0.3s ease-in-out;
     -webkit-transition: all 0.3s ease-in-out;
     -o-transition: all 0.3s ease-in-out;
+    color:#fff;
 }
 
 .portfolio-item .portfolio-details a span {
