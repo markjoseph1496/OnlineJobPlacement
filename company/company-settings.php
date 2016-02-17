@@ -360,7 +360,7 @@ $ProfileImage= $companyinfo_tbl[0][11];
                             </div>
                             <div class="col-md-8">
                                 <div class="form-group">
-                                    <textarea type="text" name="Description" id="usr" class="form-control" maxlength="1000"><?php echo $Description; ?></textarea>
+                                    <textarea type="text" name="Description" id="usr" class="form-control" maxlength="5000"><?php echo $Description; ?></textarea>
                                 </div>
                             </div>
                         </div>
