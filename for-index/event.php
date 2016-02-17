@@ -165,16 +165,18 @@
                             <!-- Start Single Post Content -->
                             <div class="post-content">
                                 <div class="post-type"><i class="fa fa-picture-o"></i></div>
-                                <h2>Gallery Post With Nice Lightbox</h2>
+                                <h2>Training Beyond College</h2>
                                 <ul class="post-meta">
                                   <li>By <a href="#">iThemesLab</a></li>
                                   <li>December 30, 2013</li>
                                   <li><a href="#">WordPress</a>, <a href="#">Graphic</a></li>
                                   <li><a href="#">4 Comments</a></li>
                                 </ul>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-                                <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt.</p>
-
+                                <p>The STI Alumni Association, Inc. (STIAA) invites STI graduates in an STI Alumni Continuing Education Seminar, a learning experience that will grant them an opportunity to gain personal and professional development. Entitled UPLIFT! Establishing Connection, Achieving Productivity & Leading with Relevance, the event will feature two well-established industry professionals who will give inside tips on how to succeed in this ever-shifting and progressing professional setting. The seminar will open its doors to 300 members of STIAA and will be conducted on February 6, 2016 at the 7th Floor, Multipurpose Hall of STI the Academic Center Global City in Bonifacio Global City, Taguig.</p>
+                                <p>“When our students are with us, we give them an updated and relevant education because we stand by our cause to prepare them for their future. Now that they are graduates, they are still regarded as members of the STI community, thus we continue to find ways to train them. However, instead of using books and our courseware, we use motivation as a tool for them to become better in whatever venture they are pursuing. Becoming better may mean making new acquaintances to establish a strong network of people whom they can collaborate with, developing one’s skills, and finding the drive to reach one’s goals,” shares STI Vice President for Academics Dr. Lloyd Bautista in a statement.</p>
+                                <p>One of the guest speakers is Weena Christine Cortes, a motivator for professional development. She has 18 years of working experience as a training consultant in Business Development, Operations, Marketing, and Sales in five-star hotels, both locally and abroad. She is the Founder and Managing Director of ConsultAsia Professional Solutions, Inc. (CPSI), a local Business/Human Resources Solutions provider to various businesses in the country, and runs a separate training company that caters to Overseas Filipino Workers (OFWs).</p>
+                                <p>Anthony Pangilinan, on the other hand, is a key speaker who will share his knowledge about the current environment of the industry, keeping connections with other people, personal growth, managing resources, and setting priorities.  An accomplished businessman, he is the Chairman and Chief Distributor of Businessworks, Inc., a training and consultancy firm, and the Founding Head of the PLDT-Smart Foundation. He is also an in-demand international speaker and a trainer and management consultant for various companies in over 70 countries. Moreover, he was a prominent figure as a newscaster and currently the Program Designer and Host of “Magbago Tayo,” a weekly program in Radyo Singko and Aksyon TV of TV5. Anthony is a recipient of two Anvil Awards for innovative educational campaigns for parents and the youth.</p>
+                                <p>Believing in continuous learning, STI supports its graduates and help them fulfill their own success by creating opportunities to create connections, learn the ways of productivity, and become better and more proficient in their fields of choice.</p>
                                 <div class="post-bottom clearfix">
                                     <div class="post-tags-list">
                                         <a href="#">Theme</a>
@@ -251,24 +253,21 @@
                 </div>
 
                 <div class="container">
-                    <!-- Start Recent Projects Carousel -->
                     <div class="recent-projects">
-                        <h4 class="title"><span>Recent Projects</span></h4>
+                        <h4 class="title-yellow wite-text">Events</h4>
                         <div class="projects-carousel touch-carousel">
 
                             <div class="portfolio-item item">
                                 <div class="portfolio-border">
                                     <div class="portfolio-thumb">
-                                        <a class="lightbox" data-lightbox-type="ajax" href="https://vimeo.com/78468485">
-                                            <div class="thumb-overlay"><i class="fa fa-play"></i></div>
-                                            <img alt="" src="images/portfolio-1/1.png" />
+                                        <a class="lightbox" title="This is an image title" href="../images/event/gen-ass-2016.jpg">
+                                            <div class="thumb-overlay"><i class="fa fa-arrows-alt"></i></div>
+                                            <img alt="" src="../images/event/gen-ass-2016.jpg"/>
                                         </a>
                                     </div>
                                     <div class="portfolio-details">
                                         <a href="#">
-                                            <h4>Lorem Ipsum Dolor</h4>
-                                            <span>Website</span>
-                                            <span>Drawing</span>
+                                            <h4>Batch 2016 General Assembly</h4>
                                         </a>
                                     </div>
                                 </div>
@@ -277,200 +276,84 @@
                             <div class="portfolio-item item">
                                 <div class="portfolio-border">
                                     <div class="portfolio-thumb">
-                                        <a class="lightbox" title="This is an image title" href="images/portfolio-big-01.jpg">
+                                        <a class="lightbox" title="This is an image title" href="../images/event/pep-talk.jpg">
                                             <div class="thumb-overlay"><i class="fa fa-arrows-alt"></i></div>
-                                            <img alt="" src="images/portfolio-1/2.png" />
+                                            <img alt="" src="../images/event/pep-talk.jpg"/>
                                         </a>
                                     </div>
                                     <div class="portfolio-details">
                                         <a href="#">
-                                            <h4>Lorem Ipsum Dolor</h4>
-                                            <span>Logo</span>
-                                            <span>Animation</span>
+                                            <h4>PEP Talk</h4>
                                         </a>
                                     </div>
                                 </div>
                             </div>
 
                             <div class="portfolio-item item">
-                              <div class="portfolio-border">
-                                <div class="portfolio-thumb">
-                                  <a href="#">
-                                    <div class="thumb-overlay"><i class="fa fa-arrows-alt"></i></div>
-                                    <img alt="" src="images/portfolio-1/3.png" />
-                                  </a>
+                                <div class="portfolio-border">
+                                    <div class="portfolio-thumb">
+                                        <a class="lightbox" title="This is an image title" href="../images/event/job-fair.jpg">
+                                            <div class="thumb-overlay"><i class="fa fa-arrows-alt"></i></div>
+                                            <img alt="" src="../images/event/job-fair.jpg"/>
+                                        </a>
+                                    </div>
+                                    <div class="portfolio-details">
+                                        <a href="#">
+                                            <h4>Are Your Ready for Job Fair 2016</h4>
+                                        </a>
+                                    </div>
                                 </div>
-                                <div class="portfolio-details">
-                                  <a href="#">
-                                    <h4>Lorem Ipsum Dolor</h4>
-                                    <span>Drawing</span>
-                                  </a>
-                                </div>
-                              </div>
                             </div>
 
                             <div class="portfolio-item item">
-                              <div class="portfolio-border">
-                                <div class="portfolio-thumb">
-                                  <a href="#">
-                                    <div class="thumb-overlay"><i class="fa fa-arrows-alt"></i></div>
-                                    <img alt="" src="images/portfolio-1/4.png" />
-                                  </a>
+                                <div class="portfolio-border">
+                                    <div class="portfolio-thumb">
+                                        <a class="lightbox" title="This is an image title" href="../images/event/seminar.jpg">
+                                            <div class="thumb-overlay"><i class="fa fa-arrows-alt"></i></div>
+                                            <img alt="" src="../images/event/seminar.jpg"/>
+                                        </a>
+                                    </div>
+                                    <div class="portfolio-details">
+                                        <a href="#">
+                                            <h4>STI</h4>
+                                        </a>
+                                    </div>
                                 </div>
-                                <div class="portfolio-details">
-                                  <a href="#">
-                                    <h4>Lorem Ipsum Dolor</h4>
-                                    <span>Website</span>
-                                    <span>Ilustration</span>
-                                  </a>
-                                </div>
-                              </div>
                             </div>
 
                             <div class="portfolio-item item">
-                              <div class="portfolio-border">
-                                <div class="portfolio-thumb">
-                                  <a class="lightbox" title="This is an image title" href="images/portfolio-big-02.jpg">
-                                    <div class="thumb-overlay"><i class="fa fa-arrows-alt"></i></div>
-                                    <img alt="" src="images/portfolio-1/5.png" />
-                                  </a>
+                                <div class="portfolio-border">
+                                    <div class="portfolio-thumb">
+                                        <a class="lightbox" title="This is an image title" href="../images/event/uplift.jpg">
+                                            <div class="thumb-overlay"><i class="fa fa-arrows-alt"></i></div>
+                                            <img alt="" src="../images/event/uplift.jpg"/>
+                                        </a>
+                                    </div>
+                                    <div class="portfolio-details">
+                                        <a href="for-index/view-event.php">
+                                            <h4>Training Beyond College</h4>
+                                        </a>
+                                    </div>
                                 </div>
-                                <div class="portfolio-details">
-                                  <a href="#">
-                                    <h4>Lorem Ipsum Dolor</h4>
-                                    <span>Logo</span>
-                                    <span>Drawing</span>
-                                  </a>
-                                </div>
-                              </div>
                             </div>
 
                             <div class="portfolio-item item">
-                              <div class="portfolio-border">
-                                <div class="portfolio-thumb">
-                                  <a href="#">
-                                    <div class="thumb-overlay"><i class="fa fa-arrows-alt"></i></div>
-                                    <img alt="" src="images/portfolio-1/6.png" />
-                                  </a>
-                                </div>
-                                <div class="portfolio-details">
-                                  <a href="#">
-                                    <h4>Lorem Ipsum Dolor</h4>
-                                    <span>Animation</span>
-                                  </a>
-                                </div>
-                              </div>
-                            </div>
-
-                            <div class="portfolio-item item">
-                              <div class="portfolio-border">
-                                <div class="portfolio-thumb">
-                                  <a class="lightbox" title="This is an image title" href="images/portfolio-big-03.jpg">
-                                    <div class="thumb-overlay"><i class="fa fa-arrows-alt"></i></div>
-                                    <img alt="" src="images/portfolio-1/7.png" />
-                                  </a>
-                                </div>
-                                <div class="portfolio-details">
-                                  <a href="#">
-                                    <h4>Lorem Ipsum Dolor</h4>
-                                    <span>Website</span>
-                                  </a>
-                                </div>
-                              </div>
-                            </div>
-
-                            <div class="portfolio-item item">
-                              <div class="portfolio-border">
-                                <div class="portfolio-thumb">
-                                  <a href="#">
-                                    <div class="thumb-overlay"><i class="fa fa-arrows-alt"></i></div>
-                                    <img alt="" src="images/portfolio-1/8.png" />
-                                  </a>
-                                </div>
-                                <div class="portfolio-details">
-                                  <a href="#">
-                                    <h4>Lorem Ipsum Dolor</h4>
-                                    <span>Ilustration</span>
-                                    <span>Animation</span>
-                                  </a>
-                                </div>
-                              </div>
-                            </div>
-
-                            <div class="portfolio-item item">
-                              <div class="portfolio-border">
-                                <div class="portfolio-thumb">
-                                  <a href="#">
-                                    <div class="thumb-overlay"><i class="fa fa-arrows-alt"></i></div>
-                                    <img alt="" src="images/portfolio-1/9.png" />
-                                  </a>
-                                </div>
-                                <div class="portfolio-details">
-                                  <a href="#">
-                                    <h4>Lorem Ipsum Dolor</h4>
-                                    <span>Ilustration</span>
-                                    <span>Animation</span>
-                                  </a>
-                                </div>
-                              </div>
-                            </div>
-
-                            <div class="portfolio-item item">
-                              <div class="portfolio-border">
-                                <div class="portfolio-thumb">
-                                  <a href="#">
-                                    <div class="thumb-overlay"><i class="fa fa-arrows-alt"></i></div>
-                                    <img alt="" src="images/portfolio-1/10.png" />
-                                  </a>
-                                </div>
-                                <div class="portfolio-details">
-                                  <a href="#">
-                                    <h4>Lorem Ipsum Dolor</h4>
-                                    <span>Ilustration</span>
-                                    <span>Animation</span>
-                                  </a>
-                                </div>
-                              </div>
-                            </div>
-
-                            <div class="portfolio-item item">
-                              <div class="portfolio-border">
-                                <div class="portfolio-thumb">
-                                  <a href="#">
-                                    <div class="thumb-overlay"><i class="fa fa-arrows-alt"></i></div>
-                                    <img alt="" src="images/portfolio-1/11.png" />
-                                  </a>
-                                </div>
-                                <div class="portfolio-details">
-                                  <a href="#">
-                                    <h4>Lorem Ipsum Dolor</h4>
-                                    <span>Ilustration</span>
-                                    <span>Animation</span>
-                                  </a>
-                                </div>
-                              </div>
-                            </div>
-
-                            <div class="portfolio-item item">
-                              <div class="portfolio-border">
-                                <div class="portfolio-thumb">
-                                  <a href="#">
-                                    <div class="thumb-overlay"><i class="fa fa-arrows-alt"></i></div>
-                                    <img alt="" src="images/portfolio-1/12.png" />
-                                  </a>
-                                </div>
-                                <div class="portfolio-details">
-                                    <a href="#">
-                                        <h4>Lorem Ipsum Dolor</h4>
-                                        <span>Ilustration</span>
-                                        <span>Animation</span>
-                                    </a>
-                                </div>
+                                <div class="portfolio-border">
+                                    <div class="portfolio-thumb">
+                                        <a class="lightbox" title="This is an image title" href="../images/event/nyc.jpg">
+                                            <div class="thumb-overlay"><i class="fa fa-arrows-alt"></i></div>
+                                            <img alt="" src="../images/event/nyc.jpg"/>
+                                        </a>
+                                    </div>
+                                    <div class="portfolio-details">
+                                        <a href="#">
+                                            <h4>National Youth Convention 2016</h4>
+                                        </a>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <!-- End Recent Projects Carousel -->
                 </div>
             </div>
         </div>

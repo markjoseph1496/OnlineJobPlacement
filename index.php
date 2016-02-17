@@ -338,16 +338,78 @@ $adminevent_tbl =
                             <div class="portfolio-item item">
                                 <div class="portfolio-border">
                                     <div class="portfolio-thumb">
+                                        <a class="lightbox" title="This is an image title" href="images/event/gen-ass-2016.jpg">
+                                            <div class="thumb-overlay"><i class="fa fa-arrows-alt"></i></div>
+                                            <img alt="" src="images/event/gen-ass-2016.jpg"/>
+                                        </a>
+                                    </div>
+                                    <div class="portfolio-details">
+                                        <a href="#">
+                                            <h4>Batch 2016 General Assembly</h4>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="portfolio-item item">
+                                <div class="portfolio-border">
+                                    <div class="portfolio-thumb">
+                                        <a class="lightbox" title="This is an image title" href="images/event/pep-talk.jpg">
+                                            <div class="thumb-overlay"><i class="fa fa-arrows-alt"></i></div>
+                                            <img alt="" src="images/event/pep-talk.jpg"/>
+                                        </a>
+                                    </div>
+                                    <div class="portfolio-details">
+                                        <a href="#">
+                                            <h4>PEP Talk</h4>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="portfolio-item item">
+                                <div class="portfolio-border">
+                                    <div class="portfolio-thumb">
+                                        <a class="lightbox" title="This is an image title" href="images/event/job-fair.jpg">
+                                            <div class="thumb-overlay"><i class="fa fa-arrows-alt"></i></div>
+                                            <img alt="" src="images/event/job-fair.jpg"/>
+                                        </a>
+                                    </div>
+                                    <div class="portfolio-details">
+                                        <a href="#">
+                                            <h4>Are Your Ready for Job Fair 2016</h4>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="portfolio-item item">
+                                <div class="portfolio-border">
+                                    <div class="portfolio-thumb">
+                                        <a class="lightbox" title="This is an image title" href="images/event/seminar.jpg">
+                                            <div class="thumb-overlay"><i class="fa fa-arrows-alt"></i></div>
+                                            <img alt="" src="images/event/seminar.jpg"/>
+                                        </a>
+                                    </div>
+                                    <div class="portfolio-details">
+                                        <a href="#">
+                                            <h4>STI</h4>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="portfolio-item item">
+                                <div class="portfolio-border">
+                                    <div class="portfolio-thumb">
                                         <a class="lightbox" title="This is an image title" href="images/event/uplift.jpg">
                                             <div class="thumb-overlay"><i class="fa fa-arrows-alt"></i></div>
                                             <img alt="" src="images/event/uplift.jpg"/>
                                         </a>
                                     </div>
                                     <div class="portfolio-details">
-                                        <a href="view-event.php">
-                                            <h4>STI</h4>
-                                            <span>Events</span>
-                                            <span>Events</span>
+                                        <a href="for-index/view-event.php">
+                                            <h4>Training Beyond College</h4>
                                         </a>
                                     </div>
                                 </div>
@@ -363,173 +425,7 @@ $adminevent_tbl =
                                     </div>
                                     <div class="portfolio-details">
                                         <a href="#">
-                                            <h4>STI</h4>
-                                            <span>Events</span>
-                                            <span>Events</span>
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="portfolio-item item">
-                                <div class="portfolio-border">
-                                    <div class="portfolio-thumb">
-                                        <a href="#">
-                                            <div class="thumb-overlay"><i class="fa fa-arrows-alt"></i></div>
-                                            <img alt="" src="images/event/4.png"/>
-                                        </a>
-                                    </div>
-                                    <div class="portfolio-details">
-                                        <a href="#">
-                                            <h4>STI</h4>
-                                            <span>Events</span>
-                                            <span>Events</span>
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="portfolio-item item">
-                                <div class="portfolio-border">
-                                    <div class="portfolio-thumb">
-                                        <a class="lightbox" title="This is an image title"
-                                           href="images/portfolio-big-02.jpg">
-                                            <div class="thumb-overlay"><i class="fa fa-arrows-alt"></i></div>
-                                            <img alt="" src="images/event/5.png"/>
-                                        </a>
-                                    </div>
-                                    <div class="portfolio-details">
-                                        <a href="#">
-                                            <h4>STI</h4>
-                                            <span>Events</span>
-                                            <span>Events</span>
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="portfolio-item item">
-                                <div class="portfolio-border">
-                                    <div class="portfolio-thumb">
-                                        <a href="#">
-                                            <div class="thumb-overlay"><i class="fa fa-arrows-alt"></i></div>
-                                            <img alt="" src="images/event/6.png"/>
-                                        </a>
-                                    </div>
-                                    <div class="portfolio-details">
-                                        <a href="#">
-                                            <h4>STI</h4>
-                                            <span>Events</span>
-                                            <span>Events</span>
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="portfolio-item item">
-                                <div class="portfolio-border">
-                                    <div class="portfolio-thumb">
-                                        <a class="lightbox" title="This is an image title"
-                                           href="images/portfolio-big-03.jpg">
-                                            <div class="thumb-overlay"><i class="fa fa-arrows-alt"></i></div>
-                                            <img alt="" src="images/event/7.png"/>
-                                        </a>
-                                    </div>
-                                    <div class="portfolio-details">
-                                        <a href="#">
-                                            <h4>STI</h4>
-                                            <span>Events</span>
-                                            <span>Events</span>
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="portfolio-item item">
-                                <div class="portfolio-border">
-                                    <div class="portfolio-thumb">
-                                        <a href="#">
-                                            <div class="thumb-overlay"><i class="fa fa-arrows-alt"></i></div>
-                                            <img alt="" src="images/event/8.png"/>
-                                        </a>
-                                    </div>
-                                    <div class="portfolio-details">
-                                        <a href="#">
-                                            <h4>STI</h4>
-                                            <span>Events</span>
-                                            <span>Events</span>
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="portfolio-item item">
-                                <div class="portfolio-border">
-                                    <div class="portfolio-thumb">
-                                        <a href="#">
-                                            <div class="thumb-overlay"><i class="fa fa-arrows-alt"></i></div>
-                                            <img alt="" src="images/event/9.png"/>
-                                        </a>
-                                    </div>
-                                    <div class="portfolio-details">
-                                        <a href="#">
-                                            <h4>STI</h4>
-                                            <span>Events</span>
-                                            <span>Events</span>
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="portfolio-item item">
-                                <div class="portfolio-border">
-                                    <div class="portfolio-thumb">
-                                        <a href="#">
-                                            <div class="thumb-overlay"><i class="fa fa-arrows-alt"></i></div>
-                                            <img alt="" src="images/event/10.png"/>
-                                        </a>
-                                    </div>
-                                    <div class="portfolio-details">
-                                        <a href="#">
-                                            <h4>STI</h4>
-                                            <span>Events</span>
-                                            <span>Events</span>
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="portfolio-item item">
-                                <div class="portfolio-border">
-                                    <div class="portfolio-thumb">
-                                        <a href="#">
-                                            <div class="thumb-overlay"><i class="fa fa-arrows-alt"></i></div>
-                                            <img alt="" src="images/event/11.png"/>
-                                        </a>
-                                    </div>
-                                    <div class="portfolio-details">
-                                        <a href="#">
-                                            <h4>STI</h4>
-                                            <span>Events</span>
-                                            <span>Events</span>
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="portfolio-item item">
-                                <div class="portfolio-border">
-                                    <div class="portfolio-thumb">
-                                        <a href="#">
-                                            <div class="thumb-overlay"><i class="fa fa-arrows-alt"></i></div>
-                                            <img alt="" src="images/event/12.png"/>
-                                        </a>
-                                    </div>
-                                    <div class="portfolio-details">
-                                        <a href="#">
-                                            <h4>STI</h4>
-                                            <span>Events</span>
-                                            <span>Events</span>
+                                            <h4>National Youth Convention 2016</h4>
                                         </a>
                                     </div>
                                 </div>
