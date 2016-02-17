@@ -310,39 +310,21 @@ if(isset($_SESSION['AdminID'])){
             &nbsp;
             <div class = "col-md-12">
                 <?php
-                  if(isset($_GET['id'])){
-                        $id=$_GET['id'];
-                        if($id=="EventEdit"){
-                            echo '<div class="alert alert-success">
-                            <span class="glyphicon glyphicon-info-sign"></span> 
-                            Achievement successfully updated.
-                            </div>';
+                    if (isset($_GET['id'])) {
+                        $id = $_GET['id'];
+
+                        if ($id == 'deleteevent') {
+                            echo '
+                                    <div class="alert alert-success" id="success-alert">
+                                        <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                                        <strong><span class="fa fa-info-circle"></span> Event successfully deleted.</strong> 
+                                    </div>
+                                    ';
                         }
-                        elseif($id=="EventDelete"){
-                            echo '<div class="alert alert-success">
-                            <span class="glyphicon glyphicon-info-sign"></span> 
-                            Achievement successfully deleted.
-                            </div>';
-                        }
-                        elseif($id=="EventAdd"){
-                            echo '<div class="alert alert-success">
-                            <span class="glyphicon glyphicon-info-sign"></span> 
-                            Achievement successfully added.
-                            </div>';    
-                        }
-                    }   
+                    }
                 ?>
                 <table class="table segment table-hover">
                     <thead>
-                        <?php
-                          $eventtitle = 'EventTitle';
-                          $datefrom = 'EventDatef';
-                          $dateto = 'EventDatet';
-                          $location = 'Location';
-
-                          $query = ("SELECT * FROM admineventtbl WHERE AdminID = '$AdminID'");
-                          $Result = mysql_query($query);
-                        ?>
                         <tr>
                             <th width= "20%" class = "tabletitle">Event</th>
                             <th width = "20%" class = "tabletitle">From</th>
@@ -353,26 +335,64 @@ if(isset($_SESSION['AdminID'])){
                     </thead>
                     <tbody>
                         <?php
-                        while ($row = mysql_fetch_array($Result)) {
-                          
+                            $adminevent_tbl =
+                                GSecureSQL::query(
+                                    "SELECT * FROM admineventtbl WHERE `AdminID` = ?",
+                                    TRUE,
+                                    "s",
+                                    $AdminID
+                                );
+                            foreach ($adminevent_tbl as $value) {
+                            $EventID = $value[0];
+                            $eventtitle = $value[2];
+                            $datefrom = $value[3];
+                            $dateto = $value[4];
+                            $location = $value[5];
+                            
                         ?>
                         <tr>
-                           <td width = 20% class = tabletitle><?php echo $row[$eventtitle];?></td>
-                           <td width = 20% class = tabletitle><?php echo $row[$datefrom]; ?> </td>
-                           <td width = 20% class = tabletitle><?php echo $row[$dateto]; ?> </td>
-                           <td width = 20% class = tabletitle><?php echo $row[$location];?> </td>
-                           <form method="POST">
-                              <input type="hidden" name="delete_id" value="<?php echo $row['EventID']; ?>" />
+                           <td width = 20% class = tabletitle><?php echo $eventtitle;?></td>
+                           <td width = 20% class = tabletitle><?php echo $datefrom; ?> </td>
+                           <td width = 20% class = tabletitle><?php echo $dateto; ?> </td>
+                           <td width = 20% class = tabletitle><?php echo $location;?> </td>
                            <td class = tabletitle> 
                                 <button id="Adduser" href="" name="btnedit" class=" btn btn-primary"> 
-                                <i class="fa fa-pencil-square-o fa-1x"></i></button> 
-                                <button id="Adduser" href="#" class=" btn btn-primary"> 
-                                <i class="fa fa-exclamation"></i> </button>
-                                <button id="Adduser" name="btndelete" href="#" class=" btn btn-primary"> 
-                                <i class="fa fa-trash fa-1x"></i> </button> 
+                                <i class="fa fa-pencil-square-o fa-1x"></i></button>
+                                <button class="btn btn-danger" data-toggle="modal"
+                                    data-target="#DeleteEvent<?php echo $EventID; ?>">
+                                    <i class="fa fa-trash fa-1x"></i>
+                                </button> 
                            </td>
-                           </form>
-                        <tr> 
+                        <tr>
+                        <!-- Modal-->
+                        <div class="modal fade" id="DeleteEvent<?php echo $EventID; ?>"
+                         role="dialog">
+                            <div class="modal-dialog" style="padding:100px">
+                                <!-- Modal content-->
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                        <h4 class="modal-title">Delete Event?</h4>
+                                    </div>
+                                    <div class="modal-body">
+                                        <div class="col-md-15">
+                                            <label = "usr" class = "control-label">Do you want to delete
+                                            <?php echo $eventtitle; ?> ? This cannot be undone.</label>
+                                            <div class="form-group">
+                                            </div>
+                                        </div>
+                                        <div class="modal-footer">
+                                            <a href="admin-delete.php?delete_EventID=<?php echo $EventID; ?>"
+                                               class="btn btn-danger">Delete</a>
+                                            <button type="button" class="btn btn-default" data-dismiss="modal">
+                                                Cancel
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- End Modal--> 
                         <?php
                         }
                         ?>

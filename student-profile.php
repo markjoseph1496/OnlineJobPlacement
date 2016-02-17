@@ -1,4 +1,19 @@
+<?php
+include('connection.php');
 
+$StudentID = $_GET['id'];
+
+$student_id =
+    GSecureSQL::query(
+        "SELECT StudentID FROM studentinfotbl",
+        TRUE
+    );
+
+
+
+die();
+
+?>
 <!doctype html>
 <html lang="en">
 <head>
