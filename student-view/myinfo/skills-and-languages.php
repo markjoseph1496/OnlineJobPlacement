@@ -131,7 +131,7 @@ if($References == "ok"){
 <head>
 
     <!-- Basic -->
-    <title>OJPMS | Specialization & Languages</title>
+    <title>OJPMS | Skills & Languages</title>
 
     <!-- Define Charset -->
     <meta charset="utf-8">
@@ -340,7 +340,7 @@ if($References == "ok"){
                                     <li><a href="education.php"><?php echo $nSchool; ?> Education</a></li>
                                     <li><a href="certifications.php"><?php echo $nCertification; ?> Certifications</a></li>
                                     <li><a href="achievements.php"><?php echo $nAchievements; ?> Achievements</a></li>
-                                    <li><a class="active" href="specialization-and-languages.php"><?php echo $nSpecialization; ?> Specialization & Languages</a></li>
+                                    <li><a class="active" href="skills-and-languages.php"><?php echo $nSpecialization; ?> Skills & Languages</a></li>
                                     <li><a href="references.php"><?php echo $nReferences; ?> References</a></li>
                                     <li><a href="portfolio.php">Portfolio</a></li>
                                 </ul>
@@ -374,7 +374,7 @@ if($References == "ok"){
                             <li><a href="education.php">Education</a></li>
                             <li><a href="certifications.php">Certifications</a></li>
                             <li><a href="achievements.php">Achievements</a></li>
-                            <li><a class="active" href="specialization-and-languages.php">Specialization & Languages</a></li>
+                            <li><a class="active" href="skills-and-languages.php">Skills & Languages</a></li>
                             <li><a href="references.php">References</a></li>
                             <li><a href="portfolio.php">Portfolio</a></li>
                         </ul>
@@ -402,7 +402,7 @@ if($References == "ok"){
             <div class="container">
                 <div class="row">
                     <div class="col-md-6">
-                        <h2>Specialization & Languages</h2>
+                        <h2>Skills & Languages</h2>
                     </div>
                 </div>
             </div>
@@ -420,7 +420,7 @@ if($References == "ok"){
                         echo'
                             <div class="alert alert-success" id="success-alert">
                                 <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
-                                <strong><span class="fa fa-info-circle"></span> Specialization successfully updated.</strong> 
+                                <strong><span class="fa fa-info-circle"></span> Skill successfully updated.</strong> 
                             </div>
                             ';
                     }
@@ -428,7 +428,7 @@ if($References == "ok"){
                         echo'
                             <div class="alert alert-success" id="success-alert">
                                 <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
-                                <strong><span class="fa fa-info-circle"></span> Specialization successfully added.</strong> 
+                                <strong><span class="fa fa-info-circle"></span> Skill successfully added.</strong> 
                             </div>
                             ';
                     }
@@ -436,7 +436,7 @@ if($References == "ok"){
                         echo'
                             <div class="alert alert-success" id="success-alert">
                                 <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
-                                <strong><span class="fa fa-info-circle"></span> Specialization successfully deleted.</strong> 
+                                <strong><span class="fa fa-info-circle"></span> Skill successfully deleted.</strong> 
                             </div>
                             ';
                     }
@@ -485,11 +485,11 @@ if($References == "ok"){
                             <!-- Single Testimonial -->
                             <div class="row field">
                                 <div class="col-md-6">
-                                    <h4>Specialization<span="head-line"></span></h4>
+                                    <h4>Skills<span="head-line"></span></h4>
                                 </div>
                                 <div class="col-md-6">
                                     <a href="add/add-specialization.php" class="main-button" style="float:right;">
-                                        <span class="fa fa-plus"> Add Specialization</span>
+                                        <span class="fa fa-plus"> Add Skill</span>
                                     </a>
                                 </div>
                             </div>
@@ -499,7 +499,6 @@ if($References == "ok"){
                                 <thead>
                                     <tr>
                                         <th>Skill</th>
-                                        <th>Specialization</th>
                                         <th>Year of Experience</th>
                                         <th>Proficiency</th>
                                         <th width="15%">&nbsp;</th>
@@ -524,7 +523,6 @@ if($References == "ok"){
                                     ?>
                                     <tr>
                                         <td><?php echo $Skills; ?></td>
-                                        <td><?php echo $Specialization; ?></td>
                                         <td class="text-center"><?php echo $YearOfExperience; ?></td>
                                         <td class="text-center">
                                             <fieldset class="rating">

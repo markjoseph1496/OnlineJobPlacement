@@ -28,7 +28,7 @@
     <div class="box effect3" style="margin-top:5%;">
         <h2 class="register-title">Sign In</h2>
         <form id="myForm" action="login.php" method="POST" autocomplete="off">
-            <div id="message"></div>
+            <div id="message" style="color:#d95c5c;font-weight:600;"></div>
             <fieldset class="register-fieldset">
                 <input type="text" value="" class="form-control register-input" placeholder="Username" id="AdviserUsername" name="AdviserUsername"/>
             </fieldset>
