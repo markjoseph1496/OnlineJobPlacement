@@ -5556,13 +5556,13 @@ ul.footer-nav li a:hover {
   position:relative;
 }
 
- .progress-bar-span { 
+ .progress-bar-span {
  opacity:1;
  position:absolute;
  top:-5px;
- background:#f8ba01;
+ background:#ff0;
  padding:3px 10px;
- color:#FFF;
+ color:#00599D;
  border-radius: 0px;
  right:0px;
     -webkit-transition: all .5s ease-in-out;
