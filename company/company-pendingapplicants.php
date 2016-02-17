@@ -366,7 +366,7 @@ $cLastName = $companyinfo_tbl[0][2];
                     <tr>
                     </tbody>
                     <!-- Modal -->
-                    <form name="form_Accept" id="form_Accept"
+                    <form name="form_Accept[]" id="form_Accept[]"
                           action="add-company.php" autocomplete="off" method="POST">
                         <div class="modal fade" id="AcceptRequest<?php echo $RID; ?>"
                              role="dialog">
@@ -455,23 +455,3 @@ $cLastName = $companyinfo_tbl[0][2];
     <script type="text/javascript" src="../js/script.js"></script>
 </body>
 </html>
-<script type="text/javascript">
-    $(document).ready(function () {
-        $("#form_Accept").bootstrapValidator({
-            feedbackIcons: {
-                valid: "glyphicon glyphicon-ok",
-                invalid: "glyphicon glyphicon-remove",
-                validating: "glyphicon glyphicon-refresh"
-            },
-            fields: {
-                AcceptMsg: {
-                    validators: {
-                        notEmpty: {
-                            message: "This field is required."
-                        }
-                    }
-                }
-            }
-        });
-    });
-</script>
