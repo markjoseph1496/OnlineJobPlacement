@@ -221,20 +221,8 @@ if (isset($_POST['CompanyName'])) {
             'errorMsg' => 'Company name is required'
         ),
         'CompanyWebsite' => array(
-            'pattern' => '/(^$|^(http|https)://.+\..+$)/i',
+            'pattern' => '/(^$|^(http|https):\/\/.+\..+$)/i',
             'errorMsg' => 'Company name is required'
-        ),
-        'Industry' => array(
-            'pattern' => $common_functions->get_regex_of_industry(),
-            'errorMsg' => 'Invalid industry'
-        ),
-        'PositionLevel' => array(
-            'pattern' => $common_functions->get_regex_of_position_level(),
-            'errorMsg' => 'Invalid Position Level'
-        ),
-        'WorkSpecialization' => array(
-            'pattern' => $common_functions->get_regex_of_work_specialization(),
-            'errorMsg' => 'Invalid Work Specialization'
         ),
         'MonthlySalary' => array(
             'pattern' => $common_functions->get_regex_of_monthly_salary(),

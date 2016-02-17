@@ -313,52 +313,6 @@ class CommonFunctions{
         return $ret;
     }
 
-    function get_regex_of_industry(){
-        $industry_tbl =
-            GSecureSQL::query(
-                "SELECT * FROM listofindustrytbl",
-                TRUE
-            );
-
-        $ret = "/^(";
-        foreach ($industry_tbl as $value) {
-            $ret = $ret . $value[1] . '|';
-        }
-        substr_replace($ret, "", -1);
-        $ret = $ret . ')$/';
-        return $ret;
-    }
-
-    function get_regex_of_position_level(){
-        $position_tbl =
-            GSecureSQL::query(
-                "SELECT * FROM listofpositiontbl",
-                TRUE
-            );
-        $ret = "/^(";
-        foreach ($position_tbl as $value) {
-            $ret = $ret . $value[1] . '|';
-        }
-        substr_replace($ret, "", -1);
-        $ret = $ret . ')$/';
-        return $ret;
-    }
-
-    function get_regex_of_work_specialization(){
-        $specialization_tbl =
-            GSecureSQL::query(
-                "SELECT * FROM listofspecializationtbl",
-                TRUE
-            );
-        $ret = "/^(";
-        foreach ($specialization_tbl as $value) {
-            $ret = $ret . $value[1] . '|';
-        }
-        substr_replace($ret, "", -1);
-        $ret = $ret . ')$/';
-        return $ret;
-    }
-
     function get_regex_of_monthly_salary(){
         $salaryrange_tbl =
             GSecureSQL::query(
