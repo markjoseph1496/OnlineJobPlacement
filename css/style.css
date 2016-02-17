@@ -6096,3 +6096,74 @@ th.rotate {
 -webkit-transform: rotate(-90.0deg);  /* Safari 3.1+, Chrome */
       transform: rotate(-90.0deg);  /* Standard */
 }
+
+
+/* Login Style */
+
+/*Login-Student*/
+.login-student {
+  background: 
+    /* top, transparent #fff, faked with gradient */ 
+    linear-gradient(
+        rgba(0, 0, 0, 0.6),
+        rgba(0, 0, 0, 0.6),
+        rgba(0, 0, 0, 0.6)
+    ),
+    /* bottom, image */
+    url(../img/login-bg.jpg) no-repeat center center fixed;
+    max-width: 100%;
+    max-height: 100%;
+    background-size: cover;
+}
+
+/*Login-Company*/
+.login-company {
+  background: 
+    /* top, transparent #fff, faked with gradient */ 
+    linear-gradient(
+        rgba(0, 0, 0, 0.6),
+        rgba(0, 0, 0, 0.6),
+        rgba(0, 0, 0, 0.6)
+    ),
+    /* bottom, image */
+    url(../img/company.jpg) no-repeat center center fixed;
+    max-width: 100%;
+    max-height: 100%;
+    background-size: cover;
+}
+
+/*Login-admin*/
+.login-admin {
+  background: 
+    /* top, transparent #fff, faked with gradient */ 
+    linear-gradient(
+        rgba(0, 0, 0, 0.6),
+        rgba(0, 0, 0, 0.6),
+        rgba(0, 0, 0, 0.6)
+    ),
+    /* bottom, image */
+    url(../img/login-bg.jpg) no-repeat center center fixed;
+    max-width: 100%;
+    max-height: 100%;
+    background-size: cover;
+}
+
+
+/* Sign In*/
+.box {
+    max-width: 450px;
+    text-align:center;
+    background-color: rgba(255,255,255,0.9);
+    margin: auto;
+    padding: 2rem 0 1rem;
+}
+
+.effect3 {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 
+    0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+::selection {
+    text-shadow: none;
+    background: #fed136;
+}

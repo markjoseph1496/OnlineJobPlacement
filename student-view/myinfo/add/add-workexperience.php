@@ -596,5 +596,18 @@ $MajorCourse = $course_qry[0][0];
                 }
             }
         });
+        $("#FromYear").change(function(){
+            var from_year = $("#FromYear").val();
+            var to_year = $("#ToYear").val();
+
+            if(from_year > to_year){
+                $("#ToYear").val(from_year);
+                $("#ToYear").parent().removeClass("has-error");
+                $("#ToYear").parent().addClass("has-success");
+                $($("#ToYear").parent().find(".form-control-feedback")).removeClass("glyphicon-remove");
+                $($("#ToYear").parent().find(".form-control-feedback")).addClass("glyphicon-ok");
+                $($("#ToYear").parent().find(".help-block")).css("display", "none");
+            }
+        });
     });
 </script>

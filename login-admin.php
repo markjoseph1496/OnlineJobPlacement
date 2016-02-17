@@ -31,7 +31,7 @@
         <h2>Good day, Admin!</h2>
         <h4>Sign In</h4>
         <form id="myForm" action="login.php" method="POST" autocomplete="off">
-            <div id="message"></div>
+            <div id="message" style="color:#d95c5c;font-weight:600;"></div>
             <fieldset class="register-fieldset">
                 <input type="text" class="form-control register-input" placeholder="Username" id="AdminEmail" name="AdminEmail" />
             </fieldset>
