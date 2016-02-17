@@ -419,18 +419,23 @@ if($References == "ok"){
                             <table class="table segment table-hover">
                                 <thead>
                                 <tr class="table-color">
-                                    <th>Position</th>
-                                    <th>Company</th>
-                                    <th>Location</th>
-                                    <th>Applied</th>
+                                    <th width="20%">Position</th>
+                                    <th width="20%">Company</th>
+                                    <th width="20%">Location</th>
+                                    <th width="10%">Status</th>
+                                    <th width="15%">Date Submitted</th>
                                 </tr>
                                 </thead>
+                                <?php
+
+                                ?>
                                 <tbody>
                                 <tr>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
+                                    <td width="20%"></td>
+                                    <td width="20%"></td>
+                                    <td width="20%"></td>
+                                    <td width="10%"></td>
+                                    <td width="15%"></td>
                                 </tr>
                                 </tbody>
                             </table>
