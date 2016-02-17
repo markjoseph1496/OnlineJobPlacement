@@ -6110,7 +6110,7 @@ th.rotate {
         rgba(0, 0, 0, 0.6)
     ),
     /* bottom, image */
-    url(../img/login-bg.jpg) no-repeat center center fixed;
+    url(../images/login-bg/login-student.jpg) no-repeat center center fixed;
     max-width: 100%;
     max-height: 100%;
     background-size: cover;
@@ -6126,7 +6126,7 @@ th.rotate {
         rgba(0, 0, 0, 0.6)
     ),
     /* bottom, image */
-    url(../img/company.jpg) no-repeat center center fixed;
+    url(../images/login-bg/login-company.jpg) no-repeat center center fixed;
     max-width: 100%;
     max-height: 100%;
     background-size: cover;
@@ -6153,7 +6153,7 @@ th.rotate {
 .box {
     max-width: 450px;
     text-align:center;
-    background-color: rgba(255,255,255,0.9);
+    background-color: rgba(255, 255, 255, 0.63);
     margin: auto;
     padding: 2rem 0 1rem;
 }
