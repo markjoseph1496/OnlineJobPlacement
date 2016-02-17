@@ -329,7 +329,7 @@ $MajorCourse = $course_qry[0][0];
                                         $date = Date("Y") + 1;
                                         while ($date != 1935) {
                                             $date--;
-                                            echo "<option value='$date'> $date</option>";
+                                            echo "<option value=\"$date\"> $date</option>";
                                         }
                                         ?>
                                     </select>

@@ -3,32 +3,6 @@ include('../connection.php');
 session_start();
 $CompanyID = $_SESSION['CompanyID'];
 
-// Create Calendar Event
-if (isset($_GET['BtnCalendarsave'])) {
-
-    $datefrom = $_GET['datefrom'];
-    $dateto = $_GET['dateto'];
-    $eventtitle = $_GET['eventtitle'];
-    $location = $_GET['location'];
-    $descrip = $_GET['descrip'];
-
-    GSecureSQL::query(
-        "INSERT INTO compeventtbl (CompanyID,EventTitle,EventDatef,EventDatet,Location,Description) values (?,?,?,?,?,?)",
-        FALSE,
-        "ssssss",
-        $CompanyID,
-        $eventtitle,
-        $datefrom,
-        $dateto,
-        $location,
-        $descrip
-    );
-    header("location: company-calendar.php?id=EventAdd");
-
-}
-// End of Calendar Event
-
-
 // Create Position
 if (isset($_GET['btnsave'])) {
     $DateFrom = $_GET['DateFrom'];
