@@ -15,4 +15,19 @@ if (isset($_GET['delete_CompanyID'])) {
 
 }
 //END
+
+//Delete event
+if (isset($_GET['delete_EventID'])) {
+    $Z = $_GET['delete_EventID'];
+
+    GSecureSQL::query(
+        "DELETE FROM admineventtbl WHERE EventID=?",
+        FALSE,
+        "s",
+        $Z
+    );
+    header("location: admin-calendar.php?id=deleteevent");
+
+}
+//END
 ?>
