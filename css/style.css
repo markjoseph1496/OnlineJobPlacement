@@ -5561,9 +5561,9 @@ ul.footer-nav li a:hover {
  opacity:1;
  position:absolute;
  top:-5px;
- background:#ff0;
+ background:#f8ba01;
  padding:3px 10px;
- color:#00599D;
+ color:#fff;
  border-radius: 0px;
  right:0px;
     -webkit-transition: all .5s ease-in-out;
@@ -6130,6 +6130,9 @@ section {
   // white-space: nowrap; /*whether to display in one line or not*/
 }
 
+td, th {
+    border: 1px solid #eee;
+}
 
 /* Login Style */
 /*Login-Student*/
