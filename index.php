@@ -535,7 +535,7 @@ $adminevent_tbl =
             </div>
 
 
-
+            <div class="container">
             <div class="row">
 
                 <!-- Start Memebr 1 -->
@@ -618,19 +618,11 @@ $adminevent_tbl =
                   <span class="percentage">100%</span>
                 </div>
               </div>
-              <!-- Memebr Social Links -->
-              <div class="member-socail">
-                <a class="twitter" href="#"><i class="fa fa-twitter"></i></a>
-                <a class="gplus" href="#"><i class="fa fa-google-plus"></i></a>
-                <a class="linkedin" href="#"><i class="fa fa-linkedin"></i></a>
-                <a class="flickr" href="#"><i class="fa fa-flickr"></i></a>
-                <a class="mail" href="#"><i class="fa fa-envelope"></i></a>
-              </div>
             </div>
           </div>
           <!-- End Memebr 2 -->
 
-          
+          </div>
 
             </div>
 
