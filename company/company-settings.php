@@ -520,7 +520,7 @@ $ProfileImage= $companyinfo_tbl[0][11];
                         <label class="control-label">Select Image</label>
                         <input id="ProfilePicture" name="ProfilePicture" type="file"
                                class="file file-loading"
-                               data-allowed-file-extensions='["png", "jpg", "bmp", "gif"]'>
+                               data-allowed-file-extensions='["png", "jpg", "jpeg", "jpe", "bmp", "gif"]'>
                         <br>
                         <button id="" class="btn-system btn-mini border-btn" name="btnDelete">Delete Image</button>
                     </div>
