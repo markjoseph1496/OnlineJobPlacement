@@ -40,6 +40,15 @@ $MajorCourse = $StudentInfo_tbl[0][3];
 $Birthdate = $StudentInfo_tbl[0][4];
 $ProfileImage = $StudentInfo_tbl[0][5];
 
+$course_code =
+    GSecureSQL::query(
+        "SELECT CourseTitle FROM coursetbl WHERE CourseCode = ?",
+        TRUE,
+        "s",
+        $MajorCourse
+    );
+$MajorCourse = $course_code[0][0];
+
 $monthNum = substr($Birthdate,5, 2);
 $yearNum = substr($Birthdate,0, 4);
 $dayNum = substr($Birthdate,8, 2);
@@ -47,6 +56,19 @@ $dateObj   = DateTime::createFromFormat('!m', $monthNum);
 $monthName = $dateObj->format('F');
 
 $Birthdate = $monthName . " " . $dayNum . ", " . $yearNum;
+
+
+$studcontacts_tbl =
+    GSecureSQL::query(
+        "SELECT Email, Address, MobileNumber FROM studcontactstbl WHERE StudentID = ?",
+        TRUE,
+        "s",
+        $StudentID
+    );
+
+$Email = $studcontacts_tbl[0][0];
+$Address = $studcontacts_tbl[0][1];
+$MobileNumber = $studcontacts_tbl[0][2];
 
 ?>
 <!doctype html>
@@ -183,11 +205,11 @@ $Birthdate = $monthName . " " . $dayNum . ", " . $yearNum;
                     <div class="col-md-4">
                         <h1>&nbsp;</h1>
                         <br>
-                        <p><label>Studied <?php echo $MajorCourse; ?></label></p>
-                        <p><label>Lives in Malabon</label></p>
-                        <p><label><?php echo $Birthdate; ?></label></p>
-                        <p><label>0923456789</label></p>
-                        <p><label>ramirezchai@gmail.com</label></p>
+                        <p><label>Course: <b><?php echo $MajorCourse; ?></b></label></p>
+                        <p><label>Address: <b><?php echo $Address; ?></b></label></p>
+                        <p><label>Birthday: <b><?php echo $Birthdate; ?></b></label></p>
+                        <p><label>Contact Number: <b><?php echo $MobileNumber; ?></b></label></p>
+                        <p><label>Email: <b><?php echo $Email; ?></b></label></p>
                     </div>
                 </div>
 
