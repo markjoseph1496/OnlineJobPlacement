@@ -7,6 +7,25 @@ $StudentID = $_SESSION['StudentID']; // to conform with your coding style -- gha
 
 $PositionID = $_GET['id'];
 
+$get_PID =
+    GSecureSQL::query(
+        "SELECT PositionID FROM comppositiontbl",
+        TRUE
+    );
+$c = 0;
+foreach($get_PID as $value){
+    $db_PositionID = $value[0];
+    $hashPID = hash('md4', $db_PositionID);
+    if($hashPID == $PositionID){
+        $PositionID = $db_PositionID;
+        $c = $c + 1;
+    }
+}
+
+if($c == 0){
+    header('location: jobs.php');
+}
+
 $position_tbl =
     GSecureSQL::query(
         "SELECT * FROM comppositiontbl WHERE PositionID = ?",
@@ -15,9 +34,7 @@ $position_tbl =
         $PositionID
     );
 
-if(empty($position_tbl)){
-    header("location: jobs.php");
-}
+
 $CompanyID = $position_tbl[0][1];
 $Email = $position_tbl[0][2];
 $PostingDateFrom = $position_tbl[0][3];

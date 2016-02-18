@@ -489,6 +489,7 @@ $Progress = $progress_tbl[0][0];
                                     $RelatedCourses = explode(", ", $RelatedCourses);
                                     $RequiredSkills = $value[8];
                                     $RequiredSkills = explode(", ", $RequiredSkills);
+                                    $hashPID = hash('md4',$PositionID);
                                     foreach ($RelatedCourses as $value3) {
                                         $rCourse = $value3;
                                         if ($rCourse == $CourseCode) {
@@ -558,7 +559,7 @@ $Progress = $progress_tbl[0][0];
                                                                         <li><?php echo $Location; ?></li>
                                                                     </ul>
                                                                     <a class='main-button'
-                                                                       href='view-details.php?id=<?php echo $PositionID; ?>'>View
+                                                                       href='view-details.php?id=<?php echo $hashPID; ?>'>View
                                                                         Details <i class='fa fa-angle-right'></i></a>
                                                                 </div>
                                                             </div>
@@ -620,6 +621,7 @@ $Progress = $progress_tbl[0][0];
                                     $RelatedCourses = explode(", ", $RelatedCourses);
                                     $RequiredSkills = $value[8];
                                     $RequiredSkills = explode(", ", $RequiredSkills);
+                                    $hashPID = hash('md4', $PositionID);
                                     foreach ($RelatedCourses as $value3) {
                                         $rCourse = $value3;
                                         if ($rCourse == $CourseCode) {
@@ -689,7 +691,7 @@ $Progress = $progress_tbl[0][0];
                                                                         <li><?php echo $Location; ?></li>
                                                                     </ul>
                                                                     <a class='main-button'
-                                                                       href='view-details.php?id=<?php echo $PositionID; ?>'>View
+                                                                       href='view-details.php?id=<?php echo $hashPID; ?>'>View
                                                                         Details <i class='fa fa-angle-right'></i></a>
                                                                 </div>
                                                             </div>

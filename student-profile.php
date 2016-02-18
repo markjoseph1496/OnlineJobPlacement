@@ -8,10 +8,10 @@ $student_id =
         "SELECT StudentID FROM studentinfotbl",
         TRUE
     );
-foreach($student_id as $value){
+foreach ($student_id as $value) {
     $db_StudentID = $value[0];
-    $hashStudentID = hash('md4',$db_StudentID);
-    if($hashStudentID == $StudentID){
+    $hashStudentID = hash('md4', $db_StudentID);
+    if ($hashStudentID == $StudentID) {
         $StudentID = $db_StudentID;
     }
 }
@@ -49,10 +49,10 @@ $course_code =
     );
 $MajorCourse = $course_code[0][0];
 
-$monthNum = substr($Birthdate,5, 2);
-$yearNum = substr($Birthdate,0, 4);
-$dayNum = substr($Birthdate,8, 2);
-$dateObj   = DateTime::createFromFormat('!m', $monthNum);
+$monthNum = substr($Birthdate, 5, 2);
+$yearNum = substr($Birthdate, 0, 4);
+$dayNum = substr($Birthdate, 8, 2);
+$dateObj = DateTime::createFromFormat('!m', $monthNum);
 $monthName = $dateObj->format('F');
 
 $Birthdate = $monthName . " " . $dayNum . ", " . $yearNum;
@@ -96,7 +96,7 @@ $MobileNumber = $studcontacts_tbl[0][2];
 
     <!-- jQuery and Bootstrap JS -->
     <script type="text/javascript" src="js/jquery.min.js"></script>
-    <script type="text/javascript" src="js/bootstrap.min.js" ></script>
+    <script type="text/javascript" src="js/bootstrap.min.js"></script>
 
     <!-- BootstrapValidator -->
     <script src="js/bootstrapValidator.min.js" type="text/javascript"></script>
@@ -144,275 +144,312 @@ $MobileNumber = $studcontacts_tbl[0][2];
 </head>
 
 <body>
-    <div id="container">
-        <!-- Start Header Section -->
-        <div class="hidden-header"></div>
-        <div id="join" class="parallax" style="background-image:url(img/profile-bg.jpg); height: 400px;">
-            <div class="overlay" style=" height: 400px;"></div>
-        </div>  
-        <header class="clearfix">
-            <!-- Start  Logo & Naviagtion  -->
-            <div class="navbar navbar-default navbar-top">
-                <div class="container">
-                    <div class="navbar-header">
-                        <!-- Stat Toggle Nav Link For Mobiles -->
-                        <button type="button" class="navbar-toggle" data-toggle="collapse"
-                                data-target=".navbar-collapse">
-                            <i class="fa fa-bars"></i>
-                        </button>
-                        <!-- End Toggle Nav Link For Mobiles -->
-                        <a class="navbar-brand">
-                            <img src="images/ojpms.png">
-                        </a>
-                    </div>
-                    <div class="navbar-collapse collapse">
-                        
-                    </div>
-                </div>
-            </div>
-        </header>
-
-        <div class="profile-bar" style="padding:10px 0">
+<div id="container">
+    <!-- Start Header Section -->
+    <div class="hidden-header"></div>
+    <div id="join" class="parallax" style="background-image:url(img/profile-bg.jpg); height: 400px;">
+        <div class="overlay" style=" height: 400px;"></div>
+    </div>
+    <header class="clearfix">
+        <!-- Start  Logo & Naviagtion  -->
+        <div class="navbar navbar-default navbar-top">
             <div class="container">
-                <div class="row">
-                    <div  class="col-md-2">&nbsp;</div>
-                    <div class="col-md-3">
-                        <div class="profile-photo">
-                            <img src="student-view/myinfo/<?php echo $ProfileImage; ?>">
-                        </div> 
-                    </div><br>
-                    <div class="col-md-7">
-                        <label class="text-center" style="font-size:30px;"><?php echo $FirstName . " " . $MiddleName . " " . $LastName; ?></label>
-                        <div><i class="fa fa-quote-left fa-2x fa-pull-left fa-border"></i>To obtain the position of ONLINE ESL INSTRUCTOR with BabelSpeak.com where I can apply my education, fifteen years of teaching experience and native linguistic skills and provide clients with a high quality language instruction experience.</div>
-                    </div>
-                    <div  class="col-md-2">&nbsp;</div>
+                <div class="navbar-header">
+                    <!-- Stat Toggle Nav Link For Mobiles -->
+                    <button type="button" class="navbar-toggle" data-toggle="collapse"
+                            data-target=".navbar-collapse">
+                        <i class="fa fa-bars"></i>
+                    </button>
+                    <!-- End Toggle Nav Link For Mobiles -->
+                    <a class="navbar-brand">
+                        <img src="images/ojpms.png">
+                    </a>
+                </div>
+                <div class="navbar-collapse collapse">
+
                 </div>
             </div>
         </div>
-        <div class="hr1" style="margin-top:10px;margin-bottom:10px;"></div>
+    </header>
 
-        <!-- Start Content -->
-        <div id="content">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-4">
-                        <h1><span class="fa-stack fa-lg">
+    <div class="profile-bar" style="padding:10px 0">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-2">&nbsp;</div>
+                <div class="col-md-3">
+                    <div class="profile-photo">
+                        <img src="student-view/myinfo/<?php echo $ProfileImage; ?>">
+                    </div>
+                </div>
+                <br>
+                <div class="col-md-7">
+                    <label class="text-center"
+                           style="font-size:30px;"><?php echo $FirstName . " " . $MiddleName . " " . $LastName; ?></label>
+                    <div><i class="fa fa-quote-left fa-2x fa-pull-left fa-border"></i>To obtain the position of ONLINE
+                        ESL INSTRUCTOR with BabelSpeak.com where I can apply my education, fifteen years of teaching
+                        experience and native linguistic skills and provide clients with a high quality language
+                        instruction experience.
+                    </div>
+                </div>
+                <div class="col-md-2">&nbsp;</div>
+            </div>
+        </div>
+    </div>
+    <div class="hr1" style="margin-top:10px;margin-bottom:10px;"></div>
+
+    <!-- Start Content -->
+    <div id="content">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <h1><span class="fa-stack fa-lg">
                             <i class="fa fa-circle fa-stack-2x"></i>
                             <i class="fa fa-user fa-stack-1x fa-inverse"></i></span>
-                            Personal Information
-                        </h1> 
-                    </div>
-                    <div class="col-md-4">
-                        <h1>&nbsp;</h1>
-                        <br>
-                        <p><label>Course: <b><?php echo $MajorCourse; ?></b></label></p>
-                        <p><label>Address: <b><?php echo $Address; ?></b></label></p>
-                        <p><label>Birthday: <b><?php echo $Birthdate; ?></b></label></p>
-                        <p><label>Contact Number: <b><?php echo $MobileNumber; ?></b></label></p>
-                        <p><label>Email: <b><?php echo $Email; ?></b></label></p>
-                    </div>
+                        Personal Information
+                    </h1>
                 </div>
+                <div class="col-md-4">
+                    <h1>&nbsp;</h1>
+                    <br>
+                    <p><label>Course: <b><?php echo $MajorCourse; ?></b></label></p>
+                    <p><label>Address: <b><?php echo $Address; ?></b></label></p>
+                    <p><label>Birthday: <b><?php echo $Birthdate; ?></b></label></p>
+                    <p><label>Contact Number: <b><?php echo $MobileNumber; ?></b></label></p>
+                    <p><label>Email: <b><?php echo $Email; ?></b></label></p>
+                </div>
+            </div>
 
-                <div class="hr3" style="margin-top:30px;margin-bottom:30px;"></div>
+            <div class="hr3" style="margin-top:30px;margin-bottom:30px;"></div>
 
-                <div class="row">
-                    <div class="col-md-4">
-                        <h1><span class="fa-stack fa-lg">
+            <div class="row">
+                <div class="col-md-4">
+                    <h1><span class="fa-stack fa-lg">
                             <i class="fa fa-circle fa-stack-2x"></i>
                             <i class="fa fa-book fa-stack-1x fa-inverse"></i></span>
-                            Education
-                        </h1> 
-                    </div>
-                    <div class="col-md-4">
-                        <h1>Bachelor's/College Degree</h1>
-                        <br>
-                        <p><label>School</label></p>
-                        <p><label>Graduated</label></p>
-                        <p><label>Major</label></p>
-                        <p><label>Field of Study</label></p>
-                    </div>
-                    <div class="col-md-4">
-                        <h1>&nbsp;</h1>
-                        <br>
-                        <p><label>STI College Caloocan</label></p>
-                        <p><label>May 2015</label></p>
-                        <p><label>Bachelor of Science in Computer Science</label></p>
-                        <p><label>Computer Science/Information Technology</label></p>
-                    </div>
+                        Education
+                    </h1>
                 </div>
+                <div class="col-md-4">
+                    <h1>Bachelor's/College Degree</h1>
+                    <br>
+                    <p><label>School</label></p>
+                    <p><label>Graduated</label></p>
+                    <p><label>Major</label></p>
+                    <p><label>Field of Study</label></p>
+                </div>
+                <div class="col-md-4">
+                    <h1>&nbsp;</h1>
+                    <br>
+                    <p><label>STI College Caloocan</label></p>
+                    <p><label>May 2015</label></p>
+                    <p><label>Bachelor of Science in Computer Science</label></p>
+                    <p><label>Computer Science/Information Technology</label></p>
+                </div>
+            </div>
 
-                <div class="hr3" style="margin-top:30px;margin-bottom:30px;"></div>
+            <div class="hr3" style="margin-top:30px;margin-bottom:30px;"></div>
 
-                <div class="row">
-                    <div class="col-md-4">
-                        <h1><span class="fa-stack fa-lg">
+            <div class="row">
+                <div class="col-md-4">
+                    <h1><span class="fa-stack fa-lg">
                             <i class="fa fa-circle fa-stack-2x"></i>
                             <i class="fa fa-language fa-stack-1x fa-inverse"></i></span>
-                            Languages
-                        </h1> 
-                    </div>
-                    <div class="col-md-3">
-                        <h1>&nbsp;</h1>
-                        <br>
-                        <p><label>Filipino</label></p>
-                        <p><label>Nihonggo</label></p>
-                    </div>
-                    <div class="col-md-5">
-                        <h1>&nbsp;</h1>
-                        <br>
-                        <div>
-                            <div class="progress">
-                                <div class="progress-bar-info progress-bar-striped" role="progressbar" 
-                                    aria-valuenow="70"  aria-valuemin="0" aria-valuemax="100" style="width:70%">
-                                        <font style="color:white;" ><center>70%
-                                </div>
+                        Languages
+                    </h1>
+                </div>
+                <div class="col-md-3">
+                    <h1>&nbsp;</h1>
+                    <br>
+                    <p><label>Filipino</label></p>
+                    <p><label>Nihonggo</label></p>
+                </div>
+                <div class="col-md-5">
+                    <h1>&nbsp;</h1>
+                    <br>
+                    <div>
+                        <div class="progress">
+                            <div class="progress-bar-info progress-bar-striped" role="progressbar"
+                                 aria-valuenow="70" aria-valuemin="0" aria-valuemax="100" style="width:70%">
+                                <font style="color:white;">
+                                    <center>70%
                             </div>
                         </div>
-                        <div>
-                            <div class="progress">
-                                <div class="progress-bar-info progress-bar-striped" role="progressbar" 
-                                    aria-valuenow="70"  aria-valuemin="0" aria-valuemax="100" style="width:100%">
-                                        <font style="color:white;" ><center>100%
-                                </div>
+                    </div>
+                    <div>
+                        <div class="progress">
+                            <div class="progress-bar-info progress-bar-striped" role="progressbar"
+                                 aria-valuenow="70" aria-valuemin="0" aria-valuemax="100" style="width:100%">
+                                <font style="color:white;">
+                                    <center>100%
                             </div>
                         </div>
                     </div>
                 </div>
+            </div>
 
-                <div class="hr3" style="margin-top:30px;margin-bottom:30px;"></div>
+            <div class="hr3" style="margin-top:30px;margin-bottom:30px;"></div>
 
-                <div class="row">
-                    <div class="col-md-4">
-                        <h1><span class="fa-stack fa-lg">
+            <div class="row">
+                <div class="col-md-4">
+                    <h1><span class="fa-stack fa-lg">
                             <i class="fa fa-circle fa-stack-2x"></i>
                             <i class="fa fa-star fa-stack-1x fa-inverse"></i></span>
-                            Skills
-                        </h1> 
-                    </div>
-                    <div class="col-md-3">
-                        <h1>&nbsp;</h1>
-                        <br>
-                        <p><label>Web Design</label></p>
-                        <p><label>Web Programming</label></p>
-                    </div>
-                    <div class="col-md-5">
-                        <h1>&nbsp;</h1>
-                        <br>
-                        <div>
-                            <div class="progress">
-                                <div class="progress-bar-warning progress-bar-striped" role="progressbar" 
-                                    aria-valuenow="50"  aria-valuemin="0" aria-valuemax="100" style="width:80%">
-                                        <font style="color:white;" ><center>80%
-                                </div>
+                        Skills
+                    </h1>
+                </div>
+                <div class="col-md-3">
+                    <h1>&nbsp;</h1>
+                    <br>
+                    <p><label>Web Design</label></p>
+                    <p><label>Web Programming</label></p>
+                </div>
+                <div class="col-md-5">
+                    <h1>&nbsp;</h1>
+                    <br>
+                    <div>
+                        <div class="progress">
+                            <div class="progress-bar-warning progress-bar-striped" role="progressbar"
+                                 aria-valuenow="50" aria-valuemin="0" aria-valuemax="100" style="width:80%">
+                                <font style="color:white;">
+                                    <center>80%
                             </div>
                         </div>
-                        <div>
-                            <div class="progress">
-                                <div class="progress-bar-warning progress-bar-striped" role="progressbar" 
-                                    aria-valuenow="50"  aria-valuemin="0" aria-valuemax="100" style="width:50%">
-                                        <font style="color:white;" ><center>50%
-                                </div>
+                    </div>
+                    <div>
+                        <div class="progress">
+                            <div class="progress-bar-warning progress-bar-striped" role="progressbar"
+                                 aria-valuenow="50" aria-valuemin="0" aria-valuemax="100" style="width:50%">
+                                <font style="color:white;">
+                                    <center>50%
                             </div>
                         </div>
                     </div>
                 </div>
+            </div>
 
-                <div class="hr3" style="margin-top:30px;margin-bottom:30px;"></div>
+            <div class="hr3" style="margin-top:30px;margin-bottom:30px;"></div>
 
-                <div class="row">
-                    <div class="col-md-4">
-                        <h1><span class="fa-stack fa-lg">
+            <div class="row">
+                <div class="col-md-4">
+                    <h1><span class="fa-stack fa-lg">
                             <i class="fa fa-circle fa-stack-2x"></i>
                             <i class="fa fa-trophy fa-stack-1x fa-inverse"></i></span>
-                            Achievements & Certificates
-                        </h1> 
-                    </div>
-                    <div class="col-md-4">
-                        <h1>&nbsp;</h1>
-                        <br>
-                        <p><label>Top 1 in Math Class</label></p>
-                        <p><label>Self Development Seminar</label></p>
-                    </div>
-                    <div class="col-md-4">
-                        <h1>&nbsp;</h1>
-                        <br>
-                        
-                    </div>
+                        Achievements & Certificates
+                    </h1>
                 </div>
+                <div class="col-md-4">
+                    <h1>&nbsp;</h1>
+                    <br>
+                    <?php
+                    $achievement_tbl =
+                        GSecureSQL::query(
+                            "SELECT Achievements FROM achievementstbl WHERE StudentID = ?",
+                            TRUE,
+                            "s",
+                            $StudentID
+                        );
+                    foreach ($achievement_tbl as $value) {
+                        $Achievement = $value[0];
+                        ?>
+                        <p><label><?php echo $Achievement; ?></label></p>
+                        <?php
+                    }
+                    $seminar_tbl =
+                        GSecureSQL::query(
+                            "SELECT Seminar, YearAttended FROM seminartbl WHERE StudentID = ?",
+                            TRUE,
+                            "s",
+                            $StudentID
+                        );
+                    foreach ($seminar_tbl as $value) {
+                        $Seminar = $value[0];
+                        $YearAttended = $value[1];
+                        ?>
+                        <p><label><?php echo $Seminar . " (" . $YearAttended . ")"; ?></label></p>
+                        <?php
+                    }
+                    ?>
+                </div>
+                <div class="col-md-4">
+                    <h1>&nbsp;</h1>
+                    <br>
 
-                <div class="hr3" style="margin-top:30px;margin-bottom:30px;"></div>
+                </div>
+            </div>
 
-                <div class="row">
-                    <div class="col-md-4">
-                        <h1><span class="fa-stack fa-lg">
+            <div class="hr3" style="margin-top:30px;margin-bottom:30px;"></div>
+
+            <div class="row">
+                <div class="col-md-4">
+                    <h1><span class="fa-stack fa-lg">
                             <i class="fa fa-circle fa-stack-2x"></i>
                             <i class="fa fa-users fa-stack-1x fa-inverse"></i></span>
-                            References
-                        </h1> 
-                    </div>
-                    <div class="col-md-4">
-                        <h1>&nbsp;</h1>
-                        <br>
-                        <p><label>Name</label></p>
-                        <p><label>Relationship</label></p>
-                        <p><label>Company</label></p>
-                        <p><label>Email</label></p>
-                    </div>
-                    <div class="col-md-4">
-                        <h1>&nbsp;</h1>
-                        <br>
-                        <p><label>Name</label></p>
-                        <p><label>Relationship</label></p>
-                        <p><label>Company</label></p>
-                        <p><label>Email</label></p>
-                    </div>
+                        References
+                    </h1>
+                </div>
+                <div class="col-md-4">
+                    <h1>&nbsp;</h1>
+                    <br>
+                    <p><label>Name</label></p>
+                    <p><label>Relationship</label></p>
+                    <p><label>Company</label></p>
+                    <p><label>Email</label></p>
+                </div>
+                <div class="col-md-4">
+                    <h1>&nbsp;</h1>
+                    <br>
+                    <p><label>Name</label></p>
+                    <p><label>Relationship</label></p>
+                    <p><label>Company</label></p>
+                    <p><label>Email</label></p>
                 </div>
             </div>
         </div>
-    </div>   
-    <!-- End Content -->
-    <script type="text/javascript" src="js/script.js"></script>
+    </div>
+</div>
+<!-- End Content -->
+<script type="text/javascript" src="js/script.js"></script>
 
 
-        <!-- Start Footer Section -->
-        <footer>
-            <div class="container">
-                <!-- Start Copyright -->
-                <div class="copyright-section">
-                    <div class="row">
-                        <div class="col-md-6">
-                            <p>&copy; 2015 OJPMS - All Rights Reserved</p>
-                        </div>
-                        <!-- .col-md-6 -->
-                        <div class="col-md-6">
-                            <ul class="footer-nav">
-                                <li><a href="#">Sitemap</a>
-                                </li>
-                                <li><a href="#">Privacy Policy</a>
-                                </li>
-                                <li><a href="#">Contact</a>
-                                </li>
-                            </ul>
-                        </div>
-                        <!-- .col-md-6 -->
-                    </div>
-                    <!-- .row -->
+<!-- Start Footer Section -->
+<footer>
+    <div class="container">
+        <!-- Start Copyright -->
+        <div class="copyright-section">
+            <div class="row">
+                <div class="col-md-6">
+                    <p>&copy; 2015 OJPMS - All Rights Reserved</p>
                 </div>
-                <!-- End Copyright -->
+                <!-- .col-md-6 -->
+                <div class="col-md-6">
+                    <ul class="footer-nav">
+                        <li><a href="#">Sitemap</a>
+                        </li>
+                        <li><a href="#">Privacy Policy</a>
+                        </li>
+                        <li><a href="#">Contact</a>
+                        </li>
+                    </ul>
+                </div>
+                <!-- .col-md-6 -->
             </div>
-        </footer>
-        <!-- End Footer Section -->
-    </div>
-
-
-    <!-- Go To Top Link -->
-    <a href="#" class="back-to-top"><i class="fa fa-angle-up"></i></a>
-
-    <div id="loader">
-        <div class="spinner">
-            <div class="dot1"></div>
-            <div class="dot2"></div>
+            <!-- .row -->
         </div>
+        <!-- End Copyright -->
     </div>
+</footer>
+<!-- End Footer Section -->
+</div>
+
+
+<!-- Go To Top Link -->
+<a href="#" class="back-to-top"><i class="fa fa-angle-up"></i></a>
+
+<div id="loader">
+    <div class="spinner">
+        <div class="dot1"></div>
+        <div class="dot2"></div>
+    </div>
+</div>
 </body>
 </html>
