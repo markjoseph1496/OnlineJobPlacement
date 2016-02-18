@@ -12,12 +12,18 @@ $get_PID =
         "SELECT PositionID FROM comppositiontbl",
         TRUE
     );
+$c = 0;
 foreach($get_PID as $value){
     $db_PositionID = $value[0];
     $hashPID = hash('md4', $db_PositionID);
     if($hashPID == $PositionID){
         $PositionID = $db_PositionID;
+        $c = $c + 1;
     }
+}
+
+if($c == 0){
+    header('location: jobs.php');
 }
 
 $position_tbl =
