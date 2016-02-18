@@ -425,6 +425,7 @@ if (isset($_SESSION['AdviserID'])) {
                             <th class="rotate-45"><div><span>Integration</span></div></th>
                             <th class="rotate-45"><div><span>PAF</span></div></th>
                             <th class="rotate-45"><div><span>Certificate</span></div></th>
+                            <th width="5%"></th>
                         </tr>
                     </thead>
                     <tbody>
@@ -434,16 +435,70 @@ if (isset($_SESSION['AdviserID'])) {
                             <td width="20%"></td>
                             <td width="20%"></td>
                             <td width="10%"></td>
-                            <td><input type="checkbox" value=""></td>
-                            <td><input type="checkbox" value=""></td>
-                            <td><input type="checkbox" value=""></td>
-                            <td><input type="checkbox" value=""></td>
-                            <td><input type="checkbox" value=""></td>
-                            <td><input type="checkbox" value=""></td>
-                            <td><input type="checkbox" value=""></td>
-                            <td><input type="checkbox" value=""></td>
-                            <td><input type="checkbox" value=""></td>
-                            <td><input type="checkbox" value=""></td>
+                            <td>
+                                <div class="checkbox">
+                                    <input class="styled" id="" type="checkbox" disabled="">
+                                    <label for=""></label>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="checkbox">
+                                    <input class="styled" id="" type="checkbox" disabled="">
+                                    <label for=""></label>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="checkbox">
+                                    <input class="styled" id="" type="checkbox" disabled="">
+                                    <label for=""></label>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="checkbox">
+                                    <input class="styled" id="" type="checkbox" disabled="">
+                                    <label for=""></label>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="checkbox">
+                                    <input class="styled" id="" type="checkbox" disabled="">
+                                    <label for=""></label>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="checkbox">
+                                    <input class="styled" id="" type="checkbox" disabled="">
+                                    <label for=""></label>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="checkbox">
+                                    <input class="styled" id="" type="checkbox" disabled="">
+                                    <label for=""></label>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="checkbox">
+                                    <input class="styled" id="" type="checkbox" disabled="">
+                                    <label for=""></label>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="checkbox">
+                                    <input class="styled" id="" type="checkbox" disabled="">
+                                    <label for=""></label>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="checkbox">
+                                    <input class="styled" id="" type="checkbox" disabled="">
+                                    <label for=""></label>
+                                </div>
+                            </td>
+                            <td>
+                                <a href="" class="btn btn-default btnformaintenance">
+                                <i class="fa fa-pencil-square-o fa-1x"></i></a>
+                            </td> 
                         </tr>
                     </tbody>
                 </table>
