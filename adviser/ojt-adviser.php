@@ -356,7 +356,8 @@ if (isset($_SESSION['AdviserID'])) {
                             CompanyAddress,
                             Supervisor,
                             Position,
-                            ContactNumber)
+                            ContactNumber,
+                            AdviserID)
                             VALUES (?,?,?,?,?,?,?,?,?,?)",
                             FALSE,
                             "ssssssssss",
@@ -369,7 +370,8 @@ if (isset($_SESSION['AdviserID'])) {
                             $CompanyAddress,
                             $Supervisor,
                             $Position,
-                            $ContactNumber
+                            $ContactNumber,
+                            $AdviserID
                         );
                         $msg = 'Record has been added. <div style="Padding:20px 0 0 0;"></div>';
                     } else {
