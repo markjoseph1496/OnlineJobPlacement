@@ -296,11 +296,21 @@ if (isset($_SESSION['AdviserID'])) {
                     </button>
                 </div>
             </div>
-            <div class="hr1" style="margin-bottom:10px;margin-top:10px;"></div>
+            <div class="hr1" style="margin-bottom:30px;margin-top:30px;"></div>
 
             <form name="import" method="post" enctype="multipart/form-data">
-                <input type="file" name="file"/><br/>
-                <input type="submit" name="submit" value="Submit"/>
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <input id="" name="" type="file" class="file file-loading" data-allowed-file-extensions='["png", "jpg", "bmp", "gif"]'>
+                            </div>
+                            <div class="col-md-6"><input type="submit" name="submit" value="Submit"/></div>
+                        </div>
+                    </div>
+                    <div class="col-md-3">&nbsp;</div>
+                    <div class="col-md-3">&nbsp;</div>
+                </div>
             </form>
 
             <?php
