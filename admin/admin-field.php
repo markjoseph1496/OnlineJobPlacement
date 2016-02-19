@@ -432,21 +432,21 @@ foreach($work_tbl as $value){
 
             $positionlevel_tbl =
                 GSecureSQL::query(
-                    "SELECT PositionLevel FROM workexperiencetbl WHERE StudentID = ? LIMIT 3",
+                    "SELECT PositionLevel FROM workexperiencetbl WHERE StudentID = ? LIMIT 1",
                     TRUE,
                     "s",
                     $StudentID
                 );
             $specialization_tbl =
                 GSecureSQL::query(
-                    "SELECT Specialization FROM workexperiencetbl WHERE StudentID = ? LIMIT 3",
+                    "SELECT Specialization FROM workexperiencetbl WHERE StudentID = ? LIMIT 1",
                     TRUE,
                     "s",
                     $StudentID
                 );
             $industry_tbl =
                 GSecureSQL::query(
-                    "SELECT Industry FROM workexperiencetbl WHERE StudentID = ? LIMIT 3",
+                    "SELECT Industry FROM workexperiencetbl WHERE StudentID = ? LIMIT 1",
                     TRUE,
                     "s",
                     $StudentID

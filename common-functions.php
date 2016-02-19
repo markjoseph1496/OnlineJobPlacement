@@ -18,28 +18,28 @@ class CommonFunctions{
 
     function admin_login_check(){
         if(!isset($_SESSION['AdminID'])){
-            header('Location: ' . $this->base_url('login-admin.php'));
+            header('Location: ' . $this->base_url('onlinejobplacement/login-admin.php'));
             die();
         }
     }
 
     function adviser_login_check(){
         if(!isset($_SESSION['AdviserID'])){
-            header('Location: ' . $this->base_url('login-adviser.php'));
+            header('Location: ' . $this->base_url('onlinejobplacement/login-adviser.php'));
             die();
         }
     }
 
     function company_login_check(){
         if(!isset($_SESSION['CompanyID'])){
-            header('Location: ' . $this->base_url('login-company.php'));
+            header('Location: ' . $this->base_url('onlinejobplacement/login-company.php'));
             die();
         }
     }
 
     function student_login_check(){
         if(!isset($_SESSION['StudentID'])){
-            header('Location: ' . $this->base_url('login-student.php'));
+            header('Location: ' . $this->base_url('onlinejobplacement/login-student.php'));
             die();
         }
     }
