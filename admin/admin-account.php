@@ -119,200 +119,235 @@ $ContactNumber = $admin_tbl[0][9];
 </head>
 
 <body>
-<div class="container">
-    <!-- Modal -->
-    <div class="modal fade" id="ChangeUsername" role="dialog">
-        <div class="modal-dialog" style="padding:100px">
+    <div class="container">
+        <!-- Modal -->
+        <div class="modal fade" id="ChangeUsername" role="dialog">
+            <div class="modal-dialog" style="padding:100px">
 
-            <!-- Modal content-->
-            <form id="change-Username-form" autocomplete="off" method="POST" action="functions.php">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <button type="button" class="close" data-dismiss="modal">&times;</button>
-                        <h4 class="modal-title">Change Username</h4>
-                    </div>
-                    <div class="modal-body">
-                        <div class="col-md-15 fieldcol">
-                            <label = "usr" class = "control-label"> New Username: </label>
-                            <div class="form-group">
-                                <input type="text" name="ModalNewUsername" id="ModalNewUsername" class="form-control">
-                            </div>
+                <!-- Modal content-->
+                <form id="change-Username-form" autocomplete="off" method="POST" action="functions.php">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                            <h4 class="modal-title">Change Username</h4>
                         </div>
-
-                        <div class="col-md-15 fieldcol">
-                            <label = "usr" class = "control-label"> Confirm Username: </label>
-                            <div class="form-group">
-                                <input type="text" name="ModalConfirmUsername" id="ModalConfirmUsername" class="form-control">
+                        <div class="modal-body">
+                            <div class="col-md-15">
+                                <label = "usr" class = "control-label"> New Username: </label>
+                                <div class="form-group">
+                                    <input type="text" name="ModalNewUsername" id="ModalNewUsername" class="form-control">
+                                </div>
                             </div>
+
+                            <div class="col-md-15">
+                                <label = "usr" class = "control-label"> Confirm Username: </label>
+                                <div class="form-group">
+                                    <input type="text" name="ModalConfirmUsername" id="ModalConfirmUsername" class="form-control">
+                                </div>
+                            </div>
+
                         </div>
-
-                    </div>
-                    <div class="modal-footer">
-                        <button type="submit" class="btn btn-primary" name="btnChangeUsername">Change Username</button>
-                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                    </div>
-                </div>
-            </form>
-        </div>
-    </div>
-
-
-    <div class="modal fade" id="ChangePassword" role="dialog">
-        <div class="modal-dialog" style="padding:100px">
-
-            <!-- Modal content-->
-            <form id="change-password-form" autocomplete="off" method="POST" action="functions.php">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <button type="button" class="close" data-dismiss="modal">&times;</button>
-                        <h4 class="modal-title">Change Password</h4>
-                    </div>
-                    <div class="modal-body">
-                        <div class="col-md-15 fieldcol">
-                            <div id="message"></div>
-                            <br>
-                            <label = "usr" class = "control-label"> Old Password: </label>
-                            <div class="form-group">
-                                <input type="password" name="ModalOldPassword" id="ModalOldPassword"
-                                       class="form-control">
-                            </div>
-                        </div>
-
-
-                        <div class="col-md-15 fieldcol">
-                            <label = "usr" class = "control-label"> New Password: </label>
-                            <div class="form-group">
-                                <input type="password" name="ModalNewPassword" id="ModalNewPassword"
-                                       class="form-control">
-                            </div>
-                        </div>
-
-
-                        <div class="col-md-15 fieldcol">
-                            <label = "usr" class = "control-label"> Confirm Password: </label>
-                            <div class="form-group">
-                                <input type="password" name="ModalConfirmPassword" id="ModalConfirmPassword"
-                                       class="form-control">
-                            </div>
+                        <div class="modal-footer">
+                            <button type="submit" class="btn btn-primary" name="btnChangeUsername">Change Username</button>
+                            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
                         </div>
                     </div>
-                    <div class="modal-footer">
-                        <button type="submit" id="submitPassword" class="btn btn-primary">Change Password</button>
-                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                    </div>
-                </div>
-            </form>
-        </div>
-    </div>
-</div>
-
-<!-- Full Body Container -->
-<div id="container">
-
-
-    <!-- Start Header Section -->
-    <div class="hidden-header"></div>
-    <header class="clearfix">
-
-        <!-- Start Top Bar -->
-        <div class="top-bar">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-6">
-                        <!-- Start Contact Info -->
-                        &nbsp;
-                        <!-- End Contact Info -->
-                    </div>
-                    <!-- .col-md-6 -->
-                    <div class="col-md-6">
-                        <!-- Notification -->
-                            <ul class="nav navbar-nav navbar-right">
-                                <li class="dropdown icon-border" id="notificationLink">
-                                    <span id="notification_count">3</span>
-                                    <a href="#" class="bell itl-tooltip" data-placement="bottom" data-toggle="dropdown"><i
-                                            class="fa fa-bell"></i></a>
-                                    <ul id="notificationContainer" class="dropdown-menu dropdown-menu-inverse">
-                                        <li class="dropdown-header"><label>Notification</label></li>
-                                        <li class="disabled"><a href="#" tabindex="-1">No new notification.</a></li>
-                                        <li><a href="#" tabindex="-1">This is a notification.</a></li>
-                                        <li class="divider"></li>
-                                        <li><a href="../notification/notification.php" tabindex="-1">See All</a></li>
-                                    </ul>
-                                </li>
-                                <li class="dropdown">
-                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown"><b class="fa fa-user"></b> Welcome, <b>Admin Tim </b><b class="caret"></b></a>
-                                    <ul class="dropdown-menu">
-                                        <li><a href="admin-account.php">Account <b class="fa fa-user" style="float:right;"></b></a></li>
-                                        <li class="divider"></li>
-                                        <li><a href="#" data-target='#Logout' data-toggle='modal'>Sign Out <b class="fa fa-sign-out" style="float:right;"></b></a></li>
-                                    </ul>
-                                </li>
-                            </ul>
-                        <!-- Notification -->
-                    </div>
-                    <!-- .col-md-6 -->
-                </div>
-                <!-- .row -->
+                </form>
             </div>
-            <!-- .container -->
         </div>
-        <!-- .top-bar -->
-        <!-- End Top Bar -->
 
 
-        <!-- Start  Logo & Naviagtion  -->
-        <div class="navbar navbar-default navbar-top">
-            <div class="container">
-                <div class="navbar-header">
-                    <!-- Stat Toggle Nav Link For Mobiles -->
-                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                        <i class="fa fa-bars"></i>
-                    </button>
-                    <!-- End Toggle Nav Link For Mobiles -->
-                    <a class="navbar-brand" href="">
-                        <img src="../images/ojpms.png">
-                    </a>
+        <div class="modal fade" id="ChangePassword" role="dialog">
+            <div class="modal-dialog" style="padding:100px">
+
+                <!-- Modal content-->
+                <form id="change-password-form" autocomplete="off" method="POST" action="functions.php">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                            <h4 class="modal-title">Change Password</h4>
+                        </div>
+                        <div class="modal-body">
+                            <div class="col-md-15">
+                                <div id="message"></div>
+                                <br>
+                                <label = "usr" class = "control-label"> Old Password: </label>
+                                <div class="form-group">
+                                    <input type="password" name="ModalOldPassword" id="ModalOldPassword"
+                                           class="form-control">
+                                </div>
+                            </div>
+
+
+                            <div class="col-md-15">
+                                <label = "usr" class = "control-label"> New Password: </label>
+                                <div class="form-group">
+                                    <input type="password" name="ModalNewPassword" id="ModalNewPassword"
+                                           class="form-control">
+                                </div>
+                            </div>
+
+
+                            <div class="col-md-15">
+                                <label = "usr" class = "control-label"> Confirm Password: </label>
+                                <div class="form-group">
+                                    <input type="password" name="ModalConfirmPassword" id="ModalConfirmPassword"
+                                           class="form-control">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="submit" id="submitPassword" class="btn btn-primary">Change Password</button>
+                            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Full Body Container -->
+    <div id="container">
+        <!-- Start Header Section -->
+        <div class="hidden-header"></div>
+        <header class="clearfix">
+            <!-- Start Top Bar -->
+            <div class="top-bar">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <!-- Start Contact Info -->
+                            &nbsp;
+                            <!-- End Contact Info -->
+                        </div>
+                        <!-- .col-md-6 -->
+                        <div class="col-md-6">
+                            <!-- Notification -->
+                                <ul class="nav navbar-nav navbar-right">
+                                    <li class="dropdown icon-border" id="notificationLink">
+                                        <span id="notification_count">3</span>
+                                        <a href="#" class="bell itl-tooltip" data-placement="bottom" data-toggle="dropdown"><i
+                                                class="fa fa-bell"></i></a>
+                                        <ul id="notificationContainer" class="dropdown-menu dropdown-menu-inverse">
+                                            <li class="dropdown-header"><label>Notification</label></li>
+                                            <li class="disabled"><a href="#" tabindex="-1">No new notification.</a></li>
+                                            <li><a href="#" tabindex="-1">This is a notification.</a></li>
+                                            <li class="divider"></li>
+                                            <li><a href="../notification/notification.php" tabindex="-1">See All</a></li>
+                                        </ul>
+                                    </li>
+                                    <li class="dropdown">
+                                        <a href="#" class="dropdown-toggle" data-toggle="dropdown"><b class="fa fa-user"></b> Welcome, <b>Admin Tim </b><b class="caret"></b></a>
+                                        <ul class="dropdown-menu">
+                                            <li><a href="admin-account.php">Account <b class="fa fa-user" style="float:right;"></b></a></li>
+                                            <li class="divider"></li>
+                                            <li><a href="#" data-target='#Logout' data-toggle='modal'>Sign Out <b class="fa fa-sign-out" style="float:right;"></b></a></li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            <!-- Notification -->
+                        </div>
+                        <!-- .col-md-6 -->
+                    </div>
+                    <!-- .row -->
                 </div>
-                <div class="navbar-collapse collapse">
-                    <!-- Modal -->
-                    <div class="modal fade" id="Logout"
-                             role="dialog">
-                            <div class="modal-dialog" style="padding:100px">
-                                <!-- Modal content-->
-                                <div class="modal-content">
-                                    <div class="modal-header">
-                                        <button style = type="button" class="close" data-dismiss="modal">&times;</button>
-                                        <h4 class="modal-title">Sign Out</h4>
-                                    </div>
-                                    <div class="modal-body">
-                                        <div class="col-md-15 fieldcol">
-                                            <label = "usr" class = "control-label">Do you want to Sign Out?</label>
-                                            <div class="form-group">
-                                            </div>
+                <!-- .container -->
+            </div>
+            <!-- .top-bar -->
+            <!-- End Top Bar -->
+
+
+            <!-- Start  Logo & Naviagtion  -->
+            <div class="navbar navbar-default navbar-top">
+                <div class="container">
+                    <div class="navbar-header">
+                        <!-- Stat Toggle Nav Link For Mobiles -->
+                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        <!-- End Toggle Nav Link For Mobiles -->
+                        <a class="navbar-brand" href="">
+                            <img src="../images/ojpms.png">
+                        </a>
+                    </div>
+                    <div class="navbar-collapse collapse">
+                        <!-- Modal -->
+                        <div class="modal fade" id="Logout"
+                                 role="dialog">
+                                <div class="modal-dialog" style="padding:100px">
+                                    <!-- Modal content-->
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <button style = type="button" class="close" data-dismiss="modal">&times;</button>
+                                            <h4 class="modal-title">Sign Out</h4>
                                         </div>
-                                        <div class="modal-footer">
-                                            <a href="logout.php"
-                                               class="btn btn-primary">Sign out</a>
-                                            <button type="button" class="btn btn-default" data-dismiss="modal">
-                                                Cancel
-                                            </button>
+                                        <div class="modal-body">
+                                            <div class="col-md-15">
+                                                <label = "usr" class = "control-label">Do you want to Sign Out?</label>
+                                                <div class="form-group">
+                                                </div>
+                                            </div>
+                                            <div class="modal-footer">
+                                                <a href="logout.php"
+                                                   class="btn btn-primary">Sign out</a>
+                                                <button type="button" class="btn btn-default" data-dismiss="modal">
+                                                    Cancel
+                                                </button>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
-                            </div>
+                        </div>
+                        <!-- End Sign-out -->
+                        <!-- Start Navigation List -->
+                        <ul class="nav navbar-nav navbar-right">
+                            <li>
+                                <a href="admin.php">Home</a>
+                            </li>
+                            <li>
+                            <a>Reports</a>
+                            <ul class="dropdown">
+                                <li><a href="admin-reports.php">Alumni Reports</a></li>
+                                <li><a href="admin-ojtreports.php">OJT Reports</a></li>
+                            </ul>
+                            </li>
+                            <li>
+                                <a class="active" href="admin-account.php">Account</a>
+                            </li>
+                            <li>
+                                <a href="admin-requested.php">Requested</a>
+                            </li>
+                            <li>
+                                <a>Company List</a>
+                                 <ul class="dropdown">
+                                <li><a href="admin-companylist.php">Active</a></li>
+                                <li><a href="admin-company_pending.php">Pending</a></li>
+                                 </ul>
+                            </li>
+                            <li>
+                            <a> Maintenance</a>
+                            <ul class="dropdown">
+                                <li><a href="admin-maintenance.php">Courses</a></li>
+                                <li><a href="admin-users.php">Users</a></li>
+                                <li><a href="admin-calendar.php">Calendar Events</a></li>
+                            </ul>
+                        </li>
+                        </ul>
+                        <!-- End Navigation List -->
                     </div>
-                    <!-- End Sign-out -->
-                    <!-- Start Navigation List -->
+                </div>
+                <!-- Mobile Menu Start -->
+                <ul class="wpb-mobile-menu">
                     <ul class="nav navbar-nav navbar-right">
                         <li>
                             <a href="admin.php">Home</a>
                         </li>
                         <li>
                         <a>Reports</a>
-                        <ul class="dropdown">
-                            <li><a href="admin-reports.php">Alumni Reports</a></li>
-                            <li><a href="admin-ojtreports.php">OJT Reports</a></li>
-                        </ul>
+                            <ul class="dropdown">
+                                <li><a href="admin-reports.php" class = "active">Alumni Reports</a></li>
+                                <li><a href="admin-ojtreports.php">OJT Reports</a></li>
+                            </ul>
                         </li>
                         <li>
                             <a class="active" href="admin-account.php">Account</a>
@@ -322,231 +357,189 @@ $ContactNumber = $admin_tbl[0][9];
                         </li>
                         <li>
                             <a>Company List</a>
-                             <ul class="dropdown">
-                            <li><a href="admin-companylist.php">Active</a></li>
-                            <li><a href="admin-company_pending.php">Pending</a></li>
-                             </ul>
+                            <ul class="dropdown">
+                                <li><a href="admin-companylist.php">Active</a></li>
+                                <li><a href="admin-company_pending.php">Pending</a></li>
+                            </ul>
                         </li>
                         <li>
-                        <a> Maintenance</a>
-                        <ul class="dropdown">
-                            <li><a href="admin-maintenance.php">Courses</a></li>
-                            <li><a href="admin-users.php">Users</a></li>
-                            <li><a href="admin-calendar.php">Calendar Events</a></li>
-                        </ul>
-                    </li>
+                            <a> Maintenance</a>
+                            <ul class="dropdown">
+                                <li><a href="admin-maintenance.php">Courses</a></li>
+                                <li><a href="admin-users.php">Users</a></li>
+                                <li><a href="admin-calendar.php">Calendar Events</a></li>
+                            </ul>
+                        </li>
                     </ul>
-                    <!-- End Navigation List -->
+                </ul>
+            </div>
+        </header>
+        <!-- End Header Section -->
+
+        <!-- Start Page Banner -->
+        <div class="page-banner" style="padding:40px 0; center #f9f9f9;">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6">
+                        <h2>Personal Information</h2>
+                    </div>
+                    <div class="col-md-6">
+                    </div>
                 </div>
             </div>
-            <!-- Mobile Menu Start -->
-            <ul class="wpb-mobile-menu">
-                <ul class="nav navbar-nav navbar-right">
-                    <li>
-                        <a href="admin.php">Home</a>
-                    </li>
-                    <li>
-                    <a>Reports</a>
-                        <ul class="dropdown">
-                            <li><a href="admin-reports.php" class = "active">Alumni Reports</a></li>
-                            <li><a href="admin-ojtreports.php">OJT Reports</a></li>
-                        </ul>
-                    </li>
-                    <li>
-                        <a class="active" href="admin-account.php">Account</a>
-                    </li>
-                    <li>
-                        <a href="admin-requested.php">Requested</a>
-                    </li>
-                    <li>
-                        <a>Company List</a>
-                        <ul class="dropdown">
-                            <li><a href="admin-companylist.php">Active</a></li>
-                            <li><a href="admin-company_pending.php">Pending</a></li>
-                        </ul>
-                    </li>
-                    <li>
-                        <a> Maintenance</a>
-                        <ul class="dropdown">
-                            <li><a href="admin-maintenance.php">Courses</a></li>
-                            <li><a href="admin-users.php">Users</a></li>
-                            <li><a href="admin-calendar.php">Calendar Events</a></li>
-                        </ul>
-                    </li>
-                </ul>
-            </ul>
-    </header>
-    <!-- Mobile Menu End -->
+        </div>
+        <!-- End Page Banner -->
 
-</div>
-<!-- End Header Logo & Naviagtion -->
+        <!--Content-->
+        <br><br><br>
 
-</header>
-<!-- End Header Section -->
+        <div class="container">
+            <form name="UpdateAdmin" id="UpdateAdmin" autocomplete="off" action="functions.php" method="POST">
+                <div class="col-md-12">
+                    <div class="row">
+                        <?php
 
-<!-- Start Page Banner -->
-<div class="page-banner" style="padding:40px 0; center #f9f9f9;">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-6">
-                <h2>Personal Information</h2>
-            </div>
-            <div class="col-md-6">
-            </div>
+                        if (isset($_GET['id'])) {
+                            $id = $_GET['id'];
+                            if ($id == 1) {
+                                echo '
+                            <div class="alert alert-success">
+                                <span class="glyphicon glyphicon-info-sign"></span> 
+                                Username successfully changed.
+                            </div>
+                            ';
+                            } elseif ($id == 2) {
+                                echo '
+                            <div class="alert alert-success">
+                                <span class="glyphicon glyphicon-info-sign"></span> 
+                                Password successfully changed.
+                            </div>
+                            ';
+                            } elseif ($id == 3) {
+                                echo '
+                            <div class="alert alert-success">
+                                <span class="glyphicon glyphicon-info-sign"></span> 
+                                Personal info successfully updated.
+                            </div>
+                            ';
+                            }
+
+                        }
+                        ?>
+                        <div class="col-md-2">
+                            <label = "usr" class = "control-label"> Username: </label>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                <label = "usr" class = "control-label"><?php echo $Username; ?></label>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="form-group">
+                                <div class="box">
+                                    <button class="btn btn-default" data-toggle="modal" data-target="#ChangeUsername">Change
+                                        Username
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-2">
+                            <label = "usr" class = "control-label"> Password: </label>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                <label = "usr" class = "control-label">**********</label>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="form-group">
+                                <div class="box">
+                                    <button class="btn btn-default" data-toggle="modal" data-target="#ChangePassword">
+                                        ChangePassword
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-2">
+                            <label>First Name <span>(*)</span></label>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                <input type="text" name="FirstName" id="FirstName" class="form-control"
+                                       maxlength="20" value="<?php echo $FirstName; ?>">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-2">
+                            <label>Middle Name <span>(*)</span></label>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                <input type="text" name="MiddleName" id="MiddleName" class="form-control"
+                                       maxlength="20" value="<?php echo $MiddleName; ?>">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-2">
+                            <label>Last Name <span>(*)</span></label>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                <input type="text" name="LastName" id="LastName" class="form-control"
+                                       maxlength="20" value="<?php echo $LastName; ?>">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-2">
+                            <label>Position <span>(*)</span></label>
+                        </div>,
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                <input type="text" name="Position" id="Position" class="form-control"
+                                       maxlength="20" value="<?php echo $Position; ?>">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-2">
+                            <label>Address <span>(*)</span></label>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                <input type="text" name="Address" id="Address" class="form-control"
+                                       maxlength="50" value="<?php echo $Address; ?>">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-2">
+                            <label>Contact Number <span>(*)</span></label>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                <input type="text" name="ContactNumber" id="ContactNumber" class="form-control"
+                                       maxlength="11" value="<?php echo $ContactNumber ?>">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                &nbsp;
+                <div class="hr5" style="margin-top:35px;margin-bottom:40px;"></div>
+                <div class="field">
+                    <div class="text-center">
+                        <button type="submit" class="btn-system btn-large">Save</button>
+                    </div>
+                </div>
+            </form>
         </div>
     </div>
-</div>
-<!-- End Page Banner -->
-
-<!--Content-->
-<br><br><br>
-
-<div class="container">
-    <form name="UpdateAdmin" id="UpdateAdmin" autocomplete="off" action="functions.php" method="POST">
-        <div class="col-md-12">
-            <div class="row field">
-                <?php
-
-                if (isset($_GET['id'])) {
-                    $id = $_GET['id'];
-                    if ($id == 1) {
-                        echo '
-                    <div class="alert alert-success">
-                        <span class="glyphicon glyphicon-info-sign"></span> 
-                        Username successfully changed.
-                    </div>
-                    ';
-                    } elseif ($id == 2) {
-                        echo '
-                    <div class="alert alert-success">
-                        <span class="glyphicon glyphicon-info-sign"></span> 
-                        Password successfully changed.
-                    </div>
-                    ';
-                    } elseif ($id == 3) {
-                        echo '
-                    <div class="alert alert-success">
-                        <span class="glyphicon glyphicon-info-sign"></span> 
-                        Personal info successfully updated.
-                    </div>
-                    ';
-                    }
-
-                }
-                ?>
-                <div class="col-md-2 fieldcol">
-                    <label = "usr" class = "control-label"> Username: </label>
-                </div>
-                <div class="col-md-4 fieldcol">
-                    <div class="form-group">
-                        <label = "usr" class = "control-label"><?php echo $Username; ?></label>
-                    </div>
-                </div>
-                <div class="col-md-3 fieldcol">
-                    <div class="form-group">
-                        <div class="box">
-                            <button class="btn btn-default" data-toggle="modal" data-target="#ChangeUsername">Change
-                                Username
-                            </button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="row field">
-                <div class="col-md-2 fieldcol">
-                    <label = "usr" class = "control-label"> Password: </label>
-                </div>
-                <div class="col-md-4 fieldcol">
-                    <div class="form-group">
-                        <label = "usr" class = "control-label">**********</label>
-                    </div>
-                </div>
-                <div class="col-md-3 fieldcol">
-                    <div class="form-group">
-                        <div class="box">
-                            <button class="btn btn-default" data-toggle="modal" data-target="#ChangePassword">
-                                ChangePassword
-                            </button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="row field">
-                <div class="col-md-2 fieldcol">
-                    <label>First Name <span>(*)</span></label>
-                </div>
-                <div class="col-md-4 fieldcol">
-                    <div class="form-group">
-                        <input type="text" name="FirstName" id="FirstName" class="form-control"
-                               maxlength="20" value="<?php echo $FirstName; ?>">
-                    </div>
-                </div>
-            </div>
-            <div class="row field">
-                <div class="col-md-2 fieldcol">
-                    <label>Middle Name <span>(*)</span></label>
-                </div>
-                <div class="col-md-4 fieldcol">
-                    <div class="form-group">
-                        <input type="text" name="MiddleName" id="MiddleName" class="form-control"
-                               maxlength="20" value="<?php echo $MiddleName; ?>">
-                    </div>
-                </div>
-            </div>
-            <div class="row field">
-                <div class="col-md-2 fieldcol">
-                    <label>Last Name <span>(*)</span></label>
-                </div>
-                <div class="col-md-4 fieldcol">
-                    <div class="form-group">
-                        <input type="text" name="LastName" id="LastName" class="form-control"
-                               maxlength="20" value="<?php echo $LastName; ?>">
-                    </div>
-                </div>
-            </div>
-            <div class="row field">
-                <div class="col-md-2 fieldcol">
-                    <label>Position <span>(*)</span></label>
-                </div>,
-                <div class="col-md-4 fieldcol">
-                    <div class="form-group">
-                        <input type="text" name="Position" id="Position" class="form-control"
-                               maxlength="20" value="<?php echo $Position; ?>">
-                    </div>
-                </div>
-            </div>
-            <div class="row field">
-                <div class="col-md-2 fieldcol">
-                    <label>Address <span>(*)</span></label>
-                </div>
-                <div class="col-md-4 fieldcol">
-                    <div class="form-group">
-                        <input type="text" name="Address" id="Address" class="form-control"
-                               maxlength="50" value="<?php echo $Address; ?>">
-                    </div>
-                </div>
-            </div>
-            <div class="row field">
-                <div class="col-md-2 fieldcol">
-                    <label>Contact Number <span>(*)</span></label>
-                </div>
-                <div class="col-md-4 fieldcol">
-                    <div class="form-group">
-                        <input type="text" name="ContactNumber" id="ContactNumber" class="form-control"
-                               maxlength="11" value="<?php echo $ContactNumber ?>">
-                    </div>
-                </div>
-            </div>
-        </div>
-        &nbsp;
-        <div class="hr5" style="margin-top:35px;margin-bottom:40px;"></div>
-        <div class="field">
-            <div class="text-center">
-                <button type="submit" class="btn-system btn-large">Save</button>
-            </div>
-        </div>
-    </form>
-</div>
 </body>
 <script type="text/javascript" src="../js/script.js"></script>
 </html>
@@ -559,14 +552,14 @@ $ContactNumber = $admin_tbl[0][9];
                 invalid: "glyphicon glyphicon-remove",
                 validating: "glyphicon glyphicon-refresh"
             },
-            fields: {
+           s: {
                 ModalNewUsername: {
                     validators: {
                         notEmpty: {
                             message: "Username is required."
                         },
                         identical: {
-                            field: "ModalConfirmUsername",
+                           : "ModalConfirmUsername",
                             message: "Username and Confirm Username mismatched."
                         }
                     }
@@ -577,7 +570,7 @@ $ContactNumber = $admin_tbl[0][9];
                             message: "Username is required."
                         },
                         identical: {
-                            field: "ModalNewUsername",
+                           : "ModalNewUsername",
                             message: "Username and Confirm Username mismatched."
                         }
                     }
@@ -591,7 +584,7 @@ $ContactNumber = $admin_tbl[0][9];
                 invalid: "glyphicon glyphicon-remove",
                 validating: "glyphicon glyphicon-refresh"
             },
-            fields: {
+           s: {
                 ModalOldPassword: {
                     validators: {
                         notEmpty: {
@@ -612,7 +605,7 @@ $ContactNumber = $admin_tbl[0][9];
                             message: "Confirm Password is required."
                         },
                         identical: {
-                            field: "ModalNewPassword",
+                           : "ModalNewPassword",
                             message: "Password mismatched."
                         }
                     }
@@ -626,11 +619,11 @@ $ContactNumber = $admin_tbl[0][9];
                 invalid: "glyphicon glyphicon-remove",
                 validating: "glyphicon glyphicon-refresh"
             },
-            fields: {
+           s: {
                 FirstName: {
                     validators: {
                         notEmpty: {
-                            message: "This field is required."
+                            message: "This is required."
                         },
                         regexp: {
                             regexp: /^[a-z\s]+$/i,
@@ -649,7 +642,7 @@ $ContactNumber = $admin_tbl[0][9];
                 LastName: {
                     validators: {
                         notEmpty: {
-                            message: "This field is required."
+                            message: "This is required."
                         },
                         regexp: {
                             regexp: /^[a-z\s]+$/i,
@@ -660,28 +653,28 @@ $ContactNumber = $admin_tbl[0][9];
                 Position: {
                     validators: {
                         notEmpty: {
-                            message: "This field is required."
+                            message: "This is required."
                         }
                     }
                 },
                 Department: {
                     validators: {
                         notEmpty: {
-                            message: "This field is required."
+                            message: "This is required."
                         }
                     }
                 },
                 Address: {
                     validators: {
                         notEmpty: {
-                            message: "This field is required."
+                            message: "This is required."
                         }
                     }
                 },
                 ContactNumber: {
                     validators: {
                         notEmpty: {
-                            message: "This field is required."
+                            message: "This is required."
                         },
                         regexp: {
                             regexp: /^[0-9]+$/i,

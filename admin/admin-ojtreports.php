@@ -382,12 +382,7 @@ if (isset($_SESSION['AdminID'])) {
                             <td width="30%"></td>
                             <td width="10%"></td>
                             <td width=""></td>
-                            <td>
-                                <div class="checkbox">
-                                    <input class="styled" type="checkbox" disabled>
-                                    <label for=""></label>
-                                </div>
-                            </td>
+                            <td width=""></td>
                             <td>
                                 <div class="checkbox">
                                     <input class="styled" type="checkbox" disabled>
