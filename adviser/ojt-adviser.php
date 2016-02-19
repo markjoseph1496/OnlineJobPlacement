@@ -563,24 +563,152 @@ if (isset($_SESSION['AdviserID'])) {
                                             <ul>
                                                 <li>
                                                     <div class="form-group">
+                                                        <input type="hidden" value="<?php echo $StudentID; ?>"
+                                                               name="StudentID">
                                                         <label> Student Name: <?php echo $FullName; ?></label><br>
                                                         <label> Course: <?php echo $Course; ?></label>
                                                     </div>
                                                 </li>
-                                            </ul>
+                                                <li>
+                                                    <div class="form-group">
+                                                        <label> Company </label><br>
+                                                        <input type="text" class="form-control" id="Company"
+                                                               name="Company"
+                                                               value="<?php echo $CompanyName; ?>">
+                                                    </div>
+                                                </li>
+                                                <li>
+                                                    <div class="form-group">
+                                                        <label> Company Address </label><br>
+                                                        <input type="text" class="form-control" id="CompanyAddress"
+                                                               name="CompanyAddress"
+                                                               value="<?php echo $CompanyAddress; ?>">
+                                                    </div>
+                                                </li>
+                                                <li>
+                                                    <div class="form-group">
+                                                        <label> Position </label><br>
+                                                        <input type="text" class="form-control" id="Position"
+                                                               name="Position"
+                                                               value="<?php echo $Position; ?>">
+                                                    </div>
+                                                </li>
+                                                <li>
+                                                    <div class="form-group">
+                                                        <label> Supervisor </label><br>
+                                                        <input type="text" class="form-control" id="Supervisor"
+                                                               name="Supervisor"
+                                                               value="<?php echo $Supervisor; ?>">
+                                                    </div>
+                                                </li>
+                                                <li>
+                                                    <div class="form-group">
+                                                        <label> Remarks </label><br>
+                                                        <select class="form-control" name="Remarks" id="Remarks">
+                                                            <option value="">- Select Remarks -</option>
+                                                            <option value="INC">INC</option>
+                                                            <option value="Finished">Finished</option>
+                                                            <option value="On Going">On Going</option>
+                                                        </select>
+                                                    </div>
+                                                </li>
+                                                <li>
+                                                    <div class="form-group">
+                                                        <label> Hours </label><br>
+                                                        <input type="text" class="form-control" id="Hours"
+                                                               name="Hours"
+                                                               value="<?php echo $Hours; ?>">
+                                                    </div>
+                                                </li>
+                                                <li>
+                                                    <br><label> Requirements</label><br>
+                                                </li>
+                                                <li>
+                                                    <div class="checkbox">
+                                                        <input id="Endorsement" name="Endorsement" value="on"
+                                                               class="styled" <?php if ($Endorsement == "on") {
+                                                            echo "checked";
+                                                        } ?> type="checkbox">
+                                                        <label for="">Endorsement</label>
+                                                    </div>
+                                                    <input name="EndorsementHidden" value="off" type='hidden'>
+                                                    <div class="checkbox">
+                                                        <input id="DTR" name="DTR" value="on"
+                                                               class="styled" <?php if ($DTR == "on") {
+                                                            echo "checked";
+                                                        } ?> type="checkbox">
+                                                        <label for="">DTR</label>
+                                                        <input name="DTRHidden" value="off" type='hidden'>
+                                                    </div>
+                                                    <div class="checkbox">
+                                                        <input id="Waiver" name="Waiver" value="on"
+                                                               class="styled" <?php if ($Waiver == "on") {
+                                                            echo "checked";
+                                                        } ?> type="checkbox">
+                                                        <label for="">Waiver</label>
+                                                        <input name="WaiverHidden" value="off" type='hidden'>
+                                                    </div>
+                                                    <div class="checkbox">
+                                                        <input id="TrainingPlan" name="TrainingPlan" value="on"
+                                                               class="styled" <?php if ($TrainingPlan == "on") {
+                                                            echo "checked";
+                                                        } ?> type="checkbox">
+                                                        <label for="">Training Plan</label>
+                                                        <input name="TrainingPlanHidden" value="off" type='hidden'>
+                                                    </div>
+                                                    <div class="checkbox">
+                                                        <input id="MOA" name="MOA" value="on"
+                                                               class="styled" <?php if ($MOA == "on") {
+                                                            echo "checked";
+                                                        } ?> type="checkbox">
+                                                        <label for="">MOA</label>
+                                                        <input name="MOAHidden" value="off" type='hidden'>
+                                                    </div>
+                                                    <div class="checkbox">
+                                                        <input id="Journal" name="Journal" value="on"
+                                                               class="styled" <?php if ($Journal == "on") {
+                                                            echo "checked";
+                                                        } ?> type="checkbox">
+                                                        <label for="">Journal</label>
+                                                        <input name="JournalHidden" value="off" type='hidden'>
+                                                    </div>
+                                                    <div class="checkbox">
+                                                        <input id="Integration" name="Integration" value="on"
+                                                               class="styled" <?php if ($Integration == "on") {
+                                                            echo "checked";
+                                                        } ?> type="checkbox">
+                                                        <label for="">Integration</label>
+                                                        <input name="IntegrationHidden" value="off" type='hidden'>
+                                                    </div>
+                                                    <div class="checkbox">
+                                                        <input id="PAF" name="PAF" value="on"
+                                                               class="styled" <?php if ($PAF == "on") {
+                                                            echo "checked";
+                                                        } ?> type="checkbox">
+                                                        <label for="">PAF</label>
+                                                        <input name="PAFHidden" value="off" type='hidden'>
+                                                    </div>
+                                                    <div class="checkbox">
+                                                        <input id="Certification" name="Certification" value="on"
+                                                               class="styled" <?php if ($Certification == "on") {
+                                                            echo "checked";
+                                                        } ?> type="checkbox">
+                                                        <label for="">Certification</label>
+                                                        <input name="CertificationHidden" value="off" type='hidden'>
+                                                    </div>
+                                                </li>
                                         </div>
-                                        <input type="hidden" name="lid" value="<?php echo $LID; ?>"/>
-                                        <div class='modal-footer'>
-                                            <button type="submit"
-                                                    class='btn btn-primary'>Accept
-                                            </button>
-                                            <button type='button' class='btn btn-default' data-dismiss='modal'>Cancel
-                                            </button>
-                                        </div>
+                                        </ul>
+                                    </div>
+                                    <div class='modal-footer'>
+                                        <button type="submit"
+                                                class='btn btn-primary'> Update
+                                        </button>
+                                        <button type='button' class='btn btn-default' data-dismiss='modal'>Cancel
+                                        </button>
                                     </div>
                                 </div>
                             </div>
-                        </div>
                     </form>
                     <?php
                 }
@@ -592,29 +720,3 @@ if (isset($_SESSION['AdviserID'])) {
 </body>
 <script type="text/javascript" src="../js/script.js"></script>
 </html>
-<script type="text/javascript">
-    if (document.getElementById("DTR").checked) {
-        document.getElementById('DTRhidden').disabled = true;
-    }
-    if (document.getElementById("iPaper").checked) {
-        document.getElementById('iPaperhidden').disabled = true;
-    }
-    if (document.getElementById("PracJournal").checked) {
-        document.getElementById('PracJournalhidden').disabled = true;
-    }
-    if (document.getElementById("TrainingPlan").checked) {
-        document.getElementById('TrainingPlanhidden').disabled = true;
-    }
-    if (document.getElementById("Resume").checked) {
-        document.getElementById('Resumehidden').disabled = true;
-    }
-    if (document.getElementById("MOA").checked) {
-        document.getElementById('MOAhidden').disabled = true;
-    }
-    if (document.getElementById("AppLetter").checked) {
-        document.getElementById('AppLetterhidden').disabled = true;
-    }
-    if (document.getElementById("Waiver").checked) {
-        document.getElementById('Waiverhidden').disabled = true;
-    }
-</script>
