@@ -390,7 +390,7 @@ if (isset($_SESSION['AdviserID'])) {
                     <th width="20%">Name</th>
                     <th width="20%">Course</th>
                     <th width="20%">Company</th>
-                    <th width="20%">Address</th>
+                    <th width="30%">Address</th>
                     <th width="10%">Remarks</th>
                     <!-- Following headers are rotated -->
                     <th class="rotate-45">
@@ -456,6 +456,7 @@ if (isset($_SESSION['AdviserID'])) {
                     $Journal = $value[19];
                     $Integration = $value[20];
                     $PAF = $value[21];
+                    $Certification = $value[22];
 
                     $FullName = $LastName . ", " . $FirstName . " " . $MiddleName;
                     ?>
@@ -465,69 +466,122 @@ if (isset($_SESSION['AdviserID'])) {
                         <td width="20%"><?php echo $FullName; ?></td>
                         <td width="20%"><?php echo $Course; ?></td>
                         <td width="20%"><?php echo $CompanyName; ?></td>
-                        <td width="20%"><?php echo $CompanyAddress; ?></td>
+                        <td width="30%"><?php echo $CompanyAddress; ?></td>
                         <td width="10%"><?php echo $Remarks; ?></td>
                         <td width="10%"><?php echo $Hours; ?></td>
                         <td>
                             <div class="checkbox">
-                                <input class="styled" id="" type="checkbox" disabled>
+                                <input class="styled" <?php if ($Endorsement == "on") {
+                                    echo "checked";
+                                } ?> type="checkbox" disabled>
                                 <label for=""></label>
                             </div>
                         </td>
                         <td>
                             <div class="checkbox">
-                                <input class="styled" id="" type="checkbox" disabled>
+                                <input class="styled" <?php if ($DTR == "on") {
+                                    echo "checked";
+                                } ?> type="checkbox" disabled>
                                 <label for=""></label>
                             </div>
                         </td>
                         <td>
                             <div class="checkbox">
-                                <input class="styled" id="" type="checkbox" disabled>
+                                <input class="styled" <?php if ($Waiver == "on") {
+                                    echo "checked";
+                                } ?> type="checkbox" disabled>
                                 <label for=""></label>
                             </div>
                         </td>
                         <td>
                             <div class="checkbox">
-                                <input class="styled" id="" type="checkbox" disabled>
+                                <input class="styled" <?php if ($TrainingPlan == "on") {
+                                    echo "checked";
+                                } ?> type="checkbox" disabled>
                                 <label for=""></label>
                             </div>
                         </td>
                         <td>
                             <div class="checkbox">
-                                <input class="styled" id="" type="checkbox" disabled>
+                                <input class="styled" <?php if ($MOA == "on") {
+                                    echo "checked";
+                                } ?> type="checkbox" disabled>
                                 <label for=""></label>
                             </div>
                         </td>
                         <td>
                             <div class="checkbox">
-                                <input class="styled" id="" type="checkbox" disabled>
+                                <input class="styled" <?php if ($Journal == "on") {
+                                    echo "checked";
+                                } ?> type="checkbox" disabled>
                                 <label for=""></label>
                             </div>
                         </td>
                         <td>
                             <div class="checkbox">
-                                <input class="styled" id="" type="checkbox" disabled>
+                                <input class="styled" <?php if ($Integration == "on") {
+                                    echo "checked";
+                                } ?> type="checkbox" disabled>
                                 <label for=""></label>
                             </div>
                         </td>
                         <td>
                             <div class="checkbox">
-                                <input class="styled" id="" type="checkbox" disabled>
+                                <input class="styled" <?php if ($PAF == "on") {
+                                    echo "checked";
+                                } ?> type="checkbox" disabled>
                                 <label for=""></label>
                             </div>
                         </td>
                         <td>
                             <div class="checkbox">
-                                <input class="styled" id="" type="checkbox" disabled>
+                                <input class="styled" <?php if ($Certification == "on") {
+                                    echo "checked";
+                                } ?> type="checkbox" disabled>
                                 <label for=""></label>
                             </div>
                         </td>
                         <td>
-                            <button class="btn btn-default">
+                            <button class='btn btn-default' data-toggle='modal'
+                                    data-target='#EditInfo<?php echo $StudentID; ?>'>
                                 <i class="fa fa-pencil-square-o fa-1x"></i></button>
                         </td>
                     </tr>
                     </tbody>
+                    <!-- Modal -->
+                    <form class="ModalForm" id="ModalForm" action="functions.php" method="POST">
+                        <div class='modal fade' id='EditInfo<?php echo $StudentID; ?>' role='dialog'>
+                            <div class='modal-dialog' style='padding:100px'>
+                                <!-- Modal content-->
+                                <div class='modal-content'>
+                                    <div class='modal-header'>
+                                        <button type='button' class='close' data-dismiss='modal'>&times;</button>
+                                        <h4 class='modal-title'>Update OJT Info</h4>
+                                    </div>
+                                    <div class='modal-body'>
+                                        <div class='col-md-15 fieldcol'>
+                                            <ul>
+                                                <li>
+                                                    <div class="form-group">
+                                                        <label> Student Name: <?php echo $FullName; ?></label><br>
+                                                        <label> Course: <?php echo $Course; ?></label>
+                                                    </div>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <input type="hidden" name="lid" value="<?php echo $LID; ?>"/>
+                                        <div class='modal-footer'>
+                                            <button type="submit"
+                                                    class='btn btn-primary'>Accept
+                                            </button>
+                                            <button type='button' class='btn btn-default' data-dismiss='modal'>Cancel
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
                     <?php
                 }
                 ?>
