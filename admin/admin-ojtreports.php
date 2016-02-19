@@ -418,16 +418,6 @@ if (isset($_SESSION['AdminID'])) {
                         ?>
                         <tbody>
                         <tr>
-<<<<<<< Updated upstream
-                            <td width="15%"></td>
-                            <td width="20%"></td>
-                            <td width="20%"></td>
-                            <td width="20%"></td>
-                            <td width="30%"></td>
-                            <td width="10%"></td>
-                            <td width=""></td>
-                            <td width=""></td>
-=======
                             <td width="15%"><?php echo $StudentID; ?></td>
                             <td width="20%"><?php echo $FullName; ?></td>
                             <td width="20%"><?php echo $Course; ?></td>
@@ -444,7 +434,6 @@ if (isset($_SESSION['AdminID'])) {
                                     <label for=""></label>
                                 </div>
                             </td>
->>>>>>> Stashed changes
                             <td>
                                 <div class="checkbox">
                                     <input class="styled" <?php if ($DTR == "on") {
