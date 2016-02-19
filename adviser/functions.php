@@ -3,55 +3,27 @@ include('../connection.php');
 
 if(isset($_POST['StudentID'])){
     $StudentID = $_POST['StudentID'];
-    $Company = $_POST['txtCompany'];
-    $CompanyAddress = $_POST['txtCompanyAddress'];
-    $ContactNumber = $_POST['txtContactNumber'];
-    $Supervisor = $_POST['txtSupervisor'];
-    $DTR = $_POST['DTR'];
-    $iPaper = $_POST['iPaper'];
-    $PracJournal = $_POST['PracJournal'];
-    $TrainingPlan = $_POST['TrainingPlan'];
-    $Resume = $_POST['Resume'];
-    $MOA = $_POST['MOA'];
-    $AppLetter = $_POST['AppLetter'];
+    $CompanyName = $_POST['Company'];
+    $CompanyAddress = $_POST['CompanyAddress'];
+    $Remarks = $_POST['Remarks'];
+    $Hours = $_POST['Hours'];
+
+
+
+    if(isset($_POST['Endorsement'])){
+        $Endorsement = $_POST['Endorsement'];
+    }
+    if(isset($_POST['DTR'])){
+        $DTR = $_POST['DTR'];
+    }
     $Waiver = $_POST['Waiver'];
-    $Status = $_POST['Status'];
+    $TrainingPlan = $_POST['TrainingPlan'];
+    $MOA = $_POST['MOA'];
+    $Journal = $_POST['Journal'];
+    $Integration = $_POST['Integration'];
+    $PAF = $_POST['PAF'];
+    $Certification = $_POST['Certification'];
 
-    GSecureSQL::query(
-        "UPDATE ojttbl
-        SET
-        CompanyName = ?,
-        CompanyAddress = ?,
-        ContactNumber = ?,
-        Supervisor = ?,
-        DailyTimeRecord = ?,
-        IntegrationPaper = ?,
-        PracJournal = ?,
-        TrainingPlan = ?,
-        Resume = ?,
-        MOA = ?,
-        ApplicationLetter = ?,
-        Waiver = ?,
-        aStatus = ?
-        WHERE
-        StudentID = ?",
-        FALSE,
-        "ssssssssssssss",
-        $Company,
-        $CompanyAddress,
-        $ContactNumber,
-        $Supervisor,
-        $DTR,
-        $iPaper,
-        $PracJournal,
-        $TrainingPlan,
-        $Resume,
-        $MOA,
-        $AppLetter,
-        $Waiver,
-        $Status,
-        $StudentID
-    );
 
-    header("location: ojt-adviser.php");
+    die();
 }

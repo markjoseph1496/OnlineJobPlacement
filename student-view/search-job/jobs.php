@@ -588,7 +588,8 @@ $Progress = $progress_tbl[0][0];
                                             </div>
                                             ";
                                 }
-                            } else {
+                            }
+                            else {
                                 $isEmpty = 0;
                                 $compposition_tbl =
                                     GSecureSQL::query(
