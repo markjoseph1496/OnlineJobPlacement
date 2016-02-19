@@ -337,68 +337,44 @@ if (isset($_SESSION['AdviserID'])) {
                 $ContactNumber = trim($allDataInSheet[$i]["J"]);
 
 
-                $query =
-                    "SELECT
-                            StudentID 
-                        FROM 
-                            ojttbl 
-                        WHERE 
-                            StudentID = '" . $StudentID . "'
-                            and 
-                            LastName = '" . $LastName . "'
-                            and 
-                            FirstName = '" . $FirstName . "'
-                            and 
-                            MiddleName = '" . $MiddleName . "'
-                            and 
-                            Course = '" . $Course . "'
-                            and 
-                            CompanyName = '" . $CompanyName . "'
-                            and 
-                            CompanyAddress = '" . $CompanyAddress . "'
-                            and 
-                            Supervisor = '" . $Supervisor . "'
-                            and 
-                            Position = '" . $Position . "'
-                            and 
-                            ContactNumber = '" . $ContactNumber . "'
-                            ";
-
-
-                $sql = mysql_query($query);
-                $recResult = mysql_fetch_array($sql);
-                $existName = $recResult["StudentID"];
-
-                if ($existName == "") {
-                    $insertTable = mysql_query("insert
-                                                into 
-                                                ojttbl 
-                                                    (StudentID, 
-                                                    LastName, 
-                                                    FirstName,
-                                                    MiddleName,
-                                                    Course,
-                                                    CompanyName,
-                                                    CompanyAddress,
-                                                    Supervisor,
-                                                    Position,
-                                                    ContactNumber) 
-                                                values
-                                                    ('" . $StudentID . "',
-                                                    '" . $LastName . "',
-                                                    '" . $FirstName . "',
-                                                    '" . $MiddleName . "',
-                                                    '" . $Course . "',
-                                                    '" . $CompanyName . "',
-                                                    '" . $CompanyAddress . "',
-                                                    '" . $Supervisor . "',
-                                                    '" . $Position . "',
-                                                    '" . $ContactNumber . "');");
-
-
-                    $msg = 'Record has been added. <div style="Padding:20px 0 0 0;"></div>';
-                } else {
-                    $msg = 'Record already exist. <div style="Padding:20px 0 0 0;"></div>';
+                $ojt_tbl =
+                    GSecureSQL::query(
+                        "SELECT StudentID FROM ojttbl",
+                        TRUE
+                    );
+                foreach ($ojt_tbl as $value) {
+                    $StudentID = $value[0];
+                    if ($StudentID == "") {
+                        GSecureSQL::query(
+                            "INSERT INTO ojttbl
+                            (StudentID,
+                            LastName,
+                            FirstName,
+                            MiddleName,
+                            Course,
+                            CompanyName,
+                            CompanyAddress,
+                            Supervisor,
+                            Position,
+                            ContactNumber)
+                            VALUES (?,?,?,?,?,?,?,?,?,?)",
+                            FALSE,
+                            "ssssssssss",
+                            $StudentID,
+                            $LastName,
+                            $FirstName,
+                            $MiddleName,
+                            $Course,
+                            $CompanyName,
+                            $CompanyAddress,
+                            $Supervisor,
+                            $Position,
+                            $ContactNumber
+                        );
+                        $msg = 'Record has been added. <div style="Padding:20px 0 0 0;"></div>';
+                    } else {
+                        $msg = 'Record already exist. <div style="Padding:20px 0 0 0;"></div>';
+                    }
                 }
             }
             echo "<div style='font: bold 18px arial,verdana;padding: 45px 0 0 500px;'>" . $msg . "</div>";
@@ -412,9 +388,10 @@ if (isset($_SESSION['AdviserID'])) {
                     <!-- First column header is not rotated -->
                     <th width="15%">Student No.</th>
                     <th width="20%">Name</th>
+                    <th width="20%">Course</th>
                     <th width="20%">Company</th>
                     <th width="20%">Address</th>
-                    <th width="10%">Remark</th>
+                    <th width="10%">Remarks</th>
                     <!-- Following headers are rotated -->
                     <th class="rotate-45">
                         <div><span>Hours</span></div>
@@ -449,79 +426,111 @@ if (isset($_SESSION['AdviserID'])) {
                     <th width="5%"></th>
                 </tr>
                 </thead>
-                <tbody>
-                <tr>
-                    <td width="15%"></td>
-                    <td width="20%"></td>
-                    <td width="20%"></td>
-                    <td width="20%"></td>
-                    <td width="10%"></td>
-                    <td>
-                        <div class="checkbox">
-                            <input class="styled" id="" type="checkbox" disabled="">
-                            <label for=""></label>
-                        </div>
-                    </td>
-                    <td>
-                        <div class="checkbox">
-                            <input class="styled" id="" type="checkbox" disabled="">
-                            <label for=""></label>
-                        </div>
-                    </td>
-                    <td>
-                        <div class="checkbox">
-                            <input class="styled" id="" type="checkbox" disabled="">
-                            <label for=""></label>
-                        </div>
-                    </td>
-                    <td>
-                        <div class="checkbox">
-                            <input class="styled" id="" type="checkbox" disabled>
-                            <label for=""></label>
-                        </div>
-                    </td>
-                    <td>
-                        <div class="checkbox">
-                            <input class="styled" id="" type="checkbox" disabled="">
-                            <label for=""></label>
-                        </div>
-                    </td>
-                    <td>
-                        <div class="checkbox">
-                            <input class="styled" id="" type="checkbox" disabled="">
-                            <label for=""></label>
-                        </div>
-                    </td>
-                    <td>
-                        <div class="checkbox">
-                            <input class="styled" id="" type="checkbox" disabled="">
-                            <label for=""></label>
-                        </div>
-                    </td>
-                    <td>
-                        <div class="checkbox">
-                            <input class="styled" id="" type="checkbox" disabled="">
-                            <label for=""></label>
-                        </div>
-                    </td>
-                    <td>
-                        <div class="checkbox">
-                            <input class="styled" id="" type="checkbox" disabled="">
-                            <label for=""></label>
-                        </div>
-                    </td>
-                    <td>
-                        <div class="checkbox">
-                            <input class="styled" id="" type="checkbox" disabled="">
-                            <label for=""></label>
-                        </div>
-                    </td>
-                    <td>
-                        <a href="" class="btn btn-default btnformaintenance">
-                            <i class="fa fa-pencil-square-o fa-1x"></i></a>
-                    </td>
-                </tr>
-                </tbody>
+                <?php
+                $ojtlist_tbl =
+                    GSecureSQL::query(
+                        "SELECT * FROM ojttbl WHERE AdviserID = ?",
+                        TRUE,
+                        "s",
+                        $AdviserID
+                    );
+                foreach ($ojtlist_tbl as $value) {
+                    $StudentID = $value[1];
+                    $LastName = $value[2];
+                    $FirstName = $value[3];
+                    $MiddleName = $value[4];
+                    $Course = $value[5];
+                    $CompanyName = $value[6];
+                    $CompanyAddress = $value[7];
+                    $Supervisor = $value[8];
+                    $Position = $value[9];
+                    $ContactNumber = $value[10];
+                    $Email = $value[11];
+                    $Remarks = $value[12];
+                    $Hours = $value[13];
+                    $Endorsement = $value[14];
+                    $DTR = $value[15];
+                    $Waiver = $value[16];
+                    $TrainingPlan = $value[17];
+                    $MOA = $value[18];
+                    $Journal = $value[19];
+                    $Integration = $value[20];
+                    $PAF = $value[21];
+
+                    $FullName = $LastName . ", " . $FirstName . " " . $MiddleName;
+                    ?>
+                    <tbody>
+                    <tr>
+                        <td width="15%"><?php echo $StudentID; ?></td>
+                        <td width="20%"><?php echo $FullName; ?></td>
+                        <td width="20%"><?php echo $Course; ?></td>
+                        <td width="20%"><?php echo $CompanyName; ?></td>
+                        <td width="20%"><?php echo $CompanyAddress; ?></td>
+                        <td width="10%"><?php echo $Remarks; ?></td>
+                        <td width="10%"><?php echo $Hours; ?></td>
+                        <td>
+                            <div class="checkbox">
+                                <input class="styled" id="" type="checkbox" disabled>
+                                <label for=""></label>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="checkbox">
+                                <input class="styled" id="" type="checkbox" disabled>
+                                <label for=""></label>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="checkbox">
+                                <input class="styled" id="" type="checkbox" disabled>
+                                <label for=""></label>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="checkbox">
+                                <input class="styled" id="" type="checkbox" disabled>
+                                <label for=""></label>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="checkbox">
+                                <input class="styled" id="" type="checkbox" disabled>
+                                <label for=""></label>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="checkbox">
+                                <input class="styled" id="" type="checkbox" disabled>
+                                <label for=""></label>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="checkbox">
+                                <input class="styled" id="" type="checkbox" disabled>
+                                <label for=""></label>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="checkbox">
+                                <input class="styled" id="" type="checkbox" disabled>
+                                <label for=""></label>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="checkbox">
+                                <input class="styled" id="" type="checkbox" disabled>
+                                <label for=""></label>
+                            </div>
+                        </td>
+                        <td>
+                            <button class="btn btn-default">
+                                <i class="fa fa-pencil-square-o fa-1x"></i></button>
+                        </td>
+                    </tr>
+                    </tbody>
+                    <?php
+                }
+                ?>
             </table>
         </div>
     </div>
