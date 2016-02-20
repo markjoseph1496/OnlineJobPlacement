@@ -93,7 +93,7 @@ $adminevent_tbl =
                     </div>
                     <div class="navbar-collapse collapse">
                         <div class="search-side">
-                            <a href="#join" class="smoothScroll btn-system btn-large border-btn btn-yellow">Login</a>
+                            <a href="#join" class="smoothScroll btn-system btn-large border-btn btn-yellow">Sign In</a>
                         </div>
                         <!-- Start Navigation List -->
                         <ul class="nav navbar-nav navbar-right">
@@ -585,99 +585,7 @@ $adminevent_tbl =
                 </div>
             </div>
 
-
-            <div class="container">
-            <div class="row">
-
-                <!-- Start Memebr 1 -->
-                <div class="col-md-3 col-sm-6 col-xs-12 animated fadeIn delay-03" data-animation="fadeIn" data-animation-delay="03">
-                    <div class="team-member modern">
-                        <!-- Memebr Photo, Name & Position -->
-                        <div class="member-photo">
-                            <img alt="" src="images/team/face_1.png">
-                            <div class="member-name">John Doe <span>Developer</span>
-                        </div>
-                    </div>
-                    <!-- Memebr Words -->
-                    <div class="member-info">
-                        <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore fugiat.</p>
-                    </div>
-                    <!-- Start Progress Bar 1 -->
-                    <div class="progress-label">Photoshop</div>
-                    <div class="progress">
-                        <div class="progress-bar progress-bar-primary" data-progress-animation="96%" data-appear-animation-delay="400">
-                            <span class="percentage">96%</span>
-                        </div>
-                    </div>
-                    <!-- Start Progress Bar 2 -->
-                    <div class="progress-label">Logo Design</div>
-                    <div class="progress">
-                        <div class="progress-bar progress-bar-primary" data-progress-animation="88%" data-appear-animation-delay="800">
-                            <span class="percentage">88%</span>
-                        </div>
-                    </div>
-                    <!-- Start Progress Bar 3 -->
-                    <div class="progress-label">Vectors Design</div>
-                    <div class="progress">
-                        <div class="progress-bar progress-bar-primary" data-progress-animation="100%" data-appear-animation-delay="1200">
-                            <span class="percentage">100%</span>
-                        </div>
-                    </div>
-                    <!-- Memebr Social Links -->
-                    <div class="member-socail">
-                        <a class="twitter" href="#"><i class="fa fa-twitter"></i></a>
-                        <a class="gplus" href="#"><i class="fa fa-google-plus"></i></a>
-                        <a class="linkedin" href="#"><i class="fa fa-linkedin"></i></a>
-                        <a class="flickr" href="#"><i class="fa fa-flickr"></i></a>
-                        <a class="mail" href="#"><i class="fa fa-envelope"></i></a>
-                    </div>
-                </div>
-            </div>
-            <!-- End Memebr 1 -->
-
-          <!-- Start Memebr 2 -->
-          <div class="col-md-3 col-sm-6 col-xs-12 animated fadeIn delay-04" data-animation="fadeIn" data-animation-delay="04">
-            <div class="team-member modern">
-              <!-- Memebr Photo, Name & Position -->
-              <div class="member-photo">
-                <img alt="" src="images/team/face_2.png">
-                <div class="member-name">Silly Sally <span>Developer</span>
-                </div>
-              </div>
-              <!-- Memebr Words -->
-              <div class="member-info">
-                <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore fugiat.</p>
-              </div>
-              <!-- Start Progress Bar 1 -->
-              <div class="progress-label">Photoshop</div>
-              <div class="progress">
-                <div class="progress-bar progress-bar-primary" data-progress-animation="96%" data-appear-animation-delay="400">
-                  <span class="percentage">96%</span>
-                </div>
-              </div>
-              <!-- Start Progress Bar 2 -->
-              <div class="progress-label">Logo Design</div>
-              <div class="progress">
-                <div class="progress-bar progress-bar-primary" data-progress-animation="88%" data-appear-animation-delay="800">
-                  <span class="percentage">88%</span>
-                </div>
-              </div>
-              <!-- Start Progress Bar 3 -->
-              <div class="progress-label">Vectors Design</div>
-              <div class="progress">
-                <div class="progress-bar progress-bar-primary" data-progress-animation="100%" data-appear-animation-delay="1200">
-                  <span class="percentage">100%</span>
-                </div>
-              </div>
-            </div>
-          </div>
-          <!-- End Memebr 2 -->
-
-          </div>
-
-            </div>
-
-            
+        
             <div id="join" class="parallax" style="background-image:url(images/sti-bldg.jpg);">
                 <div class="overlay">
                     <div class="parallax-text-container-1">
@@ -685,10 +593,10 @@ $adminevent_tbl =
                             <div class="container">
                                 <div class="row">
                                     <div class="big-title text-center animated fadeInDown delay-01" data-animation="fadeInDown" data-animation-delay="01">
-                                        <h1 class="wite-text">Be Part of Us</h1>
+                                        <h1 class="wite-text">Sign In</h1>
                                     </div>
                                         
-                                    <!-- Start Service Icon 1 -->
+                                    <!-- Start Service Icon 1 
                                     <div class="col-md-6 col-sm-6 service-box service-center">
                                         <div class="service-boxed">
                                             <div class="service-icon" style="margin-top:-25px;">
@@ -699,10 +607,10 @@ $adminevent_tbl =
                                                 <p class="accent-color">This section is exclusively made for STI Caloocan's current and former students.</p>
                                             </div>
                                         </div>
-                                    </div>
+                                    </div>-->
                                     <!-- End Service Icon 1 -->
 
-                                    <!-- Start Service Icon 2 -->
+                                    <!-- Start Service Icon 2 
                                     <div class="col-md-6 col-sm-6 service-box service-center">
                                         <div class="service-boxed">
                                             <div class="service-icon" style="margin-top:-25px;">
@@ -713,8 +621,39 @@ $adminevent_tbl =
                                                 <p class="accent-color">This section is designed for STI partner companies.</p>
                                             </div>
                                         </div>
-                                    </div>
+                                    </div>-->
                                     <!-- End Service Icon 2 -->
+
+                                    <ul class="timeline">
+                                        <li>
+                                            <div class="timeline-image">
+                                                <img class="img-circle img-responsive" src="img/about/1.jpg" alt="">
+                                            </div>
+                                            <div class="timeline-panel">
+                                                <div class="timeline-heading">
+                                                    <h1>Student</h1>
+                                                    <h4 class="subheading">This section is exclusively made for STI Caloocan's current and former students.</h4>
+                                                </div>
+                                                <div class="timeline-body">
+                                                    <p class="text-muted">STI conceived the first and only Enrollment to Employment or E2E System.</p>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li class="timeline-inverted">
+                                            <div class="timeline-image">
+                                                <img class="img-circle img-responsive" src="img/about/1.jpg" alt="">
+                                            </div>
+                                            <div class="timeline-panel">
+                                                <div class="timeline-heading">
+                                                    <h1>Company</h1>
+                                                    <h4 class="subheading">This section is designed for STI partner companies.</h4>
+                                                </div>
+                                                <div class="timeline-body">
+                                                    <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt ut voluptatum eius sapiente, totam reiciendis temporibus qui quibusdam, recusandae sit vero unde, sed, incidunt et ea quo dolore laudantium consectetur!</p>
+                                                </div>
+                                            </div>
+                                        </li>
+                                    </ul>
                                 </div>
                             </div>
                         </div>
