@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50616
 File Encoding         : 65001
 
-Date: 2016-02-19 12:44:51
+Date: 2016-02-20 19:32:37
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -47,12 +47,15 @@ CREATE TABLE `admineventtbl` (
   `Status` varchar(255) DEFAULT NULL,
   `ProfileImage` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`EventID`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=latin1;
 
 -- ----------------------------
 -- Records of admineventtbl
 -- ----------------------------
 INSERT INTO admineventtbl VALUES ('1', '1', 'asdasd', '2016-02-04', '2016-02-25', 'asdasd', 'asdasdad', null, null);
+INSERT INTO admineventtbl VALUES ('2', '1', 'dddddddd', '2016-02-10', '2016-02-26', 'ddddddddd', 'dddddddddddddddddd', null, null);
+INSERT INTO admineventtbl VALUES ('3', '1', 'ddd', '2016-02-03', '2016-02-17', 'ddddddddddd', 'ddddddddddddd', null, null);
+INSERT INTO admineventtbl VALUES ('4', '1', 'dddddddddddd', '2016-02-17', '2016-02-26', 'ddddddd', 'dddddddddd', null, null);
 
 -- ----------------------------
 -- Table structure for `admintbl`
@@ -77,7 +80,7 @@ CREATE TABLE `admintbl` (
 -- Records of admintbl
 -- ----------------------------
 INSERT INTO admintbl VALUES ('1', 'markjoseph1496', '0a7675b497c9e79aa2ddd1dbd39ed429b54bc044f704d85b4427ff23f35df299fcae46a6d86d6e900da432d59fd731ab6a643cea23de2d59ac7274209962b3fd', '59eba39dc8615e72ae9b7a0d76b06fc99aace644b3460c7b0a2b0d8c236663733e2ad0df55ea18a352a3c015355b362655ed563f1164c3682b6742a2fb438b85', 'Mark Joseph', 'Flaviano', 'Cinco', 'Janitor', '2890 A. Pablo St. Karuhatan, Valenzuela City.', '09355585931', 'Admin');
-INSERT INTO admintbl VALUES ('13', '1', '16d917462347d622d56f4269bf74e305dbdc14294e159efe502679eee9df8f49009ca5897ada300ea757d0e0e561187b1d17713e1a561dd6247829155f6c312c', '4a800106f6fa85d4053db33f3f6dce2439efdb6a13d28caae8c2d9694c70084d36b53fed0240277512430e6cf662cdedf0e5533a9e9703aee3b4207ddfdf1f74', 'adsadsad', 'sadsa', 'dsasad', 'dsad', 'sadsadsa', '123421312', 'Adviser');
+INSERT INTO admintbl VALUES ('13', '1', '16d917462347d622d56f4269bf74e305dbdc14294e159efe502679eee9df8f49009ca5897ada300ea757d0e0e561187b1d17713e1a561dd6247829155f6c312c', '4a800106f6fa85d4053db33f3f6dce2439efdb6a13d28caae8c2d9694c70084d36b53fed0240277512430e6cf662cdedf0e5533a9e9703aee3b4207ddfdf1f74', 'Mark Josephd', 'sadsa', 'Cinco', 'dsad', 'sadsadsa', '123421312', 'Adviser');
 
 -- ----------------------------
 -- Table structure for `applicationtbl`
@@ -605,13 +608,13 @@ CREATE TABLE `ojttbl` (
   `Certificate` varchar(255) DEFAULT NULL,
   `AdviserID` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=184 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=latin1;
 
 -- ----------------------------
 -- Records of ojttbl
 -- ----------------------------
-INSERT INTO ojttbl VALUES ('1', '00820131192', 'FIRMANTE', 'MARY ANN', 'LAPORE', 'BSIT', 'ONLY @ PC GILMORE COMPUTER CENTER', 'Unit 12, 4th floor Fisher Mall, Brgy. Sta. Cruz, Quezon City', 'Mr. Conrad Gueta', 'OIC', '', null, 'ee', '486', 'off', 'off', 'on', 'on', 'on', 'on', 'on', 'on', 'on', '13');
-INSERT INTO ojttbl VALUES ('2', '00820120173', 'MENDIOLA', 'MARK ANTHONY', 'ACERO', 'BSIT', 'Transcom Worldwide Philippines', '6F Cyberscape Alpha Bldg., Garnet and Sapphire Road, Ortigas, Pasig City', 'Mr. Kenneth Macaraeg', 'IT ADMIN', '', null, null, null, null, null, null, null, null, null, null, null, null, '13');
+INSERT INTO ojttbl VALUES ('1', '00820131192', 'FIRMANTE', 'MARY ANN', 'LAPORE', 'BSIT', 'ONLY @ PC GILMORE COMPUTER CENTER', 'Unit 12, 4th floor Fisher Mall, Brgy. Sta. Cruz, Quezon City', 'Mr. Conrad Guetaw', 'OIC', '', null, '', '200', 'on', 'on', 'on', 'on', 'on', 'on', 'on', 'on', 'on', '13');
+INSERT INTO ojttbl VALUES ('2', '00820120173', 'MENDIOLA', 'MARK ANTHONY', 'ACERO', 'BSIT', 'Transcom Worldwide Philippines', '6F Cyberscape Alpha Bldg., Garnet and Sapphire Road, Ortigas, Pasig City', 'Mr. Kenneth Macaraeg', 'IT ADMIN', '', null, 'INC', '222', 'on', 'on', 'on', 'on', 'on', 'off', 'off', 'off', 'off', '13');
 INSERT INTO ojttbl VALUES ('3', '00820120330', 'MINGOY', 'RONNEL', 'GALVANTE', 'BSIT', 'Malabon City Hall', 'F. Sevilla Blvd., Malabon City', 'Ms. Herminia B. Cunanan', 'OJT Coordinator', '', null, null, null, null, null, null, null, null, null, null, null, null, '13');
 INSERT INTO ojttbl VALUES ('4', '00820120442', 'NUÃ‘EZ', 'EDRICK', 'BERIDO', 'BSIT', 'Micro Tech 96 Co.', '11th Avenue, Grace Park, Caloocan City', 'Mr. Roderick F. Dilag', 'Owner', '', null, null, null, null, null, null, null, null, null, null, null, null, '13');
 INSERT INTO ojttbl VALUES ('5', '00820121466', 'OREO', 'REYNA', '', 'BSIT', 'PLDT/NOGMMFXATOP', 'PLDT Diliman Exchange East Avenue, Quezon City', 'Mr. Domingo Roque', 'Sr. Telecom Manager', '', null, null, null, null, null, null, null, null, null, null, null, null, '13');
