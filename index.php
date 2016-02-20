@@ -377,7 +377,7 @@ $adminevent_tbl =
                                     </div>
                                     <div class="portfolio-details">
                                         <a href="#">
-                                            <h4>Are Your Ready for Job Fair 2016</h4>
+                                            <h4>Job Fair 2015</h4>
                                         </a>
                                     </div>
                                 </div>
@@ -393,7 +393,7 @@ $adminevent_tbl =
                                     </div>
                                     <div class="portfolio-details">
                                         <a href="#">
-                                            <h4>STI</h4>
+                                            <h4>Preparation for Your Workplace 2015</h4>
                                         </a>
                                     </div>
                                 </div>
@@ -439,35 +439,86 @@ $adminevent_tbl =
 
                     <div class="row">
                         <div class="col-md-12">
+
                             <!-- Start Recent Posts Carousel -->
                             <div class="latest-posts">
                                 <h4 class="classic-title wite-text"><strong>Latest News</strong></h4>
-                                <div class="latest-posts-classic custom-carousel touch-carousel" data-appeared-items="2">
-                                    <?php 
-                                        foreach($adminevent_tbl as $adminevent)
-                                        { 
-                                            $EventTitle = $adminevent_tbl[0][2];
-                                            $EventDateF = $adminevent_tbl[0][3];
-                                            $EventDateT = $adminevent_tbl[0][4];
-                                            $Description = $adminevent_tbl[0][6];
-                                            $ProfileImage = $adminevent_tbl[0][8];
-                                    ?>
+                                <div class="latest-posts-classic custom-carousel touch-carousel" data-appeared-items="3">
 
-                                        <div class="post-row item">
+                                    <!-- Posts 1 -->
+                                    <div class="post-row item">
                                         <div class="left-meta-post">
-                                            <div class="post-date"><span class="day">28</span><span class="month">Dec</span>
-                                            </div>
+                                            <div class="post-date"><span class="day">28</span><span class="month">Dec</span></div>
                                             <div class="post-type"><i class="fa fa-picture-o"></i></div>
                                         </div>
-                                        <h3 class="post-title"><a href="#"><?php echo $EventTitle?></a></h3>
+                                        <h3 class="post-title"><a href="#">Standard Post With Image</a></h3>
                                         <div class="post-contents">
                                             <p>
-                                                <?php echo $Description?>
+                                                dhasdjasgbdhasbdjbsahj
                                                 <a class="read-more" href="#">Read More...</a>
                                             </p>
                                         </div>
                                     </div>
-                                    <?php } ?>
+
+                                    <!-- Posts 1 -->
+                                    <div class="post-row item">
+                                        <div class="left-meta-post">
+                                            <div class="post-date"><span class="day">28</span><span class="month">Dec</span></div>
+                                            <div class="post-type"><i class="fa fa-picture-o"></i></div>
+                                        </div>
+                                        <h3 class="post-title"><a href="#">Standard Post With Image</a></h3>
+                                        <div class="post-contents">
+                                            <p>
+                                                dhasdjasgbdhasbdjbsahj
+                                                <a class="read-more" href="#">Read More...</a>
+                                            </p>
+                                        </div>
+                                    </div>
+
+                                    <!-- Posts 1 -->
+                                    <div class="post-row item">
+                                        <div class="left-meta-post">
+                                            <div class="post-date"><span class="day">28</span><span class="month">Dec</span></div>
+                                            <div class="post-type"><i class="fa fa-picture-o"></i></div>
+                                        </div>
+                                        <h3 class="post-title"><a href="#">Standard Post With Image</a></h3>
+                                        <div class="post-contents">
+                                            <p>
+                                                dhasdjasgbdhasbdjbsahj
+                                                <a class="read-more" href="#">Read More...</a>
+                                            </p>
+                                        </div>
+                                    </div>
+
+                                    <!-- Posts 1 -->
+                                    <div class="post-row item">
+                                        <div class="left-meta-post">
+                                            <div class="post-date"><span class="day">28</span><span class="month">Dec</span></div>
+                                            <div class="post-type"><i class="fa fa-picture-o"></i></div>
+                                        </div>
+                                        <h3 class="post-title"><a href="#">Standard Post With Image</a></h3>
+                                        <div class="post-contents">
+                                            <p>
+                                                dhasdjasgbdhasbdjbsahj
+                                                <a class="read-more" href="#">Read More...</a>
+                                            </p>
+                                        </div>
+                                    </div>
+
+                                    <!-- Posts 1 -->
+                                    <div class="post-row item">
+                                        <div class="left-meta-post">
+                                            <div class="post-date"><span class="day">28</span><span class="month">Dec</span></div>
+                                            <div class="post-type"><i class="fa fa-picture-o"></i></div>
+                                        </div>
+                                        <h3 class="post-title"><a href="#">Standard Post With Image</a></h3>
+                                        <div class="post-contents">
+                                            <p>
+                                                dhasdjasgbdhasbdjbsahj
+                                                <a class="read-more" href="#">Read More...</a>
+                                            </p>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                             <!-- End Recent Posts Carousel -->
