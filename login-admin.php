@@ -2,7 +2,7 @@
 <html>
 <head>
 
-    <title>OJPMS | Login Administrator</title>
+    <title>OJPMS | Administrator Sign In</title>
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="css/bootstrap.min.css"/>
