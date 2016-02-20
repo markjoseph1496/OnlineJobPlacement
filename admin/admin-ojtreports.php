@@ -313,11 +313,7 @@ if (isset($_SESSION['AdminID'])) {
                     <label>
                         <center><b>Search by: </b></center>
                     </label>
-                    <select class="form-control" style="width:250px;">
-                        <option value="00">- Status</option>
-                        <option value="asd">adsa</option>
-                        <option value="ada">ada</option>
-                    </select>
+                     <input type="text" class="form-control" value="">
                 </div>
                 <div class="col-sm-2">
                     <button type="submit" class="btn-system btn-large border-btn"
