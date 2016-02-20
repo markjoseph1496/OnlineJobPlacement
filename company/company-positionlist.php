@@ -339,10 +339,10 @@ $ReqSkills = $companyupdate_tbl[0][15];
                 <thead>
                 <tr>
                     <th width='30%' class='tabletitle'>Positions</th>
-                    <th width='15%' class='tabletitle'>From</th>
-                    <th width='15%' class='tabletitle'>To</th>
+                    <th width='20%' class='tabletitle'>From</th>
+                    <th width='20%' class='tabletitle'>To</th>
                     <th width='20%' class='tabletitle'>Available Position</th>
-                    <th width='20%' class='tabletitle'>Action</th>
+                    <th width='10%' class='tabletitle'>Action</th>
                 <tr>
                 </thead>
                 <?php
@@ -373,10 +373,10 @@ $ReqSkills = $companyupdate_tbl[0][15];
                     <tbody>
                     <tr>
                         <td width=30% class='tabletitle'><?php echo $PositionTitle; ?></td>
-                        <td width=15% class='tabletitle'><?php echo $PostingDateFrom; ?></td>
-                        <td width=15% class='tabletitle'><?php echo $PostingDateTo; ?></td>
-                        <td width=20% class='tabletitle'><?php echo $AvPosition; ?></td>
-                        <td width=20% class='tabletitle'>
+                        <td width=20% class='tabletitle'><?php echo $PostingDateFrom; ?></td>
+                        <td width=20% class='tabletitle'><?php echo $PostingDateTo; ?></td>
+                        <td width=20% class='tabletitle' style = "text-indent:50px;"><?php echo $AvPosition; ?></td>
+                        <td width=10% class='tabletitle'>
                             <button name="btnedit" data-toggle='modal'
                                     data-target='#UpdatePosition<?php echo $PositionID; ?>' class='btn btn-default'>
                                 <i class='fa fa-eye'></i>

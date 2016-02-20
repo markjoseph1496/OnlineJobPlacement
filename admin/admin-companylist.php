@@ -317,9 +317,9 @@ if(isset($_SESSION['AdminID'])){
 
                 </tr>
                 <tr>
-                    <th width='15%' class='tabletitle'>Company Name</th>
-                    <th width='10%' class='tabletitle'>Location</th>
-                    <th width='15%' class='tabletitle'>Industry</th>
+                    <th width='20%' class='tabletitle'>Company Name</th>
+                    <th width='10%' class='tabletitle'>Locationh</th>
+                    <th width='20%' class='tabletitle'>Industry</th>
                     <th width='15%' class='tabletitle'>Contact Number</th>
                     <th width='15%' class='tabletitle'>Email Address</th>
                     <th width='15%' class='tabletitle'>Website</th>
@@ -351,12 +351,12 @@ if(isset($_SESSION['AdminID'])){
                 }
                 ?>
                 <tr>
-                    <td width=15% class=tabletitle>
+                    <td width=20% class=tabletitle>
                         <a target="_blank"
                            href='../companyprofile.php?id=<?php echo $CompanyID; ?>'><?php echo $CompanyName; ?></a>
                     </td>
                     <td width=10% class=tabletitle><?php echo $City; ?></td>
-                    <td width='15%' class='tabletitle'><?php echo $Industry; ?></td>
+                    <td width='20%' class='tabletitle'><?php echo $Industry; ?></td>
                     <td width='15%' class='tabletitle'><?php echo $ContactNo; ?></td>
                     <td width='15%' class='tabletitle'><?php echo $Email; ?></td>
                     <td width='15%' class='tabletitle'>
