@@ -1,5 +1,12 @@
 <?php
 include('../connection.php');
+session_start();
+
+if(isset($_SESSION['AdviserID'])){
+    $AdviserID = $_SESSION['AdviserID'];
+}else{
+    header("location: ../login-adviser.php");
+}
 
 if (isset($_POST['StudentID'])) {
     $StudentID = $_POST['StudentID'];
@@ -104,4 +111,86 @@ if (isset($_POST['StudentID'])) {
 
     header('location: ojt-adviser.php');
 
+}
+
+//Update ng info ng User ni Company
+if (isset($_GET['btnsaveuser'])) {
+    $FirstName = $_GET['FirstName'];
+    $MiddleName = $_GET['MiddleName'];
+    $LastName = $_GET['LastName'];
+    $Position = $_GET['Position'];
+    $Address = $_GET['Address'];
+    $ContactNumber = $_GET['ContactNumber'];
+
+    GSecureSQL::query(
+        "UPDATE admintbl SET FirstName = ?, MiddleName = ?, LastName = ?, Position = ?, Address = ?, ContactNumber = ? WHERE AdminID = ?",
+        FALSE,
+        "sssssss",
+        $FirstName,
+        $MiddleName,
+        $LastName,
+        $Position,
+        $Address,
+        $ContactNumber,
+        $AdviserID
+    );
+    header("location: ojt-account.php?id=3");
+}
+
+
+//Change Company Username
+if (isset($_POST['ModalNewUsername'])) {
+    $Username = $_POST['ModalNewUsername'];
+
+    GSecureSQL::query(
+        "UPDATE admintbl SET Username = ? WHERE `AdminID` = ?",
+        FALSE,
+        "ss",
+        $Username,
+        $AdviserID 
+    );
+
+    header("location: ojt-account.php?id=1");
+
+}
+
+//Change Company Password
+if (isset($_POST['ModalNewPassword'])) {
+    $OldPassword = $_POST['ModalOldPassword'];
+    $NewPassword = $_POST['ModalNewPassword'];
+
+    $company_tbl =
+        GSecureSQL::query(
+            "SELECT
+                `Password`,
+                `SaltedPassword`
+            FROM `admintbl` WHERE `AdminID ` = ?",
+            TRUE,
+            "s",
+            $AdviserID 
+        );
+
+    if (count($company_tbl)) {
+        if (hash('sha512', $OldPassword . $company_tbl[0][1]) == $company_tbl[0][0]) {
+
+            $salt = hash('sha512', mt_rand(0, PHP_INT_MAX) . mt_rand(0, PHP_INT_MAX) . mt_rand(0, PHP_INT_MAX));
+            $NewPassword = hash('sha512', $NewPassword . $salt);
+
+            GSecureSQL::query(
+                "UPDATE admintbl SET Password = ? , SaltedPassword = ? WHERE AdminID = ?",
+                FALSE,
+                "sss",
+                $NewPassword,
+                $salt,
+                $AdviserID
+            );
+
+            header("location: ojt-account.php?id=2");
+
+        } else {
+            echo "Wrong password";
+        }
+    } else {
+        echo "Wrong password";
+    }
 }

@@ -252,7 +252,90 @@ $adviser_tbl =
         <br><br><br>
 
         <div class="container">
-            <form name="UpdateAdmin" id="UpdateAdmin" autocomplete="off" action="functions.php" method="POST">
+        <!-- Modal for Username -->
+                    <div class="modal fade" id="ChangeOJTUsername" role="dialog">
+                        <div class="modal-dialog" style="padding:100px">
+                            <!-- Modal content-->
+                            <form id="change-Username-form" autocomplete="off" method="POST" action="functions.php">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                        <h4 class="modal-title">Change Username</h4>
+                                    </div>
+                                    <div class="modal-body">
+                                        <div class="col-md-15 fieldcol">
+                                            <label = "usr" class = "control-label"> New Username: </label>
+                                            <div class="form-group">
+                                                <input type="text" name="ModalNewUsername" id="ModalNewUsername" class="form-control">
+                                            </div>
+                                        </div>
+
+                                        <div class="col-md-15 fieldcol">
+                                            <label = "usr" class = "control-label"> Confirm Username: </label>
+                                            <div class="form-group">
+                                                <input type="text" name="ModalConfirmUsername" id="ModalConfirmUsername" class="form-control">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="submit" class="btn btn-primary" name="btnChangeUsername">Change Email</button>
+                                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                <!-- End Modal ng Change Email -->
+                <!-- Modal ng Change Password -->
+                    <div class="modal fade" id="ChangePassword" role="dialog">
+                        <div class="modal-dialog" style="padding:100px">
+
+                            <!-- Modal content-->
+                            <form id="change-password-form" autocomplete="off" method="POST" action="functions.php">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                        <h4 class="modal-title">Change Password</h4>
+                                    </div>
+                                    <div class="modal-body">
+                                        <div class="col-md-15 fieldcol">
+                                            <div id="message"></div>
+                                            <br>
+                                            <label = "usr" class = "control-label"> Old Password: </label>
+                                            <div class="form-group">
+                                                <input type="password" name="ModalOldPassword" id="ModalOldPassword"
+                                                       class="form-control">
+                                            </div>
+                                        </div>
+
+
+                                        <div class="col-md-15 fieldcol">
+                                            <label = "usr" class = "control-label"> New Password: </label>
+                                            <div class="form-group">
+                                                <input type="password" name="ModalNewPassword" id="ModalNewPassword"
+                                                       class="form-control">
+                                            </div>
+                                        </div>
+
+
+                                        <div class="col-md-15 fieldcol">
+                                            <label = "usr" class = "control-label"> Confirm Password: </label>
+                                            <div class="form-group">
+                                                <input type="password" name="ModalConfirmPassword" id="ModalConfirmPassword"
+                                                       class="form-control">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="submit" id="submitPassword" class="btn btn-primary">Change Password</button>
+                                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                <!-- End Modal ng Change Password -->
+            <form name="UpdateAdviser" id="UpdateAdviser" autocomplete="off" action="functions.php">
                 <div class="col-md-12">
                     <div class="row">
                         <?php
@@ -277,50 +360,51 @@ $adviser_tbl =
                                 echo '
                             <div class="alert alert-success">
                                 <span class="glyphicon glyphicon-info-sign"></span> 
-                                Personal info successfully updated.
+                                OJT Account successfully updated.
                             </div>
                             ';
                             }
 
                         }
                         ?>
-                        <div class="col-md-2">
-                            <label>Username:</label>
-                        </div>
-                        <div class="col-md-4">
-                            <div class="form-group">
-                                <label><?php echo $Username; ?></label>
-                            </div>
-                        </div>
-                        <div class="col-md-3">
-                            <div class="form-group">
-                                <div class="box">
-                                    <button class="btn btn-default" data-toggle="modal" data-target="#ChangeUsername">Change
-                                        Username
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-md-2">
-                            <label>Password:</label>
-                        </div>
-                        <div class="col-md-4">
-                            <div class="form-group">
-                                <label>**********</label>
-                            </div>
-                        </div>
-                        <div class="col-md-3">
-                            <div class="form-group">
-                                <div class="box">
-                                    <button class="btn btn-default" data-toggle="modal" data-target="#ChangePassword">
-                                        ChangePassword
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                        <div class="row field">
+                                        <div class = "col-md-2 fieldcol">
+                                           <label = "usr" class = "control-label"> Username: </label>
+                                        </div>
+                                        <div class = "col-md-4 fieldcol">
+                                            <div class="form-group">
+                                                  <label = "usr" class = "control-label"><?php echo $Username; ?></label>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-3 fieldcol">
+                                            <div class="form-group">
+                                                <div class="box">
+                                                    <button class="btn btn-default" data-toggle="modal" data-target="#ChangeOJTUsername">Change
+                                                        Username
+                                                    </button>
+                                                </div>
+                                            </div>
+                                        </div>
+                        </div> 
+                        <div class="row field">
+                                        <div class = "col-md-2 fieldcol">
+                                           <label = "usr" class = "control-label"> Password: </label>
+                                        </div>
+                                        <div class = "col-md-4 fieldcol">
+                                            <div class="form-group">
+                                                  <label = "usr" class = "control-label">*****</label>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-3 fieldcol">
+                                            <div class="form-group">
+                                                <div class="box">
+                                                    <button class="btn btn-default" data-toggle="modal" data-target="#ChangePassword">
+                                                        ChangePassword
+                                                    </button>
+                                                </div>
+                                            </div>
+                                        </div>
+                        </div> 
                     <div class="row">
                         <div class="col-md-2">
                             <label>First Name <span>(*)</span></label>
@@ -392,9 +476,8 @@ $adviser_tbl =
                 <div class="hr5" style="margin-top:35px;margin-bottom:40px;"></div>
                 <div class="field">
                     <div class="text-center">
-                        <button type="submit" class="btn-system btn-large">Save</button>
-                        <button type="submit" class="btn-system btn-large btn-black">Cancel</button>
-                    </div>
+                        <button type="submit" class="btn-system btn-large" id="btnsave" name="btnsaveuser">Save</button>
+                    </div>           
                 </div>
             </form>
         </div>
@@ -410,14 +493,14 @@ $adviser_tbl =
                 invalid: "glyphicon glyphicon-remove",
                 validating: "glyphicon glyphicon-refresh"
             },
-           s: {
+            fields: {
                 ModalNewUsername: {
                     validators: {
                         notEmpty: {
                             message: "Username is required."
                         },
                         identical: {
-                           : "ModalConfirmUsername",
+                            field: "ModalConfirmUsername",
                             message: "Username and Confirm Username mismatched."
                         }
                     }
@@ -428,7 +511,7 @@ $adviser_tbl =
                             message: "Username is required."
                         },
                         identical: {
-                           : "ModalNewUsername",
+                            field: "ModalNewUsername",
                             message: "Username and Confirm Username mismatched."
                         }
                     }
@@ -442,7 +525,7 @@ $adviser_tbl =
                 invalid: "glyphicon glyphicon-remove",
                 validating: "glyphicon glyphicon-refresh"
             },
-           s: {
+            fields: {
                 ModalOldPassword: {
                     validators: {
                         notEmpty: {
@@ -463,7 +546,7 @@ $adviser_tbl =
                             message: "Confirm Password is required."
                         },
                         identical: {
-                           : "ModalNewPassword",
+                            field: "ModalNewPassword",
                             message: "Password mismatched."
                         }
                     }
@@ -471,17 +554,17 @@ $adviser_tbl =
             }
         });
 
-        $("#UpdateAdmin").bootstrapValidator({
+        $("#UpdateAdviser").bootstrapValidator({
             feedbackIcons: {
                 valid: "glyphicon glyphicon-ok",
                 invalid: "glyphicon glyphicon-remove",
                 validating: "glyphicon glyphicon-refresh"
             },
-           s: {
+            fields: {
                 FirstName: {
                     validators: {
                         notEmpty: {
-                            message: "This is required."
+                            message: "First Name is required."
                         },
                         regexp: {
                             regexp: /^[a-z\s]+$/i,
@@ -500,7 +583,7 @@ $adviser_tbl =
                 LastName: {
                     validators: {
                         notEmpty: {
-                            message: "This is required."
+                            message: "Last Name is required."
                         },
                         regexp: {
                             regexp: /^[a-z\s]+$/i,
@@ -511,35 +594,24 @@ $adviser_tbl =
                 Position: {
                     validators: {
                         notEmpty: {
-                            message: "This is required."
-                        }
-                    }
-                },
-                Department: {
-                    validators: {
-                        notEmpty: {
-                            message: "This is required."
+                            message: "Position is required."
                         }
                     }
                 },
                 Address: {
                     validators: {
                         notEmpty: {
-                            message: "This is required."
+                            message: "Address is required."
                         }
                     }
                 },
                 ContactNumber: {
                     validators: {
                         notEmpty: {
-                            message: "This is required."
-                        },
-                        regexp: {
-                            regexp: /^[0-9]+$/i,
-                            message: "Contact Number can consist of numeric characters only"
+                            message: "Contact Number is required."
                         }
                     }
-                }
+                },
             }
         });
     });
