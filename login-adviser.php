@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>OJPMS | Login Adviser</title>
+    <title>OJPMS | Adviser Sign In</title>
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="css/bootstrap.min.css"/>
@@ -26,6 +26,9 @@
 </head>
 <body class="login-adviser">
     <div class="box effect3" style="margin-top:5%;">
+        <a href="index.php"><img src="images/logo/ojpms-logo.png" title="OJPMS - Home" style="width:70%;height:70%;"></a>
+    </div>
+    <div class="box effect3" style="margin-top:1%;">
         <h2 class="register-title">Sign In</h2>
         <form id="myForm" action="login.php" method="POST" autocomplete="off">
             <div id="message" style="color:#d95c5c;font-weight:600;"></div>

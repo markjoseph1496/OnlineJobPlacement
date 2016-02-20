@@ -302,10 +302,17 @@ $Progress = $progress_tbl[0][0];
                         <!--Sidebar-->
                         <div class="col-md-3 sidebar left-sidebar">
 
+
                             <div>
                                 <label><i class="fa fa-bookmark"></i> Bookmarked Jobs: <a
                                         href="bookmarked-jobs.php">(0)</a>&nbsp;
                                 </label>
+                            </div>
+
+                            <div>
+                                <label><i class="fa fa-search"></i> Search by: 
+                                </label>
+                                <input type="text" class="form-control" value="">
                             </div>
 
                             <div>

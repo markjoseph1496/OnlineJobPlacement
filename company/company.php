@@ -207,7 +207,7 @@ if (count($LOGquery1) > 0) {
                                     <a href="#" class="dropdown-toggle" data-toggle="dropdown"><b class="fa fa-user"></b>
                                         Welcome, <b><?php echo $cFirstName . " " . $cLastName; ?> </b><b class="caret"></b></a>
                                     <ul class="dropdown-menu">
-                                        <li><a href="#">Profile <b class="fa fa-user" style="float:right;"></b></a></li>
+                                        <li><a href="company-settingsaccount.php">Profile <b class="fa fa-user" style="float:right;"></b></a></li>
                                         <li><a href="company-settings.php">Settings <b class="fa fa-cog"
                                                                                                    style="float:right;"></b></a>
                                         </li>

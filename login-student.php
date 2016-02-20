@@ -2,7 +2,7 @@
 <html>
 <head>
 
-    <title>OJPMS | Login Student</title>
+    <title>OJPMS | Student Sign In</title>
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="css/bootstrap.min.css" />
@@ -28,7 +28,7 @@
 </head>
 <body class="login-student">
     <div class="box effect3" style="margin-top:5%;">
-        <a href="index.php"><img src="images/logo/ojpms-cube.png" title="OJPMS - Home"style="width:20%;height:20%;"></a>
+        <a href="index.php"><img src="images/logo/ojpms-logo.png" title="OJPMS - Home" style="width:70%;height:70%;"></a>
     </div>
     <div class="box effect3" style="margin-top:1%;">
         <h2 class="register-title">Sign In</h2>

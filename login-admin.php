@@ -2,7 +2,7 @@
 <html>
 <head>
 
-    <title>OJPMS | Login Administrator</title>
+    <title>OJPMS | Administrator Sign In</title>
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="css/bootstrap.min.css"/>
@@ -28,6 +28,9 @@
 
 <body class="admin-login">
     <div class="box effect3" style="margin-top:5%;">
+        <a href="index.php"><img src="images/logo/ojpms-logo.png" title="OJPMS - Home" style="width:70%;height:70%;"></a>
+    </div>
+    <div class="box effect3" style="margin-top:1%;">
         <h2>Good day, Admin!</h2>
         <h4>Sign In</h4>
         <form id="myForm" action="login.php" method="POST" autocomplete="off">
