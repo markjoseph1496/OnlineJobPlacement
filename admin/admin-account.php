@@ -378,9 +378,7 @@ $ContactNumber = $admin_tbl[0][9];
             <div class="container">
                 <div class="row">
                     <div class="col-md-6">
-                        <h2>Personal Information</h2>
-                    </div>
-                    <div class="col-md-6">
+                        <h2>Account</h2>
                     </div>
                 </div>
             </div>
@@ -388,42 +386,42 @@ $ContactNumber = $admin_tbl[0][9];
         <!-- End Page Banner -->
 
         <div id="content">
-
             <div class="container">
                 <form name="UpdateAdmin" id="UpdateAdmin" autocomplete="off" action="functions.php" method="POST">
-                    <div class="col-md-12">
-                        <div class="row">
-                            <?php
+                    <?php
 
-                            if (isset($_GET['id'])) {
-                                $id = $_GET['id'];
-                                if ($id == 1) {
-                                    echo '
-                                <div class="alert alert-success">
-                                    <span class="glyphicon glyphicon-info-sign"></span> 
-                                    Username successfully changed.
-                                </div>
-                                ';
-                                } elseif ($id == 2) {
-                                    echo '
-                                <div class="alert alert-success">
-                                    <span class="glyphicon glyphicon-info-sign"></span> 
-                                    Password successfully changed.
-                                </div>
-                                ';
-                                } elseif ($id == 3) {
-                                    echo '
-                                <div class="alert alert-success">
-                                    <span class="glyphicon glyphicon-info-sign"></span> 
-                                    Personal info successfully updated.
-                                </div>
-                                ';
-                                }
-
+                        if (isset($_GET['id'])) {
+                            $id = $_GET['id'];
+                            if ($id == 1) {
+                                echo '
+                            <div class="alert alert-success">
+                                <span class="glyphicon glyphicon-info-sign"></span> 
+                                Username successfully changed.
+                            </div>
+                            ';
+                            } elseif ($id == 2) {
+                                echo '
+                            <div class="alert alert-success">
+                                <span class="glyphicon glyphicon-info-sign"></span> 
+                                Password successfully changed.
+                            </div>
+                            ';
+                            } elseif ($id == 3) {
+                                echo '
+                            <div class="alert alert-success">
+                                <span class="glyphicon glyphicon-info-sign"></span> 
+                                Personal info successfully updated.
+                            </div>
+                            ';
                             }
-                            ?>
+
+                        }
+                    ?>
+
+                    <div class="">
+                        <div class="row">
                             <div class="col-md-2">
-                                <label> Username: </label>
+                                <label>Username:</label>
                             </div>
                             <div class="col-md-4">
                                 <div class="form-group">
