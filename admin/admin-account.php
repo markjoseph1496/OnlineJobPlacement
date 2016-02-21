@@ -133,14 +133,14 @@ $ContactNumber = $admin_tbl[0][9];
                         </div>
                         <div class="modal-body">
                             <div class="col-md-15">
-                                <label = "usr" class = "control-label"> New Username: </label>
+                                <label> New Username: </label>
                                 <div class="form-group">
                                     <input type="text" name="ModalNewUsername" id="ModalNewUsername" class="form-control">
                                 </div>
                             </div>
 
                             <div class="col-md-15">
-                                <label = "usr" class = "control-label"> Confirm Username: </label>
+                                <label> Confirm Username: </label>
                                 <div class="form-group">
                                     <input type="text" name="ModalConfirmUsername" id="ModalConfirmUsername" class="form-control">
                                 </div>
@@ -171,7 +171,7 @@ $ContactNumber = $admin_tbl[0][9];
                             <div class="col-md-15">
                                 <div id="message"></div>
                                 <br>
-                                <label = "usr" class = "control-label"> Old Password: </label>
+                                <label> Old Password: </label>
                                 <div class="form-group">
                                     <input type="password" name="ModalOldPassword" id="ModalOldPassword"
                                            class="form-control">
@@ -180,7 +180,7 @@ $ContactNumber = $admin_tbl[0][9];
 
 
                             <div class="col-md-15">
-                                <label = "usr" class = "control-label"> New Password: </label>
+                                <label> New Password: </label>
                                 <div class="form-group">
                                     <input type="password" name="ModalNewPassword" id="ModalNewPassword"
                                            class="form-control">
@@ -189,7 +189,7 @@ $ContactNumber = $admin_tbl[0][9];
 
 
                             <div class="col-md-15">
-                                <label = "usr" class = "control-label"> Confirm Password: </label>
+                                <label> Confirm Password: </label>
                                 <div class="form-group">
                                     <input type="password" name="ModalConfirmPassword" id="ModalConfirmPassword"
                                            class="form-control">
@@ -215,36 +215,34 @@ $ContactNumber = $admin_tbl[0][9];
             <div class="top-bar">
                 <div class="container">
                     <div class="row">
-                        <div class="col-md-6">
-                            <!-- Start Contact Info -->
+                        <div class="col-md-7">
                             &nbsp;
-                            <!-- End Contact Info -->
                         </div>
                         <!-- .col-md-6 -->
-                        <div class="col-md-6">
+                        <div class="col-md-5">
                             <!-- Notification -->
-                                <ul class="nav navbar-nav navbar-right">
-                                    <li class="dropdown icon-border" id="notificationLink">
-                                        <span id="notification_count">3</span>
-                                        <a href="#" class="bell itl-tooltip" data-placement="bottom" data-toggle="dropdown"><i
-                                                class="fa fa-bell"></i></a>
-                                        <ul id="notificationContainer" class="dropdown-menu dropdown-menu-inverse">
-                                            <li class="dropdown-header"><label>Notification</label></li>
-                                            <li class="disabled"><a href="#" tabindex="-1">No new notification.</a></li>
-                                            <li><a href="#" tabindex="-1">This is a notification.</a></li>
-                                            <li class="divider"></li>
-                                            <li><a href="../notification/notification.php" tabindex="-1">See All</a></li>
-                                        </ul>
-                                    </li>
-                                    <li class="dropdown">
-                                        <a href="#" class="dropdown-toggle" data-toggle="dropdown"><b class="fa fa-user"></b> Welcome, <b>Admin Tim </b><b class="caret"></b></a>
-                                        <ul class="dropdown-menu">
-                                            <li><a href="admin-account.php">Account <b class="fa fa-user" style="float:right;"></b></a></li>
-                                            <li class="divider"></li>
-                                            <li><a href="#" data-target='#Logout' data-toggle='modal'>Sign Out <b class="fa fa-sign-out" style="float:right;"></b></a></li>
-                                        </ul>
-                                    </li>
-                                </ul>
+                            <ul class="nav navbar-nav navbar-right">
+                                <li class="dropdown icon-border" id="notificationLink">
+                                    <span id="notification_count">3</span>
+                                    <a href="#" class="bell itl-tooltip" data-placement="bottom" data-toggle="dropdown"><i
+                                            class="fa fa-bell"></i></a>
+                                    <ul id="notificationContainer" class="dropdown-menu dropdown-menu-inverse">
+                                        <li class="dropdown-header"><label>Notification</label></li>
+                                        <li class="disabled"><a href="#" tabindex="-1">No new notification.</a></li>
+                                        <li><a href="#" tabindex="-1">This is a notification.</a></li>
+                                        <li class="divider"></li>
+                                        <li><a href="../notification/notification.php" tabindex="-1">See All</a></li>
+                                    </ul>
+                                </li>
+                                <li class="dropdown">
+                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown"><b class="fa fa-user"></b> Welcome, <b>Admin Tim </b><b class="caret"></b></a>
+                                    <ul class="dropdown-menu">
+                                        <li><a href="admin-account.php">Account <b class="fa fa-user" style="float:right;"></b></a></li>
+                                        <li class="divider"></li>
+                                        <li><a href="#" data-target='#Logout' data-toggle='modal'>Sign Out <b class="fa fa-sign-out" style="float:right;"></b></a></li>
+                                    </ul>
+                                </li>
+                            </ul>
                             <!-- Notification -->
                         </div>
                         <!-- .col-md-6 -->
@@ -274,42 +272,41 @@ $ContactNumber = $admin_tbl[0][9];
                         <!-- Modal -->
                         <div class="modal fade" id="Logout"
                                  role="dialog">
-                                <div class="modal-dialog" style="padding:100px">
-                                    <!-- Modal content-->
-                                    <div class="modal-content">
-                                        <div class="modal-header">
-                                            <button style = type="button" class="close" data-dismiss="modal">&times;</button>
-                                            <h4 class="modal-title">Sign Out</h4>
+                            <div class="modal-dialog" style="padding:100px">
+                                <!-- Modal content-->
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <button style = type="button" class="close" data-dismiss="modal">&times;</button>
+                                        <h4 class="modal-title">Sign Out</h4>
+                                    </div>
+                                    <div class="modal-body">
+                                        <div class="col-md-15">
+                                            <label>Do you want to Sign Out?</label>
+                                            <div class="form-group">
+                                            </div>
                                         </div>
-                                        <div class="modal-body">
-                                            <div class="col-md-15">
-                                                <label = "usr" class = "control-label">Do you want to Sign Out?</label>
-                                                <div class="form-group">
-                                                </div>
-                                            </div>
-                                            <div class="modal-footer">
-                                                <a href="logout.php"
-                                                   class="btn btn-primary">Sign out</a>
-                                                <button type="button" class="btn btn-default" data-dismiss="modal">
-                                                    Cancel
-                                                </button>
-                                            </div>
+                                        <div class="modal-footer">
+                                            <a href="logout.php"
+                                               class="btn btn-primary">Sign out</a>
+                                            <button type="button" class="btn btn-default" data-dismiss="modal">
+                                                Cancel
+                                            </button>
                                         </div>
                                     </div>
                                 </div>
+                            </div>
                         </div>
-                        <!-- End Sign-out -->
                         <!-- Start Navigation List -->
                         <ul class="nav navbar-nav navbar-right">
                             <li>
                                 <a href="admin.php">Home</a>
                             </li>
                             <li>
-                            <a>Reports</a>
-                            <ul class="dropdown">
-                                <li><a href="admin-reports.php">Alumni Reports</a></li>
-                                <li><a href="admin-ojtreports.php">OJT Reports</a></li>
-                            </ul>
+                                <a>Reports</a>
+                                <ul class="dropdown">
+                                    <li><a href="admin-reports.php">Alumni Reports</a></li>
+                                    <li><a href="admin-ojtreports.php">OJT Reports</a></li>
+                                </ul>
                             </li>
                             <li>
                                 <a class="active" href="admin-account.php">Account</a>
@@ -320,18 +317,18 @@ $ContactNumber = $admin_tbl[0][9];
                             <li>
                                 <a>Company List</a>
                                  <ul class="dropdown">
-                                <li><a href="admin-companylist.php">Active</a></li>
-                                <li><a href="admin-company_pending.php">Pending</a></li>
+                                    <li><a href="admin-companylist.php">Active</a></li>
+                                    <li><a href="admin-company_pending.php">Pending</a></li>
                                  </ul>
                             </li>
                             <li>
-                            <a> Maintenance</a>
-                            <ul class="dropdown">
-                                <li><a href="admin-maintenance.php">Courses</a></li>
-                                <li><a href="admin-users.php">Users</a></li>
-                                <li><a href="admin-calendar.php">Calendar Events</a></li>
-                            </ul>
-                        </li>
+                                <a> Maintenance</a>
+                                <ul class="dropdown">
+                                    <li><a href="admin-maintenance.php">Courses</a></li>
+                                    <li><a href="admin-users.php">Users</a></li>
+                                    <li><a href="admin-calendar.php">Calendar Events</a></li>
+                                </ul>
+                            </li>
                         </ul>
                         <!-- End Navigation List -->
                     </div>
@@ -343,7 +340,7 @@ $ContactNumber = $admin_tbl[0][9];
                             <a href="admin.php">Home</a>
                         </li>
                         <li>
-                        <a>Reports</a>
+                            <a>Reports</a>
                             <ul class="dropdown">
                                 <li><a href="admin-reports.php" class = "active">Alumni Reports</a></li>
                                 <li><a href="admin-ojtreports.php">OJT Reports</a></li>
@@ -377,27 +374,21 @@ $ContactNumber = $admin_tbl[0][9];
         <!-- End Header Section -->
 
         <!-- Start Page Banner -->
-        <div class="page-banner" style="padding:40px 0; center #f9f9f9;">
+        <div class="page-banner no-subtitle">
             <div class="container">
                 <div class="row">
                     <div class="col-md-6">
-                        <h2>Personal Information</h2>
-                    </div>
-                    <div class="col-md-6">
+                        <h2>Account</h2>
                     </div>
                 </div>
             </div>
         </div>
         <!-- End Page Banner -->
 
-        <!--Content-->
-        <br><br><br>
-
-        <div class="container">
-            <form name="UpdateAdmin" id="UpdateAdmin" autocomplete="off" action="functions.php" method="POST">
-                <div class="col-md-12">
-                    <div class="row">
-                        <?php
+        <div id="content">
+            <div class="container">
+                <form name="UpdateAdmin" id="UpdateAdmin" autocomplete="off" action="functions.php" method="POST">
+                    <?php
 
                         if (isset($_GET['id'])) {
                             $id = $_GET['id'];
@@ -425,119 +416,121 @@ $ContactNumber = $admin_tbl[0][9];
                             }
 
                         }
-                        ?>
-                        <div class="col-md-2">
-                            <label = "usr" class = "control-label"> Username: </label>
-                        </div>
-                        <div class="col-md-4">
-                            <div class="form-group">
-                                <label = "usr" class = "control-label"><?php echo $Username; ?></label>
+                    ?>
+
+                    <div class="">
+                        <div class="row">
+                            <div class="col-md-2">
+                                <label>Username:</label>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    <label><?php echo $Username; ?></label>
+                                </div>
+                            </div>
+                            <div class="col-md-3">
+                                <div class="form-group">
+                                    <div class="box">
+                                        <button class="btn btn-default" data-toggle="modal" data-target="#ChangeUsername">Change
+                                            Username
+                                        </button>
+                                    </div>
+                                </div>
                             </div>
                         </div>
-                        <div class="col-md-3">
-                            <div class="form-group">
-                                <div class="box">
-                                    <button class="btn btn-default" data-toggle="modal" data-target="#ChangeUsername">Change
-                                        Username
-                                    </button>
+                        <div class="row">
+                            <div class="col-md-2">
+                                <label>Password: </label>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    <label>**********</label>
+                                </div>
+                            </div>
+                            <div class="col-md-3">
+                                <div class="form-group">
+                                    <div class="box">
+                                        <button class="btn btn-default" data-toggle="modal" data-target="#ChangePassword">
+                                            ChangePassword
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-2">
+                                <label>First Name <span>(*)</span></label>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    <input type="text" name="FirstName" id="FirstName" class="form-control"
+                                           maxlength="20" value="<?php echo $FirstName; ?>">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-2">
+                                <label>Middle Name <span>(*)</span></label>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    <input type="text" name="MiddleName" id="MiddleName" class="form-control"
+                                           maxlength="20" value="<?php echo $MiddleName; ?>">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-2">
+                                <label>Last Name <span>(*)</span></label>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    <input type="text" name="LastName" id="LastName" class="form-control"
+                                           maxlength="20" value="<?php echo $LastName; ?>">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-2">
+                                <label>Position <span>(*)</span></label>
+                            </div>,
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    <input type="text" name="Position" id="Position" class="form-control"
+                                           maxlength="20" value="<?php echo $Position; ?>">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-2">
+                                <label>Address <span>(*)</span></label>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    <input type="text" name="Address" id="Address" class="form-control"
+                                           maxlength="50" value="<?php echo $Address; ?>">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-2">
+                                <label>Contact Number <span>(*)</span></label>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    <input type="text" name="ContactNumber" id="ContactNumber" class="form-control"
+                                           maxlength="11" value="<?php echo $ContactNumber ?>">
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <div class="row">
-                        <div class="col-md-2">
-                            <label = "usr" class = "control-label"> Password: </label>
-                        </div>
-                        <div class="col-md-4">
-                            <div class="form-group">
-                                <label = "usr" class = "control-label">**********</label>
-                            </div>
-                        </div>
-                        <div class="col-md-3">
-                            <div class="form-group">
-                                <div class="box">
-                                    <button class="btn btn-default" data-toggle="modal" data-target="#ChangePassword">
-                                        ChangePassword
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-md-2">
-                            <label>First Name <span>(*)</span></label>
-                        </div>
-                        <div class="col-md-4">
-                            <div class="form-group">
-                                <input type="text" name="FirstName" id="FirstName" class="form-control"
-                                       maxlength="20" value="<?php echo $FirstName; ?>">
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-md-2">
-                            <label>Middle Name <span>(*)</span></label>
-                        </div>
-                        <div class="col-md-4">
-                            <div class="form-group">
-                                <input type="text" name="MiddleName" id="MiddleName" class="form-control"
-                                       maxlength="20" value="<?php echo $MiddleName; ?>">
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-md-2">
-                            <label>Last Name <span>(*)</span></label>
-                        </div>
-                        <div class="col-md-4">
-                            <div class="form-group">
-                                <input type="text" name="LastName" id="LastName" class="form-control"
-                                       maxlength="20" value="<?php echo $LastName; ?>">
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-md-2">
-                            <label>Position <span>(*)</span></label>
-                        </div>,
-                        <div class="col-md-4">
-                            <div class="form-group">
-                                <input type="text" name="Position" id="Position" class="form-control"
-                                       maxlength="20" value="<?php echo $Position; ?>">
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-md-2">
-                            <label>Address <span>(*)</span></label>
-                        </div>
-                        <div class="col-md-4">
-                            <div class="form-group">
-                                <input type="text" name="Address" id="Address" class="form-control"
-                                       maxlength="50" value="<?php echo $Address; ?>">
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-md-2">
-                            <label>Contact Number <span>(*)</span></label>
-                        </div>
-                        <div class="col-md-4">
-                            <div class="form-group">
-                                <input type="text" name="ContactNumber" id="ContactNumber" class="form-control"
-                                       maxlength="11" value="<?php echo $ContactNumber ?>">
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                &nbsp;
-                <div class="hr5" style="margin-top:35px;margin-bottom:40px;"></div>
-                <div class="field">
+                    &nbsp;
+                    <div class="hr5" style="margin-top:35px;margin-bottom:40px;"></div>
                     <div class="text-center">
                         <button type="submit" class="btn-system btn-large">Save</button>
                     </div>
-                </div>
-            </form>
+                </form>
+            </div>
         </div>
     </div>
 </body>

@@ -243,40 +243,38 @@ $Total = $TotalStudents[0][0];
                 </div>
                 <!-- Mobile Menu Start -->
                 <ul class="wpb-mobile-menu">
-                    <ul class="nav navbar-nav navbar-right">
-                        <li>
-                            <a class="active" href="admin.php">Home</a>
-                        </li>
-                       <li>
-                            <a>Reports</a>
-                            <ul class="dropdown">
-                                <li><a href="admin-reports.php" class = "active">Alumni Reports</a></li>
-                                <li><a href="admin-ojtreports.php">OJT Reports</a></li>
-                            </ul>
-                        </li>
-                        <li>
-                            <a href="admin-account.php">Account</a>
-                        </li>
-                        <li>
-                            <a href="admin-requested.php">Requested</a>
-                        </li>
-                        <li>
-                          <a>Company List</a>
-                            <ul class="dropdown">
-                                <li><a href="admin-companylist.php">Active</a></li>
-                                <li><a href="admin-company_pending.php">Pending</a></li>
-                            </ul>
-                        </li>
-                        
-                        <li>
-                          <a> Maintenance</a>
-                            <ul class="dropdown">
-                                <li><a class="active" href="admin-maintenance.php">Courses</a></li>
-                                <li><a href="admin-users.php">Users</a></li>
-                                <li><a href="admin-calendar.php">Calendar Events</a></li>
-                            </ul>
-                        </li>
-                    </ul>
+                    <li>
+                        <a class="active" href="admin.php">Home</a>
+                    </li>
+                   <li>
+                        <a>Reports</a>
+                        <ul class="dropdown">
+                            <li><a href="admin-reports.php" class = "active">Alumni Reports</a></li>
+                            <li><a href="admin-ojtreports.php">OJT Reports</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="admin-account.php">Account</a>
+                    </li>
+                    <li>
+                        <a href="admin-requested.php">Requested</a>
+                    </li>
+                    <li>
+                        <a>Company List</a>
+                        <ul class="dropdown">
+                            <li><a href="admin-companylist.php">Active</a></li>
+                            <li><a href="admin-company_pending.php">Pending</a></li>
+                        </ul>
+                    </li>
+                    
+                    <li>
+                        <a> Maintenance</a>
+                        <ul class="dropdown">
+                            <li><a class="active" href="admin-maintenance.php">Courses</a></li>
+                            <li><a href="admin-users.php">Users</a></li>
+                            <li><a href="admin-calendar.php">Calendar Events</a></li>
+                        </ul>
+                    </li>
                 </ul>
             </div>
         </header>
@@ -294,18 +292,14 @@ $Total = $TotalStudents[0][0];
         </div>
         <!-- End Page Banner -->
 
-        <!--Content-->
-        <br><br><br>
-
-        <div class="container">
-            <div class="col-md-12">
-                <div class="hr2"></div>
+        <div id="content">
+            <div class="container">
                 <table class="table segment table-hover">
                     <thead>
-                    <tr>
-                        <th width='70%' class='tabletitle'>Course</th>
-                        <th width='30%' class='tabletitle' style = "text-align: center;">Number of Students</th>
-                    <tr>
+                        <tr>
+                            <th width='70%' class='tabletitle'>Course</th>
+                            <th width='30%' class='tabletitle' style = "text-align: center;">Number of Students</th>
+                        <tr>
                     </thead>
                     <tbody>
                     <!--Fields-->
