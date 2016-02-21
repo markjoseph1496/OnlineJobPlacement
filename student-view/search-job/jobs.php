@@ -42,15 +42,6 @@ $coursetbl =
     );
 $MajorCourse = $coursetbl[0][0];
 
-$progress_tbl =
-    GSecureSQL::query(
-        "SELECT Progress FROM progresstbl WHERE StudentID = ?",
-        TRUE,
-        "s",
-        $StudentID
-    );
-
-$Progress = $progress_tbl[0][0];
 ?>
     <!DOCTYPE html>
     <html lang="en">
@@ -363,7 +354,7 @@ $Progress = $progress_tbl[0][0];
                             </div>
                             <div class="hr1" style="margin-top:10px;margin-bottom:10px;"></div>
                             <div class="text-center">
-                                <button type="submit" name="btnFilter" class="btn-system btn-large btn-black">Filter
+                                <button type="submit" name="btnFilter" class="btn-system btn-large btn-black">Apply Filter
                                 </button>
                             </div>
 
@@ -796,7 +787,7 @@ $progress_tbl =
         Specialization,
         Languages,
         _References
-        FROM Progresstbl
+        FROM progresstbl
         WHERE StudentID = ?",
         TRUE,
         "s",

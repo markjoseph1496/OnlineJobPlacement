@@ -41,7 +41,7 @@ $progress_tbl =
         Specialization,
         Languages,
         _References
-        FROM Progresstbl
+        FROM progresstbl
         WHERE StudentID = ?",
         TRUE,
         "s",
