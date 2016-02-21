@@ -5,9 +5,9 @@ include('../../common-functions.php');
 $common_functions->student_login_check();
 $StudentID = $_SESSION['StudentID']; // to conform with your coding style -- ghabx
 
-if (isset($_GET['id'])) {
-    $PositionID = $_GET['id'];
-    $CompanyID = $_GET['cid'];
+if (isset($_POST['id'])) {
+    $PositionID = $_POST['id'];
+    $CompanyID = $_POST['cid'];
     $DateSubmitted = date("Y-m-d");
     GSecureSQL::query(
         "INSERT INTO requesttocompanytbl (CompanyID, StudentID, PositionID, Status, DateSubmitted) values (?,?,?,'Pending',?)",
@@ -19,7 +19,11 @@ if (isset($_GET['id'])) {
         $DateSubmitted
     );
 
-    header('location: jobs.php?id=1');
+    if(isset($_REQUEST["destination"])){
+        header("Location: {$_REQUEST["destination"]}");
+    }else if(isset($_SERVER["HTTP_REFERER"])){
+        header("Location: {$_SERVER["HTTP_REFERER"]}");
+    }
 }
 
 if(isset($_POST['delete_request'])){

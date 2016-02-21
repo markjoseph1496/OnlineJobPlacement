@@ -13,16 +13,16 @@ $get_PID =
         TRUE
     );
 $c = 0;
-foreach($get_PID as $value){
+foreach ($get_PID as $value) {
     $db_PositionID = $value[0];
     $hashPID = hash('md4', $db_PositionID);
-    if($hashPID == $PositionID){
+    if ($hashPID == $PositionID) {
         $PositionID = $db_PositionID;
         $c = $c + 1;
     }
 }
 
-if($c == 0){
+if ($c == 0) {
     header('location: jobs.php');
 }
 
@@ -221,7 +221,9 @@ $MajorCourse = $coursetbl[0][0];
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown"><b class="fa fa-user"></b>
                                     Welcome, <b><?php echo $StudentName; ?> </b><b class="caret"></b></a>
                                 <ul class="dropdown-menu">
-                                    <li><a href="../../student-profile.php">Profile <b class="fa fa-user" style="float:right;"></b></a></li>
+                                    <li><a href="../../student-profile.php">Profile <b class="fa fa-user"
+                                                                                       style="float:right;"></b></a>
+                                    </li>
                                     <li><a href="../settings/settings.php">Settings <b class="fa fa-cog"
                                                                                        style="float:right;"></b></a>
                                     </li>
@@ -258,64 +260,68 @@ $MajorCourse = $coursetbl[0][0];
                 <div class="navbar-collapse collapse">
                     <!-- Sign-out -->
                     <div class="signout-side">
-                        <?php
-                        $requesttocompany_tbl =
-                            GSecureSQL::query(
-                                "SELECT * FROM requesttocompanytbl WHERE StudentID = ? AND PositionID = ?",
-                                TRUE,
-                                "ss",
-                                $StudentID,
-                                $PositionID
-                            );
+                        <form method="GET">
+                            <?php
+                            $requesttocompany_tbl =
+                                GSecureSQL::query(
+                                    "SELECT * FROM requesttocompanytbl WHERE StudentID = ? AND PositionID = ?",
+                                    TRUE,
+                                    "ss",
+                                    $StudentID,
+                                    $PositionID
+                                );
 
-                        if (count($requesttocompany_tbl)) {
-                            echo "
-                            <a href='jobs.php' class='btn-system btn-mini border-btn'>Back
-                            </a>
+                            if (count($requesttocompany_tbl)) {
+                                echo "
+                            <button name='btnBack' class='btn-system btn-mini border-btn'>Back</button>
                             <button class='btn-system btn-mini border-btn' data-toggle='modal'
                                 data-target='#ApplyNow' disabled>Resumé Submitted
                             </button>
                             ";
-                        } else{
-                            echo "
-                            <a href='jobs.php' class='btn-system btn-mini border-btn'>Back
-                            </a>
+                            } else {
+                                echo "
+                            <button name='btnBack' class='btn-system btn-mini border-btn'>Back</button>
                             <button class='btn-system btn-mini border-btn' data-toggle='modal'
                                 data-target='#ApplyNow'>Submit Resumé
                             </button>
                             ";
-                        }
-                        ?>
-
+                            }
+                            ?>
+                        </form>
                     </div>
                     <!-- End Sign-out -->
                     <!-- Modal -->
-                    <div class="modal fade" id="ApplyNow" role="dialog">
-                        <div class="modal-dialog" style="padding:100px">
-                            <!-- Modal content-->
-                            <div class="modal-content">
-                                <div class="modal-header">
-                                    <button type="button" class="close" data-dismiss="modal">&times;</button>
-                                    <h4 class="modal-title">Submit Resume</h4>
-                                </div>
-                                <div class="modal-body">
-                                    <div class="col-md-15 fieldcol">
-                                        <label = "usr" class = "control-label">Do you want to Submit your resume to this
-                                        company?</label>
-                                        <div class="form-group">
-                                        </div>
+                    <form action="function.php" method="POST">
+                        <div class="modal fade" id="ApplyNow" role="dialog">
+                            <div class="modal-dialog" style="padding:100px">
+                                <!-- Modal content-->
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                        <h4 class="modal-title">Submit Resume</h4>
                                     </div>
-                                    <div class="modal-footer">
-                                        <a href="function.php?id=<?php echo $PositionID; ?>&cid=<?php echo $CompanyID; ?>"
-                                           class="btn-system btn-large">Send</a>
-                                        <button type="button" class="btn btn-default" data-dismiss="modal">
-                                            Cancel
-                                        </button>
+                                    <div class="modal-body">
+                                        <div class="col-md-15 fieldcol">
+                                            <label = "usr" class = "control-label">Do you want to Submit your resume to
+                                            this
+                                            company?</label>
+                                            <div class="form-group">
+                                            </div>
+                                        </div>
+                                        <input type="hidden" name="id" value="<?php echo $PositionID; ?>">
+                                        <input type="hidden" name="cid" value="<?php echo $CompanyID; ?>"
+                                        <input type="hidden" name="desination"
+                                               value="<?php echo $_SERVER["REQUEST_URI"]; ?>"/>
+                                        <div class="modal-footer">
+                                            <button class="btn-system btn-large">Send</button>
+                                            <button type="button" class="btn btn-default" data-dismiss="modal">Cancel
+                                            </button>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
+                    </form>
                     <!-- Modal End -->
 
                     <!-- Start Navigation List -->
@@ -350,184 +356,182 @@ $MajorCourse = $coursetbl[0][0];
 
 
     <!-- Start Content -->
-    <form id="Save" name="Save" autocomplete="off" action="addfunction.php">
-        <div id="content">
-            <div class="container">
-                <div class="row sidebar-page">
-                    <!-- Page Content -->
-                    <div class="col-md-9 page-content">
-                        <div class="row">
-                            <div class="col-md-6">
-                                <!-- Single Testimonial -->
-                                <div class="classic-testimonials">
-                                    From: <?php echo $PostingDateFrom . " To: " . $PostingDateTo; ?>
-                                </div>
-                                <!-- End Single Testimonial -->
+    <div id="content">
+        <div class="container">
+            <div class="row sidebar-page">
+                <!-- Page Content -->
+                <div class="col-md-9 page-content">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <!-- Single Testimonial -->
+                            <div class="classic-testimonials">
+                                From: <?php echo $PostingDateFrom . " To: " . $PostingDateTo; ?>
                             </div>
-                            <div class="col-md-6">
-                                <!-- Single Testimonial
-                                <div class="classic-testimonials" style="float:right;">
-                                    ojpms Ref. JPH500003003534608
-                                </div>
-                               End Single Testimonial -->
-                            </div>
+                            <!-- End Single Testimonial -->
                         </div>
-
-                        <div class="row">
-                            <div class="col-md-12">
-                                <!-- Single Testimonial -->
-                                <div class="hr5" style="margin-top:35px;margin-bottom:40px;"></div>
-                                <div class="text-center">
-                                    <div class="company-logo">
-                                        <img src="../../company/<?php echo $ProfileImage; ?>" class="img-responsive"
-                                             style="width:100%; height:100%;">
-                                    </div>
-                                </div>
-                                <!-- End Single Testimonial -->
+                        <div class="col-md-6">
+                            <!-- Single Testimonial
+                            <div class="classic-testimonials" style="float:right;">
+                                ojpms Ref. JPH500003003534608
                             </div>
+                           End Single Testimonial -->
                         </div>
+                    </div>
 
-                        <div class="row">
-                            <div class="col-md-12">
-                                <div class="text-center">
-                                    <h4><?php echo $CompanyName; ?></h4>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <!-- Single Testimonial -->
+                            <div class="hr5" style="margin-top:35px;margin-bottom:40px;"></div>
+                            <div class="text-center">
+                                <div class="company-logo">
+                                    <img src="../../company/<?php echo $ProfileImage; ?>" class="img-responsive"
+                                         style="width:100%; height:100%;">
                                 </div>
-                                <label><?php echo nl2br($CompanyDescription); ?></label>
-                                <div class="hr3" style="margin-top:35px;margin-bottom:40px;"></div>
-                                <div class="text-center"><h3><?php echo $PositionTitle; ?></h3></div>
-                                <div class="hr3" style="margin-top:35px;margin-bottom:40px;"></div>
                             </div>
+                            <!-- End Single Testimonial -->
                         </div>
+                    </div>
 
-                        <div class="row">
-                            <div class="col-md-12">
-                                <div class="classic-testimonials">
-                                    <label><u>Good candidate must have the following qualifications:</u></label>
-                                </div>
-                                <?php
-                                $reqSkills_tbl =
-                                    GSecureSQL::query(
-                                        "SELECT ReqSkills FROM comppositiontbl WHERE CompanyID = ? AND PositionID = ?",
-                                        TRUE,
-                                        "ss",
-                                        $CompanyID,
-                                        $PositionID
-                                    );
-                                foreach ($reqSkills_tbl as $value) {
-                                    $Skills = $value[0];
-                                    $Skills = explode(", ", $Skills);
-                                    foreach ($Skills as $value2) {
-                                        $Skills = $value2;
-                                        ?>
-                                        <li><?php echo $Skills; ?></li>
-                                        <?php
-                                    }
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="text-center">
+                                <h4><?php echo $CompanyName; ?></h4>
+                            </div>
+                            <label><?php echo nl2br($CompanyDescription); ?></label>
+                            <div class="hr3" style="margin-top:35px;margin-bottom:40px;"></div>
+                            <div class="text-center"><h3><?php echo $PositionTitle; ?></h3></div>
+                            <div class="hr3" style="margin-top:35px;margin-bottom:40px;"></div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="classic-testimonials">
+                                <label><u>Good candidate must have the following qualifications:</u></label>
+                            </div>
+                            <?php
+                            $reqSkills_tbl =
+                                GSecureSQL::query(
+                                    "SELECT ReqSkills FROM comppositiontbl WHERE CompanyID = ? AND PositionID = ?",
+                                    TRUE,
+                                    "ss",
+                                    $CompanyID,
+                                    $PositionID
+                                );
+                            foreach ($reqSkills_tbl as $value) {
+                                $Skills = $value[0];
+                                $Skills = explode(", ", $Skills);
+                                foreach ($Skills as $value2) {
+                                    $Skills = $value2;
+                                    ?>
+                                    <li><?php echo $Skills; ?></li>
+                                    <?php
                                 }
-                                ?>
+                            }
+                            ?>
 
-                            </div>
-                        </div>
-                        <div class="hr5" style="margin-top:35px;margin-bottom:40px;"></div>
-
-                        <div class="row">
-                            <div class="col-md-3">
-                                <label>Year(s) of Experience</label>
-                            </div>
-                            <div class="col-md-3"><?php echo $YearExperience; ?> year(s)</div>
-                        </div>
-                        <div class="row">
-                            <div class="col-md-3">
-                                <label>Educational Attainment</label>
-                            </div>
-                            <div class="col-md-3"><?php echo $DegreeLevel; ?></div>
-                        </div>
-                        <div class="row">
-                            <div class="col-md-3">
-                                <label>Industry</label>
-                            </div>
-                            <div class="col-md-3">Information Technology</div>
-                        </div>
-                        <div class="row">
-                            <div class="col-md-3">
-                                <label>Job Description</label>
-                            </div>
-                            <div class="col-md-4"><?php echo $JobDescription; ?></div>
-                        </div>
-                        <div class="row">
-                            <div class="col-md-3">
-                                <label>Location</label>
-                            </div>
-                            <div class="col-md-3"><?php echo $cLocation; ?></div>
-                        </div>
-                        <div class="row">
-                            <div class="col-md-3">
-                                <label>Salary</label>
-                            </div>
-                            <div class="col-md-3">PHP <?php echo $MonthlySalary; ?></div>
-                        </div>
-                        <div class="row">
-                            <div class="col-md-3">
-                                <label>Employment Type</label>
-                            </div>
-                            <div class="col-md-3"><?php echo $EmploymentType; ?></div>
-                        </div>
-                        <div class="row">
-                            <div class="col-md-3">
-                                <label>&nbsp;</label>
-                            </div>
-                        </div>
-
-                        <div class="hr5" style="margin-top:35px;margin-bottom:40px;"></div>
-                        <div><h3>People also viewed</h3></div>
-                        <div class="hr5" style="margin-top:35px;margin-bottom:40px;"></div>
-                        <div><h3>Related Searches</h3></div>
-
-                    </div>
-                    <!-- End Page Content -->
-
-                    <!--Sidebar-->
-                    <div class="col-md-3 sidebar right-sidebar">
-                        <!-- Search Widget -->
-                        <div class="widget widget-categories">
-                            <h4>Tools <span class="head-line"></span></h4>
-                            <ul>
-                                <li>
-                                    <a href="#"><i class="fa fa-bookmark"></i> Bookmark this Job</a>
-                                </li>
-                                <li>
-                                    <a href="#"><i class="fa fa-share-alt"></i> Share</a>
-                                </li>
-                                <li>
-                                    <a href="#"><i class="fa fa-print"></i> Print this Job Ad</a>
-                                </li>
-                                <li>
-                                    <a href="#"><i class="fa fa-exclamation-triangle"></i> Report this Job</a>
-                                </li>
-                            </ul>
-                        </div>
-
-                        <div class="widget widget-tags">
-                            <h4>Keywords: <span class="head-line"></span></h4>
-                            <div class="tagcloud">
-                                <a href="#">cpa</a>
-                                <a href="#">mnc</a>
-                                <a href="#">accountant</a>
-                                <a href="#">multinational</a>
-                                <a href="#">accounting</a>
-                                <a href="#">asset</a>
-                                <a href="#">taguig</a>
-                                <a href="#">senior accountant</a>
-                                <a href="#">audit</a>
-                                <a href="#">tax</a>
-                                <a href="#">global accounting</a>
-                            </div>
                         </div>
                     </div>
-                    <!--End sidebar-->
+                    <div class="hr5" style="margin-top:35px;margin-bottom:40px;"></div>
+
+                    <div class="row">
+                        <div class="col-md-3">
+                            <label>Year(s) of Experience</label>
+                        </div>
+                        <div class="col-md-3"><?php echo $YearExperience; ?> year(s)</div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-3">
+                            <label>Educational Attainment</label>
+                        </div>
+                        <div class="col-md-3"><?php echo $DegreeLevel; ?></div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-3">
+                            <label>Industry</label>
+                        </div>
+                        <div class="col-md-3">Information Technology</div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-3">
+                            <label>Job Description</label>
+                        </div>
+                        <div class="col-md-4"><?php echo $JobDescription; ?></div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-3">
+                            <label>Location</label>
+                        </div>
+                        <div class="col-md-3"><?php echo $cLocation; ?></div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-3">
+                            <label>Salary</label>
+                        </div>
+                        <div class="col-md-3">PHP <?php echo $MonthlySalary; ?></div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-3">
+                            <label>Employment Type</label>
+                        </div>
+                        <div class="col-md-3"><?php echo $EmploymentType; ?></div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-3">
+                            <label>&nbsp;</label>
+                        </div>
+                    </div>
+
+                    <div class="hr5" style="margin-top:35px;margin-bottom:40px;"></div>
+                    <div><h3>People also viewed</h3></div>
+                    <div class="hr5" style="margin-top:35px;margin-bottom:40px;"></div>
+                    <div><h3>Related Searches</h3></div>
+
                 </div>
+                <!-- End Page Content -->
+
+                <!--Sidebar-->
+                <div class="col-md-3 sidebar right-sidebar">
+                    <!-- Search Widget -->
+                    <div class="widget widget-categories">
+                        <h4>Tools <span class="head-line"></span></h4>
+                        <ul>
+                            <li>
+                                <a href="#"><i class="fa fa-bookmark"></i> Bookmark this Job</a>
+                            </li>
+                            <li>
+                                <a href="#"><i class="fa fa-share-alt"></i> Share</a>
+                            </li>
+                            <li>
+                                <a href="#"><i class="fa fa-print"></i> Print this Job Ad</a>
+                            </li>
+                            <li>
+                                <a href="#"><i class="fa fa-exclamation-triangle"></i> Report this Job</a>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="widget widget-tags">
+                        <h4>Keywords: <span class="head-line"></span></h4>
+                        <div class="tagcloud">
+                            <a href="#">cpa</a>
+                            <a href="#">mnc</a>
+                            <a href="#">accountant</a>
+                            <a href="#">multinational</a>
+                            <a href="#">accounting</a>
+                            <a href="#">asset</a>
+                            <a href="#">taguig</a>
+                            <a href="#">senior accountant</a>
+                            <a href="#">audit</a>
+                            <a href="#">tax</a>
+                            <a href="#">global accounting</a>
+                        </div>
+                    </div>
+                </div>
+                <!--End sidebar-->
             </div>
         </div>
-    </form>
+    </div>
 </div>
 <!-- End Content -->
 <script type="text/javascript" src="../../js/script.js"></script>
