@@ -165,7 +165,6 @@ if (isset($_POST['ModalNewPassword'])) {
     $OldPassword = $_POST['ModalOldPassword'];
     $NewPassword = $_POST['ModalNewPassword'];
 
-
     $company_tbl =
         GSecureSQL::query(
             "SELECT
