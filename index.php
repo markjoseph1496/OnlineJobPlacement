@@ -143,7 +143,7 @@ $adminevent_tbl =
                                     <span>Welcome to <strong>OJPMS</strong></span>
                                 </h2>
                                 <h3 class="animated3">
-                                    <span>The ultimate aim of your business</span>
+                                    <span>The ultimate aim of your education</span>
                                 </h3>
                                 <p class="animated4"><a href="#" class="slider btn btn-system btn-large">Check Now</a></p>
                             </div>
@@ -195,7 +195,7 @@ $adminevent_tbl =
                 <div class="container">
                     <div class="row">
                     	<div class="big-title text-center animated fadeInDown delay-01" data-animation="fadeInDown" data-animation-delay="01">
-		                   <h1>Search for Your <span class="accent-color">Jobs</span></h1>
+		                   <h1>Search for Your <strong><span class="accent-color">Jobs</span></strong></h1>
 		                   <p class="title-desc"></p>
 		                </div>
 
@@ -338,13 +338,13 @@ $adminevent_tbl =
                             <div class="portfolio-item item">
                                 <div class="portfolio-border">
                                     <div class="portfolio-thumb">
-                                        <a class="lightbox" title="This is an image title" href="images/event/gen-ass-2016.jpg">
+                                        <a class="lightbox" title="Batch 2016 General Assembly" href="images/event/gen-ass-2016.jpg">
                                             <div class="thumb-overlay"><i class="fa fa-arrows-alt"></i></div>
                                             <img alt="" src="images/event/gen-ass-2016.jpg"/>
                                         </a>
                                     </div>
                                     <div class="portfolio-details">
-                                        <a href="#">
+                                        <a href="for-index/view-event.php">
                                             <h4>Batch 2016 General Assembly</h4>
                                         </a>
                                     </div>
@@ -354,14 +354,14 @@ $adminevent_tbl =
                             <div class="portfolio-item item">
                                 <div class="portfolio-border">
                                     <div class="portfolio-thumb">
-                                        <a class="lightbox" title="This is an image title" href="images/event/pep-talk.jpg">
+                                        <a class="lightbox" title="PEP Talk 2015" href="images/event/pep-talk.jpg">
                                             <div class="thumb-overlay"><i class="fa fa-arrows-alt"></i></div>
                                             <img alt="" src="images/event/pep-talk.jpg"/>
                                         </a>
                                     </div>
                                     <div class="portfolio-details">
-                                        <a href="#">
-                                            <h4>PEP Talk</h4>
+                                        <a href="for-index/view-event.php">
+                                            <h4>PEP Talk 2015</h4>
                                         </a>
                                     </div>
                                 </div>
@@ -370,13 +370,13 @@ $adminevent_tbl =
                             <div class="portfolio-item item">
                                 <div class="portfolio-border">
                                     <div class="portfolio-thumb">
-                                        <a class="lightbox" title="This is an image title" href="images/event/job-fair.jpg">
+                                        <a class="lightbox" title="Job Fair 2015" href="images/event/job-fair.jpg">
                                             <div class="thumb-overlay"><i class="fa fa-arrows-alt"></i></div>
                                             <img alt="" src="images/event/job-fair.jpg"/>
                                         </a>
                                     </div>
                                     <div class="portfolio-details">
-                                        <a href="#">
+                                        <a href="for-index/view-event.php">
                                             <h4>Job Fair 2015</h4>
                                         </a>
                                     </div>
@@ -386,13 +386,13 @@ $adminevent_tbl =
                             <div class="portfolio-item item">
                                 <div class="portfolio-border">
                                     <div class="portfolio-thumb">
-                                        <a class="lightbox" title="This is an image title" href="images/event/seminar.jpg">
+                                        <a class="lightbox" title="Preparation for Your Workplace 2015" href="images/event/seminar.jpg">
                                             <div class="thumb-overlay"><i class="fa fa-arrows-alt"></i></div>
                                             <img alt="" src="images/event/seminar.jpg"/>
                                         </a>
                                     </div>
                                     <div class="portfolio-details">
-                                        <a href="#">
+                                        <a href="for-index/view-event.php">
                                             <h4>Preparation for Your Workplace 2015</h4>
                                         </a>
                                     </div>
@@ -402,7 +402,7 @@ $adminevent_tbl =
                             <div class="portfolio-item item">
                                 <div class="portfolio-border">
                                     <div class="portfolio-thumb">
-                                        <a class="lightbox" title="This is an image title" href="images/event/uplift.jpg">
+                                        <a class="lightbox" title="Training Beyond College" href="images/event/uplift.jpg">
                                             <div class="thumb-overlay"><i class="fa fa-arrows-alt"></i></div>
                                             <img alt="" src="images/event/uplift.jpg"/>
                                         </a>
@@ -418,13 +418,13 @@ $adminevent_tbl =
                             <div class="portfolio-item item">
                                 <div class="portfolio-border">
                                     <div class="portfolio-thumb">
-                                        <a class="lightbox" title="This is an image title" href="images/event/nyc.jpg">
+                                        <a class="lightbox" title="National Youth Convention 2016" href="images/event/nyc.jpg">
                                             <div class="thumb-overlay"><i class="fa fa-arrows-alt"></i></div>
                                             <img alt="" src="images/event/nyc.jpg"/>
                                         </a>
                                     </div>
                                     <div class="portfolio-details">
-                                        <a href="#">
+                                        <a href="for-index/view-event.php">
                                             <h4>National Youth Convention 2016</h4>
                                         </a>
                                     </div>
@@ -449,13 +449,13 @@ $adminevent_tbl =
                                     <div class="post-row item">
                                         <div class="left-meta-post">
                                             <div class="post-date"><span class="day">28</span><span class="month">Dec</span></div>
-                                            <div class="post-type"><i class="fa fa-picture-o"></i></div>
+                                            <div class="post-type"><i class="fa fa-newspaper-o"></i></div>
                                         </div>
-                                        <h3 class="post-title"><a href="#">Standard Post With Image</a></h3>
+                                        <h3 class="post-title"><a href="for-index/news.php">Professional Etiquette Seminar</a></h3>
                                         <div class="post-contents">
                                             <p>
                                                 dhasdjasgbdhasbdjbsahj
-                                                <a class="read-more" href="#">Read More...</a>
+                                                <a class="read-more" href="for-index/news.php">Read More...</a>
                                             </p>
                                         </div>
                                     </div>
@@ -464,13 +464,13 @@ $adminevent_tbl =
                                     <div class="post-row item">
                                         <div class="left-meta-post">
                                             <div class="post-date"><span class="day">28</span><span class="month">Dec</span></div>
-                                            <div class="post-type"><i class="fa fa-picture-o"></i></div>
+                                            <div class="post-type"><i class="fa fa-newspaper-o"></i></div>
                                         </div>
-                                        <h3 class="post-title"><a href="#">Standard Post With Image</a></h3>
+                                        <h3 class="post-title"><a href="for-index/news.php">Standard Post With Image</a></h3>
                                         <div class="post-contents">
                                             <p>
                                                 dhasdjasgbdhasbdjbsahj
-                                                <a class="read-more" href="#">Read More...</a>
+                                                <a class="read-more" href="for-index/news.php">Read More...</a>
                                             </p>
                                         </div>
                                     </div>
@@ -479,13 +479,13 @@ $adminevent_tbl =
                                     <div class="post-row item">
                                         <div class="left-meta-post">
                                             <div class="post-date"><span class="day">28</span><span class="month">Dec</span></div>
-                                            <div class="post-type"><i class="fa fa-picture-o"></i></div>
+                                            <div class="post-type"><i class="fa fa-newspaper-o"></i></div>
                                         </div>
-                                        <h3 class="post-title"><a href="#">Standard Post With Image</a></h3>
+                                        <h3 class="post-title"><a href="for-index/news.php">Standard Post With Image</a></h3>
                                         <div class="post-contents">
                                             <p>
                                                 dhasdjasgbdhasbdjbsahj
-                                                <a class="read-more" href="#">Read More...</a>
+                                                <a class="read-more" href="for-index/news.php">Read More...</a>
                                             </p>
                                         </div>
                                     </div>
@@ -494,13 +494,13 @@ $adminevent_tbl =
                                     <div class="post-row item">
                                         <div class="left-meta-post">
                                             <div class="post-date"><span class="day">28</span><span class="month">Dec</span></div>
-                                            <div class="post-type"><i class="fa fa-picture-o"></i></div>
+                                            <div class="post-type"><i class="fa fa-newspaper-o"></i></div>
                                         </div>
-                                        <h3 class="post-title"><a href="#">Standard Post With Image</a></h3>
+                                        <h3 class="post-title"><a href="for-index/news.php">Standard Post With Image</a></h3>
                                         <div class="post-contents">
                                             <p>
                                                 dhasdjasgbdhasbdjbsahj
-                                                <a class="read-more" href="#">Read More...</a>
+                                                <a class="read-more" href="for-index/news.php">Read More...</a>
                                             </p>
                                         </div>
                                     </div>
@@ -509,13 +509,13 @@ $adminevent_tbl =
                                     <div class="post-row item">
                                         <div class="left-meta-post">
                                             <div class="post-date"><span class="day">28</span><span class="month">Dec</span></div>
-                                            <div class="post-type"><i class="fa fa-picture-o"></i></div>
+                                            <div class="post-type"><i class="fa fa-newspaper-o"></i></div>
                                         </div>
-                                        <h3 class="post-title"><a href="#">Standard Post With Image</a></h3>
+                                        <h3 class="post-title"><a href="for-index/news.php">Standard Post With Image</a></h3>
                                         <div class="post-contents">
                                             <p>
                                                 dhasdjasgbdhasbdjbsahj
-                                                <a class="read-more" href="#">Read More...</a>
+                                                <a class="read-more" href="for-index/news.php">Read More...</a>
                                             </p>
                                         </div>
                                     </div>
@@ -536,7 +536,7 @@ $adminevent_tbl =
                     <div class="row">
                         <div class="col-lg-12 text-center">
                             <div class="big-title text-center animated fadeInDown delay-01" data-animation="fadeInDown" data-animation-delay="01">
-                                <h1>Enrollment to Employment (E2E) System</h1>
+                                <h1>Enrollment to Employment <strong><span style="color:#337ab7;">(E2E)</span></strong> System</h1>
                             </div>
                         </div>
                     </div>
@@ -593,63 +593,29 @@ $adminevent_tbl =
                             <div class="container">
                                 <div class="row">
                                     <div class="big-title text-center animated fadeInDown delay-01" data-animation="fadeInDown" data-animation-delay="01">
-                                        <h1 class="wite-text">Sign In</h1>
+                                        <strong><h1 class="wite-text">Sign In</h1></strong>
                                     </div>
-                                        
-                                    <!-- Start Service Icon 1 
-                                    <div class="col-md-6 col-sm-6 service-box service-center">
-                                        <div class="service-boxed">
-                                            <div class="service-icon" style="margin-top:-25px;">
-                                                <a href="login-student.php"><i class="fa fa-users icon-large-effect icon-effect-2"></i></a>
-                                            </div>
-                                            <div class="service-content">
-                                                <h4 class="wite-text">Student</h4>
-                                                <p class="accent-color">This section is exclusively made for STI Caloocan's current and former students.</p>
-                                            </div>
-                                        </div>
-                                    </div>-->
-                                    <!-- End Service Icon 1 -->
-
-                                    <!-- Start Service Icon 2 
-                                    <div class="col-md-6 col-sm-6 service-box service-center">
-                                        <div class="service-boxed">
-                                            <div class="service-icon" style="margin-top:-25px;">
-                                                <a href="login-company.php"><i class="fa fa-building icon-large-effect icon-effect-2"></i></a>
-                                            </div>
-                                            <div class="service-content">
-                                                <h4 class="wite-text">Company</h4>
-                                                <p class="accent-color">This section is designed for STI partner companies.</p>
-                                            </div>
-                                        </div>
-                                    </div>-->
-                                    <!-- End Service Icon 2 -->
 
                                     <ul class="timeline">
                                         <li>
                                             <div class="timeline-image">
-                                                <img class="img-circle img-responsive" src="img/about/1.jpg" alt="">
+                                                <a href="login-student.php"><img class="img-circle img-responsive" src="images/home/student.png" alt=""></a>
                                             </div>
                                             <div class="timeline-panel">
                                                 <div class="timeline-heading">
-                                                    <h1>Student</h1>
+                                                    <strong><h1 style="color:#337ab7;">Student</h1></strong>
                                                     <h4 class="subheading">This section is exclusively made for STI Caloocan's current and former students.</h4>
-                                                </div>
-                                                <div class="timeline-body">
-                                                    <p class="text-muted">STI conceived the first and only Enrollment to Employment or E2E System.</p>
                                                 </div>
                                             </div>
                                         </li>
                                         <li class="timeline-inverted">
                                             <div class="timeline-image">
-                                                <img class="img-circle img-responsive" src="img/about/1.jpg" alt="">
+                                                <a href="login-company.php"><img class="img-circle img-responsive" src="images/home/company.png" alt=""></a>
                                             </div>
                                             <div class="timeline-panel">
                                                 <div class="timeline-heading">
-                                                    <h1>Company</h1>
+                                                    <strong><h1 style="color:#f8ba01;">Company</h1></strong>
                                                     <h4 class="subheading">This section is designed for STI partner companies.</h4>
-                                                </div>
-                                                <div class="timeline-body">
-                                                    <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt ut voluptatum eius sapiente, totam reiciendis temporibus qui quibusdam, recusandae sit vero unde, sed, incidunt et ea quo dolore laudantium consectetur!</p>
                                                 </div>
                                             </div>
                                         </li>
@@ -660,9 +626,6 @@ $adminevent_tbl =
                     </div>
                 </div>
             </div>
-
-            <!-- Divider 
-            <div class="hr1 margin-60"></div>-->
 
             <!-- Start Partner Company -->
             <div class="section" style="padding-top:35px; padding-bottom:20px; border-top:0; border-bottom:0; background:#fff;">
@@ -762,7 +725,7 @@ $adminevent_tbl =
                     <!-- Start Contact Widget -->
                     <div class="col-md-3">
                         <div class="footer-widget contact-widget">
-                            <h4><img src="images/footer-ojpms.gif" class="img-responsive" alt="Footer Logo"/></h4>
+                            <!--<h4><img src="images/ojpms.png" class="img-responsive" alt="Footer Logo"/></h4>-->
                             <!--<p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident</p>-->
                             <ul>
                                 <li><span>Phone Number:</span> +63 (917) 4638460</li>

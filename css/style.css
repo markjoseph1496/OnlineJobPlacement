@@ -35,7 +35,7 @@
 /*	     01 - General & Basic Styles
 /*------------------------------------------*/
 body {
-	font-family: 'Open Sans','Helvetica Neue',Arial,sans-serif;
+	font-family: 'Open Sans', sans-serif;
 	font-size: 14px;
     line-height: 21px;
 	font-weight: 400;
@@ -80,7 +80,7 @@ i {
 }
 
 h1, h2, h3, h4, h5, h6 {
-	font-family: Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;
+	font-family: 'Open Sans', sans-serif;
 	font-weight: 600;
 	margin: 0;
 	color: #444;
@@ -166,7 +166,7 @@ a.main-button, input[type="submit"] {
     text-decoration: none;
     color: #fff;
     font-size: 12px;
-    font-family: Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-family: 'Open Sans', sans-serif;
     font-weight: 300;
     text-transform: uppercase;
     padding: 6px 16px;
@@ -681,7 +681,7 @@ ul.social-list li:last-child a i {
     display: block;
     color: #666;
     font-size: 13px;
-    font-family: Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-family: 'Open Sans', sans-serif;
     padding: 11px 16px;
     text-decoration: none;
     text-transform: capitalize;
@@ -1091,7 +1091,7 @@ ul.breadcrumbs {
 }
 
 ul.breadcrumbs li {
-	font-family: Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;
+	font-family: 'Open Sans', sans-serif;
 	font-size: 13px;
 	font-weight: 300;
     margin-left: 3px;
@@ -1145,7 +1145,7 @@ input[type="submit"] {
 #respond textarea, .email {
     color: #666fb5;
     font-size: 13px;
-    font-family: Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-family: 'Open Sans', sans-serif;
     border: 1px solid #eee;
     border-radius: 2px;
     -webkit-border-radius: 2px;
