@@ -2,9 +2,9 @@
 include('../connection.php');
 session_start();
 
-if(isset($_SESSION['AdviserID'])){
+if (isset($_SESSION['AdviserID'])) {
     $AdviserID = $_SESSION['AdviserID'];
-}else{
+} else {
     header("location: ../login-adviser.php");
 }
 
@@ -16,58 +16,61 @@ if (isset($_POST['StudentID'])) {
     $Supervisor = $_POST['Supervisor'];
     $Remarks = $_POST['Remarks'];
     $Hours = $_POST['Hours'];
+    $Search = $_POST['Search'];
+    $SearchBy = $_POST['SearchBy'];
 
-    if(isset($_POST['Endorsement'])){
+
+    if (isset($_POST['Endorsement'])) {
         $Endorsement = $_POST['Endorsement'];
-    }else{
+    } else {
         $Endorsement = $_POST['EndorsementHidden'];
     }
 
-    if(isset($_POST['DTR'])){
+    if (isset($_POST['DTR'])) {
         $DTR = $_POST['DTR'];
-    }else{
+    } else {
         $DTR = $_POST['DTRHidden'];
     }
 
-    if(isset($_POST['Waiver'])){
+    if (isset($_POST['Waiver'])) {
         $Waiver = $_POST['Waiver'];
-    }else{
+    } else {
         $Waiver = $_POST['WaiverHidden'];
     }
 
-    if(isset($_POST['TrainingPlan'])){
+    if (isset($_POST['TrainingPlan'])) {
         $TrainingPlan = $_POST['TrainingPlan'];
-    }else{
+    } else {
         $TrainingPlan = $_POST['TrainingPlanHidden'];
     }
 
-    if(isset($_POST['MOA'])){
+    if (isset($_POST['MOA'])) {
         $MOA = $_POST['MOA'];
-    }else{
+    } else {
         $MOA = $_POST['MOAHidden'];
     }
 
-    if(isset($_POST['Journal'])){
+    if (isset($_POST['Journal'])) {
         $Journal = $_POST['Journal'];
-    }else{
+    } else {
         $Journal = $_POST['JournalHidden'];
     }
 
-    if(isset($_POST['Integration'])){
+    if (isset($_POST['Integration'])) {
         $Integration = $_POST['Integration'];
-    }else{
+    } else {
         $Integration = $_POST['IntegrationHidden'];
     }
 
-    if(isset($_POST['PAF'])){
+    if (isset($_POST['PAF'])) {
         $PAF = $_POST['PAF'];
-    }else{
+    } else {
         $PAF = $_POST['PAFHidden'];
     }
 
-    if(isset($_POST['Certification'])){
+    if (isset($_POST['Certification'])) {
         $Certification = $_POST['Certification'];
-    }else{
+    } else {
         $Certification = $_POST['CertificationHidden'];
     }
 
@@ -109,8 +112,13 @@ if (isset($_POST['StudentID'])) {
         $StudentID
     );
 
-    header('location: ojt-adviser.php');
-
+    if(isset($_REQUEST["destination"])){
+        header("Location: {$_REQUEST["destination"]}");
+    }else if(isset($_SERVER["HTTP_REFERER"])){
+        header("Location: {$_SERVER["HTTP_REFERER"]}");
+    }else{
+        /* some fallback, maybe redirect to index.php */
+    }
 }
 
 //Update ng info ng User ni Company
@@ -143,11 +151,11 @@ if (isset($_POST['ModalNewUsername'])) {
     $Username = $_POST['ModalNewUsername'];
 
     GSecureSQL::query(
-        "UPDATE admintbl SET Username = ? WHERE `AdminID` = ?",
+        "UPDATE admintbl SET Username = ? WHERE AdminID = ?",
         FALSE,
         "ss",
         $Username,
-        $AdviserID 
+        $AdviserID
     );
 
     header("location: ojt-account.php?id=1");
@@ -167,7 +175,7 @@ if (isset($_POST['ModalNewPassword'])) {
             FROM `admintbl` WHERE `AdminID ` = ?",
             TRUE,
             "s",
-            $AdviserID 
+            $AdviserID
         );
 
     if (count($company_tbl)) {
