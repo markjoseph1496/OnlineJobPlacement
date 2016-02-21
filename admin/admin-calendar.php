@@ -292,7 +292,7 @@ if(isset($_SESSION['AdminID'])){
         <!-- End Page Banner -->
 
         <div id="content">
-            <div class = "container">
+            <div class="container">
 
                 <?php
                     if (isset($_GET['id'])) {
@@ -374,8 +374,7 @@ if(isset($_SESSION['AdminID'])){
                            </td>
                         </tr>
                         <!-- Edit Modal-->
-                        <div class="modal fade" id="EditEvent<?php echo $EventID; ?>"
-                         role="dialog">
+                        <div class="modal fade" id="EditEvent<?php echo $EventID; ?>" role="dialog">
                             <div class="modal-dialog modal-lg" style="padding:100px">
                                 <!-- Modal content-->
                                 <div class="modal-content">
@@ -385,29 +384,26 @@ if(isset($_SESSION['AdminID'])){
                                     </div>
                                     <div class="modal-body">
                                         <form method="POST" action="functions.php ">
-                                            <div class="col-md-7">
-                                                <div class="row">
+                                            <div class="row">
+                                                <div class="col-md-12">
                                                     <div class="row">
-                                                        <div class="col-md-2">
-                                                            <label>Event from: </label>
+                                                        <div class="col-md-3">
+                                                            <label>Event:</label>
                                                         </div>
                                                         <div class="col-md-4">
                                                             <div class = "form-group">
-                                                                <label><?php echo $datefrom; ?></label>
+                                                                <label>From: <p><?php echo $datefrom; ?></p></label>
                                                             </div>
                                                         </div>
-                                                        <div class="col-md-1">
-                                                            <label>to: </label>
-                                                        </div>
                                                         <div class="col-md-4">
                                                             <div class = "form-group">
-                                                                <label><?php echo $dateto; ?></label>
+                                                                <label>To: <p><?php echo $dateto; ?></p></label>
                                                             </div>
                                                         </div>
                                                     </div>
                                                     <div class="row">
-                                                        <div class="col-md-2">
-                                                            <label>Event Title: </label>
+                                                        <div class="col-md-3">
+                                                            <label>Event Title:</label>
                                                         </div>
                                                         <div class="col-md-9">
                                                             <div class="form-group">
@@ -416,8 +412,8 @@ if(isset($_SESSION['AdminID'])){
                                                         </div>
                                                     </div>
                                                     <div class="row">
-                                                        <div class="col-md-2">
-                                                            <label>Location: </label>
+                                                        <div class="col-md-3">
+                                                            <label>Location</label>
                                                         </div>
                                                         <div class="col-md-9">
                                                             <div class="form-group">
@@ -426,8 +422,8 @@ if(isset($_SESSION['AdminID'])){
                                                         </div>
                                                     </div>
                                                     <div class="row">
-                                                        <div class="col-md-2">
-                                                            <label>Caption: </label>
+                                                        <div class="col-md-3">
+                                                            <label>Caption</label>
                                                         </div>
                                                         <div class="col-md-9">
                                                             <div class="form-group">

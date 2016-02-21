@@ -116,79 +116,75 @@ $course_tbl =
 </head>
 
 <body>
-<!-- Full Body Container -->
-<div id="container">
-
-
+    <!-- Full Body Container -->
+    <div id="container">
+        <div class="hidden-header"></div>
+        <header class="clearfix">
             <!-- Start Top Bar -->
-        <div class="top-bar">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-6">
-                        <!-- Start Contact Info -->
-                            <ul class="contact-details">
-                                <li class="profile-name"><i class="fa fa-hashtag"></i> <b>008-2012-0805</b></li>
-                            </ul>
-                        <!-- End Contact Info -->
+            <div class="top-bar">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <!-- Start Contact Info -->
+                                <ul class="contact-details">
+                                    <li class="profile-name"><i class="fa fa-hashtag"></i> <b>008-2012-0805</b></li>
+                                </ul>
+                            <!-- End Contact Info -->
+                        </div>
+                        <!-- .col-md-6 -->
+                        <div class="col-md-6">
+                           <!-- Notification -->
+                                <ul class="nav navbar-nav navbar-right">
+                                    <li class="dropdown icon-border" id="notificationLink">
+                                        <span id="notification_count">3</span>
+                                        <a href="#" class="bell itl-tooltip" data-placement="bottom" data-toggle="dropdown"><i
+                                                class="fa fa-bell"></i></a>
+                                        <ul id="notificationContainer" class="dropdown-menu dropdown-menu-inverse">
+                                            <li class="dropdown-header"><label>Notification</label></li>
+                                            <li class="disabled"><a href="#" tabindex="-1">No new notification.</a></li>
+                                            <li><a href="#" tabindex="-1">This is a notification.</a></li>
+                                            <li class="divider"></li>
+                                            <li><a href="../notification/notification.php" tabindex="-1">See All</a></li>
+                                        </ul>
+                                    </li>
+                                    <li class="dropdown">
+                                        <a href="#" class="dropdown-toggle" data-toggle="dropdown"><b class="fa fa-user"></b> Welcome, <b>Admin Tim </b><b class="caret"></b></a>
+                                        <ul class="dropdown-menu">
+                                            <li><a href="admin-account.php">Account <b class="fa fa-user" style="float:right;"></b></a></li>
+                                            <li class="divider"></li>
+                                            <li><a href="#" data-target='#Logout' data-toggle='modal'>Sign Out <b class="fa fa-sign-out" style="float:right;"></b></a></li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                           <!-- Notification -->
+                        </div>
+                        <!-- .col-md-6 -->
                     </div>
-                    <!-- .col-md-6 -->
-                    <div class="col-md-6">
-                       <!-- Notification -->
-                            <ul class="nav navbar-nav navbar-right">
-                                <li class="dropdown icon-border" id="notificationLink">
-                                    <span id="notification_count">3</span>
-                                    <a href="#" class="bell itl-tooltip" data-placement="bottom" data-toggle="dropdown"><i
-                                            class="fa fa-bell"></i></a>
-                                    <ul id="notificationContainer" class="dropdown-menu dropdown-menu-inverse">
-                                        <li class="dropdown-header"><label>Notification</label></li>
-                                        <li class="disabled"><a href="#" tabindex="-1">No new notification.</a></li>
-                                        <li><a href="#" tabindex="-1">This is a notification.</a></li>
-                                        <li class="divider"></li>
-                                        <li><a href="../notification/notification.php" tabindex="-1">See All</a></li>
-                                    </ul>
-                                </li>
-                                <li class="dropdown">
-                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown"><b class="fa fa-user"></b> Welcome, <b>Admin Tim </b><b class="caret"></b></a>
-                                    <ul class="dropdown-menu">
-                                        <li><a href="admin-account.php">Account <b class="fa fa-user" style="float:right;"></b></a></li>
-                                        <li class="divider"></li>
-                                        <li><a href="#" data-target='#Logout' data-toggle='modal'>Sign Out <b class="fa fa-sign-out" style="float:right;"></b></a></li>
-                                    </ul>
-                                </li>
-                            </ul>
-                       <!-- Notification -->
-                    </div>
-                    <!-- .col-md-6 -->
+                    <!-- .row -->
                 </div>
-                <!-- .row -->
+                <!-- .container -->
             </div>
-            <!-- .container -->
-        </div>
-        <!-- .top-bar -->
-        <!-- End Top Bar -->
+            <!-- .top-bar -->
+            <!-- End Top Bar -->
 
 
-        <!-- Start  Logo & Naviagtion  -->
-        <div class="navbar navbar-default navbar-top">
-            <div class="container">
-                <div class="navbar-header">
-                    <!-- Stat Toggle Nav Link For Mobiles -->
-                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                        <i class="fa fa-bars"></i>
-                    </button>
-                    <!-- End Toggle Nav Link For Mobiles -->
-                     <a class="navbar-brand" href="">
-                        <img src="../images/ojpms.png">
-                    </a>
-                </div>
-                <div class="navbar-collapse collapse">
-                    <!-- Sign-out -->
-                    <div class="signout-side">
-                        <a class="show-signout" data-toggle='modal' data-target='#Logout'><i class="fa fa-sign-out"></i></a>
+            <!-- Start  Logo & Naviagtion  -->
+            <div class="navbar navbar-default navbar-top">
+                <div class="container">
+                    <div class="navbar-header">
+                        <!-- Stat Toggle Nav Link For Mobiles -->
+                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        <!-- End Toggle Nav Link For Mobiles -->
+                         <a class="navbar-brand" href="">
+                            <img src="../images/ojpms.png">
+                        </a>
                     </div>
-                    <!-- Modal -->
-                    <div class="modal fade" id="Logout"
-                             role="dialog">
+                    <div class="navbar-collapse collapse">
+                        <!-- Modal -->
+                        <div class="modal fade" id="Logout"
+                                 role="dialog">
                             <div class="modal-dialog" style="padding:100px">
                                 <!-- Modal content-->
                                 <div class="modal-content">
@@ -197,8 +193,8 @@ $course_tbl =
                                         <h4 class="modal-title">Sign Out</h4>
                                     </div>
                                     <div class="modal-body">
-                                        <div class="col-md-15 fieldcol">
-                                            <label = "usr" class = "control-label">Do you want to Sign Out?</label>
+                                        <div class="col-md-15">
+                                            <label>Do you want to Sign Out?</label>
                                             <div class="form-group">
                                             </div>
                                         </div>
@@ -213,47 +209,46 @@ $course_tbl =
                                 </div>
                             </div>
                         </div>
-                    <!-- End Sign-out -->
-                    <!-- Start Navigation List -->
-                    <ul class="nav navbar-nav navbar-right">
-                        <li>
-                            <a href="admin.php">Home</a>
-                        </li>
-                        <li>
-                    <a>Reports</a>
-                        <ul class="dropdown">
-                            <li><a href="admin-reports.php" class = "active">Alumni Reports</a></li>
-                            <li><a href="admin-ojtreports.php">OJT Reports</a></li>
+
+                        <!-- Start Navigation List -->
+                        <ul class="nav navbar-nav navbar-right">
+                            <li>
+                                <a href="admin.php">Home</a>
+                            </li>
+                            <li>
+                                <a>Reports</a>
+                                <ul class="dropdown">
+                                    <li><a href="admin-reports.php" class = "active">Alumni Reports</a></li>
+                                    <li><a href="admin-ojtreports.php">OJT Reports</a></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="admin-account.php">Account</a>
+                            </li>
+                            <li>
+                                <a href="admin-requested.php">Requested</a>
+                            </li>
+                            <li>
+                               <a>Company List</a>
+                                <ul class="dropdown">
+                                    <li><a href="admin-companylist.php" class = "active">Active</a></li>
+                                    <li><a href="admin-company_pending.php">Pending</a></li>
+                                </ul>
+                            </li>
+                           <li>
+                                <a> Maintenance</a>
+                                <ul class="dropdown">
+                                    <li><a class="active" href="admin-maintenance.php">Courses</a></li>
+                                    <li><a href="admin-users.php">Users</a></li>
+                                    <li><a href="admin-calendar.php">Calendar Events</a></li>
+                                </ul>
+                            </li>
                         </ul>
-                    </li>
-                        <li>
-                            <a href="admin-account.php">Account</a>
-                        </li>
-                        <li>
-                            <a href="admin-requested.php">Requested</a>
-                        </li>
-                        <li>
-                           <a>Company List</a>
-                        <ul class="dropdown">
-                            <li><a href="admin-companylist.php" class = "active">Active</a></li>
-                            <li><a href="admin-company_pending.php">Pending</a></li>
-                        </ul>
-                        </li>
-                       <li>
-                        <a> Maintenance</a>
-                        <ul class="dropdown">
-                            <li><a class="active" href="admin-maintenance.php">Courses</a></li>
-                            <li><a href="admin-users.php">Users</a></li>
-                            <li><a href="admin-calendar.php">Calendar Events</a></li>
-                        </ul>
-                    </li>
-                    </ul>
-                    <!-- End Navigation List -->
+                        <!-- End Navigation List -->
+                    </div>
                 </div>
-            </div>
-            <!-- Mobile Menu Start -->
-            <ul class="wpb-mobile-menu">
-                <ul class="nav navbar-nav navbar-right">
+                <!-- Mobile Menu Start -->
+                <ul class="wpb-mobile-menu">
                     <li>
                         <a href="admin.php">Home</a>
                     </li>
@@ -286,81 +281,74 @@ $course_tbl =
                         </ul>
                     </li>
                 </ul>
-            </ul>
-    </header>
-    <!-- Mobile Menu End -->
-
-</div>
-<!-- End Header Logo & Naviagtion -->
-
-</header>
-<!-- End Header Section -->
-
-<!-- Start Page Banner -->
-<div class="page-banner" style="padding:40px 0; center #f9f9f9;">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-6">
-                <h2>Maintenance</h2>
             </div>
-        </div>
-    </div>
-</div>
-<!-- End Page Banner -->
+            <!-- End Header Logo & Naviagtion -->
+        </header>
+        <!-- Mobile Menu End -->
 
-<!--Content-->
-<br><br><br>
-<form id="EditCourse" name="EditCourse" autocomplete="off" method="POST" action="functions.php">
-    <input type="text" class="form-control" id="CourseID" name="CourseID" style="display: none;"
-           value="<?php echo $CourseID; ?>">
-    <div class="container">
-        <div class="col-md-12">
-            <div class="row field">
-                <div class="col-md-2 fieldcol">
-                    <label = "usr" class = "control-label"> Course Title </label>
-                </div>
-                <div class="col-md-4 fieldcol">
-                    <div class="form-group">
-                        <input type="text" name="coursetitle" class="form-control" id="coursetitle"
-                               value="<?php echo $coursetitle; ?>">
-                    </div>
-                </div>
-            </div>
-            <div class="row field">
-                <div class="col-md-2 fieldcol">
-                    <label = "usr" class = "control-label"> Course Code:</label>
-                </div>
-                <div class="col-md-4 fieldcol">
-                    <div class="form-group">
-                        <input type="text" name="coursecode" class="form-control" id="coursecode"
-                               value="<?php echo $coursecode; ?>">
-                    </div>
-                </div>
-            </div>
-            <div class="row field">
-                <div class="col-md-2 fieldcol">
-                    <label = "usr" class = "control-label"> Course Description: </label>
-                </div>
-                <div class="col-md-4 fieldcol">
-                    <div class="form-group">
-                        <input type="text" name="coursedesc" class="form-control" id="coursedesc"
-                               value="<?php echo $coursedescription; ?>">
+        <!-- Start Page Banner -->
+        <div class="page-banner" style="padding:40px 0; center #f9f9f9;">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6">
+                        <h2>Maintenance</h2>
                     </div>
                 </div>
             </div>
         </div>
-        &nbsp;
-        <div class="hr5" style="margin-top:35px;margin-bottom:40px;"></div>
-        <div class="field">
+        <!-- End Page Banner -->
+
+        <div id="content">
+            <div class="container">
+                <form id="EditCourse" name="EditCourse" autocomplete="off" method="POST" action="functions.php">
+                    <input type="text" class="form-control" id="CourseID" name="CourseID" style="display: none;" value="<?php echo $CourseID; ?>">
+                
+                    <div class="col-md-12">
+                        <div class="row">
+                            <div class="col-md-2">
+                                <label> Course Title </label>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    <input type="text" name="coursetitle" class="form-control" id="coursetitle"
+                                           value="<?php echo $coursetitle; ?>">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-2">
+                                <label> Course Code:</label>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    <input type="text" name="coursecode" class="form-control" id="coursecode"
+                                           value="<?php echo $coursecode; ?>">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-2">
+                                <label> Course Description: </label>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    <input type="text" name="coursedesc" class="form-control" id="coursedesc"
+                                           value="<?php echo $coursedescription; ?>">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    &nbsp;
+                    <div class="hr5" style="margin-top:35px;margin-bottom:40px;"></div>
                     <div class="text-center">
                         <button type="submit" class="btn-system btn-large">Save</button>
                         <button type="submit" class="btn-system btn-large">Cancel</button>
-                    </div>           
-         </div>
-
+                    </div>             
+                </form>
+            </div>
+        </div>
     </div>
-</form>
-<script type="text/javascript" src="../js/script.js"></script>
+    <script type="text/javascript" src="../js/script.js"></script>
 </body>
 </html>
 <script type="text/javascript">
@@ -371,7 +359,7 @@ $course_tbl =
                 invalid: "glyphicon glyphicon-remove",
                 validating: "glyphicon glyphicon-refresh"
             },
-            fields: {
+           s: {
                 coursetitle: {
                     validators: {
                         notEmpty: {
