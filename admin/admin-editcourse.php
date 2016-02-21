@@ -182,10 +182,6 @@ $course_tbl =
                     </a>
                 </div>
                 <div class="navbar-collapse collapse">
-                    <!-- Sign-out -->
-                    <div class="signout-side">
-                        <a class="show-signout" data-toggle='modal' data-target='#Logout'><i class="fa fa-sign-out"></i></a>
-                    </div>
                     <!-- Modal -->
                     <div class="modal fade" id="Logout"
                              role="dialog">
@@ -303,7 +299,7 @@ $course_tbl =
     </div>
     <!-- End Page Banner -->
 
-    <div class="content">
+    <div id="content">
         <div class="container">
             <form id="EditCourse" name="EditCourse" autocomplete="off" method="POST" action="functions.php">
                 <input type="text" class="form-control" id="CourseID" name="CourseID" style="display: none;"
