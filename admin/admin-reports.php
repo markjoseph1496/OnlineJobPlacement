@@ -282,7 +282,7 @@ $Total = $TotalStudents[0][0];
         <!-- End Header Section -->
 
         <!-- Start Page Banner -->
-        <div class="page-banner" style="padding:40px 0; center #f9f9f9;">
+        <div class="page-banner no-subtitle">
             <div class="container">
                 <div class="row">
                     <div class="col-md-6">
@@ -293,85 +293,85 @@ $Total = $TotalStudents[0][0];
         </div>
         <!-- End Page Banner -->
 
-        <!--Content-->
-        <br><br><br>
+        <div id="content">
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-4">
+                        <h4><b>TOTAL NUMBER OF STUDENTS: <?php echo $Total; ?></b></h4>
+                    </div>
+                </div>
 
-        <div class="container">
-            <div class="col-sm-4">
-                <h4><b>TOTAL NUMBER OF STUDENTS: <?php echo $Total; ?></b></h4>
-            </div>
-            <BR><BR><BR>
-            <div class="hr2"></div>
-            <table class="table segment table-hover">
-                <thead>
-                    <tr>
-                        <th width='40%' class='tabletitle'>Course</th>
-                        <th width='20%' class='tabletitle' style = "text-align: center;">Number of Students</th>
-                        <th width='20%' class='tabletitle' style = "text-align: center;"> Number of Employed</th>
-                        <th width='20%' class='tabletitle' style = "text-align: center;">Number of Unemployed</th>
-                    <tr>
-                </thead>
-                <?php
+                <div class="hr1" style="margin-top:30px;margin-bottom:30px;"></div>
 
-                $course_tbl =
-                    GSecureSQL::query(
-                        "SELECT * FROM coursetbl",
-                        TRUE
-                    );
-                foreach ($course_tbl as $value) {
-                    $CourseID = $value[0];
-                    $CourseTitle = $value[1];
-                    $CourseCode = $value[2];
+                <table class="table segment table-hover">
+                    <thead>
+                        <tr>
+                            <th width="40%">Course</th>
+                            <th width="20%" class="text-center">Number of Student</th>
+                            <th width="20%" class="text-center">Number of Employed</th>
+                            <th width="20%" class="text-center">Number of Unemployed</th>
+                        <tr>
+                    </thead>
+                    <?php
 
-                    $qryTotal =
+                    $course_tbl =
                         GSecureSQL::query(
-                            "SELECT COUNT(*) FROM studentinfotbl WHERE MajorCourse = ?",
-                            TRUE,
-                            "s",
-                            $CourseCode
+                            "SELECT * FROM coursetbl",
+                            TRUE
                         );
-                    foreach ($qryTotal as $value1) {
-                        $TotalStudents = $value1[0];
-                    }
+                    foreach ($course_tbl as $value) {
+                        $CourseID = $value[0];
+                        $CourseTitle = $value[1];
+                        $CourseCode = $value[2];
 
-                    $EmployedTotal =
-                        GSecureSQL::query(
-                            "SELECT COUNT(*) FROM studentinfotbl WHERE MajorCourse = ? AND EmploymentStatus = 'Employed'",
-                            TRUE,
-                            "s",
-                            $CourseCode
-                        );
-                    foreach ($EmployedTotal as $value2) {
-                        $TotalEmployed = $value2[0];
-                    }
+                        $qryTotal =
+                            GSecureSQL::query(
+                                "SELECT COUNT(*) FROM studentinfotbl WHERE MajorCourse = ?",
+                                TRUE,
+                                "s",
+                                $CourseCode
+                            );
+                        foreach ($qryTotal as $value1) {
+                            $TotalStudents = $value1[0];
+                        }
 
-                    $UnemployedTotal =
-                        GSecureSQL::query(
-                            "SELECT COUNT(*) FROM studentinfotbl WHERE MajorCourse = ? AND EmploymentStatus = 'Unemployed'",
-                            TRUE,
-                            "s",
-                            $CourseCode
-                        );
-                    foreach ($UnemployedTotal as $value3) {
-                        $TotalUnemployed = $value3[0];
+                        $EmployedTotal =
+                            GSecureSQL::query(
+                                "SELECT COUNT(*) FROM studentinfotbl WHERE MajorCourse = ? AND EmploymentStatus = 'Employed'",
+                                TRUE,
+                                "s",
+                                $CourseCode
+                            );
+                        foreach ($EmployedTotal as $value2) {
+                            $TotalEmployed = $value2[0];
+                        }
+
+                        $UnemployedTotal =
+                            GSecureSQL::query(
+                                "SELECT COUNT(*) FROM studentinfotbl WHERE MajorCourse = ? AND EmploymentStatus = 'Unemployed'",
+                                TRUE,
+                                "s",
+                                $CourseCode
+                            );
+                        foreach ($UnemployedTotal as $value3) {
+                            $TotalUnemployed = $value3[0];
+                        }
+                        ?>
+                        <tbody>
+                        <tr>
+                            <td class=tabletitle>
+                                <a href='admin-field.php?id=<?php echo $CourseID; ?>'><?php echo $CourseTitle; ?></a>
+                            </td>
+                            <td class="text-center"><?php echo $TotalStudents; ?></td>
+                            <td class="text-center"><?php echo $TotalEmployed; ?></td>
+                            <td class="text-center"><?php echo $TotalUnemployed; ?></td>
+                        <tr>
+                        </tbody>
+                        <?php
                     }
                     ?>
-                    <tbody>
-                    <tr>
-                        <td class=tabletitle>
-                            <a href='admin-field.php?id=<?php echo $CourseID; ?>'><?php echo $CourseTitle; ?></a>
-                        </td>
-                        <td class='tabletitle'style = "text-align: center;" ><?php echo $TotalStudents; ?></td>
-                        <td class='tabletitle' style = "text-align: center;"><?php echo $TotalEmployed; ?></td>
-                        <td class='tabletitle' style = "text-align: center;"><?php echo $TotalUnemployed; ?></td>
-                    <tr>
-                    </tbody>
-                    <?php
-                }
-                ?>
-            </table>
-            <div class="hr2"></div>
-            <br>
+                </table>
+            </div>
         </div>
     </div>
 </body>
