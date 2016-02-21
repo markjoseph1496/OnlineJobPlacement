@@ -1068,6 +1068,7 @@ $Search_Default = isset($_GET['Search']) ? $_GET['Search'] : '';
                                             </div>
                                             </ul>
                                         </div>
+                                        <input type="hidden" name="desination" value="<?php echo $_SERVER["REQUEST_URI"]; ?>"/>
                                         <div class='modal-footer'>
                                             <button type="submit"
                                                     class='btn btn-primary'> Update

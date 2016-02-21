@@ -116,8 +116,6 @@ if (isset($_POST['StudentID'])) {
         header("Location: {$_REQUEST["destination"]}");
     }else if(isset($_SERVER["HTTP_REFERER"])){
         header("Location: {$_SERVER["HTTP_REFERER"]}");
-    }else{
-        /* some fallback, maybe redirect to index.php */
     }
 }
 
@@ -170,9 +168,9 @@ if (isset($_POST['ModalNewPassword'])) {
     $company_tbl =
         GSecureSQL::query(
             "SELECT
-                `Password`,
-                `SaltedPassword`
-            FROM `admintbl` WHERE `AdminID ` = ?",
+                Password,
+                SaltedPassword
+            FROM admintbl WHERE AdminID  = ?",
             TRUE,
             "s",
             $AdviserID

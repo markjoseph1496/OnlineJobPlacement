@@ -392,6 +392,10 @@ if (isset($_POST['StudentID'])) {
         $StudentID
     );
 
-    header('location: admin-ojtreports.php');
+    if(isset($_REQUEST["destination"])){
+        header("Location: {$_REQUEST["destination"]}");
+    }else if(isset($_SERVER["HTTP_REFERER"])){
+        header("Location: {$_SERVER["HTTP_REFERER"]}");
+    }
 
 }
