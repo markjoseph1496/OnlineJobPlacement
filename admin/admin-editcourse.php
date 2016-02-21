@@ -193,8 +193,8 @@ $course_tbl =
                                     <h4 class="modal-title">Sign Out</h4>
                                 </div>
                                 <div class="modal-body">
-                                    <div class="col-md-15 fieldcol">
-                                        <label = "usr" class = "control-label">Do you want to Sign Out?</label>
+                                    <div class="col-md-15">
+                                        <label>Do you want to Sign Out?</label>
                                         <div class="form-group">
                                         </div>
                                     </div>
@@ -306,33 +306,33 @@ $course_tbl =
                        value="<?php echo $CourseID; ?>">
                 <div class="container">
                     <div class="col-md-12">
-                        <div class="row field">
-                            <div class="col-md-2 fieldcol">
-                                <label = "usr" class = "control-label"> Course Title </label>
+                        <div class="row">
+                            <div class="col-md-2">
+                                <label>Course Title </label>
                             </div>
-                            <div class="col-md-4 fieldcol">
+                            <div class="col-md-4">
                                 <div class="form-group">
                                     <input type="text" name="coursetitle" class="form-control" id="coursetitle"
                                            value="<?php echo $coursetitle; ?>">
                                 </div>
                             </div>
                         </div>
-                        <div class="row field">
-                            <div class="col-md-2 fieldcol">
-                                <label = "usr" class = "control-label"> Course Code:</label>
+                        <div class="row">
+                            <div class="col-md-2">
+                                <label>Course Code:</label>
                             </div>
-                            <div class="col-md-4 fieldcol">
+                            <div class="col-md-4">
                                 <div class="form-group">
                                     <input type="text" name="coursecode" class="form-control" id="coursecode"
                                            value="<?php echo $coursecode; ?>">
                                 </div>
                             </div>
                         </div>
-                        <div class="row field">
-                            <div class="col-md-2 fieldcol">
-                                <label = "usr" class = "control-label"> Course Description: </label>
+                        <div class="row">
+                            <div class="col-md-2">
+                                <label> Course Description: </label>
                             </div>
-                            <div class="col-md-4 fieldcol">
+                            <div class="col-md-4">
                                 <div class="form-group">
                                     <input type="text" name="coursedesc" class="form-control" id="coursedesc"
                                            value="<?php echo $coursedescription; ?>">
@@ -364,7 +364,7 @@ $course_tbl =
                 invalid: "glyphicon glyphicon-remove",
                 validating: "glyphicon glyphicon-refresh"
             },
-            fields: {
+           s: {
                 coursetitle: {
                     validators: {
                         notEmpty: {
