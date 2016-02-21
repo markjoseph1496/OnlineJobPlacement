@@ -5,8 +5,9 @@ include('../../common-functions.php');
 $common_functions->student_login_check();
 $StudentID = $_SESSION['StudentID']; // to conform with your coding style -- ghabx
 
-$PLevel_Default = isset($_POST['PLevel']) ? $_POST['PLevel'] : '';
-$EType_Default = isset($_POST['EType']) ? $_POST['EType'] : '';
+$PLevel_Default = isset($_GET['PLevel']) ? $_GET['PLevel'] : '';
+$EType_Default = isset($_GET['EType']) ? $_GET['EType'] : '';
+$Search_Default = isset($_GET['Search']) ? $_GET['Search'] : '';
 
 
 $infoquery =
@@ -286,7 +287,7 @@ $MajorCourse = $coursetbl[0][0];
         ?>
 
         <!-- Start Content -->
-        <form method="POST">
+        <form method="GET">
             <div id="content">
                 <div class="container">
                     <div class="row blog-page">
@@ -299,11 +300,10 @@ $MajorCourse = $coursetbl[0][0];
                                         href="bookmarked-jobs.php">(0)</a>&nbsp;
                                 </label>
                             </div>
-
                             <div>
-                                <label><i class="fa fa-search"></i> Search by: 
+                                <label><i class="fa fa-search"></i> Search:
                                 </label>
-                                <input type="text" class="form-control" value="">
+                                <input type="text" name="Search" class="form-control" value="<?php echo $Search_Default; ?>">
                             </div>
 
                             <div>
@@ -382,10 +382,11 @@ $MajorCourse = $coursetbl[0][0];
                         <div class="col-md-9 blog-box">
                             <h4 class="classic-title"><span>Jobs</span></h4>
                             <?php
-                            if (isset($_POST['btnFilter'])) {
+                            if (isset($_GET['btnFilter'])) {
                                 $isEmpty = 0;
-                                $PLevel = $_POST['PLevel'];
-                                $EType = $_POST['EType'];
+                                $PLevel = $_GET['PLevel'];
+                                $EType = $_GET['EType'];
+                                $Search = $_GET['Search'];
 
                                 if (empty($PLevel) && empty($EType)) {
                                     $compposition_tbl =
@@ -403,6 +404,7 @@ $MajorCourse = $coursetbl[0][0];
                                             comppositiontbl.JSpecialization
                                             FROM listofspecializationtbl
                                             INNER JOIN comppositiontbl ON listofspecializationtbl.Specialization = comppositiontbl.JSpecialization
+                                            WHERE PositionTitle LIKE '%$Search%'
                                             ORDER BY PositionTitle ASC",
                                             TRUE
                                         );
@@ -422,7 +424,7 @@ $MajorCourse = $coursetbl[0][0];
                                             comppositiontbl.JSpecialization
                                             FROM listofspecializationtbl
                                             INNER JOIN comppositiontbl ON listofspecializationtbl.Specialization = comppositiontbl.JSpecialization
-                                            WHERE comppositiontbl.PositionLevel = ?
+                                            WHERE comppositiontbl.PositionLevel = ? AND comppositiontbl.PositionTitle LIKE '%$Search%'
                                             ORDER BY PositionTitle ASC",
                                             TRUE,
                                             "s",
@@ -444,7 +446,7 @@ $MajorCourse = $coursetbl[0][0];
                                             comppositiontbl.JSpecialization
                                             FROM listofspecializationtbl
                                             INNER JOIN comppositiontbl ON listofspecializationtbl.Specialization = comppositiontbl.JSpecialization
-                                            WHERE comppositiontbl.EType = ?
+                                            WHERE comppositiontbl.EType = ? AND comppositiontbl.PositionTitle LIKE '%$Search%'
                                             ORDER BY PositionTitle ASC",
                                             TRUE,
                                             "s",
@@ -466,7 +468,7 @@ $MajorCourse = $coursetbl[0][0];
                                             comppositiontbl.JSpecialization
                                             FROM listofspecializationtbl
                                             INNER JOIN comppositiontbl ON listofspecializationtbl.Specialization = comppositiontbl.JSpecialization
-                                            WHERE comppositiontbl.EType = ? AND comppositiontbl.PositionLevel = ?
+                                            WHERE comppositiontbl.EType = ? AND comppositiontbl.PositionLevel = ? AND comppositiontbl.PositionTitle LIKE '%$Search%'
                                             ORDER BY PositionTitle ASC",
                                             TRUE,
                                             "ss",
