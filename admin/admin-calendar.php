@@ -184,14 +184,14 @@ if(isset($_SESSION['AdminID'])){
                                         <h4 class="modal-title">Sign Out</h4>
                                     </div>
                                     <div class="modal-body">
-                                        <div class="col-md-15 fieldcol">
-                                            <label = "usr" class = "control-label">Do you want to Sign Out?</label>
+                                        <div class="col-md-15">
+                                            <label>Do you want to Sign Out?</label>
                                             <div class="form-group">
                                             </div>
                                         </div>
                                         <div class="modal-footer">
                                             <a href="logout.php"
-                                               class="btn btn-primary">Sign out</a>
+                                               class="btn btn-primary">Sign Out</a>
                                             <button type="button" class="btn btn-default" data-dismiss="modal">
                                                 Cancel
                                             </button>
@@ -200,87 +200,84 @@ if(isset($_SESSION['AdminID'])){
                                 </div>
                             </div>
                         </div>
-                        <!-- End Sign-out -->
 
                         <!-- Start Navigation List -->
-                <ul class="nav navbar-nav navbar-right">
-                    <li>
-                        <a href="admin.php">Home</a>
-                    </li>
-                    <li>
-                    <a>Reports</a>
-                        <ul class="dropdown">
-                            <li><a href="admin-reports.php" class = "active">Alumni Reports</a></li>
-                            <li><a href="admin-ojtreports.php">OJT Reports</a></li>
+                        <ul class="nav navbar-nav navbar-right">
+                            <li>
+                                <a href="admin.php">Home</a>
+                            </li>
+                            <li>
+                                <a>Reports</a>
+                                <ul class="dropdown">
+                                    <li><a href="admin-reports.php">Alumni Reports</a></li>
+                                    <li><a href="admin-ojtreports.php">OJT Reports</a></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="admin-account.php">Account</a>
+                            </li>
+                            <li>
+                                <a href="admin-requested.php">Requested</a>
+                            </li>
+                            <li>
+                                <a>Company List</a>
+                                <ul class="dropdown">
+                                    <li><a href="admin-companylist.php">Active</a></li>
+                                    <li><a href="admin-company_pending.php">Pending</a></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a class="active">Maintenance</a>
+                                <ul class="dropdown">
+                                    <li><a href="admin-maintenance.php">Courses</a></li>
+                                    <li><a href="admin-users.php">Users</a></li>
+                                    <li><a class="active" href="admin-calendar.php">Calendar Events</a></li>
+                                </ul>
+                            </li>
                         </ul>
-                    </li>
-                    <li>
-                        <a href="admin-account.php">Account</a>
-                    </li>
-                    <li>
-                        <a href="admin-requested.php">Requested</a>
-                    </li>
-                    <li>
-                        <a>Company List</a>
-                        <ul class="dropdown">
-                            <li><a href="admin-companylist.php" class="active">Active</a></li>
-                            <li><a href="admin-company_pending.php">Pending</a></li>
-                        </ul>
-                    </li>
-                    <li>
-                        <a> Maintenance</a>
-                        <ul class="dropdown">
-                            <li><a href="admin-maintenance.php">Courses</a></li>
-                            <li><a href="admin-users.php">Users</a></li>
-                            <li><a class="active" href="admin-calendar.php">Calendar Events</a></li>
-                        </ul>
-                    </li>
+                        <!-- End Navigation List -->
+                    </div>
+                </div>
+                <!-- Mobile Menu Start -->
+                <ul class="wpb-mobile-menu">
+                    <ul class="nav navbar-nav navbar-right">
+                        <li>
+                            <a href="admin.php">Home</a>
+                        </li>
+                        <li>
+                            <a>Reports</a>
+                                <ul class="dropdown">
+                                    <li><a href="admin-reports.php" class = "active">Alumni Reports</a></li>
+                                    <li><a href="admin-ojtreports.php">OJT Reports</a></li>
+                                </ul>
+                            </li>
+                        <li>
+                            <a href="admin-account.php">Account</a>
+                        </li>
+                        <li>
+                            <a href="admin-requested.php">Requested</a>
+                        </li>
+                        <li>
+                            <a>Company List</a>
+                            <ul class="dropdown">
+                                <li><a href="admin-companylist.php">Active</a></li>
+                                <li><a href="admin-company_pending.php">Pending</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a> Maintenance</a>
+                            <ul class="dropdown">
+                                <li><a href="admin-maintenance.php">Courses</a></li>
+                                <li><a href="admin-users.php">Users</a></li>
+                                <li><a class="active" href="admin-calendar.php">Calendar Events</a></li>
+                            </ul>
+                        </li>
+                    </ul>
                 </ul>
-                <!-- End Navigation List -->
-            </div>
-        </div>
-        <!-- Mobile Menu Start -->
-        <ul class="wpb-mobile-menu">
-            <ul class="nav navbar-nav navbar-right">
-                <li>
-                    <a href="admin.php">Home</a>
-                </li>
-                <li>
-                    <a>Reports</a>
-                        <ul class="dropdown">
-                            <li><a href="admin-reports.php" class = "active">Alumni Reports</a></li>
-                            <li><a href="admin-ojtreports.php">OJT Reports</a></li>
-                        </ul>
-                    </li>
-                <li>
-                    <a href="admin-account.php">Account</a>
-                </li>
-                <li>
-                    <a href="admin-requested.php">Requested</a>
-                </li>
-                <li>
-                    <a>Company List</a>
-                    <ul class="dropdown">
-                        <li><a href="admin-companylist.php">Active</a></li>
-                        <li><a href="admin-company_pending.php">Pending</a></li>
-                    </ul>
-                </li>
-                <li>
-                    <a> Maintenance</a>
-                    <ul class="dropdown">
-                        <li><a href="admin-maintenance.php">Courses</a></li>
-                        <li><a href="admin-users.php">Users</a></li>
-                        <li><a class="active" href="admin-calendar.php">Calendar Events</a></li>
-                    </ul>
-                </li>
-            </ul>
-        </ul>
-        </header>
-        <!-- Mobile Menu End -->
             </div>
             <!-- End Header Logo & Naviagtion -->
         </header>
-        <!-- End Header Section -->
+        <!-- Mobile Menu End -->
 
         <!-- Start Page Banner -->
         <div class="page-banner">
@@ -294,21 +291,9 @@ if(isset($_SESSION['AdminID'])){
         </div>
         <!-- End Page Banner -->
 
-        <!--Content-->
-        <br><br><br>
-        <div class = "container">
-            <div class="row">
-                <div class="col-md-6">
-                    &nbsp;
-                </div>
-                <div class="col-md-6">
-                    <a href="admin-calendarcreateevent.php" class="main-button" style="float:right;">
-                        <span class="fa fa-pencil-square-o fa-1x"></span> Create an Event 
-                    </a>
-                </div>
-            </div>
-            &nbsp;
-            <div class = "col-md-12">
+        <div id="content">
+            <div class = "container">
+
                 <?php
                     if (isset($_GET['id'])) {
                         $id = $_GET['id'];
@@ -330,14 +315,28 @@ if(isset($_SESSION['AdminID'])){
                         }
                     }
                 ?>
+
+                <div class="row">
+                    <div class="col-md-6">
+                        &nbsp;
+                    </div>
+                    <div class="col-md-6">
+                        <a href="admin-calendarcreateevent.php" class="main-button" style="float:right;">
+                            <span class="fa fa-pencil-square-o fa-1x"></span> Create an Event 
+                        </a>
+                    </div>
+                </div>
+
+                <div class="hr1" style="margin-top:30px;margin-bottom:30px;"></div>
+
                 <table class="table segment table-hover">
                     <thead>
                         <tr>
-                            <th width= "20%" class = "tabletitle">Event</th>
-                            <th width = "20%" class = "tabletitle">From</th>
-                            <th width = "20%" class = "tabletitle">To</th>
-                            <th width = "25%" class = "tabletitle"> Location </th>
-                            <th width = "15%" class = "tabletitle"> </th>
+                            <th width="25%">Event</th>
+                            <th width="20%">From</th>
+                            <th width="20%">To</th>
+                            <th width="25%">Location</th>
+                            <th width="10%"></th>
                         <tr>
                     </thead>
                     <tbody>
@@ -359,12 +358,12 @@ if(isset($_SESSION['AdminID'])){
                             
                         ?>
                         <tr>
-                           <td width = 20% class = tabletitle><?php echo $eventtitle;?></td>
-                           <td width = 20% class = tabletitle><?php echo $datefrom; ?> </td>
-                           <td width = 20% class = tabletitle><?php echo $dateto; ?> </td>
-                           <td width = 20% class = tabletitle><?php echo $location;?> </td>
-                           <td class = tabletitle>
-                                <button class="btn btn-primary" data-toggle="modal"
+                            <td width="25%"><?php echo $eventtitle;?></td>
+                            <td width="20%"><?php echo $datefrom; ?></td>
+                            <td width="20%"><?php echo $dateto; ?></td>
+                            <td width="25%"><?php echo $location;?></td>
+                            <td width="10%" class="text-center">
+                                <button class="btn btn-default" data-toggle="modal"
                                     data-target="#EditEvent<?php echo $EventID; ?>">
                                     <i class="fa fa-pencil-square-o fa-1x"></i>
                                 </button>
@@ -373,7 +372,7 @@ if(isset($_SESSION['AdminID'])){
                                     <i class="fa fa-trash fa-1x"></i>
                                 </button> 
                            </td>
-                        <tr>
+                        </tr>
                         <!-- Edit Modal-->
                         <div class="modal fade" id="EditEvent<?php echo $EventID; ?>"
                          role="dialog">
@@ -385,68 +384,64 @@ if(isset($_SESSION['AdminID'])){
                                         <h4 class="modal-title">Edit Event?</h4>
                                     </div>
                                     <div class="modal-body">
-                                    <form method="POST" action="functions.php ">
-                                        <div class="col-md-7">
-                                            <div class="row">
-                                                <div class="row field">
-                                                    <div class="col-md-2 fieldcol">
-                                                        <label = "usr" class = "control-label">Event from: </label>
-                                                    </div>
-                                                    <div class="col-md-4 fieldcol">
-                                                        <div class = "form-group">
-                                                            <label = "usr" class = "control-label"><?php echo $datefrom; ?></label>
+                                        <form method="POST" action="functions.php ">
+                                            <div class="col-md-7">
+                                                <div class="row">
+                                                    <div class="row">
+                                                        <div class="col-md-2">
+                                                            <label>Event from: </label>
+                                                        </div>
+                                                        <div class="col-md-4">
+                                                            <div class = "form-group">
+                                                                <label><?php echo $datefrom; ?></label>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-md-1">
+                                                            <label>to: </label>
+                                                        </div>
+                                                        <div class="col-md-4">
+                                                            <div class = "form-group">
+                                                                <label><?php echo $dateto; ?></label>
+                                                            </div>
                                                         </div>
                                                     </div>
-                                                    <div class="col-md-1 fieldcol">
-                                                        <label = "usr" class = "control-label" >to: </label>
-                                                    </div>
-                                                    <div class="col-md-4 fieldcol">
-                                                        <div class = "form-group">
-                                                            <label = "usr" class = "control-label"><?php echo $dateto; ?></label>
+                                                    <div class="row">
+                                                        <div class="col-md-2">
+                                                            <label>Event Title: </label>
+                                                        </div>
+                                                        <div class="col-md-9">
+                                                            <div class="form-group">
+                                                                <input type="text" name="eEventTitle" id="eEventTitle" class="form-control" value="<?php echo $eventtitle; ?>">
+                                                            </div>
                                                         </div>
                                                     </div>
-
-                                                    
-                                                </div>
-                                                <div class="row field">
-                                                    <div class="col-md-2 fieldcol">
-                                                        <label = "usr" class = "control-label"> Event Title: </label>
-                                                    </div>
-                                                    <div class="col-md-9 fieldcol">
-                                                        <div class="form-group">
-                                                            <input type="text" name="eEventTitle" id="eEventTitle" class="form-control" value="<?php echo $eventtitle; ?>">
+                                                    <div class="row">
+                                                        <div class="col-md-2">
+                                                            <label>Location: </label>
+                                                        </div>
+                                                        <div class="col-md-9">
+                                                            <div class="form-group">
+                                                                <input type="text" name="eLocation" id="eLocation" class="form-control" value="<?php echo $location; ?>">
+                                                            </div>
                                                         </div>
                                                     </div>
-                                                </div>
-                                                <div class="row field">
-                                                    <div class="col-md-2 fieldcol">
-                                                        <label = "usr" class = "control-label"> Location: </label>
-                                                    </div>
-                                                    <div class="col-md-9 fieldcol">
-                                                        <div class="form-group">
-                                                            <input type="text" name="eLocation" id="eLocation" class="form-control" value="<?php echo $location; ?>">
+                                                    <div class="row">
+                                                        <div class="col-md-2">
+                                                            <label>Caption: </label>
                                                         </div>
-                                                    </div>
-                                                </div>
-                                                <div class="row field">
-                                                    <div class="col-md-2 fieldcol">
-                                                        <label = "usr" class = "control-label"> Caption: </label>
-                                                    </div>
-                                                    <div class="col-md-9 fieldcol">
-                                                        <div class="form-group">
-                                                            <input type="text" class="form-control" id="eDescription" name="eDescription" value="<?php echo $description; ?>">
+                                                        <div class="col-md-9">
+                                                            <div class="form-group">
+                                                                <input type="text" class="form-control" id="eDescription" name="eDescription" value="<?php echo $description; ?>">
+                                                            </div>
                                                         </div>
                                                     </div>
                                                 </div>
                                             </div>
-                                        </div>
-                                        <div class="modal-footer">
-                                            <button type="submit" class="btn btn-primary" name="btnUpdateEvent">Update</button>
-                                            <button type="button" class="btn btn-default" data-dismiss="modal">
-                                                Cancel
-                                            </button>
-                                        </div>
-                                    </form>
+                                            <div class="modal-footer">
+                                                <button type="submit" class="btn btn-primary" name="btnUpdateEvent">Update</button>
+                                                <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+                                            </div>
+                                        </form>
                                     </div>
                                 </div>
                             </div>
@@ -464,7 +459,7 @@ if(isset($_SESSION['AdminID'])){
                                     </div>
                                     <div class="modal-body">
                                         <div class="col-md-15">
-                                            <label = "usr" class = "control-label">Do you want to delete
+                                            <label>Do you want to delete
                                             <?php echo $eventtitle; ?> ? This cannot be undone.</label>
                                             <div class="form-group">
                                             </div>
