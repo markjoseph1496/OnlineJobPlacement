@@ -114,11 +114,7 @@ if (isset($_SESSION['AdminID'])) {
                 <div class="container">
                     <div class="row">
                         <div class="col-md-6">
-                            <!-- Start Contact Info -->
-                            <ul class="contact-details">
-                                <li class="profile-name"><i class="fa fa-hashtag"></i> <b>008-2012-0805</b></li>
-                            </ul>
-                            <!-- End Contact Info -->
+                            &nbsp;
                         </div>
                         <!-- .col-md-6 -->
                         <div class="col-md-6">

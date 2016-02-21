@@ -15,7 +15,7 @@ if(isset($_SESSION['AdminID'])){
 <head>
 
     <!-- Basic -->
-    <title>OJPMS</title>
+    <title>OJPMS | Pending Company</title>
 
     <!-- Define Charset -->
     <meta charset="utf-8">
@@ -112,11 +112,7 @@ if(isset($_SESSION['AdminID'])){
                 <div class="container">
                     <div class="row">
                         <div class="col-md-7">
-                            <!-- Start Contact Info -->
-                            <ul class="contact-details">
-                                <li class="profile-name"><i class="fa fa-hashtag"></i> <b>008-2012-0805</b></li>
-                            </ul>
-                            <!-- End Contact Info -->
+                            &nbsp;
                         </div>
                         <!-- .col-md-6 -->
                         <div class="col-md-5">
@@ -287,6 +283,7 @@ if(isset($_SESSION['AdminID'])){
 
         <div id="content">
             <div class="container">
+                <div class="hr2"></div>
                 <table class="table segment table-hover">
                     <thead>
                         <tr>

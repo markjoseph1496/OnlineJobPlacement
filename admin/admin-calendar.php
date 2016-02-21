@@ -329,6 +329,7 @@ if(isset($_SESSION['AdminID'])){
 
                 <div class="hr1" style="margin-top:30px;margin-bottom:30px;"></div>
 
+                <div class="hr2"></div>
                 <table class="table segment table-hover">
                     <thead>
                         <tr>

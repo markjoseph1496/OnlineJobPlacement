@@ -103,25 +103,25 @@ if (isset($_SESSION['AdminID'])) {
 </head>
 
 <body>
+    <!-- Full Body Container -->
+    <div id="container">
+        <div class="hidden-header"></div>
+        <header class="clearfix">
 
-<!-- Full Body Container -->
-<div id="container">
-
-
-    <!-- Start Top Bar -->
-    <div class="top-bar">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-6">
-                    <!-- Start Contact Info -->
-                    <ul class="contact-details">
-                        <li class="profile-name"><i class="fa fa-hashtag"></i> <b>008-2012-0805</b></li>
-                    </ul>
-                    <!-- End Contact Info -->
-                </div>
-                <!-- .col-md-6 -->
-                <div class="col-md-6">
-                    <!-- Notification -->
+            <!-- Start Top Bar -->
+            <div class="top-bar">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <!-- Start Contact Info -->
+                            <ul class="contact-details">
+                                <li class="profile-name"><i class="fa fa-hashtag"></i> <b>008-2012-0805</b></li>
+                            </ul>
+                            <!-- End Contact Info -->
+                        </div>
+                        <!-- .col-md-6 -->
+                        <div class="col-md-6">
+                            <!-- Notification -->
                             <ul class="nav navbar-nav navbar-right">
                                 <li class="dropdown icon-border" id="notificationLink">
                                     <span id="notification_count">3</span>
@@ -145,34 +145,34 @@ if (isset($_SESSION['AdminID'])) {
                                 </li>
                             </ul>
                             <!-- Notification -->
+                        </div>
+                        <!-- .col-md-6 -->
+                    </div>
+                    <!-- .row -->
                 </div>
-                <!-- .col-md-6 -->
+                <!-- .container -->
             </div>
-            <!-- .row -->
-        </div>
-        <!-- .container -->
-    </div>
-    <!-- .top-bar -->
-    <!-- End Top Bar -->
+            <!-- .top-bar -->
+            <!-- End Top Bar -->
 
 
-    <!-- Start  Logo & Naviagtion  -->
-    <div class="navbar navbar-default navbar-top">
-        <div class="container">
-            <div class="navbar-header">
-                <!-- Stat Toggle Nav Link For Mobiles -->
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                    <i class="fa fa-bars"></i>
-                </button>
-                <!-- End Toggle Nav Link For Mobiles -->
-                <a class="navbar-brand" href="">
-                    <img src="../images/ojpms.png">
-                </a>
-            </div>
-            <div class="navbar-collapse collapse">
-                <!-- Modal -->
-               <div class="modal fade" id="Logout"
-                             role="dialog">
+            <!-- Start  Logo & Naviagtion  -->
+            <div class="navbar navbar-default navbar-top">
+                <div class="container">
+                    <div class="navbar-header">
+                        <!-- Stat Toggle Nav Link For Mobiles -->
+                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        <!-- End Toggle Nav Link For Mobiles -->
+                        <a class="navbar-brand" href="">
+                            <img src="../images/ojpms.png">
+                        </a>
+                    </div>
+                    <div class="navbar-collapse collapse">
+                        <!-- Modal -->
+                       <div class="modal fade" id="Logout"
+                                     role="dialog">
                             <div class="modal-dialog" style="padding:100px">
                                 <!-- Modal content-->
                                 <div class="modal-content">
@@ -181,7 +181,7 @@ if (isset($_SESSION['AdminID'])) {
                                         <h4 class="modal-title">Sign Out</h4>
                                     </div>
                                     <div class="modal-body">
-                                        <div class="col-md-15 fieldcol">
+                                        <div class="col-md-15">
                                             <label = "usr" class = "control-label">Do you want to Sign Out?</label>
                                             <div class="form-group">
                                             </div>
@@ -196,201 +196,128 @@ if (isset($_SESSION['AdminID'])) {
                                     </div>
                                 </div>
                             </div>
+                        </div>
+                    </div>
                 </div>
-                <!-- End Sign-out -->
-                <!-- Start Navigation List -->
-                <ul class="nav navbar-nav navbar-right">
-                    <li>
-                        <a href="admin.php">Home</a>
-                    </li>
-                    <li>
-                    <a>Reports</a>
-                        <ul class="dropdown">
-                            <li><a href="admin-reports.php" class = "active">Alumni Reports</a></li>
-                            <li><a href="admin-ojtreports.php">OJT Reports</a></li>
-                        </ul>
-                    </li>
-                    <li>
-                        <a href="admin-account.php">Account</a>
-                    </li>
-                    <li>
-                        <a href="admin-requested.php">Requested</a>
-                    </li>
-                    <li>
-                        <a>Company List</a>
-                        <ul class="dropdown">
-                            <li><a href="admin-companylist.php" class="active">Active</a></li>
-                            <li><a href="admin-company_pending.php">Pending</a></li>
-                        </ul>
-                    </li>
-                    <li>
-                        <a> Maintenance</a>
-                        <ul class="dropdown">
-                            <li><a href="admin-maintenance.php">Courses</a></li>
-                            <li><a class="active" href="admin-users.php">Users</a></li>
-                            <li><a href="admin-calendar.php">Calendar Events</a></li>
-                        </ul>
-                    </li>
-                </ul>
-                <!-- End Navigation List -->
             </div>
-        </div>
-        <!-- Mobile Menu Start -->
-        <ul class="wpb-mobile-menu">
-            <ul class="nav navbar-nav navbar-right">
-                <li>
-                    <a href="admin.php">Home</a>
-                </li>
-                <li>
-                    <a>Reports</a>
-                        <ul class="dropdown">
-                            <li><a href="admin-reports.php" class = "active">Alumni Reports</a></li>
-                            <li><a href="admin-ojtreports.php">OJT Reports</a></li>
-                        </ul>
-                    </li>
-                <li>
-                    <a href="admin-account.php">Account</a>
-                </li>
-                <li>
-                    <a href="admin-requested.php">Requested</a>
-                </li>
-                <li>
-                    <a>Company List</a>
-                    <ul class="dropdown">
-                        <li><a href="admin-companylist.php">Active</a></li>
-                        <li><a href="admin-company_pending.php">Pending</a></li>
-                    </ul>
-                </li>
-                <li>
-                    <a> Maintenance</a>
-                    <ul class="dropdown">
-                        <ul class="dropdown">
-                            <li><a href="admin-maintenance.php">Courses</a></li>
-                            <li><a class="active" href="admin-users.php">Users</a></li>
-                            <li><a href="admin-calendar.php">Calendar Events</a></li>
-                        </ul>
-                    </ul>
-                </li>
-            </ul>
-        </ul>
+            <!-- End Header Logo & Naviagtion -->
         </header>
-        <!-- Mobile Menu End -->
+        <!-- End Header Section -->
 
-    </div>
-    <!-- End Header Logo & Naviagtion -->
-
-    </header>
-    <!-- End Header Section -->
-
-    <!-- Start Page Banner -->
-    <div class="page-banner" style="padding:40px 0; center #f9f9f9;">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-6">
-                    <h2>Add User</h2>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- End Page Banner -->
-
-    <!--Content-->
-    <br><br><br>
-    <form method="POST" action="functions.php" name="AddUser" id="AddUser" autocomplete="off">
-    <div class="container">
-        <div class="col-md-12">
-            <div class="row field">
-                <div class="col-md-2 fieldcol">
-                    <label>Username:</label>
-                </div>
-                <div class="col-md-4 fieldcol">
-                    <div class="form-group">
-                        <input type="text" class="form-control" name="aUsername" id="aUsername">
+        <!-- Start Page Banner -->
+        <div class="page-banner" style="padding:40px 0; center #f9f9f9;">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6">
+                        <h2>User</h2>
                     </div>
-                </div>
-            </div>
-            <div class="row field">
-                <div class="col-md-2 fieldcol">
-                    <label>Password:</label>
-                </div>
-                <div class="col-md-4 fieldcol">
-                    <div class="form-group">
-                        <label><i>Default password is "user".</i></label>
-                    </div>
-                </div>
-            </div>
-            <div class="row field">
-                <div class="col-md-2 fieldcol">
-                    <label>First Name:</label>
-                </div>
-                <div class="col-md-4 fieldcol">
-                    <div class="form-group">
-                        <input type="text" name="aFirstName" id="aFirstName" class="form-control">
-                    </div>
-                </div>
-            </div>
-            <div class="row field">
-                <div class="col-md-2 fieldcol">
-                    <label>MiddleName:</label>
-                </div>
-                <div class="col-md-4 fieldcol">
-                    <div class="form-group">
-                        <input type="text" name="aMiddleName" id="aMiddleName" class="form-control">
-                    </div>
-                </div>
-            </div>
-            <div class="row field">
-                <div class="col-md-2 fieldcol">
-                    <label>Last Name: </label>
-                </div>
-                <div class="col-md-4 fieldcol">
-                    <div class="form-group">
-                        <input type="text" name="aLastName" id="aLastName" class="form-control">
-                    </div>
-                </div>
-            </div>
-            <div class="row field">
-                <div class="col-md-2 fieldcol">
-                    <label>Position:</label>
-                </div>
-                <div class="col-md-4 fieldcol">
-                    <div class="form-group">
-                        <input type="text" name="aPosition" id="aPosition" class="form-control">
-                    </div>
-                </div>
-            </div>
-            <div class="row field">
-
-                <div class="col-md-2 fieldcol">
-                    <label>Address:</label>
-                </div>
-                <div class="col-md-4 fieldcol">
-                    <div class="form-group">
-                        <input type="text" name="aAddress" id="aAddress" class="form-control">
-                    </div>
-                </div>
-            </div>
-            <div class="row field">
-                <div class="col-md-2 fieldcol">
-                    <label>Contact Number:</label>
-                </div>
-                <div class="col-md-4 fieldcol">
-                    <div class="form-group">
-                        <input type="text" name="aContactNumber" id="aContactNumber" class="form-control">
+                    <div class="col-md-6">
+                        <ul class="breadcrumbs">
+                            <li><a href="#"></a></li>
+                            <li>Add User</li>
+                        </ul>
                     </div>
                 </div>
             </div>
         </div>
-        &nbsp;
-        <div class="hr5" style="margin-top:35px;margin-bottom:40px;"></div>
-        <div class="field">
-            <div class="text-center">
-                <button type="submit" class="btn-system btn-large">Save</button>
-                <a href = "admin-adduser.php" class="btn-system btn-large btn-black">Cancel</a>
-            </div>
+        <!-- End Page Banner -->
+
+        <div id="content">
+            <form method="POST" action="functions.php" name="AddUser" id="AddUser" autocomplete="off">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-2">
+                            <label>Username:</label>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                <input type="text" class="form-control" name="aUsername" id="aUsername">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-2">
+                            <label>Password:</label>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                <label><i>Default password is "user".</i></label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-2">
+                            <label>First Name:</label>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                <input type="text" name="aFirstName" id="aFirstName" class="form-control">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-2">
+                            <label>MiddleName:</label>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                <input type="text" name="aMiddleName" id="aMiddleName" class="form-control">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-2">
+                            <label>Last Name: </label>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                <input type="text" name="aLastName" id="aLastName" class="form-control">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-2">
+                            <label>Position:</label>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                <input type="text" name="aPosition" id="aPosition" class="form-control">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+
+                        <div class="col-md-2">
+                            <label>Address:</label>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                <input type="text" name="aAddress" id="aAddress" class="form-control">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-2">
+                            <label>Contact Number:</label>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                <input type="text" name="aContactNumber" id="aContactNumber" class="form-control">
+                            </div>
+                        </div>
+                    </div>
+                    &nbsp;
+                    <div class="hr5" style="margin-top:35px;margin-bottom:40px;"></div>
+                    <div class="field">
+                        <div class="text-center">
+                            <button type="submit" class="btn-system btn-large">Save</button>
+                            <a href = "admin-adduser.php" class="btn-system btn-large btn-black">Cancel</a>
+                        </div>
+                    </div>
+                </div>
+            </form>
         </div>
     </div>
-    </form>
 </body>
 <script type="text/javascript" src="../js/script.js"></script>
 
@@ -402,7 +329,7 @@ if (isset($_SESSION['AdminID'])) {
                 invalid: "glyphicon glyphicon-remove",
                 validating: "glyphicon glyphicon-refresh"
             },
-           fields: {
+          s: {
                 aUsername: {
                     validators: {
                         notEmpty: {

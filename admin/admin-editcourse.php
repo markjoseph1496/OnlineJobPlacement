@@ -209,90 +209,25 @@ $course_tbl =
                             </div>
                         </div>
                     </div>
-                    <!-- Start Navigation List -->
-                    <ul class="nav navbar-nav navbar-right">
-                        <li>
-                            <a href="admin.php">Home</a>
-                        </li>
-                        <li>
-                    <a>Reports</a>
-                        <ul class="dropdown">
-                            <li><a href="admin-reports.php" class = "active">Alumni Reports</a></li>
-                            <li><a href="admin-ojtreports.php">OJT Reports</a></li>
-                        </ul>
-                    </li>
-                        <li>
-                            <a href="admin-account.php">Account</a>
-                        </li>
-                        <li>
-                            <a href="admin-requested.php">Requested</a>
-                        </li>
-                        <li>
-                           <a>Company List</a>
-                        <ul class="dropdown">
-                            <li><a href="admin-companylist.php" class = "active">Active</a></li>
-                            <li><a href="admin-company_pending.php">Pending</a></li>
-                        </ul>
-                        </li>
-                       <li>
-                        <a> Maintenance</a>
-                        <ul class="dropdown">
-                            <li><a class="active" href="admin-maintenance.php">Courses</a></li>
-                            <li><a href="admin-users.php">Users</a></li>
-                            <li><a href="admin-calendar.php">Calendar Events</a></li>
-                        </ul>
-                    </li>
-                    </ul>
-                    <!-- End Navigation List -->
                 </div>
             </div>
-            <!-- Mobile Menu Start -->
-            <ul class="wpb-mobile-menu">
-                <ul class="nav navbar-nav navbar-right">
-                    <li>
-                        <a href="admin.php">Home</a>
-                    </li>
-                   <li>
-                    <a>Reports</a>
-                        <ul class="dropdown">
-                            <li><a href="admin-reports.php" class = "active">Alumni Reports</a></li>
-                            <li><a href="admin-ojtreports.php">OJT Reports</a></li>
-                        </ul>
-                    </li>
-                    <li>
-                        <a href="admin-account.php">Account</a>
-                    </li>
-                    <li>
-                        <a href="admin-requested.php">Requested</a>
-                    </li>
-                    <li>
-                       <a>Company List</a>
-                        <ul class="dropdown">
-                            <li><a href="admin-companylist.php">Active</a></li>
-                            <li><a href="admin-company_pending.php">Pending</a></li>
-                        </ul>
-                    </li>
-                    <li>
-                        <a> Maintenance</a>
-                        <ul class="dropdown">
-                            <li><a href="admin-maintenance.php">Courses</a></li>
-                            <li><a href="admin-users.php">Users</a></li>
-                            <li><a href="admin-calendar.php">Calendar Events</a></li>
-                        </ul>
-                    </li>
-                </ul>
-            </ul>
         </div>
         <!-- End Header Logo & Naviagtion -->
     </header>
     <!-- Mobile Menu End -->
 
     <!-- Start Page Banner -->
-    <div class="page-banner" style="padding:40px 0; center #f9f9f9;">
+    <div class="page-banner no-subtitle">
         <div class="container">
             <div class="row">
                 <div class="col-md-6">
-                    <h2>Maintenance</h2>
+                    <h2>Course</h2>
+                </div>
+                <div class="col-md-6">
+                    <ul class="breadcrumbs">
+                        <li><a href="#"></a></li>
+                        <li>Edit Course</li>
+                    </ul>
                 </div>
             </div>
         </div>
@@ -304,52 +239,45 @@ $course_tbl =
             <form id="EditCourse" name="EditCourse" autocomplete="off" method="POST" action="functions.php">
                 <input type="text" class="form-control" id="CourseID" name="CourseID" style="display: none;"
                        value="<?php echo $CourseID; ?>">
-                <div class="container">
-                    <div class="col-md-12">
-                        <div class="row">
-                            <div class="col-md-2">
-                                <label>Course Title </label>
-                            </div>
-                            <div class="col-md-4">
-                                <div class="form-group">
-                                    <input type="text" name="coursetitle" class="form-control" id="coursetitle"
-                                           value="<?php echo $coursetitle; ?>">
-                                </div>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-md-2">
-                                <label>Course Code:</label>
-                            </div>
-                            <div class="col-md-4">
-                                <div class="form-group">
-                                    <input type="text" name="coursecode" class="form-control" id="coursecode"
-                                           value="<?php echo $coursecode; ?>">
-                                </div>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-md-2">
-                                <label> Course Description: </label>
-                            </div>
-                            <div class="col-md-4">
-                                <div class="form-group">
-                                    <input type="text" name="coursedesc" class="form-control" id="coursedesc"
-                                           value="<?php echo $coursedescription; ?>">
-                                </div>
-                            </div>
+                <div class="row">
+                    <div class="col-md-2">
+                        <label>Course Title </label>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <input type="text" name="coursetitle" class="form-control" id="coursetitle"
+                                   value="<?php echo $coursetitle; ?>">
                         </div>
                     </div>
-                    &nbsp;
-                    <div class="hr5" style="margin-top:35px;margin-bottom:40px;"></div>
-                    <div class="field">
-                                <div class="text-center">
-                                    <button type="submit" class="btn-system btn-large">Save</button>
-                                    <button type="submit" class="btn-system btn-large">Cancel</button>
-                                </div>           
-                     </div>
-
                 </div>
+                <div class="row">
+                    <div class="col-md-2">
+                        <label>Course Code:</label>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <input type="text" name="coursecode" class="form-control" id="coursecode"
+                                   value="<?php echo $coursecode; ?>">
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-2">
+                        <label> Course Description: </label>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <input type="text" name="coursedesc" class="form-control" id="coursedesc"
+                                   value="<?php echo $coursedescription; ?>">
+                        </div>
+                    </div>
+                </div>
+                &nbsp;
+                <div class="hr5" style="margin-top:35px;margin-bottom:40px;"></div>
+                <div class="text-center">
+                    <button type="submit" class="btn-system btn-large">Save</button>
+                    <button type="submit" class="btn-system btn-large btn-black">Cancel</button>
+                </div>           
             </form>
         </div>
     </div>
