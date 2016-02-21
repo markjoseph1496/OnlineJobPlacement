@@ -48,7 +48,7 @@
 
         <button type="submit" class="btn btn--green register-submit text-center" id="button"><center>Sign In</center></button>
         
-        <p class="register-terms">Don't have an account? Get started <a href="registration.php">here</a>.</p>
+        <p class="register-terms">Don't have an account? Get started <a href="registration-company.php">here</a>.</p>
     </div>
 </body>
 </html>
