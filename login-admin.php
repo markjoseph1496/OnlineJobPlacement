@@ -26,7 +26,7 @@
     <link href="css/style.css" rel="stylesheet">
 </head>
 
-<body class="admin-login">
+<body class="login-admin">
     <div class="box effect3" style="margin-top:5%;">
         <a href="index.php"><img src="images/logo/ojpms-logo.png" title="OJPMS - Home" style="width:70%;height:70%;"></a>
     </div>

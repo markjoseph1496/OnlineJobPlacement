@@ -114,6 +114,19 @@ $FirstName = $infoquery[0][0];
 
         });
     </script>
+
+    <!-- Alert -->
+    <script type="text/javascript">
+        $(document).ready (function(){
+        $("#success-alert").hide();
+        $("#btnsave").click(function showAlert() {
+            $("#success-alert").alert();
+            $("#success-alert").fadeTo(2000, 500).slideUp(500, function(){
+           $("#success-alert").alert('close');
+                });   
+            });
+        });
+    </script>
 </head>
 
 <body>
@@ -310,11 +323,11 @@ $FirstName = $infoquery[0][0];
 
                         if ($id == 'deleteevent') {
                             echo '
-                                    <div class="alert alert-success" id="success-alert">
-                                        <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
-                                        <strong><span class="fa fa-info-circle"></span> Event successfully deleted.</strong> 
-                                    </div>
-                                    ';
+                            <div class="alert alert-success" id="success-alert">
+                                <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                                <strong><span class="fa fa-info-circle"></span> Event successfully deleted.</strong> 
+                            </div>
+                            ';
                         } elseif ($id == 'updateevent') {
                             echo '
                             <div class="alert alert-success" id="success-alert">

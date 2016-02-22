@@ -6083,7 +6083,6 @@ section {
   border-left: 1px solid #dddddd;
   border-right: 1px solid #dddddd;
   vertical-align: middle;
-  text-align: center;
 }
 
 .table-header-rotated th.rotate-45{
@@ -6177,7 +6176,7 @@ td, th {
         rgba(0, 0, 0, 0.6)
     ),
     /* bottom, image */
-    url(../img/login-bg.jpg) no-repeat center center fixed;
+    url(../images/login-bg/login-admin.jpg) no-repeat center center fixed;
     max-width: 100%;
     max-height: 100%;
     background-size: cover;
@@ -6185,7 +6184,7 @@ td, th {
 
 
 /*Login-adviser*/
-.login-admin {
+.login-adviser {
   background: 
     /* top, transparent #fff, faked with gradient */ 
     linear-gradient(
@@ -6194,7 +6193,7 @@ td, th {
         rgba(0, 0, 0, 0.6)
     ),
     /* bottom, image */
-    url(../img/login-bg.jpg) no-repeat center center fixed;
+    url(../images/login-bg/login-adviser.jpg) no-repeat center center fixed;
     max-width: 100%;
     max-height: 100%;
     background-size: cover;

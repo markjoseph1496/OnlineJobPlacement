@@ -109,6 +109,19 @@ $FirstName = $infoquery[0][0];
 
         });
     </script>
+
+    <!-- Alert -->
+    <script type="text/javascript">
+        $(document).ready (function(){
+        $("#success-alert").hide();
+        $("#btnsave").click(function showAlert() {
+            $("#success-alert").alert();
+            $("#success-alert").fadeTo(2000, 500).slideUp(500, function(){
+           $("#success-alert").alert('close');
+                });   
+            });
+        });
+    </script>
 </head>
 
 <body>
@@ -304,10 +317,10 @@ $FirstName = $infoquery[0][0];
                 <table class="table segment table-hover">
                     <thead>
                         <tr>
-                            <th width='10%' class='tabletitle'>Course Code</th>
-                            <th width='20%' class='tabletitle'>Course Title</th>
-                            <th width='30%' class='tabletitle'>Course Description</th>
-                            <th width='10%' class='tabletitle'></th>
+                            <th width='10%'>Course Code</th>
+                            <th width='20%'>Course Title</th>
+                            <th width='30%'>Course Description</th>
+                            <th width='10%'></th>
                         <tr>
                     </thead>
                     <?php
@@ -325,9 +338,9 @@ $FirstName = $infoquery[0][0];
                         ?>
                     <tbody>
                         <tr>
-                            <td width="10%" class=tabletitle><?php echo $CourseCode; ?></td>
-                            <td width="20%" class=tabletitle><?php echo $CourseTitle; ?></td>
-                            <td width="30%" class=tabletitle><?php echo $CourseDesc; ?></td>
+                            <td width="10%"><?php echo $CourseCode; ?></td>
+                            <td width="20%"><?php echo $CourseTitle; ?></td>
+                            <td width="30%"><?php echo $CourseDesc; ?></td>
                             <td width="10%" class="tabletitle text-center">
                                 <a href="admin-editcourse.php?id=<?php echo $CourseID; ?>" class='btn btn-default'> <i
                                         class='fa fa-pencil-square-o fa-1x'></i> </a>

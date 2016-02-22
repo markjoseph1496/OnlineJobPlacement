@@ -420,11 +420,11 @@ if($References == "ok"){
 
                         if ($id == 1) {
                             echo '
-                                    <div class="alert alert-success" id="success-alert">
-                                        <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
-                                        <strong><span class="fa fa-info-circle"></span> Personal Information successfully updated.</strong> 
-                                    </div>
-                                    ';
+                            <div class="alert alert-success" id="success-alert">
+                                <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                                <strong><span class="fa fa-info-circle"></span> Personal Information successfully updated.</strong> 
+                            </div>
+                            ';
                         }
                     }
                     ?>
