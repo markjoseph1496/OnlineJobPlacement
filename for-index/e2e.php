@@ -4,7 +4,7 @@
 <head>
 
     <!-- Basic -->
-    <title>OJPMS | Partner Companies</title>
+    <title>OJPMS | Enrollment to Employment (E2E) System</title>
 
     <!-- Define Charset -->
     <meta charset="utf-8">
@@ -88,7 +88,7 @@
                             <i class="fa fa-bars"></i>
                         </button>
                         <!-- End Toggle Nav Link For Mobiles -->
-                        <a class="navbar-brand">
+                        <a href="../index.php" class="navbar-brand">
                             <img src="../images/ojpms.png">
                         </a>
                     </div>
@@ -127,8 +127,9 @@
                     <div class="col-md-2">&nbsp;</div>
                     <div class="col-md-8">
                         <div class="call-action call-action-boxed call-action-style2 clearfix">
-                            <img src="">
-                            <h2 class="primary">The <strong>E2E System</strong> is a complete approach to human resource development, which aims to develop ICT-enabled professionals through innovative learning and career planning methodologies.</h2>
+                            <img src="../images/logo/e2e.png">
+                            <div class="hr1" style="margin-top:10px;"></div>
+                            <h2 class="primary text-center">The <strong>E2E System</strong> is a complete approach to human resource development, which aims to develop ICT-enabled professionals through innovative learning and career planning methodologies.</h2>
                             
                             <div class="hr1" style="margin-top:10px;"></div>
                             <p>Establishing one’s career in today’s competitive industries has become a challenging pursuit to most job seekers. Employers too are increasingly having difficulty finding the right person for the job. Too often, there remains a huge gap between the skills required by the industry and what a graduate has to offer.</p>
@@ -137,16 +138,16 @@
                             <p>STI steps up to bridge this gap by introducing the Enrollment to Employment or E2E System. The E2E System is a complete approach to human resource development, which aims to develop ICT-enabled professionals through innovative learning and career planning methodologies. Through the E2E System, STI students get applicable education, job market skills, job preparedness, and job placement assistance.</p>
 
                             <div class="hr1" style="margin-top:10px;"></div>
-                            <p>The first step is the Learning Systems Development which ensures that the curriculum content is up-to-date and job market-oriented. A group of exemplary professionals in various fields prepares the curriculum/curricula being taught in all STI campuses.</p>
+                            <p>The first step is the <strong>Learning Systems Development</strong> which ensures that the curriculum content is up-to-date and job market-oriented. A group of exemplary professionals in various fields prepares the curriculum/curricula being taught in all STI campuses.</p>
 
                             <div class="hr1" style="margin-top:10px;"></div>
-                            <p>To make sure that the courses being offered are carried out well, STI implements the Academic Delivery System. This guarantees that highly qualified faculty and the state-of-the-art facilities of campuses are at par with the standardized courseware and curriculum, thus providing world class learning across all STI campuses.</p>
+                            <p>To make sure that the courses being offered are carried out well, STI implements the <strong>Academic Delivery System</strong>. This guarantees that highly qualified faculty and the state-of-the-art facilities of campuses are at par with the standardized courseware and curriculum, thus providing world class learning across all STI campuses.</p>
 
                             <div class="hr1" style="margin-top:10px;"></div>
-                            <p>The third step, Student Certification, assures that students are prepared for employment through rigid assessment, evaluation, and certificate programs. Before the students leave the security of their four-walled classrooms, they are given the opportunity to undergo on-the-job training with some of STI’s reputable partner companies.</p>
+                            <p>The third step, <strong>Student Certification</strong>, assures that students are prepared for employment through rigid assessment, evaluation, and certificate programs. Before the students leave the security of their four-walled classrooms, they are given the opportunity to undergo on-the-job training with some of STI’s reputable partner companies.</p>
 
                             <div class="hr1" style="margin-top:10px;"></div>
-                            <p>STI’s responsibility to its graduates goes beyond quality education. The final step, Job Placement Assistance, warrants every graduate employment support with the help of Interactive - Career Assistance Recruitment System (I-CARES) and international placement agencies like GROW, INC.</p>
+                            <p>STI’s responsibility to its graduates goes beyond quality education. The final step, <strong>Job Placement Assistance</strong>, warrants every graduate employment support with the help of Interactive - Career Assistance Recruitment System <a href="http://www.i-cares.com/" target="_blank">(I-CARES)</a> and international placement agencies like GROW, INC.</p>
 
                             <div class="hr1" style="margin-top:10px;"></div>
                             <p>With these unique processes making up the E2E System, STI has become a pioneer all over again. It has introduced a holistic approach to education and bravely took on the challenge to ensure a bright future for its graduates through job placement assistance and a stronger alumni support system. The E2E System has redefined the landscape of the education sector.</p>
