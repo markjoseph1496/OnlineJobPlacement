@@ -28,7 +28,7 @@ $FirstName = $infoquery[0][0];
 <head>
 
     <!-- Basic -->
-    <title>OJPMS</title>
+    <title>OJPMS | Adviser</title>
 
     <!-- Define Charset -->
     <meta charset="utf-8">
@@ -37,8 +37,7 @@ $FirstName = $infoquery[0][0];
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
     <!-- Page Description and Author -->
-    <meta name="description" content="Margo - Responsive HTML5 Template">
-    <meta name="author" content="iThemesLab">
+    <meta name="description" content="OJPMS">
 
     <!-- Bootstrap CSS -->
     <link href="../css/bootstrap.min.css" rel="stylesheet"/>
@@ -176,11 +175,6 @@ $FirstName = $infoquery[0][0];
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown"><b class="fa fa-user"></b>
                                     Welcome <?php echo $FirstName; ?>  </b><b class="caret"></b></a>
                                 <ul class="dropdown-menu">
-                                    <li><a href="#">Profile <b class="fa fa-user" style="float:right;"></b></a></li>
-                                    <li><a href="company-settings.php">Settings <b class="fa fa-cog"
-                                                                                   style="float:right;"></b></a>
-                                    </li>
-                                    <li class="divider"></li>
                                     <li><a href="#" data-target='#Logout' data-toggle='modal'>Sign Out <b
                                                 class="fa fa-sign-out" style="float:right;"></b></a></li>
                                 </ul>

@@ -31,7 +31,7 @@ $ContactNumber = $adviser_tbl[0][9];
 <head>
 
     <!-- Basic -->
-    <title>OJPMS</title>
+    <title>OJPMS | Account </title>
 
     <!-- Define Charset -->
     <meta charset="utf-8">
@@ -40,8 +40,7 @@ $ContactNumber = $adviser_tbl[0][9];
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
     <!-- Page Description and Author -->
-    <meta name="description" content="Margo - Responsive HTML5 Template">
-    <meta name="author" content="iThemesLab">
+    <meta name="description" content="OJPMS">
 
     <!-- Bootstrap CSS -->
     <link href="../css/bootstrap.min.css" rel="stylesheet"/>
@@ -147,11 +146,6 @@ $ContactNumber = $adviser_tbl[0][9];
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown"><b class="fa fa-user"></b>
                                 Welcome <?php echo $FirstName; ?> </b><b class="caret"></b></a>
                             <ul class="dropdown-menu">
-                                <li><a href="#">Profile <b class="fa fa-user" style="float:right;"></b></a></li>
-                                <li><a href="company-settings.php">Settings <b class="fa fa-cog"
-                                                                               style="float:right;"></b></a>
-                                </li>
-                                <li class="divider"></li>
                                 <li><a href="#" data-target='#Logout' data-toggle='modal'>Sign Out <b
                                             class="fa fa-sign-out" style="float:right;"></b></a></li>
                             </ul>
@@ -241,7 +235,7 @@ $ContactNumber = $adviser_tbl[0][9];
         <div class="container">
             <div class="row">
                 <div class="col-md-6">
-                    <h2>Reports</h2>
+                    <h2>My Account</h2>
                 </div>
             </div>
         </div>
