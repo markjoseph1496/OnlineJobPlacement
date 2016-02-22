@@ -599,9 +599,6 @@ if($References == "ok"){
                                 <td><?php echo $WorkSpecialization; ?></td>
                                 <td><?php echo $Duration; ?></td>
                                 <td class="text-center">
-                                    <button href='edit/edit-workexperience.php' class='btn btn-default'>
-                                        <i class='fa fa-pencil-square-o fa-1x'></i>
-                                    </button>
                                     <button href='' class='btn btn-danger'>
                                         <i class='fa fa-trash fa-1x'></i>
                                     </button>
