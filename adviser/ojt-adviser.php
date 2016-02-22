@@ -159,6 +159,7 @@ $FirstName = $infoquery[0][0];
                     <div class="col-md-5">
                         <!-- Notification -->
                         <ul class="nav navbar-nav navbar-right">
+                            <!--noti
                             <li class="dropdown icon-border" id="notificationLink">
                                 <span id="notification_count">3</span>
                                 <a href="#" class="bell itl-tooltip" data-placement="bottom" data-toggle="dropdown"><i
@@ -170,7 +171,7 @@ $FirstName = $infoquery[0][0];
                                     <li class="divider"></li>
                                     <li><a href="../notification/notification.php" tabindex="-1">See All</a></li>
                                 </ul>
-                            </li>
+                            </li>-->
                             <li class="dropdown">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown"><b class="fa fa-user"></b>
                                     Welcome <?php echo $FirstName; ?>  </b><b class="caret"></b></a>
@@ -326,7 +327,7 @@ $FirstName = $infoquery[0][0];
             <input type="file" name="file"/><br/>
             <input type="submit" name="submit" value="Import"/>
         </form>
-
+        &nbsp;
         <?php
 
         if (isset($_POST["submit"])) {
@@ -412,6 +413,7 @@ $FirstName = $infoquery[0][0];
             <table class="table table-striped table-header-rotated">
                 <thead>
                 <tr>
+                    <thead>
                     <!-- First column header is not rotated -->
                     <th width="15%">Student No.</th>
                     <th width="20%">Name</th>
@@ -451,6 +453,7 @@ $FirstName = $infoquery[0][0];
                         <div><span>Certificate</span></div>
                     </th>
                     <th width="5%"></th>
+                    </thead>
                 </tr>
                 </thead>
                 <?php
