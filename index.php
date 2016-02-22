@@ -450,13 +450,13 @@ $adminevent_tbl =
                                     <!-- Posts 1 -->
                                     <div class="post-row item">
                                         <div class="left-meta-post">
-                                            <div class="post-date"><span class="day">1</span><span class="month">Dec</span></div>
+                                            <div class="post-date"><span class="day">1</span><span class="month"></span></div>
                                             <div class="post-type"><i class="fa fa-newspaper-o"></i></div>
                                         </div>
                                         <h3 class="post-title"><a href="for-index/news.php">Professional Etiquette Seminar</a></h3>
                                         <div class="post-contents">
                                             <p>
-                                                dhasdjasgbdhasbdjbsahj
+                                                STI College Caloocan is ready to conduct their Professional Etiquette Seminar
                                                 <a class="read-more" href="for-index/news.php">Read More...</a>
                                             </p>
                                         </div>
@@ -465,13 +465,13 @@ $adminevent_tbl =
                                     <!-- Posts 1 -->
                                     <div class="post-row item">
                                         <div class="left-meta-post">
-                                            <div class="post-date"><span class="day">28</span><span class="month">Dec</span></div>
+                                            <div class="post-date"><span class="day">2</span><span class="month"></span></div>
                                             <div class="post-type"><i class="fa fa-newspaper-o"></i></div>
                                         </div>
-                                        <h3 class="post-title"><a href="for-index/news.php">Standard Post With Image</a></h3>
+                                        <h3 class="post-title"><a href="for-index/news.php">Are you ready for the PEP Talk 2016?</a></h3>
                                         <div class="post-contents">
                                             <p>
-                                                dhasdjasgbdhasbdjbsahj
+                                                STI College Caloocan is ready to conduct their PEP Talk 2016 Seminar
                                                 <a class="read-more" href="for-index/news.php">Read More...</a>
                                             </p>
                                         </div>
@@ -480,13 +480,13 @@ $adminevent_tbl =
                                     <!-- Posts 1 -->
                                     <div class="post-row item">
                                         <div class="left-meta-post">
-                                            <div class="post-date"><span class="day">28</span><span class="month">Dec</span></div>
+                                            <div class="post-date"><span class="day">3</span><span class="month"></span></div>
                                             <div class="post-type"><i class="fa fa-newspaper-o"></i></div>
                                         </div>
-                                        <h3 class="post-title"><a href="for-index/news.php">Standard Post With Image</a></h3>
+                                        <h3 class="post-title"><a href="for-index/news.php">JOB FAIR 2016</a></h3>
                                         <div class="post-contents">
                                             <p>
-                                                dhasdjasgbdhasbdjbsahj
+                                                STI College Caloocan is ready to conduct their JOB FAIR 2016
                                                 <a class="read-more" href="for-index/news.php">Read More...</a>
                                             </p>
                                         </div>
@@ -495,32 +495,18 @@ $adminevent_tbl =
                                     <!-- Posts 1 -->
                                     <div class="post-row item">
                                         <div class="left-meta-post">
-                                            <div class="post-date"><span class="day">28</span><span class="month">Dec</span></div>
+                                            <div class="post-date"><span class="day">4</span><span class="month"></span></div>
                                             <div class="post-type"><i class="fa fa-newspaper-o"></i></div>
                                         </div>
-                                        <h3 class="post-title"><a href="for-index/news.php">Standard Post With Image</a></h3>
+                                        <h3 class="post-title"><a href="for-index/news.php">Mock Interview</a></h3>
                                         <div class="post-contents">
                                             <p>
-                                                dhasdjasgbdhasbdjbsahj
+                                                STI College Caloocan's students are ready to conduct their mock interiew
                                                 <a class="read-more" href="for-index/news.php">Read More...</a>
                                             </p>
                                         </div>
                                     </div>
 
-                                    <!-- Posts 1 -->
-                                    <div class="post-row item">
-                                        <div class="left-meta-post">
-                                            <div class="post-date"><span class="day">28</span><span class="month">Dec</span></div>
-                                            <div class="post-type"><i class="fa fa-newspaper-o"></i></div>
-                                        </div>
-                                        <h3 class="post-title"><a href="for-index/news.php">Standard Post With Image</a></h3>
-                                        <div class="post-contents">
-                                            <p>
-                                                dhasdjasgbdhasbdjbsahj
-                                                <a class="read-more" href="for-index/news.php">Read More...</a>
-                                            </p>
-                                        </div>
-                                    </div>
                                 </div>
                             </div>
                             <!-- End Recent Posts Carousel -->
@@ -553,7 +539,7 @@ $adminevent_tbl =
                         <div class="col-md-8 col-sm-8 service-box service-center">
                             <div class="service-boxed">
                                 <div class="service-icon" style="margin-top:-25px;">
-                                    <img src="img/about/e2e-logo.gif">
+                                    <img src="images/home/e2e-logo.gif">
                                 </div>
                                 <div class="service-content">
                                     <h4>The E2E System is a complete approach to human resource 

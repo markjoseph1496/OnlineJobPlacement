@@ -403,7 +403,7 @@ if($References == "ok"){
                             <p>Your Resume</p>
                             <a href="resumeprint.php" class="btn-system btn-medium"><i class="fa fa-print"></i> Print</a>
                         </div>
-                        <img src="../../img/one-column.jpg">
+                        <img src="../../images/resume-sample.png">
                     </div>
                 </div>
             </div>

@@ -208,22 +208,22 @@
                                 <ul>
                                     <li>
                                         <div class="widget-content">
-                                            <h5><a href="news.php">Graduates</a></h5>
-                                            <span>Jul 29 2013</span>
+                                            <h5><a href="news.php">Are you ready for the PEP Talk 2016?</a></h5>
+                                            <span>February 23, 2016</span>
                                         </div>
                                         <div class="clearfix"></div>
                                     </li>
                                     <li>
                                         <div class="widget-content">
-                                            <h5><a href="news.php">Graduates</a></h5>
-                                            <span>Jul 29 2013</span>
+                                            <h5><a href="news.php">JOB FAIR 2016</a></h5>
+                                            <span>February 23, 2016</span>
                                         </div>
                                         <div class="clearfix"></div>
                                     </li>
                                     <li>
                                         <div class="widget-content">
-                                            <h5><a href="news.php">Graduates</a></h5>
-                                            <span>Jul 29 2013</span>
+                                            <h5><a href="news.php">Mock Interview</a></h5>
+                                            <span>February 23, 2016</span>
                                         </div>
                                         <div class="clearfix"></div>
                                     </li>
