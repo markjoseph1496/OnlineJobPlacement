@@ -92,7 +92,7 @@ if (isset($_GET['delete_SID'])) {
         "s",
         $id
     );
-    header("location: specialization-and-languages.php?id=3");
+    header("location: skills-and-languages.php?id=3");
 
 }
 
@@ -105,7 +105,7 @@ if (isset($_GET['delete_LangID'])) {
         "s",
         $id
     );
-    header("location: specialization-and-languages.php?id=6");
+    header("location: skills-and-languages.php?id=6");
 
 }
 if (isset($_GET['Delete_DocID'])){

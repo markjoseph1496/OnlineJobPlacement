@@ -405,6 +405,8 @@ if($References == "ok"){
         <!-- Start Content -->
         <div id="content">
             <div class="container">
+                
+                <label><span class="fa fa-check-circle"></span> Your information progress..</label>
                 <div class="skill-shortcode">
                     <div class="skill">
                         <div class="progress">
@@ -494,7 +496,6 @@ if($References == "ok"){
                                 ?>
                                 </tbody>
                             </table>
-                            <div class="hr2"></div>
 
                             <div class="hr4" style="margin-top:40px;margin-bottom:40px;"></div>
                             <div class="row">
@@ -536,7 +537,6 @@ if($References == "ok"){
                                 </tr>
                                 </tbody>
                             </table>
-                            <div class="hr2"></div>
                         </div>
                     </div>
                     <!-- End Page Content -->

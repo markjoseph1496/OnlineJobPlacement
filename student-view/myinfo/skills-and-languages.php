@@ -470,6 +470,7 @@ if($References == "ok"){
                 }
                 ?>
 
+                <label><span class="fa fa-check-circle"></span> Your information progress..</label>
                 <div class="skill-shortcode">
                     <div class="skill">
                         <div class="progress">
@@ -555,7 +556,7 @@ if($References == "ok"){
                                                     </div>
                                                     <div class="modal-body">
                                                         <div class="col-md-15">
-                                                            <label = "usr" class = "control-label">Do you want to delete this information? This cannot be undone.</label>
+                                                            <label>Do you want to delete this information? This cannot be undone.</label>
                                                             <div class="form-group">
                                                             </div>
                                                     </div>
@@ -572,7 +573,6 @@ if($References == "ok"){
                                     ?>
                                 </tbody>
                             </table>
-                            <div class="hr2"></div>
 
                             <div class="hr4" style="margin-top:40px;margin-bottom:40px;"></div>
                             <div class="row field">
@@ -642,34 +642,33 @@ if($References == "ok"){
                                         </td>
                                     </tr>
                                      <!-- Modal -->
-                                        <div class="modal fade" id="DeleteLanguage" role="dialog">
-                                            <div class="modal-dialog" style="padding:100px">
-                                                <!-- Modal content-->
-                                                <div class="modal-content">
-                                                    <div class="modal-header">
-                                                        <button type="button" class="close" data-dismiss="modal">&times;</button>
-                                                        <h4 class="modal-title">Delete Language?</h4>
-                                                    </div>
-                                                    <div class="modal-body">
-                                                        <div class="col-md-15">
-                                                            <label = "usr" class = "control-label">Do you want to delete this information? This cannot be undone.</label>
-                                                            <div class="form-group">
-                                                            </div>
-                                                    </div>
-                                                    <div class="modal-footer">
-                                                        <a href="delete.php?delete_LangID=<?php echo $LangID; ?>" class="btn btn-danger">Delete</a>
-                                                        <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
-                                                    </div>
-                                                    </div>
+                                    <div class="modal fade" id="DeleteLanguage" role="dialog">
+                                        <div class="modal-dialog" style="padding:100px">
+                                            <!-- Modal content-->
+                                            <div class="modal-content">
+                                                <div class="modal-header">
+                                                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                                    <h4 class="modal-title">Delete Language?</h4>
+                                                </div>
+                                                <div class="modal-body">
+                                                    <div class="col-md-15">
+                                                        <label>Do you want to delete this information? This cannot be undone.</label>
+                                                        <div class="form-group">
+                                                        </div>
+                                                </div>
+                                                <div class="modal-footer">
+                                                    <a href="delete.php?delete_LangID=<?php echo $LangID; ?>" class="btn btn-danger">Delete</a>
+                                                    <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+                                                </div>
                                                 </div>
                                             </div>
                                         </div>
+                                    </div>
                                     <?php
                                         }
                                     ?>
                                 </tbody>
                             </table>
-                            <div class="hr2"></div>
                         </div>
                     </div>
                     <!-- End Page Content -->

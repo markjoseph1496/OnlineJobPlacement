@@ -285,7 +285,7 @@ $MajorCourse = $course_qry[0][0];
                             <div class="col-md-6 fieldcol">
                                 <div class="form-group">
                                     <label>Phone <span>(*)</span></label>
-                                    <input type="text" class="form-control" id="Phone" name="Phone">
+                                    <input type="text" class="form-control" id="Phone" name="Phone" maxlength="11">
                                 </div>
                             </div>
                             <div class="col-md-6 fieldcol">
