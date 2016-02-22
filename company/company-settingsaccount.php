@@ -30,6 +30,7 @@ else{
         $CompanyID
     );
 
+/*
 $CompanyName = $companyuser_tbl[0][0];
 $Email = $companyuser_tbl[0][1];
 $Password = $companyuser_tbl[0][2];
@@ -39,7 +40,20 @@ $LastName = $companyuser_tbl[0][5];
 $Position = $companyuser_tbl[0][6];
 $Department = $companyuser_tbl[0][7];
 $Address = $companyuser_tbl[0][8];
+*/
 
+
+$CompanyName = $companyuser_tbl[0][0];
+$Email = $companyuser_tbl[0][1];
+$Password = $companyuser_tbl[0][2];
+$FirstName = $companyuser_tbl[0][3];
+$MiddleName = $companyuser_tbl[0][4];
+$LastName = $companyuser_tbl[0][5];
+$Position = $companyuser_tbl[0][6];
+$Department = $companyuser_tbl[0][7];
+$cFirstName = $companyuser_tbl[0][3];
+$cLastName= $companyuser_tbl[0][5];
+$Address = $companyuser_tbl[0][8];
 ?>
 <!doctype html>
 <!--[if IE 8 ]><html class="ie ie8" lang="en"> <![endif]-->
@@ -59,6 +73,7 @@ $Address = $companyuser_tbl[0][8];
 
     <!-- Page Description and Author -->
     <meta name="description" content="OJPMS">
+    <link rel="shortcut icon" href="../images/logo/favicon.ico">
 
     <!-- Bootstrap CSS -->
     <link href="../css/bootstrap.min.css" rel="stylesheet"/>
@@ -156,6 +171,7 @@ $Address = $companyuser_tbl[0][8];
                     <div class="col-md-6">
                        <!-- Notification -->
                             <ul class="nav navbar-nav navbar-right">
+                                <!--noti
                                 <li class="dropdown icon-border" id="notificationLink">
                                     <span id="notification_count">3</span>
                                     <a href="#" class="bell itl-tooltip" data-placement="bottom" data-toggle="dropdown"><i
@@ -167,12 +183,11 @@ $Address = $companyuser_tbl[0][8];
                                         <li class="divider"></li>
                                         <li><a href="../notification/notification.php" tabindex="-1">See All</a></li>
                                     </ul>
-                                </li>
+                                </li>-->
                                 <li class="dropdown">
                                     <a href="#" class="dropdown-toggle" data-toggle="dropdown"><b class="fa fa-user"></b>
                                         Welcome, <b><?php echo $cFirstName . " " . $cLastName; ?> </b><b class="caret"></b></a>
                                     <ul class="dropdown-menu">
-                                       
                                         <li><a href="#" data-target='#Logout' data-toggle='modal'>Sign Out <b
                                                     class="fa fa-sign-out" style="float:right;"></b></a></li>
                                     </ul>
@@ -204,7 +219,34 @@ $Address = $companyuser_tbl[0][8];
             </a>
           </div>
           <div class="navbar-collapse collapse">
-            <!-- End Sign-out -->
+            <!-- Modal -->
+                        <div class="modal fade" id="Logout"
+                             role="dialog">
+                            <div class="modal-dialog" style="padding:100px">
+                                <!-- Modal content-->
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                        <h4 class="modal-title">Sign out</h4>
+                                    </div>
+                                    <div class="modal-body">
+                                        <div class="col-md-15">
+                                            <label = "usr" class = "control-label">Do you want to Sign Out?</label>
+                                            <div class="form-group">
+                                            </div>
+                                        </div>
+                                        <div class="modal-footer">
+                                            <a href="logout.php"
+                                               class="btn btn-primary">Sign out</a>
+                                            <button type="button" class="btn btn-default" data-dismiss="modal">
+                                                Cancel
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+             <!-- End Sign-out -->
              <!-- Start Navigation List -->
             <ul class="nav navbar-nav navbar-right">
                 <li>

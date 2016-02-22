@@ -35,6 +35,10 @@ $cLastName = $companyinfo_tbl[0][2];
     <!-- Responsive Metatag -->
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
+    <!-- Page Description and Author -->
+    <meta name="description" content=" OJPMS">
+    <link rel="shortcut icon" href="../images/logo/favicon.ico">
+
     <!-- Bootstrap CSS -->
     <link href="../css/bootstrap.min.css" rel="stylesheet"/>
 
@@ -58,7 +62,7 @@ $cLastName = $companyinfo_tbl[0][2];
     <!-- Slicknav -->
     <link rel="stylesheet" type="text/css" href="../css/slicknav.css" media="screen">
 
-    <!-- Margo CSS Styles  -->
+    <!-- CSS Styles  -->
     <link rel="stylesheet" type="text/css" href="../css/style.css" media="screen">
 
     <!-- Responsive CSS Styles  -->
@@ -133,6 +137,7 @@ $cLastName = $companyinfo_tbl[0][2];
                         <!-- Start Social Links -->
                         <ul class="nav navbar-nav navbar-right">
                             <li class="dropdown icon-border" id="notificationLink">
+                                <!--noti
                                 <span id="notification_count">3</span>
                                 <a href="#" class="bell itl-tooltip" data-placement="bottom" data-toggle="dropdown"><i
                                         class="fa fa-bell"></i></a>
@@ -143,7 +148,7 @@ $cLastName = $companyinfo_tbl[0][2];
                                     <li class="divider"></li>
                                     <li><a href="../notification/notification.php" tabindex="-1">See All</a></li>
                                 </ul>
-                            </li>
+                            </li>-->
                             <li class="dropdown">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown"><b class="fa fa-user"></b>
                                     Welcome, <b><?php echo $cFirstName . " " . $cLastName; ?> </b><b class="caret"></b></a>

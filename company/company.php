@@ -94,6 +94,7 @@ if (count($LOGquery1) > 0) {
 
     <!-- Page Description and Author -->
     <meta name="description" content="OJPMS">
+    <link rel="shortcut icon" href="../images/logo/favicon.ico">
 
     <!-- Bootstrap CSS -->
     <link href="../css/bootstrap.min.css" rel="stylesheet"/>
@@ -190,10 +191,11 @@ if (count($LOGquery1) > 0) {
                         <div class="col-md-5">
                             <!-- Notification -->
                             <ul class="nav navbar-nav navbar-right">
+                                <!--noti
                                 <li class="dropdown icon-border" id="notificationLink">
-                                    <span id="notification_count">3</span>
+                                     <span id="notification_count">3</span>
                                     <a href="#" class="bell itl-tooltip" data-placement="bottom" data-toggle="dropdown"><i
-                                            class="fa fa-bell"></i></a>
+                                            class="fa fa-bell"></i></a> 
                                     <ul id="notificationContainer" class="dropdown-menu dropdown-menu-inverse">
                                         <li class="dropdown-header"><label>Notification</label></li>
                                         <li class="disabled"><a href="#" tabindex="-1">No new notification.</a></li>
@@ -201,7 +203,7 @@ if (count($LOGquery1) > 0) {
                                         <li class="divider"></li>
                                         <li><a href="../notification/notification.php" tabindex="-1">See All</a></li>
                                     </ul>
-                                </li>
+                                </li> -->
                                 <li class="dropdown">
                                     <a href="#" class="dropdown-toggle" data-toggle="dropdown"><b class="fa fa-user"></b>
                                         Welcome, <b><?php echo $cFirstName . " " . $cLastName; ?> </b><b class="caret"></b></a>
