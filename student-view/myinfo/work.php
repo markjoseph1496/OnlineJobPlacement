@@ -610,7 +610,6 @@ if($References == "ok"){
                         }
                         ?>
                     </table>
-                    <div class="hr2"></div>
                 </div>
             </div>
         </form>

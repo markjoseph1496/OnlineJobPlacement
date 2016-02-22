@@ -304,7 +304,7 @@ include('connection.php');
     </div>
 </form>
 <script type="text/javascript" src="js/script.js"></script>
-
+<!--
 <script type="text/javascript">
     $(document).ready(function () {
         var validator = $("#companyregistration").bootstrapValidator({
@@ -458,6 +458,6 @@ include('connection.php');
         });
     });
 </script>
-
+-->
 </body>
 </html>
