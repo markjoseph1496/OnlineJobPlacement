@@ -2,27 +2,27 @@
 include('../connection.php');
 session_start();
 
-if(isset($_SESSION['AdviserID'])){
+if (isset($_SESSION['AdviserID'])) {
     $AdviserID = $_SESSION['AdviserID'];
-}else{
+} else {
     header("location: ../login-adviser.php");
 }
 
 $adviser_tbl =
     GSecureSQL::query(
-            "SELECT * FROM admintbl WHERE AdminID = ?",
-            TRUE,
-            "s",
-            $AdviserID
-        );
+        "SELECT * FROM admintbl WHERE AdminID = ?",
+        TRUE,
+        "s",
+        $AdviserID
+    );
 
-    $Username = $adviser_tbl[0][1];
-    $FirstName = $adviser_tbl[0][4];
-    $MiddleName = $adviser_tbl[0][5];
-    $LastName = $adviser_tbl[0][6];
-    $Position = $adviser_tbl[0][7];
-    $Address = $adviser_tbl[0][8];
-    $ContactNumber = $adviser_tbl[0][9];
+$Username = $adviser_tbl[0][1];
+$FirstName = $adviser_tbl[0][4];
+$MiddleName = $adviser_tbl[0][5];
+$LastName = $adviser_tbl[0][6];
+$Position = $adviser_tbl[0][7];
+$Address = $adviser_tbl[0][8];
+$ContactNumber = $adviser_tbl[0][9];
 
 ?>
 <!doctype html>
@@ -121,110 +121,97 @@ $adviser_tbl =
 </head>
 
 <body>
-    <!-- Full Body Container -->
-    <div id="container">
-        <!-- Start Top Bar -->
-        <div class="top-bar">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-7">&nbsp;</div>
-                    <div class="col-md-5">
-                        <!-- Notification -->
-                        <ul class="nav navbar-nav navbar-right">
-                            <li class="dropdown icon-border" id="notificationLink">
-                                <span id="notification_count">3</span>
-                                <a href="#" class="bell itl-tooltip" data-placement="bottom" data-toggle="dropdown"><i
-                                        class="fa fa-bell"></i></a>
-                                <ul id="notificationContainer" class="dropdown-menu dropdown-menu-inverse">
-                                    <li class="dropdown-header"><label>Notification</label></li>
-                                    <li class="disabled"><a href="#" tabindex="-1">No new notification.</a></li>
-                                    <li><a href="#" tabindex="-1">The administrator accepted your request.</a></li>
-                                    <li class="divider"></li>
-                                    <li><a href="../notification/notification.php" tabindex="-1">See All</a></li>
-                                </ul>
-                            </li>
-                            <li class="dropdown">
-                                <a href="#" class="dropdown-toggle" data-toggle="dropdown"><b class="fa fa-user"></b>
-                                    Welcome,  </b><b class="caret"></b></a>
-                                <ul class="dropdown-menu">
-                                    <li><a href="#">Profile <b class="fa fa-user" style="float:right;"></b></a></li>
-                                    <li><a href="company-settings.php">Settings <b class="fa fa-cog"
-                                                                                               style="float:right;"></b></a>
-                                    </li>
-                                    <li class="divider"></li>
-                                    <li><a href="#" data-target='#Logout' data-toggle='modal'>Sign Out <b
-                                                class="fa fa-sign-out" style="float:right;"></b></a></li>
-                                </ul>
-                            </li>
-                        </ul>
-                        <!-- Notification -->
-                    </div>
-                    <!-- .col-md-5 -->
-                </div>
-                <!-- .row -->
-            </div>
-            <!-- .container -->
-        </div>
-        <!-- .top-bar -->
-        <!-- End Top Bar -->
-
-        <!-- Modal -->
-        <div class="modal fade" id="Logout"
-             role="dialog">
-            <div class="modal-dialog" style="padding:100px">
-                <!-- Modal content-->
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <button style = type="button" class="close" data-dismiss="modal">&times;</button>
-                        <h4 class="modal-title">Log out?</h4>
-                    </div>
-                    <div class="modal-body">
-                        <div class="col-md-15">
-                            <label>Do you want to log out?</label>
-                            <div class="form-group">
-                            </div>
-                        </div>
-                        <div class="modal-footer">
-                            <a href="logout.php"
-                               class="btn btn-primary">Log out</a>
-                            <button type="button" class="btn btn-default" data-dismiss="modal">
-                                Cancel
-                            </button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- Start  Logo & Naviagtion  -->
-        <div class="navbar navbar-default navbar-top">
-            <div class="container">
-                <div class="navbar-header">
-                    <!-- Stat Toggle Nav Link For Mobiles -->
-                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                        <i class="fa fa-bars"></i>
-                    </button>
-                    <!-- End Toggle Nav Link For Mobiles -->
-                    <a class="navbar-brand" href="">
-                        <img src="../images/ojpms.png">
-                    </a>
-                </div>
-                <div class="navbar-collapse collapse">
-                    <!-- Start Navigation List -->
+<!-- Full Body Container -->
+<div id="container">
+    <!-- Start Top Bar -->
+    <div class="top-bar">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-7">&nbsp;</div>
+                <div class="col-md-5">
+                    <!-- Notification -->
                     <ul class="nav navbar-nav navbar-right">
-                        <li>
-                            <a href="ojt-adviser.php">Home</a>
+                        <li class="dropdown icon-border" id="notificationLink">
+                            <span id="notification_count">3</span>
+                            <a href="#" class="bell itl-tooltip" data-placement="bottom" data-toggle="dropdown"><i
+                                    class="fa fa-bell"></i></a>
+                            <ul id="notificationContainer" class="dropdown-menu dropdown-menu-inverse">
+                                <li class="dropdown-header"><label>Notification</label></li>
+                                <li class="disabled"><a href="#" tabindex="-1">No new notification.</a></li>
+                                <li><a href="#" tabindex="-1">The administrator accepted your request.</a></li>
+                                <li class="divider"></li>
+                                <li><a href="../notification/notification.php" tabindex="-1">See All</a></li>
+                            </ul>
                         </li>
-                        <li>
-                            <a href="ojt-account.php">Account</a>
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown"><b class="fa fa-user"></b>
+                                Welcome <?php echo $FirstName; ?> </b><b class="caret"></b></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="#">Profile <b class="fa fa-user" style="float:right;"></b></a></li>
+                                <li><a href="company-settings.php">Settings <b class="fa fa-cog"
+                                                                               style="float:right;"></b></a>
+                                </li>
+                                <li class="divider"></li>
+                                <li><a href="#" data-target='#Logout' data-toggle='modal'>Sign Out <b
+                                            class="fa fa-sign-out" style="float:right;"></b></a></li>
+                            </ul>
                         </li>
                     </ul>
-                    <!-- End Navigation List -->
+                    <!-- Notification -->
+                </div>
+                <!-- .col-md-5 -->
+            </div>
+            <!-- .row -->
+        </div>
+        <!-- .container -->
+    </div>
+    <!-- .top-bar -->
+    <!-- End Top Bar -->
+
+    <!-- Modal -->
+    <div class="modal fade" id="Logout"
+         role="dialog">
+        <div class="modal-dialog" style="padding:100px">
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button style=type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title">Log out?</h4>
+                </div>
+                <div class="modal-body">
+                    <div class="col-md-15">
+                        <label>Do you want to log out?</label>
+                        <div class="form-group">
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <a href="logout.php"
+                           class="btn btn-primary">Log out</a>
+                        <button type="button" class="btn btn-default" data-dismiss="modal">
+                            Cancel
+                        </button>
+                    </div>
                 </div>
             </div>
-            <!-- Mobile Menu Start -->
-            <ul class="wpb-mobile-menu">
-               <ul class="nav navbar-nav navbar-right">
+        </div>
+    </div>
+
+    <!-- Start  Logo & Naviagtion  -->
+    <div class="navbar navbar-default navbar-top">
+        <div class="container">
+            <div class="navbar-header">
+                <!-- Stat Toggle Nav Link For Mobiles -->
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <i class="fa fa-bars"></i>
+                </button>
+                <!-- End Toggle Nav Link For Mobiles -->
+                <a class="navbar-brand" href="">
+                    <img src="../images/ojpms.png">
+                </a>
+            </div>
+            <div class="navbar-collapse collapse">
+                <!-- Start Navigation List -->
+                <ul class="nav navbar-nav navbar-right">
                     <li>
                         <a href="ojt-adviser.php">Home</a>
                     </li>
@@ -232,179 +219,195 @@ $adviser_tbl =
                         <a href="ojt-account.php">Account</a>
                     </li>
                 </ul>
-            </ul>
+                <!-- End Navigation List -->
+            </div>
         </div>
-        <!-- End Header Logo & Naviagtion -->
+        <!-- Mobile Menu Start -->
+        <ul class="wpb-mobile-menu">
+            <ul class="nav navbar-nav navbar-right">
+                <li>
+                    <a href="ojt-adviser.php">Home</a>
+                </li>
+                <li>
+                    <a href="ojt-account.php">Account</a>
+                </li>
+            </ul>
+        </ul>
+    </div>
+    <!-- End Header Logo & Naviagtion -->
 
-        <!-- Start Page Banner -->
-        <div class="page-banner" style="padding:40px 0; center #f9f9f9;">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-6">
-                        <h2>Reports</h2>
-                    </div>
+    <!-- Start Page Banner -->
+    <div class="page-banner" style="padding:40px 0; center #f9f9f9;">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <h2>Reports</h2>
                 </div>
             </div>
         </div>
-        <!-- End Page Banner -->
+    </div>
+    <!-- End Page Banner -->
 
-        <!--Content-->
-        <br><br><br>
+    <!--Content-->
+    <br><br><br>
 
-        <div class="container">
+    <div class="container">
         <!-- Modal for Username -->
-                    <div class="modal fade" id="ChangeOJTUsername" role="dialog">
-                        <div class="modal-dialog" style="padding:100px">
-                            <!-- Modal content-->
-                            <form id="change-Username-form" autocomplete="off" method="POST" action="functions.php">
-                                <div class="modal-content">
-                                    <div class="modal-header">
-                                        <button type="button" class="close" data-dismiss="modal">&times;</button>
-                                        <h4 class="modal-title">Change Username</h4>
-                                    </div>
-                                    <div class="modal-body">
-                                        <div class="col-md-15 fieldcol">
-                                            <label = "usr" class = "control-label"> New Username: </label>
-                                            <div class="form-group">
-                                                <input type="text" name="ModalNewUsername" id="ModalNewUsername" class="form-control">
-                                            </div>
-                                        </div>
-
-                                        <div class="col-md-15 fieldcol">
-                                            <label = "usr" class = "control-label"> Confirm Username: </label>
-                                            <div class="form-group">
-                                                <input type="text" name="ModalConfirmUsername" id="ModalConfirmUsername" class="form-control">
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="modal-footer">
-                                        <button type="submit" class="btn btn-primary" name="btnChangeUsername">Change Email</button>
-                                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                                    </div>
+        <div class="modal fade" id="ChangeOJTUsername" role="dialog">
+            <div class="modal-dialog" style="padding:100px">
+                <!-- Modal content-->
+                <form id="change-Username-form" autocomplete="off" method="POST" action="functions.php">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                            <h4 class="modal-title">Change Username</h4>
+                        </div>
+                        <div class="modal-body">
+                            <div class="col-md-15 fieldcol">
+                                <label = "usr" class = "control-label"> New Username: </label>
+                                <div class="form-group">
+                                    <input type="text" name="ModalNewUsername" id="ModalNewUsername"
+                                           class="form-control">
                                 </div>
-                            </form>
+                            </div>
+
+                            <div class="col-md-15 fieldcol">
+                                <label = "usr" class = "control-label"> Confirm Username: </label>
+                                <div class="form-group">
+                                    <input type="text" name="ModalConfirmUsername" id="ModalConfirmUsername"
+                                           class="form-control">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="submit" class="btn btn-primary" name="btnChangeUsername">Change Email</button>
+                            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
                         </div>
                     </div>
-                <!-- End Modal ng Change Email -->
-                <!-- Modal ng Change Password -->
-                    <div class="modal fade" id="ChangePassword" role="dialog">
-                        <div class="modal-dialog" style="padding:100px">
+                </form>
+            </div>
+        </div>
+        <!-- End Modal ng Change Email -->
+        <!-- Modal ng Change Password -->
+        <div class="modal fade" id="ChangePassword" role="dialog">
+            <div class="modal-dialog" style="padding:100px">
 
-                            <!-- Modal content-->
-                            <form id="change-password-form" autocomplete="off" method="POST" action="functions.php">
-                                <div class="modal-content">
-                                    <div class="modal-header">
-                                        <button type="button" class="close" data-dismiss="modal">&times;</button>
-                                        <h4 class="modal-title">Change Password</h4>
-                                    </div>
-                                    <div class="modal-body">
-                                        <div class="col-md-15 fieldcol">
-                                            <div id="message"></div>
-                                            <br>
-                                            <label = "usr" class = "control-label"> Old Password: </label>
-                                            <div class="form-group">
-                                                <input type="password" name="ModalOldPassword" id="ModalOldPassword"
-                                                       class="form-control">
-                                            </div>
-                                        </div>
-
-
-                                        <div class="col-md-15 fieldcol">
-                                            <label = "usr" class = "control-label"> New Password: </label>
-                                            <div class="form-group">
-                                                <input type="password" name="ModalNewPassword" id="ModalNewPassword"
-                                                       class="form-control">
-                                            </div>
-                                        </div>
-
-
-                                        <div class="col-md-15 fieldcol">
-                                            <label = "usr" class = "control-label"> Confirm Password: </label>
-                                            <div class="form-group">
-                                                <input type="password" name="ModalConfirmPassword" id="ModalConfirmPassword"
-                                                       class="form-control">
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="modal-footer">
-                                        <button type="submit" id="submitPassword" class="btn btn-primary">Change Password</button>
-                                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                                    </div>
+                <!-- Modal content-->
+                <form id="change-password-form" autocomplete="off" method="POST" action="functions.php">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                            <h4 class="modal-title">Change Password</h4>
+                        </div>
+                        <div class="modal-body">
+                            <div class="col-md-15 fieldcol">
+                                <div id="message"></div>
+                                <br>
+                                <label = "usr" class = "control-label"> Old Password: </label>
+                                <div class="form-group">
+                                    <input type="password" name="ModalOldPassword" id="ModalOldPassword"
+                                           class="form-control">
                                 </div>
-                            </form>
+                            </div>
+
+
+                            <div class="col-md-15 fieldcol">
+                                <label = "usr" class = "control-label"> New Password: </label>
+                                <div class="form-group">
+                                    <input type="password" name="ModalNewPassword" id="ModalNewPassword"
+                                           class="form-control">
+                                </div>
+                            </div>
+
+
+                            <div class="col-md-15 fieldcol">
+                                <label = "usr" class = "control-label"> Confirm Password: </label>
+                                <div class="form-group">
+                                    <input type="password" name="ModalConfirmPassword" id="ModalConfirmPassword"
+                                           class="form-control">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="submit" id="submitPassword" class="btn btn-primary">Change Password</button>
+                            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
                         </div>
                     </div>
-                <!-- End Modal ng Change Password -->
-            <form name="UpdateAdviser" id="UpdateAdviser" autocomplete="off" action="functions.php">
-                <div class="col-md-12">
-                    <div class="row">
-                        <?php
+                </form>
+            </div>
+        </div>
+        <!-- End Modal ng Change Password -->
+        <form name="UpdateAdviser" id="UpdateAdviser" autocomplete="off" action="functions.php">
+            <div class="col-md-12">
+                <div class="row">
+                    <?php
 
-                        if (isset($_GET['id'])) {
-                            $id = $_GET['id'];
-                            if ($id == 1) {
-                                echo '
+                    if (isset($_GET['id'])) {
+                        $id = $_GET['id'];
+                        if ($id == 1) {
+                            echo '
                             <div class="alert alert-success">
                                 <span class="glyphicon glyphicon-info-sign"></span> 
                                 Username successfully changed.
                             </div>
                             ';
-                            } elseif ($id == 2) {
-                                echo '
+                        } elseif ($id == 2) {
+                            echo '
                             <div class="alert alert-success">
                                 <span class="glyphicon glyphicon-info-sign"></span> 
                                 Password successfully changed.
                             </div>
                             ';
-                            } elseif ($id == 3) {
-                                echo '
+                        } elseif ($id == 3) {
+                            echo '
                             <div class="alert alert-success">
                                 <span class="glyphicon glyphicon-info-sign"></span> 
                                 OJT Account successfully updated.
                             </div>
                             ';
-                            }
-
                         }
-                        ?>
-                        <div class="row field">
-                                        <div class = "col-md-2 fieldcol">
-                                           <label = "usr" class = "control-label"> Username: </label>
-                                        </div>
-                                        <div class = "col-md-4 fieldcol">
-                                            <div class="form-group">
-                                                  <label = "usr" class = "control-label"><?php echo $Username; ?></label>
-                                            </div>
-                                        </div>
-                                        <div class="col-md-3 fieldcol">
-                                            <div class="form-group">
-                                                <div class="box">
-                                                    <button class="btn btn-default" data-toggle="modal" data-target="#ChangeOJTUsername">Change
-                                                        Username
-                                                    </button>
-                                                </div>
-                                            </div>
-                                        </div>
-                        </div> 
-                        <div class="row field">
-                                        <div class = "col-md-2 fieldcol">
-                                           <label = "usr" class = "control-label"> Password: </label>
-                                        </div>
-                                        <div class = "col-md-4 fieldcol">
-                                            <div class="form-group">
-                                                  <label = "usr" class = "control-label">*****</label>
-                                            </div>
-                                        </div>
-                                        <div class="col-md-3 fieldcol">
-                                            <div class="form-group">
-                                                <div class="box">
-                                                    <button class="btn btn-default" data-toggle="modal" data-target="#ChangePassword">
-                                                        ChangePassword
-                                                    </button>
-                                                </div>
-                                            </div>
-                                        </div>
-                        </div> 
+
+                    }
+                    ?>
+                    <div class="row field">
+                        <div class="col-md-2 fieldcol">
+                            <label = "usr" class = "control-label"> Username: </label>
+                        </div>
+                        <div class="col-md-4 fieldcol">
+                            <div class="form-group">
+                                <label = "usr" class = "control-label"><?php echo $Username; ?></label>
+                            </div>
+                        </div>
+                        <div class="col-md-3 fieldcol">
+                            <div class="form-group">
+                                <div class="box">
+                                    <button class="btn btn-default" data-toggle="modal"
+                                            data-target="#ChangeOJTUsername">Change
+                                        Username
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row field">
+                        <div class="col-md-2 fieldcol">
+                            <label = "usr" class = "control-label"> Password: </label>
+                        </div>
+                        <div class="col-md-4 fieldcol">
+                            <div class="form-group">
+                                <label = "usr" class = "control-label">*****</label>
+                            </div>
+                        </div>
+                        <div class="col-md-3 fieldcol">
+                            <div class="form-group">
+                                <div class="box">
+                                    <button class="btn btn-default" data-toggle="modal" data-target="#ChangePassword">
+                                        ChangePassword
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                     <div class="row">
                         <div class="col-md-2">
                             <label>First Name <span>(*)</span></label>
@@ -477,11 +480,11 @@ $adviser_tbl =
                 <div class="field">
                     <div class="text-center">
                         <button type="submit" class="btn-system btn-large" id="btnsave" name="btnsaveuser">Save</button>
-                    </div>           
+                    </div>
                 </div>
-            </form>
-        </div>
+        </form>
     </div>
+</div>
 </body>
 <script type="text/javascript" src="../js/script.js"></script>
 </html>

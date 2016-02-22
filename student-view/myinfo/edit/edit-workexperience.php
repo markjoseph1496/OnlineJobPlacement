@@ -34,6 +34,9 @@ $course_qry =
         $MajorCourse
     );
 $MajorCourse = $course_qry[0][0];
+
+$WorkID = $_GET['id'];
+
 ?>
 <!doctype html>
 <html lang="en">
@@ -227,13 +230,13 @@ $MajorCourse = $course_qry[0][0];
                         <div class="col-md-6">
                             <div class="form-group">
                                 <label>Company Name <span>(*)</span></label>
-                                <input type="text" class="form-control" id="" name="">
+                                <input type="text" class="form-control" id="CompanyName" name="CompanyName">
                             </div>
                         </div>
                         <div class="col-md-6">
                             <div class="form-group">
                                 <label>Company Website</label>
-                                <input type="text" class="form-control" id="" name="">
+                                <input type="text" class="form-control" id="Website" name="Website">
                             </div>
                         </div>
                     </div>
@@ -241,9 +244,8 @@ $MajorCourse = $course_qry[0][0];
                         <div class="col-md-6">
                             <div class="form-group">
                                 <label>Industry <span>(*)</span></label>
-                                <select id="" name="" class="form-control" style="width:100%; height:34px;">
+                                <select id="Industry" name="Industry" class="form-control" style="width:100%; height:34px;">
                                     <option value></option>
-                                    <option value=""></option>
                                     <option value=""></option>
                                 </select>
                             </div>
@@ -374,3 +376,126 @@ $MajorCourse = $course_qry[0][0];
 <script type="text/javascript" src="../../../js/script.js"></script>
 </body>
 </html>
+<script type="text/javascript">
+    $('#Duration').click(function () {
+        $("#ToMonth").val("");
+        $("#ToYear").val("");
+        if ($(this).is(':checked')) {
+            $('#ToDuration').hide();
+        } else {
+            $('#ToDuration').show();
+        }
+    });
+
+    if ($('#Duration').is(':checked')) {
+        $('#ToDuration').hide();
+    } else {
+        $('#ToDuration').show();
+    }
+
+    $(document).ready(function() {
+        var text_max = 150;
+        $('#textarea_feedback').html(text_max + ' characters remaining.');
+
+        $('#NatureOfWork').keyup(function() {
+            var text_length = $('#NatureOfWork').val().length;
+            var text_remaining = text_max - text_length;
+
+            $('#textarea_feedback').html(text_remaining + ' characters remaining.');
+        });
+    });
+
+    $(document).ready(function () {
+        var validator = $("#myForm").bootstrapValidator({
+            feedbackIcons:{
+                valid: "glyphicon glyphicon-ok",
+                invalid: "glyphicon glyphicon-remove",
+                validating: "glyphicon glyphicon-refresh"
+            },
+            fields: {
+                CompanyName: {
+                    validators: {
+                        notEmpty: {
+                            message: "This field is required."
+                        }
+                    }
+                },
+                Industry: {
+                    validators: {
+                        notEmpty: {
+                            message: "This field is required."
+                        }
+                    }
+                },
+                FromMonth: {
+                    validators: {
+                        notEmpty: {
+                            message: "This field is required."
+                        }
+                    }
+                },
+                FromYear: {
+                    validators: {
+                        notEmpty: {
+                            message: "This field is required."
+                        }
+                    }
+                },
+                ToMonth: {
+                    required: "#Duration:checked",
+                    validators: {
+                        notEmpty: {
+                            message: "This field is required."
+                        }
+                    }
+                },
+                ToYear: {
+                    required: "#Duration:checked",
+                    validators: {
+                        notEmpty: {
+                            message: "This field is required."
+                        },
+                        greaterThan: {
+                            value: "FromYear",
+                            message: "Invalid date."
+                        }
+                    }
+                },
+                PositionLevel: {
+                    validators: {
+                        notEmpty: {
+                            message: "This field is required."
+                        }
+                    }
+                },
+                WorkSpecialization: {
+                    validators: {
+                        notEmpty: {
+                            message: "This field is required."
+                        }
+                    }
+                },
+                MonthlySalary: {
+                    validators: {
+                        notEmpty: {
+                            message: "This field is required."
+                        }
+                    }
+                }
+            }
+        });
+        $("#FromYear").change(function(){
+            var from_year = $("#FromYear").val();
+            var to_year = $("#ToYear").val();
+
+            if(from_year > to_year){
+                $("#ToYear").val(from_year);
+                $("#ToYear").parent().removeClass("has-error");
+                $("#ToYear").parent().addClass("has-success");
+                $($("#ToYear").parent().find(".form-control-feedback")).removeClass("glyphicon-remove");
+                $($("#ToYear").parent().find(".form-control-feedback")).addClass("glyphicon-ok");
+                $($("#ToYear").parent().find(".help-block")).css("display", "none");
+            }
+        });
+    });
+</script>
