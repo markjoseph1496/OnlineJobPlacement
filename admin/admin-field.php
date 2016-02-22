@@ -58,6 +58,17 @@ foreach($work_tbl as $value){
         );
     }
 }
+
+$infoquery =
+    GSecureSQL::query(
+        "SELECT FirstName FROM admintbl WHERE AdminID = ?",
+        TRUE,
+        "s",
+        $AdminID
+    );
+
+$aFirstName = $infoquery[0][0];
+
 ?>
 <!doctype html>
 <html lang="en">
@@ -183,7 +194,7 @@ foreach($work_tbl as $value){
                                     </ul>
                                 </li>
                                 <li class="dropdown">
-                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown"><b class="fa fa-user"></b> Welcome, <b>Admin Tim </b><b class="caret"></b></a>
+                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown"><b class="fa fa-user"></b> Welcome, <b>Admin <?php echo $aFirstName; ?> </b><b class="caret"></b></a>
                                     <ul class="dropdown-menu">
                                         <li><a href="admin-account.php">Account <b class="fa fa-user" style="float:right;"></b></a></li>
                                         <li class="divider"></li>

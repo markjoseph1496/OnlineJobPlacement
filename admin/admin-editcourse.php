@@ -20,6 +20,17 @@ $course_tbl =
     $coursetitle = $course_tbl[0][1];
     $coursecode = $course_tbl[0][2];
     $coursedescription = $course_tbl[0][3];
+
+$infoquery =
+    GSecureSQL::query(
+        "SELECT FirstName FROM admintbl WHERE AdminID = ?",
+        TRUE,
+        "s",
+        $AdminID
+    );
+
+$FirstName = $infoquery[0][0];
+
 ?>
 
 <!doctype html>
@@ -148,7 +159,7 @@ $course_tbl =
                                     </ul>
                                 </li>
                                 <li class="dropdown">
-                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown"><b class="fa fa-user"></b> Welcome, <b>Admin Tim </b><b class="caret"></b></a>
+                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown"><b class="fa fa-user"></b> Welcome, <b>Admin <?php echo $FirstName; ?> </b><b class="caret"></b></a>
                                     <ul class="dropdown-menu">
                                         <li><a href="admin-account.php">Account <b class="fa fa-user" style="float:right;"></b></a></li>
                                         <li class="divider"></li>

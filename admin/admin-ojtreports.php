@@ -11,6 +11,16 @@ if (isset($_SESSION['AdminID'])) {
 $SearchBy_Default = isset($_GET['SearchBy']) ? $_GET['SearchBy'] : '';
 $Search_Default = isset($_GET['Search']) ? $_GET['Search'] : '';
 
+$infoquery =
+    GSecureSQL::query(
+        "SELECT FirstName FROM admintbl WHERE AdminID = ?",
+        TRUE,
+        "s",
+        $AdminID
+    );
+
+$cFirstName = $infoquery[0][0];
+
 ?>
 <!doctype html>
 <html lang="en">
@@ -141,7 +151,7 @@ $Search_Default = isset($_GET['Search']) ? $_GET['Search'] : '';
                             </li>
                             <li class="dropdown">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown"><b class="fa fa-user"></b>
-                                    Welcome, <b>Admin Tim </b><b class="caret"></b></a>
+                                    Welcome, <b>Admin <?php echo $cFirstName; ?></b><b class="caret"></b></a>
                                 <ul class="dropdown-menu">
                                     <li><a href="admin-account.php">Account <b class="fa fa-user"
                                                                                style="float:right;"></b></a></li>
