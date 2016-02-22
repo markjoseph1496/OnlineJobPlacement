@@ -361,7 +361,7 @@ $MajorCourse = $coursetbl[0][0];
                             </div>
 
                             <div class="hr4" style="margin-top:40px;margin-bottom:40px;"></div>
-                            <!-- Popular Posts widget -->
+                            <!-- Popular Posts widget 
                             <div class="widget widget-popular-posts">
                                 <h4>Popular Jobs <span class="head-line"></span></h4>
                                 <ul>
@@ -376,7 +376,7 @@ $MajorCourse = $coursetbl[0][0];
                                         <div class="clearfix"></div>
                                     </li>
                                 </ul>
-                            </div>
+                            </div>-->
                         </div>
                         <!--End sidebar-->
 
