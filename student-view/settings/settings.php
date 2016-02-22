@@ -125,117 +125,115 @@ $MajorCourse = $course_qry[0][0];
 </head>
 
 <body>
-    <!-- Start Header Section -->
-    <div class="hidden-header"></div>
-    <header class="clearfix">
-        <!-- Start Top Bar -->
-        <div class="top-bar">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-7">
-                        <!-- Start Contact Info -->
-                        <ul class="profile-name">
-                            <li>Course: <b><?php echo $MajorCourse; ?></b></li>
-                        </ul>
-                        <!-- End Contact Info -->
+    <div id="container">
+        <!-- Start Header Section -->
+        <div class="hidden-header"></div>
+        <header class="clearfix">
+            <!-- Start Top Bar -->
+            <div class="top-bar">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-7">
+                            <!-- Start Contact Info -->
+                            <ul class="profile-name">
+                                <li>Course: <b><?php echo $MajorCourse; ?></b></li>
+                            </ul>
+                            <!-- End Contact Info -->
+                        </div>
+                        <!-- .col-md-6 -->
+                        <div class="col-md-5">
+                            <!-- Start Social Links -->
+                            <ul class="nav navbar-nav navbar-right">
+                                <li class="dropdown icon-border" id="notificationLink">
+                                    <span id="notification_count">3</span>
+                                    <a href="#" class="bell itl-tooltip" data-placement="bottom" data-toggle="dropdown"><i class="fa fa-bell"></i></a>
+                                    <ul id="notificationContainer" class="dropdown-menu dropdown-menu-inverse">
+                                        <li class="dropdown-header"><label>Notification</label></li>
+                                        <li class="disabled"><a href="#" tabindex="-1">No new notification.</a></li>
+                                        <li><a href="#" tabindex="-1">The administrator accepted your request.</a></li>
+                                        <li class="divider"></li>
+                                        <li><a href="../notification/notification.php" tabindex="-1">See All</a></li>
+                                    </ul>
+                                </li>
+                                <li class="dropdown">
+                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown"><b class="fa fa-user"></b> Welcome, <b><?php echo $StudentName; ?> </b><b class="caret"></b></a>
+                                    <ul class="dropdown-menu">
+                                        <li><a href="../../student-profile.php?id=<?php echo $hashStudentID; ?>">Profile <b class="fa fa-user" style="float:right;"></b></a></li>
+                                        <li class="divider"></li>
+                                        <li><a href="#" data-target='#Logout' data-toggle='modal'>Sign Out <b class="fa fa-sign-out" style="float:right;"></b></a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                            <!-- End Social Links -->
+                        </div>
+                        <!-- .col-md-6 -->
                     </div>
-                    <!-- .col-md-6 -->
-                    <div class="col-md-5">
-                        <!-- Start Social Links -->
-                        <ul class="nav navbar-nav navbar-right">
-                            <li class="dropdown icon-border" id="notificationLink">
-                                <span id="notification_count">3</span>
-                                <a href="#" class="bell itl-tooltip" data-placement="bottom" data-toggle="dropdown"><i class="fa fa-bell"></i></a>
-                                <ul id="notificationContainer" class="dropdown-menu dropdown-menu-inverse">
-                                    <li class="dropdown-header"><label>Notification</label></li>
-                                    <li class="disabled"><a href="#" tabindex="-1">No new notification.</a></li>
-                                    <li><a href="#" tabindex="-1">The administrator accepted your request.</a></li>
-                                    <li class="divider"></li>
-                                    <li><a href="../notification/notification.php" tabindex="-1">See All</a></li>
-                                </ul>
-                            </li>
-                            <li class="dropdown">
-                                <a href="#" class="dropdown-toggle" data-toggle="dropdown"><b class="fa fa-user"></b> Welcome, <b><?php echo $StudentName; ?> </b><b class="caret"></b></a>
-                                <ul class="dropdown-menu">
-                                    <li><a href="../../student-profile.php?id=<?php echo $hashStudentID; ?>">Profile <b class="fa fa-user" style="float:right;"></b></a></li>
-                                    <li class="divider"></li>
-                                    <li><a href="#" data-target='#Logout' data-toggle='modal'>Sign Out <b class="fa fa-sign-out" style="float:right;"></b></a></li>
-                                </ul>
-                            </li>
-                        </ul>
-                        <!-- End Social Links -->
-                    </div>
-                    <!-- .col-md-6 -->
+                    <!-- .row -->
                 </div>
-                <!-- .row -->
+                <!-- .container -->
             </div>
-            <!-- .container -->
-        </div>
-        <!-- .top-bar -->
-        <!-- End Top Bar -->
+            <!-- .top-bar -->
+            <!-- End Top Bar -->
 
-        <!-- Modal -->
-        <div class="modal fade" id="Logout" role="dialog">
-            <div class="modal-dialog" style="padding:100px">
-                <!-- Modal content-->
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <button type="button" class="close" data-dismiss="modal">&times;</button>
-                        <h4 class="modal-title">Sign Out?</h4>
-                    </div>
-                    <div class="modal-body">
-                        <div class="col-md-15 fieldcol">
-                            <label = "usr" class = "control-label">Do you want to sign out?</label>
-                            <div class="form-group">
+            <!-- Modal -->
+            <div class="modal fade" id="Logout" role="dialog">
+                <div class="modal-dialog" style="padding:100px">
+                    <!-- Modal content-->
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                            <h4 class="modal-title">Sign Out</h4>
+                        </div>
+                        <div class="modal-body">
+                            <div class="col-md-15 fieldcol">
+                                <label = "usr" class = "control-label">Do you want to sign out?</label>
+                                <div class="form-group">
+                                </div>
+                            </div>
+                            <div class="modal-footer">
+                                <a href="../logout.php"
+                                   class="btn btn-primary">Sign out</a>
+                                <button type="button" class="btn btn-default" data-dismiss="modal">
+                                    Cancel
+                                </button>
                             </div>
                         </div>
-                        <div class="modal-footer">
-                            <a href="../logout.php"
-                               class="btn btn-primary">Sign out</a>
-                            <button type="button" class="btn btn-default" data-dismiss="modal">
-                                Cancel
-                            </button>
-                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Start  Logo & Naviagtion  -->
+            <div class="navbar navbar-default navbar-top">
+                <div class="container">
+                    <div class="navbar-header">
+                        <!-- Stat Toggle Nav Link For Mobiles -->
+                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        <!-- End Toggle Nav Link For Mobiles -->
+                        <a class="navbar-brand" href="../myinfo/personal-info.php">
+                            <img src="../../images/ojpms.png">
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <div class="page-banner no-subtitle">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6">
+                        <h2>Settings</h2>
                     </div>
                 </div>
             </div>
         </div>
+        <!-- End Page Banner -->
 
-        <!-- Start  Logo & Naviagtion  -->
-        <div class="navbar navbar-default navbar-top">
+        <!-- Start Content -->
+        <div id="content">
             <div class="container">
-                <div class="navbar-header">
-                    <!-- Stat Toggle Nav Link For Mobiles -->
-                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                        <i class="fa fa-bars"></i>
-                    </button>
-                    <!-- End Toggle Nav Link For Mobiles -->
-                    <a class="navbar-brand" href="">
-                        <img src="../../images/ojpms.png">
-                    </a>
-                </div>
-            </div>
-        </div>
-    </header>
-
-    <div class="page-banner no-subtitle">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-6">
-                    <h2>Settings</h2>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- End Page Banner -->
-
-    <!-- Start Content -->
-    <div id="content">
-        <div class="container">
-            <!-- Page Content -->
-            <div class="col-md-12 page-content">
                 
-
                 <div class="tabs-section">
 
                     <!-- Nav Tabs -->
@@ -422,10 +420,9 @@ $MajorCourse = $course_qry[0][0];
                     <!-- End Tab Panels -->
                 </div>
             </div>
-            <!-- End Page Content -->
         </div>
+        <!-- End Content -->
     </div>
-    <!-- End Content -->
     <script type="text/javascript" src="../../js/script.js"></script>
 </body>
 

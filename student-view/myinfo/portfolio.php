@@ -161,7 +161,7 @@ if($References == "ok"){
     <!-- Slicknav -->
     <link rel="stylesheet" type="text/css" href="../../css/slicknav.css" media="screen">
 
-    <!-- Margo CSS Styles  -->
+    <!--  CSS Styles  -->
     <link rel="stylesheet" type="text/css" href="../../css/style.css" media="screen">
 
     <!-- Responsive CSS Styles  -->
@@ -405,7 +405,7 @@ if($References == "ok"){
         <!-- Start Content -->
         <div id="content">
             <div class="container">
-                
+
                 <label><span class="fa fa-check-circle"></span> Your information progress..</label>
                 <div class="skill-shortcode">
                     <div class="skill">
