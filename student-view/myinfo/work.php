@@ -5,6 +5,8 @@ include('../../common-functions.php');
 $common_functions->student_login_check();
 $StudentID = $_SESSION['StudentID']; // to conform with your coding style -- ghabx
 
+$hashStudentID = hash('md4',$StudentID);
+
 if (isset($_SESSION['StudentID'])) {
     $StudentID = $_SESSION['StudentID'];
 } else {
@@ -273,7 +275,7 @@ if($References == "ok"){
                                                 class="fa fa-user"></b>
                                             Welcome, <b><?php echo $StudentName; ?> </b><b class="caret"></b></a>
                                         <ul class="dropdown-menu">
-                                            <li><a href="../../student-profile.php">Profile <b class="fa fa-user" style="float:right;"></b></a></li>
+                                            <li><a href="../../student-profile.php?id=<?php echo $hashStudentID; ?>">Profile <b class="fa fa-user" style="float:right;"></b></a></li>
                                             <li><a href="../settings/settings.php">Settings <b class="fa fa-cog"
                                                                                                style="float:right;"></b></a>
                                             </li>
