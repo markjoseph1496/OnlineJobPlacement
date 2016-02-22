@@ -137,7 +137,8 @@ if($References == "ok"){
 
     <!-- Page Description and Author -->
     <meta name="description" content=" - Responsive HTML5 Template">
-    <meta name="author" content="iThemesLab">
+
+    <link rel="shortcut icon" href="../../images/logo/favicon.ico">
 
     <!-- Bootstrap CSS -->
     <link href="../../css/bootstrap.min.css" rel="stylesheet"/>
