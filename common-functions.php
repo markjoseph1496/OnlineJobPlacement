@@ -1,10 +1,4 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: GhabX
- * Date: 2/15/2016
- * Time: 11:51 PM
- */
 
 class CommonFunctions{
     function base_url($path){
