@@ -55,8 +55,7 @@ $ReqSkills = $companyupdate_tbl[0][15];
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
     <!-- Page Description and Author -->
-    <meta name="description" content="Margo - Responsive HTML5 Template">
-    <meta name="author" content="iThemesLab">
+    <meta name="description" content="OJPMS">
 
     <!-- Bootstrap CSS -->
     <link href="../css/bootstrap.min.css" rel="stylesheet"/>
@@ -171,11 +170,6 @@ $ReqSkills = $companyupdate_tbl[0][15];
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown"><b class="fa fa-user"></b>
                                     Welcome, <b><?php echo $cFirstName . " " . $cLastName; ?> </b><b class="caret"></b></a>
                                 <ul class="dropdown-menu">
-                                    <li><a href="#">Profile <b class="fa fa-user" style="float:right;"></b></a></li>
-                                    <li><a href="company-settings.php">Settings <b class="fa fa-cog"
-                                                                                   style="float:right;"></b></a>
-                                    </li>
-                                    <li class="divider"></li>
                                     <li><a href="#" data-target='#Logout' data-toggle='modal'>Sign Out <b
                                                 class="fa fa-sign-out" style="float:right;"></b></a></li>
                                 </ul>

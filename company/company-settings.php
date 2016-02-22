@@ -177,9 +177,6 @@ $ProfileImage= $companyinfo_tbl[0][11];
                                 <li class="dropdown">
                                     <a href="#" class="dropdown-toggle" data-toggle="dropdown"><b class="fa fa-user"></b> Welcome, <b><?php echo $cFirstName . " " . $cLastName; ?> </b><b class="caret"></b></a>
                                     <ul class="dropdown-menu">
-                                        <li><a href="#">Profile <b class="fa fa-user" style="float:right;"></b></a></li>
-                                        <li><a href="company-settings.php">Settings <b class="fa fa-cog" style="float:right;"></b></a></li>
-                                        <li class="divider"></li>
                                         <li><a href="#" data-target='#Logout' data-toggle='modal'>Sign Out <b class="fa fa-sign-out" style="float:right;"></b></a></li>
                                     </ul>
                                 </li>

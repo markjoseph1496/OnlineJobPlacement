@@ -15,7 +15,7 @@ $adminevent_tbl =
 
 <head>
     <!-- Basic -->
-    <title>OJPMS</title>
+    <title>Online Job Placement Management System (OJPMS)</title>
 
     <!-- Define Charset -->
     <meta charset="utf-8">
@@ -26,6 +26,8 @@ $adminevent_tbl =
     <!-- Page Description and Author -->
     <meta name="description" content="Responsive HTML5 Template">
     <meta name="author" content="">
+
+    <link rel="shortcut icon" href="images/logo/favicon.ico">
 
     <!-- Bootstrap CSS  -->
     <link rel="stylesheet" href="asset/css/bootstrap.min.css" type="text/css" media="screen">
@@ -572,7 +574,7 @@ $adminevent_tbl =
                                         job market skills, job preparedness, and job placement assistance.
                                     </p>
                                     <div class="hr1" style="margin-top:5px;"></div>
-                                    <p>To learn more, <a href="e2e.php"><u>click here</u></a>.</p>
+                                    <p>To learn more, <a href="for-index/e2e.php"><u>click here</u></a>.</p>
                                 </div>
                             </div>
                         </div>

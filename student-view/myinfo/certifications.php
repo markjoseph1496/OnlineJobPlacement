@@ -338,11 +338,11 @@ if($References == "ok"){
                                 </ul>
                             </li>
                             <li>
-                                <a href="../resumelink/resume-link.php">Resume Link</a>
+                                <a href="../resume/resume.php">Resumé</a>
                                 <ul class="dropdown">
-                                    <li><a href="../resumelink/resume-link.php">Resume Link</a></li>
-                                    <li><a href="../resumelink/background.php">Background</a></li>
-                                    <li><a href="../resumelink/print-share.php">Print/Share</a></li>
+                                    <li><a href="../resume/resume.php">Resumé</a></li>
+                                    <li><a href="../resume/background.php">Background</a></li>
+                                    <li><a href="../resume/print.php">Print</a></li>
                                 </ul>
                             </li>
                             <li>
@@ -372,11 +372,11 @@ if($References == "ok"){
                         </ul>
                     </li>
                     <li>
-                        <a href="../resumelink/resume-link.php">Resume Link</a>
+                        <a href="../resume/resume.php">Resumé</a>
                         <ul class="dropdown">
-                            <li><a href="../resumelink/resume-link.php">Resume Link</a></li>
-                            <li><a href="../resumelink/background.php">Background</a></li>
-                            <li><a href="../resumelink/print-share.php">Print/Share</a></li>
+                            <li><a href="../resume/resume.php">Resumé</a></li>
+                            <li><a href="../resume/background.php">Background</a></li>
+                            <li><a href="../resume/print.php">Print</a></li>
                         </ul>
                     </li>
                     <li>
@@ -433,8 +433,11 @@ if($References == "ok"){
 
                 }
                 ?>
+<<<<<<< HEAD
+=======
 
                 <label><span class="fa fa-check-circle"></span> Your information progress..</label>
+>>>>>>> origin/master
                 <div class="skill-shortcode">
                     <div class="skill">
                         <div class="progress">
