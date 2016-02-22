@@ -450,7 +450,7 @@ $adminevent_tbl =
                                     <!-- Posts 1 -->
                                     <div class="post-row item">
                                         <div class="left-meta-post">
-                                            <div class="post-date"><span class="day">28</span><span class="month">Dec</span></div>
+                                            <div class="post-date"><span class="day">1</span><span class="month">Dec</span></div>
                                             <div class="post-type"><i class="fa fa-newspaper-o"></i></div>
                                         </div>
                                         <h3 class="post-title"><a href="for-index/news.php">Professional Etiquette Seminar</a></h3>

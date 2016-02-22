@@ -208,27 +208,21 @@
                                 <ul>
                                     <li>
                                         <div class="widget-content">
-                                            <h5><a href="#">How To Download The Google Fonts Catalog</a></h5>
+                                            <h5><a href="news.php">Graduates</a></h5>
                                             <span>Jul 29 2013</span>
                                         </div>
                                         <div class="clearfix"></div>
                                     </li>
                                     <li>
-                                        <div class="widget-thumb">
-                                            <a href="#"><img src="images/blog-mini-02.jpg" alt="" /></a>
-                                        </div>
                                         <div class="widget-content">
-                                            <h5><a href="#">How To Download The Google Fonts Catalog</a></h5>
+                                            <h5><a href="news.php">Graduates</a></h5>
                                             <span>Jul 29 2013</span>
                                         </div>
                                         <div class="clearfix"></div>
                                     </li>
                                     <li>
-                                        <div class="widget-thumb">
-                                            <a href="#"><img src="images/blog-mini-03.jpg" alt="" /></a>
-                                        </div>
                                         <div class="widget-content">
-                                            <h5><a href="#">How To Download The Google Fonts Catalog</a></h5>
+                                            <h5><a href="news.php">Graduates</a></h5>
                                             <span>Jul 29 2013</span>
                                         </div>
                                         <div class="clearfix"></div>
