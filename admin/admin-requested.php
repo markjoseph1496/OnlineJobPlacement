@@ -217,9 +217,9 @@ $FirstName = $infoquery[0][0];
                                     <li><a href="admin-ojtreports.php">OJT Reports</a></li>
                                 </ul>
                             </li>
-                            <li>
+                            <!--<li>
                                 <a href="admin-account.php">Account</a>
-                            </li>
+                            </li>-->
                             <li>
                                 <a class="active" href="admin-requested.php">Requested</a>
                             </li>

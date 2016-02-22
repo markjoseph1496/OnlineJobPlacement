@@ -263,7 +263,7 @@ $ContactNumber = $admin_tbl[0][9];
                             <i class="fa fa-bars"></i>
                         </button>
                         <!-- End Toggle Nav Link For Mobiles -->
-                        <a class="navbar-brand" href="">
+                        <a class="navbar-brand" href="admin.php">
                             <img src="../images/ojpms.png">
                         </a>
                     </div>
@@ -295,7 +295,7 @@ $ContactNumber = $admin_tbl[0][9];
                                 </div>
                             </div>
                         </div>
-                        <!-- Start Navigation List -->
+                        <!-- Start Navigation List 
                         <ul class="nav navbar-nav navbar-right">
                             <li>
                                 <a href="admin.php">Home</a>
