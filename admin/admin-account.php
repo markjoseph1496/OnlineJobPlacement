@@ -221,7 +221,7 @@ $ContactNumber = $admin_tbl[0][9];
                         <div class="col-md-5">
                             <!-- Notification -->
                             <ul class="nav navbar-nav navbar-right">
-                                <li class="dropdown icon-border" id="notificationLink">
+                                <!--<li class="dropdown icon-border" id="notificationLink">
                                     <span id="notification_count">3</span>
                                     <a href="#" class="bell itl-tooltip" data-placement="bottom" data-toggle="dropdown"><i
                                             class="fa fa-bell"></i></a>
@@ -232,7 +232,7 @@ $ContactNumber = $admin_tbl[0][9];
                                         <li class="divider"></li>
                                         <li><a href="../notification/notification.php" tabindex="-1">See All</a></li>
                                     </ul>
-                                </li>
+                                </li>-->
                                 <li class="dropdown">
                                     <a href="#" class="dropdown-toggle" data-toggle="dropdown"><b class="fa fa-user"></b> Welcome, <b>Admin <?php echo $FirstName; ?> </b><b class="caret"></b></a>
                                     <ul class="dropdown-menu">

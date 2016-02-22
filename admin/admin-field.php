@@ -181,7 +181,7 @@ $aFirstName = $infoquery[0][0];
                     <div class="col-md-6">
                         <!-- Notification -->
                             <ul class="nav navbar-nav navbar-right">
-                                <li class="dropdown icon-border" id="notificationLink">
+                                <!--<li class="dropdown icon-border" id="notificationLink">
                                     <span id="notification_count">3</span>
                                     <a href="#" class="bell itl-tooltip" data-placement="bottom" data-toggle="dropdown"><i
                                             class="fa fa-bell"></i></a>
@@ -192,7 +192,7 @@ $aFirstName = $infoquery[0][0];
                                         <li class="divider"></li>
                                         <li><a href="../notification/notification.php" tabindex="-1">See All</a></li>
                                     </ul>
-                                </li>
+                                </li>-->
                                 <li class="dropdown">
                                     <a href="#" class="dropdown-toggle" data-toggle="dropdown"><b class="fa fa-user"></b> Welcome, <b>Admin <?php echo $aFirstName; ?> </b><b class="caret"></b></a>
                                     <ul class="dropdown-menu">
