@@ -51,8 +51,9 @@ $MajorCourse = $course_qry[0][0];
 
     <!-- Page Description and Author -->
     <meta name="description" content=" - Responsive HTML5 Template">
-    <meta name="author" content="iThemesLab">
-
+    
+    <link rel="shortcut icon" href="../../../images/logo/favicon.ico">
+    
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="../../../css/bootstrap.min.css" />
 
@@ -156,7 +157,7 @@ $MajorCourse = $course_qry[0][0];
                         <div class="col-md-5">
                             <!-- Start Social Links -->
                             <ul class="nav navbar-nav navbar-right">
-                                <li class="dropdown icon-border" id="notificationLink">
+                                <!--<li class="dropdown icon-border" id="notificationLink">
                                     <span id="notification_count">3</span>
                                     <a href="#" class="bell itl-tooltip" data-placement="bottom" data-toggle="dropdown"><i class="fa fa-bell"></i></a>
                                     <ul id="notificationContainer" class="dropdown-menu dropdown-menu-inverse">
@@ -166,7 +167,7 @@ $MajorCourse = $course_qry[0][0];
                                         <li class="divider"></li>
                                         <li><a href="../../notification/notification.php" tabindex="-1">See All</a></li>
                                     </ul>
-                                </li>
+                                </li>-->
                                 <li class="dropdown">
                                     <a href="#" class="dropdown-toggle" data-toggle="dropdown"><b class="fa fa-user"></b> Welcome, <b><?php echo $StudentName; ?> </b><b class="caret"></b></a>
                                     <ul class="dropdown-menu">
