@@ -122,12 +122,13 @@ if($References == "ok"){
     $nReferences = "";
 }
 ?>
+<!doctype html>
 <html lang="en">
 
 <head>
 
     <!-- Basic -->
-    <title>OJPMS | Resumé</title>
+    <title>OJPMS | Print</title>
 
     <!-- Define Charset -->
     <meta charset="utf-8">
@@ -137,7 +138,8 @@ if($References == "ok"){
 
     <!-- Page Description and Author -->
     <meta name="description" content=" - Responsive HTML5 Template">
-    <meta name="author" content="iThemesLab">
+
+    <link rel="shortcut icon" href="../../images/logo/favicon.ico">
 
     <!-- Bootstrap CSS -->
     <link href="../../css/bootstrap.min.css" rel="stylesheet"/>
@@ -171,8 +173,8 @@ if($References == "ok"){
     <!-- Css3 Transitions Styles  -->
     <link rel="stylesheet" type="text/css" href="../../css/animate.css" media="screen">
 
-    <!-- OJPMS CSS  -->
-    <link rel="stylesheet" type="text/css" href="../../css/ojpms-style.css" media="screen">
+    <!-- Important! -->
+    <link rel="stylesheet" type="text/css" href="../../css/about-style.css" media="screen">
 
     <!-- Color CSS Styles  -->
     <link rel="stylesheet" type="text/css" href="../../css/colors/yellow.css" title="yellow" media="screen"/>
@@ -196,26 +198,22 @@ if($References == "ok"){
     <!-- Notification -->
     <link rel="stylesheet" href="../../css/notif.css"/>
 
-    <script type="text/javascript" >
-        $(document).ready(function()
-        {
-        $("#notificationLink").click(function()
-        {
-        $("#notificationContainer").fadeToggle(300);
-        $("#notification_count").fadeOut("slow");
-        return false;
-        });
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $("#notificationLink").click(function () {
+                $("#notificationContainer").fadeToggle(300);
+                $("#notification_count").fadeOut("slow");
+                return false;
+            });
 
-        //Document Click
-        $(document).click(function()
-        {
-        $("#notificationContainer").hide();
-        });
-        //Popup Click
-        $("#notificationContainer").click(function()
-        {
-        return false
-        });
+            //Document Click
+            $(document).click(function () {
+                $("#notificationContainer").hide();
+            });
+            //Popup Click
+            $("#notificationContainer").click(function () {
+                return false
+            });
 
         });
     </script>
@@ -419,28 +417,16 @@ if($References == "ok"){
         <!-- Start Content -->
         <div id="content">
             <div class="container">
-                <div class="row sidebar-page">
-                    <!-- Page Content -->
-                    <div class="col-md-12 page-content">
-                        <div class "row">
-                            <div class="col-md-12">
-                                <label>About Me</label>
-                            </div>
-                        </div>
-                        <div class "row">
-                            <div class="col-md-12">
-                                <div class="form-group">
-                                    <textarea class="form-control" name="" id="" rows="10"></textarea>
-                                </div>
-                            </div>
-                        </div>
+                <div class "row">
+                    <label>About Me</label>
+                    <div class="form-group">
+                        <textarea class="form-control" name="" id="" rows="10"></textarea>
                     </div>
-                    <!-- End Page Content -->
                 </div>
-                <div class="hr5" style="margin-top:35px;margin-bottom:40px;"></div>
-                <div class="text-center">
-                    <button type="submit" class="btn-system btn-large" name="btnSave">Save</button>
-                </div>
+            </div>
+            <div class="hr5" style="margin-top:35px;margin-bottom:40px;"></div>
+            <div class="text-center">
+                <button type="submit" class="btn-system btn-large" name="btnSave">Save</button>
             </div>
         </div>
     </div>

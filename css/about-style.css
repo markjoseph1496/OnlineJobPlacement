@@ -218,7 +218,7 @@
     position: relative;
 }
 
-.mymyoverlay {
+.myoverlay {
     background-color: rgba(0, 0, 0, 0.6);
     border-radius: 4px;
     height: 100%;
@@ -271,17 +271,6 @@
     transition: all 0.3s ease-in;
 }
 
-.print .column > .myoverlay > a {
-    background-color: #7eba99 !important;
-}
-
-.print .column > .myoverlay > a {
-    background-color: #333;
-    border: 1px solid #666;
-    border-radius: 4px;
-    color: #fff;
-    padding: 10px;
-}
 
 .print .column > .myoverlay > a > img {
     height: 20px;

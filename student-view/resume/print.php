@@ -396,29 +396,16 @@ if($References == "ok"){
         <!-- Start Content -->
         <div id="content">
             <div class="container">
-                <div class="row sidebar-page">
-                    <!-- Page Content -->
-                    <div class="col-md-12 page-content">
-
-                        <div class="row">
-                            <div class="col-md-6">
-                                <label>Print</label>
-                            </div>
+                <label>Print Your Resume</label>
+                <div class="print">
+                    <div class="column">
+                        <div class="myoverlay">
+                            <p>Your Resume</p>
+                            <a href="resumeprint.php" class="btn-system btn-medium"><i class="fa fa-print"></i> Print</a>
                         </div>
-                        <div class="row">
-                            <div class="print">
-                                <div class="column">
-                                    <div class="myoverlay">
-                                        <p>Your Resume</p>
-                                        <a href="resumeprint.php" class="btn-system btn-mini border-btn"><i class="fa fa-print"></i> Print</a>
-                                    </div>
-                                    <img src="../../img/one-column.jpg">
-                                </div>
-                            </div>
-                        </div>
+                        <img src="../../img/one-column.jpg">
                     </div>
                 </div>
-                <!-- End Page Content -->
             </div>
             <div class="hr3" style="margin-top:35px;margin-bottom:40px;"></div>
         </div>
