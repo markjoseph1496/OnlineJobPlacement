@@ -472,7 +472,7 @@ $cLastName = $companyinfo_tbl[0][2];
                                         </div>
                                     </div>
                                     <br>
-                                    <label>Level</label>
+                                    <label>Courses needed</label>
                                     <br>
 
                                     <?php

@@ -19,26 +19,6 @@ $CompanyName = $companyinfo_tbl[0][0];
 $cFirstName = $companyinfo_tbl[0][1];
 $cLastName = $companyinfo_tbl[0][2];
 
-$companyupdate_tbl =
-    GSecureSQL::query(
-        "SELECT * FROM comppositiontbl WHERE CompanyID = ?",
-        TRUE,
-        "s",
-        $CompanyID
-    );
-$PostingDateFrom = $companyupdate_tbl[0][3];
-$PostingDateTo = $companyupdate_tbl[0][4];
-$PositionTitle = $companyupdate_tbl[0][5];
-$PositionLevel = $companyupdate_tbl[0][6];
-$JobDescription = $companyupdate_tbl[0][7];
-$JSpecialization = $companyupdate_tbl[0][8];
-$EType = $companyupdate_tbl[0][9];
-$AvPosition = $companyupdate_tbl[0][10];
-$MonthlySalary = $companyupdate_tbl[0][11];
-$YExperience = $companyupdate_tbl[0][12];
-$DegreeLevel = $companyupdate_tbl[0][13];
-$Language = $companyupdate_tbl[0][14];
-$ReqSkills = $companyupdate_tbl[0][15];
 ?>
 <!doctype html>
 <html lang="en">

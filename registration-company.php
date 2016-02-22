@@ -304,7 +304,7 @@ include('connection.php');
     </div>
 </form>
 <script type="text/javascript" src="js/script.js"></script>
-<!--
+
 <script type="text/javascript">
     $(document).ready(function () {
         var validator = $("#companyregistration").bootstrapValidator({
@@ -313,7 +313,7 @@ include('connection.php');
                 invalid: "glyphicon glyphicon-remove",
                 validating: "glyphicon glyphicon-refresh"
             },
-           s: {
+           fields: {
                 CompanyName: {
                     validators: {
                         notEmpty: {
@@ -378,11 +378,6 @@ include('connection.php');
                     validators: {
                         notEmpty: {
                             message: "Position is required."
-                        },
-                        stringLength: {
-                            min: 3,
-                            max: 15,
-                            message: "Position must be 3-15 characters long."
                         }
                     }
                 },
@@ -390,15 +385,6 @@ include('connection.php');
                     validators: {
                         notEmpty: {
                             message: "Department is required."
-                        },
-                        stringLength: {
-                            min: 3,
-                            max: 15,
-                            message: "Department must be 3-15 characters long."
-                        },
-                        regexp: {
-                            regexp: /^[a-z\s]+$/i,
-                            message: "Department can consist of alphabetical characters and spaces only"
                         }
                     }
                 },
@@ -406,15 +392,9 @@ include('connection.php');
                     validators: {
                         notEmpty: {
                             message: "Email address is required."
-                        },
-                        stringLength: {
-                            min: 6,
-                            max: 35,
-                            message: "Email address must be 6-35 characters long."
                         }
                     }
                 },
-                /*
                 cPassword: {
                     validators: {
                         notEmpty: {
@@ -433,11 +413,11 @@ include('connection.php');
                             message: "Confirm password is required."
                         },
                         identical: {
-                           : "cPassword",
+                            field: "cPassword",
                             message: "Password and confirm password mismatched."
                         }
                     }
-                },*/
+                },
                 Contact: {
                     validators: {
                         notEmpty: {
@@ -453,11 +433,9 @@ include('connection.php');
                         }
                     }
                 }
-
             }
         });
     });
 </script>
--->
 </body>
 </html>

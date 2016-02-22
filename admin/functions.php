@@ -399,3 +399,38 @@ if (isset($_POST['StudentID'])) {
     }
 
 }
+
+if (isset($_POST['eFirstName'])) {
+    $aUsername = $_POST['eUsername'];
+    $aFirstName = $_POST['eFirstName'];
+    $aMiddleName = $_POST['eMiddleName'];
+    $aLastName = $_POST['eLastName'];
+    $aPosition = $_POST['ePosition'];
+    $aAddress = $_POST['eAddress'];
+    $aContactNumber = $_POST['eContactNumber'];
+
+
+    GSecureSQL::query(
+        "UPDATE admintbl
+        SET Username = ?,
+        FirstName = ?,
+        MiddleName = ?,
+        LastName = ?,
+        Position = ?,
+        Address = ?,
+        ContactNumber = ?",
+        FALSE,
+        "sssssss",
+        $aUsername,
+        $aFirstName,
+        $aMiddleName,
+        $aLastName,
+        $aPosition,
+        $aAddress,
+        $aContactNumber
+
+    );
+
+    header("location: admin-users.php?id=1");
+
+}

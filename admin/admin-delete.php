@@ -30,4 +30,17 @@ if (isset($_GET['delete_EventID'])) {
 
 }
 //END
+
+if (isset($_GET['delete_userID'])) {
+    $Z = $_GET['delete_userID'];
+
+    GSecureSQL::query(
+        "DELETE FROM admintbl WHERE AdminID=?",
+        FALSE,
+        "s",
+        $Z
+    );
+    header("location: admin-users.php?delete");
+
+}
 ?>
