@@ -3,9 +3,12 @@ include('../connection.php');
 session_start();
 $AdminID = $_SESSION['AdminID'];
 
+$salt = hash('md4', mt_rand(0, PHP_INT_MAX) . mt_rand(0, PHP_INT_MAX) . mt_rand(0, PHP_INT_MAX));
+$FileName = hash('sha512', $AdminID . $salt);
+
 $fileToUpload = basename($_FILES["ProfilePicture"]["name"]);
 $target_dir = "ProfileImage/";
-$target_file = $target_dir . $AdminID . ".jpg";
+$target_file = $target_dir . $FileName . ".jpg";
 $uploadOk = 1;
 $imageFileType = pathinfo($target_file, PATHINFO_EXTENSION);
 
@@ -21,11 +24,12 @@ if ($uploadOk == 0) {
     if (move_uploaded_file($_FILES["ProfilePicture"]["tmp_name"], $target_file)) {
 
         GSecureSQL::query(
-            "UPDATE admineventtbl SET ProfileImage = ? WHERE AdminID = ?",
+            "UPDATE admineventtbl SET ProfileImage = ?, Salt = ? WHERE AdminID = ?",
             FALSE,
-            "ss",
+            "sss",
             $target_file,
-            $AdminID
+            $AdminID,
+            $Salt
         );
         header("location: admin-calendarcreateevent.php");
 

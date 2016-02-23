@@ -475,12 +475,83 @@ $aFirstName = $infoquery[0][0];
                 <td class = 'tcenter'><?php echo $Industry; ?></td>
                 <td class = 'tcenter'><?php echo $EmploymentStatus; ?></td>
                 <td>
-                   <a href = "admin-viewstudent.php" name="btnedit" 
-                                    class='btn btn-default'>
-                                <i class='fa fa-eye'></i>
-                    </a>
+                    <button class="btn btn-default" data-toggle="modal"
+                        data-target="#ViewWork<?php echo $StudentID; ?>">
+                        <i class="fa fa-eye"></i>
+                    </button>
                 </td>
             </tr>
+            <!-- Edit Modal-->
+                <div class="modal fade" id="ViewWork<?php echo $StudentID; ?>" role="dialog">
+                    <div class="modal-dialog modal-lg" style="padding:100px">
+                        <!-- Modal content-->
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                <h4 class="modal-title">Edit Event?</h4>
+                            </div>
+                            <div class="modal-body">
+                                <form method="POST" action="functions.php ">
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <div class="row">
+                                                <div class="col-md-3">
+                                                    <label>Event:</label>
+                                                </div>
+                                                <div class="col-md-4">
+                                                    <div class = "form-group">
+                                                        <label>From: <p><?php echo $datefrom; ?></p></label>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-4">
+                                                    <div class = "form-group">
+                                                        <label>To: <p><?php echo $dateto; ?></p></label>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-md-3">
+                                                    <label>Event Title:</label>
+                                                </div>
+                                                <div class="col-md-9">
+                                                    <div class="form-group">
+                                                        <input type="text" name="eEventTitle" id="eEventTitle" class="form-control" value="<?php echo $eventtitle; ?>">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-md-3">
+                                                    <label>Location</label>
+                                                </div>
+                                                <div class="col-md-9">
+                                                    <div class="form-group">
+                                                        <input type="text" name="eLocation" id="eLocation" class="form-control" value="<?php echo $location; ?>">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-md-3">
+                                                    <label>Caption</label>
+                                                </div>
+                                                <div class="col-md-9">
+                                                    <div class="form-group">
+                                                        <input type="text" class="form-control" id="eDescription" name="eDescription" value="<?php echo $description; ?>">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <input type="hidden" name="StudentID" value="<?php echo $StudentID; ?>">
+                                    <div class="modal-footer">
+                                        <button type="submit" class="btn btn-primary" name="btnUpdateEvent">Update</button>
+                                        <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            <!-- End Modal-->
             </tbody>
             <?php
         }

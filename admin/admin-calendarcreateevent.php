@@ -243,63 +243,61 @@ $adminpic_tbl =
             </div>
         </div>
         <!-- End Page Banner -->
-
-        <div id="content">
-            <div class="container">
-                <div class="row">
-                    <form action="functions.php" name="addcalendar" id="addcalendar" autocomplete="off">
+        <form action="functions.php" name="addcalendar" id="addcalendar" autocomplete="off" method="POST" enctype="multipart/form-data">
+            <div id="content">
+                <div class="container">
+                    <div class="row">
+                        
+                            <div class="col-md-6">
+                                <div class="row">
+                                    <div class="col-md-3">
+                                        <label>Event:</label>
+                                    </div>
+                                    <div class="col-md-5">
+                                        <label>From</label>
+                                        <div class = "form-group">
+                                            <input type="date" name="datefrom" id="date_from" class="form-control">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <label>To</label>
+                                        <div class = "form-group">
+                                            <input type="date" name="dateto" id="date_to" class="form-control">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-3">
+                                        <label>Event Title:</label>
+                                    </div>
+                                    <div class="col-md-9">
+                                        <div class="form-group">
+                                            <input type="text" name="eventtitle" id="eventtitle" class="form-control">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-3">
+                                        <label>Location:</label>
+                                    </div>
+                                    <div class="col-md-9">
+                                        <div class="form-group">
+                                            <input type="text" name="location" id="location" class="form-control">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-3">
+                                        <label>Caption:</label>
+                                    </div>
+                                    <div class="col-md-9">
+                                        <div class="form-group">
+                                            <input type="text" class="form-control" id="descrip" name="descrip">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         <div class="col-md-6">
-                            <div class="row">
-                                <div class="col-md-3">
-                                    <label>Event:</label>
-                                </div>
-                                <div class="col-md-5">
-                                    <label>From</label>
-                                    <div class = "form-group">
-                                        <input type="date" name="datefrom" id="date_from" class="form-control">
-                                    </div>
-                                </div>
-                                <div class="col-md-4">
-                                    <label>To</label>
-                                    <div class = "form-group">
-                                        <input type="date" name="dateto" id="date_to" class="form-control">
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-md-3">
-                                    <label>Event Title:</label>
-                                </div>
-                                <div class="col-md-9">
-                                    <div class="form-group">
-                                        <input type="text" name="eventtitle" id="eventtitle" class="form-control">
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-md-3">
-                                    <label>Location:</label>
-                                </div>
-                                <div class="col-md-9">
-                                    <div class="form-group">
-                                        <input type="text" name="location" id="location" class="form-control">
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-md-3">
-                                    <label>Caption:</label>
-                                </div>
-                                <div class="col-md-9">
-                                    <div class="form-group">
-                                        <input type="text" class="form-control" id="descrip" name="descrip">
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </form>
-                    <div class="col-md-6">
-                        <form id="UploadPicture" name="UploadPicture" method="POST" action="uploadpicture.php" enctype="multipart/form-data">
                             <div class="row">
                                 <div class="image-border" style = "width: 400px;">
                                     <img src="<?php echo $ProfileImage; ?>" class="img-responsive" style="width:100%; height:100%;">
@@ -313,20 +311,26 @@ $adminpic_tbl =
                                            class="file file-loading"
                                     data-allowed-file-extensions='["png", "jpg", "bmp", "gif"]'>
                                 </div>
+                                <script>
+                                    $("#ProfilePicture").fileinput({
+                                        showUpload : false
+                                    });
+                                </script>
                                 <div class="col-md-6">
                                     <button id="" class="btn-system btn-mini border-btn" name="btnDelete">Delete Image</button>
                                 </div>
                             </div>
-                        </form>
+                        </div>
+                    </div>
+
+                    <div class="hr5" style="margin-top:35px;margin-bottom:40px;"></div>
+                    <div class="text-center">
+                        <button type="submit" class="btn-system btn-large" id="BtnCalendarsave" name="BtnCalendarsave">Save</button>
+                        <a href = "admin-calendarcreateevent.php" class="btn-system btn-large btn-black">Cancel</a>
                     </div>
                 </div>
-                <div class="hr5" style="margin-top:35px;margin-bottom:40px;"></div>
-                <div class="text-center">
-                    <button type="submit" class="btn-system btn-large" id="BtnCalendarsave" name="BtnCalendarsave">Save</button>
-                    <a href = "admin-calendarcreateevent.php" class="btn-system btn-large btn-black">Cancel</a>
-                </div>
             </div>
-        </div>
+        </form>
     </div>
 </body>
 <script type="text/javascript">
@@ -337,7 +341,7 @@ $adminpic_tbl =
                 invalid: "glyphicon glyphicon-remove",
                 validating: "glyphicon glyphicon-refresh"
             },
-           s: {
+           fields: {
                 datefrom: {
                     validators: {
                         notEmpty: {

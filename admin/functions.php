@@ -247,26 +247,58 @@ if (isset($_POST['aFirstName'])) {
 // End of Add User
 
 //Create Calendar-Event
-if (isset($_GET['BtnCalendarsave'])) {
+if (isset($_POST['BtnCalendarsave'])) {
 
-    $datefrom = $_GET['datefrom'];
-    $dateto = $_GET['dateto'];
-    $eventtitle = $_GET['eventtitle'];
-    $location = $_GET['location'];
-    $descrip = $_GET['descrip'];
+    $datefrom = $_POST['datefrom'];
+    $dateto = $_POST['dateto'];
+    $eventtitle = $_POST['eventtitle'];
+    $location = $_POST['location'];
+    $descrip = $_POST['descrip'];
 
-    GSecureSQL::query(
-        "INSERT INTO admineventtbl (AdminID,EventTitle,EventDatef,EventDatet,Location,Description) values (?,?,?,?,?,?)",
-        FALSE,
-        "ssssss",
-        $AdminID,
-        $eventtitle,
-        $datefrom,
-        $dateto,
-        $location,
-        $descrip
-    );
-    header("location: admin-calendar.php?id=EventAdd");
+    $FileName = hash('sha512', mt_rand(0, PHP_INT_MAX) . mt_rand(0, PHP_INT_MAX) . mt_rand(0, PHP_INT_MAX));
+
+    if(isset($_FILES["ProfilePicture"])){
+        if($_FILES["ProfilePicture"]["error"] === 0){
+            $ext = explode('.', $_FILES["ProfilePicture"]["name"]);
+            $ext = $ext[count($ext) - 1];
+            $fileToUpload = basename($_FILES["ProfilePicture"]["name"]);
+
+            $target_dir = "ProfileImage/";
+            $target_file = $target_dir . $FileName . '.' . $ext;
+            $uploadOk = 1;
+            $imageFileType = pathinfo($target_file, PATHINFO_EXTENSION);
+
+            if ($imageFileType != "jpg" && $imageFileType != "png" && $imageFileType != "jpeg" && $imageFileType != "bmp" && $imageFileType != "gif") {
+                echo "Sorry, only JPG, JPEG, PNG, BMP, or GIF files are allowed. ";
+                $uploadOk = 0;
+            }
+
+            if ($uploadOk == 0) {
+                echo "Sorry, your file was not uploaded.";
+
+            } else {
+                if (move_uploaded_file($_FILES["ProfilePicture"]["tmp_name"], $target_file)) {
+                GSecureSQL::query(
+                        "INSERT INTO admineventtbl (AdminID,EventTitle,EventDatef,EventDatet,Location,Description,ProfileImage) values (?,?,?,?,?,?,?)",
+                        FALSE,
+                        "sssssss",
+                        $AdminID,
+                        $eventtitle,
+                        $datefrom,
+                        $dateto,
+                        $location,
+                        $descrip,
+                        $target_file
+                    );
+                header("location: admin-calendar.php?id=EventAdd");
+                   
+                } else {
+                    echo "Sorry, there was an error uploading your file.";
+                }
+            }
+        }
+    }
+    print_r($_FILES["ProfilePicture"]);die();
 
 }
 // End of Create Calendar-Event

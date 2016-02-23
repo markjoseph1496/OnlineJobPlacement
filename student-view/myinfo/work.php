@@ -603,10 +603,9 @@ if($References == "ok"){
                                     data-target="#DeleteWork<?php echo $WorkID; ?>">
                                     <i class="fa fa-trash fa-1x"></i>
                                     </button>
-                        </td>
                                 </td>
                             </tr>
-                             <!-- Modal -->
+                            <!-- Modal -->
                                 <div class="modal fade" id="DeleteWork<?php echo $WorkID; ?>"
                                      role="dialog">
                                     <div class="modal-dialog" style="padding:100px">
