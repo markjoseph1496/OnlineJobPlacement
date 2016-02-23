@@ -324,7 +324,7 @@ if ($References == "ok") {
                                     <li><a href="../myinfo/skills-and-languages.php"><?php echo $nSpecialization; ?> Skills
                                             & Languages</a></li>
                                     <li><a href="../myinfo/references.php"><?php echo $nReferences; ?> References</a></li>
-                                    <li><a href="../myinfo/portfolio.php">Portfolio</a></li>
+                                    <!--<li><a href="portfolio.php">Portfolio</a></li>-->
                                 </ul>
                             </li>
                             <li>
