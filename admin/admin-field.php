@@ -353,21 +353,24 @@ $aFirstName = $infoquery[0][0];
             <div class="col-md-8">
                 <h5> <?php echo $CourseTitle; ?> <h5>
             </div>
+            <!--
             <div class="col-md-4">
                 <div class="form-group text-center">
                     <a href="#" class="main-button" style="float:right;">
                         <span class="fa fa-download"></span> Export XLS
                     </a>
-                </div>
+                </div>-->
             </div>
         </div>
     </div>
+                &nbsp;
     <div class="header2_advertising">
         <div class="container">
             <div class = "row-field">
             <div class="col-sm-4">
                 <label><b>TOTAL NUMBER OF STUDENTS: <?php echo $Total; ?></b></label>
             </div>
+                <!--
             <div class="col-sm-4">
                 <div class="form-group">
                         <input type="text" name= id= "" class="form-control"
@@ -389,9 +392,11 @@ $aFirstName = $infoquery[0][0];
                         <option value="unemp">Unemployed</option>
                     </select><br>
             </div>
+
             <div class="col-md-3" style = "margin-top:15px;" >
                  <button type="submit" class="btn-system btn-large border-btn" href="#" style = "width:100px;">Filter</button>
             </div>
+            -->
             </div>
                        
               
@@ -410,7 +415,9 @@ $aFirstName = $infoquery[0][0];
             <th width="20%" class="tabletitle"> Specialization</th>
             <th width="15%" class="tabletitle"> Industry</th>
             <th width="20%" class="tabletitle"> Employment Status</th>
+            <!--
             <th width="5%" class="tabletitle"></th>
+            -->
         <tr>
         </thead>
         <?php
@@ -475,12 +482,14 @@ $aFirstName = $infoquery[0][0];
                 <td class = 'tcenter'><?php echo $Specialization; ?></td>
                 <td class = 'tcenter'><?php echo $Industry; ?></td>
                 <td class = 'tcenter'><?php echo $EmploymentStatus; ?></td>
+                <!--
                 <td>
                     <button class="btn btn-default" data-toggle="modal"
-                        data-target="#ViewWork<?php echo $StudentID; ?>">
+                        data-target="#ViewWork">
                         <i class="fa fa-eye"></i>
                     </button>
                 </td>
+                -->
             </tr>
             <!-- Edit Modal-->
                 <div class="modal fade" id="ViewWork<?php echo $StudentID; ?>" role="dialog">
