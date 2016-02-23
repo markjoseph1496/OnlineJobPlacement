@@ -320,7 +320,7 @@ if (count($LOGquery1) > 0) {
         <!-- Mobile Menu End -->
 
         <!-- Start Page Banner -->
-        <div class="page-banner" style="padding:40px 0; center #f9f9f9;">
+        <div class="page-banner no-subtitle">
             <div class="container">
                 <div class="row">
                     <div class="col-md-6">
