@@ -5,7 +5,7 @@ include('../../common-functions.php');
 $common_functions->student_login_check();
 $StudentID = $_SESSION['StudentID']; // to conform with your coding style -- ghabx
 
-$hashStudentID = hash('md4',$StudentID);
+$hashStudentID = hash('md4', $StudentID);
 
 $infoquery =
     GSecureSQL::query(
@@ -17,7 +17,7 @@ $infoquery =
 
 $FirstName = $infoquery[0][0];
 $LastName = $infoquery[0][1];
-$MajorCourse =  $infoquery[0][2];
+$MajorCourse = $infoquery[0][2];
 $StudentName = $FirstName . " " . $LastName;
 
 $course_qry =
@@ -75,48 +75,48 @@ $Specialization = $progress_tbl[0][8];
 $Languages = $progress_tbl[0][9];
 $References = $progress_tbl[0][10];
 
-if($Pinfo == "ok"){
+if ($Pinfo == "ok") {
     $Progress = $Progress + 10;
     $nPinfo = "";
 }
-if($Cinfo == "ok"){
+if ($Cinfo == "ok") {
     $Progress = $Progress + 10;
     $nCinfo = "";
 }
-if($Objective == "ok"){
+if ($Objective == "ok") {
     $Progress = $Progress + 15;
     $nWorkXP = "";
 }
-if($School == "ok"){
+if ($School == "ok") {
     $Progress = $Progress + 5;
     $nSchool = "";
 }
-if($Seminar == "ok"){
+if ($Seminar == "ok") {
     $Progress = $Progress + 5;
     $nSeminar = "";
 }
-if($Certification == "ok"){
+if ($Certification == "ok") {
     $Progress = $Progress + 10;
     $nCertification = "";
 }
-if($Achievements == "ok"){
+if ($Achievements == "ok") {
     $Progress = $Progress + 10;
     $nAchievements = "";
 }
-if($Specialization == "ok"){
+if ($Specialization == "ok") {
     $Progress = $Progress + 10;
-    if($Languages == "ok" && $Specialization == "ok"){
+    if ($Languages == "ok" && $Specialization == "ok") {
         $nSpecialization = "";
     }
 }
-if($Languages == "ok"){
+if ($Languages == "ok") {
     $Progress = $Progress + 5;
-    if($Languages == "ok" && $Specialization == "ok"){
+    if ($Languages == "ok" && $Specialization == "ok") {
         $nSpecialization = "";
     }
 
 }
-if($References == "ok"){
+if ($References == "ok") {
     $Progress = $Progress + 10;
     $nReferences = "";
 }
@@ -194,41 +194,40 @@ if($References == "ok"){
     <!-- Notification -->
     <link rel="stylesheet" href="../../css/notif.css"/>
 
-    <script type="text/javascript" >
-        $(document).ready(function()
-        {
-        $("#notificationLink").click(function()
-        {
-        $("#notificationContainer").fadeToggle(300);
-        $("#notification_count").fadeOut("slow");
-        return false;
-        });
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $("#notificationLink").click(function () {
+                $("#notificationContainer").fadeToggle(300);
+                $("#notification_count").fadeOut("slow");
+                return false;
+            });
 
-        //Document Click
-        $(document).click(function()
-        {
-        $("#notificationContainer").hide();
-        });
-        //Popup Click
-        $("#notificationContainer").click(function()
-        {
-        return false
-        });
+            //Document Click
+            $(document).click(function () {
+                $("#notificationContainer").hide();
+            });
+            //Popup Click
+            $("#notificationContainer").click(function () {
+                return false
+            });
 
         });
     </script>
 
+
     <!-- Alert -->
     <script type="text/javascript">
-        $(document).ready (function(){
-        $("#success-alert").hide();
-        $("#btnsave").click(function showAlert() {
-            $("#success-alert").alert();
-            $("#success-alert").fadeTo(2000, 500).slideUp(500, function(){
-           $("#success-alert").alert('close');
-                });   
-            });
-        });
+        /*
+         $(document).ready (function(){
+         $("#success-alert").hide();
+         $("#btnsave").click(function showAlert() {
+         $("#success-alert").alert();
+         $("#success-alert").fadeTo(2000, 500).slideUp(500, function(){
+         $("#success-alert").alert('close');
+         });
+         });
+         });
+         */
     </script>
 </head>
 
@@ -264,12 +263,17 @@ if($References == "ok"){
                                 </ul>
                             </li>-->
                             <li class="dropdown">
-                                <a href="#" class="dropdown-toggle" data-toggle="dropdown"><b class="fa fa-user"></b> Welcome, <b><?php echo $StudentName; ?> </b><b class="caret"></b></a>
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown"><b class="fa fa-user"></b>
+                                    Welcome, <b><?php echo $StudentName; ?> </b><b class="caret"></b></a>
                                 <ul class="dropdown-menu">
-                                    <li><a href="../../student-profile.php?id=<?php echo $hashStudentID; ?>">Profile <b class="fa fa-user" style="float:right;"></b></a></li>
-                                    <li><a href="../settings/settings.php">Settings <b class="fa fa-cog" style="float:right;"></b></a></li>
+                                    <li><a href="../../student-profile.php?id=<?php echo $hashStudentID; ?>">Profile <b
+                                                class="fa fa-user" style="float:right;"></b></a></li>
+                                    <li><a href="../settings/settings.php">Settings <b class="fa fa-cog"
+                                                                                       style="float:right;"></b></a>
+                                    </li>
                                     <li class="divider"></li>
-                                    <li><a href="#" data-target='#Logout' data-toggle='modal'>Sign Out <b class="fa fa-sign-out" style="float:right;"></b></a></li>
+                                    <li><a href="#" data-target='#Logout' data-toggle='modal'>Sign Out <b
+                                                class="fa fa-sign-out" style="float:right;"></b></a></li>
                                 </ul>
                             </li>
                         </ul>
@@ -283,7 +287,7 @@ if($References == "ok"){
         </div>
         <!-- .top-bar -->
         <!-- End Top Bar -->
-        
+
         <!-- Modal -->
         <div class="modal fade" id="Logout" role="dialog">
             <div class="modal-dialog" style="padding:100px">
@@ -333,8 +337,10 @@ if($References == "ok"){
                                 <li><a href="work.php"><?php echo $nWorkXP; ?> Work</a></li>
                                 <li><a href="education.php"><?php echo $nSchool; ?> Education</a></li>
                                 <li><a href="certifications.php"><?php echo $nCertification; ?> Certifications</a></li>
-                                <li><a class="active" href="achievements.php"><?php echo $nAchievements; ?> Achievements</a></li>
-                                <li><a href="skills-and-languages.php"><?php echo $nSpecialization; ?> Skills & Languages</a></li>
+                                <li><a class="active" href="achievements.php"><?php echo $nAchievements; ?>
+                                        Achievements</a></li>
+                                <li><a href="skills-and-languages.php"><?php echo $nSpecialization; ?> Skills &
+                                        Languages</a></li>
                                 <li><a href="references.php"><?php echo $nReferences; ?> References</a></li>
                                 <li><a href="portfolio.php">Portfolio</a></li>
                             </ul>
@@ -439,7 +445,8 @@ if($References == "ok"){
             <div class="skill-shortcode">
                 <div class="skill">
                     <div class="progress">
-                        <div class="progress-bar" role="progressbar" data-percentage="<?php echo $Progress; ?>" style="width: <?php echo $Progress; ?>%;">
+                        <div class="progress-bar" role="progressbar" data-percentage="<?php echo $Progress; ?>"
+                             style="width: <?php echo $Progress; ?>%;">
                             <span class="progress-bar-span"><?php echo $Progress; ?>%</span>
                         </div>
                     </div>
@@ -480,8 +487,8 @@ if($References == "ok"){
                                     $StudentID
                                 );
                             foreach ($achievements_tbl as $value) {
-                                $AchievementID = $value[0];
-                                $Achievements = $value[2];
+                            $AchievementID = $value[0];
+                            $Achievements = $value[2];
                             ?>
                             <tr>
                                 <td><?php echo $Achievements; ?></td>

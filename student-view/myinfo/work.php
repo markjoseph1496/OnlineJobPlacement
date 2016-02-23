@@ -226,15 +226,17 @@ if($References == "ok"){
 
     <!-- Alert -->
     <script type="text/javascript">
-        $(document).ready(function () {
-            $("#success-alert").hide();
-            $("#btnSave").click(function showAlert() {
-                $("#success-alert").alert();
-                $("#success-alert").fadeTo(2000, 500).slideUp(500, function () {
-                    $("#success-alert").alert('close');
-                });
-            });
-        });
+        /*
+         $(document).ready (function(){
+         $("#success-alert").hide();
+         $("#btnsave").click(function showAlert() {
+         $("#success-alert").alert();
+         $("#success-alert").fadeTo(2000, 500).slideUp(500, function(){
+         $("#success-alert").alert('close');
+         });
+         });
+         });
+         */
     </script>
 </head>
 
