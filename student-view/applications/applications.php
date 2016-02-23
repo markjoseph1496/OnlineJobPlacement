@@ -438,7 +438,7 @@ if ($References == "ok") {
                     <?php
                     $application_tbl =
                         GSecureSQL::query(
-                            "SELECT * FROM requesttocompanytbl WHERE StudentID = ? AND Status = 'Pending' OR Status = 'Accepted' OR Status = 'Rejected'",
+                            "SELECT * FROM requesttocompanytbl WHERE StudentID = ?",
                             TRUE,
                             "s",
                             $StudentID
@@ -446,7 +446,6 @@ if ($References == "ok") {
                     foreach ($application_tbl as $value) {
                         $RID = $value[0];
                         $CompanyID = $value[1];
-                        $StudentID = $value[2];
                         $PositionID = $value[3];
                         $Status = $value[4];
                         $DateSubmitted = $value[5];
