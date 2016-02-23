@@ -115,342 +115,341 @@ $cLastName = $companyinfo_tbl[0][2];
 </head>
 
 <body>
-<!-- Full Body Container -->
-<div id="container">
-    <!-- Start Header Section -->
-    <div class="hidden-header"></div>
-    <header class="clearfix">
+    <!-- Full Body Container -->
+    <div id="container">
+        <!-- Start Header Section -->
+        <div class="hidden-header"></div>
+        <header class="clearfix">
 
-        <!-- Start Top Bar -->
-        <div class="top-bar">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-7">
-                        <!-- Start Contact Info -->
-                        <ul class="contact-details">
-                            <li class="profile-name"><b><?php echo $CompanyName; ?></b></li>
-                        </ul>
-                        <!-- End Contact Info -->
+            <!-- Start Top Bar -->
+            <div class="top-bar">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-7">
+                            <!-- Start Contact Info -->
+                            <ul class="contact-details">
+                                <li class="profile-name"><b><?php echo $CompanyName; ?></b></li>
+                            </ul>
+                            <!-- End Contact Info -->
+                        </div>
+                        <!-- .col-md-6 -->
+                        <div class="col-md-5">
+                            <!-- Start Social Links -->
+                            <ul class="nav navbar-nav navbar-right">
+                                <li class="dropdown icon-border" id="notificationLink">
+                                    <!--noti
+                                    <span id="notification_count">3</span>
+                                    <a href="#" class="bell itl-tooltip" data-placement="bottom" data-toggle="dropdown"><i
+                                            class="fa fa-bell"></i></a>
+                                    <ul id="notificationContainer" class="dropdown-menu dropdown-menu-inverse">
+                                        <li class="dropdown-header"><label>Notification</label></li>
+                                        <li class="disabled"><a href="#" tabindex="-1">No new notification.</a></li>
+                                        <li><a href="#" tabindex="-1">The administrator accepted your request.</a></li>
+                                        <li class="divider"></li>
+                                        <li><a href="../notification/notification.php" tabindex="-1">See All</a></li>
+                                    </ul>
+                                </li>-->
+                                <li class="dropdown">
+                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown"><b class="fa fa-user"></b>
+                                        Welcome, <b><?php echo $cFirstName . " " . $cLastName; ?> </b><b class="caret"></b></a>
+                                    <ul class="dropdown-menu">
+                                        <li><a href="#" data-target='#Logout' data-toggle='modal'>Sign Out <b
+                                                    class="fa fa-sign-out" style="float:right;"></b></a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                            <!-- End Social Links -->
+                        </div>
+                        <!-- .col-md-6 -->
                     </div>
-                    <!-- .col-md-6 -->
-                    <div class="col-md-5">
-                        <!-- Start Social Links -->
+                    <!-- .row -->
+                </div>
+                <!-- .container -->
+            </div>
+            <!-- .top-bar -->
+            <!-- End Top Bar -->
+
+
+            <!-- Start  Logo & Naviagtion  -->
+            <div class="navbar navbar-default navbar-top">
+                <div class="container">
+                    <div class="navbar-header">
+                        <!-- Stat Toggle Nav Link For Mobiles -->
+                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        <!-- End Toggle Nav Link For Mobiles -->
+                        <a class="navbar-brand" href="">
+                            <img src="../images/ojpms.png">
+                        </a>
+                    </div>
+                    <div class="navbar-collapse collapse">
+                        <!-- Modal -->
+                        <div class="modal fade" id="Logout"
+                             role="dialog">
+                            <div class="modal-dialog" style="padding:100px">
+                                <!-- Modal content-->
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                        <h4 class="modal-title">Sign Out</h4>
+                                    </div>
+                                    <div class="modal-body">
+                                        <div class="col-md-15 fieldcol">
+                                            <label = "usr" class = "control-label">Do you want to Sign Out?</label>
+                                            <div class="form-group">
+                                            </div>
+                                        </div>
+                                        <div class="modal-footer">
+                                            <a href="logout.php"
+                                               class="btn btn-primary">Sign Out</a>
+                                            <button type="button" class="btn btn-default" data-dismiss="modal">
+                                                Cancel
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Start Navigation List -->
                         <ul class="nav navbar-nav navbar-right">
-                            <li class="dropdown icon-border" id="notificationLink">
-                                <!--noti
-                                <span id="notification_count">3</span>
-                                <a href="#" class="bell itl-tooltip" data-placement="bottom" data-toggle="dropdown"><i
-                                        class="fa fa-bell"></i></a>
-                                <ul id="notificationContainer" class="dropdown-menu dropdown-menu-inverse">
-                                    <li class="dropdown-header"><label>Notification</label></li>
-                                    <li class="disabled"><a href="#" tabindex="-1">No new notification.</a></li>
-                                    <li><a href="#" tabindex="-1">The administrator accepted your request.</a></li>
-                                    <li class="divider"></li>
-                                    <li><a href="../notification/notification.php" tabindex="-1">See All</a></li>
-                                </ul>
-                            </li>-->
-                            <li class="dropdown">
-                                <a href="#" class="dropdown-toggle" data-toggle="dropdown"><b class="fa fa-user"></b>
-                                    Welcome, <b><?php echo $cFirstName . " " . $cLastName; ?> </b><b class="caret"></b></a>
-                                <ul class="dropdown-menu">
-                                    <li><a href="#" data-target='#Logout' data-toggle='modal'>Sign Out <b
-                                                class="fa fa-sign-out" style="float:right;"></b></a></li>
+                            <li>
+                                <a href="company.php">Home</a>
+                            </li>
+                            <li>
+                                <a>Position</a>
+                                <ul class="dropdown">
+                                    <li><a href="company-positionlist.php">Position List</a></li>
+                                    <li><a href="company-createposition.php">Create Position</a></li>
                                 </ul>
                             </li>
+                            <li>
+                                <a class="active">Applicant List</a>
+                                <ul class="dropdown">
+                                    <li><a href="company-pendingapplicants.php" class="active">Pending</a></li>
+                                    <li><a href="company-acceptedapplicants.php">Accepted</a></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="company-settings.php">Settings</a>
+                            </li>
                         </ul>
-                        <!-- End Social Links -->
+                        <!-- End Navigation List -->
                     </div>
-                    <!-- .col-md-6 -->
                 </div>
-                <!-- .row -->
+                <!-- Mobile Menu Start -->
+                <ul class="wpb-mobile-menu">
+                    <li>
+                        <a href="company.php">Home</a>
+                    </li>
+                    <li>
+                        <a>Position</a>
+                        <ul class="dropdown">
+                            <li><a href="company-positionlist.php">Position List</a></li>
+                            <li><a href="company-createposition.php">Create Position</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a class="active" href="company-applicants.php">Applicant List</a>
+                        <ul class="dropdown">
+                            <li><a href="company-pendingapplicants.php" class="active">Pending</a></li>
+                            <li><a href="company-acceptedapplicants.php">Accepted</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="company-settings.php">Settings</a>
+                    </li>
+                </ul>
             </div>
-            <!-- .container -->
-        </div>
-        <!-- .top-bar -->
-        <!-- End Top Bar -->
+            <!-- End Header Logo & Naviagtion -->
+        </header>
+        <!-- Mobile Menu End -->
 
 
-        <!-- Start  Logo & Naviagtion  -->
-        <div class="navbar navbar-default navbar-top">
+        <!-- Start Page Banner -->
+        <div class="page-banner no-subtitle">
             <div class="container">
-                <div class="navbar-header">
-                    <!-- Stat Toggle Nav Link For Mobiles -->
-                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                        <i class="fa fa-bars"></i>
-                    </button>
-                    <!-- End Toggle Nav Link For Mobiles -->
-                    <a class="navbar-brand" href="">
-                        <img src="../images/ojpms.png">
-                    </a>
-                </div>
-                <div class="navbar-collapse collapse">
-                    <!-- Modal -->
-                    <div class="modal fade" id="Logout"
-                         role="dialog">
-                        <div class="modal-dialog" style="padding:100px">
-                            <!-- Modal content-->
-                            <div class="modal-content">
-                                <div class="modal-header">
-                                    <button type="button" class="close" data-dismiss="modal">&times;</button>
-                                    <h4 class="modal-title">Sign Out</h4>
-                                </div>
-                                <div class="modal-body">
-                                    <div class="col-md-15 fieldcol">
-                                        <label = "usr" class = "control-label">Do you want to Sign Out?</label>
-                                        <div class="form-group">
-                                        </div>
-                                    </div>
-                                    <div class="modal-footer">
-                                        <a href="logout.php"
-                                           class="btn btn-primary">Sign out</a>
-                                        <button type="button" class="btn btn-default" data-dismiss="modal">
-                                            Cancel
-                                        </button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                <div class="row">
+                    <div class="col-md-6">
+                        <h2>List of Pending Applicants</h2>
                     </div>
-                    <!-- End Sign-out -->
-                    <!-- Start Navigation List -->
-                    <ul class="nav navbar-nav navbar-right">
-                        <li>
-                            <a href="company.php">Home</a>
-                        </li>
-                        <li>
-                            <a>Position</a>
-                            <ul class="dropdown">
-                                <li><a href="company-positionlist.php">Position List</a></li>
-                                <li><a href="company-createposition.php">Create Position</a></li>
-                            </ul>
-                        </li>
-                        <li>
-                            <a class="active">Applicant List</a>
-                            <ul class="dropdown">
-                                <li><a href="company-pendingapplicants.php" class="active">Pending</a></li>
-                                <li><a href="company-acceptedapplicants.php">Accepted</a></li>
-                            </ul>
-                        </li>
-                        <li>
-                            <a href="company-settings.php">Settings</a>
-                        </li>
-                    </ul>
-                    <!-- End Navigation List -->
-                </div>
-            </div>
-            <!-- Mobile Menu Start -->
-            <ul class="wpb-mobile-menu">
-                <li>
-                    <a href="company.php">Home</a>
-                </li>
-                <li>
-                    <a>Position</a>
-                    <ul class="dropdown">
-                        <li><a href="company-positionlist.php">Position List</a></li>
-                        <li><a href="company-createposition.php">Create Position</a></li>
-                    </ul>
-                </li>
-                <li>
-                    <a class="active" href="company-applicants.php">Applicant List</a>
-                    <ul class="dropdown">
-                        <li><a href="company-pendingapplicants.php" class="active">Pending</a></li>
-                        <li><a href="company-acceptedapplicants.php">Accepted</a></li>
-                    </ul>
-                </li>
-                <li><a href="company-settings.php">Settings</a>
-                </li>
-            </ul>
-        </div>
-        <!-- End Header Logo & Naviagtion -->
-    </header>
-    <!-- Mobile Menu End -->
-
-
-    <!-- Start Page Banner -->
-    <div class="page-banner" style="padding:40px 0; center #f9f9f9;">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-6">
-                    <h2>List of Pending Applicants</h2>
                 </div>
             </div>
         </div>
-    </div>
-    <!-- End Page Banner -->
+        <!-- End Page Banner -->
 
-    <!--Content-->
-    <br><br><br>
-    <div class="container">
-        <div class="col-md-12">
-            <table class="table segment table-hover">
-                <thead>
-                <tr>
-                    <th width='20%' class='tabletitle'>Applicant Name</th>
-                    <th width='17%' class='tabletitle'>Position</th>
-                    <th width='20%' class='tabletitle'>Course</th>
-                    <th width='13%' class='tabletitle'>Location</th>
-                    <th width='15%' class='tabletitle'>Email</th>
-                    <th width='15%' class='tabletitle'>Contact Number</th>
-                    <th width='15%' class='tabletitle'>Date Submitted</th>
-                    <th width='10%' class='tabletitle'>Action</th>
-                <tr>
-                </thead>
-                <?php
-                $requesttocompany_tbl =
-                    GSecureSQL::query(
-                        "SELECT
-                              requesttocompanytbl.RID,
-                              requesttocompanytbl.StudentID,
-                              requesttocompanytbl.PositionID,
-                              requesttocompanytbl.Status,
-                              studentinfotbl.StudentID,
-                              studentinfotbl.FirstName,
-                              studentinfotbl.LastName,
-                              studentinfotbl.MajorCourse,
-                              studcontactstbl.StudentID,
-                              studcontactstbl.City,
-                              studcontactstbl.Email,
-                              comppositiontbl.PositionID,
-                              comppositiontbl.PositionTitle,
-                              requesttocompanytbl.DateSubmitted,
-                              studcontactstbl.MobileNumber
-                              FROM
-                              requesttocompanytbl
-                              INNER JOIN comppositiontbl ON requesttocompanytbl.PositionID = comppositiontbl.PositionID
-                              INNER JOIN studentinfotbl ON requesttocompanytbl.StudentID = studentinfotbl.StudentID
-                              INNER JOIN studcontactstbl ON studentinfotbl.StudentID = studcontactstbl.StudentID
-                              WHERE requesttocompanytbl.Status = 'Pending' AND requesttocompanytbl.CompanyID = ?
-                              ",
-                        TRUE,
-                        "s",
-                        $CompanyID
-                    );
-                foreach ($requesttocompany_tbl as $value) {
-                    $RID = $value[0];
-                    $PositionLevel = $value[12];
-                    $FirstName = $value[5];
-                    $LastName = $value[6];
-                    $MajorCourse = $value[7];
-                    $Location = $value[9];
-                    $Email = $value[10];
-                    $DateSubmitted = $value[13];
-                    $ContactNumber = $value[14];
-
-                    $coursetbl =
+        <div id="content">
+            <div class="container">
+                <div class="hr2"></div>
+                <table class="table segment table-hover">
+                    <thead>
+                    <tr>
+                        <th width='20%' class='tabletitle'>Applicant Name</th>
+                        <th width='17%' class='tabletitle'>Position</th>
+                        <th width='20%' class='tabletitle'>Course</th>
+                        <th width='13%' class='tabletitle'>Location</th>
+                        <th width='15%' class='tabletitle'>Email</th>
+                        <th width='15%' class='tabletitle'>Contact Number</th>
+                        <th width='15%' class='tabletitle'>Date Submitted</th>
+                        <th width='10%' class='tabletitle'>Action</th>
+                    <tr>
+                    </thead>
+                    <?php
+                    $requesttocompany_tbl =
                         GSecureSQL::query(
-                            "SELECT CourseTitle FROM coursetbl WHERE CourseCode = ?",
+                            "SELECT
+                                  requesttocompanytbl.RID,
+                                  requesttocompanytbl.StudentID,
+                                  requesttocompanytbl.PositionID,
+                                  requesttocompanytbl.Status,
+                                  studentinfotbl.StudentID,
+                                  studentinfotbl.FirstName,
+                                  studentinfotbl.LastName,
+                                  studentinfotbl.MajorCourse,
+                                  studcontactstbl.StudentID,
+                                  studcontactstbl.City,
+                                  studcontactstbl.Email,
+                                  comppositiontbl.PositionID,
+                                  comppositiontbl.PositionTitle,
+                                  requesttocompanytbl.DateSubmitted,
+                                  studcontactstbl.MobileNumber
+                                  FROM
+                                  requesttocompanytbl
+                                  INNER JOIN comppositiontbl ON requesttocompanytbl.PositionID = comppositiontbl.PositionID
+                                  INNER JOIN studentinfotbl ON requesttocompanytbl.StudentID = studentinfotbl.StudentID
+                                  INNER JOIN studcontactstbl ON studentinfotbl.StudentID = studcontactstbl.StudentID
+                                  WHERE requesttocompanytbl.Status = 'Pending' AND requesttocompanytbl.CompanyID = ?
+                                  ",
                             TRUE,
                             "s",
-                            $MajorCourse
+                            $CompanyID
                         );
-                    foreach ($coursetbl as $value1) {
-                        $MajorCourse = $value1[0];
+                    foreach ($requesttocompany_tbl as $value) {
+                        $RID = $value[0];
+                        $PositionLevel = $value[12];
+                        $FirstName = $value[5];
+                        $LastName = $value[6];
+                        $MajorCourse = $value[7];
+                        $Location = $value[9];
+                        $Email = $value[10];
+                        $DateSubmitted = $value[13];
+                        $ContactNumber = $value[14];
+
+                        $coursetbl =
+                            GSecureSQL::query(
+                                "SELECT CourseTitle FROM coursetbl WHERE CourseCode = ?",
+                                TRUE,
+                                "s",
+                                $MajorCourse
+                            );
+                        foreach ($coursetbl as $value1) {
+                            $MajorCourse = $value1[0];
+                        }
+                        ?>
+                        <tbody>
+                        <tr>
+                            <td width='20%' class=tabletitle><a href=''><?php echo $LastName . ", " . $FirstName; ?></a></td>
+                            <td width='17%' class=tabletitle><?php echo $PositionLevel; ?></td>
+                            <td width='20%' class=tabletitle><?php echo $MajorCourse; ?></td>
+                            <td width='12%' class=tabletitle><?php echo $Location; ?></td>
+                            <td width='15%' class=tabletitle><?php echo $Email; ?></td>
+                            <td width='15%' class=tabletitle><?php echo $ContactNumber; ?></td>
+                            <td width='15%' class=tabletitle><?php echo $DateSubmitted; ?></td>
+                            <td>
+                                <button class='btn btn-default' data-toggle='modal'
+                                        data-target='#AcceptRequest<?php echo $RID; ?>'>
+                                    <i class='fa fa-check-circle'></i></button>
+                                <button class='btn btn-danger' data-toggle='modal'
+                                        data-target='#DeclineRequest<?php echo $RID; ?>'>
+                                    <i class='fa fa-trash fa-1x'></i></button>
+                            </td>
+                        <tr>
+                        </tbody>
+                        <!-- Modal -->
+                        <form name="form_Accept[]" id="form_Accept[]"
+                              action="add-company.php" autocomplete="off" method="POST">
+                            <div class="modal fade" id="AcceptRequest<?php echo $RID; ?>"
+                                 role="dialog">
+                                <div class="modal-dialog" style="padding:100px">
+                                    <!-- Modal content-->
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                            <h4 class="modal-title">Accept Applicant?</h4>
+                                        </div>
+                                        <div class="modal-body">
+                                            <div class="col-md-15 fieldcol">
+                                                <label = "usr" class = "control-label">Do you want to accept this
+                                                applicant?</label>
+                                                <div class="form-group">
+                                                </div>
+                                            </div>
+                                            <div class="col-md-15 fieldcol">
+                                                <label = "usr" class = "control-label">Message to applicant.
+                                                <span>(*)</span> </label>
+                                                <div class="form-group">
+                                            <textarea type="text" name="AcceptMsg" id="AcceptMsg"
+                                                      class="form-control"></textarea>
+                                                </div>
+                                            </div>
+                                            <input type="hidden" name="id" value="1">
+                                            <input type="hidden" name="rid" value="<?php echo $RID; ?>">
+                                            <div class="modal-footer">
+                                                <button type="submit" class="btn btn-primary">Accept</button>
+                                                <button type="button" class="btn btn-default" data-dismiss="modal">
+                                                    Cancel
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+
+                        <form name="form_Decline" id="form_Decline"
+                              action="add-company.php" autocomplete="off" method="POST">
+                            <div class="modal fade" id="DeclineRequest<?php echo $RID; ?>"
+                                 role="dialog">
+                                <div class="modal-dialog" style="padding:100px">
+                                    <!-- Modal content-->
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                            <h4 class="modal-title">Reject Applicant?</h4>
+                                        </div>
+                                        <div class="modal-body">
+                                            <div class="col-md-15 fieldcol">
+                                                <label = "usr" class = "control-label">Do you want to reject this applicant?
+                                                This
+                                                cannot be undone.</label>
+                                                <div class="form-group">
+                                                </div>
+                                            </div>
+                                            <div class="col-md-15 fieldcol">
+                                                <label = "usr" class = "control-label">Message to applicant.
+                                                <span>(*)</span> </label>
+                                                <div class="form-group">
+                                                <textarea type="text" name="AcceptMsg" id="AcceptMsg"
+                                                          class="form-control"> </textarea>
+                                                </div>
+                                            </div>
+                                            <input type="hidden" name="id" value="2">
+                                            <input type="hidden" name="rid" value="<?php echo $RID; ?>">
+                                            <div class="modal-footer">
+                                                <button type="submit" class="btn btn-danger">Reject</button>
+                                                <button type="button" class="btn btn-default" data-dismiss="modal">
+                                                    Cancel
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                        <?php
                     }
                     ?>
-                    <tbody>
-                    <tr>
-                        <td width='20%' class=tabletitle><a href=''><?php echo $LastName . ", " . $FirstName; ?></a></td>
-                        <td width='17%' class=tabletitle><?php echo $PositionLevel; ?></td>
-                        <td width='20%' class=tabletitle><?php echo $MajorCourse; ?></td>
-                        <td width='12%' class=tabletitle><?php echo $Location; ?></td>
-                        <td width='15%' class=tabletitle><?php echo $Email; ?></td>
-                        <td width='15%' class=tabletitle><?php echo $ContactNumber; ?></td>
-                        <td width='15%' class=tabletitle><?php echo $DateSubmitted; ?></td>
-                        <td>
-                            <button class='btn btn-default' data-toggle='modal'
-                                    data-target='#AcceptRequest<?php echo $RID; ?>'>
-                                <i class='fa fa-check-circle'></i></button>
-                            <button class='btn btn-danger' data-toggle='modal'
-                                    data-target='#DeclineRequest<?php echo $RID; ?>'>
-                                <i class='fa fa-trash fa-1x'></i></button>
-                        </td>
-                    <tr>
-                    </tbody>
-                    <!-- Modal -->
-                    <form name="form_Accept[]" id="form_Accept[]"
-                          action="add-company.php" autocomplete="off" method="POST">
-                        <div class="modal fade" id="AcceptRequest<?php echo $RID; ?>"
-                             role="dialog">
-                            <div class="modal-dialog" style="padding:100px">
-                                <!-- Modal content-->
-                                <div class="modal-content">
-                                    <div class="modal-header">
-                                        <button type="button" class="close" data-dismiss="modal">&times;</button>
-                                        <h4 class="modal-title">Accept Applicant?</h4>
-                                    </div>
-                                    <div class="modal-body">
-                                        <div class="col-md-15 fieldcol">
-                                            <label = "usr" class = "control-label">Do you want to accept this
-                                            applicant?</label>
-                                            <div class="form-group">
-                                            </div>
-                                        </div>
-                                        <div class="col-md-15 fieldcol">
-                                            <label = "usr" class = "control-label">Message to applicant.
-                                            <span>(*)</span> </label>
-                                            <div class="form-group">
-                                        <textarea type="text" name="AcceptMsg" id="AcceptMsg"
-                                                  class="form-control"></textarea>
-                                            </div>
-                                        </div>
-                                        <input type="hidden" name="id" value="1">
-                                        <input type="hidden" name="rid" value="<?php echo $RID; ?>">
-                                        <div class="modal-footer">
-                                            <button type="submit" class="btn btn-primary">Accept</button>
-                                            <button type="button" class="btn btn-default" data-dismiss="modal">
-                                                Cancel
-                                            </button>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </form>
-
-                    <form name="form_Decline" id="form_Decline"
-                          action="add-company.php" autocomplete="off" method="POST">
-                        <div class="modal fade" id="DeclineRequest<?php echo $RID; ?>"
-                             role="dialog">
-                            <div class="modal-dialog" style="padding:100px">
-                                <!-- Modal content-->
-                                <div class="modal-content">
-                                    <div class="modal-header">
-                                        <button type="button" class="close" data-dismiss="modal">&times;</button>
-                                        <h4 class="modal-title">Reject Applicant?</h4>
-                                    </div>
-                                    <div class="modal-body">
-                                        <div class="col-md-15 fieldcol">
-                                            <label = "usr" class = "control-label">Do you want to reject this applicant?
-                                            This
-                                            cannot be undone.</label>
-                                            <div class="form-group">
-                                            </div>
-                                        </div>
-                                        <div class="col-md-15 fieldcol">
-                                            <label = "usr" class = "control-label">Message to applicant.
-                                            <span>(*)</span> </label>
-                                            <div class="form-group">
-                                            <textarea type="text" name="AcceptMsg" id="AcceptMsg"
-                                                      class="form-control"> </textarea>
-                                            </div>
-                                        </div>
-                                        <input type="hidden" name="id" value="2">
-                                        <input type="hidden" name="rid" value="<?php echo $RID; ?>">
-                                        <div class="modal-footer">
-                                            <button type="submit" class="btn btn-danger">Reject</button>
-                                            <button type="button" class="btn btn-default" data-dismiss="modal">
-                                                Cancel
-                                            </button>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </form>
-                    <?php
-                }
-                ?>
-            </table>
+                </table>
+            </div>
         </div>
     </div>
     <script type="text/javascript" src="../js/script.js"></script>
