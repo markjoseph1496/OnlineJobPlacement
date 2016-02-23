@@ -640,13 +640,13 @@ if($References == "ok"){
                                             <a href="edit/edit-language.php?id=<?php echo $LangID; ?>" class="btn btn-default">
                                                 <i class="fa fa-pencil-square-o fa-1x"></i>
                                             </a>
-                                            <button class="btn btn-danger" data-toggle="modal" data-target="#DeleteLanguage">
+                                            <button class="btn btn-danger" data-toggle="modal" data-target="#DeleteLanguage<?php echo $LangID; ?>">
                                                 <i class="fa fa-trash fa-1x"></i>
                                             </button>
                                         </td>
                                     </tr>
                                      <!-- Modal -->
-                                    <div class="modal fade" id="DeleteLanguage" role="dialog">
+                                    <div class="modal fade" id="DeleteLanguage<?php echo $LangID; ?>" role="dialog">
                                         <div class="modal-dialog" style="padding:100px">
                                             <!-- Modal content-->
                                             <div class="modal-content">

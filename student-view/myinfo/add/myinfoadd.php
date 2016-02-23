@@ -174,15 +174,17 @@ if (isset($_POST['Skill'])) {
 
 if (isset($_POST['Language'])) {
     $Language = $_POST['Language'];
-    $LanguageProficiency = $_POST['LanguageProficiency'];
+    $WrittenProficiency = $_POST['WrittenProficiency'];
+    $SpokenProficiency = $_POST['SpokenProficiency'];
 
     GSecureSQL::query(
-        "INSERT INTO languagetbl (StudentID, Language, WrittenProf) values (?,?,?)",
+        "INSERT INTO languagetbl (StudentID, Language, WrittenProf, SpokenProf) values (?,?,?,?)",
         FALSE,
-        "ss",
+        "ssss",
         $StudentID,
         $Language,
-        $LanguageProficiency
+        $WrittenProficiency,
+        $SpokenProficiency
     );
 
     GSecureSQL::query(
