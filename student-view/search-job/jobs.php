@@ -102,9 +102,6 @@ $MajorCourse = $coursetbl[0][0];
         <!-- Color CSS Styles  -->
         <link rel="stylesheet" type="text/css" href="../../css/colors/yellow.css" title="yellow" media="screen"/>
 
-        <!-- Pagination -->
-        <link rel="stylesheet" href="../../css/simplePagination.css"/>
-
         <!-- JS  -->
         <script type="text/javascript" src="../../js/jquery.migrate.js"></script>
         <script type="text/javascript" src="../../js/modernizrr.js"></script>

@@ -383,7 +383,7 @@ $MajorCourse = $course_qry[0][0];
                                 message: "This field is required."
                             }
                         }
-                    },
+                    }
                 }
             });
     });

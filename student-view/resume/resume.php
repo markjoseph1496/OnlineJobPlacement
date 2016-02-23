@@ -221,30 +221,6 @@ if($References == "ok"){
 
 <body>
     <div id="container">
-        <script>
-            $(document).on("click", ".deleteCertification", function (result) {
-                bootbox.confirm({
-                    title: 'Delete',
-                    message: 'Are you sure you want to delete this Information?',
-                    buttons: {
-                        'cancel': {
-                            label: 'Cancel',
-
-                        },
-                        'confirm': {
-                            label: 'Delete',
-                            className: 'btn-danger pull-right'
-                        }
-                    },
-                    callback: function (result) {
-                        if (result) {
-                            window.location = $("a[data-bb='confirmDeleteCertification']").attr('href');
-                        }
-                    }
-                });
-            });
-        </script>
-
         <!-- Start Header Section -->
         <div class="hidden-header"></div>
         <header class="clearfix">

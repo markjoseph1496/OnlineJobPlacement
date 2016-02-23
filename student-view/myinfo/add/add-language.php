@@ -288,7 +288,7 @@ $MajorCourse = $course_qry[0][0];
                 <div class="hr5" style="margin-top:35px;margin-bottom:40px;"></div>
                 <div class="text-center">
                     <button type="submit" class="btn-system btn-large border-btn">Add</button>
-                    <a href="../specialization-and-languages.php" class="btn-system btn-large btn-black">Cancel</a>
+                    <a href="../skills-and-languages.php" class="btn-system btn-large btn-black">Cancel</a>
                 </div>
             </div>
         </div>
