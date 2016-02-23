@@ -729,6 +729,8 @@ if (count($LOGquery1) > 0) {
         }
         ?>
     </div>
+    <!-- Go To Top Link -->
+    <a href="#" class="back-to-top"><i class="fa fa-angle-up"></i></a>
 </body>
 <script type="text/javascript" src="../js/script.js"></script>
 </html>
