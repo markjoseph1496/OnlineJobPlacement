@@ -47,11 +47,12 @@ if (isset($_GET['btnSaveInfo'])) {
         )
     );
 
+    /*
     $validation_return = $common_functions->validate($_GET, $validation_config);
     if($validation_return['hasError']){
         print_r($validation_return);die();
     }
-
+    */
     if(!$common_functions->date_validator($_GET['Birthdate'])){
         die('Birthdate supplied is an invalid date.');
     }
@@ -122,11 +123,12 @@ if (isset($_GET['btnSaveContactInfo'])) {
         )
     );
 
+    /*
     $validation_return = $common_functions->validate($_GET, $validation_config);
     if($validation_return['hasError']){
         print_r($validation_return);die();
     }
-
+    */
     GSecureSQL::query(
         "UPDATE studcontactstbl SET Email = ?, MobileNumber = ?, HomeNumber = ?, WorkNumber = ?, Address = ?, City = ?, PostalCode = ? WHERE StudentID = ?",
         FALSE,

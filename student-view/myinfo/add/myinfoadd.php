@@ -146,18 +146,16 @@ if (isset($_GET['Name'])) {
     header("location: ../references.php?id=2");
 
 }
-if (isset($_POST['Specialization'])) {
-    $Specialization = $_POST['Specialization'];
+if (isset($_POST['Skill'])) {
     $YearsOfExperience = $_POST['YearsOfExperience'];
     $Proficiency = $_POST['rating'];
     $Skill = $_POST['Skill'];
 
     GSecureSQL::query(
-        "INSERT INTO specializationtbl (StudentID, Specialization, YearOfExperience, Proficiency, Skills) values (?,?,?,?,?)",
+        "INSERT INTO specializationtbl (StudentID, YearOfExperience, Proficiency, Skills) values (?,?,?,?)",
         FALSE,
-        "sssss",
+        "ssss",
         $StudentID,
-        $Specialization,
         $YearsOfExperience,
         $Proficiency,
         $Skill

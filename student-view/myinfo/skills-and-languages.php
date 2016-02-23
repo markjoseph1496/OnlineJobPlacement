@@ -531,11 +531,11 @@ if($References == "ok"){
                                         <td class="text-center"><?php echo $YearOfExperience; ?></td>
                                         <td class="text-center">
                                             <fieldset class="rating">
-                                                <input <?php if($Proficiency == "5") echo "checked"; ?> type="radio" id="star5" name="rating" value="5" /><label class = "full" for="star5" title="Excellent - 5 stars"></label>
-                                                <input <?php if($Proficiency == "4") echo "checked"; ?> type="radio" id="star4" name="rating" value="4" /><label class = "full" for="star4" title="Good - 4 stars"></label>
-                                                <input <?php if($Proficiency == "3") echo "checked"; ?> type="radio" id="star3" name="rating" value="3" /><label class = "full" for="star3" title="Average - 3 stars"></label>
-                                                <input <?php if($Proficiency == "2") echo "checked"; ?> type="radio" id="star2" name="rating" value="2" /><label class = "full" for="star2" title="Poor - 2 stars"></label>
-                                                <input <?php if($Proficiency == "1") echo "checked"; ?> type="radio" id="star1" name="rating" value="1" /><label class = "full" for="star1" title="Awful - 1 star"></label>
+                                                <input <?php if($Proficiency == "5") echo "checked"; ?> type="radio" id="star5<?php echo $SID; ?>" name="rating<?php echo $SID; ?>" value="5" /><label class = "full" for="star5<?php echo $SID; ?>" title="Excellent - 5 stars"></label>
+                                                <input <?php if($Proficiency == "4") echo "checked"; ?> type="radio" id="star4<?php echo $SID; ?>" name="rating<?php echo $SID; ?>" value="4" /><label class = "full" for="star4<?php echo $SID; ?>" title="Good - 4 stars"></label>
+                                                <input <?php if($Proficiency == "3") echo "checked"; ?> type="radio" id="star3<?php echo $SID; ?>" name="rating<?php echo $SID; ?>" value="3" /><label class = "full" for="star3<?php echo $SID; ?>" title="Average - 3 stars"></label>
+                                                <input <?php if($Proficiency == "2") echo "checked"; ?> type="radio" id="star2<?php echo $SID; ?>" name="rating<?php echo $SID; ?>" value="2" /><label class = "full" for="star2<?php echo $SID; ?>" title="Poor - 2 stars"></label>
+                                                <input <?php if($Proficiency == "1") echo "checked"; ?> type="radio" id="star1<?php echo $SID; ?>" name="rating<?php echo $SID; ?>" value="1" /><label class = "full" for="star1<?php echo $SID; ?>" title="Awful - 1 star"></label>
                                             </fieldset>
                                         </td>
                                         <td class="text-center">
@@ -554,7 +554,7 @@ if($References == "ok"){
                                                 <div class="modal-content">
                                                     <div class="modal-header">
                                                         <button type="button" class="close" data-dismiss="modal">&times;</button>
-                                                        <h4 class="modal-title">Delete Specialization?</h4>
+                                                        <h4 class="modal-title">Delete</h4>
                                                     </div>
                                                     <div class="modal-body">
                                                         <div class="col-md-15">
@@ -613,25 +613,26 @@ if($References == "ok"){
                                             $Language = $value2[2];
                                             $WrittenProf = $value2[3];
                                             $SpokenProf = $value2[4];
+                                            $SpokenProfName = $LangID . "s";
                                     ?>
                                     <tr>
                                         <td><?php echo $Language; ?></td>
                                         <td class="text-center">
                                             <fieldset class="rating">
-                                                <input type="radio" id="star5" name="rating" value="5" /><label class = "full" for="star5" title="Excellent - 5 stars"></label>
-                                                <input type="radio" id="star4" name="rating" value="4" /><label class = "full" for="star4" title="Good - 4 stars"></label>
-                                                <input type="radio" id="star3" name="rating" value="3" /><label class = "full" for="star3" title="Meh - 3 stars"></label>
-                                                <input type="radio" id="star2" name="rating" value="2" /><label class = "full" for="star2" title="Poor - 2 stars"></label>
-                                                <input type="radio" id="star1" name="rating" value="1" /><label class = "full" for="star1" title="Awful - 1 star"></label>
+                                                <input <?php if($WrittenProf == "5") echo "checked"; ?> type="radio" id="star5<?php echo $LangID; ?>" name="rating<?php echo $LangID; ?>" value="5" /><label class = "full" for="star5<?php echo $LangID; ?>" title="Excellent - 5 stars"></label>
+                                                <input <?php if($WrittenProf == "4") echo "checked"; ?> type="radio" id="star4<?php echo $LangID; ?>" name="rating<?php echo $LangID; ?>" value="4" /><label class = "full" for="star4<?php echo $LangID; ?>" title="Good - 4 stars"></label>
+                                                <input <?php if($WrittenProf == "3") echo "checked"; ?> type="radio" id="star3<?php echo $LangID; ?>" name="rating<?php echo $LangID; ?>" value="3" /><label class = "full" for="star3<?php echo $LangID; ?>" title="Meh - 3 stars"></label>
+                                                <input <?php if($WrittenProf == "2") echo "checked"; ?> type="radio" id="star2<?php echo $LangID; ?>" name="rating<?php echo $LangID; ?>" value="2" /><label class = "full" for="star2<?php echo $LangID; ?>" title="Poor - 2 stars"></label>
+                                                <input <?php if($WrittenProf == "1") echo "checked"; ?> type="radio" id="star1<?php echo $LangID; ?>" name="rating<?php echo $LangID; ?>" value="1" /><label class = "full" for="star1<?php echo $LangID; ?>" title="Awful - 1 star"></label>
                                             </fieldset>
                                         </td>
                                         <td class="text-center">
                                             <fieldset class="rating">
-                                                <input type="radio" id="star5" name="rating" value="5" /><label class = "full" for="star5" title="Excellent - 5 stars"></label>
-                                                <input type="radio" id="star4" name="rating" value="4" /><label class = "full" for="star4" title="Good - 4 stars"></label>
-                                                <input type="radio" id="star3" name="rating" value="3" /><label class = "full" for="star3" title="Average - 3 stars"></label>
-                                                <input type="radio" id="star2" name="rating" value="2" /><label class = "full" for="star2" title="Poor - 2 stars"></label>
-                                                <input type="radio" id="star1" name="rating" value="1" /><label class = "full" for="star1" title="Awful - 1 star"></label>
+                                                <input <?php if($SpokenProf == "5") echo "checked"; ?> type="radio" id="star5<?php echo $SpokenProfName; ?>" name="rating<?php echo $SpokenProfName; ?>" value="5" /><label class = "full" for="star5<?php echo $SpokenProfName; ?>" title="Excellent - 5 stars"></label>
+                                                <input <?php if($SpokenProf == "4") echo "checked"; ?> type="radio" id="star4<?php echo $SpokenProfName; ?>" name="rating<?php echo $SpokenProfName; ?>" value="4" /><label class = "full" for="star4<?php echo $SpokenProfName; ?>" title="Good - 4 stars"></label>
+                                                <input <?php if($SpokenProf == "3") echo "checked"; ?> type="radio" id="star3<?php echo $SpokenProfName; ?>" name="rating<?php echo $SpokenProfName; ?>" value="3" /><label class = "full" for="star3<?php echo $SpokenProfName; ?>" title="Average - 3 stars"></label>
+                                                <input <?php if($SpokenProf == "2") echo "checked"; ?> type="radio" id="star2<?php echo $SpokenProfName; ?>" name="rating<?php echo $SpokenProfName; ?>" value="2" /><label class = "full" for="star2<?php echo $SpokenProfName; ?>" title="Poor - 2 stars"></label>
+                                                <input <?php if($SpokenProf == "1") echo "checked"; ?> type="radio" id="star1<?php echo $SpokenProfName; ?>" name="rating<?php echo $SpokenProfName; ?>" value="1" /><label class = "full" for="star1<?php echo $SpokenProfName; ?>" title="Awful - 1 star"></label>
                                             </fieldset>
                                         </td>
                                         <td class="text-center">

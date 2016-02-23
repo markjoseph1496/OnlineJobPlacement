@@ -663,9 +663,6 @@ if($References == "ok"){
                 },
                 PostalCode: {
                     validators: {
-                        notEmpty: {
-                            message: "Postal Code is required"
-                        },
                         regexp: {
                             regexp: /^[0-9]+$/,
                             message: "Postal Code can consist of numeric characters only."

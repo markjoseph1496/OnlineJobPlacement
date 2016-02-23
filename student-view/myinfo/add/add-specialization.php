@@ -255,7 +255,7 @@ $MajorCourse = $course_qry[0][0];
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <label>Skill <span>(*)</span></label>
-                                    <input type="text" class="form-control" name="Skill" id="Skill"">
+                                    <input type="text" class="form-control" name="Skill" id="Skill">
                                 </div>
                             </div>
                             <div class="col-md-6">
@@ -274,29 +274,6 @@ $MajorCourse = $course_qry[0][0];
                             </div>
                         </div>
                         <div class="row">
-                            <div class="col-md-8">
-                                <div class="form-group">
-                                    <label>Specialization <span>(*)</span></label>
-                                    <select id="" name="Specialization" class="form-control">
-                                        <option value="" selected="selected">- Please select one -</option>
-                                        <?php
-
-                                        $listofspecialization_tbl =
-                                            GSecureSQL::query(
-                                                "SELECT Specialization FROM listofspecializationtbl",
-                                                TRUE
-                                            );
-                                        foreach($listofspecialization_tbl as $value){
-                                            $Specialization = $value[0];
-                                        ?>
-                                            <option value="<?php echo $Specialization; ?>"><?php echo $Specialization; ?></option>
-                                        <?php
-                                        }
-                                        ?>
-                                        
-                                    </select>
-                                </div>
-                            </div>
                             <div class="col-md-4">
                                 <div class="form-group">
                                     <label>Years of Experience <span>(*)</span></label>
@@ -319,7 +296,7 @@ $MajorCourse = $course_qry[0][0];
                 <div class="hr5" style="margin-top:35px;margin-bottom:40px;"></div>
                 <div class="text-center">
                     <button type="submit" class="btn-system btn-large border-btn">Add</button>
-                    <a href="../specialization-and-languages.php" class="btn-system btn-large btn-black">Cancel</a>
+                    <a href="../skills-and-languages.php" class="btn-system btn-large btn-black">Cancel</a>
                 </div>
             </div>
         </div>
@@ -337,13 +314,6 @@ $MajorCourse = $course_qry[0][0];
                     validating: "glyphicon glyphicon-refresh"
                 },
                 fields: {
-                    Specialization: {
-                        validators: {
-                            notEmpty: {
-                                message: "This field is required."
-                            }
-                        }
-                    },
                     YearsOfExperience: {
                         validators: {
                             notEmpty: {
