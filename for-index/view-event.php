@@ -14,8 +14,8 @@
 
     <!-- Page Description and Author -->
     <meta name="description" content=" - Responsive HTML5 Template">
-    <meta name="author" content="iThemesLab">
-
+    <link rel="shortcut icon" href="../images/logo/favicon.ico">
+    
     <!-- Bootstrap CSS -->
     <link href="../css/bootstrap.min.css" rel="stylesheet"/>
 
@@ -88,7 +88,7 @@
                             <i class="fa fa-bars"></i>
                         </button>
                         <!-- End Toggle Nav Link For Mobiles -->
-                        <a class="navbar-brand">
+                        <a href="../index.php" class="navbar-brand">
                             <img src="../images/ojpms.png">
                         </a>
                     </div>
@@ -96,7 +96,7 @@
 
                         <div class="signout-side">
                             <a href='../login-student.php' class='btn-system btn-large btn-black'>Login</a>
-                            <button href="../registration.php" class='btn-system btn-large btn-black'>Sign Up</button>
+                            <a href="../registration.php" class='btn-system btn-large btn-black'>Sign Up</a>
                         </div>
                     </div>
                 </div>
@@ -230,13 +230,13 @@
                                 </ul>
                             </div>
 
-                            <!-- Video Widget -->
+                            <!-- Video Widget
                             <div class="widget">
                                 <h4>Video <span class="head-line"></span></h4>
                                 <div>
                                     <iframe src="http://player.vimeo.com/video/63322694?byline=0&amp;portrait=0&amp;badge=0" width="800" height="450"></iframe>
                                 </div>
-                            </div>
+                            </div> -->
                         </div>
                         <!--End sidebar-->
                     </div>

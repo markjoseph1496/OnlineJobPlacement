@@ -307,8 +307,8 @@ if (count($LOGquery1) > 0) {
                     <li>
                         <a>Applicant List</a>
                         <ul class="dropdown">
-                                    <li><a href="company-pendingapplicants.php">Pending</a></li>
-                                    <li><a href="company-acceptedapplicants.php">Accepted</a></li>
+                            <li><a href="company-pendingapplicants.php">Pending</a></li>
+                            <li><a href="company-acceptedapplicants.php">Accepted</a></li>
                         </ul>
                     </li>
                         <a href="company-settings.php">Settings</a>
