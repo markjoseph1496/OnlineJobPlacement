@@ -601,11 +601,42 @@ if($References == "ok"){
                                 <td><?php echo $WorkSpecialization; ?></td>
                                 <td><?php echo $Duration; ?></td>
                                 <td class="text-center">
-                                    <button href='' class='btn btn-danger'>
-                                        <i class='fa fa-trash fa-1x'></i>
+                                    <button class="btn btn-danger" data-toggle="modal"
+                                    data-target="#DeleteWork<?php echo $WorkID; ?>">
+                                    <i class="fa fa-trash fa-1x"></i>
                                     </button>
+                        </td>
                                 </td>
                             </tr>
+                             <!-- Modal -->
+                                <div class="modal fade" id="DeleteWork<?php echo $WorkID; ?>"
+                                     role="dialog">
+                                    <div class="modal-dialog" style="padding:100px">
+                                        <!-- Modal content-->
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                                <h4 class="modal-title">Delete Position?</h4>
+                                            </div>
+                                            <div class="modal-body">
+                                                <div class="col-md-15">
+                                                    <label = "usr" class = "control-label">Do you want to delete
+                                                    Work ? This cannot be undone.</label>
+                                                    <div class="form-group">
+                                                    </div>
+                                                </div>
+                                                <div class="modal-footer">
+                                                    <a href="delete.php?delete_WorkID=<?php echo $WorkID; ?>"
+                                                       class="btn btn-danger">Delete</a>
+                                                    <button type="button" class="btn btn-default" data-dismiss="modal">
+                                                        Cancel
+                                                    </button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            <!-- End Modal -->
                             </tbody>
                             <?php
                         }

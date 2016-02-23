@@ -457,6 +457,7 @@ $FirstName = $infoquery[0][0];
                                                     </div>
                                                 </div>
                                             </div>
+                                            <input type="hidden" name="EventID" value="<?php echo $EventID; ?>">
                                             <div class="modal-footer">
                                                 <button type="submit" class="btn btn-primary" name="btnUpdateEvent">Update</button>
                                                 <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
