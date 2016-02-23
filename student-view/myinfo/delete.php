@@ -118,3 +118,18 @@ if (isset($_GET['Delete_DocID'])){
         $id
     );
 }
+
+//Delete Work
+if (isset($_GET['Delete_WorkID'])) {
+    $Z = $_GET['Delete_WorkID'];
+
+    GSecureSQL::query(
+        "DELETE FROM workexperiencetbl WHERE WorkID=?",
+        FALSE,
+        "s",
+        $Z
+    );
+    header("location: company-positionlist.php?id=3");
+
+}
+//end

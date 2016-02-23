@@ -119,6 +119,7 @@ include('connection.php');
                                 <h3><strong>Primary User Information:</strong></h3>
                             </div>
                         </div>
+                        <div class="hr1" style="margin-top:20px;"></div>
 
                         <div class="row">
                             <div class="col-md-6">
@@ -131,13 +132,6 @@ include('connection.php');
                                 <div class="form-group">
                                     <label>First Name <span>(*)</span></label>
                                     <input type="text" class="form-control" id="FirstName" name="FirstName">
-                                </div>
-                            </div>
-                        </div>
-                             <div class="col-md-6">
-                                <div class="form-group">
-                                    <label>Middle Name <span>(*)</span></label>
-                                    <input type="text" class="form-control" id="MiddleName" name="MiddleName">
                                 </div>
                             </div>
                         </div>
@@ -163,10 +157,10 @@ include('connection.php');
                                     </select>
                                 </div>
                             </div>
-                            <div class="col-md-6">
+                             <div class="col-md-6">
                                 <div class="form-group">
-                                    <label>Last Name <span>(*)</span></label>
-                                    <input type="text" class="form-control" id="LastName" name="LastName">
+                                    <label>Middle Name <span>(*)</span></label>
+                                    <input type="text" class="form-control" id="MiddleName" name="MiddleName">
                                 </div>
                             </div>
                         </div>
@@ -198,8 +192,8 @@ include('connection.php');
                             </div>
                             <div class="col-md-6">
                                 <div class="form-group">
-                                    <label>Contact Number <span>(*)</span></label>
-                                    <input type="text" class="form-control" id="Contact" name="Contact" maxlength="11">
+                                    <label>Last Name <span>(*)</span></label>
+                                    <input type="text" class="form-control" id="LastName" name="LastName">
                                 </div>
                             </div>
                         </div>
@@ -212,22 +206,30 @@ include('connection.php');
                             </div>
                             <div class="col-md-6">
                                 <div class="form-group">
-                                    <label>Position <span>(*)</span></label>
-                                    <input type="text" class="form-control" id="Position" name="Position">
+                                    <label>Contact Number <span>(*)</span></label>
+                                    <input type="text" class="form-control" id="Contact" name="Contact" maxlength="11">
                                 </div>
                             </div>
                         </div>
+
                         <div class="row">
-                            <div class="col-md-6">
+                            <div class="col-md-3">
                                 <div class="form-group">
                                     <label>Password</label>
                                     <input type="password" class="form-control" id="cPassword" name="cPassword">
                                 </div>
                             </div>
-                            <div class="col-md-6">
+                            <div class="col-md-3">
                                 <div class="form-group">
                                     <label>Confirm Password </label>
                                     <input type="password" class="form-control" id="ConfirmPassword" name="ConfirmPassword">
+                                </div>
+                            </div>
+
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label>Position <span>(*)</span></label>
+                                    <input type="text" class="form-control" id="Position" name="Position">
                                 </div>
                             </div>
                         </div>
@@ -313,11 +315,6 @@ include('connection.php');
                     validators: {
                         notEmpty: {
                             message: "Compamy Name is required."
-                        },
-                        stringLength: {
-                            min: 1,
-                            max: 15,
-                            message: "Company Name is invalid."
                         },
                         regexp: {
                             regexp: /^[a-z\s]+$/i,
