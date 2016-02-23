@@ -357,6 +357,7 @@ $cFirstName = $infoquery[0][0];
                     <table class="table table-striped table-header-rotated">
                         <thead>
                         <tr>
+                            <thead>
                             <!-- First column header is not rotated -->
                             <th width="15%">Student No.</th>
                             <th width="20%">Name</th>
@@ -397,6 +398,7 @@ $cFirstName = $infoquery[0][0];
                                 <div><span>Certificate</span></div>
                             </th>
                             <th width="5%"></th>
+                            </thead>
                         </tr>
                         </thead>
                         <?php

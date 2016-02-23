@@ -130,6 +130,7 @@ $ContactNumber = $adviser_tbl[0][9];
                 <div class="col-md-5">
                     <!-- Notification -->
                     <ul class="nav navbar-nav navbar-right">
+                        <!--noti
                         <li class="dropdown icon-border" id="notificationLink">
                             <span id="notification_count">3</span>
                             <a href="#" class="bell itl-tooltip" data-placement="bottom" data-toggle="dropdown"><i
@@ -141,7 +142,7 @@ $ContactNumber = $adviser_tbl[0][9];
                                 <li class="divider"></li>
                                 <li><a href="../notification/notification.php" tabindex="-1">See All</a></li>
                             </ul>
-                        </li>
+                        </li>-->
                         <li class="dropdown">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown"><b class="fa fa-user"></b>
                                 Welcome <?php echo $FirstName; ?> </b><b class="caret"></b></a>
@@ -210,7 +211,7 @@ $ContactNumber = $adviser_tbl[0][9];
                         <a href="ojt-adviser.php">Home</a>
                     </li>
                     <li>
-                        <a href="ojt-account.php">Account</a>
+                        <a class = "active" href="ojt-account.php">Account</a>
                     </li>
                 </ul>
                 <!-- End Navigation List -->
@@ -223,7 +224,7 @@ $ContactNumber = $adviser_tbl[0][9];
                     <a href="ojt-adviser.php">Home</a>
                 </li>
                 <li>
-                    <a href="ojt-account.php">Account</a>
+                    <a class = "active"  href="ojt-account.php">Account</a>
                 </li>
             </ul>
         </ul>

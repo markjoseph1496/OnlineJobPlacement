@@ -269,9 +269,6 @@ $aFirstName = $infoquery[0][0];
                         </ul>
                          </li>
                         <li>
-                            <a href="admin-account.php">Account</a>
-                        </li>
-                        <li>
                             <a href="admin-requested.php">Requested</a>
                         </li>
                         <li>
@@ -305,9 +302,6 @@ $aFirstName = $infoquery[0][0];
                             <li><a href="admin-reports.php" class = "active">Alumni Reports</a></li>
                             <li><a href="admin-ojtreports.php">OJT Reports</a></li>
                         </ul>
-                    </li>
-                    <li>
-                        <a href="admin-account.php">Account</a>
                     </li>
                     <li>
                         <a href="admin-requested.php">Requested</a>
@@ -361,7 +355,7 @@ $aFirstName = $infoquery[0][0];
             </div>
             <div class="col-md-4">
                 <div class="form-group text-center">
-                    <a href="admin-addcourse.php" class="main-button" style="float:right;">
+                    <a href="#" class="main-button" style="float:right;">
                         <span class="fa fa-download"></span> Export XLS
                     </a>
                 </div>
@@ -474,7 +468,7 @@ $aFirstName = $infoquery[0][0];
             <tbody>
             <tr>
                 <td>
-                    <a href = 'resumelink.php'><?php echo $FullName; ?></a>
+                    <a href = '#'><?php echo $FullName; ?></a>
                 </td>
                 <td class = 'tcenter'><?php echo $PositionLevel; ?></td>
                 <td class = 'tcenter'><?php echo $Specialization; ?></td>

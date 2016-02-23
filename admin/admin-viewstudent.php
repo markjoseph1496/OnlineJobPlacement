@@ -13,8 +13,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
     <!-- Page Description and Author -->
-    <meta name="description" content="Margo - Responsive HTML5 Template">
-    <meta name="author" content="iThemesLab">
+    <meta name="description" content="OJPMS">
 
     <!-- Bootstrap CSS -->
     <link href="../css/bootstrap.min.css" rel="stylesheet"/>
@@ -196,9 +195,6 @@
                         </ul>
                          </li>
                         <li>
-                            <a href="admin-account.php">Account</a>
-                        </li>
-                        <li>
                             <a href="admin-requested.php">Requested</a>
                         </li>
                         <li>
@@ -232,9 +228,6 @@
                             <li><a href="admin-reports.php" class = "active">Alumni Reports</a></li>
                             <li><a href="admin-ojtreports.php">OJT Reports</a></li>
                         </ul>
-                    </li>
-                    <li>
-                        <a href="admin-account.php">Account</a>
                     </li>
                     <li>
                         <a href="admin-requested.php">Requested</a>
