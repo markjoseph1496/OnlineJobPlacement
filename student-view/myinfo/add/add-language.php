@@ -263,11 +263,11 @@ $MajorCourse = $course_qry[0][0];
                                     <label>Proficiency <span>(*)</span></label>
                                     <div class="text-center">
                                         <fieldset class="rating">
-                                            <input type="radio" id="star5" name="rating" value="5" /><label class = "full" for="star5" title="Excellent - 5 stars"></label>
-                                            <input type="radio" id="star4" name="rating" value="4" /><label class = "full" for="star4" title="Good - 4 stars"></label>
-                                            <input type="radio" id="star3" name="rating" value="3" /><label class = "full" for="star3" title="Meh - 3 stars"></label>
-                                            <input type="radio" id="star2" name="rating" value="2" /><label class = "full" for="star2" title="Poor - 2 stars"></label>
-                                            <input type="radio" id="star1" name="rating" value="1" /><label class = "full" for="star1" title="Awful - 1 star"></label>
+                                            <input type="radio" id="star5" name="LanguageProficiency" value="5" /><label class = "full" for="star5" title="Excellent - 5 stars"></label>
+                                            <input type="radio" id="star4" name="LanguageProficiency" value="4" /><label class = "full" for="star4" title="Good - 4 stars"></label>
+                                            <input type="radio" id="star3" name="LanguageProficiency" value="3" /><label class = "full" for="star3" title="Meh - 3 stars"></label>
+                                            <input type="radio" id="star2" name="LanguageProficiency" value="2" /><label class = "full" for="star2" title="Poor - 2 stars"></label>
+                                            <input type="radio" id="star1" name="LanguageProficiency" value="1" /><label class = "full" for="star1" title="Awful - 1 star"></label>
                                         </fieldset>
                                     </div>
                                 </div>
