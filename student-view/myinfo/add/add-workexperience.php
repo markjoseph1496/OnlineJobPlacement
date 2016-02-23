@@ -257,12 +257,6 @@ $MajorCourse = $course_qry[0][0];
                             </div>
                             <div class="col-md-6">
                                 <div class="form-group">
-                                    <label>Company Website</label>
-                                    <input type="url" class="form-control" id="CompanyWebsite" name="CompanyWebsite" value="http://">
-                                </div>
-                            </div>
-                            <div class="col-md-6">
-                                <div class="form-group">
                                     <label>Address</label>
                                     <input type="text" class="form-control" id="CompanyAddress" name="CompanyAddress">
                                 </div>
@@ -528,6 +522,13 @@ $MajorCourse = $course_qry[0][0];
             },
             fields: {
                 CompanyName: {
+                    validators: {
+                        notEmpty: {
+                            message: "This field is required."
+                        }
+                    }
+                },
+                CompanyAddress: {
                     validators: {
                         notEmpty: {
                             message: "This field is required."

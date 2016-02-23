@@ -195,7 +195,7 @@ if (isset($_POST['Language'])) {
 }
 if (isset($_POST['CompanyName'])) {
     $CompanyName = $_POST['CompanyName'];
-    $CompanyWebsite = $_POST['CompanyWebsite'];
+    $CompanyAddress = $_POST['CompanyAddress'];
     $Industry = $_POST['Industry'];
     $DateFromMonth = $_POST['FromMonth'];
     $DateFromYear = $_POST['FromYear'];
@@ -218,9 +218,9 @@ if (isset($_POST['CompanyName'])) {
             'pattern' => '/^.+$/',
             'errorMsg' => 'Company name is required'
         ),
-        'CompanyWebsite' => array(
+        'CompanyAddress' => array(
             'pattern' => '/(^$|^(http|https):\/\/.+\..+$)/i',
-            'errorMsg' => 'Company name is required'
+            'errorMsg' => 'Company address is required'
         ),
         'MonthlySalary' => array(
             'pattern' => $common_functions->get_regex_of_monthly_salary(),
@@ -258,12 +258,12 @@ if (isset($_POST['CompanyName'])) {
     }
 
     GSecureSQL::query(
-        "INSERT INTO workexperiencetbl (StudentID, CompanyName, CompanyWebsite, Industry, DateFromMonth, DateFromYear, DateToMonth, DateToYear, PositionLevel, Specialization, MonthlySalary, NatureOfWork) value (?,?,?,?,?,?,?,?,?,?,?,?)",
+        "INSERT INTO workexperiencetbl (StudentID, CompanyName, CompanyAddress, Industry, DateFromMonth, DateFromYear, DateToMonth, DateToYear, PositionLevel, Specialization, MonthlySalary, NatureOfWork) value (?,?,?,?,?,?,?,?,?,?,?,?)",
         FALSE,
         "ssssssssssss",
         $StudentID,
         $CompanyName,
-        $CompanyWebsite,
+        $CompanyAddress,
         $Industry,
         $DateFromMonth,
         $DateFromYear,

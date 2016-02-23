@@ -427,7 +427,7 @@ $cLastName = $companyinfo_tbl[0][2];
                                     <div class="hr1" style="margin-top:15px;margin-bottom:15px;"></div>
 
                                     <label>Consider Fresh Graduate</label>
-                                    <br><em>(Please select appropriate box)</em>
+                                    <br><em>(Please select)</em>
                                     <br>
                                     <div class="radio radio-inline">
                                         <input type="radio" id="Yes" value="Yes" name="CFG">
@@ -442,7 +442,7 @@ $cLastName = $companyinfo_tbl[0][2];
                                     <div class="hr1" style="margin-top:15px;margin-bottom:15px;"></div>
 
                                     <label>Duration of Request</label>
-                                    <br><em>(Please select appropriate box)</em>
+                                    <br><em>(Please select Duration)</em>
                                     <br>
                                     <div class="radio radio-inline">
                                         <input id="rDOR" name="rDOR" type="radio" value="15 Days">

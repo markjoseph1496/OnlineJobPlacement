@@ -334,14 +334,14 @@ $FirstName = $infoquery[0][0];
                 invalid: "glyphicon glyphicon-remove",
                 validating: "glyphicon glyphicon-refresh"
             },
-          s: {
+          fields: {
                 aUsername: {
                     validators: {
                         notEmpty: {
                             message: "Username is required."
                         },
                         stringLength: {
-                            min: 5,
+                            min: 3,
                             max: 15,
                             message: "Username is invalid."
                         },

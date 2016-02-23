@@ -454,7 +454,7 @@ include('connection.php');
                         stringLength: {
                             min: 8,
                             max: 16,
-                            message: "Email address must be 8-16 characters long."
+                            message: "Password must be 8-16 characters long."
                         }
 
                     }

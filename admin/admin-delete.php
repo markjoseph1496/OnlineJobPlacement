@@ -40,7 +40,7 @@ if (isset($_GET['delete_userID'])) {
         "s",
         $Z
     );
-    header("location: admin-users.php?delete");
+    header("location: admin-users.php?id=3");
 
 }
 ?>

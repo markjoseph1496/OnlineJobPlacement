@@ -293,6 +293,35 @@ $FirstName = $infoquery[0][0];
 
     <div id="content">
         <div class="container">
+        <?php
+            if (isset($_GET['id'])) {
+                $id = $_GET['id'];
+
+                if ($id == 2) {
+                    echo '
+                            <div class="alert alert-success" id="success-alert">
+                                <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                                <strong><span class="fa fa-info-circle"></span> User successfully updated.</strong>
+                            </div>
+                            ';
+                } elseif ($id == 1) {
+                    echo '
+                            <div class="alert alert-success" id="success-alert">
+                                <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                                <strong><span class="fa fa-info-circle"></span> User successfully added.</strong>
+                            </div>
+                            ';
+                } elseif ($id == 3) {
+                    echo '
+                            <div class="alert alert-success" id="success-alert">
+                                <a href="#" class="close" data-dismiss="alert" aria-laFbel="close">&times;</a>
+                                <strong><span class="fa fa-info-circle"></span> User successfully deleted.</strong>
+                            </div>
+                            ';
+                }
+
+            }
+            ?>
             <div class="col-md-12">
                 <a href="admin-adduser.php" class="main-button" style="float:right;">
                     <span class="fa fa-plus"></span> Add User
@@ -344,6 +373,7 @@ $FirstName = $infoquery[0][0];
                             </button>
                         </td>
                     </tr>
+                    <!-- Modal -->
                     <div class="modal fade" id="Delete<?php echo $AdviserID; ?>"
                          role="dialog">
                         <div class="modal-dialog" style="padding:100px">
@@ -356,7 +386,7 @@ $FirstName = $infoquery[0][0];
                                 <div class="modal-body">
                                     <div class="col-md-15">
                                         <label = "usr" class = "control-label">Do you want to delete
-                                        this user? This cannot be undone.</label>
+                                        <?php echo $FirstName; ?> user? This cannot be undone.</label>
                                         <div class="form-group">
                                         </div>
                                     </div>

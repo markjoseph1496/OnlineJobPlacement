@@ -138,7 +138,7 @@ if (isset($_GET['DeleteID'])) {
     header("location: admin-maintenance.php?id=3");
 
 }
-
+// accept company
 if (isset($_GET['id']) && isset($_GET['cid'])) {
     $id = $_GET['id'];
     $cid = $_GET['cid'];
@@ -166,6 +166,7 @@ if (isset($_GET['id']) && isset($_GET['cid'])) {
 
     }
 }
+//end
 
 if (isset($_POST['lid'])) {
     $LID = $_POST['lid'];
@@ -208,6 +209,7 @@ if (isset($_POST['type'])) {
     ));
 }
 
+// admin add user
 if (isset($_POST['aFirstName'])) {
     $aUsername = $_POST['aUsername'];
     $aFirstName = $_POST['aFirstName'];
@@ -291,6 +293,7 @@ if (isset($_POST['btnUpdateEvent'])) {
 }
 //End
 
+//OJT report update
 if (isset($_POST['StudentID'])) {
     $StudentID = $_POST['StudentID'];
     $CompanyName = $_POST['Company'];
@@ -398,8 +401,12 @@ if (isset($_POST['StudentID'])) {
         header("Location: {$_SERVER["HTTP_REFERER"]}");
     }
 
-}
+    header("location: admin-ojtreports.php?id=1");
 
+}
+// end
+
+// admin update user
 if (isset($_POST['eFirstName'])) {
     $aUsername = $_POST['eUsername'];
     $aFirstName = $_POST['eFirstName'];
@@ -431,6 +438,6 @@ if (isset($_POST['eFirstName'])) {
 
     );
 
-    header("location: admin-users.php?id=1");
+    header("location: admin-users.php?id=2");
 
 }

@@ -292,6 +292,27 @@ $FirstName = $infoquery[0][0];
 
         <div id="content">
             <div class="container">
+            <?php
+                if (isset($_GET['id'])) {
+                    $id = $_GET['id'];
+
+                    if ($id == 1) {
+                        echo '
+                                <div class="alert alert-success" id="success-alert" width = "70%">
+                                    <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                                    <strong><span class="fa fa-info-circle"></span> You have successfully accepted Company.</strong>
+                                </div>
+                                ';
+                    } elseif ($id == 2) {
+                    echo '
+                            <div class="alert alert-success" id="success-alert">
+                                <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                                <strong><span class="fa fa-info-circle"></span> You have rejected Company.</strong>
+                            </div>
+                            ';
+                    }
+                }
+            ?>
                 <div class="hr2"></div>
                 <table class="table segment table-hover">
                     <thead>
@@ -364,7 +385,7 @@ $FirstName = $infoquery[0][0];
                                     </div>
                                     <div class="modal-body">
                                         <div class="col-md-15 fieldcol">
-                                            <label = "usr" class = "control-label">Do you want to accept this
+                                            <label = "usr" class = "control-label">Do you want to accept <?php echo $CompanyName; ?>
                                             Company?</label>
                                             <div class="form-group">
                                             </div>
@@ -392,14 +413,14 @@ $FirstName = $infoquery[0][0];
                                     </div>
                                     <div class="modal-body">
                                         <div class="col-md-15 fieldcol">
-                                            <label = "usr" class = "control-label">Do you want to Reject this
+                                            <label = "usr" class = "control-label">Do you want to Reject <?php echo $CompanyName; ?>
                                             Company? This cannot be undone.</label>
                                             <div class="form-group">
                                             </div>
                                         </div>
                                         <div class="modal-footer">
                                             <a href="functions.php?id=2&cid=<?php echo $CompanyID; ?>"
-                                               class="btn btn-danger">Accept</a>
+                                               class="btn btn-danger">Reject</a>
                                             <button type="button" class="btn btn-default" data-dismiss="modal">
                                                 Cancel
                                             </button>

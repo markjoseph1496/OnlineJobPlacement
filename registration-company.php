@@ -134,11 +134,6 @@ include('connection.php');
                                 </div>
                             </div>
                         </div>
-                        <div class="row">
-                            <div class="col-md-6">
-                                <label>Career Site Url <span>(*)</span></label>
-                                <input type="text" class="form-control" id="Website" name="Website">
-                            </div>
                              <div class="col-md-6">
                                 <div class="form-group">
                                     <label>Middle Name <span>(*)</span></label>
