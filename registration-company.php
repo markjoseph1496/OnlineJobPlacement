@@ -314,11 +314,6 @@ include('connection.php');
                         notEmpty: {
                             message: "Compamy Name is required."
                         },
-                        stringLength: {
-                            min: 1,
-                            max: 15,
-                            message: "Company Name is invalid."
-                        },
                         regexp: {
                             regexp: /^[a-z\s]+$/i,
                             message: "Company Name can consist of alphabetical characters and spaces only"
