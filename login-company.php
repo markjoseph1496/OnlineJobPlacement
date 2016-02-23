@@ -31,6 +31,21 @@
     <div class="box effect3" style="margin-top:5%;">
         <a href="index.php"><img src="images/logo/ojpms-logo.png" title="OJPMS - Home" style="width:70%;height:70%;"></a>
     </div>
+    <br>
+    <?php
+            if (isset($_GET['id'])) {
+                $id = $_GET['id'];
+
+                if ($id == 1) {
+                    echo '
+                            <div class="alert alert-success" id="success-alert">
+                                <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                                <strong><span class="fa fa-info-circle"></span> You have successfully created an account wait for the admin to accept your account before you may log in.</strong>
+                            </div>
+                            ';
+                } 
+            }
+            ?>
     <div class="box effect3" style="margin-top:1%;">
         <h2 class="register-title">Sign In</h2>
         <form id="myForm" action="login.php" method="POST" autocomplete="off">

@@ -64,6 +64,6 @@ if (isset($_POST['FirstName'])) {
 
     );
 
-    header("location: login-company.php");
+    header("location: login-company.php?id=1");
 }
 ?>

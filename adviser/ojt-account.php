@@ -41,6 +41,7 @@ $ContactNumber = $adviser_tbl[0][9];
 
     <!-- Page Description and Author -->
     <meta name="description" content="OJPMS">
+    <link rel="shortcut icon" href="../images/logo/favicon.ico">
 
     <!-- Bootstrap CSS -->
     <link href="../css/bootstrap.min.css" rel="stylesheet"/>
@@ -67,7 +68,7 @@ $ContactNumber = $adviser_tbl[0][9];
     <!-- Slicknav -->
     <link rel="stylesheet" type="text/css" href="../css/slicknav.css" media="screen">
 
-    <!-- Margo CSS Styles  -->
+    <!--CSS Styles  -->
     <link rel="stylesheet" type="text/css" href="../css/style.css" media="screen">
 
     <!-- Responsive CSS Styles  -->
@@ -171,17 +172,17 @@ $ContactNumber = $adviser_tbl[0][9];
             <div class="modal-content">
                 <div class="modal-header">
                     <button style=type="button" class="close" data-dismiss="modal">&times;</button>
-                    <h4 class="modal-title">Log out?</h4>
+                    <h4 class="modal-title">Sign out</h4>
                 </div>
                 <div class="modal-body">
                     <div class="col-md-15">
-                        <label>Do you want to log out?</label>
+                        <label>Do you want to sign out?</label>
                         <div class="form-group">
                         </div>
                     </div>
                     <div class="modal-footer">
                         <a href="logout.php"
-                           class="btn btn-primary">Log out</a>
+                           class="btn btn-primary">Sign out</a>
                         <button type="button" class="btn btn-default" data-dismiss="modal">
                             Cancel
                         </button>
