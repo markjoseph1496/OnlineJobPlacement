@@ -341,7 +341,7 @@ $FirstName = $infoquery[0][0];
                         },
                         stringLength: {
                             min: 1,
-                            max: 25,
+                            max: 100,
                             message: "Event Title is 100 characters only."
                         }
                     }
@@ -369,8 +369,8 @@ $FirstName = $infoquery[0][0];
                         },
                         stringLength: {
                             min: 1,
-                            max: 25,
-                            message: "Description is 25 characters only."
+                            max: 100,
+                            message: "Description is 255 characters only."
                         },
                         regexp: {
                             regexp: /^[a-z\s]+$/i,
