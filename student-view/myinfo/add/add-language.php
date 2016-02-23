@@ -263,11 +263,11 @@ $MajorCourse = $course_qry[0][0];
                                     <label> Written Proficiency <span>(*)</span></label>
                                     <div class="text-center">
                                         <fieldset class="rating">
-                                            <input type="radio" id="star5" name="LanguageProficiency" value="5" /><label class = "full" for="star5" title="Excellent - 5 stars"></label>
-                                            <input type="radio" id="star4" name="LanguageProficiency" value="4" /><label class = "full" for="star4" title="Good - 4 stars"></label>
-                                            <input type="radio" id="star3" name="LanguageProficiency" value="3" /><label class = "full" for="star3" title="Meh - 3 stars"></label>
-                                            <input type="radio" id="star2" name="LanguageProficiency" value="2" /><label class = "full" for="star2" title="Poor - 2 stars"></label>
-                                            <input type="radio" id="star1" name="LanguageProficiency" value="1" /><label class = "full" for="star1" title="Awful - 1 star"></label>
+                                            <input type="radio" id="star5w" name="WrittenProficiency" value="5" /><label class = "full" for="star5w" title="Excellent - 5 stars"></label>
+                                            <input type="radio" id="star4w" name="WrittenProficiency" value="4" /><label class = "full" for="star4w" title="Good - 4 stars"></label>
+                                            <input type="radio" id="star3w" name="WrittenProficiency" value="3" /><label class = "full" for="star3w" title="Meh - 3 stars"></label>
+                                            <input type="radio" id="star2w" name="WrittenProficiency" value="2" /><label class = "full" for="star2w" title="Poor - 2 stars"></label>
+                                            <input type="radio" id="star1w" name="WrittenProficiency" value="1" /><label class = "full" for="star1w" title="Awful - 1 star"></label>
                                         </fieldset>
                                     </div>
                                 </div>
@@ -277,11 +277,11 @@ $MajorCourse = $course_qry[0][0];
                                     <label> Spoken Proficiency <span>(*)</span></label>
                                     <div class="text-center">
                                         <fieldset class="rating">
-                                            <input type="radio" id="star5" name="LanguageProficiency" value="5" /><label class = "full" for="star5" title="Excellent - 5 stars"></label>
-                                            <input type="radio" id="star4" name="LanguageProficiency" value="4" /><label class = "full" for="star4" title="Good - 4 stars"></label>
-                                            <input type="radio" id="star3" name="LanguageProficiency" value="3" /><label class = "full" for="star3" title="Meh - 3 stars"></label>
-                                            <input type="radio" id="star2" name="LanguageProficiency" value="2" /><label class = "full" for="star2" title="Poor - 2 stars"></label>
-                                            <input type="radio" id="star1" name="LanguageProficiency" value="1" /><label class = "full" for="star1" title="Awful - 1 star"></label>
+                                            <input type="radio" id="star5s" name="SpokenProficiency" value="5" /><label class = "full" for="star5s" title="Excellent - 5 stars"></label>
+                                            <input type="radio" id="star4s" name="SpokenProficiency" value="4" /><label class = "full" for="star4s" title="Good - 4 stars"></label>
+                                            <input type="radio" id="star3s" name="SpokenProficiency" value="3" /><label class = "full" for="star3s" title="Meh - 3 stars"></label>
+                                            <input type="radio" id="star2s" name="SpokenProficiency" value="2" /><label class = "full" for="star2s" title="Poor - 2 stars"></label>
+                                            <input type="radio" id="star1s" name="SpokenProficiency" value="1" /><label class = "full" for="star1s" title="Awful - 1 star"></label>
                                         </fieldset>
                                     </div>
                                 </div>
