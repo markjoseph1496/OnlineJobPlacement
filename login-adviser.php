@@ -23,6 +23,7 @@
     <!-- CSS-->
     <link href="css/login-style.css" rel="stylesheet">
     <link href="css/style.css" rel="stylesheet">
+    <link rel="shortcut icon" href="images/logo/favicon.ico">
 </head>
 <body class="login-adviser">
     <div class="box effect3" style="margin-top:5%;">

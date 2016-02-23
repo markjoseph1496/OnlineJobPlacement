@@ -35,6 +35,7 @@ $FirstName = $infoquery[0][0];
 
     <!-- Page Description and Author -->
     <meta name="description" content="OJPMS">
+    <link rel="shortcut icon" href="../images/logo/favicon.ico">
 
     <!-- Bootstrap CSS -->
     <link href="../css/bootstrap.min.css" rel="stylesheet"/>

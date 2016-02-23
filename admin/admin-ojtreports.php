@@ -38,6 +38,7 @@ $cFirstName = $infoquery[0][0];
 
     <!-- Page Description and Author -->
     <meta name="description" content="OJPMS">
+    <link rel="shortcut icon" href="../images/logo/favicon.ico">
 
     <!-- Bootstrap CSS -->
     <link href="../css/bootstrap.min.css" rel="stylesheet"/>
@@ -368,52 +369,51 @@ $cFirstName = $infoquery[0][0];
                 <div class="hr1" style="margin-bottom:20px;margin-top:20px;"></div>
 
                 <div class="scrollable-table">
+                    <div class="hr2"></div>
                     <table class="table table-striped table-header-rotated">
                         <thead>
-                        <tr>
-                            <thead>
-                            <!-- First column header is not rotated -->
-                            <th width="15%">Student No.</th>
-                            <th width="20%">Name</th>
-                            <th width="20%">Course</th>
-                            <th width="20%">Company</th>
-                            <th width="30%">Address</th>
-                            <th width="10%">Remarks</th>
-                            <th width="10%">Adviser</th>
-                            <!-- Following headers are rotated -->
-                            <th class="rotate-45">
-                                <div><span>Hours</span></div>
-                            </th>
-                            <th class="rotate-45">
-                                <div><span>Endorsement</span></div>
-                            </th>
-                            <th class="rotate-45">
-                                <div><span>DTR</span></div>
-                            </th>
-                            <th class="rotate-45">
-                                <div><span>Waiver</span></div>
-                            </th>
-                            <th class="rotate-45">
-                                <div><span>Training Plan</span></div>
-                            </th>
-                            <th class="rotate-45">
-                                <div><span>MOA</span></div>
-                            </th>
-                            <th class="rotate-45">
-                                <div><span>Journal</span></div>
-                            </th>
-                            <th class="rotate-45">
-                                <div><span>Integration</span></div>
-                            </th>
-                            <th class="rotate-45">
-                                <div><span>PAF</span></div>
-                            </th>
-                            <th class="rotate-45">
-                                <div><span>Certificate</span></div>
-                            </th>
-                            <th width="5%"></th>
-                            </thead>
-                        </tr>
+                            <tr>
+                                <!-- First column header is not rotated -->
+                                <th width="15%">Student No.</th>
+                                <th width="20%">Name</th>
+                                <th width="20%">Course</th>
+                                <th width="20%">Company</th>
+                                <th width="30%">Address</th>
+                                <th width="10%">Remarks</th>
+                                <th width="10%">Adviser</th>
+                                <!-- Following headers are rotated -->
+                                <th class="rotate-45">
+                                    <div><span>Hours</span></div>
+                                </th>
+                                <th class="rotate-45">
+                                    <div><span>Endorsement</span></div>
+                                </th>
+                                <th class="rotate-45">
+                                    <div><span>DTR</span></div>
+                                </th>
+                                <th class="rotate-45">
+                                    <div><span>Waiver</span></div>
+                                </th>
+                                <th class="rotate-45">
+                                    <div><span>Training Plan</span></div>
+                                </th>
+                                <th class="rotate-45">
+                                    <div><span>MOA</span></div>
+                                </th>
+                                <th class="rotate-45">
+                                    <div><span>Journal</span></div>
+                                </th>
+                                <th class="rotate-45">
+                                    <div><span>Integration</span></div>
+                                </th>
+                                <th class="rotate-45">
+                                    <div><span>PAF</span></div>
+                                </th>
+                                <th class="rotate-45">
+                                    <div><span>Certificate</span></div>
+                                </th>
+                                <th width="5%"></th>
+                            </tr>
                         </thead>
                         <?php
                         if (isset($_GET['btnSearch'])) {
