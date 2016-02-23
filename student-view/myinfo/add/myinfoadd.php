@@ -247,7 +247,7 @@ if (isset($_POST['CompanyName'])) {
 
     $validation_return = $common_functions->validate($_POST, $validation_config);
     if($validation_return['hasError']){
-        print_r($validation_return);die();
+        
     }
 
     if($DateToYear !== 'Current'){
