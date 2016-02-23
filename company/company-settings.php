@@ -213,7 +213,7 @@ $ProfileImage= $companyinfo_tbl[0][11];
                             <i class="fa fa-bars"></i>
                         </button>
                         <!-- End Toggle Nav Link For Mobiles -->
-                        <a class="navbar-brand" href="index.html">
+                        <a class="navbar-brand" href="">
                             <img src="../images/ojpms.png">
                         </a>
                     </div>
@@ -301,7 +301,7 @@ $ProfileImage= $companyinfo_tbl[0][11];
         <!-- End Header Logo & Naviagtion -->
 
         <!-- Start Page Banner -->
-        <div class="page-banner" style="padding:40px 0; center #f9f9f9;">
+        <div class="page-banner no-subtitle">
             <div class="container">
                 <div class="row">
                     <div class="col-md-6">
@@ -312,34 +312,35 @@ $ProfileImage= $companyinfo_tbl[0][11];
         </div>
         <!-- End Page Banner -->
 
-        <!-- Start Content -->
-        <br><br><br>
-        <form  name="CompanySetting" id="CompanySetting" autocomplete="off" action="add-company.php">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-6">
-                    &nbsp;
-                </div>
-                <div class="col-md-6">
-                    <a href="company-settingsaccount.php" class="main-button" style="float:right;">
-                        <span class="fa fa-user"></span> My Account 
-                    </a>
-                </div>
-            </div>
-            <div class="hr4" style="margin-top:10px;margin-bottom:35px;"></div>
-            <div class="row">
-                    <div class="col-md-7">
-                        <?php
-                        if (isset($_GET['id'])) {
-                            $id = $_GET['id'];
-                            if ($id == "SettingEdit") {
-                                echo '<div class="alert alert-success">
-                                    <span class="glyphicon glyphicon-info-sign"></span> 
-                                    Achievement successfully updated.
-                                    </div>';
-                            }
+        <div id="content">
+            <form  name="CompanySetting" id="CompanySetting" autocomplete="off" action="add-company.php">
+            <div class="container">
+                <?php
+                    if (isset($_GET['id'])) {
+                        $id = $_GET['id'];
+                        if ($id == "SettingEdit") {
+                            echo '
+
+                            <div class="alert alert-success" id="success-alert">
+                                <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                                <strong><span class="fa fa-info-circle"></span> Achievement successfully updated.</strong> 
+                            </div>';
                         }
-                        ?>
+                    }
+                ?>
+                <div class="row">
+                    <div class="col-md-6">
+                        &nbsp;
+                    </div>
+                    <div class="col-md-6">
+                        <a href="company-settingsaccount.php" class="main-button" style="float:right;">
+                            <span class="fa fa-user"></span> My Account 
+                        </a>
+                    </div>
+                </div>
+                <div class="hr4" style="margin-top:10px;margin-bottom:35px;"></div>
+                <div class="row">
+                    <div class="col-md-7">
                         <div class="row">
                             <div class="col-md-4">
                                 <label>Company Name <span>(*)</span>:</label><br>
@@ -368,7 +369,7 @@ $ProfileImage= $companyinfo_tbl[0][11];
                             </div>
                             <div class="col-md-8">
                                 <div class="form-group">
-                                    <textarea type="text" name="Description" id="usr" class="form-control" maxlength="5000"><?php echo $Description; ?></textarea>
+                                    <textarea type="text" name="Description" rows="7" id="" class="form-control" maxlength="5000"><?php echo $Description; ?></textarea>
                                 </div>
                             </div>
                         </div>
@@ -518,10 +519,10 @@ $ProfileImage= $companyinfo_tbl[0][11];
                             </div>
                         </div>
                     </div>
-            </form>
+                </form>
                 <form id="UploadPicture" name="UploadPicture" method="POST" action="uploadpic.php" enctype="multipart/form-data">
                     <div class="col-md-5">
-                        <div class="image-border">
+                        <div class="box-border">
                             <img src="<?php echo $ProfileImage; ?>" class="img-responsive" style="width:100%; height:100%;">
                         </div>
                         <br><br>
@@ -530,13 +531,14 @@ $ProfileImage= $companyinfo_tbl[0][11];
                                class="file file-loading"
                                data-allowed-file-extensions='["png", "jpg", "jpeg", "jpe", "bmp", "gif"]'>
                         <br>
-                        <button id="" class="btn-system btn-mini border-btn" name="btnDelete">Delete Image</button>
+                        <!--<button id="" class="btn-system btn-mini border-btn" name="btnDelete">Delete Image</button>-->
                     </div>
                 </form>
-        </div>
-            <div class="hr5" style="margin-top:35px;margin-bottom:40px;"></div>
-            <div class="text-center">
-                <button type="submit" class="btn-system btn-large" name="btnSaveSetting" id="save">Save</button>
+                </div>
+                <div class="hr5" style="margin-top:35px;margin-bottom:40px;"></div>
+                <div class="text-center">
+                    <button type="submit" class="btn-system btn-large" name="btnSaveSetting" id="save">Save</button>
+                </div>
             </div>
         </div>
     </div>

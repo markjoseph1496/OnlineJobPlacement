@@ -770,8 +770,8 @@ $MajorCourse = $coursetbl[0][0];
             <div class="dot2"></div>
         </div>
     </div>
-    </body>
-    </html>
+</body>
+</html>
 <?php
 
 $progress_tbl =

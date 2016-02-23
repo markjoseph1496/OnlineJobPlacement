@@ -128,7 +128,7 @@ if($References == "ok"){
 <head>
 
     <!-- Basic -->
-    <title>OJPMS | Print</title>
+    <title>OJPMS | Resumé</title>
 
     <!-- Define Charset -->
     <meta charset="utf-8">

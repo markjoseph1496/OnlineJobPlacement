@@ -42,6 +42,7 @@ $FirstName = $infoquery[0][0];
 
     <!-- Page Description and Author -->
     <meta name="description" content="OJPMS">
+    <link rel="shortcut icon" href="../images/logo/favicon.ico">
 
     <!-- Bootstrap CSS -->
     <link href="../css/bootstrap.min.css" rel="stylesheet"/>
@@ -313,6 +314,7 @@ $FirstName = $infoquery[0][0];
 
                 <div class="hr1" style="margin-top:30px;margin-bottom:30px;"></div>
 
+                <div class="hr2"></div>
                 <table class="table segment table-hover">
                     <thead>
                         <tr>

@@ -320,7 +320,7 @@ if (count($LOGquery1) > 0) {
         <!-- Mobile Menu End -->
 
         <!-- Start Page Banner -->
-        <div class="page-banner" style="padding:40px 0; center #f9f9f9;">
+        <div class="page-banner no-subtitle">
             <div class="container">
                 <div class="row">
                     <div class="col-md-6">
@@ -655,7 +655,7 @@ if (count($LOGquery1) > 0) {
                                     ?>
                                     <tbody>
                                     <tr>
-                                        <td width='20%' class='tabletitle'><a href = "../student-profile.php"><?php echo $LastName . ", " . $FirstName; ?> </a></td>
+                                        <td width='20%' class='tabletitle'><a href = ""><?php echo $LastName . ", " . $FirstName; ?> </a></td>
                                         <td width='10%' class='tabletitle'><?php echo $_Course; ?></td>
                                         <td width='20%' class='tabletitle'><?php echo $MobileNumber; ?></td>
                                         <td width='25%' class='tabletitle'><?php echo $Email; ?></td>
@@ -710,7 +710,7 @@ if (count($LOGquery1) > 0) {
                                     ?>
                                     <tbody>
                                     <tr>
-                                        <td width='20%' class='tabletitle'><a href = "../student-profile.php"><?php echo $LastName . ", " . $FirstName; ?></a></td>
+                                        <td width='20%' class='tabletitle'><a href = ""><?php echo $LastName . ", " . $FirstName; ?></a></td>
                                         <td width='10%' class='tabletitle'><?php echo $_Course; ?></td>
                                         <td width='20%' class='tabletitle'><?php echo $MobileNumber; ?></td>
                                         <td width='25%' class='tabletitle'><?php echo $Email; ?></td>
@@ -729,6 +729,8 @@ if (count($LOGquery1) > 0) {
         }
         ?>
     </div>
+    <!-- Go To Top Link -->
+    <a href="#" class="back-to-top"><i class="fa fa-angle-up"></i></a>
 </body>
 <script type="text/javascript" src="../js/script.js"></script>
 </html>

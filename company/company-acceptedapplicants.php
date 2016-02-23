@@ -115,280 +115,94 @@ $cLastName = $companyinfo_tbl[0][2];
 </head>
 
 <body>
-<!-- Full Body Container -->
-<div id="container">
+    <!-- Full Body Container -->
+    <div id="container">
+        <!-- Start Header Section -->
+        <div class="hidden-header"></div>
+        <header class="clearfix">
 
-
-    <!-- Start Header Section -->
-    <div class="hidden-header"></div>
-    <header class="clearfix">
-
-        <!-- Start Top Bar -->
-        <div class="top-bar">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-6">
-                        <!-- Start Contact Info -->
-                        <ul class="contact-details">
-                            <li class="profile-name"><b><?php echo $CompanyName; ?></b></li>
-                        </ul>
-                        <!-- End Contact Info -->
-                    </div>
-                    <!-- .col-md-6 -->
-                    <div class="col-md-6">
-                        <!-- Notification -->
-                            <ul class="nav navbar-nav navbar-right">
-                                <!--noti
-                                <li class="dropdown icon-border" id="notificationLink">
-                                    <span id="notification_count">3</span>
-                                    <a href="#" class="bell itl-tooltip" data-placement="bottom" data-toggle="dropdown"><i
-                                            class="fa fa-bell"></i></a>
-                                    <ul id="notificationContainer" class="dropdown-menu dropdown-menu-inverse">
-                                        <li class="dropdown-header"><label>Notification</label></li>
-                                        <li class="disabled"><a href="#" tabindex="-1">No new notification.</a></li>
-                                        <li><a href="#" tabindex="-1">The administrator accepted your request.</a></li>
-                                        <li class="divider"></li>
-                                        <li><a href="../notification/notification.php" tabindex="-1">See All</a></li>
-                                    </ul>
-                                </li>-->
-                                <li class="dropdown">
-                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown"><b class="fa fa-user"></b>
-                                        Welcome, <b><?php echo $cFirstName . " " . $cLastName; ?> </b><b class="caret"></b></a>
-                                    <ul class="dropdown-menu">
-                                        <li><a href="#" data-target='#Logout' data-toggle='modal'>Sign Out <b
-                                                    class="fa fa-sign-out" style="float:right;"></b></a></li>
-                                    </ul>
-                                </li>
+            <!-- Start Top Bar -->
+            <div class="top-bar">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <!-- Start Contact Info -->
+                            <ul class="contact-details">
+                                <li class="profile-name"><b><?php echo $CompanyName; ?></b></li>
                             </ul>
-                            <!-- Notification -->
-                    </div>
-                    <!-- .col-md-6 -->
-                </div>
-                <!-- .row -->
-            </div>
-            <!-- .container -->
-        </div>
-        <!-- .top-bar -->
-        <!-- End Top Bar -->
-
-
-        <!-- Start  Logo & Naviagtion  -->
-        <div class="navbar navbar-default navbar-top">
-            <div class="container">
-                <div class="navbar-header">
-                    <!-- Stat Toggle Nav Link For Mobiles -->
-                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                        <i class="fa fa-bars"></i>
-                    </button>
-                    <!-- End Toggle Nav Link For Mobiles -->
-                    <a class="navbar-brand" href="">
-                        <img src="../images/ojpms.png">
-                    </a>
-                </div>
-                <div class="navbar-collapse collapse">
-                    <!-- Modal -->
-                    <div class="modal fade" id="Logout"
-                         role="dialog">
-                        <div class="modal-dialog" style="padding:100px">
-                            <!-- Modal content-->
-                            <div class="modal-content">
-                                <div class="modal-header">
-                                    <button type="button" class="close" data-dismiss="modal">&times;</button>
-                                    <h4 class="modal-title">Log out?</h4>
-                                </div>
-                                <div class="modal-body">
-                                    <div class="col-md-15 fieldcol">
-                                        <label = "usr" class = "control-label">Do you want to log out?</label>
-                                        <div class="form-group">
-                                        </div>
-                                    </div>
-                                    <div class="modal-footer">
-                                        <a href="logout.php"
-                                           class="btn btn-primary">Log out</a>
-                                        <button type="button" class="btn btn-default" data-dismiss="modal">
-                                            Cancel
-                                        </button>
-                                    </div>
-                                </div>
-                            </div>
+                            <!-- End Contact Info -->
                         </div>
+                        <!-- .col-md-6 -->
+                        <div class="col-md-6">
+                            <!-- Notification -->
+                                <ul class="nav navbar-nav navbar-right">
+                                    <!--noti
+                                    <li class="dropdown icon-border" id="notificationLink">
+                                        <span id="notification_count">3</span>
+                                        <a href="#" class="bell itl-tooltip" data-placement="bottom" data-toggle="dropdown"><i
+                                                class="fa fa-bell"></i></a>
+                                        <ul id="notificationContainer" class="dropdown-menu dropdown-menu-inverse">
+                                            <li class="dropdown-header"><label>Notification</label></li>
+                                            <li class="disabled"><a href="#" tabindex="-1">No new notification.</a></li>
+                                            <li><a href="#" tabindex="-1">The administrator accepted your request.</a></li>
+                                            <li class="divider"></li>
+                                            <li><a href="../notification/notification.php" tabindex="-1">See All</a></li>
+                                        </ul>
+                                    </li>-->
+                                    <li class="dropdown">
+                                        <a href="#" class="dropdown-toggle" data-toggle="dropdown"><b class="fa fa-user"></b>
+                                            Welcome, <b><?php echo $cFirstName . " " . $cLastName; ?> </b><b class="caret"></b></a>
+                                        <ul class="dropdown-menu">
+                                            <li><a href="#" data-target='#Logout' data-toggle='modal'>Sign Out <b
+                                                        class="fa fa-sign-out" style="float:right;"></b></a></li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                                <!-- Notification -->
+                        </div>
+                        <!-- .col-md-6 -->
                     </div>
-                    <!-- End Sign-out -->
-                    <!-- Start Navigation List -->
-                    <ul class="nav navbar-nav navbar-right">
-                        <li>
-                            <a href="company.php">Home</a>
-                        </li>
-                        <li>
-                            <a>Position</a>
-                            <ul class="dropdown">
-                                <li><a href="company-positionlist.php">Position List</a></li>
-                                <li><a href="company-createposition.php">Create Position</a></li>
-                            </ul>
-                        </li>
-                        <li>
-                            <a class="active">Applicant List</a>
-                            <ul class="dropdown">
-                                <li><a href="company-pendingapplicants.php">Pending</a></li>
-                                <li><a href="company-acceptedapplicants.php" class="active">Accepted</a></li>
-                            </ul>
-                        </li>
-                        <li>
-                            <a href="company-settings.php">Settings</a>
-                        </li>
-                    </ul>
-                    <!-- End Navigation List -->
+                    <!-- .row -->
                 </div>
+                <!-- .container -->
             </div>
-            <!-- Mobile Menu Start -->
-            <ul class="wpb-mobile-menu">
-                <li>
-                    <a href="company.php">Home</a>
-                </li>
-                <li>
-                    <a>Position</a>
-                    <ul class="dropdown">
-                        <li><a href="company-positionlist.php">Position List</a></li>
-                        <li><a href="company-createposition.php">Create Position</a></li>
-                    </ul>
-                </li>
-                <li>
-                    <a class="active">Applicant List</a>
-                    <ul class="dropdown">
-                        <li><a href="company-pendingapplicants.php">Pending</a></li>
-                        <li><a href="company-acceptedapplicants.php" class="active">Accepted</a></li>
-                    </ul>
-                </li>
-                <li>
-                    <a href="company-settings.php">Settings</a>
-                </li>
-            </ul>
-            <!-- Mobile Menu End -->
-        </div>
-        <!-- End Header Logo & Naviagtion -->
-    </header>
-    <!-- End Header Section -->
+            <!-- .top-bar -->
+            <!-- End Top Bar -->
 
-    <!-- Start Page Banner -->
-    <div class="page-banner" style="padding:40px 0; center #f9f9f9;">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-6">
-                    <h2>List of Accepted Applicants</h2>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- End Page Banner -->
 
-    <!--Content-->
-    <br><br><br>
-    <div class="container">
-        <div class="col-md-12">
-            <table class="table segment table-hover">
-                <thead>
-                    <tr>
-                        <th width='20%' class='tabletitle'>Applicant Name</th>
-                        <th width='17%' class='tabletitle'>Position</th>
-                        <th width='20%' class='tabletitle'>Course</th>
-                        <th width='13%' class='tabletitle'>Location</th>
-                        <th width='15%' class='tabletitle'>Email</th>
-                        <th width='15%' class='tabletitle'>Contact Number</th>
-                        <th width='15%' class='tabletitle'>Date Submitted</th>
-                        <th width='5%' class='tabletitle'>Remove</th>
-                    <tr>
-                </thead>
-                <?php
-                $requesttocompany_tbl =
-                    GSecureSQL::query(
-                        "SELECT
-                              requesttocompanytbl.RID,
-                              requesttocompanytbl.StudentID,
-                              requesttocompanytbl.PositionID,
-                              requesttocompanytbl.Status,
-                              studentinfotbl.StudentID,
-                              studentinfotbl.FirstName,
-                              studentinfotbl.LastName,
-                              studentinfotbl.MajorCourse,
-                              studcontactstbl.StudentID,
-                              studcontactstbl.City,
-                              studcontactstbl.Email,
-                              comppositiontbl.PositionID,
-                              comppositiontbl.PositionLevel,
-                              requesttocompanytbl.DateSubmitted,
-                              studcontactstbl.MobileNumber
-                              FROM
-                              requesttocompanytbl
-                              INNER JOIN comppositiontbl ON requesttocompanytbl.PositionID = comppositiontbl.PositionID
-                              INNER JOIN studentinfotbl ON requesttocompanytbl.StudentID = studentinfotbl.StudentID
-                              INNER JOIN studcontactstbl ON studentinfotbl.StudentID = studcontactstbl.StudentID
-                              WHERE requesttocompanytbl.Status = 'Accepted' AND requesttocompanytbl.CompanyID = ?
-                              ",
-                        TRUE,
-                        "s",
-                        $CompanyID
-                    );
-                foreach ($requesttocompany_tbl as $value) {
-                    $RID = $value[0];
-                    $PositionLevel = $value[12];
-                    $FirstName = $value[5];
-                    $LastName = $value[6];
-                    $MajorCourse = $value[7];
-                    $Location = $value[9];
-                    $Email = $value[10];
-                    $DateSubmitted = $value[13];
-                    $ContactNumber = $value[14];
-
-                    $coursetbl =
-                        GSecureSQL::query(
-                            "SELECT CourseTitle FROM coursetbl WHERE CourseCode = ?",
-                            TRUE,
-                            "s",
-                            $MajorCourse
-                        );
-                    foreach ($coursetbl as $value1) {
-                        $MajorCourse = $value1[0];
-                    }
-                    ?>
-                    <tbody>
-                    <tr>
-                        <td width='20%' class=tabletitle><a href=''><?php echo $LastName . ", " . $FirstName; ?></a></td>
-                        <td width='17%' class=tabletitle><?php echo $PositionLevel; ?></td>
-                        <td width='20%' class=tabletitle><?php echo $MajorCourse; ?></td>
-                        <td width='12%' class=tabletitle><?php echo $Location; ?></td>
-                        <td width='15%' class=tabletitle><?php echo $Email; ?></td>
-                        <td width='15%' class=tabletitle><?php echo $ContactNumber; ?></td>
-                        <td width='15%' class=tabletitle><?php echo $DateSubmitted; ?></td>
-                        <td width="5%" class="tabletitle">
-                            <button class='btn btn-danger' data-toggle='modal'
-                                    data-target='#Delete<?php echo $RID; ?>'><i
-                                    class='fa fa-trash fa-1x'></i></button>
-                        </td>
-                    <tr>
-                    </tbody>
-                    <!-- Modal -->
-                    <form name="form_Delete" id="form_Delete"
-                          action="add-company.php" autocomplete="off" method="POST">
-                        <div class="modal fade" id="Delete<?php echo $RID; ?>"
+            <!-- Start  Logo & Naviagtion  -->
+            <div class="navbar navbar-default navbar-top">
+                <div class="container">
+                    <div class="navbar-header">
+                        <!-- Stat Toggle Nav Link For Mobiles -->
+                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        <!-- End Toggle Nav Link For Mobiles -->
+                        <a class="navbar-brand" href="">
+                            <img src="../images/ojpms.png">
+                        </a>
+                    </div>
+                    <div class="navbar-collapse collapse">
+                        <!-- Modal -->
+                        <div class="modal fade" id="Logout"
                              role="dialog">
                             <div class="modal-dialog" style="padding:100px">
                                 <!-- Modal content-->
                                 <div class="modal-content">
                                     <div class="modal-header">
                                         <button type="button" class="close" data-dismiss="modal">&times;</button>
-                                        <h4 class="modal-title">Delete</h4>
+                                        <h4 class="modal-title">Sign Out</h4>
                                     </div>
                                     <div class="modal-body">
                                         <div class="col-md-15 fieldcol">
-                                            <label = "usr" class = "control-label">Do you want to delete this
-                                            applicant from the list?</label>
+                                            <label = "usr" class = "control-label">Do you want to sign out?</label>
                                             <div class="form-group">
                                             </div>
                                         </div>
-                                        <input type="hidden" name="delete_applicant">
-                                        <input type="hidden" name="rid" value="<?php echo $RID; ?>">
                                         <div class="modal-footer">
-                                            <button type="submit" class="btn btn-primary">Accept</button>
+                                            <a href="logout.php"
+                                               class="btn btn-primary">Sign Out</a>
                                             <button type="button" class="btn btn-default" data-dismiss="modal">
                                                 Cancel
                                             </button>
@@ -397,11 +211,195 @@ $cLastName = $companyinfo_tbl[0][2];
                                 </div>
                             </div>
                         </div>
-                    </form>
+                        <!-- End Sign-out -->
+                        <!-- Start Navigation List -->
+                        <ul class="nav navbar-nav navbar-right">
+                            <li>
+                                <a href="company.php">Home</a>
+                            </li>
+                            <li>
+                                <a>Position</a>
+                                <ul class="dropdown">
+                                    <li><a href="company-positionlist.php">Position List</a></li>
+                                    <li><a href="company-createposition.php">Create Position</a></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a class="active">Applicant List</a>
+                                <ul class="dropdown">
+                                    <li><a href="company-pendingapplicants.php">Pending</a></li>
+                                    <li><a href="company-acceptedapplicants.php" class="active">Accepted</a></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="company-settings.php">Settings</a>
+                            </li>
+                        </ul>
+                        <!-- End Navigation List -->
+                    </div>
+                </div>
+                <!-- Mobile Menu Start -->
+                <ul class="wpb-mobile-menu">
+                    <li>
+                        <a href="company.php">Home</a>
+                    </li>
+                    <li>
+                        <a>Position</a>
+                        <ul class="dropdown">
+                            <li><a href="company-positionlist.php">Position List</a></li>
+                            <li><a href="company-createposition.php">Create Position</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a class="active">Applicant List</a>
+                        <ul class="dropdown">
+                            <li><a href="company-pendingapplicants.php">Pending</a></li>
+                            <li><a href="company-acceptedapplicants.php" class="active">Accepted</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="company-settings.php">Settings</a>
+                    </li>
+                </ul>
+                <!-- Mobile Menu End -->
+            </div>
+            <!-- End Header Logo & Naviagtion -->
+        </header>
+        <!-- End Header Section -->
+
+        <!-- Start Page Banner -->
+        <div class="page-banner no-subtitle">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6">
+                        <h2>List of Accepted Applicants</h2>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- End Page Banner -->
+
+        <div id="content">
+            <div class="container">
+                <div class="hr2"></div>
+                <table class="table segment table-hover">
+                    <thead>
+                        <tr>
+                            <th width='20%' class='tabletitle'>Applicant Name</th>
+                            <th width='17%' class='tabletitle'>Position</th>
+                            <th width='20%' class='tabletitle'>Course</th>
+                            <th width='13%' class='tabletitle'>Location</th>
+                            <th width='15%' class='tabletitle'>Email</th>
+                            <th width='15%' class='tabletitle'>Contact Number</th>
+                            <th width='15%' class='tabletitle'>Date Submitted</th>
+                            <th width='5%' class='tabletitle'>Remove</th>
+                        <tr>
+                    </thead>
                     <?php
-                }
-                ?>
-            </table>
+                    $requesttocompany_tbl =
+                        GSecureSQL::query(
+                            "SELECT
+                                  requesttocompanytbl.RID,
+                                  requesttocompanytbl.StudentID,
+                                  requesttocompanytbl.PositionID,
+                                  requesttocompanytbl.Status,
+                                  studentinfotbl.StudentID,
+                                  studentinfotbl.FirstName,
+                                  studentinfotbl.LastName,
+                                  studentinfotbl.MajorCourse,
+                                  studcontactstbl.StudentID,
+                                  studcontactstbl.City,
+                                  studcontactstbl.Email,
+                                  comppositiontbl.PositionID,
+                                  comppositiontbl.PositionLevel,
+                                  requesttocompanytbl.DateSubmitted,
+                                  studcontactstbl.MobileNumber
+                                  FROM
+                                  requesttocompanytbl
+                                  INNER JOIN comppositiontbl ON requesttocompanytbl.PositionID = comppositiontbl.PositionID
+                                  INNER JOIN studentinfotbl ON requesttocompanytbl.StudentID = studentinfotbl.StudentID
+                                  INNER JOIN studcontactstbl ON studentinfotbl.StudentID = studcontactstbl.StudentID
+                                  WHERE requesttocompanytbl.Status = 'Accepted' AND requesttocompanytbl.CompanyID = ?
+                                  ",
+                            TRUE,
+                            "s",
+                            $CompanyID
+                        );
+                    foreach ($requesttocompany_tbl as $value) {
+                        $RID = $value[0];
+                        $PositionLevel = $value[12];
+                        $FirstName = $value[5];
+                        $LastName = $value[6];
+                        $MajorCourse = $value[7];
+                        $Location = $value[9];
+                        $Email = $value[10];
+                        $DateSubmitted = $value[13];
+                        $ContactNumber = $value[14];
+
+                        $coursetbl =
+                            GSecureSQL::query(
+                                "SELECT CourseTitle FROM coursetbl WHERE CourseCode = ?",
+                                TRUE,
+                                "s",
+                                $MajorCourse
+                            );
+                        foreach ($coursetbl as $value1) {
+                            $MajorCourse = $value1[0];
+                        }
+                        ?>
+                        <tbody>
+                        <tr>
+                            <td width='20%' class=tabletitle><a href=''><?php echo $LastName . ", " . $FirstName; ?></a></td>
+                            <td width='17%' class=tabletitle><?php echo $PositionLevel; ?></td>
+                            <td width='20%' class=tabletitle><?php echo $MajorCourse; ?></td>
+                            <td width='12%' class=tabletitle><?php echo $Location; ?></td>
+                            <td width='15%' class=tabletitle><?php echo $Email; ?></td>
+                            <td width='15%' class=tabletitle><?php echo $ContactNumber; ?></td>
+                            <td width='15%' class=tabletitle><?php echo $DateSubmitted; ?></td>
+                            <td width="5%" class="tabletitle">
+                                <button class='btn btn-danger' data-toggle='modal'
+                                        data-target='#Delete<?php echo $RID; ?>'><i
+                                        class='fa fa-trash fa-1x'></i></button>
+                            </td>
+                        <tr>
+                        </tbody>
+                        <!-- Modal -->
+                        <form name="form_Delete" id="form_Delete"
+                              action="add-company.php" autocomplete="off" method="POST">
+                            <div class="modal fade" id="Delete<?php echo $RID; ?>"
+                                 role="dialog">
+                                <div class="modal-dialog" style="padding:100px">
+                                    <!-- Modal content-->
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                            <h4 class="modal-title">Delete</h4>
+                                        </div>
+                                        <div class="modal-body">
+                                            <div class="col-md-15 fieldcol">
+                                                <label = "usr" class = "control-label">Do you want to delete this
+                                                applicant from the list?</label>
+                                                <div class="form-group">
+                                                </div>
+                                            </div>
+                                            <input type="hidden" name="delete_applicant">
+                                            <input type="hidden" name="rid" value="<?php echo $RID; ?>">
+                                            <div class="modal-footer">
+                                                <button type="submit" class="btn btn-primary">Accept</button>
+                                                <button type="button" class="btn btn-default" data-dismiss="modal">
+                                                    Cancel
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                        <?php
+                    }
+                    ?>
+                </table>
+            </div>
         </div>
     </div>
     <script type="text/javascript" src="../js/script.js"></script>

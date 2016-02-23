@@ -63,7 +63,7 @@ $Address = $companyuser_tbl[0][8];
 <head>
 
     <!-- Basic -->
-    <title>OJPMS</title>
+    <title>OJPMS | My Account </title>
 
     <!-- Define Charset -->
     <meta charset="utf-8">
