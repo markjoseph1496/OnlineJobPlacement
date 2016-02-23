@@ -173,7 +173,7 @@ $aFirstName = $infoquery[0][0];
                     <div class="col-md-6">
                         <!-- Start Contact Info -->
                             <ul class="contact-details">
-                                <li class="profile-name"><i class="fa fa-hashtag"></i> <b>008-2012-0805</b></li>
+                                &nbsp;
                             </ul>
                         <!-- End Contact Info -->
                     </div>
