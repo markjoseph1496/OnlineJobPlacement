@@ -738,7 +738,7 @@ if($References == "ok"){
                        data-allowed-file-extensions='["png", "jpg", "bmp", "gif"]'>
                 <label style="float:right;">* Select Image</label>
                 <br>
-                <button id="" class="btn-system btn-mini border-btn" name="btnDelete">Delete Image</button>
+                <!-- <button id="" class="btn-system btn-mini border-btn" name="btnDelete">Delete Image</button> -->
             </div>
         </form>
     </div>
