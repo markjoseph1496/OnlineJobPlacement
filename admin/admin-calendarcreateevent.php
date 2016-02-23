@@ -364,7 +364,7 @@ $adminpic_tbl =
                         stringLength: {
                             min: 1,
                             max: 25,
-                            message: "Event Title is 25 characters only."
+                            message: "Event Title is 100 characters only."
                         }
                     }
                 },
@@ -399,7 +399,7 @@ $adminpic_tbl =
                             message: "Description can consist of alphabetical characters and spaces only"
                         }
                     }
-                },
+                }
             }
         });
     });
