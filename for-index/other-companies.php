@@ -136,6 +136,7 @@
                                 <a href="#"><img src="../images/partner-company/aickman.png" alt="" /></a>
                             </div>
 
+
                             <div class="item">
                                 <a href="#"><img src="../images/partner-company/alorica.jpg" alt="" /></a>
                             </div>
