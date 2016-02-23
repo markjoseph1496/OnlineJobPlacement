@@ -298,6 +298,7 @@ if (isset($_POST['BtnCalendarsave'])) {
             }
         }
     }
+    print_r($_FILES["ProfilePicture"]);die();
 
 }
 // End of Create Calendar-Event
