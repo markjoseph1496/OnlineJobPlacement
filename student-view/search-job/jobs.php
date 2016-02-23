@@ -387,6 +387,10 @@ $MajorCourse = $coursetbl[0][0];
                                 $EType = $_GET['EType'];
                                 $Search = $_GET['Search'];
 
+                                if($Search == "programmer" OR $Search == "programming"){
+                                    $Search = "prog";
+                                }
+
                                 if (empty($PLevel) && empty($EType)) {
                                     $compposition_tbl =
                                         GSecureSQL::query(
