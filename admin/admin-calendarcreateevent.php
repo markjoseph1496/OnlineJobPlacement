@@ -18,21 +18,6 @@ $infoquery =
 
 $FirstName = $infoquery[0][0];
 
-$adminpic_tbl = 
-    GSecureSQL::query(
-        "SELECT 
-        ProfileImage
-        FROM
-        admineventtbl
-        WHERE
-        AdminID = ?",
-        True,
-        "s",
-        $AdminID
-        );
-
-    $ProfileImage = $adminpic_tbl[0][0];
-
 ?>
 <!doctype html>
 <html lang="en">
@@ -50,7 +35,7 @@ $adminpic_tbl =
     <!-- Page Description and Author -->
     <meta name="description" content="OJPMS">
     <link rel="shortcut icon" href="../images/logo/favicon.ico">
-    
+
     <!-- Bootstrap CSS -->
     <link href="../css/bootstrap.min.css" rel="stylesheet"/>
 
@@ -247,7 +232,7 @@ $adminpic_tbl =
             <div id="content">
                 <div class="container">
                     <div class="row">
-                        
+
                             <div class="col-md-6">
                                 <div class="row">
                                     <div class="col-md-3">
@@ -298,11 +283,6 @@ $adminpic_tbl =
                                 </div>
                             </div>
                         <div class="col-md-6">
-                            <div class="row">
-                                <div class="image-border" style = "width: 400px;">
-                                    <img src="<?php echo $ProfileImage; ?>" class="img-responsive" style="width:100%; height:100%;">
-                                </div>
-                            </div>
                             <br>
                             <label class="control-label">Select Image</label>
                             <div class="row">
@@ -316,9 +296,6 @@ $adminpic_tbl =
                                         showUpload : false
                                     });
                                 </script>
-                                <div class="col-md-6">
-                                    <button id="" class="btn-system btn-mini border-btn" name="btnDelete">Delete Image</button>
-                                </div>
                             </div>
                         </div>
                     </div>
