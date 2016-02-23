@@ -232,12 +232,12 @@ $MajorCourse = $course_qry[0][0];
             <div class="container">
                 <div class="row">
                     <div class="col-md-6">
-                        <h2>Specialization</h2>
+                        <h2>Skill</h2>
                     </div>
                     <div class="col-md-6">
                         <ul class="breadcrumbs">
                             <li><a href="#"></a></li>
-                            <li>Add Specialization</li>
+                            <li>Add Skill</li>
                         </ul>
                     </div>
                 </div>

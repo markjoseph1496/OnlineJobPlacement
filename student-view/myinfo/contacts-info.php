@@ -230,21 +230,18 @@ if($References == "ok"){
         });
     </script>
 
-
-    <!-- Alert -->
+    <!-- Alert 
     <script type="text/javascript">
-        /*
-         $(document).ready (function(){
-         $("#success-alert").hide();
-         $("#btnsave").click(function showAlert() {
-         $("#success-alert").alert();
-         $("#success-alert").fadeTo(2000, 500).slideUp(500, function(){
-         $("#success-alert").alert('close');
-         });
-         });
-         });
-         */
-    </script>
+        $(document).ready (function(){
+        $("#success-alert").hide();
+        $("#btnsave").click(function showAlert() {
+            $("#success-alert").alert();
+            $("#success-alert").fadeTo(2000, 500).slideUp(500, function(){
+           $("#success-alert").alert('close');
+                });   
+            });
+        });
+    </script>-->
 </head>
 
 <body>
@@ -437,11 +434,11 @@ if($References == "ok"){
 
                     if ($id == 1) {
                         echo '
-                                <div class="alert alert-success" id="success-alert">
-                                    <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
-                                    <strong><span class="fa fa-info-circle"></span> Contacts Information successfully updated.</strong>
-                                </div>
-                                ';
+                        <div class="alert alert-success" id="success-alert">
+                            <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                            <strong><span class="fa fa-info-circle"></span> Contacts Information successfully updated.</strong>
+                        </div>
+                        ';
                     }
                 }
                 ?>

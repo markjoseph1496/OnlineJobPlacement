@@ -228,9 +228,8 @@ if($References == "ok"){
     </script>
 
 
-    <!-- Alert -->
+    <!-- Alert 
     <script type="text/javascript">
-        /*
          $(document).ready (function(){
          $("#success-alert").hide();
          $("#btnsave").click(function showAlert() {
@@ -240,8 +239,7 @@ if($References == "ok"){
          });
          });
          });
-         */
-    </script>
+    </script>-->
 </head>
 
 <body>
