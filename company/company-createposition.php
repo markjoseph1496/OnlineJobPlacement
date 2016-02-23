@@ -281,351 +281,351 @@ $cLastName = $companyinfo_tbl[0][2];
         </div>
         <!-- End Page Banner -->
 
-        <!-- Start Content -->
-        <br><br><br>
-        <form action="add-company.php" name="AddPosition" id="AddPosition" autocomplete="off">
-            <div class="container">
-                <div class="col-md-12">
-                    <div class="row">
-                        <h3>Post Position </h3>
-                        &nbsp;
+        <div id="content">
+            <form action="add-company.php" name="AddPosition" id="AddPosition" autocomplete="off">
+                <div class="container">
+                    <div class="col-md-12">
                         <div class="row">
-                            <div class="col-md-3">
-                                <label> Posting Date: </label>
-                            </div>
-                            <div class="col-md-3">
-                                <div class="form-group">
-                                    <label>From:</label><input type="date" name="DateFrom" id="date_from" class="form-control">
+                            <h3>Post Position </h3>
+                            &nbsp;
+                            <div class="row">
+                                <div class="col-md-3">
+                                    <label> Posting Date: </label>
                                 </div>
-                            </div>
-                            <div class="col-md-3">
-                                <div class="form-group">
-                                    <label>To:</label><input type="date" name="DateTo" id="date_to" class="form-control">
+                                <div class="col-md-3">
+                                    <div class="form-group">
+                                        <label>From:</label><input type="date" name="DateFrom" id="date_from" class="form-control">
+                                    </div>
                                 </div>
-                            </div>
-                        </div>
-                        <h3> Position Information </h3>
-                        &nbsp;
-                        <div class="row">
-                            <div class="col-md-3">
-                                <label> Position Title: </label>
-                            </div>
-                            <div class="col-md-4">
-                                <div class="form-group">
-                                    <input type="text" id="PTitle" name="PTitle" class="form-control" style=" width: 100%; height:30px;">
-                                </div>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-md-3">
-                                <label> Position Level: </label>
-                            </div>
-                            <div class="col-md-4">
-                                <div class="form-group">
-                                    <select id="PLevel" name="PLevel" class="specialization form-control">
-                                        <option value="" selected="selected">- Select Position level -</option>
-                                        <?php
-                                        $position_tbl =
-                                            GSecureSQL::query(
-                                                "SELECT Position FROM listofpositiontbl",
-                                                TRUE
-                                            );
-                                        foreach ($position_tbl as $value) {
-                                            $Position = $value[0];
-                                            ?>
-                                            <option value="<?php echo $Position; ?>"><?php echo $Position; ?></option>
-                                            <?php
-                                        }
-                                        ?>
-                                    </select>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-md-3">
-                                <label> Job Description: </label>
-                            </div>
-                            <div class="col-md-4">
-                                <div class="form-group">
-                                    <input type="text" name="JobDesc" id="JobDesc" class="form-control" style="width: 100%;">
-                                </div>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-md-3">
-                                <label> Job Specialization: </label>
-                            </div>
-                            <div class="col-md-4">
-                                <div class="form-group">
-                                    <select id="Specialization" name="Specialization" class="specialization form-control">
-                                        <option value="" selected="selected">- Select Specialization -</option>
-                                        <?php
-                                        $specialization_tbl =
-                                            GSecureSQL::query(
-                                                "SELECT * FROM listofspecializationtbl",
-                                                TRUE
-                                            );
-                                        foreach ($specialization_tbl as $value) {
-                                            $Specialization = $value[1];
-                                            ?>
-                                            <option
-                                                value="<?php echo $Specialization; ?>"><?php echo $Specialization; ?></option>
-                                            <?php
-                                        }
-                                        ?>
-                                    </select>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-md-3">
-                                <label> Employment Type: </label>
-                            </div>
-                            <div class="col-md-4">
-                                <div class="form-group">
-                                    <select id="EType" name="EType" class="state form-control">
-                                        <option value="">- Please select One -</option>
-                                        <option value="Full Time">Full Time</option>
-                                        <option value="Part Time">Part Time</option>
-                                        <option value="Contract">Contract</option>
-                                        <option value="Temporary">Temporary</option>
-                                    </select>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-md-3">
-                                <label> Available Position: </label>
-                            </div>
-                            <div class="col-md-4">
-                                <div class="form-group">
-                                    <input type="number" name="AvPosition" id="AvPosition" class="form-control">
-                                </div>
-                            </div>
-                        </div>
-                        <h3> Salary Range </h3>
-                        &nbsp;
-                        <div class="row">
-                            <div class="col-md-3">
-                                <label> Range of Salary: </label>
-                            </div>
-                            <div class="col-md-4">
-                                <div class="form-group">
-                                    <select id="Salary" name="Salary" class="salaryrange form-control">
-                                        <option value="" selected="selected">- Select Salary Range -</option>
-                                        <?php
-                                        $salaryrange_tbl =
-                                            GSecureSQL::query(
-                                                "SELECT * FROM listofsalaryrangetbl",
-                                                TRUE
-                                            );
-                                        foreach ($salaryrange_tbl as $value) {
-                                            $SalaryRange = $value[1];
-                                            ?>
-                                            <option value="<?php echo $SalaryRange; ?>"><?php echo $SalaryRange; ?></option>
-                                            <?php
-                                        }
-                                        ?>
-                                    </select>
-                                </div>
-                            </div>
-                        </div>
-                        <h3> General Requirements </h3>
-                        &nbsp;
-                        <div class="row">
-                            <div class="col-md-3">
-                                <label>Years of Experience:</label>
-                            </div>
-                            <div class="col-md-4">
-                                <div class="form-group">
-                                    <select id="Salary" name="YExperience" class="form-control">
-                                        <option value="" selected="selected">- Select Year of experience -</option>
-                                        <?php
-                                        for ($count = 1; $count <= 20; $count++) {
-                                            ?>
-                                            <option value="<?php echo $count; ?>"><?php echo $count; ?></option>
-                                            <?php
-                                        }
-                                        ?>
-                                    </select>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-md-3">
-                                <label>Degree Level:</label>
-                            </div>
-                            <div class="col-md-3">
-                                <div class="form-group">
-                                    <div class="input-group" style="margin-bottom: 5px">
-                                        <ul>
-                                            <li>
-                                                <div class="checkbox checkbox-success">
-                                                <input id="DegreeLevel" class="styled" type="checkbox" name="DegreeLevel[]" value="Bachelor Degree">
-                                                <label for="checkbox3"><b>Bachelor Degree</b></label>
-                                            </li>
-                                            <li>
-                                                <div class="checkbox checkbox-success">
-                                                <input id="DegreeLevel" class="styled" type="checkbox" name="DegreeLevel[]" value="Masteral Degree">
-                                                <label for="checkbox3"><b>Masteral Degree</b></label>
-                                            </li>
-                                            <li>
-                                                <div class="checkbox checkbox-success">
-                                                <input id="DegreeLevel" class="styled" type="checkbox" name="DegreeLevel[]" value="Doctorate Degree">
-                                                <label for="checkbox3"><b>Doctorate Degree</b></label>
-                                            </li>
-                                        </ul>
+                                <div class="col-md-3">
+                                    <div class="form-group">
+                                        <label>To:</label><input type="date" name="DateTo" id="date_to" class="form-control">
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-md-3">
-                                <label>Required Skills:</label>
-                            </div>
-                            <div class="col-md-4">
-                                <div class="form-group">
-                                    <div class="input-group" style="margin-bottom: 15px">
-                                        <input type="text" class="form-control" id="txt-knowledge" name="Knowledge">
-                                        <script>
-                                            var kl_index = -1;
-                                            function delete_knowledge(index) {
-                                                $('#kl-span-' + index).remove();
-                                                $('#kl-a-' + index).remove();
-                                                $('#kl-input-' + index).remove();
-                                            }
-                                        </script>
-                                      <span class="input-group-btn">
-                                        <a class="btn btn-primary" onclick="(function(){
-                                          var _requirements = $('#txt-knowledge').val();
-                                          if(_requirements==''){
-                                              alert('Cannot add empty value.');
-                                          }
-                                          else{
-                                              kl_index++;
-                                              var kk = $('#knowledge-template');
-                                              var kk_span = kk.find('span');
-                                              var kk_a = kk.find('a');
-                                              var kk_input = kk.find('input');
-
-                                              kk_span.text($('#txt-knowledge').val());
-                                              kk_span.attr('id', 'kl-span-' + kl_index);
-                                              kk_a.attr('id', 'kl-a-' + kl_index);
-                                              kk_a.attr('onclick', 'delete_knowledge(' + kl_index + ')');
-                                              kk_input.attr('id', 'kl-input-' + kl_index);
-                                              kk_input.attr('name', 'knowledge[' + kl_index +']');
-                                              kk_input.val(kk_span.text());
-                                              $('#knowledge-list').append($('#knowledge-template').html());
-                                              $('#txt-knowledge').val('');
-
-                                              //disposal of used resource in #knowledge-template
-                                              kk_span.removeAttr('id');
-                                              kk_a.removeAttr('id');
-                                              kk_a.removeAttr('onclick');
-                                              kk_input.removeAttr('id');
-                                              kk_input.removeAttr('name');
-                                              kk_input.removeAttr('value');
-                                          }
-                                        })()">Add</a>
-                                      </span>
+                            <h3> Position Information </h3>
+                            &nbsp;
+                            <div class="row">
+                                <div class="col-md-3">
+                                    <label> Position Title: </label>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <input type="text" id="PTitle" name="PTitle" class="form-control" style=" width: 100%; height:30px;">
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                        <div class="row" style="margin-bottom: 15px">
-                            <div id="knowledge-template" class="hidden">
-                                <b><span>dito_yung_text</span></b>
-                                <a href="javascript:void(0)">[remove]<br></a>
-                                <input type="hidden"/>
-                            </div>
-                            <div id="knowledge-list" class="col-md-offset-3 col-md-4"
-                                 style="width: 300px; word-wrap: break-word">
-                            </div>
-                        </div>
-                        &nbsp;
-                        <div class="row" style="margin-bottom: 15px">
-                            <div id="specialize-template" class="hidden">
-                                <b><span>dito_yung_text</span></b>
-                                <a href="javascript:void(0)">[remove]<br></a>
-                                <input type="hidden"/>
-                            </div>
-                            <div id="specialize-list" class="col-md-offset-3 col-md-8"
-                                 style="width: 300px; word-wrap: break-word">
-                            </div>
-                        </div>
-                        <h3> Optional Requirements </h3>
-                        &nbsp;
-                        <div class="row">
-                            <div class="col-md-3">
-                                <label> Language: </label>
-                            </div>
-                            <div class="col-md-4">
-                                <div class="form-group">
-                                    <div class="input-group" style="margin-bottom: 15px">
-                                        <input type="text" class="form-control" id="txt-language" name="Language">
-                                        <script>
-                                            var lll_index = -1;
-                                            function delete_language(index) {
-                                                $('#lll-span-' + index).remove();
-                                                $('#lll-a-' + index).remove();
-                                                $('#lll-input-' + index).remove();
+                            <div class="row">
+                                <div class="col-md-3">
+                                    <label> Position Level: </label>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <select id="PLevel" name="PLevel" class="specialization form-control">
+                                            <option value="" selected="selected">- Select Position level -</option>
+                                            <?php
+                                            $position_tbl =
+                                                GSecureSQL::query(
+                                                    "SELECT Position FROM listofpositiontbl",
+                                                    TRUE
+                                                );
+                                            foreach ($position_tbl as $value) {
+                                                $Position = $value[0];
+                                                ?>
+                                                <option value="<?php echo $Position; ?>"><?php echo $Position; ?></option>
+                                                <?php
                                             }
-                                        </script>
-                                        <span class="input-group-btn">
+                                            ?>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-3">
+                                    <label> Job Description: </label>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <input type="text" name="JobDesc" id="JobDesc" class="form-control" style="width: 100%;">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-3">
+                                    <label> Job Specialization: </label>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <select id="Specialization" name="Specialization" class="specialization form-control">
+                                            <option value="" selected="selected">- Select Specialization -</option>
+                                            <?php
+                                            $specialization_tbl =
+                                                GSecureSQL::query(
+                                                    "SELECT * FROM listofspecializationtbl",
+                                                    TRUE
+                                                );
+                                            foreach ($specialization_tbl as $value) {
+                                                $Specialization = $value[1];
+                                                ?>
+                                                <option
+                                                    value="<?php echo $Specialization; ?>"><?php echo $Specialization; ?></option>
+                                                <?php
+                                            }
+                                            ?>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-3">
+                                    <label> Employment Type: </label>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <select id="EType" name="EType" class="state form-control">
+                                            <option value="">- Please select One -</option>
+                                            <option value="Full Time">Full Time</option>
+                                            <option value="Part Time">Part Time</option>
+                                            <option value="Contract">Contract</option>
+                                            <option value="Temporary">Temporary</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-3">
+                                    <label> Available Position: </label>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <input type="number" name="AvPosition" id="AvPosition" class="form-control">
+                                    </div>
+                                </div>
+                            </div>
+                            <h3> Salary Range </h3>
+                            &nbsp;
+                            <div class="row">
+                                <div class="col-md-3">
+                                    <label> Range of Salary: </label>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <select id="Salary" name="Salary" class="salaryrange form-control">
+                                            <option value="" selected="selected">- Select Salary Range -</option>
+                                            <?php
+                                            $salaryrange_tbl =
+                                                GSecureSQL::query(
+                                                    "SELECT * FROM listofsalaryrangetbl",
+                                                    TRUE
+                                                );
+                                            foreach ($salaryrange_tbl as $value) {
+                                                $SalaryRange = $value[1];
+                                                ?>
+                                                <option value="<?php echo $SalaryRange; ?>"><?php echo $SalaryRange; ?></option>
+                                                <?php
+                                            }
+                                            ?>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                            <h3> General Requirements </h3>
+                            &nbsp;
+                            <div class="row">
+                                <div class="col-md-3">
+                                    <label>Years of Experience:</label>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <select id="Salary" name="YExperience" class="form-control">
+                                            <option value="" selected="selected">- Select Year of experience -</option>
+                                            <?php
+                                            for ($count = 1; $count <= 20; $count++) {
+                                                ?>
+                                                <option value="<?php echo $count; ?>"><?php echo $count; ?></option>
+                                                <?php
+                                            }
+                                            ?>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-3">
+                                    <label>Degree Level:</label>
+                                </div>
+                                <div class="col-md-3">
+                                    <div class="form-group">
+                                        <div class="input-group" style="margin-bottom: 5px">
+                                            <ul>
+                                                <li>
+                                                    <div class="checkbox checkbox-success">
+                                                    <input id="DegreeLevel" class="styled" type="checkbox" name="DegreeLevel[]" value="Bachelor Degree">
+                                                    <label for="checkbox3"><b>Bachelor Degree</b></label>
+                                                </li>
+                                                <li>
+                                                    <div class="checkbox checkbox-success">
+                                                    <input id="DegreeLevel" class="styled" type="checkbox" name="DegreeLevel[]" value="Masteral Degree">
+                                                    <label for="checkbox3"><b>Masteral Degree</b></label>
+                                                </li>
+                                                <li>
+                                                    <div class="checkbox checkbox-success">
+                                                    <input id="DegreeLevel" class="styled" type="checkbox" name="DegreeLevel[]" value="Doctorate Degree">
+                                                    <label for="checkbox3"><b>Doctorate Degree</b></label>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-3">
+                                    <label>Required Skills:</label>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <div class="input-group" style="margin-bottom: 15px">
+                                            <input type="text" class="form-control" id="txt-knowledge" name="Knowledge">
+                                            <script>
+                                                var kl_index = -1;
+                                                function delete_knowledge(index) {
+                                                    $('#kl-span-' + index).remove();
+                                                    $('#kl-a-' + index).remove();
+                                                    $('#kl-input-' + index).remove();
+                                                }
+                                            </script>
+                                          <span class="input-group-btn">
                                             <a class="btn btn-primary" onclick="(function(){
-                                              var _languages = $('#txt-language').val();
-                                              if(_languages==''){
-                                                alert('Cannot add empty value.');
-                                              }else{
-                                              lll_index++;
-                                              var ll = $('#language-template');
-                                              var ll_span = ll.find('span');
-                                              var ll_a = ll.find('a');
-                                              var ll_input = ll.find('input');
+                                              var _requirements = $('#txt-knowledge').val();
+                                              if(_requirements==''){
+                                                  alert('Cannot add empty value.');
+                                              }
+                                              else{
+                                                  kl_index++;
+                                                  var kk = $('#knowledge-template');
+                                                  var kk_span = kk.find('span');
+                                                  var kk_a = kk.find('a');
+                                                  var kk_input = kk.find('input');
 
-                                              ll_span.text($('#txt-language').val());
-                                              ll_span.attr('id', 'lll-span-' + lll_index);
-                                              ll_a.attr('id', 'lll-a-' + lll_index);
-                                              ll_a.attr('onclick', 'delete_language(' + lll_index + ')');
-                                              ll_input.attr('id', 'lll-input-' + lll_index);
-                                              ll_input.attr('name', 'language[' + lll_index +']');
-                                              ll_input.val(ll_span.text());
-                                              $('#language-list').append($('#language-template').html());
-                                              $('#txt-language').val('');
+                                                  kk_span.text($('#txt-knowledge').val());
+                                                  kk_span.attr('id', 'kl-span-' + kl_index);
+                                                  kk_a.attr('id', 'kl-a-' + kl_index);
+                                                  kk_a.attr('onclick', 'delete_knowledge(' + kl_index + ')');
+                                                  kk_input.attr('id', 'kl-input-' + kl_index);
+                                                  kk_input.attr('name', 'knowledge[' + kl_index +']');
+                                                  kk_input.val(kk_span.text());
+                                                  $('#knowledge-list').append($('#knowledge-template').html());
+                                                  $('#txt-knowledge').val('');
 
-                                              //disposal of used resource in #language-template
-                                              ll_span.removeAttr('id');
-                                              ll_a.removeAttr('id');
-                                              ll_a.removeAttr('onclick');
-                                              ll_input.removeAttr('id');
-                                              ll_input.removeAttr('name');
-                                              ll_input.removeAttr('value');
+                                                  //disposal of used resource in #knowledge-template
+                                                  kk_span.removeAttr('id');
+                                                  kk_a.removeAttr('id');
+                                                  kk_a.removeAttr('onclick');
+                                                  kk_input.removeAttr('id');
+                                                  kk_input.removeAttr('name');
+                                                  kk_input.removeAttr('value');
                                               }
                                             })()">Add</a>
-                                        </span>
+                                          </span>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                        <div class="row" style="margin-bottom: 15px">
-                            <div id="language-template" class="hidden">
-                                <b><span>dito_yung_text</span></b>
-                                <a href="javascript:void(0)">[remove]<br></a>
-                                <input type="hidden"/>
+                            <div class="row" style="margin-bottom: 15px">
+                                <div id="knowledge-template" class="hidden">
+                                    <b><span>dito_yung_text</span></b>
+                                    <a href="javascript:void(0)">[remove]<br></a>
+                                    <input type="hidden"/>
+                                </div>
+                                <div id="knowledge-list" class="col-md-offset-3 col-md-4"
+                                     style="width: 300px; word-wrap: break-word">
+                                </div>
                             </div>
-                            <div id="language-list" class="col-md-offset-3 col-md-8"
-                                 style="width: 300px; word-wrap: break-word">
+                            &nbsp;
+                            <div class="row" style="margin-bottom: 15px">
+                                <div id="specialize-template" class="hidden">
+                                    <b><span>dito_yung_text</span></b>
+                                    <a href="javascript:void(0)">[remove]<br></a>
+                                    <input type="hidden"/>
+                                </div>
+                                <div id="specialize-list" class="col-md-offset-3 col-md-8"
+                                     style="width: 300px; word-wrap: break-word">
+                                </div>
                             </div>
-                        </div>
-                        <div class="hr5" style="margin-top:35px;margin-bottom:40px;"></div>
-                        <div class="text-center">
-                            <button type="submit" class="btn-system btn-large" id="btnsave" name="btnsave">Save</button>
-                            <button type="submit" class="btn-system btn-large btn-black" id="cancel">Cancel</button>
+                            <h3> Optional Requirements </h3>
+                            &nbsp;
+                            <div class="row">
+                                <div class="col-md-3">
+                                    <label> Language: </label>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <div class="input-group" style="margin-bottom: 15px">
+                                            <input type="text" class="form-control" id="txt-language" name="Language">
+                                            <script>
+                                                var lll_index = -1;
+                                                function delete_language(index) {
+                                                    $('#lll-span-' + index).remove();
+                                                    $('#lll-a-' + index).remove();
+                                                    $('#lll-input-' + index).remove();
+                                                }
+                                            </script>
+                                            <span class="input-group-btn">
+                                                <a class="btn btn-primary" onclick="(function(){
+                                                  var _languages = $('#txt-language').val();
+                                                  if(_languages==''){
+                                                    alert('Cannot add empty value.');
+                                                  }else{
+                                                  lll_index++;
+                                                  var ll = $('#language-template');
+                                                  var ll_span = ll.find('span');
+                                                  var ll_a = ll.find('a');
+                                                  var ll_input = ll.find('input');
+
+                                                  ll_span.text($('#txt-language').val());
+                                                  ll_span.attr('id', 'lll-span-' + lll_index);
+                                                  ll_a.attr('id', 'lll-a-' + lll_index);
+                                                  ll_a.attr('onclick', 'delete_language(' + lll_index + ')');
+                                                  ll_input.attr('id', 'lll-input-' + lll_index);
+                                                  ll_input.attr('name', 'language[' + lll_index +']');
+                                                  ll_input.val(ll_span.text());
+                                                  $('#language-list').append($('#language-template').html());
+                                                  $('#txt-language').val('');
+
+                                                  //disposal of used resource in #language-template
+                                                  ll_span.removeAttr('id');
+                                                  ll_a.removeAttr('id');
+                                                  ll_a.removeAttr('onclick');
+                                                  ll_input.removeAttr('id');
+                                                  ll_input.removeAttr('name');
+                                                  ll_input.removeAttr('value');
+                                                  }
+                                                })()">Add</a>
+                                            </span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row" style="margin-bottom: 15px">
+                                <div id="language-template" class="hidden">
+                                    <b><span>dito_yung_text</span></b>
+                                    <a href="javascript:void(0)">[remove]<br></a>
+                                    <input type="hidden"/>
+                                </div>
+                                <div id="language-list" class="col-md-offset-3 col-md-8"
+                                     style="width: 300px; word-wrap: break-word">
+                                </div>
+                            </div>
+                            <div class="hr5" style="margin-top:35px;margin-bottom:40px;"></div>
+                            <div class="text-center">
+                                <button type="submit" class="btn-system btn-large" id="btnsave" name="btnsave">Save</button>
+                                <button type="submit" class="btn-system btn-large btn-black" id="cancel">Cancel</button>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
-        </form>
+            </form>
+        </div>
     </div>
     <!--End of Content-->
     <script type="text/javascript" src="../js/script.js"></script>   

@@ -214,7 +214,7 @@ $Address = $companyuser_tbl[0][8];
               <i class="fa fa-bars"></i>
             </button>
             <!-- End Toggle Nav Link For Mobiles -->
-            <a class="navbar-brand" href="index.html">
+            <a class="navbar-brand" href="">
              <img src="../images/ojpms.png">
             </a>
           </div>
@@ -413,23 +413,24 @@ $Address = $companyuser_tbl[0][8];
                     $id = $_GET['id'];
                     if ($id == 1) {
                         echo '
-                    <div class="alert alert-success">
-                        <span class="glyphicon glyphicon-info-sign"></span> 
-                        Email successfully changed.
+
+                    <div class="alert alert-success" id="success-alert">
+                        <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                        <strong><span class="fa fa-info-circle"></span> Email successfully changed.</strong>
                     </div>
                     ';
                     } elseif ($id == 2) {
                         echo '
-                    <div class="alert alert-success">
-                        <span class="glyphicon glyphicon-info-sign"></span> 
-                        Password successfully changed.
+                    <div class="alert alert-success" id="success-alert">
+                        <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                        <strong><span class="fa fa-info-circle"></span> Password successfully changed.</strong>
                     </div>
                     ';
                     } elseif ($id == 3) {
                         echo '
-                    <div class="alert alert-success">
-                        <span class="glyphicon glyphicon-info-sign"></span> 
-                        Personal info successfully updated.
+                    <div class="alert alert-success" id="success-alert">
+                        <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                        <strong><span class="fa fa-info-circle"></span> Personal info successfully updated.</strong>
                     </div>
                     ';
                     }
