@@ -107,7 +107,7 @@ include('connection.php');
                 <div class="big-title text-center">
                     <h1><strong>Registration</strong></h1>
                 </div>
-                <h3><strong>Alumni Details:</strong></h3>
+                <h3><strong>Student Details:</strong></h3>
                 <br>
                 <div class="row">
                     <div class="col-md-3">
