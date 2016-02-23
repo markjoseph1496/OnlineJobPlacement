@@ -273,6 +273,7 @@ if($References == "ok"){
                                 </li>-->
                                 <li class="dropdown">
                                     <a href="#" class="dropdown-toggle" data-toggle="dropdown"><b class="fa fa-user"></b> Welcome, <b><?php echo $StudentName; ?> </b><b class="caret"></b></a>
+                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown"><b class="fa fa-user"></b> Welcome, <b><?php echo $StudentName; ?> </b><b class="caret"></b></a>
                                     <ul class="dropdown-menu">
                                         <li><a href="../../student-profile.php?id=<?php echo $hashStudentID; ?>">Profile <b class="fa fa-user" style="float:right;"></b></a></li>
                                         <li><a href="../settings/settings.php">Settings <b class="fa fa-cog" style="float:right;"></b></a></li>
@@ -738,7 +739,7 @@ if($References == "ok"){
                        data-allowed-file-extensions='["png", "jpg", "bmp", "gif"]'>
                 <label style="float:right;">* Select Image</label>
                 <br>
-                <button id="" class="btn-system btn-mini border-btn" name="btnDelete">Delete Image</button>
+                <!-- <button id="" class="btn-system btn-mini border-btn" name="btnDelete">Delete Image</button> -->
             </div>
         </form>
     </div>
