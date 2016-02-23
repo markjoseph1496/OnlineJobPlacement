@@ -14,7 +14,7 @@
 
     <!-- Page Description and Author -->
     <meta name="description" content=" - Responsive HTML5 Template">
-    <meta name="author" content="iThemesLab">
+    <link rel="shortcut icon" href="../images/logo/favicon.ico">
 
     <!-- Bootstrap CSS -->
     <link href="../css/bootstrap.min.css" rel="stylesheet"/>
@@ -88,7 +88,7 @@
                             <i class="fa fa-bars"></i>
                         </button>
                         <!-- End Toggle Nav Link For Mobiles -->
-                        <a class="navbar-brand">
+                        <a href="../index.php" class="navbar-brand">
                             <img src="../images/ojpms.png">
                         </a>
                     </div>
