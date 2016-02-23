@@ -24,7 +24,7 @@ $adminevent_tbl =
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
     <!-- Page Description and Author -->
-    <meta name="description" content="Responsive HTML5 Template">
+    <meta name="description" content="OJPMS">
     <meta name="author" content="">
 
     <link rel="shortcut icon" href="images/logo/favicon.ico">
