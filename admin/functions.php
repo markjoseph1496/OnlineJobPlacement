@@ -272,19 +272,20 @@ if (isset($_GET['BtnCalendarsave'])) {
 // End of Create Calendar-Event
 
 //Update Event
-if (isset($_POST['btnUpdateEvent'])) {
+if (isset($_POST['EventID'])) {
+    $EventID = $_POST['EventID'];
     $eEventTitle = $_POST['eEventTitle'];
     $eLocation = $_POST['eLocation'];
     $eDescription = $_POST['eDescription'];
 
     GSecureSQL::query(
-        "UPDATE admineventtbl SET EventTitle = ?, Location = ?, Description = ? WHERE AdminID = ?",
+        "UPDATE admineventtbl SET EventTitle = ?, Location = ?, Description = ? WHERE EventID = ?",
         FALSE,
         "ssss",
         $eEventTitle,
         $eLocation,
         $eDescription,
-        $AdminID
+        $EventID
 
     );
 
