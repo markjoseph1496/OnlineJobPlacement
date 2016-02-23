@@ -278,6 +278,20 @@ $FirstName = $infoquery[0][0];
     <br><br><br>
 
     <div class="container">
+    <?php
+                if (isset($_GET['id'])) {
+                    $id = $_GET['id'];
+
+                    if ($id == 1) {
+                        echo '
+                                <div class="alert alert-success" id="success-alert" width = "70%">
+                                    <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                                    <strong><span class="fa fa-info-circle"></span> OJT student account updated.</strong>
+                                </div>
+                                ';
+                    } 
+                }
+            ?>
         <div class="col-sm-4">
             <h4 style="margin-top:20px;">TOTAL NUMBER OF STUDENTS: </b></h4>
         </div>

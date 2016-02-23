@@ -117,6 +117,8 @@ if (isset($_POST['StudentID'])) {
     }else if(isset($_SERVER["HTTP_REFERER"])){
         header("Location: {$_SERVER["HTTP_REFERER"]}");
     }
+
+    header("location: ojt-adviser.php?id=1");
 }
 
 //Update ng info ng User ni Company
