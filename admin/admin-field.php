@@ -370,6 +370,7 @@ $aFirstName = $infoquery[0][0];
             <div class="col-sm-4">
                 <label><b>TOTAL NUMBER OF STUDENTS: <?php echo $Total; ?></b></label>
             </div>
+                <!--
             <div class="col-sm-4">
                 <div class="form-group">
                         <input type="text" name= id= "" class="form-control"
@@ -391,9 +392,11 @@ $aFirstName = $infoquery[0][0];
                         <option value="unemp">Unemployed</option>
                     </select><br>
             </div>
+
             <div class="col-md-3" style = "margin-top:15px;" >
                  <button type="submit" class="btn-system btn-large border-btn" href="#" style = "width:100px;">Filter</button>
             </div>
+            -->
             </div>
                        
               
