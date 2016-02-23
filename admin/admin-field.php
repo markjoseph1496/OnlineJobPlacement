@@ -464,6 +464,7 @@ $aFirstName = $infoquery[0][0];
             $PositionLevel = implode(", ", $positionlevel_tbl);
             $Specialization = implode(", ", $specialization_tbl);
             $Industry = implode(", ", $industry_tbl);
+
             ?>
             <tbody>
             <tr>
@@ -488,7 +489,7 @@ $aFirstName = $infoquery[0][0];
                         <div class="modal-content">
                             <div class="modal-header">
                                 <button type="button" class="close" data-dismiss="modal">&times;</button>
-                                <h4 class="modal-title">Edit Event?</h4>
+                                <h4 class="modal-title">Work View</h4>
                             </div>
                             <div class="modal-body">
                                 <form method="POST" action="functions.php ">
@@ -496,46 +497,41 @@ $aFirstName = $infoquery[0][0];
                                         <div class="col-md-12">
                                             <div class="row">
                                                 <div class="col-md-3">
-                                                    <label>Event:</label>
+                                                    <label>Company Name:</label>
                                                 </div>
                                                 <div class="col-md-4">
                                                     <div class = "form-group">
-                                                        <label>From: <p><?php echo $datefrom; ?></p></label>
+                                                        <label><p><?php echo $datefrom; ?></p></label>
                                                     </div>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-md-3">
+                                                    <label>Position Level:</label>
                                                 </div>
                                                 <div class="col-md-4">
                                                     <div class = "form-group">
-                                                        <label>To: <p><?php echo $dateto; ?></p></label>
+                                                        <label><p><?php echo $dateto; ?></p></label>
                                                     </div>
                                                 </div>
                                             </div>
                                             <div class="row">
                                                 <div class="col-md-3">
-                                                    <label>Event Title:</label>
+                                                    <label>Employment Type:</label>
                                                 </div>
-                                                <div class="col-md-9">
-                                                    <div class="form-group">
-                                                        <input type="text" name="eEventTitle" id="eEventTitle" class="form-control" value="<?php echo $eventtitle; ?>">
+                                                <div class="col-md-4">
+                                                    <div class = "form-group">
+                                                        <label><p><?php echo $dateto; ?></p></label>
                                                     </div>
                                                 </div>
                                             </div>
                                             <div class="row">
                                                 <div class="col-md-3">
-                                                    <label>Location</label>
+                                                    <label>Date:</label>
                                                 </div>
-                                                <div class="col-md-9">
-                                                    <div class="form-group">
-                                                        <input type="text" name="eLocation" id="eLocation" class="form-control" value="<?php echo $location; ?>">
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="row">
-                                                <div class="col-md-3">
-                                                    <label>Caption</label>
-                                                </div>
-                                                <div class="col-md-9">
-                                                    <div class="form-group">
-                                                        <input type="text" class="form-control" id="eDescription" name="eDescription" value="<?php echo $description; ?>">
+                                                <div class="col-md-4">
+                                                    <div class = "form-group">
+                                                        <label><p><?php echo $dateto; ?></p></label>
                                                     </div>
                                                 </div>
                                             </div>
