@@ -264,7 +264,7 @@ $ContactNumber = $admin_tbl[0][9];
                             <i class="fa fa-bars"></i>
                         </button>
                         <!-- End Toggle Nav Link For Mobiles -->
-                        <a class="navbar-brand" href="admin.php">
+                        <a class="navbar-brand" href="">
                             <img src="../images/ojpms.png">
                         </a>
                     </div>

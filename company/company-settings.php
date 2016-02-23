@@ -213,7 +213,7 @@ $ProfileImage= $companyinfo_tbl[0][11];
                             <i class="fa fa-bars"></i>
                         </button>
                         <!-- End Toggle Nav Link For Mobiles -->
-                        <a class="navbar-brand" href="index.html">
+                        <a class="navbar-brand" href="">
                             <img src="../images/ojpms.png">
                         </a>
                     </div>

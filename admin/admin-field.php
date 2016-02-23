@@ -75,7 +75,7 @@ $aFirstName = $infoquery[0][0];
 <head>
 
     <!-- Basic -->
-    <title>OJPMS</title>
+    <title>OJPMS | Reports</title>
 
     <!-- Define Charset -->
     <meta charset="utf-8">

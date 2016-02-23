@@ -655,7 +655,7 @@ if (count($LOGquery1) > 0) {
                                     ?>
                                     <tbody>
                                     <tr>
-                                        <td width='20%' class='tabletitle'><a href = "../student-profile.php"><?php echo $LastName . ", " . $FirstName; ?> </a></td>
+                                        <td width='20%' class='tabletitle'><a href = ""><?php echo $LastName . ", " . $FirstName; ?> </a></td>
                                         <td width='10%' class='tabletitle'><?php echo $_Course; ?></td>
                                         <td width='20%' class='tabletitle'><?php echo $MobileNumber; ?></td>
                                         <td width='25%' class='tabletitle'><?php echo $Email; ?></td>
@@ -710,7 +710,7 @@ if (count($LOGquery1) > 0) {
                                     ?>
                                     <tbody>
                                     <tr>
-                                        <td width='20%' class='tabletitle'><a href = "../student-profile.php"><?php echo $LastName . ", " . $FirstName; ?></a></td>
+                                        <td width='20%' class='tabletitle'><a href = ""><?php echo $LastName . ", " . $FirstName; ?></a></td>
                                         <td width='10%' class='tabletitle'><?php echo $_Course; ?></td>
                                         <td width='20%' class='tabletitle'><?php echo $MobileNumber; ?></td>
                                         <td width='25%' class='tabletitle'><?php echo $Email; ?></td>
