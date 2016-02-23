@@ -230,13 +230,13 @@
                                 </ul>
                             </div>
 
-                            <!-- Video Widget -->
+                            <!-- Video Widget
                             <div class="widget">
                                 <h4>Video <span class="head-line"></span></h4>
                                 <div>
                                     <iframe src="http://player.vimeo.com/video/63322694?byline=0&amp;portrait=0&amp;badge=0" width="800" height="450"></iframe>
                                 </div>
-                            </div>
+                            </div> -->
                         </div>
                         <!--End sidebar-->
                     </div>
