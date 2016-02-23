@@ -353,15 +353,17 @@ $aFirstName = $infoquery[0][0];
             <div class="col-md-8">
                 <h5> <?php echo $CourseTitle; ?> <h5>
             </div>
+            <!--
             <div class="col-md-4">
                 <div class="form-group text-center">
                     <a href="#" class="main-button" style="float:right;">
                         <span class="fa fa-download"></span> Export XLS
                     </a>
-                </div>
+                </div>-->
             </div>
         </div>
     </div>
+                &nbsp;
     <div class="header2_advertising">
         <div class="container">
             <div class = "row-field">
