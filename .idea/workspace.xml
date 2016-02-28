@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="d999e893-f739-4a68-b7b0-034239dfb77e" name="Default" comment="" />
+    <list default="true" id="d999e893-f739-4a68-b7b0-034239dfb77e" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/connection.php" afterPath="$PROJECT_DIR$/connection.php" />
+    </list>
     <ignored path="OnlineJobPlacement.iws" />
     <ignored path=".idea/workspace.xml" />
     <ignored path=".idea/dataSources.local.xml" />
@@ -25,30 +28,9 @@
       <file leaf-file-name="jobs.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/student-view/search-job/jobs.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="9.709678">
+            <state vertical-scroll-proportion="0.0">
               <caret line="423" column="70" selection-start-line="423" selection-start-column="70" selection-end-line="423" selection-end-column="70" />
-              <folding>
-                <marker date="1456374048561" expanded="true" signature="502:581" placeholder="SELECT First... studentinfotbl" />
-                <marker date="1456374048561" expanded="true" signature="692:756" placeholder="SELECT Speci... specializationtbl" />
-                <marker date="1456374048561" expanded="true" signature="1127:1181" placeholder="SELECT Cours... coursetbl" />
-                <marker date="1456374048561" expanded="true" signature="12176:12297" placeholder="..." />
-                <marker date="1456374048561" expanded="true" signature="13683:13721" placeholder="SELECT Posit... listofpositiontbl" />
-                <marker date="1456374048561" expanded="true" signature="18342:19470" placeholder="SELECT compp... listofspecializationtbl" />
-                <marker date="1456374048561" expanded="true" signature="19784:20966" placeholder="SELECT compp... listofspecializationtbl" />
-                <marker date="1456374048561" expanded="true" signature="21383:22557" placeholder="SELECT compp... listofspecializationtbl" />
-                <marker date="1456374048561" expanded="true" signature="22954:24166" placeholder="SELECT compp... listofspecializationtbl" />
-                <marker date="1456374048561" expanded="true" signature="25776:25824" placeholder="SELECT * FRO... companyinfotbl" />
-                <marker date="1456374048561" expanded="true" signature="32119:32514" placeholder="..." />
-                <marker date="1456374048561" expanded="true" signature="32185:32463" placeholder="..." />
-                <marker date="1456374048561" expanded="true" signature="32260:32408" placeholder="..." />
-                <marker date="1456374048561" expanded="true" signature="32856:33903" placeholder="SELECT compp... listofspecializationtbl" />
-                <marker date="1456374048561" expanded="true" signature="35317:35365" placeholder="SELECT * FRO... companyinfotbl" />
-                <marker date="1456374048561" expanded="true" signature="41647:41994" placeholder="..." />
-                <marker date="1456374048561" expanded="true" signature="41705:41951" placeholder="..." />
-                <marker date="1456374048561" expanded="true" signature="41772:41904" placeholder="..." />
-                <marker date="1456374048561" expanded="true" signature="43684:43949" placeholder="SELECT Pinfo... " />
-                <marker date="1456374048561" expanded="true" signature="44711:44830" placeholder="..." />
-              </folding>
+              <folding />
             </state>
           </provider>
         </entry>
@@ -56,8 +38,8 @@
       <file leaf-file-name="connection.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/connection.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.06214689">
-              <caret line="2" column="33" selection-start-line="2" selection-start-column="33" selection-end-line="2" selection-end-column="33" />
+            <state vertical-scroll-proportion="0.9322034">
+              <caret line="30" column="5" selection-start-line="30" selection-start-column="5" selection-end-line="30" selection-end-column="5" />
               <folding />
             </state>
           </provider>
@@ -602,7 +584,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1616" height="876" extended-state="6" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -952,9 +934,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-9.225806">
           <caret line="21" column="72" selection-start-line="21" selection-start-column="72" selection-end-line="21" selection-end-column="72" />
-          <folding>
-            <marker date="1456214827563" expanded="true" signature="7939:7973" placeholder="SELECT * FRO... listofsalaryrangetbl" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1023,37 +1002,16 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/student-view/search-job/jobs.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="9.709678">
+        <state vertical-scroll-proportion="0.0">
           <caret line="423" column="70" selection-start-line="423" selection-start-column="70" selection-end-line="423" selection-end-column="70" />
-          <folding>
-            <marker date="1456374048561" expanded="true" signature="502:581" placeholder="SELECT First... studentinfotbl" />
-            <marker date="1456374048561" expanded="true" signature="692:756" placeholder="SELECT Speci... specializationtbl" />
-            <marker date="1456374048561" expanded="true" signature="1127:1181" placeholder="SELECT Cours... coursetbl" />
-            <marker date="1456374048561" expanded="true" signature="12176:12297" placeholder="..." />
-            <marker date="1456374048561" expanded="true" signature="13683:13721" placeholder="SELECT Posit... listofpositiontbl" />
-            <marker date="1456374048561" expanded="true" signature="18342:19470" placeholder="SELECT compp... listofspecializationtbl" />
-            <marker date="1456374048561" expanded="true" signature="19784:20966" placeholder="SELECT compp... listofspecializationtbl" />
-            <marker date="1456374048561" expanded="true" signature="21383:22557" placeholder="SELECT compp... listofspecializationtbl" />
-            <marker date="1456374048561" expanded="true" signature="22954:24166" placeholder="SELECT compp... listofspecializationtbl" />
-            <marker date="1456374048561" expanded="true" signature="25776:25824" placeholder="SELECT * FRO... companyinfotbl" />
-            <marker date="1456374048561" expanded="true" signature="32119:32514" placeholder="..." />
-            <marker date="1456374048561" expanded="true" signature="32185:32463" placeholder="..." />
-            <marker date="1456374048561" expanded="true" signature="32260:32408" placeholder="..." />
-            <marker date="1456374048561" expanded="true" signature="32856:33903" placeholder="SELECT compp... listofspecializationtbl" />
-            <marker date="1456374048561" expanded="true" signature="35317:35365" placeholder="SELECT * FRO... companyinfotbl" />
-            <marker date="1456374048561" expanded="true" signature="41647:41994" placeholder="..." />
-            <marker date="1456374048561" expanded="true" signature="41705:41951" placeholder="..." />
-            <marker date="1456374048561" expanded="true" signature="41772:41904" placeholder="..." />
-            <marker date="1456374048561" expanded="true" signature="43684:43949" placeholder="SELECT Pinfo... " />
-            <marker date="1456374048561" expanded="true" signature="44711:44830" placeholder="..." />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/connection.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.06214689">
-          <caret line="2" column="33" selection-start-line="2" selection-start-column="33" selection-end-line="2" selection-end-column="33" />
+        <state vertical-scroll-proportion="0.9322034">
+          <caret line="30" column="5" selection-start-line="30" selection-start-column="5" selection-end-line="30" selection-end-column="5" />
           <folding />
         </state>
       </provider>
