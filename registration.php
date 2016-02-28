@@ -16,8 +16,8 @@ include('connection.php');
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
     <!-- Page Description and Author -->
-    <meta name="description" content="Margo - Responsive HTML5 Template">
-    <meta name="author" content="iThemesLab">
+    <meta name="description" content="OJPMS">
+    <link rel="shortcut icon" href="images/logo/favicon.ico">
 
     <!-- Bootstrap CSS -->
     <link href="css/bootstrap.min.css" rel="stylesheet"/>
@@ -234,7 +234,7 @@ include('connection.php');
                         <label>Course <span>(*)</span></label>
                         <div class="form-group">
                             <select id="Course" name="Course" class="form-control" style="width:100%; height:34px;">
-                                <option value="">- Please select one</option>
+                                <option value="">- Please select one -</option>
                                 <?php
                                 $course_tbl =
                                     GSecureSQL::query(
@@ -299,7 +299,7 @@ include('connection.php');
                 <div class="hr5" style="margin-top:40px;margin-bottom:40px;"></div>
                 <div class"row">
                     <div class="col-md-6">
-                        <label><b>By clicking the "Sign Up" button below, I certify that I have read and agree to the <a
+                        <label><b>By clicking the "Sign Up" button, I certify that I have read and agree to the <a
                                     href="" target="_blank">Terms of Use</a>.</b></label>
                     </div>
                     <div class="col-md-6">

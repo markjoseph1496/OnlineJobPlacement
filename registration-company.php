@@ -17,7 +17,6 @@ include('connection.php');
 
     <!-- Page Description and Author -->
     <meta name="description" content="OJPMS">
-
     <link rel="shortcut icon" href="images/logo/favicon.ico">
 
     <!-- Bootstrap CSS -->
@@ -199,7 +198,7 @@ include('connection.php');
                             <input type="text" class="form-control" id="LastName" name="LastName">
                         </div>
                         <div class="form-group">
-                            <label>Contact No. <span>(*)</span></label>
+                            <label>Contact Number <span>(*)</span></label>
                             <input type="text" class="form-control" id="Contact" name="Contact" maxlength="11">
                         </div>
                         <div class="form-group">

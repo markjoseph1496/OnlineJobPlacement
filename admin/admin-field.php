@@ -163,23 +163,20 @@ $aFirstName = $infoquery[0][0];
 </head>
 
 <body>
-
-<!-- Full Body Container -->
-<div id="container">
+    <!-- Full Body Container -->
+    <div id="container">
+        <div class="hidden-header"></div>
+        <header class="clearfix">
             <!-- Start Top Bar -->
-        <div class="top-bar">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-6">
-                        <!-- Start Contact Info -->
-                            <ul class="contact-details">
-                                &nbsp;
-                            </ul>
-                        <!-- End Contact Info -->
-                    </div>
-                    <!-- .col-md-6 -->
-                    <div class="col-md-6">
-                        <!-- Notification -->
+            <div class="top-bar">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-6">
+                             &nbsp;   
+                        </div>
+                        <!-- .col-md-6 -->
+                        <div class="col-md-6">
+                            <!-- Notification -->
                             <ul class="nav navbar-nav navbar-right">
                                 <!--<li class="dropdown icon-border" id="notificationLink">
                                     <span id="notification_count">3</span>
@@ -202,35 +199,34 @@ $aFirstName = $infoquery[0][0];
                                     </ul>
                                 </li>
                             </ul>
-                        <!-- Notification -->
+                            <!-- Notification -->
+                        </div>
+                        <!-- .col-md-6 -->
                     </div>
-                    <!-- .col-md-6 -->
+                    <!-- .row -->
                 </div>
-                <!-- .row -->
+                <!-- .container -->
             </div>
-            <!-- .container -->
-        </div>
-        <!-- .top-bar -->
-        <!-- End Top Bar -->
+            <!-- .top-bar -->
+            <!-- End Top Bar -->
 
 
-        <!-- Start  Logo & Naviagtion  -->
-        <div class="navbar navbar-default navbar-top">
-            <div class="container">
-                <div class="navbar-header">
-                    <!-- Stat Toggle Nav Link For Mobiles -->
-                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                        <i class="fa fa-bars"></i>
-                    </button>
-                    <!-- End Toggle Nav Link For Mobiles -->
-                     <a class="navbar-brand" href="">
-                        <img src="../images/ojpms.png">
-                    </a>
-                </div>
-                <div class="navbar-collapse collapse">
-                    <!-- Modal -->
-                    <div class="modal fade" id="Logout"
-                             role="dialog">
+            <!-- Start  Logo & Naviagtion  -->
+            <div class="navbar navbar-default navbar-top">
+                <div class="container">
+                    <div class="navbar-header">
+                        <!-- Stat Toggle Nav Link For Mobiles -->
+                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        <!-- End Toggle Nav Link For Mobiles -->
+                         <a class="navbar-brand" href="">
+                            <img src="../images/ojpms.png">
+                        </a>
+                    </div>
+                    <div class="navbar-collapse collapse">
+                        <!-- Modal -->
+                        <div class="modal fade" id="Logout" role="dialog">
                             <div class="modal-dialog" style="padding:100px">
                                 <!-- Modal content-->
                                 <div class="modal-content">
@@ -254,317 +250,302 @@ $aFirstName = $infoquery[0][0];
                                     </div>
                                 </div>
                             </div>
+                        </div>
+                        <!-- Start Navigation List -->
+                        <ul class="nav navbar-nav navbar-right">
+                            <li>
+                                <a class="active" href="admin.php">Home</a>
+                            </li>
+                            <li>
+                                <a>Reports</a>
+                                <ul class="dropdown">
+                                    <li><a href="admin-reports.php" class = "active">Alumni Reports</a></li>
+                                    <li><a href="admin-ojtreports.php">OJT Reports</a></li>
+                                </ul>
+                             </li>
+                            <li>
+                                <a href="admin-requested.php">Requested</a>
+                            </li>
+                            <li>
+                                <a>Company List</a>
+                                <ul class="dropdown">
+                                    <li><a href="admin-companylist.php">Active</a></li>
+                                    <li><a href="admin-company_pending.php">Pending</a></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a> Maintenance</a>
+                                <ul class="dropdown">
+                                    <li><a class="active" href="admin-maintenance.php">Courses</a></li>
+                                    <li><a href="admin-users.php">Users</a></li>
+                                    <li><a href="admin-calendar.php">Calendar Events</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                        <!-- End Navigation List -->
                     </div>
-                    <!-- End Sign-out -->
-                    <!-- Start Navigation List -->
+                </div>
+                <!-- Mobile Menu Start -->
+                <ul class="wpb-mobile-menu">
                     <ul class="nav navbar-nav navbar-right">
                         <li>
-                            <a href="admin.php">Home</a>
+                            <a class="active" href="admin.php">Home</a>
                         </li>
                         <li>
                             <a>Reports</a>
-                        <ul class="dropdown">
-                            <li><a href="admin-reports.php" class = "active">Alumni Reports</a></li>
-                            <li><a href="admin-ojtreports.php">OJT Reports</a></li>
-                        </ul>
-                         </li>
+                            <ul class="dropdown">
+                                <li><a href="admin-reports.php" class="active">Alumni Reports</a></li>
+                                <li><a href="admin-ojtreports.php">OJT Reports</a></li>
+                            </ul>
+                        </li>
                         <li>
                             <a href="admin-requested.php">Requested</a>
                         </li>
                         <li>
-                           <a>Company List</a>
-                        <ul class="dropdown">
-                            <li><a href="admin-companylist.php">Active</a></li>
-                            <li><a href="admin-company_pending.php">Pending</a></li>
-                        </ul>
+                            <a>Company List</a>
+                            <ul class="dropdown">
+                                <li><a href="admin-companylist.php" class = "active">Active</a></li>
+                                <li><a href="admin-company_pending.php">Pending</a></li>
+                            </ul>
                         </li>
                         <li>
-                        <a> Maintenance</a>
-                        <ul class="dropdown">
-                            <li><a class="active" href="admin-maintenance.php">Courses</a></li>
-                            <li><a href="admin-users.php">Users</a></li>
-                            <li><a href="admin-calendar.php">Calendar Events</a></li>
-                        </ul>
-                    </li>
+                            <a> Maintenance</a>
+                            <ul class="dropdown">
+                                <li><a class="active" href="admin-maintenance.php">Courses</a></li>
+                                <li><a href="admin-users.php">Users</a></li>
+                                <li><a href="admin-calendar.php">Calendar Events</a></li>
+                            </ul>
+                        </li>
                     </ul>
-                    <!-- End Navigation List -->
-                </div>
-            </div>
-            <!-- Mobile Menu Start -->
-            <ul class="wpb-mobile-menu">
-                <ul class="nav navbar-nav navbar-right">
-                    <li>
-                        <a href="admin.php">Home</a>
-                    </li>
-                    <li>
-                    <a>Reports</a>
-                        <ul class="dropdown">
-                            <li><a href="admin-reports.php" class = "active">Alumni Reports</a></li>
-                            <li><a href="admin-ojtreports.php">OJT Reports</a></li>
-                        </ul>
-                    </li>
-                    <li>
-                        <a href="admin-requested.php">Requested</a>
-                    </li>
-                    <li>
-                       <a>Company List</a>
-                        <ul class="dropdown">
-                            <li><a href="admin-companylist.php" class = "active">Active</a></li>
-                            <li><a href="admin-company_pending.php">Pending</a></li>
-                        </ul>
-                    </li>
-                    <li>
-                       <a> Maintenance</a>
-                        <ul class="dropdown">
-                            <li><a class="active" href="admin-maintenance.php">Courses</a></li>
-                            <li><a href="admin-users.php">Users</a></li>
-                            <li><a href="admin-calendar.php">Calendar Events</a></li>
-                        </ul>
-                    </li>
                 </ul>
-            </ul>
-    </header>
-    <!-- Mobile Menu End -->
-
-</div>
-<!-- End Header Logo & Naviagtion -->
-
-</header>
-<!-- End Header Section -->
-
-<!-- Start Page Banner -->
-<div class="page-banner" style="padding:40px 0; center #f9f9f9;">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-6">
-                <h2>Reports</h2>
             </div>
-        </div>
-    </div>
-</div>
-<!-- End Page Banner -->
+            <!-- End Header Logo & Naviagtion -->
+        </header>
+        <!-- Mobile Menu End -->
 
-<!--Content-->
-<br><br><br>
-
-<div class="container">
-    <div class="header_advertising">
-        <div class="container">
-            <div class="col-md-8">
-                <h5> <?php echo $CourseTitle; ?> <h5>
-            </div>
-            <!--
-            <div class="col-md-4">
-                <div class="form-group text-center">
-                    <a href="#" class="main-button" style="float:right;">
-                        <span class="fa fa-download"></span> Export XLS
-                    </a>
-                </div>-->
-            </div>
-        </div>
-    </div>
-                &nbsp;
-    <div class="header2_advertising">
-        <div class="container">
-            <div class = "row-field">
-            <div class="col-sm-4">
-                <label><b>TOTAL NUMBER OF STUDENTS: <?php echo $Total; ?></b></label>
-            </div>
-                <!--
-            <div class="col-sm-4">
-                <div class="form-group">
-                        <input type="text" name= id= "" class="form-control"
-                               value="" placeholder = "Enter Student Name">
+        <!-- Start Page Banner -->
+        <div class="page-banner no-subtitle">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6">
+                        <h2>Reports</h2>
+                    </div>
                 </div>
             </div>
-            <div class="col-sm-4">
-                 <button type="submit" class="btn-system btn-large border-btn" href="#" style = "width:100px;" >Search</button>
-            </div>
-            </div>
-            <div class = "row-field">
-            <div class = "col-md-4" style = "margin-left:380px;" >
-                    <label>
-                        <center><b>Select Employment Status </b>
-                    </label></center>
-                    <select id="status" name="status" class="form-control" style="width:350px;">
-                        <option value="pos"> Select One</option>
-                        <option value="emp">Employed</option>
-                        <option value="unemp">Unemployed</option>
-                    </select><br>
-            </div>
-
-            <div class="col-md-3" style = "margin-top:15px;" >
-                 <button type="submit" class="btn-system btn-large border-btn" href="#" style = "width:100px;">Filter</button>
-            </div>
-            -->
-            </div>
-                       
-              
-            </div>
         </div>
-    </div>
-  <div class = "container">  
-    <table class="table segment table-hover">
-        <thead>
-        <tr>
+        <!-- End Page Banner -->
 
-        </tr>
-        <tr>
-            <th width="25%" class="tabletitle"> Student Name</th>
-            <th width="15%" class="tabletitle"> Position Level</th>
-            <th width="20%" class="tabletitle"> Specialization</th>
-            <th width="15%" class="tabletitle"> Industry</th>
-            <th width="20%" class="tabletitle"> Employment Status</th>
-            <!--
-            <th width="5%" class="tabletitle"></th>
-            -->
-        <tr>
-        </thead>
-        <?php
-        $studentinfocourse_tbl =
-            GSecureSQL::query(
-                "SELECT
-                StudentID,
-                FirstName,
-                LastName,
-                EmploymentStatus
-                FROM studentinfotbl
-                WHERE MajorCourse = ?
-                ORDER BY LastName ASC",
-                TRUE,
-                "s",
-                $CourseCode
-            );
-        foreach ($studentinfocourse_tbl as $value) {
-            $StudentID = $value[0];
-            $FirstName = $value[1];
-            $LastName = $value[2];
-            $FullName = $LastName . ", " . $FirstName;
-            $EmploymentStatus = $value[3];
-
-            $positionlevel_tbl =
-                GSecureSQL::query(
-                    "SELECT PositionLevel FROM workexperiencetbl WHERE StudentID = ? LIMIT 1",
-                    TRUE,
-                    "s",
-                    $StudentID
-                );
-            $specialization_tbl =
-                GSecureSQL::query(
-                    "SELECT Specialization FROM workexperiencetbl WHERE StudentID = ? LIMIT 1",
-                    TRUE,
-                    "s",
-                    $StudentID
-                );
-            $industry_tbl =
-                GSecureSQL::query(
-                    "SELECT Industry FROM workexperiencetbl WHERE StudentID = ? LIMIT 1",
-                    TRUE,
-                    "s",
-                    $StudentID
-                );
-
-            $positionlevel_tbl = array_reduce($positionlevel_tbl, 'array_merge', array());
-            $specialization_tbl = array_reduce($specialization_tbl, 'array_merge', array());
-            $industry_tbl = array_reduce($industry_tbl, 'array_merge', array());
-
-            $PositionLevel = implode(", ", $positionlevel_tbl);
-            $Specialization = implode(", ", $specialization_tbl);
-            $Industry = implode(", ", $industry_tbl);
-
-            ?>
-            <tbody>
-            <tr>
-                <td>
-                    <a href = '#'><?php echo $FullName; ?></a>
-                </td>
-                <td class = 'tcenter'><?php echo $PositionLevel; ?></td>
-                <td class = 'tcenter'><?php echo $Specialization; ?></td>
-                <td class = 'tcenter'><?php echo $Industry; ?></td>
-                <td class = 'tcenter'><?php echo $EmploymentStatus; ?></td>
-                <!--
-                <td>
-                    <button class="btn btn-default" data-toggle="modal"
-                        data-target="#ViewWork">
-                        <i class="fa fa-eye"></i>
-                    </button>
-                </td>
-                -->
-            </tr>
-            <!-- Edit Modal-->
-                <div class="modal fade" id="ViewWork<?php echo $StudentID; ?>" role="dialog">
-                    <div class="modal-dialog modal-lg" style="padding:100px">
-                        <!-- Modal content-->
-                        <div class="modal-content">
-                            <div class="modal-header">
-                                <button type="button" class="close" data-dismiss="modal">&times;</button>
-                                <h4 class="modal-title">Work View</h4>
-                            </div>
-                            <div class="modal-body">
-                                <form method="POST" action="functions.php ">
-                                    <div class="row">
-                                        <div class="col-md-12">
-                                            <div class="row">
-                                                <div class="col-md-3">
-                                                    <label>Company Name:</label>
-                                                </div>
-                                                <div class="col-md-4">
-                                                    <div class = "form-group">
-                                                        <label><p><?php echo $datefrom; ?></p></label>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="row">
-                                                <div class="col-md-3">
-                                                    <label>Position Level:</label>
-                                                </div>
-                                                <div class="col-md-4">
-                                                    <div class = "form-group">
-                                                        <label><p><?php echo $dateto; ?></p></label>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="row">
-                                                <div class="col-md-3">
-                                                    <label>Employment Type:</label>
-                                                </div>
-                                                <div class="col-md-4">
-                                                    <div class = "form-group">
-                                                        <label><p><?php echo $dateto; ?></p></label>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="row">
-                                                <div class="col-md-3">
-                                                    <label>Date:</label>
-                                                </div>
-                                                <div class="col-md-4">
-                                                    <div class = "form-group">
-                                                        <label><p><?php echo $dateto; ?></p></label>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <input type="hidden" name="StudentID" value="<?php echo $StudentID; ?>">
-                                    <div class="modal-footer">
-                                        <button type="submit" class="btn btn-primary" name="btnUpdateEvent">Update</button>
-                                        <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
-                                    </div>
-                                </form>
-                            </div>
+        <div id="content">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-8">
+                        <h5><?php echo $CourseTitle; ?><h5>
+                    </div>
+                    
+                    <div class="col-md-4">
+                        <div class="form-group text-center">
+                            <a href="#" class="main-button" style="float:right;">
+                                <span class="fa fa-download"></span> Export XLS
+                            </a>
                         </div>
                     </div>
                 </div>
-            <!-- End Modal-->
-            </tbody>
-            <?php
-        }
-        ?>
-    </table>
-</div>
-</div>
-<br><br>
+
+                <div class="hr1" style="margin-top:30px;"></div>
+
+                <div class="row">
+                    <div class="col-md-4">
+                        <strong>TOTAL NUMBER OF STUDENTS: <?php echo $Total; ?></strong>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <input type="text" name= id= "" class="form-control" value="" placeholder="Enter Student Name">
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <button type="submit" class="btn-system btn-large border-btn" href="#">Search</button>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-4">&nbsp;</div>
+                    <div class="col-md-4"><strong>Select Employment Status</strong></div>
+                    <div class="col-md-4">&nbsp;</div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-4">&nbsp;</div>
+                    <div class="col-md-4">
+                        <div class="form-group">
+                        <select id="status" name="status" class="form-control">
+                            <option value="pos">Select One</option>
+                            <option value="emp">Employed</option>
+                            <option value="unemp">Unemployed</option>
+                        </select></div>
+                    </div>
+                    <div class="col-md-4">
+                        <button type="submit" class="btn-system btn-large border-btn" href="#">Filter</button>
+                    </div>
+                </div>
+                         
+                <div class="hr2" style="margin-top:20px;"></div>
+                <table class="table segment table-hover">
+                    <thead>
+                        <tr>
+                            <th width="25%"> Student Name</th>
+                            <th width="15%"> Position Level</th>
+                            <th width="20%"> Specialization</th>
+                            <th width="15%"> Industry</th>
+                            <th width="20%"> Employment Status</th>
+                            <!--
+                            <th width="5%"></th>
+                            -->
+                        <tr>
+                    </thead>
+                    <?php
+                        $studentinfocourse_tbl =
+                            GSecureSQL::query(
+                                "SELECT
+                                StudentID,
+                                FirstName,
+                                LastName,
+                                EmploymentStatus
+                                FROM studentinfotbl
+                                WHERE MajorCourse = ?
+                                ORDER BY LastName ASC",
+                                TRUE,
+                                "s",
+                                $CourseCode
+                            );
+                        foreach ($studentinfocourse_tbl as $value) {
+                            $StudentID = $value[0];
+                            $FirstName = $value[1];
+                            $LastName = $value[2];
+                            $FullName = $LastName . ", " . $FirstName;
+                            $EmploymentStatus = $value[3];
+
+                            $positionlevel_tbl =
+                                GSecureSQL::query(
+                                    "SELECT PositionLevel FROM workexperiencetbl WHERE StudentID = ? LIMIT 1",
+                                    TRUE,
+                                    "s",
+                                    $StudentID
+                                );
+                            $specialization_tbl =
+                                GSecureSQL::query(
+                                    "SELECT Specialization FROM workexperiencetbl WHERE StudentID = ? LIMIT 1",
+                                    TRUE,
+                                    "s",
+                                    $StudentID
+                                );
+                            $industry_tbl =
+                                GSecureSQL::query(
+                                    "SELECT Industry FROM workexperiencetbl WHERE StudentID = ? LIMIT 1",
+                                    TRUE,
+                                    "s",
+                                    $StudentID
+                                );
+
+                            $positionlevel_tbl = array_reduce($positionlevel_tbl, 'array_merge', array());
+                            $specialization_tbl = array_reduce($specialization_tbl, 'array_merge', array());
+                            $industry_tbl = array_reduce($industry_tbl, 'array_merge', array());
+
+                            $PositionLevel = implode(", ", $positionlevel_tbl);
+                            $Specialization = implode(", ", $specialization_tbl);
+                            $Industry = implode(", ", $industry_tbl);
+                        ?>
+                    <tbody>
+                        <tr>
+                            <td>
+                                <a href = '#'><?php echo $FullName; ?></a>
+                            </td>
+                            <td class = 'tcenter'><?php echo $PositionLevel; ?></td>
+                            <td class = 'tcenter'><?php echo $Specialization; ?></td>
+                            <td class = 'tcenter'><?php echo $Industry; ?></td>
+                            <td class = 'tcenter'><?php echo $EmploymentStatus; ?></td>
+                            <!--
+                            <td>
+                                <button class="btn btn-default" data-toggle="modal"
+                                    data-target="#ViewWork">
+                                    <i class="fa fa-eye"></i>
+                                </button>
+                            </td>
+                            -->
+                        </tr>
+                        <!-- Edit Modal-->
+                        <div class="modal fade" id="ViewWork<?php echo $StudentID; ?>" role="dialog">
+                            <div class="modal-dialog modal-lg" style="padding:100px">
+                                <!-- Modal content-->
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                        <h4 class="modal-title">Work View</h4>
+                                    </div>
+                                    <div class="modal-body">
+                                        <form method="POST" action="functions.php ">
+                                            <div class="row">
+                                                <div class="col-md-12">
+                                                    <div class="row">
+                                                        <div class="col-md-3">
+                                                            <label>Company Name:</label>
+                                                        </div>
+                                                        <div class="col-md-4">
+                                                            <div class = "form-group">
+                                                                <label><p><?php echo $datefrom; ?></p></label>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="row">
+                                                        <div class="col-md-3">
+                                                            <label>Position Level:</label>
+                                                        </div>
+                                                        <div class="col-md-4">
+                                                            <div class = "form-group">
+                                                                <label><p><?php echo $dateto; ?></p></label>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="row">
+                                                        <div class="col-md-3">
+                                                            <label>Employment Type:</label>
+                                                        </div>
+                                                        <div class="col-md-4">
+                                                            <div class = "form-group">
+                                                                <label><p><?php echo $dateto; ?></p></label>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="row">
+                                                        <div class="col-md-3">
+                                                            <label>Date:</label>
+                                                        </div>
+                                                        <div class="col-md-4">
+                                                            <div class = "form-group">
+                                                                <label><p><?php echo $dateto; ?></p></label>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <input type="hidden" name="StudentID" value="<?php echo $StudentID; ?>">
+                                            <div class="modal-footer">
+                                                <button type="submit" class="btn btn-primary" name="btnUpdateEvent">Update</button>
+                                                <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- End Modal-->
+                    </tbody>
+                    <?php
+                        }
+                    ?>
+                </table>
+            </div>
+        </div>
+    </div>
 </body>
 <script type="text/javascript" src="../js/script.js"></script>
 </html>
