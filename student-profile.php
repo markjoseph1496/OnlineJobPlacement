@@ -85,8 +85,8 @@ $MobileNumber = $studcontacts_tbl[0][2];
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
     <!-- Page Description and Author -->
-    <meta name="description" content="Margo - Responsive HTML5 Template">
-    <meta name="author" content="iThemesLab">
+    <meta name="description" content="OJPMS">
+    <link rel="shortcut icon" href="images/logo/favicon.ico">
 
     <!-- Bootstrap CSS -->
     <link href="css/bootstrap.min.css" rel="stylesheet"/>
@@ -120,8 +120,8 @@ $MobileNumber = $studcontacts_tbl[0][2];
     <!-- Css3 Transitions Styles  -->
     <link rel="stylesheet" type="text/css" href="css/animate.css" media="screen">
 
-    <!-- OJPMS CSS  -->
-    <link rel="stylesheet" type="text/css" href="css/ojpms-style.css" media="screen">
+    <!-- Borderless Table CSS  -->
+    <link rel="stylesheet" type="text/css" href="css/borderless-tbl.css" media="screen">
 
     <!-- Color CSS Styles  -->
     <link rel="stylesheet" type="text/css" href="css/colors/yellow.css" title="yellow" media="screen"/>
@@ -144,312 +144,448 @@ $MobileNumber = $studcontacts_tbl[0][2];
 </head>
 
 <body>
-<div id="container">
-    <!-- Start Header Section -->
-    <div class="hidden-header"></div>
-    <div id="join" class="parallax" style="background-image:url(img/profile-bg.jpg); height: 400px;">
-        <div class="overlay" style=" height: 400px;"></div>
-    </div>
-    <header class="clearfix">
-        <!-- Start  Logo & Naviagtion  -->
-        <div class="navbar navbar-default navbar-top">
+    <div id="container">
+        <!-- Start Header Section -->
+        <div class="hidden-header"></div>
+        <div id="join" class="parallax" style="background-image:url(img/profile-bg.jpg); height: 400px;">
+            <div class="overlay" style=" height: 400px;"></div>
+        </div>
+        <header class="clearfix">
+            <!-- Start  Logo & Naviagtion  -->
+            <div class="navbar navbar-default navbar-top">
+                <div class="container">
+                    <div class="navbar-header">
+                        <!-- Stat Toggle Nav Link For Mobiles -->
+                        <button type="button" class="navbar-toggle" data-toggle="collapse"
+                                data-target=".navbar-collapse">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        <!-- End Toggle Nav Link For Mobiles -->
+                        <a class="navbar-brand">
+                            <img src="images/ojpms.png">
+                        </a>
+                    </div>
+                    <div class="navbar-collapse collapse">
+
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <div class="profile-bar" style="padding:10px 0">
             <div class="container">
-                <div class="navbar-header">
-                    <!-- Stat Toggle Nav Link For Mobiles -->
-                    <button type="button" class="navbar-toggle" data-toggle="collapse"
-                            data-target=".navbar-collapse">
-                        <i class="fa fa-bars"></i>
-                    </button>
-                    <!-- End Toggle Nav Link For Mobiles -->
-                    <a class="navbar-brand">
-                        <img src="images/ojpms.png">
-                    </a>
-                </div>
-                <div class="navbar-collapse collapse">
-
+                <div class="row">
+                    <div class="col-sm-2">&nbsp;</div>
+                    <div class="col-sm-3">
+                        <div class="profile-photo">
+                            <img src="student-view/myinfo/<?php echo $ProfileImage; ?>">
+                        </div>
+                    </div>
+                    <br>
+                    <div class="col-sm-7">
+                        <label class="text-center"
+                               style="font-size:30px;"><?php echo $FirstName . " " . $MiddleName . " " . $LastName; ?></label>
+                        <div><i class="fa fa-quote-left fa-2x fa-pull-left fa-border"></i>To obtain the position of ONLINE
+                            ESL INSTRUCTOR with BabelSpeak.com where I can apply my education, fifteen years of teaching
+                            experience and native linguistic skills and provide clients with a high quality language
+                            instruction experience.
+                        </div>
+                    </div>
+                    <div class="col-sm-2">&nbsp;</div>
                 </div>
             </div>
         </div>
-    </header>
+        <div class="hr1" style="margin-top:10px;margin-bottom:10px;"></div>
 
-    <div class="profile-bar" style="padding:10px 0">
+        <!-- Start Content -->
+        <div id="content">
+            <div class="section" style="padding-top:40px; padding-bottom:40px;">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-sm-4">
+                            <h1><img src="images/pro-icon/personal-info.png" style="width:20%;height:20%">
+                                Personal Information
+                            </h1>
+                        </div>
+                        <div class="col-sm-8">
+                            <table class="table">
+                                <tbody>
+                                    <tr>
+                                        <td>Course:</td>
+                                        <td><b><?php echo $MajorCourse; ?></b></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Address:</td>
+                                        <td><b><?php echo $Address; ?></b></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Birthday:</td>
+                                        <td><b><?php echo $Birthdate; ?></b></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Contact No.:</td>
+                                        <td><b><?php echo $MobileNumber; ?></b></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Email:</td>
+                                        <td><b><?php echo $Email; ?></b></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+
+            <div class="section" style="padding-top:40px; padding-bottom:40px; border-top:1px solid #eee; border-bottom:1px solid #eee; background:#f9f9f9;">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-sm-4">
+                            <h1><img src="images/pro-icon/education.png" style="width:20%;height:20%">
+                                Education
+                            </h1>
+                        </div>
+                        <div class="col-sm-8">
+                            <h1>Bachelor's/College Degree</h1>
+                            <div class="hr4" style="margin-top:5px;margin-bottom:10px;"></div>
+                            <table class="table">
+                                <tbody>
+                                    <tr>
+                                        <td>School</td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Graduated</td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Major</td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Field of Study</td>
+                                        <td></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+
+                            <h1>High School Diploma</h1>
+                            <div class="hr4" style="margin-top:5px;margin-bottom:10px;"></div>
+                            <table class="table">
+                                <tbody>
+                                    <tr>
+                                        <td>School</td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Graduated</td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Field of Study</td>
+                                        <td></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="section" style="padding-top:40px; padding-bottom:40px;">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-sm-4">
+                            <h1><img src="images/pro-icon/language.png" style="width:20%;height:20%">
+                                Languages
+                            </h1>
+                        </div>
+                        <div class="col-sm-8">
+                            <table class="table">
+                                <thead>
+                                    <tr>
+                                        <th>Language</th>
+                                        <th>Proficiency</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>Filipino</td>
+                                        <td>
+                                            <div class="progress">
+                                                <div class="progress-bar-info progress-bar-striped" role="progressbar"
+                                                     aria-valuenow="70" aria-valuemin="0" aria-valuemax="100" style="width:70%">
+                                                    <font style="color:white;">
+                                                        <center>70%
+                                                </div>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Nihonggo</td>
+                                        <td>
+                                            <div class="progress">
+                                                <div class="progress-bar-info progress-bar-striped" role="progressbar"
+                                                     aria-valuenow="70" aria-valuemin="0" aria-valuemax="100" style="width:100%">
+                                                    <font style="color:white;">
+                                                        <center>100%
+                                                </div>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="section" style="padding-top:40px; padding-bottom:40px; border-top:1px solid #eee; border-bottom:1px solid #eee; background:#f9f9f9;">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-sm-4">
+                            <h1><img src="images/pro-icon/skill.png" style="width:20%;height:20%">
+                                Skills
+                            </h1>
+                        </div>
+                        <div class="col-sm-8">
+                            <table class="table">
+                                <thead>
+                                    <tr>
+                                        <th>Skill</th>
+                                        <th>Years of Experience</th>
+                                        <th>Proficiency</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>Web Design</td>
+                                        <td>
+                                            <div class="progress">
+                                                <div class="progress-bar progress-bar-info" role="progressbar" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100" style="width: 20%">
+                                                    <span class="sr-only">20% Complete</span>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="progress">
+                                                <div class="progress-bar-warning progress-bar-striped" role="progressbar"
+                                                     aria-valuenow="50" aria-valuemin="0" aria-valuemax="100" style="width:80%">
+                                                    <font style="color:white;">
+                                                        <center>80%
+                                                </div>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Web Programming</td>
+                                        <td>
+                                            <div class="progress">
+                                                <div class="progress-bar-warning progress-bar-striped" role="progressbar"
+                                                     aria-valuenow="50" aria-valuemin="0" aria-valuemax="100" style="width:80%">
+                                                    <font style="color:white;">
+                                                        <center>80%
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="progress">
+                                                <div class="progress-bar-warning progress-bar-striped" role="progressbar"
+                                                     aria-valuenow="50" aria-valuemin="0" aria-valuemax="100" style="width:50%">
+                                                    <font style="color:white;">
+                                                        <center>50%
+                                                </div>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+
+            <div class="section" style="padding-top:40px; padding-bottom:40px;">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-sm-4">
+                            <h1><img src="images/pro-icon/certification.png" style="width:20%;height:20%">
+                                Certifications
+                            </h1>
+                        </div>
+                        <div class="col-sm-8">
+                            <table class="table">
+                                <thead>
+                                    <tr>
+                                        <th>Certificate</th>
+                                        <th>Date</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>Tagisan ng Talino 2016 - Essay Does It!</td>
+                                        <td>
+                                            2016
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="section" style="padding-top:40px; padding-bottom:40px; border-top:1px solid #eee; border-bottom:1px solid #eee; background:#f9f9f9;">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-sm-4">
+                            <h1><img src="images/pro-icon/achievement.png" style="width:20%;height:20%">
+                                Achievements
+                            </h1>
+                        </div>
+                        <div class="col-sm-8">
+                            <table class="table">
+                                <tbody>
+                                    <tr>
+                                        
+                                        <?php
+                                            $achievement_tbl =
+                                                GSecureSQL::query(
+                                                    "SELECT Achievements FROM achievementstbl WHERE StudentID = ?",
+                                                    TRUE,
+                                                    "s",
+                                                    $StudentID
+                                                );
+                                            foreach ($achievement_tbl as $value) {
+                                                $Achievement = $value[0];
+                                                ?>
+                                                <td><?php echo $Achievement; ?></td>
+                                                <!--<?php
+                                                    }
+                                                    $seminar_tbl =
+                                                        GSecureSQL::query(
+                                                            "SELECT Seminar, YearAttended FROM seminartbl WHERE StudentID = ?",
+                                                            TRUE,
+                                                            "s",
+                                                            $StudentID
+                                                        );
+                                                    foreach ($seminar_tbl as $value) {
+                                                        $Seminar = $value[0];
+                                                        $YearAttended = $value[1];
+                                                        ?>
+                                                        <td><?php echo $Seminar . " (" . $YearAttended . ")"; ?></td>
+                                                        <?php
+                                                    }
+                                            ?>-->
+                                        
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="section" style="padding-top:40px; padding-bottom:40px;">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-sm-4">
+                            <h1><img src="images/pro-icon/reference.png" style="width:20%;height:20%">
+                                References
+                            </h1>
+                        </div>
+                        <div class="col-sm-4">
+                            <table class="table">
+                                <tbody>
+                                    <tr>
+                                        <td>Name</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Phone</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Relationship</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Company</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="col-sm-4">
+                            <table class="table">
+                                <tbody>
+                                    <tr>
+                                        <td>Name</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Phone</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Relationship</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Company</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End Content -->
+    <script type="text/javascript" src="js/script.js"></script>
+
+
+    <!-- Start Footer Section -->
+    <footer>
         <div class="container">
-            <div class="row">
-                <div class="col-md-2">&nbsp;</div>
-                <div class="col-md-3">
-                    <div class="profile-photo">
-                        <img src="student-view/myinfo/<?php echo $ProfileImage; ?>">
+            <!-- Start Copyright -->
+            <div class="copyright-section">
+                <div class="row">
+                    <div class="col-sm-6">
+                        <p>&copy; 2015 OJPMS - All Rights Reserved</p>
                     </div>
-                </div>
-                <br>
-                <div class="col-md-7">
-                    <label class="text-center"
-                           style="font-size:30px;"><?php echo $FirstName . " " . $MiddleName . " " . $LastName; ?></label>
-                    <div><i class="fa fa-quote-left fa-2x fa-pull-left fa-border"></i>To obtain the position of ONLINE
-                        ESL INSTRUCTOR with BabelSpeak.com where I can apply my education, fifteen years of teaching
-                        experience and native linguistic skills and provide clients with a high quality language
-                        instruction experience.
+                    <!-- .col-sm-6 -->
+                    <div class="col-sm-6">
+                        <ul class="footer-nav">
+                            <li><a href="#">Sitemap</a>
+                            </li>
+                            <li><a href="#">Privacy Policy</a>
+                            </li>
+                            <li><a href="#">Contact</a>
+                            </li>
+                        </ul>
                     </div>
+                    <!-- .col-sm-6 -->
                 </div>
-                <div class="col-md-2">&nbsp;</div>
+                <!-- .row -->
             </div>
+            <!-- End Copyright -->
+        </div>
+    </footer>
+    <!-- End Footer Section -->
+    </div>
+
+
+    <!-- Go To Top Link -->
+    <a href="#" class="back-to-top"><i class="fa fa-angle-up"></i></a>
+
+    <div id="loader">
+        <div class="spinner">
+            <div class="dot1"></div>
+            <div class="dot2"></div>
         </div>
     </div>
-    <div class="hr1" style="margin-top:10px;margin-bottom:10px;"></div>
-
-    <!-- Start Content -->
-    <div id="content">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-4">
-                    <h1><span class="fa-stack fa-lg">
-                            <i class="fa fa-circle fa-stack-2x"></i>
-                            <i class="fa fa-user fa-stack-1x fa-inverse"></i></span>
-                        Personal Information
-                    </h1>
-                </div>
-                <div class="col-md-4">
-                    <h1>&nbsp;</h1>
-                    <br>
-                    <p><label>Course: <b><?php echo $MajorCourse; ?></b></label></p>
-                    <p><label>Address: <b><?php echo $Address; ?></b></label></p>
-                    <p><label>Birthday: <b><?php echo $Birthdate; ?></b></label></p>
-                    <p><label>Contact Number: <b><?php echo $MobileNumber; ?></b></label></p>
-                    <p><label>Email: <b><?php echo $Email; ?></b></label></p>
-                </div>
-            </div>
-
-            <div class="hr3" style="margin-top:30px;margin-bottom:30px;"></div>
-
-            <div class="row">
-                <div class="col-md-4">
-                    <h1><span class="fa-stack fa-lg">
-                            <i class="fa fa-circle fa-stack-2x"></i>
-                            <i class="fa fa-book fa-stack-1x fa-inverse"></i></span>
-                        Education
-                    </h1>
-                </div>
-                <div class="col-md-4">
-                    <h1>Bachelor's/College Degree</h1>
-                    <br>
-                    <p><label>School</label></p>
-                    <p><label>Graduated</label></p>
-                    <p><label>Major</label></p>
-                    <p><label>Field of Study</label></p>
-                </div>
-                <div class="col-md-4">
-                    <h1>&nbsp;</h1>
-                    <br>
-                    <p><label>STI College Caloocan</label></p>
-                    <p><label>May 2015</label></p>
-                    <p><label>Bachelor of Science in Computer Science</label></p>
-                    <p><label>Computer Science/Information Technology</label></p>
-                </div>
-            </div>
-
-            <div class="hr3" style="margin-top:30px;margin-bottom:30px;"></div>
-
-            <div class="row">
-                <div class="col-md-4">
-                    <h1><span class="fa-stack fa-lg">
-                            <i class="fa fa-circle fa-stack-2x"></i>
-                            <i class="fa fa-language fa-stack-1x fa-inverse"></i></span>
-                        Languages
-                    </h1>
-                </div>
-                <div class="col-md-3">
-                    <h1>&nbsp;</h1>
-                    <br>
-                    <p><label>Filipino</label></p>
-                    <p><label>Nihonggo</label></p>
-                </div>
-                <div class="col-md-5">
-                    <h1>&nbsp;</h1>
-                    <br>
-                    <div>
-                        <div class="progress">
-                            <div class="progress-bar-info progress-bar-striped" role="progressbar"
-                                 aria-valuenow="70" aria-valuemin="0" aria-valuemax="100" style="width:70%">
-                                <font style="color:white;">
-                                    <center>70%
-                            </div>
-                        </div>
-                    </div>
-                    <div>
-                        <div class="progress">
-                            <div class="progress-bar-info progress-bar-striped" role="progressbar"
-                                 aria-valuenow="70" aria-valuemin="0" aria-valuemax="100" style="width:100%">
-                                <font style="color:white;">
-                                    <center>100%
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="hr3" style="margin-top:30px;margin-bottom:30px;"></div>
-
-            <div class="row">
-                <div class="col-md-4">
-                    <h1><span class="fa-stack fa-lg">
-                            <i class="fa fa-circle fa-stack-2x"></i>
-                            <i class="fa fa-star fa-stack-1x fa-inverse"></i></span>
-                        Skills
-                    </h1>
-                </div>
-                <div class="col-md-3">
-                    <h1>&nbsp;</h1>
-                    <br>
-                    <p><label>Web Design</label></p>
-                    <p><label>Web Programming</label></p>
-                </div>
-                <div class="col-md-5">
-                    <h1>&nbsp;</h1>
-                    <br>
-                    <div>
-                        <div class="progress">
-                            <div class="progress-bar-warning progress-bar-striped" role="progressbar"
-                                 aria-valuenow="50" aria-valuemin="0" aria-valuemax="100" style="width:80%">
-                                <font style="color:white;">
-                                    <center>80%
-                            </div>
-                        </div>
-                    </div>
-                    <div>
-                        <div class="progress">
-                            <div class="progress-bar-warning progress-bar-striped" role="progressbar"
-                                 aria-valuenow="50" aria-valuemin="0" aria-valuemax="100" style="width:50%">
-                                <font style="color:white;">
-                                    <center>50%
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="hr3" style="margin-top:30px;margin-bottom:30px;"></div>
-
-            <div class="row">
-                <div class="col-md-4">
-                    <h1><span class="fa-stack fa-lg">
-                            <i class="fa fa-circle fa-stack-2x"></i>
-                            <i class="fa fa-trophy fa-stack-1x fa-inverse"></i></span>
-                        Achievements & Certificates
-                    </h1>
-                </div>
-                <div class="col-md-4">
-                    <h1>&nbsp;</h1>
-                    <br>
-                    <?php
-                    $achievement_tbl =
-                        GSecureSQL::query(
-                            "SELECT Achievements FROM achievementstbl WHERE StudentID = ?",
-                            TRUE,
-                            "s",
-                            $StudentID
-                        );
-                    foreach ($achievement_tbl as $value) {
-                        $Achievement = $value[0];
-                        ?>
-                        <p><label><?php echo $Achievement; ?></label></p>
-                        <?php
-                    }
-                    $seminar_tbl =
-                        GSecureSQL::query(
-                            "SELECT Seminar, YearAttended FROM seminartbl WHERE StudentID = ?",
-                            TRUE,
-                            "s",
-                            $StudentID
-                        );
-                    foreach ($seminar_tbl as $value) {
-                        $Seminar = $value[0];
-                        $YearAttended = $value[1];
-                        ?>
-                        <p><label><?php echo $Seminar . " (" . $YearAttended . ")"; ?></label></p>
-                        <?php
-                    }
-                    ?>
-                </div>
-                <div class="col-md-4">
-                    <h1>&nbsp;</h1>
-                    <br>
-
-                </div>
-            </div>
-
-            <div class="hr3" style="margin-top:30px;margin-bottom:30px;"></div>
-
-            <div class="row">
-                <div class="col-md-4">
-                    <h1><span class="fa-stack fa-lg">
-                            <i class="fa fa-circle fa-stack-2x"></i>
-                            <i class="fa fa-users fa-stack-1x fa-inverse"></i></span>
-                        References
-                    </h1>
-                </div>
-                <div class="col-md-4">
-                    <h1>&nbsp;</h1>
-                    <br>
-                    <p><label>Name</label></p>
-                    <p><label>Relationship</label></p>
-                    <p><label>Company</label></p>
-                    <p><label>Email</label></p>
-                </div>
-                <div class="col-md-4">
-                    <h1>&nbsp;</h1>
-                    <br>
-                    <p><label>Name</label></p>
-                    <p><label>Relationship</label></p>
-                    <p><label>Company</label></p>
-                    <p><label>Email</label></p>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-<!-- End Content -->
-<script type="text/javascript" src="js/script.js"></script>
-
-
-<!-- Start Footer Section -->
-<footer>
-    <div class="container">
-        <!-- Start Copyright -->
-        <div class="copyright-section">
-            <div class="row">
-                <div class="col-md-6">
-                    <p>&copy; 2015 OJPMS - All Rights Reserved</p>
-                </div>
-                <!-- .col-md-6 -->
-                <div class="col-md-6">
-                    <ul class="footer-nav">
-                        <li><a href="#">Sitemap</a>
-                        </li>
-                        <li><a href="#">Privacy Policy</a>
-                        </li>
-                        <li><a href="#">Contact</a>
-                        </li>
-                    </ul>
-                </div>
-                <!-- .col-md-6 -->
-            </div>
-            <!-- .row -->
-        </div>
-        <!-- End Copyright -->
-    </div>
-</footer>
-<!-- End Footer Section -->
-</div>
-
-
-<!-- Go To Top Link -->
-<a href="#" class="back-to-top"><i class="fa fa-angle-up"></i></a>
-
-<div id="loader">
-    <div class="spinner">
-        <div class="dot1"></div>
-        <div class="dot2"></div>
-    </div>
-</div>
 </body>
 </html>
