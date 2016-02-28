@@ -6142,7 +6142,7 @@ td, th {
     border: 1px solid #eee;
 }
 
-/* Login Style */
+/* ------------------------ Login Style --------------------------- */
 /*Login-Student*/
 .login-student {
   background: 
@@ -6175,7 +6175,7 @@ td, th {
     background-size: cover;
 }
 
-/*Login-admin*/
+/*Login-Admin*/
 .login-admin {
   background: 
     /* top, transparent #fff, faked with gradient */ 
@@ -6192,7 +6192,7 @@ td, th {
 }
 
 
-/*Login-adviser*/
+/*Login-Adviser*/
 .login-adviser {
   background: 
     /* top, transparent #fff, faked with gradient */ 
@@ -6229,8 +6229,7 @@ td, th {
 
 
 
-
-
+/* Login - HOME */
 .timeline {
     position: relative;
     padding: 0;

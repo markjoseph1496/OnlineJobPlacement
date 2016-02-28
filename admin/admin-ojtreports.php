@@ -127,11 +127,7 @@ $cFirstName = $infoquery[0][0];
                 <div class="container">
                     <div class="row">
                         <div class="col-md-7">
-                            <!-- Start Contact Info -->
-                            <ul class="profile-name">
-                                <li></li>
-                            </ul>
-                            <!-- End Contact Info -->
+                            &nbsp;
                         </div>
                         <!-- .col-md-6 -->
                         <div class="col-md-5">
@@ -204,7 +200,7 @@ $cFirstName = $infoquery[0][0];
                                         </div>
                                         <div class="modal-footer">
                                             <a href="logout.php"
-                                               class="btn btn-primary">Sign out</a>
+                                               class="btn btn-primary">Sign Out</a>
                                             <button type="button" class="btn btn-default" data-dismiss="modal">
                                                 Cancel
                                             </button>
@@ -370,7 +366,7 @@ $cFirstName = $infoquery[0][0];
 
                 <div class="scrollable-table">
                     <div class="hr2"></div>
-                    <table class="table table-striped table-header-rotated">
+                    <table class="table table-striped table-header-rotated table-hover">
                         <thead>
                             <tr>
                                 <!-- First column header is not rotated -->
