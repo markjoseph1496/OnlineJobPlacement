@@ -105,162 +105,127 @@ include('connection.php');
         <div id="content">
 
             <div class="container">
+                <div class="big-title text-center">
+                    <h1><strong>Registration</strong></h1>
+                </div>
                 <div class="row">
-                    <div class="big-title text-center">
-                        <h1><strong>Registration</strong></h1>
-                    </div>
+                    <div class="col-md-6">
+                        <h3><strong>Company Information:</strong></h3>
 
-                    <div class="row">
-                        <div class="row">
-                            <div class="col-md-6">
-                                <h3><strong>Company Information:</strong></h3>
-                            </div>
-                            <div class="col-md-6">
-                                <h3><strong>Primary User Information:</strong></h3>
-                            </div>
-                        </div>
-                        <div class="hr1" style="margin-top:20px;"></div>
+                        <div class="hr1" style="margin-top:10px;margin-bottom:10px;"></div>
 
-                        <div class="row">
-                            <div class="col-md-6">
-                                <div class="form-group">
-                                    <label>Company Name <span>(*)</span></label>
-                                    <input type="text" class="form-control" id="CompanyName" name="CompanyName">
-                                </div>
-                            </div>
-                            <div class="col-md-6">
-                                <div class="form-group">
-                                    <label>First Name <span>(*)</span></label>
-                                    <input type="text" class="form-control" id="FirstName" name="FirstName">
-                                </div>
-                            </div>
+                        <div class="form-group">
+                            <label>Company Name <span>(*)</span></label>
+                            <input type="text" class="form-control" id="CompanyName" name="CompanyName">
+                        </div>
+                        <div class="form-group">
+                            <label>Industry <span>(*)</span></label><br>
+                            <select id="Industry" name="Industry" class="industry form-control">
+                                <option value>Select Industry</option>
+                                <?php
+                                $listofindustrytbl =
+                                    GSecureSQL::query(
+                                        "SELECT * FROM listofindustrytbl",
+                                        TRUE
+                                    );
+                                foreach ($listofindustrytbl as $value) {
+                                    $Industry = $value[1];
+                                    ?>
+                                    <option value="<?php echo $Industry; ?>"><?php echo $Industry; ?></option>
+                                    <?php
+                                }
+                                ?>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label>City <span>(*)</span></label><br>
+                            <select id="City" name="City" class="city_id form-control">
+                                <option value="">- Please select one -</option>
+                                <option value="Caloocan City">Caloocan City</option>
+                                <option value="Las Pińas City">Las Pińas City</option>
+                                <option value="Makati City">Makati City</option>
+                                <option value="Malabon City">Malabon City</option>
+                                <option value="Mandaluyong City">Mandaluyong City</option>
+                                <option value="Manila">Manila</option>
+                                <option value="Marikina City">Marikina City</option>
+                                <option value="Muntinlupa City">Muntinlupa City</option>
+                                <option value="Navotas City">Navotas City</option>
+                                <option value="Parańaque City">Parańaque City</option>
+                                <option value="Pasay City">Pasay City</option>
+                                <option value="Pasig City">Pasig City</option>
+                                <option value="Pateros City">Pateros City</option>
+                                <option value="Quezon City">Quezon City</option>
+                                <option value="San Juan City">San Juan City</option>
+                                <option value="Taguig City">Taguig City</option>
+                                <option value="Valenzuela City">Valenzuela City</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label>Email</label>
+                            <input type="email" class="form-control" id="Email" name="Email">
                         </div>
                         <div class="row">
                             <div class="col-md-6">
-                                <div class="form-group">
-                                    <label>Industry <span>(*)</span></label><br>
-                                    <select id="Industry" name="Industry" class="industry form-control">
-                                        <option value>Select Industry</option>
-                                        <?php
-                                        $listofindustrytbl =
-                                            GSecureSQL::query(
-                                                "SELECT * FROM listofindustrytbl",
-                                                TRUE
-                                            );
-                                        foreach ($listofindustrytbl as $value) {
-                                            $Industry = $value[1];
-                                            ?>
-                                            <option value="<?php echo $Industry; ?>"><?php echo $Industry; ?></option>
-                                            <?php
-                                        }
-                                        ?>
-                                    </select>
-                                </div>
-                            </div>
-                             <div class="col-md-6">
-                                <div class="form-group">
-                                    <label>Middle Name <span>(*)</span></label>
-                                    <input type="text" class="form-control" id="MiddleName" name="MiddleName">
-                                </div>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-md-6">
-                                <div class="form-group">
-                                    <label>City <span>(*)</span></label><br>
-                                    <select id="City" name="City" class="city_id form-control">
-                                        <option value="">- Please select one -</option>
-                                        <option value="Caloocan City">Caloocan City</option>
-                                        <option value="Las Pińas City">Las Pińas City</option>
-                                        <option value="Makati City">Makati City</option>
-                                        <option value="Malabon City">Malabon City</option>
-                                        <option value="Mandaluyong City">Mandaluyong City</option>
-                                        <option value="Manila">Manila</option>
-                                        <option value="Marikina City">Marikina City</option>
-                                        <option value="Muntinlupa City">Muntinlupa City</option>
-                                        <option value="Navotas City">Navotas City</option>
-                                        <option value="Parańaque City">Parańaque City</option>
-                                        <option value="Pasay City">Pasay City</option>
-                                        <option value="Pasig City">Pasig City</option>
-                                        <option value="Pateros City">Pateros City</option>
-                                        <option value="Quezon City">Quezon City</option>
-                                        <option value="San Juan City">San Juan City</option>
-                                        <option value="Taguig City">Taguig City</option>
-                                        <option value="Valenzuela City">Valenzuela City</option>
-                                    </select>
-                                </div>
-                            </div>
-                            <div class="col-md-6">
-                                <div class="form-group">
-                                    <label>Last Name <span>(*)</span></label>
-                                    <input type="text" class="form-control" id="LastName" name="LastName">
-                                </div>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-md-6">
-                                <div class="form-group">
-                                    <label>Email</label>
-                                    <input type="email" class="form-control" id="Email" name="Email">
-                                </div>
-                            </div>
-                            <div class="col-md-6">
-                                <div class="form-group">
-                                    <label>Contact Number <span>(*)</span></label>
-                                    <input type="text" class="form-control" id="Contact" name="Contact" maxlength="11">
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="row">
-                            <div class="col-md-3">
                                 <div class="form-group">
                                     <label>Password</label>
                                     <input type="password" class="form-control" id="cPassword" name="cPassword">
                                 </div>
                             </div>
-                            <div class="col-md-3">
+                            <div class="col-md-6">
                                 <div class="form-group">
                                     <label>Confirm Password </label>
                                     <input type="password" class="form-control" id="ConfirmPassword" name="ConfirmPassword">
                                 </div>
                             </div>
-
-                            <div class="col-md-6">
-                                <div class="form-group">
-                                    <label>Position <span>(*)</span></label>
-                                    <input type="text" class="form-control" id="Position" name="Position">
-                                </div>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-md-6">
-                                &nbsp;
-                            </div>
-                            <div class="col-md-6">
-                                <div class="form-group">
-                                    <label>Department <span>(*)</span></label>
-                                    <input type="text" class="form-control" id="Department" name="Department">
-                                </div>
-                            </div>
                         </div>
                     </div>
 
-                    <div class="row">
-                        <br><br>
+
+                    <div class="col-md-6">
+                        <h3><strong>Primary User Information:</strong></h3>
+
+                        <div class="hr1" style="margin-top:10px;margin-bottom:10px;"></div>
+
+                        <div class="form-group">
+                            <label>First Name <span>(*)</span></label>
+                            <input type="text" class="form-control" id="FirstName" name="FirstName">
+                        </div>
+                        <div class="form-group">
+                            <label>Middle Name <span>(*)</span></label>
+                            <input type="text" class="form-control" id="MiddleName" name="MiddleName">
+                        </div>
+                        <div class="form-group">
+                            <label>Last Name <span>(*)</span></label>
+                            <input type="text" class="form-control" id="LastName" name="LastName">
+                        </div>
+                        <div class="form-group">
+                            <label>Contact No. <span>(*)</span></label>
+                            <input type="text" class="form-control" id="Contact" name="Contact" maxlength="11">
+                        </div>
+                        <div class="form-group">
+                            <label>Position <span>(*)</span></label>
+                            <input type="text" class="form-control" id="Position" name="Position">
+                        </div>
+                        <div class="form-group">
+                            <label>Department <span>(*)</span></label>
+                            <input type="text" class="form-control" id="Department" name="Department">
+                        </div>
+
                         <label style="float:right;"><span>(*)</span> <em> - Required Fields</em></label>
                     </div>
-                    <div class="hr5" style="margin-top:40px;margin-bottom:40px;"></div>
-                    <div class"row">
-                        <div class="col-md-6">
-                            <label><b>By clicking the "Sign Up" button below, I certify that I have read and agree to the <a
-                                        href="" target="_blank">Terms of Use</a>.</b></label>
-                        </div>
-                        <div class="col-md-6">
-                            <button type="submit" name="btnsave" id="btnsave" class="btn-system btn-large border-btn"
-                                    style="float:right;">Submit
-                            </button>
-                        </div>
+                </div>
+                <div class="hr5" style="margin-top:40px;margin-bottom:40px;"></div>
+
+                <div class"row">
+                    <div class="col-md-6">
+                        <label>
+                            <b>By clicking the "Sign Up" button, I certify that I have read and agree to the <a href="" target="_blank">Terms of Use</a>.</b>
+                        </label>
+                    </div>
+                    <div class="col-md-6">
+                        <button type="submit" name="btnsave" id="btnsave" class="btn-system btn-large border-btn"
+                                style="float:right;">Sign Up
+                        </button>
                     </div>
                 </div>
             </div>
