@@ -254,19 +254,19 @@ $MobileNumber = $studcontacts_tbl[0][2];
                                 <tbody>
                                     <tr>
                                         <td>School</td>
-                                        <td></td>
+                                        <td>STI COLLEGE CALOOCAN</td>
                                     </tr>
                                     <tr>
                                         <td>Graduated</td>
-                                        <td></td>
+                                        <td>May 2016</td>
                                     </tr>
                                     <tr>
                                         <td>Major</td>
-                                        <td></td>
+                                        <td>Bachelor of Science in Computer Science</td>
                                     </tr>
                                     <tr>
                                         <td>Field of Study</td>
-                                        <td></td>
+                                        <td>Computer Software</td>
                                     </tr>
                                 </tbody>
                             </table>
@@ -277,11 +277,11 @@ $MobileNumber = $studcontacts_tbl[0][2];
                                 <tbody>
                                     <tr>
                                         <td>School</td>
-                                        <td></td>
+                                        <td>TINAJEROS NATIONAL HIGH SCHOOL</td>
                                     </tr>
                                     <tr>
                                         <td>Graduated</td>
-                                        <td></td>
+                                        <td>March 2012</td>
                                     </tr>
                                     <tr>
                                         <td>Field of Study</td>
@@ -363,11 +363,13 @@ $MobileNumber = $studcontacts_tbl[0][2];
                                 </thead>
                                 <tbody>
                                     <tr>
-                                        <td>Web Design</td>
+                                        <td>Skill in Web Development (PHP, JAVASCRIPT, HTML, BOOTSTRAP)</td>
                                         <td>
                                             <div class="progress">
-                                                <div class="progress-bar progress-bar-info" role="progressbar" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100" style="width: 20%">
-                                                    <span class="sr-only">20% Complete</span>
+                                                <div class="progress-bar-warning progress-bar-striped" role="progressbar"
+                                                     aria-valuenow="50" aria-valuemin="0" aria-valuemax="100" style="width:80%">
+                                                    <font style="color:white;">
+                                                        <center>80%
                                                 </div>
                                             </div>
                                         </td>
@@ -382,7 +384,7 @@ $MobileNumber = $studcontacts_tbl[0][2];
                                         </td>
                                     </tr>
                                     <tr>
-                                        <td>Web Programming</td>
+                                        <td>Essay, Poetry, and Story Writing enthusiast and Blogging</td>
                                         <td>
                                             <div class="progress">
                                                 <div class="progress-bar-warning progress-bar-striped" role="progressbar"

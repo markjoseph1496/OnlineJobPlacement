@@ -155,7 +155,7 @@ $hGraduated = $hsschool_tbl[0][2];
     <div class="hr4" style="margin-top:20px;margin-bottom:30px;"></div>
     <div class="text-center">
         <button name="b_print" type="button" class="fa fa-print btn-system btn-mini border-btn"
-                onClick="printdiv('div_print');" value=" Print " style="height:50px;"> Print this Resume
+                onClick="printdiv('div_print');" value=" Print " style="height:50px;"> Print this ResumÉ
         </button>
     </div>
     <div class="hr1" style="margin-top:20px;margin-bottom:20px;"></div>

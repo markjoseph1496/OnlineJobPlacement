@@ -332,8 +332,8 @@ if($References == "ok"){
                             <li>
                                 <a class="active" href="resume.php">Resumé</a>
                                 <ul class="dropdown">
-                                    <li><a href="resume.php">Resumé</a></li>
-                                    <li><a href="background.php">Background</a></li>
+                                    <!--<li><a href="resume.php">Resumé</a></li>
+                                    <li><a href="background.php">Background</a></li>-->
                                     <li><a class="active" href="print.php">Print</a></li>
                                 </ul>
                             </li>
@@ -366,8 +366,8 @@ if($References == "ok"){
                     <li>
                         <a class="active" href="resume.php">Resumé</a>
                         <ul class="dropdown">
-                            <li><a href="resume.php">Resumé</a></li>
-                            <li><a href="background.php">Background</a></li>
+                            <!--<li><a href="resume.php">Resumé</a></li>
+                            <li><a href="background.php">Background</a></li>-->
                             <li><a class="active" href="print.php">Print</a></li>
                         </ul>
                     </li>
