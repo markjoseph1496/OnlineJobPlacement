@@ -47,7 +47,7 @@ i {
 }
 
 h1, h2, h3, h4, h5, h6 {
-    font-family: Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-family: 'Open Sans','Helvetica Neue',Arial,sans-serif;
     font-weight: 600;
     margin: 0;
     color: #444;
@@ -174,7 +174,7 @@ h3,
 h4,
 h5,
 h6 {
-    font-family: Montserrat, "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-family: 'Open Sans','Helvetica Neue',Arial,sans-serif;
     text-transform: uppercase;
     font-weight: 700
 }
@@ -192,13 +192,17 @@ h6 {
 }
 
 .navbar-default {
-    background-color: #222;
-    border-color: transparent
+    background: #ffffff;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #ebebeb;
+    background-color: white;
+    box-shadow: rgba(0, 0, 0, 0.02) 1px 1px 2px 2px;
 }
 
 .navbar-default .navbar-brand {
     color: #fed136;
-    font-family: "Kaushan Script", "Helvetica Neue", Helvetica, Arial, cursive
+    font-family: 'Open Sans','Helvetica Neue',Arial,sans-serif;
 }
 
 .navbar-default .navbar-brand:hover,
@@ -227,7 +231,7 @@ h6 {
 }
 
 .navbar-default .nav li a {
-    font-family: Montserrat, "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-family: 'Open Sans','Helvetica Neue',Arial,sans-serif;
     text-transform: uppercase;
     font-weight: 700;
     letter-spacing: 1px;
@@ -256,7 +260,6 @@ h6 {
 @media (min-width:768px) {
     .navbar-default {
         background-color: #fff;
-        padding: 25px 0;
         -webkit-transition: padding .3s;
         -moz-transition: padding .3s;
         transition: padding .3s;
@@ -294,7 +297,7 @@ section h2.section-heading {
 
 section h3.section-subheading {
     font-size: 16px;
-    font-family: "Droid Serif", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-family: 'Open Sans','Helvetica Neue',Arial,sans-serif;
     text-transform: none;
     font-style: italic;
     font-weight: 400;

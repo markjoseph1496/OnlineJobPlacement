@@ -23,6 +23,13 @@ $adminevent_tbl =
 
     <title></title>
 
+    <!-- Page Description and Author -->
+    <meta name="description" content="OJPMS">
+    <meta name="author" content="">
+
+    <link rel="shortcut icon" href="images/logo/favicon.ico">
+
+
     <!-- Bootstrap Core CSS -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
 
@@ -31,12 +38,6 @@ $adminevent_tbl =
 
     <!-- Custom Fonts -->
     <link href="fonts/ffonts/font-awesome.min.css" rel="stylesheet" type="text/css">
-
-    <!-- Page Description and Author -->
-    <meta name="description" content="OJPMS">
-    <meta name="author" content="">
-
-    <link rel="shortcut icon" href="images/logo/favicon.ico">
 
     <!-- Bootstrap CSS  -->
     <link rel="stylesheet" href="css/about-style.css" type="text/css" media="screen">
@@ -93,7 +94,7 @@ $adminevent_tbl =
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand page-scroll" href="#page-top">Start Bootstrap</a>
+                <a class="navbar-brand page-scroll" href="#page-top"><img src="images/ojmps.png"></a>
             </div>
 
             <!-- Collect the nav links, forms, and other content for toggling -->
@@ -102,6 +103,9 @@ $adminevent_tbl =
                     <li class="hidden">
                         <a href="#page-top"></a>
                     </li>
+                    <!--<li>
+                        <a class="page-scroll" href="#home">Home</a>
+                    </li>-->
                     <li>
                         <a class="page-scroll" href="#jobs">Jobs</a>
                     </li>
@@ -112,7 +116,7 @@ $adminevent_tbl =
                         <a class="page-scroll" href="#e2e">E2E</a>
                     </li>
                     <li>
-                        <a href="#join" class="smoothScroll btn-system btn-large border-btn btn-yellow">Sign In</a>
+                        <a href="#join" class="page-scroll">Sign In</a>
                     </li>
                 </ul>
             </div>
