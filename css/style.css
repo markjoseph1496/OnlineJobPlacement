@@ -40,8 +40,8 @@ body {
     line-height: 21px;
 	font-weight: 400;
 	color: #333;
-	/*background: url(../images/patterns/1.png) fixed repeat;*/
 }
+
 strong, b {
 	font-weight: 600;
 }
@@ -5528,10 +5528,8 @@ ul.footer-nav li a:hover {
 
 
 /* progress bar */
-
 .skill p {
   margin-bottom:7px;
-
 }
 
 .progress {

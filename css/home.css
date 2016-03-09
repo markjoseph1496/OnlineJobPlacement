@@ -7,7 +7,6 @@ body {
     line-height: 21px;
     font-weight: 400;
     color: #333;
-    /*background: url(../images/patterns/1.png) fixed repeat;*/
 }
 strong, b {
     font-weight: 600;
@@ -231,11 +230,11 @@ h6 {
 }
 
 .navbar-default .nav li a {
-    font-family: 'Open Sans','Helvetica Neue',Arial,sans-serif;
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
     text-transform: uppercase;
     font-weight: 700;
     letter-spacing: 1px;
-    color: #373c40;
+    color: #fff;
     margin: 0 2px;
 }
 
@@ -256,15 +255,15 @@ h6 {
     color: #fff;
     background-color: #fec503
 }
-
+/*
 @media (min-width:768px) {
     .navbar-default {
-        background-color: #fff;
+        background-color: #0A3D73;
         -webkit-transition: padding .3s;
         -moz-transition: padding .3s;
         transition: padding .3s;
         border: 0
-    }
+    }*/
     .navbar-default .navbar-brand {
         font-size: 2em;
         -webkit-transition: all .3s;
