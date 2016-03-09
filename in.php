@@ -116,6 +116,9 @@ $adminevent_tbl =
                         <a class="page-scroll" href="#e2e">E2E</a>
                     </li>
                     <li>
+                        <a class="page-scroll" href="#p-company">Partner Company</a>
+                    </li>
+                    <li>
                         <a href="#join" class="page-scroll">Sign In</a>
                     </li>
                 </ul>
@@ -534,53 +537,7 @@ $adminevent_tbl =
         </div>
     </section>
 
-    <section id="join" class="parallax" style="background-image:url(images/sti-bldg.jpg);">
-        <div class="overlay">
-            <div class="parallax-text-container-1">
-                <div class="parallax-text-item">
-                    <div class="container">
-                        <div class="row">
-                            <div class="big-title text-center animated fadeInDown delay-01" data-animation="fadeInDown"
-                                 data-animation-delay="01">
-                                <strong><h1 class="wite-text">Sign In</h1></strong>
-                            </div>
-
-                            <ul class="timeline">
-                                <li>
-                                    <div class="timeline-image">
-                                        <a href="login-student.php"><img class="img-circle img-responsive"
-                                                                         src="images/home/student.png" alt=""></a>
-                                    </div>
-                                    <div class="timeline-panel">
-                                        <div class="timeline-heading">
-                                            <strong><h1 style="color:#337ab7;">Student</h1></strong>
-                                            <h4 class="subheading">This section is exclusively made for STI Caloocan's
-                                                current and former students.</h4>
-                                        </div>
-                                    </div>
-                                </li>
-                                <li class="timeline-inverted">
-                                    <div class="timeline-image">
-                                        <a href="login-company.php"><img class="img-circle img-responsive"
-                                                                         src="images/home/company.png" alt=""></a>
-                                    </div>
-                                    <div class="timeline-panel">
-                                        <div class="timeline-heading">
-                                            <strong><h1 style="color:#f8ba01;">Company</h1></strong>
-                                            <h4 class="subheading">This section is designed for STI partner
-                                                companies.</h4>
-                                        </div>
-                                    </div>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section style="padding-top:35px; padding-bottom:20px; border-top:0; border-bottom:0; background:#fff;">
+    <section id="p-company" style="padding-top:35px; padding-bottom:20px; border-top:0; border-bottom:0; background:#fff;">
         <div class="container">
             <!-- Start Big Heading -->
             <div class="big-title text-center">
@@ -641,6 +598,52 @@ $adminevent_tbl =
                 <div class="col-md-6">
                     <label style="float:right;"><a href="for-index/other-companies.php">See Other Companies <i
                                 class="fa fa-caret-right"></i></a></label>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="join" class="parallax" style="background-image:url(images/sti-bldg.jpg);">
+        <div class="overlay">
+            <div class="parallax-text-container-1">
+                <div class="parallax-text-item">
+                    <div class="container">
+                        <div class="row">
+                            <div class="big-title text-center animated fadeInDown delay-01" data-animation="fadeInDown"
+                                 data-animation-delay="01">
+                                <strong><h1 class="wite-text">Sign In</h1></strong>
+                            </div>
+
+                            <ul class="timeline">
+                                <li>
+                                    <div class="timeline-image">
+                                        <a href="login-student.php"><img class="img-circle img-responsive"
+                                                                         src="images/home/student.png" alt=""></a>
+                                    </div>
+                                    <div class="timeline-panel">
+                                        <div class="timeline-heading">
+                                            <strong><h1 style="color:#337ab7;">Student</h1></strong>
+                                            <h4 class="subheading">This section is exclusively made for STI Caloocan's
+                                                current and former students.</h4>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="timeline-inverted">
+                                    <div class="timeline-image">
+                                        <a href="login-company.php"><img class="img-circle img-responsive"
+                                                                         src="images/home/company.png" alt=""></a>
+                                    </div>
+                                    <div class="timeline-panel">
+                                        <div class="timeline-heading">
+                                            <strong><h1 style="color:#f8ba01;">Company</h1></strong>
+                                            <h4 class="subheading">This section is designed for STI partner
+                                                companies.</h4>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>

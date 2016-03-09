@@ -1,4 +1,16 @@
-<!DOCTYPE html>
+<?php
+include("connection.php");
+
+$adminevent_tbl =
+    GSecureSQL::query(
+        "SELECT 
+            *
+        FROM `admineventtbl`
+        LIMIT 6",
+        TRUE
+    );
+?>
+<!doctype html>
 <html lang="en">
 
 <head>
@@ -11,20 +23,24 @@
 
     <title></title>
 
+    <!-- Page Description and Author -->
+    <meta name="description" content="OJPMS">
+    <meta name="author" content="">
+
+    <link rel="shortcut icon" href="images/logo/favicon.ico">
+
+
     <!-- Bootstrap Core CSS -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Custom CSS -->
-    <link href="css/agency.css" rel="stylesheet">
-
-    <!-- Color CSS Styles  -->
-    <link rel="stylesheet" type="text/css" href="css/colors/yellow.css" title="yellow" media="screen"/>
+    <link href="css/home.css" rel="stylesheet">
 
     <!-- Custom Fonts -->
     <link href="fonts/ffonts/font-awesome.min.css" rel="stylesheet" type="text/css">
 
-    <!-- Bootstrap CSS 
-    <link rel="stylesheet" href="css/about-style.css" type="text/css" media="screen"> -->
+    <!-- Bootstrap CSS  -->
+    <link rel="stylesheet" href="css/about-style.css" type="text/css" media="screen">
 
     <!-- Font Awesome CSS -->
     <link rel="stylesheet" href="css/font-awesome.min.css" type="text/css" media="screen">
@@ -41,6 +57,9 @@
 
     <!-- Css3 Transitions Styles  -->
     <link rel="stylesheet" type="text/css" href="css/animate.css" media="screen">
+
+    <!-- Color CSS Styles  -->
+    <link rel="stylesheet" type="text/css" href="css/colors/yellow.css" title="yellow" media="screen"/>
 
     <!-- JS  -->
     <script type="text/javascript" src="js/jquery.min.js"></script>
@@ -62,6 +81,7 @@
     <script type="text/javascript" src="js/jquery.slicknav.js"></script>
 </head>
 
+
 <body id="page-top" class="index">
     <!-- Navigation -->
     <nav class="navbar navbar-default navbar-fixed-top">
@@ -74,7 +94,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand page-scroll" href="#page-top">Start Bootstrap</a>
+                <a class="navbar-brand page-scroll" href="#page-top"><img src="images/logo.png"></a>
             </div>
 
             <!-- Collect the nav links, forms, and other content for toggling -->
@@ -83,6 +103,9 @@
                     <li class="hidden">
                         <a href="#page-top"></a>
                     </li>
+                    <!--<li>
+                        <a class="page-scroll" href="#home">Home</a>
+                    </li>-->
                     <li>
                         <a class="page-scroll" href="#jobs">Jobs</a>
                     </li>
@@ -93,7 +116,10 @@
                         <a class="page-scroll" href="#e2e">E2E</a>
                     </li>
                     <li>
-                        <a class="page-scroll" href="#join" >Sign In</a>
+                        <a class="page-scroll" href="#p-company">Partner Company</a>
+                    </li>
+                    <li>
+                        <a href="#join" class="page-scroll">Sign In</a>
                     </li>
                 </ul>
             </div>
@@ -102,6 +128,18 @@
         <!-- /.container-fluid -->
     </nav>
 
+    <!-- Header 
+    <header>
+        <div class="container">
+            <div class="intro-text">
+                <div class="intro-lead-in">Welcome To Our Studio!</div>
+                <div class="intro-heading">It's Nice To Meet You</div>
+                <a href="#services" class="page-scroll btn btn-xl">Tell Me More</a>
+            </div>
+        </div>
+    </header>-->
+
+    <!-- Services Section -->
     <section id="home">
         <!-- Carousel -->
         <div id="main-slide" class="carousel slide" data-ride="carousel">
@@ -166,6 +204,8 @@
         <!-- /carousel -->    
     </section>
 
+    <!-- Start Content -->
+    
     <section id="jobs">
         <!-- Start News & Skill Section -->
         <div class="container">
@@ -497,53 +537,7 @@
         </div>
     </section>
 
-    <section id="join" class="parallax" style="background-image:url(images/sti-bldg.jpg);">
-        <div class="overlay">
-            <div class="parallax-text-container-1">
-                <div class="parallax-text-item">
-                    <div class="container">
-                        <div class="row">
-                            <div class="big-title text-center animated fadeInDown delay-01" data-animation="fadeInDown"
-                                 data-animation-delay="01">
-                                <strong><h1 class="wite-text">Sign In</h1></strong>
-                            </div>
-
-                            <ul class="timeline">
-                                <li>
-                                    <div class="timeline-image">
-                                        <a href="login-student.php"><img class="img-circle img-responsive"
-                                                                         src="images/home/student.png" alt=""></a>
-                                    </div>
-                                    <div class="timeline-panel">
-                                        <div class="timeline-heading">
-                                            <strong><h1 style="color:#337ab7;">Student</h1></strong>
-                                            <h4 class="subheading">This section is exclusively made for STI Caloocan's
-                                                current and former students.</h4>
-                                        </div>
-                                    </div>
-                                </li>
-                                <li class="timeline-inverted">
-                                    <div class="timeline-image">
-                                        <a href="login-company.php"><img class="img-circle img-responsive"
-                                                                         src="images/home/company.png" alt=""></a>
-                                    </div>
-                                    <div class="timeline-panel">
-                                        <div class="timeline-heading">
-                                            <strong><h1 style="color:#f8ba01;">Company</h1></strong>
-                                            <h4 class="subheading">This section is designed for STI partner
-                                                companies.</h4>
-                                        </div>
-                                    </div>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section style="padding-top:35px; padding-bottom:20px; border-top:0; border-bottom:0; background:#fff;">
+    <section id="p-company" >
         <div class="container">
             <!-- Start Big Heading -->
             <div class="big-title text-center">
@@ -599,11 +593,107 @@
                 </div>
             </div>
             <!-- End Clients Carousel -->
+
+            <div class="hr5" style="width:50px;height:50px;"></div>
+
+            <!-- Start Clients Carousel -->
+            <div class="our-clients">
+                <div class="clients-carousel custom-carousel touch-carousel" data-appeared-items="5"
+                     data-navigation="false">
+
+                    <!-- Company 1 -->
+                    <div class="client-item item">
+                        <a href="#"><img src="images/partner-company/accenture.png" alt=""/></a>
+                    </div>
+
+                    <!-- Company 2 -->
+                    <div class="client-item item">
+                        <a href="#"><img src="images/partner-company/sykes.png" alt=""/></a>
+                    </div>
+
+                    <!-- Company 3 -->
+                    <div class="client-item item">
+                        <a href="#"><img src="images/partner-company/cicc.png" alt=""/></a>
+                    </div>
+
+                    <!-- Company 4 -->
+                    <div class="client-item item">
+                        <a href="#"><img src="images/partner-company/concentrix.png" alt=""/></a>
+                    </div>
+
+                    <!-- Company 5 -->
+                    <div class="client-item item">
+                        <a href="#"><img src="images/partner-company/globe.png" alt=""/></a>
+                    </div>
+
+                    <!-- Company 6 -->
+                    <div class="client-item item">
+                        <a href="#"><img src="images/partner-company/collabera.png" alt=""/></a>
+                    </div>
+
+                    <!-- Company 7 -->
+                    <div class="client-item item">
+                        <a href="#"><img src="images/partner-company/business-trends.png" alt=""/></a>
+                    </div>
+
+                    <!-- Company 8 -->
+                    <div class="client-item item">
+                        <a href="#"><img src="images/partner-company/aickman.png" alt=""/></a>
+                    </div>
+                </div>
+            </div>
+            <!-- End Clients Carousel -->
             <div class="row">
                 <div class="col-md-6">&nbsp;</div>
                 <div class="col-md-6">
                     <label style="float:right;"><a href="for-index/other-companies.php">See Other Companies <i
                                 class="fa fa-caret-right"></i></a></label>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="join" class="parallax" style="background-image:url(images/sti-bldg.jpg);">
+        <div class="overlay">
+            <div class="parallax-text-container-1">
+                <div class="parallax-text-item">
+                    <div class="container">
+                        <div class="row">
+                            <div class="big-title text-center animated fadeInDown delay-01" data-animation="fadeInDown"
+                                 data-animation-delay="01">
+                                <strong><h1 class="wite-text">Sign In</h1></strong>
+                            </div>
+
+                            <ul class="timeline">
+                                <li>
+                                    <div class="timeline-image">
+                                        <a href="login-student.php"><img class="img-circle img-responsive"
+                                                                         src="images/home/student.png" alt=""></a>
+                                    </div>
+                                    <div class="timeline-panel">
+                                        <div class="timeline-heading">
+                                            <strong><h1 style="color:#337ab7;">Student</h1></strong>
+                                            <h4 class="subheading">This section is exclusively made for STI Caloocan's
+                                                current and former students.</h4>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="timeline-inverted">
+                                    <div class="timeline-image">
+                                        <a href="login-company.php"><img class="img-circle img-responsive"
+                                                                         src="images/home/company.png" alt=""></a>
+                                    </div>
+                                    <div class="timeline-panel">
+                                        <div class="timeline-heading">
+                                            <strong><h1 style="color:#f8ba01;">Company</h1></strong>
+                                            <h4 class="subheading">This section is designed for STI partner
+                                                companies.</h4>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -670,19 +760,21 @@
             <!-- End Copyright -->
         </div>
     </footer>
+    
 
     <!-- Go To Top Link -->
     <a href="#" class="back-to-top"><i class="fa fa-angle-up"></i></a>
 
-    <!--<div id="loader">
+    <div id="loader">
         <div class="spinner">
             <div class="dot1"></div>
             <div class="dot2"></div>
         </div>
-    </div>-->
+    </div>
 
     <!-- important-->
     <script type="text/javascript" src="js/script.js"></script>
+    <script type="text/javascript" src="js/smoothscroll.js"></script>
 
     <!-- jQuery -->
     <script src="js/jquery.js"></script>
@@ -691,12 +783,11 @@
     <script src="js/bootstrap.min.js"></script>
 
     <!-- Plugin JavaScript -->
-    <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
-    <script src="js/classie.js"></script>
-    <script src="js/cbpAnimatedHeader.js"></script>
+    <script src="js/home/ease.js"></script>
+    <script src="js/home/classie.js"></script>
+    <script src="js/home/cbpAnimatedHeader.js"></script>
 
     <!-- Custom Theme JavaScript -->
-    <script src="js/agency.js"></script>
+    <script src="js/home/agency.js"></script>
 </body>
-
 </html>
