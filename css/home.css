@@ -40,8 +40,8 @@ body {
     line-height: 21px;
     font-weight: 400;
     color: #333;
+    /*background: url(../images/patterns/1.png) fixed repeat;*/
 }
-
 strong, b {
     font-weight: 600;
 }
@@ -611,7 +611,7 @@ ul.social-list li:last-child a i {
     -moz-transition: all 0.3s ease-in-out;
     -webkit-transition: all 0.3s ease-in-out;
     -o-transition: all 0.3s ease-in-out;
-    font-weight: 400;
+    font-weight: 600;
 }
 
 .navbar-default .navbar-nav > li > a.active, .navbar-default .navbar-nav > li:hover > a {
@@ -5528,8 +5528,10 @@ ul.footer-nav li a:hover {
 
 
 /* progress bar */
+
 .skill p {
   margin-bottom:7px;
+
 }
 
 .progress {

@@ -34,7 +34,7 @@ $adminevent_tbl =
     <link href="css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Custom CSS -->
-    <link href="css/style.css" rel="stylesheet">
+    <link href="css/home.css" rel="stylesheet">
 
     <!-- Custom Fonts -->
     <link href="fonts/ffonts/font-awesome.min.css" rel="stylesheet" type="text/css">
@@ -99,7 +99,7 @@ $adminevent_tbl =
 
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                <ul class="nav nav-pills navbar-right">
+                <ul class="nav navbar-nav navbar-right">
                     <li class="hidden">
                         <a href="#page-top"></a>
                     </li>
@@ -115,12 +115,11 @@ $adminevent_tbl =
                     <li>
                         <a class="page-scroll" href="#p-company">Partner Company</a>
                     </li>
-                    <!--<li>
+                    <li>
                         <a href="#join" class="">Sign In</a>
-                    </li>-->
+                    </li>
                 </ul>
             </div>
-            <a href="#join" class="page-scroll sign-in sign-in-button sign-in-element">Sign In</a>
             <!-- /.navbar-collapse -->
         </div>
         <!-- /.container-fluid -->
