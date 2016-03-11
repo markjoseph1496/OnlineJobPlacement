@@ -103,9 +103,6 @@ $adminevent_tbl =
                     <li class="hidden">
                         <a href="#page-top"></a>
                     </li>
-                    <!--<li>
-                        <a class="page-scroll" href="#home">Home</a>
-                    </li>-->
                     <li>
                         <a class="page-scroll" href="#jobs">Jobs</a>
                     </li>
@@ -118,26 +115,16 @@ $adminevent_tbl =
                     <li>
                         <a class="page-scroll" href="#p-company">Partner Company</a>
                     </li>
-                    <li>
-                        <a href="#join" class="page-scroll">Sign In</a>
-                    </li>
+                    <!--<li>
+                        <a href="#join" class="">Sign In</a>
+                    </li>-->
                 </ul>
             </div>
+            <a href="#join" class="page-scroll sign-in sign-in-button sign-in-element">Sign In</a>
             <!-- /.navbar-collapse -->
         </div>
         <!-- /.container-fluid -->
     </nav>
-
-    <!-- Header 
-    <header>
-        <div class="container">
-            <div class="intro-text">
-                <div class="intro-lead-in">Welcome To Our Studio!</div>
-                <div class="intro-heading">It's Nice To Meet You</div>
-                <a href="#services" class="page-scroll btn btn-xl">Tell Me More</a>
-            </div>
-        </div>
-    </header>-->
 
     <!-- Services Section -->
     <section id="home">
@@ -594,51 +581,29 @@ $adminevent_tbl =
             </div>
             <!-- End Clients Carousel -->
 
-            <div class="hr5" style="width:50px;height:50px;"></div>
 
             <!-- Start Clients Carousel -->
             <div class="our-clients">
-                <div class="clients-carousel custom-carousel touch-carousel" data-appeared-items="5"
-                     data-navigation="false">
+                <div class="clients-carousel custom-carousel touch-carousel" data-appeared-items="5" data-navigation="false">
 
-                    <!-- Company 1 -->
                     <div class="client-item item">
-                        <a href="#"><img src="images/partner-company/accenture.png" alt=""/></a>
+                        <a href="#" data-toggle="tooltip" data-placement="bottom" title="Evotech"><img src="images/partner-company/evotech.jpg" alt="" /></a>
                     </div>
 
-                    <!-- Company 2 -->
                     <div class="client-item item">
-                        <a href="#"><img src="images/partner-company/sykes.png" alt=""/></a>
+                        <a href="#" data-toggle="tooltip" data-placement="bottom" title="Food Asia Corp."><img src="images/partner-company/food-asia.jpe" alt="" /></a>
                     </div>
 
-                    <!-- Company 3 -->
                     <div class="client-item item">
-                        <a href="#"><img src="images/partner-company/cicc.png" alt=""/></a>
+                        <a href="#" data-toggle="tooltip" data-placement="bottom" title="Gerry's Grill"><img src="images/partner-company/gerrys-grill.jpg" alt="" /></a>
                     </div>
 
-                    <!-- Company 4 -->
                     <div class="client-item item">
-                        <a href="#"><img src="images/partner-company/concentrix.png" alt=""/></a>
+                        <a href="#" data-toggle="tooltip" data-placement="bottom" title="Global Staff Recruitment Search Inc."><img src="images/partner-company/global-staff.jpg" alt="" /></a>
                     </div>
 
-                    <!-- Company 5 -->
                     <div class="client-item item">
-                        <a href="#"><img src="images/partner-company/globe.png" alt=""/></a>
-                    </div>
-
-                    <!-- Company 6 -->
-                    <div class="client-item item">
-                        <a href="#"><img src="images/partner-company/collabera.png" alt=""/></a>
-                    </div>
-
-                    <!-- Company 7 -->
-                    <div class="client-item item">
-                        <a href="#"><img src="images/partner-company/business-trends.png" alt=""/></a>
-                    </div>
-
-                    <!-- Company 8 -->
-                    <div class="client-item item">
-                        <a href="#"><img src="images/partner-company/aickman.png" alt=""/></a>
+                        <a href="#" data-toggle="tooltip" data-placement="bottom" title="Globe Telecom"><img src="images/partner-company/globe.png" alt="" /></a>
                     </div>
                 </div>
             </div>
