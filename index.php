@@ -29,7 +29,6 @@ $adminevent_tbl =
 
     <link rel="shortcut icon" href="images/logo/favicon.ico">
 
-
     <!-- Bootstrap Core CSS -->
     <link href="asset/css/bootstrap.min.css" rel="stylesheet">
 
@@ -57,6 +56,9 @@ $adminevent_tbl =
 
     <!-- Css3 Transitions Styles  -->
     <link rel="stylesheet" type="text/css" href="css/animate.css" media="screen">
+
+    <!-- Color CSS Styles  -->
+    <link rel="stylesheet" type="text/css" href="css/colors/home-color.css" media="screen"/>
 
     <!-- JS  -->
     <script type="text/javascript" src="js/jquery.min.js"></script>
