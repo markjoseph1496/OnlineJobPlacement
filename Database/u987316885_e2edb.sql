@@ -1,16 +1,16 @@
 /*
 Navicat MySQL Data Transfer
 
-Source Server         : localhost
-Source Server Version : 50616
-Source Host           : localhost:3306
+Source Server         : Hostinger
+Source Server Version : 50505
+Source Host           : 31.220.110.88:3306
 Source Database       : u987316885_e2edb
 
 Target Server Type    : MYSQL
-Target Server Version : 50616
+Target Server Version : 50505
 File Encoding         : 65001
 
-Date: 2016-02-22 22:24:47
+Date: 2016-03-05 00:22:25
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -23,7 +23,7 @@ CREATE TABLE `achievementstbl` (
   `StudentID` varchar(255) NOT NULL,
   `Achievements` varchar(255) NOT NULL,
   PRIMARY KEY (`AchievementID`)
-) ENGINE=MyISAM AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM AUTO_INCREMENT=16 DEFAULT CHARSET=latin1;
 
 -- ----------------------------
 -- Records of achievementstbl
@@ -31,6 +31,16 @@ CREATE TABLE `achievementstbl` (
 INSERT INTO achievementstbl VALUES ('1', '00820120004', 'dfsdfs');
 INSERT INTO achievementstbl VALUES ('2', '00820120001', 'asdasdas');
 INSERT INTO achievementstbl VALUES ('3', '00820120001', 'asdsadsadas');
+INSERT INTO achievementstbl VALUES ('4', '00820120326', 'asdafasfa');
+INSERT INTO achievementstbl VALUES ('6', '00820120325', 'MVP');
+INSERT INTO achievementstbl VALUES ('7', '00820124321', 'best thesis 2016');
+INSERT INTO achievementstbl VALUES ('8', '00820129999', 'Top 1 in Math Class');
+INSERT INTO achievementstbl VALUES ('9', '00820120100', 'Dean\'s Lister');
+INSERT INTO achievementstbl VALUES ('11', '00820120290', 'magaling magdrawing');
+INSERT INTO achievementstbl VALUES ('12', '00820121111', 'Tagisan ng Talino 3rd Runner Up');
+INSERT INTO achievementstbl VALUES ('13', '00820120278', 'dsfdgdfgd');
+INSERT INTO achievementstbl VALUES ('14', '00820170318', 'Passed Computer Science');
+INSERT INTO achievementstbl VALUES ('15', '00820120805', 'Regional Secondary Student Press Conference Editorial Champion');
 
 -- ----------------------------
 -- Table structure for `admineventtbl`
@@ -47,14 +57,17 @@ CREATE TABLE `admineventtbl` (
   `Status` varchar(255) DEFAULT NULL,
   `ProfileImage` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`EventID`)
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=latin1;
 
 -- ----------------------------
 -- Records of admineventtbl
 -- ----------------------------
-INSERT INTO admineventtbl VALUES ('2', '1', 'dddddddd', '2016-02-10', '2016-02-26', 'ddddddddd', 'dddddddddddddddddd', null, null);
-INSERT INTO admineventtbl VALUES ('3', '1', 'dddddddd', '2016-02-03', '2016-02-17', 'ddddddddd', 'dddddddddddddddddd', null, null);
-INSERT INTO admineventtbl VALUES ('4', '1', 'dddddddd', '2016-02-17', '2016-02-26', 'ddddddddd', 'dddddddddddddddddd', null, null);
+INSERT INTO admineventtbl VALUES ('5', '1', 'General Assembly 2016', '2016-02-10', '2016-02-04', 'STI Caloocan', 'Seminar for graduating st', null, 'ProfileImage/15df338b7d475942454dc2ea185009903345a2b5b4514616ea805f1b3327fd99e9f0967fac259dacea563d2fa239bbf878c5539df9182a946e39aca93b2fa081.jpg');
+INSERT INTO admineventtbl VALUES ('6', '1', 'Job Fair 2015', '2016-02-23', '2016-03-15', 'Sti Caloocan', 'Graduating job fair', null, 'ProfileImage/f201ffa8cc65a0e7a7a9910fde5c25cd97b0f558502c4a2be334973cdfd5c4d115b6291ec7942848671c0de466931f66fd8b7668f411bf101774734de0da2670.jpg');
+INSERT INTO admineventtbl VALUES ('7', '1', 'National Youth Convention 2016', '2016-02-23', '2016-03-30', 'Aliw Theater', 'Student Convention', null, 'ProfileImage/860ef7c6fc2911091cf3e4f84162cf48608fb3263d9f1f01fe4594aebe47d5d720599916f633d7e22da597412b6b2122b7c0e57d85d3de7eca94a1122dd7edc3.jpg');
+INSERT INTO admineventtbl VALUES ('8', '1', 'PEP Talk 2015', '2016-02-23', '2016-03-30', 'STI College Caloocan', 'Pep Talk seminar', null, 'ProfileImage/b470de343ef66fe4bd474331290ba7bdc418e60a598f731b3c86e0bd3b94a1cb97979bb6a58815ccf7ab01d775aa7ae246adf42933a621a49447573101147703.jpg');
+INSERT INTO admineventtbl VALUES ('9', '1', 'Preparation for the Workplace 2015', '2016-02-23', '2016-02-29', 'STI College  Caloocan', 'Seminar', null, 'ProfileImage/ea86e4290bb6c648a4f32672c7b582ca2692c30199e0755598c2f0778a787c8036a4919b292124c1b4565cdd7c3d16767ccc12f366b259fc6a3db8f11fa5ecaa.jpg');
+INSERT INTO admineventtbl VALUES ('10', '1', 'UpLift', '2016-02-23', '2016-02-29', 'STI Caloocan', 'Establish Achieve Lead', null, 'ProfileImage/a97efea5469cd786eddd16edf22cbdc7b9187b14c501713bc71bece9535f7a679c175a9f813c299d7fa77853e5af86a9a5a838c4073f7dfcdd40bb8b281780ca.jpg');
 
 -- ----------------------------
 -- Table structure for `admintbl`
@@ -79,7 +92,7 @@ CREATE TABLE `admintbl` (
 -- Records of admintbl
 -- ----------------------------
 INSERT INTO admintbl VALUES ('1', 'markjoseph1496', '0a7675b497c9e79aa2ddd1dbd39ed429b54bc044f704d85b4427ff23f35df299fcae46a6d86d6e900da432d59fd731ab6a643cea23de2d59ac7274209962b3fd', '59eba39dc8615e72ae9b7a0d76b06fc99aace644b3460c7b0a2b0d8c236663733e2ad0df55ea18a352a3c015355b362655ed563f1164c3682b6742a2fb438b85', 'Mark Joseph', 'Flaviano', 'Cinco', 'Janitor', '2890 A. Pablo St. Karuhatan, Valenzuela City.', '09355585931', 'Admin');
-INSERT INTO admintbl VALUES ('13', '1', '16d917462347d622d56f4269bf74e305dbdc14294e159efe502679eee9df8f49009ca5897ada300ea757d0e0e561187b1d17713e1a561dd6247829155f6c312c', '4a800106f6fa85d4053db33f3f6dce2439efdb6a13d28caae8c2d9694c70084d36b53fed0240277512430e6cf662cdedf0e5533a9e9703aee3b4207ddfdf1f74', 'Mark Josephd', 'sadsa', 'Cinco', 'dsad', 'sadsadsa', '123421312', 'Adviser');
+INSERT INTO admintbl VALUES ('13', 'adviser', '16d917462347d622d56f4269bf74e305dbdc14294e159efe502679eee9df8f49009ca5897ada300ea757d0e0e561187b1d17713e1a561dd6247829155f6c312c', '4a800106f6fa85d4053db33f3f6dce2439efdb6a13d28caae8c2d9694c70084d36b53fed0240277512430e6cf662cdedf0e5533a9e9703aee3b4207ddfdf1f74', 'Mark Josephd', 'sadsa', 'Cinco', 'dsad', 'sadsadsa', '123421312', 'Adviser');
 
 -- ----------------------------
 -- Table structure for `applicationtbl`
@@ -109,7 +122,7 @@ CREATE TABLE `certificationtbl` (
   `Certification` varchar(255) NOT NULL,
   `YearTaken` varchar(255) NOT NULL,
   PRIMARY KEY (`CertificationID`)
-) ENGINE=MyISAM AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM AUTO_INCREMENT=16 DEFAULT CHARSET=latin1;
 
 -- ----------------------------
 -- Records of certificationtbl
@@ -117,6 +130,17 @@ CREATE TABLE `certificationtbl` (
 INSERT INTO certificationtbl VALUES ('1', '00820120004', 'sfsdfds', '2015');
 INSERT INTO certificationtbl VALUES ('2', '00820120001', 'Graduate of Computer Science', '2014');
 INSERT INTO certificationtbl VALUES ('3', '00820120001', 'Technician', '2014');
+INSERT INTO certificationtbl VALUES ('4', '00820120326', 'YUFC Certificate of Appreciation', '2014');
+INSERT INTO certificationtbl VALUES ('6', '00820120325', 'Pep talk', '2016');
+INSERT INTO certificationtbl VALUES ('7', '00820124321', 'Certificate in Professional Etiquette', '2016');
+INSERT INTO certificationtbl VALUES ('8', '00820129999', 'Autocad 2011', '2011');
+INSERT INTO certificationtbl VALUES ('9', '00820120100', 'NYC', '2016');
+INSERT INTO certificationtbl VALUES ('10', '00820120290', 'Seminars Certificate', '2016');
+INSERT INTO certificationtbl VALUES ('11', '00820121111', 'Certificate in Metamorphosis', '2015');
+INSERT INTO certificationtbl VALUES ('12', '00820120278', 'fddfdfd', '2006');
+INSERT INTO certificationtbl VALUES ('13', '00820120805', 'Stand Up & Deliver 2013', '2013');
+INSERT INTO certificationtbl VALUES ('14', '00820120805', 'Essay Does It 2016', '2016');
+INSERT INTO certificationtbl VALUES ('15', '00820170318', 'National Youth Convention', '2015');
 
 -- ----------------------------
 -- Table structure for `companyinfotbl`
@@ -146,7 +170,7 @@ CREATE TABLE `companyinfotbl` (
   `Website` varchar(255) DEFAULT NULL,
   `ProfileImage` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`CompanyID`)
-) ENGINE=InnoDB AUTO_INCREMENT=49 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=55 DEFAULT CHARSET=latin1;
 
 -- ----------------------------
 -- Records of companyinfotbl
@@ -191,6 +215,11 @@ INSERT INTO companyinfotbl VALUES ('45', 'MACSLINK ï¿½ PSV Services, Inc.', '
 INSERT INTO companyinfotbl VALUES ('46', 'Food Asia Corporation', 'FoodAsia Corporation, a Consumer Food Manufacturer/Retailer, is the owner and operator of multi-awarded Food Brands including Tea Square ï¿½, Bibingkinitan! ï¿½, The Bibingka Cafï¿½, Bar-B-Kingï¿½, and FreshFoodsï¿½. With over Two Hundred (300) stores nationwide including Cebu, Davao, Cagayan de Oro, Iloilo and General Santos City. FoodAsia Corporation envisions to be one of the leading food manufacturers in Southeast Asia. As the Company gears up for regional and international expansion, we are looking for dynamic individuals to join our team of professionals.', 'Food and Beverage', null, 'Quezon City', '', '', '09123456789', '', 'Francis', 'C.', 'Villaluz', 'Supervisor', null, 'f.villaluz@foodasia.com.ph', 'a9920687fd51c8f6ba165bb9fe963ccd0a47f99a88c76b343fe7792477f24a42e17eca217ec72c4e2adfd4b35effc5d0a6481c09280850da0f4349db83b05c26', '0dedd75782209edca197c3d0c6416f10820a50f246ab9c35e6a121fadede01e7794cd8aff26fbfb3c2cf1af60f0b54deac56f5404e875a0e7c9255d76653abfe', '', 'Active', 'www.foodasia.com.ph', 'ProfileImage/46.jpg');
 INSERT INTO companyinfotbl VALUES ('47', 'Gerry\'s Grill', 'Dining at Gerryâ€™s gives everyone a pleasurable experience. Diners are served with only the freshest food ranging from Filipino favorites â€“ Sisig, Inihaw na Pusit, Crispy Pata, Beef Kare-kare, Adobo Shreds to exotic cuisines. Ultimately, every item on the menu goes perfectly well with your favorite beverage.\r\n \r\nSince his college years, its founder, Gerry Apolinario had been dreaming of putting up a place where everyone could hang out and enjoy good food. With his passion for cooking and love for grilled dishes, he yearned for a venue where both may be enjoyed amidst an atmosphere that is fun, fresh and wholesome. And although the original concept of the business was one where people could unwind with a drink or two, Gerryâ€™s inadvertently became a family restaurant too. â€œParents who frequented Gerryâ€™s  during weekdays began bringing their family to us especially on Sundays and then the rest of the week. Apparently, they liked our wide variety of food selections and the clean and fun motifâ€, Mr. Apolinario enthuses. He goes on to say, \"Gerryâ€™s continue to evolve to respond to the ever growing needs of our customers. We also take pride in taking care of our people â€“ one of our most valuable assets. We develop inspired and competent human resources who are constantly seeking ways to further enhance our skills. We believe in our ability to act with a sense of urgency in creating innovations in order to deliver world class products\".\r\n \r\n 	\r\n \r\nâ€œWhen it comes to pricing, we pursue cost leadership and a culture that aims to maximize cost and resources. We believe in offering our customers the best value for their money.â€\r\n\r\n\r\n \r\nGerryâ€™s continues to reach out to its growing customers. From its first restaurant located along Tomas Morato corner Eugenio Lopez Avenue in Quezon City,    Gerryâ€™s  now has over 75 branches nationwide with 2 branches in Singapore, 2 branches in United States and in Doha, Qatar.\r\nIndeed, Gerryâ€™s Restaurant and Bar remains a favorite place to dine in among Filipinos here and abroad.\r\n\r\nSo for great food and loads of fun, you\'d still rather be at Gerry\'s.\r\n', 'Food and Beverage', null, 'Caloocan City', '', '', '09456789123', '', 'Gerry', 'M.', 'Sta.Maria', 'CEO', null, 'gerrysgrill@yahoo.com', 'a9920687fd51c8f6ba165bb9fe963ccd0a47f99a88c76b343fe7792477f24a42e17eca217ec72c4e2adfd4b35effc5d0a6481c09280850da0f4349db83b05c26', '0dedd75782209edca197c3d0c6416f10820a50f246ab9c35e6a121fadede01e7794cd8aff26fbfb3c2cf1af60f0b54deac56f5404e875a0e7c9255d76653abfe', '', 'Active', 'http://www.gerrysgrill.com/', 'ProfileImage/47.jpg');
 INSERT INTO companyinfotbl VALUES ('48', 'RBX', 'RBX specializes in authentic Chinese food take-out. The company\'s main products are varieties of fried rice and rice toppings that are prepared fresh in front of the customers. These are uniquely packed in convenient take-out boxes served hot and ready for people on the go. From food carts, RBX have found it\'s way to stalls, mini-diners and restaurant in major malls, supermarkets and universities. For the past 12 years, RBX Rice in a Box had established over 100 outlets sering quality food and service for its customers in and around Metro Manila.', 'Food and Beverage', null, 'Quezon City', '', '', '09231278906', '', 'Kathleen', 'S', 'Go', 'Assistant Manager', null, 'franchise@rbx.com.ph', 'a9920687fd51c8f6ba165bb9fe963ccd0a47f99a88c76b343fe7792477f24a42e17eca217ec72c4e2adfd4b35effc5d0a6481c09280850da0f4349db83b05c26', '0dedd75782209edca197c3d0c6416f10820a50f246ab9c35e6a121fadede01e7794cd8aff26fbfb3c2cf1af60f0b54deac56f5404e875a0e7c9255d76653abfe', '', 'Active', 'http://www.rbx.com.ph', 'ProfileImage/48.jpg');
+INSERT INTO companyinfotbl VALUES ('50', 'IBM', 'International Business Machines, or IBM, nicknamed \"Big Blue\", is a multinational computer technology and IT consulting corporation headquartered in Armonk, New York, United States.', 'Computer / Information Technology (Hardware)', null, 'Pasig City', '1400', '', '09224248230', '', 'Tim', 'Lao', 'Rojas', 'manager', 'head office', 'ibm1@gmail.com', 'ae988509d164a1a6d6649b11d2aadb4d02136be82a3ea9b229660d961bbab67888341f8e5eb2e0eb5950892332af27eef330d4b71c240b24b7d7fdfc305ea631', '0540b05af18ab26e2a2dd14038df93f6cb14dec4292c1283c2d38b9cb2f3d3f45161f17c9f3a073cf1c06c9f980c4954ce62ea329fdeec5c5ff3ccd6133c312b', ' Armonk, New York, United States', 'Active', '', 'ProfileImage/50.jpg');
+INSERT INTO companyinfotbl VALUES ('51', 'Tj Corp', null, 'Computer / Information Technology (Software)', null, 'Caloocan City', null, null, '09224248230', null, 'Tim', 'Lao', 'Rojas', 'president', 'head office', 'tjcorp@gmail.com', '7b7bd335088c83e63352e23c0365900c629b4c0d13b0e0773645704b65a452af95d98d555cf25eb70139310a74beabca492458e7821e8db94a8f34056697d8e7', '7f764e339879dc4023927f1c02e230fbcf53c11e51ab4431f36d4c8eb9b34ed20d3ce8f8a79389f68c307f86d8b4135928849d0e9684febb8832d7fc3a0e9e78', null, 'Active', '', null);
+INSERT INTO companyinfotbl VALUES ('52', 'Qwe Corp', null, 'Food and Beverage', null, 'Caloocan City', null, null, '09876543211', null, 'Qween', 'Sy', 'Chan', 'Manager', 'Managing Department', 'qwecorp@gmail.com', 'e0b1c676d09738ebddca812c3762baeec1d29b440fb02e1ee07ff33b2ce8e6c86f27ee6822ae20b85015e20f2f77c89ae2c2749e628825543457ebc001927642', '35b87ad97e2b83e6bf09c81ad86e3b6079b54f86bea32d298b40851fec543e7042be34beddc78c7663ec5d03212a27ac316f38dba85ac9e2220fd54d2f77296b', null, 'Active', 'https://qwecorp.com.ph', null);
+INSERT INTO companyinfotbl VALUES ('53', 'PrintInk', 'print', 'Arts / Design', null, 'Valenzuela City', '', '3321123', '09232126231', '', 'John', 'S', 'Boe', 'HR', 'Head Office', 'Print@email.com', '0506daa37d2036bc3fa12d5e9d3370ab80e84664a5e14e8b9b334c476e3425c6c98d94f310da82922263196e8d79040004855369cc665d8b1dd631e9f149c1b4', 'f13bceca61369d26f513eb2c177a572e9924d59c9803f51b0dfe10a027e8499adfb3f3a74c5182f93e18f0c1a03dfb6ddac584ee70d6fd7149fffb256097fa33', 'valenzuela', 'Active', 'PrintInk.com', 'ProfileImage/53.jpg');
+INSERT INTO companyinfotbl VALUES ('54', 'San Miguel Corporation', null, 'Tobacco and Liquor', null, 'Valenzuela City', null, null, '09056394929', null, 'Joshua', 'Dauag', 'Agcaoili', 'CEO', 'Head Office', 'smc@gmail.com', '77599aea3f5f207329cbdab4d12fc25ac6dc83e94c37d60e3d291f8be33aa64f254f36ac06d9b9f058049b28874ca36008e3f2e1c3f36078d6cc46654479909e', 'c95c994e5a8e75cabaf510064c25dd9a87e9eaf0b5267d56e958a143ae37cc5132ef1a497b45e9dbc3a7768877a4454e12deba54c89aaf6a193a217f86a7719a', null, 'Active', null, null);
 
 -- ----------------------------
 -- Table structure for `compeduclvltbl`
@@ -205,26 +234,6 @@ CREATE TABLE `compeduclvltbl` (
 
 -- ----------------------------
 -- Records of compeduclvltbl
--- ----------------------------
-
--- ----------------------------
--- Table structure for `compeventtbl`
--- ----------------------------
-DROP TABLE IF EXISTS `compeventtbl`;
-CREATE TABLE `compeventtbl` (
-  `EventID` int(11) NOT NULL AUTO_INCREMENT,
-  `CompanyID` varchar(255) DEFAULT NULL,
-  `EventTitle` varchar(255) DEFAULT NULL,
-  `EventDatef` varchar(255) DEFAULT NULL,
-  `EventDatet` varchar(255) DEFAULT NULL,
-  `Location` varchar(255) DEFAULT NULL,
-  `Description` varchar(255) DEFAULT NULL,
-  `Status` varchar(255) DEFAULT NULL,
-  PRIMARY KEY (`EventID`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
--- ----------------------------
--- Records of compeventtbl
 -- ----------------------------
 
 -- ----------------------------
@@ -250,7 +259,7 @@ CREATE TABLE `comppositiontbl` (
   `ReqSkills` varchar(500) DEFAULT NULL,
   `Tags` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`PositionID`)
-) ENGINE=InnoDB AUTO_INCREMENT=103 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=108 DEFAULT CHARSET=latin1;
 
 -- ----------------------------
 -- Records of comppositiontbl
@@ -343,6 +352,9 @@ INSERT INTO comppositiontbl VALUES ('99', '47', null, '2016-02-23', '2016-12-23'
 INSERT INTO comppositiontbl VALUES ('100', '47', null, '2016-02-23', '2016-12-23', 'Business Analyst', 'Manager', 'Solves organizational information problems', 'Marketing/Business Development', 'Full Time', '1', '25,000 - 30,000', '5', 'Bachelor Degree', 'English', 'Promoting Process Improvement', null);
 INSERT INTO comppositiontbl VALUES ('101', '47', null, '2016-02-23', '2016-09-13', 'Restaurant Manager', 'Manager', 'Accomplishes department objectives by managing staff', 'Hotel Management/Tourism Services', 'Full Time', '3', '15,000 - 20,000', '3', 'Bachelor Degree', 'English', 'Supervision, Results Driven, Developing Standards', null);
 INSERT INTO comppositiontbl VALUES ('102', '48', null, '2016-02-23', '2016-10-10', 'Manager', 'Manager', 'Accomplishes department objectives by managing staff', 'Hotel Management/Tourism Services', 'Full Time', '5', '20,000 - 25,000', '3', 'Bachelor Degree', 'English', 'Supervision, Communication Skills, Leadership Skills', null);
+INSERT INTO comppositiontbl VALUES ('105', '53', null, '2016-02-23', '2016-03-23', 'Manager', 'Manager', 'Hard Working', 'Arts/Creative/Graphics Design', 'Full Time', '1', '30,000 - 40,000', '5', 'Bachelor Degree', 'english', 'Design', null);
+INSERT INTO comppositiontbl VALUES ('106', '50', null, '2016-02-23', '2016-02-29', 'Java Programming', 'Senior Manager', 'we need java programmer', 'IT/Computer - Software Development', 'Part Time', '2', '25,000 - 30,000', '2', 'Bachelor Degree', 'english', 'Java', null);
+INSERT INTO comppositiontbl VALUES ('107', '54', null, '2016-02-23', '2017-03-03', 'Manager', 'Junior Executive', 'Manage the staff', 'Marketing/Business Development', 'Full Time', '3', '20,000 - 25,000', '2', 'Bachelor Degree', null, 'Flexible', null);
 
 -- ----------------------------
 -- Table structure for `coursetbl`
@@ -398,13 +410,21 @@ CREATE TABLE `languagetbl` (
   `WrittenProf` varchar(255) NOT NULL,
   `SpokenProf` varchar(255) NOT NULL,
   PRIMARY KEY (`LangID`)
-) ENGINE=MyISAM AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM AUTO_INCREMENT=12 DEFAULT CHARSET=latin1;
 
 -- ----------------------------
 -- Records of languagetbl
 -- ----------------------------
 INSERT INTO languagetbl VALUES ('1', '00820120004', 'asdsad', '', '');
-INSERT INTO languagetbl VALUES ('3', '00820120001', 'asdsadsa', '', '');
+INSERT INTO languagetbl VALUES ('3', '00820120001', 'English', '', '');
+INSERT INTO languagetbl VALUES ('4', '00820120326', 'English', '', '');
+INSERT INTO languagetbl VALUES ('5', '00820120325', 'english', '', '');
+INSERT INTO languagetbl VALUES ('6', '00820124321', 'English', '', '');
+INSERT INTO languagetbl VALUES ('7', '00820129999', 'English', '', '');
+INSERT INTO languagetbl VALUES ('8', '00820129999', 'Filipino', '', '');
+INSERT INTO languagetbl VALUES ('9', '00820129999', 'Nihongo', '', '');
+INSERT INTO languagetbl VALUES ('10', '00820170318', 'English', '3', '3');
+INSERT INTO languagetbl VALUES ('11', '00820120805', 'English', '5', '5');
 
 -- ----------------------------
 -- Table structure for `listofindustrytbl`
@@ -600,12 +620,14 @@ CREATE TABLE `logrequesttbl` (
   `DurationOfRequest` varchar(255) NOT NULL,
   `MarketingMaterials` varchar(255) NOT NULL,
   PRIMARY KEY (`LID`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=latin1;
 
 -- ----------------------------
 -- Records of logrequesttbl
 -- ----------------------------
 INSERT INTO logrequesttbl VALUES ('2', '1', 'BSBM, ABCOMM, BSITDA', '2016-02-17', '2016-02-29', 'Accepted', '2016-02-17', 'asdasdsa', 'Full Time, Part-Time, Contractual', 'Entry Level/Gen Staff, Officer, Supervisory', 'ddddddddddddd', 'dddddddddddd', 'Valenzuela City', '41241', '11', 'Yes', '1 Month', 'Yes');
+INSERT INTO logrequesttbl VALUES ('3', '50', 'BSCS, BSIT, BSCPE, ASCT', '2016-02-23', '2016-03-31', 'Accepted', '2016-02-23', 'Java Programming', 'Full Time', 'Entry Level/Gen Staff', 'we need java programming', 'Java programmer', 'Caloocan City', '25000', '1', 'Yes', '2 Months', 'Yes');
+INSERT INTO logrequesttbl VALUES ('4', '53', 'ABCOMM', '2016-02-23', '2016-03-31', 'Accepted', '2016-02-23', 'Manager', 'Full Time', 'Management', 'Hard Worker', 'Hard Worker', 'Valenzuela City', '30000', '5', 'No', '1 Month', 'Yes');
 
 -- ----------------------------
 -- Table structure for `ojttbl`
@@ -642,7 +664,7 @@ CREATE TABLE `ojttbl` (
 -- ----------------------------
 -- Records of ojttbl
 -- ----------------------------
-INSERT INTO ojttbl VALUES ('1', '00820131192', 'FIRMANTE', 'MARY ANN', 'LAPORE', 'BSIT', 'ONLY @ PC GILMORE COMPUTER CENTER', 'Unit 12, 4th floor Fisher Mall, Brgy. Sta. Cruz, Quezon City', 'Mr. Conrad Guetaw', 'OIC', '', null, '', '200', 'on', 'on', 'on', 'on', 'on', 'on', 'on', 'on', 'on', '13');
+INSERT INTO ojttbl VALUES ('1', '00820131192', 'FIRMANTE', 'MARY ANN', 'LAPORE', 'BSIT', 'ONLY @ PC GILMORE COMPUTER CENTER', 'Unit 12, 4th floor Fisher Mall, Brgy. Sta. Cruz, Quezon City', 'Mr. Conrad Guetaw', 'OIC', '', null, '', '201', 'on', 'on', 'on', 'on', 'on', 'on', 'on', 'on', 'on', '13');
 INSERT INTO ojttbl VALUES ('2', '00820120173', 'MENDIOLA', 'MARK ANTHONY', 'ACERO', 'BSIT', 'Transcom Worldwide Philippines', '6F Cyberscape Alpha Bldg., Garnet and Sapphire Road, Ortigas, Pasig City', 'Mr. Kenneth Macaraeg', 'IT ADMIN', '', null, 'INC', '222', 'on', 'on', 'on', 'on', 'on', 'off', 'on', 'off', 'off', '13');
 INSERT INTO ojttbl VALUES ('3', '00820120330', 'MINGOY', 'RONNEL', 'GALVANTE', 'BSIT', 'Malabon City Hall', 'F. Sevilla Blvd., Malabon City', 'Ms. Herminia B. Cunanan', 'OJT Coordinator', '', null, '', '', 'off', 'on', 'on', 'off', 'off', 'off', 'off', 'off', 'off', '13');
 INSERT INTO ojttbl VALUES ('4', '00820120442', 'NUÃ‘EZ', 'EDRICK', 'BERIDO', 'BSIT', 'Micro Tech 96 Co.', '11th Avenue, Grace Park, Caloocan City', 'Mr. Roderick F. Dilag', 'Owner', '', null, null, null, null, null, null, null, null, null, null, null, null, '13');
@@ -674,7 +696,7 @@ CREATE TABLE `progresstbl` (
   `Languages` varchar(255) NOT NULL,
   `_References` varchar(255) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=165 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=176 DEFAULT CHARSET=latin1;
 
 -- ----------------------------
 -- Records of progresstbl
@@ -778,7 +800,7 @@ INSERT INTO progresstbl VALUES ('96', '00820120096', '0', '', '', '', '', '', ''
 INSERT INTO progresstbl VALUES ('97', '00820120097', '0', '', '', '', '', '', '', '', '', '', '', '');
 INSERT INTO progresstbl VALUES ('98', '00820120098', '0', '', '', '', '', '', '', '', '', '', '', '');
 INSERT INTO progresstbl VALUES ('99', '00820120099', '0', '', '', '', '', '', '', '', '', '', '', '');
-INSERT INTO progresstbl VALUES ('100', '00820120100', '0', '', '', '', '', '', '', '', '', '', '', '');
+INSERT INTO progresstbl VALUES ('100', '00820120100', '0', 'ok', 'ok', 'ok', '', 'ok', 'ok', 'ok', 'ok', 'ok', 'ok', 'ok');
 INSERT INTO progresstbl VALUES ('101', '00820120101', '0', '', '', '', '', '', '', '', '', '', '', '');
 INSERT INTO progresstbl VALUES ('102', '00820120102', '0', '', '', '', '', '', '', '', '', '', '', '');
 INSERT INTO progresstbl VALUES ('103', '00820120103', '0', '', '', '', '', '', '', '', '', '', '', '');
@@ -843,6 +865,17 @@ INSERT INTO progresstbl VALUES ('161', '00820120162', '0', '', '', '', '', '', '
 INSERT INTO progresstbl VALUES ('162', '00820120163', '0', '', '', '', '', '', '', '', '', '', '', '');
 INSERT INTO progresstbl VALUES ('163', '00820120164', '0', '', '', '', '', '', '', '', '', '', '', '');
 INSERT INTO progresstbl VALUES ('164', '00820120192', '0', 'ok', 'ok', 'ok', '', '', '', '', '', '', '', '');
+INSERT INTO progresstbl VALUES ('165', '00820120326', '0', 'ok', 'ok', 'ok', '', 'ok', 'ok', 'ok', 'ok', 'ok', 'ok', 'ok');
+INSERT INTO progresstbl VALUES ('166', '00820120325', '0', 'ok', 'ok', 'ok', 'ok', 'ok', 'ok', 'ok', 'ok', 'ok', 'ok', 'ok');
+INSERT INTO progresstbl VALUES ('167', '00820124321', '0', 'ok', 'ok', 'ok', '', 'ok', 'ok', 'ok', 'ok', 'ok', 'ok', 'ok');
+INSERT INTO progresstbl VALUES ('168', '00820129999', '0', 'ok', 'ok', 'ok', '', 'ok', 'ok', 'ok', 'ok', 'ok', 'ok', 'ok');
+INSERT INTO progresstbl VALUES ('169', '00820120998', '0', '', '', '', '', '', '', '', '', '', '', '');
+INSERT INTO progresstbl VALUES ('170', '00820120290', '0', 'ok', 'ok', 'ok', 'ok', 'ok', 'ok', 'ok', 'ok', 'ok', 'ok', '');
+INSERT INTO progresstbl VALUES ('171', '00820121111', '0', 'ok', 'ok', 'ok', '', 'ok', 'ok', 'ok', 'ok', 'ok', 'ok', 'ok');
+INSERT INTO progresstbl VALUES ('172', '00820120278', '0', 'ok', 'ok', 'ok', '', 'ok', 'ok', 'ok', 'ok', 'ok', 'ok', 'ok');
+INSERT INTO progresstbl VALUES ('173', '00820120805', '0', 'ok', 'ok', 'ok', '', 'ok', 'ok', 'ok', 'ok', 'ok', 'ok', 'ok');
+INSERT INTO progresstbl VALUES ('174', '00820170318', '0', 'ok', 'ok', 'ok', '', 'ok', '', 'ok', 'ok', 'ok', 'ok', '');
+INSERT INTO progresstbl VALUES ('175', '00820126969', '0', '', '', '', '', '', '', '', '', '', '', '');
 
 -- ----------------------------
 -- Table structure for `referencetbl`
@@ -858,7 +891,7 @@ CREATE TABLE `referencetbl` (
   `Phone` varchar(255) NOT NULL,
   `Email` varchar(255) NOT NULL,
   PRIMARY KEY (`ReferenceID`)
-) ENGINE=MyISAM AUTO_INCREMENT=5 DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM AUTO_INCREMENT=15 DEFAULT CHARSET=latin1;
 
 -- ----------------------------
 -- Records of referencetbl
@@ -867,6 +900,16 @@ INSERT INTO referencetbl VALUES ('1', '00820120004', 'asdsds', 'sdada', 'adasdsf
 INSERT INTO referencetbl VALUES ('2', '00820120001', 'Tim Joseph Rojas', 'Friend', 'Sykes', 'Top Level Management', '092222222', 'tj@yahoo.com');
 INSERT INTO referencetbl VALUES ('3', '00820120001', 'Aira Jane Cruz', 'Friend', 'Sykes', 'Janitor', '09355585931', 'aira@yahoo.com');
 INSERT INTO referencetbl VALUES ('4', '00820120001', 'asdsad', 'sadasdsa', 'dasdas', 'das', '465464', 'asdas@cc.cc');
+INSERT INTO referencetbl VALUES ('5', '00820120326', 'Marilou F. Bartolome', 'Thesis Adviser', 'STI Caloocan', 'Professor', '09176232278', 'MarilouBartolome@gmail.com');
+INSERT INTO referencetbl VALUES ('6', '00820120326', 'Blenda Bensurto', 'Professor', 'STI College Caloocan	', 'Professor', '09236964748', 'BlendaBensurto@gmail.com');
+INSERT INTO referencetbl VALUES ('7', '00820120325', 'Marilou F. Bartolome', 'Thesis Adviser', 'STI College Caloocan', 'Professor', '09176232278', 'MarilouBartolome@gmail.com');
+INSERT INTO referencetbl VALUES ('8', '00820124321', 'Bill Doors', 'uncle', 'Microsoft', 'Manager', '09877656767', 'bill@yahoo.com');
+INSERT INTO referencetbl VALUES ('9', '00820129999', 'Marilou Bartolome', 'Thesis Adviser', 'STI College Caloocan', 'Professor', '09355585931', 'marilou_bartolome@gmai.com');
+INSERT INTO referencetbl VALUES ('10', '00820129999', 'Wilson Mendoza', 'Thesis Coordinator', 'STI College Caloocan', 'Thesis Coordinator', '2790201', 'wilson_mendoza@gmail.com');
+INSERT INTO referencetbl VALUES ('11', '00820120100', 'Marilou Bartolome', 'Adviser', 'STI', 'Professor', '09876543215', 'mbart@yahoo.com');
+INSERT INTO referencetbl VALUES ('12', '00820121111', 'Suzette Crisostomo', 'Adviser', 'STI', 'Faculty Member', '09876543234', 'suzette@gmail.com');
+INSERT INTO referencetbl VALUES ('13', '00820120278', 'adfafds', 'dsafsdfsd', 'dfdfdfds', 'fdsfdsf', '07677856936', 'judee@dnfjldsf.com');
+INSERT INTO referencetbl VALUES ('14', '00820120805', 'Marilou F. Bartolome', 'Thesis Adviser', 'STI College Caloocan', 'Faculty', '09176232278', 'msbart@gmail.com');
 
 -- ----------------------------
 -- Table structure for `requesttocompanytbl`
@@ -882,12 +925,12 @@ CREATE TABLE `requesttocompanytbl` (
   `_Date` varchar(255) NOT NULL,
   `Message` varchar(255) NOT NULL,
   PRIMARY KEY (`RID`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=latin1;
 
 -- ----------------------------
 -- Records of requesttocompanytbl
 -- ----------------------------
-INSERT INTO requesttocompanytbl VALUES ('1', '4', '00820120001', '12', 'Pending', '2016-02-21', '', '');
+INSERT INTO requesttocompanytbl VALUES ('6', '16', '00820120001', '84', 'Pending', '2016-02-23', '', '');
 
 -- ----------------------------
 -- Table structure for `schooltbl`
@@ -902,7 +945,7 @@ CREATE TABLE `schooltbl` (
   `Graduated` varchar(255) NOT NULL,
   `_Default` varchar(10) NOT NULL,
   PRIMARY KEY (`SchoolID`)
-) ENGINE=MyISAM AUTO_INCREMENT=158 DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM AUTO_INCREMENT=180 DEFAULT CHARSET=latin1;
 
 -- ----------------------------
 -- Records of schooltbl
@@ -1055,6 +1098,27 @@ INSERT INTO schooltbl VALUES ('152', '00820120001', 'Malinta National High Schoo
 INSERT INTO schooltbl VALUES ('154', '00820120191', 'STI College Caloocan', 'Bachelor\'s/College Degree', 'BSCS', '05 2016', '1');
 INSERT INTO schooltbl VALUES ('155', '00820120192', 'STI College Caloocan', 'Bachelor\'s/College Degree', 'BSCS', '05 2016', '1');
 INSERT INTO schooltbl VALUES ('156', '00820120051', 'asdasdasdasd', 'High School Diploma', '', '2008 - 2012', '0');
+INSERT INTO schooltbl VALUES ('158', '00820120326', 'STI College Caloocan', 'Bachelor\'s/College Degree', 'BSAT', '05 2016', '1');
+INSERT INTO schooltbl VALUES ('159', '00820120326', 'Salt and Light for Tomorrow Christian Academy', 'High School Diploma', '', '2008 - 2012', '0');
+INSERT INTO schooltbl VALUES ('160', '00820120325', 'STI College Caloocan', 'Bachelor\'s/College Degree', 'BSCS', ' ', '1');
+INSERT INTO schooltbl VALUES ('161', '00820124321', 'STI College Caloocan', 'Bachelor\'s/College Degree', 'BSCS', ' ', '1');
+INSERT INTO schooltbl VALUES ('163', '00820120325', 'Salt and Light for tomorrow Christian Academy', 'High School Diploma', '', '2008 - 2012', '0');
+INSERT INTO schooltbl VALUES ('164', '00820124321', 'Navotas national highschool', 'High School Diploma', '', '2008 - 2012', '0');
+INSERT INTO schooltbl VALUES ('165', '00820129999', 'STI College Caloocan', 'Bachelor\'s/College Degree', 'BSCS', '05 2016', '1');
+INSERT INTO schooltbl VALUES ('166', '00820129999', 'Malinta National High School', 'High School Diploma', '', '2008 - 2012', '0');
+INSERT INTO schooltbl VALUES ('167', '00820120998', 'STI College Caloocan', 'Bachelor\'s/College Degree', 'BSCS', '05 2016', '1');
+INSERT INTO schooltbl VALUES ('168', '00820120100', 'Tugatog National High School', 'High School Diploma', '', '2008 - 2012', '0');
+INSERT INTO schooltbl VALUES ('169', '00820120290', 'STI College Caloocan', 'Bachelor\'s/College Degree', 'BSCS', '05 2016', '1');
+INSERT INTO schooltbl VALUES ('170', '00820120290', 'Caloocan High School', 'High School Diploma', '', '2008 - 2012', '0');
+INSERT INTO schooltbl VALUES ('171', '00820121111', 'STI College Caloocan', 'Bachelor\'s/College Degree', 'BSCPE', '05 2016', '1');
+INSERT INTO schooltbl VALUES ('172', '00820120278', 'STI College Caloocan', 'Bachelor\'s/College Degree', 'BSCS', '05 2016', '1');
+INSERT INTO schooltbl VALUES ('173', '00820121111', 'Caloocan High School', 'High School Diploma', '', '2008 - 2012', '0');
+INSERT INTO schooltbl VALUES ('174', '00820120278', 'Maypajo Integrated School', 'High School Diploma', '', '2008 - 2012', '0');
+INSERT INTO schooltbl VALUES ('175', '00820120805', 'STI College Caloocan', 'Bachelor\'s/College Degree', 'BSCS', '05 2016', '1');
+INSERT INTO schooltbl VALUES ('176', '00820120805', 'Tinajeros National High School', 'Bachelor\'s/College Degree', 'BSCS', '2008 - 2012', '0');
+INSERT INTO schooltbl VALUES ('177', '00820170318', 'STI College Caloocan', 'Bachelor\'s/College Degree', 'BSCS', ' ', '1');
+INSERT INTO schooltbl VALUES ('178', '00820170318', 'Caruhatan National High School', 'High School Diploma', '', '2009 - 2012', '0');
+INSERT INTO schooltbl VALUES ('179', '00820126969', 'STI College Caloocan', 'Bachelor\'s/College Degree', 'BSITDA', '12 2016', '1');
 
 -- ----------------------------
 -- Table structure for `seminartbl`
@@ -1066,7 +1130,7 @@ CREATE TABLE `seminartbl` (
   `Seminar` varchar(255) NOT NULL,
   `YearAttended` varchar(255) NOT NULL,
   PRIMARY KEY (`SeminarID`)
-) ENGINE=MyISAM AUTO_INCREMENT=6 DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM AUTO_INCREMENT=15 DEFAULT CHARSET=latin1;
 
 -- ----------------------------
 -- Records of seminartbl
@@ -1074,6 +1138,15 @@ CREATE TABLE `seminartbl` (
 INSERT INTO seminartbl VALUES ('4', '00820120001', 'Professional etiquette', '2013');
 INSERT INTO seminartbl VALUES ('3', '00820120001', 'Achievement Seminar', '2012');
 INSERT INTO seminartbl VALUES ('5', '00820120001', 'Facebook Free Seminar', '2014');
+INSERT INTO seminartbl VALUES ('6', '00820120326', 'Pep Talk', '2016');
+INSERT INTO seminartbl VALUES ('7', '00820124321', 'Professional etiquette', '2016');
+INSERT INTO seminartbl VALUES ('8', '00820120325', 'Pep talk', '2016');
+INSERT INTO seminartbl VALUES ('9', '00820129999', 'Pep Talk', '2016');
+INSERT INTO seminartbl VALUES ('10', '00820120100', 'NYC', '2016');
+INSERT INTO seminartbl VALUES ('11', '00820120290', 'Pep Talk', '2016');
+INSERT INTO seminartbl VALUES ('12', '00820121111', 'Metamorphosis', '2015');
+INSERT INTO seminartbl VALUES ('13', '00820120278', 'dfsdfsdf', '2003');
+INSERT INTO seminartbl VALUES ('14', '00820120805', 'PEP Talk', '2016');
 
 -- ----------------------------
 -- Table structure for `specializationtbl`
@@ -1087,409 +1160,27 @@ CREATE TABLE `specializationtbl` (
   `Proficiency` varchar(255) NOT NULL,
   `Skills` varchar(255) NOT NULL,
   PRIMARY KEY (`SID`)
-) ENGINE=MyISAM AUTO_INCREMENT=412 DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM AUTO_INCREMENT=427 DEFAULT CHARSET=latin1;
 
 -- ----------------------------
 -- Records of specializationtbl
 -- ----------------------------
-INSERT INTO specializationtbl VALUES ('4', '00820120006', 'sadsa', '1', '', '');
-INSERT INTO specializationtbl VALUES ('5', '00820120007', 'asdas', '3', '', '');
-INSERT INTO specializationtbl VALUES ('6', '00820120008', 'Biotechnology', '1', '', '');
-INSERT INTO specializationtbl VALUES ('7', '00820120008', 'Customer Service (Technical)', '4', '', '');
-INSERT INTO specializationtbl VALUES ('8', '00820120010', 'Actuarial Science/Statistics', '5', '', '');
-INSERT INTO specializationtbl VALUES ('9', '00820120011', 'Customer Service (Technical)', '10', '', '');
-INSERT INTO specializationtbl VALUES ('10', '00820120012', 'BPO/Call Center', '1', '', '');
-INSERT INTO specializationtbl VALUES ('11', '00820120013', 'Corporate Strategy/Top Management', '1', '', '');
-INSERT INTO specializationtbl VALUES ('12', '00820120014', 'IT/Computer - Software Development', '2', '', '');
-INSERT INTO specializationtbl VALUES ('13', '00820120016', 'Logistics/Supply Chain', '5', '', '');
-INSERT INTO specializationtbl VALUES ('14', '00820120017', 'Technical and Helpdesk Support', '1', '', '');
-INSERT INTO specializationtbl VALUES ('15', '00820120018', 'Merchandising', '1', '', '');
-INSERT INTO specializationtbl VALUES ('16', '00820120019', 'Research and Development', '3', '', '');
-INSERT INTO specializationtbl VALUES ('17', '00820120019', 'Research and Development', '3', '', '');
-INSERT INTO specializationtbl VALUES ('18', '00820120020', 'Sales - Financial Services (Insurance, Unit Trust, etc)', '7', '', '');
-INSERT INTO specializationtbl VALUES ('19', '00820120021', 'Stockbroking', '1', '', '');
-INSERT INTO specializationtbl VALUES ('20', '00820120021', 'Arts and Design', '3', '', '');
-INSERT INTO specializationtbl VALUES ('21', '00820120022', 'Costing Management', '2', '', '');
-INSERT INTO specializationtbl VALUES ('22', '00820120023', 'Geology/Geophysics', '1', '', '');
-INSERT INTO specializationtbl VALUES ('23', '00820120024', 'General Work (Housekeeper, Driver, Dispatch, Messenger, etc)', '2', '', '');
-INSERT INTO specializationtbl VALUES ('24', '00820120025', 'Marketing/Business Development', '5', '', '');
-INSERT INTO specializationtbl VALUES ('25', '00820120026', 'Purchasing/Inventory/Material and Warehouse Management', '8', '', '');
-INSERT INTO specializationtbl VALUES ('26', '00820120027', 'IT/Computer - Creative Design', '1', '', '');
-INSERT INTO specializationtbl VALUES ('27', '00820120028', 'Quality Control/Assuranc', '2', '', '');
-INSERT INTO specializationtbl VALUES ('28', '00820120028', 'Corporate Strategy/Top Management', '2', '', '');
-INSERT INTO specializationtbl VALUES ('29', '00820120029', 'Sales - Corporate / B2B', '4', '', '');
-INSERT INTO specializationtbl VALUES ('30', '00820120030', 'Law/Legal Services', '4', '', '');
-INSERT INTO specializationtbl VALUES ('31', '00820120031', 'Engineering - Environmental/Health/Safety', '1', '', '');
-INSERT INTO specializationtbl VALUES ('32', '00820120032', 'IT/Computer - Network/System/Database Admin', '3', '', '');
-INSERT INTO specializationtbl VALUES ('33', '00820120033', 'Project Management', '3', '', '');
-INSERT INTO specializationtbl VALUES ('34', '00820120034', 'Security/Armed Forces/Protective Services', '3', '', '');
-INSERT INTO specializationtbl VALUES ('35', '00820120035', 'Training and Development', '1', '', '');
-INSERT INTO specializationtbl VALUES ('36', '00820120036', 'Agriculture/Forestry/Fisheries', '1', '', '');
-INSERT INTO specializationtbl VALUES ('37', '00820120037', 'Customer Service (Technical)', '1', '', '');
-INSERT INTO specializationtbl VALUES ('38', '00820120038', 'Hotel Management/Tourism Services', '1', '', '');
-INSERT INTO specializationtbl VALUES ('39', '00820120039', 'Hotel Management/Tourism Services', '1', '', '');
-INSERT INTO specializationtbl VALUES ('40', '00820120040', 'Food Technology/Nutritionist', '3', '', '');
-INSERT INTO specializationtbl VALUES ('41', '00820120041', 'Finance - Corporate Finance/Investment/Merchant Banking<', '1', '', '');
-INSERT INTO specializationtbl VALUES ('42', '00820120042', 'Human Resources', '3', '', '');
-INSERT INTO specializationtbl VALUES ('43', '00820120043', 'Manufacturing/Production Operatio', '1', '', '');
-INSERT INTO specializationtbl VALUES ('44', '00820120044', 'IT/Computer - QA', '2', '', '');
-INSERT INTO specializationtbl VALUES ('45', '00820120045', 'Engineering - Oil/Gas', '3', '', '');
-INSERT INTO specializationtbl VALUES ('46', '00820120046', 'Quantity Surveying', '1', '', '');
-INSERT INTO specializationtbl VALUES ('47', '00820120047', 'Aviation/Aircraft Maintenance', '1', '', '');
-INSERT INTO specializationtbl VALUES ('48', '00820120048', 'Health Diagnosing', '5', '', '');
-INSERT INTO specializationtbl VALUES ('49', '00820120049', 'Journalist/Editor', '1', '', '');
-INSERT INTO specializationtbl VALUES ('50', '00820120050', 'Logistics/Supply Chain', '2', '', '');
-INSERT INTO specializationtbl VALUES ('53', '00820120160', 'BPO/Call Center', '3', '', '');
-INSERT INTO specializationtbl VALUES ('54', '00820120160', 'IT/Computer - Hardware', '1', '', '');
-INSERT INTO specializationtbl VALUES ('56', '00820120004', 'Advertising/Media Planning', '3', '', '');
-INSERT INTO specializationtbl VALUES ('57', '00820120004', 'Architecture/Interior Design', '3', '', '');
-INSERT INTO specializationtbl VALUES ('58', '00820120004', 'Banking/Financial Services', '5', '', '');
-INSERT INTO specializationtbl VALUES ('59', '00820120065', 'Arts and Design', '1', '', '');
-INSERT INTO specializationtbl VALUES ('60', '00820120065', 'Agriculture/Forestry/Fisheries', '2', '', '');
-INSERT INTO specializationtbl VALUES ('61', '00820120065', 'Aviation/Aircraft Maintenance', '2', '', '');
-INSERT INTO specializationtbl VALUES ('62', '00820120005', 'Arts/Creative/Graphics Design', '4', '', '');
-INSERT INTO specializationtbl VALUES ('63', '00820120005', 'Arts and Design', '4', '', '');
-INSERT INTO specializationtbl VALUES ('64', '00820120005', 'Banking/Financial Services', '4', '', '');
-INSERT INTO specializationtbl VALUES ('65', '00820120066', 'Agriculture/Forestry/Fisheries', '2', '', '');
-INSERT INTO specializationtbl VALUES ('66', '00820120066', 'Arts and Design', '1', '', '');
-INSERT INTO specializationtbl VALUES ('67', '00820120066', 'Clerical/Administrative Support', '1', '', '');
-INSERT INTO specializationtbl VALUES ('68', '00820120067', 'Arts and Design', '1', '', '');
-INSERT INTO specializationtbl VALUES ('69', '00820120006', 'Arts/Creative/Graphics Design', '3', '', '');
-INSERT INTO specializationtbl VALUES ('70', '00820120067', 'BPO/Call Center', '2', '', '');
-INSERT INTO specializationtbl VALUES ('71', '00820120006', 'Arts and Design', '3', '', '');
-INSERT INTO specializationtbl VALUES ('72', '00820120067', 'Advertising/Media Planning', '1', '', '');
-INSERT INTO specializationtbl VALUES ('73', '00820120006', 'Costing Management', '3', '', '');
-INSERT INTO specializationtbl VALUES ('74', '00820120068', 'Arts/Creative/Graphics Design', '1', '', '');
-INSERT INTO specializationtbl VALUES ('75', '00820120068', 'Arts/Creative/Graphics Design', '2', '', '');
-INSERT INTO specializationtbl VALUES ('76', '00820120068', 'Biotechnology', '1', '', '');
-INSERT INTO specializationtbl VALUES ('77', '00820120007', 'Arts/Creative/Graphics Design', '6', '', '');
-INSERT INTO specializationtbl VALUES ('78', '00820120007', 'Aviation/Aircraft Maintenance', '4', '', '');
-INSERT INTO specializationtbl VALUES ('81', '00820120069', 'Agriculture/Forestry/Fisheries', '1', '', '');
-INSERT INTO specializationtbl VALUES ('82', '00820120069', 'Aviation/Aircraft Maintenance', '1', '', '');
-INSERT INTO specializationtbl VALUES ('83', '00820120069', 'Architecture/Interior Design', '1', '', '');
-INSERT INTO specializationtbl VALUES ('84', '00820120008', 'Arts and Design', '5', '', '');
-INSERT INTO specializationtbl VALUES ('85', '00820120008', 'Aviation/Aircraft Maintenance', '6', '', '');
-INSERT INTO specializationtbl VALUES ('86', '00820120008', 'Banking/Financial Services', '6', '', '');
-INSERT INTO specializationtbl VALUES ('87', '00820120009', 'Arts and Design', '4', '', '');
-INSERT INTO specializationtbl VALUES ('88', '00820120070', 'Arts/Creative/Graphics Design', '1', '', '');
-INSERT INTO specializationtbl VALUES ('89', '00820120009', 'BPO/Call Center', '6', '', '');
-INSERT INTO specializationtbl VALUES ('90', '00820120070', 'Agriculture/Forestry/Fisheries', '3', '', '');
-INSERT INTO specializationtbl VALUES ('91', '00820120009', 'Chemistry', '7', '', '');
-INSERT INTO specializationtbl VALUES ('92', '00820120070', 'Architecture/Interior Design', '3', '', '');
-INSERT INTO specializationtbl VALUES ('93', '00820120071', 'Architecture/Interior Design', '1', '', '');
-INSERT INTO specializationtbl VALUES ('94', '00820120010', 'Aviation/Aircraft Maintenance', '2', '', '');
-INSERT INTO specializationtbl VALUES ('95', '00820120071', 'Arts and Design', '2', '', '');
-INSERT INTO specializationtbl VALUES ('96', '00820120010', 'Aviation/Aircraft Maintenance', '3', '', '');
-INSERT INTO specializationtbl VALUES ('97', '00820120071', 'Architecture/Interior Design', '2', '', '');
-INSERT INTO specializationtbl VALUES ('98', '00820120010', 'BPO/Call Center', '4', '', '');
-INSERT INTO specializationtbl VALUES ('99', '00820120072', 'Architecture/Interior Design', '1', '', '');
-INSERT INTO specializationtbl VALUES ('100', '00820120072', 'Aviation/Aircraft Maintenance', '2', '', '');
-INSERT INTO specializationtbl VALUES ('101', '00820120011', 'Aviation/Aircraft Maintenance', '4', '', '');
-INSERT INTO specializationtbl VALUES ('102', '00820120072', 'Aviation/Aircraft Maintenance', '1', '', '');
-INSERT INTO specializationtbl VALUES ('103', '00820120011', 'BPO/Call Center', '4', '', '');
-INSERT INTO specializationtbl VALUES ('104', '00820120073', 'Arts/Creative/Graphics Design', '1', '', '');
-INSERT INTO specializationtbl VALUES ('105', '00820120073', 'Architecture/Interior Design', '11', '', '');
-INSERT INTO specializationtbl VALUES ('106', '00820120012', 'Banking/Financial Services', '3', '', '');
-INSERT INTO specializationtbl VALUES ('107', '00820120073', 'Arts and Design', '1', '', '');
-INSERT INTO specializationtbl VALUES ('108', '00820120012', 'Banking/Financial Services', '3', '', '');
-INSERT INTO specializationtbl VALUES ('109', '00820120012', 'Costing Management', '2', '', '');
-INSERT INTO specializationtbl VALUES ('110', '00820120074', 'Agriculture/Forestry/Fisheries', '1', '', '');
-INSERT INTO specializationtbl VALUES ('111', '00820120013', 'Architecture/Interior Design', '3', '', '');
-INSERT INTO specializationtbl VALUES ('112', '00820120074', 'Architecture/Interior Design', '2', '', '');
-INSERT INTO specializationtbl VALUES ('113', '00820120013', 'Aviation/Aircraft Maintenance', '3', '', '');
-INSERT INTO specializationtbl VALUES ('114', '00820120074', 'Architecture/Interior Design', '1', '', '');
-INSERT INTO specializationtbl VALUES ('115', '00820120013', 'BPO/Call Center', '4', '', '');
-INSERT INTO specializationtbl VALUES ('116', '00820120075', 'Architecture/Interior Design', '1', '', '');
-INSERT INTO specializationtbl VALUES ('117', '00820120075', 'Banking/Financial Services', '2', '', '');
-INSERT INTO specializationtbl VALUES ('118', '00820120075', 'BPO/Call Center', '2', '', '');
-INSERT INTO specializationtbl VALUES ('119', '00820120014', 'Biotechnology', '4', '', '');
-INSERT INTO specializationtbl VALUES ('120', '00820120014', 'Clerical/Administrative Support', '3', '', '');
-INSERT INTO specializationtbl VALUES ('121', '00820120014', 'BPO/Call Center', '5', '', '');
-INSERT INTO specializationtbl VALUES ('122', '00820120076', 'Agriculture/Forestry/Fisheries', '1', '', '');
-INSERT INTO specializationtbl VALUES ('123', '00820120076', 'Arts and Design', '2', '', '');
-INSERT INTO specializationtbl VALUES ('124', '00820120076', 'Architecture/Interior Design', '3', '', '');
-INSERT INTO specializationtbl VALUES ('125', '00820120015', 'Clerical/Administrative Support', '3', '', '');
-INSERT INTO specializationtbl VALUES ('126', '00820120015', 'Costing Management', '3', '', '');
-INSERT INTO specializationtbl VALUES ('127', '00820120015', 'Banking/Financial Services', '5', '', '');
-INSERT INTO specializationtbl VALUES ('128', '00820120077', 'Agriculture/Forestry/Fisheries', '1', '', '');
-INSERT INTO specializationtbl VALUES ('129', '00820120077', 'Arts and Design', '1', '', '');
-INSERT INTO specializationtbl VALUES ('130', '00820120077', 'Banking/Financial Services', '2', '', '');
-INSERT INTO specializationtbl VALUES ('131', '00820120016', 'Aviation/Aircraft Maintenance', '2', '', '');
-INSERT INTO specializationtbl VALUES ('132', '00820120016', 'Banking/Financial Services', '3', '', '');
-INSERT INTO specializationtbl VALUES ('133', '00820120016', 'Clerical/Administrative Support', '2', '', '');
-INSERT INTO specializationtbl VALUES ('134', '00820120078', 'Arts and Design', '1', '', '');
-INSERT INTO specializationtbl VALUES ('135', '00820120078', 'Arts and Design', '2', '', '');
-INSERT INTO specializationtbl VALUES ('136', '00820120078', 'Arts/Creative/Graphics Design', '2', '', '');
-INSERT INTO specializationtbl VALUES ('137', '00820120017', 'Biotechnology', '2', '', '');
-INSERT INTO specializationtbl VALUES ('138', '00820120017', 'BPO/Call Center', '3', '', '');
-INSERT INTO specializationtbl VALUES ('139', '00820120017', 'Chemistry', '3', '', '');
-INSERT INTO specializationtbl VALUES ('140', '00820120079', 'Architecture/Interior Design', '1', '', '');
-INSERT INTO specializationtbl VALUES ('141', '00820120079', 'Biotechnology', '2', '', '');
-INSERT INTO specializationtbl VALUES ('142', '00820120079', 'Costing Management', '2', '', '');
-INSERT INTO specializationtbl VALUES ('143', '00820120018', 'Arts and Design', '2', '', '');
-INSERT INTO specializationtbl VALUES ('144', '00820120018', 'Chemistry', '2', '', '');
-INSERT INTO specializationtbl VALUES ('145', '00820120080', 'Arts and Design', '1', '', '');
-INSERT INTO specializationtbl VALUES ('146', '00820120018', 'Corporate Strategy/Top Management', '3', '', '');
-INSERT INTO specializationtbl VALUES ('147', '00820120080', 'Banking/Financial Services', '2', '', '');
-INSERT INTO specializationtbl VALUES ('148', '00820120080', 'Arts/Creative/Graphics Design', '1', '', '');
-INSERT INTO specializationtbl VALUES ('149', '00820120019', 'Banking/Financial Services', '3', '', '');
-INSERT INTO specializationtbl VALUES ('150', '00820120019', 'Clerical/Administrative Support', '4', '', '');
-INSERT INTO specializationtbl VALUES ('151', '00820120081', 'Arts/Creative/Graphics Design', '1', '', '');
-INSERT INTO specializationtbl VALUES ('152', '00820120019', 'Chemistry', '3', '', '');
-INSERT INTO specializationtbl VALUES ('153', '00820120081', 'Biotechnology', '2', '', '');
-INSERT INTO specializationtbl VALUES ('154', '00820120081', 'Chemistry', '1', '', '');
-INSERT INTO specializationtbl VALUES ('155', '00820120020', 'Arts/Creative/Graphics Design', '2', '', '');
-INSERT INTO specializationtbl VALUES ('156', '00820120020', 'Chemistry', '1', '', '');
-INSERT INTO specializationtbl VALUES ('157', '00820120082', 'Arts/Creative/Graphics Design', '1', '', '');
-INSERT INTO specializationtbl VALUES ('158', '00820120020', 'Clerical/Administrative Support', '3', '', '');
-INSERT INTO specializationtbl VALUES ('159', '00820120082', 'Architecture/Interior Design', '3', '', '');
-INSERT INTO specializationtbl VALUES ('160', '00820120082', 'Agriculture/Forestry/Fisheries', '5', '', '');
-INSERT INTO specializationtbl VALUES ('161', '00820120021', 'Aviation/Aircraft Maintenance', '1', '', '');
-INSERT INTO specializationtbl VALUES ('162', '00820120021', 'BPO/Call Center', '1', '', '');
-INSERT INTO specializationtbl VALUES ('163', '00820120021', 'Chemistry', '3', '', '');
-INSERT INTO specializationtbl VALUES ('164', '00820120083', 'Arts and Design', '1', '', '');
-INSERT INTO specializationtbl VALUES ('165', '00820120083', 'Arts/Creative/Graphics Design', '2', '', '');
-INSERT INTO specializationtbl VALUES ('166', '00820120083', 'BPO/Call Center', '2', '', '');
-INSERT INTO specializationtbl VALUES ('167', '00820120022', 'Arts and Design', '3', '', '');
-INSERT INTO specializationtbl VALUES ('168', '00820120022', 'Biotechnology', '3', '', '');
-INSERT INTO specializationtbl VALUES ('169', '00820120084', 'Arts and Design', '1', '', '');
-INSERT INTO specializationtbl VALUES ('170', '00820120022', 'Aviation/Aircraft Maintenance', '4', '', '');
-INSERT INTO specializationtbl VALUES ('171', '00820120084', 'Biotechnology', '2', '', '');
-INSERT INTO specializationtbl VALUES ('172', '00820120084', 'Corporate Strategy/Top Management', '1', '', '');
-INSERT INTO specializationtbl VALUES ('173', '00820120085', 'Arts and Design', '1', '', '');
-INSERT INTO specializationtbl VALUES ('174', '00820120085', 'Arts/Creative/Graphics Design', '2', '', '');
-INSERT INTO specializationtbl VALUES ('175', '00820120085', 'BPO/Call Center', '1', '', '');
-INSERT INTO specializationtbl VALUES ('176', '00820120024', 'Arts/Creative/Graphics Design', '2', '', '');
-INSERT INTO specializationtbl VALUES ('177', '00820120024', 'Banking/Financial Services', '3', '', '');
-INSERT INTO specializationtbl VALUES ('178', '00820120024', 'BPO/Call Center', '2', '', '');
-INSERT INTO specializationtbl VALUES ('179', '00820120086', 'Architecture/Interior Design', '1', '', '');
-INSERT INTO specializationtbl VALUES ('180', '00820120086', 'Biotechnology', '2', '', '');
-INSERT INTO specializationtbl VALUES ('181', '00820120086', 'Arts/Creative/Graphics Design', '3', '', '');
-INSERT INTO specializationtbl VALUES ('182', '00820120025', 'Aviation/Aircraft Maintenance', '3', '', '');
-INSERT INTO specializationtbl VALUES ('183', '00820120025', 'Aviation/Aircraft Maintenance', '2', '', '');
-INSERT INTO specializationtbl VALUES ('184', '00820120025', 'BPO/Call Center', '3', '', '');
-INSERT INTO specializationtbl VALUES ('185', '00820120087', 'Arts/Creative/Graphics Design', '1', '', '');
-INSERT INTO specializationtbl VALUES ('186', '00820120087', 'Banking/Financial Services', '2', '', '');
-INSERT INTO specializationtbl VALUES ('187', '00820120087', 'Advertising/Media Planning', '1', '', '');
-INSERT INTO specializationtbl VALUES ('188', '00820120026', 'Aviation/Aircraft Maintenance', '4', '', '');
-INSERT INTO specializationtbl VALUES ('189', '00820120026', 'Clerical/Administrative Support', '4', '', '');
-INSERT INTO specializationtbl VALUES ('190', '00820120026', 'Chemistry', '3', '', '');
-INSERT INTO specializationtbl VALUES ('191', '00820120088', 'Arts/Creative/Graphics Design', '1', '', '');
-INSERT INTO specializationtbl VALUES ('192', '00820120088', 'Corporate Strategy/Top Management', '2', '', '');
-INSERT INTO specializationtbl VALUES ('193', '00820120088', 'Customer Service', '2', '', '');
-INSERT INTO specializationtbl VALUES ('194', '00820120089', 'Architecture/Interior Design', '1', '', '');
-INSERT INTO specializationtbl VALUES ('195', '00820120089', 'Architecture/Interior Design', '2', '', '');
-INSERT INTO specializationtbl VALUES ('196', '00820120028', 'Corporate Strategy/Top Management', '3', '', '');
-INSERT INTO specializationtbl VALUES ('197', '00820120089', 'Aviation/Aircraft Maintenance', '2', '', '');
-INSERT INTO specializationtbl VALUES ('198', '00820120028', 'Banking/Financial Services', '2', '', '');
-INSERT INTO specializationtbl VALUES ('199', '00820120028', 'Banking/Financial Services', '2', '', '');
-INSERT INTO specializationtbl VALUES ('200', '00820120090', 'Arts/Creative/Graphics Design', '1', '', '');
-INSERT INTO specializationtbl VALUES ('201', '00820120029', 'Architecture/Interior Design', '2', '', '');
-INSERT INTO specializationtbl VALUES ('202', '00820120090', 'Banking/Financial Services', '2', '', '');
-INSERT INTO specializationtbl VALUES ('203', '00820120029', 'Aviation/Aircraft Maintenance', '3', '', '');
-INSERT INTO specializationtbl VALUES ('204', '00820120090', 'Arts and Design', '3', '', '');
-INSERT INTO specializationtbl VALUES ('205', '00820120029', 'BPO/Call Center', '3', '', '');
-INSERT INTO specializationtbl VALUES ('206', '00820120091', 'Aviation/Aircraft Maintenance', '1', '', '');
-INSERT INTO specializationtbl VALUES ('207', '00820120091', 'Banking/Financial Services', '2', '', '');
-INSERT INTO specializationtbl VALUES ('208', '00820120030', 'Aviation/Aircraft Maintenance', '2', '', '');
-INSERT INTO specializationtbl VALUES ('209', '00820120091', 'Chemistry', '1', '', '');
-INSERT INTO specializationtbl VALUES ('210', '00820120030', 'Banking/Financial Services', '2', '', '');
-INSERT INTO specializationtbl VALUES ('211', '00820120030', 'Biotechnology', '4', '', '');
-INSERT INTO specializationtbl VALUES ('212', '00820120092', 'Arts/Creative/Graphics Design', '1', '', '');
-INSERT INTO specializationtbl VALUES ('213', '00820120031', 'Arts/Creative/Graphics Design', '3', '', '');
-INSERT INTO specializationtbl VALUES ('214', '00820120092', 'Customer Service (Technical)', '2', '', '');
-INSERT INTO specializationtbl VALUES ('215', '00820120031', 'Chemistry', '3', '', '');
-INSERT INTO specializationtbl VALUES ('216', '00820120092', 'Chemistry', '2', '', '');
-INSERT INTO specializationtbl VALUES ('217', '00820120031', 'Clerical/Administrative Support', '4', '', '');
-INSERT INTO specializationtbl VALUES ('218', '00820120093', 'Arts/Creative/Graphics Design', '1', '', '');
-INSERT INTO specializationtbl VALUES ('219', '00820120093', 'Chemistry', '2', '', '');
-INSERT INTO specializationtbl VALUES ('220', '00820120093', 'Chemistry', '3', '', '');
-INSERT INTO specializationtbl VALUES ('221', '00820120032', 'BPO/Call Center', '2', '', '');
-INSERT INTO specializationtbl VALUES ('222', '00820120032', 'Corporate Strategy/Top Management', '1', '', '');
-INSERT INTO specializationtbl VALUES ('223', '00820120032', 'Chemistry', '1', '', '');
-INSERT INTO specializationtbl VALUES ('224', '00820120094', 'Aviation/Aircraft Maintenance', '1', '', '');
-INSERT INTO specializationtbl VALUES ('225', '00820120094', 'Banking/Financial Services', '3', '', '');
-INSERT INTO specializationtbl VALUES ('226', '00820120094', 'BPO/Call Center', '2', '', '');
-INSERT INTO specializationtbl VALUES ('227', '00820120033', 'Arts/Creative/Graphics Design', '4', '', '');
-INSERT INTO specializationtbl VALUES ('228', '00820120033', 'Banking/Financial Services', '2', '', '');
-INSERT INTO specializationtbl VALUES ('229', '00820120033', 'Aviation/Aircraft Maintenance', '4', '', '');
-INSERT INTO specializationtbl VALUES ('230', '00820120034', 'Arts and Design', '3', '', '');
-INSERT INTO specializationtbl VALUES ('231', '00820120034', 'BPO/Call Center', '3', '', '');
-INSERT INTO specializationtbl VALUES ('232', '00820120095', 'Customer Service', '1', '', '');
-INSERT INTO specializationtbl VALUES ('233', '00820120034', 'Banking/Financial Services', '3', '', '');
-INSERT INTO specializationtbl VALUES ('234', '00820120095', 'BPO/Call Center', '2', '', '');
-INSERT INTO specializationtbl VALUES ('235', '00820120095', 'Corporate Strategy/Top Management', '4', '', '');
-INSERT INTO specializationtbl VALUES ('236', '00820120035', 'Arts/Creative/Graphics Design', '4', '', '');
-INSERT INTO specializationtbl VALUES ('237', '00820120035', 'Biotechnology', '4', '', '');
-INSERT INTO specializationtbl VALUES ('238', '00820120035', 'BPO/Call Center', '3', '', '');
-INSERT INTO specializationtbl VALUES ('239', '00820120096', 'Biotechnology', '1', '', '');
-INSERT INTO specializationtbl VALUES ('240', '00820120096', 'BPO/Call Center', '2', '', '');
-INSERT INTO specializationtbl VALUES ('241', '00820120096', 'Aviation/Aircraft Maintenance', '2', '', '');
-INSERT INTO specializationtbl VALUES ('242', '00820120035', 'Banking/Financial Services', '4', '', '');
-INSERT INTO specializationtbl VALUES ('243', '00820120035', 'Chemistry', '4', '', '');
-INSERT INTO specializationtbl VALUES ('244', '00820120035', 'Biotechnology', '3', '', '');
-INSERT INTO specializationtbl VALUES ('245', '00820120097', 'BPO/Call Center', '1', '', '');
-INSERT INTO specializationtbl VALUES ('246', '00820120097', 'Chemistry', '2', '', '');
-INSERT INTO specializationtbl VALUES ('247', '00820120097', 'Arts and Design', '1', '', '');
-INSERT INTO specializationtbl VALUES ('248', '00820120036', 'Aviation/Aircraft Maintenance', '1', '', '');
-INSERT INTO specializationtbl VALUES ('249', '00820120036', 'Aviation/Aircraft Maintenance', '2', '', '');
-INSERT INTO specializationtbl VALUES ('250', '00820120036', 'Biotechnology', '4', '', '');
-INSERT INTO specializationtbl VALUES ('251', '00820120098', 'Aviation/Aircraft Maintenance', '1', '', '');
-INSERT INTO specializationtbl VALUES ('252', '00820120098', 'Banking/Financial Services', '2', '', '');
-INSERT INTO specializationtbl VALUES ('253', '00820120098', 'Clerical/Administrative Support', '3', '', '');
-INSERT INTO specializationtbl VALUES ('254', '00820120037', 'Aviation/Aircraft Maintenance', '2', '', '');
-INSERT INTO specializationtbl VALUES ('255', '00820120037', 'Biotechnology', '3', '', '');
-INSERT INTO specializationtbl VALUES ('256', '00820120037', 'Aviation/Aircraft Maintenance', '3', '', '');
-INSERT INTO specializationtbl VALUES ('257', '00820120099', 'Advertising/Media Planning', '1', '', '');
-INSERT INTO specializationtbl VALUES ('258', '00820120099', 'Clerical/Administrative Support', '2', '', '');
-INSERT INTO specializationtbl VALUES ('259', '00820120099', 'Clerical/Administrative Support', '2', '', '');
-INSERT INTO specializationtbl VALUES ('260', '00820120038', 'Banking/Financial Services', '2', '', '');
-INSERT INTO specializationtbl VALUES ('261', '00820120038', 'Architecture/Interior Design', '3', '', '');
-INSERT INTO specializationtbl VALUES ('262', '00820120038', 'Arts/Creative/Graphics Design', '3', '', '');
-INSERT INTO specializationtbl VALUES ('263', '00820120100', 'Arts/Creative/Graphics Design', '1', '', '');
-INSERT INTO specializationtbl VALUES ('264', '00820120100', 'Aviation/Aircraft Maintenance', '2', '', '');
-INSERT INTO specializationtbl VALUES ('265', '00820120100', 'Clerical/Administrative Support', '3', '', '');
-INSERT INTO specializationtbl VALUES ('266', '00820120039', 'Arts/Creative/Graphics Design', '2', '', '');
-INSERT INTO specializationtbl VALUES ('267', '00820120039', 'Arts and Design', '3', '', '');
-INSERT INTO specializationtbl VALUES ('268', '00820120039', 'Banking/Financial Services', '3', '', '');
-INSERT INTO specializationtbl VALUES ('269', '00820120101', 'Aviation/Aircraft Maintenance', '1', '', '');
-INSERT INTO specializationtbl VALUES ('270', '00820120101', 'Costing Management', '2', '', '');
-INSERT INTO specializationtbl VALUES ('271', '00820120101', 'BPO/Call Center', '3', '', '');
-INSERT INTO specializationtbl VALUES ('272', '00820120039', 'Aviation/Aircraft Maintenance', '2', '', '');
-INSERT INTO specializationtbl VALUES ('273', '00820120039', 'Banking/Financial Services', '2', '', '');
-INSERT INTO specializationtbl VALUES ('274', '00820120039', 'Chemistry', '3', '', '');
-INSERT INTO specializationtbl VALUES ('275', '00820120040', 'Arts/Creative/Graphics Design', '3', '', '');
-INSERT INTO specializationtbl VALUES ('276', '00820120040', 'Aviation/Aircraft Maintenance', '3', '', '');
-INSERT INTO specializationtbl VALUES ('277', '00820120040', 'Aviation/Aircraft Maintenance', '3', '', '');
-INSERT INTO specializationtbl VALUES ('278', '00820120102', 'Biotechnology', '1', '', '');
-INSERT INTO specializationtbl VALUES ('279', '00820120102', 'Aviation/Aircraft Maintenance', '3', '', '');
-INSERT INTO specializationtbl VALUES ('280', '00820120102', 'Arts/Creative/Graphics Design', '4', '', '');
-INSERT INTO specializationtbl VALUES ('281', '00820120041', 'BPO/Call Center', '2', '', '');
-INSERT INTO specializationtbl VALUES ('282', '00820120041', 'Aviation/Aircraft Maintenance', '4', '', '');
-INSERT INTO specializationtbl VALUES ('283', '00820120041', 'Costing Management', '4', '', '');
-INSERT INTO specializationtbl VALUES ('284', '00820120103', 'Banking/Financial Services', '3', '', '');
-INSERT INTO specializationtbl VALUES ('285', '00820120103', 'Customer Service (Technical)', '22', '', '');
-INSERT INTO specializationtbl VALUES ('286', '00820120103', 'Customer Service', '1', '', '');
-INSERT INTO specializationtbl VALUES ('287', '00820120042', 'BPO/Call Center', '3', '', '');
-INSERT INTO specializationtbl VALUES ('288', '00820120042', 'BPO/Call Center', '3', '', '');
-INSERT INTO specializationtbl VALUES ('289', '00820120042', 'Biotechnology', '3', '', '');
-INSERT INTO specializationtbl VALUES ('290', '00820120104', 'Arts/Creative/Graphics Design', '1', '', '');
-INSERT INTO specializationtbl VALUES ('291', '00820120104', 'Biotechnology', '3', '', '');
-INSERT INTO specializationtbl VALUES ('292', '00820120104', 'Customer Service', '4', '', '');
-INSERT INTO specializationtbl VALUES ('293', '00820120043', 'Aviation/Aircraft Maintenance', '3', '', '');
-INSERT INTO specializationtbl VALUES ('294', '00820120043', 'Arts/Creative/Graphics Design', '3', '', '');
-INSERT INTO specializationtbl VALUES ('295', '00820120043', 'Banking/Financial Services', '3', '', '');
-INSERT INTO specializationtbl VALUES ('296', '00820120105', 'Biotechnology', '11', '', '');
-INSERT INTO specializationtbl VALUES ('297', '00820120105', 'Customer Service (Technical)', '2', '', '');
-INSERT INTO specializationtbl VALUES ('298', '00820120105', 'Costing Management', '3', '', '');
-INSERT INTO specializationtbl VALUES ('299', '00820120044', 'Arts/Creative/Graphics Design', '4', '', '');
-INSERT INTO specializationtbl VALUES ('300', '00820120044', 'Architecture/Interior Design', '3', '', '');
-INSERT INTO specializationtbl VALUES ('301', '00820120044', 'Arts and Design', '3', '', '');
-INSERT INTO specializationtbl VALUES ('302', '00820120106', 'Costing Management', '2', '', '');
-INSERT INTO specializationtbl VALUES ('303', '00820120106', 'Clerical/Administrative Support', '3', '', '');
-INSERT INTO specializationtbl VALUES ('304', '00820120106', 'Banking/Financial Services', '1', '', '');
-INSERT INTO specializationtbl VALUES ('305', '00820120045', 'Corporate Strategy/Top Management', '3', '', '');
-INSERT INTO specializationtbl VALUES ('306', '00820120045', 'Arts and Design', '2', '', '');
-INSERT INTO specializationtbl VALUES ('307', '00820120045', 'Biotechnology', '4', '', '');
-INSERT INTO specializationtbl VALUES ('308', '00820120107', 'Aviation/Aircraft Maintenance', '1', '', '');
-INSERT INTO specializationtbl VALUES ('309', '00820120107', 'BPO/Call Center', '3', '', '');
-INSERT INTO specializationtbl VALUES ('310', '00820120107', 'Clerical/Administrative Support', '4', '', '');
-INSERT INTO specializationtbl VALUES ('311', '00820120047', 'Biotechnology', '2', '', '');
-INSERT INTO specializationtbl VALUES ('312', '00820120047', 'BPO/Call Center', '3', '', '');
-INSERT INTO specializationtbl VALUES ('313', '00820120047', 'Aviation/Aircraft Maintenance', '4', '', '');
-INSERT INTO specializationtbl VALUES ('314', '00820120108', 'Arts and Design', '1', '', '');
-INSERT INTO specializationtbl VALUES ('315', '00820120108', 'Chemistry', '2', '', '');
-INSERT INTO specializationtbl VALUES ('316', '00820120050', 'Aviation/Aircraft Maintenance', '3', '', '');
-INSERT INTO specializationtbl VALUES ('317', '00820120050', 'Arts/Creative/Graphics Design', '3', '', '');
-INSERT INTO specializationtbl VALUES ('318', '00820120108', 'Banking/Financial Services', '3', '', '');
-INSERT INTO specializationtbl VALUES ('319', '00820120050', 'Banking/Financial Services', '4', '', '');
-INSERT INTO specializationtbl VALUES ('320', '00820120051', 'Architecture/Interior Design', '4', '', '');
-INSERT INTO specializationtbl VALUES ('321', '00820120051', 'Arts and Design', '4', '', '');
-INSERT INTO specializationtbl VALUES ('322', '00820120109', 'Biotechnology', '1', '', '');
-INSERT INTO specializationtbl VALUES ('323', '00820120051', 'Arts/Creative/Graphics Design', '3', '', '');
-INSERT INTO specializationtbl VALUES ('324', '00820120109', 'Aviation/Aircraft Maintenance', '2', '', '');
-INSERT INTO specializationtbl VALUES ('325', '00820120109', 'Clerical/Administrative Support', '4', '', '');
-INSERT INTO specializationtbl VALUES ('326', '00820120052', 'BPO/Call Center', '3', '', '');
-INSERT INTO specializationtbl VALUES ('327', '00820120052', 'Arts/Creative/Graphics Design', '4', '', '');
-INSERT INTO specializationtbl VALUES ('328', '00820120052', 'Arts and Design', '4', '', '');
-INSERT INTO specializationtbl VALUES ('329', '00820120110', 'BPO/Call Center', '1', '', '');
-INSERT INTO specializationtbl VALUES ('330', '00820120110', 'Customer Service', '2', '', '');
-INSERT INTO specializationtbl VALUES ('331', '00820120110', 'Costing Management', '3', '', '');
-INSERT INTO specializationtbl VALUES ('332', '00820120053', 'Biotechnology', '3', '', '');
-INSERT INTO specializationtbl VALUES ('333', '00820120053', 'Aviation/Aircraft Maintenance', '1', '', '');
-INSERT INTO specializationtbl VALUES ('334', '00820120053', 'Aviation/Aircraft Maintenance', '4', '', '');
-INSERT INTO specializationtbl VALUES ('335', '00820120111', 'Corporate Strategy/Top Management', '1', '', '');
-INSERT INTO specializationtbl VALUES ('336', '00820120111', 'Clerical/Administrative Support', '2', '', '');
-INSERT INTO specializationtbl VALUES ('337', '00820120111', 'Corporate Strategy/Top Management', '4', '', '');
-INSERT INTO specializationtbl VALUES ('338', '00820120054', 'Banking/Financial Services', '3', '', '');
-INSERT INTO specializationtbl VALUES ('339', '00820120054', 'Biotechnology', '3', '', '');
-INSERT INTO specializationtbl VALUES ('340', '00820120054', 'Biotechnology', '4', '', '');
-INSERT INTO specializationtbl VALUES ('341', '00820120112', 'Aviation/Aircraft Maintenance', '11', '', '');
-INSERT INTO specializationtbl VALUES ('342', '00820120112', 'Biotechnology', '2', '', '');
-INSERT INTO specializationtbl VALUES ('343', '00820120112', 'Customer Service', '3', '', '');
-INSERT INTO specializationtbl VALUES ('344', '00820120055', 'Architecture/Interior Design', '3', '', '');
-INSERT INTO specializationtbl VALUES ('345', '00820120055', 'Banking/Financial Services', '4', '', '');
-INSERT INTO specializationtbl VALUES ('346', '00820120055', 'Banking/Financial Services', '3', '', '');
-INSERT INTO specializationtbl VALUES ('347', '00820120113', 'Clerical/Administrative Support', '1', '', '');
-INSERT INTO specializationtbl VALUES ('348', '00820120113', 'Customer Service (Technical)', '2', '', '');
-INSERT INTO specializationtbl VALUES ('349', '00820120113', 'Education / Academe', '4', '', '');
-INSERT INTO specializationtbl VALUES ('350', '00820120056', 'Architecture/Interior Design', '3', '', '');
-INSERT INTO specializationtbl VALUES ('351', '00820120056', 'Arts/Creative/Graphics Design', '3', '', '');
-INSERT INTO specializationtbl VALUES ('352', '00820120056', 'Arts and Design', '3', '', '');
-INSERT INTO specializationtbl VALUES ('353', '00820120114', 'Banking/Financial Services', '12', '', '');
-INSERT INTO specializationtbl VALUES ('354', '00820120114', 'BPO/Call Center', '2', '', '');
-INSERT INTO specializationtbl VALUES ('355', '00820120114', 'Biotechnology', '1', '', '');
-INSERT INTO specializationtbl VALUES ('356', '00820120057', 'Aviation/Aircraft Maintenance', '2', '', '');
-INSERT INTO specializationtbl VALUES ('357', '00820120057', 'Architecture/Interior Design', '2', '', '');
-INSERT INTO specializationtbl VALUES ('358', '00820120057', 'Banking/Financial Services', '4', '', '');
-INSERT INTO specializationtbl VALUES ('359', '00820120115', 'Banking/Financial Services', '1', '', '');
-INSERT INTO specializationtbl VALUES ('360', '00820120115', 'Corporate Strategy/Top Management', '2', '', '');
-INSERT INTO specializationtbl VALUES ('361', '00820120115', 'BPO/Call Center', '3', '', '');
-INSERT INTO specializationtbl VALUES ('362', '00820120059', 'Aviation/Aircraft Maintenance', '2', '', '');
-INSERT INTO specializationtbl VALUES ('363', '00820120059', 'Arts/Creative/Graphics Design', '2', '', '');
-INSERT INTO specializationtbl VALUES ('364', '00820120059', 'Banking/Financial Services', '2', '', '');
-INSERT INTO specializationtbl VALUES ('365', '00820120116', 'Aviation/Aircraft Maintenance', '1', '', '');
-INSERT INTO specializationtbl VALUES ('366', '00820120116', 'Chemistry', '2', '', '');
-INSERT INTO specializationtbl VALUES ('367', '00820120116', 'Corporate Strategy/Top Management', '3', '', '');
-INSERT INTO specializationtbl VALUES ('368', '00820120061', 'Aviation/Aircraft Maintenance', '3', '', '');
-INSERT INTO specializationtbl VALUES ('369', '00820120061', 'Architecture/Interior Design', '3', '', '');
-INSERT INTO specializationtbl VALUES ('370', '00820120061', 'Biotechnology', '3', '', '');
-INSERT INTO specializationtbl VALUES ('371', '00820120117', 'Arts/Creative/Graphics Design', '1', '', '');
-INSERT INTO specializationtbl VALUES ('372', '00820120117', 'Clerical/Administrative Support', '2', '', '');
-INSERT INTO specializationtbl VALUES ('373', '00820120117', 'Corporate Strategy/Top Management', '4', '', '');
-INSERT INTO specializationtbl VALUES ('374', '00820120062', 'Arts/Creative/Graphics Design', '3', '', '');
-INSERT INTO specializationtbl VALUES ('375', '00820120062', 'Arts/Creative/Graphics Design', '3', '', '');
-INSERT INTO specializationtbl VALUES ('376', '00820120062', 'Aviation/Aircraft Maintenance', '3', '', '');
-INSERT INTO specializationtbl VALUES ('377', '00820120118', 'Arts and Design', '1', '', '');
-INSERT INTO specializationtbl VALUES ('378', '00820120118', 'Chemistry', '3', '', '');
-INSERT INTO specializationtbl VALUES ('379', '00820120118', 'Costing Management', '4', '', '');
-INSERT INTO specializationtbl VALUES ('380', '00820120063', 'Architecture/Interior Design', '2', '', '');
-INSERT INTO specializationtbl VALUES ('381', '00820120063', 'Biotechnology', '3', '', '');
-INSERT INTO specializationtbl VALUES ('382', '00820120063', 'Biotechnology', '3', '', '');
-INSERT INTO specializationtbl VALUES ('383', '00820120119', 'Banking/Financial Services', '1', '', '');
-INSERT INTO specializationtbl VALUES ('384', '00820120119', 'Chemistry', '2', '', '');
-INSERT INTO specializationtbl VALUES ('385', '00820120119', 'Chemistry', '3', '', '');
-INSERT INTO specializationtbl VALUES ('386', '00820120064', 'Biotechnology', '3', '', '');
-INSERT INTO specializationtbl VALUES ('387', '00820120064', 'Arts/Creative/Graphics Design', '3', '', '');
-INSERT INTO specializationtbl VALUES ('388', '00820120064', 'Arts/Creative/Graphics Design', '3', '', '');
-INSERT INTO specializationtbl VALUES ('389', '00820120120', 'Arts/Creative/Graphics Design', '1', '', '');
-INSERT INTO specializationtbl VALUES ('390', '00820120120', 'BPO/Call Center', '2', '', '');
-INSERT INTO specializationtbl VALUES ('391', '00820120120', 'Arts/Creative/Graphics Design', '1', '', '');
-INSERT INTO specializationtbl VALUES ('392', '00820120124', 'Arts and Design', '5', '', '');
-INSERT INTO specializationtbl VALUES ('393', '00820120124', 'Arts and Design', '2', '', '');
-INSERT INTO specializationtbl VALUES ('394', '00820120124', 'Arts and Design', '3', '', '');
-INSERT INTO specializationtbl VALUES ('395', '00820120121', 'Architecture/Interior Design', '1', '', '');
-INSERT INTO specializationtbl VALUES ('396', '00820120121', 'BPO/Call Center', '2', '', '');
-INSERT INTO specializationtbl VALUES ('397', '00820120121', 'Chemistry', '3', '', '');
-INSERT INTO specializationtbl VALUES ('398', '00820120123', 'Aviation/Aircraft Maintenance', '2', '', '');
-INSERT INTO specializationtbl VALUES ('399', '00820120123', 'Agriculture/Forestry/Fisheries', '3', '', '');
-INSERT INTO specializationtbl VALUES ('400', '00820120123', 'Arts/Creative/Graphics Design', '4', '', '');
-INSERT INTO specializationtbl VALUES ('401', '00820120122', 'Arts/Creative/Graphics Design', '1', '', '');
-INSERT INTO specializationtbl VALUES ('402', '00820120122', 'Biotechnology', '2', '', '');
-INSERT INTO specializationtbl VALUES ('403', '00820120122', 'Clerical/Administrative Support', '4', '', '');
+INSERT INTO specializationtbl VALUES ('422', '00820120290', '', '2', '4', 'Game Developer');
+INSERT INTO specializationtbl VALUES ('423', '00820121111', '', '1', '5', 'Networking');
+INSERT INTO specializationtbl VALUES ('424', '00820120278', '', '5', '5', 'sdsfdsf');
+INSERT INTO specializationtbl VALUES ('425', '00820170318', '', '3', '3', 'Programing');
+INSERT INTO specializationtbl VALUES ('426', '00820120805', '', '0', '3', 'Programming');
 INSERT INTO specializationtbl VALUES ('411', '00820120001', 'IT/Computer - QA', '1', '5', 'Microsoft Powerpoint');
-INSERT INTO specializationtbl VALUES ('409', '00820120001', 'IT/Computer - Software Development', '1', '3.5', 'Java Programming');
+INSERT INTO specializationtbl VALUES ('409', '00820120001', 'IT/Computer - Software Development', '1', '3', 'Java Programming');
 INSERT INTO specializationtbl VALUES ('410', '00820120001', 'IT/Computer - Creative Design', '2', '5', 'Microsoft Word');
+INSERT INTO specializationtbl VALUES ('414', '00820120326', 'IT/Computer - Software Development', '2', '4', 'PHP');
+INSERT INTO specializationtbl VALUES ('413', '00820120326', 'IT/Computer - Software Development', '2', '4', 'Java');
+INSERT INTO specializationtbl VALUES ('415', '00820120325', '21', '2', '4', 'Java');
+INSERT INTO specializationtbl VALUES ('417', '00820124321', '21', '1', '5', 'Php');
+INSERT INTO specializationtbl VALUES ('418', '00820129999', '', '3', '5', 'Java Programming');
+INSERT INTO specializationtbl VALUES ('419', '00820129999', '', '1', '5', 'Vb.net');
+INSERT INTO specializationtbl VALUES ('420', '00820129999', '', '1', '4', 'Networking');
+INSERT INTO specializationtbl VALUES ('421', '00820120100', '', '1', '5', 'Design');
 
 -- ----------------------------
 -- Table structure for `studcontactstbl`
@@ -1507,7 +1198,7 @@ CREATE TABLE `studcontactstbl` (
   `WorkNumber` varchar(255) NOT NULL,
   `City` varchar(255) NOT NULL,
   PRIMARY KEY (`ContactsID`)
-) ENGINE=MyISAM AUTO_INCREMENT=169 DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM AUTO_INCREMENT=180 DEFAULT CHARSET=latin1;
 
 -- ----------------------------
 -- Records of studcontactstbl
@@ -1610,7 +1301,7 @@ INSERT INTO studcontactstbl VALUES ('96', '00820120096', 'penillaleziel@yahoo.co
 INSERT INTO studcontactstbl VALUES ('97', '00820120097', 'jayzzzification@rocketmail.com', '', '09358126046', '', '', '', '', 'Valenzuela City');
 INSERT INTO studcontactstbl VALUES ('98', '00820120098', 'nequinto_carina@yahoo.com', '', '9498460533', '', '', '', '', 'Caloocan City');
 INSERT INTO studcontactstbl VALUES ('99', '00820120099', 'poyaoan.melanie@yahoo.com', '', '09058060809', '', '', '', '', 'Caloocan City');
-INSERT INTO studcontactstbl VALUES ('100', '00820120100', 'oshinracsa@gmail.com', '', '09239747927', '', '', '', '', 'Malabon City');
+INSERT INTO studcontactstbl VALUES ('100', '00820120100', 'oshinracsa@gmail.com', 'Malabon', '09239747927', '', '', '1470', '2148279', 'Malabon City');
 INSERT INTO studcontactstbl VALUES ('101', '00820120101', 'jerencenilo@yahoo.com', '', '9357956691', '', '', '', '', 'Caloocan City');
 INSERT INTO studcontactstbl VALUES ('102', '00820120102', 'ongmylene55@gmail.com', '', '9162549548', '', '', '', '', 'Valenzuela City');
 INSERT INTO studcontactstbl VALUES ('103', '00820120103', 'jenniebiacopintor2gmail.com', '', '09325036350', '', '', '', '', 'Valenzuela City');
@@ -1679,6 +1370,17 @@ INSERT INTO studcontactstbl VALUES ('165', '12321312', 'aaaa@cc.cc', '', '123123
 INSERT INTO studcontactstbl VALUES ('166', '00820120190', 'markjoseph1496@yahoo.com', '', '09355585931', '', '', '', '', 'Valenzuela City');
 INSERT INTO studcontactstbl VALUES ('167', '00820120191', 'markjoseph1496@yahoo.com', '', '09355585931', '', '', '', '', 'Valenzuela City');
 INSERT INTO studcontactstbl VALUES ('168', '00820120192', 'markjoseph1496@yahoo.com', '2890 A. Pablo St. Karuhatan, Valenzuela City', '09355585931', '', '', '', '', 'Valenzuela City');
+INSERT INTO studcontactstbl VALUES ('169', '00820120326', 'princetj.21@gmail.com', 'Blk 33 B Lot 9 Phase3 Dagat-dagatan St.', '09224248230', '', '', '1400', '9656034', 'Caloocan City');
+INSERT INTO studcontactstbl VALUES ('170', '00820120325', 'princetj.21@gmail.com', 'Blk 33 B Lot 9 Phase3 Dagat-dagatan St.', '09224248230', '', '', '1400', '9656034', 'Caloocan City');
+INSERT INTO studcontactstbl VALUES ('171', '00820124321', 'q@yahoo.com', 'valenzuela', '09125412323', '', '', '', '', 'Valenzuela City');
+INSERT INTO studcontactstbl VALUES ('172', '00820129999', 'markjoseph1496@yahoo.com', '2890 A. Pablo st. Karuhatan, Valenzuela City', '09355585931', '', '', '', '', 'Valenzuela City');
+INSERT INTO studcontactstbl VALUES ('173', '00820120998', 'chairamirez@gmail.com', '', '09756749702', '', '', '', '', 'Malabon City');
+INSERT INTO studcontactstbl VALUES ('174', '00820120290', 'ellacleofas@gmail.com', 'north caloocan', '09774134685', '', '', '1400', '', 'Caloocan City');
+INSERT INTO studcontactstbl VALUES ('175', '00820121111', 'chai@gmail.com', 'Caloocan', '09262148279', '', '', '1234', '', 'Caloocan City');
+INSERT INTO studcontactstbl VALUES ('176', '00820120278', 'judeecaballero@gmail.com', '317 D D Aquino Street 10th Avenue Grace Park Caloocan City', '09331399282', '', '', '', '', 'Caloocan City');
+INSERT INTO studcontactstbl VALUES ('177', '00820120805', 'airajanecruz15@gmail.com', '15 Espiritu St. Tinajeros Malabon City', '09267694941', '', '', '1470', '', 'Malabon City');
+INSERT INTO studcontactstbl VALUES ('178', '00820170318', 'agcaoili.joshua410@gmail.com', '271 Industrial Road Karuhatan', '09056394929', '', '', '', '', 'Valenzuela City');
+INSERT INTO studcontactstbl VALUES ('179', '00820126969', 'some@email.com', '', '09781461781', '', '', '', '', 'Makati City');
 
 -- ----------------------------
 -- Table structure for `studentinfotbl`
@@ -1806,7 +1508,7 @@ INSERT INTO studentinfotbl VALUES ('00820120096', 'bfb06515685323b16768fdf83fee4
 INSERT INTO studentinfotbl VALUES ('00820120097', '3a8bd7ed68c0170c01a0176389fe9fdf4a79b4473b049c58e666f1df4944ede92b90f02b516d845e8d57ba93244ca840f0fccfb928cfa1fd80d0231146f1e089', 'bf056b1133a211a8321e1a50152ad6dd905502d46d857cbfb883dd2bbc73b8d38cf380d0c83093ee324ac1827ff357100041694d53f275ee9b7d6cdc15acb99a', 'Armando Santos', '', 'Perez Jr.', '', '1991-11-17', '', '', '', 'Employed', '', '', '', 'BSHRM', '');
 INSERT INTO studentinfotbl VALUES ('00820120098', '39356e1fa4b6d04d4188eed3944d83e27db74f5bbba2c57a5ff71e0458d449320cfc3bc5ad2081a7c5a58591eb53d5a750b174b680442b416f5cd7d42a9f2782', 'a800a82026a6db9bfb2567efbf7494ab732ace5eda08bf8b9974e970d5482b89f97b8eacde966bbec8bad8b7f3e8de80d5dcab9c5d8085af9ad41d5b21d07b9e', 'Carina', '', 'Nequinto', '', '1994-08-24', '', '', '', 'Employed', '', '', '', 'BSBM', '');
 INSERT INTO studentinfotbl VALUES ('00820120099', '19f1f3c6cf7890b63056c1a072eabaeea280b4ae873cd488832eeb92b84d2fd98b637b1daadd997f141f24d4bd81ab8621201b606104cf8377d67067d73c02cd', '46d21e91c9a5cf816b5575492038028558c8612ab3c44a9d67d06213a7ff0c7ecbd27fe237489d3b1f54d47b9cd6b85ed4bb2d290c7579a7725e468107c89afe', 'Melanie', '', 'Poyaoan', '', '1994-03-15', '', '', '', 'Employed', '', '', '', 'BSHRM', '');
-INSERT INTO studentinfotbl VALUES ('00820120100', 'a9884a27351d78a61a171b906970705e64ff9601302c85c125aae225112d8d14282b06fc4796a492fb71dd595d0324863070f1860415b42063b43be8e1677cf7', '7c5b4933ed970309c384ac824180a99989cc2d3d8ab0a4657dcda9623beb68d513e8f5141d50e589f067cb3ee5513f4cbd0d4ec32f4f6f9ceca0e16bd0738082', 'Oshin', '', 'Racsa', '', '1994-01-15', '', '', '', 'Employed', '', '', '', 'BSHRM', '');
+INSERT INTO studentinfotbl VALUES ('00820120100', 'a9884a27351d78a61a171b906970705e64ff9601302c85c125aae225112d8d14282b06fc4796a492fb71dd595d0324863070f1860415b42063b43be8e1677cf7', '7c5b4933ed970309c384ac824180a99989cc2d3d8ab0a4657dcda9623beb68d513e8f5141d50e589f067cb3ee5513f4cbd0d4ec32f4f6f9ceca0e16bd0738082', 'Oshin', 'Dagsa', 'Racsa', 'Female', '1994-01-15', '', 'Single', 'Filipino', 'Employed', 'http://www.facebook.com/', '', '', 'BSHRM', 'Seeking a company that will acquire  my skills');
 INSERT INTO studentinfotbl VALUES ('00820120101', 'ac09cecb8995de85f6eb752ef1625d84ddf63615b6d242234e894af3c9a3304d9601a4b958db22bdfe4fd67f56d1908212e39748c45e72aa64761f716e3cdb6a', '7d3355fc5b4700800ed6b1bed39516b29dfd489a00d397eb0b8195d0f32773ba273bc41664c43c9ecdc6224ce7f8f6dd38befac634916c5f4eed044cd209ae07', 'Jerenze', '', 'Nilo', '', '1994-07-04', '', '', '', 'Employed', '', '', '', 'BSBM', '');
 INSERT INTO studentinfotbl VALUES ('00820120102', '7f7b42bc9afa8367de9ecb7a4501cbc32d24fbe441d5490e8060736b94be72cbdb49c9a2dfde6a9506f37a25fa888d098e30ef81b8aa40970d7be0a9fed805e0', 'ad971caa5965a2ee884e8eb38c72d492ddaf632bbae29a6fe666a926350037b23622f436b17d6901e0dad71f8bb8a83a605698c5edb19e4d2f409ec6783a527e', 'Mylene', '', 'Ong', '', '1995-05-05', '', '', '', 'Employed', '', '', '', 'BSBM', '');
 INSERT INTO studentinfotbl VALUES ('00820120103', 'ba051a9aa16de57484431494403a114eb597408b2568a80abb72314dd10ca65430fd98ab52d6e7daefb8bff551dc19a604b16f9c94e2be0dcfa6f4b09ab39e72', 'b6dd3b11cbd693e2bb5f0da6c6f9ead4279a9ac27e3159bc1d27e7a05896ad8cd0cfacfe5b2f12ea9bd9c10b2fa5cd198d7537386194b427264d11900616786a', 'Jennie', '', 'Pintor', '', '1994-07-14', '', '', '', 'Employed', '', '', '', 'BSBM', '');
@@ -1873,6 +1575,17 @@ INSERT INTO studentinfotbl VALUES ('00820120164', '40cad4bb01d41743c6cbf5a465b9b
 INSERT INTO studentinfotbl VALUES ('00820120190', '18e6c4916f533ee104c043b816316a973fcfa97a98abae143bbfe707750904892fe309fa127a51dc2a25fa85cdb52042fb50eab7b57f563be3ca5a52b7beba1c', 'f450923f05f084a5ed89364c0654699e25df2ce5c476fb540bebec406ecd03055d440e36122948463245353a3b9d105e4487627a39b6fd4cd50d8fa4140a1375', 'Mark Joseph', '', 'Cinco', '', '1996-03-14', '', '', '', '', '', '', '', 'BSCS', '');
 INSERT INTO studentinfotbl VALUES ('00820120191', '58ff1f5691c800be863e0cbd119c0eb24764c105003a2c363e6b41fbfc6361bbdbd4c470e5549d16e82f3e1e70261ac542fb1532c13d2938d783fe23015164ec', '3db863060925c1373f8b7e5d632cc1d25b4fadfbcdaec0e33dffe2f55aae9d3fe5df66aa2968ac616637d5b00d4b00a42a7131d75ad139f52daf0f88f7ea15e4', 'Mark Joseph', '', 'Cinco', '', '1996-03-14', '', '', '', '', '', '', '', 'BSCS', '');
 INSERT INTO studentinfotbl VALUES ('00820120192', 'eeff05afe097b9c036a5b36477fad7b945043b96e4332ab88d9b6873788b8d126ff138758e9b47b2a75b295c7b00dcef817b38e005644de49ddddc671bbdcc49', 'af2431d0a8c40d431375b3cadbfe26203a15a00b9a7c10c3ba5e65c79460b53adb787ff3805cd58371b6a04064b5a30e47a988b48c6636eff6364e56f120bda3', 'Mark Joseph', '', 'Cinco', 'Male', '1996-03-14', '', 'Single', 'Filipino', '', 'http://www.facebook.com/akodawsimacoy', '', '', 'BSCS', 'I want to graduate.');
+INSERT INTO studentinfotbl VALUES ('00820120326', '87ab847c40083756d70de272c030b046de61ac767da593d8b21c10771b04127b0c3f584e31b8b3a44f547f2061e1a9f83d279e718ac001e765a444832298385d', 'cadbe5730cde2007d677e61a21121994efbb3053bcc0bcf66599acfdddf4cfeb86e16a19cfaa7e8caf59459ee08754715c2ac5a977e635db07bd1787aed3285f', 'Tim', 'Lao', 'Rojas', 'Male', '1996-11-20', '', 'Single', 'Filipino', '', 'http://www.facebook.com/timrojas', '', '', 'BSAT', 'To associate with a vibrant organization, to fully utilize my knowledge, skills and contribute to the overall growth of the organization.');
+INSERT INTO studentinfotbl VALUES ('00820120325', '280a384c63fdc324d455000fd1bae61b6026b7952c1048aa97b5b68ec6a7030d067857581a479b80e73502bd61d095dee149c2badabea53dc0307a06db895a29', 'e18bd18107dee43be66045163e8c53477f0b6b23add1f1344807591bbd72c81c369ddcf95a6dc9951eda5541235e183b749cc25e1092ea3cdef08501ac635ec6', 'Tim Joseph', 'Lao', 'Rojas', 'Male', '1995-11-29', '', 'Single', 'Filipino', 'Employed', 'http://www.facebook.com/tj.rojas1', '', 'ProfileImages/00820120325.jpg', 'BSCS', 'To associate with a vibrant organization, to fully utilize my knowledge, skills and contribute to the overall growth of the organization.');
+INSERT INTO studentinfotbl VALUES ('00820124321', 'de7721c3f9a4c613dbd68c4a0e1d816170e6d9ba070174f03414893c190bb424cb262d23fca0b999e7312a06a4be8e4187566cb2afa75cf2b9666d6e5304e0a9', 'e09af5ca8b22c8e806edd631d1fd445c9e0ea0345948b96a358834ca5a2b4597185210e13eaa017374ffedd02c383036c5dce1bf2d145afefb37e137d0d3c343', 'John', 'S', 'Doe', 'Male', '1996-05-05', '', 'Single', 'Filipino', '', 'http://www.facebook.com/somefacebookuser', '', 'ProfileImages/00820124321.jpg', 'BSCS', 'to work');
+INSERT INTO studentinfotbl VALUES ('00820129999', '921cc2bd18ec29562b5aa22fdd531c185f7bbd246a95664c97cac1941c18387d8f5847817270388e7936fa2af5fe334a9a185663f04945793fedecc8b6772c6b', '6d055e5542ae11cf3044f00e0a3c5788028aef614fb30052e3b520720dcbff4fb4c567f099f2b8fb2d4a3184670bb4828b290529fd9897c4d9134eafc0dd74ad', 'Mark Joseph', 'flaviano', 'Cinco', 'Male', '1996-03-14', '', 'Single', 'Filipino', '', 'http://www.facebook.com/', '', 'ProfileImages/00820129999.jpg', 'BSCS', 'My objective is to become a successful programmer in your company.');
+INSERT INTO studentinfotbl VALUES ('00820120998', '1dfc31edd94a37efeb62fe3a243e514c684d57213591a30f9faab1d683727260a647eb97f68f9e1d8a80e642f3e71e38c6faeba30e407e93bc1297eb3299135a', '2050012e6ca1e5ba05dbe62102b612e46a445a4d6cb6e1010e003fa1e5aedf3c70bc41a59fb60cb9598afe128aeb7b6cae35525bb5760f2b6180876d89910562', 'Cherry', '', 'Ramirez', '', '1996-04-13', '', '', '', '', '', '', 'ProfileImages/00820120998.jpg', 'BSCS', '');
+INSERT INTO studentinfotbl VALUES ('00820120290', 'bd64072f100aea6f0228644d69e5ff813b03a69df42872f60ec7427ca406c845df70f08669982e77b40f59ac21aaf4f486b41099ce862611c360cd984c012f7d', '66d142c84b1d5e8fa4d58ae291dc112fd8a7f3c34b9a4625ef119304b9d8d62a65bd5ad30b697ed4dab57109193ecb26cd9c900f3758725f1f17fcba6d40795c', 'Maria Lucilla', 'Jones', 'Cleofas', 'Female', '1996-01-21', '', 'Single', 'Filipino', 'Employed', 'http://www.facebook.com/ellacleofas', '', '', 'BSCS', 'gusto kong makahanap ng magandang trabaho');
+INSERT INTO studentinfotbl VALUES ('00820121111', 'dfa49f3001012a912346a4706795775cb237f0d52b828ae2926fa6d3105fc7c3fb002462375257034b667dc9c612b340755856bb15ceb813c3480ca4c1783d1c', 'e1361a5fe35743e497c78ac9fc9306a53ecd0986342ff9d59393133d3f70e06fe5723e78ce0036e2a3dde0ad357ea06bc221580e1e123c2aee80fe87310a581b', 'Chai', 'Dy', 'Ramirez', 'Female', '1996-04-30', '', 'Single', 'Filipino', '', 'http://www.facebook.com/chairamirez', '', 'ProfileImages/00820121111.jpg', 'BSCPE', 'Seek a company where I can acquire my skills.');
+INSERT INTO studentinfotbl VALUES ('00820120278', 'beb1e424b9d1262023404b83c26a832412a3ec8404ed5c432d6227412a71106d3178acb1103d4b2a9472654e8f75bfdb9ab0b5534e40b9bb9e73d3d59ea9eae2', '803dcc5249ad6dbe05f84aa49caf503ba2c266b9536b57f6f1d4e6d911b838a893457160cac67a640fed6209b19b939a6029c7661b426bc3c40cef7d082ebf21', 'Judee Mae', 'Ederon', 'Caballero', 'Female', '1996-05-06', '', 'Single', 'Filipino', '', 'http://www.facebook.com/JudeeMaeEderonCaball', '', '', 'BSCS', 'Is to have a job that enhances my skill');
+INSERT INTO studentinfotbl VALUES ('00820120805', '839d9828c123cd436ebfeba28d4adf679e008c6162085f69b854e5559d825c1fc27eb53086492264f69f65dacd6853123c7cca7e88cf3c483751c37722c438fc', 'd844109929fb823f631cbab4b9394763261cbb3edb0339c333ea7a45a2682e22623ed7ab9a0a38aab750169264d4ae521de9d200d22316483b066bdfea4d8e21', 'Aira Jane', 'Fortuno', 'Cruz', 'Female', '1995-11-15', '', 'Single', 'Filipino', '', 'http://www.facebook.com/ajlovestowrite', '', 'ProfileImages/00820120805.jpg', 'BSCS', 'Dedicated and motivated computer science graduate with proven leadership and organizational skills seeking for the position where I can apply my abilities in programming and public speaking.');
+INSERT INTO studentinfotbl VALUES ('00820170318', 'e907a11c3d15c1d6e071d6c4c60940df29c5cd087f87ae3a27fb1f9780f5053cfef57ba5b552a39e70df8604096f78e795b64cec3a9f3289182a6cd017838e43', 'cf2207dd9154b449a6b43cb17fe809986164464e1c91fd03622c1b92ab70b035b8dde9ba914f30728c7b107d316981694134693b369d319a0c224d9cbd86e7ab', 'Joshua', 'Dauag', 'Agcaoili', 'Male', '1996-04-10', '', 'Single', 'Filipino', '', 'http://www.facebook.com/pogi.nga.daw.akoh', '', 'ProfileImages/00820170318.jpg', 'BSCS', 'Because, im the bread winner of the family Agcaoili');
+INSERT INTO studentinfotbl VALUES ('00820126969', '3c5d2d975d709647cd70ef89e6653be9a827afdea29de4418621da23ab706604c1ab9ca327b15309df51de9b651fb180f74a2634a28f83a36fa30cb674cadb56', 'a00dd3703b739ebf736fd5c79d34c277be9dea3539e97440ffcdd067cd1c48e63b09256268820d42f27b670805c5ed66566c9428b7028c772bbec6559f1b903d', 'John', '', 'Boe', '', '1996-05-05', '', '', '', '', '', '', '', 'BSITDA', '');
 
 -- ----------------------------
 -- Table structure for `studnotificationtbl`
@@ -1929,7 +1642,7 @@ CREATE TABLE `workexperiencetbl` (
   `PositionTitle` varchar(255) NOT NULL,
   `CompanyAddress` varchar(255) NOT NULL,
   PRIMARY KEY (`WorkID`)
-) ENGINE=InnoDB AUTO_INCREMENT=356 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=358 DEFAULT CHARSET=latin1;
 
 -- ----------------------------
 -- Records of workexperiencetbl
@@ -2287,3 +2000,5 @@ INSERT INTO workexperiencetbl VALUES ('352', '00820120122', 'awd', 'http://ll.ll
 INSERT INTO workexperiencetbl VALUES ('353', '00820120122', 'awdwadwa', 'http://ll.ll', 'Banking / Financial Services', 'Arts/Creative/Graphics Design', '05', '2012', '', 'Current', '', 'Sernior Executive / Supervisor', '6', '', '');
 INSERT INTO workexperiencetbl VALUES ('354', '00820120122', 'wadawdwad', 'http://ll.ll', 'Commodities Production / Distribution', 'Biotechnology', '07', '2006', '05', '2012', '', 'Junior Executive', '4', '', '');
 INSERT INTO workexperiencetbl VALUES ('355', '00820120001', 'qwe', 'http://htasd.cc', 'Computer / Information Technology (Software)', 'Costing Management', '10', '2002', '', 'Current', 'sadasdsadas', 'Fresh / Entry Level', '5', '', '');
+INSERT INTO workexperiencetbl VALUES ('356', '00820120325', 'aksjdkajd', '', 'Accounting / Audit / Tax Services', '\r\nAdvertising/Media Planning', '01', '2016', '', 'Current', 'asdasdad', 'Top Level Management', '1', '', 'kjakjdkad');
+INSERT INTO workexperiencetbl VALUES ('357', '00820120290', 'sykes', '', 'Banking / Financial Services', 'Finance - Corporate \r\n\r\nFinance/Investment/Merchant Banking', '04', '2000', '', 'Current', 'asdasdasdad', 'Fresh / Entry Level', '5', '', 'ajkdada');

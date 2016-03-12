@@ -3,6 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="d999e893-f739-4a68-b7b0-034239dfb77e" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Database/u987316885_e2edb.sql" afterPath="$PROJECT_DIR$/Database/u987316885_e2edb.sql" />
     </list>
     <ignored path="OnlineJobPlacement.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -24,22 +25,15 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="jobs.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/student-view/search-job/jobs.php">
+      <file leaf-file-name="index.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/index.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="423" column="70" selection-start-line="423" selection-start-column="70" selection-end-line="423" selection-end-column="70" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="connection.php" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/connection.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.55932206">
-              <caret line="18" column="34" selection-start-line="18" selection-start-column="34" selection-end-line="18" selection-end-column="34" />
-              <folding />
+            <state vertical-scroll-proportion="0.2838983">
+              <caret line="364" column="38" selection-start-line="364" selection-start-column="38" selection-end-line="364" selection-end-column="38" />
+              <folding>
+                <marker date="1457195167936" expanded="true" signature="84:150" placeholder="SELECT * FRO... admineventtbl" />
+                <marker date="1457195167936" expanded="true" signature="19835:19885" placeholder="SELECT Event... admineventtbl" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -96,13 +90,13 @@
         <option value="$PROJECT_DIR$/common-functions.php" />
         <option value="$PROJECT_DIR$/for-index/other-companies.php" />
         <option value="$PROJECT_DIR$/student-view/myinfo/personal-info.php" />
-        <option value="$PROJECT_DIR$/index.php" />
         <option value="$PROJECT_DIR$/admin/functions.php" />
         <option value="$PROJECT_DIR$/admin/admin-calendarcreateevent.php" />
         <option value="$PROJECT_DIR$/student-view/applications/applications.php" />
         <option value="$PROJECT_DIR$/admin/admin-field.php" />
         <option value="$PROJECT_DIR$/student-view/search-job/jobs.php" />
         <option value="$PROJECT_DIR$/connection.php" />
+        <option value="$PROJECT_DIR$/index.php" />
       </list>
     </option>
   </component>
@@ -164,42 +158,10 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="OnlineJobPlacement" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="OnlineJobPlacement" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="student-view" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="OnlineJobPlacement" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="OnlineJobPlacement" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="student-view" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="search-job" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
         </subPane>
       </pane>
-      <pane id="Scratches" />
       <pane id="Scope" />
+      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -222,6 +184,7 @@
     <property name="FileHistory.git4idea.history.GitHistoryProvider_treeOrder2" value="2" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_treeWidth3" value="898" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_treeOrder3" value="3" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../Survey" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -283,12 +246,6 @@
       <created>1451894355130</created>
       <option name="number" value="Default" />
       <updated>1451894355130</updated>
-    </task>
-    <task id="LOCAL-00190" summary="POLISHING">
-      <created>1455857099799</created>
-      <option name="number" value="00190" />
-      <option name="project" value="LOCAL" />
-      <updated>1455857099799</updated>
     </task>
     <task id="LOCAL-00191" summary="POLISHING">
       <created>1455867121946</created>
@@ -578,7 +535,13 @@
       <option name="project" value="LOCAL" />
       <updated>1456652539188</updated>
     </task>
-    <option name="localTasksCounter" value="239" />
+    <task id="LOCAL-00239" summary="Polishing">
+      <created>1456660067847</created>
+      <option name="number" value="00239" />
+      <option name="project" value="LOCAL" />
+      <updated>1456660067849</updated>
+    </task>
+    <option name="localTasksCounter" value="240" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -964,13 +927,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/index.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="6.677419">
-          <caret line="371" column="22" selection-start-line="371" selection-start-column="22" selection-end-line="371" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/admin/admin-calendarcreateevent.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="2.5141244">
@@ -1003,15 +959,24 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="423" column="70" selection-start-line="423" selection-start-column="70" selection-end-line="423" selection-end-column="70" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/connection.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.55932206">
+        <state vertical-scroll-proportion="0.0">
           <caret line="18" column="34" selection-start-line="18" selection-start-column="34" selection-end-line="18" selection-end-column="34" />
-          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.2838983">
+          <caret line="364" column="38" selection-start-line="364" selection-start-column="38" selection-end-line="364" selection-end-column="38" />
+          <folding>
+            <marker date="1457195167936" expanded="true" signature="84:150" placeholder="SELECT * FRO... admineventtbl" />
+            <marker date="1457195167936" expanded="true" signature="19835:19885" placeholder="SELECT Event... admineventtbl" />
+          </folding>
         </state>
       </provider>
     </entry>
