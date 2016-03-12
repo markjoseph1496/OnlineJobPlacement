@@ -31,13 +31,13 @@ $adminevent_tbl =
 
 
     <!-- Bootstrap Core CSS -->
-    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="asset/css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Custom CSS -->
     <link href="css/home.css" rel="stylesheet">
 
     <!-- Custom Fonts -->
-    <link href="fonts/ffonts/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="css/font-awesome.min.css" rel="stylesheet" type="text/css">
 
     <!-- Bootstrap CSS  -->
     <link rel="stylesheet" href="css/about-style.css" type="text/css" media="screen">
@@ -57,9 +57,6 @@ $adminevent_tbl =
 
     <!-- Css3 Transitions Styles  -->
     <link rel="stylesheet" type="text/css" href="css/animate.css" media="screen">
-
-    <!-- Color CSS Styles  -->
-    <link rel="stylesheet" type="text/css" href="css/colors/yellow.css" title="yellow" media="screen"/>
 
     <!-- JS  -->
     <script type="text/javascript" src="js/jquery.min.js"></script>
@@ -104,6 +101,9 @@ $adminevent_tbl =
                         <a href="#page-top"></a>
                     </li>
                     <li>
+                        <a class="page-scroll" href="#home">Home</a>
+                    </li>
+                    <li>
                         <a class="page-scroll" href="#jobs">Jobs</a>
                     </li>
                     <li>
@@ -113,10 +113,10 @@ $adminevent_tbl =
                         <a class="page-scroll" href="#e2e">E2E</a>
                     </li>
                     <li>
-                        <a class="page-scroll" href="#p-company">Partner Company</a>
+                        <a class="page-scroll" href="#partners">Partners</a>
                     </li>
                     <li>
-                        <a href="#join" class="">Sign In</a>
+                        <a href="#sign-in" class="page-scroll page-promo-header-element"><b style="line-height:20px;">Sign In</b></a>
                     </li>
                 </ul>
             </div>
@@ -126,7 +126,7 @@ $adminevent_tbl =
     </nav>
 
     <!-- Services Section -->
-    <section id="home">
+    <section id="home" class="bg-light-gray">
         <!-- Carousel -->
         <div id="main-slide" class="carousel slide" data-ride="carousel">
             <!-- Indicators -->
@@ -523,7 +523,7 @@ $adminevent_tbl =
         </div>
     </section>
 
-    <section id="p-company" >
+    <section id="partners" >
         <div class="container">
             <!-- Start Big Heading -->
             <div class="big-title text-center">
@@ -617,7 +617,7 @@ $adminevent_tbl =
         </div>
     </section>
 
-    <section id="join" class="parallax" style="background-image:url(images/sti-bldg.jpg);">
+    <section id="sign-in" class="parallax" style="background-image:url(images/sti-bldg.jpg);">
         <div class="overlay">
             <div class="parallax-text-container-1">
                 <div class="parallax-text-item">
@@ -739,9 +739,6 @@ $adminevent_tbl =
     <!-- important-->
     <script type="text/javascript" src="js/script.js"></script>
     <script type="text/javascript" src="js/smoothscroll.js"></script>
-
-    <!-- jQuery -->
-    <script src="js/jquery.js"></script>
 
     <!-- Bootstrap Core JavaScript -->
     <script src="js/bootstrap.min.js"></script>
