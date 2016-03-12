@@ -603,7 +603,7 @@ ul.social-list li:last-child a i {
 .navbar-default .navbar-nav > li > a {
     color: #333;
     display: block;
-
+    text-transform: uppercase;
     font-size: 14px;
     font-weight: 400;
     padding: 28px 15px 28px 15px;
@@ -6441,6 +6441,7 @@ td, th {
     color: #333;
     /*background-color: #e7e7e7;*/
     border-bottom: #FFF100 solid;
+    font-weight: 700;
 }
 
 
@@ -6846,29 +6847,46 @@ ul.post-meta li a:hover {
     color: #f8ba01;
 }
 
-.dot1, .dot2 {
-    background-color: #f8ba01;
+.dot1 {
+    background-color: #0A3D73;
+}
+
+.dot2 {
+    background-color: #FFF100;
 }
 
 
-
+.page-promo-header-element {
+    float: right;
+    z-index: 2;
+    margin-top: 9px;
+    margin-right: 4.16667%;
+    width: 100%;
+}
 .page-promo-header-element {
     height: 30px;
-    font-family: "ptsans", "PT Sans", "Sans", Arial;
+    font-family: inherit;
     font-size: 16px;
-    /*line-height: 37px;*/
+    line-height: 60px;
     font-weight: bold;
     text-align: center;
     text-decoration: none;
     color: #000000;
-    border: 3px solid #FCDB05;
+    border: 3px solid #FFF100;
     border-radius: 30px;
     cursor: pointer;
-    background-color: #FCDB05;
+    background-color: #FFF100;
     -webkit-transition: background-color 0.6s;
     transition: background-color 0.6s;
 }
-
+.page-promo-header .page-promo-header-element {
+    float: left;
+    z-index: 1;
+    position: relative;
+}
+.page-promo-header-element {
+    display: block;
+}
 
 
 .page-promo-header-element .login:hover {

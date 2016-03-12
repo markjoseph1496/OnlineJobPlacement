@@ -101,6 +101,9 @@ $adminevent_tbl =
                         <a href="#page-top"></a>
                     </li>
                     <li>
+                        <a class="page-scroll" href="#home">Home</a>
+                    </li>
+                    <li>
                         <a class="page-scroll" href="#jobs">Jobs</a>
                     </li>
                     <li>
@@ -110,10 +113,10 @@ $adminevent_tbl =
                         <a class="page-scroll" href="#e2e">E2E</a>
                     </li>
                     <li>
-                        <a class="page-scroll" href="#p-company">Partner Company</a>
+                        <a class="page-scroll" href="#partners">Partners</a>
                     </li>
                     <li>
-                        <a href="#join" class="page-scroll page-promo-header-element">Sign In</a>
+                        <a href="#sign-in" class="page-scroll page-promo-header-element"><b style="line-height:20px;">Sign In</b></a>
                     </li>
                 </ul>
             </div>
@@ -520,7 +523,7 @@ $adminevent_tbl =
         </div>
     </section>
 
-    <section id="p-company" >
+    <section id="partners" >
         <div class="container">
             <!-- Start Big Heading -->
             <div class="big-title text-center">
@@ -614,7 +617,7 @@ $adminevent_tbl =
         </div>
     </section>
 
-    <section id="join" class="parallax" style="background-image:url(images/sti-bldg.jpg);">
+    <section id="sign-in" class="parallax" style="background-image:url(images/sti-bldg.jpg);">
         <div class="overlay">
             <div class="parallax-text-container-1">
                 <div class="parallax-text-item">
