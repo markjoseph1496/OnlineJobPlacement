@@ -31,13 +31,13 @@ $adminevent_tbl =
 
 
     <!-- Bootstrap Core CSS -->
-    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="asset/css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Custom CSS -->
     <link href="css/home.css" rel="stylesheet">
 
     <!-- Custom Fonts -->
-    <link href="fonts/ffonts/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="css/font-awesome.min.css" rel="stylesheet" type="text/css">
 
     <!-- Bootstrap CSS  -->
     <link rel="stylesheet" href="css/about-style.css" type="text/css" media="screen">
@@ -57,9 +57,6 @@ $adminevent_tbl =
 
     <!-- Css3 Transitions Styles  -->
     <link rel="stylesheet" type="text/css" href="css/animate.css" media="screen">
-
-    <!-- Color CSS Styles  -->
-    <link rel="stylesheet" type="text/css" href="css/colors/yellow.css" title="yellow" media="screen"/>
 
     <!-- JS  -->
     <script type="text/javascript" src="js/jquery.min.js"></script>
@@ -116,7 +113,7 @@ $adminevent_tbl =
                         <a class="page-scroll" href="#p-company">Partner Company</a>
                     </li>
                     <li>
-                        <a href="#join" class="">Sign In</a>
+                        <a href="#join" class="page-scroll page-promo-header-element">Sign In</a>
                     </li>
                 </ul>
             </div>
@@ -126,7 +123,7 @@ $adminevent_tbl =
     </nav>
 
     <!-- Services Section -->
-    <section id="home">
+    <section id="home" class="bg-light-gray">
         <!-- Carousel -->
         <div id="main-slide" class="carousel slide" data-ride="carousel">
             <!-- Indicators -->
@@ -739,9 +736,6 @@ $adminevent_tbl =
     <!-- important-->
     <script type="text/javascript" src="js/script.js"></script>
     <script type="text/javascript" src="js/smoothscroll.js"></script>
-
-    <!-- jQuery -->
-    <script src="js/jquery.js"></script>
 
     <!-- Bootstrap Core JavaScript -->
     <script src="js/bootstrap.min.js"></script>
