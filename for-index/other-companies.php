@@ -70,14 +70,17 @@
     <script type="text/javascript" src="../js/jquery.parallax.js"></script>
     <script type="text/javascript" src="../js/jquery.slicknav.js"></script>
 
+    <style type="text/css">.popover {
+    z-index: 1010; /* A value higher than 1010 that solves the problem */
+}</style>
     <script>
         $(document).ready(function(){
-            $('[data-toggle="tooltip"]').tooltip();   
+            $('[data-toggle="popover"]').popover();   
         });
     </script>
 </head>
 
-<body>
+<body style="overflow:hidden;">
     <div id="container">
         <!-- Start Header Section -->
         <div class="hidden-header"></div>
@@ -126,56 +129,31 @@
         <!-- Start Content -->
         <div id="content">
             <div class="container">
+                <a href="#" title="Header" data-toggle="popover" data-trigger="hover" data-content="Some content">Hover over me</a>
+                
                 <div class="row">
                     <div class="our-clients">
                         <div class="clients-carousel custom-carousel touch-carousel" data-appeared-items="5" data-navigation="false">
 
                             <div class="item">
-                                <a href="#" data-toggle="tooltip" data-placement="bottom" title="Accenture"><img src="../images/partner-company/accenture.png" alt="" /></a>
+                                <a href="#" data-toggle="popover" data-trigger="hover" data-content="Description here" title="Accenture"><img src="../images/partner-company/accenture.png" alt="" /></a>
                             </div>
 
                             <div class="item">
-                                <a href="#" data-toggle="tooltip" data-placement="bottom" title="Admerex"><img src="../images/partner-company/admerex.bmp" alt="" /></a>
+                                <a href="#" data-toggle="popover" data-trigger="hover" data-content="Description here" title="Admerex"><img src="../images/partner-company/admerex.bmp" alt="" /></a>
                             </div>
 
                             <div class="item">
-                                <a href="#" data-toggle="tooltip" data-placement="bottom" title="Aickman"><img src="../images/partner-company/aickman.png" alt="" /></a>
+                                <a href="#" data-toggle="popover" data-trigger="hover" data-content="Description here" title="Aickman"><img src="../images/partner-company/aickman.png" alt="" /></a>
                             </div>
 
 
                             <div class="item">
-                                <a href="#" data-toggle="tooltip" data-placement="bottom" title="Alorica"><img src="../images/partner-company/alorica.jpg" alt="" /></a>
+                                <a href="#" data-toggle="popover" data-trigger="hover" data-content="Description here" title="Alorica"><img src="../images/partner-company/alorica.jpg" alt="" /></a>
                             </div>
 
                             <div class="item">
-                                <a href="#" data-toggle="tooltip" data-placement="bottom" title="ANR"><img src="../images/partner-company/anr.jpg" alt="" /></a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="hr1" style="margin-top:10px;margin-bottom:10px;"></div>
-
-                    <div class="our-clients">
-                        <div class="clients-carousel custom-carousel touch-carousel" data-appeared-items="5" data-navigation="false">
-
-                            <div class="item">
-                                <a href="#" data-toggle="tooltip" data-placement="bottom" title="Benby"><img src="../images/partner-company/benby.jpg" alt="" /></a>
-                            </div>
-
-                            <div class="item">
-                                <a href="#" data-toggle="tooltip" data-placement="bottom" title="BoardWalk"><img src="../images/partner-company/boardwalk.png" alt="" /></a>
-                            </div>
-
-                            <div class="item">
-                                <a href="#" data-toggle="tooltip" data-placement="bottom" title="BPO"><img src="../images/partner-company/bpo.jpg" alt="" /></a>
-                            </div>
-
-                            <div class="item">
-                                <a href="#" data-toggle="tooltip" data-placement="bottom" title="Business Trends"><img src="../images/partner-company/business-trends.png" alt="" /></a>
-                            </div>
-
-                            <div class="item">
-                                <a href="#" data-toggle="tooltip" data-placement="bottom" title="CICC"><img src="../images/partner-company/cicc.png" alt="" /></a>
+                                <a href="#" data-toggle="popover" data-trigger="hover" data-content="Description here" title="ANR"><img src="../images/partner-company/anr.jpg" alt="" /></a>
                             </div>
                         </div>
                     </div>
@@ -186,50 +164,23 @@
                         <div class="clients-carousel custom-carousel touch-carousel" data-appeared-items="5" data-navigation="false">
 
                             <div class="item">
-                                <a href="#" data-toggle="tooltip" data-placement="bottom" title="Circuit Solutions"><img src="../images/partner-company/circuit.png" alt="" /></a>
+                                <a href="#" data-toggle="popover" data-trigger="hover" data-content="Description here" title="Benby"><img src="../images/partner-company/benby.jpg" alt="" /></a>
                             </div>
 
                             <div class="item">
-                                <a href="#" data-toggle="tooltip" data-placement="bottom" title="Collabera"><img src="../images/partner-company/collabera.png" alt="" /></a>
+                                <a href="#" data-toggle="popover" data-trigger="hover" data-content="Description here" title="BoardWalk"><img src="../images/partner-company/boardwalk.png" alt="" /></a>
                             </div>
 
                             <div class="item">
-                                <a href="#" data-toggle="tooltip" data-placement="bottom" title="Concentrix"><img src="../images/partner-company/concentrix.png" alt="" /></a>
+                                <a href="#" data-toggle="popover" data-trigger="hover" data-content="Description here" title="BPO"><img src="../images/partner-company/bpo.jpg" alt="" /></a>
                             </div>
 
                             <div class="item">
-                                <a href="#" data-toggle="tooltip" data-placement="bottom" title="DELL"><img src="../images/partner-company/dell.png" alt="" /></a>
+                                <a href="#" data-toggle="popover" data-trigger="hover" data-content="Description here" title="Business Trends"><img src="../images/partner-company/business-trends.png" alt="" /></a>
                             </div>
 
                             <div class="item">
-                                <a href="#" data-toggle="tooltip" data-placement="bottom" title="Empire East"><img src="../images/partner-company/empire-east.jpg" alt="" /></a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="hr1" style="margin-top:10px;margin-bottom:10px;"></div>
-
-                    <div class="our-clients">
-                        <div class="clients-carousel custom-carousel touch-carousel" data-appeared-items="5" data-navigation="false">
-
-                            <div class="item">
-                                <a href="#" data-toggle="tooltip" data-placement="bottom" title="Evotech"><img src="../images/partner-company/evotech.jpg" alt="" /></a>
-                            </div>
-
-                            <div class="item">
-                                <a href="#" data-toggle="tooltip" data-placement="bottom" title="Food Asia Corp."><img src="../images/partner-company/food-asia.jpe" alt="" /></a>
-                            </div>
-
-                            <div class="item">
-                                <a href="#" data-toggle="tooltip" data-placement="bottom" title="Gerry's Grill"><img src="../images/partner-company/gerrys-grill.jpg" alt="" /></a>
-                            </div>
-
-                            <div class="item">
-                                <a href="#" data-toggle="tooltip" data-placement="bottom" title="Global Staff Recruitment Search Inc."><img src="../images/partner-company/global-staff.jpg" alt="" /></a>
-                            </div>
-
-                            <div class="item">
-                                <a href="#" data-toggle="tooltip" data-placement="bottom" title="Globe Telecom"><img src="../images/partner-company/globe.png" alt="" /></a>
+                                <a href="#" data-toggle="popover" data-trigger="hover" data-content="Description here" title="CICC"><img src="../images/partner-company/cicc.png" alt="" /></a>
                             </div>
                         </div>
                     </div>
@@ -240,50 +191,23 @@
                         <div class="clients-carousel custom-carousel touch-carousel" data-appeared-items="5" data-navigation="false">
 
                             <div class="item">
-                                <a href="#" data-toggle="tooltip" data-placement="bottom" title="Jobs180"><img src="../images/partner-company/jobs180.png" alt="" /></a>
+                                <a href="#" data-toggle="popover" data-trigger="hover" data-content="Description here" title="Circuit Solutions"><img src="../images/partner-company/circuit.png" alt="" /></a>
                             </div>
 
                             <div class="item">
-                                <a href="#" data-toggle="tooltip" data-placement="bottom" title="Job Solutions"><img src="../images/partner-company/job-solutions.jpg" alt="" /></a>
+                                <a href="#" data-toggle="popover" data-trigger="hover" data-content="Description here" title="Collabera"><img src="../images/partner-company/collabera.png" alt="" /></a>
                             </div>
 
                             <div class="item">
-                                <a href="#" data-toggle="tooltip" data-placement="bottom" title="LBP Service Corp."><img src="../images/partner-company/lbp.jpg" alt="" /></a>
+                                <a href="#" data-toggle="popover" data-trigger="hover" data-content="Description here" title="Concentrix"><img src="../images/partner-company/concentrix.png" alt="" /></a>
                             </div>
 
                             <div class="item">
-                                <a href="#" data-toggle="tooltip" data-placement="bottom" title="M-bay Health Spa"><img src="../images/partner-company/m-bay.jpg" alt="" /></a>
+                                <a href="#" data-toggle="popover" data-trigger="hover" data-content="Description here" title="DELL"><img src="../images/partner-company/dell.png" alt="" /></a>
                             </div>
 
                             <div class="item">
-                                <a href="#" data-toggle="tooltip" data-placement="bottom" title="MGME Manpower Services"><img src="../images/partner-company/mgme.jpe" alt="" /></a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="hr1" style="margin-top:10px;margin-bottom:10px;"></div>
-
-                    <div class="our-clients">
-                        <div class="clients-carousel custom-carousel touch-carousel" data-appeared-items="5" data-navigation="false">
-
-                            <div class="item">
-                                <a href="#" data-toggle="tooltip" data-placement="bottom" title="Mirof"><img src="../images/partner-company/mirof.png" alt="" /></a>
-                            </div>
-
-                            <div class="item">
-                                <a href="#" data-toggle="tooltip" data-placement="bottom" title="Netineers Web Design"><img src="../images/partner-company/netineers.gif" alt="" /></a>
-                            </div>
-
-                            <div class="item">
-                                <a href="#" data-toggle="tooltip" data-placement="bottom" title="Nova ED"><img src="../images/partner-company/nova.png" alt="" /></a>
-                            </div>
-
-                            <div class="item">
-                                <a href="#" data-toggle="tooltip" data-placement="bottom" title="Pacific Hub"><img src="../images/partner-company/pacific-hub.bmp" alt="" /></a>
-                            </div>
-
-                            <div class="item">
-                                <a href="#" data-toggle="tooltip" data-placement="bottom" title="People Depot"><img src="../images/partner-company/people-depot.png" alt="" /></a>
+                                <a href="#" data-toggle="popover" data-trigger="hover" data-content="Description here" title="Empire East"><img src="../images/partner-company/empire-east.jpg" alt="" /></a>
                             </div>
                         </div>
                     </div>
@@ -294,50 +218,23 @@
                         <div class="clients-carousel custom-carousel touch-carousel" data-appeared-items="5" data-navigation="false">
 
                             <div class="item">
-                                <a href="#" data-toggle="tooltip" data-placement="bottom" title="PRU Life U.K."><img src="../images/partner-company/pru-life-uk.jpg" alt="" /></a>
+                                <a href="#" data-toggle="popover" data-trigger="hover" data-content="Description here" title="Evotech"><img src="../images/partner-company/evotech.jpg" alt="" /></a>
                             </div>
 
                             <div class="item">
-                                <a href="#" data-toggle="tooltip" data-placement="bottom" title="PSV Services Inc."><img src="../images/partner-company/psv.jpg" alt="" /></a>
+                                <a href="#" data-toggle="popover" data-trigger="hover" data-content="Description here" title="Food Asia Corp."><img src="../images/partner-company/food-asia.jpe" alt="" /></a>
                             </div>
 
                             <div class="item">
-                                <a href="#" data-toggle="tooltip" data-placement="bottom" title="Quaerito"><img src="../images/partner-company/quaerito.jpg" alt="" /></a>
+                                <a href="#" data-toggle="popover" data-trigger="hover" data-content="Description here" title="Gerry's Grill"><img src="../images/partner-company/gerrys-grill.jpg" alt="" /></a>
                             </div>
 
                             <div class="item">
-                                <a href="#" data-toggle="tooltip" data-placement="bottom" title="Rice in a Box"><img src="../images/partner-company/rbx.jpg" alt="" /></a>
+                                <a href="#" data-toggle="popover" data-trigger="hover" data-content="Description here" title="Global Staff Recruitment Search Inc."><img src="../images/partner-company/global-staff.jpg" alt="" /></a>
                             </div>
 
                             <div class="item">
-                                <a href="#" data-toggle="tooltip" data-placement="bottom" title="RG Meditron"><img src="../images/partner-company/rg-meditron.gif" alt="" /></a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="hr1" style="margin-top:10px;margin-bottom:10px;"></div>
-
-                    <div class="our-clients">
-                        <div class="clients-carousel custom-carousel touch-carousel" data-appeared-items="5" data-navigation="false">
-
-                            <div class="item">
-                                <a href="#" data-toggle="tooltip" data-placement="bottom" title="Sentinel"><img src="../images/partner-company/sentinel.png" alt="" /></a>
-                            </div>
-
-                            <div class="item">
-                                <a href="#" data-toggle="tooltip" data-placement="bottom" title="Servflex"><img src="../images/partner-company/servflex.jpg" alt="" /></a>
-                            </div>
-
-                            <div class="item">
-                                <a href="#" data-toggle="tooltip" data-placement="bottom" title="Shakeys Pizza Parlor"><img src="../images/partner-company/shakeys.jpg" alt="" /></a>
-                            </div>
-
-                            <div class="item">
-                                <a href="#" data-toggle="tooltip" data-placement="bottom" title="Sitel"><img src="../images/partner-company/sitel.jpg" alt="" /></a>
-                            </div>
-
-                            <div class="item">
-                                <a href="#" data-toggle="tooltip" data-placement="bottom" title="SPI Global"><img src="../images/partner-company/spi-global.jpg" alt="" /></a>
+                                <a href="#" data-toggle="popover" data-trigger="hover" data-content="Description here" title="Globe Telecom"><img src="../images/partner-company/globe.png" alt="" /></a>
                             </div>
                         </div>
                     </div>
@@ -348,19 +245,127 @@
                         <div class="clients-carousel custom-carousel touch-carousel" data-appeared-items="5" data-navigation="false">
 
                             <div class="item">
-                                <a href="#" data-toggle="tooltip" data-placement="bottom" title="Staff Finders Inc."><img src="../images/partner-company/staff-finders.jpeg" alt="" /></a>
+                                <a href="#" data-toggle="popover" data-trigger="hover" data-content="Description here" title="Jobs180"><img src="../images/partner-company/jobs180.png" alt="" /></a>
                             </div>
 
                             <div class="item">
-                                <a href="#" data-toggle="tooltip" data-placement="bottom" title="Sykes"><img src="../images/partner-company/sykes.png" alt="" /></a>
+                                <a href="#" data-toggle="popover" data-trigger="hover" data-content="Description here" title="Job Solutions"><img src="../images/partner-company/job-solutions.jpg" alt="" /></a>
                             </div>
 
                             <div class="item">
-                                <a href="#" data-toggle="tooltip" data-placement="bottom" title="Symanpro Manpower"><img src="../images/partner-company/symanpro.jpg" alt="" /></a>
+                                <a href="#" data-toggle="popover" data-trigger="hover" data-content="Description here" title="LBP Service Corp."><img src="../images/partner-company/lbp.jpg" alt="" /></a>
                             </div>
 
                             <div class="item">
-                                <a href="#" data-toggle="tooltip" data-placement="bottom" title="TeleDevelopment"><img src="../images/partner-company/teledevelopment.jpg" alt="" /></a>
+                                <a href="#" data-toggle="popover" data-trigger="hover" data-content="Description here" title="M-bay Health Spa"><img src="../images/partner-company/m-bay.jpg" alt="" /></a>
+                            </div>
+
+                            <div class="item">
+                                <a href="#" data-toggle="popover" data-trigger="hover" data-content="Description here" title="MGME Manpower Services"><img src="../images/partner-company/mgme.jpe" alt="" /></a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="hr1" style="margin-top:10px;margin-bottom:10px;"></div>
+
+                    <div class="our-clients">
+                        <div class="clients-carousel custom-carousel touch-carousel" data-appeared-items="5" data-navigation="false">
+
+                            <div class="item">
+                                <a href="#" data-toggle="popover" data-trigger="hover" data-content="Description here" title="Mirof"><img src="../images/partner-company/mirof.png" alt="" /></a>
+                            </div>
+
+                            <div class="item">
+                                <a href="#" data-toggle="popover" data-trigger="hover" data-content="Description here" title="Netineers Web Design"><img src="../images/partner-company/netineers.gif" alt="" /></a>
+                            </div>
+
+                            <div class="item">
+                                <a href="#" data-toggle="popover" data-trigger="hover" data-content="Description here" title="Nova ED"><img src="../images/partner-company/nova.png" alt="" /></a>
+                            </div>
+
+                            <div class="item">
+                                <a href="#" data-toggle="popover" data-trigger="hover" data-content="Description here" title="Pacific Hub"><img src="../images/partner-company/pacific-hub.bmp" alt="" /></a>
+                            </div>
+
+                            <div class="item">
+                                <a href="#" data-toggle="popover" data-trigger="hover" data-content="Description here" title="People Depot"><img src="../images/partner-company/people-depot.png" alt="" /></a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="hr1" style="margin-top:10px;margin-bottom:10px;"></div>
+
+                    <div class="our-clients">
+                        <div class="clients-carousel custom-carousel touch-carousel" data-appeared-items="5" data-navigation="false">
+
+                            <div class="item">
+                                <a href="#" data-toggle="popover" data-trigger="hover" data-content="Description here" title="PRU Life U.K."><img src="../images/partner-company/pru-life-uk.jpg" alt="" /></a>
+                            </div>
+
+                            <div class="item">
+                                <a href="#" data-toggle="popover" data-trigger="hover" data-content="Description here" title="PSV Services Inc."><img src="../images/partner-company/psv.jpg" alt="" /></a>
+                            </div>
+
+                            <div class="item">
+                                <a href="#" data-toggle="popover" data-trigger="hover" data-content="Description here" title="Quaerito"><img src="../images/partner-company/quaerito.jpg" alt="" /></a>
+                            </div>
+
+                            <div class="item">
+                                <a href="#" data-toggle="popover" data-trigger="hover" data-content="Description here" title="Rice in a Box"><img src="../images/partner-company/rbx.jpg" alt="" /></a>
+                            </div>
+
+                            <div class="item">
+                                <a href="#" data-toggle="popover" data-trigger="hover" data-content="Description here" title="RG Meditron"><img src="../images/partner-company/rg-meditron.gif" alt="" /></a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="hr1" style="margin-top:10px;margin-bottom:10px;"></div>
+
+                    <div class="our-clients">
+                        <div class="clients-carousel custom-carousel touch-carousel" data-appeared-items="5" data-navigation="false">
+
+                            <div class="item">
+                                <a href="#" data-toggle="popover" data-trigger="hover" data-content="Description here" title="Sentinel"><img src="../images/partner-company/sentinel.png" alt="" /></a>
+                            </div>
+
+                            <div class="item">
+                                <a href="#" data-toggle="popover" data-trigger="hover" data-content="Description here" title="Servflex"><img src="../images/partner-company/servflex.jpg" alt="" /></a>
+                            </div>
+
+                            <div class="item">
+                                <a href="#" data-toggle="popover" data-trigger="hover" data-content="Description here" title="Shakeys Pizza Parlor"><img src="../images/partner-company/shakeys.jpg" alt="" /></a>
+                            </div>
+
+                            <div class="item">
+                                <a href="#" data-toggle="popover" data-trigger="hover" data-content="Description here" title="Sitel"><img src="../images/partner-company/sitel.jpg" alt="" /></a>
+                            </div>
+
+                            <div class="item">
+                                <a href="#" data-toggle="popover" data-trigger="hover" data-content="Description here" title="SPI Global"><img src="../images/partner-company/spi-global.jpg" alt="" /></a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="hr1" style="margin-top:10px;margin-bottom:10px;"></div>
+
+                    <div class="our-clients">
+                        <div class="clients-carousel custom-carousel touch-carousel" data-appeared-items="5" data-navigation="false">
+
+                            <div class="item">
+                                <a href="#" data-toggle="popover" data-trigger="hover" data-content="Description here" title="Staff Finders Inc."><img src="../images/partner-company/staff-finders.jpeg" alt="" /></a>
+                            </div>
+
+                            <div class="item">
+                                <a href="#" data-toggle="popover" data-trigger="hover" data-content="Description here" title="Sykes"><img src="../images/partner-company/sykes.png" alt="" /></a>
+                            </div>
+
+                            <div class="item">
+                                <a href="#" data-toggle="popover" data-trigger="hover" data-content="Description here" title="Symanpro Manpower"><img src="../images/partner-company/symanpro.jpg" alt="" /></a>
+                            </div>
+
+                            <div class="item">
+                                <a href="#" data-toggle="popover" data-trigger="hover" data-content="Description here" title="TeleDevelopment"><img src="../images/partner-company/teledevelopment.jpg" alt="" /></a>
                             </div>
                         </div>
                     </div>

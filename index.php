@@ -116,7 +116,7 @@ $adminevent_tbl =
                         <a class="page-scroll" href="#partners">Partners</a>
                     </li>
                     <li>
-                        <a href="#sign-in" class="page-scroll page-promo-header-element"><b style="line-height:20px;">Sign In</b></a>
+                        <a href="#sign-in" class="page-scroll page-promo-header-element">Sign In</a>
                     </li>
                 </ul>
             </div>
@@ -580,29 +580,51 @@ $adminevent_tbl =
             </div>
             <!-- End Clients Carousel -->
 
+            <div class="hr3" style="margin-top:30px;margin-bottom:30px;"></div>
 
             <!-- Start Clients Carousel -->
             <div class="our-clients">
-                <div class="clients-carousel custom-carousel touch-carousel" data-appeared-items="5" data-navigation="false">
+                <div class="clients-carousel custom-carousel touch-carousel" data-appeared-items="5"
+                     data-navigation="false">
 
+                    <!-- Company 1 -->
                     <div class="client-item item">
-                        <a href="#" data-toggle="tooltip" data-placement="bottom" title="Evotech"><img src="images/partner-company/evotech.jpg" alt="" /></a>
+                        <a href="#"><img src="images/partner-company/accenture.png" alt=""/></a>
                     </div>
 
+                    <!-- Company 2 -->
                     <div class="client-item item">
-                        <a href="#" data-toggle="tooltip" data-placement="bottom" title="Food Asia Corp."><img src="images/partner-company/food-asia.jpe" alt="" /></a>
+                        <a href="#"><img src="images/partner-company/sykes.png" alt=""/></a>
                     </div>
 
+                    <!-- Company 3 -->
                     <div class="client-item item">
-                        <a href="#" data-toggle="tooltip" data-placement="bottom" title="Gerry's Grill"><img src="images/partner-company/gerrys-grill.jpg" alt="" /></a>
+                        <a href="#"><img src="images/partner-company/cicc.png" alt=""/></a>
                     </div>
 
+                    <!-- Company 4 -->
                     <div class="client-item item">
-                        <a href="#" data-toggle="tooltip" data-placement="bottom" title="Global Staff Recruitment Search Inc."><img src="images/partner-company/global-staff.jpg" alt="" /></a>
+                        <a href="#"><img src="images/partner-company/concentrix.png" alt=""/></a>
                     </div>
 
+                    <!-- Company 5 -->
                     <div class="client-item item">
-                        <a href="#" data-toggle="tooltip" data-placement="bottom" title="Globe Telecom"><img src="images/partner-company/globe.png" alt="" /></a>
+                        <a href="#"><img src="images/partner-company/globe.png" alt=""/></a>
+                    </div>
+
+                    <!-- Company 6 -->
+                    <div class="client-item item">
+                        <a href="#"><img src="images/partner-company/collabera.png" alt=""/></a>
+                    </div>
+
+                    <!-- Company 7 -->
+                    <div class="client-item item">
+                        <a href="#"><img src="images/partner-company/business-trends.png" alt=""/></a>
+                    </div>
+
+                    <!-- Company 8 -->
+                    <div class="client-item item">
+                        <a href="#"><img src="images/partner-company/aickman.png" alt=""/></a>
                     </div>
                 </div>
             </div>
@@ -668,7 +690,6 @@ $adminevent_tbl =
         <div class="container">
             <div class="row footer-widgets">
 
-                <!-- Start Subscribe & Social Links Widget -->
                 <div class="col-md-4">
                     <div class="footer-widget social-widget">
                         <h4>Follow Us<span class="head-line"></span></h4>
@@ -685,15 +706,10 @@ $adminevent_tbl =
                         <label>109 Samson Road corner Caimito Street Caloocan City, Philippines 1400</label>
                     </div>
                 </div>
-                <!-- .col-md-3 -->
-                <!-- End Subscribe & Social Links Widget -->
 
 
-                <!-- Start Contact Widget -->
                 <div class="col-md-4">
                     <div class="footer-widget contact-widget">
-                        <!--<h4><img src="images/ojpms.png" class="img-responsive" alt="Footer Logo"/></h4>-->
-                        <!--<p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident</p>-->
                         <ul>
                             <li><span>Phone Number:</span> +63 (917) 4638460</li>
                             <li><span>Email:</span> jobplacement@caloocan.sti.edu</li>
@@ -701,10 +717,7 @@ $adminevent_tbl =
                         </ul>
                     </div>
                 </div>
-                <!-- .col-md-3 -->
-                <!-- End Contact Widget -->
             </div>
-            <!-- .row -->
 
             <!-- Start Copyright -->
             <div class="copyright-section">
