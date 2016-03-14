@@ -151,7 +151,7 @@ $MajorCourse = $course_qry[0][0];
                                     <ul id="notificationContainer" class="dropdown-menu dropdown-menu-inverse">
                                         <li class="dropdown-header"><label>Notification</label></li>
                                         <li class="disabled"><a href="#" tabindex="-1">No new notification.</a></li>
-                                        <li><a href="#" tabindex="-1">The administrator accepted your request.</a></li>
+                                        <li><a href="#" tabindex="-1">Concentrix Accepted your submitted online resume.</a></li>
                                         <li class="divider"></li>
                                         <li><a href="../notification/notification.php" tabindex="-1">See All</a></li>
                                     </ul>
