@@ -117,8 +117,8 @@ $adminevent_tbl =
                     <li>
                         <a class="page-scroll" href="#partners">Partners</a>
                     </li>
-                    <li>
-                        <a href="#sign-in" class="page-scroll page-promo-header-element">Sign In</a>
+                    <li><!-- page-promo-header-element-->
+                        <a href="#sign-in" class="page-scroll">Sign In</a>
                     </li>
                 </ul>
             </div>
@@ -582,7 +582,7 @@ $adminevent_tbl =
             </div>
             <!-- End Clients Carousel -->
 
-            <div class="hr3" style="margin-top:30px;margin-bottom:30px;"></div>
+            <div class="hr3" style="margin-top:25px;margin-bottom:25px;"></div>
 
             <!-- Start Clients Carousel -->
             <div class="our-clients">
@@ -591,42 +591,42 @@ $adminevent_tbl =
 
                     <!-- Company 1 -->
                     <div class="client-item item">
-                        <a href="#"><img src="images/partner-company/accenture.png" alt=""/></a>
+                        <a href="#"><img src="images/partner-company/gerrys-grill.jpg" alt=""/></a>
                     </div>
 
                     <!-- Company 2 -->
                     <div class="client-item item">
-                        <a href="#"><img src="images/partner-company/sykes.png" alt=""/></a>
+                        <a href="#"><img src="images/partner-company/netineers.gif" alt=""/></a>
                     </div>
 
                     <!-- Company 3 -->
                     <div class="client-item item">
-                        <a href="#"><img src="images/partner-company/cicc.png" alt=""/></a>
+                        <a href="#"><img src="images/partner-company/people-depot.png" alt=""/></a>
                     </div>
 
                     <!-- Company 4 -->
                     <div class="client-item item">
-                        <a href="#"><img src="images/partner-company/concentrix.png" alt=""/></a>
+                        <a href="#"><img src="images/partner-company/shakeys.jpg" alt=""/></a>
                     </div>
 
                     <!-- Company 5 -->
                     <div class="client-item item">
-                        <a href="#"><img src="images/partner-company/globe.png" alt=""/></a>
+                        <a href="#"><img src="images/partner-company/rbx.jpg" alt=""/></a>
                     </div>
 
                     <!-- Company 6 -->
                     <div class="client-item item">
-                        <a href="#"><img src="images/partner-company/collabera.png" alt=""/></a>
+                        <a href="#"><img src="images/partner-company/servflex.jpg" alt=""/></a>
                     </div>
 
                     <!-- Company 7 -->
                     <div class="client-item item">
-                        <a href="#"><img src="images/partner-company/business-trends.png" alt=""/></a>
+                        <a href="#"><img src="images/partner-company/staff-finders.jpeg" alt=""/></a>
                     </div>
 
                     <!-- Company 8 -->
                     <div class="client-item item">
-                        <a href="#"><img src="images/partner-company/aickman.png" alt=""/></a>
+                        <a href="#"><img src="images/partner-company/rg-meditron.gif" alt=""/></a>
                     </div>
                 </div>
             </div>
