@@ -261,7 +261,7 @@ if($References == "ok"){
                         <div class="col-md-5">
                             <!-- Start Social Links -->
                             <ul class="nav navbar-nav navbar-right">
-                                <!--<li class="dropdown icon-border" id="notificationLink">
+                                <li class="dropdown icon-border" id="notificationLink">
                                     <span id="notification_count">5</span>
                                     <a class="bell itl-tooltip" data-placement="bottom" data-toggle="dropdown"><i class="fa fa-bell"></i></a>
                                     <ul id="notificationContainer" class="dropdown-menu dropdown-menu-inverse">
@@ -270,7 +270,7 @@ if($References == "ok"){
                                         <li class="divider"></li>
                                         <li><a href="../../notification/notification.php">See All</a></li>
                                     </ul>
-                                </li>-->
+                                </li>
                                 <li class="dropdown">
                                     <a href="#" class="dropdown-toggle" data-toggle="dropdown"><b class="fa fa-user"></b> Welcome, <b><?php echo $StudentName; ?> </b><b class="caret"></b></a>
                                     <ul class="dropdown-menu">
