@@ -283,14 +283,14 @@ $cLastName = $companyinfo_tbl[0][2];
                 <table class="table segment table-hover">
                     <thead>
                     <tr>
-                        <th width='20%' class='tabletitle'>Applicant Name</th>
-                        <th width='17%' class='tabletitle'>Position</th>
-                        <th width='20%' class='tabletitle'>Course</th>
-                        <th width='13%' class='tabletitle'>Location</th>
-                        <th width='15%' class='tabletitle'>Email</th>
-                        <th width='15%' class='tabletitle'>Contact Number</th>
-                        <th width='15%' class='tabletitle'>Date Submitted</th>
-                        <th width='10%' class='tabletitle'>Action</th>
+                        <th width='15%' class='tabletitle'>Applicant Name</th>
+                        <th width='12%' class='tabletitle'>Position</th>
+                        <th width='12%' class='tabletitle'>Course</th>
+                        <th width='12%' class='tabletitle'>Location</th>
+                        <th width='12%' class='tabletitle'>Email</th>
+                        <th width='12%' class='tabletitle'>Contact Number</th>
+                        <th width='12%' class='tabletitle'>Date Submitted</th>
+                        <th width='9%' class='tabletitle'>Action</th>
                     <tr>
                     </thead>
                     <?php
@@ -347,14 +347,14 @@ $cLastName = $companyinfo_tbl[0][2];
                         ?>
                         <tbody>
                         <tr>
-                            <td width='20%' class=tabletitle><a href=''><?php echo $LastName . ", " . $FirstName; ?></a></td>
-                            <td width='17%' class=tabletitle><?php echo $PositionLevel; ?></td>
-                            <td width='20%' class=tabletitle><?php echo $MajorCourse; ?></td>
+                            <td width='15%' class=tabletitle><a href=''><?php echo $LastName . ", " . $FirstName; ?></a></td>
+                            <td width='12%' class=tabletitle><?php echo $PositionLevel; ?></td>
+                            <td width='12%' class=tabletitle><?php echo $MajorCourse; ?></td>
                             <td width='12%' class=tabletitle><?php echo $Location; ?></td>
-                            <td width='15%' class=tabletitle><?php echo $Email; ?></td>
-                            <td width='15%' class=tabletitle><?php echo $ContactNumber; ?></td>
-                            <td width='15%' class=tabletitle><?php echo $DateSubmitted; ?></td>
-                            <td>
+                            <td width='12%' class=tabletitle><?php echo $Email; ?></td>
+                            <td width='12%' class=tabletitle><?php echo $ContactNumber; ?></td>
+                            <td width='12%' class=tabletitle><?php echo $DateSubmitted; ?></td>
+                            <td width='8%'>
                                 <button class='btn btn-default' data-toggle='modal'
                                         data-target='#AcceptRequest<?php echo $RID; ?>'>
                                     <i class='fa fa-check-circle'></i></button>
