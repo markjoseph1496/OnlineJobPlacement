@@ -14,9 +14,9 @@ class GSecureSQLConfig
         } else {
             return array(
                 'host' => 'mysql.hostinger.ph',
-                'user' => 'u987316885_e2edb',
-                'pass' => 'o2ehQX3wqO',
-                'db' => 'u987316885_e2edb'
+                'user' => 'u305071956_e2edb',
+                'pass' => 'ocCWVkS7qe',
+                'db' => 'u305071956_e2edb'
             );
         }
     }
