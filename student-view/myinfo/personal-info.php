@@ -225,20 +225,6 @@ if ($References == "ok") {
 
         });
     </script>
-
-    <!-- Alert
-    <script type="text/javascript">
-        $(document).ready (function(){
-        $("#success-alert").hide();
-        $("#btnsave").click(function showAlert() {
-            $("#success-alert").alert();
-            $("#success-alert").fadeTo(2000, 500).slideUp(500, function(){
-           $("#success-alert").alert('close');
-                });   
-            });
-        });
-    </script> -->
-
 </head>
 
 <body>
@@ -349,8 +335,7 @@ if ($References == "ok") {
                                 <li><a href="education.php"><?php echo $nSchool; ?> Education</a></li>
                                 <li><a href="certifications.php"><?php echo $nCertification; ?> Certifications</a></li>
                                 <li><a href="achievements.php"><?php echo $nAchievements; ?> Achievements</a></li>
-                                <li><a href="skills-and-languages.php"><?php echo $nSpecialization; ?> Skills &
-                                        Languages</a></li>
+                                <li><a href="skills-and-languages.php"><?php echo $nSpecialization; ?> Skills & Languages</a></li>
                                 <li><a href="references.php"><?php echo $nReferences; ?> References</a></li>
                                 <!--<li><a href="portfolio.php">Portfolio</a></li>-->
                             </ul>
@@ -442,7 +427,7 @@ if ($References == "ok") {
                 }
                 ?>
                 <script type="text/javascript">
-                    $("#success-alert").fadeTo(5000, 500).slideUp(500, function(){
+                    $("#success-alert").fadeTo(5000, 500).slideUp(500, function () {
                         $("#success-alert").alert('close');
                     });
                 </script>
@@ -451,8 +436,7 @@ if ($References == "ok") {
                 <div class="skill-shortcode">
                     <div class="skill">
                         <div class="progress">
-                            <div class="progress-bar" role="progressbar" data-percentage="<?php echo $Progress; ?>"
-                                 style="width: <?php echo $Progress; ?>%;">
+                            <div class="progress-bar" role="progressbar" data-percentage="<?php echo $Progress; ?>" style="width: <?php echo $Progress; ?>%;">
                                 <span class="progress-bar-span"><?php echo $Progress; ?>%</span>
                             </div>
                         </div>
@@ -468,55 +452,36 @@ if ($References == "ok") {
                                 <div class="call-action call-action-boxed call-action-style1 clearfix">
                                     <div class="form-group">
                                         <label>First Name <span>(*)</span></label>
-                                        <input type="text" class="form-control" id="FirstName" name="FirstName"
-                                               value="<?php echo $FirstName; ?>">
+                                        <input type="text" class="form-control" id="FirstName" name="FirstName" value="<?php echo $FirstName; ?>">
                                     </div>
                                     <div class="form-group">
                                         <label>Middle Name</label>
-                                        <input type="text" class="form-control" id="MiddleName" name="MiddleName"
-                                               value="<?php echo $MiddleName; ?>">
+                                        <input type="text" class="form-control" id="MiddleName" name="MiddleName" value="<?php echo $MiddleName; ?>">
                                     </div>
                                     <div class="form-group">
                                         <label>Last Name <span>(*)</span></label>
-                                        <input type="text" class="form-control" id="LastName" name="LastName"
-                                               value="<?php echo $LastName; ?>">
+                                        <input type="text" class="form-control" id="LastName" name="LastName" value="<?php echo $LastName; ?>">
                                     </div>
                                     <div class="form-group">
                                         <label>Gender <span>(*)</span></label>
-                                        <select id="Gender" name="Gender" class="form-control"
-                                                style="width:100%; height:34px;">
-                                            <option value="" <?php if ($Gender == "") echo 'selected="selected"'; ?>>-
-                                                Please Select Gender -
-                                            </option>
-                                            <option
-                                                value="Female" <?php if ($Gender == "Female") echo 'selected="selected"'; ?>>
-                                                Female
-                                            </option>
-                                            <option
-                                                value="Male" <?php if ($Gender == "Male") echo 'selected="selected"'; ?>>
-                                                Male
-                                            </option>
+                                        <select id="Gender" name="Gender" class="form-control" style="width:100%; height:34px;">
+                                            <option value="" <?php if ($Gender == "") echo 'selected="selected"'; ?>>-Please Select Gender -</option>
+                                            <option value="Female" <?php if ($Gender == "Female") echo 'selected="selected"'; ?>>Female</option>
+                                            <option value="Male" <?php if ($Gender == "Male") echo 'selected="selected"'; ?>>Male</option>
                                         </select>
                                     </div>
                                     <div class="form-group">
                                         <label>Birthdate <span>(*)</span></label><br>
-                                        <input type="date" class="form-control" name="Birthdate" id="Birthdate"
-                                               value="<?php echo $Birthdate; ?>">
+                                        <input type="date" class="form-control" name="Birthdate" id="Birthdate" value="<?php echo $Birthdate; ?>">
                                     </div>
                                     <div class="form-group">
                                         <label>Nationality <span>(*)</span></label>
                                         <select id="Nationality" name="Nationality" class="form-control">
-                                            <option
-                                                value="" <?php if ($Nationality == "") echo 'selected="selected"'; ?>>-
-                                                Please select one -
-                                            </option>
+                                            <option value="" <?php if ($Nationality == "") echo 'selected="selected"'; ?>>-Please select one -</option>
                                             <option value="Afghan">Afghan</option>
                                             <option value="Albanian">Albanian</option>
                                             <option value="Algerian">Algerian</option>
-                                            <option
-                                                value="American" <?php if ($Nationality == "American") echo 'selected="selected"'; ?>>
-                                                American
-                                            </option>
+                                            <option value="American" <?php if ($Nationality == "American") echo 'selected="selected"'; ?>>American</option>
                                             <option value="Andorran">Andorran</option>
                                             <option value="Angolan">Angolan</option>
                                             <option value="Antiguans">Antiguans</option>
@@ -574,10 +539,7 @@ if ($References == "ok") {
                                             <option value="Estonian">Estonian</option>
                                             <option value="Ethiopian">Ethiopian</option>
                                             <option value="Fijian">Fijian</option>
-                                            <option
-                                                value="Filipino" <?php if ($Nationality == "Filipino") echo 'selected="selected"'; ?>>
-                                                Filipino
-                                            </option>
+                                            <option value="Filipino" <?php if ($Nationality == "Filipino") echo 'selected="selected"'; ?>>Filipino</option>
                                             <option value="Finnish">Finnish</option>
                                             <option value="French">French</option>
                                             <option value="Gabonese">Gabonese</option>
@@ -721,34 +683,18 @@ if ($References == "ok") {
                                     <div class="form-group">
                                         <label>Civil Status <span>(*)</span></label>
                                         <select id="CivilStatus" name="CivilStatus" class="form-control">
-                                            <option
-                                                value="" <?php if ($CivilStatus == "") echo 'selected="selected"'; ?>>-
-                                                Please select one -
-                                            </option>
-                                            <option
-                                                value="Single" <?php if ($CivilStatus == "Single") echo 'selected="selected"'; ?>>
-                                                Single
-                                            </option>
-                                            <option
-                                                value="Married" <?php if ($CivilStatus == "Married") echo 'selected="selected"'; ?>>
-                                                Married
-                                            </option>
-                                            <option
-                                                value="Separated" <?php if ($CivilStatus == "Separated") echo 'selected="selected"'; ?>>
-                                                Separated
-                                            </option>
-                                            <option
-                                                value="Widowed" <?php if ($CivilStatus == "Widowed") echo 'selected="selected"'; ?>>
-                                                Widowed
-                                            </option>
+                                            <option value="" <?php if ($CivilStatus == "") echo 'selected="selected"'; ?>>-Please select one -</option>
+                                            <option value="Single" <?php if ($CivilStatus == "Single") echo 'selected="selected"'; ?>>Single</option>
+                                            <option value="Married" <?php if ($CivilStatus == "Married") echo 'selected="selected"'; ?>>Married</option>
+                                            <option value="Separated" <?php if ($CivilStatus == "Separated") echo 'selected="selected"'; ?>>Separated</option>
+                                            <option value="Widowed" <?php if ($CivilStatus == "Widowed") echo 'selected="selected"'; ?>>Widowed</option>
                                         </select>
                                     </div>
                                     <label class="control-label">Facebook</label>
                                     <div class="input-group">
                                         <span class="input-group-addon">http://www.facebook.com/</span>
                                         <div class="form-group">
-                                            <input name="FBLink" id="FBLink" type="text" maxlength="20"
-                                                   class="form-control" value="<?php echo $FBLink; ?>">
+                                            <input name="FBLink" id="FBLink" type="text" maxlength="20" class="form-control" value="<?php echo $FBLink; ?>">
                                         </div>
                                     </div>
                                 </div>
@@ -759,23 +705,22 @@ if ($References == "ok") {
                                 if ($ProfileImage == "") {
                                     ?>
                                     <div class="image-border">
-                                        <img src="" class="img-responsive" style="width:100%; height:100%;">
+                                        <img src="../../img/man-icon.png" class="img-responsive" style="width:100%; height:100%;">
                                     </div>
                                     <?php
                                 } else {
                                     ?>
                                     <div class="image-border">
-                                        <img src="<?php echo $ProfileImage; ?>" class="img-responsive"
-                                             style="width:100%; height:100%;">
+                                        <img src="<?php echo $ProfileImage; ?>" class="img-responsive" style="width:100%; height:100%;">
                                     </div>
                                     <?php
                                 }
                                 ?>
                                 <br><br>
                                 <label>Photo <span>(*)</span></label>
-                                <input id="ProfilePicture" name="ProfilePicture" type="file"
-                                       class="file file-loading"
-                                       data-allowed-file-extensions='["png", "jpg", "bmp", "gif"]'>
+                                <div class="form-group">
+                                    <input id="ProfilePicture" name="ProfilePicture" type="file" class="file file-loading" data-allowed-file-extensions='["png", "jpg", "bmp", "gif"]'>
+                                </div>
                                 <script>
                                     $("#ProfilePicture").fileinput({
                                         showUpload: false
@@ -893,7 +838,20 @@ if ($References == "ok") {
                             message: "Invalid Twitter Link"
                         }
                     }
+                },
+                <?php
+                if($ProfileImage == ""){
+                ?>
+                ProfilePicture: {
+                    validators: {
+                        notEmpty: {
+                            message: "Photo is required."
+                        }
+                    }
                 }
+                <?php
+                }
+                ?>
             }
         });
     });
