@@ -101,6 +101,13 @@ $MajorCourse = $course_qry[0][0];
     <!-- Checkbox -->
     <link rel="stylesheet" type="text/css" href="../../css/checkbox.css" media="screen" />
 
+    <link rel="stylesheet" type="text/css" href="../../css/color-selector/prettify.css"/>
+    <link rel="stylesheet" type="text/css" href="../../css/color-selector/bootstrap-colorselector.css"/>
+
+    <!-- fileupload -->
+    <link href="../../css/fileinput.min.css" media="all" rel="stylesheet" type="text/css"/>
+    <script src="../../js/fileinput.min.js" type="text/javascript"></script>
+
     <!-- Notification -->
     <link rel="stylesheet" href="../../css/notif.css"/>
 
@@ -241,6 +248,7 @@ $MajorCourse = $course_qry[0][0];
                     <ul class="nav nav-tabs">
                         <li class="active"><a href="#tab-1" data-toggle="tab"><i class="fa fa-key"></i>Password Settings</a></li>
                         <li><a href="#tab-2" data-toggle="tab"><i class="fa fa-check"></i>Privacy Settings</a></li>
+                        <li><a href="#tab-3" data-toggle="tab"><i class="fa fa-check"></i>Online Resume</a></li>
                     </ul>
 
                     <!-- Tab panels -->
@@ -416,6 +424,92 @@ $MajorCourse = $course_qry[0][0];
                                 </div>
                             </div>
                         </div>
+                        <!-- Tab Content 2 -->
+
+                        <!-- Tab Content 3 -->
+                        <div class="tab-pane fade in" id="tab-3">
+                            <div class="call-action call-action-boxed call-action-style2 clearfix">         
+                                <h2 class="primary"><strong></strong></h2>
+                            </div>
+                            <div class="hr4" style="margin-top:15px;margin-bottom:25px;"></div>
+
+                            <label>About Me</label>
+                            <div class="form-group">
+                                <textarea class="form-control" name="" id="" rows="10"></textarea>
+                            </div>
+                               
+                            <div class="hr4" style="margin-top:35px;margin-bottom:40px;"></div>
+                            <div class="text-center">
+                                <button type="submit" class="btn-system btn-large" name="btnSave">Save</button>
+                            </div>
+
+
+
+
+                            <div class="row sidebar-page">
+                                <!-- Page Content -->
+                                <div class="col-md-12 page-content">
+                                    <label>Use Background</label><br>
+
+                                    <div class="radio radio-inline">
+                                        <input type="radio" id="Color" value="Color" name="selection" checked="checked">
+                                        <label for="inlineRadio1"> Solid Color </label>
+                                    </div>
+
+                                    <div class="radio radio-inline">
+                                        <input type="radio" id="Image" value="Image" name="selection">
+                                        <label for="inlineRadio2"> Uploaded Image </label>
+                                    </div>
+                                
+                                    <div class="row">
+                                        <div class="col-md-6" id="ToColor">
+                                            <div id="Colors">
+                                                <label class="accent-color">Solid Color</label><br>
+                                                <select id="colorselector_1" style="display: none;">
+                                                    <option value="106" data-color="#A0522D" selected="selected">sienna</option>
+                                                    <option value="47" data-color="#CD5C5C">indianred</option>
+                                                    <option value="87" data-color="#FF4500">orangered</option>
+                                                    <option value="17" data-color="#008B8B">darkcyan</option>
+                                                    <option value="18" data-color="#B8860B">darkgoldenrod</option>
+                                                    <option value="68" data-color="#32CD32">limegreen</option>
+                                                    <option value="42" data-color="#FFD700">gold</option>
+                                                    <option value="77" data-color="#48D1CC">mediumturquoise</option>
+                                                    <option value="107" data-color="#87CEEB">skyblue</option>
+                                                    <option value="46" data-color="#FF69B4">hotpink</option>
+                                                    <option value="64" data-color="#87CEFA">lightskyblue</option>
+                                                    <option value="13" data-color="#6495ED">cornflowerblue</option>
+                                                    <option value="15" data-color="#DC143C">crimson</option>
+                                                    <option value="24" data-color="#FF8C00">darkorange</option>
+                                                    <option value="78" data-color="#C71585">mediumvioletred</option>
+                                                    <option value="123" data-color="#000000">black</option>
+                                                </select>
+                                                <script>
+                                                    $('#colorselector_1').colorselector();
+                                                </script>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6" id="ToImage">
+                                            <div id="UploadImages">
+                                                <label class="accent-color">Uploaded Image</label>
+                                                <div class="classic-testimonials">
+                                                    <input id="ProfilePicture" name="" multiple type="file" class="file file-loading"
+                                                           data-allowed-file-extensions='["png", "jpg", "bmp", "gif"]'>
+                                                    <br>
+                                                    <button id="" class="btn-system btn-mini border-btn" name="btnDelete">Delete Image</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- End Page Content -->
+                            </div>
+                            <div class="hr5" style="margin-top:35px;margin-bottom:40px;"></div>
+                            <div class="text-center">
+                                <button type="submit" class="btn-system btn-large" name="btnSave">Save</button>
+                            </div>
+            
+
+                        </div>
                         <!-- Tab Content 3 -->
                     </div>
                     <!-- End Tab Panels -->
@@ -425,7 +519,56 @@ $MajorCourse = $course_qry[0][0];
         <!-- End Content -->
     </div>
     <script type="text/javascript" src="../../js/script.js"></script>
+
+    <script src="../../css/color-selector/jquery-1.10.2.min.js"></script>
+    <script src="../../css/color-selector/bootstrap-colorselector.js"></script>
+    <script src="../../css/color-selector/prettify.js"></script>
 </body>
+
+<script type="text/javascript">
+    $(document).ready(function(){
+        $('input[type="radio"]').click(function(){
+            if($(this).attr("value")=="Color"){
+                $("#UploadImages").hide();
+                $("#Colors").show();
+            }
+            if($(this).attr("value")=="Image"){
+                $("#Colors").hide();
+                $("#UploadImages").show();
+            }
+        });
+        if ($('#Color').is(':checked')) {
+            $('#UploadImages').hide();
+        } else {
+            $('#Colors').show();
+        }
+    });
+
+
+    $(function () {
+
+        window.prettyPrint && prettyPrint();
+
+        $('#colorselector_1').colorselector();
+        $('#colorselector_2').colorselector({
+            callback: function (value, color, title) {
+                $("#colorValue").val(value);
+                $("#colorColor").val(color);
+                $("#colorTitle").val(title);
+            }
+        });
+
+        $("#setColor").click(function (e) {
+            $("#colorselector_2").colorselector("setColor", "#008B8B");
+        })
+
+        $("#setValue").click(function (e) {
+            $("#colorselector_2").colorselector("setValue", 18);
+        })
+
+    });
+</script>
+
 
 <?php
 
