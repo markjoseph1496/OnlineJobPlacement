@@ -4,15 +4,15 @@ session_start();
 include('../../common-functions.php');
 $common_functions->student_login_check();
 $StudentID = $_SESSION['StudentID']; // to conform with your coding style -- ghabx
-if (isset($_GET['btnSaveInfo'])) {
-    $FirstName = $_GET['FirstName'];
-    $MiddleName = $_GET['MiddleName'];
-    $LastName = $_GET['LastName'];
-    $Gender = $_GET['Gender'];
-    $Birthdate = $_GET['Birthdate'];
-    $Nationality = $_GET['Nationality'];
-    $CivilStatus = $_GET['CivilStatus'];
-    $FBLink = $_GET['FBLink'];
+if (isset($_POST['btnSaveInfo'])) {
+    $FirstName = $_POST['FirstName'];
+    $MiddleName = $_POST['MiddleName'];
+    $LastName = $_POST['LastName'];
+    $Gender = $_POST['Gender'];
+    $Birthdate = $_POST['Birthdate'];
+    $Nationality = $_POST['Nationality'];
+    $CivilStatus = $_POST['CivilStatus'];
+    $FBLink = $_POST['FBLink'];
 
     $FBLink = "http://www.facebook.com/" . $FBLink;
 
@@ -53,7 +53,7 @@ if (isset($_GET['btnSaveInfo'])) {
         print_r($validation_return);die();
     }
     */
-    if(!$common_functions->date_validator($_GET['Birthdate'])){
+    if(!$common_functions->date_validator($_POST['Birthdate'])){
         die('Birthdate supplied is an invalid date.');
     }
 
@@ -78,6 +78,40 @@ if (isset($_GET['btnSaveInfo'])) {
         "s",
         $StudentID
     );
+
+
+    //start upload
+    $fileToUpload = basename($_FILES["ProfilePicture"]["name"]);
+    $target_dir = "ProfileImages/";
+    $target_file = $target_dir . $StudentID . ".jpg";
+    $uploadOk = 1;
+    $imageFileType = pathinfo($target_file, PATHINFO_EXTENSION);
+
+    if ($imageFileType != "jpg" && $imageFileType != "png" && $imageFileType != "jpeg") {
+        echo "Sorry, only JPG, JPEG, PNG files are allowed.";
+        $uploadOk = 0;
+    }
+
+    if ($uploadOk == 0) {
+        echo "Sorry, your file was not uploaded.";
+
+    } else {
+        if (move_uploaded_file($_FILES["ProfilePicture"]["tmp_name"], $target_file)) {
+
+            GSecureSQL::query(
+                "UPDATE studentinfotbl SET ProfileImage = ? WHERE StudentID = ?",
+                FALSE,
+                "ss",
+                $target_file,
+                $StudentID
+            );
+            header("location: personal-info.php");
+
+        } else {
+            echo "Sorry, there was an error uploading your file.";
+        }
+    }
+    // end upload
 
     header("location: personal-info.php?id=1");
 

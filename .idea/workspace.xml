@@ -2,8 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d999e893-f739-4a68-b7b0-034239dfb77e" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/admin/ProfileImage/18b7ae0cd85af22e97a0f27bcdce24b0c0f68f59ef3cdcf5d08b1b78f2206e634d75dfc0412f04a891b0f4f58380723e0e634de5c60831c2189081560005c78d.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/student-view/myinfo/ProfileImages/00820120001.jpg" afterPath="$PROJECT_DIR$/student-view/myinfo/ProfileImages/00820120001.jpg" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Database/u987316885_e2edb.sql" afterPath="$PROJECT_DIR$/Database/u987316885_e2edb.sql" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/admin/admin-calendarcreateevent.php" afterPath="$PROJECT_DIR$/admin/admin-calendarcreateevent.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/student-view/myinfo/addfunction.php" afterPath="$PROJECT_DIR$/student-view/myinfo/addfunction.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/student-view/myinfo/personal-info.php" afterPath="$PROJECT_DIR$/student-view/myinfo/personal-info.php" />
     </list>
     <ignored path="OnlineJobPlacement.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -25,12 +29,69 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="connection.php" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/connection.php">
+      <file leaf-file-name="admin-calendarcreateevent.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/admin/admin-calendarcreateevent.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.6214689">
-              <caret line="20" column="9" selection-start-line="20" selection-start-column="9" selection-end-line="20" selection-end-column="9" />
-              <folding />
+            <state vertical-scroll-proportion="-9.633333">
+              <caret line="246" column="58" selection-start-line="246" selection-start-column="58" selection-end-line="246" selection-end-column="58" />
+              <folding>
+                <marker date="1458892873635" expanded="true" signature="223:271" placeholder="SELECT First... admintbl" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="personal-info.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/student-view/myinfo/personal-info.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-1.5666667">
+              <caret line="422" column="56" selection-start-line="422" selection-start-column="56" selection-end-line="422" selection-end-column="56" />
+              <folding>
+                <element signature="n#style#0;n#b#0;n#a#0;n#li#0;n#ul#0;n#li#1;n#ul#0;n#div#1;n#div#0;n#div#0;n#div#0;n#header#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#b#0;n#a#0;n#li#1;n#ul#0;n#li#1;n#ul#0;n#div#1;n#div#0;n#div#0;n#div#0;n#header#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#b#0;n#a#0;n#li#3;n#ul#0;n#li#1;n#ul#0;n#div#1;n#div#0;n#div#0;n#div#0;n#header#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#0;n#div#1;n#header#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#form#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#select#0;n#div#3;n#div#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#form#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#img#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#form#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#img#0;n#div#1;n#div#1;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#form#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#label#1;n#div#1;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#form#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#2;n#div#0;n#div#0;n#form#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <marker date="1458898417494" expanded="true" signature="311:359" placeholder="SELECT * FRO... studentinfotbl" />
+                <marker date="1458898417494" expanded="true" signature="867:921" placeholder="SELECT Cours... coursetbl" />
+                <marker date="1458898417494" expanded="true" signature="1107:1372" placeholder="SELECT Pinfo... " />
+                <marker date="1458898417494" expanded="true" signature="17010:17288" placeholder="..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="upload.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/student-view/myinfo/upload.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-2.1290324">
+              <caret line="3" column="38" selection-start-line="3" selection-start-column="38" selection-end-line="3" selection-end-column="38" />
+              <folding>
+                <marker date="1456585192888" expanded="true" signature="810:872" placeholder="UPDATE stude... " />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="addfunction.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/student-view/myinfo/addfunction.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.7641243">
+              <caret line="114" column="4" selection-start-line="114" selection-start-column="4" selection-end-line="114" selection-end-column="4" />
+              <folding>
+                <marker date="1458898656990" expanded="true" signature="1986:2148" placeholder="UPDATE stude... " />
+                <marker date="1458898656990" expanded="true" signature="2404:2459" placeholder="UPDATE progr... " />
+                <marker date="1458898656990" expanded="true" signature="3186:3248" placeholder="UPDATE stude... " />
+                <marker date="1458898656990" expanded="true" signature="5670:5815" placeholder="UPDATE studc... " />
+                <marker date="1458898656990" expanded="true" signature="6048:6103" placeholder="UPDATE progr... " />
+                <marker date="1458898656990" expanded="true" signature="6315:6375" placeholder="UPDATE stude... " />
+                <marker date="1458898656990" expanded="true" signature="6486:6545" placeholder="UPDATE progr... " />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -45,7 +106,6 @@
       <list>
         <option value="$PROJECT_DIR$/adviser/logout.php" />
         <option value="$PROJECT_DIR$/adviser/ojt-adviser.php" />
-        <option value="$PROJECT_DIR$/student-view/myinfo/addfunction.php" />
         <option value="$PROJECT_DIR$/student-view/search-job/bookmarked-jobs.php" />
         <option value="$PROJECT_DIR$/student-view/search-job/search-result.php" />
         <option value="$PROJECT_DIR$/registration.php" />
@@ -53,14 +113,12 @@
         <option value="$PROJECT_DIR$/student-view/myinfo/add/myinfoadd.php" />
         <option value="$PROJECT_DIR$/common-functions.php" />
         <option value="$PROJECT_DIR$/for-index/other-companies.php" />
-        <option value="$PROJECT_DIR$/admin/admin-calendarcreateevent.php" />
         <option value="$PROJECT_DIR$/admin/admin-field.php" />
         <option value="$PROJECT_DIR$/index.php" />
         <option value="$PROJECT_DIR$/student-view/myinfo/achievements.php" />
         <option value="$PROJECT_DIR$/student-view/myinfo/certifications.php" />
         <option value="$PROJECT_DIR$/student-view/myinfo/contacts-info.php" />
         <option value="$PROJECT_DIR$/student-view/myinfo/education.php" />
-        <option value="$PROJECT_DIR$/student-view/myinfo/personal-info.php" />
         <option value="$PROJECT_DIR$/student-view/myinfo/portfolio.php" />
         <option value="$PROJECT_DIR$/student-view/myinfo/references.php" />
         <option value="$PROJECT_DIR$/student-view/myinfo/skills-and-languages.php" />
@@ -94,6 +152,9 @@
         <option value="$PROJECT_DIR$/admin/functions.php" />
         <option value="$PROJECT_DIR$/company/company-pendingapplicants.php" />
         <option value="$PROJECT_DIR$/connection.php" />
+        <option value="$PROJECT_DIR$/admin/admin-calendarcreateevent.php" />
+        <option value="$PROJECT_DIR$/student-view/myinfo/personal-info.php" />
+        <option value="$PROJECT_DIR$/student-view/myinfo/addfunction.php" />
       </list>
     </option>
   </component>
@@ -155,10 +216,42 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="OnlineJobPlacement" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="OnlineJobPlacement" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="student-view" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="OnlineJobPlacement" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="OnlineJobPlacement" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="student-view" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="myinfo" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
       <pane id="Scratches" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -198,6 +291,116 @@
       <recent name="C:\xampp\htdocs\OnlineJobPlacement\student-view\myinfo" />
       <recent name="C:\xampp\htdocs\OnlineJobPlacement\company" />
     </key>
+  </component>
+  <component name="RestoreUpdateTree" date="Moments ago" ActionInfo="_Update">
+    <UpdatedFiles>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Updated from server" />
+        <option name="myStatusName" value="Changed on server" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="CHANGED_ON_SERVER" />
+        <FILE-GROUP>
+          <option name="myUpdateName" value="Updated" />
+          <option name="myStatusName" value="Changed" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="false" />
+          <option name="myId" value="UPDATED" />
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/index.php</PATH>
+        </FILE-GROUP>
+        <FILE-GROUP>
+          <option name="myUpdateName" value="Created" />
+          <option name="myStatusName" value="Created" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="false" />
+          <option name="myId" value="CREATED" />
+        </FILE-GROUP>
+        <FILE-GROUP>
+          <option name="myUpdateName" value="Deleted" />
+          <option name="myStatusName" value="Deleted" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="true" />
+          <option name="myId" value="REMOVED_FROM_REPOSITORY" />
+        </FILE-GROUP>
+        <FILE-GROUP>
+          <option name="myUpdateName" value="Restored" />
+          <option name="myStatusName" value="Will be restored" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="false" />
+          <option name="myId" value="RESTORED" />
+        </FILE-GROUP>
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Modified" />
+        <option name="myStatusName" value="Modified" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="MODIFIED" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Skipped" />
+        <option name="myStatusName" value="Skipped" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="SKIPPED" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Merged with conflicts" />
+        <option name="myStatusName" value="Will be merged with conflicts" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="MERGED_WITH_CONFLICTS" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Merged with tree conflicts" />
+        <option name="myStatusName" value="Merged with tree conflicts" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="MERGED_WITH_TREE_CONFLICT" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Merged with property conflicts" />
+        <option name="myStatusName" value="Will be merged with property conflicts" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="MERGED_WITH_PROPERTY_CONFLICT" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Merged" />
+        <option name="myStatusName" value="Will be merged" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="MERGED" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Not in repository" />
+        <option name="myStatusName" value="Not in repository" />
+        <option name="mySupportsDeletion" value="true" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="UNKNOWN" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Locally added" />
+        <option name="myStatusName" value="Locally added" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="LOCALLY_ADDED" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Locally removed" />
+        <option name="myStatusName" value="Locally removed" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="LOCALLY_REMOVED" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Switched" />
+        <option name="myStatusName" value="Switched" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="SWITCHED" />
+      </FILE-GROUP>
+    </UpdatedFiles>
   </component>
   <component name="RunManager">
     <configuration default="true" type="JavascriptDebugType" factoryName="JavaScript Debug">
@@ -243,12 +446,6 @@
       <created>1451894355130</created>
       <option name="number" value="Default" />
       <updated>1451894355130</updated>
-    </task>
-    <task id="LOCAL-00197" summary="POLISHING">
-      <created>1456033261776</created>
-      <option name="number" value="00197" />
-      <option name="project" value="LOCAL" />
-      <updated>1456033261776</updated>
     </task>
     <task id="LOCAL-00198" summary="POLISHING">
       <created>1456050377295</created>
@@ -538,14 +735,20 @@
       <option name="project" value="LOCAL" />
       <updated>1458726032798</updated>
     </task>
-    <option name="localTasksCounter" value="246" />
+    <task id="LOCAL-00246" summary="Polishing">
+      <created>1458789598499</created>
+      <option name="number" value="00246" />
+      <option name="project" value="LOCAL" />
+      <updated>1458789598504</updated>
+    </task>
+    <option name="localTasksCounter" value="247" />
     <servers />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1616" height="876" extended-state="6" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.199375" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32724902" sideWeight="0.505" order="10" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -616,20 +819,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/registration.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-2.5480225">
-          <caret line="235" column="116" selection-start-line="235" selection-start-column="116" selection-end-line="235" selection-end-column="116" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/registration-company.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.3036723">
-          <caret line="315" column="26" selection-start-line="315" selection-start-column="26" selection-end-line="315" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/student-view/myinfo/add/myinfoadd.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.6694915">
@@ -662,13 +851,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-5.245763">
           <caret line="8" column="1" selection-start-line="8" selection-start-column="1" selection-end-line="8" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/admin/admin-calendarcreateevent.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="2.5141244">
-          <caret line="359" column="50" selection-start-line="359" selection-start-column="50" selection-end-line="359" selection-end-column="50" />
         </state>
       </provider>
     </entry>
@@ -711,13 +893,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-15.5161295">
           <caret line="267" column="33" selection-start-line="267" selection-start-column="33" selection-end-line="267" selection-end-column="33" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/student-view/myinfo/personal-info.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-16.32258">
-          <caret line="272" column="37" selection-start-line="272" selection-start-column="37" selection-end-line="272" selection-end-column="37" />
         </state>
       </provider>
     </entry>
@@ -968,9 +1143,68 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/connection.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.6214689">
-          <caret line="20" column="9" selection-start-line="20" selection-start-column="9" selection-end-line="20" selection-end-column="9" />
+        <state vertical-scroll-proportion="-10.645162">
+          <caret line="48" column="33" selection-start-line="48" selection-start-column="33" selection-end-line="48" selection-end-column="33" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/student-view/myinfo/upload.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-2.1290324">
+          <caret line="3" column="38" selection-start-line="3" selection-start-column="38" selection-end-line="3" selection-end-column="38" />
+          <folding>
+            <marker date="1456585192888" expanded="true" signature="810:872" placeholder="UPDATE stude... " />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/admin/admin-calendarcreateevent.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-9.633333">
+          <caret line="246" column="58" selection-start-line="246" selection-start-column="58" selection-end-line="246" selection-end-column="58" />
+          <folding>
+            <marker date="1458892873635" expanded="true" signature="223:271" placeholder="SELECT First... admintbl" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/student-view/myinfo/personal-info.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-1.5666667">
+          <caret line="422" column="56" selection-start-line="422" selection-start-column="56" selection-end-line="422" selection-end-column="56" />
+          <folding>
+            <element signature="n#style#0;n#b#0;n#a#0;n#li#0;n#ul#0;n#li#1;n#ul#0;n#div#1;n#div#0;n#div#0;n#div#0;n#header#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#b#0;n#a#0;n#li#1;n#ul#0;n#li#1;n#ul#0;n#div#1;n#div#0;n#div#0;n#div#0;n#header#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#b#0;n#a#0;n#li#3;n#ul#0;n#li#1;n#ul#0;n#div#1;n#div#0;n#div#0;n#div#0;n#header#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#1;n#header#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#form#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#select#0;n#div#3;n#div#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#form#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#img#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#form#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#img#0;n#div#1;n#div#1;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#form#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#label#1;n#div#1;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#form#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#2;n#div#0;n#div#0;n#form#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <marker date="1458898417494" expanded="true" signature="311:359" placeholder="SELECT * FRO... studentinfotbl" />
+            <marker date="1458898417494" expanded="true" signature="867:921" placeholder="SELECT Cours... coursetbl" />
+            <marker date="1458898417494" expanded="true" signature="1107:1372" placeholder="SELECT Pinfo... " />
+            <marker date="1458898417494" expanded="true" signature="17010:17288" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/student-view/myinfo/addfunction.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.7641243">
+          <caret line="114" column="4" selection-start-line="114" selection-start-column="4" selection-end-line="114" selection-end-column="4" />
+          <folding>
+            <marker date="1458898656990" expanded="true" signature="1986:2148" placeholder="UPDATE stude... " />
+            <marker date="1458898656990" expanded="true" signature="2404:2459" placeholder="UPDATE progr... " />
+            <marker date="1458898656990" expanded="true" signature="3186:3248" placeholder="UPDATE stude... " />
+            <marker date="1458898656990" expanded="true" signature="5670:5815" placeholder="UPDATE studc... " />
+            <marker date="1458898656990" expanded="true" signature="6048:6103" placeholder="UPDATE progr... " />
+            <marker date="1458898656990" expanded="true" signature="6315:6375" placeholder="UPDATE stude... " />
+            <marker date="1458898656990" expanded="true" signature="6486:6545" placeholder="UPDATE progr... " />
+          </folding>
         </state>
       </provider>
     </entry>

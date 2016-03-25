@@ -319,7 +319,7 @@ $FirstName = $infoquery[0][0];
                 invalid: "glyphicon glyphicon-remove",
                 validating: "glyphicon glyphicon-refresh"
             },
-           fields: {
+            fields: {
                 datefrom: {
                     validators: {
                         notEmpty: {
