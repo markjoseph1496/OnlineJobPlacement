@@ -690,17 +690,24 @@ $adminevent_tbl =
 
 
     <footer id="contact">
-        <div class="container"><div class="footer-widget contact-widget">
-            <div class="row text-center">
-                
+        <div class="container">
+            <div class="footer-widget contact-widget">
+                <div class="row text-center">
                     <h4>Contact Us</h4>
                     <div><b>Tel. no. (+632) 294-4001 / 361-6070</b></div>
                     <label>109 Samson Road corner Caimito Street Caloocan City, Philippines 1400</label>
-               
+                </div>
+                <div class="row text-center">
+                    <ul>
+                        <li><span>Phone Number:</span> +63 (917) 4638460</li>
+                        <li><span>Email:</span> jobplacement@caloocan.sti.edu</li>
+                        <li><span>Website:</span> www.sti.edu</li>
+                    </ul>
+                </div>
             </div>
             <div class="row text-center">
                 <div class="footer-widget social-widget">
-                    <h4>Follow Us</span></h4>
+                    <h4>Follow Us</h4>
                     <ul class="social-icons">
                         <li><a class="facebook"
                                href="https://www.facebook.com/pages/STI-College-Caloocan-Official-Fanpage/133289683408899?pnref=lhc"><i
@@ -711,15 +718,6 @@ $adminevent_tbl =
                     </ul>
                 </div>
             </div>
-            <div class="row text-center">
-                
-                    <ul>
-                        <li><span>Phone Number:</span> +63 (917) 4638460</li>
-                        <li><span>Email:</span> jobplacement@caloocan.sti.edu</li>
-                        <li><span>Website:</span> www.sti.edu</li>
-                    </ul>
-                
-            </div></div>
 
             <!-- Start Copyright -->
             <div class="copyright-section">
