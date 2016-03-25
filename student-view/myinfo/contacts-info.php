@@ -5,7 +5,7 @@ include('../../common-functions.php');
 $common_functions->student_login_check();
 $StudentID = $_SESSION['StudentID']; // to conform with your coding style -- ghabx
 
-$hashStudentID = hash('md4',$StudentID);
+$hashStudentID = hash('md4', $StudentID);
 
 $student_tbl =
     GSecureSQL::query(
@@ -91,48 +91,48 @@ $Specialization = $progress_tbl[0][8];
 $Languages = $progress_tbl[0][9];
 $References = $progress_tbl[0][10];
 
-if($Pinfo == "ok"){
+if ($Pinfo == "ok") {
     $Progress = $Progress + 10;
     $nPinfo = "";
 }
-if($Cinfo == "ok"){
+if ($Cinfo == "ok") {
     $Progress = $Progress + 10;
     $nCinfo = "";
 }
-if($Objective == "ok"){
+if ($Objective == "ok") {
     $Progress = $Progress + 15;
     $nWorkXP = "";
 }
-if($School == "ok"){
+if ($School == "ok") {
     $Progress = $Progress + 5;
     $nSchool = "";
 }
-if($Seminar == "ok"){
+if ($Seminar == "ok") {
     $Progress = $Progress + 5;
     $nSeminar = "";
 }
-if($Certification == "ok"){
+if ($Certification == "ok") {
     $Progress = $Progress + 10;
     $nCertification = "";
 }
-if($Achievements == "ok"){
+if ($Achievements == "ok") {
     $Progress = $Progress + 10;
     $nAchievements = "";
 }
-if($Specialization == "ok"){
+if ($Specialization == "ok") {
     $Progress = $Progress + 10;
-    if($Languages == "ok" && $Specialization == "ok"){
+    if ($Languages == "ok" && $Specialization == "ok") {
         $nSpecialization = "";
     }
 }
-if($Languages == "ok"){
+if ($Languages == "ok") {
     $Progress = $Progress + 5;
-    if($Languages == "ok" && $Specialization == "ok"){
+    if ($Languages == "ok" && $Specialization == "ok") {
         $nSpecialization = "";
     }
 
 }
-if($References == "ok"){
+if ($References == "ok") {
     $Progress = $Progress + 10;
     $nReferences = "";
 }
@@ -161,7 +161,7 @@ if($References == "ok"){
 
     <!-- BootstrapValidator CSS -->
     <link href="../../css/bootstrapValidator.min.css" rel="stylesheet"/>
-    
+
     <!-- jQuery and Bootstrap JS -->
     <script type="text/javascript" src="../../js/jquery.min.js"></script>
     <script src="../../js/bootstrap.min.js" type="text/javascript"></script>
@@ -229,19 +229,6 @@ if($References == "ok"){
 
         });
     </script>
-
-    <!-- Alert 
-    <script type="text/javascript">
-        $(document).ready (function(){
-        $("#success-alert").hide();
-        $("#btnsave").click(function showAlert() {
-            $("#success-alert").alert();
-            $("#success-alert").fadeTo(2000, 500).slideUp(500, function(){
-           $("#success-alert").alert('close');
-                });   
-            });
-        });
-    </script>-->
 </head>
 
 <body>
@@ -282,9 +269,10 @@ if($References == "ok"){
                                             class="fa fa-user"></b> Welcome, <b><?php echo $StudentName; ?> </b><b
                                             class="caret"></b></a>
                                     <ul class="dropdown-menu">
-                                        <li><a href="../../student-profile.php?id=<?php echo $hashStudentID; ?>">Profile <b class="fa fa-user" style="float:right;"></b></a></li>
+                                        <li><a href="../../student-profile.php?id=<?php echo $hashStudentID; ?>">Profile
+                                                <b class="fa fa-user" style="float:right;"></b></a></li>
                                         <li><a href="../settings/settings.php">Settings <b class="fa fa-cog"
-                                                                                                   style="float:right;"></b></a>
+                                                                                           style="float:right;"></b></a>
                                         </li>
                                         <li class="divider"></li>
                                         <li><a href="#" data-target='#Logout' data-toggle='modal'>Sign Out <b
@@ -349,12 +337,15 @@ if($References == "ok"){
                                 <a class="active" href="personal-info.php">My Info</a>
                                 <ul class="dropdown">
                                     <li><a href="personal-info.php"><?php echo $nPinfo; ?> Personal Info</a></li>
-                                    <li><a class="active" href="contacts-info.php"><?php echo $nCinfo; ?> Contacts Info</a></li>
+                                    <li><a class="active" href="contacts-info.php"><?php echo $nCinfo; ?> Contacts
+                                            Info</a></li>
                                     <li><a href="work.php"><?php echo $nWorkXP; ?> Work</a></li>
                                     <li><a href="education.php"><?php echo $nSchool; ?> Education</a></li>
-                                    <li><a href="certifications.php"><?php echo $nCertification; ?> Certifications</a></li>
+                                    <li><a href="certifications.php"><?php echo $nCertification; ?> Certifications</a>
+                                    </li>
                                     <li><a href="achievements.php"><?php echo $nAchievements; ?> Achievements</a></li>
-                                    <li><a href="skills-and-languages.php"><?php echo $nSpecialization; ?> Skills & Languages</a></li>
+                                    <li><a href="skills-and-languages.php"><?php echo $nSpecialization; ?> Skills &
+                                            Languages</a></li>
                                     <li><a href="references.php"><?php echo $nReferences; ?> References</a></li>
                                     <li><a href="portfolio.php">Portfolio</a></li>
                                 </ul>
@@ -383,7 +374,8 @@ if($References == "ok"){
                             <li><a href="education.php"><?php echo $nSchool; ?> Education</a></li>
                             <li><a href="certifications.php"><?php echo $nCertification; ?> Certifications</a></li>
                             <li><a href="achievements.php"><?php echo $nAchievements; ?> Achievements</a></li>
-                            <li><a href="specialization-and-languages.php"><?php echo $nSpecialization; ?> Specialization & Languages</a></li>
+                            <li><a href="skills-and-languages.php"><?php echo $nSpecialization; ?> Skills &
+                                    Languages</a></li>
                             <li><a href="references.php"><?php echo $nReferences; ?> References</a></li>
                             <li><a href="portfolio.php">Portfolio</a></li>
                         </ul>
@@ -424,25 +416,36 @@ if($References == "ok"){
             <div class="container">
 
                 <?php
-                if (isset($_GET['id'])) {
-                    $id = $_GET['id'];
-
-                    if ($id == 1) {
-                        echo '
-                        <div class="alert alert-success" id="success-alert">
+                if (isset($_GET['saved'])) {
+                    echo '
+                        <div class="alert alert-success fade in" id="success-alert">
                             <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
-                            <strong><span class="fa fa-info-circle"></span> Contacts Information successfully updated.</strong>
+                            <strong><span class="fa fa-info-circle"></span> Contact information successfully updated.</strong>
                         </div>
                         ';
-                    }
+                }
+                if (isset($_GET['error'])) {
+                    echo '
+                        <div class="alert alert-danger fade in" id="danger-alert">
+                            <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                            <strong><span class="fa fa-warning"></span> Some errors occured, Please try again.</strong>
+                        </div>
+                        ';
                 }
                 ?>
+
+                <script type="text/javascript">
+                    $("#success-alert").fadeTo(5000, 500).slideUp(500, function(){
+                        $("#success-alert").alert('close');
+                    });
+                </script>
 
                 <label><span class="fa fa-check-circle"></span> Your information progress..</label>
                 <div class="skill-shortcode">
                     <div class="skill">
                         <div class="progress">
-                            <div class="progress-bar" role="progressbar" data-percentage="<?php echo $Progress; ?>" style="width: <?php echo $Progress; ?>%;">
+                            <div class="progress-bar" role="progressbar" data-percentage="<?php echo $Progress; ?>"
+                                 style="width: <?php echo $Progress; ?>%;">
                                 <span class="progress-bar-span"><?php echo $Progress; ?>%</span>
                             </div>
                         </div>
@@ -588,7 +591,8 @@ if($References == "ok"){
                 <div class="hr5" style="margin-top:35px;margin-bottom:40px;"></div>
                 <div class="field">
                     <div class="text-center">
-                        <button type="submit" class="btn-system btn-large" name="btnSaveContactInfo" id="btnsave">Save</button>
+                        <button type="submit" class="btn-system btn-large" name="btnSaveContactInfo" id="btnsave">Save
+                        </button>
                     </div>
                 </div>
             </div>

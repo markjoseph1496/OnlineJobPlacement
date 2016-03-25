@@ -137,6 +137,7 @@ if (isset($_GET['btnSaveContactInfo'])) {
             'pattern' => '/^(0(9(05|06|07|08|09|10|11|12|13|14|15|16|17|18|19|20|21|22|23|24|25|26|27|28|29|30|32|33|34|35|36|37|38|39|42|43|46|47|48|49|75|77|89|94|96|97|98)[0-9]{7}|[0-8][0-9]{5})|[1-9][0-9]{6})$/',
             'errorMsg' => 'Invalid Mobile Number'
         ),
+        /*
         'HomeNumber' => array(
             'pattern' => '/(^(0(9(05|06|07|08|09|10|11|12|13|14|15|16|17|18|19|20|21|22|23|24|25|26|27|28|29|30|32|33|34|35|36|37|38|39|42|43|46|47|48|49|75|77|89|94|96|97|98)[0-9]{7}|[0-8][0-9]{5})|[1-9][0-9]{6})$|^$)/',
             'errorMsg' => 'Invalid Home Number'
@@ -145,6 +146,7 @@ if (isset($_GET['btnSaveContactInfo'])) {
             'pattern' => '/(^(0(9(05|06|07|08|09|10|11|12|13|14|15|16|17|18|19|20|21|22|23|24|25|26|27|28|29|30|32|33|34|35|36|37|38|39|42|43|46|47|48|49|75|77|89|94|96|97|98)[0-9]{7}|[0-8][0-9]{5})|[1-9][0-9]{6})$|^$)/',
             'errorMsg' => 'Invalid Work Number'
         ),
+        */
         'Address' => array(
             'pattern' => '/^.+$/',
             'errorMsg' => 'Address cannot be empty'
@@ -153,18 +155,20 @@ if (isset($_GET['btnSaveContactInfo'])) {
             'pattern' => $common_functions->get_regex_of_cities(),
             'errorMsg' => 'Invalid City'
         ),
+        /*
         'PostalCode' => array(
             'pattern' => '/^[0-9]+$/',
             'errorMsg' => 'Invalid Postal Code'
         )
+        */
     );
 
-    /*
     $validation_return = $common_functions->validate($_GET, $validation_config);
     if($validation_return['hasError']){
-        print_r($validation_return);die();
+        //header("location: contacts-info.php?error");
+        print_r($validation_return);
+        die();
     }
-    */
     GSecureSQL::query(
         "UPDATE studcontactstbl SET Email = ?, MobileNumber = ?, HomeNumber = ?, WorkNumber = ?, Address = ?, City = ?, PostalCode = ? WHERE StudentID = ?",
         FALSE,
@@ -187,9 +191,11 @@ if (isset($_GET['btnSaveContactInfo'])) {
         $StudentID
     );
 
-    header("location: contacts-info.php?id=1");
+    header("location: contacts-info.php?saved");
 
 }
+
+
 if(isset($_POST['Objective'])){
     $Objective = $_POST['Objective'];
 
