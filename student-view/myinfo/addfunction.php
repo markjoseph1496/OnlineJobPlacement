@@ -47,12 +47,14 @@ if (isset($_POST['btnSaveInfo'])) {
         )
     );
 
-    /*
-    $validation_return = $common_functions->validate($_GET, $validation_config);
+
+    $validation_return = $common_functions->validate($_POST, $validation_config);
     if($validation_return['hasError']){
-        print_r($validation_return);die();
+        header("location: personal-info.php?error");
+        //print_r($validation_return);
+        die();
     }
-    */
+
     if(!$common_functions->date_validator($_POST['Birthdate'])){
         die('Birthdate supplied is an invalid date.');
     }
@@ -113,7 +115,7 @@ if (isset($_POST['btnSaveInfo'])) {
     }
     // end upload
 
-    header("location: personal-info.php?id=1");
+    header("location: personal-info.php?saved");
 
 }
 

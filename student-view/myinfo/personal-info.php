@@ -424,19 +424,28 @@ if ($References == "ok") {
         <div id="content">
             <div class="container">
                 <?php
-                if (isset($_GET['id'])) {
-                    $id = $_GET['id'];
-
-                    if ($id == 1) {
-                        echo '
-                            <div class="alert alert-success" id="success-alert">
-                                <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
-                                <strong><span class="fa fa-info-circle"></span> Personal Information successfully updated.</strong> 
-                            </div>
-                            ';
-                    }
+                if (isset($_GET['saved'])) {
+                    echo '
+                        <div class="alert alert-success fade in" id="success-alert">
+                            <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                            <strong><span class="fa fa-info-circle"></span> Personal Information successfully updated.</strong>
+                        </div>
+                        ';
+                }
+                if (isset($_GET['error'])) {
+                    echo '
+                        <div class="alert alert-danger fade in" id="danger-alert">
+                            <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                            <strong><span class="fa fa-warning"></span> Some errors occured, Please try again.</strong>
+                        </div>
+                        ';
                 }
                 ?>
+                <script type="text/javascript">
+                    $("#success-alert").fadeTo(5000, 500).slideUp(500, function(){
+                        $("#success-alert").alert('close');
+                    });
+                </script>
 
                 <label><span class="fa fa-check-circle"></span> Your information progress..</label>
                 <div class="skill-shortcode">
