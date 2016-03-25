@@ -200,7 +200,7 @@ $MajorCourse = $course_qry[0][0];
                             </div>
                             <div class="modal-footer">
                                 <a href="../logout.php"
-                                   class="btn btn-primary">Sign out</a>
+                                   class="btn btn-primary">Sign Out</a>
                                 <button type="button" class="btn btn-default" data-dismiss="modal">
                                     Cancel
                                 </button>
@@ -246,50 +246,88 @@ $MajorCourse = $course_qry[0][0];
 
                     <!-- Nav Tabs -->
                     <ul class="nav nav-tabs">
-                        <li class="active"><a href="#tab-1" data-toggle="tab"><i class="fa fa-key"></i>Password Settings</a></li>
+                        <li class="active"><a href="#tab-1" data-toggle="tab"><i class="fa fa-user"></i>Profile Settings</a></li>
                         <li><a href="#tab-2" data-toggle="tab"><i class="fa fa-check"></i>Privacy Settings</a></li>
-                        <li><a href="#tab-3" data-toggle="tab"><i class="fa fa-check"></i>Online Resume</a></li>
+                        <li><a href="#tab-3" data-toggle="tab"><i class="fa fa-lock"></i>Password Settings</a></li>
                     </ul>
 
                     <!-- Tab panels -->
                     <div class="tab-content">
+
                         <!-- Tab Content 1 -->
                         <div class="tab-pane fade in active" id="tab-1">
                             <div class="call-action call-action-boxed call-action-style2 clearfix">         
-                                <h2 class="primary"><strong>Change Password</strong></h2>
+                                <h2 class="primary"><strong>Profile Settings</strong></h2>
                             </div>
                             <div class="hr4" style="margin-top:15px;margin-bottom:25px;"></div>
+
                             <div class="row">
                                 <div class="col-md-6">
+                                    <label>About Me</label>
                                     <div class="form-group">
-                                        <label>Current Password <span>(*)</span></label>
-                                        <input type="password" class="form-control" id="txtCurrentPassword" name="txtCurrentPassword">
+                                        <textarea class="form-control" name="" id="" rows="10"></textarea>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <label>Use Background</label><br>
+
+                                    <div class="radio radio-inline">
+                                        <input type="radio" id="Image" value="Image" name="selection">
+                                        <label for="inlineRadio2"> Uploaded Image </label>
+                                    </div>
+                                    <div class="radio radio-inline">
+                                        <input type="radio" id="Color" value="Color" name="selection" checked="checked">
+                                        <label for="inlineRadio1"> Solid Color </label>
+                                    </div>
+                                
+                                    <div class="row">
+                                        <div class="col-md-6" id="ToImage">
+                                            <div id="UploadImages">
+                                                <label class="accent-color">Uploaded Image</label>
+                                                <div class="classic-testimonials">
+                                                    <input id="ProfilePicture" name="" multiple type="file" class="file file-loading"
+                                                           data-allowed-file-extensions='["png", "jpg", "bmp", "gif"]'>
+                                                    <br>
+                                                    <button id="" class="btn-system btn-mini border-btn" name="btnDelete">Delete Image</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6" id="ToColor">
+                                            <div id="Colors">
+                                                <label class="accent-color">Solid Color</label><br>
+                                                <select id="colorselector_1" style="display: none;">
+                                                    <option value="106" data-color="#A0522D" selected="selected">sienna</option>
+                                                    <option value="47" data-color="#CD5C5C">indianred</option>
+                                                    <option value="87" data-color="#FF4500">orangered</option>
+                                                    <option value="17" data-color="#008B8B">darkcyan</option>
+                                                    <option value="18" data-color="#B8860B">darkgoldenrod</option>
+                                                    <option value="68" data-color="#32CD32">limegreen</option>
+                                                    <option value="42" data-color="#FFD700">gold</option>
+                                                    <option value="77" data-color="#48D1CC">mediumturquoise</option>
+                                                    <option value="107" data-color="#87CEEB">skyblue</option>
+                                                    <option value="46" data-color="#FF69B4">hotpink</option>
+                                                    <option value="64" data-color="#87CEFA">lightskyblue</option>
+                                                    <option value="13" data-color="#6495ED">cornflowerblue</option>
+                                                    <option value="15" data-color="#DC143C">crimson</option>
+                                                    <option value="24" data-color="#FF8C00">darkorange</option>
+                                                    <option value="78" data-color="#C71585">mediumvioletred</option>
+                                                    <option value="123" data-color="#000000">black</option>
+                                                </select>
+                                                <script>
+                                                    $('#colorselector_1').colorselector();
+                                                </script>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
-                            <div class="row">
-                                <div class="col-md-6 col-sm-6">
-                                    <div class="form-group">
-                                        <label>New Password <span>(*)</span></label>
-                                        <input type="password" class="form-control" id="txtNewPassword" name="txtNewPassword">
-                                    </div>
-                                </div>
-                                <div class="col-md-6 col-sm-6">
-                                    <div class="form-group">
-                                        <label>Confirm New Password <span>(*)</span></label>
-                                        <input type="password" class="form-control" id="txtConfPassword" name="txtConfPassword">
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-md-6">
-                                    &nbsp;
-                                </div>
-                                <div class="col-md-6">
-                                    <button type="submit" class="btn-system btn-large" style="float:right;" name="btnChangePass">Change Password</button>
-                                </div>
+                            <div class="hr4" style="margin-top:35px;margin-bottom:40px;"></div>
+                            <div class="text-center">
+                                <button type="submit" class="btn-system btn-large" name="btnSave">Save</button>
                             </div>
                         </div>
+
+                        
                         <!-- Tab Content 2 -->
                         <div class="tab-pane fade" id="tab-2">
                             <div class="call-action call-action-boxed call-action-style2 clearfix">         
@@ -424,93 +462,45 @@ $MajorCourse = $course_qry[0][0];
                                 </div>
                             </div>
                         </div>
-                        <!-- Tab Content 2 -->
 
                         <!-- Tab Content 3 -->
                         <div class="tab-pane fade in" id="tab-3">
                             <div class="call-action call-action-boxed call-action-style2 clearfix">         
-                                <h2 class="primary"><strong></strong></h2>
+                                <h2 class="primary"><strong>Password Settings</strong></h2>
                             </div>
                             <div class="hr4" style="margin-top:15px;margin-bottom:25px;"></div>
-
-                            <label>About Me</label>
-                            <div class="form-group">
-                                <textarea class="form-control" name="" id="" rows="10"></textarea>
-                            </div>
-                               
-                            <div class="hr4" style="margin-top:35px;margin-bottom:40px;"></div>
-                            <div class="text-center">
-                                <button type="submit" class="btn-system btn-large" name="btnSave">Save</button>
-                            </div>
-
-
-
-
-                            <div class="row sidebar-page">
-                                <!-- Page Content -->
-                                <div class="col-md-12 page-content">
-                                    <label>Use Background</label><br>
-
-                                    <div class="radio radio-inline">
-                                        <input type="radio" id="Color" value="Color" name="selection" checked="checked">
-                                        <label for="inlineRadio1"> Solid Color </label>
-                                    </div>
-
-                                    <div class="radio radio-inline">
-                                        <input type="radio" id="Image" value="Image" name="selection">
-                                        <label for="inlineRadio2"> Uploaded Image </label>
-                                    </div>
-                                
-                                    <div class="row">
-                                        <div class="col-md-6" id="ToColor">
-                                            <div id="Colors">
-                                                <label class="accent-color">Solid Color</label><br>
-                                                <select id="colorselector_1" style="display: none;">
-                                                    <option value="106" data-color="#A0522D" selected="selected">sienna</option>
-                                                    <option value="47" data-color="#CD5C5C">indianred</option>
-                                                    <option value="87" data-color="#FF4500">orangered</option>
-                                                    <option value="17" data-color="#008B8B">darkcyan</option>
-                                                    <option value="18" data-color="#B8860B">darkgoldenrod</option>
-                                                    <option value="68" data-color="#32CD32">limegreen</option>
-                                                    <option value="42" data-color="#FFD700">gold</option>
-                                                    <option value="77" data-color="#48D1CC">mediumturquoise</option>
-                                                    <option value="107" data-color="#87CEEB">skyblue</option>
-                                                    <option value="46" data-color="#FF69B4">hotpink</option>
-                                                    <option value="64" data-color="#87CEFA">lightskyblue</option>
-                                                    <option value="13" data-color="#6495ED">cornflowerblue</option>
-                                                    <option value="15" data-color="#DC143C">crimson</option>
-                                                    <option value="24" data-color="#FF8C00">darkorange</option>
-                                                    <option value="78" data-color="#C71585">mediumvioletred</option>
-                                                    <option value="123" data-color="#000000">black</option>
-                                                </select>
-                                                <script>
-                                                    $('#colorselector_1').colorselector();
-                                                </script>
-                                            </div>
-                                        </div>
-                                        <div class="col-md-6" id="ToImage">
-                                            <div id="UploadImages">
-                                                <label class="accent-color">Uploaded Image</label>
-                                                <div class="classic-testimonials">
-                                                    <input id="ProfilePicture" name="" multiple type="file" class="file file-loading"
-                                                           data-allowed-file-extensions='["png", "jpg", "bmp", "gif"]'>
-                                                    <br>
-                                                    <button id="" class="btn-system btn-mini border-btn" name="btnDelete">Delete Image</button>
-                                                </div>
-                                            </div>
-                                        </div>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label>Current Password <span>(*)</span></label>
+                                        <input type="password" class="form-control" id="txtCurrentPassword" name="txtCurrentPassword">
                                     </div>
                                 </div>
-                                <!-- End Page Content -->
                             </div>
-                            <div class="hr5" style="margin-top:35px;margin-bottom:40px;"></div>
-                            <div class="text-center">
-                                <button type="submit" class="btn-system btn-large" name="btnSave">Save</button>
+                            <div class="row">
+                                <div class="col-md-6 col-sm-6">
+                                    <div class="form-group">
+                                        <label>New Password <span>(*)</span></label>
+                                        <input type="password" class="form-control" id="txtNewPassword" name="txtNewPassword">
+                                    </div>
+                                </div>
+                                <div class="col-md-6 col-sm-6">
+                                    <div class="form-group">
+                                        <label>Confirm New Password <span>(*)</span></label>
+                                        <input type="password" class="form-control" id="txtConfPassword" name="txtConfPassword">
+                                    </div>
+                                </div>
                             </div>
-            
-
+                            <div class="row">
+                                <div class="col-md-6">
+                                    &nbsp;
+                                </div>
+                                <div class="col-md-6">
+                                    <button type="submit" class="btn-system btn-large" style="float:right;" name="btnChangePass">Change Password</button>
+                                </div>
+                            </div>
                         </div>
-                        <!-- Tab Content 3 -->
+                        
                     </div>
                     <!-- End Tab Panels -->
                 </div>

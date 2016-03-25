@@ -330,12 +330,7 @@ if($References == "ok"){
                                 </ul>
                             </li>
                             <li>
-                                <a class="active" href="resume.php">Resumé</a>
-                                <ul class="dropdown">
-                                    <!--<li><a href="resume.php">Resumé</a></li>
-                                    <li><a href="background.php">Background</a></li>-->
-                                    <li><a class="active" href="print.php">Print</a></li>
-                                </ul>
+                                <a class="active" href="resume.php">Print</a>
                             </li>
                             <li>
                                 <a href="../applications/applications.php">Applications</a>
