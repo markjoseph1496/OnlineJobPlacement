@@ -1,0 +1,1043 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="d999e893-f739-4a68-b7b0-034239dfb77e" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+    </list>
+    <ignored path="OnlineJobPlacement.iws" />
+    <ignored path=".idea/workspace.xml" />
+    <ignored path=".idea/dataSources.local.xml" />
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="TRACKING_ENABLED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ChangesViewManager" flattened_view="true" show_ignored="false" />
+  <component name="CreatePatchCommitExecutor">
+    <option name="PATCH_PATH" value="C:\xampp\htdocs\OnlineJobPlacement" />
+  </component>
+  <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
+  <component name="FavoritesManager">
+    <favorites_list name="OnlineJobPlacement" />
+  </component>
+  <component name="FileEditorManager">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file leaf-file-name="skills-and-languages.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/student-view/myinfo/skills-and-languages.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="628" column="43" selection-start-line="628" selection-start-column="43" selection-end-line="628" selection-end-column="43" />
+              <folding>
+                <marker date="1458969030481" expanded="true" signature="444:523" placeholder="SELECT First... studentinfotbl" />
+                <marker date="1458969030481" expanded="true" signature="767:821" placeholder="SELECT Cours... coursetbl" />
+                <marker date="1458969030481" expanded="true" signature="962:1227" placeholder="SELECT Pinfo... " />
+                <marker date="1458969030481" expanded="true" signature="16681:16944" placeholder="..." />
+                <marker date="1458969030481" expanded="true" signature="17144:17405" placeholder="..." />
+                <marker date="1458969030481" expanded="true" signature="17605:17868" placeholder="..." />
+                <marker date="1458969030481" expanded="true" signature="18068:18335" placeholder="..." />
+                <marker date="1458969030481" expanded="true" signature="18535:18800" placeholder="..." />
+                <marker date="1458969030481" expanded="true" signature="19000:19266" placeholder="..." />
+                <marker date="1458969030481" expanded="true" signature="21627:21678" placeholder="SELECT * FRO... specializationtbl" />
+                <marker date="1458969030481" expanded="true" signature="28527:28572" placeholder="SELECT * FRO... languagetbl" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="index.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/index.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.5338983">
+              <caret line="295" column="20" selection-start-line="295" selection-start-column="20" selection-end-line="295" selection-end-column="20" />
+              <folding>
+                <marker date="1458989726492" expanded="true" signature="84:150" placeholder="SELECT * FRO... admineventtbl" />
+                <marker date="1458989726492" expanded="true" signature="9336:9366" placeholder="SELECT * FRO... listofindustrytbl" />
+                <marker date="1458989726492" expanded="true" signature="9336:9413" placeholder="SELECT DISTI... companyinfotbl" />
+                <marker date="1458989726492" expanded="true" signature="10669:10717" placeholder="SELECT * FRO... listofspecializationtbl" />
+                <marker date="1458989726492" expanded="true" signature="11608:11657" placeholder="SELECT * FRO... listofspecializationtbl" />
+                <marker date="1458989726492" expanded="true" signature="12601:12670" placeholder="SELECT DISTI... companyinfotbl" />
+                <marker date="1458989726492" expanded="true" signature="13019:13043" placeholder="SELECT COUNT... table_name" />
+                <marker date="1458989726492" expanded="true" signature="13019:13072" placeholder="SELECT COUNT... companyinfotbl" />
+                <marker date="1458989726492" expanded="true" signature="16369:16419" placeholder="SELECT Event... admineventtbl" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="search-result.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/student-view/search-job/search-result.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="15" column="0" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/adviser/logout.php" />
+        <option value="$PROJECT_DIR$/adviser/ojt-adviser.php" />
+        <option value="$PROJECT_DIR$/student-view/search-job/bookmarked-jobs.php" />
+        <option value="$PROJECT_DIR$/registration.php" />
+        <option value="$PROJECT_DIR$/registration-company.php" />
+        <option value="$PROJECT_DIR$/student-view/myinfo/add/myinfoadd.php" />
+        <option value="$PROJECT_DIR$/common-functions.php" />
+        <option value="$PROJECT_DIR$/for-index/other-companies.php" />
+        <option value="$PROJECT_DIR$/admin/admin-field.php" />
+        <option value="$PROJECT_DIR$/student-view/myinfo/achievements.php" />
+        <option value="$PROJECT_DIR$/student-view/myinfo/certifications.php" />
+        <option value="$PROJECT_DIR$/student-view/myinfo/education.php" />
+        <option value="$PROJECT_DIR$/student-view/myinfo/portfolio.php" />
+        <option value="$PROJECT_DIR$/student-view/myinfo/references.php" />
+        <option value="$PROJECT_DIR$/student-view/myinfo/work.php" />
+        <option value="$PROJECT_DIR$/student-view/myinfo/add/add-achievement.php" />
+        <option value="$PROJECT_DIR$/student-view/myinfo/add/add-certification.php" />
+        <option value="$PROJECT_DIR$/student-view/myinfo/add/add-document.php" />
+        <option value="$PROJECT_DIR$/student-view/myinfo/add/add-language.php" />
+        <option value="$PROJECT_DIR$/student-view/myinfo/add/add-link.php" />
+        <option value="$PROJECT_DIR$/student-view/myinfo/add/add-reference.php" />
+        <option value="$PROJECT_DIR$/student-view/myinfo/add/add-school.php" />
+        <option value="$PROJECT_DIR$/student-view/myinfo/add/add-seminar.php" />
+        <option value="$PROJECT_DIR$/student-view/myinfo/add/add-specialization.php" />
+        <option value="$PROJECT_DIR$/student-view/myinfo/add/add-workexperience.php" />
+        <option value="$PROJECT_DIR$/student-view/myinfo/edit/edit-achievement.php" />
+        <option value="$PROJECT_DIR$/student-view/myinfo/edit/edit-certification.php" />
+        <option value="$PROJECT_DIR$/student-view/myinfo/edit/edit-language.php" />
+        <option value="$PROJECT_DIR$/student-view/myinfo/edit/edit-link.php" />
+        <option value="$PROJECT_DIR$/student-view/myinfo/edit/edit-reference.php" />
+        <option value="$PROJECT_DIR$/student-view/myinfo/edit/edit-school.php" />
+        <option value="$PROJECT_DIR$/student-view/myinfo/edit/edit-seminar.php" />
+        <option value="$PROJECT_DIR$/student-view/myinfo/edit/edit-specialization.php" />
+        <option value="$PROJECT_DIR$/student-view/myinfo/edit/edit-workexperience.php" />
+        <option value="$PROJECT_DIR$/student-view/applications/applications.php" />
+        <option value="$PROJECT_DIR$/student-view/resume/background.php" />
+        <option value="$PROJECT_DIR$/student-view/resume/print.php" />
+        <option value="$PROJECT_DIR$/student-view/resume/resume.php" />
+        <option value="$PROJECT_DIR$/student-view/search-job/jobs.php" />
+        <option value="$PROJECT_DIR$/student-view/search-job/view-details.php" />
+        <option value="$PROJECT_DIR$/student-view/settings/settings.php" />
+        <option value="$PROJECT_DIR$/admin/functions.php" />
+        <option value="$PROJECT_DIR$/company/company-pendingapplicants.php" />
+        <option value="$PROJECT_DIR$/connection.php" />
+        <option value="$PROJECT_DIR$/admin/admin-calendarcreateevent.php" />
+        <option value="$PROJECT_DIR$/student-view/myinfo/personal-info.php" />
+        <option value="$PROJECT_DIR$/student-view/myinfo/contacts-info.php" />
+        <option value="$PROJECT_DIR$/student-view/myinfo/addfunction.php" />
+        <option value="$PROJECT_DIR$/student-view/myinfo/skills-and-languages.php" />
+        <option value="$PROJECT_DIR$/student-view/search-job/search-result.php" />
+        <option value="$PROJECT_DIR$/index.php" />
+      </list>
+    </option>
+  </component>
+  <component name="JsBuildToolGruntFileManager" detection-done="true" />
+  <component name="JsBuildToolPackageJson" detection-done="true" />
+  <component name="JsGulpfileManager">
+    <detection-done>true</detection-done>
+  </component>
+  <component name="PhpServers">
+    <servers />
+  </component>
+  <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
+  <component name="ProjectFrameBounds">
+    <option name="x" value="-8" />
+    <option name="y" value="-8" />
+    <option name="width" value="1616" />
+    <option name="height" value="876" />
+  </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="false">
+    <OptionsSetting value="true" id="Add" />
+    <OptionsSetting value="true" id="Remove" />
+    <OptionsSetting value="true" id="Checkout" />
+    <OptionsSetting value="false" id="Update" />
+    <OptionsSetting value="true" id="Status" />
+    <OptionsSetting value="true" id="Edit" />
+    <ConfirmationsSetting value="0" id="Add" />
+    <ConfirmationsSetting value="0" id="Remove" />
+  </component>
+  <component name="ProjectView">
+    <navigator currentView="ProjectPane" proportions="" version="1">
+      <flattenPackages />
+      <showMembers />
+      <showModules />
+      <showLibraryContents />
+      <hideEmptyPackages />
+      <abbreviatePackageNames />
+      <autoscrollToSource />
+      <autoscrollFromSource />
+      <sortByType />
+      <manualOrder />
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="Scope" />
+      <pane id="ProjectPane">
+        <subPane>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="OnlineJobPlacement" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="OnlineJobPlacement" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="OnlineJobPlacement" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+        </subPane>
+      </pane>
+      <pane id="Scratches" />
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="settings.editor.selected.configurable" value="preferences.sourceCode" />
+    <property name="settings.editor.splitter.proportion" value="0.2" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatWidth0" value="201" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatOrder0" value="0" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatWidth1" value="230" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatOrder1" value="1" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatWidth2" value="233" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatOrder2" value="2" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatWidth3" value="906" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatOrder3" value="3" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeWidth0" value="224" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeOrder0" value="0" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeWidth1" value="223" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeOrder1" value="1" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeWidth2" value="225" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeOrder2" value="2" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeWidth3" value="898" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeOrder3" value="3" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../Survey" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\xampp\htdocs\OnlineJobPlacement\student-view\resumelink" />
+      <recent name="C:\xampp\htdocs\OnlineJobPlacement\student-view" />
+      <recent name="C:\xampp\htdocs\OnlineJobPlacement\company" />
+      <recent name="C:\xampp\htdocs\OnlineJobPlacement\student-view\myinfo" />
+      <recent name="C:\xampp\htdocs\OnlineJobPlacement" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\xampp\htdocs\OnlineJobPlacement\adviser" />
+      <recent name="C:\xampp\htdocs\OnlineJobPlacement\student-view\myinfo\add" />
+      <recent name="C:\xampp\htdocs\OnlineJobPlacement\admin" />
+      <recent name="C:\xampp\htdocs\OnlineJobPlacement\student-view\myinfo" />
+      <recent name="C:\xampp\htdocs\OnlineJobPlacement\company" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration default="true" type="JavascriptDebugType" factoryName="JavaScript Debug">
+      <method />
+    </configuration>
+    <configuration default="true" type="PHPUnitRunConfigurationType" factoryName="PHPUnit">
+      <TestRunner />
+      <method />
+    </configuration>
+    <configuration default="true" type="PhpBehatConfigurationType" factoryName="Behat">
+      <BehatRunner />
+      <method />
+    </configuration>
+    <configuration default="true" type="PhpLocalRunConfigurationType" factoryName="PHP Console">
+      <method />
+    </configuration>
+    <configuration default="true" type="js.build_tools.gulp" factoryName="Gulp.js">
+      <node-options />
+      <gulpfile />
+      <tasks />
+      <arguments />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="true" type="js.build_tools.npm" factoryName="npm">
+      <command value="run-script" />
+      <scripts />
+      <envs />
+      <method />
+    </configuration>
+  </component>
+  <component name="ShelveChangesManager" show_recycled="false" />
+  <component name="StructureViewFactory">
+    <option name="AUTOSCROLL_FROM_SOURCE" value="true" />
+    <option name="ACTIVE_ACTIONS" value=",ALPHA_COMPARATOR" />
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="d999e893-f739-4a68-b7b0-034239dfb77e" name="Default" comment="" />
+      <created>1451894355130</created>
+      <option name="number" value="Default" />
+      <updated>1451894355130</updated>
+    </task>
+    <task id="LOCAL-00202" summary="POLISHING">
+      <created>1456072075942</created>
+      <option name="number" value="00202" />
+      <option name="project" value="LOCAL" />
+      <updated>1456072075942</updated>
+    </task>
+    <task id="LOCAL-00203" summary="POLISHING">
+      <created>1456148701076</created>
+      <option name="number" value="00203" />
+      <option name="project" value="LOCAL" />
+      <updated>1456148701076</updated>
+    </task>
+    <task id="LOCAL-00204" summary="POLISHING">
+      <created>1456150085495</created>
+      <option name="number" value="00204" />
+      <option name="project" value="LOCAL" />
+      <updated>1456150085495</updated>
+    </task>
+    <task id="LOCAL-00205" summary="POLISHING">
+      <created>1456151096649</created>
+      <option name="number" value="00205" />
+      <option name="project" value="LOCAL" />
+      <updated>1456151096649</updated>
+    </task>
+    <task id="LOCAL-00206" summary="POLISHING">
+      <created>1456151750257</created>
+      <option name="number" value="00206" />
+      <option name="project" value="LOCAL" />
+      <updated>1456151750258</updated>
+    </task>
+    <task id="LOCAL-00207" summary="POLISHING">
+      <created>1456151831480</created>
+      <option name="number" value="00207" />
+      <option name="project" value="LOCAL" />
+      <updated>1456151831480</updated>
+    </task>
+    <task id="LOCAL-00208" summary="POLISHING">
+      <created>1456151887646</created>
+      <option name="number" value="00208" />
+      <option name="project" value="LOCAL" />
+      <updated>1456151887646</updated>
+    </task>
+    <task id="LOCAL-00209" summary="POLISHING">
+      <created>1456155563881</created>
+      <option name="number" value="00209" />
+      <option name="project" value="LOCAL" />
+      <updated>1456155563881</updated>
+    </task>
+    <task id="LOCAL-00210" summary="Merge remote-tracking branch 'origin/master'&#10;&#10;# Conflicts:&#10;#&#9;student-view/myinfo/certifications.php&#10;#&#9;student-view/myinfo/work.php&#10;">
+      <created>1456155708330</created>
+      <option name="number" value="00210" />
+      <option name="project" value="LOCAL" />
+      <updated>1456155708330</updated>
+    </task>
+    <task id="LOCAL-00211" summary="Merge remote-tracking branch 'origin/master'&#10;&#10;# Conflicts:&#10;#&#9;student-view/myinfo/certifications.php&#10;#&#9;student-view/myinfo/work.php&#10;">
+      <created>1456177997783</created>
+      <option name="number" value="00211" />
+      <option name="project" value="LOCAL" />
+      <updated>1456177997783</updated>
+    </task>
+    <task id="LOCAL-00212" summary="Polishing">
+      <created>1456182611222</created>
+      <option name="number" value="00212" />
+      <option name="project" value="LOCAL" />
+      <updated>1456182611222</updated>
+    </task>
+    <task id="LOCAL-00213" summary="Polishing">
+      <created>1456186774329</created>
+      <option name="number" value="00213" />
+      <option name="project" value="LOCAL" />
+      <updated>1456186774329</updated>
+    </task>
+    <task id="LOCAL-00214" summary="Polishing">
+      <created>1456187600456</created>
+      <option name="number" value="00214" />
+      <option name="project" value="LOCAL" />
+      <updated>1456187600456</updated>
+    </task>
+    <task id="LOCAL-00215" summary="Polishing">
+      <created>1456188570973</created>
+      <option name="number" value="00215" />
+      <option name="project" value="LOCAL" />
+      <updated>1456188570973</updated>
+    </task>
+    <task id="LOCAL-00216" summary="Polishing">
+      <created>1456188980757</created>
+      <option name="number" value="00216" />
+      <option name="project" value="LOCAL" />
+      <updated>1456188980757</updated>
+    </task>
+    <task id="LOCAL-00217" summary="Polishing">
+      <created>1456209301109</created>
+      <option name="number" value="00217" />
+      <option name="project" value="LOCAL" />
+      <updated>1456209301111</updated>
+    </task>
+    <task id="LOCAL-00218" summary="Polishing">
+      <created>1456210788676</created>
+      <option name="number" value="00218" />
+      <option name="project" value="LOCAL" />
+      <updated>1456210788676</updated>
+    </task>
+    <task id="LOCAL-00219" summary="Polishing">
+      <created>1456212422298</created>
+      <option name="number" value="00219" />
+      <option name="project" value="LOCAL" />
+      <updated>1456212422298</updated>
+    </task>
+    <task id="LOCAL-00220" summary="Polishing">
+      <created>1456214831809</created>
+      <option name="number" value="00220" />
+      <option name="project" value="LOCAL" />
+      <updated>1456214831809</updated>
+    </task>
+    <task id="LOCAL-00221" summary="Polishing">
+      <created>1456215661124</created>
+      <option name="number" value="00221" />
+      <option name="project" value="LOCAL" />
+      <updated>1456215661127</updated>
+    </task>
+    <task id="LOCAL-00222" summary="Polishing">
+      <created>1456215759243</created>
+      <option name="number" value="00222" />
+      <option name="project" value="LOCAL" />
+      <updated>1456215759243</updated>
+    </task>
+    <task id="LOCAL-00223" summary="Polishing">
+      <created>1456215864220</created>
+      <option name="number" value="00223" />
+      <option name="project" value="LOCAL" />
+      <updated>1456215864220</updated>
+    </task>
+    <task id="LOCAL-00224" summary="Polishing">
+      <created>1456215910878</created>
+      <option name="number" value="00224" />
+      <option name="project" value="LOCAL" />
+      <updated>1456215910878</updated>
+    </task>
+    <task id="LOCAL-00225" summary="Polishing">
+      <created>1456218414944</created>
+      <option name="number" value="00225" />
+      <option name="project" value="LOCAL" />
+      <updated>1456218414944</updated>
+    </task>
+    <task id="LOCAL-00226" summary="Polishing">
+      <created>1456218924135</created>
+      <option name="number" value="00226" />
+      <option name="project" value="LOCAL" />
+      <updated>1456218924135</updated>
+    </task>
+    <task id="LOCAL-00227" summary="Polishing">
+      <created>1456219500993</created>
+      <option name="number" value="00227" />
+      <option name="project" value="LOCAL" />
+      <updated>1456219500993</updated>
+    </task>
+    <task id="LOCAL-00228" summary="Polishing">
+      <created>1456219691144</created>
+      <option name="number" value="00228" />
+      <option name="project" value="LOCAL" />
+      <updated>1456219691144</updated>
+    </task>
+    <task id="LOCAL-00229" summary="Polishing">
+      <created>1456220271431</created>
+      <option name="number" value="00229" />
+      <option name="project" value="LOCAL" />
+      <updated>1456220271431</updated>
+    </task>
+    <task id="LOCAL-00230" summary="Polishing">
+      <created>1456220550398</created>
+      <option name="number" value="00230" />
+      <option name="project" value="LOCAL" />
+      <updated>1456220550398</updated>
+    </task>
+    <task id="LOCAL-00231" summary="Polishing">
+      <created>1456220831613</created>
+      <option name="number" value="00231" />
+      <option name="project" value="LOCAL" />
+      <updated>1456220831613</updated>
+    </task>
+    <task id="LOCAL-00232" summary="Polishing">
+      <created>1456221611937</created>
+      <option name="number" value="00232" />
+      <option name="project" value="LOCAL" />
+      <updated>1456221611937</updated>
+    </task>
+    <task id="LOCAL-00233" summary="Polishing">
+      <created>1456221659085</created>
+      <option name="number" value="00233" />
+      <option name="project" value="LOCAL" />
+      <updated>1456221659085</updated>
+    </task>
+    <task id="LOCAL-00234" summary="Polishing">
+      <created>1456222750445</created>
+      <option name="number" value="00234" />
+      <option name="project" value="LOCAL" />
+      <updated>1456222750445</updated>
+    </task>
+    <task id="LOCAL-00235" summary="Polishing">
+      <created>1456225434570</created>
+      <option name="number" value="00235" />
+      <option name="project" value="LOCAL" />
+      <updated>1456225434570</updated>
+    </task>
+    <task id="LOCAL-00236" summary="Polishing">
+      <created>1456225996351</created>
+      <option name="number" value="00236" />
+      <option name="project" value="LOCAL" />
+      <updated>1456225996351</updated>
+    </task>
+    <task id="LOCAL-00237" summary="Polishing">
+      <created>1456226878920</created>
+      <option name="number" value="00237" />
+      <option name="project" value="LOCAL" />
+      <updated>1456226878920</updated>
+    </task>
+    <task id="LOCAL-00238" summary="Polishing">
+      <created>1456652539188</created>
+      <option name="number" value="00238" />
+      <option name="project" value="LOCAL" />
+      <updated>1456652539188</updated>
+    </task>
+    <task id="LOCAL-00239" summary="Polishing">
+      <created>1456660067847</created>
+      <option name="number" value="00239" />
+      <option name="project" value="LOCAL" />
+      <updated>1456660067849</updated>
+    </task>
+    <task id="LOCAL-00240" summary="Polishing">
+      <created>1457766502248</created>
+      <option name="number" value="00240" />
+      <option name="project" value="LOCAL" />
+      <updated>1457766502249</updated>
+    </task>
+    <task id="LOCAL-00241" summary="Polishing">
+      <created>1457973526000</created>
+      <option name="number" value="00241" />
+      <option name="project" value="LOCAL" />
+      <updated>1457973526001</updated>
+    </task>
+    <task id="LOCAL-00242" summary="Polishing">
+      <created>1457975174766</created>
+      <option name="number" value="00242" />
+      <option name="project" value="LOCAL" />
+      <updated>1457975174766</updated>
+    </task>
+    <task id="LOCAL-00243" summary="Polishing">
+      <created>1458695672947</created>
+      <option name="number" value="00243" />
+      <option name="project" value="LOCAL" />
+      <updated>1458695672947</updated>
+    </task>
+    <task id="LOCAL-00244" summary="Polishing">
+      <created>1458725708934</created>
+      <option name="number" value="00244" />
+      <option name="project" value="LOCAL" />
+      <updated>1458725708936</updated>
+    </task>
+    <task id="LOCAL-00245" summary="Polishing">
+      <created>1458726032798</created>
+      <option name="number" value="00245" />
+      <option name="project" value="LOCAL" />
+      <updated>1458726032798</updated>
+    </task>
+    <task id="LOCAL-00246" summary="Polishing">
+      <created>1458789598499</created>
+      <option name="number" value="00246" />
+      <option name="project" value="LOCAL" />
+      <updated>1458789598504</updated>
+    </task>
+    <task id="LOCAL-00247" summary="Polishing">
+      <created>1458898719125</created>
+      <option name="number" value="00247" />
+      <option name="project" value="LOCAL" />
+      <updated>1458898719126</updated>
+    </task>
+    <task id="LOCAL-00248" summary="Polishing">
+      <created>1458918165188</created>
+      <option name="number" value="00248" />
+      <option name="project" value="LOCAL" />
+      <updated>1458918165188</updated>
+    </task>
+    <task id="LOCAL-00249" summary="Polishing">
+      <created>1458923461299</created>
+      <option name="number" value="00249" />
+      <option name="project" value="LOCAL" />
+      <updated>1458923461299</updated>
+    </task>
+    <task id="LOCAL-00250" summary="Polishing">
+      <created>1458966685424</created>
+      <option name="number" value="00250" />
+      <option name="project" value="LOCAL" />
+      <updated>1458966685425</updated>
+    </task>
+    <option name="localTasksCounter" value="251" />
+    <servers />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="-8" y="-8" width="1616" height="876" extended-state="6" />
+    <editor active="true" />
+    <layout>
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.199375" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32724902" sideWeight="0.505" order="10" side_tool="true" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32724902" sideWeight="0.495" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32985657" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Command Line Tools Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32985657" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32985657" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+    </layout>
+    <layout-to-restore>
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32985657" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32724902" sideWeight="0.5025" order="10" side_tool="true" content_ui="tabs" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Command Line Tools Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32985657" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32724902" sideWeight="0.4975" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32985657" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+    </layout-to-restore>
+  </component>
+  <component name="Vcs.Log.UiProperties">
+    <option name="RECENTLY_FILTERED_USER_GROUPS">
+      <collection />
+    </option>
+    <option name="RECENTLY_FILTERED_BRANCH_GROUPS">
+      <collection />
+    </option>
+  </component>
+  <component name="VcsContentAnnotationSettings">
+    <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="OFFER_MOVE_TO_ANOTHER_CHANGELIST_ON_PARTIAL_COMMIT" value="false" />
+    <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
+    <option name="CHECK_NEW_TODO" value="false" />
+    <MESSAGE value="q" />
+    <MESSAGE value="Contact info&#10;-done by ghabx" />
+    <MESSAGE value="POLISHING" />
+    <MESSAGE value="Merge remote-tracking branch 'origin/master'&#10;&#10;# Conflicts:&#10;#&#9;student-view/myinfo/certifications.php&#10;#&#9;student-view/myinfo/work.php&#10;" />
+    <MESSAGE value="Polishing" />
+    <option name="LAST_COMMIT_MESSAGE" value="Polishing" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <option name="time" value="3" />
+    </breakpoint-manager>
+    <watches-manager />
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/student-view/myinfo/add/myinfoadd.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.6694915">
+          <caret line="186" column="0" selection-start-line="186" selection-start-column="0" selection-end-line="186" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/admin/adminupload.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="4.2580647">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/for-index/other-companies.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.4661017">
+          <caret line="147" column="26" selection-start-line="147" selection-start-column="26" selection-end-line="147" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/adviser/functions.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-5.245763">
+          <caret line="8" column="1" selection-start-line="8" selection-start-column="1" selection-end-line="8" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/admin/admin-field.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="2.8771186">
+          <caret line="415" column="48" selection-start-line="415" selection-start-column="48" selection-end-line="415" selection-end-column="48" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/student-view/myinfo/achievements.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-11.354838">
+          <caret line="261" column="33" selection-start-line="261" selection-start-column="33" selection-end-line="261" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/student-view/myinfo/certifications.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-14.193548">
+          <caret line="263" column="37" selection-start-line="263" selection-start-column="37" selection-end-line="263" selection-end-column="37" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/student-view/myinfo/education.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-15.5161295">
+          <caret line="267" column="33" selection-start-line="267" selection-start-column="33" selection-end-line="267" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/student-view/myinfo/portfolio.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-20.806452">
+          <caret line="261" column="37" selection-start-line="261" selection-start-column="37" selection-end-line="261" selection-end-column="37" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/student-view/myinfo/references.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-16.290323">
+          <caret line="271" column="33" selection-start-line="271" selection-start-column="33" selection-end-line="271" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/student-view/myinfo/work.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-13.548388">
+          <caret line="272" column="41" selection-start-line="272" selection-start-column="41" selection-end-line="272" selection-end-column="41" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/student-view/myinfo/add/add-achievement.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-19.870968">
+          <caret line="163" column="37" selection-start-line="163" selection-start-column="37" selection-end-line="163" selection-end-column="37" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/student-view/myinfo/add/add-certification.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-6.806452">
+          <caret line="164" column="37" selection-start-line="164" selection-start-column="37" selection-end-line="164" selection-end-column="37" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/student-view/myinfo/add/add-document.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-14.903226">
+          <caret line="165" column="37" selection-start-line="165" selection-start-column="37" selection-end-line="165" selection-end-column="37" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/student-view/myinfo/add/add-language.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-14.096774">
+          <caret line="166" column="37" selection-start-line="166" selection-start-column="37" selection-end-line="166" selection-end-column="37" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/student-view/myinfo/add/add-link.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-19.161291">
+          <caret line="168" column="37" selection-start-line="168" selection-start-column="37" selection-end-line="168" selection-end-column="37" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/student-view/myinfo/add/add-reference.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-18.709677">
+          <caret line="169" column="37" selection-start-line="169" selection-start-column="37" selection-end-line="169" selection-end-column="37" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/student-view/myinfo/add/add-school.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-11.741936">
+          <caret line="163" column="37" selection-start-line="163" selection-start-column="37" selection-end-line="163" selection-end-column="37" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/student-view/myinfo/add/add-seminar.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-19.870968">
+          <caret line="169" column="37" selection-start-line="169" selection-start-column="37" selection-end-line="169" selection-end-column="37" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/student-view/myinfo/add/add-specialization.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-13.967742">
+          <caret line="166" column="37" selection-start-line="166" selection-start-column="37" selection-end-line="166" selection-end-column="37" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/student-view/myinfo/add/add-workexperience.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-15.4838705">
+          <caret line="162" column="37" selection-start-line="162" selection-start-column="37" selection-end-line="162" selection-end-column="37" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/student-view/myinfo/edit/edit-achievement.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-12.774194">
+          <caret line="168" column="37" selection-start-line="168" selection-start-column="37" selection-end-line="168" selection-end-column="37" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/student-view/myinfo/edit/edit-certification.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-17.741936">
+          <caret line="178" column="37" selection-start-line="178" selection-start-column="37" selection-end-line="178" selection-end-column="37" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/student-view/myinfo/edit/edit-language.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-19.870968">
+          <caret line="178" column="37" selection-start-line="178" selection-start-column="37" selection-end-line="178" selection-end-column="37" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/student-view/myinfo/edit/edit-link.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-15.612904">
+          <caret line="163" column="37" selection-start-line="163" selection-start-column="37" selection-end-line="163" selection-end-column="37" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/student-view/myinfo/edit/edit-reference.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-16.32258">
+          <caret line="182" column="37" selection-start-line="182" selection-start-column="37" selection-end-line="182" selection-end-column="37" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/student-view/myinfo/edit/edit-school.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-18.451612">
+          <caret line="182" column="37" selection-start-line="182" selection-start-column="37" selection-end-line="182" selection-end-column="37" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/student-view/myinfo/edit/edit-seminar.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-12.774194">
+          <caret line="177" column="37" selection-start-line="177" selection-start-column="37" selection-end-line="177" selection-end-column="37" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/student-view/myinfo/edit/edit-specialization.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-8.5161295">
+          <caret line="177" column="45" selection-start-line="177" selection-start-column="45" selection-end-line="177" selection-end-column="45" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/student-view/myinfo/edit/edit-workexperience.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-9.225806">
+          <caret line="166" column="33" selection-start-line="166" selection-start-column="33" selection-end-line="166" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/student-view/applications/applications.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-9.774194">
+          <caret line="256" column="37" selection-start-line="256" selection-start-column="37" selection-end-line="256" selection-end-column="37" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/student-view/resume/background.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-12.774194">
+          <caret line="261" column="37" selection-start-line="261" selection-start-column="37" selection-end-line="261" selection-end-column="37" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/student-view/resume/print.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-17.741936">
+          <caret line="250" column="37" selection-start-line="250" selection-start-column="37" selection-end-line="250" selection-end-column="37" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/student-view/resume/resume.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.63276833">
+          <caret line="251" column="37" selection-start-line="251" selection-start-column="37" selection-end-line="251" selection-end-column="37" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/student-view/resume/resumeprint.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.43502825">
+          <caret line="71" column="16" selection-start-line="71" selection-start-column="16" selection-end-line="71" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/student-view/search-job/bookmarked-jobs.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-4.004237">
+          <caret line="63" column="0" selection-start-line="63" selection-start-column="0" selection-end-line="63" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/student-view/search-job/jobs.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.6581921">
+          <caret line="174" column="37" selection-start-line="174" selection-start-column="37" selection-end-line="174" selection-end-column="37" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/student-view/search-job/view-details.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.65254235">
+          <caret line="218" column="48" selection-start-line="218" selection-start-column="48" selection-end-line="218" selection-end-column="48" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/student-view/settings/settings.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-0.77683616">
+          <caret line="53" column="72" selection-start-line="53" selection-start-column="72" selection-end-line="53" selection-end-column="72" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/admin/functions.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.3328424">
+          <caret line="264" column="0" selection-start-line="264" selection-start-column="0" selection-end-line="264" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/company/company-pendingapplicants.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.730226">
+          <caret line="308" column="55" selection-start-line="307" selection-start-column="60" selection-end-line="308" selection-end-column="55" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/connection.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-10.645162">
+          <caret line="48" column="33" selection-start-line="48" selection-start-column="33" selection-end-line="48" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/admin/admin-calendarcreateevent.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-9.633333">
+          <caret line="246" column="58" selection-start-line="246" selection-start-column="58" selection-end-line="246" selection-end-column="58" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/student-view/myinfo/personal-info.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-11.870968">
+          <caret line="725" column="51" selection-start-line="725" selection-start-column="51" selection-end-line="725" selection-end-column="51" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/student-view/myinfo/contacts-info.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-19.903225">
+          <caret line="449" column="34" selection-start-line="449" selection-start-column="34" selection-end-line="449" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/student-view/myinfo/upload.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.09322034">
+          <caret line="3" column="38" selection-start-line="3" selection-start-column="38" selection-end-line="3" selection-end-column="38" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/student-view/myinfo/addfunction.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.37288135">
+          <caret line="165" column="23" selection-start-line="165" selection-start-column="23" selection-end-line="165" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/common-functions.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="1.1101695">
+          <caret line="266" column="36" selection-start-line="266" selection-start-column="36" selection-end-line="266" selection-end-column="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/student-view/myinfo/skills-and-languages.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="628" column="43" selection-start-line="628" selection-start-column="43" selection-end-line="628" selection-end-column="43" />
+          <folding>
+            <marker date="1458969030481" expanded="true" signature="444:523" placeholder="SELECT First... studentinfotbl" />
+            <marker date="1458969030481" expanded="true" signature="767:821" placeholder="SELECT Cours... coursetbl" />
+            <marker date="1458969030481" expanded="true" signature="962:1227" placeholder="SELECT Pinfo... " />
+            <marker date="1458969030481" expanded="true" signature="16681:16944" placeholder="..." />
+            <marker date="1458969030481" expanded="true" signature="17144:17405" placeholder="..." />
+            <marker date="1458969030481" expanded="true" signature="17605:17868" placeholder="..." />
+            <marker date="1458969030481" expanded="true" signature="18068:18335" placeholder="..." />
+            <marker date="1458969030481" expanded="true" signature="18535:18800" placeholder="..." />
+            <marker date="1458969030481" expanded="true" signature="19000:19266" placeholder="..." />
+            <marker date="1458969030481" expanded="true" signature="21627:21678" placeholder="SELECT * FRO... specializationtbl" />
+            <marker date="1458969030481" expanded="true" signature="28527:28572" placeholder="SELECT * FRO... languagetbl" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/student-view/search-job/search-result.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="15" column="0" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.5338983">
+          <caret line="295" column="20" selection-start-line="295" selection-start-column="20" selection-end-line="295" selection-end-column="20" />
+          <folding>
+            <marker date="1458989726492" expanded="true" signature="84:150" placeholder="SELECT * FRO... admineventtbl" />
+            <marker date="1458989726492" expanded="true" signature="9336:9366" placeholder="SELECT * FRO... listofindustrytbl" />
+            <marker date="1458989726492" expanded="true" signature="9336:9413" placeholder="SELECT DISTI... companyinfotbl" />
+            <marker date="1458989726492" expanded="true" signature="10669:10717" placeholder="SELECT * FRO... listofspecializationtbl" />
+            <marker date="1458989726492" expanded="true" signature="11608:11657" placeholder="SELECT * FRO... listofspecializationtbl" />
+            <marker date="1458989726492" expanded="true" signature="12601:12670" placeholder="SELECT DISTI... companyinfotbl" />
+            <marker date="1458989726492" expanded="true" signature="13019:13043" placeholder="SELECT COUNT... table_name" />
+            <marker date="1458989726492" expanded="true" signature="13019:13072" placeholder="SELECT COUNT... companyinfotbl" />
+            <marker date="1458989726492" expanded="true" signature="16369:16419" placeholder="SELECT Event... admineventtbl" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+  </component>
+</project>
