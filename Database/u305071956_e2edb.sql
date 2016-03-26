@@ -4,13 +4,13 @@ Navicat MySQL Data Transfer
 Source Server         : localhost
 Source Server Version : 50616
 Source Host           : localhost:3306
-Source Database       : u987316885_e2edb
+Source Database       : u305071956_e2edb
 
 Target Server Type    : MYSQL
 Target Server Version : 50616
 File Encoding         : 65001
 
-Date: 2016-03-23 17:35:32
+Date: 2016-03-26 12:30:57
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -714,7 +714,7 @@ INSERT INTO progresstbl VALUES ('62', '00820120062', '0', '', '', '', '', '', ''
 INSERT INTO progresstbl VALUES ('63', '00820120063', '0', '', '', '', '', '', '', '', '', '', '', '');
 INSERT INTO progresstbl VALUES ('64', '00820120064', '0', '', '', '', '', '', '', '', '', '', '', '');
 INSERT INTO progresstbl VALUES ('65', '00820120065', '0', '', '', '', '', '', '', '', '', '', '', '');
-INSERT INTO progresstbl VALUES ('66', '00820120066', '0', '', '', '', '', '', '', '', '', '', '', '');
+INSERT INTO progresstbl VALUES ('66', '00820120066', '0', 'ok', '', '', '', '', '', '', '', '', '', '');
 INSERT INTO progresstbl VALUES ('67', '00820120067', '0', '', '', '', '', '', '', '', '', '', '', '');
 INSERT INTO progresstbl VALUES ('68', '00820120068', '0', '', '', '', '', '', '', '', '', '', '', '');
 INSERT INTO progresstbl VALUES ('69', '00820120069', '0', '', '', '', '', '', '', '', '', '', '', '');
@@ -1486,7 +1486,7 @@ CREATE TABLE `studcontactstbl` (
 -- ----------------------------
 -- Records of studcontactstbl
 -- ----------------------------
-INSERT INTO studcontactstbl VALUES ('1', '00820120001', 'markjoseph1496@yahoo.com', '2890 A. Pablo St. Karuhatan, Valenzuela City', '09355585931', '', '2790201', '', '', 'Valenzuela City');
+INSERT INTO studcontactstbl VALUES ('1', '00820120001', 'markjoseph1496@yahoo.com', '2890 A. Pablo St. Karuhatan, Valenzuela City', '09355585931', '', '2790201', '412412', '3442424', 'Pasay City');
 INSERT INTO studcontactstbl VALUES ('3', '00820120003', 'aasdsad@cs.cc', '', '09355585931', '', '', '', '', 'Valenzuela City');
 INSERT INTO studcontactstbl VALUES ('4', '00820120004', 'tristanabad55@gmail.com', '', '09239565052', '', '', '', '', 'Malabon City');
 INSERT INTO studcontactstbl VALUES ('5', '00820120005', 'binary.to.hexa@gmail.com', '', '09261788252', '', '', '', '', 'Caloocan City');
@@ -1746,7 +1746,7 @@ INSERT INTO studentinfotbl VALUES ('00820120062', '7512c715fee0d1868573a6c4fc8b1
 INSERT INTO studentinfotbl VALUES ('00820120063', 'a5fc3839c2c7de2359d32f971b78b91a1c3775d128dcaf277c427aa4297a5d35173ef6dd02b2bf2a1aef6d7d647c87c63de2fbbd36eb6ad65d9ebc64f40d5942', '96e66149753580a5b1d3686e2a8b31dcd97d2fb360b0bf2a2593104a8baa4dfc9ac88ddca62fd8f2bba95d05f996845967b3ff560d7792c62435634af582267b', 'Jaime', '', 'Falla', '', '1994-01-19', '', '', '', 'Employed', '', '', '', 'BSBM', '');
 INSERT INTO studentinfotbl VALUES ('00820120064', '9fd2f7a6de68b3c5372921f6164f8e3df39aa670a3b3a555595e11ac7e91c23bf46864ede2a10c0eebb7b6696bf147aa0d57ee63cc5b78472f582d137a079152', 'be3ad12fe555ba141ea835657ce7e46062182901c72bb2c43cce29498fb5d7cd1e4ee5c6f123b0a3b05ade148f4838b5550a49d18912edcb48559d5a6d36958d', 'Angelique', '', 'Fernandez', '', '1994-04-18', '', '', '', 'Employed', '', '', '', 'BSBM', '');
 INSERT INTO studentinfotbl VALUES ('00820120065', '962ab4ea47f049b6571ad61eb79832f96e7945a53daa057fe1ef719b5158950abb53e1753242c4597e18afe597a0205d446958761a5b186d5aea248028058ef3', '40591e2ab5d452332c1bf64e5ac22e783aa032e214a6546b248c31ae8fe1a5405fdbe5d84f0dd14b931a638037c98ea3ebce453092a542d67c922cf5715291ad', 'Elisa Mae', '', 'Florano', '', '1995-02-03', '', '', '', 'Employed', '', '', '', 'BSBM', '');
-INSERT INTO studentinfotbl VALUES ('00820120066', '235ea0ca2c1614fdacfff49c0e8ecc36de3b120da8b4924e8bca887ca85f1b36b51b726801349b0901ae7745aa1cb272902ffc49ed055f100306f6da62fa3058', 'da8e2053e89749334c8aba713188214831de5dfe55be20170976a3adc75b1298ddce721fcd17ed1ee3fcd332cf4328170cbe2e4781a36998def5acba63aeffc9', 'Maria Jessa', '', 'Fulay', '', '1995-03-21', '', '', '', 'Employed', '', '', '', 'BSBM', '');
+INSERT INTO studentinfotbl VALUES ('00820120066', '235ea0ca2c1614fdacfff49c0e8ecc36de3b120da8b4924e8bca887ca85f1b36b51b726801349b0901ae7745aa1cb272902ffc49ed055f100306f6da62fa3058', 'da8e2053e89749334c8aba713188214831de5dfe55be20170976a3adc75b1298ddce721fcd17ed1ee3fcd332cf4328170cbe2e4781a36998def5acba63aeffc9', 'Maria Jessa', '', 'Fulay', 'Female', '1995-03-21', '', 'Single', 'Filipino', 'Employed', 'http://www.facebook.com/test', '', 'ProfileImages/00820120066.jpg', 'BSBM', '');
 INSERT INTO studentinfotbl VALUES ('00820120067', '20887b66318267fb88cc1feaa80e0b595540f070265e642fbd8a959f022e9a112adff8532febceaa9a09da284dc7d0c77441865043471992709b166af629637c', '0f0bc64f7aabf2bb15c833b791109f0bd20882b6043fe364e46a542524ac4465e95dd0bdf555a24d483f8c8de37bf30e110c6c2ed8cf14d4dcc1d6d63c3137a0', 'Jessica', '', 'Galabay', '', '111995-06-26', '', '', '', 'Employed', '', '', '', 'BSBM', '');
 INSERT INTO studentinfotbl VALUES ('00820120068', '9b80e0e696ae6515f8226a4b42bf7f868263578f730f9f94159e4ac01417f075a25f67a171a5b8ecbaa9a2ff08869bd62829180f8d76e8690d54f9c6888c0de6', 'd96bb6e1b1f8f8924af00419d4429865545d076412d624870242fd3867b3d8fd64b86e2181d96e38b26e79aba19f606476d3d19004b34ad253cb87587b455254', 'Maiko Aldy', '', 'Manacmul', '', '1991-07-22', '', '', '', 'Employed', '', '', '', 'BSHRM', '');
 INSERT INTO studentinfotbl VALUES ('00820120069', 'daaf577c04c9954363a9202945a612f90b19c9f00642a548e1a816509e3f3142f41a9ea70400d4517ed071e5fa81d55df24315937468811e56ce3b80968a2460', '1071ef3f6742544398b154ca8d818e3fb3ad6a3af57bc474f11773d7ddb67c688894c966d56df96c4c74e75b60e68197539b5fef2bc4276e17247de984314782', 'Diana Jean', '', 'Genita', '', '1993-02-03', '', '', '', 'Employed', '', '', '', 'BSBM', '');

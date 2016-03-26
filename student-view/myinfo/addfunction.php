@@ -165,8 +165,8 @@ if (isset($_GET['btnSaveContactInfo'])) {
 
     $validation_return = $common_functions->validate($_GET, $validation_config);
     if($validation_return['hasError']){
-        //header("location: contacts-info.php?error");
-        print_r($validation_return);
+        header("location: contacts-info.php?error");
+        //print_r($validation_return);
         die();
     }
     GSecureSQL::query(
