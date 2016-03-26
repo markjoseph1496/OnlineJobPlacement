@@ -303,10 +303,10 @@ $MajorCourse = $course_qry[0][0];
                                         <option value="">- Course -</option>
                                         <?php
                                         $query = "SELECT * FROM coursetbl";
-                                        $result = mysql_query($query);
-                                        while ($query = mysql_fetch_array($result)) {
-                                            $CourseCode = $query['CourseCode'];
-                                            $CourseTitle = $query['CourseTitle'];
+                                        $tbl = GSecureSQL::query($query, TRUE);
+                                        foreach($tbl as $row){
+                                            $CourseCode = $row[2];
+                                            $CourseTitle = $row[1];
                                             ?>
                                             <option
                                                 value="<?php echo $CourseCode; ?>" <?php if ($CourseCode == $Course) echo 'selected="selected"'; ?>><?php echo $CourseTitle; ?></option>
