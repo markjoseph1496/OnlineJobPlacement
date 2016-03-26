@@ -729,7 +729,7 @@ $adminevent_tbl =
                         <ul class="footer-nav">
                             <li><a href="#">Sitemap</a></li>
                             <li><a href="#">Privacy Policy</a></li>
-                            <li><a href="#">Contact</a></li>
+                            <li><a href="contact.php">Contact</a></li>
                         </ul>
                     </div>
                 </div>

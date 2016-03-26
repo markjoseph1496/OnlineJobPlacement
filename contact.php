@@ -69,15 +69,6 @@
     <script type="text/javascript" src="js/jquery.nicescroll.min.js"></script>
     <script type="text/javascript" src="js/jquery.parallax.js"></script>
     <script type="text/javascript" src="js/jquery.slicknav.js"></script>
-
-    <style type="text/css">.popover {
-    z-index: 1010; /* A value higher than 1010 that solves the problem */
-}</style>
-    <script>
-        $(document).ready(function(){
-            $('[data-toggle="popover"]').popover();   
-        });
-    </script>
 </head>
 
 <body style="overflow:hidden;">
@@ -201,8 +192,6 @@
                             <li><a href="#">Sitemap</a>
                             </li>
                             <li><a href="#">Privacy Policy</a>
-                            </li>
-                            <li><a href="#">Contact</a>
                             </li>
                         </ul>
                     </div>

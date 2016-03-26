@@ -532,7 +532,7 @@ ul.social-list li:last-child a i {
 }
 .navbar {
     margin-bottom: 0;
-    background: #fff;
+    background: rgba(255, 255, 255, 0.85);
     border: none;
     border-radius: 0;
     -webkit-border-radius: 0;
