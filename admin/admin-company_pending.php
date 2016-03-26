@@ -318,13 +318,13 @@ $FirstName = $infoquery[0][0];
                 <table class="table segment table-hover">
                     <thead>
                         <tr>
-                            <th width='15%' class='tabletitle'>Company Name</th>
-                            <th width='10%' class='tabletitle'>Location</th>
-                            <th width='15%' class='tabletitle'>Industry</th>
-                            <th width='15%' class='tabletitle'>Contact Number</th>
-                            <th width='15%' class='tabletitle'>Email Address</th>
-                            <th width='15%' class='tabletitle'>Website</th>
-                            <th width='10%' class='tabletitle'>Action</th>
+                            <th width='15%'>Company Name</th>
+                            <th width='10%'>Location</th>
+                            <th width='15%'>Industry</th>
+                            <th width='15%'>Contact Number</th>
+                            <th width='15%'>Email Address</th>
+                            <th width='15%'>Website</th>
+                            <th width='10%'>Action</th>
                         <tr>
                     </thead>
                     <tbody>
@@ -352,18 +352,18 @@ $FirstName = $infoquery[0][0];
                         }
                         ?>
                         <tr>
-                            <td width=15% class=tabletitle>
+                            <td width='15%'>
                                 <a target="_blank"
                                    href='../companyprofile.php?id=<?php echo $CompanyID; ?>'><?php echo $CompanyName; ?></a>
                             </td>
-                            <td width=10% class=tabletitle><?php echo $City; ?></td>
-                            <td width='15%' class='tabletitle'><?php echo $Industry; ?></td>
-                            <td width='15%' class='tabletitle'><?php echo $ContactNo; ?></td>
-                            <td width='15%' class='tabletitle'><?php echo $Email; ?></td>
-                            <td width='15%' class='tabletitle'>
+                            <td width='10%'><?php echo $City; ?></td>
+                            <td width='15%'><?php echo $Industry; ?></td>
+                            <td width='15%'><?php echo $ContactNo; ?></td>
+                            <td width='15%'><?php echo $Email; ?></td>
+                            <td width='15%'>
                                 <a target="_blank" href='<?php echo $Website; ?>'><?php echo $Website; ?></a></td>
 
-                            <td width='10%' class=tabletitle>
+                            <td width='10%'>
                                 <button class='btn btn-default' data-toggle='modal'
                                         data-target='#Accept<?php echo $CompanyID; ?>'>
                                     <i class='fa fa-check-circle'></i>

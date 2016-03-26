@@ -254,12 +254,12 @@ $aFirstName = $infoquery[0][0];
                         <!-- Start Navigation List -->
                         <ul class="nav navbar-nav navbar-right">
                             <li>
-                                <a class="active" href="admin.php">Home</a>
+                                <a href="admin.php">Home</a>
                             </li>
                             <li>
-                                <a>Reports</a>
+                                <a class="active">Reports</a>
                                 <ul class="dropdown">
-                                    <li><a href="admin-reports.php" class = "active">Alumni Reports</a></li>
+                                    <li><a href="admin-reports.php">Alumni Reports</a></li>
                                     <li><a href="admin-ojtreports.php">OJT Reports</a></li>
                                 </ul>
                              </li>
@@ -274,9 +274,9 @@ $aFirstName = $infoquery[0][0];
                                 </ul>
                             </li>
                             <li>
-                                <a> Maintenance</a>
+                                <a>Maintenance</a>
                                 <ul class="dropdown">
-                                    <li><a class="active" href="admin-maintenance.php">Courses</a></li>
+                                    <li><a href="admin-maintenance.php">Courses</a></li>
                                     <li><a href="admin-users.php">Users</a></li>
                                     <li><a href="admin-calendar.php">Calendar Events</a></li>
                                 </ul>
@@ -294,24 +294,24 @@ $aFirstName = $infoquery[0][0];
                         <li>
                             <a>Reports</a>
                             <ul class="dropdown">
-                                <li><a href="admin-reports.php" class="active">Alumni Reports</a></li>
+                                <li><a href="admin-reports.php">Alumni Reports</a></li>
                                 <li><a href="admin-ojtreports.php">OJT Reports</a></li>
                             </ul>
-                        </li>
+                         </li>
                         <li>
                             <a href="admin-requested.php">Requested</a>
                         </li>
                         <li>
                             <a>Company List</a>
                             <ul class="dropdown">
-                                <li><a href="admin-companylist.php" class = "active">Active</a></li>
+                                <li><a href="admin-companylist.php">Active</a></li>
                                 <li><a href="admin-company_pending.php">Pending</a></li>
                             </ul>
                         </li>
                         <li>
-                            <a> Maintenance</a>
+                            <a>Maintenance</a>
                             <ul class="dropdown">
-                                <li><a class="active" href="admin-maintenance.php">Courses</a></li>
+                                <li><a href="admin-maintenance.php">Courses</a></li>
                                 <li><a href="admin-users.php">Users</a></li>
                                 <li><a href="admin-calendar.php">Calendar Events</a></li>
                             </ul>
@@ -341,7 +341,7 @@ $aFirstName = $infoquery[0][0];
                     <div class="col-md-8">
                         <h5><?php echo $CourseTitle; ?><h5>
                     </div>
-                    <!--
+                    
                     <div class="col-md-4">
                         <div class="form-group text-center">
                             <a href="#" class="main-button" style="float:right;">
@@ -349,7 +349,7 @@ $aFirstName = $infoquery[0][0];
                             </a>
                         </div>
                     </div>
-                </div>-->
+                </div>
 
                 <div class="hr1" style="margin-top:30px;"></div>
 

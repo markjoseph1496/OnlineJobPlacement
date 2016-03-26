@@ -3347,7 +3347,7 @@ and (min-width : 551px){
     -o-opacity:1;
   color: #556270;
   border-color: #fff;
-  background:#fff;
+  background:#FFF100;
 }
 
 
@@ -6783,7 +6783,7 @@ ul.post-meta li a:hover {
 }
 
 #portfolio-list li .portfolio-item-content {
-    background: rgba(248, 186, 1, 0.9);
+    background: rgba(10, 61, 115, 0.78);
 }
 
 .services-3-icon i {
@@ -6837,6 +6837,25 @@ ul.post-meta li a:hover {
 	color: #f8ba01;
 }
 
-.dot1, .dot2 {
-    background-color: #f8ba01;
+.dot1 {
+    background-color: #0A3D73;
+}
+
+.dot2 {
+    background-color: #FFF100;
+}
+
+
+
+/* Modal */
+.header {
+	background-color: #FFF100;
+}
+
+.header-title {
+	color: #333;
+}
+
+.body-color {
+	background-color: #eee;
 }
