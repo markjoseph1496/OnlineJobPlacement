@@ -463,6 +463,7 @@ if ($References == "ok") {
                                         <label>Email <span>(*)</span></label>
                                         <input type="email" class="form-control" id="Email" name="Email"
                                                value="<?php echo $Email; ?>" maxlength="50">
+                                        invalid chuchu
                                     </div>
                                     <div class="form-group">
                                         <label>Mobile Number <span>(*)</span></label>
@@ -591,7 +592,8 @@ if ($References == "ok") {
                 <div class="hr5" style="margin-top:35px;margin-bottom:40px;"></div>
                 <div class="field">
                     <div class="text-center">
-                        <button type="submit" class="btn-system btn-large" name="btnSaveContactInfo" id="btnsave">Save
+                        <input type="hidden" name="btnSaveContactInfo"/> <!-- Magic yan para gumana yung enter -- ghabx -->
+                        <button type="submit" class="btn-system btn-large" id="btnsave">Save
                         </button>
                     </div>
                 </div>
@@ -604,6 +606,7 @@ if ($References == "ok") {
 </body>
 </html>
 <script type="text/javascript">
+
     $(document).ready(function () {
         $("#Save").bootstrapValidator({
             feedbackIcons: {
@@ -662,6 +665,9 @@ if ($References == "ok") {
                 },
                 PostalCode: {
                     validators: {
+                        notEmpty: {
+                            message: "Postal Code is Required."
+                        },
                         regexp: {
                             regexp: /^[0-9]+$/,
                             message: "Postal Code can consist of numeric characters only."
