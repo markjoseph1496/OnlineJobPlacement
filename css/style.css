@@ -6837,6 +6837,25 @@ ul.post-meta li a:hover {
 	color: #f8ba01;
 }
 
-.dot1, .dot2 {
-    background-color: #f8ba01;
+.dot1 {
+    background-color: #0A3D73;
+}
+
+.dot2 {
+    background-color: #FFF100;
+}
+
+
+
+/* Modal */
+.header {
+	background-color: #FFF100;
+}
+
+.header-title {
+	color: #333;
+}
+
+.body-color {
+	background-color: #eee;
 }
