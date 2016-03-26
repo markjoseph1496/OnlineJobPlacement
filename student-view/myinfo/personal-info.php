@@ -741,7 +741,8 @@ if ($References == "ok") {
                 </div>
                 <div class="hr5" style="margin-top:35px;margin-bottom:40px;"></div>
                 <div class="text-center">
-                    <button type="submit" class="btn-system btn-large" name="btnSaveInfo" id="btnsave">Save</button>
+                    <input type="hidden" name="btnSaveInfo"/> <!-- magic ko to mark lol -- ghabx -->
+                    <button type="submit" class="btn-system btn-large" id="btnsave">Save</button>
                 </div>
             </div>
         </div>
