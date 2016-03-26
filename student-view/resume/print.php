@@ -396,7 +396,7 @@ if($References == "ok"){
                     <div class="column">
                         <div class="myoverlay">
                             <p>Your Resume</p>
-                            <a href="resumeprint.php" class="btn-system btn-medium"><i class="fa fa-print"></i> Print</a>
+                            <a href="resumeprint.php" class="btn-system btn-medium">View</a>
                         </div>
                         <img src="../../images/resume-sample.png">
                     </div>
