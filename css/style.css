@@ -3347,7 +3347,7 @@ and (min-width : 551px){
     -o-opacity:1;
   color: #556270;
   border-color: #fff;
-  background:#fff;
+  background:#FFF100;
 }
 
 
@@ -6783,7 +6783,7 @@ ul.post-meta li a:hover {
 }
 
 #portfolio-list li .portfolio-item-content {
-    background: rgba(248, 186, 1, 0.9);
+    background: rgba(10, 61, 115, 0.78);
 }
 
 .services-3-icon i {
