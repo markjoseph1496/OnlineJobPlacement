@@ -7,7 +7,7 @@ include('connection.php');
 <head>
 
     <!-- Basic -->
-    <title>OJPMS</title>
+    <title>OJPMS | Registration</title>
 
     <!-- Define Charset -->
     <meta charset="utf-8">
