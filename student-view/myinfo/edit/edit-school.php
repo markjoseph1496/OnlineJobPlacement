@@ -16,11 +16,17 @@ if (isset($_SESSION['StudentID'])) {
 $EditSchoolID = $_GET['id'];
 $school_tbl =
     GSecureSQL::query(
-        "SELECT * FROM schooltbl WHERE SchoolID = ?",
+        "SELECT * FROM schooltbl WHERE SchoolID = ? AND `StudentID` = ?",
         TRUE,
-        "s",
-        $EditSchoolID
+        "ss",
+        $EditSchoolID,
+        $_SESSION['StudentID']
     );
+
+if(!count($school_tbl[0])){
+    header("Location: ../education.php?error");
+    die();
+}
 $SchoolID = $school_tbl[0][0];
 $StudentID = $school_tbl[0][1];
 $School = $school_tbl[0][2];
@@ -327,7 +333,7 @@ $MajorCourse = $course_qry[0][0];
                             <div class="col-md-3">
                                 <div class="form-group">
                                     <label>From</label>
-                                    <select id="GraduatedYearTo" name="GraduatedYearTo" class="form-control"
+                                    <select id="GraduatedYearFrom" name="GraduatedYearFrom" class="form-control"
                                             style="width:100%; height:34px;">
                                         <option value="">- Year -</option>
                                         <?php
@@ -347,7 +353,7 @@ $MajorCourse = $course_qry[0][0];
                                             style="width:100%; height:34px;">
                                         <option value="">- Year -</option>
                                         <?php
-                                        $date = Date("Y") + 1;
+                                        $date = Date("Y") + 15;
                                         while ($date != 1935) {
                                             $date--;
                                             if ($date == $choose) {
@@ -420,7 +426,7 @@ $MajorCourse = $course_qry[0][0];
 
 
     $(document).ready(function () {
-        var validator = $("#AddSchool").bootstrapValidator({
+        var validator = $("#EditSchool").bootstrapValidator({
             feedbackIcons: {
                 valid: "glyphicon glyphicon-ok",
                 invalid: "glyphicon glyphicon-remove",
@@ -464,7 +470,7 @@ $MajorCourse = $course_qry[0][0];
                 GraduatedYearFrom: {
                     validators: {
                         notEmpty: {
-                            message: "Month graduated is required."
+                            message: "Year graduated is required."
                         }
                     }
                 },

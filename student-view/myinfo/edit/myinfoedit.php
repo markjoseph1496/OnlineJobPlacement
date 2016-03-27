@@ -14,6 +14,49 @@ if (isset($_GET['School'])) {
     $GraduatedYear = $_GET['GraduatedYear'];
     $Graduation = $GraduatedMonth . " " . $GraduatedYear;
 
+    $a = $Attainment == "High School Diploma";
+    $a = $a || $Attainment == "Technical Vocational/Certificate";
+    $a = $a || $Attainment == "Bachelor's/College Degree";
+    $a = $a || $Attainment == "Post Graduate Diploma/Master's Degree";
+    $a = $a || $Attainment == "Professional License (Passed Board/Bar/Professional License Exam)";
+    $a = $a || $Attainment == "Doctorate Degree";
+
+    if(!$a){
+        header("location: edit-school.php?id=" . $_GET['SchoolID']);
+        die();
+    }
+
+    if($Attainment != "High School Diploma"){
+        $course_valid = GSecureSQL::query(
+            "SELECT COUNT(*) AS `Count` FROM `coursetbl` WHERE `CourseCode` = ?", TRUE, "s", $Course
+        );
+
+        if($course_valid[0][0] == 0){
+            header("location: edit-school.php?id=" . $_GET['SchoolID']);
+            die();
+        }
+    }
+
+    $a = FALSE;
+    $b = FALSE;
+    $date = Date("Y") + 15;
+    while ($date != 1935) {
+        $date--;
+        $a = $a || $_GET['GraduatedYearFrom'] == $date;
+        $b = $b || $_GET['GraduatedYearTo'] == $date;
+    }
+
+    if(!$a || !$b){
+        header("location: edit-school.php?id=" . $_GET['SchoolID'] . "&error");
+        die();
+    }
+
+    if(strlen($_GET['School']) === 0){
+        header("location: edit-school.php?id=" . $_GET['SchoolID'] . "&error");
+        die();
+    }
+
+
 
     GSecureSQL::query(
         "UPDATE schooltbl SET School = ?, Attainment =?, Course = ?, Graduated = ? WHERE SchoolID = ? AND StudentID = ?",
