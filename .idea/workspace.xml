@@ -28,21 +28,21 @@
       <file leaf-file-name="index.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/index.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.61119294">
-              <caret line="346" column="73" selection-start-line="346" selection-start-column="73" selection-end-line="346" selection-end-column="73" />
+            <state vertical-scroll-proportion="0.25478646">
+              <caret line="329" column="40" selection-start-line="329" selection-start-column="40" selection-end-line="329" selection-end-column="40" />
               <folding>
-                <marker date="1459048135028" expanded="true" signature="84:150" placeholder="SELECT * FRO... admineventtbl" />
-                <marker date="1459048135028" expanded="true" signature="9336:9366" placeholder="SELECT * FRO... listofindustrytbl" />
-                <marker date="1459048135028" expanded="true" signature="9336:9413" placeholder="SELECT DISTI... companyinfotbl" />
-                <marker date="1459048135028" expanded="true" signature="10669:10717" placeholder="SELECT * FRO... listofspecializationtbl" />
-                <marker date="1459048135028" expanded="true" signature="11608:11657" placeholder="SELECT * FRO... listofspecializationtbl" />
-                <marker date="1459048135028" expanded="true" signature="12601:12670" placeholder="SELECT DISTI... companyinfotbl" />
-                <marker date="1459048135028" expanded="true" signature="13019:13043" placeholder="SELECT COUNT... table_name" />
-                <marker date="1459048135028" expanded="true" signature="13019:13072" placeholder="SELECT COUNT... companyinfotbl" />
-                <marker date="1459048135028" expanded="true" signature="14805:15165" placeholder="SELECT compp... listofspecializationtbl" />
-                <marker date="1459048135028" expanded="true" signature="14805:15239" placeholder="SELECT Posit... comppositiontbl" />
-                <marker date="1459048135028" expanded="true" signature="15825:15883" placeholder="SELECT Compa... companyinfotbl" />
-                <marker date="1459048135028" expanded="true" signature="18442:18492" placeholder="SELECT Event... admineventtbl" />
+                <marker date="1459050664963" expanded="true" signature="84:150" placeholder="SELECT * FRO... admineventtbl" />
+                <marker date="1459050664963" expanded="true" signature="9336:9366" placeholder="SELECT * FRO... listofindustrytbl" />
+                <marker date="1459050664963" expanded="true" signature="9336:9413" placeholder="SELECT DISTI... companyinfotbl" />
+                <marker date="1459050664963" expanded="true" signature="10669:10717" placeholder="SELECT * FRO... listofspecializationtbl" />
+                <marker date="1459050664963" expanded="true" signature="11608:11657" placeholder="SELECT * FRO... listofspecializationtbl" />
+                <marker date="1459050664963" expanded="true" signature="12601:12670" placeholder="SELECT DISTI... companyinfotbl" />
+                <marker date="1459050664963" expanded="true" signature="13019:13043" placeholder="SELECT COUNT... table_name" />
+                <marker date="1459050664963" expanded="true" signature="13019:13072" placeholder="SELECT COUNT... companyinfotbl" />
+                <marker date="1459050664963" expanded="true" signature="14813:15173" placeholder="SELECT compp... listofspecializationtbl" />
+                <marker date="1459050664963" expanded="true" signature="14813:15247" placeholder="SELECT Posit... comppositiontbl" />
+                <marker date="1459050664963" expanded="true" signature="15833:15891" placeholder="SELECT Compa... companyinfotbl" />
+                <marker date="1459050664963" expanded="true" signature="18819:18869" placeholder="SELECT Event... admineventtbl" />
               </folding>
             </state>
           </provider>
@@ -319,12 +319,6 @@
       <created>1451894355130</created>
       <option name="number" value="Default" />
       <updated>1451894355130</updated>
-    </task>
-    <task id="LOCAL-00204" summary="POLISHING">
-      <created>1456150085495</created>
-      <option name="number" value="00204" />
-      <option name="project" value="LOCAL" />
-      <updated>1456150085495</updated>
     </task>
     <task id="LOCAL-00205" summary="POLISHING">
       <created>1456151096649</created>
@@ -614,7 +608,13 @@
       <option name="project" value="LOCAL" />
       <updated>1458997406684</updated>
     </task>
-    <option name="localTasksCounter" value="253" />
+    <task id="LOCAL-00253" summary="Polishing">
+      <created>1459049209234</created>
+      <option name="number" value="00253" />
+      <option name="project" value="LOCAL" />
+      <updated>1459049209236</updated>
+    </task>
+    <option name="localTasksCounter" value="254" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -623,6 +623,7 @@
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.199375" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32985657" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32724902" sideWeight="0.505" order="10" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32724902" sideWeight="0.495" order="7" side_tool="false" content_ui="tabs" />
@@ -630,7 +631,6 @@
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32985657" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Command Line Tools Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32985657" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
@@ -1150,21 +1150,21 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/index.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.61119294">
-          <caret line="346" column="73" selection-start-line="346" selection-start-column="73" selection-end-line="346" selection-end-column="73" />
+        <state vertical-scroll-proportion="0.25478646">
+          <caret line="329" column="40" selection-start-line="329" selection-start-column="40" selection-end-line="329" selection-end-column="40" />
           <folding>
-            <marker date="1459048135028" expanded="true" signature="84:150" placeholder="SELECT * FRO... admineventtbl" />
-            <marker date="1459048135028" expanded="true" signature="9336:9366" placeholder="SELECT * FRO... listofindustrytbl" />
-            <marker date="1459048135028" expanded="true" signature="9336:9413" placeholder="SELECT DISTI... companyinfotbl" />
-            <marker date="1459048135028" expanded="true" signature="10669:10717" placeholder="SELECT * FRO... listofspecializationtbl" />
-            <marker date="1459048135028" expanded="true" signature="11608:11657" placeholder="SELECT * FRO... listofspecializationtbl" />
-            <marker date="1459048135028" expanded="true" signature="12601:12670" placeholder="SELECT DISTI... companyinfotbl" />
-            <marker date="1459048135028" expanded="true" signature="13019:13043" placeholder="SELECT COUNT... table_name" />
-            <marker date="1459048135028" expanded="true" signature="13019:13072" placeholder="SELECT COUNT... companyinfotbl" />
-            <marker date="1459048135028" expanded="true" signature="14805:15165" placeholder="SELECT compp... listofspecializationtbl" />
-            <marker date="1459048135028" expanded="true" signature="14805:15239" placeholder="SELECT Posit... comppositiontbl" />
-            <marker date="1459048135028" expanded="true" signature="15825:15883" placeholder="SELECT Compa... companyinfotbl" />
-            <marker date="1459048135028" expanded="true" signature="18442:18492" placeholder="SELECT Event... admineventtbl" />
+            <marker date="1459050664963" expanded="true" signature="84:150" placeholder="SELECT * FRO... admineventtbl" />
+            <marker date="1459050664963" expanded="true" signature="9336:9366" placeholder="SELECT * FRO... listofindustrytbl" />
+            <marker date="1459050664963" expanded="true" signature="9336:9413" placeholder="SELECT DISTI... companyinfotbl" />
+            <marker date="1459050664963" expanded="true" signature="10669:10717" placeholder="SELECT * FRO... listofspecializationtbl" />
+            <marker date="1459050664963" expanded="true" signature="11608:11657" placeholder="SELECT * FRO... listofspecializationtbl" />
+            <marker date="1459050664963" expanded="true" signature="12601:12670" placeholder="SELECT DISTI... companyinfotbl" />
+            <marker date="1459050664963" expanded="true" signature="13019:13043" placeholder="SELECT COUNT... table_name" />
+            <marker date="1459050664963" expanded="true" signature="13019:13072" placeholder="SELECT COUNT... companyinfotbl" />
+            <marker date="1459050664963" expanded="true" signature="14813:15173" placeholder="SELECT compp... listofspecializationtbl" />
+            <marker date="1459050664963" expanded="true" signature="14813:15247" placeholder="SELECT Posit... comppositiontbl" />
+            <marker date="1459050664963" expanded="true" signature="15833:15891" placeholder="SELECT Compa... companyinfotbl" />
+            <marker date="1459050664963" expanded="true" signature="18819:18869" placeholder="SELECT Event... admineventtbl" />
           </folding>
         </state>
       </provider>

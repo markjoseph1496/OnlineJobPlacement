@@ -324,14 +324,14 @@ $adminevent_tbl =
                     <div class="plan-price">
                         <div class="row">
                             <div class="col-md-6">
-                                <button href="#" class="btn-system btn-mini border-btn btn-gray">Refresh</button>
+                                <button id="btnRefresh" class="btn-system btn-mini border-btn btn-gray">Refresh</button>
                             </div>
                             <div class="col-md-6">
-                                <button href="#" class="btn-system btn-mini border-btn">View More</button>
+                                <button class="btn-system btn-mini border-btn">View More</button>
                             </div>
                         </div>
                     </div>
-                    <div class="plan-list">
+                    <div class="plan-list" id="Jobs">
                         <ul>
                             <?php
                             $JCount = 0;
@@ -397,6 +397,16 @@ $adminevent_tbl =
 
                         </ul>
                     </div>
+                    <script>
+                        $(document).ready(function () {
+
+                            function RefreshTable() {
+                                $("#Jobs").load("index.php #Jobs");
+                            }
+
+                            $("#btnRefresh").on("click", RefreshTable);
+                        });
+                    </script>
                     <div class="plan-signup">
                         &nbsp;
                     </div>
