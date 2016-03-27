@@ -324,32 +324,89 @@ $adminevent_tbl =
                     <div class="plan-price">
                         <div class="row">
                             <div class="col-md-6">
-                                <button href="#" class="btn-system btn-mini border-btn btn-gray">Refresh</button>
+                                <button id="btnRefresh" class="btn-system btn-mini border-btn btn-gray">Refresh</button>
                             </div>
                             <div class="col-md-6">
-                                <button href="#" class="btn-system btn-mini border-btn">View More</button>
+                                <button class="btn-system btn-mini border-btn">View More</button>
                             </div>
                         </div>
                     </div>
-                    <div class="plan-list">
+                    <div class="plan-list" id="Jobs">
                         <ul>
-                            <li><strong><a href="">ONLINE English Educator (Part-time Home-based)</a></strong>
-                                <div class="interval">Posted By: 51Talk</div>
-                            </li>
-                            <li><strong><a href="">ONLINE English Educator (Part-time Home-based)</a></strong>
-                                <div class="interval">Posted By: 51Talk</div>
-                            </li>
-                            <li><strong><a href="">ONLINE English Educator (Part-time Home-based)</a></strong>
-                                <div class="interval">Posted By: 51Talk</div>
-                            </li>
-                            <li><strong><a href="">ONLINE English Educator (Part-time Home-based)</a></strong>
-                                <div class="interval">Posted By: 51Talk</div>
-                            </li>
-                            <li><strong><a href="">ONLINE English Educator (Part-time Home-based)</a></strong>
-                                <div class="interval">Posted By: 51Talk</div>
-                            </li>
+                            <?php
+                            $JCount = 0;
+                            $compposition_tbl =
+                                GSecureSQL::query(
+                                    "SELECT
+                                            PositionID,
+                                            CompanyID,
+                                            PostingDateFrom,
+                                            PostingDateTo,
+                                            PositionTitle
+                                            FROM comppositiontbl
+                                            ORDER BY PostingDateFrom DESC",
+                                    TRUE
+                                );
+                            foreach ($compposition_tbl as $value) {
+                                $PositionID = $value[0];
+                                $CompanyID = $value[1];
+                                $PostingDateFrom = $value[2];
+                                $PostingDateTo = $value[3];
+                                $PositionTitle = $value[4];
+
+                                $company_tbl =
+                                    GSecureSQL::query(
+                                        "SELECT CompanyName FROM companyinfotbl WHERE CompanyID = ?",
+                                        TRUE,
+                                        "s",
+                                        $CompanyID
+                                    );
+                                foreach ($company_tbl as $value1) {
+                                    $CompanyName = $value1[0];
+
+                                    $diff_from = date_diff(new DateTime(), new DateTime($PostingDateFrom));
+                                    $diff_to = date_diff(new DateTime(), new DateTime($PostingDateTo));
+
+                                    if ($diff_to->d == 0) {
+                                        $diff_to->invert = 0;
+                                    }
+
+                                    $a = $diff_from->y >= 0 &&
+                                        $diff_from->m >= 0 &&
+                                        $diff_from->d >= 0 &&
+                                        $diff_from->invert == 1;
+
+                                    $b = $diff_to->y >= 0 &&
+                                        $diff_to->m >= 0 &&
+                                        $diff_to->d >= 0 &&
+                                        $diff_to->invert == 0;
+
+                                    if ($a && $b) {
+                                        $JCount++;
+                                        if ($JCount <= 5) {
+                                            ?>
+                                            <li><strong><a href=""><?php echo $PositionTitle; ?></a></strong>
+                                                <div class="interval">Posted By: <?php echo $CompanyName; ?></div>
+                                            </li>
+                                            <?php
+                                        }
+                                    }
+                                }
+                            }
+                            ?>
+
                         </ul>
                     </div>
+                    <script>
+                        $(document).ready(function () {
+
+                            function RefreshTable() {
+                                $("#Jobs").load("index.php #Jobs");
+                            }
+
+                            $("#btnRefresh").on("click", RefreshTable);
+                        });
+                    </script>
                     <div class="plan-signup">
                         &nbsp;
                     </div>
