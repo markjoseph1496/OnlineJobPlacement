@@ -435,7 +435,7 @@ if($References == "ok"){
                                     <div class="classic-testimonials">
                                         <div class="testimonial-content">
                                             <label>Objectives <span>(*)</span></label>
-                                            <textarea class="form-control" id="Objective" name="Objective" rows="7" maxlength="300" required><?php echo $Objectives; ?></textarea>
+                                            <textarea class="form-control" id="Objective" name="Objective" rows="7" maxlength="300" required><?php echo htmlspecialchars($Objectives); ?></textarea>
                                             <div id="textarea_feedback"></div>
                                         </div>
                                         <div class="testimonial-author">

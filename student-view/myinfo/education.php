@@ -536,7 +536,7 @@ if($References == "ok"){
                                 <tr>
                                     <td><?php echo $School; ?></td>
                                     <td><?php echo $Attainment; ?></td>
-                                    <td><?php echo $Course; ?></td>
+                                    <td><?php echo htmlspecialchars($Course); ?></td>
                                     <td><?php echo $Graduated; ?></td>
                                     <td class="text-center">
                                         <a href="edit/edit-school.php?id=<?php echo $SchoolID; ?>"
@@ -613,7 +613,7 @@ if($References == "ok"){
                                 <tr>
                                     <td><?php echo $_School; ?></td>
                                     <td><?php echo $_Attainment; ?></td>
-                                    <td><?php echo $_Course; ?></td>
+                                    <td><?php echo htmlspecialchars($_Course); ?></td>
                                     <td><?php echo $_Graduated; ?></td>
                                     <td class="text-center">
                                         <a href="edit/edit-school.php?id=<?php echo $_SchoolID; ?>"

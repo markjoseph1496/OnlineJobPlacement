@@ -372,8 +372,8 @@ $MajorCourse = $course_qry[0][0];
                                 message: "This field is required."
                             },
                             regexp: {
-                                    regexp: /^[0-9]+$/i,
-                                    message: "Phone number can consist of numeric characters only."
+                                    regexp: /(^(0(9(05|06|07|08|09|10|11|12|13|14|15|16|17|18|19|20|21|22|23|24|25|26|27|28|29|30|32|33|34|35|36|37|38|39|42|43|46|47|48|49|75|77|89|94|96|97|98)[0-9]{7}|[0-8][0-9]{5})|[1-9][0-9]{6})$|^$)/,
+                                    message: "Invalid Phone Number."
                             }
                         }
                     },

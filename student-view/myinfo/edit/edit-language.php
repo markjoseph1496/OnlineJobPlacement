@@ -24,6 +24,8 @@ $language_tbl =
     );
 
     $Language = $language_tbl[0][2];
+    $wp = $language_tbl[0][3];
+    $sp = $language_tbl[0][4];
 
 $infoquery =
     GSecureSQL::query(
@@ -240,22 +242,36 @@ $MajorCourse = $course_qry[0][0];
                     <!-- Page Content -->
                     <div class="col-md-9 page-content">
                         <div class="row">
-                            <div class="col-md-6">
+                            <div class="col-md-4">
                                 <div class="</-group">
                                     <label>Language <span>(*)</span></label>
                                     <input type="text" class="form-control" id="Language" name="Language" value="<?php echo $Language; ?>">
                                 </div>
                             </div>
-                            <div class="col-md-6">
+                            <div class="col-md-4">
                                 <div class="form-group">
-                                    <label>Proficiency <span>(*)</span></label>
+                                    <label>Written Proficiency <span>(*)</span></label>
                                     <div class="text-center">
                                         <fieldset class="rating">
-                                            <input type="radio" id="star5" name="rating" value="5" /><label class = "full" for="star5" title="Excellent - 5 stars"></label>
-                                            <input type="radio" id="star4" name="rating" value="4" /><label class = "full" for="star4" title="Good - 4 stars"></label>
-                                            <input type="radio" id="star3" name="rating" value="3" /><label class = "full" for="star3" title="Meh - 3 stars"></label>
-                                            <input type="radio" id="star2" name="rating" value="2" /><label class = "full" for="star2" title="Poor - 2 stars"></label>
-                                            <input type="radio" id="star1" name="rating" value="1" /><label class = "full" for="star1" title="Awful - 1 star"></label>
+                                            <input type="radio" id="wstar5" name="WrittenProficiency" value="5" <?php echo $wp == 5 ? 'checked' : ''; ?>/><label class = "full" for="wstar5" title="Excellent - 5 stars"></label>
+                                            <input type="radio" id="wstar4" name="WrittenProficiency" value="4" <?php echo $wp == 4 ? 'checked' : ''; ?>/><label class = "full" for="wstar4" title="Good - 4 stars"></label>
+                                            <input type="radio" id="wstar3" name="WrittenProficiency" value="3" <?php echo $wp == 3 ? 'checked' : ''; ?>/><label class = "full" for="wstar3" title="Meh - 3 stars"></label>
+                                            <input type="radio" id="wstar2" name="WrittenProficiency" value="2" <?php echo $wp == 2 ? 'checked' : ''; ?>/><label class = "full" for="wstar2" title="Poor - 2 stars"></label>
+                                            <input type="radio" id="wstar1" name="WrittenProficiency" value="1" <?php echo $wp == 1 ? 'checked' : ''; ?>/><label class = "full" for="wstar1" title="Awful - 1 star"></label>
+                                        </fieldset>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    <label>Spoken Proficiency <span>(*)</span></label>
+                                    <div class="text-center">
+                                        <fieldset class="rating">
+                                            <input type="radio" id="sstar5" name="SpokenProficiency" value="5" <?php echo $sp == 5 ? 'checked' : ''; ?>/><label class = "full" for="sstar5" title="Excellent - 5 stars"></label>
+                                            <input type="radio" id="sstar4" name="SpokenProficiency" value="4" <?php echo $sp == 4 ? 'checked' : ''; ?>/><label class = "full" for="sstar4" title="Good - 4 stars"></label>
+                                            <input type="radio" id="sstar3" name="SpokenProficiency" value="3" <?php echo $sp == 3 ? 'checked' : ''; ?>/><label class = "full" for="sstar3" title="Meh - 3 stars"></label>
+                                            <input type="radio" id="sstar2" name="SpokenProficiency" value="2" <?php echo $sp == 2 ? 'checked' : ''; ?>/><label class = "full" for="sstar2" title="Poor - 2 stars"></label>
+                                            <input type="radio" id="sstar1" name="SpokenProficiency" value="1" <?php echo $sp == 1 ? 'checked' : ''; ?>/><label class = "full" for="sstar1" title="Awful - 1 star"></label>
                                         </fieldset>
                                     </div>
                                 </div>
@@ -277,7 +293,7 @@ $MajorCourse = $course_qry[0][0];
                 <div class="field">
                     <div class="text-center">
                         <button type="submit" class="btn-system btn-large" name="btnSave">Save</button>
-                        <a href="../specialization-and-languages.php" class="btn-system btn-large btn-black">Cancel</a>
+                        <a href="../skills-and-languages.php" class="btn-system btn-large btn-black">Cancel</a>
                     </div>
                 </div>
             </div>

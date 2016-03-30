@@ -314,7 +314,7 @@ $MajorCourse = $course_qry[0][0];
 </html>
 <script type="text/javascript">
     $(document).ready(function () {
-            var validator = $("#form").bootstrapValidator({
+            var validator = $("#forma").bootstrapValidator({
                 feedbackIcons:{
                     valid: "glyphicon glyphicon-ok",
                     invalid: "glyphicon glyphicon-remove",

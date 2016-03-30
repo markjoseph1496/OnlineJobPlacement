@@ -332,6 +332,11 @@ $MajorCourse = $course_qry[0][0];
                         <div class="row">
                             <div class="col-md-3">
                                 <div class="form-group">
+                                    <?php
+                                    $g = explode(' - ', $school_tbl[0][5]);
+                                    $gyf = $g[0];
+                                    $gyt = $g[1];
+                                    ?>
                                     <label>From</label>
                                     <select id="GraduatedYearFrom" name="GraduatedYearFrom" class="form-control"
                                             style="width:100%; height:34px;">
@@ -340,7 +345,11 @@ $MajorCourse = $course_qry[0][0];
                                         $date = Date("Y") + 1;
                                         while ($date != 1935) {
                                             $date--;
-                                            echo "<option value='$date'> $date</option>";
+                                            if($gyf == $date){
+                                                echo "<option value='$date' selected> $date</option>";
+                                            }else{
+                                                echo "<option value='$date'> $date</option>";
+                                            }
                                         }
                                         ?>
                                     </select>
@@ -356,9 +365,9 @@ $MajorCourse = $course_qry[0][0];
                                         $date = Date("Y") + 15;
                                         while ($date != 1935) {
                                             $date--;
-                                            if ($date == $choose) {
-                                                echo "<option selected value='$date'> $date</option>";
-                                            } else {
+                                            if($gyt == $date){
+                                                echo "<option value='$date' selected> $date</option>";
+                                            }else{
                                                 echo "<option value='$date'> $date</option>";
                                             }
                                         }
