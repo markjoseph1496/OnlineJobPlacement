@@ -82,7 +82,7 @@ if (isset($_GET['School'])) {
         $StudentID
     );
 
-    header("location: ../education.php?id=4");
+    header("location: ../education.php?saved");
 
 }
 
@@ -124,7 +124,7 @@ if (isset($_GET['Seminar'])) {
         $StudentID
     );
 
-    header("location: ../education.php?id=5");
+    header("location: ../education.php?saved");
 
 }
 
@@ -166,7 +166,7 @@ if (isset($_GET['Certification'])) {
         $StudentID
     );
 
-    header("location: ../certifications.php?id=2");
+    header("location: ../certifications.php?saved");
 
 }
 
@@ -194,7 +194,7 @@ if (isset($_GET['Achievement'])) {
         $StudentID
     );
 
-    header("location: ../achievements.php?id=2");
+    header("location: ../achievements.php?saved");
 
 }
 if (isset($_GET['Name'])) {
@@ -264,7 +264,7 @@ if (isset($_GET['Name'])) {
         $StudentID
     );
 
-    header("location: ../references.php?id=2");
+    header("location: ../references.php?saved");
 
 }
 if (isset($_POST['Skill'])) {
@@ -306,7 +306,7 @@ if (isset($_POST['Skill'])) {
         $StudentID
     );
 
-    header("location: ../skills-and-languages.php?id=2");
+    header("location: ../skills-and-languages.php?saved");
 
 }
 
@@ -349,7 +349,7 @@ if (isset($_POST['Language'])) {
         $StudentID
     );
 
-    header("location: ../skills-and-languages.php?id=5");
+    header("location: ../skills-and-languages.php?saved");
 
 }
 if (isset($_POST['CompanyName'])) {
@@ -441,6 +441,6 @@ if (isset($_POST['CompanyName'])) {
         $StudentID
     );
 
-    header("location: ../work.php?id=1");
+    header("location: ../work.php?saved");
 
 }

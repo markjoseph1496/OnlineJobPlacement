@@ -408,7 +408,7 @@ if ($References == "ok") {
                     echo '
                         <div class="alert alert-success fade in" id="success-alert">
                             <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
-                            <strong><span class="fa fa-info-circle"></span> Personal Information successfully updated.</strong>
+                            <strong><span class="fa fa-info-circle"></span> Information successfully updated.</strong>
                         </div>
                         ';
                 }
