@@ -1,0 +1,9 @@
+RewriteEngine On
+
+RewriteRule ^home?$ index.php
+RewriteRule ^login-student?$ login-student.php
+RewriteRule ^login-company?$ login-company.php
+RewriteRule ^adminlogin?$ login-admin.php
+RewriteRule ^adviserlogin?$ login-adviser.php
+RewriteRule ^register?$ registration.php
+RewriteRule ^job-openings?$ jobs.php
