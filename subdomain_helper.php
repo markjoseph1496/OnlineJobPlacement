@@ -6,7 +6,7 @@ function create_subdomain($subDomain,$cPanelUser,$cPanelPass,$rootDomain) {
 
 	$buildRequest = "/frontend/x3/subdomain/doadddomain.html?rootdomain=" . $rootDomain . "&domain=" . $subDomain . "&dir=public_html/subdomains/" . $subDomain;
 
-	$openSocket = fsockopen('mysql.hostinger.ph',2082);
+	$openSocket = fsockopen('teachermanagementsystem.com',80);
 	if(!$openSocket) {
 		return "Socket error";
 		exit();
