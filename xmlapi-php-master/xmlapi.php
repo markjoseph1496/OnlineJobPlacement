@@ -135,7 +135,7 @@ class xmlapi
     private $debug			= false;
 
     // The host to connect to
-    private $host				=	'31.220.110.19';
+    private $host				=	'server27.hostinger.ph';
 
     // the port to connect to
     private $port				=	'2087';

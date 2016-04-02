@@ -4,7 +4,7 @@ include('xmlapi-php-master/xmlapi.php');
 
 $cpanelusr = 'judeecaballero@gmail.com';
 $cpanelpass = 'judeelovejesus';
-$xmlapi = new xmlapi('31.220.110.19');
+$xmlapi = new xmlapi('server27.hostinger.ph');
 $xmlapi->set_port( 2083 );
 $xmlapi->password_auth($cpanelusr,$cpanelpass);
 $xmlapi->set_debug(0); //output actions in the error log 1 for true and 0 false
