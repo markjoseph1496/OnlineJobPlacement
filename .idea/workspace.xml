@@ -6,8 +6,6 @@
   <component name="ChangeListManager">
     <list default="true" id="d999e893-f739-4a68-b7b0-034239dfb77e" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test.php" afterPath="$PROJECT_DIR$/test.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/xmlapi-php-master/xmlapi.php" afterPath="$PROJECT_DIR$/xmlapi-php-master/xmlapi.php" />
     </list>
     <ignored path="OnlineJobPlacement.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -530,12 +528,6 @@
       <option name="number" value="Default" />
       <updated>1451894355130</updated>
     </task>
-    <task id="LOCAL-00224" summary="Polishing">
-      <created>1456215910878</created>
-      <option name="number" value="00224" />
-      <option name="project" value="LOCAL" />
-      <updated>1456215910878</updated>
-    </task>
     <task id="LOCAL-00225" summary="Polishing">
       <created>1456218414944</created>
       <option name="number" value="00225" />
@@ -824,7 +816,13 @@
       <option name="project" value="LOCAL" />
       <updated>1459603108385</updated>
     </task>
-    <option name="localTasksCounter" value="273" />
+    <task id="LOCAL-00273" summary="Polishing">
+      <created>1459603202560</created>
+      <option name="number" value="00273" />
+      <option name="project" value="LOCAL" />
+      <updated>1459603202561</updated>
+    </task>
+    <option name="localTasksCounter" value="274" />
     <servers />
   </component>
   <component name="ToolWindowManager">

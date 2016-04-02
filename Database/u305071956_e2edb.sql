@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50616
 File Encoding         : 65001
 
-Date: 2016-03-28 14:55:10
+Date: 2016-04-02 21:23:40
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -368,7 +368,7 @@ CREATE TABLE `languagetbl` (
   `WrittenProf` varchar(255) NOT NULL,
   `SpokenProf` varchar(255) NOT NULL,
   PRIMARY KEY (`LangID`)
-) ENGINE=MyISAM AUTO_INCREMENT=5 DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM AUTO_INCREMENT=6 DEFAULT CHARSET=latin1;
 
 -- ----------------------------
 -- Records of languagetbl
@@ -1485,7 +1485,7 @@ CREATE TABLE `studcontactstbl` (
 -- ----------------------------
 -- Records of studcontactstbl
 -- ----------------------------
-INSERT INTO studcontactstbl VALUES ('1', '00820120001', 'markjoseph1496@yahoo.com', '2890 A. Pablo St. Karuhatan, Valenzuela City', '09355585931', '', '2790201', '412412', '3442424', 'Pasay City');
+INSERT INTO studcontactstbl VALUES ('1', '00820120001', 'markjoseph1496@yahoo.com', '2890 A. Pablo St. Karuhatan, Valenzuela City', '09355585931', '', '2790201', '412412', '3442424', 'Valenzuela City');
 INSERT INTO studcontactstbl VALUES ('3', '00820120003', 'aasdsad@cs.cc', '', '09355585931', '', '', '', '', 'Valenzuela City');
 INSERT INTO studcontactstbl VALUES ('4', '00820120004', 'tristanabad55@gmail.com', '', '09239565052', '', '', '', '', 'Malabon City');
 INSERT INTO studcontactstbl VALUES ('5', '00820120005', 'binary.to.hexa@gmail.com', '', '09261788252', '', '', '', '', 'Caloocan City');
@@ -1681,7 +1681,7 @@ CREATE TABLE `studentinfotbl` (
 -- ----------------------------
 -- Records of studentinfotbl
 -- ----------------------------
-INSERT INTO studentinfotbl VALUES ('00820120001', 'b6454095efa3f85096ece699c0d9052c572ef11ff92058af5982cd57f3ae399ea7ee458a09433d7982e8979d336c54e5893459851dc5b6179c81fe065fedc674', '808a73c9742958c6714fe7fd11f2d4d244f358ced430174b01c2bc5627af40021889f813b93f8b1b76044aa54caa78a8eff95f7357891d37f451c08f7155e235', 'Mark Joseph', 'Flaviano', 'Cinco', 'Male', '1996-03-14', 'OJT', 'Single', 'Filipino', 'Employed', 'http://www.facebook.com/akodawsimacoy', '', 'ProfileImages/00820120001.jpg', 'BSCS', ' I am seeking a position in the travel industry focusing on sales, customer care and office management. Education.');
+INSERT INTO studentinfotbl VALUES ('00820120001', 'b6454095efa3f85096ece699c0d9052c572ef11ff92058af5982cd57f3ae399ea7ee458a09433d7982e8979d336c54e5893459851dc5b6179c81fe065fedc674', '808a73c9742958c6714fe7fd11f2d4d244f358ced430174b01c2bc5627af40021889f813b93f8b1b76044aa54caa78a8eff95f7357891d37f451c08f7155e235', 'Mark Joseph', 'Flaviano', 'Cinco', 'Male', '1996-03-14', 'OJT', 'Single', 'Filipino', 'Employed', 'http://www.facebook.com/akodawsimacoy', '', 'ProfileImages/00820120001.jpg', 'BSCS', 'My Object is a blank space in the outer space that cannot space because the spacebar is missing.');
 INSERT INTO studentinfotbl VALUES ('00820120003', 'daa84497905fe6e26a872cfd699b36b3af689335652d5413e1005bebd6e867f23dad79318efe22dce702c5de70abc1f07f00968001a8ea9664f54fb038140850', '20d7c6e44a2467e1609014c24a31faae35a31aa413338b14f48225141e1aa5679ab2573c5be38b84122913dc6657ebb62d3974a44a7a21f62b7892d1d5e45b12', 'Testing', '', 'Testing', '', '0123-01-01', '', '', '', 'Unemployed', '', '', '', 'BSAT', '');
 INSERT INTO studentinfotbl VALUES ('00820120004', '3d8fd53015c9929dd24e29958d0a939ba5dff8d18f6335138f48d74312df1ac316173f11585b72295067ca57c58d9aa412b6a95c4a09fde4466dc4c2b2caf24e', 'fc914918a09a5e3fb1948c2c677854a3c01e35cc9f29728b4ba9833f0e16c0617a9025d9ee089216c644ab72a52d9000f0a4208fac8777a69e226fb4d7881d8a', 'Tristan', 'adasd', 'Abad', 'Male', '1996-10-31', '', 'Single', 'Filipino', 'Employed', 'http://www.facebook.com/adsadsf', 'sfsdfs', '', 'ASCT', '');
 INSERT INTO studentinfotbl VALUES ('00820120005', 'c2a4eff2f75be4b01d85d3efffaa9c5334a70744f7670c10b6daf3d672cfc7dfaaf1c9e40b6e33b593195017f7d8e714959ad60f18ab77ad7a600c8b2fb002eb', 'da85b1e23a09aad2b4d21695773a6eca951913f20b0288e1b8086c6fc49b31aa77e3bf7fccb25fb6438ae6088ec930e1eb805923fb07f28ef28e7825891b8c4b', 'Mark Anthony', '', 'Abenoja', '', '1988-06-27', '', '', '', 'Employed', '', '', '', 'ASCT', '');
@@ -1855,15 +1855,19 @@ CREATE TABLE `studnotificationtbl` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `StudentID` varchar(255) NOT NULL,
   `Message` varchar(255) NOT NULL,
-  `From` varchar(255) NOT NULL,
+  `_From` varchar(255) NOT NULL,
   `_Date` varchar(255) NOT NULL,
-  `Status` varchar(255) NOT NULL,
+  `Time` varchar(255) NOT NULL,
+  `Seen` int(1) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
 
 -- ----------------------------
 -- Records of studnotificationtbl
 -- ----------------------------
+INSERT INTO studnotificationtbl VALUES ('1', '00820120001', 'testing lamang ito', 'OJPMS', '04/02/2016', '09:45PM', '1');
+INSERT INTO studnotificationtbl VALUES ('2', '00820120001', 'testing ulit to', 'OJPMS', '04/02/2016', '09:43PM', '1');
+INSERT INTO studnotificationtbl VALUES ('3', '00820120002', 'testing', 'OJPMS', '04/02/2016', '09:42PM', '0');
 
 -- ----------------------------
 -- Table structure for `urltbl`
@@ -1907,8 +1911,6 @@ CREATE TABLE `workexperiencetbl` (
 -- ----------------------------
 -- Records of workexperiencetbl
 -- ----------------------------
-INSERT INTO workexperiencetbl VALUES ('3', '00820120001', 'dfgd', 'http://gg.bb', 'Advertising / Marketing / Promotion / PR', 'Costing Management', '02', '1998', '', 'Current', 'mmm', 'Manager', '3', 'Maglalaro', '2890 A. Pablo st. Karuhatan, Valenzuela City');
-INSERT INTO workexperiencetbl VALUES ('4', '00820120001', 'hvhv', 'http://vvh.hh', 'Aerospace / Aviation / Airline', 'Customer Service', '01', '2004', '03', '2007', 'vhv', 'Senior Manager', '5', '', '');
 INSERT INTO workexperiencetbl VALUES ('5', '00820120004', 'gyeyryregre', 'http://ss.mm', 'Apparel / Fashion', 'Arts and Design', '03', '2002', '', 'Current', 'feterehrhre', 'Manager', '3', '', '');
 INSERT INTO workexperiencetbl VALUES ('6', '00820120004', 'etertrehyrth', 'http://nn.jjj', 'Arts / Design', 'Customer Service (Technical)', '03', '2002', '', 'Current', 'grhgre', 'Sernior Executive / Supervisor', '3', '', '');
 INSERT INTO workexperiencetbl VALUES ('7', '00820120065', 'aq2e2ae', 'http://ll.ll', 'Advertising / Marketing / Promotion / PR', 'Customer Service', '02', '2001', '02', '2006', '', 'Senior Manager', '3', '', '');
@@ -2259,4 +2261,3 @@ INSERT INTO workexperiencetbl VALUES ('351', '00820120123', 'sdfgsg', 'http://pp
 INSERT INTO workexperiencetbl VALUES ('352', '00820120122', 'awd', 'http://ll.ll', 'Architectural Services / Interior Designing', 'BPO/Call Center', '04', '2007', '06', '2016', '', 'Senior Manager', '4', '', '');
 INSERT INTO workexperiencetbl VALUES ('353', '00820120122', 'awdwadwa', 'http://ll.ll', 'Banking / Financial Services', 'Arts/Creative/Graphics Design', '05', '2012', '', 'Current', '', 'Sernior Executive / Supervisor', '6', '', '');
 INSERT INTO workexperiencetbl VALUES ('354', '00820120122', 'wadawdwad', 'http://ll.ll', 'Commodities Production / Distribution', 'Biotechnology', '07', '2006', '05', '2012', '', 'Junior Executive', '4', '', '');
-INSERT INTO workexperiencetbl VALUES ('355', '00820120001', 'qwe', 'http://htasd.cc', 'Computer / Information Technology (Software)', 'Costing Management', '10', '2002', '', 'Current', 'sadasdsadas', 'Fresh / Entry Level', '5', '', '');
