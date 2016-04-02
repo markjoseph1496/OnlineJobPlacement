@@ -115,12 +115,17 @@ $adminevent_tbl =
                     <a class="page-scroll" href="#e2e">E2E</a>
                 </li>
                 <li>
+                    <a class="page-scroll" href="#ojt">OJT</a>
+                </li>
+                <li>
                     <a class="page-scroll" href="#partners">Partners</a>
                 </li>
-                <li><!-- page-promo-header-element-->
-                    <a href="#sign-in" class="page-scroll">Sign In</a>
+                <li>
+                    <a class="page-scroll" href="#links">Links</a>
                 </li>
-
+                <li><!-- page-promo-header-element-->
+                    <a class="page-scroll" href="#sign-in">Sign In</a>
+                </li>
             </ul>
         </div>
         <!-- /.navbar-collapse -->
@@ -596,11 +601,58 @@ $adminevent_tbl =
     </div>
 </section>
 
+<!-- Services Section -->
+<section id="ojt" class="bg-light-gray">
+    <div class="container">
+        <div class="col-md-3">
+            &nbsp;
+        </div>
+        <div class="col-md-6">
+            <div class="big-title text-center animated fadeInDown delay-01" data-animation="fadeInDown"
+                     data-animation-delay="01">
+                <h1><strong>OJT</strong> Process</h1>
+            </div>
+            <!-- Start Touch Slider -->
+            <div class="touch-slider" data-slider-navigation="true" data-slider-pagination="false">
+                <div class="item"><img alt="" src="images/ojt-slider/01.jpg"></div>
+                <div class="item"><img alt="" src="images/ojt-slider/02.jpg"></div>
+                <div class="item"><img alt="" src="images/ojt-slider/03.jpg"></div>
+                <div class="item"><img alt="" src="images/ojt-slider/04.jpg"></div>
+                <div class="item"><img alt="" src="images/ojt-slider/05.jpg"></div>
+                <div class="item"><img alt="" src="images/ojt-slider/06.jpg"></div>
+                <div class="item"><img alt="" src="images/ojt-slider/07.jpg"></div>
+                <div class="item"><img alt="" src="images/ojt-slider/08.jpg"></div>
+                <div class="item"><img alt="" src="images/ojt-slider/09.jpg"></div>
+                <div class="item"><img alt="" src="images/ojt-slider/10.jpg"></div>
+                <div class="item"><img alt="" src="images/ojt-slider/11.jpg"></div>
+                <div class="item"><img alt="" src="images/ojt-slider/12.jpg"></div>
+                <div class="item"><img alt="" src="images/ojt-slider/13.jpg"></div>
+                <div class="item"><img alt="" src="images/ojt-slider/14.jpg"></div>
+                <div class="item"><img alt="" src="images/ojt-slider/15.jpg"></div>
+                <div class="item"><img alt="" src="images/ojt-slider/16.jpg"></div>
+                <div class="item"><img alt="" src="images/ojt-slider/17.jpg"></div>
+                <div class="item"><img alt="" src="images/ojt-slider/18.jpg"></div>
+                <div class="item"><img alt="" src="images/ojt-slider/19.jpg"></div>
+                <div class="item"><img alt="" src="images/ojt-slider/20.jpg"></div>
+                <div class="item"><img alt="" src="images/ojt-slider/21.jpg"></div>
+                <div class="item"><img alt="" src="images/ojt-slider/22.jpg"></div>
+                <div class="item"><img alt="" src="images/ojt-slider/23.jpg"></div>
+                <div class="item"><img alt="" src="images/ojt-slider/24.jpg"></div>
+                <div class="item"><img alt="" src="images/ojt-slider/25.jpg"></div>
+            </div>
+            <!-- End Touch Slider -->
+        </div>
+        <div class="col-md-3">
+            &nbsp;
+        </div>
+    </div>
+</section>
+
 <section id="partners">
     <div class="container">
         <!-- Start Big Heading -->
         <div class="big-title text-center">
-            <h1>Our Happy <span class="accent-color">Partners</span></h1>
+            <h1>Our Happy <strong><span class="accent-color">Partners</span></strong></h1>
             <p class="title-desc">Featured Companies</p>
         </div>
         <!-- End Big Heading -->
@@ -707,6 +759,55 @@ $adminevent_tbl =
             <div class="col-md-6">
                 <label style="float:right;"><a href="for-index/other-companies.php">See Other Companies <i
                             class="fa fa-caret-right"></i></a></label>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="links">
+    <div id="content">
+        <div class="container">
+            <!-- Start Big Heading -->
+            <div class="big-title text-center">
+                <h1>For <strong><span class="accent-color">OJT</span></strong> Students</h1>
+            </div>
+            <!-- End Big Heading -->
+
+            <div class="hr5" style="margin-top:20px;margin-bottom:50px;"></div>
+            <div class="row">
+                <!-- Start Service Icon 1 -->
+                <div class="col-md-12 col-sm-6 service-box service-center">
+                    <div class="service-icon">
+                        <i style="font-size: 3em;" class="fa fa-sun-o icon-large"></i>
+                    </div>
+                    <div class="service-content">
+                        <h2>OJT Summer 2015-2016 Registration</h2>
+                    </div>
+                </div>
+                <!-- End Service Icon 1 -->
+            </div>
+            <div class="row">
+                <!-- Start Service Icon 2 -->
+                <div class="col-md-6 col-sm-6 service-box service-center">
+                    <div class="service-icon">
+                        <i style="font-size: 3em;" class="fa fa-pencil icon-large"></i>
+                    </div>
+                    <div class="service-content">
+                        <h2>Update your information sheet</h2>
+                    </div>
+                </div>
+                <!-- End Service Icon 2 -->
+
+                <!-- Start Service Icon 3 -->
+                <div class="col-md-6 col-sm-6 service-box service-center">
+                    <div class="service-icon">
+                        <i style="font-size: 3em;" class="fa fa-link icon-large"></i>
+                    </div>
+                    <div class="service-content">
+                        <h2>Link for your OJT files</h2>
+                    </div>
+                </div>
+                <!-- End Service Icon 3 -->
             </div>
         </div>
     </div>
