@@ -10,7 +10,7 @@ $cpanel_pass = 'judeelovejesus';
 $cpanel_skin = 'x2';
 
 // your cPanel domain
-$cpanel_host = 'mx1.hostinger.ph';
+$cpanel_host = 'clcp.hostinger.com';
 
 // subdomain name
 $subdomain = 'test';
