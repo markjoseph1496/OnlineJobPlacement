@@ -10,9 +10,50 @@ if (isset($_GET['School'])) {
     $School = $_GET['School'];
     $Attainment = $_GET['EducAttainment'];
     $Course = $_GET['Course'];
-    $GraduatedMonth = $_GET['GraduatedMonth'];
-    $GraduatedYear = $_GET['GraduatedYear'];
-    $Graduation = $GraduatedMonth . " " . $GraduatedYear;
+    $Graduation = $_GET['GraduatedYearFrom'] . " - " . $_GET['GraduatedYearTo'];
+
+    $a = $Attainment == "High School Diploma";
+    $a = $a || $Attainment == "Technical Vocational/Certificate";
+    $a = $a || $Attainment == "Bachelor's/College Degree";
+    $a = $a || $Attainment == "Post Graduate Diploma/Master's Degree";
+    $a = $a || $Attainment == "Professional License (Passed Board/Bar/Professional License Exam)";
+    $a = $a || $Attainment == "Doctorate Degree";
+
+    if(!$a){
+        header("location: edit-school.php?id=" . $_GET['SchoolID']);
+        die();
+    }
+
+    if($Attainment != "High School Diploma"){
+        $course_valid = GSecureSQL::query(
+            "SELECT COUNT(*) AS `Count` FROM `coursetbl` WHERE `CourseCode` = ?", TRUE, "s", $Course
+        );
+
+        if($course_valid[0][0] == 0){
+            header("location: edit-school.php?id=" . $_GET['SchoolID']);
+            die();
+        }
+    }
+
+    $a = FALSE;
+    $b = FALSE;
+    $date = Date("Y") + 15;
+    while ($date != 1935) {
+        $date--;
+        $a = $a || $_GET['GraduatedYearFrom'] == $date;
+        $b = $b || $_GET['GraduatedYearTo'] == $date;
+    }
+
+    if(!$a || !$b){
+        header("location: edit-school.php?id=" . $_GET['SchoolID'] . "&error");
+        die();
+    }
+
+    if(strlen($_GET['School']) === 0){
+        header("location: edit-school.php?id=" . $_GET['SchoolID'] . "&error");
+        die();
+    }
+
 
 
     GSecureSQL::query(
@@ -26,7 +67,7 @@ if (isset($_GET['School'])) {
         $SchoolID,
         $StudentID
     );
-    header("location: ../education.php?id=1");
+    header("location: ../education.php?saved");
 
 }
 
@@ -35,23 +76,58 @@ if (isset($_GET['Seminar'])) {
     $Seminar = $_GET['Seminar'];
     $YearAttended = $_GET['YearAttended'];
 
+    if(strlen($Seminar) === 0){
+        header("location: edit-seminar.php?id=" . $SeminarID . "&error");
+        die();
+    }
+
+    $date = Date("Y") + 15;
+    $a = FALSE;
+    while ($date != 1935) {
+        $date--;
+        $a = $a || $YearAttended == $date;
+    }
+
+    if(!$a){
+        header("location: edit-seminar.php?id=" . $SeminarID . "&error");
+        die();
+    }
+
     GSecureSQL::query(
         "UPDATE seminartbl SET Seminar = ?, YearAttended = ? WHERE SeminarID = ? AND StudentID = ?",
         FALSE,
         "ssss",
         $Seminar,
         $YearAttended,
-        $Seminar,
+        $SeminarID,
         $StudentID
     );
-    header("location: ../education.php?id=2");
 
+    header("location: ../education.php?saved");
+    die();
 }
 
 if (isset($_GET['Certification'])) {
     $CertificationID = $_GET['CertificationID'];
     $Certification = $_GET['Certification'];
     $YearTaken = $_GET['YearTaken'];
+
+    if(strlen($Certification) === 0){
+        header("Location: edit-certification.php?id=" . $CertificationID . "&error");
+        die();
+    }
+
+    $date = Date("Y") + 1;
+    $a = FALSE;
+    while($date != 1935){
+        $date--;
+        $a = $a || $date == $YearTaken;
+    }
+
+    if(!$a){
+        header("Location: edit-certification.php?id=" . $CertificationID . "&error");
+        die();
+    }
 
     GSecureSQL::query(
         "UPDATE certificationtbl SET Certification = ?, YearTaken = ? WHERE CertificationID = ? AND StudentID = ?",
@@ -62,13 +138,18 @@ if (isset($_GET['Certification'])) {
         $CertificationID,
         $StudentID
     );
-    header("location: ../certifications.php?id=1");
+    header("location: ../certifications.php?saved");
 
 }
 
 if (isset($_GET['Achievement'])) {
     $AchievementID = $_GET['AchievementID'];
     $Achievement = $_GET['Achievement'];
+
+    if(strlen($Achievement) === 0){
+        header('Location: edit-achievement.php?id=' . $AchievementID . '&error');
+        die();
+    }
 
     GSecureSQL::query(
         "UPDATE achievementstbl SET Achievements = ? WHERE AchievementID = ? AND StudentID = ?",
@@ -78,7 +159,7 @@ if (isset($_GET['Achievement'])) {
         $AchievementID,
         $StudentID
     );
-    header("location: ../achievements.php?id=1");
+    header("location: ../achievements.php?saved");
 
 }
 
@@ -104,40 +185,80 @@ if (isset($_GET['ReferenceID'])) {
         $ReferenceID,
         $StudentID
     );
-    header("location: ../references.php?id=1");
+    header("location: ../references.php?saved");
 
 }
 
-if (isset($_POST['Specialization'])) {
+if (isset($_POST['Skills'])) {
     $SID = $_POST['SpecializationID'];
-    $Specialization = $_POST['Specialization'];
-    $YearOfExperience = $_POST['YearsOfExperience'];
+    $YearsOfExperience = $_POST['YearsOfExperience'];
+    $Proficiency = $_POST['rating'];
+    $Skill = $_POST['Skills'];
+
+    $a = is_numeric($YearsOfExperience) && $YearsOfExperience >= 0;
+    if(!$a){
+        header('Location: edit-specialization.php?error');
+        die();
+    }
+
+    if(strlen($Skill) === 0){
+        header('Location: edit-specialization.php?error');
+        die();
+    }
+
+    $a = $Proficiency >= 1 && $Proficiency <= 5;
+    if(!$a){
+        header('Location: edit-specialization.php?error');
+        die();
+    }
 
     GSecureSQL::query(
-        "UPDATE specializationtbl SET Specialization = ?, YearOfExperience = ? WHERE SID = ? AND StudentID = ?",
+        "UPDATE specializationtbl SET Skills = ?, YearOfExperience = ?, Proficiency = ? WHERE SID = ? AND StudentID = ?",
         FALSE,
-        "ssss",
-        $Specialization,
-        $YearOfExperience,
+        "sssss",
+        $Skill,
+        $YearsOfExperience,
+        $Proficiency,
         $SID,
         $StudentID
     );
-    header("location: ../skills-and-languages.php?id=1");
-
+    header("location: ../skills-and-languages.php?saved");
+    die();
 }
 
 if (isset($_POST['Language'])) {
     $LangID = $_POST['LangID'];
     $Language = $_POST['Language'];
+    $WrittenProficiency = $_POST['WrittenProficiency'];
+    $SpokenProficiency = $_POST['SpokenProficiency'];
+
+    if(strlen($Language) === 0){
+        header('Location: edit-language.php?id=' . $LangID . '&error');
+        die();
+    }
+
+    $a = $WrittenProficiency >= 1 && $WrittenProficiency <= 5;
+    if(!$a){
+        header('Location: edit-language.php?id=' . $LangID . '&error');
+        die();
+    }
+
+    $a = $SpokenProficiency >= 1 && $SpokenProficiency <= 5;
+    if(!$a){
+        header('Location: edit-language.php?id=' . $LangID . '&error');
+        die();
+    }
 
     GSecureSQL::query(
-        "UPDATE languagetbl SET Language = ? WHERE LangID = ? AND StudentID = ?",
+        "UPDATE languagetbl SET `Language` = ?, `WrittenProf` = ?, `SpokenProf` = ? WHERE LangID = ? AND StudentID = ?",
         FALSE,
-        "sss",
+        "sssss",
         $Language,
+        $WrittenProficiency,
+        $SpokenProficiency,
         $LangID,
         $StudentID
     );
-    header("location: ../skills-and-languages.php?id=4");
+    header("location: ../skills-and-languages.php?saved");
 
 }

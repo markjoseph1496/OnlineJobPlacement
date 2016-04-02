@@ -414,13 +414,12 @@ if ($References == "ok") {
         <!-- Start Content -->
         <div id="content">
             <div class="container">
-
                 <?php
                 if (isset($_GET['saved'])) {
                     echo '
                         <div class="alert alert-success fade in" id="success-alert">
                             <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
-                            <strong><span class="fa fa-info-circle"></span> Contact information successfully updated.</strong>
+                            <strong><span class="fa fa-info-circle"></span> Information successfully updated.</strong>
                         </div>
                         ';
                 }
@@ -433,9 +432,8 @@ if ($References == "ok") {
                         ';
                 }
                 ?>
-
                 <script type="text/javascript">
-                    $("#success-alert").fadeTo(5000, 500).slideUp(500, function(){
+                    $("#success-alert").fadeTo(5000, 500).slideUp(500, function () {
                         $("#success-alert").alert('close');
                     });
                 </script>

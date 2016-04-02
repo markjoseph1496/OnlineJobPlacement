@@ -24,6 +24,8 @@ $specialization_tbl =
     );
     $Specialization = $specialization_tbl[0][2];
     $YearOfExperience = $specialization_tbl[0][3];
+    $Skills = $specialization_tbl[0][5];
+    $Proficiency = $specialization_tbl[0][4];
 
 $infoquery =
     GSecureSQL::query(
@@ -244,55 +246,35 @@ $MajorCourse = $course_qry[0][0];
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <label>Skills <span>(*)</span></label>
-                                    <input type="text" class="form-control" name="" id="">
+                                    <input type="text" class="form-control" name="Skills" id="Skills" value="<?php echo htmlspecialchars($Skills)?>">
                                 </div>
                             </div>
                             <div class="col-md-4">
                                 <div class="form-group">
                                     <label>Proficiency <span>(*)</span></label>
+                                    <?php
+
+                                    ?>
                                     <div class="text-center">
                                         <fieldset class="rating">
-                                            <input type="radio" id="star5" name="rating" value="5" /><label class = "full" for="star5" title="Excellent - 5 stars"></label>
-                                            <input type="radio" id="star4" name="rating" value="4" /><label class = "full" for="star4" title="Good - 4 stars"></label>
-                                            <input type="radio" id="star3" name="rating" value="3" /><label class = "full" for="star3" title="Meh - 3 stars"></label>
-                                            <input type="radio" id="star2" name="rating" value="2" /><label class = "full" for="star2" title="Poor - 2 stars"></label>
-                                            <input type="radio" id="star1" name="rating" value="1" /><label class = "full" for="star1" title="Awful - 1 star"></label>
+                                            <input type="radio" id="star5" name="rating" value="5" <?php echo $Proficiency == 5 ? 'checked' : '' ?>/><label class = "full" for="star5" title="Excellent - 5 stars"></label>
+                                            <input type="radio" id="star4" name="rating" value="4" <?php echo $Proficiency == 4 ? 'checked' : '' ?>/><label class = "full" for="star4" title="Good - 4 stars"></label>
+                                            <input type="radio" id="star3" name="rating" value="3" <?php echo $Proficiency == 3 ? 'checked' : '' ?>/><label class = "full" for="star3" title="Meh - 3 stars"></label>
+                                            <input type="radio" id="star2" name="rating" value="2" <?php echo $Proficiency == 2 ? 'checked' : '' ?>/><label class = "full" for="star2" title="Poor - 2 stars"></label>
+                                            <input type="radio" id="star1" name="rating" value="1" <?php echo $Proficiency == 1 ? 'checked' : '' ?>/><label class = "full" for="star1" title="Awful - 1 star"></label>
                                         </fieldset>
                                     </div>
                                 </div>
                             </div>
                         </div>
                         <div class="row">
-                            <div class="col-md-8">
-                                <div class="form-group">
-                                    <label>Specialization <span>(*)</span></label>
-                                    <select id="" name="Specialization" class="form-control">
-                                        <option value="" selected="selected">- Please select one -</option>
-                                        <?php
-
-                                        $listofspecialization_tbl =
-                                            GSecureSQL::query(
-                                                "SELECT * FROM listofspecializationtbl",
-                                                TRUE
-                                            );
-                                            foreach($listofspecialization_tbl as $value){
-                                                $SID = $value[0];
-                                                $_Specialization = $value[1];
-                                        ?>
-                                            <option value="<?php echo $SID; ?>" <?php if($SID == $Specialization) echo 'selected="selected"' ?> ><?php echo $_Specialization; ?></option>
-                                        <?php
-                                        }
-                                        ?>
-                                    </select>
-                                </div>
-                            </div>
                             <div class="col-md-4">
                                 <div class="form-group">
                                     <label>Years of Experience <span>(*)</span></label>
                                     <input type="number" class="form-control" id="YearsOfExperience" name="YearsOfExperience" value="<?php echo $YearOfExperience; ?>">
                                 </div>
                             </div>
-                        </div> 
+                        </div>
                     </div>
                     <!-- End Page Content -->
 
@@ -309,7 +291,7 @@ $MajorCourse = $course_qry[0][0];
                 <div class="field">
                     <div class="text-center">
                         <button type="submit" class="btn-system btn-large" name="btnSave">Save</button>
-                        <a href="../specialization-and-languages.php" class="btn-system btn-large btn-black">Cancel</a>
+                        <a href="../skills-and-languages.php" class="btn-system btn-large btn-black">Cancel</a>
                     </div>
                 </div>
             </div>
@@ -329,7 +311,7 @@ $MajorCourse = $course_qry[0][0];
                     validating: "glyphicon glyphicon-refresh"
                 },
                 fields: {
-                    Specialization: {
+                    Skills: {
                         validators: {
                             notEmpty: {
                                 message: "This field is required."

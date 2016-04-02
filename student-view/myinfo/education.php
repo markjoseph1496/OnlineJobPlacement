@@ -413,7 +413,7 @@ if($References == "ok"){
                 echo '
                         <div class="alert alert-success fade in" id="success-alert">
                             <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
-                            <strong><span class="fa fa-info-circle"></span> Education successfully updated.</strong>
+                            <strong><span class="fa fa-info-circle"></span> Information successfully updated.</strong>
                         </div>
                         ';
             }
@@ -536,7 +536,7 @@ if($References == "ok"){
                                 <tr>
                                     <td><?php echo $School; ?></td>
                                     <td><?php echo $Attainment; ?></td>
-                                    <td><?php echo $Course; ?></td>
+                                    <td><?php echo htmlspecialchars($Course); ?></td>
                                     <td><?php echo $Graduated; ?></td>
                                     <td class="text-center">
                                         <a href="edit/edit-school.php?id=<?php echo $SchoolID; ?>"
@@ -613,7 +613,7 @@ if($References == "ok"){
                                 <tr>
                                     <td><?php echo $_School; ?></td>
                                     <td><?php echo $_Attainment; ?></td>
-                                    <td><?php echo $_Course; ?></td>
+                                    <td><?php echo htmlspecialchars($_Course); ?></td>
                                     <td><?php echo $_Graduated; ?></td>
                                     <td class="text-center">
                                         <a href="edit/edit-school.php?id=<?php echo $_SchoolID; ?>"
