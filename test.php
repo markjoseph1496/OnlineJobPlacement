@@ -1,7 +1,7 @@
 <?php
 
 // your cPanel username
-$cpanel_user = 'judeecaballer@gmail.com';
+$cpanel_user = 'judeecaballero@gmail.com';
 
 // your cPanel password
 $cpanel_pass = 'judeelovejesus';
@@ -10,7 +10,7 @@ $cpanel_pass = 'judeelovejesus';
 $cpanel_skin = 'x2';
 
 // your cPanel domain
-$cpanel_host = 'teachermanagementsystem.com';
+$cpanel_host = 'mx1.hostinger.ph';
 
 // subdomain name
 $subdomain = 'test';
