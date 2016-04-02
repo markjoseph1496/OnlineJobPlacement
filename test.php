@@ -1,13 +1,42 @@
 <?php
 
-include('xmlapi-php-master/xmlapi.php');
+// your cPanel username
+$cpanel_user = 'judeecaballer@gmail.com';
 
-$cpanelusr = 'judeecaballero@gmail.com';
-$cpanelpass = 'judeelovejesus';
-$xmlapi = new xmlapi('mx1.hostinger.ph');
-$xmlapi->set_port( 2525 );
-$xmlapi->password_auth($cpanelusr,$cpanelpass);
-$xmlapi->set_debug(0); //output actions in the error log 1 for true and 0 false
-$result = $xmlapi->api1_query($cpanelusr, 'SubDomain', 'addsubdomain', array('subdomainname','teachermanagementsystem.com',0,0, '/public_html/subdomains/subdomainname'));
-?>
-    
+// your cPanel password
+$cpanel_pass = 'judeelovejesus';
+
+// your cPanel skin
+$cpanel_skin = 'x2';
+
+// your cPanel domain
+$cpanel_host = 'teachermanagementsystem.com';
+
+// subdomain name
+$subdomain = 'test';
+
+// directory - defaults to public_html/subdomain_name
+$dir = 'public_html/subdomains';
+
+// create the subdomain
+
+$sock = fsockopen($cpanel_host,2082);
+if(!$sock) {
+    print('Socket error');
+    exit();
+}
+
+$pass = base64_encode("$cpanel_user:$cpanel_pass");
+$in = "GET /frontend/$cpanel_skin/subdomain/doadddomain.html?rootdomain=$cpanel_host&domain=$subdomain&dir=$dir\r\n";
+$in .= "HTTP/1.0\r\n";
+$in .= "Host:$cpanel_host\r\n";
+$in .= "Authorization: Basic $pass\r\n";
+$in .= "\r\n";
+
+fputs($sock, $in);
+while (!feof($sock)) {
+    $result .= fgets ($sock,128);
+}
+fclose($sock);
+
+echo $result;
