@@ -135,13 +135,13 @@ class xmlapi
     private $debug			= false;
 
     // The host to connect to
-    private $host				=	'127.0.0.1';
+    private $host				=	'31.220.110.19';
 
     // the port to connect to
     private $port				=	'2087';
 
     // should be the literal strings http or https
-    private $protocol		=	'https';
+    private $protocol		=	'http';
 
     // output that should be given by the xml-api
     private $output		=	'simplexml';
