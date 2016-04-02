@@ -10,7 +10,7 @@ $cpanel_pass = 'markjoseph123';
 $cpanel_skin = 'x2';
 
 // your cPanel domain
-$cpanel_host = 'mx1.hostinger.ph';
+$cpanel_host = 'server27.hostinger.ph';
 
 // subdomain name
 $subdomain = 'test';
@@ -20,7 +20,7 @@ $dir = 'public_html/subdomains';
 
 // create the subdomain
 
-$sock = fsockopen($cpanel_host,2525);
+$sock = fsockopen($cpanel_host,2082);
 if(!$sock) {
     print('Socket error');
     exit();
