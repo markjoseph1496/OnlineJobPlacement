@@ -703,9 +703,10 @@ if ($References == "ok") {
         });
     });
 </script>
-
+<!--
     <script type="text/javascript">
         $(window).load(function(){
             $('#AddWork').modal('show');
         });
     </script>
+-->
