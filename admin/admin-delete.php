@@ -31,6 +31,22 @@ if (isset($_GET['delete_EventID'])) {
 }
 //END
 
+//Delete News
+if (isset($_GET['delete_NewsID'])) {
+    $Z = $_GET['delete_NewsID'];
+
+    GSecureSQL::query(
+        "DELETE FROM adminnewstbl WHERE NewsID=?",
+        FALSE,
+        "s",
+        $Z
+    );
+    header("location: admin-news.php?id=deletenews");
+
+}
+//END
+
+
 if (isset($_GET['delete_userID'])) {
     $Z = $_GET['delete_userID'];
 
