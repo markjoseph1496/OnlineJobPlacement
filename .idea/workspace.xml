@@ -71,7 +71,7 @@
         <entry file="file://$PROJECT_DIR$/test.php">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.5960452">
-              <caret line="22" column="37" selection-start-line="22" selection-start-column="37" selection-end-line="22" selection-end-column="37" />
+              <caret line="22" column="35" selection-start-line="22" selection-start-column="35" selection-end-line="22" selection-end-column="35" />
               <folding />
             </state>
           </provider>
@@ -529,12 +529,6 @@
       <option name="number" value="Default" />
       <updated>1451894355130</updated>
     </task>
-    <task id="LOCAL-00226" summary="Polishing">
-      <created>1456218924135</created>
-      <option name="number" value="00226" />
-      <option name="project" value="LOCAL" />
-      <updated>1456218924135</updated>
-    </task>
     <task id="LOCAL-00227" summary="Polishing">
       <created>1456219500993</created>
       <option name="number" value="00227" />
@@ -823,7 +817,13 @@
       <option name="project" value="LOCAL" />
       <updated>1459603427924</updated>
     </task>
-    <option name="localTasksCounter" value="275" />
+    <task id="LOCAL-00275" summary="Polishing">
+      <created>1459604349308</created>
+      <option name="number" value="00275" />
+      <option name="project" value="LOCAL" />
+      <updated>1459604349308</updated>
+    </task>
+    <option name="localTasksCounter" value="276" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -1449,7 +1449,7 @@
     <entry file="file://$PROJECT_DIR$/test.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.5960452">
-          <caret line="22" column="37" selection-start-line="22" selection-start-column="37" selection-end-line="22" selection-end-column="37" />
+          <caret line="22" column="35" selection-start-line="22" selection-start-column="35" selection-end-line="22" selection-end-column="35" />
           <folding />
         </state>
       </provider>

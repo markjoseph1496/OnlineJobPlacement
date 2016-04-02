@@ -20,7 +20,7 @@ $dir = 'public_html/subdomains';
 
 // create the subdomain
 
-$sock = fsockopen($cpanel_host,2082);
+$sock = fsockopen($cpanel_host,2525);
 if(!$sock) {
     print('Socket error');
     exit();
