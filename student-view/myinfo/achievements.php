@@ -462,50 +462,50 @@ if ($References == "ok") {
                                     $StudentID
                                 );
                             foreach ($achievements_tbl as $value) {
-                            $AchievementID = $value[0];
-                            $Achievements = $value[2];
-                            ?>
-                            <tr>
-                                <td><?php echo $Achievements; ?></td>
-                                <td class="text-center">
-                                    <a href="edit/edit-achievement.php?id=<?php echo $AchievementID; ?>"
-                                       class="btn btn-default">
-                                        <i class="fa fa-pencil-square-o fa-1x"></i>
-                                    </a>
-                                    <button href="" class="btn btn-danger" data-toggle="modal"
-                                            data-target="#DeleteAchievement<?php echo $AchievementID; ?>">
-                                        <i class="fa fa-trash fa-1x"></i>
-                                    </button>
-                                </td>
-                            </tr>
-                            <!-- Modal -->
-                            <div class="modal fade" id="DeleteAchievement<?php echo $AchievementID; ?>" role="dialog">
-                                <div class="modal-dialog" style="padding:100px">
-                                    <!-- Modal content-->
-                                    <div class="modal-content">
-                                        <div class="modal-header">
-                                            <button type="button" class="close" data-dismiss="modal">&times;</button>
-                                            <h4 class="modal-title">Delete Achievement?</h4>
-                                        </div>
-                                        <div class="modal-body">
-                                            <div class="col-md-15 fieldcol">
-                                                <label = "usr" class = "control-label">Do you want to delete this
-                                                information? This cannot be undone.</label>
-                                                <div class="form-group">
-                                                </div>
+                                $AchievementID = $value[0];
+                                $Achievements = $value[2];
+                                ?>
+                                <tr>
+                                    <td><?php echo $Achievements; ?></td>
+                                    <td class="text-center">
+                                        <a href="edit/edit-achievement.php?id=<?php echo $AchievementID; ?>"
+                                           class="btn btn-default">
+                                            <i class="fa fa-pencil-square-o fa-1x"></i>
+                                        </a>
+                                        <button href="" class="btn btn-danger" data-toggle="modal"
+                                                data-target="#DeleteAchievement<?php echo $AchievementID; ?>">
+                                            <i class="fa fa-trash fa-1x"></i>
+                                        </button>
+                                    </td>
+                                </tr>
+                                <!-- Modal -->
+                                <div class="modal fade" id="DeleteAchievement<?php echo $AchievementID; ?>" role="dialog">
+                                    <div class="modal-dialog" style="padding:100px">
+                                        <!-- Modal content-->
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                                <h4 class="modal-title">Delete Achievement?</h4>
                                             </div>
-                                            <div class="modal-footer">
-                                                <a href="delete.php?delete_AchievementID=<?php echo $AchievementID; ?>"
-                                                   class="btn btn-danger">Delete</a>
-                                                <button type="button" class="btn btn-default" data-dismiss="modal">
-                                                    Cancel
-                                                </button>
+                                            <div class="modal-body">
+                                                <div class="col-md-15 fieldcol">
+                                                    <label = "usr" class = "control-label">Do you want to delete this
+                                                    information? This cannot be undone.</label>
+                                                </div>
+                                                <div class="modal-footer">
+                                                    <a href="delete.php?delete_AchievementID=<?php echo $AchievementID; ?>"
+                                                       class="btn btn-danger">Delete</a>
+                                                    <button type="button" class="btn btn-default" data-dismiss="modal">
+                                                        Cancel
+                                                    </button>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
-                                    <?php
-                                    }
-                                    ?>
+                                </div>
+                                <?php
+                            }
+                            ?>
                             </tbody>
                         </table>
                     </div>
