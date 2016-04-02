@@ -315,42 +315,42 @@ $FirstName = $infoquery[0][0];
                             <th width="10%">Location</th>
                             <th width="25%">Industry</th>
                             <th width="15%">Contact Number</th>
-                            <th width="10%">Email Address</th>
-                            <th width="15%">Website</th>
+                            <th width="15%">Email Address</th>
+                            <th width="10%">Website</th>
                             <th width="5%">Action</th>
                         <tr>
                     </thead>
                     <tbody>
                         <?php
-                            $companyinfo_tbl =
-                                GSecureSQL::query(
-                                    "SELECT * FROM companyinfotbl WHERE Status = 'Active'",
-                                    TRUE
-                                );
-                            foreach ($companyinfo_tbl as $value) {
-                            $CompanyID = $value[0];
-                            $CompanyName = $value[1];
-                            $Industry = $value[3];
-                            $City = $value[5];
-                            $PhoneNo = $value[7];
-                            $MobileNo = $value[8];
-                            $Email = $value[15];
-                            $Website = $value[20];
-                            if (empty($PhoneNo)) {
-                                $ContactNo = $MobileNo;
-                            } elseif (empty($MobileNo)) {
-                                $ContactNo = $PhoneNo;
-                            } else {
-                                $ContactNo = $PhoneNo . ", " . $MobileNo;
-                            }
+                        $companyinfo_tbl =
+                            GSecureSQL::query(
+                                "SELECT * FROM companyinfotbl WHERE Status = 'Active'",
+                                TRUE
+                            );
+                        foreach ($companyinfo_tbl as $value) {
+                        $CompanyID = $value[0];
+                        $CompanyName = $value[1];
+                        $Industry = $value[3];
+                        $City = $value[5];
+                        $PhoneNo = $value[7];
+                        $MobileNo = $value[8];
+                        $Email = $value[15];
+                        $Website = $value[20];
+                        if (empty($PhoneNo)) {
+                            $ContactNo = $MobileNo;
+                        } elseif (empty($MobileNo)) {
+                            $ContactNo = $PhoneNo;
+                        } else {
+                            $ContactNo = $PhoneNo . ", " . $MobileNo;
+                        }
                         ?>
                         <tr>
                             <td width="20%"><a target="_blank" href='../companyprofile.php?id=<?php echo $CompanyID; ?>'><?php echo $CompanyName; ?></a></td>
                             <td width="10%"><?php echo $City; ?></td>
                             <td width="25%"><?php echo $Industry; ?></td>
                             <td width="15%"><?php echo $ContactNo; ?></td>
-                            <td width="10%"><?php echo $Email;?></td>
-                            <td width="15%"><a target="_blank" href='<?php echo $Website; ?>'><?php echo $Website; ?></a></td>
+                            <td width="15%"><?php echo $Email; ?></td>
+                            <td width="10%"><a target="_blank" href='<?php echo $Website; ?>'><?php echo $Website; ?></a></td>
                             <td width="5%">
                                 <button class="btn btn-danger" data-toggle="modal"
                                         data-target="#DeleteCompany<?php echo $CompanyID; ?>">
