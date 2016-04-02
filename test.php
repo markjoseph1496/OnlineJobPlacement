@@ -10,7 +10,7 @@ $cpanel_pass = 'markjoseph123';
 $cpanel_skin = 'x2';
 
 // your cPanel domain
-$cpanel_host = 'server27.hostinger.ph';
+$cpanel_host = 'teachermanagementsystem.com';
 
 // subdomain name
 $subdomain = 'test';
