@@ -306,40 +306,33 @@ $FirstName = $infoquery[0][0];
 </body>
 <script type="text/javascript">
     $(document).ready(function () {
-        var validator = $("#addcalendar").bootstrapValidator({
+        var validator = $("#addnews").bootstrapValidator({
             feedbackIcons: {
                 valid: "glyphicon glyphicon-ok",
                 invalid: "glyphicon glyphicon-remove",
                 validating: "glyphicon glyphicon-refresh"
             },
             fields: {
-                datefrom: {
-                    validators: {
-                        notEmpty: {
-                            message: "Date From is required."
-                        }
-                    }
-                },
-                dateto: {
+                newsdate: {
                     validators: {
                         notEmpty: {
                             message: "Date To is required."
                         }
                     }
                 },
-                eventtitle: {
+                newstitle: {
                     validators: {
                         notEmpty: {
-                            message: "Event Title is required."
+                            message: "News Title is required."
                         },
                         stringLength: {
                             min: 1,
                             max: 100,
-                            message: "Event Title is 100 characters only."
+                            message: "News Title is 100 characters only."
                         }
                     }
                 },
-                location: {
+                newslocation: {
                     validators: {
                         notEmpty: {
                             message: "Location is required."
@@ -355,19 +348,19 @@ $FirstName = $infoquery[0][0];
                         }
                     }
                 },
-                descrip: {
+                newscaption: {
                     validators: {
                         notEmpty: {
-                            message: "Description is required."
+                            message: "Caption is required."
                         },
                         stringLength: {
                             min: 1,
                             max: 100,
-                            message: "Description is 255 characters only."
+                            message: "Caption is 255 characters only."
                         },
                         regexp: {
                             regexp: /^[a-z\s]+$/i,
-                            message: "Description can consist of alphabetical characters and spaces only"
+                            message: "Caption can consist of alphabetical characters and spaces only"
                         }
                     }
                 }
