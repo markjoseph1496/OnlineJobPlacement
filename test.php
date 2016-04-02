@@ -1,10 +1,10 @@
 <?php
 
 // your cPanel username
-$cpanel_user = 'judeecaballero@gmail.com';
+$cpanel_user = 'u305071956';
 
 // your cPanel password
-$cpanel_pass = 'judeelovejesus';
+$cpanel_pass = 'markjoseph123';
 
 // your cPanel skin
 $cpanel_skin = 'x2';
@@ -20,7 +20,7 @@ $dir = 'public_html/subdomains';
 
 // create the subdomain
 
-$sock = fsockopen($cpanel_host,2083);
+$sock = fsockopen($cpanel_host,2082);
 if(!$sock) {
     print('Socket error');
     exit();
