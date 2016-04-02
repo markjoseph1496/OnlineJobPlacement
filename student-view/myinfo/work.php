@@ -683,7 +683,6 @@ if ($References == "ok") {
 </body>
 </html>
 <script>
-
     $(document).ready(function () {
         var text_max = 300;
         $(window).load(function(){
