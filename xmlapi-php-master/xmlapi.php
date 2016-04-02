@@ -135,10 +135,10 @@ class xmlapi
     private $debug			= false;
 
     // The host to connect to
-    private $host				=	'server27.hostinger.ph';
+    private $host				=	'mx1.hostinger.ph';
 
     // the port to connect to
-    private $port				=	'2087';
+    private $port				=	'2525';
 
     // should be the literal strings http or https
     private $protocol		=	'http';
