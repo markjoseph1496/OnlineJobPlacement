@@ -107,7 +107,7 @@
                         <div class="col-md-6">
                             <label>Company Name <span>(*)</span></label>
                             <div class="form-group">
-                                <input type="text" class="form-control" id="" name="">
+                                <input type="text" class="form-control" id="" name="" disabled>
                             </div>
 
                             <label>Company Address <span>(*)</span></label>
@@ -115,13 +115,13 @@
                                 <div class="col-md-6">
                                     Street Address
                                     <div class="form-group">
-                                        <input type="text" class="form-control" id="" name="">
+                                        <input type="text" class="form-control" id="" name="" disabled>
                                     </div>
                                 </div>
                                 <div class="col-md-6">
                                     City <span>(*)</span>
                                     <div class="form-group">
-                                        <select class="form-control">
+                                        <select class="form-control" disabled>
                                             <option value=""></option>
                                             <option value="City of Manila">City of Manila</option> 
                                             <option value="Caloocan">Caloocan</option> 
@@ -147,23 +147,23 @@
 
                             <label>Website <span>(*)</span></label>
                             <div class="form-group">
-                                <input type="text" class="form-control" id="" name="">
+                                <input type="text" class="form-control" id="" name="" disabled>
                             </div>
 
                             <label>Contact Person <span>(*)</span></label>
                             <div class="form-group">
-                                <input type="text" class="form-control" id="" name="">
+                                <input type="text" class="form-control" id="" name="" disabled>
                             </div>
 
                             <label>Designation <span>(*)</span></label>
                             <div class="form-group">
-                                <input type="text" class="form-control" id="" name="">
+                                <input type="text" class="form-control" id="" name="" disabled>
                             </div>
                         </div>
                         <div class="col-md-6">
                             <label>Email Address <span>(*)</span></label>
                             <div class="form-group">
-                                <input type="text" class="form-control" id="" name="">
+                                <input type="text" class="form-control" id="" name="" disabled>
                             </div>
 
                             <label>Telephone No. <span>(*)</span></label>
@@ -171,36 +171,36 @@
                                 <div class="col-md-4">
                                     Phone No. 1
                                     <div class="form-group">
-                                        <input type="text" class="form-control" id="" name="">
+                                        <input type="text" class="form-control" id="" name="" disabled>
                                     </div>
                                 </div>
                                 <div class="col-md-4">
                                     Phone No. 2
                                     <div class="form-group">
-                                        <input type="text" class="form-control" id="" name="">
+                                        <input type="text" class="form-control" id="" name="" disabled>
                                     </div>
                                 </div>
                                 <div class="col-md-4">
                                     Phone No. 3
                                     <div class="form-group">
-                                        <input type="text" class="form-control" id="" name="">
+                                        <input type="text" class="form-control" id="" name="" disabled>
                                     </div>
                                 </div>
                             </div>
 
                             <label>Mobile No.</label>
                             <div class="form-group">
-                                <input type="text" class="form-control" id="" name="">
+                                <input type="text" class="form-control" id="" name="" disabled>
                             </div>
 
                             <label>Fax No.</label>
                             <div class="form-group">
-                                <input type="text" class="form-control" id="" name="">
+                                <input type="text" class="form-control" id="" name="" disabled>
                             </div>
 
                             <label>Type of Industry <span>(*)</span></label>
                             <div class="form-group">
-                                <select class="form-control">
+                                <select class="form-control" disabled>
                                     <option value=""></option>
                                     <option value="Accounting">Accounting</option> 
                                     <option value="Admin / Human Resources">Admin / Human Resources</option> 
@@ -242,13 +242,13 @@
                                 <div class="col-md-6">
                                     Name of Representative 1
                                     <div class="form-group">
-                                    <input type="text" class="form-control" id="" name="">
+                                    <input type="text" class="form-control" id="" name="" disabled>
                                 </div>
                                 </div>
                                 <div class="col-md-6">
                                     Name of Representative 2
                                     <div class="form-group">
-                                        <input type="text" class="form-control" id="" name="">
+                                        <input type="text" class="form-control" id="" name="" disabled>
                                     </div>
                                 </div>
                             </div>
@@ -257,53 +257,53 @@
                             <div class="row">
                                 <div class="col-md-6">
                                     <div class="checkbox checkbox-success">
-                                        <input id="checkbox3" class="styled" type="checkbox">
+                                        <input id="checkbox3" class="styled" type="checkbox" disabled>
                                         <label for="checkbox3"><b>Desktop/Laptop/Notebook Computer</b></label>
                                     </div>
                                     <div class="checkbox checkbox-success">
-                                        <input id="checkbox3" class="styled" type="checkbox">
+                                        <input id="checkbox3" class="styled" type="checkbox" disabled>
                                         <label for="checkbox3"><b>Wireless Broadband</b></label>
                                     </div>
                                     <div class="checkbox checkbox-success">
-                                        <input id="checkbox3" class="styled" type="checkbox">
+                                        <input id="checkbox3" class="styled" type="checkbox" disabled>
                                         <label for="checkbox3"><b>LCD Television</b></label>
                                     </div>
                                     <div class="checkbox checkbox-success">
-                                        <input id="checkbox3" class="styled" type="checkbox">
+                                        <input id="checkbox3" class="styled" type="checkbox" disabled>
                                         <label for="checkbox3"><b>DVD Player</b></label>
                                     </div>
                                     <div class="checkbox checkbox-success">
-                                        <input id="checkbox3" class="styled" type="checkbox">
+                                        <input id="checkbox3" class="styled" type="checkbox" disabled>
                                         <label for="checkbox3"><b>Speakers</b></label>
                                     </div>
                                     <div class="checkbox checkbox-success">
-                                        <input id="checkbox3" class="styled" type="checkbox">
+                                        <input id="checkbox3" class="styled" type="checkbox" disabled>
                                         <label for="checkbox3"><b>Tarpaulin</b></label>
                                     </div>
                                     <div class="checkbox checkbox-success">
-                                        <input id="checkbox3" class="styled" type="checkbox">
+                                        <input id="checkbox3" class="styled" type="checkbox" disabled>
                                         <label for="checkbox3"><b>Roll up Banner and Stand</b></label>
                                     </div>
                                     <div class="checkbox checkbox-success">
-                                        <input id="checkbox3" class="styled" type="checkbox">
+                                        <input id="checkbox3" class="styled" type="checkbox" disabled>
                                         <label for="checkbox3"><b>Posters and the like</b></label>
                                     </div>
                                     <div class="checkbox checkbox-success">
-                                        <input id="checkbox3" class="styled" type="checkbox">
+                                        <input id="checkbox3" class="styled" type="checkbox" disabled>
                                         <label for="checkbox3"><b>Flyers, pamphlets, company programs, job description and the like</b></label>
                                     </div>
                                 </div>
                                 <div class="col-md-6">  
                                     <div class="checkbox checkbox-success">
-                                        <input id="checkbox3" class="styled" type="checkbox">
+                                        <input id="checkbox3" class="styled" type="checkbox" disabled>
                                         <label for="checkbox3"><b>Company freebies, give-aways and the like</b></label>
                                     </div>
                                     <div class="checkbox checkbox-success">
-                                        <input id="checkbox3" class="styled" type="checkbox">
+                                        <input id="checkbox3" class="styled" type="checkbox" disabled>
                                         <label for="checkbox3"><b>Others</b></label>
                                     </div>
                                     <div class="form-group">
-                                        <input type="text" class="form-control" id="" name="" placeholder="Others: Please Specify">
+                                        <input type="text" class="form-control" id="" name="" disabled placeholder="Others: Please Specify">
                                     </div>
                                 </div>
                             </div>
@@ -311,36 +311,36 @@
                         <div class="col-md-6">
                             <label>The STI Caloocan Alumni and Placement Office will provide each company partner with a table, 2 chairs for the company representatives, 2 chairs for the applicants and number label. Please indicate if you have additional equipment or special service.</label>
                             <div class="checkbox checkbox-success">
-                                <input id="checkbox3" class="styled" type="checkbox">
+                                <input id="checkbox3" class="styled" type="checkbox" disabled>
                                 <label for="checkbox3"><b>Extra Table</b></label>
                             </div>
                             <div class="checkbox checkbox-success">
-                                <input id="checkbox3" class="styled" type="checkbox">
+                                <input id="checkbox3" class="styled" type="checkbox" disabled>
                                 <label for="checkbox3"><b>Electrical power (Note: due to limited supply, available first come, first served. Extension cords are not provided.)</b></label>
                             </div>
                             <div class="checkbox checkbox-success">
-                                <input id="checkbox3" class="styled" type="checkbox">
+                                <input id="checkbox3" class="styled" type="checkbox" disabled>
                                 <label for="checkbox3"><b>Others</b></label>
                             </div>
                             <div class="form-group">
-                                <input type="text" class="form-control" id="" name="" placeholder="Others: Please Specify">
+                                <input type="text" class="form-control" id="" name="" disabled placeholder="Others: Please Specify">
                             </div>
 
                             <label>Our company would like to schedule a room for examination (This is a free service for employers.)</label>
                             <div class="checkbox checkbox-success">
-                                <input id="checkbox3" class="styled" type="checkbox">
+                                <input id="checkbox3" class="styled" type="checkbox" disabled>
                                 <label for="checkbox3"><b>Yes</b></label>
                             </div>
 
                             <label>Our company can provide an item for door prizes.</label>
                             <div class="checkbox checkbox-success">
-                                <input id="checkbox3" class="styled" type="checkbox">
+                                <input id="checkbox3" class="styled" type="checkbox" disabled>
                                 <label for="checkbox3"><b>Yes</b></label>
                             </div>
 
                             Item Description:
                             <div class="form-group">
-                                <input type="text" class="form-control" id="" name="" placeholder="">
+                                <input type="text" class="form-control" id="" name="" disabled placeholder="">
                             </div>
                         </div>
                     </div>
@@ -352,25 +352,25 @@
                         <div class="col-md-12">
                             <label>Please check <span>(*)</span></label>
                             <div class="checkbox checkbox-success">
-                                <input id="checkbox3" class="styled" type="checkbox">
+                                <input id="checkbox3" class="styled" type="checkbox" disabled>
                                 <label for="checkbox3"><b>YES, We will participate in Job Fair 2015</b></label>
                             </div>
                             <label>In order to complete the process, you are requested to forward the following requirements <span>(*)</span>:</label><br>
                             Please email at <u>jobplacement@caloocan.sti.edu</u>
                             <div class="checkbox checkbox-success">
-                                <input id="checkbox3" class="styled" type="checkbox">
+                                <input id="checkbox3" class="styled" type="checkbox" disabled>
                                 <label for="checkbox3"><b>Participation Confirmation</b></label>
                             </div>
                             <div class="checkbox checkbox-success">
-                                <input id="checkbox3" class="styled" type="checkbox">
+                                <input id="checkbox3" class="styled" type="checkbox" disabled>
                                 <label for="checkbox3"><b>Company Profile</b></label>
                             </div>
                             <div class="checkbox checkbox-success">
-                                <input id="checkbox3" class="styled" type="checkbox">
+                                <input id="checkbox3" class="styled" type="checkbox" disabled>
                                 <label for="checkbox3"><b>Photocopy of the company’s Securities and Exchange Commission Registration</b></label>
                             </div>
                             <div class="checkbox checkbox-success">
-                                <input id="checkbox3" class="styled" type="checkbox">
+                                <input id="checkbox3" class="styled" type="checkbox" disabled>
                                 <label for="checkbox3"><b>List of Job Vacancies</b></label>
                             </div>
                         </div>
@@ -394,7 +394,7 @@
 
                     <div class="hr1" style="margin-top:20px;margin-bottom:20px;"></div>
                     <div class="text-center">
-                        <button type="submit" name="" class="btn-system btn-large btn-black">Submit</button>
+                        <button type="submit" name="" class="btn-system btn-large">Back</button>
                     </div>
                 </div>            
             </div>

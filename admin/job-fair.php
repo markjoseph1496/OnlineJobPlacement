@@ -1,44 +1,15 @@
-<?php
-include('../connection.php');
-session_start();
-
-if(isset($_SESSION['AdminID'])){
-    $AdminID = $_SESSION['AdminID'];
-}else{
-    header("location: ../login-admin.php");
-}
-
-$TotalStudents =
-    GSecureSQL::query(
-        "SELECT COUNT(*) FROM studentinfotbl",
-        TRUE
-    );
-$Total = $TotalStudents[0][0];
-
-$infoquery =
-    GSecureSQL::query(
-        "SELECT FirstName FROM admintbl WHERE AdminID = ?",
-        TRUE,
-        "s",
-        $AdminID
-    );
-
-$FirstName = $infoquery[0][0];
-
-?>
-<!doctype html>
 <html lang="en">
 
 <head>
 
     <!-- Basic -->
-    <title>OJPMS | List of Courses</title>
+    <title>OJPMS | Job Fair</title>
 
     <!-- Define Charset -->
     <meta charset="utf-8">
 
     <!-- Responsive Metatag -->
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="viewport" content="width=""device-width, initial-scale=1, maximum-scale=1">
 
     <!-- Page Description and Author -->
     <meta name="description" content="OJPMS">
@@ -95,6 +66,9 @@ $FirstName = $infoquery[0][0];
     <script type="text/javascript" src="../js/jquery.parallax.js"></script>
     <script type="text/javascript" src="../js/jquery.slicknav.js"></script>
 
+    <!-- Checkbox -->
+    <link rel="stylesheet" type="text/css" href="../css/checkbox.css" media="screen"/>
+
     <!-- Notification -->
     <link rel="stylesheet" href="../css/notif.css"/>
 
@@ -118,26 +92,20 @@ $FirstName = $infoquery[0][0];
         });
     </script>
 </head>
-
 <body>
     <!-- Full Body Container -->
     <div id="container">
-        <!-- Start Header Section -->
         <div class="hidden-header"></div>
         <header class="clearfix">
             <!-- Start Top Bar -->
             <div class="top-bar">
                 <div class="container">
                     <div class="row">
-                        <div class="col-md-7">
-                            <!-- Start Contact Info -->
-                            <ul class="profile-name">
-                                <li></li>
-                            </ul>
-                            <!-- End Contact Info -->
+                        <div class="col-md-6">
+                            &nbsp;
                         </div>
                         <!-- .col-md-6 -->
-                        <div class="col-md-5">
+                        <div class="col-md-6">
                             <!-- Notification -->
                             <ul class="nav navbar-nav navbar-right">
                                 <!--<li class="dropdown icon-border" id="notificationLink">
@@ -153,11 +121,14 @@ $FirstName = $infoquery[0][0];
                                     </ul>
                                 </li>-->
                                 <li class="dropdown">
-                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown"><b class="fa fa-user"></b> Welcome, <b>Admin <?php echo $FirstName; ?> </b><b class="caret"></b></a>
+                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown"><b class="fa fa-user"></b>
+                                        Welcome, <b>Admin  echo $FirstName; ?> </b><b class="caret"></b></a>
                                     <ul class="dropdown-menu">
-                                        <li><a href="admin-account.php">Account <b class="fa fa-user" style="float:right;"></b></a></li>
+                                        <li><a href="admin-account.php">Account <b class="fa fa-user" style="float:right;"></b></a>
+                                        </li>
                                         <li class="divider"></li>
-                                        <li><a href="#" data-target='#Logout' data-toggle='modal'>Sign Out <b class="fa fa-sign-out" style="float:right;"></b></a></li>
+                                        <li><a href="#" data-target='#Logout' data-toggle='modal'>Sign Out <b
+                                                    class="fa fa-sign-out" style="float:right;"></b></a></li>
                                     </ul>
                                 </li>
                             </ul>
@@ -181,7 +152,7 @@ $FirstName = $infoquery[0][0];
                             <i class="fa fa-bars"></i>
                         </button>
                         <!-- End Toggle Nav Link For Mobiles -->
-                         <a class="navbar-brand" href="">
+                        <a class="navbar-brand" href="">
                             <img src="../images/ojpms.png">
                         </a>
                     </div>
@@ -193,7 +164,7 @@ $FirstName = $infoquery[0][0];
                                 <!-- Modal content-->
                                 <div class="modal-content">
                                     <div class="modal-header">
-                                        <button style = type="button" class="close" data-dismiss="modal">&times;</button>
+                                        <button style=type="button" class="close" data-dismiss="modal">&times;</button>
                                         <h4 class="modal-title">Sign Out</h4>
                                     </div>
                                     <div class="modal-body">
@@ -213,11 +184,10 @@ $FirstName = $infoquery[0][0];
                                 </div>
                             </div>
                         </div>
-                        <!-- End Sign-out -->
                         <!-- Start Navigation List -->
                         <ul class="nav navbar-nav navbar-right">
                             <li>
-                                <a class="active" href="admin.php">Home</a>
+                                <a href="admin.php">Home</a>
                             </li>
                             <li>
                                 <a>Reports</a>
@@ -233,14 +203,14 @@ $FirstName = $infoquery[0][0];
                                 <a href="admin-requested.php">Requested</a>
                             </li>
                             <li>
-                               <a>Company List</a>
+                                <a>Company List</a>
                                 <ul class="dropdown">
                                     <li><a href="admin-companylist.php">Active</a></li>
                                     <li><a href="admin-company_pending.php">Pending</a></li>
                                 </ul>
                             </li>
                             <li>
-                                <a href="job-fair.php">Job Fair</a>
+                                <a class="active" href="job-fair.php">Job Fair</a>
                             </li>
                             <li>
                                 <a> Maintenance</a>
@@ -248,8 +218,6 @@ $FirstName = $infoquery[0][0];
                                     <li><a href="admin-maintenance.php">Courses</a></li>
                                     <li><a href="admin-users.php">Users</a></li>
                                     <li><a href="admin-calendar.php">Calendar Events</a></li>
-                                    <li><a href="admin-news.php">News</a></li>
-                                    <li><a href="admin-contact.php">Contact</a></li>
                                 </ul>
                             </li>
                         </ul>
@@ -259,12 +227,12 @@ $FirstName = $infoquery[0][0];
                 <!-- Mobile Menu Start -->
                 <ul class="wpb-mobile-menu">
                     <li>
-                        <a class="active" href="admin.php">Home</a>
+                        <a href="admin.php">Home</a>
                     </li>
-                   <li>
+                    <li>
                         <a>Reports</a>
                         <ul class="dropdown">
-                            <li><a href="admin-reports.php" class = "active">Alumni Reports</a></li>
+                            <li><a href="admin-reports.php" class="active">Alumni Reports</a></li>
                             <li><a href="admin-ojtreports.php">OJT Reports</a></li>
                         </ul>
                     </li>
@@ -272,17 +240,14 @@ $FirstName = $infoquery[0][0];
                         <a href="admin-account.php">Account</a>
                     </li>
                     <li>
-                        <a href="admin-requested.php">Requested</a>
+                        <a class="active" href="admin-requested.php">Requested</a>
                     </li>
                     <li>
                         <a>Company List</a>
                         <ul class="dropdown">
-                            <li><a href="admin-companylist.php">Active</a></li>
+                            <li><a href="admin-companylist.php" class="active">Active</a></li>
                             <li><a href="admin-company_pending.php">Pending</a></li>
                         </ul>
-                    </li>
-                    <li>
-                        <a href="job-fair.php">Job Fair</a>
                     </li>
                     <li>
                         <a> Maintenance</a>
@@ -293,6 +258,7 @@ $FirstName = $infoquery[0][0];
                         </ul>
                     </li>
                 </ul>
+                <!-- End Header Logo & Naviagtion -->
             </div>
         </header>
         <!-- End Header Section -->
@@ -302,7 +268,7 @@ $FirstName = $infoquery[0][0];
             <div class="container">
                 <div class="row">
                     <div class="col-md-6">
-                        <h2>List of Courses</h2>
+                        <h2>Job Fair</h2>
                     </div>
                 </div>
             </div>
@@ -311,56 +277,37 @@ $FirstName = $infoquery[0][0];
 
         <div id="content">
             <div class="container">
+                <div class="hr2"></div>
                 <table class="table segment table-hover">
                     <thead>
                         <tr>
-                            <th width='70%' class='tabletitle'>Course</th>
-                            <th width='30%' class='tabletitle' style = "text-align: center;">Number of Students</th>
+                            <th width="20%">Company Name</th>
+                            <th width="15%">Location</th>
+                            <th width="15%">Industry</th>
+                            <th width="15%">Website</th>
+                            <th width="10%">Email</th>
+                            <th width="10%">Contact Person</th>
+                            <th width="10%">Contact No.</th>
+                            <th width="5%"></th>
                         <tr>
                     </thead>
                     <tbody>
-                    <!--Fields-->
-                    <?php
-                    $course_tbl =
-                        GSecureSQL::query(
-                            "SELECT * FROM coursetbl",
-                            TRUE
-                        );
-                    foreach ($course_tbl as $value) {
-                    $CourseID = $value[0];
-                    $CourseTitle = $value[1];
-                    $CourseCode = $value[2];
-
-                    $countstudentbycourse_tbl =
-                        GSecureSQL::query(
-                            "SELECT COUNT(*) FROM studentinfotbl WHERE MajorCourse = ?",
-                            TRUE,
-                            "s",
-                            $CourseCode
-                        );
-                    foreach ($countstudentbycourse_tbl as $value1) {
-                    $TotalStudentByCourse = $value1[0];
-                    ?>
-                    <tr>
-                        <td width=70% class=tabletitle>
-                            <a href='admin-field.php?id=<?php echo $CourseID; ?>'><?php echo $CourseTitle; ?></a>
-                        </td>
-                        <td width=30% class='tabletitle' style = "text-align: center;"><?php echo $TotalStudentByCourse; ?></td>
-                    <tr>
-                        <?php
-                        }
-                        }
-                        ?>
+                        <tr>
+                            <th width="20%"></th>
+                            <th width="15%"></th>
+                            <th width="15%"></th>
+                            <th width="15%"></th>
+                            <th width="10%"></th>
+                            <th width="10%"></th>
+                            <th width="10%"></th>
+                            <td width="5%">
+                                <button class='btn btn-default' data-toggle='modal'
+                                        data-target='#AcceptRequest'><i
+                                        class='fa fa-eye'></i>
+                                </button>
+                            </td>
+                        <tr>
                     </tbody>
-                    <tfoot>
-                        <thead>
-                            <div class="hr2"></div>
-                            <tr>
-                                <th width='70%' class='tabletitle'></th>
-                                <th width='30%' class='tabletitle' style = "text-align: center;">Total Number of Students: <?php echo $Total; ?></th>
-                            </tr>
-                        </thead>
-                    </tfoot>
                 </table>
             </div>
         </div>

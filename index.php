@@ -776,6 +776,11 @@ $adminevent_tbl =
                 </div>
                 <!-- End Service Icon 3 -->
             </div>
+            <div style="padding:22px 24px;" class="call-action call-action-boxed call-action-style3 clearfix">
+                <div class="button-side" style="margin-top:10px;"> <a href="forms/job-fair.php" class="btn-system border-btn btn-medium"><i class="icon-basket"></i> Register Now!</a></div>
+                <h2 class="primary"><strong>JOB FAIR</strong> participation</h2>
+                <p>For Company</p>
+            </div>
         </div>
     </div>
 </section>

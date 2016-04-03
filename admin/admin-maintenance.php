@@ -242,6 +242,9 @@ $FirstName = $infoquery[0][0];
                                 </ul>
                             </li>
                             <li>
+                                <a href="job-fair.php">Job Fair</a>
+                            </li>
+                            <li>
                                 <a class = "active">Maintenance</a>
                                 <ul class="dropdown">
                                     <li><a class="active" href="admin-maintenance.php">Courses</a></li>
