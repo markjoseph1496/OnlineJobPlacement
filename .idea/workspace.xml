@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="d999e893-f739-4a68-b7b0-034239dfb77e" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/forms/job-fair.php" afterPath="$PROJECT_DIR$/forms/job-fair.php" />
     </list>
     <list id="ee7a7474-4848-4a40-af05-afa3160fd5b4" name="New changelist" comment="" />
     <ignored path="OnlineJobPlacement.iws" />
@@ -29,8 +28,8 @@
       <file leaf-file-name="job-fair.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/forms/job-fair.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.720339">
-              <caret line="620" column="11" selection-start-line="620" selection-start-column="11" selection-end-line="620" selection-end-column="11" />
+            <state vertical-scroll-proportion="0.75141245">
+              <caret line="621" column="7" selection-start-line="621" selection-start-column="7" selection-end-line="621" selection-end-column="7" />
               <folding>
                 <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#div#2;n#div#0;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
@@ -453,12 +452,6 @@
       <option name="number" value="Default" />
       <updated>1451894355130</updated>
     </task>
-    <task id="LOCAL-00244" summary="Polishing">
-      <created>1458725708934</created>
-      <option name="number" value="00244" />
-      <option name="project" value="LOCAL" />
-      <updated>1458725708936</updated>
-    </task>
     <task id="LOCAL-00245" summary="Polishing">
       <created>1458726032798</created>
       <option name="number" value="00245" />
@@ -747,7 +740,13 @@
       <option name="project" value="LOCAL" />
       <updated>1459702959427</updated>
     </task>
-    <option name="localTasksCounter" value="293" />
+    <task id="LOCAL-00293" summary="Polishing">
+      <created>1459703998840</created>
+      <option name="number" value="00293" />
+      <option name="project" value="LOCAL" />
+      <updated>1459703998840</updated>
+    </task>
+    <option name="localTasksCounter" value="294" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -1443,8 +1442,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/forms/job-fair.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.720339">
-          <caret line="620" column="11" selection-start-line="620" selection-start-column="11" selection-end-line="620" selection-end-column="11" />
+        <state vertical-scroll-proportion="0.75141245">
+          <caret line="621" column="7" selection-start-line="621" selection-start-column="7" selection-end-line="621" selection-end-column="7" />
           <folding>
             <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#div#2;n#div#0;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
