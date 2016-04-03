@@ -809,11 +809,11 @@ $adminevent_tbl =
                 </div>
                 <!-- End Service Icon 3 -->
             </div>
-            <div style="padding:20px 22px;"class="call-action call-action-boxed call-action-style2 clearfix">
-                <div class="button-side" style="margin-top:8px;"><a href="https://docs.google.com/forms/d/14dfaF6WIC5PM2ylfL02B3XEzBlO1fLYvLamuN57QvAM/viewform" class="btn-system btn-large"><i class="icon-gift-1"></i> Register</a></div>
+            <div style="padding:22px 24px;" class="call-action call-action-boxed call-action-style3 clearfix">
+                <div class="button-side" style="margin-top:10px;"> <a href="https://docs.google.com/forms/d/14dfaF6WIC5PM2ylfL02B3XEzBlO1fLYvLamuN57QvAM/viewform" class="btn-system border-btn btn-medium"><i class="icon-basket"></i> Register Now!</a></div>
                 <h2 class="primary"><strong>JOB FAIR</strong> participation</h2>
                 <p>For Company</p>
-            </div>
+              </div>
         </div>
     </div>
 </section>
