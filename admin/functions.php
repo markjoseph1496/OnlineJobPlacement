@@ -326,6 +326,83 @@ if (isset($_POST['EventID'])) {
 }
 //End
 
+//Create News
+if (isset($_POST['BtnNewssave'])) {
+
+    $newsdate = $_POST['newsdate'];
+    $newstitle = $_POST['newstitle'];
+    $newslocation = $_POST['newslocation'];
+    $newscaption = $_POST['newscaption'];
+
+    $FileName = hash('sha512', mt_rand(0, PHP_INT_MAX) . mt_rand(0, PHP_INT_MAX) . mt_rand(0, PHP_INT_MAX));
+
+    if(isset($_FILES["ProfilePictures"])){
+        if($_FILES["ProfilePictures"]["error"] === 0){
+            $ext = explode('.', $_FILES["ProfilePictures"]["name"]);
+            $ext = $ext[count($ext) - 1];
+            $fileToUpload = basename($_FILES["ProfilePictures"]["name"]);
+
+            $target_dir = "ProfileImages/";
+            $target_file = $target_dir . $FileName . '.' . $ext;
+            $uploadOk = 1;
+            $imageFileType = pathinfo($target_file, PATHINFO_EXTENSION);
+
+            if ($imageFileType != "jpg" && $imageFileType != "png" && $imageFileType != "jpeg" && $imageFileType != "bmp" && $imageFileType != "gif") {
+                echo "Sorry, only JPG, JPEG, PNG, BMP, or GIF files are allowed. ";
+                $uploadOk = 0;
+            }
+
+            if ($uploadOk == 0) {
+                echo "Sorry, your file was not uploaded.";
+
+            } else {
+                if (move_uploaded_file($_FILES["ProfilePictures"]["tmp_name"], $target_file)) {
+                GSecureSQL::query(
+                        "INSERT INTO adminnewstbl (AdminID,NewsDate,NewsTitle,NewsLocation,NewsCaption,ProfileImages) values (?,?,?,?,?,?)",
+                        FALSE,
+                        "ssssss",
+                        $AdminID,
+                        $newsdate,
+                        $newstitle,
+                        $newslocation,
+                        $newscaption,
+                        $target_file
+                    );
+                header("location: admin-news.php?id=addnews");
+                   
+                } else {
+                    echo "Sorry, there was an error uploading your file.";
+                }
+            }
+        }
+    }
+
+}
+// End of Create News
+
+//Update News
+if (isset($_POST['NewsID'])) {
+    $NewsID = $_POST['NewsID'];
+    $NewsTitle = $_POST['NewsTitle'];
+    $NewsLocation = $_POST['NewsLocation'];
+    $NewsCaption = $_POST['NewsCaption'];
+
+    GSecureSQL::query(
+        "UPDATE adminnewstbl SET NewsTitle = ?, NewsLocation = ?, NewsCaption = ? WHERE NewsID = ?",
+        FALSE,
+        "ssss",
+        $NewsTitle,
+        $NewsLocation,
+        $NewsCaption,
+        $NewsID
+
+    );
+
+    header("location: admin-news.php?id=updatenews");
+
+}
+//End
+
 //OJT report update
 if (isset($_POST['StudentID'])) {
     $StudentID = $_POST['StudentID'];
