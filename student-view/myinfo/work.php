@@ -715,10 +715,9 @@ if ($References == "ok") {
                                                         TRUE
                                                     );
                                                 foreach ($salaryrange_tbl as $value) {
-                                                    $SalaryID = $value[0];
                                                     $Salary = $value[1];
                                                     ?>
-                                                    <option value="<?php echo $SalaryID; ?>"><?php echo $Salary; ?></option>
+                                                    <option value="<?php echo $Salary; ?>"><?php echo $Salary; ?></option>
                                                     <?php
                                                 }
                                                 ?>
@@ -783,7 +782,7 @@ if ($References == "ok") {
                     $PositionLevel = $value[11];
                     $MonthlySalary = $value[12];
                     $NatureOfWork = $value[10];
-                    $CompanyAddress = $value[11];
+                    $CompanyAddress = $value[14];
 
                     $specialization_tbl =
                         GSecureSQL::query(
@@ -1035,11 +1034,11 @@ if ($References == "ok") {
                                                                 "SELECT * FROM listofpositiontbl",
                                                                 TRUE
                                                             );
-                                                        foreach ($position_tbl as $value) {
-                                                            $PositionID = $value[0];
-                                                            $Position = $value[1];
+                                                        foreach ($position_tbl as $value3) {
+                                                            $PositionID = $value3[0];
+                                                            $Position = $value3[1];
                                                             ?>
-                                                            <option value="<?php echo $Position; ?>"><?php echo $Position; ?></option>
+                                                            <option <?php if($PositionLevel==$Position) echo "selected='selected'" ?> value="<?php echo $Position; ?>"><?php echo $Position; ?></option>
                                                             <?php
                                                         }
                                                         ?>
@@ -1061,13 +1060,12 @@ if ($References == "ok") {
                                                                 TRUE
                                                             );
                                                         $count = 0;
-                                                        foreach ($specialization_tbl as $value) {
-                                                            $SpecializationID = $value[0];
-                                                            $Specialization = $value[1];
+                                                        foreach ($specialization_tbl as $value4) {
+                                                            $SpecializationID = $value4[0];
+                                                            $Specialization = $value4[1];
                                                             $count++;
                                                             ?>
-                                                            <option
-                                                                value="<?php echo $Specialization; ?>"><?php echo $Specialization; ?></option>
+                                                            <option <?php if($WorkSpecialization==$Specialization) echo "selected='selected'" ?> value="<?php echo $Specialization; ?>"><?php echo $Specialization; ?></option>
                                                             <?php
                                                         }
                                                         ?>
@@ -1086,11 +1084,11 @@ if ($References == "ok") {
                                                                 "SELECT * FROM listofsalaryrangetbl",
                                                                 TRUE
                                                             );
-                                                        foreach ($salaryrange_tbl as $value) {
-                                                            $SalaryID = $value[0];
-                                                            $Salary = $value[1];
+                                                        foreach ($salaryrange_tbl as $value5) {
+                                                            $SalaryID = $value5[0];
+                                                            $Salary = $value5[1];
                                                             ?>
-                                                            <option value="<?php echo $SalaryID; ?>"><?php echo $Salary; ?></option>
+                                                            <option <?php if($MonthlySalary==$Salary) echo "selected='selected'" ?> value="<?php echo $SalaryID; ?>"><?php echo $Salary; ?></option>
                                                             <?php
                                                         }
                                                         ?>
@@ -1102,8 +1100,7 @@ if ($References == "ok") {
                                             <div class="col-md-12">
                                                 <div class="form-group">
                                                     <label>Nature of Work</label><br>
-                                        <textarea class="form-control" id="EditNatureOfWork" name="EditNatureOfWork"
-                                                  rows="5" maxlength="150"></textarea>
+                                                    <textarea class="form-control" id="EditNatureOfWork" name="EditNatureOfWork" rows="5" maxlength="150"><?php echo $NatureOfWork;?></textarea>
                                                     <div id="textarea_feedback"></div>
                                                 </div>
                                             </div>
