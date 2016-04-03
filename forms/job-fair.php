@@ -392,9 +392,10 @@
 
                     <img src="../images/forms/banner2.jpg">
 
-                    <div class="hr1" style="margin-top:30px;margin-bottom:30px;"></div>
-                    <button type="submit" name="" class="btn-system btn-large btn-black" style="float:right;">Apply Filter</button>
-                    <div class="hr1" style="margin-top:30px;margin-bottom:30px;"></div>
+                    <div class="hr1" style="margin-top:20px;margin-bottom:20px;"></div>
+                    <div class="text-center">
+                        <button type="submit" name="" class="btn-system btn-large btn-black">Apply Filter</button>
+                    </div>
                 </div>            
             </div>
         </div>
