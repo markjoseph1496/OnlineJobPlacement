@@ -328,7 +328,7 @@ if($References == "ok"){
                             <h4 class="modal-title">Sign Out</h4>
                         </div>
                         <div class="modal-body">
-                            <div class="col-md-15 fieldcol">
+                            <div class="col-md-15col">
                                 <label>Do you want to sign out?</label>
                             </div>
                             <div class="modal-footer">
@@ -475,14 +475,112 @@ if($References == "ok"){
                     <div class="col-md-12 page-content">
                         <div class="classic-testimonials">
                             <!-- Single Testimonial -->
-                            <div class="row field">
+                            <div class="row">
                                 <div class="col-md-6">
                                     <h4>Skills<span="head-line"></span></h4>
                                 </div>
                                 <div class="col-md-6">
-                                    <a href="add/add-specialization.php" class="main-button" style="float:right;">
-                                        <span class="fa fa-plus"> Add Skill</span>
+                                    <a class="main-button" style="float:right;cursor:pointer;" data-toggle="modal" data-target="#AddSkill">
+                                        <span> Add Skill</span>
                                     </a>
+                                </div>
+                            </div>
+
+                            <!-- ADD Skill Modal -->
+                            <div class="modal fade" id="AddSkill" role="dialog">
+                                <div class="modal-dialog modal-lg" style="padding:160px;width:100%;">
+                                    <!-- Modal content-->
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                            <h4 class="modal-title">Add Skill</h4>
+                                        </div>
+                                        <div class="modal-body">
+                                            <div class="row">
+                                                <div class="col-md-6">
+                                                    <div class="form-group">
+                                                        <label>Skill <span>(*)</span></label>
+                                                        <input type="text" class="form-control" name="Skill" id="Skill">
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <div class="form-group">
+                                                        <label>Proficiency <span>(*)</span></label>
+                                                        <div class="text-center">
+                                                            <fieldset class="rating">
+                                                                <input type="radio" id="star5" name="rating" value="5" /><label class = "full" for="star5" title="Excellent - 5 stars"></label>
+                                                                <input type="radio" id="star4" name="rating" value="4" /><label class = "full" for="star4" title="Good - 4 stars"></label>
+                                                                <input type="radio" id="star3" name="rating" value="3" /><label class = "full" for="star3" title="Meh - 3 stars"></label>
+                                                                <input type="radio" id="star2" name="rating" value="2" /><label class = "full" for="star2" title="Poor - 2 stars"></label>
+                                                                <input type="radio" id="star1" name="rating" value="1" /><label class = "full" for="star1" title="Awful - 1 star"></label>
+                                                            </fieldset>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-md-4">
+                                                    <div class="form-group">
+                                                        <label>Years of Experience <span>(*)</span></label>
+                                                        <input type="number" class="form-control" maxlength="2" id="YearsOfExperience" name="YearsOfExperience">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="modal-footer">
+                                                <button type="submit" class="btn-system btn-large">Add</button>
+                                                <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- EDIT Skill Modal -->
+                            <div class="modal fade" id="EditSkill" role="dialog">
+                                <div class="modal-dialog modal-lg" style="padding:160px;width:100%;">
+                                    <!-- Modal content-->
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                            <h4 class="modal-title">Edit Skill</h4>
+                                        </div>
+                                        <div class="modal-body">
+                                            <div class="row">
+                                                <div class="col-md-6">
+                                                    <div class="form-group">
+                                                        <label>Skill <span>(*)</span></label>
+                                                        <input type="text" class="form-control" name="Skill" id="Skill">
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <div class="form-group">
+                                                        <label>Proficiency <span>(*)</span></label>
+                                                        <div class="text-center">
+                                                            <fieldset class="rating">
+                                                                <input type="radio" id="star5" name="rating" value="5" /><label class = "full" for="star5" title="Excellent - 5 stars"></label>
+                                                                <input type="radio" id="star4" name="rating" value="4" /><label class = "full" for="star4" title="Good - 4 stars"></label>
+                                                                <input type="radio" id="star3" name="rating" value="3" /><label class = "full" for="star3" title="Meh - 3 stars"></label>
+                                                                <input type="radio" id="star2" name="rating" value="2" /><label class = "full" for="star2" title="Poor - 2 stars"></label>
+                                                                <input type="radio" id="star1" name="rating" value="1" /><label class = "full" for="star1" title="Awful - 1 star"></label>
+                                                            </fieldset>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-md-4">
+                                                    <div class="form-group">
+                                                        <label>Years of Experience <span>(*)</span></label>
+                                                        <input type="number" class="form-control" maxlength="2" id="YearsOfExperience" name="YearsOfExperience">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="modal-footer">
+                                                <button type="submit" class="btn-system btn-large">Save</button>
+                                                <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
 
@@ -564,14 +662,69 @@ if($References == "ok"){
                             </table>
 
                             <div class="hr4" style="margin-top:40px;margin-bottom:40px;"></div>
-                            <div class="row field">
+                            <div class="row">
                                 <div class="col-md-6">
                                     <h4>Languages<span="head-line"></span></h4>
                                 </div>
                                 <div class="col-md-6">
-                                    <a href="add/add-language.php" class="main-button" style="float:right;">
-                                        <span class="fa fa-plus"> Add Language</span>
+                                    <a class="main-button" style="float:right;cursor:pointer;" data-toggle="modal" data-target="#AddLanguage">
+                                        <span> Add Language</span>
                                     </a>
+                                </div>
+                            </div>
+
+                            <!-- ADD Language Modal -->
+                            <div class="modal fade" id="AddLanguage" role="dialog">
+                                <div class="modal-dialog modal-lg" style="padding:160px;width:100%;">
+                                    <!-- Modal content-->
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                            <h4 class="modal-title">Add Language</h4>
+                                        </div>
+                                        <div class="modal-body">
+                                            <div class="row">
+                                                <div class="col-md-6">
+                                                    <div class="form-group">
+                                                        <label>Language <span>(*)</span></label>
+                                                        <input type="text" class="form-control" id="Language" name="Language">
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-3">
+                                                    <div class="form-group">
+                                                        <label> Written Proficiency <span>(*)</span></label>
+                                                        <div class="text-center">
+                                                            <fieldset class="rating">
+                                                                <input type="radio" id="star5w" name="WrittenProficiency" value="5" /><label class = "full" for="star5w" title="Excellent - 5 stars"></label>
+                                                                <input type="radio" id="star4w" name="WrittenProficiency" value="4" /><label class = "full" for="star4w" title="Good - 4 stars"></label>
+                                                                <input type="radio" id="star3w" name="WrittenProficiency" value="3" /><label class = "full" for="star3w" title="Meh - 3 stars"></label>
+                                                                <input type="radio" id="star2w" name="WrittenProficiency" value="2" /><label class = "full" for="star2w" title="Poor - 2 stars"></label>
+                                                                <input type="radio" id="star1w" name="WrittenProficiency" value="1" /><label class = "full" for="star1w" title="Awful - 1 star"></label>
+                                                            </fieldset>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-3">
+                                                    <div class="form-group">
+                                                        <label> Spoken Proficiency <span>(*)</span></label>
+                                                        <div class="text-center">
+                                                            <fieldset class="rating">
+                                                                <input type="radio" id="star5s" name="SpokenProficiency" value="5" /><label class = "full" for="star5s" title="Excellent - 5 stars"></label>
+                                                                <input type="radio" id="star4s" name="SpokenProficiency" value="4" /><label class = "full" for="star4s" title="Good - 4 stars"></label>
+                                                                <input type="radio" id="star3s" name="SpokenProficiency" value="3" /><label class = "full" for="star3s" title="Meh - 3 stars"></label>
+                                                                <input type="radio" id="star2s" name="SpokenProficiency" value="2" /><label class = "full" for="star2s" title="Poor - 2 stars"></label>
+                                                                <input type="radio" id="star1s" name="SpokenProficiency" value="1" /><label class = "full" for="star1s" title="Awful - 1 star"></label>
+                                                            </fieldset>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="modal-footer">
+                                                <button type="submit" class="btn-system btn-large">Add</button>
+                                                <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
 
