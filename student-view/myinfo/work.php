@@ -964,7 +964,7 @@ if ($References == "ok") {
                                 </div>
                             </div>
                             <div class="modal-footer">
-                                <button type="submit" class="btn-system btn-large">Add</button>
+                                <button type="submit" class="btn-system btn-large">Save</button>
                                 <button type="button" class="btn btn-default" data-dismiss="modal">
                                     Cancel
                                 </button>
@@ -1099,6 +1099,9 @@ if ($References == "ok") {
                         <td><?php echo $WorkSpecialization; ?></td>
                         <td><?php echo $Duration; ?></td>
                         <td class="text-center">
+                            <a href="#EditWork" class="btn btn-default">
+                                <i class="fa fa-pencil-square-o fa-1x"></i>
+                            </a>
                             <button class="btn btn-danger" data-toggle="modal"
                                     data-target="#DeleteWork<?php echo $WorkID; ?>">
                                 <i class="fa fa-trash fa-1x"></i>
@@ -1117,7 +1120,7 @@ if ($References == "ok") {
                                 </div>
                                 <div class="modal-body">
                                     <div class="col-md-15">
-                                        <label = "usr" class = "control-label">Do you want to delete
+                                        <label>Do you want to delete
                                         Work ? This cannot be undone.</label>
                                         <div class="form-group">
                                         </div>
