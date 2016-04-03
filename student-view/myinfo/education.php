@@ -478,7 +478,7 @@ if($References == "ok"){
                             <div class="col-md-6">
                                 <a class="main-button" style="float:right;cursor:pointer;" data-toggle="modal"
                                    data-target="#AddSchool">
-                                    <span class=""> Add School</span>
+                                    <span> Add School</span>
                                 </a>
                             </div>
                         </div>
