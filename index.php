@@ -773,7 +773,7 @@ $adminevent_tbl =
             </div>
             <!-- End Big Heading -->
 
-            <div class="hr5" style="margin-top:20px;margin-bottom:50px;"></div>
+            <div class="hr5" style="margin-top:5px;margin-bottom:50px;"></div>
             <div class="row">
                 <!-- Start Service Icon 1 -->
                 <div class="col-md-12 col-sm-6 service-box service-center">
@@ -808,6 +808,11 @@ $adminevent_tbl =
                     </div>
                 </div>
                 <!-- End Service Icon 3 -->
+            </div>
+            <div style="padding:20px 22px;"class="call-action call-action-boxed call-action-style2 clearfix">
+                <div class="button-side" style="margin-top:8px;"><a href="https://docs.google.com/forms/d/14dfaF6WIC5PM2ylfL02B3XEzBlO1fLYvLamuN57QvAM/viewform" class="btn-system btn-large"><i class="icon-gift-1"></i> Register</a></div>
+                <h2 class="primary"><strong>JOB FAIR</strong> participation</h2>
+                <p>For Company</p>
             </div>
         </div>
     </div>
