@@ -1,9 +1,9 @@
 <?php
-include('../../../connection.php');
+include('../../connection.php');
 session_start();
-include('../../../common-functions.php');
+include('../../common-functions.php');
 $common_functions->student_login_check();
-$StudentID = $_SESSION['StudentID']; // to conform with your coding style -- ghabx
+$StudentID = $_SESSION['StudentID'];
 
 if (isset($_GET['School'])) {
     $SchoolID = $_GET['SchoolID'];
@@ -261,4 +261,97 @@ if (isset($_POST['Language'])) {
     );
     header("location: ../skills-and-languages.php?saved");
 
+}
+
+if (isset($_POST['EditCompanyName'])) {
+    $CompanyName = $_POST['EditCompanyName'];
+    $CompanyAddress = $_POST['EditCompanyAddress'];
+    $Industry = $_POST['EditIndustry'];
+    $DateFromMonth = $_POST['EditFromMonth'];
+    $DateFromYear = $_POST['EditFromYear'];
+    $DateToMonth = $_POST['EditToMonth'];
+    $DateToYear = $_POST['EditToYear'];
+    $PositionLevel = $_POST['EditPositionLevel'];
+    $WorkSpecialization = $_POST['EditWorkSpecialization'];
+    $MonthlySalary = $_POST['EditMonthlySalary'];
+    $NatureOfWork = $_POST['EditNatureOfWork'];
+
+    if (isset($_POST['EditDuration'])) {
+        $Duration = $_POST['EditDuration'];
+        if ($Duration == "on") {
+            $DateToYear = "Current";
+        }
+    }
+
+    $validation_config = array(
+        'EditCompanyName' => array(
+            'pattern' => '/^.+$/',
+            'errorMsg' => 'Company name is required'
+        ),
+        'EditCompanyAddress' => array(
+            'pattern' => '/(^$|^(http|https):\/\/.+\..+$)/i',
+            'errorMsg' => 'Company address is required'
+        ),
+        'EditMonthlySalary' => array(
+            'pattern' => $common_functions->get_regex_of_monthly_salary(),
+            'errorMsg' => 'Invalid Money Salary'
+        ),
+        'EditFromMonth' => array(
+            'pattern' => '/^(0[1-9]|1[0-2])$/',
+            'errorMsg' => 'Invalid Month'
+        ),
+        'EditFromYear' => array(
+            'pattern' => '/^(19(3[5-9]|[4-9][0-9])|2[0-9][0-9][0-9])$/',
+            'errorMsg' => 'Invalid Year'
+        ),
+        'EditToMonth' => array(
+            'pattern' => '/^(0[1-9]|1[0-2])$/',
+            'errorMsg' => 'Invalid Month'
+        ),
+        'EditToYear' => array(
+            'pattern' => '/^(19(3[5-9]|[4-9][0-9])|2[0-9][0-9][0-9])$/',
+            'errorMsg' => 'Invalid Year'
+        )
+    );
+
+    $validation_return = $common_functions->validate($_POST, $validation_config);
+    if ($validation_return['hasError']) {
+
+    }
+
+    if ($DateToYear !== 'Current') {
+        if ($_POST['EditToYear'] === $_POST['EditFromYear']) {
+            if ($_POST['EditFromMonth'] > $_POST['EditToMonth']) {
+                die('Invalid month.');
+            }
+        }
+    }
+
+    GSecureSQL::query(
+        "UPDATE workexperiencetbl SET StudentID = ?, CompanyName = ?, CompanyAddress = ?, Industry = ?, DateFromMonth = ?, DateFromYear = ?, DateToMonth = ?, DateToYear = ?, PositionLevel = ?, Specialization = ?, MonthlySalary = ?, NatureOfWork = ? WHERE StudentID = ?",
+        FALSE,
+        "sssssssssssss",
+        $StudentID,
+        $CompanyName,
+        $CompanyAddress,
+        $Industry,
+        $DateFromMonth,
+        $DateFromYear,
+        $DateToMonth,
+        $DateToYear,
+        $PositionLevel,
+        $WorkSpecialization,
+        $MonthlySalary,
+        $NatureOfWork,
+        $StudentID
+    );
+
+    GSecureSQL::query(
+        "UPDATE progresstbl SET WorkXP = 'ok' WHERE StudentID = ?",
+        FALSE,
+        "s",
+        $StudentID
+    );
+
+    header("location: work.php?saved");
 }

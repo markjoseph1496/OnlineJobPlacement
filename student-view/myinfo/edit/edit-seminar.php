@@ -145,7 +145,7 @@ $MajorCourse = $course_qry[0][0];
 </head>
 
 <body>
-<form id="EditSeminar" name="EditSeminar" autocomplete="off" action="myinfoedit.php">
+<form id="EditSeminar" name="EditSeminar" autocomplete="off" action="../myinfoedit.php">
     <div id="container">
         <!-- Start Header Section -->
         <div class="hidden-header"></div>

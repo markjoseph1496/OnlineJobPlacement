@@ -133,7 +133,7 @@ $MajorCourse = $course_qry[0][0];
 </head>
 
 <body>
-    <form id="form" name="form" autocomplete="off" action="myinfoadd.php" method="POST">
+    <form id="form" name="form" autocomplete="off" action="../myinfoadd.php" method="POST">
     <div id="container">
     <div id="container">
         <!-- Start Header Section -->

@@ -242,7 +242,7 @@ $MajorCourse = $course_qry[0][0];
         <!-- End Page Banner -->
 
         <!-- Start Content -->
-        <form id="myForm" name="myForm" action="myinfoadd.php" method="POST" autocomplete="off">
+        <form id="myForm" name="myForm" action="../myinfoadd.php" method="POST" autocomplete="off">
         <div id="content">
             <div class="container">
                 <div class="row sidebar-page">
