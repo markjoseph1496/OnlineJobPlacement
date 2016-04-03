@@ -326,7 +326,7 @@ if($References == "ok"){
                         <h4 class="modal-title">Sign Out</h4>
                     </div>
                     <div class="modal-body">
-                        <div class="col-md-15 fieldcol">
+                        <div class="col-md-15">
                             <label>Do you want to sign out?</label>
                         </div>
                         <div class="modal-footer">
@@ -485,9 +485,147 @@ if($References == "ok"){
                                 <h4>References<span class="head-line"></span></h4>
                             </div>
                             <div class="col-md-6">
-                                <a href="add/add-reference.php" class="main-button" style="float:right;">
-                                    <span class="fa fa-plus"> Add Reference</span>
+                                <a class="main-button" style="float:right;cursor:pointer;" data-toggle="modal" data-target="#AddReference">
+                                    <span> Add Reference</span>
                                 </a>
+                            </div>
+                        </div>
+
+                        <!-- ADD Reference Modal -->
+                        <div class="modal fade" id="AddReference" role="dialog">
+                            <div class="modal-dialog modal-lg" style="padding:160px;width:100%;">
+                                <!-- Modal content-->
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                        <h4 class="modal-title">Add Reference</h4>
+                                    </div>
+                                    <div class="modal-body">
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <div class="form-group">
+                                                    <label>Name <span>(*)</span></label>
+                                                    <input type="text" class="form-control" id="Name" name="Name">
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <div class="form-group">
+                                                    <label>Relationship <span>(*)</span></label>
+                                                    <input type="text" class="form-control" id="Relationship" name="Relationship">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <div class="form-group">
+                                                    <label>Company <span>(*)</span></label>
+                                                    <input type="text" class="form-control" id="Company" name="Company">
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <div class="form-group">
+                                                    <label>Position <span>(*)</span></label>
+                                                    <input type="text" class="form-control" id="Position" name="Position">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <div class="form-group">
+                                                    <label>Phone <span>(*)</span></label>
+                                                    <input type="text" class="form-control" id="Phone" name="Phone" maxlength="11">
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <div class="form-group">
+                                                    <label>Email</label>
+                                                    <input type="email" class="form-control" id="Email" name="Email">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-3">
+                                                &nbsp;
+                                            </div>
+                                            <div class="col-md-3">
+                                                &nbsp;
+                                            </div>
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="submit" class="btn-system btn-large">Add</button>
+                                            <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- EDIT Reference Modal -->
+                        <div class="modal fade" id="EditReference" role="dialog">
+                            <div class="modal-dialog modal-lg" style="padding:160px;width:100%;">
+                                <!-- Modal content-->
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                        <h4 class="modal-title">Edit Reference</h4>
+                                    </div>
+                                    <div class="modal-body">
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <div class="form-group">
+                                                    <label>Name <span>(*)</span></label>
+                                                    <input type="text" class="form-control" id="Name" name="Name">
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <div class="form-group">
+                                                    <label>Relationship <span>(*)</span></label>
+                                                    <input type="text" class="form-control" id="Relationship" name="Relationship">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <div class="form-group">
+                                                    <label>Company <span>(*)</span></label>
+                                                    <input type="text" class="form-control" id="Company" name="Company">
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <div class="form-group">
+                                                    <label>Position <span>(*)</span></label>
+                                                    <input type="text" class="form-control" id="Position" name="Position">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <div class="form-group">
+                                                    <label>Phone <span>(*)</span></label>
+                                                    <input type="text" class="form-control" id="Phone" name="Phone" maxlength="11">
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <div class="form-group">
+                                                    <label>Email</label>
+                                                    <input type="email" class="form-control" id="Email" name="Email">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-3">
+                                                &nbsp;
+                                            </div>
+                                            <div class="col-md-3">
+                                                &nbsp;
+                                            </div>
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="submit" class="btn-system btn-large">Save</button>
+                                            <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
 

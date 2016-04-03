@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="d999e893-f739-4a68-b7b0-034239dfb77e" name="Default" comment="">
+    <list default="true" id="d999e893-f739-4a68-b7b0-034239dfb77e" name="Default" comment="Polishing" />
+    <list id="ee7a7474-4848-4a40-af05-afa3160fd5b4" name="New changelist" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="OnlineJobPlacement.iws" />
@@ -24,11 +25,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="work.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="work.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/student-view/myinfo/work.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.5960452">
-              <caret line="1173" column="13" selection-start-line="1173" selection-start-column="13" selection-end-line="1173" selection-end-column="13" />
+            <state vertical-scroll-proportion="-13.612904">
+              <caret line="1398" column="36" selection-start-line="1398" selection-start-column="36" selection-end-line="1398" selection-end-column="36" />
               <folding>
                 <element signature="n#style#0;n#b#0;n#a#0;n#li#0;n#ul#0;n#li#1;n#ul#0;n#div#1;n#div#0;n#div#0;n#div#0;n#header#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#b#0;n#a#0;n#li#1;n#ul#0;n#li#1;n#ul#0;n#div#1;n#div#0;n#div#0;n#div#0;n#header#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
@@ -38,162 +39,53 @@
                 <element signature="n#style#0;n#button#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#form#0;n#div#1;n#div#0;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#div#2;n#div#0;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#a#0;n#div#1;n#div#3;n#div#0;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#0;n#div#4;n#div#0;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#select#0;n#div#0;n#div#0;n#div#1;n#div#1;n#div#0;n#div#0;n#div#4;n#div#0;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#select#0;n#div#0;n#div#0;n#div#2;n#div#1;n#div#0;n#div#0;n#div#4;n#div#0;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#select#0;n#div#0;n#div#1;n#div#2;n#div#1;n#div#0;n#div#0;n#div#4;n#div#0;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#select#0;n#div#0;n#div#0;n#div#2;n#div#2;n#div#1;n#div#0;n#div#0;n#div#4;n#div#0;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#select#0;n#div#0;n#div#1;n#div#2;n#div#2;n#div#1;n#div#0;n#div#0;n#div#4;n#div#0;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#select#0;n#div#0;n#div#0;n#div#4;n#div#1;n#div#0;n#div#0;n#div#4;n#div#0;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#select#0;n#div#0;n#div#1;n#div#4;n#div#1;n#div#0;n#div#0;n#div#4;n#div#0;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#0;n#div#5;n#div#0;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#select#0;n#div#0;n#div#0;n#div#1;n#div#1;n#div#0;n#div#0;n#div#5;n#div#0;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#select#0;n#div#0;n#div#0;n#div#2;n#div#1;n#div#0;n#div#0;n#div#5;n#div#0;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#select#0;n#div#0;n#div#1;n#div#2;n#div#1;n#div#0;n#div#0;n#div#5;n#div#0;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#select#0;n#div#0;n#div#0;n#div#2;n#div#2;n#div#1;n#div#0;n#div#0;n#div#5;n#div#0;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#select#0;n#div#0;n#div#1;n#div#2;n#div#2;n#div#1;n#div#0;n#div#0;n#div#5;n#div#0;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#select#0;n#div#0;n#div#0;n#div#4;n#div#1;n#div#0;n#div#0;n#div#5;n#div#0;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#select#0;n#div#0;n#div#1;n#div#4;n#div#1;n#div#0;n#div#0;n#div#5;n#div#0;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#6;n#div#0;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#0;n#div#0;n#form#0;n#div#0;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#select#0;n#div#0;n#div#0;n#div#1;n#div#1;n#div#0;n#div#0;n#div#0;n#form#0;n#div#0;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#select#0;n#div#0;n#div#0;n#div#2;n#div#1;n#div#0;n#div#0;n#div#0;n#form#0;n#div#0;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#select#0;n#div#0;n#div#1;n#div#2;n#div#1;n#div#0;n#div#0;n#div#0;n#form#0;n#div#0;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#select#0;n#div#0;n#div#0;n#div#2;n#div#2;n#div#1;n#div#0;n#div#0;n#div#0;n#form#0;n#div#0;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#select#0;n#div#0;n#div#1;n#div#2;n#div#2;n#div#1;n#div#0;n#div#0;n#div#0;n#form#0;n#div#0;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#select#0;n#div#0;n#div#0;n#div#4;n#div#1;n#div#0;n#div#0;n#div#0;n#form#0;n#div#0;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#select#0;n#div#0;n#div#1;n#div#4;n#div#1;n#div#0;n#div#0;n#div#0;n#form#0;n#div#0;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#0;n#div#0;n#form#1;n#div#0;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#select#0;n#div#0;n#div#0;n#div#1;n#div#1;n#div#0;n#div#0;n#div#0;n#form#1;n#div#0;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#select#0;n#div#0;n#div#0;n#div#2;n#div#1;n#div#0;n#div#0;n#div#0;n#form#1;n#div#0;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#select#0;n#div#0;n#div#1;n#div#2;n#div#1;n#div#0;n#div#0;n#div#0;n#form#1;n#div#0;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#select#0;n#div#0;n#div#0;n#div#2;n#div#2;n#div#1;n#div#0;n#div#0;n#div#0;n#form#1;n#div#0;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#select#0;n#div#0;n#div#1;n#div#2;n#div#2;n#div#1;n#div#0;n#div#0;n#div#0;n#form#1;n#div#0;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#select#0;n#div#0;n#div#0;n#div#4;n#div#1;n#div#0;n#div#0;n#div#0;n#form#1;n#div#0;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#select#0;n#div#0;n#div#1;n#div#4;n#div#1;n#div#0;n#div#0;n#div#0;n#form#1;n#div#0;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#4;n#div#0;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#div#0;n#div#0;n#tbody#0;n#table#0;n#div#0;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <marker date="1459672907164" expanded="true" signature="448:539" placeholder="SELECT First... studentinfotbl" />
-                <marker date="1459672907164" expanded="true" signature="814:868" placeholder="SELECT Cours... coursetbl" />
-                <marker date="1459672907164" expanded="true" signature="1009:1274" placeholder="SELECT Pinfo... " />
-                <marker date="1459672907164" expanded="true" signature="6187:6260" placeholder="SELECT COUNT... studnotificationtbl" />
-                <marker date="1459672907164" expanded="true" signature="8941:9039" placeholder="SELECT Messa... " />
-                <marker date="1459672907164" expanded="true" signature="17142:17398" placeholder="..." />
-                <marker date="1459672907164" expanded="true" signature="17586:17843" placeholder="..." />
-                <marker date="1459672907164" expanded="true" signature="23637:23668" placeholder="SELECT * FRO... listofindustrytbl" />
-                <marker date="1459672907164" expanded="true" signature="30953:30984" placeholder="SELECT * FRO... listofpositiontbl" />
-                <marker date="1459672907164" expanded="true" signature="32589:32626" placeholder="SELECT * FRO... listofspecializationtbl" />
-                <marker date="1459672907164" expanded="true" signature="34320:34354" placeholder="SELECT * FRO... listofsalaryrangetbl" />
-                <marker date="1459672907164" expanded="true" signature="38471:38502" placeholder="SELECT * FRO... listofindustrytbl" />
-                <marker date="1459672907164" expanded="true" signature="45787:45818" placeholder="SELECT * FRO... listofpositiontbl" />
-                <marker date="1459672907164" expanded="true" signature="47423:47460" placeholder="SELECT * FRO... listofspecializationtbl" />
-                <marker date="1459672907164" expanded="true" signature="49154:49188" placeholder="SELECT * FRO... listofsalaryrangetbl" />
-                <marker date="1459672907164" expanded="true" signature="51680:51756" placeholder="SELECT * FRO... workexperiencetbl" />
-                <marker date="1459672907164" expanded="true" signature="52613:52676" placeholder="SELECT Speci... listofspecializationtbl" />
+                <marker date="1459674799265" expanded="true" signature="448:539" placeholder="SELECT First... studentinfotbl" />
+                <marker date="1459674799265" expanded="true" signature="814:868" placeholder="SELECT Cours... coursetbl" />
+                <marker date="1459674799265" expanded="true" signature="1009:1274" placeholder="SELECT Pinfo... " />
+                <marker date="1459674799265" expanded="true" signature="6187:6260" placeholder="SELECT COUNT... studnotificationtbl" />
+                <marker date="1459674799265" expanded="true" signature="8941:9039" placeholder="SELECT Messa... " />
+                <marker date="1459674799265" expanded="true" signature="17142:17398" placeholder="..." />
+                <marker date="1459674799265" expanded="true" signature="17586:17843" placeholder="..." />
+                <marker date="1459674799265" expanded="true" signature="23884:23915" placeholder="SELECT * FRO... listofindustrytbl" />
+                <marker date="1459674799265" expanded="true" signature="31628:31659" placeholder="SELECT * FRO... listofpositiontbl" />
+                <marker date="1459674799265" expanded="true" signature="33364:33401" placeholder="SELECT * FRO... listofspecializationtbl" />
+                <marker date="1459674799265" expanded="true" signature="35199:35233" placeholder="SELECT * FRO... listofsalaryrangetbl" />
+                <marker date="1459674799265" expanded="true" signature="39772:39803" placeholder="SELECT * FRO... listofindustrytbl" />
+                <marker date="1459674799265" expanded="true" signature="47568:47599" placeholder="SELECT * FRO... listofpositiontbl" />
+                <marker date="1459674799265" expanded="true" signature="49312:49349" placeholder="SELECT * FRO... listofspecializationtbl" />
+                <marker date="1459674799265" expanded="true" signature="51155:51189" placeholder="SELECT * FRO... listofsalaryrangetbl" />
+                <marker date="1459674799265" expanded="true" signature="53836:53912" placeholder="SELECT * FRO... workexperiencetbl" />
+                <marker date="1459674799265" expanded="true" signature="54769:54832" placeholder="SELECT Speci... listofspecializationtbl" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="achievements.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/student-view/myinfo/achievements.php">
+      <file leaf-file-name="admin-createnews.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/admin/admin-createnews.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-17.741936">
-              <caret line="286" column="0" selection-start-line="286" selection-start-column="0" selection-end-line="286" selection-end-column="0" />
+            <state vertical-scroll-proportion="-2.118162">
+              <caret line="10" column="12" selection-start-line="10" selection-start-column="12" selection-end-line="10" selection-end-column="12" />
               <folding>
-                <marker date="1459672855259" expanded="true" signature="309:388" placeholder="SELECT First... studentinfotbl" />
-                <marker date="1459672855259" expanded="true" signature="631:685" placeholder="SELECT Cours... coursetbl" />
-                <marker date="1459672855259" expanded="true" signature="826:1091" placeholder="SELECT Pinfo... " />
-                <marker date="1459672855259" expanded="true" signature="5900:5973" placeholder="SELECT COUNT... studnotificationtbl" />
-                <marker date="1459672855259" expanded="true" signature="8659:8757" placeholder="SELECT Messa... " />
-                <marker date="1459672855259" expanded="true" signature="16769:17025" placeholder="..." />
-                <marker date="1459672855259" expanded="true" signature="17213:17470" placeholder="..." />
-                <marker date="1459672855259" expanded="true" signature="23349:23398" placeholder="SELECT * FRO... achievementstbl" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="common-functions.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/common-functions.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-7.806452">
-              <caret line="11" column="0" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
-              <folding>
-                <marker date="1456585190147" expanded="true" signature="7939:7973" placeholder="SELECT * FRO... listofsalaryrangetbl" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="certifications.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/student-view/myinfo/certifications.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-8.225806">
-              <caret line="593" column="40" selection-start-line="593" selection-start-column="40" selection-end-line="596" selection-end-column="44" />
-              <folding>
-                <marker date="1459672855260" expanded="true" signature="298:440" placeholder="..." />
-                <marker date="1459672855260" expanded="true" signature="308:387" placeholder="SELECT First... studentinfotbl" />
-                <marker date="1459672855260" expanded="true" signature="621:740" placeholder="..." />
-                <marker date="1459672855260" expanded="true" signature="631:685" placeholder="SELECT Cours... coursetbl" />
-                <marker date="1459672855260" expanded="true" signature="816:1144" placeholder="..." />
-                <marker date="1459672855260" expanded="true" signature="826:1091" placeholder="SELECT Pinfo... " />
-                <marker date="1459672855260" expanded="true" signature="1763:1814" placeholder="..." />
-                <marker date="1459672855260" expanded="true" signature="1835:1886" placeholder="..." />
-                <marker date="1459672855260" expanded="true" signature="1911:1963" placeholder="..." />
-                <marker date="1459672855260" expanded="true" signature="1985:2036" placeholder="..." />
-                <marker date="1459672855260" expanded="true" signature="2059:2111" placeholder="..." />
-                <marker date="1459672855260" expanded="true" signature="2140:2199" placeholder="..." />
-                <marker date="1459672855260" expanded="true" signature="2227:2285" placeholder="..." />
-                <marker date="1459672855260" expanded="true" signature="2315:2440" placeholder="..." />
-                <marker date="1459672855260" expanded="true" signature="2402:2438" placeholder="..." />
-                <marker date="1459672855260" expanded="true" signature="2465:2590" placeholder="..." />
-                <marker date="1459672855260" expanded="true" signature="2551:2587" placeholder="..." />
-                <marker date="1459672855260" expanded="true" signature="2616:2672" placeholder="..." />
-                <marker date="1459672855260" expanded="true" signature="5771:5927" placeholder="..." />
-                <marker date="1459672855260" expanded="true" signature="5785:5858" placeholder="SELECT COUNT... studnotificationtbl" />
-                <marker date="1459672855260" expanded="true" signature="6004:6198" placeholder="..." />
-                <marker date="1459672855260" expanded="true" signature="8599:8960" placeholder="..." />
-                <marker date="1459672855260" expanded="true" signature="8649:8747" placeholder="SELECT Messa... " />
-                <marker date="1459672855260" expanded="true" signature="9045:9506" placeholder="..." />
-                <marker date="1459672855260" expanded="true" signature="17346:17758" placeholder="..." />
-                <marker date="1459672855260" expanded="true" signature="17457:17713" placeholder="..." />
-                <marker date="1459672855260" expanded="true" signature="17804:18215" placeholder="..." />
-                <marker date="1459672855260" expanded="true" signature="17913:18170" placeholder="..." />
-                <marker date="1459672855260" expanded="true" signature="27415:27465" placeholder="SELECT * FRO... certificationtbl" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="myinfoadd.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/student-view/myinfo/myinfoadd.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-17.161291">
-              <caret line="443" column="39" selection-start-line="354" selection-start-column="0" selection-end-line="443" selection-end-column="39" />
-              <folding>
-                <marker date="1459658444642" expanded="true" signature="1180:1246" placeholder="SELECT COUNT... coursetbl" />
-                <marker date="1459658444642" expanded="true" signature="1950:2049" placeholder="INSERT INTO schooltbl... " />
-                <marker date="1459658444642" expanded="true" signature="2233:2289" placeholder="UPDATE progr... " />
-                <marker date="1459658444642" expanded="true" signature="2870:2940" placeholder="INSERT INTO seminartbl... " />
-                <marker date="1459658444642" expanded="true" signature="3073:3130" placeholder="UPDATE progr... " />
-                <marker date="1459658444642" expanded="true" signature="3735:3815" placeholder="INSERT INTO certificationtbl... " />
-                <marker date="1459658444642" expanded="true" signature="3951:4014" placeholder="UPDATE progr... " />
-                <marker date="1459658444642" expanded="true" signature="4352:4418" placeholder="INSERT INTO achievementstbl... " />
-                <marker date="1459658444642" expanded="true" signature="4531:4593" placeholder="UPDATE progr... " />
-                <marker date="1459658444642" expanded="true" signature="6727:6838" placeholder="INSERT INTO referencetbl... " />
-                <marker date="1459658444642" expanded="true" signature="7041:7101" placeholder="UPDATE progr... " />
-                <marker date="1459658444642" expanded="true" signature="7808:7905" placeholder="INSERT INTO specializationtbl... " />
-                <marker date="1459658444642" expanded="true" signature="8064:8128" placeholder="UPDATE progr... " />
-                <marker date="1459658444642" expanded="true" signature="8866:8955" placeholder="INSERT INTO languagetbl... " />
-                <marker date="1459658444642" expanded="true" signature="9124:9183" placeholder="UPDATE progr... " />
-                <marker date="1459658444642" expanded="true" signature="11428:11654" placeholder="INSERT INTO workexperiencetbl... " />
-                <marker date="1459658444642" expanded="true" signature="12011:12067" placeholder="UPDATE progr... " />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="myinfoedit.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/student-view/myinfo/myinfoedit.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-17.161291">
-              <caret line="353" column="6" selection-start-line="353" selection-start-column="6" selection-end-line="353" selection-end-column="6" />
-              <folding>
-                <marker date="1459660233512" expanded="true" signature="1026:1092" placeholder="SELECT COUNT... coursetbl" />
-                <marker date="1459660233512" expanded="true" signature="1792:1902" placeholder="UPDATE schoo... " />
-                <marker date="1459660233512" expanded="true" signature="2664:2753" placeholder="UPDATE semin... " />
-                <marker date="1459660233512" expanded="true" signature="3538:3642" placeholder="UPDATE certi... " />
-                <marker date="1459660233512" expanded="true" signature="4123:4208" placeholder="UPDATE achie... " />
-                <marker date="1459660233512" expanded="true" signature="4673:4812" placeholder="UPDATE refer... " />
-                <marker date="1459660233512" expanded="true" signature="5699:5809" placeholder="UPDATE speci... " />
-                <marker date="1459660233512" expanded="true" signature="6732:6841" placeholder="UPDATE langu... " />
-                <marker date="1459660233512" expanded="true" signature="9287:9546" placeholder="UPDATE worke... " />
-                <marker date="1459660233512" expanded="true" signature="9293:9526" placeholder="INSERT INTO workexperiencetbl... " />
-                <marker date="1459660233512" expanded="true" signature="9924:9980" placeholder="UPDATE progr... " />
+                <marker date="1459677070528" expanded="true" signature="223:271" placeholder="SELECT First... admintbl" />
               </folding>
             </state>
           </provider>
@@ -416,6 +308,124 @@
       <recent name="C:\xampp\htdocs\OnlineJobPlacement\student-view\myinfo" />
       <recent name="C:\xampp\htdocs\OnlineJobPlacement\company" />
     </key>
+  </component>
+  <component name="RestoreUpdateTree" date="Moments ago" ActionInfo="_Update">
+    <UpdatedFiles>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Updated from server" />
+        <option name="myStatusName" value="Changed on server" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="CHANGED_ON_SERVER" />
+        <FILE-GROUP>
+          <option name="myUpdateName" value="Updated" />
+          <option name="myStatusName" value="Changed" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="false" />
+          <option name="myId" value="UPDATED" />
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/admin/admin-delete.php</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/admin/admin.php</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/admin/functions.php</PATH>
+        </FILE-GROUP>
+        <FILE-GROUP>
+          <option name="myUpdateName" value="Created" />
+          <option name="myStatusName" value="Created" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="false" />
+          <option name="myId" value="CREATED" />
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/admin/ProfileImages/30b04a043a318e23b256d95a40d43d370a147eab53147787e9609b61409acdca812f0d66cb47a76588047443b6c5bde24bdec4703df2c38f2ee9d1831a315847.jpg</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/admin/ProfileImages/7e582353657f9343309fa25d1f8b73d612a47ac93ac0702583a24923b49ab12a6f79e6a94ae2ccd7813996f5f12b77f76577768479fe18fa9fadb8ea2dc816dc.jpg</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/admin/ProfileImages/d6250960a4dacbc6b8c65cadcd6a67c205f9a5007236622d3270c59885b641fe2168da5fd0032f7c898e1cff620646d8447b5992bb055f970af3eba1565bee16.png</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/admin/admin-createnews.php</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/admin/admin-news.php</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/student-view/myinfo/ProfileImages/00820120325.jpg</PATH>
+        </FILE-GROUP>
+        <FILE-GROUP>
+          <option name="myUpdateName" value="Deleted" />
+          <option name="myStatusName" value="Deleted" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="true" />
+          <option name="myId" value="REMOVED_FROM_REPOSITORY" />
+        </FILE-GROUP>
+        <FILE-GROUP>
+          <option name="myUpdateName" value="Restored" />
+          <option name="myStatusName" value="Will be restored" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="false" />
+          <option name="myId" value="RESTORED" />
+        </FILE-GROUP>
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Modified" />
+        <option name="myStatusName" value="Modified" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="MODIFIED" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Skipped" />
+        <option name="myStatusName" value="Skipped" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="SKIPPED" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Merged with conflicts" />
+        <option name="myStatusName" value="Will be merged with conflicts" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="MERGED_WITH_CONFLICTS" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Merged with tree conflicts" />
+        <option name="myStatusName" value="Merged with tree conflicts" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="MERGED_WITH_TREE_CONFLICT" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Merged with property conflicts" />
+        <option name="myStatusName" value="Will be merged with property conflicts" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="MERGED_WITH_PROPERTY_CONFLICT" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Merged" />
+        <option name="myStatusName" value="Will be merged" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="MERGED" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Not in repository" />
+        <option name="myStatusName" value="Not in repository" />
+        <option name="mySupportsDeletion" value="true" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="UNKNOWN" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Locally added" />
+        <option name="myStatusName" value="Locally added" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="LOCALLY_ADDED" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Locally removed" />
+        <option name="myStatusName" value="Locally removed" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="LOCALLY_REMOVED" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Switched" />
+        <option name="myStatusName" value="Switched" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="SWITCHED" />
+      </FILE-GROUP>
+    </UpdatedFiles>
   </component>
   <component name="RunManager">
     <configuration default="true" type="JavascriptDebugType" factoryName="JavaScript Debug">
@@ -768,7 +778,7 @@
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32985657" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32724902" sideWeight="0.505" order="10" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32724902" sideWeight="0.495" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32724902" sideWeight="0.495" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
@@ -834,84 +844,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/student-view/myinfo/work.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="n#style#0;n#b#0;n#a#0;n#li#0;n#ul#0;n#li#1;n#ul#0;n#div#1;n#div#0;n#div#0;n#div#0;n#header#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#b#0;n#a#0;n#li#1;n#ul#0;n#li#1;n#ul#0;n#div#1;n#div#0;n#div#0;n#div#0;n#header#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#b#0;n#a#0;n#li#3;n#ul#0;n#li#1;n#ul#0;n#div#1;n#div#0;n#div#0;n#div#0;n#header#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#div#1;n#header#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#button#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#form#0;n#div#1;n#div#0;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#2;n#div#0;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#a#0;n#div#1;n#div#3;n#div#0;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#div#4;n#div#0;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#select#0;n#div#0;n#div#0;n#div#1;n#div#1;n#div#0;n#div#0;n#div#4;n#div#0;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#select#0;n#div#0;n#div#0;n#div#2;n#div#1;n#div#0;n#div#0;n#div#4;n#div#0;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#select#0;n#div#0;n#div#1;n#div#2;n#div#1;n#div#0;n#div#0;n#div#4;n#div#0;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#select#0;n#div#0;n#div#0;n#div#2;n#div#2;n#div#1;n#div#0;n#div#0;n#div#4;n#div#0;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#select#0;n#div#0;n#div#1;n#div#2;n#div#2;n#div#1;n#div#0;n#div#0;n#div#4;n#div#0;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#select#0;n#div#0;n#div#0;n#div#4;n#div#1;n#div#0;n#div#0;n#div#4;n#div#0;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#select#0;n#div#0;n#div#1;n#div#4;n#div#1;n#div#0;n#div#0;n#div#4;n#div#0;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#div#5;n#div#0;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#select#0;n#div#0;n#div#0;n#div#1;n#div#1;n#div#0;n#div#0;n#div#5;n#div#0;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#select#0;n#div#0;n#div#0;n#div#2;n#div#1;n#div#0;n#div#0;n#div#5;n#div#0;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#select#0;n#div#0;n#div#1;n#div#2;n#div#1;n#div#0;n#div#0;n#div#5;n#div#0;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#select#0;n#div#0;n#div#0;n#div#2;n#div#2;n#div#1;n#div#0;n#div#0;n#div#5;n#div#0;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#select#0;n#div#0;n#div#1;n#div#2;n#div#2;n#div#1;n#div#0;n#div#0;n#div#5;n#div#0;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#select#0;n#div#0;n#div#0;n#div#4;n#div#1;n#div#0;n#div#0;n#div#5;n#div#0;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#select#0;n#div#0;n#div#1;n#div#4;n#div#1;n#div#0;n#div#0;n#div#5;n#div#0;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#6;n#div#0;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#div#0;n#tbody#0;n#table#0;n#div#0;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <marker date="1459672907164" expanded="true" signature="448:539" placeholder="SELECT First... studentinfotbl" />
-            <marker date="1459672907164" expanded="true" signature="814:868" placeholder="SELECT Cours... coursetbl" />
-            <marker date="1459672907164" expanded="true" signature="1009:1274" placeholder="SELECT Pinfo... " />
-            <marker date="1459672907164" expanded="true" signature="6187:6260" placeholder="SELECT COUNT... studnotificationtbl" />
-            <marker date="1459672907164" expanded="true" signature="8941:9039" placeholder="SELECT Messa... " />
-            <marker date="1459672907164" expanded="true" signature="17142:17398" placeholder="..." />
-            <marker date="1459672907164" expanded="true" signature="17586:17843" placeholder="..." />
-            <marker date="1459672907164" expanded="true" signature="23637:23668" placeholder="SELECT * FRO... listofindustrytbl" />
-            <marker date="1459672907164" expanded="true" signature="30953:30984" placeholder="SELECT * FRO... listofpositiontbl" />
-            <marker date="1459672907164" expanded="true" signature="32589:32626" placeholder="SELECT * FRO... listofspecializationtbl" />
-            <marker date="1459672907164" expanded="true" signature="34320:34354" placeholder="SELECT * FRO... listofsalaryrangetbl" />
-            <marker date="1459672907164" expanded="true" signature="38471:38502" placeholder="SELECT * FRO... listofindustrytbl" />
-            <marker date="1459672907164" expanded="true" signature="45787:45818" placeholder="SELECT * FRO... listofpositiontbl" />
-            <marker date="1459672907164" expanded="true" signature="47423:47460" placeholder="SELECT * FRO... listofspecializationtbl" />
-            <marker date="1459672907164" expanded="true" signature="49154:49188" placeholder="SELECT * FRO... listofsalaryrangetbl" />
-            <marker date="1459672907164" expanded="true" signature="51680:51756" placeholder="SELECT * FRO... workexperiencetbl" />
-            <marker date="1459672907164" expanded="true" signature="52613:52676" placeholder="SELECT Speci... listofspecializationtbl" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/student-view/myinfo/myinfoadd.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="423" column="21" selection-start-line="423" selection-start-column="21" selection-end-line="423" selection-end-column="21" />
-          <folding>
-            <marker date="1459658444642" expanded="true" signature="1180:1246" placeholder="SELECT COUNT... coursetbl" />
-            <marker date="1459658444642" expanded="true" signature="1950:2049" placeholder="INSERT INTO schooltbl... " />
-            <marker date="1459658444642" expanded="true" signature="2233:2289" placeholder="UPDATE progr... " />
-            <marker date="1459658444642" expanded="true" signature="2870:2940" placeholder="INSERT INTO seminartbl... " />
-            <marker date="1459658444642" expanded="true" signature="3073:3130" placeholder="UPDATE progr... " />
-            <marker date="1459658444642" expanded="true" signature="3735:3815" placeholder="INSERT INTO certificationtbl... " />
-            <marker date="1459658444642" expanded="true" signature="3951:4014" placeholder="UPDATE progr... " />
-            <marker date="1459658444642" expanded="true" signature="4352:4418" placeholder="INSERT INTO achievementstbl... " />
-            <marker date="1459658444642" expanded="true" signature="4531:4593" placeholder="UPDATE progr... " />
-            <marker date="1459658444642" expanded="true" signature="6727:6838" placeholder="INSERT INTO referencetbl... " />
-            <marker date="1459658444642" expanded="true" signature="7041:7101" placeholder="UPDATE progr... " />
-            <marker date="1459658444642" expanded="true" signature="7808:7905" placeholder="INSERT INTO specializationtbl... " />
-            <marker date="1459658444642" expanded="true" signature="8064:8128" placeholder="UPDATE progr... " />
-            <marker date="1459658444642" expanded="true" signature="8866:8955" placeholder="INSERT INTO languagetbl... " />
-            <marker date="1459658444642" expanded="true" signature="9124:9183" placeholder="UPDATE progr... " />
-            <marker date="1459658444642" expanded="true" signature="11428:11654" placeholder="INSERT INTO workexperiencetbl... " />
-            <marker date="1459658444642" expanded="true" signature="12011:12067" placeholder="UPDATE progr... " />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/student-view/myinfo/add/add-workexperience.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -1227,18 +1159,18 @@
         <state vertical-scroll-proportion="0.9378531">
           <caret line="245" column="13" selection-start-line="245" selection-start-column="13" selection-end-line="245" selection-end-column="13" />
           <folding>
-            <marker date="1459672855262" expanded="true" signature="447:526" placeholder="SELECT First... studentinfotbl" />
-            <marker date="1459672855262" expanded="true" signature="769:823" placeholder="SELECT Cours... coursetbl" />
-            <marker date="1459672855262" expanded="true" signature="964:1229" placeholder="SELECT Pinfo... " />
-            <marker date="1459672855262" expanded="true" signature="5986:6059" placeholder="SELECT COUNT... studnotificationtbl" />
-            <marker date="1459672855262" expanded="true" signature="8744:8842" placeholder="SELECT Messa... " />
-            <marker date="1459672855262" expanded="true" signature="16931:17187" placeholder="..." />
-            <marker date="1459672855262" expanded="true" signature="17375:17632" placeholder="..." />
-            <marker date="1459672855262" expanded="true" signature="20020:20080" placeholder="SELECT * FRO... schooltbl" />
-            <marker date="1459672855262" expanded="true" signature="20727:20769" placeholder="SELECT * FRO... coursetbl" />
-            <marker date="1459672855262" expanded="true" signature="24623:24683" placeholder="SELECT * FRO... schooltbl" />
-            <marker date="1459672855262" expanded="true" signature="25343:25385" placeholder="SELECT * FRO... coursetbl" />
-            <marker date="1459672855262" expanded="true" signature="32841:32885" placeholder="SELECT * FRO... seminartbl" />
+            <marker date="1459674799252" expanded="true" signature="447:526" placeholder="SELECT First... studentinfotbl" />
+            <marker date="1459674799252" expanded="true" signature="769:823" placeholder="SELECT Cours... coursetbl" />
+            <marker date="1459674799252" expanded="true" signature="964:1229" placeholder="SELECT Pinfo... " />
+            <marker date="1459674799252" expanded="true" signature="5986:6059" placeholder="SELECT COUNT... studnotificationtbl" />
+            <marker date="1459674799252" expanded="true" signature="8744:8842" placeholder="SELECT Messa... " />
+            <marker date="1459674799252" expanded="true" signature="16931:17187" placeholder="..." />
+            <marker date="1459674799252" expanded="true" signature="17375:17632" placeholder="..." />
+            <marker date="1459674799252" expanded="true" signature="20020:20080" placeholder="SELECT * FRO... schooltbl" />
+            <marker date="1459674799252" expanded="true" signature="20727:20769" placeholder="SELECT * FRO... coursetbl" />
+            <marker date="1459674799252" expanded="true" signature="24623:24683" placeholder="SELECT * FRO... schooltbl" />
+            <marker date="1459674799252" expanded="true" signature="25343:25385" placeholder="SELECT * FRO... coursetbl" />
+            <marker date="1459674799252" expanded="true" signature="32841:32885" placeholder="SELECT * FRO... seminartbl" />
           </folding>
         </state>
       </provider>
@@ -1297,15 +1229,15 @@
         <state vertical-scroll-proportion="0.9378531">
           <caret line="249" column="13" selection-start-line="249" selection-start-column="13" selection-end-line="249" selection-end-column="13" />
           <folding>
-            <marker date="1459596404911" expanded="true" signature="444:523" placeholder="SELECT First... studentinfotbl" />
-            <marker date="1459596404911" expanded="true" signature="767:821" placeholder="SELECT Cours... coursetbl" />
-            <marker date="1459596404911" expanded="true" signature="962:1227" placeholder="SELECT Pinfo... " />
-            <marker date="1459596404911" expanded="true" signature="6138:6211" placeholder="SELECT COUNT... studnotificationtbl" />
-            <marker date="1459596404911" expanded="true" signature="8999:9097" placeholder="SELECT Messa... " />
-            <marker date="1459596404911" expanded="true" signature="17807:18063" placeholder="..." />
-            <marker date="1459596404911" expanded="true" signature="18263:18520" placeholder="..." />
-            <marker date="1459596404911" expanded="true" signature="21097:21148" placeholder="SELECT * FRO... specializationtbl" />
-            <marker date="1459596404911" expanded="true" signature="27997:28042" placeholder="SELECT * FRO... languagetbl" />
+            <marker date="1459675577884" expanded="true" signature="444:523" placeholder="SELECT First... studentinfotbl" />
+            <marker date="1459675577884" expanded="true" signature="767:821" placeholder="SELECT Cours... coursetbl" />
+            <marker date="1459675577884" expanded="true" signature="962:1227" placeholder="SELECT Pinfo... " />
+            <marker date="1459675577884" expanded="true" signature="6138:6211" placeholder="SELECT COUNT... studnotificationtbl" />
+            <marker date="1459675577884" expanded="true" signature="8999:9097" placeholder="SELECT Messa... " />
+            <marker date="1459675577884" expanded="true" signature="17807:18063" placeholder="..." />
+            <marker date="1459675577884" expanded="true" signature="18263:18520" placeholder="..." />
+            <marker date="1459675577884" expanded="true" signature="21097:21148" placeholder="SELECT * FRO... specializationtbl" />
+            <marker date="1459675577884" expanded="true" signature="41452:41497" placeholder="SELECT * FRO... languagetbl" />
           </folding>
         </state>
       </provider>
@@ -1318,50 +1250,40 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/common-functions.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-7.806452">
-          <caret line="11" column="0" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
-          <folding>
-            <marker date="1456585190147" expanded="true" signature="7939:7973" placeholder="SELECT * FRO... listofsalaryrangetbl" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/student-view/myinfo/certifications.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-8.225806">
           <caret line="593" column="40" selection-start-line="593" selection-start-column="40" selection-end-line="596" selection-end-column="44" />
           <folding>
-            <marker date="1459672855260" expanded="true" signature="298:440" placeholder="..." />
-            <marker date="1459672855260" expanded="true" signature="308:387" placeholder="SELECT First... studentinfotbl" />
-            <marker date="1459672855260" expanded="true" signature="621:740" placeholder="..." />
-            <marker date="1459672855260" expanded="true" signature="631:685" placeholder="SELECT Cours... coursetbl" />
-            <marker date="1459672855260" expanded="true" signature="816:1144" placeholder="..." />
-            <marker date="1459672855260" expanded="true" signature="826:1091" placeholder="SELECT Pinfo... " />
-            <marker date="1459672855260" expanded="true" signature="1763:1814" placeholder="..." />
-            <marker date="1459672855260" expanded="true" signature="1835:1886" placeholder="..." />
-            <marker date="1459672855260" expanded="true" signature="1911:1963" placeholder="..." />
-            <marker date="1459672855260" expanded="true" signature="1985:2036" placeholder="..." />
-            <marker date="1459672855260" expanded="true" signature="2059:2111" placeholder="..." />
-            <marker date="1459672855260" expanded="true" signature="2140:2199" placeholder="..." />
-            <marker date="1459672855260" expanded="true" signature="2227:2285" placeholder="..." />
-            <marker date="1459672855260" expanded="true" signature="2315:2440" placeholder="..." />
-            <marker date="1459672855260" expanded="true" signature="2402:2438" placeholder="..." />
-            <marker date="1459672855260" expanded="true" signature="2465:2590" placeholder="..." />
-            <marker date="1459672855260" expanded="true" signature="2551:2587" placeholder="..." />
-            <marker date="1459672855260" expanded="true" signature="2616:2672" placeholder="..." />
-            <marker date="1459672855260" expanded="true" signature="5771:5927" placeholder="..." />
-            <marker date="1459672855260" expanded="true" signature="5785:5858" placeholder="SELECT COUNT... studnotificationtbl" />
-            <marker date="1459672855260" expanded="true" signature="6004:6198" placeholder="..." />
-            <marker date="1459672855260" expanded="true" signature="8599:8960" placeholder="..." />
-            <marker date="1459672855260" expanded="true" signature="8649:8747" placeholder="SELECT Messa... " />
-            <marker date="1459672855260" expanded="true" signature="9045:9506" placeholder="..." />
-            <marker date="1459672855260" expanded="true" signature="17346:17758" placeholder="..." />
-            <marker date="1459672855260" expanded="true" signature="17457:17713" placeholder="..." />
-            <marker date="1459672855260" expanded="true" signature="17804:18215" placeholder="..." />
-            <marker date="1459672855260" expanded="true" signature="17913:18170" placeholder="..." />
-            <marker date="1459672855260" expanded="true" signature="27415:27465" placeholder="SELECT * FRO... certificationtbl" />
+            <marker date="1459674799239" expanded="true" signature="298:440" placeholder="..." />
+            <marker date="1459674799239" expanded="true" signature="308:387" placeholder="SELECT First... studentinfotbl" />
+            <marker date="1459674799239" expanded="true" signature="621:740" placeholder="..." />
+            <marker date="1459674799239" expanded="true" signature="631:685" placeholder="SELECT Cours... coursetbl" />
+            <marker date="1459674799239" expanded="true" signature="816:1144" placeholder="..." />
+            <marker date="1459674799239" expanded="true" signature="826:1091" placeholder="SELECT Pinfo... " />
+            <marker date="1459674799239" expanded="true" signature="1763:1814" placeholder="..." />
+            <marker date="1459674799239" expanded="true" signature="1835:1886" placeholder="..." />
+            <marker date="1459674799239" expanded="true" signature="1911:1963" placeholder="..." />
+            <marker date="1459674799239" expanded="true" signature="1985:2036" placeholder="..." />
+            <marker date="1459674799239" expanded="true" signature="2059:2111" placeholder="..." />
+            <marker date="1459674799239" expanded="true" signature="2140:2199" placeholder="..." />
+            <marker date="1459674799239" expanded="true" signature="2227:2285" placeholder="..." />
+            <marker date="1459674799239" expanded="true" signature="2315:2440" placeholder="..." />
+            <marker date="1459674799239" expanded="true" signature="2402:2438" placeholder="..." />
+            <marker date="1459674799239" expanded="true" signature="2465:2590" placeholder="..." />
+            <marker date="1459674799239" expanded="true" signature="2551:2587" placeholder="..." />
+            <marker date="1459674799239" expanded="true" signature="2616:2672" placeholder="..." />
+            <marker date="1459674799239" expanded="true" signature="5771:5927" placeholder="..." />
+            <marker date="1459674799239" expanded="true" signature="5785:5858" placeholder="SELECT COUNT... studnotificationtbl" />
+            <marker date="1459674799239" expanded="true" signature="6004:6198" placeholder="..." />
+            <marker date="1459674799239" expanded="true" signature="8599:8960" placeholder="..." />
+            <marker date="1459674799239" expanded="true" signature="8649:8747" placeholder="SELECT Messa... " />
+            <marker date="1459674799239" expanded="true" signature="9045:9506" placeholder="..." />
+            <marker date="1459674799239" expanded="true" signature="17346:17758" placeholder="..." />
+            <marker date="1459674799239" expanded="true" signature="17457:17713" placeholder="..." />
+            <marker date="1459674799239" expanded="true" signature="17804:18215" placeholder="..." />
+            <marker date="1459674799239" expanded="true" signature="17913:18170" placeholder="..." />
+            <marker date="1459674799239" expanded="true" signature="20664:20714" placeholder="SELECT * FRO... certificationtbl" />
           </folding>
         </state>
       </provider>
@@ -1386,14 +1308,14 @@
         <state vertical-scroll-proportion="-17.741936">
           <caret line="286" column="0" selection-start-line="286" selection-start-column="0" selection-end-line="286" selection-end-column="0" />
           <folding>
-            <marker date="1459672855259" expanded="true" signature="309:388" placeholder="SELECT First... studentinfotbl" />
-            <marker date="1459672855259" expanded="true" signature="631:685" placeholder="SELECT Cours... coursetbl" />
-            <marker date="1459672855259" expanded="true" signature="826:1091" placeholder="SELECT Pinfo... " />
-            <marker date="1459672855259" expanded="true" signature="5900:5973" placeholder="SELECT COUNT... studnotificationtbl" />
-            <marker date="1459672855259" expanded="true" signature="8659:8757" placeholder="SELECT Messa... " />
-            <marker date="1459672855259" expanded="true" signature="16769:17025" placeholder="..." />
-            <marker date="1459672855259" expanded="true" signature="17213:17470" placeholder="..." />
-            <marker date="1459672855259" expanded="true" signature="23349:23398" placeholder="SELECT * FRO... achievementstbl" />
+            <marker date="1459674799226" expanded="true" signature="309:388" placeholder="SELECT First... studentinfotbl" />
+            <marker date="1459674799226" expanded="true" signature="631:685" placeholder="SELECT Cours... coursetbl" />
+            <marker date="1459674799226" expanded="true" signature="826:1091" placeholder="SELECT Pinfo... " />
+            <marker date="1459674799226" expanded="true" signature="5900:5973" placeholder="SELECT COUNT... studnotificationtbl" />
+            <marker date="1459674799226" expanded="true" signature="8659:8757" placeholder="SELECT Messa... " />
+            <marker date="1459674799226" expanded="true" signature="16769:17025" placeholder="..." />
+            <marker date="1459674799226" expanded="true" signature="17213:17470" placeholder="..." />
+            <marker date="1459674799226" expanded="true" signature="19749:19798" placeholder="SELECT * FRO... achievementstbl" />
           </folding>
         </state>
       </provider>
@@ -1444,10 +1366,32 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/student-view/myinfo/edit/edit-achievement.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <marker date="1459656483853" expanded="true" signature="489:542" placeholder="SELECT * FRO... achievementstbl" />
+            <marker date="1459656483853" expanded="true" signature="690:769" placeholder="SELECT First... studentinfotbl" />
+            <marker date="1459656483853" expanded="true" signature="1013:1067" placeholder="SELECT Cours... coursetbl" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/common-functions.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.3418079">
+          <caret line="11" column="0" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
+          <folding>
+            <marker date="1456585190147" expanded="true" signature="7939:7973" placeholder="SELECT * FRO... listofsalaryrangetbl" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/student-view/myinfo/work.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.5960452">
-          <caret line="1173" column="13" selection-start-line="1173" selection-start-column="13" selection-end-line="1173" selection-end-column="13" />
+        <state vertical-scroll-proportion="-13.612904">
+          <caret line="1398" column="36" selection-start-line="1398" selection-start-column="36" selection-end-line="1398" selection-end-column="36" />
           <folding>
             <element signature="n#style#0;n#b#0;n#a#0;n#li#0;n#ul#0;n#li#1;n#ul#0;n#div#1;n#div#0;n#div#0;n#div#0;n#header#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#b#0;n#a#0;n#li#1;n#ul#0;n#li#1;n#ul#0;n#div#1;n#div#0;n#div#0;n#div#0;n#header#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
@@ -1457,41 +1401,51 @@
             <element signature="n#style#0;n#button#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#form#0;n#div#1;n#div#0;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#div#2;n#div#0;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#a#0;n#div#1;n#div#3;n#div#0;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#div#4;n#div#0;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#select#0;n#div#0;n#div#0;n#div#1;n#div#1;n#div#0;n#div#0;n#div#4;n#div#0;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#select#0;n#div#0;n#div#0;n#div#2;n#div#1;n#div#0;n#div#0;n#div#4;n#div#0;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#select#0;n#div#0;n#div#1;n#div#2;n#div#1;n#div#0;n#div#0;n#div#4;n#div#0;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#select#0;n#div#0;n#div#0;n#div#2;n#div#2;n#div#1;n#div#0;n#div#0;n#div#4;n#div#0;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#select#0;n#div#0;n#div#1;n#div#2;n#div#2;n#div#1;n#div#0;n#div#0;n#div#4;n#div#0;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#select#0;n#div#0;n#div#0;n#div#4;n#div#1;n#div#0;n#div#0;n#div#4;n#div#0;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#select#0;n#div#0;n#div#1;n#div#4;n#div#1;n#div#0;n#div#0;n#div#4;n#div#0;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#div#5;n#div#0;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#select#0;n#div#0;n#div#0;n#div#1;n#div#1;n#div#0;n#div#0;n#div#5;n#div#0;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#select#0;n#div#0;n#div#0;n#div#2;n#div#1;n#div#0;n#div#0;n#div#5;n#div#0;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#select#0;n#div#0;n#div#1;n#div#2;n#div#1;n#div#0;n#div#0;n#div#5;n#div#0;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#select#0;n#div#0;n#div#0;n#div#2;n#div#2;n#div#1;n#div#0;n#div#0;n#div#5;n#div#0;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#select#0;n#div#0;n#div#1;n#div#2;n#div#2;n#div#1;n#div#0;n#div#0;n#div#5;n#div#0;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#select#0;n#div#0;n#div#0;n#div#4;n#div#1;n#div#0;n#div#0;n#div#5;n#div#0;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#select#0;n#div#0;n#div#1;n#div#4;n#div#1;n#div#0;n#div#0;n#div#5;n#div#0;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#6;n#div#0;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#0;n#form#0;n#div#0;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#select#0;n#div#0;n#div#0;n#div#1;n#div#1;n#div#0;n#div#0;n#div#0;n#form#0;n#div#0;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#select#0;n#div#0;n#div#0;n#div#2;n#div#1;n#div#0;n#div#0;n#div#0;n#form#0;n#div#0;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#select#0;n#div#0;n#div#1;n#div#2;n#div#1;n#div#0;n#div#0;n#div#0;n#form#0;n#div#0;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#select#0;n#div#0;n#div#0;n#div#2;n#div#2;n#div#1;n#div#0;n#div#0;n#div#0;n#form#0;n#div#0;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#select#0;n#div#0;n#div#1;n#div#2;n#div#2;n#div#1;n#div#0;n#div#0;n#div#0;n#form#0;n#div#0;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#select#0;n#div#0;n#div#0;n#div#4;n#div#1;n#div#0;n#div#0;n#div#0;n#form#0;n#div#0;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#select#0;n#div#0;n#div#1;n#div#4;n#div#1;n#div#0;n#div#0;n#div#0;n#form#0;n#div#0;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#0;n#form#1;n#div#0;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#select#0;n#div#0;n#div#0;n#div#1;n#div#1;n#div#0;n#div#0;n#div#0;n#form#1;n#div#0;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#select#0;n#div#0;n#div#0;n#div#2;n#div#1;n#div#0;n#div#0;n#div#0;n#form#1;n#div#0;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#select#0;n#div#0;n#div#1;n#div#2;n#div#1;n#div#0;n#div#0;n#div#0;n#form#1;n#div#0;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#select#0;n#div#0;n#div#0;n#div#2;n#div#2;n#div#1;n#div#0;n#div#0;n#div#0;n#form#1;n#div#0;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#select#0;n#div#0;n#div#1;n#div#2;n#div#2;n#div#1;n#div#0;n#div#0;n#div#0;n#form#1;n#div#0;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#select#0;n#div#0;n#div#0;n#div#4;n#div#1;n#div#0;n#div#0;n#div#0;n#form#1;n#div#0;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#select#0;n#div#0;n#div#1;n#div#4;n#div#1;n#div#0;n#div#0;n#div#0;n#form#1;n#div#0;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#4;n#div#0;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#div#0;n#div#0;n#tbody#0;n#table#0;n#div#0;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <marker date="1459672907164" expanded="true" signature="448:539" placeholder="SELECT First... studentinfotbl" />
-            <marker date="1459672907164" expanded="true" signature="814:868" placeholder="SELECT Cours... coursetbl" />
-            <marker date="1459672907164" expanded="true" signature="1009:1274" placeholder="SELECT Pinfo... " />
-            <marker date="1459672907164" expanded="true" signature="6187:6260" placeholder="SELECT COUNT... studnotificationtbl" />
-            <marker date="1459672907164" expanded="true" signature="8941:9039" placeholder="SELECT Messa... " />
-            <marker date="1459672907164" expanded="true" signature="17142:17398" placeholder="..." />
-            <marker date="1459672907164" expanded="true" signature="17586:17843" placeholder="..." />
-            <marker date="1459672907164" expanded="true" signature="23637:23668" placeholder="SELECT * FRO... listofindustrytbl" />
-            <marker date="1459672907164" expanded="true" signature="30953:30984" placeholder="SELECT * FRO... listofpositiontbl" />
-            <marker date="1459672907164" expanded="true" signature="32589:32626" placeholder="SELECT * FRO... listofspecializationtbl" />
-            <marker date="1459672907164" expanded="true" signature="34320:34354" placeholder="SELECT * FRO... listofsalaryrangetbl" />
-            <marker date="1459672907164" expanded="true" signature="38471:38502" placeholder="SELECT * FRO... listofindustrytbl" />
-            <marker date="1459672907164" expanded="true" signature="45787:45818" placeholder="SELECT * FRO... listofpositiontbl" />
-            <marker date="1459672907164" expanded="true" signature="47423:47460" placeholder="SELECT * FRO... listofspecializationtbl" />
-            <marker date="1459672907164" expanded="true" signature="49154:49188" placeholder="SELECT * FRO... listofsalaryrangetbl" />
-            <marker date="1459672907164" expanded="true" signature="51680:51756" placeholder="SELECT * FRO... workexperiencetbl" />
-            <marker date="1459672907164" expanded="true" signature="52613:52676" placeholder="SELECT Speci... listofspecializationtbl" />
+            <marker date="1459674799265" expanded="true" signature="448:539" placeholder="SELECT First... studentinfotbl" />
+            <marker date="1459674799265" expanded="true" signature="814:868" placeholder="SELECT Cours... coursetbl" />
+            <marker date="1459674799265" expanded="true" signature="1009:1274" placeholder="SELECT Pinfo... " />
+            <marker date="1459674799265" expanded="true" signature="6187:6260" placeholder="SELECT COUNT... studnotificationtbl" />
+            <marker date="1459674799265" expanded="true" signature="8941:9039" placeholder="SELECT Messa... " />
+            <marker date="1459674799265" expanded="true" signature="17142:17398" placeholder="..." />
+            <marker date="1459674799265" expanded="true" signature="17586:17843" placeholder="..." />
+            <marker date="1459674799265" expanded="true" signature="23884:23915" placeholder="SELECT * FRO... listofindustrytbl" />
+            <marker date="1459674799265" expanded="true" signature="31628:31659" placeholder="SELECT * FRO... listofpositiontbl" />
+            <marker date="1459674799265" expanded="true" signature="33364:33401" placeholder="SELECT * FRO... listofspecializationtbl" />
+            <marker date="1459674799265" expanded="true" signature="35199:35233" placeholder="SELECT * FRO... listofsalaryrangetbl" />
+            <marker date="1459674799265" expanded="true" signature="39772:39803" placeholder="SELECT * FRO... listofindustrytbl" />
+            <marker date="1459674799265" expanded="true" signature="47568:47599" placeholder="SELECT * FRO... listofpositiontbl" />
+            <marker date="1459674799265" expanded="true" signature="49312:49349" placeholder="SELECT * FRO... listofspecializationtbl" />
+            <marker date="1459674799265" expanded="true" signature="51155:51189" placeholder="SELECT * FRO... listofsalaryrangetbl" />
+            <marker date="1459674799265" expanded="true" signature="53836:53912" placeholder="SELECT * FRO... workexperiencetbl" />
+            <marker date="1459674799265" expanded="true" signature="54769:54832" placeholder="SELECT Speci... listofspecializationtbl" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/admin/admin-createnews.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-2.118162">
+          <caret line="10" column="12" selection-start-line="10" selection-start-column="12" selection-end-line="10" selection-end-column="12" />
+          <folding>
+            <marker date="1459677070528" expanded="true" signature="223:271" placeholder="SELECT First... admintbl" />
           </folding>
         </state>
       </provider>
