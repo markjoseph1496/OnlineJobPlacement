@@ -403,6 +403,31 @@ if (isset($_POST['NewsID'])) {
 }
 //End
 
+//Create Contact
+if (isset($_POST['BtnContactsave'])) {
+
+    $telnumber = $_POST['telnumber'];
+    $address = $_POST['address'];
+    $phonenumber = $_POST['phonenumber'];
+    $email = $_POST['email'];
+    $website = $_POST['website'];
+    
+        GSecureSQL::query(
+        "UPDATE contacttbl SET telnumber = ?, address = ?, phonenumber = ?, email = ?, website = ? WHERE ContactID = '1'",
+        FALSE,
+        "sssss",
+        $telnumber,
+        $address,
+        $phonenumber,
+        $email,
+        $website
+    );
+    header("location: admin-contact.php");
+            
+
+}
+// End 
+
 //OJT report update
 if (isset($_POST['StudentID'])) {
     $StudentID = $_POST['StudentID'];

@@ -1,3 +1,6 @@
+<?php
+include("../connection.php");
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -121,6 +124,20 @@
             </div>
         </div>
 
+        <?php
+            $news_tbl =
+                GSecureSQL::query(
+                    "SELECT NewsID, NewsTitle, NewsDate, NewsCaption FROM adminnewstbl",
+                    TRUE
+                );
+            foreach ($news_tbl as $value) {
+                $NewsID = $value[0];
+                $NewsTitle = $value[1];
+                $NewsDate = $value[2];
+                $NewsCaption = $value[3];
+            
+        ?>
+
         <!-- Start Content -->
         <div id="content">
             <div class="container">
@@ -130,25 +147,20 @@
                         <!-- Start Single Post Area -->
                         <div class="blog-post gallery-post">
 
-                            <h2>Professional Etiquette Seminar</h2>
+                            <h2><?php echo $NewsTitle; ?></h2>
                             <ul class="post-meta">
                               <li>By <a href="#">OJPMS</a></li>
-                              <li>February 8, 2016</li>
+                              <li><?php echo $NewsDate; ?></li>
                             </ul>
 
                             <div class="col-md-12 image-service-box">
-                                <img class="img-thumbnail" src="../images/news/news.jpg" alt="">
-                                <em style="float:right;">A Glimpse of Professional Etiquette Seminar 2015 <i class="fa fa-circle"></i> Photography By Gerard Salimpade</em>
-                            </div>
+                                <img class="img-thumbnail" src="admin/<?php echo $ProfileImages; ?>" alt="">
+                                </div>
 
 
                             <!-- Start Single Post Content -->
                             <div class="post-content">
-                                <p>The STI Alumni Association, Inc. (STIAA) invites STI graduates in an STI Alumni Continuing Education Seminar, a learning experience that will grant them an opportunity to gain personal and professional development. Entitled UPLIFT! Establishing Connection, Achieving Productivity & Leading with Relevance, the event will feature two well-established industry professionals who will give inside tips on how to succeed in this ever-shifting and progressing professional setting. The seminar will open its doors to 300 members of STIAA and will be conducted on February 6, 2016 at the 7th Floor, Multipurpose Hall of STI the Academic Center Global City in Bonifacio Global City, Taguig.</p>
-                                <p>“When our students are with us, we give them an updated and relevant education because we stand by our cause to prepare them for their future. Now that they are graduates, they are still regarded as members of the STI community, thus we continue to find ways to train them. However, instead of using books and our courseware, we use motivation as a tool for them to become better in whatever venture they are pursuing. Becoming better may mean making new acquaintances to establish a strong network of people whom they can collaborate with, developing one’s skills, and finding the drive to reach one’s goals,” shares STI Vice President for Academics Dr. Lloyd Bautista in a statement.</p>
-                                <p>One of the guest speakers is Weena Christine Cortes, a motivator for professional development. She has 18 years of working experience as a training consultant in Business Development, Operations, Marketing, and Sales in five-star hotels, both locally and abroad. She is the Founder and Managing Director of ConsultAsia Professional Solutions, Inc. (CPSI), a local Business/Human Resources Solutions provider to various businesses in the country, and runs a separate training company that caters to Overseas Filipino Workers (OFWs).</p>
-                                <p>Anthony Pangilinan, on the other hand, is a key speaker who will share his knowledge about the current environment of the industry, keeping connections with other people, personal growth, managing resources, and setting priorities.  An accomplished businessman, he is the Chairman and Chief Distributor of Businessworks, Inc., a training and consultancy firm, and the Founding Head of the PLDT-Smart Foundation. He is also an in-demand international speaker and a trainer and management consultant for various companies in over 70 countries. Moreover, he was a prominent figure as a newscaster and currently the Program Designer and Host of “Magbago Tayo,” a weekly program in Radyo Singko and Aksyon TV of TV5. Anthony is a recipient of two Anvil Awards for innovative educational campaigns for parents and the youth.</p>
-                                <p>Believing in continuous learning, STI supports its graduates and help them fulfill their own success by creating opportunities to create connections, learn the ways of productivity, and become better and more proficient in their fields of choice.</p>
+                            <p><?php echo $NewsCaption; ?></p>
                                 <div class="post-bottom clearfix">
                                     <div class="post-tags-list">
                                         <a href="#">Professional</a>  
@@ -168,38 +180,41 @@
                         </div>
                         <!-- End Single Post Area -->
                     </div>
-
-
+                        <?php
+                        }
+                        ?>
                     <!-- Sidebar -->
                     <div class="col-md-4 sidebar right-sidebar">
                         <!-- Popular Posts widget -->
                         <div class="widget widget-popular-posts">
                             <h4>Latest News <span class="head-line"></span></h4>
+                            <?php
+                                $newss_tbl =
+                                    GSecureSQL::query(
+                                        "SELECT NewsID, NewsTitle, NewsDate, NewsCaption FROM adminnewstbl",
+                                        TRUE
+                                    );
+                                foreach ($newss_tbl as $value) {
+                                    $NewsID = $value[0];
+                                    $NewsTitle = $value[1];
+                                    $NewsDate = $value[2];
+                                    $NewsCaption = $value[3];
+                                
+                            ?>
                             <ul>
                                 <li>
                                     <div class="widget-content">
-                                        <h5><a href="news.php">Are you ready for the PEP Talk 2016?</a></h5>
+                                        <h5><a href="news.php"><?php echo $NewsTitle; ?></a></h5>
                                         <p></p>
-                                        <span>February 23, 2016</span>
-                                    </div>
-                                    <div class="clearfix"></div>
-                                </li>
-                                <li>
-                                    <div class="widget-content">
-                                        <h5><a href="news.php">JOB FAIR 2016</a></h5>
-                                        <span>February 23, 2016</span>
-                                    </div>
-                                    <div class="clearfix"></div>
-                                </li>
-                                <li>
-                                    <div class="widget-content">
-                                        <h5><a href="news.php">Mock Interview</a></h5>
-                                        <span>February 23, 2016</span>
+                                        <span><?php echo $NewsDate; ?></span>
                                     </div>
                                     <div class="clearfix"></div>
                                 </li>
                             </ul>
                         </div>
+                        <?php
+                        }
+                        ?>
 
                         <!-- Video Widget
                         <div class="widget">

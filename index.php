@@ -473,69 +473,36 @@ $adminevent_tbl =
                 <div class="latest-posts">
                     <h4 class="classic-title wite-text"><strong>Latest News</strong></h4>
                     <div class="latest-posts-classic custom-carousel touch-carousel" data-appeared-items="3">
-
+                        <?php
+                            $news_tbl =
+                                GSecureSQL::query(
+                                    "SELECT NewsID, NewsTitle, NewsCaption FROM adminnewstbl",
+                                    TRUE
+                                );
+                            foreach ($news_tbl as $value) {
+                                $NewsID = $value[0];
+                                $NewsTitle = $value[1];
+                                $NewsCaption = $value[2];
+                            
+                        ?>
                         <!-- Posts 1 -->
                         <div class="post-row item">
                             <div class="left-meta-post">
-                                <div class="post-date"><span class="day">1</span><span class="month"></span></div>
+                                <div class="post-date"><span class="day"><?php echo $NewsID; ?></span><span class="month"></span></div>
                                 <div class="post-type"><i class="fa fa-newspaper-o"></i></div>
                             </div>
-                            <h3 class="post-title"><a href="for-index/news.php">Professional Etiquette Seminar</a>
+                            <h3 class="post-title"><a href="for-index/news.php"><?php echo $NewsTitle; ?></a>
                             </h3>
                             <div class="post-contents">
                                 <p>
-                                    STI College Caloocan is ready to conduct their Professional Etiquette Seminar
-                                    <a class="read-more" href="for-index/news.php">Read More...</a>
+                                    <?php echo $NewsCaption; ?>
+                                    <a class="read-more" data-target="#EditEvent<?php echo $NewsID; ?>" href="for-index/news.php">Read More...</a>
                                 </p>
                             </div>
                         </div>
-
-                        <!-- Posts 1 -->
-                        <div class="post-row item">
-                            <div class="left-meta-post">
-                                <div class="post-date"><span class="day">2</span><span class="month"></span></div>
-                                <div class="post-type"><i class="fa fa-newspaper-o"></i></div>
-                            </div>
-                            <h3 class="post-title"><a href="for-index/news.php">Are you ready for the PEP Talk
-                                    2016?</a></h3>
-                            <div class="post-contents">
-                                <p>
-                                    STI College Caloocan is ready to conduct their PEP Talk 2016 Seminar
-                                    <a class="read-more" href="for-index/news.php">Read More...</a>
-                                </p>
-                            </div>
-                        </div>
-
-                        <!-- Posts 1 -->
-                        <div class="post-row item">
-                            <div class="left-meta-post">
-                                <div class="post-date"><span class="day">3</span><span class="month"></span></div>
-                                <div class="post-type"><i class="fa fa-newspaper-o"></i></div>
-                            </div>
-                            <h3 class="post-title"><a href="for-index/news.php">JOB FAIR 2016</a></h3>
-                            <div class="post-contents">
-                                <p>
-                                    STI College Caloocan is ready to conduct their JOB FAIR 2016
-                                    <a class="read-more" href="for-index/news.php">Read More...</a>
-                                </p>
-                            </div>
-                        </div>
-
-                        <!-- Posts 1 -->
-                        <div class="post-row item">
-                            <div class="left-meta-post">
-                                <div class="post-date"><span class="day">4</span><span class="month"></span></div>
-                                <div class="post-type"><i class="fa fa-newspaper-o"></i></div>
-                            </div>
-                            <h3 class="post-title"><a href="for-index/news.php">Mock Interview</a></h3>
-                            <div class="post-contents">
-                                <p>
-                                    STI College Caloocan's students are ready to conduct their mock interiew
-                                    <a class="read-more" href="for-index/news.php">Read More...</a>
-                                </p>
-                            </div>
-                        </div>
-
+                        <?php
+                        }
+                        ?>
                     </div>
                 </div>
                 <!-- End Recent Posts Carousel -->
@@ -859,20 +826,35 @@ $adminevent_tbl =
     </div>
 </section>
 
+        <?php
+            $admincontact_tbl =
+                GSecureSQL::query(
+                    "SELECT * FROM contacttbl WHERE `AdminID` = '1'",
+                    TRUE
+                );
+            foreach ($admincontact_tbl as $value) {
+            $TelNumber = $value[2];
+            $Address = $value[3];
+            $PhoneNumber = $value[4];
+            $Email = $value[5];
+            $Website = $value[6];
+            
+        ?>
+
 
 <footer id="contact">
     <div class="container">
         <div class="footer-widget contact-widget">
             <div class="row text-center">
                 <h4>Contact Us</h4>
-                <div><b>Tel. no. (+632) 294-4001 / 361-6070</b></div>
-                <label>109 Samson Road corner Caimito Street Caloocan City, Philippines 1400</label>
+                <div><b>Tel. no. <?php echo $TelNumber; ?></b></div>
+                <label><?php echo $Address; ?></label>
             </div>
             <div class="row text-center">
                 <ul>
-                    <li><span>Phone Number:</span> +63 (917) 4638460</li>
-                    <li><span>Email:</span> jobplacement@caloocan.sti.edu</li>
-                    <li><span>Website:</span> www.sti.edu</li>
+                    <li><span>Phone Number:</span> <?php echo $PhoneNumber; ?></li>
+                    <li><span>Email:</span><?php echo $Email; ?></li>
+                    <li><span>Website:</span><?php echo $Website; ?></li>
                 </ul>
             </div>
         </div>
@@ -908,6 +890,9 @@ $adminevent_tbl =
         <!-- End Copyright -->
     </div>
 </footer>
+        <?php 
+        }
+         ?>
 
 
 <!-- Go To Top Link -->
