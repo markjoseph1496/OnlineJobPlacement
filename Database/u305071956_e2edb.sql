@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50616
 File Encoding         : 65001
 
-Date: 2016-04-03 20:20:20
+Date: 2016-04-03 21:10:50
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -334,6 +334,26 @@ INSERT INTO comppositiontbl VALUES ('69', '48', null, '2016-02-19', '2016-07-13'
 INSERT INTO comppositiontbl VALUES ('70', '48', null, '2016-02-20', '2016-03-20', 'Staff Crew', 'Trainee', 'Provide customers with a quick and accurate service  to their needs', 'Food/Beverage/Restaurant Service', 'Part Time', '15', '10,000 - 15,000', '1', 'Bachelor Degree', null, 'Good customer service skills , Knowledgeable in Food Preparation', null);
 INSERT INTO comppositiontbl VALUES ('71', '39', null, '2016-02-19', '2016-04-19', 'Human Resource Officer', 'Manager', 'HR officers develop, advise and implement policies ', 'Human Resources', 'Full Time', '5', '25,000 - 30,000', '5', 'Bachelor Degree', 'English', 'Business awareness, Management skills, IT and Numeracy skills', null);
 INSERT INTO comppositiontbl VALUES ('72', '39', null, '2016-02-20', '2016-04-20', 'Administrative Assistant', 'Sernior Executive / Supervisor', 'Performs administrative and office support activities for  supervisors', 'Secretarial/Executive and Personal Assistant', 'Full Time', '1', '30,000 - 40,000', '5', 'Bachelor Degree', 'English', 'Communication Skills, Organizational Ability, Management skills ', null);
+
+-- ----------------------------
+-- Table structure for `contacttbl`
+-- ----------------------------
+DROP TABLE IF EXISTS `contacttbl`;
+CREATE TABLE `contacttbl` (
+  `ContactID` int(11) NOT NULL AUTO_INCREMENT,
+  `AdminID` varchar(255) DEFAULT NULL,
+  `TelNumber` varchar(255) DEFAULT NULL,
+  `Address` varchar(255) DEFAULT NULL,
+  `PhoneNumber` varchar(255) DEFAULT NULL,
+  `Email` varchar(255) DEFAULT NULL,
+  `Website` varchar(255) DEFAULT NULL,
+  PRIMARY KEY (`ContactID`)
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
+
+-- ----------------------------
+-- Records of contacttbl
+-- ----------------------------
+INSERT INTO contacttbl VALUES ('1', '1', '361-6070', '109 Samson Road corner Caimito Street Caloocan City, Philippines 1400', '+63 (917) 4638460', 'jobplacement@caloocan.sti.edu', ' www.sticaloocan.edu.ph');
 
 -- ----------------------------
 -- Table structure for `coursetbl`
