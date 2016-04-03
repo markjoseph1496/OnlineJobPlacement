@@ -254,8 +254,9 @@ $FirstName = $infoquery[0][0];
                                 <ul class="dropdown">
                                     <li><a href="admin-maintenance.php">Courses</a></li>
                                     <li><a href="admin-users.php">Users</a></li>
-                                    <li><a class="active" href="admin-calendar.php">Calendar Events</a></li>
-                                    <li><a href="admin-news.php">News</a></li>
+                                    <li><a href="admin-calendar.php">Calendar Events</a></li>
+                                    <li><a class="active" href="admin-news.php">News</a></li>
+                                    <li><a href="admin-contact.php">Contact</a></li>
                                 </ul>
                             </li>
                         </ul>
@@ -353,7 +354,7 @@ $FirstName = $infoquery[0][0];
                     </div>
                     <div class="col-md-6">
                         <a href="admin-createnews.php" class="main-button" style="float:right;">
-                            <span class="fa fa-pencil-square-o fa-1x"></span> Create an News 
+                            <span class="fa fa-pencil-square-o fa-1x"></span> Create a News 
                         </a>
                     </div>
                 </div>

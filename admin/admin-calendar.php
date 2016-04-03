@@ -258,6 +258,8 @@ $FirstName = $infoquery[0][0];
                                     <li><a href="admin-maintenance.php">Courses</a></li>
                                     <li><a href="admin-users.php">Users</a></li>
                                     <li><a class="active" href="admin-calendar.php">Calendar Events</a></li>
+                                    <li><a href="admin-news.php">News</a></li>
+                                    <li><a href="admin-contact.php">Contact</a></li>
                                 </ul>
                             </li>
                         </ul>

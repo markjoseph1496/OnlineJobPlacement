@@ -250,63 +250,62 @@ $FirstName = $infoquery[0][0];
             <div id="content">
                 <div class="container">
                     <div class="row">
-
-                            <div class="col-md-6">
-                                <div class="row">
-                                    <div class="col-md-3">
-                                        <label>Telephone Number:</label>
-                                    </div>
-                                    <div class="col-md-9">
-                                        <div class="form-group">
-                                            <input type="text" name="telnumber" id="telnumber" class="form-control" value="<?php echo $TelNumber ?>">
-                                        </div>
-                                    </div>
+                        <div class="col-md-6">
+                            <div class="row">
+                                <div class="col-md-3">
+                                    <label>Telephone Number:</label>
                                 </div>
-                                <div class="row">
-                                    <div class="col-md-3">
-                                        <label>Address:</label>
-                                    </div>
-                                    <div class="col-md-9">
-                                        <div class="form-group">
-                                            <input type="text" name="address" id="address" class="form-control" value="<?php echo $Address ?>">
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <div class="col-md-3">
-                                        <label>Phone Number:</label>
-                                    </div>
-                                    <div class="col-md-9">
-                                        <div class="form-group">
-                                            <input type="text" class="form-control" id="phonenumber" name="phonenumber" value="<?php echo $PhoneNumber ?>">
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <div class="col-md-3">
-                                        <label>Email:</label>
-                                    </div>
-                                    <div class="col-md-9">
-                                        <div class="form-group">
-                                            <input type="text" class="form-control" id="email" name="email" value="<?php echo $Email ?>">
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <div class="col-md-3">
-                                        <label>Website:</label>
-                                    </div>
-                                    <div class="col-md-9">
-                                        <div class="form-group">
-                                            <input type="text" class="form-control" id="website" name="website" value="<?php echo $Website ?>">
-                                        </div>
+                                <div class="col-md-9">
+                                    <div class="form-group">
+                                        <input type="text" name="telnumber" id="telnumber" class="form-control" value="<?php echo $TelNumber ?>">
                                     </div>
                                 </div>
                             </div>
+                            <div class="row">
+                                <div class="col-md-3">
+                                    <label>Address:</label>
+                                </div>
+                                <div class="col-md-9">
+                                    <div class="form-group">
+                                        <input type="text" name="address" id="address" class="form-control" value="<?php echo $Address ?>">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-3">
+                                    <label>Phone Number:</label>
+                                </div>
+                                <div class="col-md-9">
+                                    <div class="form-group">
+                                        <input type="text" class="form-control" id="phonenumber" name="phonenumber" value="<?php echo $PhoneNumber ?>">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-3">
+                                    <label>Email:</label>
+                                </div>
+                                <div class="col-md-9">
+                                    <div class="form-group">
+                                        <input type="text" class="form-control" id="email" name="email" value="<?php echo $Email ?>">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-3">
+                                    <label>Website:</label>
+                                </div>
+                                <div class="col-md-9">
+                                    <div class="form-group">
+                                        <input type="text" class="form-control" id="website" name="website" value="<?php echo $Website ?>">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                         <?php 
-                        }
-                         ?>
-
+                            }
+                        ?>
+                    </div>
                     <div class="hr5" style="margin-top:35px;margin-bottom:40px;"></div>
                     <div class="text-center">
                         <button type="submit" class="btn-system btn-large" id="BtnContactsave" name="BtnContactsave">Save</button>
