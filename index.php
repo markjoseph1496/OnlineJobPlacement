@@ -133,7 +133,7 @@ $adminevent_tbl =
     <!-- /.container-fluid -->
 </nav>
 
-<!-- Services Section -->
+<!-- SLIDER Section -->
 <section id="home" class="bg-light-gray">
     <!-- Carousel -->
     <div id="main-slide" class="carousel slide" data-ride="carousel">
@@ -198,8 +198,7 @@ $adminevent_tbl =
     <!-- /carousel -->
 </section>
 
-<!-- Start Content -->
-
+<!-- JOBS Section -->
 <section id="jobs">
     <!-- Start News & Skill Section -->
     <div class="container">
@@ -423,7 +422,7 @@ $adminevent_tbl =
     <!-- .container -->
 </section>
 
-
+<!-- EVENTS & LATEST NEWS Section -->
 <section id="events" class="section" style="background-color:#00599D;">
     <div class="container">
         <div class="recent-projects">
@@ -544,6 +543,7 @@ $adminevent_tbl =
     </div>
 </section>
 
+<!-- E2E Section -->
 <section id="e2e">
     <div class="container">
         <div class="row">
@@ -601,7 +601,7 @@ $adminevent_tbl =
     </div>
 </section>
 
-<!-- Services Section -->
+<!-- OJT PROCESS Section -->
 <section id="ojt" class="bg-light-gray">
     <div class="container">
         <div class="col-md-3">
@@ -648,6 +648,7 @@ $adminevent_tbl =
     </div>
 </section>
 
+<!-- PARTNERS Section -->
 <section id="partners">
     <div class="container">
         <!-- Start Big Heading -->
@@ -764,6 +765,7 @@ $adminevent_tbl =
     </div>
 </section>
 
+<!-- LINKS Section -->
 <section id="links">
     <div id="content">
         <div class="container">
@@ -818,6 +820,7 @@ $adminevent_tbl =
     </div>
 </section>
 
+<!-- SIGN IN Section -->
 <section id="sign-in" class="parallax" style="background-image:url(images/sti-bldg.jpg);">
     <div class="overlay">
         <div class="parallax-text-container-1">
@@ -863,6 +866,9 @@ $adminevent_tbl =
         </div>
     </div>
 </section>
+
+<!-- TEAM Section -->
+<section></section>
 
 
 <footer id="contact">
