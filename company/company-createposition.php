@@ -628,7 +628,7 @@ $cLastName = $companyinfo_tbl[0][2];
         </div>
     </div>
     <!--End of Content-->
-    <script type="text/javascript" src="../js/script.js"></script>   
+    <script type="text/javascript" src="../js/script.js"></script>
 </body>
 <script type="text/javascript">
     $(document).ready(function () {

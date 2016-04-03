@@ -74,7 +74,7 @@
     <script type="text/javascript" src="../js/jquery.slicknav.js"></script>
 
     <!-- Checkbox -->
-    <link rel="stylesheet" type="text/css" href="../css/checkbox.css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="../css/checkbox.css" media="screen"/>
 
     <script>
         $(function () {
@@ -96,309 +96,319 @@
     </div>
 
     <!-- Start Content -->
-    <div id="content">
-        <div class="container">
-            <div class="call-action call-action-boxed call-action-style2 clearfix">
-                <img src="../images/forms/banner.jpg">
+    <form id="JobFair" name="JobFair" autocomplete="off">
+        <div id="content">
+            <div class="container">
+                <div class="call-action call-action-boxed call-action-style2 clearfix">
+                    <img src="../images/forms/banner.jpg">
 
-                <div class="hr1" style="margin-top:30px;margin-bottom:30px;"></div>
-                <div class="row">
-                    <div class="text-center"><label>Required Fields <span>(*)</span></label></div>
-                    <div class="col-md-6">
-                        <label>Company Name <span>(*)</span></label>
-                        <div class="form-group">
-                            <input type="text" class="form-control" id="" name="">
-                        </div>
+                    <div class="hr1" style="margin-top:30px;margin-bottom:30px;"></div>
+                    <div class="row">
+                        <div class="text-center"><label>Required Fields <span>(*)</span></label></div>
+                        <div class="col-md-6">
+                            <label>Company Name <span>(*)</span></label>
+                            <div class="form-group">
+                                <input type="text" class="form-control" id="CompanyName" name="CompanyName">
+                            </div>
 
-                        <label>Company Address <span>(*)</span></label>
-                        <div class="row">
-                            <div class="col-md-6">
-                                Street Address
-                                <div class="form-group">
-                                    <input type="text" class="form-control" id="" name="">
+                            <label>Company Address <span>(*)</span></label>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    Street Address
+                                    <div class="form-group">
+                                        <input type="text" class="form-control" id="CompanyAddress" name="CompanyAddress">
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    City <span>(*)</span>
+                                    <div class="form-group">
+                                        <select class="form-control" name="City" id="City">
+                                            <option value=""></option>
+                                            <option value="City of Manila">City of Manila</option>
+                                            <option value="Caloocan">Caloocan</option>
+                                            <option value="Las Piñas">Las Piñas</option>
+                                            <option value="Makati">Makati</option>
+                                            <option value="Malabon">Malabon</option>
+                                            <option value="Mandaluyong">Mandaluyong</option>
+                                            <option value="Marikina">Marikina</option>
+                                            <option value="Muntinlupa">Muntinlupa</option>
+                                            <option value="Navotas">Navotas</option>
+                                            <option value="Parañaque">Parañaque</option>
+                                            <option value="Pasay">Pasay</option>
+                                            <option value="Pasig">Pasig</option>
+                                            <option value="Quezon City">Quezon City</option>
+                                            <option value="San Juan">San Juan</option>
+                                            <option value="Taguig">Taguig</option>
+                                            <option value="Valenzuela">Valenzuela</option>
+                                            <option value="Others">Others</option>
+                                        </select>
+                                    </div>
                                 </div>
                             </div>
-                            <div class="col-md-6">
-                                City <span>(*)</span>
-                                <div class="form-group">
-                                    <select class="form-control">
-                                        <option value=""></option>
-                                        <option value="City of Manila">City of Manila</option>
-                                        <option value="Caloocan">Caloocan</option>
-                                        <option value="Las Piñas">Las Piñas</option>
-                                        <option value="Makati">Makati</option>
-                                        <option value="Malabon">Malabon</option>
-                                        <option value="Mandaluyong">Mandaluyong</option>
-                                        <option value="Marikina">Marikina</option>
-                                        <option value="Muntinlupa">Muntinlupa</option>
-                                        <option value="Navotas">Navotas</option>
-                                        <option value="Parañaque">Parañaque</option>
-                                        <option value="Pasay">Pasay</option>
-                                        <option value="Pasig">Pasig</option>
-                                        <option value="Quezon City">Quezon City</option>
-                                        <option value="San Juan">San Juan</option>
-                                        <option value="Taguig">Taguig</option>
-                                        <option value="Valenzuela">Valenzuela</option>
-                                        <option value="Others">Others</option>
-                                    </select>
+
+                            <label>Website <span>(*)</span></label>
+                            <div class="form-group">
+                                <input type="text" class="form-control" id="Website" name="Website">
+                            </div>
+
+                            <label>Contact Person <span>(*)</span></label>
+                            <div class="form-group">
+                                <input type="text" class="form-control" id="ContactPerson" name="ContactPerson">
+                            </div>
+
+                            <label>Designation <span>(*)</span></label>
+                            <div class="form-group">
+                                <input type="text" class="form-control" id="Designation" name="Designation">
+                            </div>
+                            Phone1
+                        </div>
+                        <div class="col-md-6">
+                            <label>Email Address <span>(*)</span></label>
+                            <div class="form-group">
+                                <input type="text" class="form-control" id="Email" name="Email">
+                            </div>
+
+                            <label>Telephone No. <span>(*)</span></label>
+                            <div class="row">
+                                <div class="col-md-4">
+                                    Phone No. 1
+                                    <div class="form-group">
+                                        <input type="text" class="form-control" id="Phone1" name="Phone1">
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    Phone No. 2
+                                    <div class="form-group">
+                                        <input type="text" class="form-control" id="Phone2" name="Phone2">
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    Phone No. 3
+                                    <div class="form-group">
+                                        <input type="text" class="form-control" id="Phone3" name="Phone3">
+                                    </div>
                                 </div>
                             </div>
-                        </div>
 
-                        <label>Website <span>(*)</span></label>
-                        <div class="form-group">
-                            <input type="text" class="form-control" id="" name="">
-                        </div>
-
-                        <label>Contact Person <span>(*)</span></label>
-                        <div class="form-group">
-                            <input type="text" class="form-control" id="" name="">
-                        </div>
-
-                        <label>Designation <span>(*)</span></label>
-                        <div class="form-group">
-                            <input type="text" class="form-control" id="" name="">
-                        </div>
-                    </div>
-                    <div class="col-md-6">
-                        <label>Email Address <span>(*)</span></label>
-                        <div class="form-group">
-                            <input type="text" class="form-control" id="" name="">
-                        </div>
-
-                        <label>Telephone No. <span>(*)</span></label>
-                        <div class="row">
-                            <div class="col-md-4">
-                                Phone No. 1
-                                <div class="form-group">
-                                    <input type="text" class="form-control" id="" name="">
-                                </div>
+                            <label>Mobile No.</label>
+                            <div class="form-group">
+                                <input type="text" class="form-control" id="MobileNumber" name="MobileNumber">
                             </div>
-                            <div class="col-md-4">
-                                Phone No. 2
-                                <div class="form-group">
-                                    <input type="text" class="form-control" id="" name="">
-                                </div>
+
+                            <label>Fax No.</label>
+                            <div class="form-group">
+                                <input type="text" class="form-control" id="FaxNumber" name="FaxNumber">
                             </div>
-                            <div class="col-md-4">
-                                Phone No. 3
-                                <div class="form-group">
-                                    <input type="text" class="form-control" id="" name="">
-                                </div>
-                            </div>
-                        </div>
 
-                        <label>Mobile No.</label>
-                        <div class="form-group">
-                            <input type="text" class="form-control" id="" name="">
-                        </div>
-
-                        <label>Fax No.</label>
-                        <div class="form-group">
-                            <input type="text" class="form-control" id="" name="">
-                        </div>
-
-                        <label>Type of Industry <span>(*)</span></label>
-                        <div class="form-group">
-                            <select class="form-control">
-                                <option value=""></option>
-                                <option value="Accounting">Accounting</option>
-                                <option value="Admin / Human Resources">Admin / Human Resources</option>
-                                <option value="Banking / Financial / Insurance">Banking / Financial / Insurance</option>
-                                <option value="Beauty / Health Care / Social Assistance">Beauty / Health Care / Social Assistance</option>
-                                <option value="Business Process Outsourcing (BPO) / Call Center">Business Process Outsourcing (BPO) / Call Center</option>
-                                <option value="Building / Construction">Building / Construction</option>
-                                <option value="Computer/ IT (Hardware)">Computer/ IT (Hardware)</option>
-                                <option value="Computer/ IT (Network/Sys/DB)">Computer/ IT (Network/Sys/DB)</option>
-                                <option value="Computer/ IT (Software)">Computer/ IT (Software)</option>
-                                <option value="Education / Training and Development">Education / Training and Development</option>
-                                <option value="Engineering">Engineering</option>
-                                <option value="Government">Government</option>
-                                <option value="Hospitality / F &amp; B">Hospitality / F &amp; B</option>
-                                <option value="Management">Management</option>
-                                <option value="Manufacturing">Manufacturing</option>
-                                <option value="Marketing / Public Relations">Marketing / Public Relations</option>
-                                <option value="Medical Services">Medical Services</option>
-                                <option value="Merchandising / Purchasing">Merchandising / Purchasing</option>
-                                <option value="Printing">Printing</option>
-                                <option value="Professional Services">Professional Services</option>
-                                <option value="Property / Real Estate">Property / Real Estate</option>
-                                <option value="Sales / Customer Service">Sales / Customer Service</option>
-                                <option value="Sciences / Lab / R &amp; D">Sciences / Lab / R &amp; D</option>
-                                <option value="Telecommunications">Telecommunications</option>
-                                <option value="Transportation / Logistics">Transportation / Logistics</option>
-                                <option value="Wholesale / Retail Trade">Wholesale / Retail Trade</option>
-                            </select>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="hr1" style="margin-top:30px;margin-bottom:30px;"></div>
-
-                <div class="row">
-                    <div class="col-md-6">
-                        <label>Name of Company Representative/s <span>(*)</span></label> <i  data-toggle="tooltip" title data-original-title="Due to limited space, maximum of two company representatives are allowed to man the booth." class="fa fa-question-circle"></i>
-                        <div class="row">
-                            <div class="col-md-6">
-                                Name of Representative 1
-                                <div class="form-group">
-                                    <input type="text" class="form-control" id="" name="">
-                                </div>
-                            </div>
-                            <div class="col-md-6">
-                                Name of Representative 2
-                                <div class="form-group">
-                                    <input type="text" class="form-control" id="" name="">
-                                </div>
-                            </div>
-                        </div>
-
-                        <label>List of Marketing Materials to bring <span>(*)</span></label> <i data-toggle="tooltip" title data-original-title="Companies may bring in and use any of the equipment only during the Job Fair. Promotional items as your freebies are encouraged." class="fa fa-question-circle"></i>
-                        <div class="row">
-                            <div class="col-md-6">
-                                <div class="checkbox checkbox-success">
-                                    <input id="checkbox3" class="styled" type="checkbox">
-                                    <label for="checkbox3"><b>Desktop/Laptop/Notebook Computer</b></label>
-                                </div>
-                                <div class="checkbox checkbox-success">
-                                    <input id="checkbox3" class="styled" type="checkbox">
-                                    <label for="checkbox3"><b>Wireless Broadband</b></label>
-                                </div>
-                                <div class="checkbox checkbox-success">
-                                    <input id="checkbox3" class="styled" type="checkbox">
-                                    <label for="checkbox3"><b>LCD Television</b></label>
-                                </div>
-                                <div class="checkbox checkbox-success">
-                                    <input id="checkbox3" class="styled" type="checkbox">
-                                    <label for="checkbox3"><b>DVD Player</b></label>
-                                </div>
-                                <div class="checkbox checkbox-success">
-                                    <input id="checkbox3" class="styled" type="checkbox">
-                                    <label for="checkbox3"><b>Speakers</b></label>
-                                </div>
-                                <div class="checkbox checkbox-success">
-                                    <input id="checkbox3" class="styled" type="checkbox">
-                                    <label for="checkbox3"><b>Tarpaulin</b></label>
-                                </div>
-                                <div class="checkbox checkbox-success">
-                                    <input id="checkbox3" class="styled" type="checkbox">
-                                    <label for="checkbox3"><b>Roll up Banner and Stand</b></label>
-                                </div>
-                                <div class="checkbox checkbox-success">
-                                    <input id="checkbox3" class="styled" type="checkbox">
-                                    <label for="checkbox3"><b>Posters and the like</b></label>
-                                </div>
-                                <div class="checkbox checkbox-success">
-                                    <input id="checkbox3" class="styled" type="checkbox">
-                                    <label for="checkbox3"><b>Flyers, pamphlets, company programs, job description and the like</b></label>
-                                </div>
-                            </div>
-                            <div class="col-md-6">
-                                <div class="checkbox checkbox-success">
-                                    <input id="checkbox3" class="styled" type="checkbox">
-                                    <label for="checkbox3"><b>Company freebies, give-aways and the like</b></label>
-                                </div>
-                                <div class="checkbox checkbox-success">
-                                    <input id="checkbox3" class="styled" type="checkbox">
-                                    <label for="checkbox3"><b>Others</b></label>
-                                </div>
-                                <div class="form-group">
-                                    <input type="text" class="form-control" id="" name="" placeholder="Others: Please Specify">
-                                </div>
+                            <label>Type of Industry <span>(*)</span></label>
+                            <div class="form-group">
+                                <select class="form-control" name="Industry" id="Industry">
+                                    <option value=""></option>
+                                    <option value="Accounting">Accounting</option>
+                                    <option value="Admin / Human Resources">Admin / Human Resources</option>
+                                    <option value="Banking / Financial / Insurance">Banking / Financial / Insurance</option>
+                                    <option value="Beauty / Health Care / Social Assistance">Beauty / Health Care / Social Assistance</option>
+                                    <option value="Business Process Outsourcing (BPO) / Call Center">Business Process Outsourcing (BPO) / Call Center</option>
+                                    <option value="Building / Construction">Building / Construction</option>
+                                    <option value="Computer/ IT (Hardware)">Computer/ IT (Hardware)</option>
+                                    <option value="Computer/ IT (Network/Sys/DB)">Computer/ IT (Network/Sys/DB)</option>
+                                    <option value="Computer/ IT (Software)">Computer/ IT (Software)</option>
+                                    <option value="Education / Training and Development">Education / Training and Development</option>
+                                    <option value="Engineering">Engineering</option>
+                                    <option value="Government">Government</option>
+                                    <option value="Hospitality / F &amp; B">Hospitality / F &amp; B</option>
+                                    <option value="Management">Management</option>
+                                    <option value="Manufacturing">Manufacturing</option>
+                                    <option value="Marketing / Public Relations">Marketing / Public Relations</option>
+                                    <option value="Medical Services">Medical Services</option>
+                                    <option value="Merchandising / Purchasing">Merchandising / Purchasing</option>
+                                    <option value="Printing">Printing</option>
+                                    <option value="Professional Services">Professional Services</option>
+                                    <option value="Property / Real Estate">Property / Real Estate</option>
+                                    <option value="Sales / Customer Service">Sales / Customer Service</option>
+                                    <option value="Sciences / Lab / R &amp; D">Sciences / Lab / R &amp; D</option>
+                                    <option value="Telecommunications">Telecommunications</option>
+                                    <option value="Transportation / Logistics">Transportation / Logistics</option>
+                                    <option value="Wholesale / Retail Trade">Wholesale / Retail Trade</option>
+                                </select>
                             </div>
                         </div>
                     </div>
-                    <div class="col-md-6">
-                        <label>The STI Caloocan Alumni and Placement Office will provide each company partner with a table, 2 chairs for the company representatives, 2 chairs for the applicants and number label. Please indicate if you have additional equipment or special service.</label>
-                        <div class="checkbox checkbox-success">
-                            <input id="checkbox3" class="styled" type="checkbox">
-                            <label for="checkbox3"><b>Extra Table</b></label>
-                        </div>
-                        <div class="checkbox checkbox-success">
-                            <input id="checkbox3" class="styled" type="checkbox">
-                            <label for="checkbox3"><b>Electrical power (Note: due to limited supply, available first come, first served. Extension cords are not provided.)</b></label>
-                        </div>
-                        <div class="checkbox checkbox-success">
-                            <input id="checkbox3" class="styled" type="checkbox">
-                            <label for="checkbox3"><b>Others</b></label>
-                        </div>
-                        <div class="form-group">
-                            <input type="text" class="form-control" id="" name="" placeholder="Others: Please Specify">
-                        </div>
 
-                        <label>Our company would like to schedule a room for examination (This is a free service for employers.)</label>
-                        <div class="checkbox checkbox-success">
-                            <input id="checkbox3" class="styled" type="checkbox">
-                            <label for="checkbox3"><b>Yes</b></label>
-                        </div>
+                    <div class="hr1" style="margin-top:30px;margin-bottom:30px;"></div>
 
-                        <label>Our company can provide an item for door prizes.</label>
-                        <div class="checkbox checkbox-success">
-                            <input id="checkbox3" class="styled" type="checkbox">
-                            <label for="checkbox3"><b>Yes</b></label>
-                        </div>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <label>Name of Company Representative/s <span>(*)</span></label> <i data-toggle="tooltip" title data-original-title="Due to limited space, maximum of two company representatives are allowed to man the booth." class="fa fa-question-circle"></i>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    Name of Representative 1
+                                    <div class="form-group">
+                                        <input type="text" class="form-control" id="Representative1" name="Representative1">
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    Name of Representative 2
+                                    <div class="form-group">
+                                        <input type="text" class="form-control" id="Representative2" name="Representative2">
+                                    </div>
+                                </div>
+                            </div>
 
-                        Item Description:
-                        <div class="form-group">
-                            <input type="text" class="form-control" id="" name="" placeholder="">
+                            <label>List of Marketing Materials to bring <span>(*)</span></label> <i data-toggle="tooltip" title data-original-title="Companies may bring in and use any of the equipment only during the Job Fair. Promotional items as your freebies are encouraged."
+                                                                                                    class="fa fa-question-circle"></i>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <div class="checkbox checkbox-success">
+                                            <input id="checkbox1" name="MarketingMaterials[]" class="styled" type="checkbox">
+                                            <label for="checkbox1"><b>Desktop/Laptop/Notebook Computer</b></label>
+                                        </div>
+                                        <div class="checkbox checkbox-success">
+                                            <input id="checkbox2" name="MarketingMaterials[]" class="styled" type="checkbox">
+                                            <label for="checkbox2"><b>Wireless Broadband</b></label>
+                                        </div>
+                                        <div class="checkbox checkbox-success">
+                                            <input id="checkbox3" name="MarketingMaterials[]" class="styled" type="checkbox">
+                                            <label for="checkbox3"><b>LCD Television</b></label>
+                                        </div>
+                                        <div class="checkbox checkbox-success">
+                                            <input id="checkbox4" name="MarketingMaterials[]" class="styled" type="checkbox">
+                                            <label for="checkbox4"><b>DVD Player</b></label>
+                                        </div>
+                                        <div class="checkbox checkbox-success">
+                                            <input id="checkbox5" name="MarketingMaterials[]" class="styled" type="checkbox">
+                                            <label for="checkbox5"><b>Speakers</b></label>
+                                        </div>
+                                        <div class="checkbox checkbox-success">
+                                            <input id="checkbox6" name="MarketingMaterials[]" class="styled" type="checkbox">
+                                            <label for="checkbox6"><b>Tarpaulin</b></label>
+                                        </div>
+                                        <div class="checkbox checkbox-success">
+                                            <input id="checkbox7" name="MarketingMaterials[]" class="styled" type="checkbox">
+                                            <label for="checkbox7"><b>Roll up Banner and Stand</b></label>
+                                        </div>
+                                        <div class="checkbox checkbox-success">
+                                            <input id="checkbox8" name="MarketingMaterials[]" class="styled" type="checkbox">
+                                            <label for="checkbox8"><b>Posters and the like</b></label>
+                                        </div>
+                                        <div class="checkbox checkbox-success">
+                                            <input id="checkbox9" name="MarketingMaterials[]" class="styled" type="checkbox">
+                                            <label for="checkbox9"><b>Flyers, pamphlets, company programs, job description and the like</b></label>
+                                        </div>
+                                        <div class="checkbox checkbox-success">
+                                            <input id="checkbox10" name="MarketingMaterials[]" class="styled" type="checkbox">
+                                            <label for="checkbox10"><b>Company freebies, give-aways and the like</b></label>
+                                        </div>
+                                        <div class="checkbox checkbox-success">
+                                            <input id="checkbox11" name="MarketingMaterials[]" class="styled" type="checkbox">
+                                            <label for="checkbox11"><b>Others</b></label>
+                                        </div>
+                                    </div>
+                                    <input type="text" class="form-control" id="Others" name="Others" placeholder="Others: Please Specify">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <label>The STI Caloocan Alumni and Placement Office will provide each company partner with a table, 2 chairs for the company representatives, 2 chairs for the applicants and number label. Please indicate if you have additional equipment or special service.</label>
+                            <div class="checkbox checkbox-success">
+                                <input id="checkbox12" name="Extras[]" class="styled" type="checkbox">
+                                <label for="checkbox12"><b>Extra Table</b></label>
+                            </div>
+                            <div class="checkbox checkbox-success">
+                                <input id="checkbox13" name="Extras[]" class="styled" type="checkbox">
+                                <label for="checkbox13"><b>Electrical power (Note: due to limited supply, available first come, first served. Extension cords are not provided.)</b></label>
+                            </div>
+                            <div class="checkbox checkbox-success">
+                                <input id="checkbox14" name="Extras[]" class="styled" type="checkbox">
+                                <label for="checkbox14"><b>Others</b></label>
+                            </div>
+                            <div class="form-group">
+                                <input type="text" class="form-control" id="OthersExtra" name="OthersExtra" placeholder="Others: Please Specify">
+                            </div>
+
+                            <label>Our company would like to schedule a room for examination (This is a free service for employers.)</label>
+                            <div class="checkbox checkbox-success">
+                                <input id="checkbox15" name="RoomForExam[]" class="styled" type="checkbox">
+                                <label for="checkbox15"><b>Yes</b></label>
+                            </div>
+
+                            <label>Our company can provide an item for door prizes.</label>
+                            <div class="checkbox checkbox-success">
+                                <input id="checkbox16" name="DoorPrizes" class="styled" type="checkbox">
+                                <label for="checkbox16"><b>Yes</b></label>
+                            </div>
+
+                            Item Description:
+                            <div class="form-group">
+                                <input type="text" class="form-control" id="ItemDescription" name="ItemDescription" placeholder="">
+                            </div>
                         </div>
                     </div>
-                </div>
 
-                <div class="hr1" style="margin-top:30px;margin-bottom:30px;"></div>
+                    <div class="hr1" style="margin-top:30px;margin-bottom:30px;"></div>
 
-                <div class="row">
-                    <h1 class="text-center">PARTICIPATION CONFIRMATION</h1>
-                    <div class="col-md-12">
-                        <label>Please check <span>(*)</span></label>
-                        <div class="checkbox checkbox-success">
-                            <input id="checkbox3" class="styled" type="checkbox">
-                            <label for="checkbox3"><b>YES, We will participate in Job Fair 2015</b></label>
-                        </div>
-                        <label>In order to complete the process, you are requested to forward the following requirements <span>(*)</span>:</label><br>
-                        Please email at <u>jobplacement@caloocan.sti.edu</u>
-                        <div class="checkbox checkbox-success">
-                            <input id="checkbox3" class="styled" type="checkbox">
-                            <label for="checkbox3"><b>Participation Confirmation</b></label>
-                        </div>
-                        <div class="checkbox checkbox-success">
-                            <input id="checkbox3" class="styled" type="checkbox">
-                            <label for="checkbox3"><b>Company Profile</b></label>
-                        </div>
-                        <div class="checkbox checkbox-success">
-                            <input id="checkbox3" class="styled" type="checkbox">
-                            <label for="checkbox3"><b>Photocopy of the company’s Securities and Exchange Commission Registration</b></label>
-                        </div>
-                        <div class="checkbox checkbox-success">
-                            <input id="checkbox3" class="styled" type="checkbox">
-                            <label for="checkbox3"><b>List of Job Vacancies</b></label>
+                    <div class="row">
+                        <h1 class="text-center">PARTICIPATION CONFIRMATION</h1>
+                        <div class="col-md-6">
+                            <label>Please check <span>(*)</span></label>
+                            <div class="row-6">
+                                <div class="form-group">
+                                    <div class="checkbox checkbox-success">
+                                        <input id="checkbox17" name="Participate[]" class="styled" type="checkbox">
+                                        <label for="checkbox17"><b>YES, We will participate in Job Fair 2015</b></label>
+                                    </div>
+                                </div>
+                            </div>
+                            <label>In order to complete the process, you are requested to forward the following requirements <span>(*)</span>:</label><br>
+                            Please email at <u>jobplacement@caloocan.sti.edu</u>
+                            <div class="row-6">
+                                <div class="form-group">
+                                    <div class="checkbox checkbox-success">
+                                        <input id="checkbox18" name="Requirements[]" class="styled" type="checkbox">
+                                        <label for="checkbox18"><b>Participation Confirmation</b></label>
+                                    </div>
+                                    <div class="checkbox checkbox-success">
+                                        <input id="checkbox19" name="Requirements[]" class="styled" type="checkbox">
+                                        <label for="checkbox19"><b>Company Profile</b></label>
+                                    </div>
+                                    <div class="checkbox checkbox-success">
+                                        <input id="checkbox20" name="Requirements[]" class="styled" type="checkbox">
+                                        <label for="checkbox20"><b>Photocopy of the company’s Securities and Exchange Commission Registration</b></label>
+                                    </div>
+                                    <div class="checkbox checkbox-success">
+                                        <input id="checkbox21" name="Requirements[]" class="styled" type="checkbox">
+                                        <label for="checkbox21"><b>List of Job Vacancies</b></label>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
-                </div>
 
-                <div class="hr1" style="margin-top:30px;margin-bottom:30px;"></div>
+                    <div class="hr1" style="margin-top:30px;margin-bottom:30px;"></div>
 
-                <div class="row text-center">
-                    <h1 class="text-center">CONTACT US</h1>
-                    <p>If you would like more information about the Jobs Fair, please contact:</p>
+                    <div class="row text-center">
+                        <h1 class="text-center">CONTACT US</h1>
+                        <p>If you would like more information about the Jobs Fair, please contact:</p>
 
-                    <label>MS. ANNABELLE O. VILLEGAS</label>
-                    <p>Alumni and Job Placement Officer</p>
-                    <p>STI College – Caloocan</p>
-                    <p>Contact No.: (02) 294 - 4001 to 02 loc. 110-111</p>
-                    <p>Mobile no. : 0932-8436642</p>
-                    Email adds.: <span class="accent-color">annabelle.villegas@caloocan.sti.edu</span> and <span class="accent-color">jobplacement@caloocan.sti.edu</span>
-                </div>
+                        <label>MS. ANNABELLE O. VILLEGAS</label>
+                        <p>Alumni and Job Placement Officer</p>
+                        <p>STI College – Caloocan</p>
+                        <p>Contact No.: (02) 294 - 4001 to 02 loc. 110-111</p>
+                        <p>Mobile no. : 0932-8436642</p>
+                        Email adds.: <span class="accent-color">annabelle.villegas@caloocan.sti.edu</span> and <span class="accent-color">jobplacement@caloocan.sti.edu</span>
+                    </div>
 
-                <img src="../images/forms/banner2.jpg">
+                    <img src="../images/forms/banner2.jpg">
 
-                <div class="hr1" style="margin-top:20px;margin-bottom:20px;"></div>
-                <div class="text-center">
-                    <button type="submit" name="" class="btn-system btn-large btn-black">Submit</button>
+                    <div class="hr1" style="margin-top:20px;margin-bottom:20px;"></div>
+                    <div class="text-center">
+                        <button type="submit" name="" class="btn-system btn-large btn-black">Submit</button>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
+    </form>
 </div>
 <!-- End Content -->
 
@@ -436,9 +446,6 @@
 <!-- Go To Top Link -->
 <a href="#" class="back-to-top"><i class="fa fa-angle-up"></i></a>
 </body>
-<<<<<<< Updated upstream
-</html>
-=======
 </html>
 <script type="text/javascript">
     $(document).ready(function () {
@@ -505,34 +512,6 @@
                         }
                     }
                 },
-                Phone2: {
-                    validators: {
-                        notEmpty: {
-                            message: "This field is required."
-                        }
-                    }
-                },
-                Phone3: {
-                    validators: {
-                        notEmpty: {
-                            message: "This field is required."
-                        }
-                    }
-                },
-                MobileNumber: {
-                    validators: {
-                        notEmpty: {
-                            message: "This field is required."
-                        }
-                    }
-                },
-                FaxNumber: {
-                    validators: {
-                        notEmpty: {
-                            message: "This field is required."
-                        }
-                    }
-                },
                 Industry: {
                     validators: {
                         notEmpty: {
@@ -547,73 +526,27 @@
                         }
                     }
                 },
-                Representative2: {
-                    validators: {
-                        notEmpty: {
-                            message: "This field is required."
-                        }
-                    }
-                },
                 'MarketingMaterials[]': {
                     validators: {
-                        notEmpty: {
-                            message: "This field is required."
-                        }
-                    }
-                },
-                Others: {
-                    validators: {
-                        notEmpty: {
-                            message: "This field is required."
-                        }
-                    }
-                },
-                'Extras[]': {
-                    validators: {
-                        notEmpty: {
-                            message: "This field is required."
-                        }
-                    }
-                },
-                OthersExtra: {
-                    validators: {
-                        notEmpty: {
-                            message: "This field is required."
-                        }
-                    }
-                },
-                'RoomForExam[]': {
-                    validators: {
-                        notEmpty: {
-                            message: "This field is required."
-                        }
-                    }
-                },
-                DoorPrizes: {
-                    validators: {
-                        notEmpty: {
-                            message: "This field is required."
-                        }
-                    }
-                },
-                ItemDescription: {
-                    validators: {
-                        notEmpty: {
-                            message: "This field is required."
+                        choice: {
+                            min: 1,
+                            message: "Please check atleast one."
                         }
                     }
                 },
                 'Participate[]': {
                     validators: {
-                        notEmpty: {
-                            message: "This field is required."
+                        choice: {
+                            min: 1,
+                            message: "Please check this."
                         }
                     }
                 },
                 'Requirements[]': {
                     validators: {
-                        notEmpty: {
-                            message: "This field is required."
+                        choice: {
+                            min: 1,
+                            message: "Please check atleast one."
                         }
                     }
                 }
