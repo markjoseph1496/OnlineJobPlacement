@@ -309,7 +309,7 @@ $FirstName = $infoquery[0][0];
                     <div class="hr5" style="margin-top:35px;margin-bottom:40px;"></div>
                     <div class="text-center">
                         <button type="submit" class="btn-system btn-large" id="BtnContactsave" name="BtnContactsave">Save</button>
-                        <a href = "admin-contact.php" class="btn-system btn-large btn-black">Cancel</a>
+                        <a href = "admin-news.php" class="btn-system btn-large btn-black">Cancel</a>
                     </div>
                 </div>
             </div>
