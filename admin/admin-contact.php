@@ -177,7 +177,7 @@ $FirstName = $infoquery[0][0];
                             <i class="fa fa-bars"></i>
                         </button>
                         <!-- End Toggle Nav Link For Mobiles -->
-                        <a class="navbar-brand" href="index.html">
+                        <a class="navbar-brand">
                             <img src="../images/ojpms.png">
                         </a>
                     </div>
