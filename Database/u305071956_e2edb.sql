@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50616
 File Encoding         : 65001
 
-Date: 2016-04-02 21:23:40
+Date: 2016-04-03 20:20:20
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -55,6 +55,27 @@ CREATE TABLE `admineventtbl` (
 INSERT INTO admineventtbl VALUES ('5', '1', 'General Assembly', '2016-03-09', '2016-03-16', '9th/floor Penthouse', 'basta description', null, 'ProfileImage/ef5e2d97a1c2e54494766b269b8b2b84e8404cfae9d874c99882e832b30964b24548549eb18f099af49668b963ad47ab8b5c4329b36d8b11bacca65ff2670ef5.jpg');
 INSERT INTO admineventtbl VALUES ('6', '1', 'd', '2016-03-01', '2016-03-09', 'dddddddddd', 'dddddd', null, 'ProfileImage/6bb42f81df857fcfc0a7cd6ae9c490a2c43ca743a8ae45c84bc5da2eab0ebc18a8ae55f7386d9820bd8d1c206f57b9cc556068fd77eb34f243fc614bd39e20b8.jpg');
 INSERT INTO admineventtbl VALUES ('7', '1', 'g', '2016-03-03', '2016-03-01', 'g', 'g', null, 'ProfileImage/18b7ae0cd85af22e97a0f27bcdce24b0c0f68f59ef3cdcf5d08b1b78f2206e634d75dfc0412f04a891b0f4f58380723e0e634de5c60831c2189081560005c78d.jpg');
+
+-- ----------------------------
+-- Table structure for `adminnewstbl`
+-- ----------------------------
+DROP TABLE IF EXISTS `adminnewstbl`;
+CREATE TABLE `adminnewstbl` (
+  `NewsID` int(11) NOT NULL AUTO_INCREMENT,
+  `AdminID` varchar(255) DEFAULT NULL,
+  `NewsTitle` varchar(255) DEFAULT NULL,
+  `NewsDate` varchar(255) DEFAULT NULL,
+  `NewsLocation` varchar(255) DEFAULT NULL,
+  `NewsCaption` varchar(255) DEFAULT NULL,
+  `ProfileImages` varchar(255) DEFAULT NULL,
+  PRIMARY KEY (`NewsID`)
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
+
+-- ----------------------------
+-- Records of adminnewstbl
+-- ----------------------------
+INSERT INTO adminnewstbl VALUES ('2', '1', 'aaaa', '2016-04-05', 'ssss', 'ddddd', 'ProfileImages/30b04a043a318e23b256d95a40d43d370a147eab53147787e9609b61409acdca812f0d66cb47a76588047443b6c5bde24bdec4703df2c38f2ee9d1831a315847.jpg');
+INSERT INTO adminnewstbl VALUES ('3', '1', 'qqqq', '2016-04-06', 'wwww', 'eeee', 'ProfileImages/d6250960a4dacbc6b8c65cadcd6a67c205f9a5007236622d3270c59885b641fe2168da5fd0032f7c898e1cff620646d8447b5992bb055f970af3eba1565bee16.png');
 
 -- ----------------------------
 -- Table structure for `admintbl`
@@ -649,7 +670,7 @@ CREATE TABLE `progresstbl` (
 -- ----------------------------
 -- Records of progresstbl
 -- ----------------------------
-INSERT INTO progresstbl VALUES ('1', '00820120001', '100', 'ok', 'ok', 'ok', '', 'ok', 'ok', 'ok', 'ok', 'ok', 'ok', 'ok');
+INSERT INTO progresstbl VALUES ('1', '00820120001', '100', 'ok', 'ok', 'ok', 'ok', 'ok', 'ok', 'ok', 'ok', 'ok', 'ok', 'ok');
 INSERT INTO progresstbl VALUES ('2', '00820120002', '0', 'ok', 'ok', 'ok', '', '', '', '', '', '', '', '');
 INSERT INTO progresstbl VALUES ('3', '00820120003', '0', '', '', '', '', '', '', '', '', '', '', '');
 INSERT INTO progresstbl VALUES ('4', '00820120004', '0', '', '', '', '', '', '', '', '', '', '', '');
@@ -1906,7 +1927,7 @@ CREATE TABLE `workexperiencetbl` (
   `PositionTitle` varchar(255) NOT NULL,
   `CompanyAddress` varchar(255) NOT NULL,
   PRIMARY KEY (`WorkID`)
-) ENGINE=InnoDB AUTO_INCREMENT=356 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=357 DEFAULT CHARSET=latin1;
 
 -- ----------------------------
 -- Records of workexperiencetbl
@@ -2261,3 +2282,5 @@ INSERT INTO workexperiencetbl VALUES ('351', '00820120123', 'sdfgsg', 'http://pp
 INSERT INTO workexperiencetbl VALUES ('352', '00820120122', 'awd', 'http://ll.ll', 'Architectural Services / Interior Designing', 'BPO/Call Center', '04', '2007', '06', '2016', '', 'Senior Manager', '4', '', '');
 INSERT INTO workexperiencetbl VALUES ('353', '00820120122', 'awdwadwa', 'http://ll.ll', 'Banking / Financial Services', 'Arts/Creative/Graphics Design', '05', '2012', '', 'Current', '', 'Sernior Executive / Supervisor', '6', '', '');
 INSERT INTO workexperiencetbl VALUES ('354', '00820120122', 'wadawdwad', 'http://ll.ll', 'Commodities Production / Distribution', 'Biotechnology', '07', '2006', '05', '2012', '', 'Junior Executive', '4', '', '');
+INSERT INTO workexperiencetbl VALUES ('355', '00820120001', 'ddddddddd', '', 'Accounting / Audit / Tax Services', 'IT/Computer - Creative Design', '03', '2000', '06', '2003', 'dddddsdd', 'Senior Manager', '5', '', '2890 A, Oab');
+INSERT INTO workexperiencetbl VALUES ('356', '00820120001', 'd', '', 'Advertising / Marketing / Promotion / PR', 'Hotel Management/Tourism Services', '02', '1999', '', 'Current', 'asdasas', 'Manager', '5', '', 'dddddd');
