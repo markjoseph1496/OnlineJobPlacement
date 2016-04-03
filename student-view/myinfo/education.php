@@ -476,9 +476,252 @@ if($References == "ok"){
                                 <h4>Schools<span class="head-line"></span></h4>
                             </div>
                             <div class="col-md-6">
-                                <a href="add/add-school.php" class="main-button" style="float:right;">
-                                    <span class="fa fa-plus"> Add School</span>
+                                <a class="main-button" style="float:right;cursor:pointer;" data-toggle="modal"
+                                   data-target="#AddSchool">
+                                    <span> Add School</span>
                                 </a>
+                            </div>
+                        </div>
+
+
+                        <!-- ADD School Modal -->
+                        <div class="modal fade" id="AddSchool" role="dialog">
+                            <div class="modal-dialog modal-lg" style="padding:160px;width:100%;">
+                                <!-- Modal content-->
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                        <h4 class="modal-title">Add School</h4>
+                                    </div>
+                                    <div class="modal-body">
+                                        <div class="row">
+                                            <div class="col-md-12">
+                                                <div class="form-group">
+                                                    <label>School <span>(*)</span></label>
+                                                    <input type="text" class="form-control" id="School" name="School" style="height:34px;">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <div class="form-group">
+                                                    <label>Educational Attainment <span>(*)</span></label>
+                                                    <select id="EducAttainment" name="EducAttainment" class="form-control" style="width:100%; height:34px;">
+                                                        <option value="">- Please select one -</option>
+                                                        <option value="High School Diploma">High School Diploma</option>
+                                                        <option value="Technical Vocational/Certificate">Technical Vocational/Certificate</option>
+                                                        <option value="Bachelor's/College Degree">Bachelor's/College Degree</option>
+                                                        <option value="Post Graduate Diploma/Master's Degree">Post Graduate Diploma/Master's Degree</option>
+                                                        <option value="Professional License (Passed Board/Bar/Professional License Exam)">Professional License (Passed Board/Bar/Professional License Exam</option>
+                                                        <option value="Doctorate Degree">Doctorate Degree</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <div class="form-group">
+                                                    <label id="lblCourse">Course <span>(*)</span></label>
+                                                    <select id="Course" name="Course" class="form-control" style="width:100%; height:34px;">
+                                                        <option value="">- Course -</option>
+                                                        <?php
+                                                            $course_tbl =
+                                                                GSecureSQL::query(
+                                                                    "SELECT * FROM coursetbl",
+                                                                    TRUE
+                                                                );
+                                                            foreach($course_tbl as $value){
+                                                                $CourseCode = $value[2];
+                                                                $CourseTitle = $value[1];
+                                                        ?>
+                                                        <option value="<?php echo $CourseCode; ?>"><?php echo $CourseTitle; ?></option>
+                                                        <?php
+                                                        }
+                                                        ?>
+                                                        <option value="other">others</option>
+                                                    </select>
+                                                    <br>
+                                                    <input type="text" class="form-control" id="txtCourse" name="txtCourse" style="height:34px;">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <label>Year Covered <span>(*)</span>:</label>
+                                            </div>
+                                            <div class="col-md-6">&nbsp;</div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-3">
+                                                <div class="form-group">
+                                                    <label>From</label>
+                                                    <select id="GraduatedYearFrom" name="GraduatedYearFrom" class="form-control" style="width:100%; height:34px;">
+                                                        <option value="">- Year -</option>
+                                                        <?php
+                                                        $date = Date("Y") + 1;
+                                                        while($date != 1935){
+                                                            $date--;
+                                                            echo "<option value='$date'> $date</option>";
+                                                        }
+                                                        ?>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-3">
+                                                <div class="form-group">
+                                                    <label>To</label>
+                                                    <select id="GraduatedYearTo" name="GraduatedYearTo" class="form-control" style="width:100%; height:34px;">
+                                                        <option value="">- Year -</option>
+                                                        <?php
+                                                            $date = Date("Y") + 1;
+                                                            while($date != 1935){
+                                                                $date--;
+                                                                echo "<option value='$date'> $date</option>";
+                                                            }
+                                                        ?>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="submit" class="btn-system btn-large">Add</button>
+                                            <button type="button" class="btn btn-default" data-dismiss="modal">
+                                                Cancel
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <!-- EDIT School Modal -->
+                        <div class="modal fade" id="EditSchool" role="dialog">
+                            <div class="modal-dialog modal-lg" style="padding:160px;width:100%;">
+                                <!-- Modal content-->
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                        <h4 class="modal-title">Edit School</h4>
+                                    </div>
+                                    <div class="modal-body">
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <div class="form-group">
+                                                    <label>Educational Attainment <span>(*)</span></label>
+                                                    <select id="EducAttainment" name="EducAttainment" class="form-control"
+                                                            style="width:100%; height:34px;">
+                                                        <option value="" <?php if ($Attainment == "") echo 'selected="selected"'; ?>>-
+                                                            Please select one -
+                                                        </option>
+                                                        <option
+                                                            value="High School Diploma" <?php if ($Attainment == "High School Diploma") echo 'selected="selected"'; ?>>
+                                                            High School Diploma
+                                                        </option>
+                                                        <option
+                                                            value="Technical Vocational/Certificate" <?php if ($Attainment == "Technical Vocational/Certificate") echo 'selected="selected"'; ?>>
+                                                            Technical Vocational/Certificate
+                                                        </option>
+                                                        <option
+                                                            value="Bachelor's/College Degree" <?php if ($Attainment == "Bachelor's/College Degree") echo 'selected="selected"'; ?>>
+                                                            Bachelor's/College Degree
+                                                        </option>
+                                                        <option
+                                                            value="Post Graduate Diploma/Master's Degree" <?php if ($Attainment == "Post Graduate Diploma/Master's Degree") echo 'selected="selected"'; ?>>
+                                                            Post Graduate Diploma/Master's Degree
+                                                        </option>
+                                                        <option
+                                                            value="Professional License (Passed Board/Bar/Professional License Exam)" <?php if ($Attainment == "Professional License (Passed Board/Bar/Professional License Exam") echo 'selected="selected"'; ?>>
+                                                            Professional License (Passed Board/Bar/Professional License Exam
+                                                        </option>
+                                                        <option
+                                                            value="Doctorate Degree" <?php if ($Attainment == "Doctorate Degree") echo 'selected="selected"'; ?>>
+                                                            Doctorate Degree
+                                                        </option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <div class="form-group">
+                                                    <label>Course <span>(*)</span></label>
+                                                    <select id="Course" name="Course" class="form-control"
+                                                            style="width:100%; height:34px;">
+                                                        <option value="">- Course -</option>
+                                                        <?php
+                                                        $query = "SELECT * FROM coursetbl";
+                                                        $tbl = GSecureSQL::query($query, TRUE);
+                                                        foreach($tbl as $row){
+                                                            $CourseCode = $row[2];
+                                                            $CourseTitle = $row[1];
+                                                            ?>
+                                                            <option
+                                                                value="<?php echo $CourseCode; ?>" <?php if ($CourseCode == $Course) echo 'selected="selected"'; ?>><?php echo $CourseTitle; ?></option>
+                                                            <?php
+                                                        }
+                                                        ?>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <label>Year Covered <span>(*)</span>:</label>
+                                            </div>
+                                            <div class="col-md-6">&nbsp;</div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-3">
+                                                <div class="form-group">
+                                                    <?php
+                                                    $g = explode(' - ', $school_tbl[0][5]);
+                                                    $gyf = $g[0];
+                                                    $gyt = $g[1];
+                                                    ?>
+                                                    <label>From</label>
+                                                    <select id="GraduatedYearFrom" name="GraduatedYearFrom" class="form-control"
+                                                            style="width:100%; height:34px;">
+                                                        <option value="">- Year -</option>
+                                                        <?php
+                                                        $date = Date("Y") + 1;
+                                                        while ($date != 1935) {
+                                                            $date--;
+                                                            if($gyf == $date){
+                                                                echo "<option value='$date' selected> $date</option>";
+                                                            }else{
+                                                                echo "<option value='$date'> $date</option>";
+                                                            }
+                                                        }
+                                                        ?>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-3">
+                                                <div class="form-group">
+                                                    <label>To</label>
+                                                    <select id="GraduatedYearTo" name="GraduatedYearTo" class="form-control"
+                                                            style="width:100%; height:34px;">
+                                                        <option value="">- Year -</option>
+                                                        <?php
+                                                        $date = Date("Y") + 15;
+                                                        while ($date != 1935) {
+                                                            $date--;
+                                                            if($gyt == $date){
+                                                                echo "<option value='$date' selected> $date</option>";
+                                                            }else{
+                                                                echo "<option value='$date'> $date</option>";
+                                                            }
+                                                        }
+                                                        ?>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="submit" class="btn-system btn-large">Save</button>
+                                            <button type="button" class="btn btn-default" data-dismiss="modal">
+                                                Cancel
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
 
@@ -689,9 +932,76 @@ if($References == "ok"){
                                 <h4>Seminars<span class="head-line"></span></h4>
                             </div>
                             <div class="col-md-6">
-                                <a href="add/add-seminar.php" class="main-button" style="float:right;">
-                                    <span class="fa fa-plus"> Add Seminar</span>
+                                <a class="main-button" style="float:right;cursor:pointer;" data-toggle="modal"
+                                   data-target="#AddSeminar">
+                                    <span class=""> Add Seminar</span>
                                 </a>
+                            </div>
+                        </div>
+
+                        <!-- ADD Seminar Modal -->
+                        <div class="modal fade" id="AddSeminar" role="dialog">
+                            <div class="modal-dialog modal-lg" style="padding:160px;width:100%;">
+                                <!-- Modal content-->
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                        <h4 class="modal-title">Add Seminar</h4>
+                                    </div>
+                                    <div class="modal-body">
+                                        <div class="row">
+                                            <div class="col-md-7">
+                                                <div class="form-group">
+                                                    <label>Seminar <span>(*)</span></label>
+                                                    <input type="text" class="form-control" id="Seminar" name="Seminar">
+                                                </div>
+                                            </div>
+                                            <div class="col-md-5">
+                                                <div class="form-group">
+                                                    <label>Year Attended <span>(*)</span></label>
+                                                    <select id="YearAttended" name="YearAttended" class="form-control" style="width:100%; height:34px;">
+                                                            <option value = "">- Year -</option>
+                                                            <?php 
+                                                                $date = Date("Y") + 1;
+                                                                while($date != 1935){
+                                                                    $date--;
+                                                                    echo "<option value='$date'> $date</option>";
+                                                                    }
+                                                            ?>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="submit" class="btn-system btn-large">Add</button>
+                                            <button type="button" class="btn btn-default" data-dismiss="modal">
+                                                Cancel
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- EDIT Seminar Modal -->
+                        <div class="modal fade" id="EditSchool" role="dialog">
+                            <div class="modal-dialog modal-lg" style="padding:160px;width:100%;">
+                                <!-- Modal content-->
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                        <h4 class="modal-title">Edit Seminar</h4>
+                                    </div>
+                                    <div class="modal-body">
+                                        
+                                        <div class="modal-footer">
+                                            <button type="submit" class="btn-system btn-large">Save</button>
+                                            <button type="button" class="btn btn-default" data-dismiss="modal">
+                                                Cancel
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
 
@@ -775,3 +1085,95 @@ if($References == "ok"){
 <script type="text/javascript" src="../../js/script.js"></script>
 </body>
 </html>
+
+
+<script type="text/javascript">
+    $(document).ready(function(){
+        $("#EducAttainment").change(function(){
+            $(this).find("option:selected").each(function(){
+                if($(this).attr("value")=="High School Diploma"){
+                    $("#Course").val("");
+                    $("#Course").hide();
+                    $("#txtCourse").hide();
+                    $("#lblCourse").hide();
+                }else{
+                    $("#Course").show();
+                    $("#lblCourse").show();
+                }
+            });
+        }).change();
+    });
+
+    $(document).ready(function(){
+        $("#Course").change(function(){
+            $(this).find("option:selected").each(function(){
+                if($(this).attr("value")=="other"){
+                    $("#txtCourse").val("");
+                    $("#txtCourse").show();
+                }else{
+                    $("#txtCourse").hide();
+                }
+            });
+        }).change();
+    });
+
+
+    $(document).ready(function () {
+            var validator = $("#AddSchool").bootstrapValidator({
+                feedbackIcons:{
+                    valid: "glyphicon glyphicon-ok",
+                    invalid: "glyphicon glyphicon-remove",
+                    validating: "glyphicon glyphicon-refresh"
+                },
+                excluded: [':disabled', ':hidden', ':not(:visible)', '#container'],
+                fields: {
+                    School: {
+                        validators: {
+                            notEmpty: {
+                                message: "School is required."
+                            }
+                        }
+                    },
+                    EducAttainment: {
+                        validators: {
+                            notEmpty: {
+                                message: "Educational Attainment is required."
+                            }
+                        }
+                    },
+                    Course: {
+                        validators: {
+                            notEmpty: {
+                                message: "Course is required."
+                            }
+                        }
+                    },
+                    txtCourse: {
+                        validators: {
+                            notEmpty: {
+                                message: "Course is required."
+                            }
+                        }
+                    },
+                    GraduatedYearFrom: {
+                        validators: {
+                            notEmpty: {
+                                message: "Month graduated is required."
+                            }
+                        }
+                    },
+                    GraduatedYearTo: {
+                        validators: {
+                            notEmpty: {
+                                message: "Year graduated is required."
+                            },
+                            greaterThan: {
+                                value: "GraduatedYearFrom",
+                                message: "Invalid date."
+                            }
+                        }
+                    }
+                }
+            });
+    });
+</script>

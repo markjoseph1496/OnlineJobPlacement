@@ -469,9 +469,98 @@ if($References == "ok"){
                                     <h4>Certifications <span class="head-line"></span></h4>
                                 </div>
                                 <div class="col-md-6">
-                                    <a href="add/add-certification.php" class="main-button" style="float:right;">
-                                        <span class="fa fa-plus"> Add Certification</span>
+                                    <a class="main-button" style="float:right;cursor:pointer;" data-toggle="modal" data-target="#AddCertification">
+                                        <span> Add Certification</span>
                                     </a>
+                                </div>
+                            </div>
+
+                            <!-- ADD Certification Modal -->
+                            <div class="modal fade" id="AddCertification" role="dialog">
+                                <div class="modal-dialog modal-lg" style="padding:160px;width:100%;">
+                                    <!-- Modal content-->
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                            <h4 class="modal-title">Add Certification</h4>
+                                        </div>
+                                        <div class="modal-body">
+                                            <div class="row">
+                                                <div class="col-md-6">
+                                                    <div class="form-group">
+                                                        <label>Certification <span>(*)</span></label>
+                                                        <input type="text" class="form-control" id="Certification" name="Certification">
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <div class="form-group">
+                                                        <label>Year Taken <span>(*)</span></label>
+                                                        <select id="YearTaken" name="YearTaken" class="form-control" style="width:100%; height:34px;">
+                                                            <option value="">- Year -</option>
+                                                            <?php
+                                                            $date = Date("Y") + 1;
+                                                            while($date != 1935){
+                                                                    $date--;
+                                                                    echo "<option value='$date'> $date</option>";
+                                                                }
+                                                            ?>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="modal-footer">
+                                                <button type="submit" class="btn-system btn-large">Add</button>
+                                                <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- EDIT Certification Modal -->
+                            <div class="modal fade" id="AddCertification" role="dialog">
+                                <div class="modal-dialog modal-lg" style="padding:160px;width:100%;">
+                                    <!-- Modal content-->
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                            <h4 class="modal-title">Edit Certification</h4>
+                                        </div>
+                                        <div class="modal-body">
+                                            <div class="row">
+                                                <div class="col-md-6">
+                                                    <div class="form-group">
+                                                        <label>Certification <span>(*)</span></label>
+                                                        <input type="text" class="form-control" id="Certification" name="Certification" value ="<?php echo $Certification; ?>">
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <div class="form-group">
+                                                        <label>Year Taken <span>(*)</span></label>
+                                                        <select id="YearTaken" name="YearTaken" class="form-control" style="width:100%; height:34px;">
+                                                            <option value="">- Year -</option>
+                                                            <?php
+                                                            $date = Date("Y") + 1;
+                                                            while($date != 1935){
+                                                                    $date--;
+                                                                    if($date == $YearTaken){
+                                                                        echo "<option selected value='$date'> $date</option>";
+                                                                    }
+                                                                    else{
+                                                                    echo "<option value='$date'> $date</option>";
+                                                                    }
+                                                                }
+                                                            ?>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="modal-footer">
+                                                <button type="submit" class="btn-system btn-large">Save</button>
+                                                <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
 
