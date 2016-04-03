@@ -470,11 +470,39 @@ if ($References == "ok") {
                                 <h4>Achievements <span class="head-line"></span></h4>
                             </div>
                             <div class="col-md-6">
-                                <a href="add/add-achievement.php" class="main-button" style="float:right;">
-                                    <span class="fa fa-plus"> Add Achievement</span>
+                                <a class="main-button" style="float:right;cursor:pointer;" data-toggle="modal" data-target="#AddAchievement">
+                                    <span>Add Achievement</span>
                                 </a>
                             </div>
                         </div>
+
+                        <!-- ADD Achievement Modal -->
+                        <div class="modal fade" id="AddAchievement" role="dialog">
+                            <div class="modal-dialog modal-lg" style="padding:160px;width:100%;">
+                                <!-- Modal content-->
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                        <h4 class="modal-title">Add Achievement</h4>
+                                    </div>
+                                    <div class="modal-body">
+                                        <div class="row">
+                                            <div class="col-md-12">
+                                                <div class="form-group">
+                                                    <label>Achievement <span>(*)</span></label>
+                                                    <input type="text" class="form-control" id="Achievement" name="Achievement">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="submit" class="btn-system btn-large">Add</button>
+                                            <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
 
                         <div class="hr2" style="margin-top:35px;"></div>
                         <table class="table segment table-hover">

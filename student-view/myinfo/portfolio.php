@@ -318,7 +318,7 @@ if ($References == "ok") {
                         <h4 class="modal-title">Sign Out</h4>
                     </div>
                     <div class="modal-body">
-                        <div class="col-md-15 fieldcol">
+                        <div class="col-md-15">
                             <label>Do you want to sign out?</label>
                         </div>
                         <div class="modal-footer">
@@ -447,9 +447,40 @@ if ($References == "ok") {
                                 <h4>Documents<span="head-line"></span="head-line"></h4>
                             </div>
                             <div class="col-md-6">
-                                <a href="add/add-document.php" class="main-button" style="float:right;">
-                                    <span class="fa fa-plus"> Add Document</span>
+                                <a class="main-button" style="float:right;cursor:pointer;" data-toggle="modal" data-target="#AddDocument">
+                                    <span>Add Document</span>
                                 </a>
+                            </div>
+                        </div>
+
+                        <!-- ADD Document Modal -->
+                        <div class="modal fade" id="AddDocument" role="dialog">
+                            <div class="modal-dialog modal-lg" style="padding:160px;width:100%;">
+                                <!-- Modal content-->
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                        <h4 class="modal-title">Add Document</h4>
+                                    </div>
+                                    <div class="modal-body">
+                                        <div class="row">
+                                            <div class="col-md-12">
+                                                <form id="UploadDocument" name="UploadDocument" method="POST" action="upload.php" enctype="multipart/form-data">
+                                                    <div class="col-md-5">
+                                                        <input id="DocumentFile" name="DocumentFile" type="file"
+                                                               class="file file-loading"
+                                                               data-allowed-file-extensions='["png", "jpg", "bmp", "gif"]'>
+                                                        <br>
+                                                    </div>
+                                                </form>
+                                            </div>
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="submit" class="btn-system btn-large">Add</button>
+                                            <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
 
@@ -523,9 +554,75 @@ if ($References == "ok") {
                                 <h4>Links<span="head-line"></span="head-line"></h4>
                             </div>
                             <div class="col-md-6">
-                                <a href="add/add-link.php" class="main-button" style="float:right;">
-                                    <span class="fa fa-plus"> Add Link</h6></span>
+                                <a class="main-button" style="float:right;cursor:pointer;" data-toggle="modal" data-target="#AddLink">
+                                    <span>Add Link</h6></span>
                                 </a>
+                            </div>
+                        </div>
+
+                        <!-- ADD Link Modal -->
+                        <div class="modal fade" id="AddLink" role="dialog">
+                            <div class="modal-dialog modal-lg" style="padding:160px;width:100%;">
+                                <!-- Modal content-->
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                        <h4 class="modal-title">Add Link</h4>
+                                    </div>
+                                    <div class="modal-body">
+                                        <div class="row">
+                                            <div class="col-md-12 fieldcol">
+                                                <div class="form-group">
+                                                    <label>URL <span>(*)</span></label>
+                                                    <input type="text" class="form-control" id="txtURL" name="txtURL"  value="<?php echo htmlspecialchars($server_txtURL)?>">
+                                                </div>
+                                            </div>
+                                            <div class="col-md-12 fieldcol">
+                                                <div class="form-group">
+                                                    <label>Name/Title/Caption <span>(*)</span></label>
+                                                    <input type="text" class="form-control" id="txtCaption" name="txtCaption"value="<?php echo htmlspecialchars($server_txtCaption)?>">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="submit" class="btn-system btn-large">Add</button>
+                                            <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- EDIT Link Modal -->
+                        <div class="modal fade" id="EditLink" role="dialog">
+                            <div class="modal-dialog modal-lg" style="padding:160px;width:100%;">
+                                <!-- Modal content-->
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                        <h4 class="modal-title">Edit Link</h4>
+                                    </div>
+                                    <div class="modal-body">
+                                        <div class="row">
+                                            <div class="col-md-12 fieldcol">
+                                                <div class="form-group">
+                                                    <label>URL <span>(*)</span></label>
+                                                    <input type="text" class="form-control" id="txtURL" name="txtURL"  value="<?php echo htmlspecialchars($server_txtURL)?>">
+                                                </div>
+                                            </div>
+                                            <div class="col-md-12 fieldcol">
+                                                <div class="form-group">
+                                                    <label>Name/Title/Caption <span>(*)</span></label>
+                                                    <input type="text" class="form-control" id="txtCaption" name="txtCaption"value="<?php echo htmlspecialchars($server_txtCaption)?>">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="submit" class="btn-system btn-large">Save</button>
+                                            <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
 
@@ -539,22 +636,22 @@ if ($References == "ok") {
                             </tr>
                             </thead>
                             <tbody>
-                            <tr>
-                                <td></td>
-                                <td></td>
+                                <tr>
+                                    <td></td>
+                                    <td></td>
 
-                                <input type="hidden" name="delete_URLID" value=""/>
-                                <td class="text-center">
-                                    <a href="" class="btn btn-danger btnformaintenance  deleteURL">
-                                        <i class="fa fa-trash fa-1x"></i>
-                                    </a>
-                                    <a data-bb="confirmDeleteURL" class="bb-alert alert alert-info"
-                                       style="display: none;" href="delete.php?delete_URLID="> </a>
-                                    <a href="edit/edit-link.php?" class="btn btn-default btnformaintenance">
-                                        <i class="fa fa-pencil-square-o fa-1x"></i>
-                                    </a>
-                                </td>
-                            </tr>
+                                    <input type="hidden" name="delete_URLID" value=""/>
+                                    <td class="text-center">
+                                        <a href="" class="btn btn-danger btnformaintenance  deleteURL">
+                                            <i class="fa fa-trash fa-1x"></i>
+                                        </a>
+                                        <a data-bb="confirmDeleteURL" class="bb-alert alert alert-info"
+                                           style="display: none;" href="delete.php?delete_URLID="> </a>
+                                        <a href="edit/edit-link.php?" class="btn btn-default btnformaintenance">
+                                            <i class="fa fa-pencil-square-o fa-1x"></i>
+                                        </a>
+                                    </td>
+                                </tr>
                             </tbody>
                         </table>
                     </div>
