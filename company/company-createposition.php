@@ -723,12 +723,12 @@ $cLastName = $companyinfo_tbl[0][2];
                         },
                         stringLength: {
                             min: 1,
-                            max: 3,
-                            message: "Years of Experience must be 3 digit long."
+                            max: 2,
+                            message: "Years of Experience must be 2 digit long."
                         },
                         regexp: {
                             regexp: /^[0-9\s]+$/i,
-                            message: "Location can consist of Positive Numbers only"
+                            message: "Years of Experience can consist of Positive Numbers only"
                         }
                     }
                 },
