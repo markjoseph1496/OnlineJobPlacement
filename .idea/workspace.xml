@@ -2,10 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d999e893-f739-4a68-b7b0-034239dfb77e" name="Default" comment="">
-      <change type="MOVED" beforePath="$PROJECT_DIR$/forms/job-fair-disabled.php" afterPath="$PROJECT_DIR$/admin/job-fair-data.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/admin/job-fair-disabled.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/admin/job-fair.php" afterPath="$PROJECT_DIR$/admin/job-fair.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/forms/functions.php" afterPath="$PROJECT_DIR$/forms/functions.php" />
     </list>
     <list id="ee7a7474-4848-4a40-af05-afa3160fd5b4" name="New changelist" comment="" />
     <ignored path="OnlineJobPlacement.iws" />
@@ -351,12 +349,6 @@
       <option name="number" value="Default" />
       <updated>1451894355130</updated>
     </task>
-    <task id="LOCAL-00249" summary="Polishing">
-      <created>1458923461299</created>
-      <option name="number" value="00249" />
-      <option name="project" value="LOCAL" />
-      <updated>1458923461299</updated>
-    </task>
     <task id="LOCAL-00250" summary="Polishing">
       <created>1458966685424</created>
       <option name="number" value="00250" />
@@ -645,7 +637,13 @@
       <option name="project" value="LOCAL" />
       <updated>1459736514203</updated>
     </task>
-    <option name="localTasksCounter" value="298" />
+    <task id="LOCAL-00298" summary="Polishing&#10;">
+      <created>1459746556682</created>
+      <option name="number" value="00298" />
+      <option name="project" value="LOCAL" />
+      <updated>1459746556682</updated>
+    </task>
+    <option name="localTasksCounter" value="299" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -1244,13 +1242,13 @@
         <state vertical-scroll-proportion="0.5338983">
           <caret line="604" column="33" selection-start-line="604" selection-start-column="33" selection-end-line="604" selection-end-column="33" />
           <folding>
-            <marker date="1459736528195" expanded="true" signature="223:271" placeholder="SELECT First... admintbl" />
-            <marker date="1459736528195" expanded="true" signature="14683:14946" placeholder="..." />
-            <marker date="1459736528195" expanded="true" signature="15151:15413" placeholder="..." />
-            <marker date="1459736528195" expanded="true" signature="16732:16779" placeholder="SELECT * FRO... admineventtbl" />
-            <marker date="1459736528195" expanded="true" signature="31479:31527" placeholder="DELETE FROM " />
-            <marker date="1459736528195" expanded="true" signature="31631:31726" placeholder="..." />
-            <marker date="1459736528195" expanded="true" signature="31919:31993" placeholder="..." />
+            <marker date="1459746617885" expanded="true" signature="223:271" placeholder="SELECT First... admintbl" />
+            <marker date="1459746617885" expanded="true" signature="14683:14946" placeholder="..." />
+            <marker date="1459746617885" expanded="true" signature="15151:15413" placeholder="..." />
+            <marker date="1459746617885" expanded="true" signature="16732:16779" placeholder="SELECT * FRO... admineventtbl" />
+            <marker date="1459746617885" expanded="true" signature="31479:31527" placeholder="DELETE FROM " />
+            <marker date="1459746617885" expanded="true" signature="31631:31726" placeholder="..." />
+            <marker date="1459746617885" expanded="true" signature="31919:31993" placeholder="..." />
           </folding>
         </state>
       </provider>
