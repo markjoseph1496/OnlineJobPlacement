@@ -96,9 +96,43 @@
     </div>
 
     <!-- Start Content -->
-    <form id="JobFair" name="JobFair" autocomplete="off" method="POST" action="functions.php">
+    <form id="JobFair" name="JobFair" autocomplete="off" method="POST" action="forms/functions.php">
         <div id="content">
             <div class="container">
+                <?php
+                if (isset($_GET['done'])) {
+                    ?>
+                    <script type="text/javascript">
+                        $(window).load(function () {
+                            $('#AddWork').modal('show');
+                        });
+                    </script>
+                    <?php
+                }
+                ?>
+                <!-- Delete Modal -->
+                <div class="modal fade" id="AddWork"
+                     role="dialog">
+                    <div class="modal-dialog" style="padding:100px">
+                        <!-- Modal content-->
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                <h4 class="modal-title">Registration Successful</h4>
+                            </div>
+                            <div class="modal-body">
+                                <div class="col-md-15">
+                                    <label = "usr" class = "control-label">You have successfully registered to Job Fair 2016.</label>
+                                    <div class="form-group">
+                                    </div>
+                                </div>
+                                <div class="modal-footer">
+                                    <a href="home" type="button" class="btn btn-default">Done</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
                 <div class="call-action call-action-boxed call-action-style2 clearfix">
                     <img src="../images/forms/banner.jpg">
                     <div class="hr1" style="margin-top:30px;margin-bottom:30px;"></div>
@@ -576,9 +610,6 @@
                 },
                 FaxNumber: {
                     validators: {
-                        notEmpty: {
-                            message: "Mobile Number is required."
-                        },
                         regexp: {
                             regexp: /^([0-9]+[.]*)+$/i,
                             message: "Invalid fax number"

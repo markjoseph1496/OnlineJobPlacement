@@ -113,4 +113,6 @@ if(isset($_POST['FormSubmit'])){
         $Requirements
 
     );
+
+    header('location: ../jobfair?done');
 }

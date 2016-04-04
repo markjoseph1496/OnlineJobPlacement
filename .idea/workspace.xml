@@ -2,8 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d999e893-f739-4a68-b7b0-034239dfb77e" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.htaccess" afterPath="$PROJECT_DIR$/.htaccess" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Database/u305071956_e2edb.sql" afterPath="$PROJECT_DIR$/Database/u305071956_e2edb.sql" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/forms/functions.php" afterPath="$PROJECT_DIR$/forms/functions.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/forms/job-fair.php" afterPath="$PROJECT_DIR$/forms/job-fair.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/index.php" afterPath="$PROJECT_DIR$/index.php" />
     </list>
     <list id="ee7a7474-4848-4a40-af05-afa3160fd5b4" name="New changelist" comment="" />
     <ignored path="OnlineJobPlacement.iws" />
@@ -26,69 +29,34 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="job-fair.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/forms/job-fair.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-65.41936">
-              <caret line="315" column="35" selection-start-line="315" selection-start-column="35" selection-end-line="315" selection-end-column="35" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="functions.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/forms/functions.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-16.32258">
-              <caret line="53" column="37" selection-start-line="53" selection-start-column="37" selection-end-line="53" selection-end-column="37" />
-              <folding>
-                <marker date="1459745332361" expanded="true" signature="1717:2295" placeholder="INSERT INTO jobfairtbl... " />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="job-fair-data.php" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/admin/job-fair-data.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.670904">
-              <caret line="269" column="64" selection-start-line="269" selection-start-column="64" selection-end-line="269" selection-end-column="86" />
-              <folding>
-                <element signature="n#style#0;n#div#2;n#div#0;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#4;n#div#0;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#6;n#div#0;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#8;n#div#0;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <marker date="1459746413739" expanded="true" signature="152:189" placeholder="SELECT * FRO... jobfairtbl" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="admin-requested.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/admin/admin-requested.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-6.387097">
-              <caret line="324" column="20" selection-start-line="324" selection-start-column="20" selection-end-line="324" selection-end-column="20" />
-              <folding>
-                <marker date="1459703830800" expanded="true" signature="227:275" placeholder="SELECT First... admintbl" />
-                <marker date="1459703830800" expanded="true" signature="14121:14320" placeholder="..." />
-                <marker date="1459703830800" expanded="true" signature="14504:14703" placeholder="..." />
-                <marker date="1459703830800" expanded="true" signature="15615:16975" placeholder="SELECT logre... companyinfotbl" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="admin-account.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/admin/admin-account.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-0.0">
-              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="26" selection-end-column="2" />
+            <state vertical-scroll-proportion="46.129032">
+              <caret line="25" column="0" selection-start-line="25" selection-start-column="0" selection-end-line="25" selection-end-column="0" />
               <folding>
                 <marker date="1456585189428" expanded="true" signature="223:263" placeholder="SELECT * FRO... admintbl" />
                 <marker date="1456585189428" expanded="true" signature="18281:18464" placeholder="..." />
                 <marker date="1456585189428" expanded="true" signature="18646:18829" placeholder="..." />
                 <marker date="1456585189428" expanded="true" signature="19011:19199" placeholder="..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="personal-info.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/student-view/myinfo/personal-info.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="14.70339">
+              <caret line="842" column="21" selection-start-line="842" selection-start-column="21" selection-end-line="842" selection-end-column="21" />
+              <folding>
+                <marker date="1459596387027" expanded="true" signature="311:359" placeholder="SELECT * FRO... studentinfotbl" />
+                <marker date="1459596387027" expanded="true" signature="867:921" placeholder="SELECT Cours... coursetbl" />
+                <marker date="1459596387027" expanded="true" signature="1107:1372" placeholder="SELECT Pinfo... " />
+                <marker date="1459596387027" expanded="true" signature="6374:6447" placeholder="SELECT COUNT... studnotificationtbl" />
+                <marker date="1459596387027" expanded="true" signature="9127:9225" placeholder="SELECT Messa... " />
+                <marker date="1459596387027" expanded="true" signature="17499:17755" placeholder="..." />
+                <marker date="1459596387027" expanded="true" signature="17955:18212" placeholder="..." />
               </folding>
             </state>
           </provider>
@@ -129,8 +97,6 @@
         <option value="$PROJECT_DIR$/testing.php" />
         <option value="$PROJECT_DIR$/subdomain_helper.php" />
         <option value="$PROJECT_DIR$/login-company.php" />
-        <option value="$PROJECT_DIR$/index.php" />
-        <option value="$PROJECT_DIR$/.htaccess" />
         <option value="$PROJECT_DIR$/login-student.php" />
         <option value="$PROJECT_DIR$/student-view/myinfo/function_notif.php" />
         <option value="$PROJECT_DIR$/student-view/myinfo/functions.php" />
@@ -149,10 +115,12 @@
         <option value="$PROJECT_DIR$/student-view/myinfo/myinfoedit.php" />
         <option value="$PROJECT_DIR$/student-view/myinfo/work.php" />
         <option value="$PROJECT_DIR$/company/company-createposition.php" />
-        <option value="$PROJECT_DIR$/forms/job-fair.php" />
         <option value="$PROJECT_DIR$/admin/job-fair.php" />
-        <option value="$PROJECT_DIR$/forms/functions.php" />
         <option value="$PROJECT_DIR$/admin/job-fair-data.php" />
+        <option value="$PROJECT_DIR$/index.php" />
+        <option value="$PROJECT_DIR$/forms/functions.php" />
+        <option value="$PROJECT_DIR$/forms/job-fair.php" />
+        <option value="$PROJECT_DIR$/.htaccess" />
       </list>
     </option>
   </component>
@@ -256,14 +224,14 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="forms" />
+              <option name="myItemId" value="admin" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scratches" />
       <pane id="Scope" />
+      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -303,6 +271,140 @@
       <recent name="C:\xampp\htdocs\OnlineJobPlacement\student-view" />
       <recent name="C:\xampp\htdocs\OnlineJobPlacement\company" />
     </key>
+  </component>
+  <component name="RestoreUpdateTree" date="Moments ago" ActionInfo="_Update">
+    <UpdatedFiles>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Updated from server" />
+        <option name="myStatusName" value="Changed on server" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="CHANGED_ON_SERVER" />
+        <FILE-GROUP>
+          <option name="myUpdateName" value="Updated" />
+          <option name="myStatusName" value="Changed" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="false" />
+          <option name="myId" value="UPDATED" />
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/Database/u305071956_e2edb.sql</PATH>
+        </FILE-GROUP>
+        <FILE-GROUP>
+          <option name="myUpdateName" value="Created" />
+          <option name="myStatusName" value="Created" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="false" />
+          <option name="myId" value="CREATED" />
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/admin/ProfileImage/7c742325a779d8728b92debb4afdc7bdb57c4e79fc88b4e79e6523675073360317b4d659280f887101822a39bd35a3c21e443b586c4135593e479b99d42461ef.jpg</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/admin/ProfileImage/a0e7eb7bc06f80cf521ede0a1e8fa4109afc497485b58e8a4c744970a2364e4b7fdbb20b3345eb446f536319c9f2422009b3514b0ca63d462eeb6e09d97f256c.jpg</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/admin/ProfileImage/a6ddf137ca44230741bda21e8e5ab5e7367f2b040003f01edf1a5cc530574e0acd1cc84faae5d2c1a4f38da70da67a86da13cddadeed07c0351e86c03097868c.png</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/admin/ProfileImages/3954cc9ee5f8fda1607de29a323767b82e4e15eb9cd8f4085cacf26d3be2bba1cf639857491d483402c44be3cc272aa9b023a74b129242563460abe96c3e231c.png</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/admin/ProfileImages/5a23c29e88d71edfca8411845198e97fa7e4b728893782bce2288a022fd7d683ff47af6c29c2164612b8a73ca831ee2d5f73bd66b6b965f5f2046a9725b7cf6c.png</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/admin/ProfileImages/b5a9b82a118e06899405caed065ca909a32e8813705b439d87b1d7b9aa1b22013f9686eca9478fabe5f665e173b0f7014bef804b73bd340a642d3dd0285de0f7.png</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/admin/ProfileImages/d1099fb77c09a861abcee6cc53c24f7f9ed9d4d8b3367bcbbd7c24c281cf67b21cfcb5131cbd2bb7cf41844a11fe9fcf4ba57a1f838fc5d466dd204741378548.png</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/admin/ProfileImages/e6ac0d5ce306bc7e36a6bf1822f2550e16cc080f948a3183367c28494e9c6f8737a2ff116d547383d90dfeb89052a067c699083dd268df8569beca20a9f97085.png</PATH>
+        </FILE-GROUP>
+        <FILE-GROUP>
+          <option name="myUpdateName" value="Deleted" />
+          <option name="myStatusName" value="Deleted" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="true" />
+          <option name="myId" value="REMOVED_FROM_REPOSITORY" />
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/admin/ProfileImage/18b7ae0cd85af22e97a0f27bcdce24b0c0f68f59ef3cdcf5d08b1b78f2206e634d75dfc0412f04a891b0f4f58380723e0e634de5c60831c2189081560005c78d.jpg</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/admin/ProfileImage/1e4cf8230e8878ec29329b19a992cc890b536fde127ed219547c949f5ec0c5488c560371f365167af0b656c61baba7e4bb7417c3ab51d937b2e01e6151d81f76.png</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/admin/ProfileImage/51e5747f0a8cf73061fbe67a4bbd39b47287cffe69306011f533a49f03eb48230035ce5155037ff4725a95eda6b4ad4d78138c60f41b05b7971ceaa9c7260ff2.jpg</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/admin/ProfileImage/889ab4fad109e1f3464c7870e029a29ce411527f67583578ef62fb84fcccfc8b744dcbc38c06d985bee3848aaee773824fa47b7865ed0f9bc2fc131b2d646e8e.jpg</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/admin/ProfileImage/9ed1140b27155ec183a727e7947d53adb0bbf4d0ddf2a952b929bd04df3b0ea00abdb4d953d0b23cb7174f389c6a7dcd4e0216291c8556ea4e2e67ffd7aa0ee5.png</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/admin/ProfileImage/a975139a232164cb1e9893ff4fa4a206d407a961c2c9af8c91f91c251a9a39e48e1c0ac5d0200f6d733adb583b2ec3a2a56ef756f9a085663d80c8de6979ef46.png</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/admin/ProfileImage/b0df5d2cfd48112008f503d65ed72783e165b995bf3991a32461a78a61f6e041b0046b0cdaf81f5a465178cd9a3c08c8e6656a0331e2c71382fd3233323b7da7.jpg</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/admin/ProfileImage/cb5a8c4a609489789286c256baf2f91fd1d22d130e4cdd9188dbeff3251957502a4337de7c05d9ae4774d90d9fca42df3cffbf58c5cc4b177fc9760377e52f05.jpg</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/admin/ProfileImages/30b04a043a318e23b256d95a40d43d370a147eab53147787e9609b61409acdca812f0d66cb47a76588047443b6c5bde24bdec4703df2c38f2ee9d1831a315847.jpg</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/admin/ProfileImages/7e582353657f9343309fa25d1f8b73d612a47ac93ac0702583a24923b49ab12a6f79e6a94ae2ccd7813996f5f12b77f76577768479fe18fa9fadb8ea2dc816dc.jpg</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/admin/ProfileImages/8ad481e10c6d038b04eb25effdb868729199b72e73ed9056b13e8220f0c205ceea0af332d964af693af62a3c13f877515b8e7f4bd282caf54e08dc92049829f3.png</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/admin/ProfileImages/9b2e7a7314cce1eec576af7ba0d48092795c5bbae266369ad8049a7f75400bb3693640d7a9e8044838b7f38118dd94294160dd8453d52d21672701e2adb31f11.png</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/admin/ProfileImages/b5cc2a96f33a8454d6e86628d5e6d7a3fc32b961726c607502979b5224929a16d3ad9f0530f648047754de24a3acacd18b9043c52e8c9c09638691d333fd82b3.png</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/admin/ProfileImages/cae530251508a5e94c6d8d9fc889c3e596c8f22ccc53da2becd560bebc6e16184cd939ce8c4c3b06049380e95c1ac7da04f40c5263ff7a51cd9a7074e3d7eb48.png</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/admin/ProfileImages/d6250960a4dacbc6b8c65cadcd6a67c205f9a5007236622d3270c59885b641fe2168da5fd0032f7c898e1cff620646d8447b5992bb055f970af3eba1565bee16.png</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/admin/ProfileImages/fc20041afed604b8c345b677cf0684a4f587e57e735bd5b3d613805bc5d5e7bd12320c375945ca90e76986d6730e4309eb4d6214cb542400b7fc1a0332ab4d81.png</PATH>
+        </FILE-GROUP>
+        <FILE-GROUP>
+          <option name="myUpdateName" value="Restored" />
+          <option name="myStatusName" value="Will be restored" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="false" />
+          <option name="myId" value="RESTORED" />
+        </FILE-GROUP>
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Modified" />
+        <option name="myStatusName" value="Modified" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="MODIFIED" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Skipped" />
+        <option name="myStatusName" value="Skipped" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="SKIPPED" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Merged with conflicts" />
+        <option name="myStatusName" value="Will be merged with conflicts" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="MERGED_WITH_CONFLICTS" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Merged with tree conflicts" />
+        <option name="myStatusName" value="Merged with tree conflicts" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="MERGED_WITH_TREE_CONFLICT" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Merged with property conflicts" />
+        <option name="myStatusName" value="Will be merged with property conflicts" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="MERGED_WITH_PROPERTY_CONFLICT" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Merged" />
+        <option name="myStatusName" value="Will be merged" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="MERGED" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Not in repository" />
+        <option name="myStatusName" value="Not in repository" />
+        <option name="mySupportsDeletion" value="true" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="UNKNOWN" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Locally added" />
+        <option name="myStatusName" value="Locally added" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="LOCALLY_ADDED" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Locally removed" />
+        <option name="myStatusName" value="Locally removed" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="LOCALLY_REMOVED" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Switched" />
+        <option name="myStatusName" value="Switched" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="SWITCHED" />
+      </FILE-GROUP>
+    </UpdatedFiles>
   </component>
   <component name="RunManager">
     <configuration default="true" type="JavascriptDebugType" factoryName="JavaScript Debug">
@@ -348,12 +450,6 @@
       <created>1451894355130</created>
       <option name="number" value="Default" />
       <updated>1451894355130</updated>
-    </task>
-    <task id="LOCAL-00251" summary="Polishing">
-      <created>1458997203619</created>
-      <option name="number" value="00251" />
-      <option name="project" value="LOCAL" />
-      <updated>1458997203621</updated>
     </task>
     <task id="LOCAL-00252" summary="Polishing">
       <created>1458997406684</created>
@@ -643,7 +739,13 @@
       <option name="project" value="LOCAL" />
       <updated>1459746641370</updated>
     </task>
-    <option name="localTasksCounter" value="300" />
+    <task id="LOCAL-00300" summary="Polishing&#10;">
+      <created>1459747070907</created>
+      <option name="number" value="00300" />
+      <option name="project" value="LOCAL" />
+      <updated>1459747070907</updated>
+    </task>
+    <option name="localTasksCounter" value="301" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -652,7 +754,6 @@
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.199375" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32985657" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32724902" sideWeight="0.505" order="10" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.31942633" sideWeight="0.495" order="7" side_tool="false" content_ui="tabs" />
@@ -660,6 +761,7 @@
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32985657" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Command Line Tools Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32985657" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
@@ -761,13 +863,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <marker date="1456585192692" expanded="true" signature="180:236" placeholder="SELECT Stude... studentinfotbl" />
-            <marker date="1456585192692" expanded="true" signature="1328:1454" placeholder="INSERT INTO studentinfotbl... " />
-            <marker date="1456585192692" expanded="true" signature="1663:1784" placeholder="INSERT INTO schooltbl... " />
-            <marker date="1456585192692" expanded="true" signature="1943:2023" placeholder="INSERT INTO studcontactstbl... " />
-            <marker date="1456585192692" expanded="true" signature="2174:2220" placeholder="INSERT INTO progresstbl... " />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -807,13 +902,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/.htaccess">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.4465494">
-          <caret line="15" column="33" selection-start-line="15" selection-start-column="33" selection-end-line="15" selection-end-column="33" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/connection.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.59039545">
@@ -826,7 +914,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="1.2485876">
           <caret line="378" column="33" selection-start-line="378" selection-start-column="33" selection-end-line="378" selection-end-column="33" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -834,16 +921,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-3.548387">
           <caret line="5" column="36" selection-start-line="5" selection-start-column="36" selection-end-line="5" selection-end-column="36" />
-          <folding>
-            <marker date="1456585192655" expanded="true" signature="219:342" placeholder="SELECT `Pass... studentinfotbl" />
-            <marker date="1456585192655" expanded="true" signature="639:772" placeholder="..." />
-            <marker date="1456585192655" expanded="true" signature="1112:1282" placeholder="SELECT `Comp... companyinfotbl" />
-            <marker date="1456585192655" expanded="true" signature="1606:1726" placeholder="..." />
-            <marker date="1456585192655" expanded="true" signature="2060:2226" placeholder="SELECT `Admi... admintbl" />
-            <marker date="1456585192655" expanded="true" signature="2522:2638" placeholder="..." />
-            <marker date="1456585192655" expanded="true" signature="2979:3137" placeholder="SELECT Admin... admintbl" />
-            <marker date="1456585192655" expanded="true" signature="3448:3572" placeholder="..." />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -893,17 +970,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.9378531">
           <caret line="249" column="13" selection-start-line="249" selection-start-column="13" selection-end-line="249" selection-end-column="13" />
-          <folding>
-            <marker date="1459685659614" expanded="true" signature="444:523" placeholder="SELECT First... studentinfotbl" />
-            <marker date="1459685659614" expanded="true" signature="767:821" placeholder="SELECT Cours... coursetbl" />
-            <marker date="1459685659614" expanded="true" signature="962:1227" placeholder="SELECT Pinfo... " />
-            <marker date="1459685659614" expanded="true" signature="6138:6211" placeholder="SELECT COUNT... studnotificationtbl" />
-            <marker date="1459685659614" expanded="true" signature="8999:9097" placeholder="SELECT Messa... " />
-            <marker date="1459685659614" expanded="true" signature="17807:18063" placeholder="..." />
-            <marker date="1459685659614" expanded="true" signature="18263:18520" placeholder="..." />
-            <marker date="1459685659614" expanded="true" signature="21097:21148" placeholder="SELECT * FRO... specializationtbl" />
-            <marker date="1459685659614" expanded="true" signature="46692:46737" placeholder="SELECT * FRO... languagetbl" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1003,24 +1069,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/index.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-31.64516">
-          <caret line="481" column="34" selection-start-line="481" selection-start-column="34" selection-end-line="481" selection-end-column="34" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/admin/admin-createnews.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-2.9519775">
           <caret line="10" column="12" selection-start-line="10" selection-start-column="12" selection-end-line="10" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/student-view/myinfo/work.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.25957447">
-          <caret line="762" column="24" selection-start-line="762" selection-start-column="24" selection-end-line="762" selection-end-column="24" />
         </state>
       </provider>
     </entry>
@@ -1054,10 +1106,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-7.096774">
           <caret line="133" column="4" selection-start-line="133" selection-start-column="4" selection-end-line="133" selection-end-column="97" />
-          <folding>
-            <marker date="1459648547302" expanded="true" signature="315:394" placeholder="SELECT First... studentinfotbl" />
-            <marker date="1459648547302" expanded="true" signature="638:692" placeholder="SELECT Cours... coursetbl" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1085,27 +1133,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-5.806452">
           <caret line="455" column="38" selection-start-line="455" selection-start-column="38" selection-end-line="455" selection-end-column="38" />
-          <folding>
-            <element signature="n#style#0;n#b#0;n#a#0;n#li#0;n#ul#0;n#li#1;n#ul#0;n#div#1;n#div#0;n#div#0;n#div#0;n#header#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#1;n#header#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#input#0;n#div#0;n#div#1;n#div#1;n#div#0;n#div#0;n#div#0;n#form#0;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#input#0;n#div#0;n#div#1;n#div#3;n#div#0;n#div#0;n#div#0;n#form#0;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#div#0;n#div#1;n#div#9;n#div#0;n#div#0;n#div#0;n#form#0;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#div#0;n#div#1;n#div#10;n#div#0;n#div#0;n#div#0;n#form#0;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#11;n#div#0;n#div#0;n#div#0;n#form#0;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#1;n#div#11;n#div#0;n#div#0;n#div#0;n#form#0;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#12;n#div#0;n#div#0;n#div#0;n#form#0;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#1;n#div#12;n#div#0;n#div#0;n#div#0;n#form#0;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#div#0;n#div#1;n#div#13;n#div#0;n#div#0;n#div#0;n#form#0;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#14;n#div#0;n#div#0;n#div#0;n#form#0;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#1;n#div#14;n#div#0;n#div#0;n#div#0;n#form#0;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#15;n#div#0;n#div#0;n#div#0;n#form#0;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <marker date="1459707284973" expanded="true" signature="241:320" placeholder="SELECT Compa... companyinfotbl" />
-            <marker date="1459707284973" expanded="true" signature="15453:15491" placeholder="SELECT Posit... listofpositiontbl" />
-            <marker date="1459707284973" expanded="true" signature="17622:17659" placeholder="SELECT * FRO... listofspecializationtbl" />
-            <marker date="1459707284973" expanded="true" signature="20955:20989" placeholder="SELECT * FRO... listofsalaryrangetbl" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1113,21 +1140,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-12.774194">
           <caret line="21" column="47" selection-start-line="21" selection-start-column="4" selection-end-line="21" selection-end-column="47" />
-          <folding>
-            <marker date="1456585190372" expanded="true" signature="785:1025" placeholder="INSERT INTO comppositiontbl... " />
-            <marker date="1456585190372" expanded="true" signature="1637:1726" placeholder="UPDATE reque... " />
-            <marker date="1456585190372" expanded="true" signature="1968:2056" placeholder="UPDATE reque... " />
-            <marker date="1456585190372" expanded="true" signature="2427:2517" placeholder="INSERT INTO logrequesttbl... " />
-            <marker date="1456585190372" expanded="true" signature="2843:2903" placeholder="SELECT Compa... companyinfotbl" />
-            <marker date="1456585190372" expanded="true" signature="3534:3703" placeholder="UPDATE compa... " />
-            <marker date="1456585190372" expanded="true" signature="4288:4407" placeholder="UPDATE compa... " />
-            <marker date="1456585190372" expanded="true" signature="6247:6662" placeholder="INSERT INTO logrequesttbl... " />
-            <marker date="1456585190372" expanded="true" signature="7249:7311" placeholder="UPDATE compp... " />
-            <marker date="1456585190372" expanded="true" signature="7596:7651" placeholder="UPDATE compa... " />
-            <marker date="1456585190372" expanded="true" signature="8012:8135" placeholder="SELECT `Pass... companyinfotbl" />
-            <marker date="1456585190372" expanded="true" signature="8554:8633" placeholder="UPDATE compa... " />
-            <marker date="1456585190372" expanded="true" signature="9058:9121" placeholder="UPDATE reque... " />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1135,16 +1147,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-3.6774194">
           <caret line="647" column="16" selection-start-line="647" selection-start-column="16" selection-end-line="657" selection-end-column="18" />
-          <folding>
-            <marker date="1459596344227" expanded="true" signature="311:360" placeholder="SELECT * FRO... studcontactstbl" />
-            <marker date="1459596344227" expanded="true" signature="718:797" placeholder="SELECT First... studentinfotbl" />
-            <marker date="1459596344227" expanded="true" signature="1040:1094" placeholder="SELECT Cours... coursetbl" />
-            <marker date="1459596344227" expanded="true" signature="1235:1500" placeholder="SELECT Pinfo... " />
-            <marker date="1459596344227" expanded="true" signature="6286:6359" placeholder="SELECT COUNT... studnotificationtbl" />
-            <marker date="1459596344227" expanded="true" signature="9229:9327" placeholder="SELECT Messa... " />
-            <marker date="1459596344227" expanded="true" signature="18104:18360" placeholder="..." />
-            <marker date="1459596344227" expanded="true" signature="18560:18817" placeholder="..." />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1152,31 +1154,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-52.51613">
           <caret line="74" column="6" selection-start-line="74" selection-start-column="6" selection-end-line="74" selection-end-column="6" />
-          <folding>
-            <marker date="1458991951179" expanded="true" signature="2039:2201" placeholder="UPDATE stude... " />
-            <marker date="1458991951179" expanded="true" signature="2457:2512" placeholder="UPDATE progr... " />
-            <marker date="1458991951179" expanded="true" signature="3239:3301" placeholder="UPDATE stude... " />
-            <marker date="1458991951179" expanded="true" signature="5781:5926" placeholder="UPDATE studc... " />
-            <marker date="1458991951179" expanded="true" signature="6159:6214" placeholder="UPDATE progr... " />
-            <marker date="1458991951179" expanded="true" signature="6429:6489" placeholder="UPDATE stude... " />
-            <marker date="1458991951179" expanded="true" signature="6600:6659" placeholder="UPDATE progr... " />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/student-view/myinfo/personal-info.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-3.6774194">
-          <caret line="860" column="24" selection-start-line="860" selection-start-column="24" selection-end-line="863" selection-end-column="25" />
-          <folding>
-            <marker date="1459596387027" expanded="true" signature="311:359" placeholder="SELECT * FRO... studentinfotbl" />
-            <marker date="1459596387027" expanded="true" signature="867:921" placeholder="SELECT Cours... coursetbl" />
-            <marker date="1459596387027" expanded="true" signature="1107:1372" placeholder="SELECT Pinfo... " />
-            <marker date="1459596387027" expanded="true" signature="6374:6447" placeholder="SELECT COUNT... studnotificationtbl" />
-            <marker date="1459596387027" expanded="true" signature="9127:9225" placeholder="SELECT Messa... " />
-            <marker date="1459596387027" expanded="true" signature="17499:17755" placeholder="..." />
-            <marker date="1459596387027" expanded="true" signature="17955:18212" placeholder="..." />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1184,9 +1161,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <marker date="1456585190382" expanded="true" signature="238:317" placeholder="SELECT Compa... companyinfotbl" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1194,22 +1168,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-22.429379">
           <caret line="14" column="13" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
-          <folding>
-            <marker date="1456585190409" expanded="true" signature="242:321" placeholder="SELECT Compa... companyinfotbl" />
-            <marker date="1456585190409" expanded="true" signature="679:750" placeholder="SELECT * FRO... logrequesttbl" />
-            <marker date="1456585190409" expanded="true" signature="1687:1757" placeholder="SELECT * FRO... logrequesttbl" />
-            <marker date="1456585190409" expanded="true" signature="17182:17235" placeholder="SELECT Cours... logrequesttbl" />
-            <marker date="1456585190409" expanded="true" signature="18066:18157" placeholder="SELECT Cours... coursetbl" />
-            <marker date="1456585190409" expanded="true" signature="27535:28321" placeholder="SELECT stude... studcontactstbl" />
-            <marker date="1456585190409" expanded="true" signature="28766:29551" placeholder="SELECT stude... studcontactstbl" />
-            <marker date="1456585190409" expanded="true" signature="30094:30829" placeholder="SELECT stude... studcontactstbl" />
-            <marker date="1456585190409" expanded="true" signature="31349:32113" placeholder="SELECT stude... studcontactstbl" />
-            <marker date="1456585190409" expanded="true" signature="32653:33199" placeholder="..." />
-            <marker date="1456585190409" expanded="true" signature="32694:33158" placeholder="..." />
-            <marker date="1456585190409" expanded="true" signature="34861:35657" placeholder="SELECT stude... studcontactstbl" />
-            <marker date="1456585190409" expanded="true" signature="36001:36547" placeholder="..." />
-            <marker date="1456585190409" expanded="true" signature="36042:36506" placeholder="..." />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1217,23 +1175,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.720339">
           <caret line="685" column="0" selection-start-line="685" selection-start-column="0" selection-end-line="689" selection-end-column="5" />
-          <folding>
-            <marker date="1456585190413" expanded="true" signature="241:320" placeholder="SELECT Compa... companyinfotbl" />
-            <marker date="1456585190413" expanded="true" signature="27708:27753" placeholder="SELECT Cours... coursetbl" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/admin/admin-account.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="26" selection-end-column="2" />
-          <folding>
-            <marker date="1456585189428" expanded="true" signature="223:263" placeholder="SELECT * FRO... admintbl" />
-            <marker date="1456585189428" expanded="true" signature="18281:18464" placeholder="..." />
-            <marker date="1456585189428" expanded="true" signature="18646:18829" placeholder="..." />
-            <marker date="1456585189428" expanded="true" signature="19011:19199" placeholder="..." />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1246,9 +1187,6 @@
             <marker date="1459746617885" expanded="true" signature="14683:14946" placeholder="..." />
             <marker date="1459746617885" expanded="true" signature="15151:15413" placeholder="..." />
             <marker date="1459746617885" expanded="true" signature="16732:16779" placeholder="SELECT * FRO... admineventtbl" />
-            <marker date="1459746617885" expanded="true" signature="31479:31527" placeholder="DELETE FROM " />
-            <marker date="1459746617885" expanded="true" signature="31631:31726" placeholder="..." />
-            <marker date="1459746617885" expanded="true" signature="31919:31993" placeholder="..." />
           </folding>
         </state>
       </provider>
@@ -1257,15 +1195,107 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.49717513">
           <caret line="16" column="6" selection-start-line="16" selection-start-column="5" selection-end-line="16" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/admin/job-fair.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="11.4039545">
+          <caret line="367" column="10" selection-start-line="367" selection-start-column="10" selection-end-line="367" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/forms/job-fair.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.5338983">
+          <caret line="129" column="88" selection-start-line="129" selection-start-column="88" selection-end-line="129" selection-end-column="88" />
           <folding>
-            <marker date="1458892873635" expanded="true" signature="223:271" placeholder="SELECT First... admintbl" />
+            <element signature="n#style#0;n#div#0;n#div#1;n#div#0;n#div#0;n#form#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#2;n#div#1;n#div#0;n#div#0;n#form#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#4;n#div#1;n#div#0;n#div#0;n#form#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#6;n#div#1;n#div#0;n#div#0;n#form#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#8;n#div#1;n#div#0;n#div#0;n#form#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/student-view/myinfo/work.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.8884181">
+          <caret line="1151" column="26" selection-start-line="1124" selection-start-column="20" selection-end-line="1151" selection-end-column="26" />
+          <folding>
+            <marker date="1459696387241" expanded="true" signature="448:539" placeholder="SELECT First... studentinfotbl" />
+            <marker date="1459696387241" expanded="true" signature="814:868" placeholder="SELECT Cours... coursetbl" />
+            <marker date="1459696387241" expanded="true" signature="1009:1274" placeholder="SELECT Pinfo... " />
+            <marker date="1459696387241" expanded="true" signature="6187:6260" placeholder="SELECT COUNT... studnotificationtbl" />
+            <marker date="1459696387241" expanded="true" signature="8941:9039" placeholder="SELECT Messa... " />
+            <marker date="1459696387241" expanded="true" signature="17142:17398" placeholder="..." />
+            <marker date="1459696387241" expanded="true" signature="17586:17843" placeholder="..." />
+            <marker date="1459696387241" expanded="true" signature="23898:23929" placeholder="SELECT * FRO... listofindustrytbl" />
+            <marker date="1459696387241" expanded="true" signature="31642:31673" placeholder="SELECT * FRO... listofpositiontbl" />
+            <marker date="1459696387241" expanded="true" signature="33378:33415" placeholder="SELECT * FRO... listofspecializationtbl" />
+            <marker date="1459696387241" expanded="true" signature="35213:35247" placeholder="SELECT * FRO... listofsalaryrangetbl" />
+            <marker date="1459696387241" expanded="true" signature="37851:37927" placeholder="SELECT * FRO... workexperiencetbl" />
+            <marker date="1459696387241" expanded="true" signature="38841:38904" placeholder="SELECT Speci... listofspecializationtbl" />
+            <marker date="1459696387241" expanded="true" signature="46044:46075" placeholder="SELECT * FRO... listofindustrytbl" />
+            <marker date="1459696387241" expanded="true" signature="55761:55792" placeholder="SELECT * FRO... listofpositiontbl" />
+            <marker date="1459696387241" expanded="true" signature="57774:57811" placeholder="SELECT * FRO... listofspecializationtbl" />
+            <marker date="1459696387241" expanded="true" signature="59841:59875" placeholder="SELECT * FRO... listofsalaryrangetbl" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/forms/functions.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.7824859">
+          <caret line="116" column="37" selection-start-line="116" selection-start-column="37" selection-end-line="116" selection-end-column="37" />
+          <folding>
+            <marker date="1459755623553" expanded="true" signature="1717:2295" placeholder="INSERT INTO jobfairtbl... " />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/admin/job-fair-data.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="1.259887">
+          <caret line="266" column="71" selection-start-line="266" selection-start-column="71" selection-end-line="266" selection-end-column="71" />
+          <folding>
+            <marker date="1459746413739" expanded="true" signature="152:189" placeholder="SELECT * FRO... jobfairtbl" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.htaccess">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.119079836">
+          <caret line="4" column="45" selection-start-line="4" selection-start-column="45" selection-end-line="4" selection-end-column="45" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.43004417">
+          <caret line="779" column="82" selection-start-line="779" selection-start-column="82" selection-end-line="779" selection-end-column="82" />
+          <folding>
+            <marker date="1459755006624" expanded="true" signature="84:150" placeholder="SELECT * FRO... admineventtbl" />
+            <marker date="1459755006624" expanded="true" signature="9551:9628" placeholder="SELECT DISTI... companyinfotbl" />
+            <marker date="1459755006624" expanded="true" signature="10884:10932" placeholder="SELECT * FRO... listofspecializationtbl" />
+            <marker date="1459755006624" expanded="true" signature="11823:11872" placeholder="SELECT * FRO... listofspecializationtbl" />
+            <marker date="1459755006624" expanded="true" signature="12816:12885" placeholder="SELECT DISTI... companyinfotbl" />
+            <marker date="1459755006624" expanded="true" signature="13234:13287" placeholder="SELECT COUNT... companyinfotbl" />
+            <marker date="1459755006624" expanded="true" signature="15028:15462" placeholder="SELECT Posit... comppositiontbl" />
+            <marker date="1459755006624" expanded="true" signature="16048:16106" placeholder="SELECT Compa... companyinfotbl" />
+            <marker date="1459755006624" expanded="true" signature="19034:19084" placeholder="SELECT Event... admineventtbl" />
+            <marker date="1459755006624" expanded="true" signature="20956:21011" placeholder="SELECT NewsI... adminnewstbl" />
+            <marker date="1459755006624" expanded="true" signature="37877:37923" placeholder="SELECT * FRO... contacttbl" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/admin/admin-requested.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-6.387097">
+        <state vertical-scroll-proportion="0.031073445">
           <caret line="324" column="20" selection-start-line="324" selection-start-column="20" selection-end-line="324" selection-end-column="20" />
           <folding>
             <marker date="1459703830800" expanded="true" signature="227:275" placeholder="SELECT First... admintbl" />
@@ -1276,47 +1306,31 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/admin/job-fair.php">
+    <entry file="file://$PROJECT_DIR$/admin/admin-account.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="11.4039545">
-          <caret line="367" column="10" selection-start-line="367" selection-start-column="10" selection-end-line="367" selection-end-column="10" />
+        <state vertical-scroll-proportion="46.129032">
+          <caret line="25" column="0" selection-start-line="25" selection-start-column="0" selection-end-line="25" selection-end-column="0" />
           <folding>
-            <marker date="1459740474784" expanded="true" signature="227:275" placeholder="SELECT First... admintbl" />
-            <marker date="1459740474784" expanded="true" signature="13865:13974" placeholder="SELECT id, C... jobfairtbl" />
-            <marker date="1459740474784" expanded="true" signature="14989:15020" placeholder="..." />
-            <marker date="1459740474784" expanded="true" signature="15835:16007" placeholder="..." />
+            <marker date="1456585189428" expanded="true" signature="223:263" placeholder="SELECT * FRO... admintbl" />
+            <marker date="1456585189428" expanded="true" signature="18281:18464" placeholder="..." />
+            <marker date="1456585189428" expanded="true" signature="18646:18829" placeholder="..." />
+            <marker date="1456585189428" expanded="true" signature="19011:19199" placeholder="..." />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/forms/job-fair.php">
+    <entry file="file://$PROJECT_DIR$/student-view/myinfo/personal-info.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-65.41936">
-          <caret line="315" column="35" selection-start-line="315" selection-start-column="35" selection-end-line="315" selection-end-column="35" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/forms/functions.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-16.32258">
-          <caret line="53" column="37" selection-start-line="53" selection-start-column="37" selection-end-line="53" selection-end-column="37" />
+        <state vertical-scroll-proportion="14.70339">
+          <caret line="842" column="21" selection-start-line="842" selection-start-column="21" selection-end-line="842" selection-end-column="21" />
           <folding>
-            <marker date="1459745332361" expanded="true" signature="1717:2295" placeholder="INSERT INTO jobfairtbl... " />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/admin/job-fair-data.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.670904">
-          <caret line="269" column="64" selection-start-line="269" selection-start-column="64" selection-end-line="269" selection-end-column="86" />
-          <folding>
-            <element signature="n#style#0;n#div#2;n#div#0;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#4;n#div#0;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#6;n#div#0;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#8;n#div#0;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <marker date="1459746413739" expanded="true" signature="152:189" placeholder="SELECT * FRO... jobfairtbl" />
+            <marker date="1459596387027" expanded="true" signature="311:359" placeholder="SELECT * FRO... studentinfotbl" />
+            <marker date="1459596387027" expanded="true" signature="867:921" placeholder="SELECT Cours... coursetbl" />
+            <marker date="1459596387027" expanded="true" signature="1107:1372" placeholder="SELECT Pinfo... " />
+            <marker date="1459596387027" expanded="true" signature="6374:6447" placeholder="SELECT COUNT... studnotificationtbl" />
+            <marker date="1459596387027" expanded="true" signature="9127:9225" placeholder="SELECT Messa... " />
+            <marker date="1459596387027" expanded="true" signature="17499:17755" placeholder="..." />
+            <marker date="1459596387027" expanded="true" signature="17955:18212" placeholder="..." />
           </folding>
         </state>
       </provider>
