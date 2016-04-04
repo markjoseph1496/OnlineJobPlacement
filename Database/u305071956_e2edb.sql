@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50616
 File Encoding         : 65001
 
-Date: 2016-04-04 16:44:29
+Date: 2016-04-04 16:54:49
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -432,12 +432,11 @@ CREATE TABLE `jobfairtbl` (
   `Participate` varchar(255) NOT NULL,
   `Requirements` varchar(255) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- ----------------------------
 -- Records of jobfairtbl
 -- ----------------------------
-INSERT INTO jobfairtbl VALUES ('1', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '');
 
 -- ----------------------------
 -- Table structure for `languagetbl`

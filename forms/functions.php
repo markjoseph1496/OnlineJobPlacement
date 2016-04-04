@@ -39,7 +39,7 @@ if(isset($_POST['FormSubmit'])){
     $a = $a && (strlen($Representative1) > 0);
 
     if($a === FALSE){
-        header('Location: ../jobfair?error');
+        header('Location: job-fair.php?error');
         die();
     }
 
@@ -81,7 +81,7 @@ if(isset($_POST['FormSubmit'])){
 
     $validation_return = $common_functions->validate($_POST, $validation_config);
     if($validation_return['hasError']){
-        header("location: ../jobfair?error");
+        header("location: job-fair.php?error");
         die();
     }
 
@@ -173,5 +173,5 @@ if(isset($_POST['FormSubmit'])){
 
     );
 
-    header('location: ../jobfair?done');
+    header('location: job-fair.php?done');
 }

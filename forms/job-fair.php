@@ -96,7 +96,7 @@
     </div>
 
     <!-- Start Content -->
-    <form id="JobFair" name="JobFair" autocomplete="off" method="POST" action="forms/functions.php">
+    <form id="JobFair" name="JobFair" autocomplete="off" method="POST" action="functions.php">
         <div id="content">
             <div class="container">
                 <?php
@@ -136,7 +136,7 @@
                                     </div>
                                 </div>
                                 <div class="modal-footer">
-                                    <a href="home" type="button" class="btn btn-default">Done</a>
+                                    <a href="../index.php" type="button" class="btn btn-default">Done</a>
                                 </div>
                             </div>
                         </div>
