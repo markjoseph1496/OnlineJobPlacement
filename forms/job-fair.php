@@ -148,7 +148,7 @@
 
                             <label>Website <span>(*)</span></label>
                             <div class="form-group">
-                                <input type="text" class="form-control" id="Website" name="Website">
+                                <input type="url" class="form-control" id="Website" name="Website" placeholder="http://www.example.com">
                             </div>
 
                             <label>Contact Person <span>(*)</span></label>
@@ -165,7 +165,7 @@
                         <div class="col-md-6">
                             <label>Email Address <span>(*)</span></label>
                             <div class="form-group">
-                                <input type="text" class="form-control" id="Email" name="Email">
+                                <input type="email" class="form-control" id="Email" name="Email">
                             </div>
 
                             <label>Telephone No. <span>(*)</span></label>
@@ -448,6 +448,36 @@
 </body>
 </html>
 <script type="text/javascript">
+    $('#checkbox11').click(function () {
+        $("#Others").val("");
+        if ($(this).is(':checked')) {
+            $('#Others').show();
+        } else {
+            $('#Others').hide();
+        }
+    });
+
+    if ($('#checkbox11').is(':checked')) {
+        $('#Others').show();
+    } else {
+        $('#Others').hide();
+    }
+
+    $('#checkbox14').click(function () {
+        $("#OthersExtra").val("");
+        if ($(this).is(':checked')) {
+            $('#OthersExtra').show();
+        } else {
+            $('#OthersExtra').hide();
+        }
+    });
+
+    if ($('#checkbox14').is(':checked')) {
+        $('#OthersExtra').show();
+    } else {
+        $('#OthersExtra').hide();
+    }
+
     $(document).ready(function () {
         var validator = $("#JobFair").bootstrapValidator({
             feedbackIcons: {
@@ -488,6 +518,10 @@
                     validators: {
                         notEmpty: {
                             message: "This field is required."
+                        },
+                        regexp: {
+                            regexp: /^[a-z\s]+$/i,
+                            message: "Name should be consist of alphabetical characters and spaces only"
                         }
                     }
                 },
@@ -509,6 +543,45 @@
                     validators: {
                         notEmpty: {
                             message: "This field is required."
+                        },
+                        regexp: {
+                            regexp: /(^(0(9(05|06|07|08|09|10|11|12|13|14|15|16|17|18|19|20|21|22|23|24|25|26|27|28|29|30|32|33|34|35|36|37|38|39|42|43|46|47|48|49|75|77|89|94|96|97|98)[0-9]{7}|[0-8][0-9]{5})|[1-9][0-9]{6})$|^$)/,
+                            message: "Invalid phone number"
+                        }
+                    }
+                },
+                Phone2: {
+                    validators: {
+                        regexp: {
+                            regexp: /(^(0(9(05|06|07|08|09|10|11|12|13|14|15|16|17|18|19|20|21|22|23|24|25|26|27|28|29|30|32|33|34|35|36|37|38|39|42|43|46|47|48|49|75|77|89|94|96|97|98)[0-9]{7}|[0-8][0-9]{5})|[1-9][0-9]{6})$|^$)/,
+                            message: "Invalid phone number"
+                        }
+                    }
+                },
+                Phone3: {
+                    validators: {
+                        regexp: {
+                            regexp: /(^(0(9(05|06|07|08|09|10|11|12|13|14|15|16|17|18|19|20|21|22|23|24|25|26|27|28|29|30|32|33|34|35|36|37|38|39|42|43|46|47|48|49|75|77|89|94|96|97|98)[0-9]{7}|[0-8][0-9]{5})|[1-9][0-9]{6})$|^$)/,
+                            message: "Invalid phone number"
+                        }
+                    }
+                },
+                MobileNumber: {
+                    validators: {
+                        regexp: {
+                            regexp: /^(0(9(05|06|07|08|09|10|11|12|13|14|15|16|17|18|19|20|21|22|23|24|25|26|27|28|29|30|32|33|34|35|36|37|38|39|42|43|46|47|48|49|75|77|89|94|96|97|98)[0-9]{7}|[0-8][0-9]{5})|[1-9][0-9]{6})$/,
+                            message: "Invalid mobile number"
+                        }
+                    }
+                },
+                FaxNumber: {
+                    validators: {
+                        notEmpty: {
+                            message: "Mobile Number is required."
+                        },
+                        regexp: {
+                            regexp: /^([0-9]+[.]*)+$/i,
+                            message: "Invalid fax number"
                         }
                     }
                 },
@@ -523,6 +596,18 @@
                     validators: {
                         notEmpty: {
                             message: "This field is required."
+                        },
+                        regexp: {
+                            regexp: /^[a-z\s]+$/i,
+                            message: "Name should be consist of alphabetical characters and spaces only"
+                        }
+                    }
+                },
+                Representative2: {
+                    validators: {
+                        regexp: {
+                            regexp: /^[a-z\s]+$/i,
+                            message: "Name should be consist of alphabetical characters and spaces only"
                         }
                     }
                 },
