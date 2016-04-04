@@ -20,9 +20,9 @@ if(isset($_POST['FormSubmit'])){
     $Representative2 = ucwords($_POST['Representative2']);
     $MarketingMaterials = $_POST['MarketingMaterials'];
 
-
     $Others = "";
     $Extras = "";
+    $OthersExtra = "";
     $RoomForExam = "";
     $DoorPrizes = "";
 
@@ -30,8 +30,12 @@ if(isset($_POST['FormSubmit'])){
         $Others = ucwords($_POST['Others']);
     }
 
+    if(isset($_POST['Extras'])){
+        $Extras = $_POST['Extras'];
+    }
+
     if(isset($_POST['OthersExtraCB'])){
-        $Extras = ucwords($_POST['OthersExtra']);
+        $OthersExtra = ucwords($_POST['OthersExtra']);
     }
 
     if(isset($_POST['RoomForExam'])){
@@ -47,8 +51,9 @@ if(isset($_POST['FormSubmit'])){
     $Participate = $_POST['Participate'];
     $Requirements = $_POST['Requirements'];
 
-    $MarketingMaterials = implode(", ", $MarketingMaterials);
-    $Requirements = implode(", ", $Requirements);
+    $Extras = implode("- ", $Extras);
+    $MarketingMaterials = implode("- ", $MarketingMaterials);
+    $Requirements = implode("- ", $Requirements);
     $Requirements = htmlentities($Requirements);
 
 
@@ -72,15 +77,16 @@ if(isset($_POST['FormSubmit'])){
         MarketingMaterials,
         Others,
         Extras,
+        OthersExtra,
         RoomForExam,
         DoorPrizes,
         ItemDescription,
         Participate,
         Requirements)
         VALUES
-        (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)",
+        (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)",
         FALSE,
-        "sssssssssssssssssssssss",
+        "ssssssssssssssssssssssss",
         $CompanyName,
         $CompanyAddress,
         $City,
@@ -99,6 +105,7 @@ if(isset($_POST['FormSubmit'])){
         $MarketingMaterials,
         $Others,
         $Extras,
+        $OthersExtra,
         $RoomForExam,
         $DoorPrizes,
         $ItemDescription,
@@ -106,6 +113,4 @@ if(isset($_POST['FormSubmit'])){
         $Requirements
 
     );
-
-
 }

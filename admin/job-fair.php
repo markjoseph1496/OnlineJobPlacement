@@ -319,30 +319,28 @@ $FirstName = $infoquery[0][0];
                 <?php
                 $JobFairParticpants =
                     GSecureSQL::query(
-                        "SELECT CompanyName, City, Industry, Website, Email, ContactPerson, Phone1, Phone2, Phone3 FROM jobfairtbl",
+                        "SELECT id, CompanyName, City, Industry, Website, Email, ContactPerson, Phone1, Phone2, Phone3 FROM jobfairtbl",
                         TRUE
                     );
                 foreach ($JobFairParticpants as $value){
-                $CompanyName = $value[0];
-                $Location = $value[1];
-                $Industry = $value[2];
-                $Website = $value[3];
-                $Email = $value[4];
-                $ContactPerson = $value[5];
-                $Phone1 = $value[6];
-                $Phone2 = $value[7];
-                $Phone3 = $value[8];
+                $JobID = $value[0];
+                $CompanyName = $value[1];
+                $Location = $value[2];
+                $Industry = $value[3];
+                $Website = $value[4];
+                $Email = $value[5];
+                $ContactPerson = $value[6];
+                $Phone1 = $value[7];
+                $Phone2 = $value[8];
+                $Phone3 = $value[9];
 
-                if(!empty($Phone2) && empty($Phone3)){
+                if (!empty($Phone2) && empty($Phone3)) {
                     $ContactNumber = $Phone1 . ", " . $Phone2;
-                }
-                elseif(!empty($Phone3) && empty($Phone2)){
+                } elseif (!empty($Phone3) && empty($Phone2)) {
                     $ContactNumber = $Phone1 . ", " . $Phone3;
-                }
-                elseif(!empty($Phone2) && !empty($Phone3)){
+                } elseif (!empty($Phone2) && !empty($Phone3)) {
                     $ContactNumber = $Phone1 . ", " . $Phone2 . ", " . $Phone3;
-                }
-                else{
+                } else {
                     $ContactNumber = $Phone1;
                 }
                 ?>
@@ -355,7 +353,10 @@ $FirstName = $infoquery[0][0];
                     <td width="10%"><?php echo $ContactPerson; ?></td>
                     <td width="10%"><?php echo $ContactNumber; ?></td>
                     <td width="5%">
-                        <button class='btn btn-default'><i class='fa fa-eye'></i></button>
+                        <form method="POST" action="job-fair-data.php">
+                            <input type="hidden" name="JobID" value="<?php echo $JobID; ?>">
+                            <button class='btn btn-default'><i class='fa fa-eye'></i></button>
+                        </form>
                     </td>
                 <tr>
                     <?php
