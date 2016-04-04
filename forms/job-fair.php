@@ -96,17 +96,17 @@
     </div>
 
     <!-- Start Content -->
-    <form id="JobFair" name="JobFair" autocomplete="off">
+    <form id="JobFair" name="JobFair" autocomplete="off" method="POST" action="functions.php">
         <div id="content">
             <div class="container">
                 <div class="call-action call-action-boxed call-action-style2 clearfix">
                     <img src="../images/forms/banner.jpg">
-
                     <div class="hr1" style="margin-top:30px;margin-bottom:30px;"></div>
                     <div class="row">
                         <div class="text-center"><label>Required Fields <span>(*)</span></label></div>
                         <div class="col-md-6">
                             <label>Company Name <span>(*)</span></label>
+                            <input type="hidden" name="FormSubmit">
                             <div class="form-group">
                                 <input type="text" class="form-control" id="CompanyName" name="CompanyName">
                             </div>
@@ -261,47 +261,47 @@
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <div class="checkbox checkbox-success">
-                                            <input id="checkbox1" name="MarketingMaterials[]" class="styled" type="checkbox">
+                                            <input id="checkbox1" name="MarketingMaterials[]" class="styled" type="checkbox" value="Desktop/Laptop/Notebook Computer">
                                             <label for="checkbox1"><b>Desktop/Laptop/Notebook Computer</b></label>
                                         </div>
                                         <div class="checkbox checkbox-success">
-                                            <input id="checkbox2" name="MarketingMaterials[]" class="styled" type="checkbox">
+                                            <input id="checkbox2" name="MarketingMaterials[]" class="styled" type="checkbox" value="Wireless Broadband">
                                             <label for="checkbox2"><b>Wireless Broadband</b></label>
                                         </div>
                                         <div class="checkbox checkbox-success">
-                                            <input id="checkbox3" name="MarketingMaterials[]" class="styled" type="checkbox">
+                                            <input id="checkbox3" name="MarketingMaterials[]" class="styled" type="checkbox" value="LCD Television">
                                             <label for="checkbox3"><b>LCD Television</b></label>
                                         </div>
                                         <div class="checkbox checkbox-success">
-                                            <input id="checkbox4" name="MarketingMaterials[]" class="styled" type="checkbox">
+                                            <input id="checkbox4" name="MarketingMaterials[]" class="styled" type="checkbox" value="DVD Player">
                                             <label for="checkbox4"><b>DVD Player</b></label>
                                         </div>
                                         <div class="checkbox checkbox-success">
-                                            <input id="checkbox5" name="MarketingMaterials[]" class="styled" type="checkbox">
+                                            <input id="checkbox5" name="MarketingMaterials[]" class="styled" type="checkbox" value="Speakers">
                                             <label for="checkbox5"><b>Speakers</b></label>
                                         </div>
                                         <div class="checkbox checkbox-success">
-                                            <input id="checkbox6" name="MarketingMaterials[]" class="styled" type="checkbox">
+                                            <input id="checkbox6" name="MarketingMaterials[]" class="styled" type="checkbox" value="Tarpaulin">
                                             <label for="checkbox6"><b>Tarpaulin</b></label>
                                         </div>
                                         <div class="checkbox checkbox-success">
-                                            <input id="checkbox7" name="MarketingMaterials[]" class="styled" type="checkbox">
+                                            <input id="checkbox7" name="MarketingMaterials[]" class="styled" type="checkbox" value="Roll up Banner and Stand">
                                             <label for="checkbox7"><b>Roll up Banner and Stand</b></label>
                                         </div>
                                         <div class="checkbox checkbox-success">
-                                            <input id="checkbox8" name="MarketingMaterials[]" class="styled" type="checkbox">
+                                            <input id="checkbox8" name="MarketingMaterials[]" class="styled" type="checkbox" value="Posters and the like">
                                             <label for="checkbox8"><b>Posters and the like</b></label>
                                         </div>
                                         <div class="checkbox checkbox-success">
-                                            <input id="checkbox9" name="MarketingMaterials[]" class="styled" type="checkbox">
+                                            <input id="checkbox9" name="MarketingMaterials[]" class="styled" type="checkbox" value="Flyers, pamphlets, company programs, job description and the like">
                                             <label for="checkbox9"><b>Flyers, pamphlets, company programs, job description and the like</b></label>
                                         </div>
                                         <div class="checkbox checkbox-success">
-                                            <input id="checkbox10" name="MarketingMaterials[]" class="styled" type="checkbox">
+                                            <input id="checkbox10" name="MarketingMaterials[]" class="styled" type="checkbox" value="Company freebies, give-aways and the like">
                                             <label for="checkbox10"><b>Company freebies, give-aways and the like</b></label>
                                         </div>
                                         <div class="checkbox checkbox-success">
-                                            <input id="checkbox11" name="MarketingMaterials[]" class="styled" type="checkbox">
+                                            <input id="checkbox11" name="OthersCB" class="styled" type="checkbox">
                                             <label for="checkbox11"><b>Others</b></label>
                                         </div>
                                     </div>
@@ -312,15 +312,15 @@
                         <div class="col-md-6">
                             <label>The STI Caloocan Alumni and Placement Office will provide each company partner with a table, 2 chairs for the company representatives, 2 chairs for the applicants and number label. Please indicate if you have additional equipment or special service.</label>
                             <div class="checkbox checkbox-success">
-                                <input id="checkbox12" name="Extras[]" class="styled" type="checkbox">
+                                <input id="checkbox12" name="Extras[]" class="styled" type="checkbox" value="Extra Table">
                                 <label for="checkbox12"><b>Extra Table</b></label>
                             </div>
                             <div class="checkbox checkbox-success">
-                                <input id="checkbox13" name="Extras[]" class="styled" type="checkbox">
+                                <input id="checkbox13" name="Extras[]" class="styled" type="checkbox" value="Electrical power">
                                 <label for="checkbox13"><b>Electrical power (Note: due to limited supply, available first come, first served. Extension cords are not provided.)</b></label>
                             </div>
                             <div class="checkbox checkbox-success">
-                                <input id="checkbox14" name="Extras[]" class="styled" type="checkbox">
+                                <input id="checkbox14" name="OthersExtraCB" class="styled" type="checkbox">
                                 <label for="checkbox14"><b>Others</b></label>
                             </div>
                             <div class="form-group">
@@ -329,7 +329,7 @@
 
                             <label>Our company would like to schedule a room for examination (This is a free service for employers.)</label>
                             <div class="checkbox checkbox-success">
-                                <input id="checkbox15" name="RoomForExam[]" class="styled" type="checkbox">
+                                <input id="checkbox15" name="RoomForExam" class="styled" type="checkbox">
                                 <label for="checkbox15"><b>Yes</b></label>
                             </div>
 
@@ -355,7 +355,7 @@
                             <div class="row-6">
                                 <div class="form-group">
                                     <div class="checkbox checkbox-success">
-                                        <input id="checkbox17" name="Participate[]" class="styled" type="checkbox">
+                                        <input id="checkbox17" name="Participate" class="styled" type="checkbox">
                                         <label for="checkbox17"><b>YES, We will participate in Job Fair 2015</b></label>
                                     </div>
                                 </div>
@@ -365,19 +365,19 @@
                             <div class="row-6">
                                 <div class="form-group">
                                     <div class="checkbox checkbox-success">
-                                        <input id="checkbox18" name="Requirements[]" class="styled" type="checkbox">
+                                        <input id="checkbox18" name="Requirements[]" class="styled" type="checkbox" value="Participation Confirmation">
                                         <label for="checkbox18"><b>Participation Confirmation</b></label>
                                     </div>
                                     <div class="checkbox checkbox-success">
-                                        <input id="checkbox19" name="Requirements[]" class="styled" type="checkbox">
+                                        <input id="checkbox19" name="Requirements[]" class="styled" type="checkbox" value="Company Profile">
                                         <label for="checkbox19"><b>Company Profile</b></label>
                                     </div>
                                     <div class="checkbox checkbox-success">
-                                        <input id="checkbox20" name="Requirements[]" class="styled" type="checkbox">
+                                        <input id="checkbox20" name="Requirements[]" class="styled" type="checkbox" value="Photocopy of the company’s Securities and Exchange Commission Registration">
                                         <label for="checkbox20"><b>Photocopy of the company’s Securities and Exchange Commission Registration</b></label>
                                     </div>
                                     <div class="checkbox checkbox-success">
-                                        <input id="checkbox21" name="Requirements[]" class="styled" type="checkbox">
+                                        <input id="checkbox21" name="Requirements[]" class="styled" type="checkbox" value="List of Job Vacancies">
                                         <label for="checkbox21"><b>List of Job Vacancies</b></label>
                                     </div>
                                 </div>
@@ -534,7 +534,7 @@
                         }
                     }
                 },
-                'Participate[]': {
+                'Participate': {
                     validators: {
                         choice: {
                             min: 1,
