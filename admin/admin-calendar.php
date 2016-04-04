@@ -361,11 +361,11 @@ $FirstName = $infoquery[0][0];
                 <table class="table segment table-hover">
                     <thead>
                         <tr>
-                            <th width="25%">Event</th>
+                            <th width="20%">Event</th>
                             <th width="20%">From</th>
                             <th width="20%">To</th>
                             <th width="25%">Location</th>
-                            <th width="10%"></th>
+                            <th width="20%"></th>
                         <tr>
                     </thead>
                     <tbody>
@@ -384,14 +384,19 @@ $FirstName = $infoquery[0][0];
                             $dateto = $value[4];
                             $location = $value[5];
                             $description = $value[6];
+                            $ProfileImage = $value[7];
                             
                         ?>
                         <tr>
-                            <td width="25%"><?php echo $eventtitle;?></td>
+                            <td width="15%"><?php echo $eventtitle;?></td>
                             <td width="20%"><?php echo $datefrom; ?></td>
                             <td width="20%"><?php echo $dateto; ?></td>
                             <td width="25%"><?php echo $location;?></td>
-                            <td width="10%" class="text-center">
+                            <td width="25%" class="text-center">
+                                <button class="btn btn-default" data-toggle="modal"
+                                    data-target="#PreviewEvent<?php echo $EventID; ?>">
+                                    <i class="fa fa-eye"></i>
+                                </button>
                                 <button class="btn btn-default" data-toggle="modal"
                                     data-target="#EditEvent<?php echo $EventID; ?>">
                                     <i class="fa fa-pencil-square-o fa-1x"></i>
@@ -402,6 +407,76 @@ $FirstName = $infoquery[0][0];
                                 </button> 
                            </td>
                         </tr>
+                        <!-- Preview Modal-->
+                        <div class="modal fade" id="PreviewEvent<?php echo $EventID; ?>" role="dialog">
+                            <div class="modal-dialog modal-lg" style="padding:100px">
+                                <!-- Modal content-->
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                        <h4 class="modal-title">Preview Event?</h4>
+                                    </div>
+                                    <div class="modal-body">
+                                        <form method="POST" action="functions.php ">
+                                            <div class="row">
+                                                <div class="col-md-12">
+                                                    <div class="container">        
+                                                      <img src="a.jpg" class="img-thumbnail"width="304" height="236"> 
+                                                    </div>
+                                                    <div class="row">
+                                                        <div class="col-md-3">
+                                                            <label>Event:</label>
+                                                        </div>
+                                                        <div class="col-md-4">
+                                                            <div class = "form-group">
+                                                                <label>From: <p><?php echo $datefrom; ?></p></label>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-md-4">
+                                                            <div class = "form-group">
+                                                                <label>To: <p><?php echo $dateto; ?></p></label>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="row">
+                                                        <div class="col-md-3">
+                                                            <label>Event Title:</label>
+                                                        </div>
+                                                        <div class="col-md-9">
+                                                            <div class="form-group">
+                                                            <label><p><?php echo $eventtitle; ?></p></label>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="row">
+                                                        <div class="col-md-3">
+                                                            <label>Location</label>
+                                                        </div>
+                                                        <div class="col-md-9">
+                                                            <div class="form-group">
+                                                                <label><p><?php echo $location; ?></p></label>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="row">
+                                                        <div class="col-md-3">
+                                                            <label>Caption</label>
+                                                        </div>
+                                                        <div class="col-md-9">
+                                                            <div class="form-group">
+                                                                <label><p><?php echo $description; ?></p></label>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <input type="hidden" name="EventID" value="<?php echo $EventID; ?>">
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- End Modal-->
                         <!-- Edit Modal-->
                         <div class="modal fade" id="EditEvent<?php echo $EventID; ?>" role="dialog">
                             <div class="modal-dialog modal-lg" style="padding:100px">
