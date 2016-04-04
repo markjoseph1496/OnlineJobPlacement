@@ -104,14 +104,23 @@
                     ?>
                     <script type="text/javascript">
                         $(window).load(function () {
-                            $('#AddWork').modal('show');
+                            $('#Done').modal('show');
+                        });
+                    </script>
+                    <?php
+                }
+                if (isset($_GET['error'])) {
+                    ?>
+                    <script type="text/javascript">
+                        $(window).load(function () {
+                            $('#Error').modal('show');
                         });
                     </script>
                     <?php
                 }
                 ?>
-                <!-- Delete Modal -->
-                <div class="modal fade" id="AddWork"
+                <!-- Done Modal -->
+                <div class="modal fade" id="Done"
                      role="dialog">
                     <div class="modal-dialog" style="padding:100px">
                         <!-- Modal content-->
@@ -133,6 +142,31 @@
                         </div>
                     </div>
                 </div>
+
+                <!-- Error Modal -->
+                <div class="modal fade" id="Error"
+                     role="dialog">
+                    <div class="modal-dialog" style="padding:100px">
+                        <!-- Modal content-->
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                <h4 class="modal-title">Registration unsuccessful</h4>
+                            </div>
+                            <div class="modal-body">
+                                <div class="col-md-15">
+                                    <label = "usr" class = "control-label">Some errors occured while registering your company.</label>
+                                    <div class="form-group">
+                                    </div>
+                                </div>
+                                <div class="modal-footer">
+                                    <a href="#" type="button" class="btn btn-default" data-dismiss="modal">Try Again</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
                 <div class="call-action call-action-boxed call-action-style2 clearfix">
                     <img src="../images/forms/banner.jpg">
                     <div class="hr1" style="margin-top:30px;margin-bottom:30px;"></div>
