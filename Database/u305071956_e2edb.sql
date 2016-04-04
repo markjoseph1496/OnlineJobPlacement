@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50616
 File Encoding         : 65001
 
-Date: 2016-04-03 21:10:50
+Date: 2016-04-04 13:17:42
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -397,6 +397,50 @@ CREATE TABLE `documentstbl` (
 -- ----------------------------
 -- Records of documentstbl
 -- ----------------------------
+
+-- ----------------------------
+-- Table structure for `jobfairtbl`
+-- ----------------------------
+DROP TABLE IF EXISTS `jobfairtbl`;
+CREATE TABLE `jobfairtbl` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `CompanyName` varchar(255) NOT NULL,
+  `CompanyAddress` varchar(255) NOT NULL,
+  `City` varchar(255) NOT NULL,
+  `Website` varchar(255) NOT NULL,
+  `ContactPerson` varchar(255) NOT NULL,
+  `Designation` varchar(255) NOT NULL,
+  `Email` varchar(255) NOT NULL,
+  `Phone1` varchar(255) NOT NULL,
+  `Phone2` varchar(255) NOT NULL,
+  `Phone3` varchar(255) NOT NULL,
+  `MobileNumber` varchar(255) NOT NULL,
+  `FaxNumber` varchar(255) NOT NULL,
+  `Industry` varchar(255) NOT NULL,
+  `Representative1` varchar(255) NOT NULL,
+  `Representative2` varchar(255) NOT NULL,
+  `MarketingMaterials` varchar(500) NOT NULL,
+  `Others` varchar(255) NOT NULL,
+  `Extras` varchar(255) NOT NULL,
+  `OthersExtra` varchar(255) NOT NULL,
+  `RoomForExam` varchar(255) NOT NULL,
+  `DoorPrizes` varchar(255) NOT NULL,
+  `ItemDescription` varchar(255) NOT NULL,
+  `Participate` varchar(255) NOT NULL,
+  `Requirements` varchar(255) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=latin1;
+
+-- ----------------------------
+-- Records of jobfairtbl
+-- ----------------------------
+INSERT INTO jobfairtbl VALUES ('1', 'df', 'dfg', 'Caloocan', 'asdasdsad', 'sadasdsadasdas', 'asdsada', 'asdasd', 'fdgasd', 'qweqwe', 'qweqwe', 'qweqw', 'wqeqwe', 'Admin / Human Resources', 'asdasd', 'sadas', 'Desktop/Laptop/Notebook Computer, Posters and the like', '', '', '', '', '', '', 'on', 'Participation Confirmation');
+INSERT INTO jobfairtbl VALUES ('2', 'df', 'dfg', 'Caloocan', 'asdasdsad', 'sadasdsadasdas', 'asdsada', 'dfgdfg', 'fdgasd', '', '', '', '', 'Admin / Human Resources', 'asdasd', 'sadas', 'Desktop/Laptop/Notebook Computer, Posters and the like', '', '', '', '', '', '', 'on', 'Participation Confirmation');
+INSERT INTO jobfairtbl VALUES ('3', 'Horese Powered', '2890 A. Pablo St. Karuhatan', 'Valenzuela', 'https://192.168.1.1', 'Mark Joseph Cinco', 'Professor', 'markjoseph1496@yahoo.com', '2790201', '', '2790206', '09355585931', '135654', 'Computer/ IT (Network/Sys/DB)', 'Mark Joseph Cinco', 'Camille Reyes Pajulio', 'Desktop/Laptop/Notebook Computer, Wireless Broadband, LCD Television, DVD Player, Speakers, Tarpaulin, Roll up Banner and Stand', 'Water', 'Extra Mouse', '', 'on', 'on', 'Asus Zenfone Max', 'on', 'Participation Confirmation, Company Profile');
+INSERT INTO jobfairtbl VALUES ('4', 'Fghfg Fgh F', 'fghfghfg', 'Caloocan', 'fghfg', 'Fgh Fgh Fgh', ' fgh ', 'hfghfg', 'fghfgh', 'fghfg', 'hfghfghfgh', 'hgfhfg', ' fgh fg', 'Management', 'fghfgh', 'fg fghfghfg', 'Desktop/Laptop/Notebook Computer, Wireless Broadband, Flyers, pamphlets, company programs, job description and the like, Company freebies, give-aways and the like', '', 'fghfgh', '', '', 'on', 'fghfg', 'on', 'Participation Confirmation, Company Profile');
+INSERT INTO jobfairtbl VALUES ('5', 'Fghfg Fgh F', 'fghfghfg', 'Caloocan', 'fghfg', 'Fgh Fgh Fgh', ' Fgh ', 'hfghfg', 'fghfgh', 'fghfg', 'hfghfghfgh', 'hgfhfg', ' fgh fg', 'Management', 'Fghfgh', 'Fg Fghfghfg', 'Desktop/Laptop/Notebook Computer- Wireless Broadband- Flyers, pamphlets, company programs, job description and the like- Company freebies, give-aways and the like', 'sd', 'Fghfgh', '', '', 'on', 'Fghfg', 'on', 'Participation Confirmation, Company Profile');
+INSERT INTO jobfairtbl VALUES ('6', 'Sadsadsad', 'sad', 'Caloocan', 'http://qweqwe.cc', 'Asdsadsadasdasdas', 'Asdsaas', 'asdsadasd@cc.cc', '2131231', '2874985', '', '2126463', '5654655', 'Sciences / Lab / R & D', 'Asdsad', 'As', 'Desktop/Laptop/Notebook Computer- Wireless Broadband- LCD Television- Roll up Banner and Stand- Company freebies, give-aways and the like', 'Fghfghfg', 'Extra Table', 'hjhh', 'off', 'on', 'Fghfghfgh', 'on', 'Company Profile- Photocopy of the company&rsquo;s Securities and Exchange Commission Registration');
+INSERT INTO jobfairtbl VALUES ('7', 'Sadsadsad', 'sad', 'Caloocan', 'http://qweqwe.cc', 'Asdsadsadasdasdas', 'Asdsaas', 'asdsadasd@cc.cc', '2131231', '2874985', '', '2126463', '5654655', 'Hospitality / F & B', 'Asdsad', 'As', 'Desktop/Laptop/Notebook Computer- Wireless Broadband- LCD Television- Roll up Banner and Stand- Company freebies, give-aways and the like', 'Fghfghfg', 'Extra Table', 'Fgfghfghhh', 'on', 'on', 'Fghfghfgh', 'on', 'Company Profile- Photocopy of the company&rsquo;s Securities and Exchange Commission Registration');
 
 -- ----------------------------
 -- Table structure for `languagetbl`
@@ -1947,7 +1991,7 @@ CREATE TABLE `workexperiencetbl` (
   `PositionTitle` varchar(255) NOT NULL,
   `CompanyAddress` varchar(255) NOT NULL,
   PRIMARY KEY (`WorkID`)
-) ENGINE=InnoDB AUTO_INCREMENT=357 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=359 DEFAULT CHARSET=latin1;
 
 -- ----------------------------
 -- Records of workexperiencetbl
@@ -2299,8 +2343,10 @@ INSERT INTO workexperiencetbl VALUES ('348', '00820120123', 'fsdrgg', 'http://hh
 INSERT INTO workexperiencetbl VALUES ('349', '00820120121', 'wadwaddfgdgfd', 'http://ll.ll', 'Chemical / Fertilizers / Pesticides', 'BPO/Call Center', '09', '2010', '', 'Current', '', 'Junior Executive', '5', '', '');
 INSERT INTO workexperiencetbl VALUES ('350', '00820120123', 'fsrg', 'http://pp.ll', 'Apparel / Fashion', 'Customer Service', '04', '2004', '06', '2013', '', 'Manager', '3', '', '');
 INSERT INTO workexperiencetbl VALUES ('351', '00820120123', 'sdfgsg', 'http://pp.jj', 'Aerospace / Aviation / Airline', 'Actuarial Science/Statistics', '03', '2000', '03', '2007', '', 'Junior Executive', '5', '', '');
-INSERT INTO workexperiencetbl VALUES ('352', '00820120122', 'awd', 'http://ll.ll', 'Architectural Services / Interior Designing', 'BPO/Call Center', '04', '2007', '06', '2016', '', 'Senior Manager', '4', '', '');
-INSERT INTO workexperiencetbl VALUES ('353', '00820120122', 'awdwadwa', 'http://ll.ll', 'Banking / Financial Services', 'Arts/Creative/Graphics Design', '05', '2012', '', 'Current', '', 'Sernior Executive / Supervisor', '6', '', '');
-INSERT INTO workexperiencetbl VALUES ('354', '00820120122', 'wadawdwad', 'http://ll.ll', 'Commodities Production / Distribution', 'Biotechnology', '07', '2006', '05', '2012', '', 'Junior Executive', '4', '', '');
-INSERT INTO workexperiencetbl VALUES ('355', '00820120001', 'ddddddddd', '', 'Accounting / Audit / Tax Services', 'IT/Computer - Creative Design', '03', '2000', '06', '2003', 'dddddsdd', 'Senior Manager', '5', '', '2890 A, Oab');
-INSERT INTO workexperiencetbl VALUES ('356', '00820120001', 'd', '', 'Advertising / Marketing / Promotion / PR', 'Hotel Management/Tourism Services', '02', '1999', '', 'Current', 'asdasas', 'Manager', '5', '', 'dddddd');
+INSERT INTO workexperiencetbl VALUES ('352', '00820120122', 'awd', 'http://ll.ll', 'Architectural Services / Interior Designing', 'BPO/Call Center', '04', '2007', '06', '2016', '', 'Senior Manager', '40,000 - 45,000', '', '');
+INSERT INTO workexperiencetbl VALUES ('353', '00820120122', 'awdwadwa', 'http://ll.ll', 'Banking / Financial Services', 'Arts/Creative/Graphics Design', '05', '2012', '', 'Current', '', 'Sernior Executive / Supervisor', '40,000 - 45,000', '', '');
+INSERT INTO workexperiencetbl VALUES ('354', '00820120122', 'wadawdwad', 'http://ll.ll', 'Commodities Production / Distribution', 'Biotechnology', '07', '2006', '05', '2012', '', 'Junior Executive', '40,000 - 45,000', '', '');
+INSERT INTO workexperiencetbl VALUES ('355', '00820120001', 'ddddddddd', '', 'Accounting / Audit / Tax Services', 'IT/Computer - Creative Design', '03', '2000', '06', '2003', 'dddddsdd', 'Senior Manager', '40,000 - 45,000', '', '2890 A, Oab');
+INSERT INTO workexperiencetbl VALUES ('356', '00820120001', 'd', '', 'Advertising / Marketing / Promotion / PR', 'Hotel Management/Tourism Services', '02', '1999', '', 'Current', 'asdasas', 'Manager', '40,000 - 45,000', '', 'dddddd');
+INSERT INTO workexperiencetbl VALUES ('357', '00820120001', 'asdsaas', '', 'Commodities Production / Distribution', 'Hotel Management/Tourism Services', '03', '2000', '', 'Current', 'asdsa', 'Junior Executive', '40,000 - 45,000', '', 'asdsad');
+INSERT INTO workexperiencetbl VALUES ('358', '00820120001', 'sdasda', '', 'Advertising / Marketing / Promotion / PR', 'Hotel Management/Tourism Services', '02', '2004', '', 'Current', 'asdas', 'Manager', '40,000 - 45,000', '', 'dasdsa');

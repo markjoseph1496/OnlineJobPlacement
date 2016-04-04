@@ -2,8 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d999e893-f739-4a68-b7b0-034239dfb77e" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/admin/job-fair-disabled.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Database/u305071956_e2edb.sql" afterPath="$PROJECT_DIR$/Database/u305071956_e2edb.sql" />
     </list>
     <list id="ee7a7474-4848-4a40-af05-afa3160fd5b4" name="New changelist" comment="" />
     <ignored path="OnlineJobPlacement.iws" />
@@ -349,12 +349,6 @@
       <option name="number" value="Default" />
       <updated>1451894355130</updated>
     </task>
-    <task id="LOCAL-00250" summary="Polishing">
-      <created>1458966685424</created>
-      <option name="number" value="00250" />
-      <option name="project" value="LOCAL" />
-      <updated>1458966685425</updated>
-    </task>
     <task id="LOCAL-00251" summary="Polishing">
       <created>1458997203619</created>
       <option name="number" value="00251" />
@@ -643,7 +637,13 @@
       <option name="project" value="LOCAL" />
       <updated>1459746556682</updated>
     </task>
-    <option name="localTasksCounter" value="299" />
+    <task id="LOCAL-00299" summary="Polishing&#10;">
+      <created>1459746641370</created>
+      <option name="number" value="00299" />
+      <option name="project" value="LOCAL" />
+      <updated>1459746641370</updated>
+    </task>
+    <option name="localTasksCounter" value="300" />
     <servers />
   </component>
   <component name="ToolWindowManager">
