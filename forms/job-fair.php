@@ -645,7 +645,7 @@
                 FaxNumber: {
                     validators: {
                         regexp: {
-                            regexp: /^([0-9]+[.]*)+$/i,
+                            regexp: /^(([0-9]+[.]*)+$|^$)/i,
                             message: "Invalid fax number"
                         }
                     }

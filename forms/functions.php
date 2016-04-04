@@ -65,7 +65,7 @@ if(isset($_POST['FormSubmit'])){
             'errorMsg' => ''
         ),
         'FaxNumber' => array(
-            'pattern' => '/^([0-9]+[.]*)+$/i',
+            'pattern' => '/^(([0-9]+[.]*)+$|^$)/i',
             'errorMsg' => ''
         ),
         'Representative1' => array(
@@ -73,7 +73,7 @@ if(isset($_POST['FormSubmit'])){
             'errorMsg' => ''
         ),
         'Representative2' => array(
-            'pattern' => '/^[a-z\s]+$/i',
+            'pattern' => '/(^[a-z\s]+$|^$)/i',
             'errorMsg' => ''
         )
     );
