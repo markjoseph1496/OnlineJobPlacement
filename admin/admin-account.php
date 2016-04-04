@@ -389,34 +389,36 @@ $ContactNumber = $admin_tbl[0][9];
             <div class="container">
                 <form name="UpdateAdmin" id="UpdateAdmin" autocomplete="off" action="functions.php" method="POST">
                     <?php
-
-                        if (isset($_GET['id'])) {
-                            $id = $_GET['id'];
-                            if ($id == 1) {
-                                echo '
-                            <div class="alert alert-success">
-                                <span class="glyphicon glyphicon-info-sign"></span> 
-                                Username successfully changed.
-                            </div>
-                            ';
-                            } elseif ($id == 2) {
-                                echo '
-                            <div class="alert alert-success">
-                                <span class="glyphicon glyphicon-info-sign"></span> 
-                                Password successfully changed.
-                            </div>
-                            ';
-                            } elseif ($id == 3) {
-                                echo '
-                            <div class="alert alert-success">
-                                <span class="glyphicon glyphicon-info-sign"></span> 
-                                Personal info successfully updated.
-                            </div>
-                            ';
-                            }
-
-                        }
+                    if (isset($_GET['saved'])) {
+                        echo '
+                        <div class="alert alert-success fade in" id="success-alert">
+                            <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                            <strong><span class="fa fa-info-circle"></span> Information successfully updated.</strong>
+                        </div>
+                        ';
+                    }
+                    if (isset($_GET['error'])) {
+                        echo '
+                        <div class="alert alert-danger fade in" id="danger-alert">
+                            <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                            <strong><span class="fa fa-warning"></span> Some errors occured, Please try again.</strong>
+                        </div>
+                        ';
+                    }
+                    if (isset($_GET['error1'])) {
+                        echo '
+                        <div class="alert alert-danger fade in" id="danger-alert">
+                            <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                            <strong><span class="fa fa-warning"></span> Incorrect password, Please try again.</strong>
+                        </div>
+                        ';
+                    }
                     ?>
+                    <script type="text/javascript">
+                        $("#success-alert").fadeTo(5000, 500).slideUp(500, function () {
+                            $("#success-alert").alert('close');
+                        });
+                    </script>
 
                     <div class="">
                         <div class="row">
@@ -497,7 +499,7 @@ $ContactNumber = $admin_tbl[0][9];
                             <div class="col-md-4">
                                 <div class="form-group">
                                     <input type="text" name="Position" id="Position" class="form-control"
-                                           maxlength="20" value="<?php echo $Position; ?>">
+                                           maxlength="50" value="<?php echo $Position; ?>">
                                 </div>
                             </div>
                         </div>
@@ -508,7 +510,7 @@ $ContactNumber = $admin_tbl[0][9];
                             <div class="col-md-4">
                                 <div class="form-group">
                                     <input type="text" name="Address" id="Address" class="form-control"
-                                           maxlength="50" value="<?php echo $Address; ?>">
+                                           maxlength="100" value="<?php echo $Address; ?>">
                                 </div>
                             </div>
                         </div>
@@ -545,14 +547,14 @@ $ContactNumber = $admin_tbl[0][9];
                 invalid: "glyphicon glyphicon-remove",
                 validating: "glyphicon glyphicon-refresh"
             },
-           s: {
+           fields: {
                 ModalNewUsername: {
                     validators: {
                         notEmpty: {
                             message: "Username is required."
                         },
                         identical: {
-                           : "ModalConfirmUsername",
+                           field: "ModalConfirmUsername",
                             message: "Username and Confirm Username mismatched."
                         }
                     }
@@ -563,7 +565,7 @@ $ContactNumber = $admin_tbl[0][9];
                             message: "Username is required."
                         },
                         identical: {
-                           : "ModalNewUsername",
+                           field: "ModalNewUsername",
                             message: "Username and Confirm Username mismatched."
                         }
                     }
@@ -577,7 +579,7 @@ $ContactNumber = $admin_tbl[0][9];
                 invalid: "glyphicon glyphicon-remove",
                 validating: "glyphicon glyphicon-refresh"
             },
-           s: {
+           fields: {
                 ModalOldPassword: {
                     validators: {
                         notEmpty: {
@@ -598,7 +600,7 @@ $ContactNumber = $admin_tbl[0][9];
                             message: "Confirm Password is required."
                         },
                         identical: {
-                           : "ModalNewPassword",
+                           field: "ModalNewPassword",
                             message: "Password mismatched."
                         }
                     }
@@ -612,7 +614,7 @@ $ContactNumber = $admin_tbl[0][9];
                 invalid: "glyphicon glyphicon-remove",
                 validating: "glyphicon glyphicon-refresh"
             },
-           s: {
+           fields: {
                 FirstName: {
                     validators: {
                         notEmpty: {
@@ -679,7 +681,7 @@ $ContactNumber = $admin_tbl[0][9];
         });
     });
 
-
+/*
     $("button#submitPassword").click(function () {
         $.post($("#change-password-form").attr("action"),
             $("#change-password-form :input").serializeArray(),
@@ -691,4 +693,5 @@ $ContactNumber = $admin_tbl[0][9];
             return false;
         });
     });
+    */
 </script>

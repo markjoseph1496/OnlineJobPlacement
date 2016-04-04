@@ -54,7 +54,7 @@ if (isset($_POST['ModalNewUsername'])) {
         $AdminID
     );
 
-    header("location: admin-account.php?id=1");
+    header("location: admin-account.php?saved");
 
 }
 
@@ -88,13 +88,13 @@ if (isset($_POST['ModalNewPassword'])) {
                 $AdminID
             );
 
-            header("location: admin-account.php?id=2");
+            header("location: admin-account.php?saved");
 
         } else {
-            echo "Wrong password";
+            header("location: admin-account.php?error1");
         }
     } else {
-        echo "Wrong password";
+        header("location: admin-account.php?error1");
     }
 }
 
@@ -121,7 +121,7 @@ if (isset($_POST['FirstName'])) {
 
     );
 
-    header("location: admin-account.php?id=3");
+    header("location: admin-account.php?saved");
 
 }
 
