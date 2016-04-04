@@ -421,7 +421,7 @@ $FirstName = $infoquery[0][0];
                                             <div class="row">
                                                 <div class="col-md-12">
                                                     <div class="container">        
-                                                      <img src="a.jpg" class="img-thumbnail"width="304" height="236"> 
+                                                      <img src="../admin/<?php echo $ProfileImage; ?>" class="img-thumbnail"width="304" height="236"> 
                                                     </div>
                                                     <div class="row">
                                                         <div class="col-md-3">
@@ -587,28 +587,4 @@ $FirstName = $infoquery[0][0];
     </div>
     <script type="text/javascript" src="../js/script.js"></script>
 </body>
-
-<?php
-    if(isset($_POST['btndelete'])){
-        $delete = $_POST['delete_id'];
-        
-        $query = "DELETE FROM compeventtbl WHERE EventID='$delete'";
-        $Result = mysql_query($query);
-
-        echo "
-                <script type='text/javascript'>
-                location.href='company-calendar.php?id=EventDelete';
-                </script>
-                ";
-    }
-    if(isset($_POST['btnedit'])){
-        $Z = $_POST['delete_id'];
-        $_SESSION['delete_id'] = $Z;
-        echo "
-                <script type='text/javascript'>
-                location.href='edit_event.php';
-                </script>
-                ";
-    }
-?>
 </html>
