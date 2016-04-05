@@ -354,10 +354,10 @@ $FirstName = $infoquery[0][0];
                             <form method="POST" action="job-fair-data.php">
                                 <input type="hidden" name="JobID" value="<?php echo $JobID; ?>">
                                 <button class='btn btn-default'><i class='fa fa-eye'></i></button>
-                            </form>
-                            <button class="btn btn-danger">
-                                <i class="fa fa-trash fa-1x"></i>
-                            </button>
+                                <button class="btn btn-danger">
+                                    <i class="fa fa-trash fa-1x"></i>
+                                </button>
+                            </form> 
                         </td>
                     <tr>
                         <?php
