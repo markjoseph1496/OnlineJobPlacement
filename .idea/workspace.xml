@@ -26,13 +26,13 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="functions.php" pinned="false" current-in-tab="false">
+      <file leaf-file-name="functions.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/forms/functions.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-23.548388">
-              <caret line="172" column="0" selection-start-line="172" selection-start-column="0" selection-end-line="172" selection-end-column="0" />
+            <state vertical-scroll-proportion="0.75141245">
+              <caret line="174" column="0" selection-start-line="174" selection-start-column="0" selection-end-line="174" selection-end-column="0" />
               <folding>
-                <marker date="1459857758643" expanded="true" signature="4129:4707" placeholder="INSERT INTO jobfairtbl... " />
+                <marker date="1459868410456" expanded="true" signature="4129:4707" placeholder="INSERT INTO jobfairtbl... " />
               </folding>
             </state>
           </provider>
@@ -50,14 +50,19 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="job-fair.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="job-fair.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/admin/job-fair.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="1.8100147">
-              <caret line="311" column="11" selection-start-line="311" selection-start-column="11" selection-end-line="311" selection-end-column="11" />
+            <state vertical-scroll-proportion="16.55">
+              <caret line="285" column="35" selection-start-line="285" selection-start-column="35" selection-end-line="285" selection-end-column="35" />
               <folding>
-                <marker date="1459858571377" expanded="true" signature="227:275" placeholder="SELECT First... admintbl" />
-                <marker date="1459858571377" expanded="true" signature="13865:13974" placeholder="SELECT id, C... jobfairtbl" />
+                <element signature="n#style#0;n#b#0;n#a#0;n#li#0;n#ul#0;n#li#0;n#ul#0;n#div#1;n#div#0;n#div#0;n#div#0;n#header#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#b#0;n#a#0;n#li#2;n#ul#0;n#li#0;n#ul#0;n#div#1;n#div#0;n#div#0;n#div#0;n#header#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#1;n#header#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#button#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#1;n#header#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <marker date="1459868179552" expanded="true" signature="227:275" placeholder="SELECT First... admintbl" />
+                <marker date="1459868179552" expanded="true" signature="14511:14620" placeholder="SELECT id, C... jobfairtbl" />
               </folding>
             </state>
           </provider>
@@ -142,8 +147,8 @@
         <option value="$PROJECT_DIR$/forms/job-fair.php" />
         <option value="$PROJECT_DIR$/css/style.css" />
         <option value="$PROJECT_DIR$/css/bootstrap.min.css" />
-        <option value="$PROJECT_DIR$/forms/functions.php" />
         <option value="$PROJECT_DIR$/admin/job-fair.php" />
+        <option value="$PROJECT_DIR$/forms/functions.php" />
       </list>
     </option>
   </component>
@@ -216,7 +221,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="admin" />
+              <option name="myItemId" value="forms" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -307,12 +312,6 @@
       <created>1451894355130</created>
       <option name="number" value="Default" />
       <updated>1451894355130</updated>
-    </task>
-    <task id="LOCAL-00262" summary="Polishing">
-      <created>1459585936949</created>
-      <option name="number" value="00262" />
-      <option name="project" value="LOCAL" />
-      <updated>1459585936950</updated>
     </task>
     <task id="LOCAL-00263" summary="Polishing">
       <created>1459586031159</created>
@@ -602,7 +601,13 @@
       <option name="project" value="LOCAL" />
       <updated>1459863816441</updated>
     </task>
-    <option name="localTasksCounter" value="311" />
+    <task id="LOCAL-00311" summary="Polishing&#10;">
+      <created>1459868150210</created>
+      <option name="number" value="00311" />
+      <option name="project" value="LOCAL" />
+      <updated>1459868150210</updated>
+    </task>
+    <option name="localTasksCounter" value="312" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -1030,16 +1035,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/forms/functions.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-23.548388">
-          <caret line="172" column="0" selection-start-line="172" selection-start-column="0" selection-end-line="172" selection-end-column="0" />
-          <folding>
-            <marker date="1459857758643" expanded="true" signature="4129:4707" placeholder="INSERT INTO jobfairtbl... " />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/admin/job-fair-data.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-22.419355">
@@ -1052,11 +1047,26 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/admin/job-fair.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="1.8100147">
-          <caret line="311" column="11" selection-start-line="311" selection-start-column="11" selection-end-line="311" selection-end-column="11" />
+        <state vertical-scroll-proportion="16.55">
+          <caret line="285" column="35" selection-start-line="285" selection-start-column="35" selection-end-line="285" selection-end-column="35" />
           <folding>
-            <marker date="1459858571377" expanded="true" signature="227:275" placeholder="SELECT First... admintbl" />
-            <marker date="1459858571377" expanded="true" signature="13865:13974" placeholder="SELECT id, C... jobfairtbl" />
+            <element signature="n#style#0;n#b#0;n#a#0;n#li#0;n#ul#0;n#li#0;n#ul#0;n#div#1;n#div#0;n#div#0;n#div#0;n#header#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#b#0;n#a#0;n#li#2;n#ul#0;n#li#0;n#ul#0;n#div#1;n#div#0;n#div#0;n#div#0;n#header#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#1;n#header#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#button#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#1;n#header#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <marker date="1459868179552" expanded="true" signature="227:275" placeholder="SELECT First... admintbl" />
+            <marker date="1459868179552" expanded="true" signature="14511:14620" placeholder="SELECT id, C... jobfairtbl" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/forms/functions.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.75141245">
+          <caret line="174" column="0" selection-start-line="174" selection-start-column="0" selection-end-line="174" selection-end-column="0" />
+          <folding>
+            <marker date="1459868410456" expanded="true" signature="4129:4707" placeholder="INSERT INTO jobfairtbl... " />
           </folding>
         </state>
       </provider>

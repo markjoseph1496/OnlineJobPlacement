@@ -173,6 +173,5 @@ if(isset($_POST['FormSubmit'])){
 
     );
 
-    die();
     header('location: job-fair.php?done');
 }
