@@ -355,7 +355,9 @@ $FirstName = $infoquery[0][0];
                                 <input type="hidden" name="JobID" value="<?php echo $JobID; ?>">
                                 <button class='btn btn-default'><i class='fa fa-eye'></i></button>
                             </form>
-                            <button href="" class="btn btn-danger">Delete</button>
+                            <button class="btn btn-danger">
+                                <i class="fa fa-trash fa-1x"></i>
+                            </button>
                         </td>
                     <tr>
                         <?php
