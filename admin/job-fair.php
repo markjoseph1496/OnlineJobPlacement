@@ -302,16 +302,16 @@ $FirstName = $infoquery[0][0];
                 <div class="hr2"></div>
                 <table class="table segment table-hover">
                     <thead>
-                    <tr>
-                        <th width="15%">Company Name</th>
-                        <th width="10%">Location</th>
-                        <th width="15%">Industry</th>
-                        <th width="15%">Website</th>
-                        <th width="10%">Email</th>
-                        <th width="15%">Contact Person</th>
-                        <th width="10%">Contact No.</th>
-                        <th width="10%"></th>
-                    <tr>
+                        <tr>
+                            <th width="15%">Company Name</th>
+                            <th width="10%">Location</th>
+                            <th width="15%">Industry</th>
+                            <th width="15%">Website</th>
+                            <th width="10%">Email</th>
+                            <th width="15%">Contact Person</th>
+                            <th width="10%">Contact No.</th>
+                            <th width="10%"></th>
+                        <tr>
                     </thead>
                     <tbody>
                     <?php
@@ -355,6 +355,7 @@ $FirstName = $infoquery[0][0];
                                 <input type="hidden" name="JobID" value="<?php echo $JobID; ?>">
                                 <button class='btn btn-default'><i class='fa fa-eye'></i></button>
                             </form>
+                            <button href="" class="btn btn-danger">Delete</button>
                         </td>
                     <tr>
                         <?php
