@@ -79,18 +79,13 @@ if(isset($_POST['FormSubmit'])){
     );
 
 
-    $validation_return = $common_functions->validate($_POST, $validation_config);
-    if($validation_return['hasError']){
-        header("location: job-fair.php?error");
-        die();
-    }
-
     if(isset($_POST['OthersCB'])){
         $Others = ucwords($_POST['Others']);
     }
 
     if(isset($_POST['Extras'])){
         $Extras = $_POST['Extras'];
+        $Extras = implode("- ", $Extras);
     }
 
     if(isset($_POST['OthersExtraCB'])){
@@ -115,6 +110,12 @@ if(isset($_POST['FormSubmit'])){
     $Requirements = implode("- ", $Requirements);
     $Requirements = htmlentities($Requirements);
 
+
+    $validation_return = $common_functions->validate($_POST, $validation_config);
+    if($validation_return['hasError']){
+        header("location: job-fair.php?error");
+        die();
+    }
 
     GSecureSQL::query(
         "INSERT INTO jobfairtbl
