@@ -1923,8 +1923,8 @@ input[type="submit"] {
 .btn-yellow.focus,
 .btn-yellow:focus {
     color: #fff;
-    background-color: #85888A;
-    border-color: #8c8c8c
+    background-color: #FFC000;
+    border-color: #FFC000
 }
 
 .btn-yellow:hover {
