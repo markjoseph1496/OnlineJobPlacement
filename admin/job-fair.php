@@ -25,7 +25,7 @@ $FirstName = $infoquery[0][0];
 <head>
 
     <!-- Basic -->
-    <title>OJPMS | Pending Company</title>
+    <title>OJPMS | Job Fair</title>
 
     <!-- Define Charset -->
     <meta charset="utf-8">
@@ -303,14 +303,14 @@ $FirstName = $infoquery[0][0];
                 <table class="table segment table-hover">
                     <thead>
                     <tr>
-                        <th width="20%">Company Name</th>
-                        <th width="15%">Location</th>
+                        <th width="15%">Company Name</th>
+                        <th width="10%">Location</th>
                         <th width="15%">Industry</th>
                         <th width="15%">Website</th>
                         <th width="10%">Email</th>
-                        <th width="10%">Contact Person</th>
+                        <th width="15%">Contact Person</th>
                         <th width="10%">Contact No.</th>
-                        <th width="5%"></th>
+                        <th width="10%"></th>
                     <tr>
                     </thead>
                     <tbody>
@@ -343,14 +343,14 @@ $FirstName = $infoquery[0][0];
                     }
                     ?>
                     <tr>
-                        <td width="20%"><?php echo $CompanyName; ?></td>
-                        <td width="15%"><?php echo $Location; ?></td>
+                        <td width="15%"><?php echo $CompanyName; ?></td>
+                        <td width="10%"><?php echo $Location; ?></td>
                         <td width="15%"><?php echo $Industry; ?></td>
                         <td width="15%"><?php echo $Website; ?></td>
                         <td width="10%"><?php echo $Email; ?></td>
-                        <td width="10%"><?php echo $ContactPerson; ?></td>
+                        <td width="15%"><?php echo $ContactPerson; ?></td>
                         <td width="10%"><?php echo $ContactNumber; ?></td>
-                        <td width="5%">
+                        <td width="10%">
                             <form method="POST" action="job-fair-data.php">
                                 <input type="hidden" name="JobID" value="<?php echo $JobID; ?>">
                                 <button class='btn btn-default'><i class='fa fa-eye'></i></button>

@@ -324,8 +324,8 @@ $FirstName = $infoquery[0][0];
                     <thead>
                         <tr>
                             <th width='10%'>Course Code</th>
-                            <th width='20%'>Course Title</th>
-                            <th width='30%'>Course Description</th>
+                            <th width='40%'>Course Title</th>
+                            <th width='40%'>Course Description</th>
                             <th width='10%'></th>
                         <tr>
                     </thead>
@@ -345,8 +345,8 @@ $FirstName = $infoquery[0][0];
                     <tbody>
                         <tr>
                             <td width="10%"><?php echo $CourseCode; ?></td>
-                            <td width="20%"><?php echo $CourseTitle; ?></td>
-                            <td width="30%"><?php echo $CourseDesc; ?></td>
+                            <td width="40%"><?php echo $CourseTitle; ?></td>
+                            <td width="40%"><?php echo $CourseDesc; ?></td>
                             <td width="10%" class="tabletitle text-center">
                                 <a href="admin-editcourse.php?id=<?php echo $CourseID; ?>" class='btn btn-default'> <i
                                         class='fa fa-pencil-square-o fa-1x'></i> </a>
@@ -366,25 +366,19 @@ $FirstName = $infoquery[0][0];
                                         <h4 class="modal-title">Delete Course?</h4>
                                     </div>
                                     <div class="modal-body">
-                                        <div class="col-md-15">
-                                            <label>Do you want to delete this
-                                            course?</label>
-                                            <div class="form-group">
-                                            </div>
-                                        </div>
+                                        <label>Do you want to delete this course?</label>
                                         <div class="modal-footer">
                                             <a href="functions.php?DeleteID=<?php echo $CourseID; ?>"
                                                class="btn btn-danger">Delete <?php echo $CourseCode; ?></a>
-                                            <button type="button" class="btn btn-default" data-dismiss="modal">Cancel
-                                            </button>
+                                            <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </tbody>
-                        <?php
-                    }
+                    <?php
+                        }
                     ?>
                 </table>
             </div>

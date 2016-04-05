@@ -339,14 +339,14 @@ $FirstName = $infoquery[0][0];
             <div class="hr2"></div>
             <table class="table segment table-hover">
                 <thead>
-                <tr>
-                    <th width="10%">Username</th>
-                    <th width="15%">Name</th>
-                    <th width="15%">Position</th>
-                    <th width="15%">Address</th>
-                    <th width="15%">Contact Number</th>
-                    <th width="7%">Action</th>
-                <tr>
+                    <tr>
+                        <th width="15%">Username</th>
+                        <th width="20%">Name</th>
+                        <th width="15%">Position</th>
+                        <th width="25%">Address</th>
+                        <th width="15%">Contact Number</th>
+                        <th width="10%">Action</th>
+                    <tr>
                 </thead>
                 <tbody>
                 <?php
@@ -365,12 +365,12 @@ $FirstName = $infoquery[0][0];
                     $ContactNumber = $value[6];
                     ?>
                     <tr>
-                        <td width="10%"><?php echo $Username; ?></td>
-                        <td width="15%"><?php echo $FirstName . " " . $LastName; ?></td>
+                        <td width="15%"><?php echo $Username; ?></td>
+                        <td width="20%"><?php echo $FirstName . " " . $LastName; ?></td>
                         <td width="15%"><?php echo $Position; ?></td>
-                        <td width="15%"><?php echo $Address; ?></td>
+                        <td width="25%"><?php echo $Address; ?></td>
                         <td width="15%"><?php echo $ContactNumber; ?></td>
-                        <td width="7%" class="text-center">
+                        <td width="10%" class="text-center">
                             <a href="admin-edituser.php?id=<?php echo $AdviserID; ?>" class='btn btn-default'> <i
                                     class='fa fa-pencil-square-o fa-1x'></i> </a>
                             <button class='btn btn-danger' data-toggle='modal'
@@ -390,12 +390,7 @@ $FirstName = $infoquery[0][0];
                                     <h4 class="modal-title">Delete</h4>
                                 </div>
                                 <div class="modal-body">
-                                    <div class="col-md-15">
-                                        <label = "usr" class = "control-label">Do you want to delete
-                                        <?php echo $FirstName; ?> user? This cannot be undone.</label>
-                                        <div class="form-group">
-                                        </div>
-                                    </div>
+                                    <label>Do you want to delete <?php echo $FirstName; ?> user? This cannot be undone.</label>
                                     <div class="modal-footer">
                                         <a href="admin-delete.php?delete_userID=<?php echo $AdviserID; ?>"
                                            class="btn btn-danger">Delete</a>
