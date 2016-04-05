@@ -1914,7 +1914,24 @@ input[type="submit"] {
 	padding: 2px 12px;
 }
 
+.btn-yellow {
+	color: #fff;
+    background-color: #f8ba01;
+    border-color: #f8ba01;
+}
 
+.btn-yellow.focus,
+.btn-yellow:focus {
+    color: #fff;
+    background-color: #85888A;
+    border-color: #8c8c8c
+}
+
+.btn-yellow:hover {
+    color: #fff;
+    background-color: #FFC000;
+    border-color: #FFC000
+}
 
 /*************** Alerts ***************/
 

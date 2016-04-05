@@ -364,8 +364,8 @@ $FirstName = $infoquery[0][0];
                             <th width="20%">Event</th>
                             <th width="20%">From</th>
                             <th width="20%">To</th>
-                            <th width="25%">Location</th>
-                            <th width="20%"></th>
+                            <th width="20%">Location</th>
+                            <th width="15%"></th>
                         <tr>
                     </thead>
                     <tbody>
@@ -388,12 +388,12 @@ $FirstName = $infoquery[0][0];
                             
                         ?>
                         <tr>
-                            <td width="15%"><?php echo $eventtitle;?></td>
-                            <td width="20%"><?php echo $datefrom; ?></td>
-                            <td width="20%"><?php echo $dateto; ?></td>
-                            <td width="25%"><?php echo $location;?></td>
-                            <td width="25%" class="text-center">
-                                <button class="btn btn-default" data-toggle="modal"
+                            <td width="20%"><?php echo $eventtitle;?></td>
+                            <td width="15%"><?php echo $datefrom; ?></td>
+                            <td width="15%"><?php echo $dateto; ?></td>
+                            <td width="20%"><?php echo $location;?></td>
+                            <td width="15%" class="text-center">
+                                <button class="btn btn-yellow" data-toggle="modal"
                                     data-target="#PreviewEvent<?php echo $EventID; ?>">
                                     <i class="fa fa-eye"></i>
                                 </button>
