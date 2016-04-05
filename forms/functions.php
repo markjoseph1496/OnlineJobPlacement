@@ -105,7 +105,6 @@ if(isset($_POST['FormSubmit'])){
     $Participate = $_POST['Participate'];
     $Requirements = $_POST['Requirements'];
 
-    $Extras = implode("- ", $Extras);
     $MarketingMaterials = implode("- ", $MarketingMaterials);
     $Requirements = implode("- ", $Requirements);
     $Requirements = htmlentities($Requirements);
@@ -174,5 +173,6 @@ if(isset($_POST['FormSubmit'])){
 
     );
 
+    die();
     header('location: job-fair.php?done');
 }
