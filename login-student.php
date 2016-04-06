@@ -12,6 +12,7 @@
 
     <!-- jQuery and Bootstrap JS -->
     <script type="text/javascript" src="js/jquery.min.js"></script>
+    <script type="text/javascript" src="js/loginstudent.js"></script>
     <script type="text/javascript" src="js/bootstrap.min.js"></script>
 
     <!-- Fonts -->
@@ -46,27 +47,34 @@
         <p class="register-terms"><a href="" target="_blank">Forgot your password?</a></p>
     </div>
 
-    <button type="submit" class="btn btn--green register-submit text-center" id="button">
+    <button type="submit" class="btn btn--green register-submit text-center" id="btnLogin">
         <center>Sign In</center>
     </button>
     <p class="register-terms">Don't have an account? Get started <a href="registration.php"><u>here</u></a>.</p>
 </div>
 <!-- Modal -->
-<div class="modal fade" id="Login" role="dialog">
+<div class="modal fade" id="Login"
+     role="dialog">
     <div class="modal-dialog" style="padding:100px">
         <!-- Modal content-->
         <div class="modal-content">
             <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal">&times;</button>
-                <h4 class="modal-title">Delete Achievement?</h4>
+                <h4 class="modal-title">Delete Certification?</h4>
             </div>
             <div class="modal-body">
-                <div class="col-md-15 fieldcol">
+                <div class="col-md-15">
                     <label = "usr" class = "control-label">Do you want to delete this
                     information? This cannot be undone.</label>
+                    <div class="form-group">
+                    </div>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+                    <a href="delete.php?delete_CertificationID=<?php echo $CertificationID; ?>"
+                       class="btn btn-danger">Delete</a>
+                    <button type="button" class="btn btn-default" data-dismiss="modal">
+                        Cancel
+                    </button>
                 </div>
             </div>
         </div>
@@ -74,6 +82,7 @@
 </div>
 </body>
 </html>
+<!--
 <script type="text/javascript">
     $("#myForm").submit(function (e) {
         e.preventDefault();
@@ -89,7 +98,7 @@
         return false;
     });
 </script>
-<!--
+
 <script type="text/javascript">
     $("button#button").click(function () {
 

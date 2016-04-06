@@ -19,11 +19,7 @@ if (isset($_POST['StudentID'])) {
     if (count($student_tbl)) {
         if (hash('sha512', $_Password . $student_tbl[0][1]) == $student_tbl[0][0]) {
             $_SESSION['StudentID'] = $StudentID;
-            echo "
-		        <script type='text/javascript'>
-		        alert('You have successfully logged in.');
-		        location.href='student-view/search-job/jobs.php';
-		        </script>";
+            echo "Success";
         } else {
             echo "Incorrect Student ID or Password";
         }
