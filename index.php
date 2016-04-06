@@ -748,7 +748,7 @@ $adminevent_tbl =
                         <i style="font-size: 3em;" class="fa fa-sun-o icon-large"></i>
                     </div>
                     <div class="service-content">
-                        <h2>OJT Summer 2015-2016 Registration</h2>
+                        <h2><a href="https://docs.google.com/forms/d/1RDM2f7z_1MQGS6tEuV7R7p1WFua6nm3xz4UUDPRx-d8/viewform?c=0&w=1">OJT Summer 2015-2016 Registration</a></h2>
                     </div>
                 </div>
                 <!-- End Service Icon 1 -->
@@ -760,7 +760,7 @@ $adminevent_tbl =
                         <i style="font-size: 3em;" class="fa fa-pencil icon-large"></i>
                     </div>
                     <div class="service-content">
-                        <h2>Update your information sheet</h2>
+                        <h2><a href="https://docs.google.com/forms/d/1Eh6YgtrBbLKAGvvMIzhOnib0oAsw6y-ejY3DDAJ_gH0/viewform">Update your information sheet</a></h2>
                     </div>
                 </div>
                 <!-- End Service Icon 2 -->
@@ -771,7 +771,7 @@ $adminevent_tbl =
                         <i style="font-size: 3em;" class="fa fa-link icon-large"></i>
                     </div>
                     <div class="service-content">
-                        <h2>Link for your OJT files</h2>
+                        <h2><a href="https://drive.google.com/folderview?id=0BxgTTRx3ef82dXZwd0REOWZjckk&usp=sharing">Link for your OJT files</a></h2>
                     </div>
                 </div>
                 <!-- End Service Icon 3 -->

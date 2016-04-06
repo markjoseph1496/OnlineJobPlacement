@@ -1,10 +1,172 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="d999e893-f739-4a68-b7b0-034239dfb77e" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/loginstudent.js" />
+    <list default="true" id="d999e893-f739-4a68-b7b0-034239dfb77e" name="Default" comment="Polishing&#10;">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/semantic-ui-modal/dist.zip" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/semantic-ui-modal/themes/default/assets/fonts/icons.eot" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/semantic-ui-modal/themes/default/assets/fonts/icons.otf" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/semantic-ui-modal/themes/default/assets/fonts/icons.ttf" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/semantic-ui-modal/themes/default/assets/fonts/icons.woff" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/semantic-ui-modal/themes/default/assets/fonts/icons.woff2" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/semantic-ui-modal/themes/default/assets/images/flags.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/loginadmin.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/semantic-ui-modal/.versions" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/semantic-ui-modal/LICENSE" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/semantic-ui-modal/README.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/semantic-ui-modal/components/accordion.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/semantic-ui-modal/components/accordion.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/semantic-ui-modal/components/accordion.min.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/semantic-ui-modal/components/accordion.min.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/semantic-ui-modal/components/ad.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/semantic-ui-modal/components/ad.min.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/semantic-ui-modal/components/api.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/semantic-ui-modal/components/api.min.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/semantic-ui-modal/components/breadcrumb.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/semantic-ui-modal/components/breadcrumb.min.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/semantic-ui-modal/components/button.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/semantic-ui-modal/components/button.min.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/semantic-ui-modal/components/card.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/semantic-ui-modal/components/card.min.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/semantic-ui-modal/components/checkbox.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/semantic-ui-modal/components/checkbox.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/semantic-ui-modal/components/checkbox.min.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/semantic-ui-modal/components/checkbox.min.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/semantic-ui-modal/components/colorize.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/semantic-ui-modal/components/colorize.min.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/semantic-ui-modal/components/comment.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/semantic-ui-modal/components/comment.min.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/semantic-ui-modal/components/container.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/semantic-ui-modal/components/container.min.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/semantic-ui-modal/components/dimmer.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/semantic-ui-modal/components/dimmer.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/semantic-ui-modal/components/dimmer.min.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/semantic-ui-modal/components/dimmer.min.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/semantic-ui-modal/components/divider.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/semantic-ui-modal/components/divider.min.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/semantic-ui-modal/components/dropdown.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/semantic-ui-modal/components/dropdown.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/semantic-ui-modal/components/dropdown.min.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/semantic-ui-modal/components/dropdown.min.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/semantic-ui-modal/components/embed.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/semantic-ui-modal/components/embed.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/semantic-ui-modal/components/embed.min.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/semantic-ui-modal/components/embed.min.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/semantic-ui-modal/components/feed.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/semantic-ui-modal/components/feed.min.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/semantic-ui-modal/components/flag.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/semantic-ui-modal/components/flag.min.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/semantic-ui-modal/components/form.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/semantic-ui-modal/components/form.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/semantic-ui-modal/components/form.min.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/semantic-ui-modal/components/form.min.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/semantic-ui-modal/components/grid.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/semantic-ui-modal/components/grid.min.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/semantic-ui-modal/components/header.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/semantic-ui-modal/components/header.min.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/semantic-ui-modal/components/icon.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/semantic-ui-modal/components/icon.min.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/semantic-ui-modal/components/image.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/semantic-ui-modal/components/image.min.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/semantic-ui-modal/components/input.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/semantic-ui-modal/components/input.min.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/semantic-ui-modal/components/item.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/semantic-ui-modal/components/item.min.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/semantic-ui-modal/components/label.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/semantic-ui-modal/components/label.min.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/semantic-ui-modal/components/list.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/semantic-ui-modal/components/list.min.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/semantic-ui-modal/components/loader.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/semantic-ui-modal/components/loader.min.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/semantic-ui-modal/components/menu.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/semantic-ui-modal/components/menu.min.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/semantic-ui-modal/components/message.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/semantic-ui-modal/components/message.min.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/semantic-ui-modal/components/modal.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/semantic-ui-modal/components/modal.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/semantic-ui-modal/components/modal.min.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/semantic-ui-modal/components/modal.min.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/semantic-ui-modal/components/nag.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/semantic-ui-modal/components/nag.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/semantic-ui-modal/components/nag.min.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/semantic-ui-modal/components/nag.min.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/semantic-ui-modal/components/popup.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/semantic-ui-modal/components/popup.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/semantic-ui-modal/components/popup.min.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/semantic-ui-modal/components/popup.min.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/semantic-ui-modal/components/progress.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/semantic-ui-modal/components/progress.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/semantic-ui-modal/components/progress.min.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/semantic-ui-modal/components/progress.min.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/semantic-ui-modal/components/rail.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/semantic-ui-modal/components/rail.min.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/semantic-ui-modal/components/rating.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/semantic-ui-modal/components/rating.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/semantic-ui-modal/components/rating.min.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/semantic-ui-modal/components/rating.min.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/semantic-ui-modal/components/reset.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/semantic-ui-modal/components/reset.min.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/semantic-ui-modal/components/reveal.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/semantic-ui-modal/components/reveal.min.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/semantic-ui-modal/components/search.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/semantic-ui-modal/components/search.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/semantic-ui-modal/components/search.min.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/semantic-ui-modal/components/search.min.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/semantic-ui-modal/components/segment.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/semantic-ui-modal/components/segment.min.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/semantic-ui-modal/components/shape.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/semantic-ui-modal/components/shape.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/semantic-ui-modal/components/shape.min.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/semantic-ui-modal/components/shape.min.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/semantic-ui-modal/components/sidebar.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/semantic-ui-modal/components/sidebar.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/semantic-ui-modal/components/sidebar.min.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/semantic-ui-modal/components/sidebar.min.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/semantic-ui-modal/components/site.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/semantic-ui-modal/components/site.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/semantic-ui-modal/components/site.min.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/semantic-ui-modal/components/site.min.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/semantic-ui-modal/components/state.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/semantic-ui-modal/components/state.min.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/semantic-ui-modal/components/statistic.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/semantic-ui-modal/components/statistic.min.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/semantic-ui-modal/components/step.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/semantic-ui-modal/components/step.min.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/semantic-ui-modal/components/sticky.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/semantic-ui-modal/components/sticky.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/semantic-ui-modal/components/sticky.min.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/semantic-ui-modal/components/sticky.min.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/semantic-ui-modal/components/tab.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/semantic-ui-modal/components/tab.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/semantic-ui-modal/components/tab.min.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/semantic-ui-modal/components/tab.min.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/semantic-ui-modal/components/table.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/semantic-ui-modal/components/table.min.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/semantic-ui-modal/components/transition.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/semantic-ui-modal/components/transition.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/semantic-ui-modal/components/transition.min.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/semantic-ui-modal/components/transition.min.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/semantic-ui-modal/components/video.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/semantic-ui-modal/components/video.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/semantic-ui-modal/components/video.min.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/semantic-ui-modal/components/video.min.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/semantic-ui-modal/components/visibility.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/semantic-ui-modal/components/visibility.min.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/semantic-ui-modal/components/visit.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/semantic-ui-modal/components/visit.min.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/semantic-ui-modal/package.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/semantic-ui-modal/package.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/semantic-ui-modal/semantic.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/semantic-ui-modal/semantic.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/semantic-ui-modal/semantic.min.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/semantic-ui-modal/semantic.min.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/semantic-ui-modal/themes/default/assets/fonts/icons.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/semantic.json" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/index.php" afterPath="$PROJECT_DIR$/index.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/loginstudent.js" afterPath="$PROJECT_DIR$/js/loginstudent.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/login-admin.php" afterPath="$PROJECT_DIR$/login-admin.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/login-student.php" afterPath="$PROJECT_DIR$/login-student.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/login.php" afterPath="$PROJECT_DIR$/login.php" />
     </list>
     <list id="ee7a7474-4848-4a40-af05-afa3160fd5b4" name="New changelist" comment="" />
     <ignored path="OnlineJobPlacement.iws" />
@@ -27,33 +189,53 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="login-student.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="login-student.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/login-student.php">
           <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-5.806452">
+              <caret line="88" column="7" selection-start-line="88" selection-start-column="7" selection-end-line="88" selection-end-column="7" />
+              <folding>
+                <element signature="n#style#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#img#0;n#a#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#3;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#0;n#form#0;n#div#3;n#body#0;n#html#0;n#!!top" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="login-admin.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/login-admin.php">
+          <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.8135593">
-              <caret line="78" column="7" selection-start-line="78" selection-start-column="7" selection-end-line="78" selection-end-column="7" />
+              <caret line="92" column="0" selection-start-line="92" selection-start-column="0" selection-end-line="92" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="index.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/index.php">
+      <file leaf-file-name="loginadmin.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/js/loginadmin.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="10.645162">
-              <caret line="809" column="42" selection-start-line="809" selection-start-column="42" selection-end-line="809" selection-end-column="42" />
+            <state vertical-scroll-proportion="0.0">
+              <caret line="17" column="0" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="login.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/login.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="24.838709">
+              <caret line="22" column="16" selection-start-line="22" selection-start-column="16" selection-end-line="22" selection-end-column="16" />
               <folding>
-                <marker date="1459908241672" expanded="true" signature="84:150" placeholder="SELECT * FRO... admineventtbl" />
-                <marker date="1459908241672" expanded="true" signature="9551:9628" placeholder="SELECT DISTI... companyinfotbl" />
-                <marker date="1459908241672" expanded="true" signature="10884:10932" placeholder="SELECT * FRO... listofspecializationtbl" />
-                <marker date="1459908241672" expanded="true" signature="11823:11872" placeholder="SELECT * FRO... listofspecializationtbl" />
-                <marker date="1459908241672" expanded="true" signature="12816:12885" placeholder="SELECT DISTI... companyinfotbl" />
-                <marker date="1459908241672" expanded="true" signature="13234:13287" placeholder="SELECT COUNT... companyinfotbl" />
-                <marker date="1459908241672" expanded="true" signature="15028:15462" placeholder="SELECT Posit... comppositiontbl" />
-                <marker date="1459908241672" expanded="true" signature="16048:16106" placeholder="SELECT Compa... companyinfotbl" />
-                <marker date="1459908241672" expanded="true" signature="19034:19084" placeholder="SELECT Event... admineventtbl" />
-                <marker date="1459908241672" expanded="true" signature="20956:21011" placeholder="SELECT NewsI... adminnewstbl" />
-                <marker date="1459908241672" expanded="true" signature="37888:37934" placeholder="SELECT * FRO... contacttbl" />
+                <marker date="1459944904647" expanded="true" signature="219:342" placeholder="SELECT `Pass... studentinfotbl" />
+                <marker date="1459944904647" expanded="true" signature="944:1114" placeholder="SELECT `Comp... companyinfotbl" />
+                <marker date="1459944904647" expanded="true" signature="1438:1558" placeholder="..." />
+                <marker date="1459944904647" expanded="true" signature="1892:2058" placeholder="SELECT `Admi... admintbl" />
+                <marker date="1459944904647" expanded="true" signature="2660:2818" placeholder="SELECT Admin... admintbl" />
+                <marker date="1459944904647" expanded="true" signature="3129:3253" placeholder="..." />
               </folding>
             </state>
           </provider>
@@ -63,57 +245,8 @@
         <entry file="file://$PROJECT_DIR$/js/loginstudent.js">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="20" column="0" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
+              <caret line="14" column="22" selection-start-line="14" selection-start-column="22" selection-end-line="14" selection-end-column="22" />
               <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="job-fair-data.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/admin/job-fair-data.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-29.516129">
-              <caret line="366" column="34" selection-start-line="366" selection-start-column="34" selection-end-line="366" selection-end-column="34" />
-              <folding>
-                <marker date="1459908460728" expanded="true" signature="152:189" placeholder="SELECT * FRO... jobfairtbl" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="login.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/login.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-9.225806">
-              <caret line="16" column="10" selection-start-line="16" selection-start-column="10" selection-end-line="16" selection-end-column="10" />
-              <folding>
-                <marker date="1459922990301" expanded="true" signature="219:342" placeholder="SELECT `Pass... studentinfotbl" />
-                <marker date="1459922990301" expanded="true" signature="944:1114" placeholder="SELECT `Comp... companyinfotbl" />
-                <marker date="1459922990301" expanded="true" signature="1438:1558" placeholder="..." />
-                <marker date="1459922990301" expanded="true" signature="1892:2058" placeholder="SELECT `Admi... admintbl" />
-                <marker date="1459922990301" expanded="true" signature="2354:2470" placeholder="..." />
-                <marker date="1459922990301" expanded="true" signature="2811:2969" placeholder="SELECT Admin... admintbl" />
-                <marker date="1459922990301" expanded="true" signature="3280:3404" placeholder="..." />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="achievements.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/student-view/myinfo/achievements.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-2.967742">
-              <caret line="558" column="62" selection-start-line="558" selection-start-column="62" selection-end-line="558" selection-end-column="62" />
-              <folding>
-                <marker date="1459685659608" expanded="true" signature="309:388" placeholder="SELECT First... studentinfotbl" />
-                <marker date="1459685659608" expanded="true" signature="631:685" placeholder="SELECT Cours... coursetbl" />
-                <marker date="1459685659608" expanded="true" signature="826:1091" placeholder="SELECT Pinfo... " />
-                <marker date="1459685659608" expanded="true" signature="5900:5973" placeholder="SELECT COUNT... studnotificationtbl" />
-                <marker date="1459685659608" expanded="true" signature="8659:8757" placeholder="SELECT Messa... " />
-                <marker date="1459685659608" expanded="true" signature="16769:17025" placeholder="..." />
-                <marker date="1459685659608" expanded="true" signature="17213:17470" placeholder="..." />
-                <marker date="1459685659608" expanded="true" signature="21555:21604" placeholder="SELECT * FRO... achievementstbl" />
-              </folding>
             </state>
           </provider>
         </entry>
@@ -121,7 +254,7 @@
       <file leaf-file-name="work.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/student-view/myinfo/work.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-0.7096774">
+            <state vertical-scroll-proportion="-5.0">
               <caret line="1186" column="0" selection-start-line="1186" selection-start-column="0" selection-end-line="1190" selection-end-column="13" />
               <folding>
                 <marker date="1459696387241" expanded="true" signature="448:539" placeholder="SELECT First... studentinfotbl" />
@@ -154,8 +287,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/student-view/myinfo/edit/edit-seminar.php" />
-        <option value="$PROJECT_DIR$/student-view/myinfo/edit/edit-specialization.php" />
         <option value="$PROJECT_DIR$/student-view/myinfo/edit/edit-workexperience.php" />
         <option value="$PROJECT_DIR$/student-view/applications/applications.php" />
         <option value="$PROJECT_DIR$/student-view/resume/background.php" />
@@ -199,12 +330,14 @@
         <option value="$PROJECT_DIR$/forms/functions.php" />
         <option value="$PROJECT_DIR$/admin/job-fair.php" />
         <option value="$PROJECT_DIR$/admin/functions.php" />
-        <option value="$PROJECT_DIR$/login.php" />
-        <option value="$PROJECT_DIR$/index.php" />
         <option value="$PROJECT_DIR$/.htaccess" />
         <option value="$PROJECT_DIR$/admin/job-fair-data.php" />
         <option value="$PROJECT_DIR$/js/loginstudent.js" />
+        <option value="$PROJECT_DIR$/login.php" />
+        <option value="$PROJECT_DIR$/index.php" />
         <option value="$PROJECT_DIR$/login-student.php" />
+        <option value="$PROJECT_DIR$/js/loginadmin.js" />
+        <option value="$PROJECT_DIR$/login-admin.php" />
       </list>
     </option>
   </component>
@@ -263,20 +396,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="OnlineJobPlacement" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="OnlineJobPlacement" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="OnlineJobPlacement" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="js" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -368,12 +487,6 @@
       <created>1451894355130</created>
       <option name="number" value="Default" />
       <updated>1451894355130</updated>
-    </task>
-    <task id="LOCAL-00267" summary="Polishing">
-      <created>1459602391553</created>
-      <option name="number" value="00267" />
-      <option name="project" value="LOCAL" />
-      <updated>1459602391553</updated>
     </task>
     <task id="LOCAL-00268" summary="Polishing">
       <created>1459602556666</created>
@@ -663,14 +776,20 @@
       <option name="project" value="LOCAL" />
       <updated>1459924498498</updated>
     </task>
-    <option name="localTasksCounter" value="316" />
+    <task id="LOCAL-00316" summary="Polishing&#10;">
+      <created>1459935467151</created>
+      <option name="number" value="00316" />
+      <option name="project" value="LOCAL" />
+      <updated>1459935467151</updated>
+    </task>
+    <option name="localTasksCounter" value="317" />
     <servers />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1616" height="876" extended-state="6" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.251875" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.251875" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32985657" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32724902" sideWeight="0.505" order="10" side_tool="true" content_ui="tabs" />
@@ -742,41 +861,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/login-company.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-15.741936">
-          <caret line="32" column="17" selection-start-line="32" selection-start-column="17" selection-end-line="32" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/student-view/search-job/jobs.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-2.019774">
-          <caret line="296" column="33" selection-start-line="296" selection-start-column="33" selection-end-line="296" selection-end-column="33" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/connection.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.59039545">
-          <caret line="19" column="14" selection-start-line="19" selection-start-column="14" selection-end-line="19" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/admin/admin-companylist.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="1.2485876">
-          <caret line="378" column="33" selection-start-line="378" selection-start-column="33" selection-end-line="378" selection-end-column="33" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/admin/admin.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.4661017">
-          <caret line="15" column="29" selection-start-line="15" selection-start-column="29" selection-end-line="15" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/student-view/myinfo/function_notif.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.4039548">
@@ -1075,16 +1159,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/admin/job-fair-data.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-29.516129">
-          <caret line="366" column="34" selection-start-line="366" selection-start-column="34" selection-end-line="366" selection-end-column="34" />
-          <folding>
-            <marker date="1459908460728" expanded="true" signature="152:189" placeholder="SELECT * FRO... jobfairtbl" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/student-view/myinfo/achievements.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-2.967742">
@@ -1102,9 +1176,45 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/admin/job-fair-data.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="1.2923728">
+          <caret line="366" column="34" selection-start-line="366" selection-start-column="34" selection-end-line="366" selection-end-column="34" />
+          <folding>
+            <marker date="1459908460728" expanded="true" signature="152:189" placeholder="SELECT * FRO... jobfairtbl" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/connection.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.27966103">
+          <caret line="9" column="33" selection-start-line="9" selection-start-column="33" selection-end-line="9" selection-end-column="33" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/AppData/Local/Temp/Rar$DRa0.633/Semantic-UI-master/examples/login.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.15536723">
+          <caret line="8" column="26" selection-start-line="8" selection-start-column="26" selection-end-line="8" selection-end-column="26" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/script.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/student-view/myinfo/work.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.7096774">
+        <state vertical-scroll-proportion="-5.0">
           <caret line="1186" column="0" selection-start-line="1186" selection-start-column="0" selection-end-line="1190" selection-end-column="13" />
           <folding>
             <marker date="1459696387241" expanded="true" signature="448:539" placeholder="SELECT First... studentinfotbl" />
@@ -1128,62 +1238,74 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/login.php">
+    <entry file="file://$PROJECT_DIR$/index.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-9.225806">
-          <caret line="16" column="10" selection-start-line="16" selection-start-column="10" selection-end-line="16" selection-end-column="10" />
+        <state vertical-scroll-proportion="0.6892489">
+          <caret line="773" column="145" selection-start-line="773" selection-start-column="145" selection-end-line="773" selection-end-column="145" />
           <folding>
-            <marker date="1459922990301" expanded="true" signature="219:342" placeholder="SELECT `Pass... studentinfotbl" />
-            <marker date="1459922990301" expanded="true" signature="944:1114" placeholder="SELECT `Comp... companyinfotbl" />
-            <marker date="1459922990301" expanded="true" signature="1438:1558" placeholder="..." />
-            <marker date="1459922990301" expanded="true" signature="1892:2058" placeholder="SELECT `Admi... admintbl" />
-            <marker date="1459922990301" expanded="true" signature="2354:2470" placeholder="..." />
-            <marker date="1459922990301" expanded="true" signature="2811:2969" placeholder="SELECT Admin... admintbl" />
-            <marker date="1459922990301" expanded="true" signature="3280:3404" placeholder="..." />
+            <marker date="1459952440824" expanded="true" signature="84:150" placeholder="SELECT * FRO... admineventtbl" />
+            <marker date="1459952440824" expanded="true" signature="9551:9628" placeholder="SELECT DISTI... companyinfotbl" />
+            <marker date="1459952440824" expanded="true" signature="10884:10932" placeholder="SELECT * FRO... listofspecializationtbl" />
+            <marker date="1459952440824" expanded="true" signature="11823:11872" placeholder="SELECT * FRO... listofspecializationtbl" />
+            <marker date="1459952440824" expanded="true" signature="12816:12885" placeholder="SELECT DISTI... companyinfotbl" />
+            <marker date="1459952440824" expanded="true" signature="13234:13287" placeholder="SELECT COUNT... companyinfotbl" />
+            <marker date="1459952440824" expanded="true" signature="15028:15462" placeholder="SELECT Posit... comppositiontbl" />
+            <marker date="1459952440824" expanded="true" signature="16048:16106" placeholder="SELECT Compa... companyinfotbl" />
+            <marker date="1459952440824" expanded="true" signature="19034:19084" placeholder="SELECT Event... admineventtbl" />
+            <marker date="1459952440824" expanded="true" signature="20956:21011" placeholder="SELECT NewsI... adminnewstbl" />
+            <marker date="1459952440824" expanded="true" signature="38190:38236" placeholder="SELECT * FRO... contacttbl" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/AppData/Local/Temp/Rar$DIa0.853/script.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.3572395">
-          <caret line="12" column="29" selection-start-line="12" selection-start-column="29" selection-end-line="12" selection-end-column="29" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/js/loginstudent.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="20" column="0" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
+          <caret line="14" column="22" selection-start-line="14" selection-start-column="22" selection-end-line="14" selection-end-column="22" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/index.php">
+    <entry file="file://$PROJECT_DIR$/login.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="10.645162">
-          <caret line="809" column="42" selection-start-line="809" selection-start-column="42" selection-end-line="809" selection-end-column="42" />
+        <state vertical-scroll-proportion="24.838709">
+          <caret line="22" column="16" selection-start-line="22" selection-start-column="16" selection-end-line="22" selection-end-column="16" />
           <folding>
-            <marker date="1459908241672" expanded="true" signature="84:150" placeholder="SELECT * FRO... admineventtbl" />
-            <marker date="1459908241672" expanded="true" signature="9551:9628" placeholder="SELECT DISTI... companyinfotbl" />
-            <marker date="1459908241672" expanded="true" signature="10884:10932" placeholder="SELECT * FRO... listofspecializationtbl" />
-            <marker date="1459908241672" expanded="true" signature="11823:11872" placeholder="SELECT * FRO... listofspecializationtbl" />
-            <marker date="1459908241672" expanded="true" signature="12816:12885" placeholder="SELECT DISTI... companyinfotbl" />
-            <marker date="1459908241672" expanded="true" signature="13234:13287" placeholder="SELECT COUNT... companyinfotbl" />
-            <marker date="1459908241672" expanded="true" signature="15028:15462" placeholder="SELECT Posit... comppositiontbl" />
-            <marker date="1459908241672" expanded="true" signature="16048:16106" placeholder="SELECT Compa... companyinfotbl" />
-            <marker date="1459908241672" expanded="true" signature="19034:19084" placeholder="SELECT Event... admineventtbl" />
-            <marker date="1459908241672" expanded="true" signature="20956:21011" placeholder="SELECT NewsI... adminnewstbl" />
-            <marker date="1459908241672" expanded="true" signature="37888:37934" placeholder="SELECT * FRO... contacttbl" />
+            <marker date="1459944904647" expanded="true" signature="219:342" placeholder="SELECT `Pass... studentinfotbl" />
+            <marker date="1459944904647" expanded="true" signature="944:1114" placeholder="SELECT `Comp... companyinfotbl" />
+            <marker date="1459944904647" expanded="true" signature="1438:1558" placeholder="..." />
+            <marker date="1459944904647" expanded="true" signature="1892:2058" placeholder="SELECT `Admi... admintbl" />
+            <marker date="1459944904647" expanded="true" signature="2660:2818" placeholder="SELECT Admin... admintbl" />
+            <marker date="1459944904647" expanded="true" signature="3129:3253" placeholder="..." />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/loginadmin.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="17" column="0" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/login-student.php">
       <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-5.806452">
+          <caret line="88" column="7" selection-start-line="88" selection-start-column="7" selection-end-line="88" selection-end-column="7" />
+          <folding>
+            <element signature="n#style#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#img#0;n#a#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#3;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#form#0;n#div#3;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/login-admin.php">
+      <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.8135593">
-          <caret line="78" column="7" selection-start-line="78" selection-start-column="7" selection-end-line="78" selection-end-column="7" />
+          <caret line="92" column="0" selection-start-line="92" selection-start-column="0" selection-end-line="92" selection-end-column="0" />
           <folding />
         </state>
       </provider>

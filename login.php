@@ -75,11 +75,7 @@ if (isset($_POST['StudentID'])) {
     if (count($admin_tbl)) {
         if (hash('sha512', $_Password . $admin_tbl[0][2]) == $admin_tbl[0][1]) {
             $_SESSION['AdminID'] = $admin_tbl[0][0];
-            echo "
-		        <script type='text/javascript'>
-		        alert('You have successfully logged in.');
-		        location.href='admin/admin.php';
-		        </script>";
+            echo "Success";
         } else {
             echo "Incorrect username or Password";
         }
