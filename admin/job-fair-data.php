@@ -466,7 +466,7 @@ $Requirements = explode("- ", $Requirements);
 
                 <div class="hr1" style="margin-top:20px;margin-bottom:20px;"></div>
                 <div class="text-center">
-                    <button type="submit" name="" class="btn-system btn-large">Back</button>
+                    <a href="job-fair.php" class="btn-system btn-large">Back</a>
                 </div>
             </div>
         </div>
