@@ -576,3 +576,16 @@ if (isset($_POST['eFirstName'])) {
     header("location: admin-users.php?id=2");
 
 }
+if(isset($_GET['deletePID'])){
+    $DeleteID = $_GET['deletePID'];
+
+    GSecureSQL::query(
+        "DELETE FROM jobfairtbl WHERE id = ?",
+        FALSE,
+        "s",
+        $DeleteID
+    );
+
+    header("location: job-fair.php?deleted");
+}
+

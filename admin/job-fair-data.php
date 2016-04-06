@@ -333,12 +333,30 @@ $Requirements = explode("- ", $Requirements);
                         <?php
                         foreach ($Extras as $value) {
                             $Extra = $value;
-                            ?>
-                            <div class="checkbox checkbox-success">
-                                <input id="checkbox3" class="styled" type="checkbox" checked disabled>
-                                <label for="checkbox3"><b><?php echo $Extra; ?></b></label>
-                            </div>
-                            <?php
+                            if($Extra == ""){
+                                ?>
+                                <div class="checkbox checkbox-success">
+                                    <input id="checkbox3" class="styled" type="checkbox" disabled>
+                                    <label for="checkbox3"><b>Extra Table</b></label>
+                                </div>
+                                <div class="checkbox checkbox-success">
+                                    <input id="checkbox3" class="styled" type="checkbox" disabled>
+                                    <label for="checkbox3"><b>Electrical power</b></label>
+                                </div>
+                                <?php
+                            }else{
+                                ?>
+                                <div class="checkbox checkbox-success">
+                                    <input id="checkbox3" class="styled" type="checkbox" checked disabled>
+                                    <label for="checkbox3"><b><?php echo $Extra; ?></b></label>
+                                </div>
+                                <div class="checkbox checkbox-success">
+                                    <input id="checkbox3" class="styled" type="checkbox" checked disabled>
+                                    <label for="checkbox3"><b><?php echo $Extra; ?></b></label>
+                                </div>
+                                <?php
+                            }
+
                         }
 
                         if (!empty($OthersExtra)) {
