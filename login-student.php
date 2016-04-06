@@ -60,21 +60,16 @@
         <div class="modal-content">
             <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal">&times;</button>
-                <h4 class="modal-title">Delete Certification?</h4>
+                <h4 class="modal-title">Login in Success</h4>
             </div>
             <div class="modal-body">
                 <div class="col-md-15">
-                    <label = "usr" class = "control-label">Do you want to delete this
-                    information? This cannot be undone.</label>
+                    <label = "usr" class = "control-label">You have successfully logged in.</label>
                     <div class="form-group">
                     </div>
                 </div>
                 <div class="modal-footer">
-                    <a href="delete.php?delete_CertificationID=<?php echo $CertificationID; ?>"
-                       class="btn btn-danger">Delete</a>
-                    <button type="button" class="btn btn-default" data-dismiss="modal">
-                        Cancel
-                    </button>
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Ok</button>
                 </div>
             </div>
         </div>
@@ -82,35 +77,3 @@
 </div>
 </body>
 </html>
-<!--
-<script type="text/javascript">
-    $("#myForm").submit(function (e) {
-        e.preventDefault();
-        $.ajax({
-            type: 'POST',
-            data: $("#myForm").serialize(),
-            url: 'login.php',
-            success: function (data) {
-                $("#message").html(data);
-                $("#Login").modal("show");
-            }
-        });
-        return false;
-    });
-</script>
-
-<script type="text/javascript">
-    $("button#button").click(function () {
-
-        $.post($("#myForm").attr("action"),
-            $("#myForm :input").serializeArray(),
-            function (data) {
-                $("div#message").html(data);
-            });
-
-        $("#myForm").submit(function () {
-            return false;
-        });
-    });
-</script>
--->
