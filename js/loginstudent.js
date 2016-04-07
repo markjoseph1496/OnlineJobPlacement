@@ -11,7 +11,7 @@ $(function() {
                     $('#Login').modal();
 
                     $('#Login').on('hidden.bs.modal', function (e) {
-                        window.location = "../student-view/search-job/jobs.php";
+                        window.location = "student-view/search-job/jobs.php";
                     })
                 } else {
                     $('#LoginFailed').modal();
