@@ -46,9 +46,7 @@
             </div>
             <div class="modal-body">
                 <div class="col-md-15">
-                    <label = "usr" class = "control-label">You have successfully logged in.</label>
-                    <div class="form-group">
-                    </div>
+                    <label>You have successfully logged in.</label>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-primary" data-dismiss="modal">Ok</button>
@@ -69,9 +67,7 @@
             </div>
             <div class="modal-body">
                 <div class="col-md-15">
-                    <label = "usr" class = "control-label">Incorrect Student ID or Password.</label>
-                    <div class="form-group">
-                    </div>
+                    <label>Incorrect Student ID or Password.</label>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-danger" data-dismiss="modal">Try Again</button>
@@ -99,7 +95,7 @@
         <p class="register-terms"><a href="" target="_blank">Forgot your password?</a></p>
     </div>
 
-    <button type="submit" class="btn btn--green register-submit text-center" id="btnLogin">
+    <button type="submit" class="button btn--green register-submit text-center" id="btnLogin">
         <center>Sign In</center>
     </button>
 

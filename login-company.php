@@ -63,7 +63,7 @@
             <p class="register-terms"><a href="" target="_blank">Forgot your password?</a></p>
         </div>
 
-        <button type="submit" class="btn btn--green register-submit text-center" id="button"><center>Sign In</center></button>
+        <button type="submit" class="button btn--green register-submit text-center" id="button"><center>Sign In</center></button>
         
         <p class="register-terms">Don't have an account? Get started <a href="registration-company.php">here</a>.</p>
     </div>

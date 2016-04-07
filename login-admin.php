@@ -89,8 +89,7 @@
                 <input type="password" class="form-control register-input" placeholder="Password" id="password" name="password">
             </fieldset>
         </form>
-            <button class="btn btn--green register-submit text-center" id="btnLogin"><center>Sign In</center></button>
-
+        <button class="button btn--green register-submit text-center" id="btnLogin"><center>Sign In</center></button>
     </div>
 </body>
 </html>

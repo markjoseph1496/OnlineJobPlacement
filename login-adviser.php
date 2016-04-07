@@ -40,7 +40,7 @@
                 <input type="password" value="" class="form-control register-input" placeholder="Password" id="password" name="_password"/>
             </fieldset>
             
-            <button type="submit" class="btn btn--green register-submit text-center" id="button"><center>Sign In</center></button>
+            <button type="submit" class="button btn--green register-submit text-center" id="button"><center>Sign In</center></button>
         </form>
         </div>
         <div class="register-screenshot not_mobile">
