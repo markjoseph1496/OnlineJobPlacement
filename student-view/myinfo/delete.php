@@ -1,7 +1,8 @@
 <?php
 include('../../connection.php');
-session_start();
 include('../../common-functions.php');
+include('../../encryption.php');
+session_start();
 $common_functions->student_login_check();
 $StudentID = $_SESSION['StudentID']; // to conform with your coding style -- ghabx
 
@@ -121,15 +122,18 @@ if (isset($_GET['Delete_DocID'])){
 
 //Delete Work
 if (isset($_GET['Delete_WorkID'])) {
-    $Z = $_GET['Delete_WorkID'];
+    $DeleteID = $_GET['Delete_WorkID'];
+
+    $DeleteID = encrypt_decrypt('decrypt',$DeleteID);
 
     GSecureSQL::query(
         "DELETE FROM workexperiencetbl WHERE WorkID=?",
         FALSE,
         "s",
-        $Z
+        $DeleteID
     );
-    header("location: company-positionlist.php?id=3");
+
+    header("location: work.php?saved");
 
 }
 //end

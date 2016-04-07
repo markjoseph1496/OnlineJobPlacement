@@ -2,11 +2,9 @@
 include('../../connection.php');
 session_start();
 include('../../common-functions.php');
+include('../../encryption.php');
 $common_functions->student_login_check();
-$i
 $StudentID = $_SESSION['StudentID']; // to conform with your coding style -- ghabx
-
-$hashStudentID = hash('md4', $StudentID);
 
 if (isset($_SESSION['StudentID'])) {
     $StudentID = $_SESSION['StudentID'];
@@ -303,7 +301,7 @@ if ($References == "ok") {
                             <li class="dropdown">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown"><b class="fa fa-user"></b>Welcome, <b><?php echo $StudentName; ?> </b><b class="caret"></b></a>
                                 <ul class="dropdown-menu">
-                                    <li><a href="../../student-profile.php?id=<?php echo $hashStudentID; ?>">Profile <b class="fa fa-user" style="float:right;"></b></a></li>
+                                    <li><a href="../../student-profile.php?id=<?php echo $StudentID; ?>">Profile <b class="fa fa-user" style="float:right;"></b></a></li>
                                     <li><a href="../settings/settings.php">Settings <b class="fa fa-cog" style="float:right;"></b></a></li>
                                     <li class="divider"></li>
                                     <li><a href="#" data-target='#Logout' data-toggle='modal'>Sign Out <b class="fa fa-sign-out" style="float:right;"></b></a></li>
@@ -785,6 +783,8 @@ if ($References == "ok") {
                     $NatureOfWork = $value[10];
                     $CompanyAddress = $value[14];
 
+                    $WorkIDenc = encrypt_decrypt('encrypt',$WorkID);
+
                     $specialization_tbl =
                         GSecureSQL::query(
                             "SELECT Specialization FROM listofspecializationtbl WHERE id = ?",
@@ -1131,17 +1131,17 @@ if ($References == "ok") {
                             <div class="modal-content">
                                 <div class="modal-header">
                                     <button type="button" class="close" data-dismiss="modal">&times;</button>
-                                    <h4 class="modal-title">Delete Position?</h4>
+                                    <h4 class="modal-title">Delete?</h4>
                                 </div>
                                 <div class="modal-body">
                                     <div class="col-md-15">
                                         <label = "usr" class = "control-label">Do you want to delete
-                                        Work ? This cannot be undone.</label>
+                                        this information? This cannot be undone.</label>
                                         <div class="form-group">
                                         </div>
                                     </div>
                                     <div class="modal-footer">
-                                        <a href="delete.php?delete_WorkID=<?php echo $WorkID; ?>"
+                                        <a href="delete.php?Delete_WorkID=<?php echo $WorkIDenc; ?>"
                                            class="btn btn-danger">Delete</a>
                                         <button type="button" class="btn btn-default" data-dismiss="modal">
                                             Cancel

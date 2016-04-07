@@ -1,21 +1,14 @@
 <?php
 include('connection.php');
+include('encryption.php');
 session_start();
+$StudentIDFromSession = $_SESSION['StudentID'];
 $StudentID = $_GET['id'];
 
-$student_id =
-    GSecureSQL::query(
-        "SELECT StudentID FROM studentinfotbl",
-        TRUE
-    );
-foreach ($student_id as $value) {
-    $db_StudentID = $value[0];
-    $hashStudentID = hash('md4', $db_StudentID);
-    if ($hashStudentID == $StudentID) {
-        $StudentID = $db_StudentID;
-    }
+if($StudentID != $StudentIDFromSession){
+    header('Location: student-profile.php?id=' . $StudentIDFromSession);
+    die();
 }
-
 
 $StudentInfo_tbl =
     GSecureSQL::query(
@@ -32,6 +25,7 @@ $StudentInfo_tbl =
         "s",
         $StudentID
     );
+
 
 $FirstName = $StudentInfo_tbl[0][0];
 $MiddleName = $StudentInfo_tbl[0][1];
