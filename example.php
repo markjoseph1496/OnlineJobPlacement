@@ -107,55 +107,59 @@ include('connection.php');
         <!-- Start Content -->
         <div id="content">
             <div class="container">
+                <h2 class="ui center aligned icon header">
+                    <i class="circular users icon"></i>
+                    Registration
+                </h2>
                 <h4 class="ui dividing header">Student Details</h4>
                 <div class="ui form"> 
                     <div class="three fields">
                         <div class="field">
                             <label>Student ID <span><i class="fa fa-asterisk"></i></span></label>
-                            <input name="" type="text">
+                            <input name="studid" id="studid" type="text">
                         </div>
                         <div class="field">
                             <label>First Name <span><i class="fa fa-asterisk"></i></span></label>
-                            <input name="first-name" type="text">
+                            <input name="fname" id="fname" type="text">
                         </div>
                         <div class="field">
                             <label>Last Name <span><i class="fa fa-asterisk"></i></span></label>
-                            <input name="last-name" type="text">
+                            <input name="lname" id="lname" type="text">
                         </div>
                     </div>
                     <div class="two fields">
                         <div class="field">
                             <label>Birthdate <span><i class="fa fa-asterisk"></i></span></label>
-                            <input type="date" name="" id="">
+                            <input type="date" name="bday" id="bday">
                         </div>
                         <div class="field">
                             <label>Mobile No. <span><i class="fa fa-asterisk"></i></span></label>
-                            <input name="" type="text">
+                            <input name="mobile" id="mobile" type="text">
                         </div>
                     </div>
                     <div class="two fields">
                         <div class="field">
                             <label>Email <span><i class="fa fa-asterisk"></i></span></label>
-                            <input name="" type="text">
+                            <input name="email" id="email" type="text">
                         </div>
                         <div class="field">
                             <label>Confirm Email <span><i class="fa fa-asterisk"></i></span></label>
-                            <input name="" type="text">
+                            <input name="confirmemail" id="confirmemail" type="text">
                         </div>
                     </div>
                     <div class="two fields">
                         <div class="field">
                             <label>Password <span><i class="fa fa-asterisk"></i></span></label>
-                            <input name="" type="password">
+                            <input name="password" id="password" type="password">
                         </div>
                         <div class="field">
                             <label>Confirm Password <span><i class="fa fa-asterisk"></i></span></label>
-                            <input name="" type="password">
+                            <input name="cpassword" id="cpassword" type="password">
                         </div>
                     </div>
                     <div class="field">
                         <label>City <span><i class="fa fa-asterisk"></i></span></label>
-                        <select class="ui search dropdown">
+                        <select class="ui search dropdown" id="city" name="city">
                             <option value="">Please Select Your City</option>
                             <option value="Caloocan City">Caloocan City</option>
                             <option value="Las Pińas City">Las Pińas City</option>
@@ -188,7 +192,7 @@ include('connection.php');
                     <div class="two fields">
                         <div class="field">
                             <label>Educational Attainment <span><i class="fa fa-asterisk"></i></span></label>
-                            <select class="ui fluid dropdown">
+                            <select class="ui fluid dropdown" id="educ" name="educ">
                                 <option value="" selected="selected">Please Select One</option>
                                 <option value="Bachelor's/College Degree">Bachelor's/College Degree</option>
                             </select>
@@ -199,7 +203,7 @@ include('connection.php');
                         </div>
                         <div class="field">
                             <label>Course <span><i class="fa fa-asterisk"></i></span></label>
-                             <select class="ui fluid search selection dropdown">
+                             <select class="ui fluid search selection dropdown" id="course" name="course">
                                 <option value="">Please Select Your Course</option>
                                 <?php
                                     $course_tbl =
@@ -226,7 +230,7 @@ include('connection.php');
                     <div class="two fields">
                         <div class="field">
                             <label>Graduation Date <span><i class="fa fa-asterisk"></i></span></label>
-                            <select class="ui fluid search dropdown">
+                            <select class="ui fluid search dropdown" id="grad_month" name="grad_month">
                                 <option value="">Month</option>
                                 <option value="1">January</option>
                                 <option value="2">February</option>
@@ -248,7 +252,7 @@ include('connection.php');
                         </div>
                         <div class="field">
                             <label>&nbsp; <span><i class="fa fa-asterisk"></i></span></label>
-                            <select class="ui fluid search dropdown">
+                            <select class="ui fluid search dropdown" id="grad_year" name="grad_year">
                                 <option value="">Year</option>
                                 <?php
                                     $date = Date("Y") + 1;
@@ -274,7 +278,7 @@ include('connection.php');
                     <h3 class="eight wide column">By clicking the "Sign Up" button, I certify that I have read and agree to the <a
                         href="" target="_blank">Terms of Use</a>.</h3>
                     <div class="eight wide column">
-                        <button style="float:right;"class="ui inverted yellow button">Sign Up</button>
+                        <button style="float:right;" type="submit" class="ui inverted yellow button">Sign Up</button>
                     </div>
                 </div>     
             </div>
@@ -318,160 +322,5 @@ include('connection.php');
 </body>
 </html>
 <script type="text/javascript">
-    $(document).ready(function () {
-        var validator = $("#registration").bootstrapValidator({
-            feedbackIcons: {
-                valid: "glyphicon glyphicon-ok",
-                invalid: "glyphicon glyphicon-remove",
-                validating: "glyphicon glyphicon-refresh"
-            },
-            fields: {
-                StudentID: {
-                    validators: {
-                        notEmpty: {
-                            message: "Student ID is required."
-                        },
-                        stringLength: {
-                            min: 11,
-                            max: 11,
-                            message: "Student ID is invalid."
-                        },
-                        remote: {
-                            message: 'The student ID already exists',
-                            url: 'registeradd.php',
-                            data: {
-                                type: 'StudentID'
-                            },
-                            type: 'POST'
-                        }
-                    }
-                },
-                FirstName: {
-                    validators: {
-                        notEmpty: {
-                            message: "First name is required."
-                        },
-                        stringLength: {
-                            min: 3,
-                            max: 15,
-                            message: "First name must be 3-15 characters long."
-                        }
-                    }
-                },
-                LastName: {
-                    validators: {
-                        notEmpty: {
-                            message: "Last name is required."
-                        },
-                        stringLength: {
-                            min: 1,
-                            max: 15,
-                            message: "Last name must be 15 characters long."
-                        }
-                    }
-                },
-                Birthday: {
-                    validators: {
-                        notEmpty: {
-                            message: "Birthdate is required."
-                        }
-                    }
-                },
-                MobileNumber: {
-                    validators: {
-                        notEmpty: {
-                            message: "Mobile number is required."
-                        },
-                        stringLength: {
-                            min: 11,
-                            message: "Mobile number must be 11 characters long."
-                        }
-                    }
-                },
-                Email: {
-                    validators: {
-                        notEmpty: {
-                            message: "Email address is required."
-                        },
-                        stringLength: {
-                            min: 6,
-                            max: 35,
-                            message: "Email address must be 6-35 characters long."
-                        }
-                    }
-                },
-                ConfirmEmail: {
-                    validators: {
-                        notEmpty: {
-                            message: "Confirm Email is required."
-                        },
-                        identical: {
-                            field: "Email",
-                            message: "Email and Confirm email mismatched."
-                        }
-                    }
-                },
-                _Password: {
-                    validators: {
-                        notEmpty: {
-                            message: "Password is required."
-                        },
 
-                        stringLength: {
-                            min: 8,
-                            max: 16,
-                            message: "Password must be 8-16 characters long."
-                        }
-
-                    }
-                },
-                ConfirmPassword: {
-                    validators: {
-                        notEmpty: {
-                            message: "Confirm password is required."
-                        },
-                        identical: {
-                            field: "_Password",
-                            message: "Password and confirm password mismatched."
-                        }
-                    }
-                },
-                City: {
-                    validators: {
-                        notEmpty: {
-                            message: "City is required."
-                        }
-                    }
-                },
-                EducAttain: {
-                    validators: {
-                        notEmpty: {
-                            message: "Educational Attainment is required."
-                        }
-                    }
-                },
-                Course: {
-                    validators: {
-                        notEmpty: {
-                            message: "Course is required."
-                        }
-                    }
-                },
-                GraduatedMonth: {
-                    validators: {
-                        notEmpty: {
-                            message: "Month graduated is required."
-                        }
-                    }
-                },
-                GraduatedYear: {
-                    validators: {
-                        notEmpty: {
-                            message: "Year graduated is required."
-                        }
-                    }
-                }
-            }
-        });
-    });
 </script>
