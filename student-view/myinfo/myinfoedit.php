@@ -1,7 +1,8 @@
 <?php
 include('../../connection.php');
-session_start();
 include('../../common-functions.php');
+include('../../encryption.php');
+session_start();
 $common_functions->student_login_check();
 $StudentID = $_SESSION['StudentID'];
 
@@ -107,13 +108,15 @@ if (isset($_GET['Seminar'])) {
     die();
 }
 
-if (isset($_GET['Certification'])) {
-    $CertificationID = $_GET['CertificationID'];
-    $Certification = $_GET['Certification'];
-    $YearTaken = $_GET['YearTaken'];
+if (isset($_POST['EditCertification'])) {
+    $CertificationID = $_POST['EditCertificationID'];
+    $Certification = $_POST['EditCertification'];
+    $YearTaken = $_POST['EditYearTaken'];
+
+    $CertificationID = encrypt_decrypt("decrypt", $CertificationID);
 
     if(strlen($Certification) === 0){
-        header("Location: edit-certification.php?id=" . $CertificationID . "&error");
+        header("Location: certification.php?error");
         die();
     }
 
@@ -125,7 +128,7 @@ if (isset($_GET['Certification'])) {
     }
 
     if(!$a){
-        header("Location: edit-certification.php?id=" . $CertificationID . "&error");
+        header("Location: certification.php?error");
         die();
     }
 
@@ -138,16 +141,17 @@ if (isset($_GET['Certification'])) {
         $CertificationID,
         $StudentID
     );
-    header("location: ../certifications.php?saved");
+    header("location: certifications.php?saved");
 
 }
 
-if (isset($_GET['Achievement'])) {
-    $AchievementID = $_GET['AchievementID'];
-    $Achievement = $_GET['Achievement'];
+if (isset($_POST['EditAchievementID'])) {
+    $AchievementID = $_POST['EditAchievementID'];
+    $Achievement = $_POST['EditAchievement'];
 
+    $AchievementID = encrypt_decrypt("decrypt", $AchievementID);
     if(strlen($Achievement) === 0){
-        header('Location: edit-achievement.php?id=' . $AchievementID . '&error');
+        header('Location: achievements.php?error');
         die();
     }
 
@@ -159,7 +163,7 @@ if (isset($_GET['Achievement'])) {
         $AchievementID,
         $StudentID
     );
-    header("location: ../achievements.php?saved");
+    header("location: achievements.php?saved");
 
 }
 

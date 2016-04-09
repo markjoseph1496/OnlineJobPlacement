@@ -1,7 +1,8 @@
 <?php
 include('../../connection.php');
-session_start();
 include('../../common-functions.php');
+include('../../encryption.php');
+session_start();
 $common_functions->student_login_check();
 $StudentID = $_SESSION['StudentID']; // to conform with your coding style -- ghabx
 
@@ -477,31 +478,34 @@ if ($References == "ok") {
                         </div>
 
                         <!-- ADD Achievement Modal -->
-                        <div class="modal fade" id="AddAchievement" role="dialog">
-                            <div class="modal-dialog modal-lg" style="padding:160px;width:100%;">
-                                <!-- Modal content-->
-                                <div class="modal-content">
-                                    <div class="modal-header">
-                                        <button type="button" class="close" data-dismiss="modal">&times;</button>
-                                        <h4 class="modal-title">Add Achievement</h4>
-                                    </div>
-                                    <div class="modal-body">
-                                        <div class="row">
-                                            <div class="col-md-12">
-                                                <div class="form-group">
-                                                    <label>Achievement <span>(*)</span></label>
-                                                    <input type="text" class="form-control" id="Achievement" name="Achievement">
+                        <form id="FormAdd" name="FormAdd" autocomplete="off" action="myinfoadd.php" method="POST">
+                            <div class="modal fade" id="AddAchievement" role="dialog">
+                                <div class="modal-dialog modal-lg" style="padding:160px;width:100%;">
+                                    <!-- Modal content-->
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                            <h4 class="modal-title">Add Achievement</h4>
+                                        </div>
+                                        <div class="modal-body">
+                                            <div class="row">
+                                                <div class="col-md-12">
+                                                    <div class="form-group">
+                                                        <label>Achievement <span>(*)</span></label>
+                                                        <input type="text" class="form-control" id="Achievement" name="Achievement" autofocus>
+                                                    </div>
                                                 </div>
                                             </div>
-                                        </div>
-                                        <div class="modal-footer">
-                                            <button type="submit" class="btn-system btn-large">Add</button>
-                                            <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+                                            <div class="modal-footer">
+                                                <button type="submit" class="btn-system btn-large">Add</button>
+                                                <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
+                        </form>
+                        <!-- end of add modal -->
 
 
                         <div class="hr2" style="margin-top:35px;"></div>
@@ -524,20 +528,75 @@ if ($References == "ok") {
                             foreach ($achievements_tbl as $value) {
                                 $AchievementID = $value[0];
                                 $Achievements = $value[2];
+
+                                $AchievementIDenc = encrypt_decrypt("encrypt", $AchievementID);
                                 ?>
                                 <tr>
                                     <td><?php echo $Achievements; ?></td>
                                     <td class="text-center">
-                                        <a href="edit/edit-achievement.php?id=<?php echo $AchievementID; ?>"
-                                           class="btn btn-default">
+                                        <button id="btnEdit" class="btn btn-default" data-toggle="modal"
+                                                data-target="#EditAchievement<?php echo $AchievementID; ?>">
                                             <i class="fa fa-pencil-square-o fa-1x"></i>
-                                        </a>
-                                        <button href="" class="btn btn-danger" data-toggle="modal"
+                                        </button>
+                                        <button  class="btn btn-danger" data-toggle="modal"
                                                 data-target="#DeleteAchievement<?php echo $AchievementID; ?>">
                                             <i class="fa fa-trash fa-1x"></i>
                                         </button>
                                     </td>
                                 </tr>
+
+                                <!-- edit Achievement Modal -->
+                                <form id="EditAchievement<?php echo $AchievementID; ?>" name="EditAchievement<?php echo $AchievementID; ?>" autocomplete="off" action="myinfoedit.php" method="POST">
+                                    <div class="modal fade" id="EditAchievement<?php echo $AchievementID; ?>" role="dialog">
+                                        <div class="modal-dialog modal-lg" style="padding:160px;width:100%;">
+                                            <!-- Modal content-->
+                                            <div class="modal-content">
+                                                <div class="modal-header">
+                                                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                                    <h4 class="modal-title">Edit Achievement</h4>
+                                                </div>
+                                                <div class="modal-body">
+                                                    <div class="row">
+                                                        <div class="col-md-12">
+                                                            <div class="form-group">
+                                                                <label>Achievement <span>(*)</span></label>
+                                                                <input type="hidden" name="EditAchievementID" value="<?php echo $AchievementIDenc;?>">
+                                                                <input type="text" class="form-control" id="EditAchievement" name="EditAchievement" value="<?php echo $Achievements; ?>">
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="modal-footer">
+                                                        <button type="submit" class="btn-system btn-large">Save</button>
+                                                        <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </form>
+
+                                <script type="text/javascript">
+                                    $(document).ready(function () {
+                                        var validator = $("#EditAchievement<?php echo $AchievementID; ?>").bootstrapValidator({
+                                            feedbackIcons:{
+                                                valid: "glyphicon glyphicon-ok",
+                                                invalid: "glyphicon glyphicon-remove",
+                                                validating: "glyphicon glyphicon-refresh"
+                                            },
+                                            fields: {
+                                                EditAchievement: {
+                                                    validators: {
+                                                        notEmpty: {
+                                                            message: "This field is required."
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        });
+                                    });
+                                </script>
+                                <!-- end of edit modal -->
+
                                 <!-- Modal -->
                                 <div class="modal fade" id="DeleteAchievement<?php echo $AchievementID; ?>" role="dialog">
                                     <div class="modal-dialog" style="padding:100px">
@@ -579,3 +638,23 @@ if ($References == "ok") {
 <script type="text/javascript" src="../../js/script.js"></script>
 </body>
 </html>
+<script type="text/javascript">
+    $(document).ready(function () {
+        var validator = $("#FormAdd").bootstrapValidator({
+            feedbackIcons:{
+                valid: "glyphicon glyphicon-ok",
+                invalid: "glyphicon glyphicon-remove",
+                validating: "glyphicon glyphicon-refresh"
+            },
+            fields: {
+                Achievement: {
+                    validators: {
+                        notEmpty: {
+                            message: "This field is required."
+                        }
+                    }
+                }
+            }
+        });
+    });
+</script>

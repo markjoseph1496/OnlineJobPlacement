@@ -8,13 +8,13 @@ $StudentID = $_SESSION['StudentID']; // to conform with your coding style -- gha
 
 $StudentID = $_SESSION['StudentID'];
 
-if (isset($_GET['School'])) {
-    $School = $_GET['School'];
-    $Attainment = $_GET['EducAttainment'];
-    $Course = $_GET['Course'];
-    $txtCourse = $_GET['txtCourse'];
-    $GraduatedYearFrom = $_GET['GraduatedYearFrom'];
-    $GraduatedYearTo = $_GET['GraduatedYearTo'];
+if (isset($_POST['School'])) {
+    $School = $_POST['School'];
+    $Attainment = $_POST['EducAttainment'];
+    $Course = $_POST['Course'];
+    $txtCourse = $_POST['txtCourse'];
+    $GraduatedYearFrom = $_POST['GraduatedYearFrom'];
+    $GraduatedYearTo = $_POST['GraduatedYearTo'];
     $Graduation = $GraduatedYearFrom . " - " . $GraduatedYearTo;
 
     $a = $Attainment == "High School Diploma";
@@ -25,7 +25,7 @@ if (isset($_GET['School'])) {
     $a = $a || $Attainment == "Doctorate Degree";
 
     if(!$a){
-        header("location: add-school.php?error");
+        //header("location: education.php?error");
         die();
     }
 
@@ -35,7 +35,7 @@ if (isset($_GET['School'])) {
         );
 
         if($course_valid[0][0] == 0 && $Course != "other"){
-            header("location: add-school.php?error");
+            //header("location: education.php?error");
             die();
         }
     }
@@ -45,17 +45,17 @@ if (isset($_GET['School'])) {
     $date = Date("Y") + 15;
     while ($date != 1935) {
         $date--;
-        $a = $a || $_GET['GraduatedYearFrom'] == $date;
-        $b = $b || $_GET['GraduatedYearTo'] == $date;
+        $a = $a || $_POST['GraduatedYearFrom'] == $date;
+        $b = $b || $_POST['GraduatedYearTo'] == $date;
     }
 
     if(!$a || !$b){
-        header("location: add-school.php?error");
+        header("location: education.php?error");
         die();
     }
 
-    if(strlen($_GET['School']) === 0){
-        header("location: add-school.php?error");
+    if(strlen($_POST['School']) === 0){
+        header("location: education.php?error");
         die();
     }
 
@@ -82,7 +82,7 @@ if (isset($_GET['School'])) {
         $StudentID
     );
 
-    header("location: ../education.php?saved");
+    header("location: education.php?saved");
 
 }
 
@@ -129,12 +129,12 @@ if (isset($_GET['Seminar'])) {
 }
 
 
-if (isset($_GET['Certification'])) {
-    $Certification = $_GET['Certification'];
-    $YearTaken = $_GET['YearTaken'];
+if (isset($_POST['Certification'])) {
+    $Certification = $_POST['Certification'];
+    $YearTaken = $_POST['YearTaken'];
 
     if(strlen($Certification) === 0){
-        header("Location: add-certification.php?error");
+        header("Location: certifications.php?error");
         die();
     }
 
@@ -146,7 +146,7 @@ if (isset($_GET['Certification'])) {
     }
 
     if(!$a){
-        header("Location: add-certification.php?error");
+        header("Location: certifications.php?error");
         die();
     }
 
@@ -166,16 +166,16 @@ if (isset($_GET['Certification'])) {
         $StudentID
     );
 
-    header("location: ../certifications.php?saved");
+    header("location: certifications.php?saved");
 
 }
 
 
-if (isset($_GET['Achievement'])) {
-    $Achievement = $_GET['Achievement'];
+if (isset($_POST['Achievement'])) {
+    $Achievement = $_POST['Achievement'];
 
     if(strlen($Achievement) === 0){
-        header('Location: add-achievement.php?error');
+        header('Location: achievements.php?error');
         die();
     }
 
@@ -194,7 +194,7 @@ if (isset($_GET['Achievement'])) {
         $StudentID
     );
 
-    header("location: ../achievements.php?saved");
+    header("location: achievements.php?saved");
 
 }
 if (isset($_GET['Name'])) {
