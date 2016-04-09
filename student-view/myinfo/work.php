@@ -783,7 +783,7 @@ if ($References == "ok") {
                     $NatureOfWork = $value[10];
                     $CompanyAddress = $value[14];
 
-                    $WorkIDenc = encrypt_decrypt('encrypt',$WorkID);
+                    $WorkIDenc = encrypt_decrypt('encrypt', $WorkID);
 
                     $specialization_tbl =
                         GSecureSQL::query(
@@ -890,7 +890,7 @@ if ($References == "ok") {
                         </td>
                     </tr>
                     <!-- EDIT Work Modal -->
-                    <form id="FormEditWork" name="FormEditWork" action="myinfoedit.php" method="POST" autocomplete="off">
+                    <form id="FormEditWork<?php echo $WorkID; ?>" name="FormEditWork<?php echo $WorkID; ?>" action="myinfoedit.php" method="POST" autocomplete="off">
                         <div class="modal fade" id="EditWork<?php echo $WorkID; ?>" role="dialog" tabindex="-1">
                             <div class="modal-dialog modal-lg" style="padding:160px;width:100%;">
                                 <!-- Modal content-->
@@ -978,7 +978,7 @@ if ($References == "ok") {
                                                         while ($date != 1935) {
                                                             $date--;
                                                             ?>
-                                                            <option <?php if($DateFromYear==$date) echo "selected='selected'"; ?> value="<?php echo $date; ?>"> <?php echo $date; ?></option>
+                                                            <option <?php if ($DateFromYear == $date) echo "selected='selected'"; ?> value="<?php echo $date; ?>"> <?php echo $date; ?></option>
                                                             <?php
                                                         }
                                                         ?>
@@ -1017,7 +1017,7 @@ if ($References == "ok") {
                                                             while ($date != 1935) {
                                                                 $date--;
                                                                 ?>
-                                                                <option <?php if($DateToYear==$date) echo "selected='selected'"; ?> value="<?php echo $date; ?>"> <?php echo $date; ?></option>
+                                                                <option <?php if ($DateToYear == $date) echo "selected='selected'"; ?> value="<?php echo $date; ?>"> <?php echo $date; ?></option>
                                                                 <?php
                                                             }
                                                             ?>
@@ -1042,7 +1042,7 @@ if ($References == "ok") {
                                                             $PositionID = $value3[0];
                                                             $Position = $value3[1];
                                                             ?>
-                                                            <option <?php if($PositionLevel==$Position) echo "selected='selected'" ?> value="<?php echo $Position; ?>"><?php echo $Position; ?></option>
+                                                            <option <?php if ($PositionLevel == $Position) echo "selected='selected'" ?> value="<?php echo $Position; ?>"><?php echo $Position; ?></option>
                                                             <?php
                                                         }
                                                         ?>
@@ -1069,7 +1069,7 @@ if ($References == "ok") {
                                                             $Specialization = $value4[1];
                                                             $count++;
                                                             ?>
-                                                            <option <?php if($WorkSpecialization==$Specialization) echo "selected='selected'" ?> value="<?php echo $Specialization; ?>"><?php echo $Specialization; ?></option>
+                                                            <option <?php if ($WorkSpecialization == $Specialization) echo "selected='selected'" ?> value="<?php echo $Specialization; ?>"><?php echo $Specialization; ?></option>
                                                             <?php
                                                         }
                                                         ?>
@@ -1092,7 +1092,7 @@ if ($References == "ok") {
                                                             $SalaryID = $value5[0];
                                                             $Salary = $value5[1];
                                                             ?>
-                                                            <option <?php if($MonthlySalary==$Salary) echo "selected='selected'" ?> value="<?php echo $SalaryID; ?>"><?php echo $Salary; ?></option>
+                                                            <option <?php if ($MonthlySalary == $Salary) echo "selected='selected'" ?> value="<?php echo $SalaryID; ?>"><?php echo $Salary; ?></option>
                                                             <?php
                                                         }
                                                         ?>
@@ -1104,7 +1104,7 @@ if ($References == "ok") {
                                             <div class="col-md-12">
                                                 <div class="form-group">
                                                     <label>Nature of Work</label><br>
-                                                    <textarea class="form-control" id="EditNatureOfWork" name="EditNatureOfWork" rows="5" maxlength="150"><?php echo $NatureOfWork;?></textarea>
+                                                    <textarea class="form-control" id="EditNatureOfWork" name="EditNatureOfWork" rows="5" maxlength="150"><?php echo $NatureOfWork; ?></textarea>
                                                     <div id="textarea_feedback"></div>
                                                 </div>
                                             </div>
@@ -1123,6 +1123,107 @@ if ($References == "ok") {
                     <script type="text/javascript">
                         $('#EditWork<?php echo $WorkID;?>').on('shown.bs.modal', function () {
                             $('#EditCompanyName').focus();
+                        });
+                        //Edit Validator
+                        $(document).ready(function () {
+                            var validator = $("#FormEditWork<?php echo $WorkID; ?>").bootstrapValidator({
+                                feedbackIcons: {
+                                    valid: "glyphicon glyphicon-ok",
+                                    invalid: "glyphicon glyphicon-remove",
+                                    validating: "glyphicon glyphicon-refresh"
+                                },
+                                fields: {
+                                    EditCompanyName: {
+                                        validators: {
+                                            notEmpty: {
+                                                message: "This field is required."
+                                            }
+                                        }
+                                    },
+                                    EditCompanyAddress: {
+                                        validators: {
+                                            notEmpty: {
+                                                message: "This field is required."
+                                            }
+                                        }
+                                    },
+                                    EditIndustry: {
+                                        validators: {
+                                            notEmpty: {
+                                                message: "This field is required."
+                                            }
+                                        }
+                                    },
+                                    EditFromMonth: {
+                                        validators: {
+                                            notEmpty: {
+                                                message: "This field is required."
+                                            }
+                                        }
+                                    },
+                                    EditFromYear: {
+                                        validators: {
+                                            notEmpty: {
+                                                message: "This field is required."
+                                            }
+                                        }
+                                    },
+                                    EditToMonth: {
+                                        required: "#Duration:checked",
+                                        validators: {
+                                            notEmpty: {
+                                                message: "This field is required."
+                                            }
+                                        }
+                                    },
+                                    EditToYear: {
+                                        required: "#Duration:checked",
+                                        validators: {
+                                            notEmpty: {
+                                                message: "This field is required."
+                                            },
+                                            greaterThan: {
+                                                value: "EditFromYear",
+                                                message: "Invalid date."
+                                            }
+                                        }
+                                    },
+                                    EditPositionLevel: {
+                                        validators: {
+                                            notEmpty: {
+                                                message: "This field is required."
+                                            }
+                                        }
+                                    },
+                                    EditWorkSpecialization: {
+                                        validators: {
+                                            notEmpty: {
+                                                message: "This field is required."
+                                            }
+                                        }
+                                    },
+                                    EditMonthlySalary: {
+                                        validators: {
+                                            notEmpty: {
+                                                message: "This field is required."
+                                            }
+                                        }
+                                    }
+                                }
+                            });
+                            $("#EditFromYear").change(function () {
+                                var from_year = $("#EditFromYear").val();
+                                var to_year = $("#EditToYear").val();
+
+                                if (from_year > to_year) {
+                                    $("#EditToYear").val(from_year);
+                                    $("#EditToYear").parent().removeClass("has-error");
+                                    $("#EditToYear").parent().addClass("has-success");
+                                    $($("#EditToYear").parent().find(".form-control-feedback")).removeClass("glyphicon-remove");
+                                    $($("#EditToYear").parent().find(".form-control-feedback")).addClass("glyphicon-ok");
+                                    $($("#EditToYear").parent().find(".help-block")).css("display", "none");
+                                }
+                            });
                         });
                     </script>
                     <!-- end of edit work modal -->
@@ -1345,108 +1446,6 @@ if ($References == "ok") {
                 $($("#ToYear").parent().find(".form-control-feedback")).removeClass("glyphicon-remove");
                 $($("#ToYear").parent().find(".form-control-feedback")).addClass("glyphicon-ok");
                 $($("#ToYear").parent().find(".help-block")).css("display", "none");
-            }
-        });
-    });
-
-    //Edit Validator
-    $(document).ready(function () {
-        var validator = $("#FormEditWork").bootstrapValidator({
-            feedbackIcons: {
-                valid: "glyphicon glyphicon-ok",
-                invalid: "glyphicon glyphicon-remove",
-                validating: "glyphicon glyphicon-refresh"
-            },
-            fields: {
-                EditCompanyName: {
-                    validators: {
-                        notEmpty: {
-                            message: "This field is required."
-                        }
-                    }
-                },
-                EditCompanyAddress: {
-                    validators: {
-                        notEmpty: {
-                            message: "This field is required."
-                        }
-                    }
-                },
-                EditIndustry: {
-                    validators: {
-                        notEmpty: {
-                            message: "This field is required."
-                        }
-                    }
-                },
-                EditFromMonth: {
-                    validators: {
-                        notEmpty: {
-                            message: "This field is required."
-                        }
-                    }
-                },
-                EditFromYear: {
-                    validators: {
-                        notEmpty: {
-                            message: "This field is required."
-                        }
-                    }
-                },
-                EditToMonth: {
-                    required: "#Duration:checked",
-                    validators: {
-                        notEmpty: {
-                            message: "This field is required."
-                        }
-                    }
-                },
-                EditToYear: {
-                    required: "#Duration:checked",
-                    validators: {
-                        notEmpty: {
-                            message: "This field is required."
-                        },
-                        greaterThan: {
-                            value: "EditFromYear",
-                            message: "Invalid date."
-                        }
-                    }
-                },
-                EditPositionLevel: {
-                    validators: {
-                        notEmpty: {
-                            message: "This field is required."
-                        }
-                    }
-                },
-                EditWorkSpecialization: {
-                    validators: {
-                        notEmpty: {
-                            message: "This field is required."
-                        }
-                    }
-                },
-                EditMonthlySalary: {
-                    validators: {
-                        notEmpty: {
-                            message: "This field is required."
-                        }
-                    }
-                }
-            }
-        });
-        $("#EditFromYear").change(function () {
-            var from_year = $("#EditFromYear").val();
-            var to_year = $("#EditToYear").val();
-
-            if (from_year > to_year) {
-                $("#EditToYear").val(from_year);
-                $("#EditToYear").parent().removeClass("has-error");
-                $("#EditToYear").parent().addClass("has-success");
-                $($("#EditToYear").parent().find(".form-control-feedback")).removeClass("glyphicon-remove");
-                $($("#EditToYear").parent().find(".form-control-feedback")).addClass("glyphicon-ok");
-                $($("#EditToYear").parent().find(".help-block")).css("display", "none");
             }
         });
     });
