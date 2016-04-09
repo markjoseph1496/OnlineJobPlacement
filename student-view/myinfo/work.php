@@ -794,6 +794,7 @@ if ($References == "ok") {
                         );
                     $FromMonth = $DateFromMonth;
                     $ToMonth = $DateToMonth;
+
                     if ($DateFromMonth == 1) {
                         $DateFromMonth = 'January';
                     }
@@ -990,18 +991,18 @@ if ($References == "ok") {
                                                         <label>To <span>(*)</span></label>
                                                         <select id="EditToMonth" name="EditToMonth" class="form-control" style="width:100%; height:34px;">
                                                             <option value="">- Select Month -</option>
-                                                            <option value="01">January</option>
-                                                            <option value="02">February</option>
-                                                            <option value="03">March</option>
-                                                            <option value="04">April</option>
-                                                            <option value="05">May</option>
-                                                            <option value="06">June</option>
-                                                            <option value="07">July</option>
-                                                            <option value="08">August</option>
-                                                            <option value="09">September</option>
-                                                            <option value="10">October</option>
-                                                            <option value="11">November</option>
-                                                            <option value="12">December</option>
+                                                            <option <?php if ($ToMonth == "01") echo "selected='selected'"; ?> value="01">January</option>
+                                                            <option <?php if ($ToMonth == "02") echo "selected='selected'"; ?> value="02">February</option>
+                                                            <option <?php if ($ToMonth == "03") echo "selected='selected'"; ?> value="03">March</option>
+                                                            <option <?php if ($ToMonth == "04") echo "selected='selected'"; ?> value="04">April</option>
+                                                            <option <?php if ($ToMonth == "05") echo "selected='selected'"; ?> value="05">May</option>
+                                                            <option <?php if ($ToMonth == "06") echo "selected='selected'"; ?> value="06">June</option>
+                                                            <option <?php if ($ToMonth == "07") echo "selected='selected'"; ?> value="07">July</option>
+                                                            <option <?php if ($ToMonth == "08") echo "selected='selected'"; ?> value="08">August</option>
+                                                            <option <?php if ($ToMonth == "09") echo "selected='selected'"; ?> value="09">September</option>
+                                                            <option <?php if ($ToMonth == "10") echo "selected='selected'"; ?> value="10">October</option>
+                                                            <option <?php if ($ToMonth == "11") echo "selected='selected'"; ?> value="11">November</option>
+                                                            <option <?php if ($ToMonth == "12") echo "selected='selected'"; ?> value="12">December</option>
                                                         </select>
                                                     </div>
                                                 </div>
@@ -1015,7 +1016,9 @@ if ($References == "ok") {
                                                             $date = Date("Y") + 1;
                                                             while ($date != 1935) {
                                                                 $date--;
-                                                                echo "<option value='$date'> $date</option>";
+                                                                ?>
+                                                                <option <?php if($DateToYear==$date) echo "selected='selected'"; ?> value="<?php echo $date; ?>"> <?php echo $date; ?></option>
+                                                                <?php
                                                             }
                                                             ?>
                                                         </select>
@@ -1107,7 +1110,7 @@ if ($References == "ok") {
                                             </div>
                                         </div>
                                         <div class="modal-footer">
-                                            <button type="submit" class="btn-system btn-large">Add</button>
+                                            <button type="submit" class="btn-system btn-large">Save</button>
                                             <button type="button" class="btn btn-default" data-dismiss="modal">
                                                 Cancel
                                             </button>
