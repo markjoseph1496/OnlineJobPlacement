@@ -544,16 +544,86 @@ if($References == "ok"){
                                     <td><?php echo $Certification; ?></td>
                                     <td><?php echo $YearTaken; ?></td>
                                     <td class="text-center">
-                                        <a href="edit/edit-certification.php?id=<?php echo $CertificationID; ?>"
-                                           class="btn btn-default">
+                                        <button class="btn btn-default" data-toggle="modal"
+                                                data-target="#EditCertification<?php echo $CertificationID; ?>">
                                             <i class="fa fa-pencil-square-o fa-1x"></i>
-                                        </a>
+                                        </button>
                                         <button class="btn btn-danger" data-toggle="modal"
                                                 data-target="#DeleteCertification<?php echo $CertificationID; ?>">
                                             <i class="fa fa-trash fa-1x"></i>
                                         </button>
                                     </td>
                                 </tr>
+                                    <!-- Edit Certification Modal -->
+                                <form id="EditCertification<?php echo $CertificationID;?>" name="EditCertification<?php echo $CertificationID;?>" autocomplete="off" action="../myinfoedit.php">
+                                    <div class="modal fade" id="EditCertification<?php echo $CertificationID; ?>" role="dialog" tabindex="-1">
+                                        <div class="modal-dialog modal-lg" style="padding:160px;width:100%;">
+                                            <!-- Modal content-->
+                                            <div class="modal-content">
+                                                <div class="modal-header">
+                                                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                                    <h4 class="modal-title">Edit Certification</h4>
+                                                </div>
+                                                <div class="modal-body">
+                                                    <div class="row">
+                                                        <div class="col-md-6">
+                                                            <div class="form-group">
+                                                                <label>Certification <span>(*)</span></label>
+                                                                <input type="text" class="form-control" id="EditCertification" value="<?php echo $Certification; ?>" name="EditCertification">
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-md-6">
+                                                            <div class="form-group">
+                                                                <label>Year Taken <span>(*)</span></label>
+                                                                <select id="YearTaken" name="YearTaken" class="form-control" style="width:100%; height:34px;">
+                                                                    <option value="">- Year -</option>
+                                                                    <?php
+                                                                    $date = Date("Y") + 1;
+                                                                    while($date != 1935){
+                                                                        $date--;
+                                                                        echo "<option value='$date'> $date</option>";
+                                                                    }
+                                                                    ?>
+                                                                </select>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="modal-footer">
+                                                        <button type="submit" class="btn-system btn-large">Add</button>
+                                                        <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    </form>
+                                    <script type="text/javascript">
+                                        $(document).ready(function () {
+                                            var validator = $("#EditCertification<?php echo $CertificationID;?>").bootstrapValidator({
+                                                feedbackIcons:{
+                                                    valid: "glyphicon glyphicon-ok",
+                                                    invalid: "glyphicon glyphicon-remove",
+                                                    validating: "glyphicon glyphicon-refresh"
+                                                },
+                                                fields: {
+                                                    EditCertification: {
+                                                        validators: {
+                                                            notEmpty: {
+                                                                message: "This field is required."
+                                                            }
+                                                        }
+                                                    },
+                                                    EditYearTaken: {
+                                                        validators: {
+                                                            notEmpty: {
+                                                                message: "This field is required."
+                                                            }
+                                                        }
+                                                    }
+                                                }
+                                            });
+                                        });
+                                    </script>
                                 <!-- Modal -->
                                 <div class="modal fade" id="DeleteCertification<?php echo $CertificationID; ?>"
                                      role="dialog">
