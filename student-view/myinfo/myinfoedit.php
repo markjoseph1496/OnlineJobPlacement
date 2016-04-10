@@ -6,13 +6,19 @@ session_start();
 $common_functions->student_login_check();
 $StudentID = $_SESSION['StudentID'];
 
-if (isset($_GET['School'])) {
-    $SchoolID = $_GET['SchoolID'];
-    $School = $_GET['School'];
-    $Attainment = $_GET['EducAttainment'];
-    $Course = $_GET['Course'];
-    $Graduation = $_GET['GraduatedYearFrom'] . " - " . $_GET['GraduatedYearTo'];
+if (isset($_POST['EditSchool'])) {
+    $SchoolID = $_POST['EditSchoolID'];
+    $School = $_POST['EditSchool'];
+    $Attainment = $_POST['EditEducAttainment'];
+    $Course = $_POST['EditCourse'];
+    $Graduation = $_POST['EditGraduatedYearFrom'] . " - " . $_POST['EditGraduatedYearTo'];
 
+    if(isset($_POST['EdittxtCourse'])){
+        $txtCourse = $_POST['EdittxtCourse'];
+    }
+
+
+    $SchoolID = encrypt_decrypt("decrypt", $SchoolID);
     $a = $Attainment == "High School Diploma";
     $a = $a || $Attainment == "Technical Vocational/Certificate";
     $a = $a || $Attainment == "Bachelor's/College Degree";
@@ -21,19 +27,30 @@ if (isset($_GET['School'])) {
     $a = $a || $Attainment == "Doctorate Degree";
 
     if(!$a){
-        header("location: edit-school.php?id=" . $_GET['SchoolID']);
+        header("location: education.php?error");
         die();
+
     }
 
     if($Attainment != "High School Diploma"){
-        $course_valid = GSecureSQL::query(
-            "SELECT COUNT(*) AS `Count` FROM `coursetbl` WHERE `CourseCode` = ?", TRUE, "s", $Course
-        );
+        if($Course == "other"){
+            $Course = $txtCourse;
+            if($Course == ""){
+                header("location: education.php?error");
+                die();
+            }
+        }else{
+            $course_valid = GSecureSQL::query(
+                "SELECT COUNT(*) AS `Count` FROM `coursetbl` WHERE `CourseCode` = ?", TRUE, "s", $Course
+            );
 
-        if($course_valid[0][0] == 0){
-            header("location: edit-school.php?id=" . $_GET['SchoolID']);
-            die();
+            if($course_valid[0][0] == 0){
+                header("location: education.php?error");
+                die();
+
+            }
         }
+
     }
 
     $a = FALSE;
@@ -41,21 +58,21 @@ if (isset($_GET['School'])) {
     $date = Date("Y") + 15;
     while ($date != 1935) {
         $date--;
-        $a = $a || $_GET['GraduatedYearFrom'] == $date;
-        $b = $b || $_GET['GraduatedYearTo'] == $date;
+        $a = $a || $_POST['EditGraduatedYearFrom'] == $date;
+        $b = $b || $_POST['EditGraduatedYearTo'] == $date;
     }
 
     if(!$a || !$b){
-        header("location: edit-school.php?id=" . $_GET['SchoolID'] . "&error");
+        header("location: education.php?error");
         die();
+
     }
 
-    if(strlen($_GET['School']) === 0){
-        header("location: edit-school.php?id=" . $_GET['SchoolID'] . "&error");
+    if(strlen($_POST['EditSchool']) === 0){
+        header("location: education.php?error");
         die();
+
     }
-
-
 
     GSecureSQL::query(
         "UPDATE schooltbl SET School = ?, Attainment =?, Course = ?, Graduated = ? WHERE SchoolID = ? AND StudentID = ?",
@@ -68,7 +85,8 @@ if (isset($_GET['School'])) {
         $SchoolID,
         $StudentID
     );
-    header("location: ../education.php?saved");
+    header("location: education.php?saved");
+    die();
 
 }
 

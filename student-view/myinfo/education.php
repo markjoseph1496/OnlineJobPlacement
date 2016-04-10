@@ -628,42 +628,6 @@ if ($References == "ok") {
                                     );
                                 foreach ($course_tbl as $value1) {
                                     $CourseTitle = $value1[1];
-                                    if (substr($Graduated, 0, 2) == 1) {
-                                        $Graduated = 'January' . substr($Graduated, 2, 5);
-                                    }
-                                    if (substr($Graduated, 0, 2) == 2) {
-                                        $Graduated = 'February' . substr($Graduated, 2, 5);
-                                    }
-                                    if (substr($Graduated, 0, 2) == 3) {
-                                        $Graduated = 'March' . substr($Graduated, 2, 5);
-                                    }
-                                    if (substr($Graduated, 0, 2) == 4) {
-                                        $Graduated = 'April' . substr($Graduated, 2, 5);
-                                    }
-                                    if (substr($Graduated, 0, 2) == 5) {
-                                        $Graduated = 'May' . substr($Graduated, 2, 5);
-                                    }
-                                    if (substr($Graduated, 0, 2) == 6) {
-                                        $Graduated = 'June' . substr($Graduated, 2, 5);
-                                    }
-                                    if (substr($Graduated, 0, 2) == 7) {
-                                        $Graduated = 'July' . substr($Graduated, 2, 5);
-                                    }
-                                    if (substr($Graduated, 0, 2) == 8) {
-                                        $Graduated = 'August' . substr($Graduated, 2, 5);
-                                    }
-                                    if (substr($Graduated, 0, 2) == 9) {
-                                        $Graduated = 'September' . substr($Graduated, 2, 5);
-                                    }
-                                    if (substr($Graduated, 0, 2) == 10) {
-                                        $Graduated = 'October' . substr($Graduated, 2, 5);
-                                    }
-                                    if (substr($Graduated, 0, 2) == 11) {
-                                        $Graduated = 'November' . substr($Graduated, 2, 5);
-                                    }
-                                    if (substr($Graduated, 0, 2) == 12) {
-                                        $Graduated = 'December' . substr($Graduated, 2, 5);
-                                    }
                                 }
                                 ?>
                                 <tr>
@@ -696,6 +660,8 @@ if ($References == "ok") {
                                 $_Course = $_value[4];
                                 $_Graduated = $_value[5];
 
+                                $_SchoolIDenc = encrypt_decrypt("encrypt", $_SchoolID);
+
                                 $_course_tbl =
                                     GSecureSQL::query(
                                         "SELECT * FROM coursetbl WHERE CourseID = ?",
@@ -705,42 +671,6 @@ if ($References == "ok") {
                                     );
                                 foreach ($_course_tbl as $_value1) {
                                     $_CourseTitle = $_value1[1];
-                                    if (substr($_Graduated, 0, 2) == 1) {
-                                        $_Graduated = 'January' . substr($_Graduated, 2, 5);
-                                    }
-                                    if (substr($_Graduated, 0, 2) == 2) {
-                                        $_Graduated = 'February' . substr($_Graduated, 2, 5);
-                                    }
-                                    if (substr($_Graduated, 0, 2) == 3) {
-                                        $_Graduated = 'March' . substr($_Graduated, 2, 5);
-                                    }
-                                    if (substr($_Graduated, 0, 2) == 4) {
-                                        $_Graduated = 'April' . substr($_Graduated, 2, 5);
-                                    }
-                                    if (substr($_Graduated, 0, 2) == 5) {
-                                        $_Graduated = 'May' . substr($_Graduated, 2, 5);
-                                    }
-                                    if (substr($_Graduated, 0, 2) == 6) {
-                                        $_Graduated = 'June' . substr($_Graduated, 2, 5);
-                                    }
-                                    if (substr($_Graduated, 0, 2) == 7) {
-                                        $_Graduated = 'July' . substr($_Graduated, 2, 5);
-                                    }
-                                    if (substr($_Graduated, 0, 2) == 8) {
-                                        $_Graduated = 'August' . substr($_Graduated, 2, 5);
-                                    }
-                                    if (substr($_Graduated, 0, 2) == 9) {
-                                        $_Graduated = 'September' . substr($_Graduated, 2, 5);
-                                    }
-                                    if (substr($_Graduated, 0, 2) == 10) {
-                                        $_Graduated = 'October' . substr($_Graduated, 2, 5);
-                                    }
-                                    if (substr($_Graduated, 0, 2) == 11) {
-                                        $_Graduated = 'November' . substr($_Graduated, 2, 5);
-                                    }
-                                    if (substr($_Graduated, 0, 2) == 12) {
-                                        $_Graduated = 'December' . substr($_Graduated, 2, 5);
-                                    }
                                 }
                                 ?>
                                 <tr>
@@ -750,7 +680,7 @@ if ($References == "ok") {
                                     <td><?php echo $_Graduated; ?></td>
                                     <td class="text-center">
                                         <button class="btn btn-default" data-toggle="modal"
-                                                data-target="#EditSchool<?php echo $_SchoolID; ?>">
+                                                data-target="#EditSchoolModal<?php echo $_SchoolID; ?>">
                                             <i class="fa fa-pencil-square-o fa-1x"></i>
                                         </button>
                                         <button class="btn btn-danger" data-toggle="modal"
@@ -760,8 +690,8 @@ if ($References == "ok") {
                                 </tr>
 
                                 <!-- Edit School Modal -->
-                                <form id="EditSchool<?php echo $_SchoolID; ?>" name="EditSchool<?php echo $_SchoolID; ?>" autocomplete="off" action="myinfoadd.php" method="POST">
-                                    <div class="modal fade" id="EditSchool<?php echo $_SchoolID; ?>" role="dialog">
+                                <form id="EditSchool<?php echo $_SchoolID; ?>" name="EditSchool<?php echo $_SchoolID; ?>" autocomplete="off" action="myinfoedit.php" method="POST">
+                                    <div class="modal fade" id="EditSchoolModal<?php echo $_SchoolID; ?>" role="dialog">
                                         <div class="modal-dialog modal-lg" style="padding:160px;width:100%;">
                                             <!-- Modal content-->
                                             <div class="modal-content">
@@ -774,25 +704,26 @@ if ($References == "ok") {
                                                         <div class="col-md-6">
                                                             <div class="form-group">
                                                                 <label>School <span>(*)</span></label>
-                                                                <input type="text" class="form-control" id="EditSchool" name="EditSchool" style="height:34px;">
+                                                                <input type="hidden" name="EditSchoolID" value="<?php echo $_SchoolIDenc; ?>">
+                                                                <input type="text" class="form-control" id="EditSchool" name="EditSchool" style="height:34px;" value="<?php echo $_School;?>">
                                                             </div>
                                                             <div class="form-group">
                                                                 <label>Educational Attainment <span>(*)</span></label>
-                                                                <select id="EditEducAttainment" name="EditEducAttainment" class="form-control" style="width:100%; height:34px;">
+                                                                <select id="EditEducAttainment<?php echo $_SchoolID;?>" name="EditEducAttainment" class="form-control" style="width:100%; height:34px;">
                                                                     <option value="">- Please select one -</option>
-                                                                    <option value="High School Diploma">High School Diploma</option>
-                                                                    <option value="Technical Vocational/Certificate">Technical Vocational/Certificate</option>
-                                                                    <option value="Bachelor's/College Degree">Bachelor's/College Degree</option>
-                                                                    <option value="Post Graduate Diploma/Master's Degree">Post Graduate Diploma/Master's Degree</option>
-                                                                    <option value="Professional License (Passed Board/Bar/Professional License Exam)">Professional License (Passed Board/Bar/Professional License Exam</option>
-                                                                    <option value="Doctorate Degree">Doctorate Degree</option>
+                                                                    <option <?php if($_Attainment == "High School Diploma") echo "selected='selected'"; ?> value="High School Diploma">High School Diploma</option>
+                                                                    <option <?php if($_Attainment == "Technical Vocational/Certificate") echo "selected='selected'"; ?>value="Technical Vocational/Certificate">Technical Vocational/Certificate</option>
+                                                                    <option <?php if($_Attainment == "Bachelor's/College Degree") echo "selected='selected'"; ?>value="Bachelor's/College Degree">Bachelor's/College Degree</option>
+                                                                    <option <?php if($_Attainment == "Post Graduate Diploma/Master's Degree") echo "selected='selected'"; ?>value="Post Graduate Diploma/Master's Degree">Post Graduate Diploma/Master's Degree</option>
+                                                                    <option <?php if($_Attainment == "Professional License (Passed Board/Bar/Professional License Exam)") echo "selected='selected'"; ?>value="Professional License (Passed Board/Bar/Professional License Exam)">Professional License (Passed Board/Bar/Professional License Exam</option>
+                                                                    <option <?php if($_Attainment == "Doctorate Degree") echo "selected='selected'"; ?>value="Doctorate Degree">Doctorate Degree</option>
                                                                 </select>
                                                             </div>
                                                         </div>
                                                         <div class="col-md-6">
                                                             <div class="form-group">
-                                                                <label id="lblCourse">Course <span>(*)</span></label>
-                                                                <select id="EditCourse" name="EditCourse" class="form-control" style="width:100%; height:34px;">
+                                                                <label id="EditlblCourse<?php echo $_SchoolID;?>">Course <span>(*)</span></label>
+                                                                <select id="EditCourse<?php echo $_SchoolID;?>" name="EditCourse" class="form-control" style="width:100%; height:34px;">
                                                                     <option value="">- Course -</option>
                                                                     <?php
                                                                     $course_tbl =
@@ -800,18 +731,22 @@ if ($References == "ok") {
                                                                             "SELECT * FROM coursetbl",
                                                                             TRUE
                                                                         );
+                                                                    $BCourse = "false";
                                                                     foreach ($course_tbl as $value) {
                                                                         $CourseCode = $value[2];
                                                                         $CourseTitle = $value[1];
+                                                                        if($_Course == $CourseCode){
+                                                                            $BCourse = "true";
+                                                                        }
                                                                         ?>
-                                                                        <option value="<?php echo $CourseCode; ?>"><?php echo $CourseTitle; ?></option>
+                                                                        <option <?php if($_Course == $CourseCode) echo "selected='selected'"; ?> value="<?php echo $CourseCode; ?>"><?php echo $CourseTitle; ?></option>
                                                                         <?php
                                                                     }
                                                                     ?>
-                                                                    <option value="other">others</option>
+                                                                    <option <?php if($BCourse == "false") echo "selected='selected'"; ?> value="other">others</option>
                                                                 </select>
                                                                 <br>
-                                                                <input type="text" class="form-control" id="EdittxtCourse" name="EdittxtCourse" style="height:34px;">
+                                                                <input type="text" class="form-control" id="EdittxtCourse<?php echo $_SchoolID;?>" name="EdittxtCourse" style="height:34px;" value="<?php echo htmlspecialchars($_Course); ?>">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -828,11 +763,12 @@ if ($References == "ok") {
                                                                 <select id="EditGraduatedYearFrom" name="EditGraduatedYearFrom" class="form-control" style="width:100%; height:34px;">
                                                                     <option value="">- Year -</option>
                                                                     <?php
+                                                                    $YearFrom = substr($_Graduated, 0,4);
                                                                     $date = Date("Y") + 1;
                                                                     while ($date != 1935) {
                                                                         $date--;
                                                                         ?>
-                                                                        <option <?php if ($YearGraduated == $date) echo "selected='selected'"; ?> value="<?php echo $date; ?>"> <?php echo $date; ?></option>
+                                                                        <option <?php if ($YearFrom == $date) echo "selected='selected'"; ?> value="<?php echo $date; ?>"> <?php echo $date; ?></option>
                                                                         <?php
                                                                     }
                                                                     ?>
@@ -845,11 +781,12 @@ if ($References == "ok") {
                                                                 <select id="EditGraduatedYearTo" name="EditGraduatedYearTo" class="form-control" style="width:100%; height:34px;">
                                                                     <option value="">- Year -</option>
                                                                     <?php
+                                                                    $YearTo = substr($_Graduated, 7,4);
                                                                     $date = Date("Y") + 1;
                                                                     while ($date != 1935) {
                                                                         $date--;
                                                                         ?>
-                                                                        <option <?php if ($YearTaken == $date) echo "selected='selected'"; ?> value="<?php echo $date; ?>"> <?php echo $date; ?></option>
+                                                                        <option <?php if ($YearTo == $date) echo "selected='selected'"; ?> value="<?php echo $date; ?>"> <?php echo $date; ?></option>
                                                                         <?php
                                                                     }
                                                                     ?>
@@ -866,6 +803,96 @@ if ($References == "ok") {
                                         </div>
                                     </div>
                                 </form>
+
+                                <script type="text/javascript">
+                                    $(document).ready(function () {
+                                        $("#EditEducAttainment<?php echo $_SchoolID;?>").change(function () {
+                                            $(this).find("option:selected").each(function () {
+                                                if ($(this).attr("value") == "High School Diploma") {
+                                                    $("#EditCourse<?php echo $_SchoolID;?>").val("");
+                                                    $("#EditCourse<?php echo $_SchoolID;?>").hide();
+                                                    $("#EdittxtCourse<?php echo $_SchoolID;?>").hide();
+                                                    $("#EditlblCourse<?php echo $_SchoolID;?>").hide();
+                                                } else {
+                                                    $("#EditCourse<?php echo $_SchoolID;?>").show();
+                                                    $("#EditlblCourse<?php echo $_SchoolID;?>").show();
+                                                }
+                                            });
+                                        }).change();
+                                    });
+
+                                    $(document).ready(function () {
+                                        $("#EditCourse<?php echo $_SchoolID;?>").change(function () {
+                                            $(this).find("option:selected").each(function () {
+                                                if ($(this).attr("value") == "other") {
+                                                    $("#EdittxtCourse<?php echo $_SchoolID;?>").show();
+                                                } else {
+                                                    $("#EdittxtCourse<?php echo $_SchoolID;?>").hide();
+                                                }
+                                            });
+                                        }).change();
+                                    });
+
+
+                                    $(document).ready(function () {
+                                        var validator = $("#EditSchoolModal<?php echo $_SchoolID; ?>").bootstrapValidator({
+                                            feedbackIcons: {
+                                                valid: "glyphicon glyphicon-ok",
+                                                invalid: "glyphicon glyphicon-remove",
+                                                validating: "glyphicon glyphicon-refresh"
+                                            },
+                                            excluded: [':disabled', ':hidden', ':not(:visible)', '#container'],
+                                            fields: {
+                                                EditSchool: {
+                                                    validators: {
+                                                        notEmpty: {
+                                                            message: "School is required."
+                                                        }
+                                                    }
+                                                },
+                                                EditEducAttainment: {
+                                                    validators: {
+                                                        notEmpty: {
+                                                            message: "Educational Attainment is required."
+                                                        }
+                                                    }
+                                                },
+                                                EditCourse: {
+                                                    validators: {
+                                                        notEmpty: {
+                                                            message: "Course is required."
+                                                        }
+                                                    }
+                                                },
+                                                EdittxtCourse: {
+                                                    validators: {
+                                                        notEmpty: {
+                                                            message: "Course is required."
+                                                        }
+                                                    }
+                                                },
+                                                EditGraduatedYearFrom: {
+                                                    validators: {
+                                                        notEmpty: {
+                                                            message: "Month graduated is required."
+                                                        }
+                                                    }
+                                                },
+                                                EditGraduatedYearTo: {
+                                                    validators: {
+                                                        notEmpty: {
+                                                            message: "Year graduated is required."
+                                                        },
+                                                        greaterThan: {
+                                                            value: "EditGraduatedYearFrom",
+                                                            message: "Invalid date."
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        });
+                                    });
+                                </script>
                                 <!-- end Edit Modal -->
 
                                 <!-- Modal -->
