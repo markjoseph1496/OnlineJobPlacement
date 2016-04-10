@@ -86,10 +86,10 @@ if (isset($_POST['School'])) {
 
 }
 
-if (isset($_GET['Seminar'])) {
+if (isset($_POST['Seminar'])) {
 
-    $Seminar = $_GET['Seminar'];
-    $YearAttended = $_GET['YearAttended'];
+    $Seminar = $_POST['Seminar'];
+    $YearAttended = $_POST['YearAttended'];
 
     if(strlen($Seminar) === 0){
         header("location: add-seminar.php?error");
@@ -104,7 +104,7 @@ if (isset($_GET['Seminar'])) {
     }
 
     if(!$a){
-        header("location: add-seminar.php?error");
+        header("location: education.php?error");
         die();
     }
 
@@ -124,7 +124,7 @@ if (isset($_GET['Seminar'])) {
         $StudentID
     );
 
-    header("location: ../education.php?saved");
+    header("location: education.php?saved");
 
 }
 
@@ -274,18 +274,18 @@ if (isset($_POST['Skill'])) {
 
     $a = is_numeric($YearsOfExperience) && $YearsOfExperience >= 0;
     if(!$a){
-        header('Location: add-specialization.php?error');
+        header('Location: skills-and-languages.php?error');
         die();
     }
 
     if(strlen($Skill) === 0){
-        header('Location: add-specialization.php?error');
+        header('Location: skills-and-languages.php?error');
         die();
     }
 
     $a = $Proficiency >= 1 && $Proficiency <= 5;
     if(!$a){
-        header('Location: add-specialization.php?error');
+        header('Location: skills-and-languages.php?error');
         die();
     }
 
@@ -306,7 +306,7 @@ if (isset($_POST['Skill'])) {
         $StudentID
     );
 
-    header("location: ../skills-and-languages.php?saved");
+    header("location: skills-and-languages.php?saved");
 
 }
 
@@ -316,19 +316,19 @@ if (isset($_POST['Language'])) {
     $SpokenProficiency = $_POST['SpokenProficiency'];
 
     if(strlen($Language) === 0){
-        header('Location: add-language.php?error');
+        header('Location: skills-and-languages.php?error');
         die();
     }
 
     $a = $WrittenProficiency >= 1 && $WrittenProficiency <= 5;
     if(!$a){
-        header('Location: add-language.php?error');
+        header('Location: skills-and-languages.php?error');
         die();
     }
 
     $a = $SpokenProficiency >= 1 && $SpokenProficiency <= 5;
     if(!$a){
-        header('Location: add-language.php?error');
+        header('Location: skills-and-languages.php?error');
         die();
     }
 
@@ -349,7 +349,7 @@ if (isset($_POST['Language'])) {
         $StudentID
     );
 
-    header("location: ../skills-and-languages.php?saved");
+    header("location: skills-and-languages.php?saved");
 
 }
 if (isset($_POST['CompanyName'])) {

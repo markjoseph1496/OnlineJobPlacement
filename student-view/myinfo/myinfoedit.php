@@ -90,13 +90,15 @@ if (isset($_POST['EditSchool'])) {
 
 }
 
-if (isset($_GET['Seminar'])) {
-    $SeminarID = $_GET['SeminarID'];
-    $Seminar = $_GET['Seminar'];
-    $YearAttended = $_GET['YearAttended'];
+if (isset($_POST['EditSeminar'])) {
+    $SeminarID = $_POST['EditSeminarID'];
+    $Seminar = $_POST['EditSeminar'];
+    $YearAttended = $_POST['EditYearAttended'];
+
+    $SeminarID = encrypt_decrypt("decrypt", $SeminarID);
 
     if(strlen($Seminar) === 0){
-        header("location: edit-seminar.php?id=" . $SeminarID . "&error");
+        header("location: education.php?error");
         die();
     }
 
@@ -108,7 +110,7 @@ if (isset($_GET['Seminar'])) {
     }
 
     if(!$a){
-        header("location: edit-seminar.php?id=" . $SeminarID . "&error");
+        header("location: education.php?error");
         die();
     }
 
@@ -122,7 +124,7 @@ if (isset($_GET['Seminar'])) {
         $StudentID
     );
 
-    header("location: ../education.php?saved");
+    header("location: education.php?saved");
     die();
 }
 
@@ -211,26 +213,28 @@ if (isset($_GET['ReferenceID'])) {
 
 }
 
-if (isset($_POST['Skills'])) {
-    $SID = $_POST['SpecializationID'];
-    $YearsOfExperience = $_POST['YearsOfExperience'];
-    $Proficiency = $_POST['rating'];
-    $Skill = $_POST['Skills'];
+if (isset($_POST['EditSkillID'])) {
+    $SID = $_POST['EditSkillID'];
+    $YearsOfExperience = $_POST['EditYearsOfExperience'];
+    $Proficiency = $_POST['EditSkills'];
+    $Skill = $_POST['EditSkill'];
+
+    $SID = encrypt_decrypt("decrypt", $SID);
 
     $a = is_numeric($YearsOfExperience) && $YearsOfExperience >= 0;
     if(!$a){
-        header('Location: edit-specialization.php?error');
+        header('Location: skills-and-languages.php?error');
         die();
     }
 
     if(strlen($Skill) === 0){
-        header('Location: edit-specialization.php?error');
+        header('Location: skills-and-languages.php?error');
         die();
     }
 
     $a = $Proficiency >= 1 && $Proficiency <= 5;
     if(!$a){
-        header('Location: edit-specialization.php?error');
+        header('Location: skills-and-languages.php?error');
         die();
     }
 
@@ -244,7 +248,7 @@ if (isset($_POST['Skills'])) {
         $SID,
         $StudentID
     );
-    header("location: ../skills-and-languages.php?saved");
+    header("location: skills-and-languages.php?saved");
     die();
 }
 
