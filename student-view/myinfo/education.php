@@ -636,10 +636,6 @@ if ($References == "ok") {
                                     <td><?php echo htmlspecialchars($Course); ?></td>
                                     <td><?php echo $Graduated; ?></td>
                                     <td class="text-center">
-                                        <a href="edit/edit-school.php?id=<?php echo $SchoolID; ?>"
-                                           class="btn btn-default btnformaintenance">
-                                            <i class="fa fa-pencil-square-o fa-1x"></i>
-                                        </a>
                                     </td>
                                 </tr>
                                 <?php
