@@ -9,7 +9,7 @@ $StudentID = $_SESSION['StudentID']; // to conform with your coding style -- gha
 $StudentID = $_SESSION['StudentID'];
 
 if (isset($_POST['School'])) {
-    $School = $_POST['School'];
+    $School = ucwords($_POST['School']);
     $Attainment = $_POST['EducAttainment'];
     $Course = $_POST['Course'];
     $txtCourse = $_POST['txtCourse'];
@@ -88,7 +88,7 @@ if (isset($_POST['School'])) {
 
 if (isset($_POST['Seminar'])) {
 
-    $Seminar = $_POST['Seminar'];
+    $Seminar = ucwords($_POST['Seminar']);
     $YearAttended = $_POST['YearAttended'];
 
     if(strlen($Seminar) === 0){
@@ -130,7 +130,7 @@ if (isset($_POST['Seminar'])) {
 
 
 if (isset($_POST['Certification'])) {
-    $Certification = $_POST['Certification'];
+    $Certification = ucwords($_POST['Certification']);
     $YearTaken = $_POST['YearTaken'];
 
     if(strlen($Certification) === 0){
@@ -172,7 +172,7 @@ if (isset($_POST['Certification'])) {
 
 
 if (isset($_POST['Achievement'])) {
-    $Achievement = $_POST['Achievement'];
+    $Achievement = ucwords($_POST['Achievement']);
 
     if(strlen($Achievement) === 0){
         header('Location: achievements.php?error');
@@ -197,14 +197,15 @@ if (isset($_POST['Achievement'])) {
     header("location: achievements.php?saved");
 
 }
-if (isset($_GET['Name'])) {
-    $Name = $_GET['Name'];
-    $Relationship = $_GET['Relationship'];
-    $Company = $_GET['Company'];
-    $Position = $_GET['Position'];
-    $Phone = $_GET['Phone'];
-    $Email = $_GET['Email'];
+if (isset($_POST['Name'])) {
+    $Name = ucwords($_POST['Name']);
+    $Relationship = ucwords($_POST['Relationship']);
+    $Company = ucwords($_POST['Company']);
+    $Position = ucwords($_POST['Position']);
+    $Phone = $_POST['Phone'];
+    $Email = $_POST['Email'];
 
+/*
     $validation_config = array(
         'Email' => array(
             'pattern' => '/^[a-z0-9\.-_]+@[a-z0-9\.-_]+(\.com|\.org|\.net|\.int|\.edu|\.gov|\.mil|\.[a-z]{2})$/i',
@@ -240,10 +241,12 @@ if (isset($_GET['Name'])) {
 
     $validation_return = $common_functions->validate($_GET, $validation_config);
     if($validation_return['hasError']){
-        header("location: add-reference.php?error");
+        print_r($validation_return);
         die();
-    }
+        header("location: references.php?error");
 
+    }
+*/
     GSecureSQL::query(
         "INSERT INTO referencetbl(StudentID, Name, Relationship, Company, Position, Phone, Email) values (?,?,?,?,?,?,?)",
         FALSE,
@@ -263,8 +266,8 @@ if (isset($_GET['Name'])) {
         "s",
         $StudentID
     );
-
-    header("location: ../references.php?saved");
+    header("location: references.php?saved");
+    die();
 
 }
 if (isset($_POST['Skill'])) {
@@ -311,7 +314,7 @@ if (isset($_POST['Skill'])) {
 }
 
 if (isset($_POST['Language'])) {
-    $Language = $_POST['Language'];
+    $Language = ucwords($_POST['Language']);
     $WrittenProficiency = $_POST['WrittenProficiency'];
     $SpokenProficiency = $_POST['SpokenProficiency'];
 
@@ -353,7 +356,7 @@ if (isset($_POST['Language'])) {
 
 }
 if (isset($_POST['CompanyName'])) {
-    $CompanyName = $_POST['CompanyName'];
+    $CompanyName = ucwords($_POST['CompanyName']);
     $CompanyAddress = $_POST['CompanyAddress'];
     $Industry = $_POST['Industry'];
     $DateFromMonth = $_POST['FromMonth'];

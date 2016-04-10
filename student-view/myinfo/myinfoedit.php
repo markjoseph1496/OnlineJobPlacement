@@ -8,7 +8,7 @@ $StudentID = $_SESSION['StudentID'];
 
 if (isset($_POST['EditSchool'])) {
     $SchoolID = $_POST['EditSchoolID'];
-    $School = $_POST['EditSchool'];
+    $School = ucwords($_POST['EditSchool']);
     $Attainment = $_POST['EditEducAttainment'];
     $Course = $_POST['EditCourse'];
     $Graduation = $_POST['EditGraduatedYearFrom'] . " - " . $_POST['EditGraduatedYearTo'];
@@ -92,7 +92,7 @@ if (isset($_POST['EditSchool'])) {
 
 if (isset($_POST['EditSeminar'])) {
     $SeminarID = $_POST['EditSeminarID'];
-    $Seminar = $_POST['EditSeminar'];
+    $Seminar = ucwords($_POST['EditSeminar']);
     $YearAttended = $_POST['EditYearAttended'];
 
     $SeminarID = encrypt_decrypt("decrypt", $SeminarID);
@@ -130,7 +130,7 @@ if (isset($_POST['EditSeminar'])) {
 
 if (isset($_POST['EditCertification'])) {
     $CertificationID = $_POST['EditCertificationID'];
-    $Certification = $_POST['EditCertification'];
+    $Certification = ucwords($_POST['EditCertification']);
     $YearTaken = $_POST['EditYearTaken'];
 
     $CertificationID = encrypt_decrypt("decrypt", $CertificationID);
@@ -167,7 +167,7 @@ if (isset($_POST['EditCertification'])) {
 
 if (isset($_POST['EditAchievementID'])) {
     $AchievementID = $_POST['EditAchievementID'];
-    $Achievement = $_POST['EditAchievement'];
+    $Achievement = ucwords($_POST['EditAchievement']);
 
     $AchievementID = encrypt_decrypt("decrypt", $AchievementID);
     if(strlen($Achievement) === 0){
@@ -187,14 +187,16 @@ if (isset($_POST['EditAchievementID'])) {
 
 }
 
-if (isset($_GET['ReferenceID'])) {
-    $ReferenceID = $_GET['ReferenceID'];
-    $Name = $_GET['Name'];
-    $Relationship = $_GET['Relationship'];
-    $Company = $_GET['Company'];
-    $Position = $_GET['Position'];
-    $Phone = $_GET['Phone'];
-    $Email = $_GET['Email'];
+if (isset($_POST['EditReferenceID'])) {
+    $ReferenceID = $_POST['EditReferenceID'];
+    $Name = ucwords($_POST['EditName']);
+    $Relationship = ucwords($_POST['EditRelationship']);
+    $Company = ucwords($_POST['EditCompany']);
+    $Position = ucwords($_POST['EditPosition']);
+    $Phone = $_POST['EditPhone'];
+    $Email = $_POST['EditEmail'];
+
+    $ReferenceID = encrypt_decrypt("decrypt", $ReferenceID);
 
     GSecureSQL::query(
         "UPDATE referencetbl SET Name = ?, Relationship = ?, Company = ?, Position = ?, Phone = ?, Email = ? WHERE ReferenceID = ? AND StudentID = ?",
@@ -209,7 +211,7 @@ if (isset($_GET['ReferenceID'])) {
         $ReferenceID,
         $StudentID
     );
-    header("location: ../references.php?saved");
+    header("location: references.php?saved");
 
 }
 
@@ -217,7 +219,7 @@ if (isset($_POST['EditSkillID'])) {
     $SID = $_POST['EditSkillID'];
     $YearsOfExperience = $_POST['EditYearsOfExperience'];
     $Proficiency = $_POST['EditSkills'];
-    $Skill = $_POST['EditSkill'];
+    $Skill = ucwords($_POST['EditSkill']);
 
     $SID = encrypt_decrypt("decrypt", $SID);
 
@@ -252,26 +254,29 @@ if (isset($_POST['EditSkillID'])) {
     die();
 }
 
-if (isset($_POST['Language'])) {
-    $LangID = $_POST['LangID'];
-    $Language = $_POST['Language'];
-    $WrittenProficiency = $_POST['WrittenProficiency'];
-    $SpokenProficiency = $_POST['SpokenProficiency'];
+if (isset($_POST['EditLangID'])) {
+
+    $LangID = $_POST['EditLangID'];
+    $Language = ucwords($_POST['EditLanguage']);
+    $WrittenProficiency = $_POST['EditWrittenProficiency'];
+    $SpokenProficiency = $_POST['EditSpokenProficiency'];
+
+    $LangID = encrypt_decrypt("decrypt", $LangID);
 
     if(strlen($Language) === 0){
-        header('Location: edit-language.php?id=' . $LangID . '&error');
+        header('Location: skills-and-languages.php?error');
         die();
     }
 
     $a = $WrittenProficiency >= 1 && $WrittenProficiency <= 5;
     if(!$a){
-        header('Location: edit-language.php?id=' . $LangID . '&error');
+        header('Location: skills-and-languages.php?error');
         die();
     }
 
     $a = $SpokenProficiency >= 1 && $SpokenProficiency <= 5;
     if(!$a){
-        header('Location: edit-language.php?id=' . $LangID . '&error');
+        header('Location: skills-and-languages.php?error');
         die();
     }
 
@@ -285,12 +290,13 @@ if (isset($_POST['Language'])) {
         $LangID,
         $StudentID
     );
-    header("location: ../skills-and-languages.php?saved");
+
+    header("location: skills-and-languages.php?saved");
 
 }
 
 if (isset($_POST['EditCompanyName'])) {
-    $CompanyName = $_POST['EditCompanyName'];
+    $CompanyName = ucwords($_POST['EditCompanyName']);
     $CompanyAddress = $_POST['EditCompanyAddress'];
     $Industry = $_POST['EditIndustry'];
     $DateFromMonth = $_POST['EditFromMonth'];

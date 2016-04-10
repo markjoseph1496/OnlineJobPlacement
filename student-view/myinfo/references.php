@@ -1,15 +1,16 @@
 <?php
 include('../../connection.php');
-session_start();
 include('../../common-functions.php');
+include('../../encryption.php');
+session_start();
 $common_functions->student_login_check();
 $StudentID = $_SESSION['StudentID']; // to conform with your coding style -- ghabx
 
-$hashStudentID = hash('md4',$StudentID);
+$hashStudentID = hash('md4', $StudentID);
 
-if(isset($_SESSION['StudentID'])){
+if (isset($_SESSION['StudentID'])) {
     $StudentID = $_SESSION['StudentID'];
-}else{
+} else {
     header("location: ../../login-student.php");
 }
 
@@ -23,7 +24,7 @@ $infoquery =
 
 $FirstName = $infoquery[0][0];
 $LastName = $infoquery[0][1];
-$MajorCourse =  $infoquery[0][2];
+$MajorCourse = $infoquery[0][2];
 $StudentName = $FirstName . " " . $LastName;
 
 $course_qry =
@@ -81,48 +82,48 @@ $Specialization = $progress_tbl[0][8];
 $Languages = $progress_tbl[0][9];
 $References = $progress_tbl[0][10];
 
-if($Pinfo == "ok"){
+if ($Pinfo == "ok") {
     $Progress = $Progress + 10;
     $nPinfo = "";
 }
-if($Cinfo == "ok"){
+if ($Cinfo == "ok") {
     $Progress = $Progress + 10;
     $nCinfo = "";
 }
-if($Objective == "ok"){
+if ($Objective == "ok") {
     $Progress = $Progress + 15;
     $nWorkXP = "";
 }
-if($School == "ok"){
+if ($School == "ok") {
     $Progress = $Progress + 5;
     $nSchool = "";
 }
-if($Seminar == "ok"){
+if ($Seminar == "ok") {
     $Progress = $Progress + 5;
     $nSeminar = "";
 }
-if($Certification == "ok"){
+if ($Certification == "ok") {
     $Progress = $Progress + 10;
     $nCertification = "";
 }
-if($Achievements == "ok"){
+if ($Achievements == "ok") {
     $Progress = $Progress + 10;
     $nAchievements = "";
 }
-if($Specialization == "ok"){
+if ($Specialization == "ok") {
     $Progress = $Progress + 10;
-    if($Languages == "ok" && $Specialization == "ok"){
+    if ($Languages == "ok" && $Specialization == "ok") {
         $nSpecialization = "";
     }
 }
-if($Languages == "ok"){
+if ($Languages == "ok") {
     $Progress = $Progress + 5;
-    if($Languages == "ok" && $Specialization == "ok"){
+    if ($Languages == "ok" && $Specialization == "ok") {
         $nSpecialization = "";
     }
 
 }
-if($References == "ok"){
+if ($References == "ok") {
     $Progress = $Progress + 10;
     $nReferences = "";
 }
@@ -154,7 +155,7 @@ if($References == "ok"){
 
     <!-- jQuery and Bootstrap JS -->
     <script type="text/javascript" src="../../js/jquery.min.js"></script>
-    <script type="text/javascript" src="../../js/bootstrap.min.js" ></script>
+    <script type="text/javascript" src="../../js/bootstrap.min.js"></script>
 
     <!-- BootstrapValidator -->
     <script src="../../js/bootstrapValidator.min.js" type="text/javascript"></script>
@@ -434,34 +435,28 @@ if($References == "ok"){
     <div id="content">
         <div class="container">
             <?php
-            if (isset($_GET['id'])) {
-                $id = $_GET['id'];
-
-                if ($id == 1) {
-                    echo '
-                            <div class="alert alert-success" id="success-alert">
-                                <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
-                                <strong><span class="fa fa-info-circle"></span> Reference successfully updated.</strong>
-                            </div>
-                            ';
-                } elseif ($id == 2) {
-                    echo '
-                            <div class="alert alert-success" id="success-alert">
-                                <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
-                                <strong><span class="fa fa-info-circle"></span> Reference successfully added.</strong>
-                            </div>
-                            ';
-                } elseif ($id == 3) {
-                    echo '
-                            <div class="alert alert-success" id="success-alert">
-                                <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
-                                <strong><span class="fa fa-info-circle"></span> Reference successfully deleted.</strong>
-                            </div>
-                            ';
-                }
-
+            if (isset($_GET['saved'])) {
+                echo '
+                        <div class="alert alert-success fade in" id="success-alert">
+                            <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                            <strong><span class="fa fa-info-circle"></span> Information successfully updated.</strong>
+                        </div>
+                        ';
+            }
+            if (isset($_GET['error'])) {
+                echo '
+                        <div class="alert alert-danger fade in" id="danger-alert">
+                            <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                            <strong><span class="fa fa-warning"></span> Some errors occured, Please try again.</strong>
+                        </div>
+                        ';
             }
             ?>
+            <script type="text/javascript">
+                $("#success-alert").fadeTo(5000, 500).slideUp(500, function () {
+                    $("#success-alert").alert('close');
+                });
+            </script>
 
             <label><span class="fa fa-check-circle"></span> Your information progress..</label>
             <div class="skill-shortcode">
@@ -473,7 +468,7 @@ if($References == "ok"){
                     </div>
                 </div>
             </div>
-            
+
             <div class="row sidebar-page">
                 <!-- Page Content -->
                 <div class="col-md-12 page-content">
@@ -492,142 +487,76 @@ if($References == "ok"){
                         </div>
 
                         <!-- ADD Reference Modal -->
-                        <div class="modal fade" id="AddReference" role="dialog">
-                            <div class="modal-dialog modal-lg" style="padding:160px;width:100%;">
-                                <!-- Modal content-->
-                                <div class="modal-content">
-                                    <div class="modal-header">
-                                        <button type="button" class="close" data-dismiss="modal">&times;</button>
-                                        <h4 class="modal-title">Add Reference</h4>
-                                    </div>
-                                    <div class="modal-body">
-                                        <div class="row">
-                                            <div class="col-md-6">
-                                                <div class="form-group">
-                                                    <label>Name <span>(*)</span></label>
-                                                    <input type="text" class="form-control" id="Name" name="Name">
-                                                </div>
-                                            </div>
-                                            <div class="col-md-6">
-                                                <div class="form-group">
-                                                    <label>Relationship <span>(*)</span></label>
-                                                    <input type="text" class="form-control" id="Relationship" name="Relationship">
-                                                </div>
-                                            </div>
+                        <form id="FormAddReference" name="FormAddReference" autocomplete="off" action="myinfoadd.php" method="POST">
+                            <div class="modal fade" id="AddReference" role="dialog">
+                                <div class="modal-dialog modal-lg" style="padding:160px;width:100%;">
+                                    <!-- Modal content-->
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                            <h4 class="modal-title">Add Reference</h4>
                                         </div>
-                                        <div class="row">
-                                            <div class="col-md-6">
-                                                <div class="form-group">
-                                                    <label>Company <span>(*)</span></label>
-                                                    <input type="text" class="form-control" id="Company" name="Company">
+                                        <div class="modal-body">
+                                            <div class="row">
+                                                <div class="col-md-6">
+                                                    <div class="form-group">
+                                                        <label>Name <span>(*)</span></label>
+                                                        <input type="text" class="form-control" id="Name" name="Name">
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <div class="form-group">
+                                                        <label>Relationship <span>(*)</span></label>
+                                                        <input type="text" class="form-control" id="Relationship" name="Relationship">
+                                                    </div>
                                                 </div>
                                             </div>
-                                            <div class="col-md-6">
-                                                <div class="form-group">
-                                                    <label>Position <span>(*)</span></label>
-                                                    <input type="text" class="form-control" id="Position" name="Position">
+                                            <div class="row">
+                                                <div class="col-md-6">
+                                                    <div class="form-group">
+                                                        <label>Company <span>(*)</span></label>
+                                                        <input type="text" class="form-control" id="Company" name="Company">
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <div class="form-group">
+                                                        <label>Position <span>(*)</span></label>
+                                                        <input type="text" class="form-control" id="Position" name="Position">
+                                                    </div>
                                                 </div>
                                             </div>
-                                        </div>
-                                        <div class="row">
-                                            <div class="col-md-6">
-                                                <div class="form-group">
-                                                    <label>Phone <span>(*)</span></label>
-                                                    <input type="text" class="form-control" id="Phone" name="Phone" maxlength="11">
+                                            <div class="row">
+                                                <div class="col-md-6">
+                                                    <div class="form-group">
+                                                        <label>Phone <span>(*)</span></label>
+                                                        <input type="text" class="form-control" id="Phone" name="Phone" maxlength="11">
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <div class="form-group">
+                                                        <label>Email</label>
+                                                        <input type="email" class="form-control" id="Email" name="Email">
+                                                    </div>
                                                 </div>
                                             </div>
-                                            <div class="col-md-6">
-                                                <div class="form-group">
-                                                    <label>Email</label>
-                                                    <input type="email" class="form-control" id="Email" name="Email">
+                                            <div class="row">
+                                                <div class="col-md-3">
+                                                    &nbsp;
+                                                </div>
+                                                <div class="col-md-3">
+                                                    &nbsp;
                                                 </div>
                                             </div>
-                                        </div>
-                                        <div class="row">
-                                            <div class="col-md-3">
-                                                &nbsp;
+                                            <div class="modal-footer">
+                                                <button type="submit" class="btn-system btn-large">Add</button>
+                                                <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
                                             </div>
-                                            <div class="col-md-3">
-                                                &nbsp;
-                                            </div>
-                                        </div>
-                                        <div class="modal-footer">
-                                            <button type="submit" class="btn-system btn-large">Add</button>
-                                            <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
+                        </form>
 
-                        <!-- EDIT Reference Modal -->
-                        <div class="modal fade" id="EditReference" role="dialog">
-                            <div class="modal-dialog modal-lg" style="padding:160px;width:100%;">
-                                <!-- Modal content-->
-                                <div class="modal-content">
-                                    <div class="modal-header">
-                                        <button type="button" class="close" data-dismiss="modal">&times;</button>
-                                        <h4 class="modal-title">Edit Reference</h4>
-                                    </div>
-                                    <div class="modal-body">
-                                        <div class="row">
-                                            <div class="col-md-6">
-                                                <div class="form-group">
-                                                    <label>Name <span>(*)</span></label>
-                                                    <input type="text" class="form-control" id="Name" name="Name">
-                                                </div>
-                                            </div>
-                                            <div class="col-md-6">
-                                                <div class="form-group">
-                                                    <label>Relationship <span>(*)</span></label>
-                                                    <input type="text" class="form-control" id="Relationship" name="Relationship">
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="row">
-                                            <div class="col-md-6">
-                                                <div class="form-group">
-                                                    <label>Company <span>(*)</span></label>
-                                                    <input type="text" class="form-control" id="Company" name="Company">
-                                                </div>
-                                            </div>
-                                            <div class="col-md-6">
-                                                <div class="form-group">
-                                                    <label>Position <span>(*)</span></label>
-                                                    <input type="text" class="form-control" id="Position" name="Position">
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="row">
-                                            <div class="col-md-6">
-                                                <div class="form-group">
-                                                    <label>Phone <span>(*)</span></label>
-                                                    <input type="text" class="form-control" id="Phone" name="Phone" maxlength="11">
-                                                </div>
-                                            </div>
-                                            <div class="col-md-6">
-                                                <div class="form-group">
-                                                    <label>Email</label>
-                                                    <input type="email" class="form-control" id="Email" name="Email">
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="row">
-                                            <div class="col-md-3">
-                                                &nbsp;
-                                            </div>
-                                            <div class="col-md-3">
-                                                &nbsp;
-                                            </div>
-                                        </div>
-                                        <div class="modal-footer">
-                                            <button type="submit" class="btn-system btn-large">Save</button>
-                                            <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
 
                         <div class="hr2" style="margin-top:35px;"></div>
                         <table class="table segment table-hover">
@@ -659,6 +588,7 @@ if($References == "ok"){
                                 $Position = $value[5];
                                 $Phone = $value[6];
                                 $Email = $value[7];
+                                $ReferenceIDenc = encrypt_decrypt("encrypt", $ReferenceID);
                                 ?>
                                 <tr>
                                     <td><?php echo $Name; ?></td>
@@ -668,16 +598,149 @@ if($References == "ok"){
                                     <td><?php echo $Phone; ?></td>
                                     <td><?php echo $Email; ?></td>
                                     <td class="text-center">
-                                        <a href="edit/edit-reference.php?id=<?php echo $ReferenceID; ?>"
-                                           class="btn btn-default">
+                                        <button href="" class="btn btn-default" data-toggle="modal"
+                                                data-target="#EditReference<?php echo $ReferenceID; ?>">
                                             <i class="fa fa-pencil-square-o fa-1x"></i>
-                                        </a>
+                                        </button>
                                         <button href="" class="btn btn-danger" data-toggle="modal"
                                                 data-target="#DeleteReference<?php echo $ReferenceID; ?>">
                                             <i class="fa fa-trash fa-1x"></i>
                                         </button>
                                     </td>
                                 </tr>
+
+                                <!-- EDIT Reference Modal -->
+                                <form id="FormEditReference<?php echo $ReferenceID; ?>" name="FormEditReference<?php echo $ReferenceID; ?>" autocomplete="off" action="myinfoedit.php" method="POST">
+                                    <div class="modal fade" id="EditReference<?php echo $ReferenceID; ?>" role="dialog">
+                                        <div class="modal-dialog modal-lg" style="padding:160px;width:100%;">
+                                            <!-- Modal content-->
+                                            <div class="modal-content">
+                                                <div class="modal-header">
+                                                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                                    <h4 class="modal-title">Edit Reference</h4>
+                                                </div>
+                                                <div class="modal-body">
+                                                    <div class="row">
+                                                        <div class="col-md-6">
+                                                            <div class="form-group">
+                                                                <label>Name <span>(*)</span></label>
+                                                                <input type="text" class="form-control" id="EditName" name="EditName" value="<?php echo $Name; ?>">
+                                                                <input type="hidden" name="EditReferenceID" value="<?php echo $ReferenceIDenc; ?>">
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-md-6">
+                                                            <div class="form-group">
+                                                                <label>Relationship <span>(*)</span></label>
+                                                                <input type="text" class="form-control" id="EditRelationship" name="EditRelationship" value="<?php echo $Relationship; ?>">
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="row">
+                                                        <div class="col-md-6">
+                                                            <div class="form-group">
+                                                                <label>Company <span>(*)</span></label>
+                                                                <input type="text" class="form-control" id="EditCompany" name="EditCompany" value="<?php echo $Company; ?>">
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-md-6">
+                                                            <div class="form-group">
+                                                                <label>Position <span>(*)</span></label>
+                                                                <input type="text" class="form-control" id="EditPosition" name="EditPosition" value="<?php echo $Position; ?>">
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="row">
+                                                        <div class="col-md-6">
+                                                            <div class="form-group">
+                                                                <label>Phone <span>(*)</span></label>
+                                                                <input type="text" class="form-control" id="EditPhone" name="EditPhone" maxlength="11" value="<?php echo $Phone; ?>">
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-md-6">
+                                                            <div class="form-group">
+                                                                <label>Email</label>
+                                                                <input type="email" class="form-control" id="EditEmail" name="EditEmail" value="<?php echo $Email; ?>">
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="row">
+                                                        <div class="col-md-3">
+                                                            &nbsp;
+                                                        </div>
+                                                        <div class="col-md-3">
+                                                            &nbsp;
+                                                        </div>
+                                                    </div>
+                                                    <div class="modal-footer">
+                                                        <button type="submit" class="btn-system btn-large">Save</button>
+                                                        <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </form>
+
+                                <script type="text/javascript">
+                                    $(document).ready(function () {
+                                        var validator = $("#EditReference<?php echo $ReferenceID; ?>").bootstrapValidator({
+                                            feedbackIcons: {
+                                                valid: "glyphicon glyphicon-ok",
+                                                invalid: "glyphicon glyphicon-remove",
+                                                validating: "glyphicon glyphicon-refresh"
+                                            },
+                                            fields: {
+                                                EditName: {
+                                                    validators: {
+                                                        notEmpty: {
+                                                            message: "This field is required."
+                                                        }
+                                                    }
+                                                },
+                                                EditRelationship: {
+                                                    validators: {
+                                                        notEmpty: {
+                                                            message: "This field is required."
+                                                        }
+                                                    }
+                                                },
+                                                EditCompany: {
+                                                    validators: {
+                                                        notEmpty: {
+                                                            message: "This field is required."
+                                                        }
+                                                    }
+                                                },
+                                                EditPosition: {
+                                                    validators: {
+                                                        notEmpty: {
+                                                            message: "This field is required."
+                                                        }
+                                                    }
+                                                },
+                                                EditPhone: {
+                                                    validators: {
+                                                        notEmpty: {
+                                                            message: "This field is required."
+                                                        },
+                                                        regexp: {
+                                                            regexp: /(^(0(9(05|06|07|08|09|10|11|12|13|14|15|16|17|18|19|20|21|22|23|24|25|26|27|28|29|30|32|33|34|35|36|37|38|39|42|43|46|47|48|49|75|77|89|94|96|97|98)[0-9]{7}|[0-8][0-9]{5})|[1-9][0-9]{6})$|^$)/,
+                                                            message: "Invalid Phone Number."
+                                                        }
+                                                    }
+                                                },
+                                                EditEmail: {
+                                                    validators: {
+                                                        notEmpty: {
+                                                            message: "This field is required."
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        });
+                                    });
+                                </script>
+
                                 <!-- Modal -->
                                 <div class="modal fade" id="DeleteReference<?php echo $ReferenceID; ?>" role="dialog">
                                     <div class="modal-dialog" style="padding:100px">
@@ -722,3 +785,62 @@ if($References == "ok"){
 <script type="text/javascript" src="../../js/script.js"></script>
 </body>
 </html>
+<script type="text/javascript">
+    $(document).ready(function () {
+        var validator = $("#FormAddReference").bootstrapValidator({
+            feedbackIcons: {
+                valid: "glyphicon glyphicon-ok",
+                invalid: "glyphicon glyphicon-remove",
+                validating: "glyphicon glyphicon-refresh"
+            },
+            fields: {
+                Name: {
+                    validators: {
+                        notEmpty: {
+                            message: "This field is required."
+                        }
+                    }
+                },
+                Relationship: {
+                    validators: {
+                        notEmpty: {
+                            message: "This field is required."
+                        }
+                    }
+                },
+                Company: {
+                    validators: {
+                        notEmpty: {
+                            message: "This field is required."
+                        }
+                    }
+                },
+                Position: {
+                    validators: {
+                        notEmpty: {
+                            message: "This field is required."
+                        }
+                    }
+                },
+                Phone: {
+                    validators: {
+                        notEmpty: {
+                            message: "This field is required."
+                        },
+                        regexp: {
+                            regexp: /(^(0(9(05|06|07|08|09|10|11|12|13|14|15|16|17|18|19|20|21|22|23|24|25|26|27|28|29|30|32|33|34|35|36|37|38|39|42|43|46|47|48|49|75|77|89|94|96|97|98)[0-9]{7}|[0-8][0-9]{5})|[1-9][0-9]{6})$|^$)/,
+                            message: "Invalid Phone Number."
+                        }
+                    }
+                },
+                Email: {
+                    validators: {
+                        notEmpty: {
+                            message: "This field is required."
+                        }
+                    }
+                }
+            }
+        });
+    });
+</script>

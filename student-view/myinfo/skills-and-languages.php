@@ -771,61 +771,6 @@ if ($References == "ok") {
                             </div>
                         </form>
 
-                        <!-- EDIT Language Modal -->
-                        <div class="modal fade" id="EditLanguage" role="dialog">
-                            <div class="modal-dialog modal-lg" style="padding:160px;width:100%;">
-                                <!-- Modal content-->
-                                <div class="modal-content">
-                                    <div class="modal-header">
-                                        <button type="button" class="close" data-dismiss="modal">&times;</button>
-                                        <h4 class="modal-title">Edit Language</h4>
-                                    </div>
-                                    <div class="modal-body">
-                                        <div class="row">
-                                            <div class="col-md-6">
-                                                <div class="form-group">
-                                                    <label>Language <span>(*)</span></label>
-                                                    <input type="text" class="form-control" id="Language" name="Language">
-                                                </div>
-                                            </div>
-                                            <div class="col-md-3">
-                                                <div class="form-group">
-                                                    <label> Written Proficiency <span>(*)</span></label>
-                                                    <div class="text-center">
-                                                        <fieldset class="rating">
-                                                            <input type="radio" id="star5w" name="WrittenProficiency" value="5"/><label class="full" for="star5w" title="Excellent - 5 stars"></label>
-                                                            <input type="radio" id="star4w" name="WrittenProficiency" value="4"/><label class="full" for="star4w" title="Good - 4 stars"></label>
-                                                            <input type="radio" id="star3w" name="WrittenProficiency" value="3"/><label class="full" for="star3w" title="Meh - 3 stars"></label>
-                                                            <input type="radio" id="star2w" name="WrittenProficiency" value="2"/><label class="full" for="star2w" title="Poor - 2 stars"></label>
-                                                            <input type="radio" id="star1w" name="WrittenProficiency" value="1"/><label class="full" for="star1w" title="Awful - 1 star"></label>
-                                                        </fieldset>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="col-md-3">
-                                                <div class="form-group">
-                                                    <label> Spoken Proficiency <span>(*)</span></label>
-                                                    <div class="text-center">
-                                                        <fieldset class="rating">
-                                                            <input type="radio" id="star5s" name="SpokenProficiency" value="5"/><label class="full" for="star5s" title="Excellent - 5 stars"></label>
-                                                            <input type="radio" id="star4s" name="SpokenProficiency" value="4"/><label class="full" for="star4s" title="Good - 4 stars"></label>
-                                                            <input type="radio" id="star3s" name="SpokenProficiency" value="3"/><label class="full" for="star3s" title="Meh - 3 stars"></label>
-                                                            <input type="radio" id="star2s" name="SpokenProficiency" value="2"/><label class="full" for="star2s" title="Poor - 2 stars"></label>
-                                                            <input type="radio" id="star1s" name="SpokenProficiency" value="1"/><label class="full" for="star1s" title="Awful - 1 star"></label>
-                                                        </fieldset>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="modal-footer">
-                                            <button type="submit" class="btn-system btn-large">Save</button>
-                                            <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
                         <div class="hr2" style="margin-top:35px;"></div>
                         <table class="table segment table-hover">
                             <thead>
@@ -852,12 +797,14 @@ if ($References == "ok") {
                                 $WrittenProf = $value2[3];
                                 $SpokenProf = $value2[4];
                                 $SpokenProfName = $LangID . "s";
+
+                                $LangIDenc = encrypt_decrypt("encrypt", $LangID);
                                 ?>
                                 <tr>
                                     <td><?php echo $Language; ?></td>
                                     <td class="text-center">
                                         <fieldset class="rating">
-                                            <input <?php if ($WrittenProf == "5") echo "checked"; ?> type="radio" id="star5<?php echo $LangID; ?>" name="rating<?php echo $LangID; ?>" value="5"/><label class="full" for="star5<?php echo $LangID; ?>" title="Excellent - 5 stars"></label>
+                                            <input <?php if ($WrittenProf == "5") echo "checked"; ?>  type="radio" id="star5<?php echo $LangID; ?>" name="rating<?php echo $LangID; ?>" value="5"/><label class="full" for="star5<?php echo $LangID; ?>" title="Excellent - 5 stars"></label>
                                             <input <?php if ($WrittenProf == "4") echo "checked"; ?> type="radio" id="star4<?php echo $LangID; ?>" name="rating<?php echo $LangID; ?>" value="4"/><label class="full" for="star4<?php echo $LangID; ?>" title="Good - 4 stars"></label>
                                             <input <?php if ($WrittenProf == "3") echo "checked"; ?> type="radio" id="star3<?php echo $LangID; ?>" name="rating<?php echo $LangID; ?>" value="3"/><label class="full" for="star3<?php echo $LangID; ?>" title="Meh - 3 stars"></label>
                                             <input <?php if ($WrittenProf == "2") echo "checked"; ?> type="radio" id="star2<?php echo $LangID; ?>" name="rating<?php echo $LangID; ?>" value="2"/><label class="full" for="star2<?php echo $LangID; ?>" title="Poor - 2 stars"></label>
@@ -879,14 +826,95 @@ if ($References == "ok") {
                                         </fieldset>
                                     </td>
                                     <td class="text-center">
-                                        <a href="edit/edit-language.php?id=<?php echo $LangID; ?>" class="btn btn-default">
+                                        <button class="btn btn-default" data-toggle="modal" data-target="#EditLanguage<?php echo $LangID; ?>">
                                             <i class="fa fa-pencil-square-o fa-1x"></i>
-                                        </a>
+                                        </button>
                                         <button class="btn btn-danger" data-toggle="modal" data-target="#DeleteLanguage<?php echo $LangID; ?>">
                                             <i class="fa fa-trash fa-1x"></i>
                                         </button>
                                     </td>
                                 </tr>
+
+                                <!-- EDIT Language Modal -->
+                                <form id="FormEditLanguage<?php echo $LangID; ?>" name="FormEditLanguage<?php echo $LangID; ?>" autocomplete="off" action="myinfoedit.php" method="POST">
+                                    <div class="modal fade" id="EditLanguage<?php echo $LangID; ?>" role="dialog">
+                                        <div class="modal-dialog modal-lg" style="padding:160px;width:100%;">
+                                            <!-- Modal content-->
+                                            <div class="modal-content">
+                                                <div class="modal-header">
+                                                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                                    <h4 class="modal-title">Edit Language</h4>
+                                                </div>
+                                                <div class="modal-body">
+                                                    <div class="row">
+                                                        <div class="col-md-6">
+                                                            <div class="form-group">
+                                                                <label>Language <span>(*)</span></label>
+                                                                <input type="hidden" name="EditLangID" value="<?php echo $LangIDenc; ?>">
+                                                                <input type="text" class="form-control" id="EditLanguage" name="EditLanguage" value="<?php echo $Language; ?>">
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-md-3">
+                                                            <div class="form-group">
+                                                                <label> Written Proficiency <span>(*)</span></label>
+                                                                <div class="text-center">
+                                                                    <fieldset class="rating">
+                                                                        <input <?php if ($WrittenProf == "5") echo "checked"; ?> type="radio" id="star5w<?php echo $LangID; ?>" name="EditWrittenProficiency" value="5"/><label class="full" for="star5w<?php echo $LangID; ?>" title="Excellent - 5 stars"></label>
+                                                                        <input <?php if ($WrittenProf == "4") echo "checked"; ?> type="radio" id="star4w<?php echo $LangID; ?>" name="EditWrittenProficiency" value="4"/><label class="full" for="star4w<?php echo $LangID; ?>" title="Good - 4 stars"></label>
+                                                                        <input <?php if ($WrittenProf == "3") echo "checked"; ?> type="radio" id="star3w<?php echo $LangID; ?>" name="EditWrittenProficiency" value="3"/><label class="full" for="star3w<?php echo $LangID; ?>" title="Meh - 3 stars"></label>
+                                                                        <input <?php if ($WrittenProf == "2") echo "checked"; ?> type="radio" id="star2w<?php echo $LangID; ?>" name="EditWrittenProficiency" value="2"/><label class="full" for="star2w<?php echo $LangID; ?>" title="Poor - 2 stars"></label>
+                                                                        <input <?php if ($WrittenProf == "1") echo "checked"; ?> type="radio" id="star1w<?php echo $LangID; ?>" name="EditWrittenProficiency" value="1"/><label class="full" for="star1w<?php echo $LangID; ?>" title="Awful - 1 star"></label>
+                                                                    </fieldset>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-md-3">
+                                                            <div class="form-group">
+                                                                <label> Spoken Proficiency <span>(*)</span></label>
+                                                                <div class="text-center">
+                                                                    <fieldset class="rating">
+                                                                        <input <?php if ($SpokenProf == "5") echo "checked"; ?> type="radio" id="star5s<?php echo $LangID; ?>" name="EditSpokenProficiency" value="5"/><label class="full" for="star5s<?php echo $LangID; ?>" title="Excellent - 5 stars"></label>
+                                                                        <input <?php if ($SpokenProf == "4") echo "checked"; ?> type="radio" id="star4s<?php echo $LangID; ?>" name="EditSpokenProficiency" value="4"/><label class="full" for="star4s<?php echo $LangID; ?>" title="Good - 4 stars"></label>
+                                                                        <input <?php if ($SpokenProf == "3") echo "checked"; ?> type="radio" id="star3s<?php echo $LangID; ?>" name="EditSpokenProficiency" value="3"/><label class="full" for="star3s<?php echo $LangID; ?>" title="Meh - 3 stars"></label>
+                                                                        <input <?php if ($SpokenProf == "2") echo "checked"; ?> type="radio" id="star2s<?php echo $LangID; ?>" name="EditSpokenProficiency" value="2"/><label class="full" for="star2s<?php echo $LangID; ?>" title="Poor - 2 stars"></label>
+                                                                        <input <?php if ($SpokenProf == "1") echo "checked"; ?> type="radio" id="star1s<?php echo $LangID; ?>" name="EditSpokenProficiency" value="1"/><label class="full" for="star1s<?php echo $LangID; ?>" title="Awful - 1 star"></label>
+                                                                    </fieldset>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="modal-footer">
+                                                        <button type="submit" class="btn-system btn-large">Save</button>
+                                                        <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </form>
+                                <script type="text/javascript">
+                                    $(document).ready(function () {
+                                        var validator = $("#FormAddLanguage").bootstrapValidator({
+                                            feedbackIcons: {
+                                                valid: "glyphicon glyphicon-ok",
+                                                invalid: "glyphicon glyphicon-remove",
+                                                validating: "glyphicon glyphicon-refresh"
+                                            },
+                                            fields: {
+                                                Language: {
+                                                    validators: {
+                                                        notEmpty: {
+                                                            message: "This field is required."
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        });
+                                    });
+                                </script>
+
+
+
                                 <!-- Modal -->
                                 <div class="modal fade" id="DeleteLanguage<?php echo $LangID; ?>" role="dialog">
                                     <div class="modal-dialog" style="padding:100px">
