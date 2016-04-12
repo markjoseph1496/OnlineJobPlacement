@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50616
 File Encoding         : 65001
 
-Date: 2016-04-04 16:54:49
+Date: 2016-04-12 17:13:36
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -23,14 +23,17 @@ CREATE TABLE `achievementstbl` (
   `StudentID` varchar(255) NOT NULL,
   `Achievements` varchar(255) NOT NULL,
   PRIMARY KEY (`AchievementID`)
-) ENGINE=MyISAM AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM AUTO_INCREMENT=8 DEFAULT CHARSET=latin1;
 
 -- ----------------------------
 -- Records of achievementstbl
 -- ----------------------------
 INSERT INTO achievementstbl VALUES ('1', '00820120004', 'dfsdfs');
-INSERT INTO achievementstbl VALUES ('2', '00820120001', 'asdasdas');
-INSERT INTO achievementstbl VALUES ('3', '00820120001', 'asdsadsadas');
+INSERT INTO achievementstbl VALUES ('3', '00820120001', 'good working siya');
+INSERT INTO achievementstbl VALUES ('4', '00820120001', 'sdsds');
+INSERT INTO achievementstbl VALUES ('5', '00820120001', 'add to');
+INSERT INTO achievementstbl VALUES ('6', '00820120001', 'h');
+INSERT INTO achievementstbl VALUES ('7', '00820120001', 'nice');
 
 -- ----------------------------
 -- Table structure for `admineventtbl`
@@ -102,7 +105,7 @@ CREATE TABLE `admintbl` (
 -- ----------------------------
 -- Records of admintbl
 -- ----------------------------
-INSERT INTO admintbl VALUES ('1', 'annabellevillegas', '3a03bc6fa610af857fa08bd8423736a63b9bf25709426fbd102fd419e8fb3a308d0c92bd6470487f780aa6fa2d6b9bfbc1472924b930a34dd4910f65cc8a95d1', 'bc8aeee40548fcbbb8869e7c94cd883d86d0adbc977dd5cf9c56aa9b96b30346d96558ab59c1be5e52fb3b0dc123d59e59814599741bb307bb89f4584353631d', 'Mark Joseph', 'Flaviano', 'Cinco', 'Alumni and Placement Officer II', '109 Samson Road corner Caimito Road, Caloocan City,  Philippines', '2944001', 'Admin');
+INSERT INTO admintbl VALUES ('1', 'annabellevillegas', '3a03bc6fa610af857fa08bd8423736a63b9bf25709426fbd102fd419e8fb3a308d0c92bd6470487f780aa6fa2d6b9bfbc1472924b930a34dd4910f65cc8a95d1', 'bc8aeee40548fcbbb8869e7c94cd883d86d0adbc977dd5cf9c56aa9b96b30346d96558ab59c1be5e52fb3b0dc123d59e59814599741bb307bb89f4584353631d', 'Annabelle', 'O', 'Villegas', 'Alumni and Placement Officer II', '109 Samson Road corner Caimito Road, Caloocan City,  Philippines', '2944001', 'Admin');
 INSERT INTO admintbl VALUES ('13', 'markjoseph14965', '16d917462347d622d56f4269bf74e305dbdc14294e159efe502679eee9df8f49009ca5897ada300ea757d0e0e561187b1d17713e1a561dd6247829155f6c312c', '4a800106f6fa85d4053db33f3f6dce2439efdb6a13d28caae8c2d9694c70084d36b53fed0240277512430e6cf662cdedf0e5533a9e9703aee3b4207ddfdf1f74', 'Mark Joseph', 'Flaviano', 'Cinco', 'OJT Adviser', '2890 A. Pablo St. Karuhatan, Valenzuela City.', '09355585931', 'Adviser');
 
 -- ----------------------------
@@ -133,14 +136,17 @@ CREATE TABLE `certificationtbl` (
   `Certification` varchar(255) NOT NULL,
   `YearTaken` varchar(255) NOT NULL,
   PRIMARY KEY (`CertificationID`)
-) ENGINE=MyISAM AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM AUTO_INCREMENT=8 DEFAULT CHARSET=latin1;
 
 -- ----------------------------
 -- Records of certificationtbl
 -- ----------------------------
 INSERT INTO certificationtbl VALUES ('1', '00820120004', 'sfsdfds', '2015');
-INSERT INTO certificationtbl VALUES ('2', '00820120001', 'Graduate of Computer Science', '2014');
+INSERT INTO certificationtbl VALUES ('7', '00820120001', 'Testing Edit', '2016');
 INSERT INTO certificationtbl VALUES ('3', '00820120001', 'Technician', '2014');
+INSERT INTO certificationtbl VALUES ('4', '00820120001', 'Good Its working now', '2012');
+INSERT INTO certificationtbl VALUES ('5', '00820120001', 'sdf', '2015');
+INSERT INTO certificationtbl VALUES ('6', '00820120001', 'd', '2016');
 
 -- ----------------------------
 -- Table structure for `companyinfotbl`
@@ -385,21 +391,24 @@ INSERT INTO coursetbl VALUES ('10', '2-Year Associate in Computer Technology', '
 INSERT INTO coursetbl VALUES ('16', 'Bachelor of Science in Tourism Management', 'BSTM', 'BSTM');
 
 -- ----------------------------
--- Table structure for `documentstbl`
+-- Table structure for `filestbl`
 -- ----------------------------
-DROP TABLE IF EXISTS `documentstbl`;
-CREATE TABLE `documentstbl` (
+DROP TABLE IF EXISTS `filestbl`;
+CREATE TABLE `filestbl` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `StudentID` varchar(255) NOT NULL,
-  `DocumentName` varchar(255) NOT NULL,
-  `DocumentPath` varchar(255) NOT NULL,
-  `SaltedName` varchar(255) NOT NULL,
+  `Filename` varchar(255) NOT NULL,
+  `EncryptedFile` varchar(255) NOT NULL,
+  `_Time` varchar(255) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=42 DEFAULT CHARSET=latin1;
 
 -- ----------------------------
--- Records of documentstbl
+-- Records of filestbl
 -- ----------------------------
+INSERT INTO filestbl VALUES ('38', '00820120001', 'A5.pdf', 'fileuploads/VVNHaEl2VlIwVmg2RWdkNGFsakxDdz09.pdf', '08:54:25');
+INSERT INTO filestbl VALUES ('40', '00820120001', 'Copy of Graduating Clearance AY 2015-2016 2nd sem.xlsx', 'fileuploads/aU1Ddk1sTE9XNVdXa285MUZ6TjVxTDNTSkx3WW5FU3ZHQ0s0THh6TUF5ZUlVMk1lOWtTOVE1QlpmQWgrdytKSkR2N2tFd0JQUDdDdXdodDhFWG91UkE9PQ==.xlsx', '09:29:05');
+INSERT INTO filestbl VALUES ('41', '00820120001', 'filipino-karaoke-songlist.pdf', 'fileuploads/WDRGRHFFS3Mzbm5mZjVYeldKQmhwRUs3QjNFODF4THZodnFKVnp0Y2JCOD0=.pdf', '09:42:12');
 
 -- ----------------------------
 -- Table structure for `jobfairtbl`
@@ -432,11 +441,12 @@ CREATE TABLE `jobfairtbl` (
   `Participate` varchar(255) NOT NULL,
   `Requirements` varchar(255) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=latin1;
 
 -- ----------------------------
 -- Records of jobfairtbl
 -- ----------------------------
+INSERT INTO jobfairtbl VALUES ('11', 'Teteasd', 'asdasd', 'Makati', 'http://asdasdsa.cc', 'Adasds', 'Asdadsa', 'asdada@cc.cc', '2314123', '', '', '', '', 'Admin / Human Resources', 'Fsdfsdf', '', 'Desktop/Laptop/Notebook Computer- Wireless Broadband- LCD Television', '', '', '', '', '', '', 'on', 'Participation Confirmation- Company Profile');
 
 -- ----------------------------
 -- Table structure for `languagetbl`
@@ -449,13 +459,16 @@ CREATE TABLE `languagetbl` (
   `WrittenProf` varchar(255) NOT NULL,
   `SpokenProf` varchar(255) NOT NULL,
   PRIMARY KEY (`LangID`)
-) ENGINE=MyISAM AUTO_INCREMENT=6 DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM AUTO_INCREMENT=9 DEFAULT CHARSET=latin1;
 
 -- ----------------------------
 -- Records of languagetbl
 -- ----------------------------
 INSERT INTO languagetbl VALUES ('1', '00820120004', 'asdsad', '', '');
-INSERT INTO languagetbl VALUES ('4', '00820120001', 'Filipino', '4', '3');
+INSERT INTO languagetbl VALUES ('4', '00820120001', 'Filipino', '1', '1');
+INSERT INTO languagetbl VALUES ('6', '00820120001', 'd', '5', '5');
+INSERT INTO languagetbl VALUES ('7', '00820120001', 'asdas', '4', '5');
+INSERT INTO languagetbl VALUES ('8', '00820120001', 'testing edit', '4', '5');
 
 -- ----------------------------
 -- Table structure for `listofindustrytbl`
@@ -909,15 +922,15 @@ CREATE TABLE `referencetbl` (
   `Phone` varchar(255) NOT NULL,
   `Email` varchar(255) NOT NULL,
   PRIMARY KEY (`ReferenceID`)
-) ENGINE=MyISAM AUTO_INCREMENT=5 DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM AUTO_INCREMENT=6 DEFAULT CHARSET=latin1;
 
 -- ----------------------------
 -- Records of referencetbl
 -- ----------------------------
 INSERT INTO referencetbl VALUES ('1', '00820120004', 'asdsds', 'sdada', 'adasdsf', 'sfsddfsd', '354565867', 'as4weds@yahoo.com');
-INSERT INTO referencetbl VALUES ('2', '00820120001', 'Tim Joseph Rojas', 'Friend', 'Sykes', 'Top Level Management', '092222222', 'tj@yahoo.com');
-INSERT INTO referencetbl VALUES ('3', '00820120001', 'Aira Jane Cruz', 'Friend', 'Sykes', 'Janitor', '09355585931', 'aira@yahoo.com');
+INSERT INTO referencetbl VALUES ('3', '00820120001', 'Aira Jane Cruzd', 'Friend', 'Sykes', 'Janitor', '09355585931', 'aira@yahoo.com');
 INSERT INTO referencetbl VALUES ('4', '00820120001', 'asdsad', 'sadasdsa', 'dasdas', 'das', '465464', 'asdas@cc.cc');
+INSERT INTO referencetbl VALUES ('5', '00820120001', 'sad', 'asda', 'dasd', 'dsa', '1231235', 'mark@cc.cc');
 
 -- ----------------------------
 -- Table structure for `requesttocompanytbl`
@@ -933,12 +946,11 @@ CREATE TABLE `requesttocompanytbl` (
   `_Date` varchar(255) NOT NULL,
   `Message` varchar(255) NOT NULL,
   PRIMARY KEY (`RID`)
-) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=latin1;
 
 -- ----------------------------
 -- Records of requesttocompanytbl
 -- ----------------------------
-INSERT INTO requesttocompanytbl VALUES ('1', '1', '00820120001', '28', 'Accepted', '2016-03-02', '2016-03-02', '');
 INSERT INTO requesttocompanytbl VALUES ('2', '1', '00820120065', '28', 'Accepted', '2016-03-02', '2016-03-02', '');
 INSERT INTO requesttocompanytbl VALUES ('3', '1', '00820120036', '28', 'Accepted', '2016-03-02', '2016-03-02', '');
 INSERT INTO requesttocompanytbl VALUES ('4', '1', '00820120037', '28', 'Accepted', '2016-03-02', '2016-03-02', '');
@@ -957,7 +969,7 @@ CREATE TABLE `schooltbl` (
   `Graduated` varchar(255) NOT NULL,
   `_Default` varchar(10) NOT NULL,
   PRIMARY KEY (`SchoolID`)
-) ENGINE=MyISAM AUTO_INCREMENT=158 DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM AUTO_INCREMENT=161 DEFAULT CHARSET=latin1;
 
 -- ----------------------------
 -- Records of schooltbl
@@ -1106,10 +1118,11 @@ INSERT INTO schooltbl VALUES ('141', '00820120140', 'STI College Caloocan', 'Bac
 INSERT INTO schooltbl VALUES ('142', '00820120141', 'STI College Caloocan', 'Bachelor\'s/College Degree', 'BSHRM', '05 2015', '1');
 INSERT INTO schooltbl VALUES ('153', '00820120190', 'STI College Caloocan', 'Bachelor\'s/College Degree', 'BSCS', '05 2016', '1');
 INSERT INTO schooltbl VALUES ('144', '00820120164', 'STI College Caloocan', 'Bachelor\'s/College Degree', 'BSCS', '05 2015', '1');
-INSERT INTO schooltbl VALUES ('152', '00820120001', 'Malinta National High School', 'High School Diploma', '', '2008 - 2012', '0');
 INSERT INTO schooltbl VALUES ('154', '00820120191', 'STI College Caloocan', 'Bachelor\'s/College Degree', 'BSCS', '05 2016', '1');
 INSERT INTO schooltbl VALUES ('155', '00820120192', 'STI College Caloocan', 'Bachelor\'s/College Degree', 'BSCS', '05 2016', '1');
 INSERT INTO schooltbl VALUES ('156', '00820120051', 'asdasdasdasd', 'High School Diploma', '', '2008 - 2012', '0');
+INSERT INTO schooltbl VALUES ('158', '00820120001', 'Testing Edit', 'Professional License (Passed Board/Bar/Professional License Exam)', 'BSITDA', '2001 - 2007', '0');
+INSERT INTO schooltbl VALUES ('159', '00820120001', 'dasdas', 'Bachelor\'s/College Degree', 'mmm', '2001 - 1980', '0');
 
 -- ----------------------------
 -- Table structure for `seminartbl`
@@ -1121,14 +1134,16 @@ CREATE TABLE `seminartbl` (
   `Seminar` varchar(255) NOT NULL,
   `YearAttended` varchar(255) NOT NULL,
   PRIMARY KEY (`SeminarID`)
-) ENGINE=MyISAM AUTO_INCREMENT=6 DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM AUTO_INCREMENT=8 DEFAULT CHARSET=latin1;
 
 -- ----------------------------
 -- Records of seminartbl
 -- ----------------------------
-INSERT INTO seminartbl VALUES ('4', '00820120001', 'Professional etiquette', '2013');
+INSERT INTO seminartbl VALUES ('4', '00820120001', 'Professional etiquette Edited', '2016');
 INSERT INTO seminartbl VALUES ('3', '00820120001', 'Achievement Seminar', '2012');
-INSERT INTO seminartbl VALUES ('5', '00820120001', 'Facebook Free Seminar', '2014');
+INSERT INTO seminartbl VALUES ('5', '00820120001', 'Facebook Free Seminar', '2016');
+INSERT INTO seminartbl VALUES ('6', '00820120001', 'sds', '2015');
+INSERT INTO seminartbl VALUES ('7', '00820120001', 'Testing lang', '2005');
 
 -- ----------------------------
 -- Table structure for `specializationtbl`
@@ -1142,7 +1157,7 @@ CREATE TABLE `specializationtbl` (
   `Proficiency` varchar(255) NOT NULL,
   `Skills` varchar(255) NOT NULL,
   PRIMARY KEY (`SID`)
-) ENGINE=MyISAM AUTO_INCREMENT=414 DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM AUTO_INCREMENT=422 DEFAULT CHARSET=latin1;
 
 -- ----------------------------
 -- Records of specializationtbl
@@ -1542,8 +1557,11 @@ INSERT INTO specializationtbl VALUES ('400', '00820120123', 'Arts/Creative/Graph
 INSERT INTO specializationtbl VALUES ('401', '00820120122', 'Arts/Creative/Graphics Design', '1', '', '');
 INSERT INTO specializationtbl VALUES ('402', '00820120122', 'Biotechnology', '2', '', '');
 INSERT INTO specializationtbl VALUES ('403', '00820120122', 'Clerical/Administrative Support', '4', '', '');
-INSERT INTO specializationtbl VALUES ('413', '00820120001', '', '2', '2', 'dd');
-INSERT INTO specializationtbl VALUES ('412', '00820120001', '', '2', '4', 'dfd');
+INSERT INTO specializationtbl VALUES ('421', '00820120001', '', '1', '2', 'q');
+INSERT INTO specializationtbl VALUES ('420', '00820120001', '', '1', '2', 'f');
+INSERT INTO specializationtbl VALUES ('419', '00820120001', '', '1', '1', '5');
+INSERT INTO specializationtbl VALUES ('416', '00820120001', '', '4', '1', 'testing add skill testing');
+INSERT INTO specializationtbl VALUES ('417', '00820120001', '', '2', '1', 'y');
 
 -- ----------------------------
 -- Table structure for `studcontactstbl`
@@ -1960,11 +1978,13 @@ CREATE TABLE `urltbl` (
   `URL` varchar(255) NOT NULL,
   `Caption` varchar(255) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM AUTO_INCREMENT=8 DEFAULT CHARSET=latin1;
 
 -- ----------------------------
 -- Records of urltbl
 -- ----------------------------
+INSERT INTO urltbl VALUES ('6', '00820120001', 'http://asdasdas.cc', 'testing add');
+INSERT INTO urltbl VALUES ('7', '00820120001', 'http://testingedit.com', 'testing edit');
 
 -- ----------------------------
 -- Table structure for `workexperiencetbl`
@@ -1987,7 +2007,7 @@ CREATE TABLE `workexperiencetbl` (
   `PositionTitle` varchar(255) NOT NULL,
   `CompanyAddress` varchar(255) NOT NULL,
   PRIMARY KEY (`WorkID`)
-) ENGINE=InnoDB AUTO_INCREMENT=359 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=368 DEFAULT CHARSET=latin1;
 
 -- ----------------------------
 -- Records of workexperiencetbl
@@ -2342,7 +2362,5 @@ INSERT INTO workexperiencetbl VALUES ('351', '00820120123', 'sdfgsg', 'http://pp
 INSERT INTO workexperiencetbl VALUES ('352', '00820120122', 'awd', 'http://ll.ll', 'Architectural Services / Interior Designing', 'BPO/Call Center', '04', '2007', '06', '2016', '', 'Senior Manager', '40,000 - 45,000', '', '');
 INSERT INTO workexperiencetbl VALUES ('353', '00820120122', 'awdwadwa', 'http://ll.ll', 'Banking / Financial Services', 'Arts/Creative/Graphics Design', '05', '2012', '', 'Current', '', 'Sernior Executive / Supervisor', '40,000 - 45,000', '', '');
 INSERT INTO workexperiencetbl VALUES ('354', '00820120122', 'wadawdwad', 'http://ll.ll', 'Commodities Production / Distribution', 'Biotechnology', '07', '2006', '05', '2012', '', 'Junior Executive', '40,000 - 45,000', '', '');
-INSERT INTO workexperiencetbl VALUES ('355', '00820120001', 'ddddddddd', '', 'Accounting / Audit / Tax Services', 'IT/Computer - Creative Design', '03', '2000', '06', '2003', 'dddddsdd', 'Senior Manager', '40,000 - 45,000', '', '2890 A, Oab');
-INSERT INTO workexperiencetbl VALUES ('356', '00820120001', 'd', '', 'Advertising / Marketing / Promotion / PR', 'Hotel Management/Tourism Services', '02', '1999', '', 'Current', 'asdasas', 'Manager', '40,000 - 45,000', '', 'dddddd');
-INSERT INTO workexperiencetbl VALUES ('357', '00820120001', 'asdsaas', '', 'Commodities Production / Distribution', 'Hotel Management/Tourism Services', '03', '2000', '', 'Current', 'asdsa', 'Junior Executive', '40,000 - 45,000', '', 'asdsad');
-INSERT INTO workexperiencetbl VALUES ('358', '00820120001', 'sdasda', '', 'Advertising / Marketing / Promotion / PR', 'Hotel Management/Tourism Services', '02', '2004', '', 'Current', 'asdas', 'Manager', '40,000 - 45,000', '', 'dasdsa');
+INSERT INTO workexperiencetbl VALUES ('366', '00820120001', 'sdfsdf', '', 'Agricultural / Plantation / Poultry / Fisheries', 'IT/Computer - Hardware', '09', '1998', '', 'Current', 'sdfsdf', 'Senior Manager', '45,000 - 50,000', '', 'sdfsdf');
+INSERT INTO workexperiencetbl VALUES ('367', '00820120001', 'asdasda', '', 'Aerospace / Aviation / Airline', 'Human Resources', '01', '2004', '02', '2013', 'asdsadsa', 'Manager', '25,000 - 30,000', '', 'dsad');
