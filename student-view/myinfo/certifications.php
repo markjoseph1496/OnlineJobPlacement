@@ -279,7 +279,7 @@ if ($References == "ok") {
                                         $From = $value[1];
                                         $Date = $value[2];
                                         ?>
-                                        <li><a tabindex="-1"><b><?php echo $From; ?>: </b><?php echo $Message; ?></a><br></li>
+                                        <li><a tabindex="-1"><b><?php echo $From; ?>: </b><?php echo $Message; ?></a></li>
                                         <?php
                                     }
                                     ?>
