@@ -594,7 +594,7 @@ if ($References == "ok") {
                                         </select>
                                     </div>
                                     <div class="form-group">
-                                        <label>Postal Code</label>
+                                        <label>Postal Code <span>(*)</span></label>
                                         <input type="text" class="form-control" id="PostalCode" name="PostalCode"
                                                value="<?php echo $PostalCode; ?>" maxlength="11">
                                     </div>

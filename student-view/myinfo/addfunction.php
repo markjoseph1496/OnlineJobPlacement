@@ -16,14 +16,11 @@ if (isset($_POST['btnSaveInfo'])) {
 
     $FBLink = "http://www.facebook.com/" . $FBLink;
 
+
     $validation_config = array(
         'FirstName' => array(
             'pattern' => '/^([a-zA-Z]+[ ]*)+$/',
             'errorMsg' => 'Invalid First name'
-        ),
-        'MiddleName' => array(
-            'pattern' => '/^([a-zA-Z]+[ ]*)*$/',
-            'errorMsg' => 'Invalid Middle name'
         ),
         'LastName' => array(
             'pattern' => '/^([a-zA-Z]+[ ]*)+$/',
@@ -40,10 +37,6 @@ if (isset($_POST['btnSaveInfo'])) {
         'CivilStatus' => array(
             'pattern' => '/^(Single|Married|Separated|Widowed)$/',
             'errorMsg' => 'Invalid Civil Status'
-        ),
-        'FBLink' => array(
-            'pattern' => '/^([a-z0-9]+[.]*)+$/i',
-            'errorMsg' => 'Invalid FB Link'
         )
     );
 
@@ -51,12 +44,12 @@ if (isset($_POST['btnSaveInfo'])) {
     $validation_return = $common_functions->validate($_POST, $validation_config);
     if($validation_return['hasError']){
         header("location: personal-info.php?error");
-        //print_r($validation_return);
         die();
     }
 
     if(!$common_functions->date_validator($_POST['Birthdate'])){
-        die('Birthdate supplied is an invalid date.');
+        header("location: personal-info.php?error");
+        die();
     }
 
     GSecureSQL::query(
@@ -128,6 +121,7 @@ if (isset($_GET['btnSaveContactInfo'])) {
     $City = $_GET['City'];
     $PostalCode = $_GET['PostalCode'];
 
+
     $validation_config = array(
         'Email' => array(
             'pattern' => '/^[a-z0-9\.-_]+@[a-z0-9\.-_]+(\.com|\.org|\.net|\.int|\.edu|\.gov|\.mil|\.[a-z]{2})$/i',
@@ -137,6 +131,15 @@ if (isset($_GET['btnSaveContactInfo'])) {
             'pattern' => '/^(0(9(05|06|07|08|09|10|11|12|13|14|15|16|17|18|19|20|21|22|23|24|25|26|27|28|29|30|32|33|34|35|36|37|38|39|42|43|46|47|48|49|75|77|89|94|96|97|98)[0-9]{7}|[0-8][0-9]{5})|[1-9][0-9]{6})$/',
             'errorMsg' => 'Invalid Mobile Number'
         ),
+        'Address' => array(
+            'pattern' => '/^.+$/',
+            'errorMsg' => 'Address cannot be empty'
+        ),
+        'City' => array(
+            'pattern' => $common_functions->get_regex_of_cities(),
+            'errorMsg' => 'Invalid City'
+        )
+/*
         'HomeNumber' => array(
             'pattern' => '/(^(0(9(05|06|07|08|09|10|11|12|13|14|15|16|17|18|19|20|21|22|23|24|25|26|27|28|29|30|32|33|34|35|36|37|38|39|42|43|46|47|48|49|75|77|89|94|96|97|98)[0-9]{7}|[0-8][0-9]{5})|[1-9][0-9]{6})$|^$)/',
             'errorMsg' => 'Invalid Home Number'
@@ -145,28 +148,15 @@ if (isset($_GET['btnSaveContactInfo'])) {
             'pattern' => '/(^(0(9(05|06|07|08|09|10|11|12|13|14|15|16|17|18|19|20|21|22|23|24|25|26|27|28|29|30|32|33|34|35|36|37|38|39|42|43|46|47|48|49|75|77|89|94|96|97|98)[0-9]{7}|[0-8][0-9]{5})|[1-9][0-9]{6})$|^$)/',
             'errorMsg' => 'Invalid Work Number'
         ),
-        'Address' => array(
-            'pattern' => '/^.+$/',
-            'errorMsg' => 'Address cannot be empty'
-        ),
-        'City' => array(
-            'pattern' => $common_functions->get_regex_of_cities(),
-            'errorMsg' => 'Invalid City'
-        ),
-
-        'PostalCode' => array(
-            'pattern' => '/^[0-9]+$/',
-            'errorMsg' => 'Invalid Postal Code'
-        )
-
+ */
     );
 
     $validation_return = $common_functions->validate($_GET, $validation_config);
     if($validation_return['hasError']){
-        header("location: contacts-info.php?error");
-        //echo json_encode($validation_return);
         die();
+        header("location: contacts-info.php?error");
     }
+
     GSecureSQL::query(
         "UPDATE studcontactstbl SET Email = ?, MobileNumber = ?, HomeNumber = ?, WorkNumber = ?, Address = ?, City = ?, PostalCode = ? WHERE StudentID = ?",
         FALSE,
