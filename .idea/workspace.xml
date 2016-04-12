@@ -2,15 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d999e893-f739-4a68-b7b0-034239dfb77e" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/student-view/myinfo/fileuploads/UHNPYWhBQTdTR3dTV21hOWNDSmdpQW5qL2ZyWnYvMUQwbThLQmlJbDZoYz0=.pdf" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/student-view/myinfo/fileuploads/VVNHaEl2VlIwVmg2RWdkNGFsakxDdz09.pdf" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/student-view/myinfo/fileuploads/aU1Ddk1sTE9XNVdXa285MUZ6TjVxTDNTSkx3WW5FU3ZHQ0s0THh6TUF5ZUlVMk1lOWtTOVE1QlpmQWgrdytKSkR2N2tFd0JQUDdDdXdodDhFWG91UkE9PQ==.xlsx" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/encryption.php" afterPath="$PROJECT_DIR$/encryption.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/fileinput.js" afterPath="$PROJECT_DIR$/js/fileinput.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/fileinput.min.js" afterPath="$PROJECT_DIR$/js/fileinput.min.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/student-view/myinfo/delete.php" afterPath="$PROJECT_DIR$/student-view/myinfo/delete.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/student-view/myinfo/myinfoadd.php" afterPath="$PROJECT_DIR$/student-view/myinfo/myinfoadd.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/student-view/myinfo/myinfoedit.php" afterPath="$PROJECT_DIR$/student-view/myinfo/myinfoedit.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/student-view/myinfo/portfolio.php" afterPath="$PROJECT_DIR$/student-view/myinfo/portfolio.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/student-view/myinfo/upload.php" afterPath="$PROJECT_DIR$/student-view/myinfo/upload.php" />
     </list>
     <list id="ee7a7474-4848-4a40-af05-afa3160fd5b4" name="New changelist" comment="" />
     <ignored path="OnlineJobPlacement.iws" />
@@ -510,12 +505,6 @@
       <option name="number" value="Default" />
       <updated>1451894355130</updated>
     </task>
-    <task id="LOCAL-00280" summary="Polishing">
-      <created>1459605477945</created>
-      <option name="number" value="00280" />
-      <option name="project" value="LOCAL" />
-      <updated>1459605477946</updated>
-    </task>
     <task id="LOCAL-00281" summary="Polishing">
       <created>1459605582230</created>
       <option name="number" value="00281" />
@@ -804,15 +793,22 @@
       <option name="project" value="LOCAL" />
       <updated>1460296814809</updated>
     </task>
-    <option name="localTasksCounter" value="329" />
+    <task id="LOCAL-00329" summary="Polishing&#10;">
+      <created>1460446166446</created>
+      <option name="number" value="00329" />
+      <option name="project" value="LOCAL" />
+      <updated>1460446166448</updated>
+    </task>
+    <option name="localTasksCounter" value="330" />
     <servers />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1616" height="876" extended-state="6" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.251875" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.251875" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32985657" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32724902" sideWeight="0.505" order="10" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.31942633" sideWeight="0.495" order="7" side_tool="false" content_ui="tabs" />
@@ -820,7 +816,6 @@
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32985657" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Command Line Tools Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32985657" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
