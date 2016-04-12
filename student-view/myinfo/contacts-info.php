@@ -6,7 +6,7 @@ session_start();
 $common_functions->student_login_check();
 $StudentID = $_SESSION['StudentID']; // to conform with your coding style -- ghabx
 
-$num = rand(0,9999);
+$num = rand(0, 9999);
 $hashStudentID = encrypt_decrypt_plusTime('encrypt', $StudentID, $num);
 
 $student_tbl =
@@ -488,7 +488,6 @@ if ($References == "ok") {
                                         <label>Email <span>(*)</span></label>
                                         <input type="email" class="form-control" id="Email" name="Email"
                                                value="<?php echo $Email; ?>" maxlength="50">
-                                        invalid chuchu
                                     </div>
                                     <div class="form-group">
                                         <label>Mobile Number <span>(*)</span></label>
