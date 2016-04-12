@@ -1,32 +1,18 @@
 <?php
 include('../../connection.php');
-session_start();
 include('../../common-functions.php');
+include('../../encryption.php');
+session_start();
 $common_functions->student_login_check();
 $StudentID = $_SESSION['StudentID']; // to conform with your coding style -- ghabx
 
 $hashStudentID = hash('md4', $StudentID);
 
 $PositionID = $_GET['id'];
+$num = $_GET['n'];
 
-$get_PID =
-    GSecureSQL::query(
-        "SELECT PositionID FROM comppositiontbl",
-        TRUE
-    );
-$c = 0;
-foreach ($get_PID as $value) {
-    $db_PositionID = $value[0];
-    $hashPID = hash('md4', $db_PositionID);
-    if ($hashPID == $PositionID) {
-        $PositionID = $db_PositionID;
-        $c = $c + 1;
-    }
-}
+$PositionID = encrypt_decrypt_plusTime('decrypt', $PositionID, $num);
 
-if ($c == 0) {
-    header('location: jobs.php');
-}
 
 $position_tbl =
     GSecureSQL::query(
@@ -35,6 +21,10 @@ $position_tbl =
         "s",
         $PositionID
     );
+
+if(count($position_tbl) == 0){
+    header("location: jobs.php");
+}
 
 
 $CompanyID = $position_tbl[0][1];

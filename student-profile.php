@@ -4,11 +4,10 @@ include('encryption.php');
 session_start();
 $StudentIDFromSession = $_SESSION['StudentID'];
 $StudentID = $_GET['id'];
+$num = $_GET['n'];
 
-if($StudentID != $StudentIDFromSession){
-    header('Location: student-profile.php?id=' . $StudentIDFromSession);
-    die();
-}
+$StudentID = encrypt_decrypt_plusTime('decrypt', $StudentID, $num);
+
 
 $StudentInfo_tbl =
     GSecureSQL::query(

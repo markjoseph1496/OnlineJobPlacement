@@ -1,7 +1,8 @@
 <?php
 include('../../connection.php');
-session_start();
 include('../../common-functions.php');
+include('../../encryption.php');
+session_start();
 $common_functions->student_login_check();
 $StudentID = $_SESSION['StudentID']; // to conform with your coding style -- ghabx
 
@@ -492,7 +493,8 @@ $MajorCourse = $coursetbl[0][0];
                                     $RelatedCourses = explode(", ", $RelatedCourses);
                                     $RequiredSkills = $value[8];
                                     $RequiredSkills = explode(", ", $RequiredSkills);
-                                    $hashPID = hash('md4',$PositionID);
+                                    $num = rand(0,9999);
+                                    $hashPID = encrypt_decrypt_plusTime("encrypt",$PositionID,$num);
                                     foreach ($RelatedCourses as $value3) {
                                         $rCourse = $value3;
                                         if ($rCourse == $CourseCode) {
@@ -562,7 +564,7 @@ $MajorCourse = $coursetbl[0][0];
                                                                         <li><?php echo $Location; ?></li>
                                                                     </ul>
                                                                     <a class='main-button'
-                                                                       href='view-details.php?id=<?php echo $hashPID; ?>'>View
+                                                                       href='view-details.php?id=<?php echo $hashPID; ?>&n=<?php echo $num; ?>'>View
                                                                         Details <i class='fa fa-angle-right'></i></a>
                                                                 </div>
                                                             </div>
@@ -625,7 +627,8 @@ $MajorCourse = $coursetbl[0][0];
                                     $RelatedCourses = explode(", ", $RelatedCourses);
                                     $RequiredSkills = $value[8];
                                     $RequiredSkills = explode(", ", $RequiredSkills);
-                                    $hashPID = hash('md4', $PositionID);
+                                    $num = rand(0,9999);
+                                    $hashPID = encrypt_decrypt_plusTime("encrypt",$PositionID,$num);
                                     foreach ($RelatedCourses as $value3) {
                                         $rCourse = $value3;
                                         if ($rCourse == $CourseCode) {
@@ -695,7 +698,7 @@ $MajorCourse = $coursetbl[0][0];
                                                                         <li><?php echo $Location; ?></li>
                                                                     </ul>
                                                                     <a class='main-button'
-                                                                       href='view-details.php?id=<?php echo $hashPID; ?>'>View
+                                                                       href='view-details.php?id=<?php echo $hashPID; ?>&n=<?php echo $num;?>'>View
                                                                         Details <i class='fa fa-angle-right'></i></a>
                                                                 </div>
                                                             </div>
