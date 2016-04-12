@@ -620,6 +620,34 @@ if ($References == "ok") {
                                 $Course = $value[4];
                                 $Graduated = $value[5];
 
+                                $_month = substr($Graduated, 0,2);
+
+                                if($_month == 01){
+                                    $Graduated = "January" . substr($Graduated, 2);
+                                }elseif($_month == 02){
+                                    $Graduated = "February" . substr($Graduated, 2);
+                                }elseif($_month == 03){
+                                    $Graduated = "March" . substr($Graduated, 2);
+                                }elseif($_month == 04){
+                                    $Graduated = "April" . substr($Graduated, 2);
+                                }elseif($_month == 05){
+                                    $Graduated = "May" . substr($Graduated, 2);
+                                }elseif($_month == 06){
+                                    $Graduated = "June" . substr($Graduated, 2);
+                                }elseif($_month == 07){
+                                    $Graduated = "July" . substr($Graduated, 2);
+                                }elseif($_month == 08){
+                                    $Graduated = "August" . substr($Graduated, 2);
+                                }elseif($_month == 09){
+                                    $Graduated = "September" . substr($Graduated, 2);
+                                }elseif($_month == 10){
+                                    $Graduated = "October" . substr($Graduated, 2);
+                                }elseif($_month == 11){
+                                    $Graduated = "November" . substr($Graduated, 2);
+                                }elseif($_month == 12){
+                                    $Graduated = "December" . substr($Graduated, 2);
+                                }
+
                                 $course_tbl =
                                     GSecureSQL::query(
                                         "SELECT * FROM coursetbl WHERE CourseID = ?",

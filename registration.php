@@ -219,16 +219,6 @@ include('connection.php');
                 <h3><strong>Educational Background:</strong></h3><br>
                 <div class="row">
                     <div class="col-md-6">
-                        <label>Educational Attainment <span>(*)</span></label>
-                        <div class="form-group">
-                            <select id="EducAttain" name="EducAttain" class="form-control"
-                                    style="width:100%; height:34px;">
-                                <option value="" selected="selected">- Please select one -</option>
-                                <option value="Bachelor's/College Degree">Bachelor's/College Degree</option>
-                            </select>
-                        </div>
-                    </div>
-                    <div class="col-md-6">
                         <label>Course <span>(*)</span></label>
                         <div class="form-group">
                             <select id="Course" name="Course" class="form-control" style="width:100%; height:34px;">
@@ -259,18 +249,10 @@ include('connection.php');
                             <select id="GraduatedMonth" name="GraduatedMonth" class="form-control"
                                     style="width:100%; height:34px;">
                                 <option value="">- Month -</option>
-                                <option value="01">January</option>
-                                <option value="02">February</option>
                                 <option value="03">March</option>
                                 <option value="04">April</option>
                                 <option value="05">May</option>
-                                <option value="06">June</option>
-                                <option value="07">July</option>
-                                <option value="08">August</option>
-                                <option value="09">September</option>
                                 <option value="10">October</option>
-                                <option value="11">November</option>
-                                <option value="12">December</option>
                             </select>
                         </div>
                     </div>
@@ -384,7 +366,7 @@ include('connection.php');
                             message: "First name is required."
                         },
                         regexp: {
-                            regexp: /^[a-zA-Z]+$/,
+                            regexp: /^[a-zA-Z ]+$/,
                             message: "Invalid name."
                         }
                     }
@@ -395,7 +377,7 @@ include('connection.php');
                             message: "First name is required."
                         },
                         regexp: {
-                            regexp: /^[a-zA-Z]+$/,
+                            regexp: /^[a-zA-Z ]+$/,
                             message: "Invalid name."
                         }
                     }
@@ -468,13 +450,6 @@ include('connection.php');
                         }
                     }
                 },
-                EducAttain: {
-                    validators: {
-                        notEmpty: {
-                            message: "Educational Attainment is required."
-                        }
-                    }
-                },
                 Course: {
                     validators: {
                         notEmpty: {
@@ -485,14 +460,14 @@ include('connection.php');
                 GraduatedMonth: {
                     validators: {
                         notEmpty: {
-                            message: "Month graduated is required."
+                            message: "Month is required."
                         }
                     }
                 },
                 GraduatedYear: {
                     validators: {
                         notEmpty: {
-                            message: "Year graduated is required."
+                            message: "Year is required."
                         }
                     }
                 }
