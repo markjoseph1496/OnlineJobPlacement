@@ -6,13 +6,17 @@ session_start();
 $common_functions->student_login_check();
 $StudentID = $_SESSION['StudentID']; // to conform with your coding style -- ghabx
 
-$hashStudentID = hash('md4', $StudentID);
-
 $PositionID = $_GET['id'];
 $num = $_GET['n'];
 
 $PositionID = encrypt_decrypt_plusTime('decrypt', $PositionID, $num);
 
+$checklink = substr($num, 0,11);
+
+if($checklink != $StudentID){
+    header("location: jobs.php");
+    die();
+}
 
 $position_tbl =
     GSecureSQL::query(

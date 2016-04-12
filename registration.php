@@ -219,16 +219,6 @@ include('connection.php');
                 <h3><strong>Educational Background:</strong></h3><br>
                 <div class="row">
                     <div class="col-md-6">
-                        <label>Educational Attainment <span>(*)</span></label>
-                        <div class="form-group">
-                            <select id="EducAttain" name="EducAttain" class="form-control"
-                                    style="width:100%; height:34px;">
-                                <option value="" selected="selected">- Please select one -</option>
-                                <option value="Bachelor's/College Degree">Bachelor's/College Degree</option>
-                            </select>
-                        </div>
-                    </div>
-                    <div class="col-md-6">
                         <label>Course <span>(*)</span></label>
                         <div class="form-group">
                             <select id="Course" name="Course" class="form-control" style="width:100%; height:34px;">
@@ -259,18 +249,10 @@ include('connection.php');
                             <select id="GraduatedMonth" name="GraduatedMonth" class="form-control"
                                     style="width:100%; height:34px;">
                                 <option value="">- Month -</option>
-                                <option value="01">January</option>
-                                <option value="02">February</option>
                                 <option value="03">March</option>
                                 <option value="04">April</option>
                                 <option value="05">May</option>
-                                <option value="06">June</option>
-                                <option value="07">July</option>
-                                <option value="08">August</option>
-                                <option value="09">September</option>
                                 <option value="10">October</option>
-                                <option value="11">November</option>
-                                <option value="12">December</option>
                             </select>
                         </div>
                     </div>
@@ -383,22 +365,20 @@ include('connection.php');
                         notEmpty: {
                             message: "First name is required."
                         },
-                        stringLength: {
-                            min: 3,
-                            max: 15,
-                            message: "First name must be 3-15 characters long."
+                        regexp: {
+                            regexp: /^[a-zA-Z ]+$/,
+                            message: "Invalid name."
                         }
                     }
                 },
                 LastName: {
                     validators: {
                         notEmpty: {
-                            message: "Last name is required."
+                            message: "First name is required."
                         },
-                        stringLength: {
-                            min: 1,
-                            max: 15,
-                            message: "Last name must be 15 characters long."
+                        regexp: {
+                            regexp: /^[a-zA-Z ]+$/,
+                            message: "Invalid name."
                         }
                     }
                 },
@@ -412,11 +392,11 @@ include('connection.php');
                 MobileNumber: {
                     validators: {
                         notEmpty: {
-                            message: "Mobile number is required."
+                            message: "Mobile Number is required."
                         },
-                        stringLength: {
-                            min: 11,
-                            message: "Mobile number must be 11 characters long."
+                        regexp: {
+                            regexp: /^(0(9(05|06|07|08|09|10|11|12|13|14|15|16|17|18|19|20|21|22|23|24|25|26|27|28|29|30|32|33|34|35|36|37|38|39|42|43|46|47|48|49|75|77|89|94|96|97|98)[0-9]{7}|[0-8][0-9]{5})|[1-9][0-9]{6})$/,
+                            message: "Invalid mobile number"
                         }
                     }
                 },
@@ -424,11 +404,6 @@ include('connection.php');
                     validators: {
                         notEmpty: {
                             message: "Email address is required."
-                        },
-                        stringLength: {
-                            min: 6,
-                            max: 35,
-                            message: "Email address must be 6-35 characters long."
                         }
                     }
                 },
@@ -475,13 +450,6 @@ include('connection.php');
                         }
                     }
                 },
-                EducAttain: {
-                    validators: {
-                        notEmpty: {
-                            message: "Educational Attainment is required."
-                        }
-                    }
-                },
                 Course: {
                     validators: {
                         notEmpty: {
@@ -492,14 +460,14 @@ include('connection.php');
                 GraduatedMonth: {
                     validators: {
                         notEmpty: {
-                            message: "Month graduated is required."
+                            message: "Month is required."
                         }
                     }
                 },
                 GraduatedYear: {
                     validators: {
                         notEmpty: {
-                            message: "Year graduated is required."
+                            message: "Year is required."
                         }
                     }
                 }
