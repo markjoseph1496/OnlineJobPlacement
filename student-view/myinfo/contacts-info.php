@@ -486,8 +486,7 @@ if ($References == "ok") {
                                 <div class="call-action call-action-boxed call-action-style1 clearfix">
                                     <div class="form-group">
                                         <label>Email <span>(*)</span></label>
-                                        <input type="email" class="form-control" id="Email" name="Email"
-                                               value="<?php echo $Email; ?>" maxlength="50">
+                                        <input type="email" class="form-control" id="Email" name="Email" value="<?php echo $Email; ?>" maxlength="50">
                                     </div>
                                     <div class="form-group">
                                         <label>Mobile Number <span>(*)</span></label>
