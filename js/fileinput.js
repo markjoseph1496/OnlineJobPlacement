@@ -2618,7 +2618,7 @@
         resizePreference: 'width',
         resizeQuality: 0.92,
         resizeDefaultImageType: 'image/jpeg',
-        maxFileSize: 0,
+        maxFileSize: 10000,
         minFileCount: 0,
         maxFileCount: 0,
         validateInitialCount: false,

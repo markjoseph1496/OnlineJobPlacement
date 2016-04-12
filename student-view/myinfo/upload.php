@@ -1,9 +1,9 @@
 <?php
 include('../../connection.php');
-session_start();
 include('../../common-functions.php');
+session_start();
 $common_functions->student_login_check();
-$StudentID = $_SESSION['StudentID']; // to conform with your coding style -- ghabx
+$StudentID = $_SESSION['StudentID'];
 
 $fileToUpload = basename($_FILES["ProfilePicture"]["name"]);
 $target_dir = "ProfileImages/";

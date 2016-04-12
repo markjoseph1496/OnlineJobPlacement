@@ -1,7 +1,8 @@
 <?php
 include('../../connection.php');
-session_start();
 include('../../common-functions.php');
+include('../../encryption.php');
+session_start();
 $common_functions->student_login_check();
 $StudentID = $_SESSION['StudentID']; // to conform with your coding style -- ghabx
 
@@ -24,18 +25,18 @@ if (isset($_POST['School'])) {
     $a = $a || $Attainment == "Professional License (Passed Board/Bar/Professional License Exam)";
     $a = $a || $Attainment == "Doctorate Degree";
 
-    if(!$a){
-        //header("location: education.php?error");
+    if (!$a) {
+        header("location: education.php?error");
         die();
     }
 
-    if($Attainment != "High School Diploma"){
+    if ($Attainment != "High School Diploma") {
         $course_valid = GSecureSQL::query(
             "SELECT COUNT(*) AS `Count` FROM `coursetbl` WHERE `CourseCode` = ?", TRUE, "s", $Course
         );
 
-        if($course_valid[0][0] == 0 && $Course != "other"){
-            //header("location: education.php?error");
+        if ($course_valid[0][0] == 0 && $Course != "other") {
+            header("location: education.php?error");
             die();
         }
     }
@@ -49,17 +50,17 @@ if (isset($_POST['School'])) {
         $b = $b || $_POST['GraduatedYearTo'] == $date;
     }
 
-    if(!$a || !$b){
+    if (!$a || !$b) {
         header("location: education.php?error");
         die();
     }
 
-    if(strlen($_POST['School']) === 0){
+    if (strlen($_POST['School']) === 0) {
         header("location: education.php?error");
         die();
     }
 
-    if($Course=="other"){
+    if ($Course == "other") {
         $Course = $txtCourse;
     }
 
@@ -91,7 +92,7 @@ if (isset($_POST['Seminar'])) {
     $Seminar = ucwords($_POST['Seminar']);
     $YearAttended = $_POST['YearAttended'];
 
-    if(strlen($Seminar) === 0){
+    if (strlen($Seminar) === 0) {
         header("location: add-seminar.php?error");
         die();
     }
@@ -103,7 +104,7 @@ if (isset($_POST['Seminar'])) {
         $a = $a || $YearAttended == $date;
     }
 
-    if(!$a){
+    if (!$a) {
         header("location: education.php?error");
         die();
     }
@@ -133,19 +134,19 @@ if (isset($_POST['Certification'])) {
     $Certification = ucwords($_POST['Certification']);
     $YearTaken = $_POST['YearTaken'];
 
-    if(strlen($Certification) === 0){
+    if (strlen($Certification) === 0) {
         header("Location: certifications.php?error");
         die();
     }
 
     $date = Date("Y") + 1;
     $a = FALSE;
-    while($date != 1935){
+    while ($date != 1935) {
         $date--;
         $a = $a || $date == $YearTaken;
     }
 
-    if(!$a){
+    if (!$a) {
         header("Location: certifications.php?error");
         die();
     }
@@ -174,7 +175,7 @@ if (isset($_POST['Certification'])) {
 if (isset($_POST['Achievement'])) {
     $Achievement = ucwords($_POST['Achievement']);
 
-    if(strlen($Achievement) === 0){
+    if (strlen($Achievement) === 0) {
         header('Location: achievements.php?error');
         die();
     }
@@ -205,48 +206,48 @@ if (isset($_POST['Name'])) {
     $Phone = $_POST['Phone'];
     $Email = $_POST['Email'];
 
-/*
-    $validation_config = array(
-        'Email' => array(
-            'pattern' => '/^[a-z0-9\.-_]+@[a-z0-9\.-_]+(\.com|\.org|\.net|\.int|\.edu|\.gov|\.mil|\.[a-z]{2})$/i',
-            'errorMsg' => 'Invalid Email'
-        ),
-        'MobileNumber' => array(
-            'pattern' => '/^(0(9(05|06|07|08|09|10|11|12|13|14|15|16|17|18|19|20|21|22|23|24|25|26|27|28|29|30|32|33|34|35|36|37|38|39|42|43|46|47|48|49|75|77|89|94|96|97|98)[0-9]{7}|[0-8][0-9]{5})|[1-9][0-9]{6})$/',
-            'errorMsg' => 'Invalid Mobile Number'
-        ),
-        'HomeNumber' => array(
-            'pattern' => '/(^(0(9(05|06|07|08|09|10|11|12|13|14|15|16|17|18|19|20|21|22|23|24|25|26|27|28|29|30|32|33|34|35|36|37|38|39|42|43|46|47|48|49|75|77|89|94|96|97|98)[0-9]{7}|[0-8][0-9]{5})|[1-9][0-9]{6})$|^$)/',
-            'errorMsg' => 'Invalid Home Number'
-        ),
-        'WorkNumber' => array(
-            'pattern' => '/(^(0(9(05|06|07|08|09|10|11|12|13|14|15|16|17|18|19|20|21|22|23|24|25|26|27|28|29|30|32|33|34|35|36|37|38|39|42|43|46|47|48|49|75|77|89|94|96|97|98)[0-9]{7}|[0-8][0-9]{5})|[1-9][0-9]{6})$|^$)/',
-            'errorMsg' => 'Invalid Work Number'
-        ),
-        'Address' => array(
-            'pattern' => '/^.+$/',
-            'errorMsg' => 'Address cannot be empty'
-        ),
-        'City' => array(
-            'pattern' => $common_functions->get_regex_of_cities(),
-            'errorMsg' => 'Invalid City'
-        ),
+    /*
+        $validation_config = array(
+            'Email' => array(
+                'pattern' => '/^[a-z0-9\.-_]+@[a-z0-9\.-_]+(\.com|\.org|\.net|\.int|\.edu|\.gov|\.mil|\.[a-z]{2})$/i',
+                'errorMsg' => 'Invalid Email'
+            ),
+            'MobileNumber' => array(
+                'pattern' => '/^(0(9(05|06|07|08|09|10|11|12|13|14|15|16|17|18|19|20|21|22|23|24|25|26|27|28|29|30|32|33|34|35|36|37|38|39|42|43|46|47|48|49|75|77|89|94|96|97|98)[0-9]{7}|[0-8][0-9]{5})|[1-9][0-9]{6})$/',
+                'errorMsg' => 'Invalid Mobile Number'
+            ),
+            'HomeNumber' => array(
+                'pattern' => '/(^(0(9(05|06|07|08|09|10|11|12|13|14|15|16|17|18|19|20|21|22|23|24|25|26|27|28|29|30|32|33|34|35|36|37|38|39|42|43|46|47|48|49|75|77|89|94|96|97|98)[0-9]{7}|[0-8][0-9]{5})|[1-9][0-9]{6})$|^$)/',
+                'errorMsg' => 'Invalid Home Number'
+            ),
+            'WorkNumber' => array(
+                'pattern' => '/(^(0(9(05|06|07|08|09|10|11|12|13|14|15|16|17|18|19|20|21|22|23|24|25|26|27|28|29|30|32|33|34|35|36|37|38|39|42|43|46|47|48|49|75|77|89|94|96|97|98)[0-9]{7}|[0-8][0-9]{5})|[1-9][0-9]{6})$|^$)/',
+                'errorMsg' => 'Invalid Work Number'
+            ),
+            'Address' => array(
+                'pattern' => '/^.+$/',
+                'errorMsg' => 'Address cannot be empty'
+            ),
+            'City' => array(
+                'pattern' => $common_functions->get_regex_of_cities(),
+                'errorMsg' => 'Invalid City'
+            ),
 
-        'PostalCode' => array(
-            'pattern' => '/^[0-9]+$/',
-            'errorMsg' => 'Invalid Postal Code'
-        )
+            'PostalCode' => array(
+                'pattern' => '/^[0-9]+$/',
+                'errorMsg' => 'Invalid Postal Code'
+            )
 
-    );
+        );
 
-    $validation_return = $common_functions->validate($_GET, $validation_config);
-    if($validation_return['hasError']){
-        print_r($validation_return);
-        die();
-        header("location: references.php?error");
+        $validation_return = $common_functions->validate($_GET, $validation_config);
+        if($validation_return['hasError']){
+            print_r($validation_return);
+            die();
+            header("location: references.php?error");
 
-    }
-*/
+        }
+    */
     GSecureSQL::query(
         "INSERT INTO referencetbl(StudentID, Name, Relationship, Company, Position, Phone, Email) values (?,?,?,?,?,?,?)",
         FALSE,
@@ -276,18 +277,18 @@ if (isset($_POST['Skill'])) {
     $Skill = $_POST['Skill'];
 
     $a = is_numeric($YearsOfExperience) && $YearsOfExperience >= 0;
-    if(!$a){
+    if (!$a) {
         header('Location: skills-and-languages.php?error');
         die();
     }
 
-    if(strlen($Skill) === 0){
+    if (strlen($Skill) === 0) {
         header('Location: skills-and-languages.php?error');
         die();
     }
 
     $a = $Proficiency >= 1 && $Proficiency <= 5;
-    if(!$a){
+    if (!$a) {
         header('Location: skills-and-languages.php?error');
         die();
     }
@@ -318,19 +319,19 @@ if (isset($_POST['Language'])) {
     $WrittenProficiency = $_POST['WrittenProficiency'];
     $SpokenProficiency = $_POST['SpokenProficiency'];
 
-    if(strlen($Language) === 0){
+    if (strlen($Language) === 0) {
         header('Location: skills-and-languages.php?error');
         die();
     }
 
     $a = $WrittenProficiency >= 1 && $WrittenProficiency <= 5;
-    if(!$a){
+    if (!$a) {
         header('Location: skills-and-languages.php?error');
         die();
     }
 
     $a = $SpokenProficiency >= 1 && $SpokenProficiency <= 5;
-    if(!$a){
+    if (!$a) {
         header('Location: skills-and-languages.php?error');
         die();
     }
@@ -368,9 +369,9 @@ if (isset($_POST['CompanyName'])) {
     $MonthlySalary = $_POST['MonthlySalary'];
     $NatureOfWork = $_POST['NatureOfWork'];
 
-    if(isset($_POST['Duration'])){
+    if (isset($_POST['Duration'])) {
         $Duration = $_POST['Duration'];
-        if($Duration == "on"){
+        if ($Duration == "on") {
             $DateToYear = "Current";
         }
     }
@@ -407,13 +408,14 @@ if (isset($_POST['CompanyName'])) {
     );
 
     $validation_return = $common_functions->validate($_POST, $validation_config);
-    if($validation_return['hasError']){
-        
+    if ($validation_return['hasError']) {
+        header("location: work.php?error");
     }
 
-    if($DateToYear !== 'Current'){
-        if($_POST['ToYear'] === $_POST['FromYear']){
-            if($_POST['FromMonth'] > $_POST['ToMonth']){
+    if ($DateToYear !== 'Current') {
+        if ($_POST['ToYear'] === $_POST['FromYear']) {
+            if ($_POST['FromMonth'] > $_POST['ToMonth']) {
+                header("location: work.php?error");
                 die('Invalid month.');
             }
         }
@@ -446,4 +448,125 @@ if (isset($_POST['CompanyName'])) {
 
     header("location: work.php?saved");
 
+}
+if (isset($_POST['txtURL'])) {
+    $URL = $_POST['txtURL'];
+    $Caption = $_POST['txtCaption'];
+
+
+    $validation_config = array(
+        'CompanyName' => array(
+            'pattern' => '/^.+$/',
+            'errorMsg' => 'Company name is required'
+        ),
+        'CompanyAddress' => array(
+            'pattern' => '/(^$|^(http|https):\/\/.+\..+$)/i',
+            'errorMsg' => 'Company address is required'
+        ),
+    );
+
+    $validation_return = $common_functions->validate($_POST, $validation_config);
+    if ($validation_return['hasError']) {
+        header("location: portfolio.php?error");
+    }
+
+    GSecureSQL::query(
+        "INSERT INTO urltbl (StudentID, URL, Caption) VALUES (?,?,?)",
+        TRUE,
+        "sss",
+        $StudentID,
+        $URL,
+        $Caption
+    );
+
+    header("location: portfolio.php?saved");
+}
+
+if(isset($_POST['uploadtest'])){
+    //start upload
+    $Time = date('H:i:s');
+    $fileToUpload = basename($_FILES["Document"]["name"]);
+    $ext = pathinfo($_FILES["Document"]["name"]);
+    $ext = $ext['extension'];
+    $fileToUploadenc = encrypt_decrypt_plusTime("encrypt", $fileToUpload,$Time);
+    $target_dir = "fileuploads/";
+    $target_file = $target_dir . $fileToUploadenc . "." . $ext;
+    $uploadOk = 1;
+    $imageFileType = pathinfo($fileToUpload, PATHINFO_EXTENSION);
+
+    $a = $imageFileType == "doc";
+    $a = $a || $imageFileType == "docx";
+    $a = $a || $imageFileType == "xls";
+    $a = $a || $imageFileType == "xlsx";
+    $a = $a || $imageFileType == "ppt";
+    $a = $a || $imageFileType == "pptx";
+    $a = $a || $imageFileType == "txt";
+    $a = $a || $imageFileType == "pdf";
+
+    if(!$a){
+        header("location: portfolio.php?error");
+        $uploadOk = 0;
+        die();
+
+    }
+
+    if ($uploadOk == 0) {
+        header("location: portfolio.php?error");
+        die();
+
+    } else {
+        if (move_uploaded_file($_FILES["Document"]["tmp_name"], $target_file)) {
+
+            GSecureSQL::query(
+                "INSERT INTO filestbl (StudentID, Filename, EncryptedFile, _Time) VALUES (?,?,?,?)",
+                FALSE,
+                "ssss",
+                $StudentID,
+                $fileToUpload,
+                $target_file,
+                $Time
+            );
+
+            header("location: portfolio.php?saved");
+            die();
+
+        } else {
+            header("location: portfolio.php?error");
+            die();
+        }
+    }
+    // end upload
+}
+if(isset($_GET['DocID'])){
+    $DocID = $_GET['DocID'];
+    $DocID = encrypt_decrypt("decrypt", $DocID);
+
+    $qryfile =
+        GSecureSQL::query(
+            "SELECT Filename, EncryptedFile FROM filestbl WHERE id = ?",
+            TRUE,
+            "s",
+            $DocID
+        );
+    $filename = $qryfile[0][0]; //filename
+    $filepath = $qryfile[0][1];
+    $name = substr($filepath, 12); //encrypted filename
+
+    echo $filename . "<br>";
+    echo $name. "<br>";
+    echo $filepath. "<br>";
+
+
+    header('Content-Description: File Transfer');
+    header('Content-Type: application/force-download');
+    header("Content-Disposition: attachment; filename=\"" . basename($filename) . "\";");
+    header('Content-Transfer-Encoding: binary');
+    header('Expires: 0');
+    header('Cache-Control: must-revalidate');
+    header('Pragma: public');
+    header('Content-Length: ' . filesize($filepath));
+    ob_clean();
+    flush();
+    readfile($filepath);
+    exit;
 }

@@ -17,8 +17,8 @@ if (isset($_POST['EditSchool'])) {
         $txtCourse = $_POST['EdittxtCourse'];
     }
 
-
     $SchoolID = encrypt_decrypt("decrypt", $SchoolID);
+
     $a = $Attainment == "High School Diploma";
     $a = $a || $Attainment == "Technical Vocational/Certificate";
     $a = $a || $Attainment == "Bachelor's/College Degree";
@@ -386,4 +386,40 @@ if (isset($_POST['EditCompanyName'])) {
     );
 
     header("location: work.php?saved");
+}
+if (isset($_POST['URLID'])) {
+    $id = $_POST['URLID'];
+    $URL = $_POST['EdittxtURL'];
+    $Caption = $_POST['EdittxtCaption'];
+
+    $id = encrypt_decrypt("decrypt", $id);
+
+    $validation_config = array(
+        'EdittxtCaption' => array(
+            'pattern' => '/^.+$/',
+            'errorMsg' => 'caption'
+        ),
+        'EdittxtURL' => array(
+            'pattern' => '/(^$|^(http|https):\/\/.+\..+$)/i',
+            'errorMsg' => 'url'
+        ),
+    );
+
+    $validation_return = $common_functions->validate($_POST, $validation_config);
+    if ($validation_return['hasError']) {
+        header("location: portfolio.php?error");
+        die();
+    }
+
+    GSecureSQL::query(
+        "UPDATE urltbl SET URL = ?, Caption = ? WHERE StudentID = ? AND id = ?",
+        FALSE,
+        "ssss",
+        $URL,
+        $Caption,
+        $StudentID,
+        $id
+    );
+
+    header("location: portfolio.php?saved");
 }

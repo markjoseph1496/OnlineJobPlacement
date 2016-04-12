@@ -6,19 +6,6 @@ session_start();
 $common_functions->student_login_check();
 $StudentID = $_SESSION['StudentID']; // to conform with your coding style -- ghabx
 
-if (isset($_GET['delete_URLID'])) {
-    $Z = $_GET['delete_URLID'];
-
-    GSecureSQL::query(
-        "DELETE FROM urltbl WHERE URLID=?",
-        FALSE,
-        "s",
-        $Z
-    );
-    header("location: portfolio.php?id=URLDeleted");
-
-}
-
 if (isset($_GET['delete_SchoolID'])) {
     $Z = $_GET['delete_SchoolID'];
 
@@ -111,13 +98,26 @@ if (isset($_GET['delete_LangID'])) {
 }
 if (isset($_GET['Delete_DocID'])){
     $id = $_GET['Delete_DocID'];
+    $id = encrypt_decrypt("decrypt", $id);
+
+    $filename =
+        GSecureSQL::query(
+        "SELECT EncryptedFile FROM filestbl WHERE id = ?",
+            TRUE,
+            "s",
+            $id
+    );
+    $Filename = $filename[0][0];
 
     GSecureSQL::query(
-        "DELETE FROM documentstbl WHERE id = ?",
+        "DELETE FROM filestbl WHERE id = ?",
         FALSE,
         "s",
         $id
     );
+
+    unlink($Filename);
+    header("location: portfolio.php?saved");
 }
 
 //Delete Work
@@ -137,3 +137,19 @@ if (isset($_GET['Delete_WorkID'])) {
 
 }
 //end
+
+if(isset($_GET['delete_URLID'])){
+    $DeleteID = $_GET['delete_URLID'];
+
+    $DeleteID = encrypt_decrypt('decrypt', $DeleteID);
+
+    GSecureSQL::query(
+        "DELETE FROM urltbl WHERE id = ? AND StudentID = ?",
+        FALSE,
+        "ss",
+        $DeleteID,
+        $StudentID
+    );
+
+    header("location: portfolio.php?saved");
+}
