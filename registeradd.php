@@ -65,6 +65,7 @@ if (isset($_POST['FirstName'])) {
     }
 
     */
+
     $salt = hash('sha512', mt_rand(0, PHP_INT_MAX) . mt_rand(0, PHP_INT_MAX) . mt_rand(0, PHP_INT_MAX));
     $Password = hash('sha512', $Password . $salt);
     $EducAttain = "Bachelor's/College Degree";
@@ -81,7 +82,7 @@ if (isset($_POST['FirstName'])) {
         $Password,
         $salt,
         $Course
-        );
+    );
 
     GSecureSQL::query(
         "INSERT INTO schooltbl (StudentID,School,Attainment,Course,Graduated,_Default) values (?,'STI College Caloocan',?,?,?,'1')",
@@ -91,7 +92,7 @@ if (isset($_POST['FirstName'])) {
         $EducAttain,
         $Course,
         $yeargraduated
-        );
+    );
 
     GSecureSQL::query(
         "INSERT INTO studcontactstbl (StudentID,Email,MobileNumber,City) values (?,?,?,?)",
@@ -101,7 +102,7 @@ if (isset($_POST['FirstName'])) {
         $Email,
         $MobileNumber,
         $City
-        );
+    );
 
     GSecureSQL::query(
         "INSERT INTO progresstbl (StudentID) values (?)",
@@ -110,7 +111,14 @@ if (isset($_POST['FirstName'])) {
         $StudentID
     );
 
+    GSecureSQL::query(
+        "INSERT INTO studnotificationtbl (StudentID, Message, _From, Seen) VALUES (?, 'No new notification.', 'OJPMS', '1')",
+        FALSE,
+        "s",
+        $StudentID
+    );
+
     header("location: login-student.php");
 
-    }
+}
 ?>

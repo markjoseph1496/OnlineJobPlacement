@@ -570,3 +570,58 @@ if(isset($_GET['DocID'])){
     readfile($filepath);
     exit;
 }
+
+if(isset($_POST['uploadphoto'])){
+    //start upload
+    $Caption = $_POST['PhotoCaption'];
+
+    $Time = date('H:i:s');
+    $fileToUpload = basename($_FILES["_Photo"]["name"]);
+    $ext = pathinfo($_FILES["_Photo"]["name"]);
+    $ext = $ext['extension'];
+    $fileToUploadenc = encrypt_decrypt_plusTime("encrypt", $fileToUpload,$Time);
+    $target_dir = "imageuploads/";
+    $target_file = $target_dir . $fileToUploadenc . "." . $ext;
+    $uploadOk = 1;
+    $imageFileType = pathinfo($fileToUpload, PATHINFO_EXTENSION);
+
+    $a = $imageFileType == "jpg";
+    $a = $a || $imageFileType == "jpeg";
+    $a = $a || $imageFileType == "png";
+
+    if(!$a){
+        die();
+        header("location: portfolio.php?error");
+        $uploadOk = 0;
+
+
+    }
+
+    if ($uploadOk == 0) {
+        header("location: portfolio.php?error");
+        die();
+
+    } else {
+        if (move_uploaded_file($_FILES["_Photo"]["tmp_name"], $target_file)) {
+
+            GSecureSQL::query(
+                "INSERT INTO phototbl (StudentID, Filename, EncryptedName, Caption, _Time) VALUES (?,?,?,?,?)",
+                FALSE,
+                "sssss",
+                $StudentID,
+                $fileToUpload,
+                $target_file,
+                $Caption,
+                $Time
+            );
+
+            header("location: portfolio.php?saved");
+            die();
+
+        } else {
+            header("location: portfolio.php?error");
+            die();
+        }
+    }
+    // end upload
+}

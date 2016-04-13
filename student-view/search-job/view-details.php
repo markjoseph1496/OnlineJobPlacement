@@ -160,12 +160,39 @@ $MajorCourse = $coursetbl[0][0];
     <!-- Notification -->
     <link rel="stylesheet" href="../../css/notif.css"/>
 
+    <?php
+    $Countnotification =
+        GSecureSQL::query(
+            "SELECT COUNT(*) FROM studnotificationtbl WHERE StudentID = ? AND Seen = 0",
+            TRUE,
+            "s",
+            $StudentID
+        );
+
+    $Notif_Count = $Countnotification[0][0];
+    if ($Notif_Count == 0) {
+        ?>
+        <script type="text/javascript">
+            $(window).load(function () {
+                $("#notification_count").hide();
+            });
+        </script>
+        <?php
+    }
+    ?>
     <script type="text/javascript">
         $(document).ready(function () {
             $("#notificationLink").click(function () {
                 $("#notificationContainer").fadeToggle(300);
                 $("#notification_count").fadeOut("slow");
                 return false;
+            });
+
+            $("#notif").click(function () {
+                $.ajax({
+                    type: "POST",
+                    url: 'function_notif.php'
+                });
             });
 
             //Document Click
@@ -176,7 +203,6 @@ $MajorCourse = $coursetbl[0][0];
             $("#notificationContainer").click(function () {
                 return false
             });
-
         });
     </script>
 </head>
@@ -202,27 +228,38 @@ $MajorCourse = $coursetbl[0][0];
                         <!-- Start Social Links -->
                         <ul class="nav navbar-nav navbar-right">
                             <li class="dropdown icon-border" id="notificationLink">
-                                <span id="notification_count">3</span>
-                                <a href="#" class="bell itl-tooltip" data-placement="bottom" data-toggle="dropdown"><i
-                                        class="fa fa-bell"></i></a>
+                                <span id="notification_count"><?php echo $Notif_Count; ?></span>
+                                <a id="notif" href="#" class="bell itl-tooltip" data-placement="bottom" data-toggle="dropdown"><i class="fa fa-bell"></i></a>
                                 <ul id="notificationContainer" class="dropdown-menu dropdown-menu-inverse">
                                     <li class="dropdown-header"><label>Notification</label></li>
-                                    <li class="disabled"><a href="#" tabindex="-1">No new notification.</a></li>
-                                    <li><a href="#" tabindex="-1">The administrator accepted your request.</a></li>
+                                    <?php
+                                    $NotificationContent =
+                                        GSecureSQL::query(
+                                            "SELECT Message,_From,_Date FROM studnotificationtbl WHERE StudentID = ? ORDER BY Time ASC LIMIT 10",
+                                            TRUE,
+                                            "s",
+                                            $StudentID
+                                        );
+                                    foreach ($NotificationContent as $value) {
+                                        $Message = $value[0];
+                                        $From = $value[1];
+                                        $Date = $value[2];
+                                        ?>
+                                        <li><a tabindex="-1"><b><?php echo $From; ?>: </b><?php echo $Message; ?></a></li>
+                                        <?php
+                                    }
+                                    ?>
+
                                     <li class="divider"></li>
-                                    <li><a href="../notification/notification.php" tabindex="-1">See All</a></li>
+                                    <li><a href="wala pa to e" tabindex="-1">See All</a></li>
                                 </ul>
                             </li>
                             <li class="dropdown">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown"><b class="fa fa-user"></b>
                                     Welcome, <b><?php echo $StudentName; ?> </b><b class="caret"></b></a>
                                 <ul class="dropdown-menu">
-                                    <li><a href="../../student-profile.php?id=<?php echo $hashStudentID; ?>">Profile <b class="fa fa-user"
-                                                                                       style="float:right;"></b></a>
-                                    </li>
-                                    <li><a href="../settings/settings.php">Settings <b class="fa fa-cog"
-                                                                                       style="float:right;"></b></a>
-                                    </li>
+                                    <!-- <li><a href="../../student-profile.php?id=<?php echo $hashStudentID; ?>">Profile <b class="fa fa-user" style="float:right;"></b></a></li> -->
+                                    <li><a href="../settings/settings.php">Settings <b class="fa fa-cog" style="float:right;"></b></a></li>
                                     <li class="divider"></li>
                                     <li><a href="#" data-target='#Logout' data-toggle='modal'>Sign Out <b
                                                 class="fa fa-sign-out" style="float:right;"></b></a></li>

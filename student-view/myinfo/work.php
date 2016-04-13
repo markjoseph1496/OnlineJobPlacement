@@ -6,7 +6,7 @@ include('../../encryption.php');
 $common_functions->student_login_check();
 $StudentID = $_SESSION['StudentID']; // to conform with your coding style -- ghabx
 
-$num = rand(0,9999);
+$num = rand(0, 9999);
 $hashStudentID = encrypt_decrypt_plusTime('encrypt', $StudentID, $num);
 
 $infoquery =
@@ -296,9 +296,9 @@ if ($References == "ok") {
                                 </ul>
                             </li>
                             <li class="dropdown">
-                                <a href="#" class="dropdown-toggle" data-toggle="dropdown"><b class="fa fa-user"></b>Welcome, <b><?php echo $StudentName; ?> </b><b class="caret"></b></a>
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown"><b class="fa fa-user"></b> Welcome, <b><?php echo $StudentName; ?> </b><b class="caret"></b></a>
                                 <ul class="dropdown-menu">
-                                    <li><a href="../../student-profile.php?id=<?php echo $hashStudentID; ?>&n=<?php echo $num; ?>">Profile <b class="fa fa-user" style="float:right;"></b></a></li>
+                                    <!-- <li><a href="../../student-profile.php?id=<?php echo $hashStudentID; ?>&n=<?php echo $num; ?>">Profile <b class="fa fa-user" style="float:right;"></b></a></li> -->
                                     <li><a href="../settings/settings.php">Settings <b class="fa fa-cog" style="float:right;"></b></a></li>
                                     <li class="divider"></li>
                                     <li><a href="#" data-target='#Logout' data-toggle='modal'>Sign Out <b class="fa fa-sign-out" style="float:right;"></b></a></li>
@@ -515,103 +515,67 @@ if ($References == "ok") {
             </div>
 
             <!-- ADD Work Ex Modal -->
-            <div class="modal fade" id="AddWork" role="dialog">
-                <div class="modal-dialog modal-lg" style="padding:160px;width:100%;">
-                    <!-- Modal content-->
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <button type="button" class="close" data-dismiss="modal">&times;</button>
-                            <h4 class="modal-title">Add Work Experience</h4>
-                        </div>
-                        <div class="modal-body">
-                            <div class="row">
-                                <div class="col-md-6">
-                                    <div class="form-group">
-                                        <label>Company Name <span>(*)</span></label>
-                                        <input type="text" class="form-control" id="CompanyName" name="CompanyName">
-                                    </div>
-                                </div>
-                                <div class="col-md-6">
-                                    <div class="form-group">
-                                        <label>Address</label>
-                                        <input type="text" class="form-control" id="CompanyAddress" name="CompanyAddress">
-                                    </div>
-                                </div>
+            <form id="FormAdd" name="FormAdd" autocomplete="off" action="myinfoadd.php" method="POST">
+                <div class="modal fade" id="AddWork" role="dialog">
+                    <div class="modal-dialog modal-lg" style="padding:160px;width:100%;">
+                        <!-- Modal content-->
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                <h4 class="modal-title">Add Work Experience</h4>
                             </div>
-                            <div class="row">
-                                <div class="col-md-6">
-                                    <div class="form-group">
-                                        <label>Industry <span>(*)</span></label>
-                                        <select id="Industry" name="Industry" class="form-control"
-                                                style="width:100%; height:34px;">
-                                            <option value="">- Please select one -</option>
-                                            <?php
-                                            $industry_tbl =
-                                                GSecureSQL::query(
-                                                    "SELECT * FROM listofindustrytbl",
-                                                    TRUE
-                                                );
-                                            foreach ($industry_tbl as $value) {
-                                                $IndustryID = $value[0];
-                                                $Industry = $value[1];
-                                                ?>
-                                                <option value="<?php echo $Industry; ?>"><?php echo $Industry; ?></option>
+                            <div class="modal-body">
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label>Company Name <span>(*)</span></label>
+                                            <input type="text" class="form-control" id="CompanyName" name="CompanyName">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label>Address</label>
+                                            <input type="text" class="form-control" id="CompanyAddress" name="CompanyAddress">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label>Industry <span>(*)</span></label>
+                                            <select id="Industry" name="Industry" class="form-control"
+                                                    style="width:100%; height:34px;">
+                                                <option value="">- Please select one -</option>
                                                 <?php
-                                            }
-                                            ?>
-                                        </select>
+                                                $industry_tbl =
+                                                    GSecureSQL::query(
+                                                        "SELECT * FROM listofindustrytbl",
+                                                        TRUE
+                                                    );
+                                                foreach ($industry_tbl as $value) {
+                                                    $IndustryID = $value[0];
+                                                    $Industry = $value[1];
+                                                    ?>
+                                                    <option value="<?php echo $Industry; ?>"><?php echo $Industry; ?></option>
+                                                    <?php
+                                                }
+                                                ?>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label>Duration</label><br>
+                                            <label><input type="checkbox" name="Duration" id="Duration" checked="checked"> Currently Work Here</label>
+                                        </div>
                                     </div>
                                 </div>
-                                <div class="col-md-6">
-                                    <div class="form-group">
-                                        <label>Duration</label><br>
-                                        <label><input type="checkbox" name="Duration" id="Duration" checked="checked"> Currently Work Here</label>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-md-3">
-                                    <div class="form-group">
-                                        <label>From <span>(*)</span></label>
-                                        <select id="FromMonth" name="FromMonth" class="form-control"
-                                                style="width:100%; height:34px;">
-                                            <option value="">- Select Month -</option>
-                                            <option value="01">January</option>
-                                            <option value="02">February</option>
-                                            <option value="03">March</option>
-                                            <option value="04">April</option>
-                                            <option value="05">May</option>
-                                            <option value="06">June</option>
-                                            <option value="07">July</option>
-                                            <option value="08">August</option>
-                                            <option value="09">September</option>
-                                            <option value="10">October</option>
-                                            <option value="11">November</option>
-                                            <option value="12">December</option>
-                                        </select>
-                                    </div>
-                                </div>
-                                <div class="col-md-3">
-                                    <div class="form-group">
-                                        <label>&nbsp;</label>
-                                        <select id="FromYear" name="FromYear" class="form-control"
-                                                style="width:100%; height:34px;">
-                                            <option value="">- Select Year -</option>
-                                            <?php
-                                            $date = Date("Y") + 1;
-                                            while ($date != 1935) {
-                                                $date--;
-                                                echo "<option value=\"$date\"> $date</option>";
-                                            }
-                                            ?>
-                                        </select>
-                                    </div>
-                                </div>
-                                <div id="ToDuration">
+                                <div class="row">
                                     <div class="col-md-3">
                                         <div class="form-group">
-                                            <label>To <span>(*)</span></label>
-                                            <select id="ToMonth" name="ToMonth" class="form-control" style="width:100%; height:34px;">
+                                            <label>From <span>(*)</span></label>
+                                            <select id="FromMonth" name="FromMonth" class="form-control"
+                                                    style="width:100%; height:34px;">
                                                 <option value="">- Select Month -</option>
                                                 <option value="01">January</option>
                                                 <option value="02">February</option>
@@ -631,340 +595,152 @@ if ($References == "ok") {
                                     <div class="col-md-3">
                                         <div class="form-group">
                                             <label>&nbsp;</label>
-                                            <select id="ToYear" name="ToYear" class="form-control"
+                                            <select id="FromYear" name="FromYear" class="form-control"
                                                     style="width:100%; height:34px;">
                                                 <option value="">- Select Year -</option>
                                                 <?php
                                                 $date = Date("Y") + 1;
                                                 while ($date != 1935) {
                                                     $date--;
-                                                    echo "<option value='$date'> $date</option>";
+                                                    echo "<option value=\"$date\"> $date</option>";
+                                                }
+                                                ?>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div id="ToDuration">
+                                        <div class="col-md-3">
+                                            <div class="form-group">
+                                                <label>To <span>(*)</span></label>
+                                                <select id="ToMonth" name="ToMonth" class="form-control" style="width:100%; height:34px;">
+                                                    <option value="">- Select Month -</option>
+                                                    <option value="01">January</option>
+                                                    <option value="02">February</option>
+                                                    <option value="03">March</option>
+                                                    <option value="04">April</option>
+                                                    <option value="05">May</option>
+                                                    <option value="06">June</option>
+                                                    <option value="07">July</option>
+                                                    <option value="08">August</option>
+                                                    <option value="09">September</option>
+                                                    <option value="10">October</option>
+                                                    <option value="11">November</option>
+                                                    <option value="12">December</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-3">
+                                            <div class="form-group">
+                                                <label>&nbsp;</label>
+                                                <select id="ToYear" name="ToYear" class="form-control"
+                                                        style="width:100%; height:34px;">
+                                                    <option value="">- Select Year -</option>
+                                                    <?php
+                                                    $date = Date("Y") + 1;
+                                                    while ($date != 1935) {
+                                                        $date--;
+                                                        echo "<option value='$date'> $date</option>";
+                                                    }
+                                                    ?>
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label>Position Level <span>(*)</span></label>
+                                            <select id="PositionLevel" name="PositionLevel" class="form-control">
+                                                <option value="">- Select Position Level -</option>
+                                                <?php
+                                                $position_tbl =
+                                                    GSecureSQL::query(
+                                                        "SELECT * FROM listofpositiontbl",
+                                                        TRUE
+                                                    );
+                                                foreach ($position_tbl as $value) {
+                                                    $PositionID = $value[0];
+                                                    $Position = $value[1];
+                                                    ?>
+                                                    <option value="<?php echo $Position; ?>"><?php echo $Position; ?></option>
+                                                    <?php
                                                 }
                                                 ?>
                                             </select>
                                         </div>
                                     </div>
                                 </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-md-6">
-                                    <div class="form-group">
-                                        <label>Position Level <span>(*)</span></label>
-                                        <select id="PositionLevel" name="PositionLevel" class="form-control">
-                                            <option value="">- Select Position Level -</option>
-                                            <?php
-                                            $position_tbl =
-                                                GSecureSQL::query(
-                                                    "SELECT * FROM listofpositiontbl",
-                                                    TRUE
-                                                );
-                                            foreach ($position_tbl as $value) {
-                                                $PositionID = $value[0];
-                                                $Position = $value[1];
-                                                ?>
-                                                <option value="<?php echo $Position; ?>"><?php echo $Position; ?></option>
-                                                <?php
-                                            }
-                                            ?>
-                                        </select>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-md-6">
-                                    <div class="form-group">
-                                        <label>Specialization <span>(*)</span></label>
-                                        <select id="WorkSpecialization" name="WorkSpecialization" class="form-control"
-                                                style="width:100%; height:34px;">
-                                            <option value="">- Select Specialization -</option>
-                                            <?php
-                                            $specialization_tbl =
-                                                GSecureSQL::query(
-                                                    "SELECT * FROM listofspecializationtbl",
-                                                    TRUE
-                                                );
-                                            $count = 0;
-                                            foreach ($specialization_tbl as $value) {
-                                                $SpecializationID = $value[0];
-                                                $Specialization = $value[1];
-                                                $count++;
-                                                ?>
-                                                <option
-                                                    value="<?php echo $Specialization; ?>"><?php echo $Specialization; ?></option>
-                                                <?php
-                                            }
-                                            ?>
-                                        </select>
-                                    </div>
-                                </div>
-                                <div class="col-md-6">
-                                    <div class="form-group">
-                                        <label>Monthly Salary</label><br>
-                                        <select id="MonthlySalary" name="MonthlySalary" class="form-control"
-                                                style="width:100%; height:34px;">
-                                            <option value="">- Select Monthly Salary -</option>
-                                            <?php
-                                            $salaryrange_tbl =
-                                                GSecureSQL::query(
-                                                    "SELECT * FROM listofsalaryrangetbl",
-                                                    TRUE
-                                                );
-                                            foreach ($salaryrange_tbl as $value) {
-                                                $SalaryID = $value[0];
-                                                $Salary = $value[1];
-                                                ?>
-                                                <option value="<?php echo $SalaryID; ?>"><?php echo $Salary; ?></option>
-                                                <?php
-                                            }
-                                            ?>
-                                        </select>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-md-12">
-                                    <div class="form-group">
-                                        <label>Nature of Work</label><br>
-                                        <textarea class="form-control" id="NatureOfWork" name="NatureOfWork"
-                                                  rows="5" maxlength="150"></textarea>
-                                        <div id="textarea_feedback"></div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="modal-footer">
-                                <button type="submit" class="btn-system btn-large">Add</button>
-                                <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- EDIT Work Ex Modal -->
-            <div class="modal fade" id="EditWork" role="dialog">
-                <div class="modal-dialog modal-lg" style="padding:160px;width:100%;">
-                    <!-- Modal content-->
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <button type="button" class="close" data-dismiss="modal">&times;</button>
-                            <h4 class="modal-title">Edit Work Experience</h4>
-                        </div>
-                        <div class="modal-body">
-                            <div class="row">
-                                <div class="col-md-6">
-                                    <div class="form-group">
-                                        <label>Company Name <span>(*)</span></label>
-                                        <input type="text" class="form-control" id="CompanyName" name="CompanyName">
-                                    </div>
-                                </div>
-                                <div class="col-md-6">
-                                    <div class="form-group">
-                                        <label>Address</label>
-                                        <input type="text" class="form-control" id="CompanyAddress" name="CompanyAddress">
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-md-6">
-                                    <div class="form-group">
-                                        <label>Industry <span>(*)</span></label>
-                                        <select id="Industry" name="Industry" class="form-control"
-                                                style="width:100%; height:34px;">
-                                            <option value="">- Please select one -</option>
-                                            <?php
-                                            $industry_tbl =
-                                                GSecureSQL::query(
-                                                    "SELECT * FROM listofindustrytbl",
-                                                    TRUE
-                                                );
-                                            foreach ($industry_tbl as $value) {
-                                                $IndustryID = $value[0];
-                                                $Industry = $value[1];
-                                                ?>
-                                                <option value="<?php echo $Industry; ?>"><?php echo $Industry; ?></option>
-                                                <?php
-                                            }
-                                            ?>
-                                        </select>
-                                    </div>
-                                </div>
-                                <div class="col-md-6">
-                                    <div class="form-group">
-                                        <label>Duration</label><br>
-                                        <label><input type="checkbox" name="Duration" id="Duration" checked="checked"> Currently Work Here</label>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-md-3">
-                                    <div class="form-group">
-                                        <label>From <span>(*)</span></label>
-                                        <select id="FromMonth" name="FromMonth" class="form-control"
-                                                style="width:100%; height:34px;">
-                                            <option value="">- Select Month -</option>
-                                            <option value="01">January</option>
-                                            <option value="02">February</option>
-                                            <option value="03">March</option>
-                                            <option value="04">April</option>
-                                            <option value="05">May</option>
-                                            <option value="06">June</option>
-                                            <option value="07">July</option>
-                                            <option value="08">August</option>
-                                            <option value="09">September</option>
-                                            <option value="10">October</option>
-                                            <option value="11">November</option>
-                                            <option value="12">December</option>
-                                        </select>
-                                    </div>
-                                </div>
-                                <div class="col-md-3">
-                                    <div class="form-group">
-                                        <label>&nbsp;</label>
-                                        <select id="FromYear" name="FromYear" class="form-control"
-                                                style="width:100%; height:34px;">
-                                            <option value="">- Select Year -</option>
-                                            <?php
-                                            $date = Date("Y") + 1;
-                                            while ($date != 1935) {
-                                                $date--;
-                                                echo "<option value=\"$date\"> $date</option>";
-                                            }
-                                            ?>
-                                        </select>
-                                    </div>
-                                </div>
-                                <div id="ToDuration">
-                                    <div class="col-md-3">
+                                <div class="row">
+                                    <div class="col-md-6">
                                         <div class="form-group">
-                                            <label>To <span>(*)</span></label>
-                                            <select id="ToMonth" name="ToMonth" class="form-control" style="width:100%; height:34px;">
-                                                <option value="">- Select Month -</option>
-                                                <option value="01">January</option>
-                                                <option value="02">February</option>
-                                                <option value="03">March</option>
-                                                <option value="04">April</option>
-                                                <option value="05">May</option>
-                                                <option value="06">June</option>
-                                                <option value="07">July</option>
-                                                <option value="08">August</option>
-                                                <option value="09">September</option>
-                                                <option value="10">October</option>
-                                                <option value="11">November</option>
-                                                <option value="12">December</option>
-                                            </select>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-3">
-                                        <div class="form-group">
-                                            <label>&nbsp;</label>
-                                            <select id="ToYear" name="ToYear" class="form-control"
+                                            <label>Specialization <span>(*)</span></label>
+                                            <select id="WorkSpecialization" name="WorkSpecialization" class="form-control"
                                                     style="width:100%; height:34px;">
-                                                <option value="">- Select Year -</option>
+                                                <option value="">- Select Specialization -</option>
                                                 <?php
-                                                $date = Date("Y") + 1;
-                                                while ($date != 1935) {
-                                                    $date--;
-                                                    echo "<option value='$date'> $date</option>";
+                                                $specialization_tbl =
+                                                    GSecureSQL::query(
+                                                        "SELECT * FROM listofspecializationtbl",
+                                                        TRUE
+                                                    );
+                                                $count = 0;
+                                                foreach ($specialization_tbl as $value) {
+                                                    $SpecializationID = $value[0];
+                                                    $Specialization = $value[1];
+                                                    $count++;
+                                                    ?>
+                                                    <option
+                                                        value="<?php echo $Specialization; ?>"><?php echo $Specialization; ?></option>
+                                                    <?php
+                                                }
+                                                ?>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label>Monthly Salary</label><br>
+                                            <select id="MonthlySalary" name="MonthlySalary" class="form-control"
+                                                    style="width:100%; height:34px;">
+                                                <option value="">- Select Monthly Salary -</option>
+                                                <?php
+                                                $salaryrange_tbl =
+                                                    GSecureSQL::query(
+                                                        "SELECT * FROM listofsalaryrangetbl",
+                                                        TRUE
+                                                    );
+                                                foreach ($salaryrange_tbl as $value) {
+                                                    $SalaryID = $value[0];
+                                                    $Salary = $value[1];
+                                                    ?>
+                                                    <option value="<?php echo $Salary; ?>"><?php echo $Salary; ?></option>
+                                                    <?php
                                                 }
                                                 ?>
                                             </select>
                                         </div>
                                     </div>
                                 </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-md-6">
-                                    <div class="form-group">
-                                        <label>Position Level <span>(*)</span></label>
-                                        <select id="PositionLevel" name="PositionLevel" class="form-control">
-                                            <option value="">- Select Position Level -</option>
-                                            <?php
-                                            $position_tbl =
-                                                GSecureSQL::query(
-                                                    "SELECT * FROM listofpositiontbl",
-                                                    TRUE
-                                                );
-                                            foreach ($position_tbl as $value) {
-                                                $PositionID = $value[0];
-                                                $Position = $value[1];
-                                                ?>
-                                                <option value="<?php echo $Position; ?>"><?php echo $Position; ?></option>
-                                                <?php
-                                            }
-                                            ?>
-                                        </select>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-md-6">
-                                    <div class="form-group">
-                                        <label>Specialization <span>(*)</span></label>
-                                        <select id="WorkSpecialization" name="WorkSpecialization" class="form-control"
-                                                style="width:100%; height:34px;">
-                                            <option value="">- Select Specialization -</option>
-                                            <?php
-                                            $specialization_tbl =
-                                                GSecureSQL::query(
-                                                    "SELECT * FROM listofspecializationtbl",
-                                                    TRUE
-                                                );
-                                            $count = 0;
-                                            foreach ($specialization_tbl as $value) {
-                                                $SpecializationID = $value[0];
-                                                $Specialization = $value[1];
-                                                $count++;
-                                                ?>
-                                                <option
-                                                    value="<?php echo $Specialization; ?>"><?php echo $Specialization; ?></option>
-                                                <?php
-                                            }
-                                            ?>
-                                        </select>
-                                    </div>
-                                </div>
-                                <div class="col-md-6">
-                                    <div class="form-group">
-                                        <label>Monthly Salary</label><br>
-                                        <select id="MonthlySalary" name="MonthlySalary" class="form-control"
-                                                style="width:100%; height:34px;">
-                                            <option value="">- Select Monthly Salary -</option>
-                                            <?php
-                                            $salaryrange_tbl =
-                                                GSecureSQL::query(
-                                                    "SELECT * FROM listofsalaryrangetbl",
-                                                    TRUE
-                                                );
-                                            foreach ($salaryrange_tbl as $value) {
-                                                $SalaryID = $value[0];
-                                                $Salary = $value[1];
-                                                ?>
-                                                <option value="<?php echo $SalaryID; ?>"><?php echo $Salary; ?></option>
-                                                <?php
-                                            }
-                                            ?>
-                                        </select>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-md-12">
-                                    <div class="form-group">
-                                        <label>Nature of Work</label><br>
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <div class="form-group">
+                                            <label>Nature of Work</label><br>
                                         <textarea class="form-control" id="NatureOfWork" name="NatureOfWork"
                                                   rows="5" maxlength="150"></textarea>
-                                        <div id="textarea_feedback"></div>
+                                            <div id="textarea_feedback"></div>
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
-                            <div class="modal-footer">
-                                <button type="submit" class="btn-system btn-large">Save</button>
-                                <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+                                <div class="modal-footer">
+                                    <button type="submit" class="btn-system btn-large">Add</button>
+                                    <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
+            </form>
 
             <div class="hr2" style="margin-top:35px;"></div>
             <table class="table segment table-hover">
@@ -1097,19 +873,355 @@ if ($References == "ok") {
                         <td><?php echo $WorkSpecialization; ?></td>
                         <td><?php echo $Duration; ?></td>
                         <td class="text-center">
+                            <!--
                             <button class="btn btn-default" data-toggle="modal"
                                     data-target="#EditWork<?php echo $WorkID; ?>">
                                 <i class="fa fa-pencil-square-o fa-1x"></i>
                             </button>
+                            -->
                             <button class="btn btn-danger" data-toggle="modal"
                                     data-target="#DeleteWork<?php echo $WorkID; ?>">
                                 <i class="fa fa-trash fa-1x"></i>
                             </button>
                         </td>
                     </tr>
+
+                    <!-- EDIT Work Ex Modal -->
+                    <form id="FormEdit<?php echo $WorkID; ?>" name="FormEdit<?php echo $WorkID; ?>" autocomplete="off" action="myinfoedit.php" method="POST">
+                        <div class="modal fade" id="EditWork<?php echo $WorkID; ?>" role="dialog">
+                            <div class="modal-dialog modal-lg" style="padding:160px;width:100%;">
+                                <!-- Modal content-->
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                        <h4 class="modal-title">Edit Work Experience</h4>
+                                    </div>
+                                    <div class="modal-body">
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <div class="form-group">
+                                                    <label>Company Name <span>(*)</span></label>
+                                                    <input type="text" class="form-control" id="EditCompanyName" name="EditCompanyName" value="<?php echo $CompanyName; ?>">
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <div class="form-group">
+                                                    <label>Address</label>
+                                                    <input type="text" class="form-control" id="EditCompanyAddress" name="EditCompanyAddress" value="<?php echo $CompanyAddress; ?>">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <div class="form-group">
+                                                    <label>Industry <span>(*)</span></label>
+                                                    <select id="EditIndustry" name="EditIndustry" class="form-control"
+                                                            style="width:100%; height:34px;">
+                                                        <option value="">- Please select one -</option>
+                                                        <?php
+                                                        $industry_tbl =
+                                                            GSecureSQL::query(
+                                                                "SELECT * FROM listofindustrytbl",
+                                                                TRUE
+                                                            );
+                                                        foreach ($industry_tbl as $value0) {
+                                                            $IndustryID = $value0[0];
+                                                            $Industry = $value0[1];
+                                                            ?>
+                                                            <option <?php if($Industry == $CompanyIndustry) echo "selected='selected'"; ?> value="<?php echo $Industry; ?>"><?php echo $Industry; ?></option>
+                                                            <?php
+                                                        }
+                                                        ?>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <div class="form-group">
+                                                    <label>Duration</label><br>
+                                                    <label><input type="checkbox" name="EditDuration" id="EditDuration" <?php if($DateToYear == "Current"){echo "checked='checked'"; } ?>> Currently Work Here</label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-3">
+                                                <div class="form-group">
+                                                    <label>From <span>(*)</span></label>
+                                                    <select id="EditFromMonth" name="EditFromMonth" class="form-control"
+                                                            style="width:100%; height:34px;">
+                                                        <option value="">- Select Month -</option>
+                                                        <option <?php if($FromMonth == "01") echo "selected='selected'"; ?> value="01">January</option>
+                                                        <option <?php if($FromMonth == "02") echo "selected='selected'"; ?> value="02">February</option>
+                                                        <option <?php if($FromMonth == "03") echo "selected='selected'"; ?> value="03">March</option>
+                                                        <option <?php if($FromMonth == "04") echo "selected='selected'"; ?> value="04">April</option>
+                                                        <option <?php if($FromMonth == "05") echo "selected='selected'"; ?> value="05">May</option>
+                                                        <option <?php if($FromMonth == "06") echo "selected='selected'"; ?> value="06">June</option>
+                                                        <option <?php if($FromMonth == "07") echo "selected='selected'"; ?> value="07">July</option>
+                                                        <option <?php if($FromMonth == "08") echo "selected='selected'"; ?> value="08">August</option>
+                                                        <option <?php if($FromMonth == "09") echo "selected='selected'"; ?> value="09">September</option>
+                                                        <option <?php if($FromMonth == "10") echo "selected='selected'"; ?> value="10">October</option>
+                                                        <option <?php if($FromMonth == "11") echo "selected='selected'"; ?> value="11">November</option>
+                                                        <option <?php if($FromMonth == "12") echo "selected='selected'"; ?> value="12">December</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-3">
+                                                <div class="form-group">
+                                                    <label>&nbsp;</label>
+                                                    <select id="EditFromYear" name="EditFromYear" class="form-control"
+                                                            style="width:100%; height:34px;">
+                                                        <option value="">- Select Year -</option>
+                                                        <?php
+                                                        $date = Date("Y") + 1;
+                                                        while ($date != 1935) {
+                                                            $date--;
+                                                            ?>
+                                                            <option <?php if ($DateFromYear == $date) echo "selected='selected'"; ?> value="<?php echo $date; ?>"> <?php echo $date; ?></option>
+                                                            <?php
+                                                        }
+                                                        ?>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                            <div id="EditToDuration">
+                                                <div class="col-md-3">
+                                                    <div class="form-group">
+                                                        <label>To <span>(*)</span></label>
+                                                        <select id="EditToMonth" name="EditToMonth" class="form-control" style="width:100%; height:34px;">
+                                                            <option value="">- Select Month -</option>
+                                                            <option <?php if($ToMonth == "01") echo "selected='selected'"; ?> value="01">January</option>
+                                                            <option <?php if($ToMonth == "02") echo "selected='selected'"; ?> value="02">February</option>
+                                                            <option <?php if($ToMonth == "03") echo "selected='selected'"; ?> value="03">March</option>
+                                                            <option <?php if($ToMonth == "04") echo "selected='selected'"; ?> value="04">April</option>
+                                                            <option <?php if($ToMonth == "05") echo "selected='selected'"; ?> value="05">May</option>
+                                                            <option <?php if($ToMonth == "06") echo "selected='selected'"; ?> value="06">June</option>
+                                                            <option <?php if($ToMonth == "07") echo "selected='selected'"; ?> value="07">July</option>
+                                                            <option <?php if($ToMonth == "08") echo "selected='selected'"; ?> value="08">August</option>
+                                                            <option <?php if($ToMonth == "09") echo "selected='selected'"; ?> value="09">September</option>
+                                                            <option <?php if($ToMonth == "10") echo "selected='selected'"; ?> value="10">October</option>
+                                                            <option <?php if($ToMonth == "11") echo "selected='selected'"; ?> value="11">November</option>
+                                                            <option <?php if($ToMonth == "12") echo "selected='selected'"; ?> value="12">December</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-3">
+                                                    <div class="form-group">
+                                                        <label>&nbsp;</label>
+                                                        <select id="EditToYear" name="EditToYear" class="form-control"
+                                                                style="width:100%; height:34px;">
+                                                            <option value="">- Select Year -</option>
+                                                            <?php
+                                                            $date = Date("Y") + 1;
+                                                            while ($date != 1935) {
+                                                                $date--;
+                                                                ?>
+                                                                <option <?php if ($DateToYear == $date) echo "selected='selected'"; ?> value="<?php echo $date; ?>"> <?php echo $date; ?></option>
+                                                                <?php
+                                                            }
+                                                            ?>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <div class="form-group">
+                                                    <label>Position Level <span>(*)</span></label>
+                                                    <select id="EditPositionLevel" name="EditPositionLevel" class="form-control">
+                                                        <option value="">- Select Position Level -</option>
+                                                        <?php
+                                                        $position_tbl =
+                                                            GSecureSQL::query(
+                                                                "SELECT * FROM listofpositiontbl",
+                                                                TRUE
+                                                            );
+                                                        foreach ($position_tbl as $value1) {
+                                                            $PositionID = $value1[0];
+                                                            $Position = $value1[1];
+                                                            ?>
+                                                            <option <?php if($PositionLevel == $Position) echo "selected='selected'"; ?> value="<?php echo $Position; ?>"><?php echo $Position; ?></option>
+                                                            <?php
+                                                        }
+                                                        ?>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <div class="form-group">
+                                                    <label>Specialization <span>(*)</span></label>
+                                                    <select id="EditWorkSpecialization" name="EditWorkSpecialization" class="form-control"
+                                                            style="width:100%; height:34px;">
+                                                        <option value="">- Select Specialization -</option>
+                                                        <?php
+                                                        $specialization_tbl =
+                                                            GSecureSQL::query(
+                                                                "SELECT * FROM listofspecializationtbl",
+                                                                TRUE
+                                                            );
+                                                        $count = 0;
+                                                        foreach ($specialization_tbl as $value2) {
+                                                            $SpecializationID = $value2[0];
+                                                            $Specialization = $value2[1];
+                                                            $count++;
+                                                            ?>
+                                                            <option <?php if($WorkSpecialization == $Specialization) echo "selected='selected'";  ?> value="<?php echo $Specialization; ?>"><?php echo $Specialization; ?></option>
+                                                            <?php
+                                                        }
+                                                        ?>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <div class="form-group">
+                                                    <label>Monthly Salary</label><br>
+                                                    <select id="EditMonthlySalary" name="EditMonthlySalary" class="form-control"
+                                                            style="width:100%; height:34px;">
+                                                        <option value="">- Select Monthly Salary -</option>
+                                                        <?php
+                                                        $salaryrange_tbl =
+                                                            GSecureSQL::query(
+                                                                "SELECT * FROM listofsalaryrangetbl",
+                                                                TRUE
+                                                            );
+                                                        foreach ($salaryrange_tbl as $value4) {
+                                                            $SalaryID = $value4[0];
+                                                            $Salary = $value4[1];
+                                                            ?>
+                                                            <option <?php if($MonthlySalary == $Salary) echo "selected='selected'"; ?> value="<?php echo $Salary; ?>"><?php echo $Salary; ?></option>
+                                                            <?php
+                                                        }
+                                                        ?>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-12">
+                                                <div class="form-group">
+                                                    <label>Nature of Work</label><br>
+                                                    <textarea class="form-control" id="EditNatureOfWork" name="EditNatureOfWork" rows="5" maxlength="150"><?php echo $NatureOfWork; ?></textarea>
+                                                    <div id="textarea_feedback"></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="submit" class="btn-system btn-large">Save</button>
+                                            <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                    <!-- End edit modal -->
+
+                    <script type="text/javascript">
+                        $(document).ready(function () {
+                            var validator = $("#EditWork<?php echo $WorkID; ?>").bootstrapValidator({
+                                feedbackIcons: {
+                                    valid: "glyphicon glyphicon-ok",
+                                    invalid: "glyphicon glyphicon-remove",
+                                    validating: "glyphicon glyphicon-refresh"
+                                },
+                                fields: {
+                                    EditCompanyName: {
+                                        validators: {
+                                            notEmpty: {
+                                                message: "This is required."
+                                            }
+                                        }
+                                    },
+                                    EditCompanyAddress: {
+                                        validators: {
+                                            notEmpty: {
+                                                message: "This is required."
+                                            }
+                                        }
+                                    },
+                                    EditIndustry: {
+                                        validators: {
+                                            notEmpty: {
+                                                message: "This is required."
+                                            }
+                                        }
+                                    },
+                                    EditFromMonth: {
+                                        validators: {
+                                            notEmpty: {
+                                                message: "This is required."
+                                            }
+                                        }
+                                    },
+                                    EditFromYear: {
+                                        validators: {
+                                            notEmpty: {
+                                                message: "This is required."
+                                            }
+                                        }
+                                    },
+                                    EditToMonth: {
+                                        required: "#EditDuration:checked",
+                                        validators: {
+                                            notEmpty: {
+                                                message: "This is required."
+                                            }
+                                        }
+                                    },
+                                    EditToYear: {
+                                        required: "#EditDuration:checked",
+                                        validators: {
+                                            notEmpty: {
+                                                message: "This is required."
+                                            },
+                                            greaterThan: {
+                                                value: "EditFromYear",
+                                                message: "Invalid date."
+                                            }
+                                        }
+                                    },
+                                    EditPositionLevel: {
+                                        validators: {
+                                            notEmpty: {
+                                                message: "This is required."
+                                            }
+                                        }
+                                    },
+                                    EditWorkSpecialization: {
+                                        validators: {
+                                            notEmpty: {
+                                                message: "This is required."
+                                            }
+                                        }
+                                    },
+                                    EditMonthlySalary: {
+                                        validators: {
+                                            notEmpty: {
+                                                message: "This is required."
+                                            }
+                                        }
+                                    }
+                                }
+                            });
+                            $("#EditFromYear").change(function () {
+                                var from_year = $("#EditFromYear").val();
+                                var to_year = $("#EditToYear").val();
+
+                                if (from_year > to_year) {
+                                    $("#EditToYear").val(from_year);
+                                    $("#EditToYear").parent().removeClass("has-error");
+                                    $("#EditToYear").parent().addClass("has-success");
+                                    $($("#EditToYear").parent().find(".form-control-feedback")).removeClass("glyphicon-remove");
+                                    $($("#EditToYear").parent().find(".form-control-feedback")).addClass("glyphicon-ok");
+                                    $($("#EditToYear").parent().find(".help-block")).css("display", "none");
+                                }
+                            });
+                        });
+                    </script>
+
                     <!-- Delete Modal -->
-                    <div class="modal fade" id="DeleteWork<?php echo $WorkID; ?>"
-                         role="dialog">
+                    <div class="modal fade" id="DeleteWork<?php echo $WorkID; ?>" role="dialog">
                         <div class="modal-dialog" style="padding:100px">
                             <!-- Modal content-->
                             <div class="modal-content">
@@ -1148,7 +1260,7 @@ if ($References == "ok") {
 <script type="text/javascript" src="../../js/script.js"></script>
 </body>
 </html>
-<script>
+<script type="text/javascript">
     $(document).ready(function () {
         var text_max = 300;
         $(window).load(function () {
@@ -1167,17 +1279,8 @@ if ($References == "ok") {
             $('#textarea_feedback').html(text_remaining + ' characters remaining.');
         });
     });
-</script>
-<!--
-    <script type="text/javascript">
-        $(window).load(function(){
-            $('#AddWork').modal('show');
-        });
-    </script>
--->
 
 
-<script type="text/javascript">
     $('#Duration').click(function () {
         $("#ToMonth").val("");
         $("#ToYear").val("");
@@ -1230,13 +1333,13 @@ if ($References == "ok") {
 
     //Add Validator
     $(document).ready(function () {
-        var validator = $("#FormAddWork").bootstrapValidator({
+        var validator = $("#FormAdd").bootstrapValidator({
             feedbackIcons: {
                 valid: "glyphicon glyphicon-ok",
                 invalid: "glyphicon glyphicon-remove",
                 validating: "glyphicon glyphicon-refresh"
             },
-           s: {
+            fields: {
                 CompanyName: {
                     validators: {
                         notEmpty: {

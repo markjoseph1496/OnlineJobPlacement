@@ -17,7 +17,8 @@ $StudentInfo_tbl =
         LastName,
         MajorCourse,
         Birthdate,
-        ProfileImage
+        ProfileImage,
+        Objectives
         FROM studentinfotbl
         WHERE StudentID = ?",
         TRUE,
@@ -32,6 +33,7 @@ $LastName = $StudentInfo_tbl[0][2];
 $MajorCourse = $StudentInfo_tbl[0][3];
 $Birthdate = $StudentInfo_tbl[0][4];
 $ProfileImage = $StudentInfo_tbl[0][5];
+$Objectives = $StudentInfo_tbl[0][6];
 
 $course_code =
     GSecureSQL::query(
@@ -178,11 +180,7 @@ $MobileNumber = $studcontacts_tbl[0][2];
                     <div class="col-sm-7">
                         <label class="text-center"
                                style="font-size:30px;"><?php echo $FirstName . " " . $MiddleName . " " . $LastName; ?></label>
-                        <div><i class="fa fa-quote-left fa-2x fa-pull-left fa-border"></i>To obtain the position of ONLINE
-                            ESL INSTRUCTOR with BabelSpeak.com where I can apply my education, fifteen years of teaching
-                            experience and native linguistic skills and provide clients with a high quality language
-                            instruction experience.
-                        </div>
+                        <div><i class="fa fa-quote-left fa-2x fa-pull-left fa-border"></i><?php echo $Objectives; ?></div>
                     </div>
                     <div class="col-sm-2">&nbsp;</div>
                 </div>

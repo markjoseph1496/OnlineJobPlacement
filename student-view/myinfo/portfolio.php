@@ -6,7 +6,7 @@ session_start();
 $common_functions->student_login_check();
 $StudentID = $_SESSION['StudentID']; // to conform with your coding style -- ghabx
 
-$num = rand(0,9999);
+$num = rand(0, 9999);
 $hashStudentID = encrypt_decrypt_plusTime('encrypt', $StudentID, $num);
 
 $infoquery =
@@ -294,9 +294,9 @@ if ($References == "ok") {
                                 </ul>
                             </li>
                             <li class="dropdown">
-                                <a href="#" class="dropdown-toggle" data-toggle="dropdown"><b class="fa fa-user"></b>Welcome, <b><?php echo $StudentName; ?> </b><b class="caret"></b></a>
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown"><b class="fa fa-user"></b> Welcome, <b><?php echo $StudentName; ?> </b><b class="caret"></b></a>
                                 <ul class="dropdown-menu">
-                                    <li><a href="../../student-profile.php?id=<?php echo $hashStudentID; ?>&n=<?php echo $num; ?>">Profile <b class="fa fa-user" style="float:right;"></b></a></li>
+                                    <!-- <li><a href="../../student-profile.php?id=<?php echo $hashStudentID; ?>&n=<?php echo $num; ?>">Profile <b class="fa fa-user" style="float:right;"></b></a></li> -->
                                     <li><a href="../settings/settings.php">Settings <b class="fa fa-cog" style="float:right;"></b></a></li>
                                     <li class="divider"></li>
                                     <li><a href="#" data-target='#Logout' data-toggle='modal'>Sign Out <b class="fa fa-sign-out" style="float:right;"></b></a></li>
@@ -455,123 +455,14 @@ if ($References == "ok") {
                 });
             </script>
 
-            <label><span class="fa fa-check-circle"></span> Your information progress..</label>
-            <div class="skill-shortcode">
-                <div class="skill">
-                    <div class="progress">
-                        <div class="progress-bar" role="progressbar" data-percentage="<?php echo $Progress; ?>" style="width: <?php echo $Progress; ?>%;">
-                            <span class="progress-bar-span"><?php echo $Progress; ?>%</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
             <div class="row sidebar-page">
                 <!-- Page Content -->
                 <div class="col-md-12 page-content">
 
                     <div class="classic-testimonials">
+                        <!-- upload here
 
-                        <div class="row">
-                            <div class="col-md-6">
-                                <h4>Images<span="head-line"></span="head-line"></h4>
-                            </div>
-                        </div>
-                        <div class="hr1" style="margin-top:35px;"></div>
-
-                        
-                        <div class=" portfolio-page portfolio-4column">
-                            <ul id="portfolio-list" data-animated="fadeIn">
-                                <li>
-                                    <img src="../../images/portfolio/ex.png" alt="">
-                                    <div class="portfolio-item-content">
-                                    </div>
-                                    <a href="#" data-toggle="modal" data-target="#AddImage"><i class="more"><span class="fa fa-plus"></span></i></a>
-                                </li>
-
-                                <li>
-                                    <img src="../../images/portfolio/example.png" alt="">
-                                    <div class="portfolio-item-content">
-                                        <p class="header">Online Job Placement Management System</p>
-                                        <button class="btn btn-default" data-toggle="modal" data-target="#EditImage">
-                                            <i class="fa fa-pencil-square-o fa-1x"></i>
-                                        </button>
-                                        <button class="btn btn-danger" data-toggle="modal" data-target="#">
-                                            <i class="fa fa-trash fa-1x"></i>
-                                        </button> 
-                                    </div>
-                                </li>
-                            </ul>
-                        </div>
-
-                        <div class="hr4" style="margin-top:40px;margin-bottom:40px;"></div>                        
-
-                        <!-- ADD Image Modal -->
-                        <div class="modal fade" id="AddImage" role="dialog">
-                            <div class="modal-dialog modal-lg" style="padding:160px;width:100%;">
-                                <!-- Modal content-->
-                                <div class="modal-content">
-                                    <div class="modal-header">
-                                        <button type="button" class="close" data-dismiss="modal">&times;</button>
-                                        <h4 class="modal-title">Add Image</h4>
-                                    </div>
-                                    <div class="modal-body">
-                                        <div class="row">
-                                            <div class="col-md-6">
-                                                <label>Image</label>
-                                                <div class="form-group">
-                                                    <input id="ProfilePicture" name="ProfilePicture" type="file" class="file file-loading" data-allowed-file-extensions='["png", "jpg", "bmp", "gif"]'>
-                                                </div>
-                                            </div>
-                                            <div class="col-md-6">
-                                                <label>Name / Title / Caption</label>
-                                                <div class="form-group">
-                                                    <input type="text" class="form-control">
-                                                </div>
-                                            </div>
-                                        </div>
-                                        
-                                        <div class="modal-footer">
-                                            <button type="submit" class="btn-system btn-large">Add</button>
-                                            <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- EDIT Image Modal -->
-                        <div class="modal fade" id="EditImage" role="dialog">
-                            <div class="modal-dialog modal-lg" style="padding:160px;width:100%;">
-                                <!-- Modal content-->
-                                <div class="modal-content">
-                                    <div class="modal-header">
-                                        <button type="button" class="close" data-dismiss="modal">&times;</button>
-                                        <h4 class="modal-title">Edit Image</h4>
-                                    </div>
-                                    <div class="modal-body">
-                                        <div class="row">
-                                            <div class="col-md-6">
-                                                <label>Image</label>
-                                                <div class="image-service-box" >
-                                                    <img class="img-thumbnail" style="width:280px;height:204px;"src="images/service-01.jpg" alt="">
-                                                </div>
-                                            </div>
-                                            <div class="col-md-6">
-                                                <label>Name / Title / Caption</label>
-                                                <div class="form-group">
-                                                    <input type="text" class="form-control">
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="modal-footer">
-                                            <button type="submit" class="btn-system btn-large">Save</button>
-                                            <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
+                        -->
                         <div class="row">
                             <div class="col-md-6">
                                 <h4>Documents<span="head-line"></span="head-line"></h4>
@@ -928,7 +819,6 @@ if ($References == "ok") {
             }
         });
     });
-
 
 
 </script>

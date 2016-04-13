@@ -1,7 +1,8 @@
 <?php
 include('../../connection.php');
-session_start();
 include('../../common-functions.php');
+include('../../encryption.php');
+session_start();
 $common_functions->student_login_check();
 $StudentID = $_SESSION['StudentID']; // to conform with your coding style -- ghabx
 if (isset($_POST['btnSaveInfo'])) {
@@ -74,42 +75,57 @@ if (isset($_POST['btnSaveInfo'])) {
         $StudentID
     );
 
+    $Picturetbl =
+        GSecureSQL::query(
+            "SELECT ProfileImage FROM studentinfotbl WHERE StudentID = ?",
+            TRUE,
+            "s",
+            $StudentID
+        );
+    $Picture = $Picturetbl[0][0];
 
     //start upload
     $fileToUpload = basename($_FILES["ProfilePicture"]["name"]);
-    $target_dir = "ProfileImages/";
-    $target_file = $target_dir . $StudentID . ".jpg";
-    $uploadOk = 1;
-    $imageFileType = pathinfo($target_file, PATHINFO_EXTENSION);
+    if($fileToUpload != ""){
+        $Time = date('H:i:s');
+        $target_dir = "ProfileImages/";
+        $ext = pathinfo($_FILES["ProfilePicture"]["name"]);
+        $ext = $ext['extension'];
+        $fileToUploadenc = encrypt_decrypt_plusTime("encrypt", $fileToUpload,$Time);
+        $target_file = $target_dir . $fileToUploadenc . "." . $ext;
+        $uploadOk = 1;
+        $imageFileType = pathinfo($target_file, PATHINFO_EXTENSION);
 
-    if ($imageFileType != "jpg" && $imageFileType != "png" && $imageFileType != "jpeg") {
-        echo "Sorry, only JPG, JPEG, PNG files are allowed.";
-        $uploadOk = 0;
-    }
+        if ($imageFileType != "jpg" && $imageFileType != "png" && $imageFileType != "jpeg") {
+            header("location: personal-info.php?error");
+            $uploadOk = 0;
+        }
 
-    if ($uploadOk == 0) {
-        echo "Sorry, your file was not uploaded.";
-
-    } else {
-        if (move_uploaded_file($_FILES["ProfilePicture"]["tmp_name"], $target_file)) {
-
-            GSecureSQL::query(
-                "UPDATE studentinfotbl SET ProfileImage = ? WHERE StudentID = ?",
-                FALSE,
-                "ss",
-                $target_file,
-                $StudentID
-            );
-            header("location: personal-info.php");
+        if ($uploadOk == 0) {
+            header("location: personal-info.php?error");
 
         } else {
-            echo "Sorry, there was an error uploading your file.";
+            if (move_uploaded_file($_FILES["ProfilePicture"]["tmp_name"], $target_file)) {
+
+                GSecureSQL::query(
+                    "UPDATE studentinfotbl SET ProfileImage = ? WHERE StudentID = ?",
+                    FALSE,
+                    "ss",
+                    $target_file,
+                    $StudentID
+                );
+                unlink($Picture);
+                header("location: personal-info.php?saved");
+
+            } else {
+                header("location: personal-info.php?error");
+            }
         }
+    }else{
+        header("location: personal-info.php?saved");
     }
+
     // end upload
-
-    header("location: personal-info.php?saved");
-
 }
 
 if (isset($_GET['btnSaveContactInfo'])) {
