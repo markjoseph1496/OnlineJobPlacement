@@ -21,7 +21,7 @@ $adminevent_tbl =
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title></title>
+    <title>Online Job Placement Management System | OJPMS</title>
 
     <!-- Page Description and Author -->
     <meta name="description" content="OJPMS">

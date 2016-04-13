@@ -479,7 +479,7 @@ if ($References == "ok") {
                             </div>
                             <div class="col-md-6">
                                 <a class="main-button" style="float:right;cursor:pointer;" data-toggle="modal" data-target="#AddSchool">
-                                    <span> Add School</span>
+                                    <span>Add School</span>
                                 </a>
                             </div>
                         </div>
@@ -492,7 +492,7 @@ if ($References == "ok") {
                                     <div class="modal-content">
                                         <div class="modal-header">
                                             <button type="button" class="close" data-dismiss="modal">&times;</button>
-                                            <h4 class="modal-title">Add </h4>
+                                            <h4 class="modal-title">Add School</h4>
                                         </div>
                                         <div class="modal-body">
                                             <div class="row">
@@ -722,7 +722,7 @@ if ($References == "ok") {
                                             <div class="modal-content">
                                                 <div class="modal-header">
                                                     <button type="button" class="close" data-dismiss="modal">&times;</button>
-                                                    <h4 class="modal-title">Add </h4>
+                                                    <h4 class="modal-title">Edit School</h4>
                                                 </div>
                                                 <div class="modal-body">
                                                     <div class="row">
@@ -822,7 +822,7 @@ if ($References == "ok") {
                                                         </div>
                                                     </div>
                                                     <div class="modal-footer">
-                                                        <button type="submit" class="btn-system btn-large">Add</button>
+                                                        <button type="submit" class="btn-system btn-large">Save</button>
                                                         <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
                                                     </div>
                                                 </div>
