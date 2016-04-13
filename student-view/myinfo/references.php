@@ -362,7 +362,7 @@ if ($References == "ok") {
                         <li>
                             <a class="active" href="personal-info.php">My Info</a>
                             <ul class="dropdown">
-                                <li><a class="active" href="personal-info.php"><?php echo $nPinfo; ?> Personal Info</a></li>
+                                <li><a  href="personal-info.php"><?php echo $nPinfo; ?> Personal Info</a></li>
                                 <li><a href="contacts-info.php"><?php echo $nCinfo; ?> Contacts Info</a></li>
                                 <li><a href="work.php"><?php echo $nWorkXP; ?> Work</a></li>
                                 <li><a href="education.php"><?php echo $nSchool; ?> Education</a></li>
