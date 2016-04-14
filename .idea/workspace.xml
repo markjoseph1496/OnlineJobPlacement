@@ -4,7 +4,7 @@
     <bookmark url="file://$PROJECT_DIR$/admin/search.php" line="365" mnemonic="4" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d999e893-f739-4a68-b7b0-034239dfb77e" name="Default" comment="Polishing&#10;">
+    <list default="true" id="d999e893-f739-4a68-b7b0-034239dfb77e" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <list id="ee7a7474-4848-4a40-af05-afa3160fd5b4" name="New changelist" comment="" />
@@ -63,8 +63,8 @@
       <file leaf-file-name="search.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/admin/search.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.106351554">
-              <caret line="3" column="0" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
+            <state vertical-scroll-proportion="0.0">
+              <caret line="0" column="5" selection-start-line="0" selection-start-column="5" selection-end-line="0" selection-end-column="5" />
               <folding>
                 <marker date="1460590749052" expanded="true" signature="297:332" placeholder="SELECT COUNT... studentinfotbl" />
                 <marker date="1460590749052" expanded="true" signature="432:480" placeholder="SELECT First... admintbl" />
@@ -406,12 +406,6 @@
       <option name="number" value="Default" />
       <updated>1451894355130</updated>
     </task>
-    <task id="LOCAL-00293" summary="Polishing">
-      <created>1459703998840</created>
-      <option name="number" value="00293" />
-      <option name="project" value="LOCAL" />
-      <updated>1459703998840</updated>
-    </task>
     <task id="LOCAL-00294" summary="Polishing&#10;">
       <created>1459724838523</created>
       <option name="number" value="00294" />
@@ -700,12 +694,18 @@
       <option name="project" value="LOCAL" />
       <updated>1460588285872</updated>
     </task>
-    <option name="localTasksCounter" value="342" />
+    <task id="LOCAL-00342" summary="Polishing&#10;">
+      <created>1460591045849</created>
+      <option name="number" value="00342" />
+      <option name="project" value="LOCAL" />
+      <updated>1460591045849</updated>
+    </task>
+    <option name="localTasksCounter" value="343" />
     <servers />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1616" height="876" extended-state="6" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.20375" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -1317,21 +1317,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/admin/admin-reports.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="80.90323">
-          <caret line="6" column="6" selection-start-line="0" selection-start-column="0" selection-end-line="395" selection-end-column="7" />
-          <folding>
-            <marker date="1459703830799" expanded="true" signature="227:262" placeholder="SELECT COUNT... studentinfotbl" />
-            <marker date="1459703830799" expanded="true" signature="362:410" placeholder="SELECT First... admintbl" />
-            <marker date="1459703830799" expanded="true" signature="15193:15216" placeholder="SELECT * FRO... coursetbl" />
-            <marker date="1459703830799" expanded="true" signature="15596:15653" placeholder="SELECT COUNT... studentinfotbl" />
-            <marker date="1459703830799" expanded="true" signature="16068:16159" placeholder="SELECT COUNT... studentinfotbl" />
-            <marker date="1459703830799" expanded="true" signature="16581:16674" placeholder="SELECT COUNT... studentinfotbl" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/admin/admin-ojtreports.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-4.0333333">
@@ -1383,10 +1368,25 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/admin/admin-reports.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="80.90323">
+          <caret line="6" column="6" selection-start-line="0" selection-start-column="0" selection-end-line="395" selection-end-column="7" />
+          <folding>
+            <marker date="1459703830799" expanded="true" signature="227:262" placeholder="SELECT COUNT... studentinfotbl" />
+            <marker date="1459703830799" expanded="true" signature="362:410" placeholder="SELECT First... admintbl" />
+            <marker date="1459703830799" expanded="true" signature="15193:15216" placeholder="SELECT * FRO... coursetbl" />
+            <marker date="1459703830799" expanded="true" signature="15596:15653" placeholder="SELECT COUNT... studentinfotbl" />
+            <marker date="1459703830799" expanded="true" signature="16068:16159" placeholder="SELECT COUNT... studentinfotbl" />
+            <marker date="1459703830799" expanded="true" signature="16581:16674" placeholder="SELECT COUNT... studentinfotbl" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/admin/search.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.106351554">
-          <caret line="3" column="0" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="5" selection-start-line="0" selection-start-column="5" selection-end-line="0" selection-end-column="5" />
           <folding>
             <marker date="1460590749052" expanded="true" signature="297:332" placeholder="SELECT COUNT... studentinfotbl" />
             <marker date="1460590749052" expanded="true" signature="432:480" placeholder="SELECT First... admintbl" />
