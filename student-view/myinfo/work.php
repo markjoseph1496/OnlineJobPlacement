@@ -534,7 +534,7 @@ if ($References == "ok") {
                                     </div>
                                     <div class="col-md-6">
                                         <div class="form-group">
-                                            <label>Address</label>
+                                            <label>Address <span>(*)</span></label>
                                             <input type="text" class="form-control" id="CompanyAddress" name="CompanyAddress">
                                         </div>
                                     </div>
@@ -700,7 +700,7 @@ if ($References == "ok") {
                                     </div>
                                     <div class="col-md-6">
                                         <div class="form-group">
-                                            <label>Monthly Salary</label><br>
+                                            <label>Monthly Salary <span>(*)</span></label><br>
                                             <select id="MonthlySalary" name="MonthlySalary" class="form-control"
                                                     style="width:100%; height:34px;">
                                                 <option value="">- Select Monthly Salary -</option>

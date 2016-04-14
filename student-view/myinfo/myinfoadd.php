@@ -205,6 +205,11 @@ if (isset($_POST['Name'])) {
     $Position = ucwords($_POST['Position']);
     $Phone = $_POST['Phone'];
     $Email = $_POST['Email'];
+    $Others = "off";
+    if(isset($_POST['Other'])){
+        $Others = $_POST['Other'];
+
+    }
 
     /*
         $validation_config = array(
@@ -249,16 +254,17 @@ if (isset($_POST['Name'])) {
         }
     */
     GSecureSQL::query(
-        "INSERT INTO referencetbl(StudentID, Name, Relationship, Company, Position, Phone, Email) values (?,?,?,?,?,?,?)",
+        "INSERT INTO referencetbl(StudentID, Name, Relationship, Company, Position, Phone, Email, Others) values (?,?,?,?,?,?,?,?)",
         FALSE,
-        "sssssss",
+        "ssssssss",
         $StudentID,
         $Name,
         $Relationship,
         $Company,
         $Position,
         $Phone,
-        $Email
+        $Email,
+        $Others
     );
 
     GSecureSQL::query(

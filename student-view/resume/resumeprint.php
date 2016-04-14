@@ -407,7 +407,7 @@ $hGraduated = $hsschool_tbl[0][2];
                             <?php
                             $reference_tbl =
                                 GSecureSQL::query(
-                                    "SELECT Name, Phone, Relationship, Email FROM referencetbl WHERE StudentID = ? LIMIT 3",
+                                    "SELECT Name, Phone, Relationship, Email, Others FROM referencetbl WHERE StudentID = ? LIMIT 3",
                                     TRUE,
                                     "s",
                                     $StudentID
@@ -417,14 +417,26 @@ $hGraduated = $hsschool_tbl[0][2];
                                 $PhoneNum = $value[1];
                                 $Relationship = $value[2];
                                 $Email = $value[3];
-                                ?>
-                                <div class="col-xs-4">
-                                    <p><?php echo $Name; ?></p>
-                                    <p><?php echo $Relationship; ?></p>
-                                    <p><?php echo $PhoneNum; ?></p>
-                                    <p><?php echo $Email; ?></p>
-                                </div>
-                                <?php
+                                $Others = $value[4];
+                                if($Others == "on"){
+                                    ?>
+                                    <div class="col-xs-4">
+                                        <p>Available upon request.</p>
+                                        <p></p>
+                                        <p></p>
+                                        <p></p>
+                                    </div>
+                                    <?php
+                                }else{
+                                    ?>
+                                    <div class="col-xs-4">
+                                        <p><?php echo $Name; ?></p>
+                                        <p><?php echo $Relationship; ?></p>
+                                        <p><?php echo $PhoneNum; ?></p>
+                                        <p><?php echo $Email; ?></p>
+                                    </div>
+                                    <?php
+                                }
                             }
                             ?>
                         </div>

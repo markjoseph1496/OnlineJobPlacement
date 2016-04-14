@@ -592,7 +592,7 @@ if ($References == "ok") {
                                         </select>
                                     </div>
                                     <div class="form-group">
-                                        <label>Postal Code <span>(*)</span></label>
+                                        <label>Postal Code </label>
                                         <input type="text" class="form-control" id="PostalCode" name="PostalCode"
                                                value="<?php echo $PostalCode; ?>" maxlength="11">
                                     </div>
@@ -683,17 +683,6 @@ if ($References == "ok") {
                     validators: {
                         notEmpty: {
                             message: "City is required."
-                        }
-                    }
-                },
-                PostalCode: {
-                    validators: {
-                        notEmpty: {
-                            message: "Postal Code is Required."
-                        },
-                        regexp: {
-                            regexp: /^[0-9]+$/,
-                            message: "Postal Code can consist of numeric characters only."
                         }
                     }
                 }

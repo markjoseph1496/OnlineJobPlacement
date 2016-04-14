@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50616
 File Encoding         : 65001
 
-Date: 2016-04-13 06:50:23
+Date: 2016-04-14 10:17:56
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -376,7 +376,7 @@ CREATE TABLE `coursetbl` (
   `CourseCode` varchar(255) NOT NULL,
   `CourseDescription` varchar(255) NOT NULL,
   PRIMARY KEY (`CourseID`)
-) ENGINE=InnoDB AUTO_INCREMENT=17 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=19 DEFAULT CHARSET=latin1;
 
 -- ----------------------------
 -- Records of coursetbl
@@ -391,6 +391,8 @@ INSERT INTO coursetbl VALUES ('8', 'Bachelor of Science in Computer Engineering'
 INSERT INTO coursetbl VALUES ('9', 'Bachelor of Science in Accounting Technology', 'BSAT', 'BSAT');
 INSERT INTO coursetbl VALUES ('10', '2-Year Associate in Computer Technology', 'ASCT', 'ASCT');
 INSERT INTO coursetbl VALUES ('16', 'Bachelor of Science in Tourism Management', 'BSTM', 'BSTM');
+INSERT INTO coursetbl VALUES ('17', 'Hotel and Restaurant Services', 'HRS', 'Hotel and Restaurant Services');
+INSERT INTO coursetbl VALUES ('18', 'Senior High School', 'SHS', 'Senior High School');
 
 -- ----------------------------
 -- Table structure for `filestbl`
@@ -440,12 +442,11 @@ CREATE TABLE `jobfairtbl` (
   `Participate` varchar(255) NOT NULL,
   `Requirements` varchar(255) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- ----------------------------
 -- Records of jobfairtbl
 -- ----------------------------
-INSERT INTO jobfairtbl VALUES ('11', 'Teteasd', 'asdasd', 'Makati', 'http://asdasdsa.cc', 'Adasds', 'Asdadsa', 'asdada@cc.cc', '2314123', '', '', '', '', 'Admin / Human Resources', 'Fsdfsdf', '', 'Desktop/Laptop/Notebook Computer- Wireless Broadband- LCD Television', '', '', '', '', '', '', 'on', 'Participation Confirmation- Company Profile');
 
 -- ----------------------------
 -- Table structure for `languagetbl`
@@ -658,12 +659,26 @@ CREATE TABLE `logrequesttbl` (
   `DurationOfRequest` varchar(255) NOT NULL,
   `MarketingMaterials` varchar(255) NOT NULL,
   PRIMARY KEY (`LID`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- ----------------------------
 -- Records of logrequesttbl
 -- ----------------------------
-INSERT INTO logrequesttbl VALUES ('2', '1', 'BSCS, BSIT, ASCT, BSCPE', '2016-03-14', '2016-04-29', 'Accepted', '2016-02-17', 'System Programmer', 'Full Time, Part-Time, Contractual', 'Entry Level/Gen Staff, Officer, Supervisory', 'System programming (or systems programming) is the activity of programming computer system software. The primary distinguishing characteristic of systems programming when compared to application programming is that application programming aims to produce ', 'Must be proficient in PHP, CSS, HTML, Bootstrap and Javascript', 'Valenzuela City', '20,000 - 30,000', '1', 'Yes', '1 Month', 'Yes');
+
+-- ----------------------------
+-- Table structure for `objectivetbl`
+-- ----------------------------
+DROP TABLE IF EXISTS `objectivetbl`;
+CREATE TABLE `objectivetbl` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `StudentID` varchar(255) NOT NULL,
+  `Caption` varchar(1000) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- ----------------------------
+-- Records of objectivetbl
+-- ----------------------------
 
 -- ----------------------------
 -- Table structure for `ojttbl`
@@ -695,29 +710,18 @@ CREATE TABLE `ojttbl` (
   `Certificate` varchar(255) DEFAULT NULL,
   `AdviserID` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- ----------------------------
 -- Records of ojttbl
 -- ----------------------------
-INSERT INTO ojttbl VALUES ('1', '00820131192', 'FIRMANTE', 'MARY ANN', 'LAPORE', 'BSIT', 'ONLY @ PC GILMORE COMPUTER CENTER', 'Unit 12, 4th floor Fisher Mall, Brgy. Sta. Cruz, Quezon City', 'Mr. Conrad Guetaw', 'OIC', '', null, '', '200', 'on', 'on', 'on', 'on', 'on', 'on', 'on', 'on', 'on', '13');
-INSERT INTO ojttbl VALUES ('2', '00820120173', 'MENDIOLA', 'MARK ANTHONY', 'ACERO', 'BSIT', 'Transcom Worldwide Philippines', '6F Cyberscape Alpha Bldg., Garnet and Sapphire Road, Ortigas, Pasig City', 'Mr. Kenneth Macaraeg', 'IT ADMIN', '', null, 'INC', '222', 'on', 'on', 'on', 'on', 'on', 'off', 'off', 'off', 'off', '13');
-INSERT INTO ojttbl VALUES ('3', '00820120330', 'MINGOY', 'RONNEL', 'GALVANTE', 'BSIT', 'Malabon City Hall', 'F. Sevilla Blvd., Malabon City', 'Ms. Herminia B. Cunanan', 'OJT Coordinator', '', null, null, null, null, null, null, null, null, null, null, null, null, '13');
-INSERT INTO ojttbl VALUES ('4', '00820120442', 'NUÃ‘EZ', 'EDRICK', 'BERIDO', 'BSIT', 'Micro Tech 96 Co.', '11th Avenue, Grace Park, Caloocan City', 'Mr. Roderick F. Dilag', 'Owner', '', null, null, null, null, null, null, null, null, null, null, null, null, '13');
-INSERT INTO ojttbl VALUES ('5', '00820121466', 'OREO', 'REYNA', '', 'BSIT', 'PLDT/NOGMMFXATOP', 'PLDT Diliman Exchange East Avenue, Quezon City', 'Mr. Domingo Roque', 'Sr. Telecom Manager', '', null, null, null, null, null, null, null, null, null, null, null, null, '13');
-INSERT INTO ojttbl VALUES ('6', '00820120361', 'PALLE', 'JAN DAVID', 'RENALES', 'BSIT', 'Caledonian International Corporation', 'Spicers Building, 4384 Montojo St., Brgy. Tejeros, 1204, Makati City', 'Mr. Cergie Dominguez', 'Technical Sales Manager', '', null, null, null, null, null, null, null, null, null, null, null, null, '13');
-INSERT INTO ojttbl VALUES ('7', '00820120582', 'PANGILINAN', 'EDWARD', 'GUINTO', 'BSIT', 'Transcom Worldwide Philippines', '6F Cyberscape Alpha Bldg., Garnet and Sapphire Road, Ortigas, Pasig City', 'Mr. Kenneth Macaraeg', 'IT ADMIN', '', null, null, null, null, null, null, null, null, null, null, null, null, '13');
-INSERT INTO ojttbl VALUES ('8', '00820120789', 'PASCUAL', 'RENZELLE JOYCE', 'GIRON', 'BSIT', 'Checksteel Fabrication and Development Corp.', 'Villa Pariancillo, Polo, Valenzuela City', 'Mr. Cris U. Dela Cruz', 'General Manager', '', null, null, null, null, null, null, null, null, null, null, null, null, '13');
-INSERT INTO ojttbl VALUES ('9', '00820120385', 'PATAC', 'NEIL', 'SUAREZ', 'BSIT', 'Foodsphere Inc.', '560 West Service Road, Paso de Blas, Valenzuela City', 'Ms. Maridel C. Tandang', 'Supervisor', '', null, null, null, null, null, null, null, null, null, null, null, null, '13');
-INSERT INTO ojttbl VALUES ('10', '00820121091', 'ROSELL', 'ADMER JR.', 'PAYAO', 'BSIT', 'ALGAR Infosys', '6B Danr Street, Barangay Vasra, Quezon City', 'Mr.Armando Amor Jr', 'Team Leader', '', null, null, null, null, null, null, null, null, null, null, null, null, '13');
-INSERT INTO ojttbl VALUES ('11', '02120090426', 'SALVADOR', 'MARC JUSTIN', 'CABILIN', 'BSIT', 'Precious Island Corporation', '1629 Laguna St., Sta. Cruz, Manila, 1003 Metro Manila', 'Mr. Anson Tan', 'IT Head', '', null, null, null, null, null, null, null, null, null, null, null, null, '13');
 
 -- ----------------------------
 -- Table structure for `phototbl`
 -- ----------------------------
 DROP TABLE IF EXISTS `phototbl`;
 CREATE TABLE `phototbl` (
-  `id` varchar(255) NOT NULL,
+  `id` int(255) NOT NULL AUTO_INCREMENT,
   `StudentID` varchar(255) NOT NULL,
   `Filename` varchar(255) NOT NULL,
   `EncryptedName` varchar(255) NOT NULL,
@@ -769,6 +773,7 @@ CREATE TABLE `referencetbl` (
   `Position` varchar(255) NOT NULL,
   `Phone` varchar(255) NOT NULL,
   `Email` varchar(255) NOT NULL,
+  `Others` varchar(255) NOT NULL,
   PRIMARY KEY (`ReferenceID`)
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
@@ -843,411 +848,11 @@ CREATE TABLE `specializationtbl` (
   `Proficiency` varchar(255) NOT NULL,
   `Skills` varchar(255) NOT NULL,
   PRIMARY KEY (`SID`)
-) ENGINE=MyISAM AUTO_INCREMENT=422 DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
 -- ----------------------------
 -- Records of specializationtbl
 -- ----------------------------
-INSERT INTO specializationtbl VALUES ('4', '00820120006', 'sadsa', '1', '', '');
-INSERT INTO specializationtbl VALUES ('5', '00820120007', 'asdas', '3', '', '');
-INSERT INTO specializationtbl VALUES ('6', '00820120008', 'Biotechnology', '1', '', '');
-INSERT INTO specializationtbl VALUES ('7', '00820120008', 'Customer Service (Technical)', '4', '', '');
-INSERT INTO specializationtbl VALUES ('8', '00820120010', 'Actuarial Science/Statistics', '5', '', '');
-INSERT INTO specializationtbl VALUES ('9', '00820120011', 'Customer Service (Technical)', '10', '', '');
-INSERT INTO specializationtbl VALUES ('10', '00820120012', 'BPO/Call Center', '1', '', '');
-INSERT INTO specializationtbl VALUES ('11', '00820120013', 'Corporate Strategy/Top Management', '1', '', '');
-INSERT INTO specializationtbl VALUES ('12', '00820120014', 'IT/Computer - Software Development', '2', '', '');
-INSERT INTO specializationtbl VALUES ('13', '00820120016', 'Logistics/Supply Chain', '5', '', '');
-INSERT INTO specializationtbl VALUES ('14', '00820120017', 'Technical and Helpdesk Support', '1', '', '');
-INSERT INTO specializationtbl VALUES ('15', '00820120018', 'Merchandising', '1', '', '');
-INSERT INTO specializationtbl VALUES ('16', '00820120019', 'Research and Development', '3', '', '');
-INSERT INTO specializationtbl VALUES ('17', '00820120019', 'Research and Development', '3', '', '');
-INSERT INTO specializationtbl VALUES ('18', '00820120020', 'Sales - Financial Services (Insurance, Unit Trust, etc)', '7', '', '');
-INSERT INTO specializationtbl VALUES ('19', '00820120021', 'Stockbroking', '1', '', '');
-INSERT INTO specializationtbl VALUES ('20', '00820120021', 'Arts and Design', '3', '', '');
-INSERT INTO specializationtbl VALUES ('21', '00820120022', 'Costing Management', '2', '', '');
-INSERT INTO specializationtbl VALUES ('22', '00820120023', 'Geology/Geophysics', '1', '', '');
-INSERT INTO specializationtbl VALUES ('23', '00820120024', 'General Work (Housekeeper, Driver, Dispatch, Messenger, etc)', '2', '', '');
-INSERT INTO specializationtbl VALUES ('24', '00820120025', 'Marketing/Business Development', '5', '', '');
-INSERT INTO specializationtbl VALUES ('25', '00820120026', 'Purchasing/Inventory/Material and Warehouse Management', '8', '', '');
-INSERT INTO specializationtbl VALUES ('26', '00820120027', 'IT/Computer - Creative Design', '1', '', '');
-INSERT INTO specializationtbl VALUES ('27', '00820120028', 'Quality Control/Assuranc', '2', '', '');
-INSERT INTO specializationtbl VALUES ('28', '00820120028', 'Corporate Strategy/Top Management', '2', '', '');
-INSERT INTO specializationtbl VALUES ('29', '00820120029', 'Sales - Corporate / B2B', '4', '', '');
-INSERT INTO specializationtbl VALUES ('30', '00820120030', 'Law/Legal Services', '4', '', '');
-INSERT INTO specializationtbl VALUES ('31', '00820120031', 'Engineering - Environmental/Health/Safety', '1', '', '');
-INSERT INTO specializationtbl VALUES ('32', '00820120032', 'IT/Computer - Network/System/Database Admin', '3', '', '');
-INSERT INTO specializationtbl VALUES ('33', '00820120033', 'Project Management', '3', '', '');
-INSERT INTO specializationtbl VALUES ('34', '00820120034', 'Security/Armed Forces/Protective Services', '3', '', '');
-INSERT INTO specializationtbl VALUES ('35', '00820120035', 'Training and Development', '1', '', '');
-INSERT INTO specializationtbl VALUES ('36', '00820120036', 'Agriculture/Forestry/Fisheries', '1', '', '');
-INSERT INTO specializationtbl VALUES ('37', '00820120037', 'Customer Service (Technical)', '1', '', '');
-INSERT INTO specializationtbl VALUES ('38', '00820120038', 'Hotel Management/Tourism Services', '1', '', '');
-INSERT INTO specializationtbl VALUES ('39', '00820120039', 'Hotel Management/Tourism Services', '1', '', '');
-INSERT INTO specializationtbl VALUES ('40', '00820120040', 'Food Technology/Nutritionist', '3', '', '');
-INSERT INTO specializationtbl VALUES ('41', '00820120041', 'Finance - Corporate Finance/Investment/Merchant Banking<', '1', '', '');
-INSERT INTO specializationtbl VALUES ('42', '00820120042', 'Human Resources', '3', '', '');
-INSERT INTO specializationtbl VALUES ('43', '00820120043', 'Manufacturing/Production Operatio', '1', '', '');
-INSERT INTO specializationtbl VALUES ('44', '00820120044', 'IT/Computer - QA', '2', '', '');
-INSERT INTO specializationtbl VALUES ('45', '00820120045', 'Engineering - Oil/Gas', '3', '', '');
-INSERT INTO specializationtbl VALUES ('46', '00820120046', 'Quantity Surveying', '1', '', '');
-INSERT INTO specializationtbl VALUES ('47', '00820120047', 'Aviation/Aircraft Maintenance', '1', '', '');
-INSERT INTO specializationtbl VALUES ('48', '00820120048', 'Health Diagnosing', '5', '', '');
-INSERT INTO specializationtbl VALUES ('49', '00820120049', 'Journalist/Editor', '1', '', '');
-INSERT INTO specializationtbl VALUES ('50', '00820120050', 'Logistics/Supply Chain', '2', '', '');
-INSERT INTO specializationtbl VALUES ('53', '00820120160', 'BPO/Call Center', '3', '', '');
-INSERT INTO specializationtbl VALUES ('54', '00820120160', 'IT/Computer - Hardware', '1', '', '');
-INSERT INTO specializationtbl VALUES ('56', '00820120004', 'Advertising/Media Planning', '3', '', '');
-INSERT INTO specializationtbl VALUES ('57', '00820120004', 'Architecture/Interior Design', '3', '', '');
-INSERT INTO specializationtbl VALUES ('58', '00820120004', 'Banking/Financial Services', '5', '', '');
-INSERT INTO specializationtbl VALUES ('59', '00820120065', 'Arts and Design', '1', '', '');
-INSERT INTO specializationtbl VALUES ('60', '00820120065', 'Agriculture/Forestry/Fisheries', '2', '', '');
-INSERT INTO specializationtbl VALUES ('61', '00820120065', 'Aviation/Aircraft Maintenance', '2', '', '');
-INSERT INTO specializationtbl VALUES ('62', '00820120005', 'Arts/Creative/Graphics Design', '4', '', '');
-INSERT INTO specializationtbl VALUES ('63', '00820120005', 'Arts and Design', '4', '', '');
-INSERT INTO specializationtbl VALUES ('64', '00820120005', 'Banking/Financial Services', '4', '', '');
-INSERT INTO specializationtbl VALUES ('65', '00820120066', 'Agriculture/Forestry/Fisheries', '2', '', '');
-INSERT INTO specializationtbl VALUES ('66', '00820120066', 'Arts and Design', '1', '', '');
-INSERT INTO specializationtbl VALUES ('67', '00820120066', 'Clerical/Administrative Support', '1', '', '');
-INSERT INTO specializationtbl VALUES ('68', '00820120067', 'Arts and Design', '1', '', '');
-INSERT INTO specializationtbl VALUES ('69', '00820120006', 'Arts/Creative/Graphics Design', '3', '', '');
-INSERT INTO specializationtbl VALUES ('70', '00820120067', 'BPO/Call Center', '2', '', '');
-INSERT INTO specializationtbl VALUES ('71', '00820120006', 'Arts and Design', '3', '', '');
-INSERT INTO specializationtbl VALUES ('72', '00820120067', 'Advertising/Media Planning', '1', '', '');
-INSERT INTO specializationtbl VALUES ('73', '00820120006', 'Costing Management', '3', '', '');
-INSERT INTO specializationtbl VALUES ('74', '00820120068', 'Arts/Creative/Graphics Design', '1', '', '');
-INSERT INTO specializationtbl VALUES ('75', '00820120068', 'Arts/Creative/Graphics Design', '2', '', '');
-INSERT INTO specializationtbl VALUES ('76', '00820120068', 'Biotechnology', '1', '', '');
-INSERT INTO specializationtbl VALUES ('77', '00820120007', 'Arts/Creative/Graphics Design', '6', '', '');
-INSERT INTO specializationtbl VALUES ('78', '00820120007', 'Aviation/Aircraft Maintenance', '4', '', '');
-INSERT INTO specializationtbl VALUES ('81', '00820120069', 'Agriculture/Forestry/Fisheries', '1', '', '');
-INSERT INTO specializationtbl VALUES ('82', '00820120069', 'Aviation/Aircraft Maintenance', '1', '', '');
-INSERT INTO specializationtbl VALUES ('83', '00820120069', 'Architecture/Interior Design', '1', '', '');
-INSERT INTO specializationtbl VALUES ('84', '00820120008', 'Arts and Design', '5', '', '');
-INSERT INTO specializationtbl VALUES ('85', '00820120008', 'Aviation/Aircraft Maintenance', '6', '', '');
-INSERT INTO specializationtbl VALUES ('86', '00820120008', 'Banking/Financial Services', '6', '', '');
-INSERT INTO specializationtbl VALUES ('87', '00820120009', 'Arts and Design', '4', '', '');
-INSERT INTO specializationtbl VALUES ('88', '00820120070', 'Arts/Creative/Graphics Design', '1', '', '');
-INSERT INTO specializationtbl VALUES ('89', '00820120009', 'BPO/Call Center', '6', '', '');
-INSERT INTO specializationtbl VALUES ('90', '00820120070', 'Agriculture/Forestry/Fisheries', '3', '', '');
-INSERT INTO specializationtbl VALUES ('91', '00820120009', 'Chemistry', '7', '', '');
-INSERT INTO specializationtbl VALUES ('92', '00820120070', 'Architecture/Interior Design', '3', '', '');
-INSERT INTO specializationtbl VALUES ('93', '00820120071', 'Architecture/Interior Design', '1', '', '');
-INSERT INTO specializationtbl VALUES ('94', '00820120010', 'Aviation/Aircraft Maintenance', '2', '', '');
-INSERT INTO specializationtbl VALUES ('95', '00820120071', 'Arts and Design', '2', '', '');
-INSERT INTO specializationtbl VALUES ('96', '00820120010', 'Aviation/Aircraft Maintenance', '3', '', '');
-INSERT INTO specializationtbl VALUES ('97', '00820120071', 'Architecture/Interior Design', '2', '', '');
-INSERT INTO specializationtbl VALUES ('98', '00820120010', 'BPO/Call Center', '4', '', '');
-INSERT INTO specializationtbl VALUES ('99', '00820120072', 'Architecture/Interior Design', '1', '', '');
-INSERT INTO specializationtbl VALUES ('100', '00820120072', 'Aviation/Aircraft Maintenance', '2', '', '');
-INSERT INTO specializationtbl VALUES ('101', '00820120011', 'Aviation/Aircraft Maintenance', '4', '', '');
-INSERT INTO specializationtbl VALUES ('102', '00820120072', 'Aviation/Aircraft Maintenance', '1', '', '');
-INSERT INTO specializationtbl VALUES ('103', '00820120011', 'BPO/Call Center', '4', '', '');
-INSERT INTO specializationtbl VALUES ('104', '00820120073', 'Arts/Creative/Graphics Design', '1', '', '');
-INSERT INTO specializationtbl VALUES ('105', '00820120073', 'Architecture/Interior Design', '11', '', '');
-INSERT INTO specializationtbl VALUES ('106', '00820120012', 'Banking/Financial Services', '3', '', '');
-INSERT INTO specializationtbl VALUES ('107', '00820120073', 'Arts and Design', '1', '', '');
-INSERT INTO specializationtbl VALUES ('108', '00820120012', 'Banking/Financial Services', '3', '', '');
-INSERT INTO specializationtbl VALUES ('109', '00820120012', 'Costing Management', '2', '', '');
-INSERT INTO specializationtbl VALUES ('110', '00820120074', 'Agriculture/Forestry/Fisheries', '1', '', '');
-INSERT INTO specializationtbl VALUES ('111', '00820120013', 'Architecture/Interior Design', '3', '', '');
-INSERT INTO specializationtbl VALUES ('112', '00820120074', 'Architecture/Interior Design', '2', '', '');
-INSERT INTO specializationtbl VALUES ('113', '00820120013', 'Aviation/Aircraft Maintenance', '3', '', '');
-INSERT INTO specializationtbl VALUES ('114', '00820120074', 'Architecture/Interior Design', '1', '', '');
-INSERT INTO specializationtbl VALUES ('115', '00820120013', 'BPO/Call Center', '4', '', '');
-INSERT INTO specializationtbl VALUES ('116', '00820120075', 'Architecture/Interior Design', '1', '', '');
-INSERT INTO specializationtbl VALUES ('117', '00820120075', 'Banking/Financial Services', '2', '', '');
-INSERT INTO specializationtbl VALUES ('118', '00820120075', 'BPO/Call Center', '2', '', '');
-INSERT INTO specializationtbl VALUES ('119', '00820120014', 'Biotechnology', '4', '', '');
-INSERT INTO specializationtbl VALUES ('120', '00820120014', 'Clerical/Administrative Support', '3', '', '');
-INSERT INTO specializationtbl VALUES ('121', '00820120014', 'BPO/Call Center', '5', '', '');
-INSERT INTO specializationtbl VALUES ('122', '00820120076', 'Agriculture/Forestry/Fisheries', '1', '', '');
-INSERT INTO specializationtbl VALUES ('123', '00820120076', 'Arts and Design', '2', '', '');
-INSERT INTO specializationtbl VALUES ('124', '00820120076', 'Architecture/Interior Design', '3', '', '');
-INSERT INTO specializationtbl VALUES ('125', '00820120015', 'Clerical/Administrative Support', '3', '', '');
-INSERT INTO specializationtbl VALUES ('126', '00820120015', 'Costing Management', '3', '', '');
-INSERT INTO specializationtbl VALUES ('127', '00820120015', 'Banking/Financial Services', '5', '', '');
-INSERT INTO specializationtbl VALUES ('128', '00820120077', 'Agriculture/Forestry/Fisheries', '1', '', '');
-INSERT INTO specializationtbl VALUES ('129', '00820120077', 'Arts and Design', '1', '', '');
-INSERT INTO specializationtbl VALUES ('130', '00820120077', 'Banking/Financial Services', '2', '', '');
-INSERT INTO specializationtbl VALUES ('131', '00820120016', 'Aviation/Aircraft Maintenance', '2', '', '');
-INSERT INTO specializationtbl VALUES ('132', '00820120016', 'Banking/Financial Services', '3', '', '');
-INSERT INTO specializationtbl VALUES ('133', '00820120016', 'Clerical/Administrative Support', '2', '', '');
-INSERT INTO specializationtbl VALUES ('134', '00820120078', 'Arts and Design', '1', '', '');
-INSERT INTO specializationtbl VALUES ('135', '00820120078', 'Arts and Design', '2', '', '');
-INSERT INTO specializationtbl VALUES ('136', '00820120078', 'Arts/Creative/Graphics Design', '2', '', '');
-INSERT INTO specializationtbl VALUES ('137', '00820120017', 'Biotechnology', '2', '', '');
-INSERT INTO specializationtbl VALUES ('138', '00820120017', 'BPO/Call Center', '3', '', '');
-INSERT INTO specializationtbl VALUES ('139', '00820120017', 'Chemistry', '3', '', '');
-INSERT INTO specializationtbl VALUES ('140', '00820120079', 'Architecture/Interior Design', '1', '', '');
-INSERT INTO specializationtbl VALUES ('141', '00820120079', 'Biotechnology', '2', '', '');
-INSERT INTO specializationtbl VALUES ('142', '00820120079', 'Costing Management', '2', '', '');
-INSERT INTO specializationtbl VALUES ('143', '00820120018', 'Arts and Design', '2', '', '');
-INSERT INTO specializationtbl VALUES ('144', '00820120018', 'Chemistry', '2', '', '');
-INSERT INTO specializationtbl VALUES ('145', '00820120080', 'Arts and Design', '1', '', '');
-INSERT INTO specializationtbl VALUES ('146', '00820120018', 'Corporate Strategy/Top Management', '3', '', '');
-INSERT INTO specializationtbl VALUES ('147', '00820120080', 'Banking/Financial Services', '2', '', '');
-INSERT INTO specializationtbl VALUES ('148', '00820120080', 'Arts/Creative/Graphics Design', '1', '', '');
-INSERT INTO specializationtbl VALUES ('149', '00820120019', 'Banking/Financial Services', '3', '', '');
-INSERT INTO specializationtbl VALUES ('150', '00820120019', 'Clerical/Administrative Support', '4', '', '');
-INSERT INTO specializationtbl VALUES ('151', '00820120081', 'Arts/Creative/Graphics Design', '1', '', '');
-INSERT INTO specializationtbl VALUES ('152', '00820120019', 'Chemistry', '3', '', '');
-INSERT INTO specializationtbl VALUES ('153', '00820120081', 'Biotechnology', '2', '', '');
-INSERT INTO specializationtbl VALUES ('154', '00820120081', 'Chemistry', '1', '', '');
-INSERT INTO specializationtbl VALUES ('155', '00820120020', 'Arts/Creative/Graphics Design', '2', '', '');
-INSERT INTO specializationtbl VALUES ('156', '00820120020', 'Chemistry', '1', '', '');
-INSERT INTO specializationtbl VALUES ('157', '00820120082', 'Arts/Creative/Graphics Design', '1', '', '');
-INSERT INTO specializationtbl VALUES ('158', '00820120020', 'Clerical/Administrative Support', '3', '', '');
-INSERT INTO specializationtbl VALUES ('159', '00820120082', 'Architecture/Interior Design', '3', '', '');
-INSERT INTO specializationtbl VALUES ('160', '00820120082', 'Agriculture/Forestry/Fisheries', '5', '', '');
-INSERT INTO specializationtbl VALUES ('161', '00820120021', 'Aviation/Aircraft Maintenance', '1', '', '');
-INSERT INTO specializationtbl VALUES ('162', '00820120021', 'BPO/Call Center', '1', '', '');
-INSERT INTO specializationtbl VALUES ('163', '00820120021', 'Chemistry', '3', '', '');
-INSERT INTO specializationtbl VALUES ('164', '00820120083', 'Arts and Design', '1', '', '');
-INSERT INTO specializationtbl VALUES ('165', '00820120083', 'Arts/Creative/Graphics Design', '2', '', '');
-INSERT INTO specializationtbl VALUES ('166', '00820120083', 'BPO/Call Center', '2', '', '');
-INSERT INTO specializationtbl VALUES ('167', '00820120022', 'Arts and Design', '3', '', '');
-INSERT INTO specializationtbl VALUES ('168', '00820120022', 'Biotechnology', '3', '', '');
-INSERT INTO specializationtbl VALUES ('169', '00820120084', 'Arts and Design', '1', '', '');
-INSERT INTO specializationtbl VALUES ('170', '00820120022', 'Aviation/Aircraft Maintenance', '4', '', '');
-INSERT INTO specializationtbl VALUES ('171', '00820120084', 'Biotechnology', '2', '', '');
-INSERT INTO specializationtbl VALUES ('172', '00820120084', 'Corporate Strategy/Top Management', '1', '', '');
-INSERT INTO specializationtbl VALUES ('173', '00820120085', 'Arts and Design', '1', '', '');
-INSERT INTO specializationtbl VALUES ('174', '00820120085', 'Arts/Creative/Graphics Design', '2', '', '');
-INSERT INTO specializationtbl VALUES ('175', '00820120085', 'BPO/Call Center', '1', '', '');
-INSERT INTO specializationtbl VALUES ('176', '00820120024', 'Arts/Creative/Graphics Design', '2', '', '');
-INSERT INTO specializationtbl VALUES ('177', '00820120024', 'Banking/Financial Services', '3', '', '');
-INSERT INTO specializationtbl VALUES ('178', '00820120024', 'BPO/Call Center', '2', '', '');
-INSERT INTO specializationtbl VALUES ('179', '00820120086', 'Architecture/Interior Design', '1', '', '');
-INSERT INTO specializationtbl VALUES ('180', '00820120086', 'Biotechnology', '2', '', '');
-INSERT INTO specializationtbl VALUES ('181', '00820120086', 'Arts/Creative/Graphics Design', '3', '', '');
-INSERT INTO specializationtbl VALUES ('182', '00820120025', 'Aviation/Aircraft Maintenance', '3', '', '');
-INSERT INTO specializationtbl VALUES ('183', '00820120025', 'Aviation/Aircraft Maintenance', '2', '', '');
-INSERT INTO specializationtbl VALUES ('184', '00820120025', 'BPO/Call Center', '3', '', '');
-INSERT INTO specializationtbl VALUES ('185', '00820120087', 'Arts/Creative/Graphics Design', '1', '', '');
-INSERT INTO specializationtbl VALUES ('186', '00820120087', 'Banking/Financial Services', '2', '', '');
-INSERT INTO specializationtbl VALUES ('187', '00820120087', 'Advertising/Media Planning', '1', '', '');
-INSERT INTO specializationtbl VALUES ('188', '00820120026', 'Aviation/Aircraft Maintenance', '4', '', '');
-INSERT INTO specializationtbl VALUES ('189', '00820120026', 'Clerical/Administrative Support', '4', '', '');
-INSERT INTO specializationtbl VALUES ('190', '00820120026', 'Chemistry', '3', '', '');
-INSERT INTO specializationtbl VALUES ('191', '00820120088', 'Arts/Creative/Graphics Design', '1', '', '');
-INSERT INTO specializationtbl VALUES ('192', '00820120088', 'Corporate Strategy/Top Management', '2', '', '');
-INSERT INTO specializationtbl VALUES ('193', '00820120088', 'Customer Service', '2', '', '');
-INSERT INTO specializationtbl VALUES ('194', '00820120089', 'Architecture/Interior Design', '1', '', '');
-INSERT INTO specializationtbl VALUES ('195', '00820120089', 'Architecture/Interior Design', '2', '', '');
-INSERT INTO specializationtbl VALUES ('196', '00820120028', 'Corporate Strategy/Top Management', '3', '', '');
-INSERT INTO specializationtbl VALUES ('197', '00820120089', 'Aviation/Aircraft Maintenance', '2', '', '');
-INSERT INTO specializationtbl VALUES ('198', '00820120028', 'Banking/Financial Services', '2', '', '');
-INSERT INTO specializationtbl VALUES ('199', '00820120028', 'Banking/Financial Services', '2', '', '');
-INSERT INTO specializationtbl VALUES ('200', '00820120090', 'Arts/Creative/Graphics Design', '1', '', '');
-INSERT INTO specializationtbl VALUES ('201', '00820120029', 'Architecture/Interior Design', '2', '', '');
-INSERT INTO specializationtbl VALUES ('202', '00820120090', 'Banking/Financial Services', '2', '', '');
-INSERT INTO specializationtbl VALUES ('203', '00820120029', 'Aviation/Aircraft Maintenance', '3', '', '');
-INSERT INTO specializationtbl VALUES ('204', '00820120090', 'Arts and Design', '3', '', '');
-INSERT INTO specializationtbl VALUES ('205', '00820120029', 'BPO/Call Center', '3', '', '');
-INSERT INTO specializationtbl VALUES ('206', '00820120091', 'Aviation/Aircraft Maintenance', '1', '', '');
-INSERT INTO specializationtbl VALUES ('207', '00820120091', 'Banking/Financial Services', '2', '', '');
-INSERT INTO specializationtbl VALUES ('208', '00820120030', 'Aviation/Aircraft Maintenance', '2', '', '');
-INSERT INTO specializationtbl VALUES ('209', '00820120091', 'Chemistry', '1', '', '');
-INSERT INTO specializationtbl VALUES ('210', '00820120030', 'Banking/Financial Services', '2', '', '');
-INSERT INTO specializationtbl VALUES ('211', '00820120030', 'Biotechnology', '4', '', '');
-INSERT INTO specializationtbl VALUES ('212', '00820120092', 'Arts/Creative/Graphics Design', '1', '', '');
-INSERT INTO specializationtbl VALUES ('213', '00820120031', 'Arts/Creative/Graphics Design', '3', '', '');
-INSERT INTO specializationtbl VALUES ('214', '00820120092', 'Customer Service (Technical)', '2', '', '');
-INSERT INTO specializationtbl VALUES ('215', '00820120031', 'Chemistry', '3', '', '');
-INSERT INTO specializationtbl VALUES ('216', '00820120092', 'Chemistry', '2', '', '');
-INSERT INTO specializationtbl VALUES ('217', '00820120031', 'Clerical/Administrative Support', '4', '', '');
-INSERT INTO specializationtbl VALUES ('218', '00820120093', 'Arts/Creative/Graphics Design', '1', '', '');
-INSERT INTO specializationtbl VALUES ('219', '00820120093', 'Chemistry', '2', '', '');
-INSERT INTO specializationtbl VALUES ('220', '00820120093', 'Chemistry', '3', '', '');
-INSERT INTO specializationtbl VALUES ('221', '00820120032', 'BPO/Call Center', '2', '', '');
-INSERT INTO specializationtbl VALUES ('222', '00820120032', 'Corporate Strategy/Top Management', '1', '', '');
-INSERT INTO specializationtbl VALUES ('223', '00820120032', 'Chemistry', '1', '', '');
-INSERT INTO specializationtbl VALUES ('224', '00820120094', 'Aviation/Aircraft Maintenance', '1', '', '');
-INSERT INTO specializationtbl VALUES ('225', '00820120094', 'Banking/Financial Services', '3', '', '');
-INSERT INTO specializationtbl VALUES ('226', '00820120094', 'BPO/Call Center', '2', '', '');
-INSERT INTO specializationtbl VALUES ('227', '00820120033', 'Arts/Creative/Graphics Design', '4', '', '');
-INSERT INTO specializationtbl VALUES ('228', '00820120033', 'Banking/Financial Services', '2', '', '');
-INSERT INTO specializationtbl VALUES ('229', '00820120033', 'Aviation/Aircraft Maintenance', '4', '', '');
-INSERT INTO specializationtbl VALUES ('230', '00820120034', 'Arts and Design', '3', '', '');
-INSERT INTO specializationtbl VALUES ('231', '00820120034', 'BPO/Call Center', '3', '', '');
-INSERT INTO specializationtbl VALUES ('232', '00820120095', 'Customer Service', '1', '', '');
-INSERT INTO specializationtbl VALUES ('233', '00820120034', 'Banking/Financial Services', '3', '', '');
-INSERT INTO specializationtbl VALUES ('234', '00820120095', 'BPO/Call Center', '2', '', '');
-INSERT INTO specializationtbl VALUES ('235', '00820120095', 'Corporate Strategy/Top Management', '4', '', '');
-INSERT INTO specializationtbl VALUES ('236', '00820120035', 'Arts/Creative/Graphics Design', '4', '', '');
-INSERT INTO specializationtbl VALUES ('237', '00820120035', 'Biotechnology', '4', '', '');
-INSERT INTO specializationtbl VALUES ('238', '00820120035', 'BPO/Call Center', '3', '', '');
-INSERT INTO specializationtbl VALUES ('239', '00820120096', 'Biotechnology', '1', '', '');
-INSERT INTO specializationtbl VALUES ('240', '00820120096', 'BPO/Call Center', '2', '', '');
-INSERT INTO specializationtbl VALUES ('241', '00820120096', 'Aviation/Aircraft Maintenance', '2', '', '');
-INSERT INTO specializationtbl VALUES ('242', '00820120035', 'Banking/Financial Services', '4', '', '');
-INSERT INTO specializationtbl VALUES ('243', '00820120035', 'Chemistry', '4', '', '');
-INSERT INTO specializationtbl VALUES ('244', '00820120035', 'Biotechnology', '3', '', '');
-INSERT INTO specializationtbl VALUES ('245', '00820120097', 'BPO/Call Center', '1', '', '');
-INSERT INTO specializationtbl VALUES ('246', '00820120097', 'Chemistry', '2', '', '');
-INSERT INTO specializationtbl VALUES ('247', '00820120097', 'Arts and Design', '1', '', '');
-INSERT INTO specializationtbl VALUES ('248', '00820120036', 'Aviation/Aircraft Maintenance', '1', '', '');
-INSERT INTO specializationtbl VALUES ('249', '00820120036', 'Aviation/Aircraft Maintenance', '2', '', '');
-INSERT INTO specializationtbl VALUES ('250', '00820120036', 'Biotechnology', '4', '', '');
-INSERT INTO specializationtbl VALUES ('251', '00820120098', 'Aviation/Aircraft Maintenance', '1', '', '');
-INSERT INTO specializationtbl VALUES ('252', '00820120098', 'Banking/Financial Services', '2', '', '');
-INSERT INTO specializationtbl VALUES ('253', '00820120098', 'Clerical/Administrative Support', '3', '', '');
-INSERT INTO specializationtbl VALUES ('254', '00820120037', 'Aviation/Aircraft Maintenance', '2', '', '');
-INSERT INTO specializationtbl VALUES ('255', '00820120037', 'Biotechnology', '3', '', '');
-INSERT INTO specializationtbl VALUES ('256', '00820120037', 'Aviation/Aircraft Maintenance', '3', '', '');
-INSERT INTO specializationtbl VALUES ('257', '00820120099', 'Advertising/Media Planning', '1', '', '');
-INSERT INTO specializationtbl VALUES ('258', '00820120099', 'Clerical/Administrative Support', '2', '', '');
-INSERT INTO specializationtbl VALUES ('259', '00820120099', 'Clerical/Administrative Support', '2', '', '');
-INSERT INTO specializationtbl VALUES ('260', '00820120038', 'Banking/Financial Services', '2', '', '');
-INSERT INTO specializationtbl VALUES ('261', '00820120038', 'Architecture/Interior Design', '3', '', '');
-INSERT INTO specializationtbl VALUES ('262', '00820120038', 'Arts/Creative/Graphics Design', '3', '', '');
-INSERT INTO specializationtbl VALUES ('263', '00820120100', 'Arts/Creative/Graphics Design', '1', '', '');
-INSERT INTO specializationtbl VALUES ('264', '00820120100', 'Aviation/Aircraft Maintenance', '2', '', '');
-INSERT INTO specializationtbl VALUES ('265', '00820120100', 'Clerical/Administrative Support', '3', '', '');
-INSERT INTO specializationtbl VALUES ('266', '00820120039', 'Arts/Creative/Graphics Design', '2', '', '');
-INSERT INTO specializationtbl VALUES ('267', '00820120039', 'Arts and Design', '3', '', '');
-INSERT INTO specializationtbl VALUES ('268', '00820120039', 'Banking/Financial Services', '3', '', '');
-INSERT INTO specializationtbl VALUES ('269', '00820120101', 'Aviation/Aircraft Maintenance', '1', '', '');
-INSERT INTO specializationtbl VALUES ('270', '00820120101', 'Costing Management', '2', '', '');
-INSERT INTO specializationtbl VALUES ('271', '00820120101', 'BPO/Call Center', '3', '', '');
-INSERT INTO specializationtbl VALUES ('272', '00820120039', 'Aviation/Aircraft Maintenance', '2', '', '');
-INSERT INTO specializationtbl VALUES ('273', '00820120039', 'Banking/Financial Services', '2', '', '');
-INSERT INTO specializationtbl VALUES ('274', '00820120039', 'Chemistry', '3', '', '');
-INSERT INTO specializationtbl VALUES ('275', '00820120040', 'Arts/Creative/Graphics Design', '3', '', '');
-INSERT INTO specializationtbl VALUES ('276', '00820120040', 'Aviation/Aircraft Maintenance', '3', '', '');
-INSERT INTO specializationtbl VALUES ('277', '00820120040', 'Aviation/Aircraft Maintenance', '3', '', '');
-INSERT INTO specializationtbl VALUES ('278', '00820120102', 'Biotechnology', '1', '', '');
-INSERT INTO specializationtbl VALUES ('279', '00820120102', 'Aviation/Aircraft Maintenance', '3', '', '');
-INSERT INTO specializationtbl VALUES ('280', '00820120102', 'Arts/Creative/Graphics Design', '4', '', '');
-INSERT INTO specializationtbl VALUES ('281', '00820120041', 'BPO/Call Center', '2', '', '');
-INSERT INTO specializationtbl VALUES ('282', '00820120041', 'Aviation/Aircraft Maintenance', '4', '', '');
-INSERT INTO specializationtbl VALUES ('283', '00820120041', 'Costing Management', '4', '', '');
-INSERT INTO specializationtbl VALUES ('284', '00820120103', 'Banking/Financial Services', '3', '', '');
-INSERT INTO specializationtbl VALUES ('285', '00820120103', 'Customer Service (Technical)', '22', '', '');
-INSERT INTO specializationtbl VALUES ('286', '00820120103', 'Customer Service', '1', '', '');
-INSERT INTO specializationtbl VALUES ('287', '00820120042', 'BPO/Call Center', '3', '', '');
-INSERT INTO specializationtbl VALUES ('288', '00820120042', 'BPO/Call Center', '3', '', '');
-INSERT INTO specializationtbl VALUES ('289', '00820120042', 'Biotechnology', '3', '', '');
-INSERT INTO specializationtbl VALUES ('290', '00820120104', 'Arts/Creative/Graphics Design', '1', '', '');
-INSERT INTO specializationtbl VALUES ('291', '00820120104', 'Biotechnology', '3', '', '');
-INSERT INTO specializationtbl VALUES ('292', '00820120104', 'Customer Service', '4', '', '');
-INSERT INTO specializationtbl VALUES ('293', '00820120043', 'Aviation/Aircraft Maintenance', '3', '', '');
-INSERT INTO specializationtbl VALUES ('294', '00820120043', 'Arts/Creative/Graphics Design', '3', '', '');
-INSERT INTO specializationtbl VALUES ('295', '00820120043', 'Banking/Financial Services', '3', '', '');
-INSERT INTO specializationtbl VALUES ('296', '00820120105', 'Biotechnology', '11', '', '');
-INSERT INTO specializationtbl VALUES ('297', '00820120105', 'Customer Service (Technical)', '2', '', '');
-INSERT INTO specializationtbl VALUES ('298', '00820120105', 'Costing Management', '3', '', '');
-INSERT INTO specializationtbl VALUES ('299', '00820120044', 'Arts/Creative/Graphics Design', '4', '', '');
-INSERT INTO specializationtbl VALUES ('300', '00820120044', 'Architecture/Interior Design', '3', '', '');
-INSERT INTO specializationtbl VALUES ('301', '00820120044', 'Arts and Design', '3', '', '');
-INSERT INTO specializationtbl VALUES ('302', '00820120106', 'Costing Management', '2', '', '');
-INSERT INTO specializationtbl VALUES ('303', '00820120106', 'Clerical/Administrative Support', '3', '', '');
-INSERT INTO specializationtbl VALUES ('304', '00820120106', 'Banking/Financial Services', '1', '', '');
-INSERT INTO specializationtbl VALUES ('305', '00820120045', 'Corporate Strategy/Top Management', '3', '', '');
-INSERT INTO specializationtbl VALUES ('306', '00820120045', 'Arts and Design', '2', '', '');
-INSERT INTO specializationtbl VALUES ('307', '00820120045', 'Biotechnology', '4', '', '');
-INSERT INTO specializationtbl VALUES ('308', '00820120107', 'Aviation/Aircraft Maintenance', '1', '', '');
-INSERT INTO specializationtbl VALUES ('309', '00820120107', 'BPO/Call Center', '3', '', '');
-INSERT INTO specializationtbl VALUES ('310', '00820120107', 'Clerical/Administrative Support', '4', '', '');
-INSERT INTO specializationtbl VALUES ('311', '00820120047', 'Biotechnology', '2', '', '');
-INSERT INTO specializationtbl VALUES ('312', '00820120047', 'BPO/Call Center', '3', '', '');
-INSERT INTO specializationtbl VALUES ('313', '00820120047', 'Aviation/Aircraft Maintenance', '4', '', '');
-INSERT INTO specializationtbl VALUES ('314', '00820120108', 'Arts and Design', '1', '', '');
-INSERT INTO specializationtbl VALUES ('315', '00820120108', 'Chemistry', '2', '', '');
-INSERT INTO specializationtbl VALUES ('316', '00820120050', 'Aviation/Aircraft Maintenance', '3', '', '');
-INSERT INTO specializationtbl VALUES ('317', '00820120050', 'Arts/Creative/Graphics Design', '3', '', '');
-INSERT INTO specializationtbl VALUES ('318', '00820120108', 'Banking/Financial Services', '3', '', '');
-INSERT INTO specializationtbl VALUES ('319', '00820120050', 'Banking/Financial Services', '4', '', '');
-INSERT INTO specializationtbl VALUES ('320', '00820120051', 'Architecture/Interior Design', '4', '', '');
-INSERT INTO specializationtbl VALUES ('321', '00820120051', 'Arts and Design', '4', '', '');
-INSERT INTO specializationtbl VALUES ('322', '00820120109', 'Biotechnology', '1', '', '');
-INSERT INTO specializationtbl VALUES ('323', '00820120051', 'Arts/Creative/Graphics Design', '3', '', '');
-INSERT INTO specializationtbl VALUES ('324', '00820120109', 'Aviation/Aircraft Maintenance', '2', '', '');
-INSERT INTO specializationtbl VALUES ('325', '00820120109', 'Clerical/Administrative Support', '4', '', '');
-INSERT INTO specializationtbl VALUES ('326', '00820120052', 'BPO/Call Center', '3', '', '');
-INSERT INTO specializationtbl VALUES ('327', '00820120052', 'Arts/Creative/Graphics Design', '4', '', '');
-INSERT INTO specializationtbl VALUES ('328', '00820120052', 'Arts and Design', '4', '', '');
-INSERT INTO specializationtbl VALUES ('329', '00820120110', 'BPO/Call Center', '1', '', '');
-INSERT INTO specializationtbl VALUES ('330', '00820120110', 'Customer Service', '2', '', '');
-INSERT INTO specializationtbl VALUES ('331', '00820120110', 'Costing Management', '3', '', '');
-INSERT INTO specializationtbl VALUES ('332', '00820120053', 'Biotechnology', '3', '', '');
-INSERT INTO specializationtbl VALUES ('333', '00820120053', 'Aviation/Aircraft Maintenance', '1', '', '');
-INSERT INTO specializationtbl VALUES ('334', '00820120053', 'Aviation/Aircraft Maintenance', '4', '', '');
-INSERT INTO specializationtbl VALUES ('335', '00820120111', 'Corporate Strategy/Top Management', '1', '', '');
-INSERT INTO specializationtbl VALUES ('336', '00820120111', 'Clerical/Administrative Support', '2', '', '');
-INSERT INTO specializationtbl VALUES ('337', '00820120111', 'Corporate Strategy/Top Management', '4', '', '');
-INSERT INTO specializationtbl VALUES ('338', '00820120054', 'Banking/Financial Services', '3', '', '');
-INSERT INTO specializationtbl VALUES ('339', '00820120054', 'Biotechnology', '3', '', '');
-INSERT INTO specializationtbl VALUES ('340', '00820120054', 'Biotechnology', '4', '', '');
-INSERT INTO specializationtbl VALUES ('341', '00820120112', 'Aviation/Aircraft Maintenance', '11', '', '');
-INSERT INTO specializationtbl VALUES ('342', '00820120112', 'Biotechnology', '2', '', '');
-INSERT INTO specializationtbl VALUES ('343', '00820120112', 'Customer Service', '3', '', '');
-INSERT INTO specializationtbl VALUES ('344', '00820120055', 'Architecture/Interior Design', '3', '', '');
-INSERT INTO specializationtbl VALUES ('345', '00820120055', 'Banking/Financial Services', '4', '', '');
-INSERT INTO specializationtbl VALUES ('346', '00820120055', 'Banking/Financial Services', '3', '', '');
-INSERT INTO specializationtbl VALUES ('347', '00820120113', 'Clerical/Administrative Support', '1', '', '');
-INSERT INTO specializationtbl VALUES ('348', '00820120113', 'Customer Service (Technical)', '2', '', '');
-INSERT INTO specializationtbl VALUES ('349', '00820120113', 'Education / Academe', '4', '', '');
-INSERT INTO specializationtbl VALUES ('350', '00820120056', 'Architecture/Interior Design', '3', '', '');
-INSERT INTO specializationtbl VALUES ('351', '00820120056', 'Arts/Creative/Graphics Design', '3', '', '');
-INSERT INTO specializationtbl VALUES ('352', '00820120056', 'Arts and Design', '3', '', '');
-INSERT INTO specializationtbl VALUES ('353', '00820120114', 'Banking/Financial Services', '12', '', '');
-INSERT INTO specializationtbl VALUES ('354', '00820120114', 'BPO/Call Center', '2', '', '');
-INSERT INTO specializationtbl VALUES ('355', '00820120114', 'Biotechnology', '1', '', '');
-INSERT INTO specializationtbl VALUES ('356', '00820120057', 'Aviation/Aircraft Maintenance', '2', '', '');
-INSERT INTO specializationtbl VALUES ('357', '00820120057', 'Architecture/Interior Design', '2', '', '');
-INSERT INTO specializationtbl VALUES ('358', '00820120057', 'Banking/Financial Services', '4', '', '');
-INSERT INTO specializationtbl VALUES ('359', '00820120115', 'Banking/Financial Services', '1', '', '');
-INSERT INTO specializationtbl VALUES ('360', '00820120115', 'Corporate Strategy/Top Management', '2', '', '');
-INSERT INTO specializationtbl VALUES ('361', '00820120115', 'BPO/Call Center', '3', '', '');
-INSERT INTO specializationtbl VALUES ('362', '00820120059', 'Aviation/Aircraft Maintenance', '2', '', '');
-INSERT INTO specializationtbl VALUES ('363', '00820120059', 'Arts/Creative/Graphics Design', '2', '', '');
-INSERT INTO specializationtbl VALUES ('364', '00820120059', 'Banking/Financial Services', '2', '', '');
-INSERT INTO specializationtbl VALUES ('365', '00820120116', 'Aviation/Aircraft Maintenance', '1', '', '');
-INSERT INTO specializationtbl VALUES ('366', '00820120116', 'Chemistry', '2', '', '');
-INSERT INTO specializationtbl VALUES ('367', '00820120116', 'Corporate Strategy/Top Management', '3', '', '');
-INSERT INTO specializationtbl VALUES ('368', '00820120061', 'Aviation/Aircraft Maintenance', '3', '', '');
-INSERT INTO specializationtbl VALUES ('369', '00820120061', 'Architecture/Interior Design', '3', '', '');
-INSERT INTO specializationtbl VALUES ('370', '00820120061', 'Biotechnology', '3', '', '');
-INSERT INTO specializationtbl VALUES ('371', '00820120117', 'Arts/Creative/Graphics Design', '1', '', '');
-INSERT INTO specializationtbl VALUES ('372', '00820120117', 'Clerical/Administrative Support', '2', '', '');
-INSERT INTO specializationtbl VALUES ('373', '00820120117', 'Corporate Strategy/Top Management', '4', '', '');
-INSERT INTO specializationtbl VALUES ('374', '00820120062', 'Arts/Creative/Graphics Design', '3', '', '');
-INSERT INTO specializationtbl VALUES ('375', '00820120062', 'Arts/Creative/Graphics Design', '3', '', '');
-INSERT INTO specializationtbl VALUES ('376', '00820120062', 'Aviation/Aircraft Maintenance', '3', '', '');
-INSERT INTO specializationtbl VALUES ('377', '00820120118', 'Arts and Design', '1', '', '');
-INSERT INTO specializationtbl VALUES ('378', '00820120118', 'Chemistry', '3', '', '');
-INSERT INTO specializationtbl VALUES ('379', '00820120118', 'Costing Management', '4', '', '');
-INSERT INTO specializationtbl VALUES ('380', '00820120063', 'Architecture/Interior Design', '2', '', '');
-INSERT INTO specializationtbl VALUES ('381', '00820120063', 'Biotechnology', '3', '', '');
-INSERT INTO specializationtbl VALUES ('382', '00820120063', 'Biotechnology', '3', '', '');
-INSERT INTO specializationtbl VALUES ('383', '00820120119', 'Banking/Financial Services', '1', '', '');
-INSERT INTO specializationtbl VALUES ('384', '00820120119', 'Chemistry', '2', '', '');
-INSERT INTO specializationtbl VALUES ('385', '00820120119', 'Chemistry', '3', '', '');
-INSERT INTO specializationtbl VALUES ('386', '00820120064', 'Biotechnology', '3', '', '');
-INSERT INTO specializationtbl VALUES ('387', '00820120064', 'Arts/Creative/Graphics Design', '3', '', '');
-INSERT INTO specializationtbl VALUES ('388', '00820120064', 'Arts/Creative/Graphics Design', '3', '', '');
-INSERT INTO specializationtbl VALUES ('389', '00820120120', 'Arts/Creative/Graphics Design', '1', '', '');
-INSERT INTO specializationtbl VALUES ('390', '00820120120', 'BPO/Call Center', '2', '', '');
-INSERT INTO specializationtbl VALUES ('391', '00820120120', 'Arts/Creative/Graphics Design', '1', '', '');
-INSERT INTO specializationtbl VALUES ('392', '00820120124', 'Arts and Design', '5', '', '');
-INSERT INTO specializationtbl VALUES ('393', '00820120124', 'Arts and Design', '2', '', '');
-INSERT INTO specializationtbl VALUES ('394', '00820120124', 'Arts and Design', '3', '', '');
-INSERT INTO specializationtbl VALUES ('395', '00820120121', 'Architecture/Interior Design', '1', '', '');
-INSERT INTO specializationtbl VALUES ('396', '00820120121', 'BPO/Call Center', '2', '', '');
-INSERT INTO specializationtbl VALUES ('397', '00820120121', 'Chemistry', '3', '', '');
-INSERT INTO specializationtbl VALUES ('398', '00820120123', 'Aviation/Aircraft Maintenance', '2', '', '');
-INSERT INTO specializationtbl VALUES ('399', '00820120123', 'Agriculture/Forestry/Fisheries', '3', '', '');
-INSERT INTO specializationtbl VALUES ('400', '00820120123', 'Arts/Creative/Graphics Design', '4', '', '');
-INSERT INTO specializationtbl VALUES ('401', '00820120122', 'Arts/Creative/Graphics Design', '1', '', '');
-INSERT INTO specializationtbl VALUES ('402', '00820120122', 'Biotechnology', '2', '', '');
-INSERT INTO specializationtbl VALUES ('403', '00820120122', 'Clerical/Administrative Support', '4', '', '');
-INSERT INTO specializationtbl VALUES ('421', '00820120001', '', '1', '2', 'q');
-INSERT INTO specializationtbl VALUES ('420', '00820120001', '', '1', '2', 'f');
-INSERT INTO specializationtbl VALUES ('419', '00820120001', '', '1', '1', '5');
-INSERT INTO specializationtbl VALUES ('416', '00820120001', '', '4', '1', 'testing add skill testing');
-INSERT INTO specializationtbl VALUES ('417', '00820120001', '', '2', '1', 'y');
 
 -- ----------------------------
 -- Table structure for `studcontactstbl`

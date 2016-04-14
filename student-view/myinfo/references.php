@@ -499,13 +499,13 @@ if ($References == "ok") {
                                         </div>
                                         <div class="modal-body">
                                             <div class="row">
-                                                <div class="col-md-6">
+                                                <div class="col-md-6" id="1">
                                                     <div class="form-group">
                                                         <label>Name <span>(*)</span></label>
                                                         <input type="text" class="form-control" id="Name" name="Name">
                                                     </div>
                                                 </div>
-                                                <div class="col-md-6">
+                                                <div class="col-md-6" id="2">
                                                     <div class="form-group">
                                                         <label>Relationship <span>(*)</span></label>
                                                         <input type="text" class="form-control" id="Relationship" name="Relationship">
@@ -513,13 +513,13 @@ if ($References == "ok") {
                                                 </div>
                                             </div>
                                             <div class="row">
-                                                <div class="col-md-6">
+                                                <div class="col-md-6" id="3">
                                                     <div class="form-group">
                                                         <label>Company <span>(*)</span></label>
                                                         <input type="text" class="form-control" id="Company" name="Company">
                                                     </div>
                                                 </div>
-                                                <div class="col-md-6">
+                                                <div class="col-md-6" id="4">
                                                     <div class="form-group">
                                                         <label>Position <span>(*)</span></label>
                                                         <input type="text" class="form-control" id="Position" name="Position">
@@ -527,16 +527,22 @@ if ($References == "ok") {
                                                 </div>
                                             </div>
                                             <div class="row">
-                                                <div class="col-md-6">
+                                                <div class="col-md-6" id="5">
                                                     <div class="form-group">
                                                         <label>Phone <span>(*)</span></label>
                                                         <input type="text" class="form-control" id="Phone" name="Phone" maxlength="11">
                                                     </div>
                                                 </div>
+                                                <div class="col-md-6" id="6">
+                                                    <div class="form-group">
+                                                        <label>Email <span>(*)</span></label>
+                                                        <input type="email" class="form-control" id="Email" name="Email">
+                                                    </div>
+                                                </div>
                                                 <div class="col-md-6">
                                                     <div class="form-group">
-                                                        <label>Email</label>
-                                                        <input type="email" class="form-control" id="Email" name="Email">
+                                                        <label>Others</label><br>
+                                                        <label><input type="checkbox" name="Other" id="Other"> Available upon request</label>
                                                     </div>
                                                 </div>
                                             </div>
@@ -787,61 +793,98 @@ if ($References == "ok") {
 </body>
 </html>
 <script type="text/javascript">
-    $(document).ready(function () {
-        var validator = $("#FormAddReference").bootstrapValidator({
-            feedbackIcons: {
-                valid: "glyphicon glyphicon-ok",
-                invalid: "glyphicon glyphicon-remove",
-                validating: "glyphicon glyphicon-refresh"
-            },
-            fields: {
-                Name: {
-                    validators: {
-                        notEmpty: {
-                            message: "This field is required."
-                        }
-                    }
+
+    $('#Other').click(function () {
+        if ($(this).is(':checked')) {
+            $('#1').hide();
+            $('#2').hide();
+            $('#3').hide();
+            $('#4').hide();
+            $('#5').hide();
+            $('#6').hide();
+        } else {
+            $('#1').show();
+            $('#2').show();
+            $('#3').show();
+            $('#4').show();
+            $('#5').show();
+            $('#6').show();
+
+        }
+    });
+
+    if ($('#Other').is(':checked')) {
+        $('#1').hide();
+        $('#2').hide();
+        $('#3').hide();
+        $('#4').hide();
+        $('#5').hide();
+        $('#6').hide();
+    } else {
+        $('#1').show();
+        $('#2').show();
+        $('#3').show();
+        $('#4').show();
+        $('#5').show();
+        $('#6').show();
+
+        $(document).ready(function () {
+            var validator = $("#FormAddReference").bootstrapValidator({
+                feedbackIcons: {
+                    valid: "glyphicon glyphicon-ok",
+                    invalid: "glyphicon glyphicon-remove",
+                    validating: "glyphicon glyphicon-refresh"
                 },
-                Relationship: {
-                    validators: {
-                        notEmpty: {
-                            message: "This field is required."
+                fields: {
+                    Name: {
+                        validators: {
+                            notEmpty: {
+                                message: "This field is required."
+                            }
                         }
-                    }
-                },
-                Company: {
-                    validators: {
-                        notEmpty: {
-                            message: "This field is required."
+                    },
+                    Relationship: {
+                        validators: {
+                            notEmpty: {
+                                message: "This field is required."
+                            }
                         }
-                    }
-                },
-                Position: {
-                    validators: {
-                        notEmpty: {
-                            message: "This field is required."
+                    },
+                    Company: {
+                        validators: {
+                            notEmpty: {
+                                message: "This field is required."
+                            }
                         }
-                    }
-                },
-                Phone: {
-                    validators: {
-                        notEmpty: {
-                            message: "This field is required."
-                        },
-                        regexp: {
-                            regexp: /(^(0(9(05|06|07|08|09|10|11|12|13|14|15|16|17|18|19|20|21|22|23|24|25|26|27|28|29|30|32|33|34|35|36|37|38|39|42|43|46|47|48|49|75|77|89|94|96|97|98)[0-9]{7}|[0-8][0-9]{5})|[1-9][0-9]{6})$|^$)/,
-                            message: "Invalid Phone Number."
+                    },
+                    Position: {
+                        validators: {
+                            notEmpty: {
+                                message: "This field is required."
+                            }
                         }
-                    }
-                },
-                Email: {
-                    validators: {
-                        notEmpty: {
-                            message: "This field is required."
+                    },
+                    Phone: {
+                        validators: {
+                            notEmpty: {
+                                message: "This field is required."
+                            },
+                            regexp: {
+                                regexp: /(^(0(9(05|06|07|08|09|10|11|12|13|14|15|16|17|18|19|20|21|22|23|24|25|26|27|28|29|30|32|33|34|35|36|37|38|39|42|43|46|47|48|49|75|77|89|94|96|97|98)[0-9]{7}|[0-8][0-9]{5})|[1-9][0-9]{6})$|^$)/,
+                                message: "Invalid Phone Number."
+                            }
+                        }
+                    },
+                    Email: {
+                        validators: {
+                            notEmpty: {
+                                message: "This field is required."
+                            }
                         }
                     }
                 }
-            }
+            });
         });
-    });
+    }
+
 </script>
