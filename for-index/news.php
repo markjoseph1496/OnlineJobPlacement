@@ -16,7 +16,6 @@ include("../connection.php");
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
     <!-- Page Description and Author -->
-    <meta name="description" content="OJPMS">
     <link rel="shortcut icon" href="../images/logo/favicon.ico">
 
     <!-- Bootstrap CSS -->
@@ -56,9 +55,6 @@ include("../connection.php");
 
     <!-- Color CSS Styles  -->
     <link rel="stylesheet" type="text/css" href="../css/colors/yellow.css" title="yellow" media="screen"/>
-
-    <!-- Pagination -->
-    <link rel="stylesheet" href="../css/simplePagination.css"/>
 
     <!-- JS  -->
     <script type="text/javascript" src="../js/jquery.migrate.js"></script>

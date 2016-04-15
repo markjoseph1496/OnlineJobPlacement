@@ -8,7 +8,6 @@ $num = $_GET['n'];
 
 $StudentID = encrypt_decrypt_plusTime('decrypt', $StudentID, $num);
 
-
 $StudentInfo_tbl =
     GSecureSQL::query(
         "SELECT
@@ -25,6 +24,11 @@ $StudentInfo_tbl =
         "s",
         $StudentID
     );
+
+if(count($StudentInfo_tbl) == 0){
+    header("location: login-student.php");
+    session_destroy();
+}
 
 
 $FirstName = $StudentInfo_tbl[0][0];

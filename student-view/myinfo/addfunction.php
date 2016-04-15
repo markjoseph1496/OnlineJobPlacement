@@ -107,6 +107,19 @@ if (isset($_POST['btnSaveInfo'])) {
         } else {
             if (move_uploaded_file($_FILES["ProfilePicture"]["tmp_name"], $target_file)) {
 
+                $ProfileImage =
+                    GSecureSQL::query(
+                        "SELECT ProfileImage FROM studentinfotbl WHERE StudentID = ?",
+                        TRUE,
+                        "s",
+                        $StudentID
+                    );
+                $picturepath = $ProfileImage[0][0];
+
+                if($picturepath != ""){
+                    unlink($Picture);
+                }
+
                 GSecureSQL::query(
                     "UPDATE studentinfotbl SET ProfileImage = ? WHERE StudentID = ?",
                     FALSE,
@@ -114,7 +127,8 @@ if (isset($_POST['btnSaveInfo'])) {
                     $target_file,
                     $StudentID
                 );
-                unlink($Picture);
+
+
                 header("location: personal-info.php?saved");
 
             } else {

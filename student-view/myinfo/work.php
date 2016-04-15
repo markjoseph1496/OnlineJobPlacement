@@ -873,12 +873,10 @@ if ($References == "ok") {
                         <td><?php echo $WorkSpecialization; ?></td>
                         <td><?php echo $Duration; ?></td>
                         <td class="text-center">
-                            <!--
                             <button class="btn btn-default" data-toggle="modal"
                                     data-target="#EditWork<?php echo $WorkID; ?>">
                                 <i class="fa fa-pencil-square-o fa-1x"></i>
                             </button>
-                            -->
                             <button class="btn btn-danger" data-toggle="modal"
                                     data-target="#DeleteWork<?php echo $WorkID; ?>">
                                 <i class="fa fa-trash fa-1x"></i>
@@ -928,7 +926,7 @@ if ($References == "ok") {
                                                             $IndustryID = $value0[0];
                                                             $Industry = $value0[1];
                                                             ?>
-                                                            <option <?php if($Industry == $CompanyIndustry) echo "selected='selected'"; ?> value="<?php echo $Industry; ?>"><?php echo $Industry; ?></option>
+                                                            <option <?php if ($Industry == $CompanyIndustry) echo "selected='selected'"; ?> value="<?php echo $Industry; ?>"><?php echo $Industry; ?></option>
                                                             <?php
                                                         }
                                                         ?>
@@ -938,7 +936,7 @@ if ($References == "ok") {
                                             <div class="col-md-6">
                                                 <div class="form-group">
                                                     <label>Duration</label><br>
-                                                    <label><input type="checkbox" name="EditDuration" id="EditDuration" <?php if($DateToYear == "Current"){echo "checked='checked'"; } ?>> Currently Work Here</label>
+                                                    <label><input type="checkbox" name="EditDuration" id="EditDuration" <?php if ($DateToYear == "Current") { echo "checked='checked'"; } ?>> Currently Work Here</label>
                                                 </div>
                                             </div>
                                         </div>
@@ -949,18 +947,18 @@ if ($References == "ok") {
                                                     <select id="EditFromMonth" name="EditFromMonth" class="form-control"
                                                             style="width:100%; height:34px;">
                                                         <option value="">- Select Month -</option>
-                                                        <option <?php if($FromMonth == "01") echo "selected='selected'"; ?> value="01">January</option>
-                                                        <option <?php if($FromMonth == "02") echo "selected='selected'"; ?> value="02">February</option>
-                                                        <option <?php if($FromMonth == "03") echo "selected='selected'"; ?> value="03">March</option>
-                                                        <option <?php if($FromMonth == "04") echo "selected='selected'"; ?> value="04">April</option>
-                                                        <option <?php if($FromMonth == "05") echo "selected='selected'"; ?> value="05">May</option>
-                                                        <option <?php if($FromMonth == "06") echo "selected='selected'"; ?> value="06">June</option>
-                                                        <option <?php if($FromMonth == "07") echo "selected='selected'"; ?> value="07">July</option>
-                                                        <option <?php if($FromMonth == "08") echo "selected='selected'"; ?> value="08">August</option>
-                                                        <option <?php if($FromMonth == "09") echo "selected='selected'"; ?> value="09">September</option>
-                                                        <option <?php if($FromMonth == "10") echo "selected='selected'"; ?> value="10">October</option>
-                                                        <option <?php if($FromMonth == "11") echo "selected='selected'"; ?> value="11">November</option>
-                                                        <option <?php if($FromMonth == "12") echo "selected='selected'"; ?> value="12">December</option>
+                                                        <option <?php if ($FromMonth == "01") echo "selected='selected'"; ?> value="01">January</option>
+                                                        <option <?php if ($FromMonth == "02") echo "selected='selected'"; ?> value="02">February</option>
+                                                        <option <?php if ($FromMonth == "03") echo "selected='selected'"; ?> value="03">March</option>
+                                                        <option <?php if ($FromMonth == "04") echo "selected='selected'"; ?> value="04">April</option>
+                                                        <option <?php if ($FromMonth == "05") echo "selected='selected'"; ?> value="05">May</option>
+                                                        <option <?php if ($FromMonth == "06") echo "selected='selected'"; ?> value="06">June</option>
+                                                        <option <?php if ($FromMonth == "07") echo "selected='selected'"; ?> value="07">July</option>
+                                                        <option <?php if ($FromMonth == "08") echo "selected='selected'"; ?> value="08">August</option>
+                                                        <option <?php if ($FromMonth == "09") echo "selected='selected'"; ?> value="09">September</option>
+                                                        <option <?php if ($FromMonth == "10") echo "selected='selected'"; ?> value="10">October</option>
+                                                        <option <?php if ($FromMonth == "11") echo "selected='selected'"; ?> value="11">November</option>
+                                                        <option <?php if ($FromMonth == "12") echo "selected='selected'"; ?> value="12">December</option>
                                                     </select>
                                                 </div>
                                             </div>
@@ -988,18 +986,18 @@ if ($References == "ok") {
                                                         <label>To <span>(*)</span></label>
                                                         <select id="EditToMonth" name="EditToMonth" class="form-control" style="width:100%; height:34px;">
                                                             <option value="">- Select Month -</option>
-                                                            <option <?php if($ToMonth == "01") echo "selected='selected'"; ?> value="01">January</option>
-                                                            <option <?php if($ToMonth == "02") echo "selected='selected'"; ?> value="02">February</option>
-                                                            <option <?php if($ToMonth == "03") echo "selected='selected'"; ?> value="03">March</option>
-                                                            <option <?php if($ToMonth == "04") echo "selected='selected'"; ?> value="04">April</option>
-                                                            <option <?php if($ToMonth == "05") echo "selected='selected'"; ?> value="05">May</option>
-                                                            <option <?php if($ToMonth == "06") echo "selected='selected'"; ?> value="06">June</option>
-                                                            <option <?php if($ToMonth == "07") echo "selected='selected'"; ?> value="07">July</option>
-                                                            <option <?php if($ToMonth == "08") echo "selected='selected'"; ?> value="08">August</option>
-                                                            <option <?php if($ToMonth == "09") echo "selected='selected'"; ?> value="09">September</option>
-                                                            <option <?php if($ToMonth == "10") echo "selected='selected'"; ?> value="10">October</option>
-                                                            <option <?php if($ToMonth == "11") echo "selected='selected'"; ?> value="11">November</option>
-                                                            <option <?php if($ToMonth == "12") echo "selected='selected'"; ?> value="12">December</option>
+                                                            <option <?php if ($ToMonth == "01") echo "selected='selected'"; ?> value="01">January</option>
+                                                            <option <?php if ($ToMonth == "02") echo "selected='selected'"; ?> value="02">February</option>
+                                                            <option <?php if ($ToMonth == "03") echo "selected='selected'"; ?> value="03">March</option>
+                                                            <option <?php if ($ToMonth == "04") echo "selected='selected'"; ?> value="04">April</option>
+                                                            <option <?php if ($ToMonth == "05") echo "selected='selected'"; ?> value="05">May</option>
+                                                            <option <?php if ($ToMonth == "06") echo "selected='selected'"; ?> value="06">June</option>
+                                                            <option <?php if ($ToMonth == "07") echo "selected='selected'"; ?> value="07">July</option>
+                                                            <option <?php if ($ToMonth == "08") echo "selected='selected'"; ?> value="08">August</option>
+                                                            <option <?php if ($ToMonth == "09") echo "selected='selected'"; ?> value="09">September</option>
+                                                            <option <?php if ($ToMonth == "10") echo "selected='selected'"; ?> value="10">October</option>
+                                                            <option <?php if ($ToMonth == "11") echo "selected='selected'"; ?> value="11">November</option>
+                                                            <option <?php if ($ToMonth == "12") echo "selected='selected'"; ?> value="12">December</option>
                                                         </select>
                                                     </div>
                                                 </div>
@@ -1039,7 +1037,7 @@ if ($References == "ok") {
                                                             $PositionID = $value1[0];
                                                             $Position = $value1[1];
                                                             ?>
-                                                            <option <?php if($PositionLevel == $Position) echo "selected='selected'"; ?> value="<?php echo $Position; ?>"><?php echo $Position; ?></option>
+                                                            <option <?php if ($PositionLevel == $Position) echo "selected='selected'"; ?> value="<?php echo $Position; ?>"><?php echo $Position; ?></option>
                                                             <?php
                                                         }
                                                         ?>
@@ -1066,7 +1064,7 @@ if ($References == "ok") {
                                                             $Specialization = $value2[1];
                                                             $count++;
                                                             ?>
-                                                            <option <?php if($WorkSpecialization == $Specialization) echo "selected='selected'";  ?> value="<?php echo $Specialization; ?>"><?php echo $Specialization; ?></option>
+                                                            <option <?php if ($WorkSpecialization == $Specialization) echo "selected='selected'"; ?> value="<?php echo $Specialization; ?>"><?php echo $Specialization; ?></option>
                                                             <?php
                                                         }
                                                         ?>
@@ -1089,7 +1087,7 @@ if ($References == "ok") {
                                                             $SalaryID = $value4[0];
                                                             $Salary = $value4[1];
                                                             ?>
-                                                            <option <?php if($MonthlySalary == $Salary) echo "selected='selected'"; ?> value="<?php echo $Salary; ?>"><?php echo $Salary; ?></option>
+                                                            <option <?php if ($MonthlySalary == $Salary) echo "selected='selected'"; ?> value="<?php echo $Salary; ?>"><?php echo $Salary; ?></option>
                                                             <?php
                                                         }
                                                         ?>
@@ -1101,7 +1099,7 @@ if ($References == "ok") {
                                             <div class="col-md-12">
                                                 <div class="form-group">
                                                     <label>Nature of Work</label><br>
-                                                    <textarea class="form-control" id="EditNatureOfWork" name="EditNatureOfWork" rows="5" maxlength="150"><?php echo $NatureOfWork; ?></textarea>
+                                                    <textarea class="form-control" id="EditNatureOfWork" name="EditNatureOfWork" rows="5" maxlength="150" placeholder="Description of your work."><?php echo $NatureOfWork; ?></textarea>
                                                     <div id="textarea_feedback"></div>
                                                 </div>
                                             </div>
