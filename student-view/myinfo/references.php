@@ -863,7 +863,8 @@ if ($References == "ok") {
                                 message: "This field is required."
                             }
                         }
-                    },
+                    }
+                    /*
                     Phone: {
                         validators: {
                             notEmpty: {
@@ -881,7 +882,7 @@ if ($References == "ok") {
                                 message: "This field is required."
                             }
                         }
-                    }
+                    } */
                 }
             });
         });

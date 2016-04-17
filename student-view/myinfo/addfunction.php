@@ -95,6 +95,7 @@ if (isset($_POST['btnSaveInfo'])) {
         $target_file = $target_dir . $fileToUploadenc . "." . $ext;
         $uploadOk = 1;
         $imageFileType = pathinfo($target_file, PATHINFO_EXTENSION);
+        $imageFileType = strtolower($imageFileType);
 
         if ($imageFileType != "jpg" && $imageFileType != "png" && $imageFileType != "jpeg") {
             header("location: personal-info.php?error");
