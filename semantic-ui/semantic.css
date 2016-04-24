@@ -29871,59 +29871,6 @@ select.ui.dropdown {
            Variations
 *******************************/
 
-/*--------------
-    Scrolling
----------------*/
-
-/* A modal that cannot fit on the page */
-
-.scrolling.dimmable.dimmed {
-  overflow: hidden;
-}
-
-.scrolling.dimmable.dimmed > .dimmer {
-  overflow: auto;
-  -webkit-overflow-scrolling: touch;
-}
-
-.scrolling.dimmable > .dimmer {
-  position: fixed;
-}
-
-.modals.dimmer .ui.scrolling.modal {
-  position: static !important;
-  margin: 3.5rem auto !important;
-}
-
-/* undetached scrolling */
-
-.scrolling.undetached.dimmable.dimmed {
-  overflow: auto;
-  -webkit-overflow-scrolling: touch;
-}
-
-.scrolling.undetached.dimmable.dimmed > .dimmer {
-  overflow: hidden;
-}
-
-.scrolling.undetached.dimmable .ui.scrolling.modal {
-  position: absolute;
-  left: 50%;
-  margin-top: 3.5rem !important;
-}
-
-/* Coupling with Sidebar */
-
-.undetached.dimmable.dimmed > .pusher {
-  z-index: auto;
-}
-
-@media only screen and (max-width: 991px) {
-  .modals.dimmer .ui.scrolling.modal {
-    margin-top: 1rem !important;
-    margin-bottom: 1rem !important;
-  }
-}
 
 /*--------------
    Full Screen

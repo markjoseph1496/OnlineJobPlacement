@@ -492,18 +492,13 @@ if ($References == "ok") {
                             <h4>Images<span="head-line"></span="head-line"></h4>
                         </div>
                     </div>
+                    <div class="hr1" style="margin-top:20px;margin-bottom:20px;"></div>
                     <div class="row">
                         <div class="col-md-3">
                             <div class="ui card">
                                 <a class="image" href="#">
                                     <img src="../../images/poster.jpg">
                                 </a>
-                                <div class="content">
-                                    <a class="header" href="#">Steve Jobes</a>
-                                    <div class="meta">
-                                        <a>Last Seen 2 days ago</a>
-                                    </div>
-                                </div>
                             </div>
                         </div>
                         <div class="col-md-3">
@@ -513,22 +508,87 @@ if ($References == "ok") {
                                         <div class="ui dimmer">
                                             <div class="content">
                                                 <div class="center">
-                                                    <div class="ui inverted button">Add Friend</div>
+                                                    <div class="ui inverted button">Edit</div>
                                                 </div>
                                             </div>
                                         </div>
-                                        <img src="../../images/poster.jpg">
+                                        <img src="../../images/abc.jpg">
                                     </div>
                                     <div class="content">
-                                        <a class="header">Team Fu</a>
+                                        <a class="header">Title</a>
                                         <div class="meta">
-                                            <span class="date">Create in Sep 2014</span>
+                                            <span class="date">Description</span>
                                         </div>
                                     </div>
-                                    <div class="extra content">
+                                    <div class="extra content red">
                                         <a>
-                                            <i class="users icon"></i>
-                                            2 Members
+                                            <i class="red trash icon"></i>
+                                        </a>
+                                    </div>
+                                </div>
+                                
+                                <script type="text/javascript">
+                                    $('.special.cards .image').dimmer({
+                                    on: 'hover'
+                                    });
+                                </script>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="ui special cards">
+                                <div class="card">
+                                    <div class="blurring dimmable image">
+                                        <div class="ui dimmer">
+                                            <div class="content">
+                                                <div class="center">
+                                                    <div class="ui inverted button">Edit</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <img src="../../images/abc.jpg">
+                                    </div>
+                                    <div class="content">
+                                        <a class="header">Title</a>
+                                        <div class="meta">
+                                            <span class="date">Description</span>
+                                        </div>
+                                    </div>
+                                    <div class="extra content red">
+                                        <a>
+                                            <i class="red trash icon"></i>
+                                        </a>
+                                    </div>
+                                </div>
+                                
+                                <script type="text/javascript">
+                                    $('.special.cards .image').dimmer({
+                                    on: 'hover'
+                                    });
+                                </script>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="ui special cards">
+                                <div class="card">
+                                    <div class="blurring dimmable image">
+                                        <div class="ui dimmer">
+                                            <div class="content">
+                                                <div class="center">
+                                                    <div class="ui inverted button">Edit</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <img src="../../images/abc.jpg">
+                                    </div>
+                                    <div class="content">
+                                        <a class="header">Title</a>
+                                        <div class="meta">
+                                            <span class="date">Description</span>
+                                        </div>
+                                    </div>
+                                    <div class="extra content red">
+                                        <a>
+                                            <i class="red trash icon"></i>
                                         </a>
                                     </div>
                                 </div>
@@ -541,10 +601,7 @@ if ($References == "ok") {
                             </div>
                         </div>
                     </div>
-
-
-                    
-
+                    <div class="hr1" style="margin-top:20px;margin-bottom:20px;"></div>
 
                     <div class="row">
                         <div class="col-md-6">
