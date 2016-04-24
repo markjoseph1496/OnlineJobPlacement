@@ -140,6 +140,22 @@ $MobileNumber = $studcontacts_tbl[0][2];
     <script type="text/javascript" src="js/jquery.nicescroll.min.js"></script>
     <script type="text/javascript" src="js/jquery.parallax.js"></script>
     <script type="text/javascript" src="js/jquery.slicknav.js"></script>
+
+    <script type="text/javascript" src="semantic-ui/semantic.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="semantic-ui/semantic.min.css"></link>
+
+    <link rel="stylesheet" type="text/css" href="semantic-ui/components/divider.css">
+    <link rel="stylesheet" type="text/css" href="semantic-ui/components/card.css">
+    <link rel="stylesheet" type="text/css" href="semantic-ui/components/dimmer.css">
+
+    <link rel="stylesheet" type="text/css" href="semantic-ui/components/container.css">
+    <link rel="stylesheet" type="text/css" href="semantic-ui/components/grid.css">
+    <link rel="stylesheet" type="text/css" href="semantic-ui/components/header.css">
+    <link rel="stylesheet" type="text/css" href="semantic-ui/components/image.css">
+    <link rel="stylesheet" type="text/css" href="semantic-ui/components/button.css">
+    <link rel="stylesheet" type="text/css" href="semantic-ui/components/icon.css">
+
+    <script type="text/javascript" src="semantic-ui/components/dimmer.js"></script>
 </head>
 
 <body>
@@ -177,7 +193,7 @@ $MobileNumber = $studcontacts_tbl[0][2];
                     <div class="col-sm-2">&nbsp;</div>
                     <div class="col-sm-3">
                         <div class="profile-photo">
-                            <img src="student-view/myinfo/<?php echo $ProfileImage; ?>">
+                            <img class="img-responsive" style="width:100%; height:100%;" src="student-view/myinfo/<?php echo $ProfileImage; ?>">
                         </div>
                     </div>
                     <br>
@@ -534,6 +550,213 @@ $MobileNumber = $studcontacts_tbl[0][2];
                                     </tr>
                                 </tbody>
                             </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="section" style="padding-top:40px; padding-bottom:40px; border-top:1px solid #eee; border-bottom:1px solid #eee; background:#f9f9f9;">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-sm-3">
+                            <h1><img src="images/pro-icon/portfolio.png" style="width:20%;height:20%">
+                                Portfolio
+                            </h1>
+                        </div>
+                    </div>
+                    
+                    <div class="row">
+                        <h4 class="ui horizontal divider header">
+                            <i class="fa fa-picture-o"></i>
+                            Image/s
+                        </h4>
+                        <div class="col-sm-3">
+                            <div class="ui special cards">
+                                <div class="card">
+                                    <div class="blurring dimmable image">
+                                        <div class="ui dimmer">
+                                            <div class="content">
+                                                <div class="center">
+                                                    <div class="ui inverted ">Description Here</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <img src="images/abc.jpg">
+                                    </div>
+                                </div>
+                                
+                                <script type="text/javascript">
+                                    $('.special.cards .image').dimmer({
+                                    on: 'hover'
+                                    });
+                                </script>
+                            </div>
+                        </div>
+                        <div class="col-sm-3">
+                            <div class="ui special cards">
+                                <div class="card">
+                                    <div class="blurring dimmable image">
+                                        <div class="ui dimmer">
+                                            <div class="content">
+                                                <div class="center">
+                                                    <div class="ui inverted ">Description Here</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <img src="images/abc.jpg">
+                                    </div>
+                                </div>
+                                
+                                <script type="text/javascript">
+                                    $('.special.cards .image').dimmer({
+                                    on: 'hover'
+                                    });
+                                </script>
+                            </div>
+                        </div>
+                        <div class="col-sm-3">
+                            <div class="ui special cards">
+                                <div class="card">
+                                    <div class="blurring dimmable image">
+                                        <div class="ui dimmer">
+                                            <div class="content">
+                                                <div class="center">
+                                                    <div class="ui inverted ">Description Here</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <img src="images/abc.jpg">
+                                    </div>
+                                </div>
+                                
+                                <script type="text/javascript">
+                                    $('.special.cards .image').dimmer({
+                                    on: 'hover'
+                                    });
+                                </script>
+                            </div>
+                        </div>
+                        <div class="col-sm-3">
+                            <div class="ui special cards">
+                                <div class="card">
+                                    <div class="blurring dimmable image">
+                                        <div class="ui dimmer">
+                                            <div class="content">
+                                                <div class="center">
+                                                    <div class="ui inverted ">Description Here</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <img src="images/abc.jpg">
+                                    </div>
+                                </div>
+                                
+                                <script type="text/javascript">
+                                    $('.special.cards .image').dimmer({
+                                    on: 'hover'
+                                    });
+                                </script>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <h4 class="ui horizontal divider header">
+                            <i class="fa fa-file-text"></i>
+                            Document/s
+                        </h4>
+                        <div class="col-sm-3">
+                            <div class="ui link cards">
+                                <div class="card">
+                                    <div class="image">
+                                        <img src="images/poster.jpg">
+                                    </div>
+                                    <div class="content">
+                                        <div class="meta">
+                                            <a>Friends</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-3">
+                            <div class="ui link cards">
+                                <div class="card">
+                                    <div class="image">
+                                        <img src="images/poster.jpg">
+                                    </div>
+                                    <div class="content">
+                                        <div class="meta">
+                                            <a>Friends</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-3">
+                            <div class="ui link cards">
+                                <div class="card">
+                                    <div class="image">
+                                        <img src="images/poster.jpg">
+                                    </div>
+                                    <div class="content">
+                                        <div class="meta">
+                                            <a>Friends</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <h4 class="ui horizontal divider header">
+                            <i class="fa fa-link"></i>
+                            Link/s
+                        </h4>
+                        <div class="col-sm-3">
+                            <div class="ui link cards">
+                                <div class="card">
+                                    <div class="image">
+                                        <img src="images/poster.jpg">
+                                    </div>
+                                    <div class="content">
+                                        <div class="meta">
+                                            <a>Friends</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-sm-3">
+                            <div class="ui link cards">
+                                <div class="card">
+                                    <div class="image">
+                                        <img src="images/poster.jpg">
+                                    </div>
+                                    <div class="content">
+                                        <div class="meta">
+                                            <a>Friends</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <div class="col-sm-3">
+                            <div class="ui link cards">
+                                <div class="card">
+                                    <div class="image">
+                                        <img src="images/poster.jpg">
+                                    </div>
+                                    <div class="content">
+                                        <div class="meta">
+                                            <a>Friends</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>

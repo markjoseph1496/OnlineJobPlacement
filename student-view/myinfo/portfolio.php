@@ -197,28 +197,15 @@ if ($References == "ok") {
 
     <link rel="stylesheet" type="text/css" href="../../semantic-ui/components/card.css">
     <link rel="stylesheet" type="text/css" href="../../semantic-ui/components/dimmer.css">
-    <link rel="stylesheet" type="text/css" href="../../semantic-ui/components/reset.css">
-    <link rel="stylesheet" type="text/css" href="../../semantic-ui/components/site.css">
+
     <link rel="stylesheet" type="text/css" href="../../semantic-ui/components/container.css">
     <link rel="stylesheet" type="text/css" href="../../semantic-ui/components/grid.css">
     <link rel="stylesheet" type="text/css" href="../../semantic-ui/components/header.css">
     <link rel="stylesheet" type="text/css" href="../../semantic-ui/components/image.css">
-    <link rel="stylesheet" type="text/css" href="../../semantic-ui/components/menu.css">
-    <link rel="stylesheet" type="text/css" href="../../semantic-ui/components/divider.css">
-    <link rel="stylesheet" type="text/css" href="../../semantic-ui/components/dropdown.css">
-    <link rel="stylesheet" type="text/css" href="../../semantic-ui/components/segment.css">
     <link rel="stylesheet" type="text/css" href="../../semantic-ui/components/button.css">
-    <link rel="stylesheet" type="text/css" href="../../semantic-ui/components/list.css">
     <link rel="stylesheet" type="text/css" href="../../semantic-ui/components/icon.css">
-    <link rel="stylesheet" type="text/css" href="../../semantic-ui/components/sidebar.css">
-    <link rel="stylesheet" type="text/css" href="../../semantic-ui/components/transition.css">
-    <link rel="stylesheet" type="text/css" href="../../semantic-ui/components/rail.css">
-    <link rel="stylesheet" type="text/css" href="../../semantic-ui/components/sticky.css">
 
     <script type="text/javascript" src="../../semantic-ui/components/dimmer.js"></script>
-    <script src="../../semantic-ui/components/card.js"></script>
-
-    
 
     <!-- fileupload -->
     <link href="../../css/fileinput.min.css" media="all" rel="stylesheet" type="text/css"/>
@@ -497,7 +484,7 @@ if ($References == "ok") {
                         <div class="col-md-3">
                             <div class="ui card">
                                 <a class="image" href="#">
-                                    <img src="../../images/poster.jpg">
+                                    <img src="../../images/abc.jpg">
                                 </a>
                             </div>
                         </div>
