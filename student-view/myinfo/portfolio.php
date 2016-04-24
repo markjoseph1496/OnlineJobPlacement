@@ -192,6 +192,34 @@ if ($References == "ok") {
     <script type="text/javascript" src="../../js/jquery.parallax.js"></script>
     <script type="text/javascript" src="../../js/jquery.slicknav.js"></script>
 
+    <script type="text/javascript" src="../../semantic-ui/semantic.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="../../semantic-ui/semantic.min.css"></link>
+
+    <link rel="stylesheet" type="text/css" href="../../semantic-ui/components/card.css">
+    <link rel="stylesheet" type="text/css" href="../../semantic-ui/components/dimmer.css">
+    <link rel="stylesheet" type="text/css" href="../../semantic-ui/components/reset.css">
+    <link rel="stylesheet" type="text/css" href="../../semantic-ui/components/site.css">
+    <link rel="stylesheet" type="text/css" href="../../semantic-ui/components/container.css">
+    <link rel="stylesheet" type="text/css" href="../../semantic-ui/components/grid.css">
+    <link rel="stylesheet" type="text/css" href="../../semantic-ui/components/header.css">
+    <link rel="stylesheet" type="text/css" href="../../semantic-ui/components/image.css">
+    <link rel="stylesheet" type="text/css" href="../../semantic-ui/components/menu.css">
+    <link rel="stylesheet" type="text/css" href="../../semantic-ui/components/divider.css">
+    <link rel="stylesheet" type="text/css" href="../../semantic-ui/components/dropdown.css">
+    <link rel="stylesheet" type="text/css" href="../../semantic-ui/components/segment.css">
+    <link rel="stylesheet" type="text/css" href="../../semantic-ui/components/button.css">
+    <link rel="stylesheet" type="text/css" href="../../semantic-ui/components/list.css">
+    <link rel="stylesheet" type="text/css" href="../../semantic-ui/components/icon.css">
+    <link rel="stylesheet" type="text/css" href="../../semantic-ui/components/sidebar.css">
+    <link rel="stylesheet" type="text/css" href="../../semantic-ui/components/transition.css">
+    <link rel="stylesheet" type="text/css" href="../../semantic-ui/components/rail.css">
+    <link rel="stylesheet" type="text/css" href="../../semantic-ui/components/sticky.css">
+
+    <script type="text/javascript" src="../../semantic-ui/components/dimmer.js"></script>
+    <script src="../../semantic-ui/components/card.js"></script>
+
+    
+
     <!-- fileupload -->
     <link href="../../css/fileinput.min.css" media="all" rel="stylesheet" type="text/css"/>
     <script src="../../js/fileinput.min.js" type="text/javascript"></script>
@@ -459,312 +487,366 @@ if ($References == "ok") {
                 <!-- Page Content -->
                 <div class="col-md-12 page-content">
 
-                    <div class="classic-testimonials">
-                        <!-- upload here
-
-                        -->
-                        <div class="row">
-                            <div class="col-md-6">
-                                <h4>Documents<span="head-line"></span="head-line"></h4>
-                            </div>
-                            <div class="col-md-6">
-                                <a class="main-button" style="float:right;cursor:pointer;" data-toggle="modal" data-target="#AddDocument">
-                                    <span>Add Document</span>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <h4>Images<span="head-line"></span="head-line"></h4>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-3">
+                            <div class="ui card">
+                                <a class="image" href="#">
+                                    <img src="../../images/poster.jpg">
                                 </a>
+                                <div class="content">
+                                    <a class="header" href="#">Steve Jobes</a>
+                                    <div class="meta">
+                                        <a>Last Seen 2 days ago</a>
+                                    </div>
+                                </div>
                             </div>
                         </div>
+                        <div class="col-md-3">
+                            <div class="ui special cards">
+                                <div class="card">
+                                    <div class="blurring dimmable image">
+                                        <div class="ui dimmer">
+                                            <div class="content">
+                                                <div class="center">
+                                                    <div class="ui inverted button">Add Friend</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <img src="../../images/poster.jpg">
+                                    </div>
+                                    <div class="content">
+                                        <a class="header">Team Fu</a>
+                                        <div class="meta">
+                                            <span class="date">Create in Sep 2014</span>
+                                        </div>
+                                    </div>
+                                    <div class="extra content">
+                                        <a>
+                                            <i class="users icon"></i>
+                                            2 Members
+                                        </a>
+                                    </div>
+                                </div>
+                                
+                                <script type="text/javascript">
+                                    $('.special.cards .image').dimmer({
+                                    on: 'hover'
+                                    });
+                                </script>
+                            </div>
+                        </div>
+                    </div>
 
-                        <!-- ADD Document Modal -->
-                        <form id="UploadDocument" name="UploadDocument" method="POST" action="myinfoadd.php" enctype="multipart/form-data">
-                            <div class="modal fade" id="AddDocument" role="dialog">
-                                <div class="modal-dialog modal-lg" style="padding:160px;">
+
+                    
+
+
+                    <div class="row">
+                        <div class="col-md-6">
+                            <h4>Documents<span="head-line"></span="head-line"></h4>
+                        </div>
+                        <div class="col-md-6">
+                            <a class="main-button" style="float:right;cursor:pointer;" data-toggle="modal" data-target="#AddDocument">
+                                <span>Add Document</span>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- ADD Document Modal -->
+                    <form id="UploadDocument" name="UploadDocument" method="POST" action="myinfoadd.php" enctype="multipart/form-data">
+                        <div class="modal fade" id="AddDocument" role="dialog">
+                            <div class="modal-dialog modal-lg" style="padding:160px;">
+                                <!-- Modal content-->
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                        <h4 class="modal-title">Add Document</h4>
+                                    </div>
+                                    <div class="modal-body">
+                                        <label style="float:left;">* Select File
+                                            <div>(10MB maximum file size)</div>
+                                        </label>
+                                        <div class="row">
+                                            <div class="col-md-12">
+                                                <div class="form-group">
+                                                    <input type="hidden" name="uploadtest" value="test">
+                                                    <input id="Document" name="Document" type="file" class="file file-loading" data-allowed-file-extensions='["doc", "docx", "xls", "xlsx", "ppt", "pptx", "txt", "pdf"]'>
+                                                </div>
+                                                <script>
+                                                    $("#Document").fileinput({
+                                                        showUpload: false
+                                                    });
+                                                </script>
+                                            </div>
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="submit" class="btn-system btn-large">Upload</button>
+                                            <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+
+                    <div class="hr2" style="margin-top:35px;"></div>
+                    <table class="table segment table-hover">
+                        <thead>
+                        <tr>
+                            <th>File</th>
+                            <th width="15%">&nbsp;</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <?php
+                        $documents_tbl =
+                            GSecureSQL::query(
+                                "SELECT * FROM filestbl WHERE StudentID = ?",
+                                TRUE,
+                                "s",
+                                $StudentID
+                            );
+                        foreach ($documents_tbl as $value) {
+                            $FileID = $value[0];
+                            $DocumentName = $value[2];
+
+                            $FileIDenc = encrypt_decrypt("encrypt", $FileID);
+
+                            ?>
+                            <tr>
+                                <td><a href="myinfoadd.php?DocID=<?php echo $FileIDenc; ?>"><?php echo $DocumentName; ?></a></td>
+                                <td class="text-center">
+                                    <button class="btn btn-danger" data-toggle="modal"
+                                            data-target="#DeleteDocument<?php echo $FileIDenc; ?>">
+                                        <i class="fa fa-trash fa-1x"></i>
+                                    </button>
+                                </td>
+                            </tr>
+                            <!-- Modal -->
+                            <div class="modal fade" id="DeleteDocument<?php echo $FileIDenc; ?>"
+                                 role="dialog">
+                                <div class="modal-dialog" style="padding:100px">
                                     <!-- Modal content-->
                                     <div class="modal-content">
                                         <div class="modal-header">
                                             <button type="button" class="close" data-dismiss="modal">&times;</button>
-                                            <h4 class="modal-title">Add Document</h4>
+                                            <h4 class="modal-title">Delete Document?</h4>
                                         </div>
                                         <div class="modal-body">
-                                            <label style="float:left;">* Select File
-                                                <div>(10MB maximum file size)</div>
-                                            </label>
-                                            <div class="row">
-                                                <div class="col-md-12">
-                                                    <div class="form-group">
-                                                        <input type="hidden" name="uploadtest" value="test">
-                                                        <input id="Document" name="Document" type="file" class="file file-loading" data-allowed-file-extensions='["doc", "docx", "xls", "xlsx", "ppt", "pptx", "txt", "pdf"]'>
-                                                    </div>
-                                                    <script>
-                                                        $("#Document").fileinput({
-                                                            showUpload: false
-                                                        });
-                                                    </script>
+                                            <div class="col-md-15">
+                                                <label>Do you want to delete this
+                                                Document? This cannot be undone.</label>
+                                                <div class="form-group">
                                                 </div>
                                             </div>
                                             <div class="modal-footer">
-                                                <button type="submit" class="btn-system btn-large">Upload</button>
-                                                <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+                                                <a href="delete.php?Delete_DocID=<?php echo $FileIDenc; ?>"
+                                                   class="btn btn-danger">Delete</a>
+                                                <button type="button" class="btn btn-default" data-dismiss="modal">
+                                                    Cancel
+                                                </button>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                        </form>
-
-                        <div class="hr2" style="margin-top:35px;"></div>
-                        <table class="table segment table-hover">
-                            <thead>
-                            <tr>
-                                <th>File</th>
-                                <th width="15%">&nbsp;</th>
-                            </tr>
-                            </thead>
-                            <tbody>
                             <?php
-                            $documents_tbl =
-                                GSecureSQL::query(
-                                    "SELECT * FROM filestbl WHERE StudentID = ?",
-                                    TRUE,
-                                    "s",
-                                    $StudentID
-                                );
-                            foreach ($documents_tbl as $value) {
-                                $FileID = $value[0];
-                                $DocumentName = $value[2];
+                        }
+                        ?>
+                        </tbody>
+                    </table>
 
-                                $FileIDenc = encrypt_decrypt("encrypt", $FileID);
+                    <div class="hr4" style="margin-top:40px;margin-bottom:40px;"></div>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <h4>Links<span="head-line"></span="head-line"></h4>
+                        </div>
+                        <div class="col-md-6">
+                            <a class="main-button" style="float:right;cursor:pointer;" data-toggle="modal" data-target="#AddLink">
+                                <span>Add Link</h6></span>
+                            </a>
+                        </div>
+                    </div>
 
-                                ?>
-                                <tr>
-                                    <td><a href="myinfoadd.php?DocID=<?php echo $FileIDenc; ?>"><?php echo $DocumentName; ?></a></td>
-                                    <td class="text-center">
-                                        <button class="btn btn-danger" data-toggle="modal"
-                                                data-target="#DeleteDocument<?php echo $FileIDenc; ?>">
-                                            <i class="fa fa-trash fa-1x"></i>
-                                        </button>
-                                    </td>
-                                </tr>
-                                <!-- Modal -->
-                                <div class="modal fade" id="DeleteDocument<?php echo $FileIDenc; ?>"
-                                     role="dialog">
-                                    <div class="modal-dialog" style="padding:100px">
+                    <!-- ADD Link Modal -->
+                    <form id="FormAddUrl" name="FormAddUrl" autocomplete="off" action="myinfoadd.php" method="POST">
+                        <div class="modal fade" id="AddLink" role="dialog">
+                            <div class="modal-dialog modal-lg" style="padding:160px;width:100%;">
+                                <!-- Modal content-->
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                        <h4 class="modal-title">Add Link</h4>
+                                    </div>
+                                    <div class="modal-body">
+                                        <div class="row">
+                                            <div class="col-md-12 fieldcol">
+                                                <div class="form-group">
+                                                    <label>URL <span>(*)</span></label>
+                                                    <input type="url" class="form-control" id="txtURL" name="txtURL" value="http://" placeholder="http://">
+                                                </div>
+                                            </div>
+                                            <div class="col-md-12 fieldcol">
+                                                <div class="form-group">
+                                                    <label>Name/Title/Caption <span>(*)</span></label>
+                                                    <input type="text" class="form-control" id="txtCaption" name="txtCaption" value="">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="submit" class="btn-system btn-large">Add</button>
+                                            <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                    <!-- end modal-->
+
+                    <div class="hr2" style="margin-top:35px;"></div>
+                    <table class="table segment table-hover">
+                        <thead>
+                        <tr>
+                            <th>URL</th>
+                            <th>Caption</th>
+                            <th width="15%">&nbsp;</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <?php
+                        $urltbl =
+                            GSecureSQL::query(
+                                "SELECT * FROM urltbl WHERE StudentID = ?",
+                                TRUE,
+                                "s",
+                                $StudentID
+                            );
+                        foreach ($urltbl as $value) {
+                            $id = $value[0];
+                            $Link = $value[2];
+                            $Caption = $value[3];
+                            $idenc = encrypt_decrypt("encrypt", $id);
+                            ?>
+                            <tr>
+                                <td><?php echo $Link; ?></td>
+                                <td><?php echo $Caption; ?></td>
+                                <td class="text-center">
+                                    <button class="btn btn-default" data-toggle="modal"
+                                            data-target="#Edit<?php echo $id; ?>">
+                                        <i class="fa fa-pencil-square-o fa-1x"></i>
+                                    </button>
+                                    <button class="btn btn-danger" data-toggle="modal"
+                                            data-target="#Delete<?php echo $id; ?>">
+                                        <i class="fa fa-trash fa-1x"></i>
+                                    </button>
+                                </td>
+                            </tr>
+
+                            <!-- EDIT Link Modal -->
+                            <form id="FormEditUrl" name="FormEditUrl<?php echo $id; ?>" autocomplete="off" action="myinfoedit.php" method="POST">
+                                <div class="modal fade" id="Edit<?php echo $id; ?>" role="dialog">
+                                    <div class="modal-dialog modal-lg" style="padding:160px;width:100%;">
                                         <!-- Modal content-->
                                         <div class="modal-content">
                                             <div class="modal-header">
                                                 <button type="button" class="close" data-dismiss="modal">&times;</button>
-                                                <h4 class="modal-title">Delete Document?</h4>
+                                                <h4 class="modal-title">Edit Link</h4>
                                             </div>
                                             <div class="modal-body">
-                                                <div class="col-md-15">
-                                                    <label = "usr" class = "control-label">Do you want to delete this
-                                                    Document? This cannot be undone.</label>
-                                                    <div class="form-group">
+                                                <div class="row">
+                                                    <div class="col-md-12 fieldcol">
+                                                        <div class="form-group">
+                                                            <label>URL <span>(*)</span></label>
+                                                            <input type="url" class="form-control" id="EdittxtURL" name="EdittxtURL" value="<?php echo $Link; ?>" placeholder="http://">
+                                                            <input type="hidden" name="URLID" value="<?php echo $idenc; ?>">
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-12 fieldcol">
+                                                        <div class="form-group">
+                                                            <label>Name/Title/Caption <span>(*)</span></label>
+                                                            <input type="text" class="form-control" id="EdittxtCaption" name="EdittxtCaption" value="<?php echo $Caption; ?>">
+                                                        </div>
                                                     </div>
                                                 </div>
                                                 <div class="modal-footer">
-                                                    <a href="delete.php?Delete_DocID=<?php echo $FileIDenc; ?>"
-                                                       class="btn btn-danger">Delete</a>
-                                                    <button type="button" class="btn btn-default" data-dismiss="modal">
-                                                        Cancel
-                                                    </button>
+                                                    <button type="submit" class="btn-system btn-large">Save</button>
+                                                    <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
-                                <?php
-                            }
-                            ?>
-                            </tbody>
-                        </table>
+                            </form>
 
-                        <div class="hr4" style="margin-top:40px;margin-bottom:40px;"></div>
-                        <div class="row">
-                            <div class="col-md-6">
-                                <h4>Links<span="head-line"></span="head-line"></h4>
-                            </div>
-                            <div class="col-md-6">
-                                <a class="main-button" style="float:right;cursor:pointer;" data-toggle="modal" data-target="#AddLink">
-                                    <span>Add Link</h6></span>
-                                </a>
-                            </div>
-                        </div>
-
-                        <!-- ADD Link Modal -->
-                        <form id="FormAddUrl" name="FormAddUrl" autocomplete="off" action="myinfoadd.php" method="POST">
-                            <div class="modal fade" id="AddLink" role="dialog">
-                                <div class="modal-dialog modal-lg" style="padding:160px;width:100%;">
-                                    <!-- Modal content-->
-                                    <div class="modal-content">
-                                        <div class="modal-header">
-                                            <button type="button" class="close" data-dismiss="modal">&times;</button>
-                                            <h4 class="modal-title">Add Link</h4>
-                                        </div>
-                                        <div class="modal-body">
-                                            <div class="row">
-                                                <div class="col-md-12 fieldcol">
-                                                    <div class="form-group">
-                                                        <label>URL <span>(*)</span></label>
-                                                        <input type="url" class="form-control" id="txtURL" name="txtURL" value="http://" placeholder="http://">
-                                                    </div>
-                                                </div>
-                                                <div class="col-md-12 fieldcol">
-                                                    <div class="form-group">
-                                                        <label>Name/Title/Caption <span>(*)</span></label>
-                                                        <input type="text" class="form-control" id="txtCaption" name="txtCaption" value="">
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="modal-footer">
-                                                <button type="submit" class="btn-system btn-large">Add</button>
-                                                <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </form>
-                        <!-- end modal-->
-
-                        <div class="hr2" style="margin-top:35px;"></div>
-                        <table class="table segment table-hover">
-                            <thead>
-                            <tr>
-                                <th>URL</th>
-                                <th>Caption</th>
-                                <th width="15%">&nbsp;</th>
-                            </tr>
-                            </thead>
-                            <tbody>
-                            <?php
-                            $urltbl =
-                                GSecureSQL::query(
-                                    "SELECT * FROM urltbl WHERE StudentID = ?",
-                                    TRUE,
-                                    "s",
-                                    $StudentID
-                                );
-                            foreach ($urltbl as $value) {
-                                $id = $value[0];
-                                $Link = $value[2];
-                                $Caption = $value[3];
-                                $idenc = encrypt_decrypt("encrypt", $id);
-                                ?>
-                                <tr>
-                                    <td><?php echo $Link; ?></td>
-                                    <td><?php echo $Caption; ?></td>
-                                    <td class="text-center">
-                                        <button class="btn btn-default" data-toggle="modal"
-                                                data-target="#Edit<?php echo $id; ?>">
-                                            <i class="fa fa-pencil-square-o fa-1x"></i>
-                                        </button>
-                                        <button class="btn btn-danger" data-toggle="modal"
-                                                data-target="#Delete<?php echo $id; ?>">
-                                            <i class="fa fa-trash fa-1x"></i>
-                                        </button>
-                                    </td>
-                                </tr>
-
-                                <!-- EDIT Link Modal -->
-                                <form id="FormEditUrl" name="FormEditUrl<?php echo $id; ?>" autocomplete="off" action="myinfoedit.php" method="POST">
-                                    <div class="modal fade" id="Edit<?php echo $id; ?>" role="dialog">
-                                        <div class="modal-dialog modal-lg" style="padding:160px;width:100%;">
-                                            <!-- Modal content-->
-                                            <div class="modal-content">
-                                                <div class="modal-header">
-                                                    <button type="button" class="close" data-dismiss="modal">&times;</button>
-                                                    <h4 class="modal-title">Edit Link</h4>
-                                                </div>
-                                                <div class="modal-body">
-                                                    <div class="row">
-                                                        <div class="col-md-12 fieldcol">
-                                                            <div class="form-group">
-                                                                <label>URL <span>(*)</span></label>
-                                                                <input type="url" class="form-control" id="EdittxtURL" name="EdittxtURL" value="<?php echo $Link; ?>" placeholder="http://">
-                                                                <input type="hidden" name="URLID" value="<?php echo $idenc; ?>">
-                                                            </div>
-                                                        </div>
-                                                        <div class="col-md-12 fieldcol">
-                                                            <div class="form-group">
-                                                                <label>Name/Title/Caption <span>(*)</span></label>
-                                                                <input type="text" class="form-control" id="EdittxtCaption" name="EdittxtCaption" value="<?php echo $Caption; ?>">
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="modal-footer">
-                                                        <button type="submit" class="btn-system btn-large">Save</button>
-                                                        <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </form>
-
-                                <script type="text/javascript">
-                                    $(document).ready(function () {
-                                        var validator = $("#Edit<?php echo $id; ?>").bootstrapValidator({
-                                            feedbackIcons: {
-                                                valid: "glyphicon glyphicon-ok",
-                                                invalid: "glyphicon glyphicon-remove",
-                                                validating: "glyphicon glyphicon-refresh"
-                                            },
-                                            fields: {
-                                                EdittxtURL: {
-                                                    validators: {
-                                                        notEmpty: {
-                                                            message: "This field is required."
-                                                        }
+                            <script type="text/javascript">
+                                $(document).ready(function () {
+                                    var validator = $("#Edit<?php echo $id; ?>").bootstrapValidator({
+                                        feedbackIcons: {
+                                            valid: "glyphicon glyphicon-ok",
+                                            invalid: "glyphicon glyphicon-remove",
+                                            validating: "glyphicon glyphicon-refresh"
+                                        },
+                                        fields: {
+                                            EdittxtURL: {
+                                                validators: {
+                                                    notEmpty: {
+                                                        message: "This field is required."
                                                     }
-                                                },
-                                                EdittxtCaption: {
-                                                    validators: {
-                                                        notEmpty: {
-                                                            message: "This field is required."
-                                                        }
+                                                }
+                                            },
+                                            EdittxtCaption: {
+                                                validators: {
+                                                    notEmpty: {
+                                                        message: "This field is required."
                                                     }
                                                 }
                                             }
-                                        });
+                                        }
                                     });
-                                </script>
+                                });
+                            </script>
 
-                                <!-- Modal -->
-                                <div class="modal fade" id="Delete<?php echo $id; ?>"
-                                     role="dialog">
-                                    <div class="modal-dialog" style="padding:100px">
-                                        <!-- Modal content-->
-                                        <div class="modal-content">
-                                            <div class="modal-header">
-                                                <button type="button" class="close" data-dismiss="modal">&times;</button>
-                                                <h4 class="modal-title">Delete URL?</h4>
+                            <!-- Modal -->
+                            <div class="modal fade" id="Delete<?php echo $id; ?>"
+                                 role="dialog">
+                                <div class="modal-dialog" style="padding:100px">
+                                    <!-- Modal content-->
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                            <h4 class="modal-title">Delete URL?</h4>
+                                        </div>
+                                        <div class="modal-body">
+                                            <div class="col-md-15">
+                                                <label>Do you want to delete this
+                                                information? This cannot be undone.</label>
+                                                <div class="form-group">
+                                                </div>
                                             </div>
-                                            <div class="modal-body">
-                                                <div class="col-md-15">
-                                                    <label = "usr" class = "control-label">Do you want to delete this
-                                                    information? This cannot be undone.</label>
-                                                    <div class="form-group">
-                                                    </div>
-                                                </div>
-                                                <div class="modal-footer">
-                                                    <a href="delete.php?delete_URLID=<?php echo $idenc; ?>"
-                                                       class="btn btn-danger">Delete</a>
-                                                    <button type="button" class="btn btn-default" data-dismiss="modal">
-                                                        Cancel
-                                                    </button>
-                                                </div>
+                                            <div class="modal-footer">
+                                                <a href="delete.php?delete_URLID=<?php echo $idenc; ?>"
+                                                   class="btn btn-danger">Delete</a>
+                                                <button type="button" class="btn btn-default" data-dismiss="modal">
+                                                    Cancel
+                                                </button>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
-                                <!-- end modal -->
-                                <?php
-                            }
-                            ?>
+                            </div>
+                            <!-- end modal -->
+                            <?php
+                        }
+                        ?>
 
-                            </tbody>
-                        </table>
-                    </div>
+                        </tbody>
+                    </table>
                 </div>
                 <!-- End Page Content -->
             </div>
@@ -822,3 +904,5 @@ if ($References == "ok") {
 
 
 </script>
+
+
