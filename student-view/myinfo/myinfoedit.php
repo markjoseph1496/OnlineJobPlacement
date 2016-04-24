@@ -296,6 +296,8 @@ if (isset($_POST['EditLangID'])) {
 }
 
 if (isset($_POST['EditCompanyName'])) {
+    $WorkID = $_POST['EditWorkID'];
+    $WorkID = encrypt_decrypt("decrypt", $WorkID);
     $CompanyName = ucwords($_POST['EditCompanyName']);
     $CompanyAddress = $_POST['EditCompanyAddress'];
     $Industry = $_POST['EditIndustry'];
@@ -360,9 +362,9 @@ if (isset($_POST['EditCompanyName'])) {
     }
 
     GSecureSQL::query(
-        "UPDATE workexperiencetbl SET StudentID = ?, CompanyName = ?, CompanyAddress = ?, Industry = ?, DateFromMonth = ?, DateFromYear = ?, DateToMonth = ?, DateToYear = ?, PositionLevel = ?, Specialization = ?, MonthlySalary = ?, NatureOfWork = ? WHERE StudentID = ?",
+        "UPDATE workexperiencetbl SET StudentID = ?, CompanyName = ?, CompanyAddress = ?, Industry = ?, DateFromMonth = ?, DateFromYear = ?, DateToMonth = ?, DateToYear = ?, PositionLevel = ?, Specialization = ?, MonthlySalary = ?, NatureOfWork = ? WHERE StudentID = ? AND WorkID = ?",
         FALSE,
-        "sssssssssssss",
+        "ssssssssssssss",
         $StudentID,
         $CompanyName,
         $CompanyAddress,
@@ -375,7 +377,8 @@ if (isset($_POST['EditCompanyName'])) {
         $WorkSpecialization,
         $MonthlySalary,
         $NatureOfWork,
-        $StudentID
+        $StudentID,
+        $WorkID
     );
 
     GSecureSQL::query(

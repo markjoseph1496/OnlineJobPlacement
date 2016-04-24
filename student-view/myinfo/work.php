@@ -900,6 +900,7 @@ if ($References == "ok") {
                                                 <div class="form-group">
                                                     <label>Company Name <span>(*)</span></label>
                                                     <input type="text" class="form-control" id="EditCompanyName" name="EditCompanyName" value="<?php echo $CompanyName; ?>">
+                                                    <input type="hidden" name="EditWorkID" value="<?php echo $WorkIDenc; ?>">
                                                 </div>
                                             </div>
                                             <div class="col-md-6">
@@ -936,7 +937,7 @@ if ($References == "ok") {
                                             <div class="col-md-6">
                                                 <div class="form-group">
                                                     <label>Duration</label><br>
-                                                    <label><input type="checkbox" name="EditDuration" id="EditDuration" <?php if ($DateToYear == "Current") { echo "checked='checked'"; } ?>> Currently Work Here</label>
+                                                    <label><input type="checkbox" name="EditDuration" id="EditDuration<?php echo $WorkID; ?>" <?php if ($DateToYear == "Current") { echo "checked='checked'"; } ?>> Currently Work Here</label>
                                                 </div>
                                             </div>
                                         </div>
@@ -980,11 +981,11 @@ if ($References == "ok") {
                                                     </select>
                                                 </div>
                                             </div>
-                                            <div id="EditToDuration">
+                                            <div id="EditToDuration<?php echo $WorkID; ?>">
                                                 <div class="col-md-3">
                                                     <div class="form-group">
                                                         <label>To <span>(*)</span></label>
-                                                        <select id="EditToMonth" name="EditToMonth" class="form-control" style="width:100%; height:34px;">
+                                                        <select id="EditToMonth<?php echo $WorkID; ?>" name="EditToMonth" class="form-control" style="width:100%; height:34px;">
                                                             <option value="">- Select Month -</option>
                                                             <option <?php if ($ToMonth == "01") echo "selected='selected'"; ?> value="01">January</option>
                                                             <option <?php if ($ToMonth == "02") echo "selected='selected'"; ?> value="02">February</option>
@@ -1004,7 +1005,7 @@ if ($References == "ok") {
                                                 <div class="col-md-3">
                                                     <div class="form-group">
                                                         <label>&nbsp;</label>
-                                                        <select id="EditToYear" name="EditToYear" class="form-control"
+                                                        <select id="EditToYear<?php echo $WorkID; ?>" name="EditToYear" class="form-control"
                                                                 style="width:100%; height:34px;">
                                                             <option value="">- Select Year -</option>
                                                             <?php
@@ -1160,7 +1161,7 @@ if ($References == "ok") {
                                         }
                                     },
                                     EditToMonth: {
-                                        required: "#EditDuration:checked",
+
                                         validators: {
                                             notEmpty: {
                                                 message: "This is required."
@@ -1168,7 +1169,7 @@ if ($References == "ok") {
                                         }
                                     },
                                     EditToYear: {
-                                        required: "#EditDuration:checked",
+
                                         validators: {
                                             notEmpty: {
                                                 message: "This is required."
@@ -1202,17 +1203,33 @@ if ($References == "ok") {
                                     }
                                 }
                             });
-                            $("#EditFromYear").change(function () {
-                                var from_year = $("#EditFromYear").val();
-                                var to_year = $("#EditToYear").val();
+                            $('#EditDuration<?php echo $WorkID; ?>').click(function () {
+                                $("#EditToMonth<?php echo $WorkID; ?>").val("");
+                                $("#EditToYear<?php echo $WorkID; ?>").val("");
+                                if ($(this).is(':checked')) {
+                                    $('#EditToDuration<?php echo $WorkID; ?>').hide();
+                                } else {
+                                    $('#EditToDuration<?php echo $WorkID; ?>').show();
+                                }
+                            });
+
+                            if ($('#EditDuration<?php echo $WorkID; ?>').is(':checked')) {
+                                $('#EditToDuration<?php echo $WorkID; ?>').hide();
+                            } else {
+                                $('#EditToDuration<?php echo $WorkID; ?>').show();
+                            }
+
+                            $("#EditFromYear<?php echo $WorkID; ?>").change(function () {
+                                var from_year = $("#EditFromYear<?php echo $WorkID; ?>").val();
+                                var to_year = $("#EditToYear<?php echo $WorkID; ?>").val();
 
                                 if (from_year > to_year) {
-                                    $("#EditToYear").val(from_year);
-                                    $("#EditToYear").parent().removeClass("has-error");
-                                    $("#EditToYear").parent().addClass("has-success");
-                                    $($("#EditToYear").parent().find(".form-control-feedback")).removeClass("glyphicon-remove");
-                                    $($("#EditToYear").parent().find(".form-control-feedback")).addClass("glyphicon-ok");
-                                    $($("#EditToYear").parent().find(".help-block")).css("display", "none");
+                                    $("#EditToYear<?php echo $WorkID; ?>").val(from_year);
+                                    $("#EditToYear<?php echo $WorkID; ?>").parent().removeClass("has-error");
+                                    $("#EditToYear<?php echo $WorkID; ?>").parent().addClass("has-success");
+                                    $($("#EditToYear<?php echo $WorkID; ?>").parent().find(".form-control-feedback")).removeClass("glyphicon-remove");
+                                    $($("#EditToYear<?php echo $WorkID; ?>").parent().find(".form-control-feedback")).addClass("glyphicon-ok");
+                                    $($("#EditToYear<?php echo $WorkID; ?>").parent().find(".help-block")).css("display", "none");
                                 }
                             });
                         });
@@ -1295,22 +1312,6 @@ if ($References == "ok") {
         $('#ToDuration').show();
     }
 
-
-    $('#EditDuration').click(function () {
-        $("#EditToMonth").val("");
-        $("#EditToYear").val("");
-        if ($(this).is(':checked')) {
-            $('#EditToDuration').hide();
-        } else {
-            $('#EditToDuration').show();
-        }
-    });
-
-    if ($('#EditDuration').is(':checked')) {
-        $('#EditToDuration').hide();
-    } else {
-        $('#EditToDuration').show();
-    }
 
     $('#AddWork').on('shown.bs.modal', function () {
         $('#CompanyName').focus();
