@@ -8,6 +8,7 @@ $StudentID = $_SESSION['StudentID'];
 
 if (isset($_POST['EditSchool'])) {
     $SchoolID = $_POST['EditSchoolID'];
+    $SchoolID = encrypt_decrypt("decrypt", $SchoolID);
     $School = ucwords($_POST['EditSchool']);
     $Attainment = $_POST['EditEducAttainment'];
     $Course = $_POST['EditCourse'];
@@ -17,7 +18,6 @@ if (isset($_POST['EditSchool'])) {
         $txtCourse = $_POST['EdittxtCourse'];
     }
 
-    $SchoolID = encrypt_decrypt("decrypt", $SchoolID);
 
     $a = $Attainment == "High School Diploma";
     $a = $a || $Attainment == "Technical Vocational/Certificate";
