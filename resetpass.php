@@ -1,7 +1,6 @@
 <?php
 include('connection.php');
 
-
 $A = GSecureSQL::query(
     "SELECT * FROM admintbl",
     TRUE
