@@ -13,9 +13,9 @@ class GSecureSQLConfig
             );
         } else {
             return array(
-                'host' => 'mysql.hostinger.ph',
-                'user' => 'u305071956_e2edb',
-                'pass' => 'ocCWVkS7qe',
+                'host' => 'localhost:3306',
+                'user' => 'root',
+                'pass' => '',
                 'db' => 'u305071956_e2edb'
             );
         }
